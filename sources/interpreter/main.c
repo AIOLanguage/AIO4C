@@ -2,14 +2,9 @@
 #include <stdio.h>
 #include <string.h>
 
-
 #include "../../headers/reservedNames/AIOReservedNamesContainer.h"
 #include "../../headers/lang/declarations/AIODeclaration.h"
-#include "../../headers/utils/stringUtils/StringUtils.h"
-
-
-
-#define INTERPRETER "AIO"
+#include "../../headers/lib/AIOMutableListOfString.h"
 
 //int main() {
 //    printf("%s\n", INTERPRETER);
@@ -20,9 +15,13 @@
 //}
 
 int main() {
-    char* a = "AAAA";
-    char* b = "AAA";
-    const int c = strcmp(a, b);
-    printf("%d", c);
+    struct AIOMutableListOfString listOfString = mutableListOfString();
+    char a [] = "33333";
+    addInMutableListOfString(&listOfString, a);
+    printf("%s\n", listOfString.strings[0]);
+    printf("%d\n", listOfString.size);
 
+    char* z = getStringInMutableListByIndex(&listOfString, 0);
+    printf("%s\n", z);
+    return 0;
 }

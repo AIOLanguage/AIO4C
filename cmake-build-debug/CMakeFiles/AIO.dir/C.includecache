@@ -8,9 +8,9 @@
 
 C:/Users/StarKRE/CLionProjects/AIO/headers/lang/declarations/AIODeclaration.h
 
-C:/Users/StarKRE/CLionProjects/AIO/headers/reservedNames/AIOReservedNamesContainer.h
+C:/Users/StarKRE/CLionProjects/AIO/headers/lib/AIOMutableListOfString.h
 
-C:/Users/StarKRE/CLionProjects/AIO/headers/utils/stringUtils/StringUtils.h
+C:/Users/StarKRE/CLionProjects/AIO/headers/reservedNames/AIOReservedNamesContainer.h
 
 C:/Users/StarKRE/CLionProjects/AIO/sources/interpreter/main.c
 stdlib.h
@@ -23,10 +23,22 @@ string.h
 C:/Users/StarKRE/CLionProjects/AIO/headers/reservedNames/AIOReservedNamesContainer.h
 ../../headers/lang/declarations/AIODeclaration.h
 C:/Users/StarKRE/CLionProjects/AIO/headers/lang/declarations/AIODeclaration.h
-../../headers/utils/stringUtils/StringUtils.h
-C:/Users/StarKRE/CLionProjects/AIO/headers/utils/stringUtils/StringUtils.h
+../../headers/lib/AIOMutableListOfString.h
+C:/Users/StarKRE/CLionProjects/AIO/headers/lib/AIOMutableListOfString.h
 
 C:/Users/StarKRE/CLionProjects/AIO/sources/lang/reservedNames/AIOReservedNamesContainer.c
+stdio.h
+-
 string.h
+-
+
+C:/Users/StarKRE/CLionProjects/AIO/sources/lib/AIOMutableListOfString.c
+../../headers/lib/AIOMutableListOfString.h
+C:/Users/StarKRE/CLionProjects/AIO/headers/lib/AIOMutableListOfString.h
+string.h
+-
+process.h
+-
+stdio.h
 -
 
