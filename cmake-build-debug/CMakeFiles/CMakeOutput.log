@@ -1,0 +1,49 @@
+The system is: Windows - 10.0.17134 - AMD64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: C:/Program Files (x86)/Microsoft Visual Studio/2017/Community/VC/Tools/MSVC/14.13.26128/bin/Hostx86/x86/cl.exe 
+Build flags: 
+Id flags:  
+
+The output was:
+0
+Оптимизирующий компилятор Microsoft (R) C/C++ версии 19.13.26129 для x86
+(C) Корпорация Майкрософт (Microsoft Corporation).  Все права защищены.
+
+CMakeCCompilerId.c
+Microsoft (R) Incremental Linker Version 14.13.26129.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+/out:CMakeCCompilerId.exe 
+CMakeCCompilerId.obj 
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CMakeCCompilerId.exe"
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CMakeCCompilerId.obj"
+
+The C compiler identification is MSVC, found in "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/3.10.2/CompilerIdC/CMakeCCompilerId.exe"
+
+Determining if the C compiler works passed with the following output:
+Change Dir: C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command:"nmake" "/NOLOGO" "cmTC_653e6\fast"
+	"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.13.26128\bin\HostX86\x86\nmake.exe" -f CMakeFiles\cmTC_653e6.dir\build.make /nologo -L                  CMakeFiles\cmTC_653e6.dir\build
+Building C object CMakeFiles/cmTC_653e6.dir/testCCompiler.c.obj
+	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1413~1.261\bin\Hostx86\x86\cl.exe @C:\Users\StarKRE\AppData\Local\Temp\nm5C2F.tmp
+testCCompiler.c
+Linking C executable cmTC_653e6.exe
+	"C:\Program Files\JetBrains\CLion 2018.1\bin\cmake\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\cmTC_653e6.dir --manifests  -- C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1413~1.261\bin\Hostx86\x86\link.exe /nologo @CMakeFiles\cmTC_653e6.dir\objects1.rsp @C:\Users\StarKRE\AppData\Local\Temp\nm5CCC.tmp
+
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command:"nmake" "/NOLOGO" "cmTC_efada\fast"
+	"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.13.26128\bin\HostX86\x86\nmake.exe" -f CMakeFiles\cmTC_efada.dir\build.make /nologo -L                  CMakeFiles\cmTC_efada.dir\build
+Building C object CMakeFiles/cmTC_efada.dir/CMakeCCompilerABI.c.obj
+	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1413~1.261\bin\Hostx86\x86\cl.exe @C:\Users\StarKRE\AppData\Local\Temp\nm60F2.tmp
+CMakeCCompilerABI.c
+Linking C executable cmTC_efada.exe
+	"C:\Program Files\JetBrains\CLion 2018.1\bin\cmake\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\cmTC_efada.dir --manifests  -- C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1413~1.261\bin\Hostx86\x86\link.exe /nologo @CMakeFiles\cmTC_efada.dir\objects1.rsp @C:\Users\StarKRE\AppData\Local\Temp\nm61FC.tmp
+
+

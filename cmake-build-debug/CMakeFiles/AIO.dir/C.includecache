@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/StarKRE/CLionProjects/AIO/headers/lang/declarations/AIODeclaration.h
+
+C:/Users/StarKRE/CLionProjects/AIO/headers/reservedNames/AIOReservedNamesContainer.h
+
+C:/Users/StarKRE/CLionProjects/AIO/headers/utils/stringUtils/StringUtils.h
+
+C:/Users/StarKRE/CLionProjects/AIO/sources/interpreter/main.c
+stdlib.h
+-
+stdio.h
+-
+string.h
+-
+../../headers/reservedNames/AIOReservedNamesContainer.h
+C:/Users/StarKRE/CLionProjects/AIO/headers/reservedNames/AIOReservedNamesContainer.h
+../../headers/lang/declarations/AIODeclaration.h
+C:/Users/StarKRE/CLionProjects/AIO/headers/lang/declarations/AIODeclaration.h
+../../headers/utils/stringUtils/StringUtils.h
+C:/Users/StarKRE/CLionProjects/AIO/headers/utils/stringUtils/StringUtils.h
+
+C:/Users/StarKRE/CLionProjects/AIO/sources/lang/reservedNames/AIOReservedNamesContainer.c
+string.h
+-
+

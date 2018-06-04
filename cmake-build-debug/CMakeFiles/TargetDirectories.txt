@@ -1,0 +1,3 @@
+C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir
+C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/rebuild_cache.dir
