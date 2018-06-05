@@ -67,6 +67,10 @@ string.h
 -
 ../../headers/lang/methods/methodDefinition/AIOMethodDefinition.h
 C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/methodDefinition/AIOMethodDefinition.h
+../../headers/lib/maps/AIOMutableMethodDefinitionMap.h
+C:/Users/StarKRE/CLionProjects/AIO/headers/lib/maps/AIOMutableMethodDefinitionMap.h
+../../headers/lang/object/AIOObject.h
+C:/Users/StarKRE/CLionProjects/AIO/headers/lang/object/AIOObject.h
 
 C:/Users/StarKRE/CLionProjects/AIO/sources/lang/annotations/AIOAnnotation.c
 malloc.h

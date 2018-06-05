@@ -4,10 +4,13 @@
 CMakeFiles/AIO.dir/sources/interpreter/main.c.obj
  C:/Users/StarKRE/CLionProjects/AIO/headers/lang/annotations/AIOAnnotation.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lang/declarations/AIODeclaration.h
+ C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/bundle/AIOBundle.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/methodDefinition/AIOMethodDefinition.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/methodDefinition/AIOMethodSizeType.h
+ C:/Users/StarKRE/CLionProjects/AIO/headers/lang/object/AIOObject.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/lists/AIOMutableListOfAnnotations.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/lists/AIOMutableListOfString.h
+ C:/Users/StarKRE/CLionProjects/AIO/headers/lib/maps/AIOMutableMethodDefinitionMap.h
  C:/Users/StarKRE/CLionProjects/AIO/sources/interpreter/main.c
 CMakeFiles/AIO.dir/sources/lang/annotations/AIOAnnotation.c.obj
  C:/Users/StarKRE/CLionProjects/AIO/headers/lang/annotations/AIOAnnotation.h

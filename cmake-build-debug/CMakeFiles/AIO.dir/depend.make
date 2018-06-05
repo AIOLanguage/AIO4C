@@ -3,10 +3,13 @@
 
 CMakeFiles/AIO.dir/sources/interpreter/main.c.obj: ../headers/lang/annotations/AIOAnnotation.h
 CMakeFiles/AIO.dir/sources/interpreter/main.c.obj: ../headers/lang/declarations/AIODeclaration.h
+CMakeFiles/AIO.dir/sources/interpreter/main.c.obj: ../headers/lang/methods/bundle/AIOBundle.h
 CMakeFiles/AIO.dir/sources/interpreter/main.c.obj: ../headers/lang/methods/methodDefinition/AIOMethodDefinition.h
 CMakeFiles/AIO.dir/sources/interpreter/main.c.obj: ../headers/lang/methods/methodDefinition/AIOMethodSizeType.h
+CMakeFiles/AIO.dir/sources/interpreter/main.c.obj: ../headers/lang/object/AIOObject.h
 CMakeFiles/AIO.dir/sources/interpreter/main.c.obj: ../headers/lib/lists/AIOMutableListOfAnnotations.h
 CMakeFiles/AIO.dir/sources/interpreter/main.c.obj: ../headers/lib/lists/AIOMutableListOfString.h
+CMakeFiles/AIO.dir/sources/interpreter/main.c.obj: ../headers/lib/maps/AIOMutableMethodDefinitionMap.h
 CMakeFiles/AIO.dir/sources/interpreter/main.c.obj: ../sources/interpreter/main.c
 
 CMakeFiles/AIO.dir/sources/lang/annotations/AIOAnnotation.c.obj: ../headers/lang/annotations/AIOAnnotation.h
