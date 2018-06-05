@@ -4,22 +4,33 @@
 #include <malloc.h>
 #include "../../../headers/lib/maps/AIOMutableMethodDefinitionMap.h"
 
-AIOMutableMethodDefinitionMap mutableMapOfDefinitions() {
-    struct AIOMutableMethodDefinitionMap methodDefinitionMap = {.size = 0};
-    return methodDefinitionMap;
+void createMutableMapOfDefinitions(AIOMutableMethodDefinitionMap **mutableMethodDefinitionMap) {
+    //Create the same definition map:
+    *mutableMethodDefinitionMap = malloc(sizeof(AIOMutableMethodDefinitionMap));
+    //Create capacity:
+    (*mutableMethodDefinitionMap)->capacity = malloc(sizeof(int));
+    *(*mutableMethodDefinitionMap)->capacity = 2;
+    //Create size:
+    (*mutableMethodDefinitionMap)->size = malloc(sizeof(int));
+    *(*mutableMethodDefinitionMap)->size = 2;
+    //Create char capacity that equals 2:
+    (*mutableMethodDefinitionMap)->names = malloc(2 * sizeof(char));
+    //Create definitions that equals 2:
+    (*mutableMethodDefinitionMap)->definitions = malloc(2 * sizeof(AIOMethodDefinition));
 }
 
 void putInMutableMapOfDefinitions(AIOMutableMethodDefinitionMap *definitionMap,
                                   AIOMethodDefinition *methodDefinition) {
-    //Set key:
-    strcpy(definitionMap->names[definitionMap->size], methodDefinition->name);
+    //Set key with 32 chars:
+    definitionMap->names[*definitionMap->size] = malloc(32 * sizeof(char));
+    definitionMap->names[*definitionMap->size] = methodDefinition->name;
     //Set value:
-    definitionMap->definitions[definitionMap->size] = methodDefinition;
+    definitionMap->definitions[*definitionMap->size] = methodDefinition;
     definitionMap->size++;
 }
 
-AIOMethodDefinition* getMethodDefinitionInMutableMapByName(AIOMutableMethodDefinitionMap *definitionMap
-        , const char *name) {
+AIOMethodDefinition *
+getMethodDefinitionInMutableMapByName(AIOMutableMethodDefinitionMap *definitionMap, const char *name) {
     for (int i = 0; i < strlen(name); ++i) {
         if (strcmp(definitionMap->names[i], name) == 0) {
             return definitionMap->definitions[i];

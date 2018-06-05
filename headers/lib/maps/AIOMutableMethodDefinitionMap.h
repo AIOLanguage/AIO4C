@@ -4,12 +4,13 @@
 #include "../../lang/methods/methodDefinition/AIOMethodDefinition.h"
 
 typedef struct AIOMutableMethodDefinitionMap {
-    int size;
+    int* capacity;
+    int* size;
     char **names;
     AIOMethodDefinition **definitions;
 } AIOMutableMethodDefinitionMap;
 
-AIOMutableMethodDefinitionMap mutableMapOfDefinitions();
+void createMutableMapOfDefinitions(AIOMutableMethodDefinitionMap** mutableMethodDefinitionMap);
 
 void putInMutableMapOfDefinitions(struct AIOMutableMethodDefinitionMap *definitionMap,
                                   struct AIOMethodDefinition *methodDefinition);

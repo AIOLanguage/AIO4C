@@ -2,6 +2,8 @@
 #include <stdio.h>
 #include <string.h>
 #include "../../headers/lang/methods/methodDefinition/AIOMethodDefinition.h"
+#include "../../headers/lib/maps/AIOMutableMethodDefinitionMap.h"
+#include "../../headers/lang/object/AIOObject.h"
 
 //AIOObjectManager aioObjectManager;
 
@@ -26,6 +28,21 @@ int main() {
     enum AIOMethodSizeType methodSizeType = DEFAULT;
     AIOMethodDefinition *definition;
     createAIOMethodDefinition(&definition, methodName, declaration, annotations, sourceCode, &methodSizeType);
-    printf("%s", definition->name);
+    printf("%s\n", definition->name);
+
+    //Create method definition map:
+    AIOMutableMethodDefinitionMap* methodDefinitionMap;
+    createMutableMapOfDefinitions(&methodDefinitionMap);
+
+    putInMutableMapOfDefinitions(methodDefinitionMap, definition);
+
+    //Create method manager:
+    AIOMethodManager* methodManager;
+    createAIOMethodManager(&methodManager, methodDefinitionMap);
+
+    //Create AIO object:
+    AIOObject* aioObject;
+    createAIOObject(&aioObject, methodManager, "starter");
+    printf("%s", aioObject->name);
     return 0;
 }
