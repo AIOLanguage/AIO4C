@@ -1,17 +1,14 @@
-#ifndef AIO_AIOOBJECT_H
-#define AIO_AIOOBJECT_H
+#ifndef AIO_AIO_OBJECT_H
+#define AIO_AIO_OBJECT_H
 
-struct AIOObject{
+typedef struct AIOObject {
+    char name[256];
+    char folderName[256];
+    struct AIOObjectFileLoader* loader;
+} AIOObject;
 
-    char* name[];
-    char* folderName[];
+typedef struct AIOObjectFileLoader {
+    char sourceCode[1024][1024];
+} AIOObjectFileLoader;
 
-    struct AIOObjectLoader{
-
-
-
-
-    };
-};
-
-#endif //AIO_AIOOBJECT_H
+#endif //AIO_AIO_OBJECT_H

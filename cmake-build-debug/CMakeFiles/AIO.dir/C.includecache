@@ -8,7 +8,21 @@
 
 C:/Users/StarKRE/CLionProjects/AIO/headers/lang/declarations/AIODeclaration.h
 
+C:/Users/StarKRE/CLionProjects/AIO/headers/lang/object/AIOObject.h
+
+C:/Users/StarKRE/CLionProjects/AIO/headers/lang/object/objectManager/AIOObjectManager.h
+../AIOObject.h
+C:/Users/StarKRE/CLionProjects/AIO/headers/lang/object/AIOObject.h
+../../../lib/AIOMutableObjectMap.h
+C:/Users/StarKRE/CLionProjects/AIO/headers/lib/AIOMutableObjectMap.h
+
+C:/Users/StarKRE/CLionProjects/AIO/headers/lang/types/AIOType.h
+
 C:/Users/StarKRE/CLionProjects/AIO/headers/lib/AIOMutableListOfString.h
+
+C:/Users/StarKRE/CLionProjects/AIO/headers/lib/AIOMutableObjectMap.h
+../lang/object/AIOObject.h
+C:/Users/StarKRE/CLionProjects/AIO/headers/lang/object/AIOObject.h
 
 C:/Users/StarKRE/CLionProjects/AIO/headers/reservedNames/AIOReservedNamesContainer.h
 
@@ -25,11 +39,29 @@ C:/Users/StarKRE/CLionProjects/AIO/headers/reservedNames/AIOReservedNamesContain
 C:/Users/StarKRE/CLionProjects/AIO/headers/lang/declarations/AIODeclaration.h
 ../../headers/lib/AIOMutableListOfString.h
 C:/Users/StarKRE/CLionProjects/AIO/headers/lib/AIOMutableListOfString.h
+../../headers/lib/AIOMutableObjectMap.h
+C:/Users/StarKRE/CLionProjects/AIO/headers/lib/AIOMutableObjectMap.h
+../../headers/lang/types/AIOType.h
+C:/Users/StarKRE/CLionProjects/AIO/headers/lang/types/AIOType.h
+../../headers/lang/object/objectManager/AIOObjectManager.h
+C:/Users/StarKRE/CLionProjects/AIO/headers/lang/object/objectManager/AIOObjectManager.h
+
+C:/Users/StarKRE/CLionProjects/AIO/sources/lang/object/objectManager/AIOObjectManager.c
+../../../../headers/lang/object/objectManager/AIOObjectManager.h
+C:/Users/StarKRE/CLionProjects/AIO/headers/lang/object/objectManager/AIOObjectManager.h
 
 C:/Users/StarKRE/CLionProjects/AIO/sources/lang/reservedNames/AIOReservedNamesContainer.c
 stdio.h
 -
 string.h
+-
+
+C:/Users/StarKRE/CLionProjects/AIO/sources/lang/types/AIOType.c
+ctype.h
+-
+stdio.h
+-
+mem.h
 -
 
 C:/Users/StarKRE/CLionProjects/AIO/sources/lib/AIOMutableListOfString.c
@@ -41,4 +73,14 @@ process.h
 -
 stdio.h
 -
+
+C:/Users/StarKRE/CLionProjects/AIO/sources/lib/AIOMutableObjectMap.c
+mem.h
+-
+process.h
+-
+stdio.h
+-
+../../headers/lib/AIOMutableObjectMap.h
+C:/Users/StarKRE/CLionProjects/AIO/headers/lib/AIOMutableObjectMap.h
 

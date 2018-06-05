@@ -5,8 +5,11 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
   "C:/Users/StarKRE/CLionProjects/AIO/sources/interpreter/main.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/interpreter/main.c.obj"
+  "C:/Users/StarKRE/CLionProjects/AIO/sources/lang/object/objectManager/AIOObjectManager.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lang/object/objectManager/AIOObjectManager.c.obj"
   "C:/Users/StarKRE/CLionProjects/AIO/sources/lang/reservedNames/AIOReservedNamesContainer.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lang/reservedNames/AIOReservedNamesContainer.c.obj"
+  "C:/Users/StarKRE/CLionProjects/AIO/sources/lang/types/AIOType.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lang/types/AIOType.c.obj"
   "C:/Users/StarKRE/CLionProjects/AIO/sources/lib/AIOMutableListOfString.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lib/AIOMutableListOfString.c.obj"
+  "C:/Users/StarKRE/CLionProjects/AIO/sources/lib/AIOMutableObjectMap.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lib/AIOMutableObjectMap.c.obj"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

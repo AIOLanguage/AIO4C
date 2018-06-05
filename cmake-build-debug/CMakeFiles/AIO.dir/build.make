@@ -128,11 +128,86 @@ CMakeFiles/AIO.dir/sources/lib/AIOMutableListOfString.c.obj.provides: CMakeFiles
 CMakeFiles/AIO.dir/sources/lib/AIOMutableListOfString.c.obj.provides.build: CMakeFiles/AIO.dir/sources/lib/AIOMutableListOfString.c.obj
 
 
+CMakeFiles/AIO.dir/sources/lang/types/AIOType.c.obj: CMakeFiles/AIO.dir/flags.make
+CMakeFiles/AIO.dir/sources/lang/types/AIOType.c.obj: ../sources/lang/types/AIOType.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\StarKRE\CLionProjects\AIO\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/AIO.dir/sources/lang/types/AIOType.c.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\AIO.dir\sources\lang\types\AIOType.c.obj   -c C:\Users\StarKRE\CLionProjects\AIO\sources\lang\types\AIOType.c
+
+CMakeFiles/AIO.dir/sources/lang/types/AIOType.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/AIO.dir/sources/lang/types/AIOType.c.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\StarKRE\CLionProjects\AIO\sources\lang\types\AIOType.c > CMakeFiles\AIO.dir\sources\lang\types\AIOType.c.i
+
+CMakeFiles/AIO.dir/sources/lang/types/AIOType.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/AIO.dir/sources/lang/types/AIOType.c.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\StarKRE\CLionProjects\AIO\sources\lang\types\AIOType.c -o CMakeFiles\AIO.dir\sources\lang\types\AIOType.c.s
+
+CMakeFiles/AIO.dir/sources/lang/types/AIOType.c.obj.requires:
+
+.PHONY : CMakeFiles/AIO.dir/sources/lang/types/AIOType.c.obj.requires
+
+CMakeFiles/AIO.dir/sources/lang/types/AIOType.c.obj.provides: CMakeFiles/AIO.dir/sources/lang/types/AIOType.c.obj.requires
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/types/AIOType.c.obj.provides.build
+.PHONY : CMakeFiles/AIO.dir/sources/lang/types/AIOType.c.obj.provides
+
+CMakeFiles/AIO.dir/sources/lang/types/AIOType.c.obj.provides.build: CMakeFiles/AIO.dir/sources/lang/types/AIOType.c.obj
+
+
+CMakeFiles/AIO.dir/sources/lib/AIOMutableObjectMap.c.obj: CMakeFiles/AIO.dir/flags.make
+CMakeFiles/AIO.dir/sources/lib/AIOMutableObjectMap.c.obj: ../sources/lib/AIOMutableObjectMap.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\StarKRE\CLionProjects\AIO\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/AIO.dir/sources/lib/AIOMutableObjectMap.c.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\AIO.dir\sources\lib\AIOMutableObjectMap.c.obj   -c C:\Users\StarKRE\CLionProjects\AIO\sources\lib\AIOMutableObjectMap.c
+
+CMakeFiles/AIO.dir/sources/lib/AIOMutableObjectMap.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/AIO.dir/sources/lib/AIOMutableObjectMap.c.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\StarKRE\CLionProjects\AIO\sources\lib\AIOMutableObjectMap.c > CMakeFiles\AIO.dir\sources\lib\AIOMutableObjectMap.c.i
+
+CMakeFiles/AIO.dir/sources/lib/AIOMutableObjectMap.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/AIO.dir/sources/lib/AIOMutableObjectMap.c.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\StarKRE\CLionProjects\AIO\sources\lib\AIOMutableObjectMap.c -o CMakeFiles\AIO.dir\sources\lib\AIOMutableObjectMap.c.s
+
+CMakeFiles/AIO.dir/sources/lib/AIOMutableObjectMap.c.obj.requires:
+
+.PHONY : CMakeFiles/AIO.dir/sources/lib/AIOMutableObjectMap.c.obj.requires
+
+CMakeFiles/AIO.dir/sources/lib/AIOMutableObjectMap.c.obj.provides: CMakeFiles/AIO.dir/sources/lib/AIOMutableObjectMap.c.obj.requires
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/AIOMutableObjectMap.c.obj.provides.build
+.PHONY : CMakeFiles/AIO.dir/sources/lib/AIOMutableObjectMap.c.obj.provides
+
+CMakeFiles/AIO.dir/sources/lib/AIOMutableObjectMap.c.obj.provides.build: CMakeFiles/AIO.dir/sources/lib/AIOMutableObjectMap.c.obj
+
+
+CMakeFiles/AIO.dir/sources/lang/object/objectManager/AIOObjectManager.c.obj: CMakeFiles/AIO.dir/flags.make
+CMakeFiles/AIO.dir/sources/lang/object/objectManager/AIOObjectManager.c.obj: ../sources/lang/object/objectManager/AIOObjectManager.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\StarKRE\CLionProjects\AIO\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/AIO.dir/sources/lang/object/objectManager/AIOObjectManager.c.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\AIO.dir\sources\lang\object\objectManager\AIOObjectManager.c.obj   -c C:\Users\StarKRE\CLionProjects\AIO\sources\lang\object\objectManager\AIOObjectManager.c
+
+CMakeFiles/AIO.dir/sources/lang/object/objectManager/AIOObjectManager.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/AIO.dir/sources/lang/object/objectManager/AIOObjectManager.c.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\StarKRE\CLionProjects\AIO\sources\lang\object\objectManager\AIOObjectManager.c > CMakeFiles\AIO.dir\sources\lang\object\objectManager\AIOObjectManager.c.i
+
+CMakeFiles/AIO.dir/sources/lang/object/objectManager/AIOObjectManager.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/AIO.dir/sources/lang/object/objectManager/AIOObjectManager.c.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\StarKRE\CLionProjects\AIO\sources\lang\object\objectManager\AIOObjectManager.c -o CMakeFiles\AIO.dir\sources\lang\object\objectManager\AIOObjectManager.c.s
+
+CMakeFiles/AIO.dir/sources/lang/object/objectManager/AIOObjectManager.c.obj.requires:
+
+.PHONY : CMakeFiles/AIO.dir/sources/lang/object/objectManager/AIOObjectManager.c.obj.requires
+
+CMakeFiles/AIO.dir/sources/lang/object/objectManager/AIOObjectManager.c.obj.provides: CMakeFiles/AIO.dir/sources/lang/object/objectManager/AIOObjectManager.c.obj.requires
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/object/objectManager/AIOObjectManager.c.obj.provides.build
+.PHONY : CMakeFiles/AIO.dir/sources/lang/object/objectManager/AIOObjectManager.c.obj.provides
+
+CMakeFiles/AIO.dir/sources/lang/object/objectManager/AIOObjectManager.c.obj.provides.build: CMakeFiles/AIO.dir/sources/lang/object/objectManager/AIOObjectManager.c.obj
+
+
 # Object files for target AIO
 AIO_OBJECTS = \
 "CMakeFiles/AIO.dir/sources/interpreter/main.c.obj" \
 "CMakeFiles/AIO.dir/sources/lang/reservedNames/AIOReservedNamesContainer.c.obj" \
-"CMakeFiles/AIO.dir/sources/lib/AIOMutableListOfString.c.obj"
+"CMakeFiles/AIO.dir/sources/lib/AIOMutableListOfString.c.obj" \
+"CMakeFiles/AIO.dir/sources/lang/types/AIOType.c.obj" \
+"CMakeFiles/AIO.dir/sources/lib/AIOMutableObjectMap.c.obj" \
+"CMakeFiles/AIO.dir/sources/lang/object/objectManager/AIOObjectManager.c.obj"
 
 # External object files for target AIO
 AIO_EXTERNAL_OBJECTS =
@@ -140,11 +215,14 @@ AIO_EXTERNAL_OBJECTS =
 AIO.exe: CMakeFiles/AIO.dir/sources/interpreter/main.c.obj
 AIO.exe: CMakeFiles/AIO.dir/sources/lang/reservedNames/AIOReservedNamesContainer.c.obj
 AIO.exe: CMakeFiles/AIO.dir/sources/lib/AIOMutableListOfString.c.obj
+AIO.exe: CMakeFiles/AIO.dir/sources/lang/types/AIOType.c.obj
+AIO.exe: CMakeFiles/AIO.dir/sources/lib/AIOMutableObjectMap.c.obj
+AIO.exe: CMakeFiles/AIO.dir/sources/lang/object/objectManager/AIOObjectManager.c.obj
 AIO.exe: CMakeFiles/AIO.dir/build.make
 AIO.exe: CMakeFiles/AIO.dir/linklibs.rsp
 AIO.exe: CMakeFiles/AIO.dir/objects1.rsp
 AIO.exe: CMakeFiles/AIO.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\StarKRE\CLionProjects\AIO\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C executable AIO.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\StarKRE\CLionProjects\AIO\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking C executable AIO.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\AIO.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -155,6 +233,9 @@ CMakeFiles/AIO.dir/build: AIO.exe
 CMakeFiles/AIO.dir/requires: CMakeFiles/AIO.dir/sources/interpreter/main.c.obj.requires
 CMakeFiles/AIO.dir/requires: CMakeFiles/AIO.dir/sources/lang/reservedNames/AIOReservedNamesContainer.c.obj.requires
 CMakeFiles/AIO.dir/requires: CMakeFiles/AIO.dir/sources/lib/AIOMutableListOfString.c.obj.requires
+CMakeFiles/AIO.dir/requires: CMakeFiles/AIO.dir/sources/lang/types/AIOType.c.obj.requires
+CMakeFiles/AIO.dir/requires: CMakeFiles/AIO.dir/sources/lib/AIOMutableObjectMap.c.obj.requires
+CMakeFiles/AIO.dir/requires: CMakeFiles/AIO.dir/sources/lang/object/objectManager/AIOObjectManager.c.obj.requires
 
 .PHONY : CMakeFiles/AIO.dir/requires
 

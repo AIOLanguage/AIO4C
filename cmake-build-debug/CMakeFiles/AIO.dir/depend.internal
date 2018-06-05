@@ -3,11 +3,26 @@
 
 CMakeFiles/AIO.dir/sources/interpreter/main.c.obj
  C:/Users/StarKRE/CLionProjects/AIO/headers/lang/declarations/AIODeclaration.h
+ C:/Users/StarKRE/CLionProjects/AIO/headers/lang/object/AIOObject.h
+ C:/Users/StarKRE/CLionProjects/AIO/headers/lang/object/objectManager/AIOObjectManager.h
+ C:/Users/StarKRE/CLionProjects/AIO/headers/lang/types/AIOType.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/AIOMutableListOfString.h
+ C:/Users/StarKRE/CLionProjects/AIO/headers/lib/AIOMutableObjectMap.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/reservedNames/AIOReservedNamesContainer.h
  C:/Users/StarKRE/CLionProjects/AIO/sources/interpreter/main.c
+CMakeFiles/AIO.dir/sources/lang/object/objectManager/AIOObjectManager.c.obj
+ C:/Users/StarKRE/CLionProjects/AIO/headers/lang/object/AIOObject.h
+ C:/Users/StarKRE/CLionProjects/AIO/headers/lang/object/objectManager/AIOObjectManager.h
+ C:/Users/StarKRE/CLionProjects/AIO/headers/lib/AIOMutableObjectMap.h
+ C:/Users/StarKRE/CLionProjects/AIO/sources/lang/object/objectManager/AIOObjectManager.c
 CMakeFiles/AIO.dir/sources/lang/reservedNames/AIOReservedNamesContainer.c.obj
  C:/Users/StarKRE/CLionProjects/AIO/sources/lang/reservedNames/AIOReservedNamesContainer.c
+CMakeFiles/AIO.dir/sources/lang/types/AIOType.c.obj
+ C:/Users/StarKRE/CLionProjects/AIO/sources/lang/types/AIOType.c
 CMakeFiles/AIO.dir/sources/lib/AIOMutableListOfString.c.obj
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/AIOMutableListOfString.h
  C:/Users/StarKRE/CLionProjects/AIO/sources/lib/AIOMutableListOfString.c
+CMakeFiles/AIO.dir/sources/lib/AIOMutableObjectMap.c.obj
+ C:/Users/StarKRE/CLionProjects/AIO/headers/lang/object/AIOObject.h
+ C:/Users/StarKRE/CLionProjects/AIO/headers/lib/AIOMutableObjectMap.h
+ C:/Users/StarKRE/CLionProjects/AIO/sources/lib/AIOMutableObjectMap.c

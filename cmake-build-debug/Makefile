@@ -149,6 +149,33 @@ sources/interpreter/main.c.s:
 	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/interpreter/main.c.s
 .PHONY : sources/interpreter/main.c.s
 
+sources/lang/object/objectManager/AIOObjectManager.obj: sources/lang/object/objectManager/AIOObjectManager.c.obj
+
+.PHONY : sources/lang/object/objectManager/AIOObjectManager.obj
+
+# target to build an object file
+sources/lang/object/objectManager/AIOObjectManager.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/object/objectManager/AIOObjectManager.c.obj
+.PHONY : sources/lang/object/objectManager/AIOObjectManager.c.obj
+
+sources/lang/object/objectManager/AIOObjectManager.i: sources/lang/object/objectManager/AIOObjectManager.c.i
+
+.PHONY : sources/lang/object/objectManager/AIOObjectManager.i
+
+# target to preprocess a source file
+sources/lang/object/objectManager/AIOObjectManager.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/object/objectManager/AIOObjectManager.c.i
+.PHONY : sources/lang/object/objectManager/AIOObjectManager.c.i
+
+sources/lang/object/objectManager/AIOObjectManager.s: sources/lang/object/objectManager/AIOObjectManager.c.s
+
+.PHONY : sources/lang/object/objectManager/AIOObjectManager.s
+
+# target to generate assembly for a file
+sources/lang/object/objectManager/AIOObjectManager.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/object/objectManager/AIOObjectManager.c.s
+.PHONY : sources/lang/object/objectManager/AIOObjectManager.c.s
+
 sources/lang/reservedNames/AIOReservedNamesContainer.obj: sources/lang/reservedNames/AIOReservedNamesContainer.c.obj
 
 .PHONY : sources/lang/reservedNames/AIOReservedNamesContainer.obj
@@ -175,6 +202,33 @@ sources/lang/reservedNames/AIOReservedNamesContainer.s: sources/lang/reservedNam
 sources/lang/reservedNames/AIOReservedNamesContainer.c.s:
 	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/reservedNames/AIOReservedNamesContainer.c.s
 .PHONY : sources/lang/reservedNames/AIOReservedNamesContainer.c.s
+
+sources/lang/types/AIOType.obj: sources/lang/types/AIOType.c.obj
+
+.PHONY : sources/lang/types/AIOType.obj
+
+# target to build an object file
+sources/lang/types/AIOType.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/types/AIOType.c.obj
+.PHONY : sources/lang/types/AIOType.c.obj
+
+sources/lang/types/AIOType.i: sources/lang/types/AIOType.c.i
+
+.PHONY : sources/lang/types/AIOType.i
+
+# target to preprocess a source file
+sources/lang/types/AIOType.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/types/AIOType.c.i
+.PHONY : sources/lang/types/AIOType.c.i
+
+sources/lang/types/AIOType.s: sources/lang/types/AIOType.c.s
+
+.PHONY : sources/lang/types/AIOType.s
+
+# target to generate assembly for a file
+sources/lang/types/AIOType.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/types/AIOType.c.s
+.PHONY : sources/lang/types/AIOType.c.s
 
 sources/lib/AIOMutableListOfString.obj: sources/lib/AIOMutableListOfString.c.obj
 
@@ -203,6 +257,33 @@ sources/lib/AIOMutableListOfString.c.s:
 	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/AIOMutableListOfString.c.s
 .PHONY : sources/lib/AIOMutableListOfString.c.s
 
+sources/lib/AIOMutableObjectMap.obj: sources/lib/AIOMutableObjectMap.c.obj
+
+.PHONY : sources/lib/AIOMutableObjectMap.obj
+
+# target to build an object file
+sources/lib/AIOMutableObjectMap.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/AIOMutableObjectMap.c.obj
+.PHONY : sources/lib/AIOMutableObjectMap.c.obj
+
+sources/lib/AIOMutableObjectMap.i: sources/lib/AIOMutableObjectMap.c.i
+
+.PHONY : sources/lib/AIOMutableObjectMap.i
+
+# target to preprocess a source file
+sources/lib/AIOMutableObjectMap.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/AIOMutableObjectMap.c.i
+.PHONY : sources/lib/AIOMutableObjectMap.c.i
+
+sources/lib/AIOMutableObjectMap.s: sources/lib/AIOMutableObjectMap.c.s
+
+.PHONY : sources/lib/AIOMutableObjectMap.s
+
+# target to generate assembly for a file
+sources/lib/AIOMutableObjectMap.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/AIOMutableObjectMap.c.s
+.PHONY : sources/lib/AIOMutableObjectMap.c.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -215,12 +296,21 @@ help:
 	@echo ... sources/interpreter/main.obj
 	@echo ... sources/interpreter/main.i
 	@echo ... sources/interpreter/main.s
+	@echo ... sources/lang/object/objectManager/AIOObjectManager.obj
+	@echo ... sources/lang/object/objectManager/AIOObjectManager.i
+	@echo ... sources/lang/object/objectManager/AIOObjectManager.s
 	@echo ... sources/lang/reservedNames/AIOReservedNamesContainer.obj
 	@echo ... sources/lang/reservedNames/AIOReservedNamesContainer.i
 	@echo ... sources/lang/reservedNames/AIOReservedNamesContainer.s
+	@echo ... sources/lang/types/AIOType.obj
+	@echo ... sources/lang/types/AIOType.i
+	@echo ... sources/lang/types/AIOType.s
 	@echo ... sources/lib/AIOMutableListOfString.obj
 	@echo ... sources/lib/AIOMutableListOfString.i
 	@echo ... sources/lib/AIOMutableListOfString.s
+	@echo ... sources/lib/AIOMutableObjectMap.obj
+	@echo ... sources/lib/AIOMutableObjectMap.i
+	@echo ... sources/lib/AIOMutableObjectMap.s
 .PHONY : help
 
 
