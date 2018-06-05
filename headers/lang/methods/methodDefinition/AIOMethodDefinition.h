@@ -1,17 +1,22 @@
-#ifndef AIO_AIO_METHOD_DEFINITION_H
-#define AIO_AIO_METHOD_DEFINITION_H
-
+#include <malloc.h>
 #include "../../declarations/AIODeclaration.h"
 #include "../../annotations/AIOAnnotation.h"
-#include "../../../lib/AIOMutableListOfString.h"
+#include "../../../lib/lists/AIOMutableListOfString.h"
 #include "AIOMethodSizeType.h"
+#include "../../../lib/lists/AIOMutableListOfAnnotations.h"
+
+#ifndef AIO_METHOD_DEFINITION_H
+#define AIO_METHOD_DEFINITION_H
 
 typedef struct AIOMethodDefinition {
-    char name[256];
-    struct AIODeclaration declaration;
-    struct AIOAnnotation annotation;
-    struct AIOMutableListOfString listOfString;
-    enum AIOMethodSizeType methodSizeType;
+    char *name;
+    AIODeclaration *declaration;
+    AIOMutableListOfAnnotations *annotations;
+    AIOMutableListOfString *sourceCode;
+    enum AIOMethodSizeType *methodSizeType;
 } AIOMethodDefinition;
 
-#endif //AIO_AIO_METHOD_DEFINITION_H
+void createAIOMethodDefinition(AIOMethodDefinition **methodDefinition, char* name, AIODeclaration* declaration
+        , AIOMutableListOfAnnotations* annotations, AIOMutableListOfString* sourceCode, enum AIOMethodSizeType* methodSizeType);
+
+#endif //AIO_METHOD_DEFINITION_H

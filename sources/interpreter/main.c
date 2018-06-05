@@ -1,18 +1,13 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include "../../headers/lang/methods/methodDefinition/AIOMethodDefinition.h"
 
-#include "../../headers/reservedNames/AIOReservedNamesContainer.h"
-#include "../../headers/lang/declarations/AIODeclaration.h"
-#include "../../headers/lib/AIOMutableListOfString.h"
-#include "../../headers/lib/AIOMutableObjectMap.h"
-#include "../../headers/lang/types/AIOType.h"
-#include "../../headers/lang/object/objectManager/AIOObjectManager.h"
-
-AIOObjectManager aioObjectManager;
+//AIOObjectManager aioObjectManager;
 
 int main() {
+    AIOMethodDefinition *definition;
+//    createAIOMethodDefinition(&definition);
+//    printf("%s", definition->declaration->methodName);
     return 0;
 }
-
-

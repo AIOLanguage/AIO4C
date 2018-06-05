@@ -1,4 +1,13 @@
+#include "../../lib/lists/AIOMutableListOfString.h"
+
+#ifndef AIO_DECLARATION_H
+#define AIO_DECLARATION_H
+
 typedef struct AIODeclaration {
     char* methodName;
-    char exactArgsList[16][256]; //16 args max
+    AIOMutableListOfString* argList;
 } AIODeclaration;
+
+void createAIODeclaration(AIODeclaration** declaration);
+
+#endif //AIO_DECLARATION_H

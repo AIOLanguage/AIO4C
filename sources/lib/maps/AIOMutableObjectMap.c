@@ -1,12 +1,13 @@
 #include <mem.h>
 #include <process.h>
 #include <stdio.h>
-#include "../../headers/lib/AIOMutableObjectMap.h"
+#include <malloc.h>
+#include "../../../headers/lib/maps/AIOMutableObjectMap.h"
 
 //Passed JUnitTests!
-AIOMutableObjectMap mutableMapOfObject() {
-    struct AIOMutableObjectMap mutableObjectMap = {.size = 0};
-    return mutableObjectMap;
+void createMutableMapOfObject(AIOMutableObjectMap *mutableObjectMap) {
+    mutableObjectMap = malloc(sizeof(AIOMutableObjectMap));
+    mutableObjectMap->size = 0;
 }
 
 //Passed JUnitTests!
@@ -15,14 +16,14 @@ void putInMutableMapOfObject(struct AIOMutableObjectMap *objectMap, struct AIOOb
     //Set key:
     strcpy(objectMap->names[index], aioObject->name);
     //Set value:
-    objectMap->objects[index] = *aioObject;
+    objectMap->objects[index] = aioObject;
     objectMap->size++;
 }
 
 //Passed JUnitTests!
-AIOObject getObjectInMutableMapByName(struct AIOMutableObjectMap *objectMap, const char name[]) {
+AIOObject *getObjectInMutableMapByName(struct AIOMutableObjectMap *objectMap, const char name[]) {
     for (int i = 0; i < strlen(name); ++i) {
-        if (strcmp(objectMap->names[i], name) == 0){
+        if (strcmp(objectMap->names[i], name) == 0) {
             return objectMap->objects[i];
         }
     }

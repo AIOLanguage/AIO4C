@@ -1,14 +1,23 @@
 #ifndef AIO_AIO_OBJECT_H
 #define AIO_AIO_OBJECT_H
 
+#include "../methods/bundle/AIOBundle.h"
+#include "../../lib/maps/AIOMutableMethodDefinitionMap.h"
+
+typedef struct AIOMethodManager {
+    AIOMutableMethodDefinitionMap* methodDefinitionMap;
+    int hasMain;
+} AIOMethodManager;
+
 typedef struct AIOObject {
-    char name[256];
-    char folderName[256];
-    struct AIOObjectFileLoader* loader;
+    char* name;
+    char* folderName;
+    struct AIOMutableListOfString* sourceCode;
+    struct AIOMethodManager* methodManager;
 } AIOObject;
 
-typedef struct AIOObjectFileLoader {
-    char sourceCode[1024][1024];
-} AIOObjectFileLoader;
+void createAIOObject(AIOObject* object, char *path);
+
+void invokeMethodInManager(struct AIOMethodManager methodManager, char methodName[], struct AIOBundle bundle);
 
 #endif //AIO_AIO_OBJECT_H
