@@ -5,7 +5,8 @@
 #include <malloc.h>
 
 void createMutableListOfString(AIOMutableListOfString **listOfString) {
-    *listOfString = (AIOMutableListOfString *) calloc(1, sizeof(AIOMutableListOfString));
+    *listOfString = malloc(sizeof(AIOMutableListOfString));
+    (*listOfString)->size = malloc(sizeof(int));
     *(*listOfString)->size = 0;
 }
 

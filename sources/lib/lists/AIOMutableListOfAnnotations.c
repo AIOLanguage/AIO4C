@@ -6,6 +6,7 @@
 
 void createMutableListOfAnnotations(AIOMutableListOfAnnotations **listOfAnnotations) {
     *listOfAnnotations = (AIOMutableListOfAnnotations *) calloc(1, sizeof(AIOMutableListOfAnnotations));
+    (*listOfAnnotations)->size = malloc(sizeof(int));
     *(*listOfAnnotations)->size = 0;
 }
 

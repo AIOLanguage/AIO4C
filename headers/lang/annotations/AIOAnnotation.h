@@ -6,6 +6,6 @@ typedef struct AIOAnnotation {
     char *annotationType;
 } AIOAnnotation;
 
-void createAIOAnnotation(AIOAnnotation** annotation);
+void createAIOAnnotation(AIOAnnotation** annotation, char* methodName, char* annotationType);
 
 #endif //AIO_ANNOTATION_H

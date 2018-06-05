@@ -8,6 +8,6 @@ typedef struct AIODeclaration {
     AIOMutableListOfString* argList;
 } AIODeclaration;
 
-void createAIODeclaration(AIODeclaration** declaration);
+void createAIODeclaration(AIODeclaration **declaration, char* methodName, AIOMutableListOfString* args);
 
 #endif //AIO_DECLARATION_H

@@ -9,14 +9,14 @@ void createAIOMethodDefinition(AIOMethodDefinition **methodDefinition, char* nam
         , enum AIOMethodSizeType* methodSizeType) {
     //Create the same definition:
     *methodDefinition = (AIOMethodDefinition *) calloc(1, sizeof(AIOMethodDefinition));
-    //Create definition name:
+    //Set definition name:
     (*methodDefinition)->name = name;
-    //Create declaration:
+    //Set declaration:
     (*methodDefinition)->declaration = declaration;
-    //Create annotation list:
+    //Set annotation list:
     (*methodDefinition)->annotations = annotations;
-    //Create source code:
+    //Set source code:
     (*methodDefinition)->sourceCode = sourceCode;
-    //Create method size type:
+    //Set method size type:
     (*methodDefinition)->methodSizeType = methodSizeType;
 }
