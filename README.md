@@ -6,11 +6,18 @@
  ### **AIO** is a ultra short programming language which contains basic types and allows write code more faster for multithreading.
 
 # Philosophy
-### First, building, then launching 
+### First, building, then launching:
 
 First, the AIO interpreter, collects all the information about the script and builds AIOObject
 
 ![image](https://user-images.githubusercontent.com/22048950/41033429-285a9a78-698f-11e8-8ffc-2fe4430863b6.png)
+
+After build, the AIO interpreter, interprets invoked method in the AIOObjects.
+Thus, you can with AIO interpreter invoke different tasks in new threads.
+
+
+![image](https://user-images.githubusercontent.com/22048950/41034305-d4968408-6991-11e8-8f26-14977f2563a6.png)
+
 
 # Features!
 ### Primitives:
