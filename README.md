@@ -3,7 +3,10 @@
 ![image](https://user-images.githubusercontent.com/22048950/39088894-46e43e94-45c3-11e8-838a-cae1fae978c2.png)
 
 
- ### **AIO** is a ultra short programming language which doesn't contain types and allows write code more faster.
+ ### **AIO** is a ultra short programming language which contains basic types and allows write code more faster for multithreading.
+
+# Philosophy
+### First, building, then launching 
 
 # Features!
 ### Primitives:
