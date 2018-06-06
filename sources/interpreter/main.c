@@ -1,14 +1,13 @@
-#include <stdlib.h>
 #include <stdio.h>
-#include <string.h>
+#include <stdlib.h>
+#include <mem.h>
 #include "../../headers/lang/object/objectManager/AIOObjectManager.h"
 #include "../../headers/lang/methods/variable/AIOVariable.h"
 
-AIOObjectManager* aioObjectManager;
+AIOObjectManager *aioObjectManager;
 
-int main(){
-    AIOVariable* aioVariable;
-    enum AIOType aioType = AIO_DOU;
-    createAIOVariable(&aioVariable, "a", "1234567.0", 0, &aioType);
+#define CHUNK 1024
+
+int main() {
     return 0;
 }

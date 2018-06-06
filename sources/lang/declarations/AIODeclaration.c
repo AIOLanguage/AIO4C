@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include "../../../headers/lang/declarations/AIODeclaration.h"
 
+//Passed JUnitTest!
 void createAIODeclaration(AIODeclaration **declaration, char* methodName, AIOMutableListOfString* args) {
     //Create the same declaration:
     *declaration = (AIODeclaration *) malloc(sizeof(AIODeclaration));

@@ -392,6 +392,54 @@ CMakeFiles/AIO.dir/sources/lang/methods/variable/AIOVariable.c.obj.provides: CMa
 CMakeFiles/AIO.dir/sources/lang/methods/variable/AIOVariable.c.obj.provides.build: CMakeFiles/AIO.dir/sources/lang/methods/variable/AIOVariable.c.obj
 
 
+CMakeFiles/AIO.dir/sources/lang/methods/result/AIOResult.c.obj: CMakeFiles/AIO.dir/flags.make
+CMakeFiles/AIO.dir/sources/lang/methods/result/AIOResult.c.obj: ../sources/lang/methods/result/AIOResult.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\StarKRE\CLionProjects\AIO\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object CMakeFiles/AIO.dir/sources/lang/methods/result/AIOResult.c.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\AIO.dir\sources\lang\methods\result\AIOResult.c.obj   -c C:\Users\StarKRE\CLionProjects\AIO\sources\lang\methods\result\AIOResult.c
+
+CMakeFiles/AIO.dir/sources/lang/methods/result/AIOResult.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/AIO.dir/sources/lang/methods/result/AIOResult.c.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\StarKRE\CLionProjects\AIO\sources\lang\methods\result\AIOResult.c > CMakeFiles\AIO.dir\sources\lang\methods\result\AIOResult.c.i
+
+CMakeFiles/AIO.dir/sources/lang/methods/result/AIOResult.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/AIO.dir/sources/lang/methods/result/AIOResult.c.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\StarKRE\CLionProjects\AIO\sources\lang\methods\result\AIOResult.c -o CMakeFiles\AIO.dir\sources\lang\methods\result\AIOResult.c.s
+
+CMakeFiles/AIO.dir/sources/lang/methods/result/AIOResult.c.obj.requires:
+
+.PHONY : CMakeFiles/AIO.dir/sources/lang/methods/result/AIOResult.c.obj.requires
+
+CMakeFiles/AIO.dir/sources/lang/methods/result/AIOResult.c.obj.provides: CMakeFiles/AIO.dir/sources/lang/methods/result/AIOResult.c.obj.requires
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/methods/result/AIOResult.c.obj.provides.build
+.PHONY : CMakeFiles/AIO.dir/sources/lang/methods/result/AIOResult.c.obj.provides
+
+CMakeFiles/AIO.dir/sources/lang/methods/result/AIOResult.c.obj.provides.build: CMakeFiles/AIO.dir/sources/lang/methods/result/AIOResult.c.obj
+
+
+CMakeFiles/AIO.dir/sources/lang/methods/defaultMethodContainer/AIODefaultMethodContainer.c.obj: CMakeFiles/AIO.dir/flags.make
+CMakeFiles/AIO.dir/sources/lang/methods/defaultMethodContainer/AIODefaultMethodContainer.c.obj: ../sources/lang/methods/defaultMethodContainer/AIODefaultMethodContainer.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\StarKRE\CLionProjects\AIO\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object CMakeFiles/AIO.dir/sources/lang/methods/defaultMethodContainer/AIODefaultMethodContainer.c.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\AIO.dir\sources\lang\methods\defaultMethodContainer\AIODefaultMethodContainer.c.obj   -c C:\Users\StarKRE\CLionProjects\AIO\sources\lang\methods\defaultMethodContainer\AIODefaultMethodContainer.c
+
+CMakeFiles/AIO.dir/sources/lang/methods/defaultMethodContainer/AIODefaultMethodContainer.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/AIO.dir/sources/lang/methods/defaultMethodContainer/AIODefaultMethodContainer.c.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\StarKRE\CLionProjects\AIO\sources\lang\methods\defaultMethodContainer\AIODefaultMethodContainer.c > CMakeFiles\AIO.dir\sources\lang\methods\defaultMethodContainer\AIODefaultMethodContainer.c.i
+
+CMakeFiles/AIO.dir/sources/lang/methods/defaultMethodContainer/AIODefaultMethodContainer.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/AIO.dir/sources/lang/methods/defaultMethodContainer/AIODefaultMethodContainer.c.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\StarKRE\CLionProjects\AIO\sources\lang\methods\defaultMethodContainer\AIODefaultMethodContainer.c -o CMakeFiles\AIO.dir\sources\lang\methods\defaultMethodContainer\AIODefaultMethodContainer.c.s
+
+CMakeFiles/AIO.dir/sources/lang/methods/defaultMethodContainer/AIODefaultMethodContainer.c.obj.requires:
+
+.PHONY : CMakeFiles/AIO.dir/sources/lang/methods/defaultMethodContainer/AIODefaultMethodContainer.c.obj.requires
+
+CMakeFiles/AIO.dir/sources/lang/methods/defaultMethodContainer/AIODefaultMethodContainer.c.obj.provides: CMakeFiles/AIO.dir/sources/lang/methods/defaultMethodContainer/AIODefaultMethodContainer.c.obj.requires
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/methods/defaultMethodContainer/AIODefaultMethodContainer.c.obj.provides.build
+.PHONY : CMakeFiles/AIO.dir/sources/lang/methods/defaultMethodContainer/AIODefaultMethodContainer.c.obj.provides
+
+CMakeFiles/AIO.dir/sources/lang/methods/defaultMethodContainer/AIODefaultMethodContainer.c.obj.provides.build: CMakeFiles/AIO.dir/sources/lang/methods/defaultMethodContainer/AIODefaultMethodContainer.c.obj
+
+
 # Object files for target AIO
 AIO_OBJECTS = \
 "CMakeFiles/AIO.dir/sources/interpreter/main.c.obj" \
@@ -407,7 +455,9 @@ AIO_OBJECTS = \
 "CMakeFiles/AIO.dir/sources/lang/annotations/AIOAnnotation.c.obj" \
 "CMakeFiles/AIO.dir/sources/lib/collections/lists/AIOMutableListOfAnnotations.c.obj" \
 "CMakeFiles/AIO.dir/sources/lang/methods/bundle/AIOBundle.c.obj" \
-"CMakeFiles/AIO.dir/sources/lang/methods/variable/AIOVariable.c.obj"
+"CMakeFiles/AIO.dir/sources/lang/methods/variable/AIOVariable.c.obj" \
+"CMakeFiles/AIO.dir/sources/lang/methods/result/AIOResult.c.obj" \
+"CMakeFiles/AIO.dir/sources/lang/methods/defaultMethodContainer/AIODefaultMethodContainer.c.obj"
 
 # External object files for target AIO
 AIO_EXTERNAL_OBJECTS =
@@ -426,11 +476,13 @@ AIO.exe: CMakeFiles/AIO.dir/sources/lang/annotations/AIOAnnotation.c.obj
 AIO.exe: CMakeFiles/AIO.dir/sources/lib/collections/lists/AIOMutableListOfAnnotations.c.obj
 AIO.exe: CMakeFiles/AIO.dir/sources/lang/methods/bundle/AIOBundle.c.obj
 AIO.exe: CMakeFiles/AIO.dir/sources/lang/methods/variable/AIOVariable.c.obj
+AIO.exe: CMakeFiles/AIO.dir/sources/lang/methods/result/AIOResult.c.obj
+AIO.exe: CMakeFiles/AIO.dir/sources/lang/methods/defaultMethodContainer/AIODefaultMethodContainer.c.obj
 AIO.exe: CMakeFiles/AIO.dir/build.make
 AIO.exe: CMakeFiles/AIO.dir/linklibs.rsp
 AIO.exe: CMakeFiles/AIO.dir/objects1.rsp
 AIO.exe: CMakeFiles/AIO.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\StarKRE\CLionProjects\AIO\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Linking C executable AIO.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\StarKRE\CLionProjects\AIO\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Linking C executable AIO.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\AIO.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -452,6 +504,8 @@ CMakeFiles/AIO.dir/requires: CMakeFiles/AIO.dir/sources/lang/annotations/AIOAnno
 CMakeFiles/AIO.dir/requires: CMakeFiles/AIO.dir/sources/lib/collections/lists/AIOMutableListOfAnnotations.c.obj.requires
 CMakeFiles/AIO.dir/requires: CMakeFiles/AIO.dir/sources/lang/methods/bundle/AIOBundle.c.obj.requires
 CMakeFiles/AIO.dir/requires: CMakeFiles/AIO.dir/sources/lang/methods/variable/AIOVariable.c.obj.requires
+CMakeFiles/AIO.dir/requires: CMakeFiles/AIO.dir/sources/lang/methods/result/AIOResult.c.obj.requires
+CMakeFiles/AIO.dir/requires: CMakeFiles/AIO.dir/sources/lang/methods/defaultMethodContainer/AIODefaultMethodContainer.c.obj.requires
 
 .PHONY : CMakeFiles/AIO.dir/requires
 

@@ -3,6 +3,7 @@
 #include <process.h>
 #include "../../../../headers/lang/methods/methodDefinition/AIOMethodDefinition.h"
 
+//Passed JUnitTest!
 void createAIOMethodDefinition(AIOMethodDefinition **methodDefinition, char* name, AIODeclaration* declaration
         , AIOMutableListOfAnnotations* annotations, AIOMutableListOfString* sourceCode
         , enum AIOMethodSizeType* methodSizeType) {

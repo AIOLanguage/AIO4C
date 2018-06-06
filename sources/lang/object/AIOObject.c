@@ -1,7 +1,9 @@
 #include <mem.h>
 #include <malloc.h>
+#include <stdio.h>
 #include "../../../headers/lang/object/AIOObject.h"
 
+//Passed JUnitTest!
 void createAIOMethodManager(AIOMethodManager **methodManager, AIOMutableMethodDefinitionMap *methodDefinitionMap) {
     //Create the same method manager:
     *methodManager = malloc(sizeof(AIOMethodManager));
@@ -20,15 +22,40 @@ char *extractAIOFolderPathFromPath(char *path) {
     return path;
 }
 
-void loadSourceCodeInAIOObject(AIOObject *object, char *path) {
+#define CHUNK 1024
 
+//Path example:
+//"../aioPrograms/test.txt", "r"
+void loadSourceCodeInAIOObject(AIOObject *object, char *path) {
+    //Create source code mutable list:
+    AIOMutableListOfString *sourceCode;
+    createMutableListOfString(&sourceCode);
+    //Create file:
+    FILE *file;
+    //Create line buffer:
+    char buffer[CHUNK];
+    if ((file = fopen(path, "r")) == NULL) {
+        perror("cannot open source-file");
+    }
+    while (fgets(buffer, sizeof(buffer), file) != NULL) {
+        buffer[strlen(buffer) - 1] = '\0';
+        //Create string:
+        char *line = calloc(1, CHUNK);
+        strcpy(line, buffer);
+        //put string in list:
+        addInMutableListOfString(sourceCode, line);
+    }
+    fclose(file);
+    //Set source code:
+    object->sourceCode = sourceCode;
 }
 
 void findMethodsInManager(AIOMethodManager *methodManager) {
 
 }
 
-void createAIOObject(AIOObject **object, AIOMethodManager* methodManager, char *path) {
+//Passed JUnitTest!
+void createAIOObject(AIOObject **object, AIOMethodManager *methodManager, char *path) {
     //Create the same object:
     *object = malloc(sizeof(AIOObject));
     //Set method manager:
@@ -45,17 +72,6 @@ void createAIOObject(AIOObject **object, AIOMethodManager* methodManager, char *
 void invokeMethodInManager(struct AIOMethodManager methodManager, char methodName[], struct AIOBundle bundle) {
 
 }
-
-
-
-
-
-
-
-
-
-
-
 
 /*
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -114,3 +130,34 @@ void invokeMethodInManager(struct AIOMethodManager methodManager, char methodNam
 //
 //    return 0;
 //}
+
+
+
+/*
+ /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#define CHUNK 1024
+
+int main() {
+    AIOMutableListOfString* sourceCode;
+    createMutableListOfString(&sourceCode);
+    FILE *file;
+    char buffer[CHUNK];
+    if ((file = fopen("../aioPrograms/test.aio", "r")) == NULL) {
+        perror("cannot open source-file");
+        return 1;
+    }
+    while (fgets(buffer, sizeof(buffer), file) != NULL) {
+        buffer[strlen(buffer) - 1] = '\0';
+        printf("%d\n", strlen(buffer));
+        char *line = calloc(1, CHUNK);
+        strcpy(line, buffer);
+        addInMutableListOfString(sourceCode, line);
+    }
+    fclose(file);
+    for (int i = 0; i < *sourceCode->size; ++i) {
+        printf("%s\n", sourceCode->strings[i]);
+    }
+    printf("4 line: %s\n", getStringInMutableListByIndex(sourceCode, 4));
+    return 0;
+}
+ */

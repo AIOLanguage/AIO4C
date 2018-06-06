@@ -1,5 +1,6 @@
 #include "../../../../headers/lang/object/objectManager/AIOObjectManager.h"
 
+//Passed JUnitTest!
 void initAIOObjectManager(AIOObjectManager** objectManager){
     *objectManager = malloc(sizeof(AIOObjectManager));
     AIOMutableObjectMap* objectMap;

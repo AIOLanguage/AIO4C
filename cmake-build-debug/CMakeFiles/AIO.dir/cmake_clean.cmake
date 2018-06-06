@@ -13,6 +13,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/AIO.dir/sources/lib/collections/lists/AIOMutableListOfAnnotations.c.obj"
   "CMakeFiles/AIO.dir/sources/lang/methods/bundle/AIOBundle.c.obj"
   "CMakeFiles/AIO.dir/sources/lang/methods/variable/AIOVariable.c.obj"
+  "CMakeFiles/AIO.dir/sources/lang/methods/result/AIOResult.c.obj"
+  "CMakeFiles/AIO.dir/sources/lang/methods/defaultMethodContainer/AIODefaultMethodContainer.c.obj"
   "AIO.pdb"
   "AIO.exe"
   "AIO.exe.manifest"

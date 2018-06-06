@@ -2,6 +2,7 @@
 #include "../../../../headers/lib/collections/lists/AIOMutableListOfString.h"
 #include "../../../../headers/lang/methods/bundle/AIOBundle.h"
 
+//Passed JUnitTest!
 void createAIOBundle(AIOBundle **bundle, AIOMutableListOfString *inputValues) {
     //Create the same bundle:
     *bundle = (AIOBundle *) calloc(1, sizeof(AIOBundle));

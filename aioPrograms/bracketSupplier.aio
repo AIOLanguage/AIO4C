@@ -1,0 +1,8 @@
+//BracketSupplier.aio
+
+@addAllBrackets addBrackets~
+
+@addBrackets >>
+    im utils = -<<utils<<-
+    im array = << "<", <<$0, ">" <<
+    utils.@toStr<<array<<

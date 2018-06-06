@@ -12,6 +12,6 @@ void createMutableListOfString(AIOMutableListOfString** listOfString);
 
 void addInMutableListOfString(AIOMutableListOfString* listOfString, char*);
 
-char* getStringInMutableListByIndex(AIOMutableListOfString *listOfString, int* index);
+char* getStringInMutableListByIndex(AIOMutableListOfString *listOfString, int index);
 
 #endif

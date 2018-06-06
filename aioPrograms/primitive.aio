@@ -1,0 +1,24 @@
+//Primitive.aio
+
+@three >> 3 + 2 + 6
+
+@fivePlusTwo >> 5 + 2
+
+@expression >> 3 + 6 + tan(45) * 4
+
+~dec: <<number<<
+@plusOne >> number + 1
+
+@plusOneAll plusOne~
+
+~dec: <<number<<
+@sqrt >> number + number
+
+@sqrtAll sqrt~
+
+~dec: <<x, a, b, c<<
+@biEq >> a * x * x + b * x + c
+
+@threePlusTwo >> two~ + three~
+
+@name1 >> 2 + (-5) - 10

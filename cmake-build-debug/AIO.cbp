@@ -83,10 +83,16 @@
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/bundle/AIOBundle.h">
 			<Option target="AIO"/>
 		</Unit>
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/defaultMethodContainer/AIODefaultMethodContainer.h">
+			<Option target="AIO"/>
+		</Unit>
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/methodDefinition/AIOMethodDefinition.h">
 			<Option target="AIO"/>
 		</Unit>
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/methodDefinition/AIOMethodSizeType.h">
+			<Option target="AIO"/>
+		</Unit>
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/result/AIOResult.h">
 			<Option target="AIO"/>
 		</Unit>
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/variable/AIOVariable.h">
@@ -128,7 +134,13 @@
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lang/methods/bundle/AIOBundle.c">
 			<Option target="AIO"/>
 		</Unit>
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lang/methods/defaultMethodContainer/AIODefaultMethodContainer.c">
+			<Option target="AIO"/>
+		</Unit>
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lang/methods/methodDefinition/AIOMethodDefinition.c">
+			<Option target="AIO"/>
+		</Unit>
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lang/methods/result/AIOResult.c">
 			<Option target="AIO"/>
 		</Unit>
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lang/methods/variable/AIOVariable.c">

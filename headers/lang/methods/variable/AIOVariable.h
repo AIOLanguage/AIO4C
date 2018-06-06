@@ -10,6 +10,6 @@ typedef struct AIOVariable {
     enum AIOType *type;
 } AIOVariable;
 
-void createAIOVariable(AIOVariable **variable, char *name, char *value, int *mutable, enum AIOType *type);
+void createAIOVariable(AIOVariable **variable, char *name, char *value, int mutable, enum AIOType *type);
 
 #endif //AIO_AIO_VARIABLE_H

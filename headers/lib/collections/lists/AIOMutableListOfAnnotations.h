@@ -4,6 +4,7 @@
 #include "../../../lang/annotations/AIOAnnotation.h"
 
 typedef struct AIOMutableListOfAnnotations {
+    int* capacity;
     int* size;
     AIOAnnotation** annotations;
 } AIOMutableListOfAnnotations;

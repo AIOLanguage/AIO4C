@@ -230,6 +230,33 @@ sources/lang/methods/bundle/AIOBundle.c.s:
 	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/methods/bundle/AIOBundle.c.s
 .PHONY : sources/lang/methods/bundle/AIOBundle.c.s
 
+sources/lang/methods/defaultMethodContainer/AIODefaultMethodContainer.obj: sources/lang/methods/defaultMethodContainer/AIODefaultMethodContainer.c.obj
+
+.PHONY : sources/lang/methods/defaultMethodContainer/AIODefaultMethodContainer.obj
+
+# target to build an object file
+sources/lang/methods/defaultMethodContainer/AIODefaultMethodContainer.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/methods/defaultMethodContainer/AIODefaultMethodContainer.c.obj
+.PHONY : sources/lang/methods/defaultMethodContainer/AIODefaultMethodContainer.c.obj
+
+sources/lang/methods/defaultMethodContainer/AIODefaultMethodContainer.i: sources/lang/methods/defaultMethodContainer/AIODefaultMethodContainer.c.i
+
+.PHONY : sources/lang/methods/defaultMethodContainer/AIODefaultMethodContainer.i
+
+# target to preprocess a source file
+sources/lang/methods/defaultMethodContainer/AIODefaultMethodContainer.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/methods/defaultMethodContainer/AIODefaultMethodContainer.c.i
+.PHONY : sources/lang/methods/defaultMethodContainer/AIODefaultMethodContainer.c.i
+
+sources/lang/methods/defaultMethodContainer/AIODefaultMethodContainer.s: sources/lang/methods/defaultMethodContainer/AIODefaultMethodContainer.c.s
+
+.PHONY : sources/lang/methods/defaultMethodContainer/AIODefaultMethodContainer.s
+
+# target to generate assembly for a file
+sources/lang/methods/defaultMethodContainer/AIODefaultMethodContainer.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/methods/defaultMethodContainer/AIODefaultMethodContainer.c.s
+.PHONY : sources/lang/methods/defaultMethodContainer/AIODefaultMethodContainer.c.s
+
 sources/lang/methods/methodDefinition/AIOMethodDefinition.obj: sources/lang/methods/methodDefinition/AIOMethodDefinition.c.obj
 
 .PHONY : sources/lang/methods/methodDefinition/AIOMethodDefinition.obj
@@ -256,6 +283,33 @@ sources/lang/methods/methodDefinition/AIOMethodDefinition.s: sources/lang/method
 sources/lang/methods/methodDefinition/AIOMethodDefinition.c.s:
 	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/methods/methodDefinition/AIOMethodDefinition.c.s
 .PHONY : sources/lang/methods/methodDefinition/AIOMethodDefinition.c.s
+
+sources/lang/methods/result/AIOResult.obj: sources/lang/methods/result/AIOResult.c.obj
+
+.PHONY : sources/lang/methods/result/AIOResult.obj
+
+# target to build an object file
+sources/lang/methods/result/AIOResult.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/methods/result/AIOResult.c.obj
+.PHONY : sources/lang/methods/result/AIOResult.c.obj
+
+sources/lang/methods/result/AIOResult.i: sources/lang/methods/result/AIOResult.c.i
+
+.PHONY : sources/lang/methods/result/AIOResult.i
+
+# target to preprocess a source file
+sources/lang/methods/result/AIOResult.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/methods/result/AIOResult.c.i
+.PHONY : sources/lang/methods/result/AIOResult.c.i
+
+sources/lang/methods/result/AIOResult.s: sources/lang/methods/result/AIOResult.c.s
+
+.PHONY : sources/lang/methods/result/AIOResult.s
+
+# target to generate assembly for a file
+sources/lang/methods/result/AIOResult.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/methods/result/AIOResult.c.s
+.PHONY : sources/lang/methods/result/AIOResult.c.s
 
 sources/lang/methods/variable/AIOVariable.obj: sources/lang/methods/variable/AIOVariable.c.obj
 
@@ -521,9 +575,15 @@ help:
 	@echo ... sources/lang/methods/bundle/AIOBundle.obj
 	@echo ... sources/lang/methods/bundle/AIOBundle.i
 	@echo ... sources/lang/methods/bundle/AIOBundle.s
+	@echo ... sources/lang/methods/defaultMethodContainer/AIODefaultMethodContainer.obj
+	@echo ... sources/lang/methods/defaultMethodContainer/AIODefaultMethodContainer.i
+	@echo ... sources/lang/methods/defaultMethodContainer/AIODefaultMethodContainer.s
 	@echo ... sources/lang/methods/methodDefinition/AIOMethodDefinition.obj
 	@echo ... sources/lang/methods/methodDefinition/AIOMethodDefinition.i
 	@echo ... sources/lang/methods/methodDefinition/AIOMethodDefinition.s
+	@echo ... sources/lang/methods/result/AIOResult.obj
+	@echo ... sources/lang/methods/result/AIOResult.i
+	@echo ... sources/lang/methods/result/AIOResult.s
 	@echo ... sources/lang/methods/variable/AIOVariable.obj
 	@echo ... sources/lang/methods/variable/AIOVariable.i
 	@echo ... sources/lang/methods/variable/AIOVariable.s

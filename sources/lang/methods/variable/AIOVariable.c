@@ -4,6 +4,7 @@
 #include <process.h>
 #include "../../../../headers/lang/methods/variable/AIOVariable.h"
 
+//Passed JUnitTest!
 char *removeBracketsAndReturnValue(char *value) {
     unsigned length = strlen(value);
     printf("VALUES\n");
@@ -24,6 +25,7 @@ char *removeBracketsAndReturnValue(char *value) {
     }
 }
 
+//Passed JUnitTest!
 void checkType(const enum AIOType *inputType, enum AIOType matcherType, char *value, int (*matcherFunction)(char *)) {
     if (*inputType == matcherType) {
         int matchesType = matcherFunction(value);
@@ -36,7 +38,8 @@ void checkType(const enum AIOType *inputType, enum AIOType matcherType, char *va
     }
 }
 
-void createAIOVariable(AIOVariable **variable, char *name, char *value, int *mutable, enum AIOType *type) {
+//Passed JUnitTest!
+void createAIOVariable(AIOVariable **variable, char *name, char *value, int mutable, enum AIOType *type) {
     //Need to crush a program:
     checkType(type, AIO_INT, value, matchesInt);
     checkType(type, AIO_DOU, value, matchesDou);
@@ -49,7 +52,23 @@ void createAIOVariable(AIOVariable **variable, char *name, char *value, int *mut
     //Set value:
     (*variable)->value = value;
     //Set mutable:
-    (*variable)->mutable = mutable;
+    (*variable)->mutable = malloc(sizeof(int));
+    *(*variable)->mutable = mutable;
+    free(&mutable);
     //Set type:
     (*variable)->type = type;
 }
+
+/*
+ * /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ * int main(){
+    AIOVariable* aioVariable;
+    enum AIOType aioType = AIO_STR;
+    createAIOVariable(&aioVariable, "a", "'0.008'", 0, &aioType);
+    printf("%s\n", aioVariable->name);
+    printf("%s\n", aioVariable->value);
+    printf("%d\n", *aioVariable->mutable);
+    printf("%d\n", *aioVariable->type);
+    return 0;
+}
+ */

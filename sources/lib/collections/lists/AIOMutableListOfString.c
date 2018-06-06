@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <malloc.h>
 
+//Passed JUnitTest!
 void createMutableListOfString(AIOMutableListOfString **listOfString) {
     //Create the same mutable list:
     *listOfString = malloc(sizeof(AIOMutableListOfString));
@@ -17,10 +18,11 @@ void createMutableListOfString(AIOMutableListOfString **listOfString) {
     (*listOfString)->strings = malloc(2 * sizeof(char));
 }
 
+//Passed JUnitTest!
 void updateMemoryInMutableListOfString(AIOMutableListOfString *listOfString) {
     if (*listOfString->size + 1 == *listOfString->capacity) {
         *listOfString->capacity = *listOfString->capacity * 2;
-        listOfString->strings = realloc(listOfString->strings, *listOfString->capacity * sizeof(char));
+        listOfString->strings = realloc(listOfString->strings, *listOfString->capacity * sizeof(char *));
     }
 }
 
@@ -29,19 +31,17 @@ void addInMutableListOfString(AIOMutableListOfString *listOfString, char *string
     //Check to update capacity:
     updateMemoryInMutableListOfString(listOfString);
     //Set string:
-    listOfString->strings[*listOfString->size] = malloc(strlen(string));
+    listOfString->strings[*listOfString->size] = calloc(1, strlen(string));
     listOfString->strings[*listOfString->size] = string;
-    printf("%s\n", listOfString->strings[*listOfString->size]);
     *listOfString->size = *listOfString->size + 1;
-    printf("%d\n", *listOfString->size);
 }
 
 //Passed JUnitTests!
-char *getStringInMutableListByIndex(AIOMutableListOfString *listOfString, int *index) {
-    if (*index < 0 || *listOfString->size < *index) {
-        printf("Cannot get index: %d in MutableList", *index);
+char *getStringInMutableListByIndex(AIOMutableListOfString *listOfString, int index) {
+    if (index < 0 || *listOfString->size <= index) {
+        perror("Cannot get index: %d in MutableList");
         exit(1);
     } else {
-        return listOfString->strings[*index];
+        return listOfString->strings[index];
     }
 }

@@ -32,6 +32,8 @@ C:/Users/StarKRE/CLionProjects/AIO/headers/lib/collections/lists/AIOMutableListO
 
 C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/methodDefinition/AIOMethodSizeType.h
 
+C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/result/AIOResult.h
+
 C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/variable/AIOVariable.h
 ../../types/AIOType.h
 C:/Users/StarKRE/CLionProjects/AIO/headers/lang/types/AIOType.h
@@ -65,11 +67,11 @@ C:/Users/StarKRE/CLionProjects/AIO/headers/lib/collections/maps/AIOMutableObject
 C:/Users/StarKRE/CLionProjects/AIO/headers/lang/object/AIOObject.h
 
 C:/Users/StarKRE/CLionProjects/AIO/sources/interpreter/main.c
-stdlib.h
--
 stdio.h
 -
-string.h
+stdlib.h
+-
+mem.h
 -
 ../../headers/lang/object/objectManager/AIOObjectManager.h
 C:/Users/StarKRE/CLionProjects/AIO/headers/lang/object/objectManager/AIOObjectManager.h
@@ -100,6 +102,16 @@ C:/Users/StarKRE/CLionProjects/AIO/headers/lib/collections/lists/AIOMutableListO
 ../../../../headers/lang/methods/bundle/AIOBundle.h
 C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/bundle/AIOBundle.h
 
+C:/Users/StarKRE/CLionProjects/AIO/sources/lang/methods/defaultMethodContainer/AIODefaultMethodContainer.c
+mem.h
+-
+math.h
+-
+comip.h
+-
+../../../../headers/lang/methods/result/AIOResult.h
+C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/result/AIOResult.h
+
 C:/Users/StarKRE/CLionProjects/AIO/sources/lang/methods/methodDefinition/AIOMethodDefinition.c
 stddef.h
 -
@@ -109,6 +121,12 @@ process.h
 -
 ../../../../headers/lang/methods/methodDefinition/AIOMethodDefinition.h
 C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/methodDefinition/AIOMethodDefinition.h
+
+C:/Users/StarKRE/CLionProjects/AIO/sources/lang/methods/result/AIOResult.c
+malloc.h
+-
+../../../../headers/lang/methods/result/AIOResult.h
+C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/result/AIOResult.h
 
 C:/Users/StarKRE/CLionProjects/AIO/sources/lang/methods/variable/AIOVariable.c
 malloc.h
@@ -126,6 +144,8 @@ C:/Users/StarKRE/CLionProjects/AIO/sources/lang/object/AIOObject.c
 mem.h
 -
 malloc.h
+-
+stdio.h
 -
 ../../../headers/lang/object/AIOObject.h
 C:/Users/StarKRE/CLionProjects/AIO/headers/lang/object/AIOObject.h

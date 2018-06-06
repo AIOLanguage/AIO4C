@@ -5,12 +5,34 @@
 
 //Passed JUnitTest!
 int matchesInt(char* word) {
-    for (int i = 0; i < strlen(word); ++i) {
-        const int e = word[i] - '0';
+    int start = 0;
+    int length = strlen(word);
+    if (length == 0){
+        free(&start);
+        free(&length);
+        printf("empty string as Int!");
+        exit(1);
+    }
+    if (word[0] == '-'){
+        if (length == 1){
+            free(&start);
+            free(&length);
+            printf("this is a minus as Int!");
+            exit(1);
+        }
+        start = 1;
+    }
+    for (int i = start; i < strlen(word); ++i) {
+        int e = word[i] - '0';
         if (e < 0 || e > 9) {
+            free(&length);
+            free(&start);
             return -1;
         }
+        free(&e);
     }
+    free(&length);
+    free(&start);
     return 0;
 }
 
@@ -19,7 +41,24 @@ int matchesDou(char* word) {
     int result = -1;
     int wasDot = -1;
     int wasFraction = -1;
-    for (int i = 0; i < strlen(word); ++i) {
+    int start = 0;
+    int length = strlen(word);
+    if (length == 0){
+        free(&start);
+        free(&length);
+        printf("empty string as Dou!");
+        exit(1);
+    }
+    if (word[0] == '-'){
+        if (length == 1){
+            free(&start);
+            free(&length);
+            printf("this is a minus as Dou!");
+            exit(1);
+        }
+        start = 1;
+    }
+    for (int i = start; i < strlen(word); ++i) {
         int e = word[i] - '0';
         if ((e < 0 || e > 9)) {
             if (word[i] == '.' && wasDot == -1) {
@@ -41,6 +80,7 @@ int matchesDou(char* word) {
     return result;
 }
 
+//Passed JUnitTest!
 int matchesCha(char* word){
     int result = -1;
     int length = strlen(word);
@@ -51,6 +91,7 @@ int matchesCha(char* word){
     return result;
 }
 
+//Passed JUnitTest!
 int matchesStr(char* word){
     int result = -1;
     int length = strlen(word);
