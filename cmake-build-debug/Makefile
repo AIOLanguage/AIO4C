@@ -284,6 +284,33 @@ sources/lang/methods/methodDefinition/AIOMethodDefinition.c.s:
 	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/methods/methodDefinition/AIOMethodDefinition.c.s
 .PHONY : sources/lang/methods/methodDefinition/AIOMethodDefinition.c.s
 
+sources/lang/methods/methodDefinition/AIOMethodDefinitionBuilder.obj: sources/lang/methods/methodDefinition/AIOMethodDefinitionBuilder.c.obj
+
+.PHONY : sources/lang/methods/methodDefinition/AIOMethodDefinitionBuilder.obj
+
+# target to build an object file
+sources/lang/methods/methodDefinition/AIOMethodDefinitionBuilder.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/methods/methodDefinition/AIOMethodDefinitionBuilder.c.obj
+.PHONY : sources/lang/methods/methodDefinition/AIOMethodDefinitionBuilder.c.obj
+
+sources/lang/methods/methodDefinition/AIOMethodDefinitionBuilder.i: sources/lang/methods/methodDefinition/AIOMethodDefinitionBuilder.c.i
+
+.PHONY : sources/lang/methods/methodDefinition/AIOMethodDefinitionBuilder.i
+
+# target to preprocess a source file
+sources/lang/methods/methodDefinition/AIOMethodDefinitionBuilder.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/methods/methodDefinition/AIOMethodDefinitionBuilder.c.i
+.PHONY : sources/lang/methods/methodDefinition/AIOMethodDefinitionBuilder.c.i
+
+sources/lang/methods/methodDefinition/AIOMethodDefinitionBuilder.s: sources/lang/methods/methodDefinition/AIOMethodDefinitionBuilder.c.s
+
+.PHONY : sources/lang/methods/methodDefinition/AIOMethodDefinitionBuilder.s
+
+# target to generate assembly for a file
+sources/lang/methods/methodDefinition/AIOMethodDefinitionBuilder.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/methods/methodDefinition/AIOMethodDefinitionBuilder.c.s
+.PHONY : sources/lang/methods/methodDefinition/AIOMethodDefinitionBuilder.c.s
+
 sources/lang/methods/result/AIOResult.obj: sources/lang/methods/result/AIOResult.c.obj
 
 .PHONY : sources/lang/methods/result/AIOResult.obj
@@ -554,6 +581,33 @@ sources/lib/collections/maps/AIOMutableObjectMap.c.s:
 	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/collections/maps/AIOMutableObjectMap.c.s
 .PHONY : sources/lib/collections/maps/AIOMutableObjectMap.c.s
 
+sources/lib/utils/stringUtils/StringUtils.obj: sources/lib/utils/stringUtils/StringUtils.c.obj
+
+.PHONY : sources/lib/utils/stringUtils/StringUtils.obj
+
+# target to build an object file
+sources/lib/utils/stringUtils/StringUtils.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/StringUtils.c.obj
+.PHONY : sources/lib/utils/stringUtils/StringUtils.c.obj
+
+sources/lib/utils/stringUtils/StringUtils.i: sources/lib/utils/stringUtils/StringUtils.c.i
+
+.PHONY : sources/lib/utils/stringUtils/StringUtils.i
+
+# target to preprocess a source file
+sources/lib/utils/stringUtils/StringUtils.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/StringUtils.c.i
+.PHONY : sources/lib/utils/stringUtils/StringUtils.c.i
+
+sources/lib/utils/stringUtils/StringUtils.s: sources/lib/utils/stringUtils/StringUtils.c.s
+
+.PHONY : sources/lib/utils/stringUtils/StringUtils.s
+
+# target to generate assembly for a file
+sources/lib/utils/stringUtils/StringUtils.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/StringUtils.c.s
+.PHONY : sources/lib/utils/stringUtils/StringUtils.c.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -581,6 +635,9 @@ help:
 	@echo ... sources/lang/methods/methodDefinition/AIOMethodDefinition.obj
 	@echo ... sources/lang/methods/methodDefinition/AIOMethodDefinition.i
 	@echo ... sources/lang/methods/methodDefinition/AIOMethodDefinition.s
+	@echo ... sources/lang/methods/methodDefinition/AIOMethodDefinitionBuilder.obj
+	@echo ... sources/lang/methods/methodDefinition/AIOMethodDefinitionBuilder.i
+	@echo ... sources/lang/methods/methodDefinition/AIOMethodDefinitionBuilder.s
 	@echo ... sources/lang/methods/result/AIOResult.obj
 	@echo ... sources/lang/methods/result/AIOResult.i
 	@echo ... sources/lang/methods/result/AIOResult.s
@@ -611,6 +668,9 @@ help:
 	@echo ... sources/lib/collections/maps/AIOMutableObjectMap.obj
 	@echo ... sources/lib/collections/maps/AIOMutableObjectMap.i
 	@echo ... sources/lib/collections/maps/AIOMutableObjectMap.s
+	@echo ... sources/lib/utils/stringUtils/StringUtils.obj
+	@echo ... sources/lib/utils/stringUtils/StringUtils.i
+	@echo ... sources/lib/utils/stringUtils/StringUtils.s
 .PHONY : help
 
 

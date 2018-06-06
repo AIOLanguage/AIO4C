@@ -22,7 +22,7 @@ void createMutableListOfString(AIOMutableListOfString **listOfString) {
 void updateMemoryInMutableListOfString(AIOMutableListOfString *listOfString) {
     if (*listOfString->size + 1 == *listOfString->capacity) {
         *listOfString->capacity = *listOfString->capacity * 2;
-        listOfString->strings = realloc(listOfString->strings, *listOfString->capacity * sizeof(char *));
+        listOfString->strings = realloc(listOfString->strings, *listOfString->capacity * sizeof(char*));
     }
 }
 

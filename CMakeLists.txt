@@ -27,4 +27,4 @@ add_executable(AIO sources/interpreter/main.c
         sources/lib/collections/lists/AIOMutableListOfAnnotations.c
         sources/lang/methods/bundle/AIOBundle.c
         sources/lang/methods/variable/AIOVariable.c
-        headers/lang/methods/result/AIOResult.h sources/lang/methods/result/AIOResult.c headers/lang/methods/defaultMethodContainer/AIODefaultMethodContainer.h sources/lang/methods/defaultMethodContainer/AIODefaultMethodContainer.c)
+        headers/lang/methods/result/AIOResult.h sources/lang/methods/result/AIOResult.c headers/lang/methods/defaultMethodContainer/AIODefaultMethodContainer.h sources/lang/methods/defaultMethodContainer/AIODefaultMethodContainer.c sources/lib/utils/stringUtils/StringUtils.c headers/lib/utils/StringUtils.h headers/lang/methods/methodDefinition/AIOMethodDefinitionBuilder.h sources/lang/methods/methodDefinition/AIOMethodDefinitionBuilder.c)

@@ -30,6 +30,10 @@ C:/Users/StarKRE/CLionProjects/AIO/headers/lib/collections/lists/AIOMutableListO
 ../../../lib/collections/lists/AIOMutableListOfString.h
 C:/Users/StarKRE/CLionProjects/AIO/headers/lib/collections/lists/AIOMutableListOfString.h
 
+C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/methodDefinition/AIOMethodDefinitionBuilder.h
+AIOMethodDefinition.h
+C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/methodDefinition/AIOMethodDefinition.h
+
 C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/methodDefinition/AIOMethodSizeType.h
 
 C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/result/AIOResult.h
@@ -122,6 +126,10 @@ process.h
 ../../../../headers/lang/methods/methodDefinition/AIOMethodDefinition.h
 C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/methodDefinition/AIOMethodDefinition.h
 
+C:/Users/StarKRE/CLionProjects/AIO/sources/lang/methods/methodDefinition/AIOMethodDefinitionBuilder.c
+../../../../headers/lang/methods/methodDefinition/AIOMethodDefinition.h
+C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/methodDefinition/AIOMethodDefinition.h
+
 C:/Users/StarKRE/CLionProjects/AIO/sources/lang/methods/result/AIOResult.c
 malloc.h
 -
@@ -149,8 +157,14 @@ stdio.h
 -
 ../../../headers/lang/object/AIOObject.h
 C:/Users/StarKRE/CLionProjects/AIO/headers/lang/object/AIOObject.h
+../../../headers/lang/methods/methodDefinition/AIOMethodDefinitionBuilder.h
+C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/methodDefinition/AIOMethodDefinitionBuilder.h
 
 C:/Users/StarKRE/CLionProjects/AIO/sources/lang/object/objectManager/AIOObjectManager.c
+mem.h
+-
+stdio.h
+-
 ../../../../headers/lang/object/objectManager/AIOObjectManager.h
 C:/Users/StarKRE/CLionProjects/AIO/headers/lang/object/objectManager/AIOObjectManager.h
 
@@ -217,4 +231,14 @@ malloc.h
 -
 ../../../../headers/lib/collections/maps/AIOMutableObjectMap.h
 C:/Users/StarKRE/CLionProjects/AIO/headers/lib/collections/maps/AIOMutableObjectMap.h
+
+C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/stringUtils/StringUtils.c
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+assert.h
+-
 

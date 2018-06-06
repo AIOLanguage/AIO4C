@@ -8,6 +8,14 @@ AIOObjectManager *aioObjectManager;
 
 #define CHUNK 1024
 
+void init(){
+    initAIOObjectManager(&aioObjectManager);
+}
+
 int main() {
+    init();
+    char* path = "../aioPrograms/starter.aio";
+    buildAIOObjectAndPutInAIOObjectManager(aioObjectManager, path);
     return 0;
 }
+

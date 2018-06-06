@@ -13,4 +13,6 @@ extern AIOObjectManager* aioObjectManager;
 
 void initAIOObjectManager(AIOObjectManager** objectManager);
 
+void buildAIOObjectAndPutInAIOObjectManager(AIOObjectManager *objectManager, char *path);
+
 #endif //AIO_AIO_OBJECT_MANAGER_H

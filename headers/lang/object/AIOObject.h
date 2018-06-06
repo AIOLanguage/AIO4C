@@ -4,6 +4,11 @@
 #include "../methods/bundle/AIOBundle.h"
 #include "../../lib/collections/maps/AIOMutableMethodDefinitionMap.h"
 
+typedef struct StringPair {
+    char* objectName;
+    char* folderPath;
+} StringPair;
+
 typedef struct AIOMethodManager {
     AIOMutableMethodDefinitionMap* methodDefinitionMap;
     int* hasMain;
@@ -17,6 +22,8 @@ typedef struct AIOObject {
     struct AIOMutableListOfString* sourceCode;
     struct AIOMethodManager* methodManager;
 } AIOObject;
+
+StringPair *extractNameAnfFolderPathFromPath(char *path);
 
 void createAIOObject(AIOObject **object, AIOMethodManager* methodManager, char *path);
 

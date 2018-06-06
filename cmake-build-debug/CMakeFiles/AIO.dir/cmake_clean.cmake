@@ -15,6 +15,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/AIO.dir/sources/lang/methods/variable/AIOVariable.c.obj"
   "CMakeFiles/AIO.dir/sources/lang/methods/result/AIOResult.c.obj"
   "CMakeFiles/AIO.dir/sources/lang/methods/defaultMethodContainer/AIODefaultMethodContainer.c.obj"
+  "CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/StringUtils.c.obj"
+  "CMakeFiles/AIO.dir/sources/lang/methods/methodDefinition/AIOMethodDefinitionBuilder.c.obj"
   "AIO.pdb"
   "AIO.exe"
   "AIO.exe.manifest"

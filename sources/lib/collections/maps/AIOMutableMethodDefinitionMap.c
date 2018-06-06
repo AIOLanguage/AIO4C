@@ -34,8 +34,7 @@ void updateMemoryInMutableMapOfDefinitions(AIOMutableMethodDefinitionMap *defini
 void putInMutableMapOfDefinitions(AIOMutableMethodDefinitionMap *definitionMap, AIOMethodDefinition *methodDefinition) {
     for (int i = 0; i < *definitionMap->size; ++i) {
         if (strcmp(definitionMap->names[i], methodDefinition->name) == 0) {
-            printf("Cannot put AIOObject: %s in definition map", methodDefinition->name);
-            exit(1);
+            perror("AIODuplicate definition error!");
         }
     }
     //Check to update:

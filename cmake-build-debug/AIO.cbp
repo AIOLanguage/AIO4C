@@ -89,6 +89,9 @@
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/methodDefinition/AIOMethodDefinition.h">
 			<Option target="AIO"/>
 		</Unit>
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/methodDefinition/AIOMethodDefinitionBuilder.h">
+			<Option target="AIO"/>
+		</Unit>
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/methodDefinition/AIOMethodSizeType.h">
 			<Option target="AIO"/>
 		</Unit>
@@ -119,6 +122,9 @@
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lib/collections/maps/AIOMutableObjectMap.h">
 			<Option target="AIO"/>
 		</Unit>
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/StringUtils.h">
+			<Option target="AIO"/>
+		</Unit>
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/reservedNames/AIOReservedNamesContainer.h">
 			<Option target="AIO"/>
 		</Unit>
@@ -138,6 +144,9 @@
 			<Option target="AIO"/>
 		</Unit>
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lang/methods/methodDefinition/AIOMethodDefinition.c">
+			<Option target="AIO"/>
+		</Unit>
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lang/methods/methodDefinition/AIOMethodDefinitionBuilder.c">
 			<Option target="AIO"/>
 		</Unit>
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lang/methods/result/AIOResult.c">
@@ -168,6 +177,9 @@
 			<Option target="AIO"/>
 		</Unit>
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lib/collections/maps/AIOMutableObjectMap.c">
+			<Option target="AIO"/>
+		</Unit>
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/stringUtils/StringUtils.c">
 			<Option target="AIO"/>
 		</Unit>
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/CMakeLists.txt">
