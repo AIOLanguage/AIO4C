@@ -39,7 +39,6 @@ All methods have variable quantity of arguments and return variable amount of va
 
  - Subtraction "a - b":
 
-
 ![image](https://user-images.githubusercontent.com/22048950/39088242-29480fc0-45b7-11e8-9ddd-31b3b7adec7e.png)
 
  - Count sum "a + b + c + .. + n":
@@ -78,18 +77,6 @@ This method very difficult to understand. Then ***declaration*** comes to help u
 
 ![image](https://user-images.githubusercontent.com/22048950/39088611-d8382e06-45bd-11e8-8fa8-9bef632b5818.png)
 
-Declarations indicate the minimum number of arguments that must be in the method first:
+Declarations indicate the exact number of arguments:
 
 ![image](https://user-images.githubusercontent.com/22048950/39088667-cd9e10ae-45be-11e8-9618-0788fe02f4e7.png)
-
-### Requests:
-
-A coarser form than a declaration. Specifies the exact number of arguments:
-
-- Subtraction:
-
-![image](https://user-images.githubusercontent.com/22048950/39088693-471ce4d2-45bf-11e8-8700-b3549971cdea.png)
-
-- Division:
-
-![image](https://user-images.githubusercontent.com/22048950/39088706-78ca339a-45bf-11e8-938f-7badd717b6c1.png)
