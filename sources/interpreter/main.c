@@ -3,6 +3,7 @@
 #include <mem.h>
 #include "../../headers/lang/object/objectManager/AIOObjectManager.h"
 #include "../../headers/lang/methods/variable/AIOVariable.h"
+#include "../../headers/lib/utils/StringUtils.h"
 
 AIOObjectManager *aioObjectManager;
 
@@ -14,8 +15,16 @@ void init(){
 
 int main() {
     init();
-    char* path = "../aioPrograms/starter.aio";
-    buildAIOObjectAndPutInAIOObjectManager(aioObjectManager, path);
+    char* a = "     ddddaaa                    ";
+    char* b = malloc(strlen(a));
+    trimEnd(a, &b);
+    printf("A: -%s-\n", a);
+    printf("B: -%s-\n", b);
+
+
+
+    //char* path = "../aioPrograms/starter.aio";
+    //buildAIOObjectAndPutInAIOObjectManager(aioObjectManager, path);
     return 0;
 }
 

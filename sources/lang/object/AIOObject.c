@@ -40,15 +40,15 @@ StringPair *extractNameAnfFolderPathFromPath(char *path) {
             objectName[j] = path[j + startOfObjectName];
         }
         printf("OBJECT NAME: %s\n", objectName);
-        char* folderPath = calloc((size_t) endOfObjectName, sizeof(char));
-        if (folderPath == NULL){
+        char *folderPath = calloc((size_t) endOfObjectName, sizeof(char));
+        if (folderPath == NULL) {
             perror("can not calloc memory for folder path!");
         }
         for (int k = 0; k < startOfObjectName - 1; ++k) {
             folderPath[k] = path[k];
         }
         printf("FOLDER PATH: %s\n", folderPath);
-        StringPair* nameVsFolder = calloc(1, sizeof(StringPair));
+        StringPair *nameVsFolder = calloc(1, sizeof(StringPair));
         nameVsFolder->objectName = objectName;
         nameVsFolder->folderPath = folderPath;
         return nameVsFolder;
@@ -84,26 +84,22 @@ void loadSourceCodeInAIOObject(AIOObject *object, char *path) {
     fclose(file);
     //Set source code:
     object->sourceCode = sourceCode;
-    for (int i = 0; i < *object->sourceCode->size; ++i) {
-        printf("--------%s\n", object->sourceCode->strings[i]);
-    }
-    printf("Loading complete!\n");
 }
 
+//Passed JUnitTest!
 void findMethodsInManager(AIOObject *aioObject) {
     for (int i = 0; i < *aioObject->sourceCode->size; ++i) {
         char *line = aioObject->sourceCode->strings[i];
         int length = strlen(line);
-        printf("LINE SIZE: %d\n", length);
         if (length > 1) {
             //starts with @
             if (line[0] == '@') {
-                printf("STARTS WITH @");
+                printf("\nSTARTS WITH @\n");
                 unsigned nameSize = 1;
                 char pointer;
                 for (int j = 1; j < length; ++j) {
-                    if (line[i] == ' '){
-                        if (j == 1){
+                    if (line[i] == ' ') {
+                        if (j == 1) {
                             perror("incorrect method mane @");
                         }
                         break;
@@ -120,7 +116,7 @@ void findMethodsInManager(AIOObject *aioObject) {
                     *aioObject->methodManager->hasMain = 0;
                     printf("HAS MAIN: %d\n", *aioObject->methodManager->hasMain);
                 }
-                printf("BUILDING AIO METHOD DEFINITION...");
+                printf("BUILDING AIO METHOD DEFINITION...\n");
                 AIOMethodDefinition *methodDefinition = buildAIOMethodDefinition(methodName, aioObject->sourceCode, i);
                 //putInMutableMapOfDefinitions(aioObject->methodManager->methodDefinitionMap, methodDefinition);
             }
@@ -135,7 +131,7 @@ void createAIOObject(AIOObject **object, AIOMethodManager *methodManager, char *
     //Set method manager:
     (*object)->methodManager = methodManager;
     //Set name from path:
-    StringPair* nameVsFolder = extractNameAnfFolderPathFromPath(path);
+    StringPair *nameVsFolder = extractNameAnfFolderPathFromPath(path);
     (*object)->name = nameVsFolder->objectName;
     //Set folder path from path:
     (*object)->folderPath = nameVsFolder->folderPath;
