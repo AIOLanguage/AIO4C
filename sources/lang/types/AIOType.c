@@ -1,9 +1,10 @@
 #include <ctype.h>
 #include <stdio.h>
 #include <mem.h>
+#include <comip.h>
 
 //Passed JUnitTest!
-int matchesInt(const char word[]) {
+int matchesInt(char* word) {
     for (int i = 0; i < strlen(word); ++i) {
         const int e = word[i] - '0';
         if (e < 0 || e > 9) {
@@ -14,11 +15,12 @@ int matchesInt(const char word[]) {
 }
 
 //Passed JUnitTest!
-int matchesDou(const char word[]) {
+int matchesDou(char* word) {
+    int result = -1;
     int wasDot = -1;
     int wasFraction = -1;
     for (int i = 0; i < strlen(word); ++i) {
-        const int e = word[i] - '0';
+        int e = word[i] - '0';
         if ((e < 0 || e > 9)) {
             if (word[i] == '.' && wasDot == -1) {
                 wasDot = 0;
@@ -26,29 +28,35 @@ int matchesDou(const char word[]) {
                 return -1;
             }
         }
-        if (e > 0 && e < 10 && wasDot == 0) {
+        if (e >= 0 && e < 10 && wasDot == 0) {
             wasFraction = 0;
         }
+        free(&e);
     }
     if (wasDot == 0 && wasFraction == 0) {
-        return 0;
-    } else {
-        return -1;
+        result = 0;
     }
+    free(&wasDot);
+    free(&wasFraction);
+    return result;
 }
 
-int matchesCha(const char word[]){
-    if (strlen(word) == 1){
-        return 0;
-    } else {
-        return -1;
+int matchesCha(char* word){
+    int result = -1;
+    int length = strlen(word);
+    if (length == 3 && word[0] == '\'' && word[length - 1] == '\''){
+        result = 0;
     }
+    free(&length);
+    return result;
 }
 
-int matchesStr(const char word[]){
-    if (strlen(word) != 1){
-        return 0;
-    } else {
-        return -1;
+int matchesStr(char* word){
+    int result = -1;
+    int length = strlen(word);
+    if ((length == 2 || length > 3) && word[0] == '\'' && word[length - 1] == '\''){
+        result = 0;
     }
+    free(&length);
+    return result;
 }

@@ -45,3 +45,72 @@ void createAIOObject(AIOObject **object, AIOMethodManager* methodManager, char *
 void invokeMethodInManager(struct AIOMethodManager methodManager, char methodName[], struct AIOBundle bundle) {
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+*/
+//int main() {
+//    //Create methodName:
+//    char* methodName = "@main";
+//    //Create declaration:
+//    AIOMutableListOfString* args;
+//    createMutableListOfString(&args);
+//    printf("%d\n", *args->size);
+//    AIODeclaration* declaration;
+//    createAIODeclaration(&declaration, methodName, args);
+//    printf("%s\n", declaration->methodName);
+//    //Create annotation list:
+//    AIOMutableListOfAnnotations* annotations;
+//    createMutableListOfAnnotations(&annotations);
+//    printf("%d\n", *annotations->size);
+//    //Create source code:
+//    AIOMutableListOfString* sourceCode;
+//    createMutableListOfString(&sourceCode);
+//    //Create method size type:
+//    enum AIOMethodSizeType methodSizeType = DEFAULT;
+//    AIOMethodDefinition *definition;
+//    createAIOMethodDefinition(&definition, methodName, declaration, annotations, sourceCode, &methodSizeType);
+//    printf("%s\n", definition->name);
+//
+//    //Create method definition map:
+//    AIOMutableMethodDefinitionMap* methodDefinitionMap;
+//    createMutableMapOfDefinitions(&methodDefinitionMap);
+//
+//    putInMutableMapOfDefinitions(methodDefinitionMap, definition);
+//
+//    AIOMethodDefinition* definition1;
+//    createAIOMethodDefinition(&definition1, "def1", declaration, annotations, sourceCode, &methodSizeType);
+//
+//    putInMutableMapOfDefinitions(methodDefinitionMap, definition1);
+//
+//    AIOMethodDefinition* definition2;
+//    createAIOMethodDefinition(&definition2, "def2", declaration, annotations, sourceCode, &methodSizeType);
+//
+//    putInMutableMapOfDefinitions(methodDefinitionMap, definition2);
+//
+//    //Create method manager:
+//    AIOMethodManager* methodManager;
+//    createAIOMethodManager(&methodManager, methodDefinitionMap);
+//
+//    //Create AIO object:
+//    AIOObject* aioObject;
+//    createAIOObject(&aioObject, methodManager, "starter");
+//    printf("%s\n", aioObject->name);
+//
+//    //let's make get!
+//    AIOMethodDefinition* aioMethodDefinition = getMethodDefinitionInMutableMapByName(methodDefinitionMap, "def1");
+//    printf("%s", aioMethodDefinition->declaration->methodName);
+//
+//    return 0;
+//}

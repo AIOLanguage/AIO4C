@@ -2,15 +2,15 @@
 #define AIO_AIO_OBJECT_MANAGER_H
 
 #include "../AIOObject.h"
-#include "../../../lib/maps/AIOMutableObjectMap.h"
+#include "../../../lib/collections/maps/AIOMutableObjectMap.h"
 
 typedef struct AIOObjectManager {
     AIOObject* lastVisitedObject;
     AIOMutableObjectMap* objectMap;
 } AIOObjectManager;
 
-extern AIOObjectManager aioObjectManager;
+extern AIOObjectManager* aioObjectManager;
 
-void initAIOObjectManager();
+void initAIOObjectManager(AIOObjectManager** objectManager);
 
 #endif //AIO_AIO_OBJECT_MANAGER_H

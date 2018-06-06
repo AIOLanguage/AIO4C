@@ -2,7 +2,7 @@
 #define AIO_AIO_OBJECT_H
 
 #include "../methods/bundle/AIOBundle.h"
-#include "../../lib/maps/AIOMutableMethodDefinitionMap.h"
+#include "../../lib/collections/maps/AIOMutableMethodDefinitionMap.h"
 
 typedef struct AIOMethodManager {
     AIOMutableMethodDefinitionMap* methodDefinitionMap;

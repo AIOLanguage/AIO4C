@@ -4,19 +4,19 @@ enum AIOType {
     AIO_INT, AIO_DOU, AIO_CHA, AIO_STR
 };
 
-int matchesInt(const char word[]);
+int matchesInt(char* word);
 
-int toInt(const char word[]);
+int toInt(char* word);
 
-int matchesDou(const char word[]);
+int matchesDou(char* word);
 
-double toDou(const char word[]);
+double toDou(char* word);
 
-int matchesCha(const char word[]);
+int matchesCha(char* word);
 
-char toCha(const char word[]);
+char toCha(char* word);
 
-int matchesStr(const char word[]);
+int matchesStr(char* word);
 
-char* toStr(const char word[]);
+char* toStr(char* word);
 #endif //AIO_AIO_TYPE_H

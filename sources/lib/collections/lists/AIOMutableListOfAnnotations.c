@@ -2,7 +2,8 @@
 #include <mem.h>
 #include <stdio.h>
 #include <process.h>
-#include "../../../headers/lib/lists/AIOMutableListOfAnnotations.h"
+#include "../../../../headers/lib/collections/lists/AIOMutableListOfAnnotations.h"
+
 
 void createMutableListOfAnnotations(AIOMutableListOfAnnotations **listOfAnnotations) {
     *listOfAnnotations = (AIOMutableListOfAnnotations *) calloc(1, sizeof(AIOMutableListOfAnnotations));
@@ -13,7 +14,7 @@ void createMutableListOfAnnotations(AIOMutableListOfAnnotations **listOfAnnotati
 //Passed JUnitTests!
 void addInMutableListOfAnnotations(AIOMutableListOfAnnotations *listOfAnnotations, AIOAnnotation* annotation) {
     listOfAnnotations->annotations[*listOfAnnotations->size] = annotation;
-    listOfAnnotations->size++;
+    *listOfAnnotations->size = *listOfAnnotations->size + 1;
 }
 
 //Passed JUnitTests!

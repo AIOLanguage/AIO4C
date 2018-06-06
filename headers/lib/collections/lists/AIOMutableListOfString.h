@@ -3,14 +3,15 @@
 
 //Passed JUnitTests!
 typedef struct AIOMutableListOfString {
+    int* capacity;
     int* size;
     char** strings;
 } AIOMutableListOfString;
 
 void createMutableListOfString(AIOMutableListOfString** listOfString);
 
-void addInMutableListOfString(AIOMutableListOfString* listOfString, const char*);
+void addInMutableListOfString(AIOMutableListOfString* listOfString, char*);
 
-char* getStringInMutableListByIndex(AIOMutableListOfString *listOfString, int index);
+char* getStringInMutableListByIndex(AIOMutableListOfString *listOfString, int* index);
 
 #endif
