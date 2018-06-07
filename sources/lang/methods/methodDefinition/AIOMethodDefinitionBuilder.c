@@ -64,7 +64,8 @@ StringList *getArgsIfCorrect(char *argLine) {
         addInListOfString(argList, trimmedLine);
     }
     for (int j = 0; j < *argList->size; ++j) {
-        if (isWord(getStringInListByIndex(argList, j)) == -1) {
+        printf("ARGUMENT:   -%s-\n", argList->strings[j]);
+        if (isWord(argList->strings[j]) == -1) {
             perror("arg in declaration has invalid name!");
         }
     }
@@ -74,20 +75,21 @@ StringList *getArgsIfCorrect(char *argLine) {
 AIODeclaration *getDeclarationOfMethod(char *methodName, StringList *sourceCode, int startIndex) {
     int currentIndex = startIndex - 1;
     char *inputLine = getStringInListByIndex(sourceCode, currentIndex);
-    printf("Allocate memory for current line...");
+    printf("Allocate memory for current line...\n");
     char *currentLine = malloc(strlen(inputLine));
     if (currentLine == NULL) {
         perror("cannot allocate memory for current line when was creating of declaration!");
     }
     trim(inputLine, &currentLine);
-    printf("TRIMMED FIRST LINE: %s\n", currentLine);
+    printf("TRIMMED FIRST LINE: -%s-\n", currentLine);
     while (strcmp(currentLine, "") != 0 && currentIndex >= 0) {
         char *declarationPrefix = "~dec:";
         int startsAsDeclaration = startsWith(currentLine, declarationPrefix);
         if (startsAsDeclaration == 0) {
-            printf("FOUND DECLARATION!");
+            printf("FOUND DECLARATION!\n");
             //Remove declaration prefix:
             char *bracketLine = malloc(strlen(currentLine));
+            printf("AFTER MALLOC!\n");
             if (bracketLine == NULL){
                 perror("cannot allocate memory for bracket line when was creating of declaration!");
             }
@@ -108,22 +110,23 @@ AIODeclaration *getDeclarationOfMethod(char *methodName, StringList *sourceCode,
                     perror("cannot allocate memory for right padding when was creating of declaration!");
                 }
                 removeSuffix(lp, "<<", &rp);
-                printf("LINE WITHOUT RP: %s\n", rp);
+                printf("LINE WITHOUT RP: -%s-\n", rp);
                 //Split naked args;
                 printf("PREPARE TO SPLIT...\n");
                 char **dirtySplitArgs;
                 splitByChar(rp, ' ', &dirtySplitArgs);
-                printf("PREPARE TO SPLIT...\n");
-
                 int argNumber = _msize(dirtySplitArgs) / 4;
+                printf("ARG NUMBER: %d\n", argNumber);
                 char **filteredArgs = calloc(_msize(dirtySplitArgs) / 4, sizeof(char *));
                 filter(dirtySplitArgs, (size_t) argNumber, &filteredArgs, isNotEmpty);
                 char *cleanArgLine;
                 joinToStringWithoutSpaces(filteredArgs, &cleanArgLine);
+                printf("JOINED STRING: %s\n", cleanArgLine);
                 StringList *argList = getArgsIfCorrect(cleanArgLine);
                 if (isStringListEmpty(argList) != 0) {
                     AIODeclaration *aioDeclaration;
                     createAIODeclaration(&aioDeclaration, methodName, argList);
+                    return aioDeclaration;
                 } else {
                     perror("invalid comma placement in declaration!");
                 }
@@ -214,9 +217,11 @@ AIOMethodDefinition *buildAIOMethodDefinition(char *methodName, StringList *sour
     }
     printf("\n\n\n\n\n\n\n");
     printf("Create AIODeclaration...\n");
-    AIODeclaration *aioDeclaration = getDeclarationOfMethod(methodName, sourceCode, startIndex);
+    AIODeclaration *declaration = getDeclarationOfMethod(methodName, sourceCode, startIndex);
     printf("Create AIOAnnotation list...\n");
-    AIOAnnotationList *aioAnnotationList = getAnnotationsOfMethod(methodName, sourceCode, startIndex);
+    AIOAnnotationList *annotationList = getAnnotationsOfMethod(methodName, sourceCode, startIndex);
     printf("Successfully created method definition!\n");
+    enum AIOMethodSizeType methodSizeType = DEFAULT;
+    createAIOMethodDefinition(&methodDefinition, methodName, declaration, annotationList, methodCode, &methodSizeType);
     return methodDefinition;
 }

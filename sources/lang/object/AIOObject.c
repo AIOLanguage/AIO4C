@@ -32,7 +32,7 @@ StringPair *extractNameAnfFolderPathFromPath(char *path) {
             startOfObjectName = i;
         }
         unsigned size = (unsigned int) (endOfObjectName - startOfObjectName + 1);
-        char *objectName = calloc(size, sizeof(char));
+        char *objectName = calloc(size + 1, sizeof(char));
         if (objectName == NULL) {
             perror("can not calloc memory for object name!");
         }
@@ -40,9 +40,9 @@ StringPair *extractNameAnfFolderPathFromPath(char *path) {
             objectName[j] = path[j + startOfObjectName];
         }
         printf("OBJECT NAME: %s\n", objectName);
-        char *folderPath = calloc((size_t) endOfObjectName, sizeof(char));
+        char *folderPath = calloc((size_t) endOfObjectName + 1, sizeof(char));
         if (folderPath == NULL) {
-            perror("can not calloc memory for folder path!");
+            perror("can not allocate memory for folder path!");
         }
         for (int k = 0; k < startOfObjectName - 1; ++k) {
             folderPath[k] = path[k];
@@ -115,7 +115,7 @@ void findMethodsInManager(AIOObject *aioObject) {
                     printf("HAS MAIN: %d\n", *aioObject->methodManager->hasMain);
                 }
                 AIOMethodDefinition *methodDefinition = buildAIOMethodDefinition(methodName, aioObject->sourceCode, i);
-                //putAIOMethodDefinitionInMap(aioObject->methodManager->methodDefinitionMap, methodDefinition);
+                putAIOMethodDefinitionInMap(aioObject->methodManager->methodDefinitionMap, methodDefinition);
             }
         }
     }

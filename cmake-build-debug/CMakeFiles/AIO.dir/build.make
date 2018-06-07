@@ -56,28 +56,28 @@ include CMakeFiles/AIO.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/AIO.dir/flags.make
 
-CMakeFiles/AIO.dir/sources/interpreter/main.c.obj: CMakeFiles/AIO.dir/flags.make
-CMakeFiles/AIO.dir/sources/interpreter/main.c.obj: ../sources/interpreter/main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\StarKRE\CLionProjects\AIO\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/AIO.dir/sources/interpreter/main.c.obj"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\AIO.dir\sources\interpreter\main.c.obj   -c C:\Users\StarKRE\CLionProjects\AIO\sources\interpreter\main.c
+CMakeFiles/AIO.dir/sources/main/main.c.obj: CMakeFiles/AIO.dir/flags.make
+CMakeFiles/AIO.dir/sources/main/main.c.obj: ../sources/main/main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\StarKRE\CLionProjects\AIO\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/AIO.dir/sources/main/main.c.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\AIO.dir\sources\main\main.c.obj   -c C:\Users\StarKRE\CLionProjects\AIO\sources\main\main.c
 
-CMakeFiles/AIO.dir/sources/interpreter/main.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/AIO.dir/sources/interpreter/main.c.i"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\StarKRE\CLionProjects\AIO\sources\interpreter\main.c > CMakeFiles\AIO.dir\sources\interpreter\main.c.i
+CMakeFiles/AIO.dir/sources/main/main.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/AIO.dir/sources/main/main.c.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\StarKRE\CLionProjects\AIO\sources\main\main.c > CMakeFiles\AIO.dir\sources\main\main.c.i
 
-CMakeFiles/AIO.dir/sources/interpreter/main.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/AIO.dir/sources/interpreter/main.c.s"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\StarKRE\CLionProjects\AIO\sources\interpreter\main.c -o CMakeFiles\AIO.dir\sources\interpreter\main.c.s
+CMakeFiles/AIO.dir/sources/main/main.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/AIO.dir/sources/main/main.c.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\StarKRE\CLionProjects\AIO\sources\main\main.c -o CMakeFiles\AIO.dir\sources\main\main.c.s
 
-CMakeFiles/AIO.dir/sources/interpreter/main.c.obj.requires:
+CMakeFiles/AIO.dir/sources/main/main.c.obj.requires:
 
-.PHONY : CMakeFiles/AIO.dir/sources/interpreter/main.c.obj.requires
+.PHONY : CMakeFiles/AIO.dir/sources/main/main.c.obj.requires
 
-CMakeFiles/AIO.dir/sources/interpreter/main.c.obj.provides: CMakeFiles/AIO.dir/sources/interpreter/main.c.obj.requires
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/interpreter/main.c.obj.provides.build
-.PHONY : CMakeFiles/AIO.dir/sources/interpreter/main.c.obj.provides
+CMakeFiles/AIO.dir/sources/main/main.c.obj.provides: CMakeFiles/AIO.dir/sources/main/main.c.obj.requires
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/main/main.c.obj.provides.build
+.PHONY : CMakeFiles/AIO.dir/sources/main/main.c.obj.provides
 
-CMakeFiles/AIO.dir/sources/interpreter/main.c.obj.provides.build: CMakeFiles/AIO.dir/sources/interpreter/main.c.obj
+CMakeFiles/AIO.dir/sources/main/main.c.obj.provides.build: CMakeFiles/AIO.dir/sources/main/main.c.obj
 
 
 CMakeFiles/AIO.dir/sources/lang/reservedNames/AIOReservedNamesContainer.c.obj: CMakeFiles/AIO.dir/flags.make
@@ -490,7 +490,7 @@ CMakeFiles/AIO.dir/sources/lang/methods/methodDefinition/AIOMethodDefinitionBuil
 
 # Object files for target AIO
 AIO_OBJECTS = \
-"CMakeFiles/AIO.dir/sources/interpreter/main.c.obj" \
+"CMakeFiles/AIO.dir/sources/main/main.c.obj" \
 "CMakeFiles/AIO.dir/sources/lang/reservedNames/AIOReservedNamesContainer.c.obj" \
 "CMakeFiles/AIO.dir/sources/lib/collections/lists/StringList.c.obj" \
 "CMakeFiles/AIO.dir/sources/lang/types/AIOType.c.obj" \
@@ -512,7 +512,7 @@ AIO_OBJECTS = \
 # External object files for target AIO
 AIO_EXTERNAL_OBJECTS =
 
-AIO.exe: CMakeFiles/AIO.dir/sources/interpreter/main.c.obj
+AIO.exe: CMakeFiles/AIO.dir/sources/main/main.c.obj
 AIO.exe: CMakeFiles/AIO.dir/sources/lang/reservedNames/AIOReservedNamesContainer.c.obj
 AIO.exe: CMakeFiles/AIO.dir/sources/lib/collections/lists/StringList.c.obj
 AIO.exe: CMakeFiles/AIO.dir/sources/lang/types/AIOType.c.obj
@@ -542,7 +542,7 @@ CMakeFiles/AIO.dir/build: AIO.exe
 
 .PHONY : CMakeFiles/AIO.dir/build
 
-CMakeFiles/AIO.dir/requires: CMakeFiles/AIO.dir/sources/interpreter/main.c.obj.requires
+CMakeFiles/AIO.dir/requires: CMakeFiles/AIO.dir/sources/main/main.c.obj.requires
 CMakeFiles/AIO.dir/requires: CMakeFiles/AIO.dir/sources/lang/reservedNames/AIOReservedNamesContainer.c.obj.requires
 CMakeFiles/AIO.dir/requires: CMakeFiles/AIO.dir/sources/lib/collections/lists/StringList.c.obj.requires
 CMakeFiles/AIO.dir/requires: CMakeFiles/AIO.dir/sources/lang/types/AIOType.c.obj.requires

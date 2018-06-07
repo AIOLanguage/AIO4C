@@ -7,41 +7,57 @@
 //Passed JUnitTests!
 void createAIOObjectMap(AIOObjectMap **objectMap) {
     //Create the same definition map:
-    *objectMap = malloc(sizeof(AIOObjectMap));
+    *objectMap = calloc(1, sizeof(AIOObjectMap));
+    if (*objectMap == NULL) {
+        perror("cannot allocate memory for AIOObject!");
+    }
     //Create capacity:
-    (*objectMap)->capacity = malloc(sizeof(int));
+    (*objectMap)->capacity = calloc(1, sizeof(int));
+    if ((*objectMap)->capacity == NULL) {
+        perror("cannot allocate memory for capacity!");
+    }
     *(*objectMap)->capacity = 2;
     //Create size:
-    (*objectMap)->size = malloc(sizeof(int));
+    (*objectMap)->size = calloc(1, sizeof(int));
+    if ((*objectMap)->size == NULL) {
+        perror("cannot allocate memory for size!");
+    }
     *(*objectMap)->size = 0;
     //Create char capacity that equals 2:
-    (*objectMap)->names = malloc(2 * sizeof(char));
+    (*objectMap)->names = calloc(2, sizeof(char *));
+    if ((*objectMap)->names == NULL) {
+        perror("cannot allocate memory for names!");
+    }
     //Create definitions that equals 2:
-    (*objectMap)->objects = malloc(2 * sizeof(AIOObject));
+    (*objectMap)->objects = calloc(2, sizeof(AIOObject *));
+    if ((*objectMap)->objects == NULL) {
+        perror("cannot allocate memory for objects!");
+    }
 }
 
 //Passed JUnitTests!
 void updateMemoryInMutableMapOfObjects(AIOObjectMap *objectMap) {
     if (*objectMap->size + 1 == *objectMap->capacity) {
         *objectMap->capacity = *objectMap->capacity * 2;
-        objectMap->names = realloc(objectMap->names, *objectMap->capacity * sizeof(char));
-        objectMap->objects = realloc(objectMap->objects, *objectMap->capacity * sizeof(AIOObject));
+        objectMap->names = realloc(objectMap->names, *objectMap->capacity * sizeof(char *));
+        objectMap->objects = realloc(objectMap->objects, *objectMap->capacity * sizeof(AIOObject *));
     }
 }
-
 
 //Passed JUnitTests!
 void putAIOObjectInMap(AIOObjectMap *objectMap, AIOObject *object) {
     for (int i = 0; i < *objectMap->size; ++i) {
         if (strcmp(objectMap->names[i], object->name) == 0) {
-            printf("Cannot put AIOObject: %s in definition map", object->name);
-            exit(1);
+            perror("Cannot put AIOObject in definition map");
         }
     }
     //Check to update:
     updateMemoryInMutableMapOfObjects(objectMap);
     //Set key:
     objectMap->names[*objectMap->size] = malloc(strlen(object->name));
+    if (objectMap->names[*objectMap->size] == NULL) {
+        perror("cannot allocate memory for names!");
+    }
     objectMap->names[*objectMap->size] = object->name;
     //Set value:
     objectMap->objects[*objectMap->size] = object;
@@ -55,8 +71,7 @@ AIOObject *getAIOObjectInMapByName(AIOObjectMap *objectMap, char *name) {
             return objectMap->objects[i];
         }
     }
-    printf("Cannot get AIOObject: %s in MutableList", name);
-    exit(1);
+    perror("cannot get aio object in map");
 }
 
 /*

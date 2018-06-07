@@ -54,6 +54,5 @@ AIOMethodDefinition *getAIOMethodDefinitionInMapByName(AIOMethodDefinitionMap *d
             return definitionMap->definitions[i];
         }
     }
-    printf("Cannot get AIOObject: %s in MutableList", name);
-    exit(1);
+    perror("can not get aio method definition in map!!!");
 }

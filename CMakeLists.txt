@@ -3,7 +3,7 @@ project(AIO C)
 
 set(CMAKE_C_STANDARD 11)
 
-add_executable(AIO sources/interpreter/main.c
+add_executable(AIO sources/main/main.c
         sources/lang/reservedNames/AIOReservedNamesContainer.c
         headers/lang/declarations/AIODeclaration.h
         headers/lang/annotations/AIOAnnotation.h

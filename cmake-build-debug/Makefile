@@ -122,33 +122,6 @@ AIO/fast:
 	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/build
 .PHONY : AIO/fast
 
-sources/interpreter/main.obj: sources/interpreter/main.c.obj
-
-.PHONY : sources/interpreter/main.obj
-
-# target to build an object file
-sources/interpreter/main.c.obj:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/interpreter/main.c.obj
-.PHONY : sources/interpreter/main.c.obj
-
-sources/interpreter/main.i: sources/interpreter/main.c.i
-
-.PHONY : sources/interpreter/main.i
-
-# target to preprocess a source file
-sources/interpreter/main.c.i:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/interpreter/main.c.i
-.PHONY : sources/interpreter/main.c.i
-
-sources/interpreter/main.s: sources/interpreter/main.c.s
-
-.PHONY : sources/interpreter/main.s
-
-# target to generate assembly for a file
-sources/interpreter/main.c.s:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/interpreter/main.c.s
-.PHONY : sources/interpreter/main.c.s
-
 sources/lang/annotations/AIOAnnotation.obj: sources/lang/annotations/AIOAnnotation.c.obj
 
 .PHONY : sources/lang/annotations/AIOAnnotation.obj
@@ -608,6 +581,33 @@ sources/lib/utils/stringUtils/StringUtils.c.s:
 	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/StringUtils.c.s
 .PHONY : sources/lib/utils/stringUtils/StringUtils.c.s
 
+sources/main/main.obj: sources/main/main.c.obj
+
+.PHONY : sources/main/main.obj
+
+# target to build an object file
+sources/main/main.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/main/main.c.obj
+.PHONY : sources/main/main.c.obj
+
+sources/main/main.i: sources/main/main.c.i
+
+.PHONY : sources/main/main.i
+
+# target to preprocess a source file
+sources/main/main.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/main/main.c.i
+.PHONY : sources/main/main.c.i
+
+sources/main/main.s: sources/main/main.c.s
+
+.PHONY : sources/main/main.s
+
+# target to generate assembly for a file
+sources/main/main.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/main/main.c.s
+.PHONY : sources/main/main.c.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -617,9 +617,6 @@ help:
 	@echo ... edit_cache
 	@echo ... AIO
 	@echo ... rebuild_cache
-	@echo ... sources/interpreter/main.obj
-	@echo ... sources/interpreter/main.i
-	@echo ... sources/interpreter/main.s
 	@echo ... sources/lang/annotations/AIOAnnotation.obj
 	@echo ... sources/lang/annotations/AIOAnnotation.i
 	@echo ... sources/lang/annotations/AIOAnnotation.s
@@ -671,6 +668,9 @@ help:
 	@echo ... sources/lib/utils/stringUtils/StringUtils.obj
 	@echo ... sources/lib/utils/stringUtils/StringUtils.i
 	@echo ... sources/lib/utils/stringUtils/StringUtils.s
+	@echo ... sources/main/main.obj
+	@echo ... sources/main/main.i
+	@echo ... sources/main/main.s
 .PHONY : help
 
 

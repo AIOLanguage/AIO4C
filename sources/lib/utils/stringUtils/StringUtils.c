@@ -5,6 +5,7 @@
 #include <ctype.h>
 #include <assert.h>
 
+//Passed JUnitTests!
 int splitByChar(char *string, char delimiter, char ***dst) {
     size_t length = strlen(string);
     if (length < 1 || delimiter == '\0') {
@@ -26,7 +27,6 @@ int splitByChar(char *string, char delimiter, char ***dst) {
         }
     }
     indices = realloc(indices, pointers * sizeof(unsigned));
-    printf("POINTERS: %d\n", pointers);
     //Cannot find points:
     if (pointers == 0) {
         *dst = calloc(1, sizeof(char *));
@@ -42,13 +42,13 @@ int splitByChar(char *string, char delimiter, char ***dst) {
     }
     //Create first path:
     if (indices[0] == 0) {
-        (*dst)[0] = calloc(1, sizeof(char));
+        (*dst)[0] = calloc(2, sizeof(char));
         if ((*dst)[0] == NULL) {
             perror("cannot allocate memory for *dst[0] in split by char!");
         }
         (*dst)[0] = "";
     } else {
-        (*dst)[0] = calloc(indices[0], sizeof(char));
+        (*dst)[0] = calloc(indices[0] + 1, sizeof(char));
         if ((*dst)[0] == NULL) {
             perror("cannot allocate memory for *dst[0] in split by char!");
         }
@@ -56,17 +56,16 @@ int splitByChar(char *string, char delimiter, char ***dst) {
             (*dst)[0][i] = string[i];
         }
     }
-    printf("FIRST: -%s-\n", *dst[0]);
     //Create last part:
-    const int last = parts - 1;
+    int last = parts - 1;
     if (length - indices[pointers - 1] == 0) {
-        (*dst)[last] = calloc(1, sizeof(char));
+        (*dst)[last] = calloc(2, sizeof(char));
         if ((*dst)[last] == NULL) {
             perror("cannot allocate memory for *dst[last] in split by char!");
         }
         (*dst)[last] = "";
     } else {
-        (*dst)[last] = calloc(length - indices[pointers - 1] - 1, sizeof(char));
+        (*dst)[last] = calloc(length - indices[pointers - 1], sizeof(char));
         if ((*dst)[last] == NULL) {
             perror("cannot allocate memory for *dst[last] in split by char!");
         }
@@ -76,24 +75,19 @@ int splitByChar(char *string, char delimiter, char ***dst) {
             k = k + 1;
         }
     }
-    printf("LAST: -%s-\n", (*dst)[last]);
     if (pointers > 1) {
         //from second delimiter:
         for (int j = 0; j < pointers - 1; ++j) {
-            printf("DISTANCE: %d\n", indices[j + 1] - indices[j] - 1);
             if (indices[j + 1] - indices[j] - 1 > 0) {
-                (*dst)[j + 1] = calloc(indices[j + 1] - indices[j], sizeof(char));
+                (*dst)[j + 1] = calloc(indices[j + 1] - indices[j] + 1, sizeof(char));
                 if ((*dst)[j + 1] == NULL) {
                     perror("cannot allocate memory for *dst[j] in split by char!");
                 }
-                printf("\n\n\n\n\n\n\n");
                 for (int i = 0; i < indices[j + 1] - indices[j] - 1; ++i) {
-                    printf("SRC_CHAR: %c\n", string[indices[j] + i + 1]);
                     (*dst)[j + 1][i] = string[indices[j] + i + 1];
                 }
-                printf("IN THE MIDDLE: -%s-\n", (*dst)[j]);
             } else {
-                (*dst)[j + 1] = calloc(1, sizeof(char));
+                (*dst)[j + 1] = calloc(2, sizeof(char));
                 if ((*dst)[j + 1] == NULL) {
                     perror("cannot allocate memory for *dst[j] in split by char!");
                 }
@@ -101,6 +95,11 @@ int splitByChar(char *string, char delimiter, char ***dst) {
             }
         }
     }
+    //free:
+    free(&length);
+    free(indices);
+    free(&pointers);
+    free((void *) parts);
     return 0;
 }
 
@@ -152,7 +151,7 @@ int trim(const char *src, char **dst) {
     if (strlen(src) == 0) {
         return 0;
     }
-    const size_t srcSize = strlen(src);
+    size_t srcSize = strlen(src);
     int lp = 0;
     int rp = 0;
     while (isWhiteSpace(src[lp]) && ++lp);
@@ -173,7 +172,7 @@ int removePrefix(const char *src, const char *prefix, char **dst) {
     if (strlen(src) == 0) {
         return 0;
     }
-    const size_t srcSize = strlen(src);
+    size_t srcSize = strlen(src);
     int lp = 0;
     for (int j = 0; j < strlen(prefix); ++j) {
         if (src[j] != prefix[j]) {
@@ -200,8 +199,8 @@ int removeSuffix(const char *src, const char *suffix, char **dst) {
     if (strlen(src) == 0) {
         return 0;
     }
-    const size_t srcSize = strlen(src);
-    const size_t suffixSize = strlen(suffix);
+    size_t srcSize = strlen(src);
+    size_t suffixSize = strlen(suffix);
     int rp = 0;
     for (int j = 0; j < suffixSize; ++j) {
         if (src[srcSize - suffixSize + j] != suffix[j]) {
@@ -220,6 +219,8 @@ int removeSuffix(const char *src, const char *suffix, char **dst) {
         (*dst)[i] = src[i];
     }
     (*dst)[srcSize - rp] = '\0';
+    free(&srcSize);
+    free(&suffixSize);
     return rp;
 }
 
@@ -235,6 +236,7 @@ int startsWith(const char *src, char *prefix) {
 
 //Passed JUnitTest!
 int **filter(char **src, size_t srcSize, char ***dst, int (*filterFunction)(char *)) {
+    printf("SIZE: %d\n", srcSize);
     int *newIndices = calloc(srcSize, sizeof(int));
     int newSize = 0;
     //Look at strings and measure new string:
@@ -256,6 +258,9 @@ int **filter(char **src, size_t srcSize, char ***dst, int (*filterFunction)(char
             newPointer = newPointer + 1;
         }
     }
+    free(newIndices);
+    free(&newSize);
+    free(&newPointer);
     return 0;
 }
 
@@ -277,7 +282,7 @@ void joinToStringWithoutSpaces(char **srcStrings, char **dst) {
         //Get increase length of general string:
         currentStringLength = currentStringLength + strlen(srcStrings[i]);
     }
-    (*dst) = calloc((size_t) currentStringLength, sizeof(char));
+    (*dst) = calloc((size_t) currentStringLength + 1, sizeof(char));
     if ((*dst) == NULL) {
         perror("cannot allocate memory for dst");
     }
@@ -341,3 +346,22 @@ int isWord(char *line) {
     }
     return 0;
 }
+
+/*
+ * Split debug:
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ //    char* a = " Hello      AIO!  ";
+//    char** b;
+//    splitByChar(a, ' ', &b);
+//    printf("SIZE:    %d\n", _msize(b) / 4);
+//    for (int i = 0; i < _msize(b) / 4; ++i) {
+//        printf("LINE->: -%s-\n", b[i]);
+//    }
+//    char** clean = calloc(_msize(b) / 4, sizeof(char*));
+//    filter(b, _msize(b) / 4 , &clean, isNotEmpty);
+//    for (int i = 0; i < _msize(clean) / 4; ++i) {
+//        printf("CLEAN LINES->: -%s-\n", clean[i]);
+//    }
+//
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+*/

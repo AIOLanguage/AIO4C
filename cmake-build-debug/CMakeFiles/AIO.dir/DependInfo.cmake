@@ -4,7 +4,6 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "C:/Users/StarKRE/CLionProjects/AIO/sources/interpreter/main.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/interpreter/main.c.obj"
   "C:/Users/StarKRE/CLionProjects/AIO/sources/lang/annotations/AIOAnnotation.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lang/annotations/AIOAnnotation.c.obj"
   "C:/Users/StarKRE/CLionProjects/AIO/sources/lang/declarations/AIODeclaration.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lang/declarations/AIODeclaration.c.obj"
   "C:/Users/StarKRE/CLionProjects/AIO/sources/lang/methods/bundle/AIOBundle.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lang/methods/bundle/AIOBundle.c.obj"
@@ -22,6 +21,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "C:/Users/StarKRE/CLionProjects/AIO/sources/lib/collections/maps/AIOMethodDefinitionMap.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lib/collections/maps/AIOMethodDefinitionMap.c.obj"
   "C:/Users/StarKRE/CLionProjects/AIO/sources/lib/collections/maps/AIOObjectMap.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lib/collections/maps/AIOObjectMap.c.obj"
   "C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/stringUtils/StringUtils.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/StringUtils.c.obj"
+  "C:/Users/StarKRE/CLionProjects/AIO/sources/main/main.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/main/main.c.obj"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

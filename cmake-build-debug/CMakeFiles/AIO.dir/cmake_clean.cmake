@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/AIO.dir/sources/interpreter/main.c.obj"
+  "CMakeFiles/AIO.dir/sources/main/main.c.obj"
   "CMakeFiles/AIO.dir/sources/lang/reservedNames/AIOReservedNamesContainer.c.obj"
   "CMakeFiles/AIO.dir/sources/lib/collections/lists/StringList.c.obj"
   "CMakeFiles/AIO.dir/sources/lang/types/AIOType.c.obj"

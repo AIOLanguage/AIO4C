@@ -1,8 +1,5 @@
 //Test.aio
 
+~dec:<<a, b, c<<
 @test
-    im int a = 3
-    im int b = 5
-    im math = -<<'math'-<<
-    im int c = math.@plus(a, b)
-    >> c
+    >> a + b * c

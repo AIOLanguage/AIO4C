@@ -9,6 +9,9 @@ void createAIOMethodDefinition(AIOMethodDefinition **methodDefinition, char* nam
         , enum AIOMethodSizeType* methodSizeType) {
     //Create the same definition:
     *methodDefinition = (AIOMethodDefinition *) calloc(1, sizeof(AIOMethodDefinition));
+    if (*methodDefinition == NULL){
+        perror("cannot allocate memory for aio method definition");
+    }
     //Set definition name:
     (*methodDefinition)->name = name;
     //Set declaration:
