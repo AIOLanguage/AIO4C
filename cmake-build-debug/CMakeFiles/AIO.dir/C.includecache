@@ -70,6 +70,8 @@ C:/Users/StarKRE/CLionProjects/AIO/headers/lib/collections/maps/AIOMutableObject
 ../../../lang/object/AIOObject.h
 C:/Users/StarKRE/CLionProjects/AIO/headers/lang/object/AIOObject.h
 
+C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/StringUtils.h
+
 C:/Users/StarKRE/CLionProjects/AIO/sources/interpreter/main.c
 stdio.h
 -
@@ -81,6 +83,8 @@ mem.h
 C:/Users/StarKRE/CLionProjects/AIO/headers/lang/object/objectManager/AIOObjectManager.h
 ../../headers/lang/methods/variable/AIOVariable.h
 C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/variable/AIOVariable.h
+../../headers/lib/utils/StringUtils.h
+C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/StringUtils.h
 
 C:/Users/StarKRE/CLionProjects/AIO/sources/lang/annotations/AIOAnnotation.c
 malloc.h
@@ -127,8 +131,14 @@ process.h
 C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/methodDefinition/AIOMethodDefinition.h
 
 C:/Users/StarKRE/CLionProjects/AIO/sources/lang/methods/methodDefinition/AIOMethodDefinitionBuilder.c
+mem.h
+-
+stdio.h
+-
 ../../../../headers/lang/methods/methodDefinition/AIOMethodDefinition.h
 C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/methodDefinition/AIOMethodDefinition.h
+../../../../headers/lib/utils/StringUtils.h
+C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/StringUtils.h
 
 C:/Users/StarKRE/CLionProjects/AIO/sources/lang/methods/result/AIOResult.c
 malloc.h
@@ -240,5 +250,7 @@ stdlib.h
 string.h
 -
 assert.h
+-
+malloc.h
 -
 

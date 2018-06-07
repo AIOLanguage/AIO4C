@@ -106,17 +106,14 @@ void findMethodsInManager(AIOObject *aioObject) {
                     }
                     nameSize = nameSize + 1;
                 }
-                printf("NAME SIZE: %d\n", nameSize);
                 char *methodName = calloc(nameSize, sizeof(char));
                 strncpy(methodName, line, nameSize);
                 free(&nameSize);
                 free(&pointer);
-                printf("METHOD NAME: %s\n", methodName);
                 if (strcmp(methodName, "@main") == 0) {
                     *aioObject->methodManager->hasMain = 0;
                     printf("HAS MAIN: %d\n", *aioObject->methodManager->hasMain);
                 }
-                printf("BUILDING AIO METHOD DEFINITION...\n");
                 AIOMethodDefinition *methodDefinition = buildAIOMethodDefinition(methodName, aioObject->sourceCode, i);
                 //putInMutableMapOfDefinitions(aioObject->methodManager->methodDefinitionMap, methodDefinition);
             }

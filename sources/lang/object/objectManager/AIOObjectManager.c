@@ -30,7 +30,7 @@ void buildAIOObjectAndPutInAIOObjectManager(AIOObjectManager *objectManager, cha
     //Create aio object:
     createAIOObject(&aioObject, methodManager, path);
     //Put new aio object in aio object manager map:
-    putInMutableMapOfObject(objectManager->objectMap, aioObject);
+    //putInMutableMapOfObject(objectManager->objectMap, aioObject);
 }
 
 /*

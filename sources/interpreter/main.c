@@ -7,24 +7,16 @@
 
 AIOObjectManager *aioObjectManager;
 
-#define CHUNK 1024
-
-void init(){
+void init() {
     initAIOObjectManager(&aioObjectManager);
 }
 
 int main() {
     init();
-    char* a = "     ddddaaa                    ";
-    char* b = malloc(strlen(a));
-    trimEnd(a, &b);
-    printf("A: -%s-\n", a);
-    printf("B: -%s-\n", b);
-
-
-
-    //char* path = "../aioPrograms/starter.aio";
-    //buildAIOObjectAndPutInAIOObjectManager(aioObjectManager, path);
+//    char * a = "@AS";
+//    char * b = malloc(strlen(a));
+//    removePrefix(a, "@AS", &b);
+    char *path = "../aioPrograms/starter.aio";
+    buildAIOObjectAndPutInAIOObjectManager(aioObjectManager, path);
     return 0;
 }
-

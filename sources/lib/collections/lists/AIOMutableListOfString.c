@@ -7,15 +7,24 @@
 //Passed JUnitTest!
 void createMutableListOfString(AIOMutableListOfString **listOfString) {
     //Create the same mutable list:
-    *listOfString = malloc(sizeof(AIOMutableListOfString));
+    *listOfString = calloc(1, sizeof(AIOMutableListOfString));
     //Create capacity:
-    (*listOfString)->capacity = malloc(sizeof(int));
+    (*listOfString)->capacity = calloc(1, sizeof(int));
+    if ((*listOfString)->capacity == NULL){
+        perror("can not allocate memory for capacity in mutable list of string");
+    }
     *(*listOfString)->capacity = 2;
     //Create size:
-    (*listOfString)->size = malloc(sizeof(int));
+    (*listOfString)->size = calloc(1, sizeof(int));
+    if ((*listOfString)->size == NULL){
+        perror("can not allocate memory for size in mutable list of string");
+    }
     *(*listOfString)->size = 0;
     //Create char capacity that equals 2:
-    (*listOfString)->strings = malloc(2 * sizeof(char));
+    (*listOfString)->strings = calloc(2, sizeof(char*));
+    if ((*listOfString)->strings == NULL){
+        perror("can not allocate memory for strings in mutable list of string");
+    }
 }
 
 //Passed JUnitTest!

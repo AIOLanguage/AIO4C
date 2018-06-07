@@ -46,6 +46,7 @@ CMakeFiles/AIO.dir/sources/lang/methods/methodDefinition/AIOMethodDefinitionBuil
  C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/methodDefinition/AIOMethodSizeType.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/collections/lists/AIOMutableListOfAnnotations.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/collections/lists/AIOMutableListOfString.h
+ C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/StringUtils.h
  C:/Users/StarKRE/CLionProjects/AIO/sources/lang/methods/methodDefinition/AIOMethodDefinitionBuilder.c
 CMakeFiles/AIO.dir/sources/lang/methods/result/AIOResult.c.obj
  C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/result/AIOResult.h
