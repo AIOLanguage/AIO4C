@@ -1,28 +1,28 @@
 #include <malloc.h>
-#include "../../../../headers/lib/collections/lists/AIOMutableListOfString.h"
+#include "../../../../headers/lib/collections/lists/StringList.h"
 #include "../../../../headers/lang/methods/bundle/AIOBundle.h"
 
 //Passed JUnitTest!
-void createAIOBundle(AIOBundle **bundle, AIOMutableListOfString *inputValues) {
+void createAIOBundle(AIOBundle **bundle, StringList *inputValues) {
     //Create the same bundle:
     *bundle = (AIOBundle *) calloc(1, sizeof(AIOBundle));
     //Set input values:
     (*bundle)->inputValues = inputValues;
     //Create output values:
-    AIOMutableListOfString *outputValues;
-    createMutableListOfString(&outputValues);
-    (*bundle)->outputValues = calloc(1, sizeof(AIOMutableListOfString));
+    StringList *outputValues;
+    createListOfString(&outputValues);
+    (*bundle)->outputValues = calloc(1, sizeof(StringList));
     (*bundle)->outputValues = outputValues;
 }
 
 /*
  * /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     AIOBundle* bundle;
-    AIOMutableListOfString* inputValues;
-    createMutableListOfString(&inputValues);
+    StringList* inputValues;
+    createListOfString(&inputValues);
     addInMutableListOfString(inputValues, "1ut");
     addInMutableListOfString(inputValues, "200y");
-    addInMutableListOfString(inputValues, "3vc");
+    addInListOfString(inputValues, "3vc");
     createAIOBundle(&bundle, inputValues);
     printf("%s", *bundle->inputValues->strings);
  */

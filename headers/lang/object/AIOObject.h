@@ -2,7 +2,7 @@
 #define AIO_AIO_OBJECT_H
 
 #include "../methods/bundle/AIOBundle.h"
-#include "../../lib/collections/maps/AIOMutableMethodDefinitionMap.h"
+#include "../../lib/collections/maps/AIOMethodDefinitionMap.h"
 
 typedef struct StringPair {
     char* objectName;
@@ -10,16 +10,16 @@ typedef struct StringPair {
 } StringPair;
 
 typedef struct AIOMethodManager {
-    AIOMutableMethodDefinitionMap* methodDefinitionMap;
+    AIOMethodDefinitionMap* methodDefinitionMap;
     int* hasMain;
 } AIOMethodManager;
 
-void createAIOMethodManager(AIOMethodManager **methodManager, AIOMutableMethodDefinitionMap *methodDefinitionMap);
+void createAIOMethodManager(AIOMethodManager **methodManager, AIOMethodDefinitionMap *methodDefinitionMap);
 
 typedef struct AIOObject {
     char* name;
     char* folderPath;
-    struct AIOMutableListOfString* sourceCode;
+    struct StringList* sourceCode;
     struct AIOMethodManager* methodManager;
 } AIOObject;
 

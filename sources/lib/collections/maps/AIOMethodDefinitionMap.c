@@ -2,12 +2,12 @@
 #include <process.h>
 #include <stdio.h>
 #include <malloc.h>
-#include "../../../../headers/lib/collections/maps/AIOMutableMethodDefinitionMap.h"
+#include "../../../../headers/lib/collections/maps/AIOMethodDefinitionMap.h"
 
 //Passed JUnitTests!
-void createMutableMapOfDefinitions(AIOMutableMethodDefinitionMap **mutableMethodDefinitionMap) {
+void createAIOMethodDefinitionMap(AIOMethodDefinitionMap **mutableMethodDefinitionMap) {
     //Create the same definition map:
-    *mutableMethodDefinitionMap = malloc(sizeof(AIOMutableMethodDefinitionMap));
+    *mutableMethodDefinitionMap = malloc(sizeof(AIOMethodDefinitionMap));
     //Create capacity:
     (*mutableMethodDefinitionMap)->capacity = malloc(sizeof(int));
     *(*mutableMethodDefinitionMap)->capacity = 2;
@@ -21,7 +21,7 @@ void createMutableMapOfDefinitions(AIOMutableMethodDefinitionMap **mutableMethod
 }
 
 //Passed JUnitTests!
-void updateMemoryInMutableMapOfDefinitions(AIOMutableMethodDefinitionMap *definitionMap) {
+void updateMemoryInMutableMapOfDefinitions(AIOMethodDefinitionMap *definitionMap) {
     if (*definitionMap->size + 1 == *definitionMap->capacity) {
         *definitionMap->capacity = *definitionMap->capacity * 2;
         definitionMap->names = realloc(definitionMap->names, *definitionMap->capacity * sizeof(char));
@@ -31,7 +31,7 @@ void updateMemoryInMutableMapOfDefinitions(AIOMutableMethodDefinitionMap *defini
 }
 
 //Passed JUnitTests!
-void putInMutableMapOfDefinitions(AIOMutableMethodDefinitionMap *definitionMap, AIOMethodDefinition *methodDefinition) {
+void putAIOMethodDefinitionInMap(AIOMethodDefinitionMap *definitionMap, AIOMethodDefinition *methodDefinition) {
     for (int i = 0; i < *definitionMap->size; ++i) {
         if (strcmp(definitionMap->names[i], methodDefinition->name) == 0) {
             perror("AIODuplicate definition error!");
@@ -48,7 +48,7 @@ void putInMutableMapOfDefinitions(AIOMutableMethodDefinitionMap *definitionMap, 
 }
 
 //Passed JUnitTests!
-AIOMethodDefinition *getMethodDefinitionInMutableMapByName(AIOMutableMethodDefinitionMap *definitionMap, char *name) {
+AIOMethodDefinition *getAIOMethodDefinitionInMapByName(AIOMethodDefinitionMap *definitionMap, char *name) {
     for (int i = 0; i < *definitionMap->size; ++i) {
         if (strcmp(definitionMap->names[i], name) == 0) {
             return definitionMap->definitions[i];

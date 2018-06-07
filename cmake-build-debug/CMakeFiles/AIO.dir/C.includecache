@@ -9,12 +9,12 @@
 C:/Users/StarKRE/CLionProjects/AIO/headers/lang/annotations/AIOAnnotation.h
 
 C:/Users/StarKRE/CLionProjects/AIO/headers/lang/declarations/AIODeclaration.h
-../../lib/collections/lists/AIOMutableListOfString.h
-C:/Users/StarKRE/CLionProjects/AIO/headers/lib/collections/lists/AIOMutableListOfString.h
+../../lib/collections/lists/ListOfString.h
+C:/Users/StarKRE/CLionProjects/AIO/headers/lib/collections/lists/ListOfString.h
 
 C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/bundle/AIOBundle.h
-../../../lib/collections/lists/AIOMutableListOfString.h
-C:/Users/StarKRE/CLionProjects/AIO/headers/lib/collections/lists/AIOMutableListOfString.h
+../../../lib/collections/lists/ListOfString.h
+C:/Users/StarKRE/CLionProjects/AIO/headers/lib/collections/lists/ListOfString.h
 
 C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/methodDefinition/AIOMethodDefinition.h
 malloc.h
@@ -25,10 +25,10 @@ C:/Users/StarKRE/CLionProjects/AIO/headers/lang/declarations/AIODeclaration.h
 C:/Users/StarKRE/CLionProjects/AIO/headers/lang/annotations/AIOAnnotation.h
 AIOMethodSizeType.h
 C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/methodDefinition/AIOMethodSizeType.h
-../../../lib/collections/lists/AIOMutableListOfAnnotations.h
-C:/Users/StarKRE/CLionProjects/AIO/headers/lib/collections/lists/AIOMutableListOfAnnotations.h
-../../../lib/collections/lists/AIOMutableListOfString.h
-C:/Users/StarKRE/CLionProjects/AIO/headers/lib/collections/lists/AIOMutableListOfString.h
+../../../lib/collections/lists/ListOfAnnotations.h
+C:/Users/StarKRE/CLionProjects/AIO/headers/lib/collections/lists/ListOfAnnotations.h
+../../../lib/collections/lists/ListOfString.h
+C:/Users/StarKRE/CLionProjects/AIO/headers/lib/collections/lists/ListOfString.h
 
 C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/methodDefinition/AIOMethodDefinitionBuilder.h
 AIOMethodDefinition.h
@@ -45,8 +45,8 @@ C:/Users/StarKRE/CLionProjects/AIO/headers/lang/types/AIOType.h
 C:/Users/StarKRE/CLionProjects/AIO/headers/lang/object/AIOObject.h
 ../methods/bundle/AIOBundle.h
 C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/bundle/AIOBundle.h
-../../lib/collections/maps/AIOMutableMethodDefinitionMap.h
-C:/Users/StarKRE/CLionProjects/AIO/headers/lib/collections/maps/AIOMutableMethodDefinitionMap.h
+../../lib/collections/maps/MethodDefinitionMap.h
+C:/Users/StarKRE/CLionProjects/AIO/headers/lib/collections/maps/MethodDefinitionMap.h
 
 C:/Users/StarKRE/CLionProjects/AIO/headers/lang/object/objectManager/AIOObjectManager.h
 ../AIOObject.h
@@ -56,19 +56,19 @@ C:/Users/StarKRE/CLionProjects/AIO/headers/lib/collections/maps/AIOMutableObject
 
 C:/Users/StarKRE/CLionProjects/AIO/headers/lang/types/AIOType.h
 
-C:/Users/StarKRE/CLionProjects/AIO/headers/lib/collections/lists/AIOMutableListOfAnnotations.h
+C:/Users/StarKRE/CLionProjects/AIO/headers/lib/collections/lists/ListOfAnnotations.h
 ../../../lang/annotations/AIOAnnotation.h
 C:/Users/StarKRE/CLionProjects/AIO/headers/lang/annotations/AIOAnnotation.h
 
-C:/Users/StarKRE/CLionProjects/AIO/headers/lib/collections/lists/AIOMutableListOfString.h
-
-C:/Users/StarKRE/CLionProjects/AIO/headers/lib/collections/maps/AIOMutableMethodDefinitionMap.h
-../../../lang/methods/methodDefinition/AIOMethodDefinition.h
-C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/methodDefinition/AIOMethodDefinition.h
+C:/Users/StarKRE/CLionProjects/AIO/headers/lib/collections/lists/ListOfString.h
 
 C:/Users/StarKRE/CLionProjects/AIO/headers/lib/collections/maps/AIOMutableObjectMap.h
 ../../../lang/object/AIOObject.h
 C:/Users/StarKRE/CLionProjects/AIO/headers/lang/object/AIOObject.h
+
+C:/Users/StarKRE/CLionProjects/AIO/headers/lib/collections/maps/MethodDefinitionMap.h
+../../../lang/methods/methodDefinition/AIOMethodDefinition.h
+C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/methodDefinition/AIOMethodDefinition.h
 
 C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/StringUtils.h
 
@@ -105,8 +105,8 @@ C:/Users/StarKRE/CLionProjects/AIO/headers/lang/declarations/AIODeclaration.h
 C:/Users/StarKRE/CLionProjects/AIO/sources/lang/methods/bundle/AIOBundle.c
 malloc.h
 -
-../../../../headers/lib/collections/lists/AIOMutableListOfString.h
-C:/Users/StarKRE/CLionProjects/AIO/headers/lib/collections/lists/AIOMutableListOfString.h
+../../../../headers/lib/collections/lists/ListOfString.h
+C:/Users/StarKRE/CLionProjects/AIO/headers/lib/collections/lists/ListOfString.h
 ../../../../headers/lang/methods/bundle/AIOBundle.h
 C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/bundle/AIOBundle.h
 
@@ -134,6 +134,8 @@ C:/Users/StarKRE/CLionProjects/AIO/sources/lang/methods/methodDefinition/AIOMeth
 mem.h
 -
 stdio.h
+-
+ctype.h
 -
 ../../../../headers/lang/methods/methodDefinition/AIOMethodDefinition.h
 C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/methodDefinition/AIOMethodDefinition.h
@@ -194,7 +196,7 @@ mem.h
 comip.h
 -
 
-C:/Users/StarKRE/CLionProjects/AIO/sources/lib/collections/lists/AIOMutableListOfAnnotations.c
+C:/Users/StarKRE/CLionProjects/AIO/sources/lib/collections/lists/ListOfAnnotations.c
 malloc.h
 -
 mem.h
@@ -203,12 +205,12 @@ stdio.h
 -
 process.h
 -
-../../../../headers/lib/collections/lists/AIOMutableListOfAnnotations.h
-C:/Users/StarKRE/CLionProjects/AIO/headers/lib/collections/lists/AIOMutableListOfAnnotations.h
+../../../../headers/lib/collections/lists/ListOfAnnotations.h
+C:/Users/StarKRE/CLionProjects/AIO/headers/lib/collections/lists/ListOfAnnotations.h
 
-C:/Users/StarKRE/CLionProjects/AIO/sources/lib/collections/lists/AIOMutableListOfString.c
-../../../../headers/lib/collections/lists/AIOMutableListOfString.h
-C:/Users/StarKRE/CLionProjects/AIO/headers/lib/collections/lists/AIOMutableListOfString.h
+C:/Users/StarKRE/CLionProjects/AIO/sources/lib/collections/lists/ListOfString.c
+../../../../headers/lib/collections/lists/ListOfString.h
+C:/Users/StarKRE/CLionProjects/AIO/headers/lib/collections/lists/ListOfString.h
 string.h
 -
 process.h
@@ -217,18 +219,6 @@ stdio.h
 -
 malloc.h
 -
-
-C:/Users/StarKRE/CLionProjects/AIO/sources/lib/collections/maps/AIOMutableMethodDefinitionMap.c
-mem.h
--
-process.h
--
-stdio.h
--
-malloc.h
--
-../../../../headers/lib/collections/maps/AIOMutableMethodDefinitionMap.h
-C:/Users/StarKRE/CLionProjects/AIO/headers/lib/collections/maps/AIOMutableMethodDefinitionMap.h
 
 C:/Users/StarKRE/CLionProjects/AIO/sources/lib/collections/maps/AIOMutableObjectMap.c
 mem.h
@@ -242,6 +232,18 @@ malloc.h
 ../../../../headers/lib/collections/maps/AIOMutableObjectMap.h
 C:/Users/StarKRE/CLionProjects/AIO/headers/lib/collections/maps/AIOMutableObjectMap.h
 
+C:/Users/StarKRE/CLionProjects/AIO/sources/lib/collections/maps/MethodDefinitionMap.c
+mem.h
+-
+process.h
+-
+stdio.h
+-
+malloc.h
+-
+../../../../headers/lib/collections/maps/MethodDefinitionMap.h
+C:/Users/StarKRE/CLionProjects/AIO/headers/lib/collections/maps/MethodDefinitionMap.h
+
 C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/stringUtils/StringUtils.c
 stdio.h
 -
@@ -252,5 +254,7 @@ string.h
 assert.h
 -
 malloc.h
+-
+ctype.h
 -
 

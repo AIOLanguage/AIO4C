@@ -3,6 +3,7 @@
 #include <string.h>
 #include <assert.h>
 #include <malloc.h>
+#include <ctype.h>
 
 char **split(char *string, char delimiter) {
     char **result = 0;
@@ -111,6 +112,7 @@ int trim(const char *src, char **dst) {
     return lp + rp;
 }
 
+//Passed JUnitTest!
 int removePrefix(const char *src, const char *prefix, char **dst) {
     if (strlen(src) == 0) {
         return 0;
@@ -137,6 +139,7 @@ int removePrefix(const char *src, const char *prefix, char **dst) {
     return lp;
 }
 
+//Passed JUnitTest!
 int removeSuffix(const char *src, const char *suffix, char **dst) {
     if (strlen(src) == 0) {
         return 0;
@@ -163,3 +166,122 @@ int removeSuffix(const char *src, const char *suffix, char **dst) {
     (*dst)[srcSize - rp] = '\0';
     return rp;
 }
+
+//Passed JUnitTest!
+int startsWith(const char *src, char *prefix) {
+    for (int i = 0; i < strlen(prefix); ++i) {
+        if (src[i] != prefix[i]) {
+            return -1;
+        }
+    }
+    return 0;
+}
+
+//Passed JUnitTest!
+int **filter(char **src, size_t srcSize, char ***dst, int (*filterFunction)(char *)) {
+    int *newIndices = calloc(srcSize, sizeof(int));
+    int newSize = 0;
+    //Look at strings and measure new string:
+    for (int i = 0; i < srcSize; ++i) {
+        if (filterFunction(src[i]) == 0) {
+            newIndices[i] = i;
+            newSize = newSize + 1;
+        } else {
+            newIndices[i] = -1;
+        }
+    }
+    if (newSize > 0) {
+        (*dst) = (char **) realloc((*dst), sizeof(char *) * newSize);
+    }
+    int newPointer = 0;
+    for (int j = 0; j < srcSize; ++j) {
+        if (newIndices[j] != -1) {
+            (*dst)[newPointer] = src[j];
+            newPointer = newPointer + 1;
+        }
+    }
+    return 0;
+}
+
+//Passed JUnitTest!
+int isNotEmpty(char *string) {
+    if (strcmp(string, "") != 0) {
+        return 0;
+    } else {
+        return -1;
+    }
+}
+
+//PassedJUnitTest!
+void joinToStringWithoutSpaces(char **srcStrings, char **dst) {
+    //Get number of strings:
+    int srcSize = _msize(srcStrings) / 4;
+    int currentStringLength = 0;
+    for (int i = 0; i < srcSize; ++i) {
+        //Get increase length of general string:
+        currentStringLength = currentStringLength + strlen(srcStrings[i]);
+    }
+    (*dst) = calloc((size_t) currentStringLength, sizeof(char));
+    if ((*dst) == NULL) {
+        perror("cannot allocate memory for dst");
+    }
+    int position = 0;
+    for (int j = 0; j < srcSize; ++j) {
+        for (int i = 0; i < strlen(srcStrings[j]); ++i) {
+            (*dst)[position] = srcStrings[j][i];
+            position = position + 1;
+        }
+    }
+}
+
+//Passed JUnitTest!
+int joinToString(char **srcStrings, char *delimiter, char **dst) {
+    //Get number of strings:
+    int srcSize = _msize(srcStrings) / 4;
+    int delimiterSize = strlen(delimiter);
+    //Delimiters less than strings by 1:
+    int currentStringLength = 0 - delimiterSize;
+    for (int i = 0; i < srcSize; ++i) {
+        //Get increase length of general string:
+        currentStringLength = currentStringLength + strlen(srcStrings[i]) + delimiterSize;
+    }
+    if (currentStringLength <= 0) {
+        return -1;
+    }
+    (*dst) = calloc((size_t) currentStringLength, sizeof(char));
+    if ((*dst) == NULL) {
+        perror("cannot allocate memory for dst");
+    }
+    int position = 0;
+    for (int j = 0; j < srcSize; ++j) {
+        int lineLength = strlen(srcStrings[j]);
+        for (int i = 0; i < lineLength; ++i) {
+            (*dst)[position] = srcStrings[j][i];
+            position = position + 1;
+        }
+        if (j != srcSize - 1) {
+            for (int i = 0; i < delimiterSize; ++i) {
+                (*dst)[position] = delimiter[i];
+                position = position + 1;
+            }
+        }
+    }
+    return 0;
+}
+
+int isWord(char *line) {
+    int length = strlen(line);
+    if (length < 1) {
+        return -1;
+    }
+    if (isalpha(line[0])) {
+        if (length > 1) {
+            for (int i = 1; i < length; ++i) {
+                if (!isalnum(line[i])) {
+                    return -1;
+                }
+            }
+        }
+    }
+    return 0;
+}]

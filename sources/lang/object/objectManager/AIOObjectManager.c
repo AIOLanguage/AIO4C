@@ -8,8 +8,8 @@ void initAIOObjectManager(AIOObjectManager **objectManager) {
     if (*objectManager == NULL) {
         perror("cannot create AIOObjectManager");
     }
-    AIOMutableObjectMap *objectMap;
-    createMutableMapOfAIOObject(&objectMap);
+    AIOObjectMap *objectMap;
+    createAIOObjectMap(&objectMap);
     (*objectManager)->objectMap = objectMap;
     (*objectManager)->lastVisitedObject = calloc(1, sizeof(AIOObject));
     if ((*objectManager)->lastVisitedObject == NULL) {
@@ -23,14 +23,14 @@ void buildAIOObjectAndPutInAIOObjectManager(AIOObjectManager *objectManager, cha
     //Init aio method manager for aio object:
     AIOMethodManager* methodManager;
     //Create definition map for aio method manager:
-    AIOMutableMethodDefinitionMap* methodDefinitionMap;
-    createMutableMapOfDefinitions(&methodDefinitionMap);
+    AIOMethodDefinitionMap* methodDefinitionMap;
+    createAIOMethodDefinitionMap(&methodDefinitionMap);
     //Create aio method manager:
     createAIOMethodManager(&methodManager, methodDefinitionMap);
     //Create aio object:
     createAIOObject(&aioObject, methodManager, path);
     //Put new aio object in aio object manager map:
-    //putInMutableMapOfObject(objectManager->objectMap, aioObject);
+    //putAIOObjectInMap(objectManager->objectMap, aioObject);
 }
 
 /*

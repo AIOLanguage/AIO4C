@@ -2,12 +2,12 @@
 #include <mem.h>
 #include <stdio.h>
 #include <process.h>
-#include "../../../../headers/lib/collections/lists/AIOMutableListOfAnnotations.h"
+#include "../../../../headers/lib/collections/lists/AIOAnnotationList.h"
 
 //Passed JUnitTest!
-void createMutableListOfAnnotations(AIOMutableListOfAnnotations **listOfAnnotations) {
+void createAnnotationList(AIOAnnotationList **listOfAnnotations) {
     //Create the same mutable list:
-    *listOfAnnotations = malloc(sizeof(AIOMutableListOfAnnotations));
+    *listOfAnnotations = malloc(sizeof(AIOAnnotationList));
     //Create capacity:
     (*listOfAnnotations)->capacity = malloc(sizeof(int));
     *(*listOfAnnotations)->capacity = 2;
@@ -19,7 +19,7 @@ void createMutableListOfAnnotations(AIOMutableListOfAnnotations **listOfAnnotati
 }
 
 //Passed JUnitTest!
-void updateMemoryInMutableListOfAnnotations(AIOMutableListOfAnnotations *listOfAnnotations) {
+void updateMemoryInMutableListOfAnnotations(AIOAnnotationList *listOfAnnotations) {
     if (*listOfAnnotations->size + 1 == *listOfAnnotations->capacity) {
         *listOfAnnotations->capacity = *listOfAnnotations->capacity * 2;
         listOfAnnotations->annotations = realloc(listOfAnnotations->annotations,
@@ -28,7 +28,7 @@ void updateMemoryInMutableListOfAnnotations(AIOMutableListOfAnnotations *listOfA
 }
 
 //Passed JUnitTests!
-void addInMutableListOfAnnotations(AIOMutableListOfAnnotations *listOfAnnotations, AIOAnnotation *annotation) {
+void addInAnnotationList(AIOAnnotationList *listOfAnnotations, AIOAnnotation *annotation) {
     //Check to update capacity:
     updateMemoryInMutableListOfAnnotations(listOfAnnotations);
     //Set annotation:
@@ -37,7 +37,7 @@ void addInMutableListOfAnnotations(AIOMutableListOfAnnotations *listOfAnnotation
 }
 
 //Passed JUnitTests!
-AIOAnnotation *getAnnotationInMutableListByIndex(AIOMutableListOfAnnotations *listOfAnnotations, int index) {
+AIOAnnotation *getAnnotationInListByIndex(AIOAnnotationList *listOfAnnotations, int index) {
     if (index < 0 || *listOfAnnotations->size <= index) {
         perror("Cannot get index: %d in MutableList");
         exit(1);

@@ -5,7 +5,7 @@
 #include "../../../headers/lang/methods/methodDefinition/AIOMethodDefinitionBuilder.h"
 
 //Passed JUnitTest!
-void createAIOMethodManager(AIOMethodManager **methodManager, AIOMutableMethodDefinitionMap *methodDefinitionMap) {
+void createAIOMethodManager(AIOMethodManager **methodManager, AIOMethodDefinitionMap *methodDefinitionMap) {
     //Create the same method manager:
     *methodManager = malloc(sizeof(AIOMethodManager));
     //Set method definition map:
@@ -64,8 +64,8 @@ StringPair *extractNameAnfFolderPathFromPath(char *path) {
 void loadSourceCodeInAIOObject(AIOObject *object, char *path) {
     printf("Loading source code...\n");
     //Create source code mutable list:
-    AIOMutableListOfString *sourceCode;
-    createMutableListOfString(&sourceCode);
+    StringList *sourceCode;
+    createListOfString(&sourceCode);
     //Create file:
     FILE *file;
     //Create line buffer:
@@ -79,7 +79,7 @@ void loadSourceCodeInAIOObject(AIOObject *object, char *path) {
         char *line = calloc(1, CHUNK);
         strcpy(line, buffer);
         //put string in list:
-        addInMutableListOfString(sourceCode, line);
+        addInListOfString(sourceCode, line);
     }
     fclose(file);
     //Set source code:
@@ -115,7 +115,7 @@ void findMethodsInManager(AIOObject *aioObject) {
                     printf("HAS MAIN: %d\n", *aioObject->methodManager->hasMain);
                 }
                 AIOMethodDefinition *methodDefinition = buildAIOMethodDefinition(methodName, aioObject->sourceCode, i);
-                //putInMutableMapOfDefinitions(aioObject->methodManager->methodDefinitionMap, methodDefinition);
+                //putAIOMethodDefinitionInMap(aioObject->methodManager->methodDefinitionMap, methodDefinition);
             }
         }
     }
@@ -148,19 +148,19 @@ void invokeMethodInManager(struct AIOMethodManager methodManager, char methodNam
 //    //Create methodName:
 //    char* methodName = "@main";
 //    //Create declaration:
-//    AIOMutableListOfString* args;
-//    createMutableListOfString(&args);
+//    StringList* args;
+//    createListOfString(&args);
 //    printf("%d\n", *args->size);
 //    AIODeclaration* declaration;
 //    createAIODeclaration(&declaration, methodName, args);
 //    printf("%s\n", declaration->methodName);
 //    //Create annotation list:
-//    AIOMutableListOfAnnotations* annotations;
-//    createMutableListOfAnnotations(&annotations);
+//    AIOAnnotationList* annotations;
+//    createAnnotationList(&annotations);
 //    printf("%d\n", *annotations->size);
 //    //Create source code:
-//    AIOMutableListOfString* sourceCode;
-//    createMutableListOfString(&sourceCode);
+//    StringList* sourceCode;
+//    createListOfString(&sourceCode);
 //    //Create method size type:
 //    enum AIOMethodSizeType methodSizeType = DEFAULT;
 //    AIOMethodDefinition *definition;
@@ -168,20 +168,20 @@ void invokeMethodInManager(struct AIOMethodManager methodManager, char methodNam
 //    printf("%s\n", definition->name);
 //
 //    //Create method definition map:
-//    AIOMutableMethodDefinitionMap* methodDefinitionMap;
-//    createMutableMapOfDefinitions(&methodDefinitionMap);
+//    AIOMethodDefinitionMap* methodDefinitionMap;
+//    createAIOMethodDefinitionMap(&methodDefinitionMap);
 //
-//    putInMutableMapOfDefinitions(methodDefinitionMap, definition);
+//    putAIOMethodDefinitionInMap(methodDefinitionMap, definition);
 //
 //    AIOMethodDefinition* definition1;
 //    createAIOMethodDefinition(&definition1, "def1", declaration, annotations, sourceCode, &methodSizeType);
 //
-//    putInMutableMapOfDefinitions(methodDefinitionMap, definition1);
+//    putAIOMethodDefinitionInMap(methodDefinitionMap, definition1);
 //
 //    AIOMethodDefinition* definition2;
 //    createAIOMethodDefinition(&definition2, "def2", declaration, annotations, sourceCode, &methodSizeType);
 //
-//    putInMutableMapOfDefinitions(methodDefinitionMap, definition2);
+//    putAIOMethodDefinitionInMap(methodDefinitionMap, definition2);
 //
 //    //Create method manager:
 //    AIOMethodManager* methodManager;
@@ -193,7 +193,7 @@ void invokeMethodInManager(struct AIOMethodManager methodManager, char methodNam
 //    printf("%s\n", aioObject->name);
 //
 //    //let's make get!
-//    AIOMethodDefinition* aioMethodDefinition = getMethodDefinitionInMutableMapByName(methodDefinitionMap, "def1");
+//    AIOMethodDefinition* aioMethodDefinition = getAIOMethodDefinitionInMapByName(methodDefinitionMap, "def1");
 //    printf("%s", aioMethodDefinition->declaration->methodName);
 //
 //    return 0;
@@ -204,8 +204,8 @@ void invokeMethodInManager(struct AIOMethodManager methodManager, char methodNam
 #define CHUNK 1024
 
 int main() {
-    AIOMutableListOfString* sourceCode;
-    createMutableListOfString(&sourceCode);
+    StringList* sourceCode;
+    createListOfString(&sourceCode);
     FILE *file;
     char buffer[CHUNK];
     if ((file = fopen("../aioPrograms/test.aio", "r")) == NULL) {
@@ -217,13 +217,13 @@ int main() {
         printf("%d\n", strlen(buffer));
         char *line = calloc(1, CHUNK);
         strcpy(line, buffer);
-        addInMutableListOfString(sourceCode, line);
+        addInListOfString(sourceCode, line);
     }
     fclose(file);
     for (int i = 0; i < *sourceCode->size; ++i) {
         printf("%s\n", sourceCode->strings[i]);
     }
-    printf("4 line: %s\n", getStringInMutableListByIndex(sourceCode, 4));
+    printf("4 line: %s\n", getStringInListByIndex(sourceCode, 4));
     return 0;
 }
  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

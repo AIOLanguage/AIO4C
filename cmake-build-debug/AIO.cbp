@@ -110,16 +110,16 @@
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lang/types/AIOType.h">
 			<Option target="AIO"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lib/collections/lists/AIOMutableListOfAnnotations.h">
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lib/collections/lists/AIOAnnotationList.h">
 			<Option target="AIO"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lib/collections/lists/AIOMutableListOfString.h">
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lib/collections/lists/StringList.h">
 			<Option target="AIO"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lib/collections/maps/AIOMutableMethodDefinitionMap.h">
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lib/collections/maps/AIOMethodDefinitionMap.h">
 			<Option target="AIO"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lib/collections/maps/AIOMutableObjectMap.h">
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lib/collections/maps/AIOObjectMap.h">
 			<Option target="AIO"/>
 		</Unit>
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/StringUtils.h">
@@ -167,16 +167,16 @@
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lang/types/AIOType.c">
 			<Option target="AIO"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lib/collections/lists/AIOMutableListOfAnnotations.c">
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lib/collections/lists/AIOAnnotationList.c">
 			<Option target="AIO"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lib/collections/lists/AIOMutableListOfString.c">
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lib/collections/lists/StringList.c">
 			<Option target="AIO"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lib/collections/maps/AIOMutableMethodDefinitionMap.c">
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lib/collections/maps/AIOMethodDefinitionMap.c">
 			<Option target="AIO"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lib/collections/maps/AIOMutableObjectMap.c">
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lib/collections/maps/AIOObjectMap.c">
 			<Option target="AIO"/>
 		</Unit>
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/stringUtils/StringUtils.c">

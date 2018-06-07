@@ -5,7 +5,7 @@
 
 //Passed JUnitTest!
 void createAIOMethodDefinition(AIOMethodDefinition **methodDefinition, char* name, AIODeclaration* declaration
-        , AIOMutableListOfAnnotations* annotations, AIOMutableListOfString* sourceCode
+        , AIOAnnotationList* annotations, StringList* sourceCode
         , enum AIOMethodSizeType* methodSizeType) {
     //Create the same definition:
     *methodDefinition = (AIOMethodDefinition *) calloc(1, sizeof(AIOMethodDefinition));

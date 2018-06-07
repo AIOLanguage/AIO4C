@@ -2,12 +2,12 @@
 #include <process.h>
 #include <stdio.h>
 #include <malloc.h>
-#include "../../../../headers/lib/collections/maps/AIOMutableObjectMap.h"
+#include "../../../../headers/lib/collections/maps/AIOObjectMap.h"
 
 //Passed JUnitTests!
-void createMutableMapOfAIOObject(AIOMutableObjectMap **objectMap) {
+void createAIOObjectMap(AIOObjectMap **objectMap) {
     //Create the same definition map:
-    *objectMap = malloc(sizeof(AIOMutableObjectMap));
+    *objectMap = malloc(sizeof(AIOObjectMap));
     //Create capacity:
     (*objectMap)->capacity = malloc(sizeof(int));
     *(*objectMap)->capacity = 2;
@@ -21,7 +21,7 @@ void createMutableMapOfAIOObject(AIOMutableObjectMap **objectMap) {
 }
 
 //Passed JUnitTests!
-void updateMemoryInMutableMapOfObjects(AIOMutableObjectMap *objectMap) {
+void updateMemoryInMutableMapOfObjects(AIOObjectMap *objectMap) {
     if (*objectMap->size + 1 == *objectMap->capacity) {
         *objectMap->capacity = *objectMap->capacity * 2;
         objectMap->names = realloc(objectMap->names, *objectMap->capacity * sizeof(char));
@@ -31,7 +31,7 @@ void updateMemoryInMutableMapOfObjects(AIOMutableObjectMap *objectMap) {
 
 
 //Passed JUnitTests!
-void putInMutableMapOfObject(AIOMutableObjectMap *objectMap, AIOObject *object) {
+void putAIOObjectInMap(AIOObjectMap *objectMap, AIOObject *object) {
     for (int i = 0; i < *objectMap->size; ++i) {
         if (strcmp(objectMap->names[i], object->name) == 0) {
             printf("Cannot put AIOObject: %s in definition map", object->name);
@@ -49,7 +49,7 @@ void putInMutableMapOfObject(AIOMutableObjectMap *objectMap, AIOObject *object) 
 }
 
 //Passed JUnitTests!
-AIOObject *getObjectInMutableMapByName(AIOMutableObjectMap *objectMap, char *name) {
+AIOObject *getAIOObjectInMapByName(AIOObjectMap *objectMap, char *name) {
     for (int i = 0; i < strlen(name); ++i) {
         if (strcmp(objectMap->names[i], name) == 0) {
             return objectMap->objects[i];
@@ -62,12 +62,12 @@ AIOObject *getObjectInMutableMapByName(AIOMutableObjectMap *objectMap, char *nam
 /*
  * /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
  * int main() {
-    AIOMutableObjectMap* objectMap;
-    createMutableMapOfAIOObject(&objectMap);
+    AIOObjectMap* objectMap;
+    createAIOObjectMap(&objectMap);
     printf("%d", *objectMap->size);
 
-    AIOMutableMethodDefinitionMap* definitionMap;
-    createMutableMapOfDefinitions(&definitionMap);
+    AIOMethodDefinitionMap* definitionMap;
+    createAIOMethodDefinitionMap(&definitionMap);
 
     AIOMethodManager* aioMethodManager;
     createAIOMethodManager(&aioMethodManager, definitionMap);
@@ -75,8 +75,8 @@ AIOObject *getObjectInMutableMapByName(AIOMutableObjectMap *objectMap, char *nam
     AIOObject* aioObject;
     createAIOObject(&aioObject, aioMethodManager, "starter");
 
-    putInMutableMapOfObject(objectMap, aioObject);
-    AIOObject* o = getObjectInMutableMapByName(objectMap, "starter");
+    putAIOObjectInMap(objectMap, aioObject);
+    AIOObject* o = getAIOObjectInMapByName(objectMap, "starter");
     printf("%d", *o->methodManager->hasMain);
 
     return 0;

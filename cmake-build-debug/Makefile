@@ -473,113 +473,113 @@ sources/lang/types/AIOType.c.s:
 	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/types/AIOType.c.s
 .PHONY : sources/lang/types/AIOType.c.s
 
-sources/lib/collections/lists/AIOMutableListOfAnnotations.obj: sources/lib/collections/lists/AIOMutableListOfAnnotations.c.obj
+sources/lib/collections/lists/AIOAnnotationList.obj: sources/lib/collections/lists/AIOAnnotationList.c.obj
 
-.PHONY : sources/lib/collections/lists/AIOMutableListOfAnnotations.obj
-
-# target to build an object file
-sources/lib/collections/lists/AIOMutableListOfAnnotations.c.obj:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/collections/lists/AIOMutableListOfAnnotations.c.obj
-.PHONY : sources/lib/collections/lists/AIOMutableListOfAnnotations.c.obj
-
-sources/lib/collections/lists/AIOMutableListOfAnnotations.i: sources/lib/collections/lists/AIOMutableListOfAnnotations.c.i
-
-.PHONY : sources/lib/collections/lists/AIOMutableListOfAnnotations.i
-
-# target to preprocess a source file
-sources/lib/collections/lists/AIOMutableListOfAnnotations.c.i:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/collections/lists/AIOMutableListOfAnnotations.c.i
-.PHONY : sources/lib/collections/lists/AIOMutableListOfAnnotations.c.i
-
-sources/lib/collections/lists/AIOMutableListOfAnnotations.s: sources/lib/collections/lists/AIOMutableListOfAnnotations.c.s
-
-.PHONY : sources/lib/collections/lists/AIOMutableListOfAnnotations.s
-
-# target to generate assembly for a file
-sources/lib/collections/lists/AIOMutableListOfAnnotations.c.s:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/collections/lists/AIOMutableListOfAnnotations.c.s
-.PHONY : sources/lib/collections/lists/AIOMutableListOfAnnotations.c.s
-
-sources/lib/collections/lists/AIOMutableListOfString.obj: sources/lib/collections/lists/AIOMutableListOfString.c.obj
-
-.PHONY : sources/lib/collections/lists/AIOMutableListOfString.obj
+.PHONY : sources/lib/collections/lists/AIOAnnotationList.obj
 
 # target to build an object file
-sources/lib/collections/lists/AIOMutableListOfString.c.obj:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/collections/lists/AIOMutableListOfString.c.obj
-.PHONY : sources/lib/collections/lists/AIOMutableListOfString.c.obj
+sources/lib/collections/lists/AIOAnnotationList.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/collections/lists/AIOAnnotationList.c.obj
+.PHONY : sources/lib/collections/lists/AIOAnnotationList.c.obj
 
-sources/lib/collections/lists/AIOMutableListOfString.i: sources/lib/collections/lists/AIOMutableListOfString.c.i
+sources/lib/collections/lists/AIOAnnotationList.i: sources/lib/collections/lists/AIOAnnotationList.c.i
 
-.PHONY : sources/lib/collections/lists/AIOMutableListOfString.i
+.PHONY : sources/lib/collections/lists/AIOAnnotationList.i
 
 # target to preprocess a source file
-sources/lib/collections/lists/AIOMutableListOfString.c.i:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/collections/lists/AIOMutableListOfString.c.i
-.PHONY : sources/lib/collections/lists/AIOMutableListOfString.c.i
+sources/lib/collections/lists/AIOAnnotationList.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/collections/lists/AIOAnnotationList.c.i
+.PHONY : sources/lib/collections/lists/AIOAnnotationList.c.i
 
-sources/lib/collections/lists/AIOMutableListOfString.s: sources/lib/collections/lists/AIOMutableListOfString.c.s
+sources/lib/collections/lists/AIOAnnotationList.s: sources/lib/collections/lists/AIOAnnotationList.c.s
 
-.PHONY : sources/lib/collections/lists/AIOMutableListOfString.s
+.PHONY : sources/lib/collections/lists/AIOAnnotationList.s
 
 # target to generate assembly for a file
-sources/lib/collections/lists/AIOMutableListOfString.c.s:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/collections/lists/AIOMutableListOfString.c.s
-.PHONY : sources/lib/collections/lists/AIOMutableListOfString.c.s
+sources/lib/collections/lists/AIOAnnotationList.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/collections/lists/AIOAnnotationList.c.s
+.PHONY : sources/lib/collections/lists/AIOAnnotationList.c.s
 
-sources/lib/collections/maps/AIOMutableMethodDefinitionMap.obj: sources/lib/collections/maps/AIOMutableMethodDefinitionMap.c.obj
+sources/lib/collections/lists/StringList.obj: sources/lib/collections/lists/StringList.c.obj
 
-.PHONY : sources/lib/collections/maps/AIOMutableMethodDefinitionMap.obj
+.PHONY : sources/lib/collections/lists/StringList.obj
 
 # target to build an object file
-sources/lib/collections/maps/AIOMutableMethodDefinitionMap.c.obj:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/collections/maps/AIOMutableMethodDefinitionMap.c.obj
-.PHONY : sources/lib/collections/maps/AIOMutableMethodDefinitionMap.c.obj
+sources/lib/collections/lists/StringList.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/collections/lists/StringList.c.obj
+.PHONY : sources/lib/collections/lists/StringList.c.obj
 
-sources/lib/collections/maps/AIOMutableMethodDefinitionMap.i: sources/lib/collections/maps/AIOMutableMethodDefinitionMap.c.i
+sources/lib/collections/lists/StringList.i: sources/lib/collections/lists/StringList.c.i
 
-.PHONY : sources/lib/collections/maps/AIOMutableMethodDefinitionMap.i
+.PHONY : sources/lib/collections/lists/StringList.i
 
 # target to preprocess a source file
-sources/lib/collections/maps/AIOMutableMethodDefinitionMap.c.i:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/collections/maps/AIOMutableMethodDefinitionMap.c.i
-.PHONY : sources/lib/collections/maps/AIOMutableMethodDefinitionMap.c.i
+sources/lib/collections/lists/StringList.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/collections/lists/StringList.c.i
+.PHONY : sources/lib/collections/lists/StringList.c.i
 
-sources/lib/collections/maps/AIOMutableMethodDefinitionMap.s: sources/lib/collections/maps/AIOMutableMethodDefinitionMap.c.s
+sources/lib/collections/lists/StringList.s: sources/lib/collections/lists/StringList.c.s
 
-.PHONY : sources/lib/collections/maps/AIOMutableMethodDefinitionMap.s
+.PHONY : sources/lib/collections/lists/StringList.s
 
 # target to generate assembly for a file
-sources/lib/collections/maps/AIOMutableMethodDefinitionMap.c.s:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/collections/maps/AIOMutableMethodDefinitionMap.c.s
-.PHONY : sources/lib/collections/maps/AIOMutableMethodDefinitionMap.c.s
+sources/lib/collections/lists/StringList.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/collections/lists/StringList.c.s
+.PHONY : sources/lib/collections/lists/StringList.c.s
 
-sources/lib/collections/maps/AIOMutableObjectMap.obj: sources/lib/collections/maps/AIOMutableObjectMap.c.obj
+sources/lib/collections/maps/AIOMethodDefinitionMap.obj: sources/lib/collections/maps/AIOMethodDefinitionMap.c.obj
 
-.PHONY : sources/lib/collections/maps/AIOMutableObjectMap.obj
+.PHONY : sources/lib/collections/maps/AIOMethodDefinitionMap.obj
 
 # target to build an object file
-sources/lib/collections/maps/AIOMutableObjectMap.c.obj:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/collections/maps/AIOMutableObjectMap.c.obj
-.PHONY : sources/lib/collections/maps/AIOMutableObjectMap.c.obj
+sources/lib/collections/maps/AIOMethodDefinitionMap.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/collections/maps/AIOMethodDefinitionMap.c.obj
+.PHONY : sources/lib/collections/maps/AIOMethodDefinitionMap.c.obj
 
-sources/lib/collections/maps/AIOMutableObjectMap.i: sources/lib/collections/maps/AIOMutableObjectMap.c.i
+sources/lib/collections/maps/AIOMethodDefinitionMap.i: sources/lib/collections/maps/AIOMethodDefinitionMap.c.i
 
-.PHONY : sources/lib/collections/maps/AIOMutableObjectMap.i
+.PHONY : sources/lib/collections/maps/AIOMethodDefinitionMap.i
 
 # target to preprocess a source file
-sources/lib/collections/maps/AIOMutableObjectMap.c.i:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/collections/maps/AIOMutableObjectMap.c.i
-.PHONY : sources/lib/collections/maps/AIOMutableObjectMap.c.i
+sources/lib/collections/maps/AIOMethodDefinitionMap.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/collections/maps/AIOMethodDefinitionMap.c.i
+.PHONY : sources/lib/collections/maps/AIOMethodDefinitionMap.c.i
 
-sources/lib/collections/maps/AIOMutableObjectMap.s: sources/lib/collections/maps/AIOMutableObjectMap.c.s
+sources/lib/collections/maps/AIOMethodDefinitionMap.s: sources/lib/collections/maps/AIOMethodDefinitionMap.c.s
 
-.PHONY : sources/lib/collections/maps/AIOMutableObjectMap.s
+.PHONY : sources/lib/collections/maps/AIOMethodDefinitionMap.s
 
 # target to generate assembly for a file
-sources/lib/collections/maps/AIOMutableObjectMap.c.s:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/collections/maps/AIOMutableObjectMap.c.s
-.PHONY : sources/lib/collections/maps/AIOMutableObjectMap.c.s
+sources/lib/collections/maps/AIOMethodDefinitionMap.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/collections/maps/AIOMethodDefinitionMap.c.s
+.PHONY : sources/lib/collections/maps/AIOMethodDefinitionMap.c.s
+
+sources/lib/collections/maps/AIOObjectMap.obj: sources/lib/collections/maps/AIOObjectMap.c.obj
+
+.PHONY : sources/lib/collections/maps/AIOObjectMap.obj
+
+# target to build an object file
+sources/lib/collections/maps/AIOObjectMap.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/collections/maps/AIOObjectMap.c.obj
+.PHONY : sources/lib/collections/maps/AIOObjectMap.c.obj
+
+sources/lib/collections/maps/AIOObjectMap.i: sources/lib/collections/maps/AIOObjectMap.c.i
+
+.PHONY : sources/lib/collections/maps/AIOObjectMap.i
+
+# target to preprocess a source file
+sources/lib/collections/maps/AIOObjectMap.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/collections/maps/AIOObjectMap.c.i
+.PHONY : sources/lib/collections/maps/AIOObjectMap.c.i
+
+sources/lib/collections/maps/AIOObjectMap.s: sources/lib/collections/maps/AIOObjectMap.c.s
+
+.PHONY : sources/lib/collections/maps/AIOObjectMap.s
+
+# target to generate assembly for a file
+sources/lib/collections/maps/AIOObjectMap.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/collections/maps/AIOObjectMap.c.s
+.PHONY : sources/lib/collections/maps/AIOObjectMap.c.s
 
 sources/lib/utils/stringUtils/StringUtils.obj: sources/lib/utils/stringUtils/StringUtils.c.obj
 
@@ -656,18 +656,18 @@ help:
 	@echo ... sources/lang/types/AIOType.obj
 	@echo ... sources/lang/types/AIOType.i
 	@echo ... sources/lang/types/AIOType.s
-	@echo ... sources/lib/collections/lists/AIOMutableListOfAnnotations.obj
-	@echo ... sources/lib/collections/lists/AIOMutableListOfAnnotations.i
-	@echo ... sources/lib/collections/lists/AIOMutableListOfAnnotations.s
-	@echo ... sources/lib/collections/lists/AIOMutableListOfString.obj
-	@echo ... sources/lib/collections/lists/AIOMutableListOfString.i
-	@echo ... sources/lib/collections/lists/AIOMutableListOfString.s
-	@echo ... sources/lib/collections/maps/AIOMutableMethodDefinitionMap.obj
-	@echo ... sources/lib/collections/maps/AIOMutableMethodDefinitionMap.i
-	@echo ... sources/lib/collections/maps/AIOMutableMethodDefinitionMap.s
-	@echo ... sources/lib/collections/maps/AIOMutableObjectMap.obj
-	@echo ... sources/lib/collections/maps/AIOMutableObjectMap.i
-	@echo ... sources/lib/collections/maps/AIOMutableObjectMap.s
+	@echo ... sources/lib/collections/lists/AIOAnnotationList.obj
+	@echo ... sources/lib/collections/lists/AIOAnnotationList.i
+	@echo ... sources/lib/collections/lists/AIOAnnotationList.s
+	@echo ... sources/lib/collections/lists/StringList.obj
+	@echo ... sources/lib/collections/lists/StringList.i
+	@echo ... sources/lib/collections/lists/StringList.s
+	@echo ... sources/lib/collections/maps/AIOMethodDefinitionMap.obj
+	@echo ... sources/lib/collections/maps/AIOMethodDefinitionMap.i
+	@echo ... sources/lib/collections/maps/AIOMethodDefinitionMap.s
+	@echo ... sources/lib/collections/maps/AIOObjectMap.obj
+	@echo ... sources/lib/collections/maps/AIOObjectMap.i
+	@echo ... sources/lib/collections/maps/AIOObjectMap.s
 	@echo ... sources/lib/utils/stringUtils/StringUtils.obj
 	@echo ... sources/lib/utils/stringUtils/StringUtils.i
 	@echo ... sources/lib/utils/stringUtils/StringUtils.s

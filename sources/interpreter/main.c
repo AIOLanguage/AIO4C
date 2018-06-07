@@ -13,10 +13,30 @@ void init() {
 
 int main() {
     init();
-//    char * a = "@AS";
-//    char * b = malloc(strlen(a));
-//    removePrefix(a, "@AS", &b);
-    char *path = "../aioPrograms/starter.aio";
-    buildAIOObjectAndPutInAIOObjectManager(aioObjectManager, path);
+    StringList *listOfString;
+
+    createListOfString(&listOfString);
+    addInListOfString(listOfString, "");
+    addInListOfString(listOfString, "");
+    addInListOfString(listOfString, "");
+    addInListOfString(listOfString, "Hi");
+    addInListOfString(listOfString, "my");
+    addInListOfString(listOfString, "favourite");
+    addInListOfString(listOfString, "AIO!");
+
+    char **filteredStrings = calloc((size_t) *listOfString->size, sizeof(char *));
+    filter(listOfString->strings, (size_t) *listOfString->size, &filteredStrings, isNotEmpty);
+
+    for (int i = 0; i < _msize(filteredStrings) / 4; ++i) {
+        printf("--->%s-\n", filteredStrings[i]);
+    }
+
+    char *dst;
+    joinToString(filteredStrings, " ", &dst);
+
+    printf("JOINED STRING: -%s-\n", dst);
+
+    //char *path = "../aioPrograms/starter.aio";
+    //buildAIOObjectAndPutInAIOObjectManager(aioObjectManager, path);
     return 0;
 }

@@ -17,10 +17,10 @@ set(CMAKE_DEPENDS_CHECK_C
   "C:/Users/StarKRE/CLionProjects/AIO/sources/lang/object/objectManager/AIOObjectManager.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lang/object/objectManager/AIOObjectManager.c.obj"
   "C:/Users/StarKRE/CLionProjects/AIO/sources/lang/reservedNames/AIOReservedNamesContainer.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lang/reservedNames/AIOReservedNamesContainer.c.obj"
   "C:/Users/StarKRE/CLionProjects/AIO/sources/lang/types/AIOType.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lang/types/AIOType.c.obj"
-  "C:/Users/StarKRE/CLionProjects/AIO/sources/lib/collections/lists/AIOMutableListOfAnnotations.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lib/collections/lists/AIOMutableListOfAnnotations.c.obj"
-  "C:/Users/StarKRE/CLionProjects/AIO/sources/lib/collections/lists/AIOMutableListOfString.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lib/collections/lists/AIOMutableListOfString.c.obj"
-  "C:/Users/StarKRE/CLionProjects/AIO/sources/lib/collections/maps/AIOMutableMethodDefinitionMap.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lib/collections/maps/AIOMutableMethodDefinitionMap.c.obj"
-  "C:/Users/StarKRE/CLionProjects/AIO/sources/lib/collections/maps/AIOMutableObjectMap.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lib/collections/maps/AIOMutableObjectMap.c.obj"
+  "C:/Users/StarKRE/CLionProjects/AIO/sources/lib/collections/lists/AIOAnnotationList.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lib/collections/lists/AIOAnnotationList.c.obj"
+  "C:/Users/StarKRE/CLionProjects/AIO/sources/lib/collections/lists/StringList.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lib/collections/lists/StringList.c.obj"
+  "C:/Users/StarKRE/CLionProjects/AIO/sources/lib/collections/maps/AIOMethodDefinitionMap.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lib/collections/maps/AIOMethodDefinitionMap.c.obj"
+  "C:/Users/StarKRE/CLionProjects/AIO/sources/lib/collections/maps/AIOObjectMap.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lib/collections/maps/AIOObjectMap.c.obj"
   "C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/stringUtils/StringUtils.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/StringUtils.c.obj"
   )
 set(CMAKE_C_COMPILER_ID "GNU")

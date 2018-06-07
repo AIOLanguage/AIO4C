@@ -4,7 +4,7 @@
 #include "../../../headers/lang/declarations/AIODeclaration.h"
 
 //Passed JUnitTest!
-void createAIODeclaration(AIODeclaration **declaration, char* methodName, AIOMutableListOfString* args) {
+void createAIODeclaration(AIODeclaration **declaration, char* methodName, StringList* args) {
     //Create the same declaration:
     *declaration = (AIODeclaration *) malloc(sizeof(AIODeclaration));
     //Set method name:

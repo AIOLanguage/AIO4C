@@ -1,13 +1,13 @@
 #ifndef AIO_DECLARATION_H
 #define AIO_DECLARATION_H
 
-#include "../../lib/collections/lists/AIOMutableListOfString.h"
+#include "../../lib/collections/lists/StringList.h"
 
 typedef struct AIODeclaration {
     char* methodName;
-    AIOMutableListOfString* argList;
+    StringList* argList;
 } AIODeclaration;
 
-void createAIODeclaration(AIODeclaration **declaration, char* methodName, AIOMutableListOfString* args);
+void createAIODeclaration(AIODeclaration **declaration, char* methodName, StringList* args);
 
 #endif //AIO_DECLARATION_H
