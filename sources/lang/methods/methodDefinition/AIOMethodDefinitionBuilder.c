@@ -51,7 +51,8 @@ int isCorrectPlacedBrackets(char *line) {
 }
 
 StringList *getArgsIfCorrect(char *argLine) {
-    char **splitArgsByComma = split(argLine, ',');
+    char **splitArgsByComma;
+    splitByChar(argLine, ',', &splitArgsByComma);
     StringList *argList;
     createListOfString(&argList);
     for (int i = 0; i < _msize(splitArgsByComma) / 4; ++i) {
@@ -73,30 +74,53 @@ StringList *getArgsIfCorrect(char *argLine) {
 AIODeclaration *getDeclarationOfMethod(char *methodName, StringList *sourceCode, int startIndex) {
     int currentIndex = startIndex - 1;
     char *inputLine = getStringInListByIndex(sourceCode, currentIndex);
+    printf("Allocate memory for current line...");
     char *currentLine = malloc(strlen(inputLine));
+    if (currentLine == NULL) {
+        perror("cannot allocate memory for current line when was creating of declaration!");
+    }
     trim(inputLine, &currentLine);
+    printf("TRIMMED FIRST LINE: %s\n", currentLine);
     while (strcmp(currentLine, "") != 0 && currentIndex >= 0) {
         char *declarationPrefix = "~dec:";
         int startsAsDeclaration = startsWith(currentLine, declarationPrefix);
         if (startsAsDeclaration == 0) {
+            printf("FOUND DECLARATION!");
             //Remove declaration prefix:
             char *bracketLine = malloc(strlen(currentLine));
+            if (bracketLine == NULL){
+                perror("cannot allocate memory for bracket line when was creating of declaration!");
+            }
             removePrefix(currentLine, declarationPrefix, &bracketLine);
+            printf("BRACKET LINE: %s\n", bracketLine);
             //<<w+<<:
             if (strlen(bracketLine) > 4 && isCorrectPlacedBrackets(bracketLine) == 0) {
                 //Remove brackets:
+                printf("REMOVING BRACKETS...\n");
                 char *lp = malloc(strlen(bracketLine));
+                if (lp == NULL){
+                    perror("cannot allocate memory for left padding when was creating of declaration!");
+                }
                 removePrefix(bracketLine, "<<", &lp);
+                printf("LINE WITHOUT LP: %s\n", lp);
                 char *rp = malloc(strlen(lp));
+                if (rp == NULL){
+                    perror("cannot allocate memory for right padding when was creating of declaration!");
+                }
                 removeSuffix(lp, "<<", &rp);
+                printf("LINE WITHOUT RP: %s\n", rp);
                 //Split naked args;
-                char **dirtySplitArgs = split(rp, ' ');
+                printf("PREPARE TO SPLIT...\n");
+                char **dirtySplitArgs;
+                splitByChar(rp, ' ', &dirtySplitArgs);
+                printf("PREPARE TO SPLIT...\n");
+
                 int argNumber = _msize(dirtySplitArgs) / 4;
                 char **filteredArgs = calloc(_msize(dirtySplitArgs) / 4, sizeof(char *));
                 filter(dirtySplitArgs, (size_t) argNumber, &filteredArgs, isNotEmpty);
                 char *cleanArgLine;
                 joinToStringWithoutSpaces(filteredArgs, &cleanArgLine);
-                StringList* argList = getArgsIfCorrect(cleanArgLine);
+                StringList *argList = getArgsIfCorrect(cleanArgLine);
                 if (isStringListEmpty(argList) != 0) {
                     AIODeclaration *aioDeclaration;
                     createAIODeclaration(&aioDeclaration, methodName, argList);
@@ -113,18 +137,6 @@ AIODeclaration *getDeclarationOfMethod(char *methodName, StringList *sourceCode,
     return NULL;
 }
 
-AIOMethodDefinition *buildAIOMethodDefinition(char *methodName, StringList *sourceCode, int startIndex) {
-    //Create the same method definition:
-    AIOMethodDefinition *methodDefinition = calloc(1, sizeof(AIOMethodDefinition));
-    StringList *methodCode = getSourceCodeOfMethod(methodName, sourceCode, startIndex);
-    //Check source code:
-    for (int i = 0; i < *methodCode->size; ++i) {
-        printf("%s\n", getStringInListByIndex(methodCode, i));
-    }
-    AIODeclaration *aioDeclaration = getDeclarationOfMethod(methodName, sourceCode, startIndex);
-    AIOAnnotationList* aioAnnotationList = getAnnotationsOfMethod(methodName, sourceCode, startIndex);
-    return methodDefinition;
-}
 
 //Passed JUnitTest!
 int isDefaultOperations(const char *operation) {
@@ -190,4 +202,21 @@ int isTheShortestInTheOtherObject(const char *operation) {
         }
     }
     return -1;
+}
+
+AIOMethodDefinition *buildAIOMethodDefinition(char *methodName, StringList *sourceCode, int startIndex) {
+    //Create the same method definition:
+    AIOMethodDefinition *methodDefinition = calloc(1, sizeof(AIOMethodDefinition));
+    StringList *methodCode = getSourceCodeOfMethod(methodName, sourceCode, startIndex);
+    //Check source code:
+    for (int i = 0; i < *methodCode->size; ++i) {
+        printf("%s\n", getStringInListByIndex(methodCode, i));
+    }
+    printf("\n\n\n\n\n\n\n");
+    printf("Create AIODeclaration...\n");
+    AIODeclaration *aioDeclaration = getDeclarationOfMethod(methodName, sourceCode, startIndex);
+    printf("Create AIOAnnotation list...\n");
+    AIOAnnotationList *aioAnnotationList = getAnnotationsOfMethod(methodName, sourceCode, startIndex);
+    printf("Successfully created method definition!\n");
+    return methodDefinition;
 }

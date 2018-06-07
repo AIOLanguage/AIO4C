@@ -1,51 +1,107 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <assert.h>
 #include <malloc.h>
 #include <ctype.h>
+#include <assert.h>
 
-char **split(char *string, char delimiter) {
-    char **result = 0;
-    size_t count = 0;
-    char *tmp = string;
-    char *lastComma = 0;
-    char delim[2];
-    delim[0] = delimiter;
-    delim[1] = 0;
-
-    /* Count how many elements will be extracted. */
-    while (*tmp) {
-        if (delimiter == *tmp) {
-            count++;
-            lastComma = tmp;
-        }
-        tmp++;
+int splitByChar(char *string, char delimiter, char ***dst) {
+    size_t length = strlen(string);
+    if (length < 1 || delimiter == '\0') {
+        *dst = calloc(1, sizeof(char *));
+        **dst = calloc(length, sizeof(char));
+        strcpy(**dst, string);
+        return -1;
     }
-
-    /* Add space for trailing token. */
-    count += lastComma < (string + strlen(string) - 1);
-
-    /* Add space for terminating null string so caller
-       knows where the list of returned strings ends. */
-    count++;
-
-    result = malloc(sizeof(char *) * count);
-
-    if (result) {
-        size_t idx = 0;
-        char *token = strtok(string, delim);
-
-        while (token) {
-            assert(idx < count);
-            *(result + idx++) = strdup(token);
-            token = strtok(0, delim);
-        }
-        assert(idx == count - 1);
-        *(result + idx) = 0;
+    unsigned *indices = calloc(length, sizeof(int));
+    if (indices == NULL) {
+        perror("cannot allocate memory for indices in split by char!");
     }
-
-    return result;
+    unsigned pointers = 0;
+    //Mark split points:
+    for (unsigned i = 0; i < length; ++i) {
+        if (string[i] == delimiter) {
+            indices[pointers] = i;
+            pointers++;
+        }
+    }
+    indices = realloc(indices, pointers * sizeof(unsigned));
+    printf("POINTERS: %d\n", pointers);
+    //Cannot find points:
+    if (pointers == 0) {
+        *dst = calloc(1, sizeof(char *));
+        **dst = calloc(length, sizeof(char));
+        strcpy(**dst, string);
+        return -1;
+    }
+    //Parts more than pointers by 1:
+    const unsigned parts = pointers + 1;
+    *dst = (char **) calloc(parts, sizeof(char *));
+    if (*dst == NULL) {
+        perror("cannot allocate memory for *dst in split by char!");
+    }
+    //Create first path:
+    if (indices[0] == 0) {
+        (*dst)[0] = calloc(1, sizeof(char));
+        if ((*dst)[0] == NULL) {
+            perror("cannot allocate memory for *dst[0] in split by char!");
+        }
+        (*dst)[0] = "";
+    } else {
+        (*dst)[0] = calloc(indices[0], sizeof(char));
+        if ((*dst)[0] == NULL) {
+            perror("cannot allocate memory for *dst[0] in split by char!");
+        }
+        for (int i = 0; i < indices[0]; ++i) {
+            (*dst)[0][i] = string[i];
+        }
+    }
+    printf("FIRST: -%s-\n", *dst[0]);
+    //Create last part:
+    const int last = parts - 1;
+    if (length - indices[pointers - 1] == 0) {
+        (*dst)[last] = calloc(1, sizeof(char));
+        if ((*dst)[last] == NULL) {
+            perror("cannot allocate memory for *dst[last] in split by char!");
+        }
+        (*dst)[last] = "";
+    } else {
+        (*dst)[last] = calloc(length - indices[pointers - 1] - 1, sizeof(char));
+        if ((*dst)[last] == NULL) {
+            perror("cannot allocate memory for *dst[last] in split by char!");
+        }
+        int k = 0;
+        for (int i = indices[pointers - 1] + 1; i < length; ++i) {
+            (*dst)[last][k] = string[i];
+            k = k + 1;
+        }
+    }
+    printf("LAST: -%s-\n", (*dst)[last]);
+    if (pointers > 1) {
+        //from second delimiter:
+        for (int j = 0; j < pointers - 1; ++j) {
+            printf("DISTANCE: %d\n", indices[j + 1] - indices[j] - 1);
+            if (indices[j + 1] - indices[j] - 1 > 0) {
+                (*dst)[j + 1] = calloc(indices[j + 1] - indices[j], sizeof(char));
+                if ((*dst)[j + 1] == NULL) {
+                    perror("cannot allocate memory for *dst[j] in split by char!");
+                }
+                printf("\n\n\n\n\n\n\n");
+                for (int i = 0; i < indices[j + 1] - indices[j] - 1; ++i) {
+                    printf("SRC_CHAR: %c\n", string[indices[j] + i + 1]);
+                    (*dst)[j + 1][i] = string[indices[j] + i + 1];
+                }
+                printf("IN THE MIDDLE: -%s-\n", (*dst)[j]);
+            } else {
+                (*dst)[j + 1] = calloc(1, sizeof(char));
+                if ((*dst)[j + 1] == NULL) {
+                    perror("cannot allocate memory for *dst[j] in split by char!");
+                }
+                (*dst)[j + 1] = "";
+            }
+        }
+    }
+    return 0;
 }
 
 //Passed JUnitTest!
@@ -284,4 +340,4 @@ int isWord(char *line) {
         }
     }
     return 0;
-}]
+}

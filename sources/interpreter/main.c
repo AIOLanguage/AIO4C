@@ -13,30 +13,26 @@ void init() {
 
 int main() {
     init();
-    StringList *listOfString;
-
-    createListOfString(&listOfString);
-    addInListOfString(listOfString, "");
-    addInListOfString(listOfString, "");
-    addInListOfString(listOfString, "");
-    addInListOfString(listOfString, "Hi");
-    addInListOfString(listOfString, "my");
-    addInListOfString(listOfString, "favourite");
-    addInListOfString(listOfString, "AIO!");
-
-    char **filteredStrings = calloc((size_t) *listOfString->size, sizeof(char *));
-    filter(listOfString->strings, (size_t) *listOfString->size, &filteredStrings, isNotEmpty);
-
-    for (int i = 0; i < _msize(filteredStrings) / 4; ++i) {
-        printf("--->%s-\n", filteredStrings[i]);
+    char* a = " Hello      AIO!  ";
+    char** b;
+    splitByChar(a, ' ', &b);
+    printf("SIZE:    %d\n", _msize(b) / 4);
+    for (int i = 0; i < _msize(b) / 4; ++i) {
+        printf("LINE->: -%s-\n", b[i]);
     }
 
-    char *dst;
-    joinToString(filteredStrings, " ", &dst);
 
-    printf("JOINED STRING: -%s-\n", dst);
 
-    //char *path = "../aioPrograms/starter.aio";
-    //buildAIOObjectAndPutInAIOObjectManager(aioObjectManager, path);
+    printf("\n\n\n\n\n\n\n\n\n\nSUCCESSFUL SPLIT!\n");
+    char** clean = calloc(_msize(b) / 4, sizeof(char*));
+    filter(b, _msize(b) / 4 , &clean, isNotEmpty);
+    for (int i = 0; i < _msize(clean) / 4; ++i) {
+        printf("CLEAN LINES->: -%s-\n", clean[i]);
+    }
+
+
+
+//    char *path = "../aioPrograms/starter.aio";
+//    buildAIOObjectAndPutInAIOObjectManager(aioObjectManager, path);
     return 0;
 }
