@@ -1,5 +1,6 @@
 #include <mem.h>
 #include <stdio.h>
+#include <process.h>
 #include "../../../../headers/lang/object/objectManager/AIOObjectManager.h"
 
 //Passed JUnitTest!
@@ -7,6 +8,7 @@ void initAIOObjectManager(AIOObjectManager **objectManager) {
     *objectManager = calloc(1, sizeof(AIOObjectManager));
     if (*objectManager == NULL) {
         perror("cannot create AIOObjectManager");
+        exit(1);
     }
     AIOObjectMap *objectMap;
     createAIOObjectMap(&objectMap);
@@ -14,16 +16,19 @@ void initAIOObjectManager(AIOObjectManager **objectManager) {
     (*objectManager)->lastVisitedObject = calloc(1, sizeof(AIOObject));
     if ((*objectManager)->lastVisitedObject == NULL) {
         perror("cannot create lastVisitedObject");
+        exit(1);
     }
+    //Set default behaviour:
+    (*objectManager)->behaviour = 0;
 }
 
-void buildAIOObjectAndPutInAIOObjectManager(AIOObjectManager *objectManager, char *path){
+void buildAIOObjectAndPutInAIOObjectManager(AIOObjectManager *objectManager, char *path) {
     //Init aio object:
-    AIOObject* aioObject;
+    AIOObject *aioObject;
     //Init aio method manager for aio object:
-    AIOMethodManager* methodManager;
+    AIOMethodManager *methodManager;
     //Create definition map for aio method manager:
-    AIOMethodDefinitionMap* methodDefinitionMap;
+    AIOMethodDefinitionMap *methodDefinitionMap;
     createAIOMethodDefinitionMap(&methodDefinitionMap);
     //Create aio method manager:
     createAIOMethodManager(&methodManager, methodDefinitionMap);
@@ -31,6 +36,10 @@ void buildAIOObjectAndPutInAIOObjectManager(AIOObjectManager *objectManager, cha
     createAIOObject(&aioObject, methodManager, path);
     //Put new aio object in aio object manager map:
     putAIOObjectInMap(objectManager->objectMap, aioObject);
+}
+
+int isDefaultBehaviour(AIOObjectManager* objectManager) {
+    return objectManager->behaviour;
 }
 
 /*

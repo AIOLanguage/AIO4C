@@ -1,5 +1,9 @@
 //Test.aio
 
-~dec:<<a, b, c<<
+~dec:<<aq, be, cd<<
 @test
     >> a + b * c
+
+@main
+    a = 3
+    >> a

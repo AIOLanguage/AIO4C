@@ -1,18 +1,28 @@
 #include <mem.h>
 #include <stdio.h>
 #include <ctype.h>
+#include <process.h>
 #include "../../../../headers/lang/methods/methodDefinition/AIOMethodDefinition.h"
 #include "../../../../headers/lib/utils/StringUtils.h"
+#include "../../../../headers/lang/object/objectManager/AIOObjectManager.h"
+
+AIOObjectManager* aioObjectManager;
 
 //Passed JUnitTest!
 StringList *getSourceCodeOfMethod(char *methodName, StringList *sourceCode, int startIndex) {
     StringList *methodCode;
     createListOfString(&methodCode);
     int currentIndex = startIndex;
-    char *trimmedLine = malloc(strlen(sourceCode->strings[currentIndex]));
+    char *trimmedLine = calloc(strlen(sourceCode->strings[currentIndex]) + 1, sizeof(char));
+    if (trimmedLine == NULL) {
+        perror("can not allocate memory for trimmed line in during get source code method procedure performs!");
+    }
     trim(sourceCode->strings[currentIndex], &trimmedLine);
     if (strcmp(trimmedLine, "") != 0) {
-        char *cleanFirstLine = malloc(strlen(trimmedLine));
+        char *cleanFirstLine = calloc(strlen(trimmedLine), sizeof(char));
+        if (cleanFirstLine == NULL) {
+            perror("can not allocate memory for clean first line in during get source code method procedure performs!");
+        }
         int result = removePrefix(trimmedLine, methodName, &cleanFirstLine);
         if (result != 0) {
             addInListOfString(methodCode, cleanFirstLine);
@@ -50,105 +60,77 @@ int isCorrectPlacedBrackets(char *line) {
     return 0;
 }
 
-StringList *getArgsIfCorrect(char *argLine) {
-    char **splitArgsByComma;
-    splitByChar(argLine, ',', &splitArgsByComma);
+//Passed JUnitTest!
+StringList *getArgsIfCorrect(char **args) {
     StringList *argList;
     createListOfString(&argList);
-    for (int i = 0; i < _msize(splitArgsByComma) / 4; ++i) {
-        char *trimmedLine = malloc(strlen(splitArgsByComma[i]));
-        if (trimmedLine == NULL) {
-            perror("cannot allocate memory for trimmed line for arg in declaration!");
-        }
-        trim(splitArgsByComma[i], &trimmedLine);
-        addInListOfString(argList, trimmedLine);
-    }
-    for (int j = 0; j < *argList->size; ++j) {
-        printf("ARGUMENT:   -%s-\n", argList->strings[j]);
-        if (isWord(argList->strings[j]) == -1) {
+    for (int j = 0; j < _msize(args) / 4; ++j) {
+        printf("ARGUMENT:   -%s-\n", args[j]);
+        if (isWord(args[j]) == -1) {
             perror("arg in declaration has invalid name!");
+            exit(1);
+        } else {
+            addInListOfString(argList, args[j]);
         }
     }
     return argList;
 }
 
+//Passed JUnitTest!
 AIODeclaration *getDeclarationOfMethod(char *methodName, StringList *sourceCode, int startIndex) {
     int currentIndex = startIndex - 1;
     char *inputLine = getStringInListByIndex(sourceCode, currentIndex);
-    printf("Allocate memory for current line...\n");
     char *currentLine = malloc(strlen(inputLine));
     if (currentLine == NULL) {
         perror("cannot allocate memory for current line when was creating of declaration!");
+        exit(1);
     }
     trim(inputLine, &currentLine);
-    printf("TRIMMED FIRST LINE: -%s-\n", currentLine);
     while (strcmp(currentLine, "") != 0 && currentIndex >= 0) {
         char *declarationPrefix = "~dec:";
         int startsAsDeclaration = startsWith(currentLine, declarationPrefix);
         if (startsAsDeclaration == 0) {
-            printf("FOUND DECLARATION!\n");
             //Remove declaration prefix:
             char *bracketLine = malloc(strlen(currentLine));
-            printf("AFTER MALLOC!\n");
-            if (bracketLine == NULL){
+            if (bracketLine == NULL) {
                 perror("cannot allocate memory for bracket line when was creating of declaration!");
+                exit(1);
             }
             removePrefix(currentLine, declarationPrefix, &bracketLine);
-            printf("BRACKET LINE: %s\n", bracketLine);
             //<<w+<<:
             if (strlen(bracketLine) > 4 && isCorrectPlacedBrackets(bracketLine) == 0) {
                 //Remove brackets:
-                printf("REMOVING BRACKETS...\n");
                 char *lp = malloc(strlen(bracketLine));
-                if (lp == NULL){
+                if (lp == NULL) {
                     perror("cannot allocate memory for left padding when was creating of declaration!");
+                    exit(1);
                 }
                 removePrefix(bracketLine, "<<", &lp);
-                printf("LINE WITHOUT LP: %s\n", lp);
                 char *rp = malloc(strlen(lp));
-                if (rp == NULL){
+                if (rp == NULL) {
                     perror("cannot allocate memory for right padding when was creating of declaration!");
+                    exit(1);
                 }
                 removeSuffix(lp, "<<", &rp);
-                printf("LINE WITHOUT RP: -%s-\n", rp);
                 //Split naked args;
-                printf("PREPARE TO SPLIT...\n");
                 char **dirtySplitArgs;
-                splitByChar(rp, ' ', &dirtySplitArgs);
-                int argNumber = _msize(dirtySplitArgs) / 4;
-                printf("ARG NUMBER: %d\n", argNumber);
-                char **filteredArgs = calloc(_msize(dirtySplitArgs) / 4, sizeof(char *));
-                filter(dirtySplitArgs, (size_t) argNumber, &filteredArgs, isNotEmpty);
-                char *cleanArgLine;
-                joinToStringWithoutSpaces(filteredArgs, &cleanArgLine);
-                printf("JOINED STRING: %s\n", cleanArgLine);
-                StringList *argList = getArgsIfCorrect(cleanArgLine);
-                if (isStringListEmpty(argList) != 0) {
-                    AIODeclaration *aioDeclaration;
-                    createAIODeclaration(&aioDeclaration, methodName, argList);
-                    return aioDeclaration;
-                } else {
-                    perror("invalid comma placement in declaration!");
-                }
+                splitByChar(rp, ',', &dirtySplitArgs);
+                //Trim all args:
+                char **args;
+                trimAll(dirtySplitArgs, _msize(dirtySplitArgs) / 4, &args);
+                StringList *argList = getArgsIfCorrect(args);
+                AIODeclaration *aioDeclaration;
+                createAIODeclaration(&aioDeclaration, methodName, argList);
+                return aioDeclaration;
             } else {
                 perror("invalid bracket placement in declaration!");
+                exit(1);
             }
         } else {
             currentLine = getStringInListByIndex(sourceCode, --currentIndex);
         }
     }
     return NULL;
-}
-
-
-//Passed JUnitTest!
-int isDefaultOperations(const char *operation) {
-    if (strlen(operation) == 1) {
-        if (operation[0] == '+' || operation[0] == '*' || operation[0] == '&') {
-            return 0;
-        }
-    }
-    return -1;
 }
 
 //Passed JUnitTest!
@@ -162,6 +144,16 @@ int isTheShortestInTheSameObject(const char *operation) {
                     return -1;
                 }
             }
+            return 0;
+        }
+    }
+    return -1;
+}
+
+//Passed JUnitTest!
+int isDefaultOperations(const char *operation) {
+    if (strlen(operation) == 1) {
+        if (operation[0] == '+' || operation[0] == '*' || operation[0] == '&') {
             return 0;
         }
     }
@@ -207,21 +199,41 @@ int isTheShortestInTheOtherObject(const char *operation) {
     return -1;
 }
 
+enum AIOMethodSizeType getSizeTypeOfMethod(StringList *methodCode) {
+    if (*methodCode->size == 1) {
+        char *trimLine = calloc(strlen(methodCode->strings[0]) + 1, sizeof(char));
+        trim(methodCode->strings[0], &trimLine);
+        if (isTheShortestInTheSameObject(trimLine) == 0
+            || isDefaultOperations(trimLine) == 0
+            || isTheShortestInTheOtherObject(trimLine)){
+            return THE_SHORTEST;
+        } else {
+            return SHORT;
+        }
+    }
+    return DEFAULT;
+}
+
+
 AIOMethodDefinition *buildAIOMethodDefinition(char *methodName, StringList *sourceCode, int startIndex) {
     //Create the same method definition:
     AIOMethodDefinition *methodDefinition = calloc(1, sizeof(AIOMethodDefinition));
-    StringList *methodCode = getSourceCodeOfMethod(methodName, sourceCode, startIndex);
-    //Check source code:
-    for (int i = 0; i < *methodCode->size; ++i) {
-        printf("%s\n", getStringInListByIndex(methodCode, i));
+    if (methodDefinition == NULL) {
+        perror("cannot allocate memory for method definition!");
+        exit(1);
     }
-    printf("\n\n\n\n\n\n\n");
-    printf("Create AIODeclaration...\n");
+    //Create aio declaration:
     AIODeclaration *declaration = getDeclarationOfMethod(methodName, sourceCode, startIndex);
-    printf("Create AIOAnnotation list...\n");
+    //Create aio annotation list:
     AIOAnnotationList *annotationList = getAnnotationsOfMethod(methodName, sourceCode, startIndex);
-    printf("Successfully created method definition!\n");
-    enum AIOMethodSizeType methodSizeType = DEFAULT;
-    createAIOMethodDefinition(&methodDefinition, methodName, declaration, annotationList, methodCode, &methodSizeType);
-    return methodDefinition;
+    if (isDefaultBehaviour(aioObjectManager) == 0){
+        //Create string list of method code:
+        StringList *methodCode = getSourceCodeOfMethod(methodName, sourceCode, startIndex);
+        //Set method size type:
+        enum AIOMethodSizeType sizeType = getSizeTypeOfMethod(methodCode);
+        createAIOMethodDefinition(&methodDefinition, methodName, declaration, annotationList, methodCode, &sizeType);
+        return methodDefinition;
+    } else {
+        return NULL;
+    }
 }

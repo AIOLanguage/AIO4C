@@ -167,6 +167,19 @@ int trim(const char *src, char **dst) {
     return lp + rp;
 }
 
+void trimAll(char** strings, size_t lineNumber, char*** dst){
+    *dst = (char**) calloc(lineNumber, sizeof(char*));
+    if (*dst == NULL){
+        perror("cannot allocate memory for dst when trim all is occurs!");
+        exit(1);
+    }
+    for (int i = 0; i < lineNumber; ++i) {
+        char* trimLine = calloc(strlen(strings[i]) + 1, sizeof(char));
+        trim(strings[i], &trimLine);
+        (*dst)[i ] = trimLine;
+    }
+}
+
 //Passed JUnitTest!
 int removePrefix(const char *src, const char *prefix, char **dst) {
     if (strlen(src) == 0) {
