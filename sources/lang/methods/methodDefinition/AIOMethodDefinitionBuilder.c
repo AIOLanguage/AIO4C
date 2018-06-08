@@ -18,13 +18,14 @@ StringList *getSourceCodeOfMethod(char *methodName, StringList *sourceCode, int 
         perror("can not allocate memory for trimmed line in during get source code method procedure performs!");
     }
     trim(sourceCode->strings[currentIndex], &trimmedLine);
+
     if (strcmp(trimmedLine, "") != 0) {
-        char *cleanFirstLine = calloc(strlen(trimmedLine), sizeof(char));
+        char *cleanFirstLine = calloc(strlen(trimmedLine) + 1, sizeof(char));
         if (cleanFirstLine == NULL) {
             perror("can not allocate memory for clean first line in during get source code method procedure performs!");
         }
-        int result = removePrefix(trimmedLine, methodName, &cleanFirstLine);
-        if (result != 0) {
+        removePrefix(trimmedLine, methodName, &cleanFirstLine);
+        if (strcmp(cleanFirstLine, "") != 0) {
             addInListOfString(methodCode, cleanFirstLine);
         }
         while (++currentIndex < *sourceCode->size) {
@@ -65,7 +66,6 @@ StringList *getArgsIfCorrect(char **args) {
     StringList *argList;
     createListOfString(&argList);
     for (int j = 0; j < _msize(args) / 4; ++j) {
-        printf("ARGUMENT:   -%s-\n", args[j]);
         if (isWord(args[j]) == -1) {
             perror("arg in declaration has invalid name!");
             exit(1);
@@ -179,6 +179,7 @@ int isTheShortestInTheOtherObject(const char *operation) {
                         break;
                     } else {
                         perror("illegal aio line with method invocation");
+                        exit(1);
                     }
                 } else if (!isalnum(operation[i])) {
                     return -1;
@@ -205,7 +206,7 @@ enum AIOMethodSizeType getSizeTypeOfMethod(StringList *methodCode) {
         trim(methodCode->strings[0], &trimLine);
         if (isTheShortestInTheSameObject(trimLine) == 0
             || isDefaultOperations(trimLine) == 0
-            || isTheShortestInTheOtherObject(trimLine)){
+            || isTheShortestInTheOtherObject(trimLine) == 0){
             return THE_SHORTEST;
         } else {
             return SHORT;
@@ -231,7 +232,7 @@ AIOMethodDefinition *buildAIOMethodDefinition(char *methodName, StringList *sour
         StringList *methodCode = getSourceCodeOfMethod(methodName, sourceCode, startIndex);
         //Set method size type:
         enum AIOMethodSizeType sizeType = getSizeTypeOfMethod(methodCode);
-        createAIOMethodDefinition(&methodDefinition, methodName, declaration, annotationList, methodCode, &sizeType);
+        createAIOMethodDefinition(&methodDefinition, methodName, declaration, annotationList, methodCode, sizeType);
         return methodDefinition;
     } else {
         return NULL;

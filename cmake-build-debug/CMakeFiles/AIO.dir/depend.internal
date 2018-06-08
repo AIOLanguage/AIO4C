@@ -26,10 +26,15 @@ CMakeFiles/AIO.dir/sources/lang/methods/methodDefinition/AIOMethodDefinition.c.o
 CMakeFiles/AIO.dir/sources/lang/methods/methodDefinition/AIOMethodDefinitionBuilder.c.obj
  C:/Users/StarKRE/CLionProjects/AIO/headers/lang/annotations/AIOAnnotation.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lang/declarations/AIODeclaration.h
+ C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/bundle/AIOBundle.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/methodDefinition/AIOMethodDefinition.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/methodDefinition/AIOMethodSizeType.h
+ C:/Users/StarKRE/CLionProjects/AIO/headers/lang/object/AIOObject.h
+ C:/Users/StarKRE/CLionProjects/AIO/headers/lang/object/objectManager/AIOObjectManager.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/collections/lists/AIOAnnotationList.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/collections/lists/StringList.h
+ C:/Users/StarKRE/CLionProjects/AIO/headers/lib/collections/maps/AIOMethodDefinitionMap.h
+ C:/Users/StarKRE/CLionProjects/AIO/headers/lib/collections/maps/AIOObjectMap.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/StringUtils.h
  C:/Users/StarKRE/CLionProjects/AIO/sources/lang/methods/methodDefinition/AIOMethodDefinitionBuilder.c
 CMakeFiles/AIO.dir/sources/lang/methods/result/AIOResult.c.obj

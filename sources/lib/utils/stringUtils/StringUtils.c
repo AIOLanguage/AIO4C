@@ -195,7 +195,7 @@ int removePrefix(const char *src, const char *prefix, char **dst) {
         }
     }
     if (lp < srcSize) {
-        (*dst) = (char *) realloc((*dst), sizeof(char) * srcSize - lp);
+        (*dst) = (char *) realloc((*dst), sizeof(char) * (srcSize - lp + 1));
     } else {
         return 0;
     }
@@ -249,7 +249,6 @@ int startsWith(const char *src, char *prefix) {
 
 //Passed JUnitTest!
 int **filter(char **src, size_t srcSize, char ***dst, int (*filterFunction)(char *)) {
-    printf("SIZE: %d\n", srcSize);
     int *newIndices = calloc(srcSize, sizeof(int));
     int newSize = 0;
     //Look at strings and measure new string:

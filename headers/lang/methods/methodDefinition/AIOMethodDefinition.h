@@ -13,10 +13,10 @@ typedef struct AIOMethodDefinition {
     AIODeclaration *declaration;
     AIOAnnotationList *annotations;
     StringList *sourceCode;
-    enum AIOMethodSizeType *methodSizeType;
+    enum AIOMethodSizeType methodSizeType;
 } AIOMethodDefinition;
 
 void createAIOMethodDefinition(AIOMethodDefinition **methodDefinition, char* name, AIODeclaration* declaration
-        , AIOAnnotationList* annotations, StringList* sourceCode, enum AIOMethodSizeType* methodSizeType);
+        , AIOAnnotationList* annotations, StringList* sourceCode, enum AIOMethodSizeType methodSizeType);
 
 #endif //AIO_METHOD_DEFINITION_H

@@ -123,10 +123,14 @@ stdio.h
 -
 ctype.h
 -
+process.h
+-
 ../../../../headers/lang/methods/methodDefinition/AIOMethodDefinition.h
 C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/methodDefinition/AIOMethodDefinition.h
 ../../../../headers/lib/utils/StringUtils.h
 C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/StringUtils.h
+../../../../headers/lang/object/objectManager/AIOObjectManager.h
+C:/Users/StarKRE/CLionProjects/AIO/headers/lang/object/objectManager/AIOObjectManager.h
 
 C:/Users/StarKRE/CLionProjects/AIO/sources/lang/methods/result/AIOResult.c
 malloc.h
@@ -162,6 +166,8 @@ C:/Users/StarKRE/CLionProjects/AIO/sources/lang/object/objectManager/AIOObjectMa
 mem.h
 -
 stdio.h
+-
+process.h
 -
 ../../../../headers/lang/object/objectManager/AIOObjectManager.h
 C:/Users/StarKRE/CLionProjects/AIO/headers/lang/object/objectManager/AIOObjectManager.h

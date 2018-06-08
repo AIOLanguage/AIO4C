@@ -25,10 +25,15 @@ CMakeFiles/AIO.dir/sources/lang/methods/methodDefinition/AIOMethodDefinition.c.o
 
 CMakeFiles/AIO.dir/sources/lang/methods/methodDefinition/AIOMethodDefinitionBuilder.c.obj: ../headers/lang/annotations/AIOAnnotation.h
 CMakeFiles/AIO.dir/sources/lang/methods/methodDefinition/AIOMethodDefinitionBuilder.c.obj: ../headers/lang/declarations/AIODeclaration.h
+CMakeFiles/AIO.dir/sources/lang/methods/methodDefinition/AIOMethodDefinitionBuilder.c.obj: ../headers/lang/methods/bundle/AIOBundle.h
 CMakeFiles/AIO.dir/sources/lang/methods/methodDefinition/AIOMethodDefinitionBuilder.c.obj: ../headers/lang/methods/methodDefinition/AIOMethodDefinition.h
 CMakeFiles/AIO.dir/sources/lang/methods/methodDefinition/AIOMethodDefinitionBuilder.c.obj: ../headers/lang/methods/methodDefinition/AIOMethodSizeType.h
+CMakeFiles/AIO.dir/sources/lang/methods/methodDefinition/AIOMethodDefinitionBuilder.c.obj: ../headers/lang/object/AIOObject.h
+CMakeFiles/AIO.dir/sources/lang/methods/methodDefinition/AIOMethodDefinitionBuilder.c.obj: ../headers/lang/object/objectManager/AIOObjectManager.h
 CMakeFiles/AIO.dir/sources/lang/methods/methodDefinition/AIOMethodDefinitionBuilder.c.obj: ../headers/lib/collections/lists/AIOAnnotationList.h
 CMakeFiles/AIO.dir/sources/lang/methods/methodDefinition/AIOMethodDefinitionBuilder.c.obj: ../headers/lib/collections/lists/StringList.h
+CMakeFiles/AIO.dir/sources/lang/methods/methodDefinition/AIOMethodDefinitionBuilder.c.obj: ../headers/lib/collections/maps/AIOMethodDefinitionMap.h
+CMakeFiles/AIO.dir/sources/lang/methods/methodDefinition/AIOMethodDefinitionBuilder.c.obj: ../headers/lib/collections/maps/AIOObjectMap.h
 CMakeFiles/AIO.dir/sources/lang/methods/methodDefinition/AIOMethodDefinitionBuilder.c.obj: ../headers/lib/utils/StringUtils.h
 CMakeFiles/AIO.dir/sources/lang/methods/methodDefinition/AIOMethodDefinitionBuilder.c.obj: ../sources/lang/methods/methodDefinition/AIOMethodDefinitionBuilder.c
 

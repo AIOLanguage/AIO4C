@@ -94,11 +94,10 @@ void findMethodsInManager(AIOObject *aioObject) {
         if (length > 1) {
             //starts with @
             if (line[0] == '@') {
-                printf("\nSTARTS WITH @\n");
                 unsigned nameSize = 1;
                 char pointer;
                 for (int j = 1; j < length; ++j) {
-                    if (line[i] == ' ') {
+                    if (line[j] == ' ') {
                         if (j == 1) {
                             perror("incorrect method mane @");
                         }
@@ -106,8 +105,10 @@ void findMethodsInManager(AIOObject *aioObject) {
                     }
                     nameSize = nameSize + 1;
                 }
-                char *methodName = calloc(nameSize, sizeof(char));
-                strncpy(methodName, line, nameSize);
+                char *methodName = calloc(nameSize + 1, sizeof(char));
+                for (int k = 0; k < nameSize; ++k) {
+                    methodName[k] = line[k];
+                }
                 free(&nameSize);
                 free(&pointer);
                 if (strcmp(methodName, "@main") == 0) {
