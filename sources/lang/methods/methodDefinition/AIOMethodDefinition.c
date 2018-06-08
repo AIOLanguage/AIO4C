@@ -11,6 +11,7 @@ void createAIOMethodDefinition(AIOMethodDefinition **methodDefinition, char* nam
     *methodDefinition = (AIOMethodDefinition *) calloc(1, sizeof(AIOMethodDefinition));
     if (*methodDefinition == NULL){
         perror("cannot allocate memory for aio method definition");
+        exit(1);
     }
     //Set definition name:
     (*methodDefinition)->name = name;

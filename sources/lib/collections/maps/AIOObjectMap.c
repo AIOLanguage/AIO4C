@@ -2,7 +2,7 @@
 #include <process.h>
 #include <stdio.h>
 #include <malloc.h>
-#include "../../../../headers/lib/collections/maps/AIOObjectMap.h"
+#include "../../../../headers/lang/object/AIOObject.h"
 
 //Passed JUnitTests!
 void createAIOObjectMap(AIOObjectMap **objectMap) {

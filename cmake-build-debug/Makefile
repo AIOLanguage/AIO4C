@@ -176,6 +176,60 @@ sources/lang/declarations/AIODeclaration.c.s:
 	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/declarations/AIODeclaration.c.s
 .PHONY : sources/lang/declarations/AIODeclaration.c.s
 
+sources/lang/methods/AIOMethod.obj: sources/lang/methods/AIOMethod.c.obj
+
+.PHONY : sources/lang/methods/AIOMethod.obj
+
+# target to build an object file
+sources/lang/methods/AIOMethod.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/methods/AIOMethod.c.obj
+.PHONY : sources/lang/methods/AIOMethod.c.obj
+
+sources/lang/methods/AIOMethod.i: sources/lang/methods/AIOMethod.c.i
+
+.PHONY : sources/lang/methods/AIOMethod.i
+
+# target to preprocess a source file
+sources/lang/methods/AIOMethod.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/methods/AIOMethod.c.i
+.PHONY : sources/lang/methods/AIOMethod.c.i
+
+sources/lang/methods/AIOMethod.s: sources/lang/methods/AIOMethod.c.s
+
+.PHONY : sources/lang/methods/AIOMethod.s
+
+# target to generate assembly for a file
+sources/lang/methods/AIOMethod.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/methods/AIOMethod.c.s
+.PHONY : sources/lang/methods/AIOMethod.c.s
+
+sources/lang/methods/analysis/methodReproducer/AIOMethodReproducer.obj: sources/lang/methods/analysis/methodReproducer/AIOMethodReproducer.c.obj
+
+.PHONY : sources/lang/methods/analysis/methodReproducer/AIOMethodReproducer.obj
+
+# target to build an object file
+sources/lang/methods/analysis/methodReproducer/AIOMethodReproducer.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/AIOMethodReproducer.c.obj
+.PHONY : sources/lang/methods/analysis/methodReproducer/AIOMethodReproducer.c.obj
+
+sources/lang/methods/analysis/methodReproducer/AIOMethodReproducer.i: sources/lang/methods/analysis/methodReproducer/AIOMethodReproducer.c.i
+
+.PHONY : sources/lang/methods/analysis/methodReproducer/AIOMethodReproducer.i
+
+# target to preprocess a source file
+sources/lang/methods/analysis/methodReproducer/AIOMethodReproducer.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/AIOMethodReproducer.c.i
+.PHONY : sources/lang/methods/analysis/methodReproducer/AIOMethodReproducer.c.i
+
+sources/lang/methods/analysis/methodReproducer/AIOMethodReproducer.s: sources/lang/methods/analysis/methodReproducer/AIOMethodReproducer.c.s
+
+.PHONY : sources/lang/methods/analysis/methodReproducer/AIOMethodReproducer.s
+
+# target to generate assembly for a file
+sources/lang/methods/analysis/methodReproducer/AIOMethodReproducer.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/AIOMethodReproducer.c.s
+.PHONY : sources/lang/methods/analysis/methodReproducer/AIOMethodReproducer.c.s
+
 sources/lang/methods/bundle/AIOBundle.obj: sources/lang/methods/bundle/AIOBundle.c.obj
 
 .PHONY : sources/lang/methods/bundle/AIOBundle.obj
@@ -554,6 +608,33 @@ sources/lib/collections/maps/AIOObjectMap.c.s:
 	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/collections/maps/AIOObjectMap.c.s
 .PHONY : sources/lib/collections/maps/AIOObjectMap.c.s
 
+sources/lib/collections/maps/AIOVariableMap.obj: sources/lib/collections/maps/AIOVariableMap.c.obj
+
+.PHONY : sources/lib/collections/maps/AIOVariableMap.obj
+
+# target to build an object file
+sources/lib/collections/maps/AIOVariableMap.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/collections/maps/AIOVariableMap.c.obj
+.PHONY : sources/lib/collections/maps/AIOVariableMap.c.obj
+
+sources/lib/collections/maps/AIOVariableMap.i: sources/lib/collections/maps/AIOVariableMap.c.i
+
+.PHONY : sources/lib/collections/maps/AIOVariableMap.i
+
+# target to preprocess a source file
+sources/lib/collections/maps/AIOVariableMap.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/collections/maps/AIOVariableMap.c.i
+.PHONY : sources/lib/collections/maps/AIOVariableMap.c.i
+
+sources/lib/collections/maps/AIOVariableMap.s: sources/lib/collections/maps/AIOVariableMap.c.s
+
+.PHONY : sources/lib/collections/maps/AIOVariableMap.s
+
+# target to generate assembly for a file
+sources/lib/collections/maps/AIOVariableMap.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/collections/maps/AIOVariableMap.c.s
+.PHONY : sources/lib/collections/maps/AIOVariableMap.c.s
+
 sources/lib/utils/stringUtils/StringUtils.obj: sources/lib/utils/stringUtils/StringUtils.c.obj
 
 .PHONY : sources/lib/utils/stringUtils/StringUtils.obj
@@ -623,6 +704,12 @@ help:
 	@echo ... sources/lang/declarations/AIODeclaration.obj
 	@echo ... sources/lang/declarations/AIODeclaration.i
 	@echo ... sources/lang/declarations/AIODeclaration.s
+	@echo ... sources/lang/methods/AIOMethod.obj
+	@echo ... sources/lang/methods/AIOMethod.i
+	@echo ... sources/lang/methods/AIOMethod.s
+	@echo ... sources/lang/methods/analysis/methodReproducer/AIOMethodReproducer.obj
+	@echo ... sources/lang/methods/analysis/methodReproducer/AIOMethodReproducer.i
+	@echo ... sources/lang/methods/analysis/methodReproducer/AIOMethodReproducer.s
 	@echo ... sources/lang/methods/bundle/AIOBundle.obj
 	@echo ... sources/lang/methods/bundle/AIOBundle.i
 	@echo ... sources/lang/methods/bundle/AIOBundle.s
@@ -665,6 +752,9 @@ help:
 	@echo ... sources/lib/collections/maps/AIOObjectMap.obj
 	@echo ... sources/lib/collections/maps/AIOObjectMap.i
 	@echo ... sources/lib/collections/maps/AIOObjectMap.s
+	@echo ... sources/lib/collections/maps/AIOVariableMap.obj
+	@echo ... sources/lib/collections/maps/AIOVariableMap.i
+	@echo ... sources/lib/collections/maps/AIOVariableMap.s
 	@echo ... sources/lib/utils/stringUtils/StringUtils.obj
 	@echo ... sources/lib/utils/stringUtils/StringUtils.i
 	@echo ... sources/lib/utils/stringUtils/StringUtils.s

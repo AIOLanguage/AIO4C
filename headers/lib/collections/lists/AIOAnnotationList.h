@@ -9,7 +9,7 @@ typedef struct AIOAnnotationList {
     AIOAnnotation** annotations;
 } AIOAnnotationList;
 
-void createAnnotationList(AIOAnnotationList **listOfString);
+void createAnnotationList(AIOAnnotationList **annotationList);
 
 void addInAnnotationList(AIOAnnotationList *listOfAnnotations, AIOAnnotation *annotation);
 

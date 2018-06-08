@@ -3,6 +3,8 @@
 #include <stdio.h>
 #include "../../../headers/lang/object/AIOObject.h"
 #include "../../../headers/lang/methods/methodDefinition/AIOMethodDefinitionBuilder.h"
+#include "../../../headers/lang/object/objectManager/AIOObjectManager.h"
+#include "../../../headers/lang/methods/AIOMethod.h"
 
 //Passed JUnitTest!
 void createAIOMethodManager(AIOMethodManager **methodManager, AIOMethodDefinitionMap *methodDefinitionMap) {
@@ -137,10 +139,20 @@ void createAIOObject(AIOObject **object, AIOMethodManager *methodManager, char *
     loadSourceCodeInAIOObject(*object, path);
     findMethodsInManager(*object);
 }
-
-void invokeMethodInManager(struct AIOMethodManager methodManager, char methodName[], struct AIOBundle bundle) {
-
-}
+//
+//void invokeMethodInManager(AIOObjectManager *objectManager, AIOObject *object, char *methodName, AIOBundle *bundle) {
+//    objectManager->lastVisitedObject = object;
+//    AIOMethodDefinition *methodDefinition = getAIOMethodDefinitionInMapByName(
+//            object->methodManager->methodDefinitionMap, methodName);
+//    if (methodDefinition->declaration != NULL) {
+//        if (*methodDefinition->declaration->argList->size != *bundle->inputValues->size) {
+//            perror("number of args not matches with arg size of declaration!");
+//        }
+//    }
+//    AIOMethod *method;
+//    createAIOMethod(&method, methodDefinition, bundle);
+//    invokeAIOMethod(method);
+//}
 
 /*
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

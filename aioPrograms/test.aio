@@ -3,4 +3,4 @@
 ~dec:<<aq, be, cd<<
 @test >> a + b * cjjj
 
-@main * 
+@main *

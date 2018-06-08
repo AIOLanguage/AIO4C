@@ -3,6 +3,7 @@
 
 #include "../methods/bundle/AIOBundle.h"
 #include "../../lib/collections/maps/AIOMethodDefinitionMap.h"
+#include "objectManager/AIOObjectManager.h"
 
 typedef struct StringPair {
     char* objectName;
@@ -27,6 +28,6 @@ StringPair *extractNameAnfFolderPathFromPath(char *path);
 
 void createAIOObject(AIOObject **object, AIOMethodManager* methodManager, char *path);
 
-void invokeMethodInManager(struct AIOMethodManager methodManager, char methodName[], struct AIOBundle bundle);
+//void invokeMethodInManager(AIOObjectManager* objectManager, AIOObject* object, char* methodName, AIOBundle* bundle);
 
 #endif //AIO_AIO_OBJECT_H

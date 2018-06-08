@@ -2,15 +2,12 @@
 #include <stdlib.h>
 #include <mem.h>
 #include "../../headers/lang/object/objectManager/AIOObjectManager.h"
-#include "../../headers/lang/methods/variable/AIOVariable.h"
-#include "../../headers/lib/utils/StringUtils.h"
 
 AIOObjectManager *aioObjectManager;
 
 void init() {
     initAIOObjectManager(&aioObjectManager);
 }
-
 
 void make() {
     init();

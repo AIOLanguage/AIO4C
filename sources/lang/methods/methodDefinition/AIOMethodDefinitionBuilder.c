@@ -48,6 +48,7 @@ AIOAnnotationList *getAnnotationsOfMethod(char *name, StringList *sourceCode, in
     return annotations;
 }
 
+//Passed JUnitTest!
 int isCorrectPlacedBrackets(char *line) {
     int length = strlen(line);
     for (int i = 0; i < length; ++i) {
@@ -200,6 +201,7 @@ int isTheShortestInTheOtherObject(const char *operation) {
     return -1;
 }
 
+//Passed JUnitTest!
 enum AIOMethodSizeType getSizeTypeOfMethod(StringList *methodCode) {
     if (*methodCode->size == 1) {
         char *trimLine = calloc(strlen(methodCode->strings[0]) + 1, sizeof(char));
@@ -215,7 +217,7 @@ enum AIOMethodSizeType getSizeTypeOfMethod(StringList *methodCode) {
     return DEFAULT;
 }
 
-
+//Passed JUnitTest!
 AIOMethodDefinition *buildAIOMethodDefinition(char *methodName, StringList *sourceCode, int startIndex) {
     //Create the same method definition:
     AIOMethodDefinition *methodDefinition = calloc(1, sizeof(AIOMethodDefinition));

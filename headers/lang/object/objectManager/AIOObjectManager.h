@@ -1,12 +1,12 @@
 #ifndef AIO_AIO_OBJECT_MANAGER_H
 #define AIO_AIO_OBJECT_MANAGER_H
 
-#include "../AIOObject.h"
+#include "../../../lang/object/AIOObject.h"
 #include "../../../lib/collections/maps/AIOObjectMap.h"
 
 typedef struct AIOObjectManager {
-    AIOObject* lastVisitedObject;
     AIOObjectMap* objectMap;
+    AIOObject* lastVisitedObject;
     int behaviour;
 } AIOObjectManager;
 

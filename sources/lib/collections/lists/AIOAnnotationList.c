@@ -5,17 +5,33 @@
 #include "../../../../headers/lib/collections/lists/AIOAnnotationList.h"
 
 //Passed JUnitTest!
-void createAnnotationList(AIOAnnotationList **listOfAnnotations) {
+void createAnnotationList(AIOAnnotationList **annotationList) {
     //Create the same mutable list:
-    *listOfAnnotations = malloc(sizeof(AIOAnnotationList));
+    *annotationList = calloc(1, sizeof(AIOAnnotationList));
+    if (*annotationList == NULL) {
+        perror("can not allocate memory for aio annotation list");
+        exit(1);
+    }
     //Create capacity:
-    (*listOfAnnotations)->capacity = malloc(sizeof(int));
-    *(*listOfAnnotations)->capacity = 2;
+    (*annotationList)->capacity = calloc(1, sizeof(int));
+    if ((*annotationList)->capacity == NULL) {
+        perror("can not allocate memory for capacity in aio annotation list");
+        exit(1);
+    }
+    *(*annotationList)->capacity = 2;
     //Create size:
-    (*listOfAnnotations)->size = malloc(sizeof(int));
-    *(*listOfAnnotations)->size = 0;
+    (*annotationList)->size = calloc(1, sizeof(int));
+    if ((*annotationList)->size == NULL) {
+        perror("can not allocate memory for size in aio annotation list");
+        exit(1);
+    }
+    *(*annotationList)->size = 0;
     //Create char capacity that equals 2:
-    (*listOfAnnotations)->annotations = malloc(2 * sizeof(AIOAnnotation));
+    (*annotationList)->annotations = calloc(2, sizeof(AIOAnnotation *));
+    if ((*annotationList)->annotations == NULL) {
+        perror("can not allocate memory for annotations in aio annotation list");
+        exit(1);
+    }
 }
 
 //Passed JUnitTest!

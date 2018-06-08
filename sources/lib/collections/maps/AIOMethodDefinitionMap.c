@@ -5,19 +5,39 @@
 #include "../../../../headers/lib/collections/maps/AIOMethodDefinitionMap.h"
 
 //Passed JUnitTests!
-void createAIOMethodDefinitionMap(AIOMethodDefinitionMap **mutableMethodDefinitionMap) {
+void createAIOMethodDefinitionMap(AIOMethodDefinitionMap **definitionMap) {
     //Create the same definition map:
-    *mutableMethodDefinitionMap = malloc(sizeof(AIOMethodDefinitionMap));
+    *definitionMap = calloc(1, sizeof(AIOMethodDefinitionMap));
+    if (*definitionMap == NULL){
+        perror("can not allocate memory for aio definition map");
+        exit(1);
+    }
     //Create capacity:
-    (*mutableMethodDefinitionMap)->capacity = malloc(sizeof(int));
-    *(*mutableMethodDefinitionMap)->capacity = 2;
+    (*definitionMap)->capacity = calloc(1, sizeof(int));
+    if ((*definitionMap)->capacity == NULL){
+        perror("can not allocate memory for capacity in aio definition map");
+        exit(1);
+    }
+    *(*definitionMap)->capacity = 2;
     //Create size:
-    (*mutableMethodDefinitionMap)->size = malloc(sizeof(int));
-    *(*mutableMethodDefinitionMap)->size = 0;
+    (*definitionMap)->size = calloc(1, sizeof(int));
+    if ((*definitionMap)->size == NULL){
+        perror("can not allocate memory for size in aio definition map");
+        exit(1);
+    }
+    *(*definitionMap)->size = 0;
     //Create char capacity that equals 2:
-    (*mutableMethodDefinitionMap)->names = malloc(2 * sizeof(char));
+    (*definitionMap)->names = calloc(2, sizeof(char *));
+    if ((*definitionMap)->names == NULL){
+        perror("can not allocate memory for capacity in aio definition map");
+        exit(1);
+    }
     //Create definitions that equals 2:
-    (*mutableMethodDefinitionMap)->definitions = malloc(2 * sizeof(AIOMethodDefinition));
+    (*definitionMap)->definitions = calloc(2, sizeof(AIOMethodDefinition*));
+    if ((*definitionMap)->definitions == NULL){
+        perror("can not allocate memory for definitions in aio variable map");
+        exit(1);
+    }
 }
 
 //Passed JUnitTests!

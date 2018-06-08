@@ -6,6 +6,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_C
   "C:/Users/StarKRE/CLionProjects/AIO/sources/lang/annotations/AIOAnnotation.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lang/annotations/AIOAnnotation.c.obj"
   "C:/Users/StarKRE/CLionProjects/AIO/sources/lang/declarations/AIODeclaration.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lang/declarations/AIODeclaration.c.obj"
+  "C:/Users/StarKRE/CLionProjects/AIO/sources/lang/methods/AIOMethod.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lang/methods/AIOMethod.c.obj"
+  "C:/Users/StarKRE/CLionProjects/AIO/sources/lang/methods/analysis/methodReproducer/AIOMethodReproducer.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/AIOMethodReproducer.c.obj"
   "C:/Users/StarKRE/CLionProjects/AIO/sources/lang/methods/bundle/AIOBundle.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lang/methods/bundle/AIOBundle.c.obj"
   "C:/Users/StarKRE/CLionProjects/AIO/sources/lang/methods/defaultMethodContainer/AIODefaultMethodContainer.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lang/methods/defaultMethodContainer/AIODefaultMethodContainer.c.obj"
   "C:/Users/StarKRE/CLionProjects/AIO/sources/lang/methods/methodDefinition/AIOMethodDefinition.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lang/methods/methodDefinition/AIOMethodDefinition.c.obj"
@@ -20,6 +22,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "C:/Users/StarKRE/CLionProjects/AIO/sources/lib/collections/lists/StringList.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lib/collections/lists/StringList.c.obj"
   "C:/Users/StarKRE/CLionProjects/AIO/sources/lib/collections/maps/AIOMethodDefinitionMap.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lib/collections/maps/AIOMethodDefinitionMap.c.obj"
   "C:/Users/StarKRE/CLionProjects/AIO/sources/lib/collections/maps/AIOObjectMap.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lib/collections/maps/AIOObjectMap.c.obj"
+  "C:/Users/StarKRE/CLionProjects/AIO/sources/lib/collections/maps/AIOVariableMap.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lib/collections/maps/AIOVariableMap.c.obj"
   "C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/stringUtils/StringUtils.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/StringUtils.c.obj"
   "C:/Users/StarKRE/CLionProjects/AIO/sources/main/main.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/main/main.c.obj"
   )

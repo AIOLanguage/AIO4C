@@ -10,7 +10,7 @@ typedef struct AIOMethodDefinitionMap {
     AIOMethodDefinition **definitions;
 } AIOMethodDefinitionMap;
 
-void createAIOMethodDefinitionMap(AIOMethodDefinitionMap **mutableMethodDefinitionMap);
+void createAIOMethodDefinitionMap(AIOMethodDefinitionMap **definitionMap);
 
 void putAIOMethodDefinitionInMap(AIOMethodDefinitionMap *definitionMap, AIOMethodDefinition *methodDefinition);
 
