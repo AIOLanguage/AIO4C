@@ -5,7 +5,6 @@
 
 typedef struct AIOObjectManager {
     AIOObjectMap* objectMap;
-    AIOObject* lastVisitedObject;
     int behaviour;
 } AIOObjectManager;
 

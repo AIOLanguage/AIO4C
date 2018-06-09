@@ -6,12 +6,12 @@
 #include <assert.h>
 
 //Passed JUnitTests!
-int splitByChar(char *string, char delimiter, char ***dst) {
-    size_t length = strlen(string);
+int splitByChar(char *src, char delimiter, char ***dst) {
+    size_t length = strlen(src);
     if (length < 1 || delimiter == '\0') {
         *dst = calloc(1, sizeof(char *));
         **dst = calloc(length, sizeof(char));
-        strcpy(**dst, string);
+        strcpy(**dst, src);
         return -1;
     }
     unsigned *indices = calloc(length, sizeof(int));
@@ -21,7 +21,7 @@ int splitByChar(char *string, char delimiter, char ***dst) {
     unsigned pointers = 0;
     //Mark split points:
     for (unsigned i = 0; i < length; ++i) {
-        if (string[i] == delimiter) {
+        if (src[i] == delimiter) {
             indices[pointers] = i;
             pointers++;
         }
@@ -31,7 +31,7 @@ int splitByChar(char *string, char delimiter, char ***dst) {
     if (pointers == 0) {
         *dst = calloc(1, sizeof(char *));
         **dst = calloc(length, sizeof(char));
-        strcpy(**dst, string);
+        strcpy(**dst, src);
         return -1;
     }
     //Parts more than pointers by 1:
@@ -53,7 +53,7 @@ int splitByChar(char *string, char delimiter, char ***dst) {
             perror("cannot allocate memory for *dst[0] in split by char!");
         }
         for (int i = 0; i < indices[0]; ++i) {
-            (*dst)[0][i] = string[i];
+            (*dst)[0][i] = src[i];
         }
     }
     //Create last part:
@@ -71,7 +71,7 @@ int splitByChar(char *string, char delimiter, char ***dst) {
         }
         int k = 0;
         for (int i = indices[pointers - 1] + 1; i < length; ++i) {
-            (*dst)[last][k] = string[i];
+            (*dst)[last][k] = src[i];
             k = k + 1;
         }
     }
@@ -84,7 +84,7 @@ int splitByChar(char *string, char delimiter, char ***dst) {
                     perror("cannot allocate memory for *dst[j] in split by char!");
                 }
                 for (int i = 0; i < indices[j + 1] - indices[j] - 1; ++i) {
-                    (*dst)[j + 1][i] = string[indices[j] + i + 1];
+                    (*dst)[j + 1][i] = src[indices[j] + i + 1];
                 }
             } else {
                 (*dst)[j + 1] = calloc(2, sizeof(char));

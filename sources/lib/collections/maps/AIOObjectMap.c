@@ -71,7 +71,7 @@ AIOObject *getAIOObjectInMapByName(AIOObjectMap *objectMap, char *name) {
             return objectMap->objects[i];
         }
     }
-    perror("cannot get aio object in map");
+    return NULL;
 }
 
 /*

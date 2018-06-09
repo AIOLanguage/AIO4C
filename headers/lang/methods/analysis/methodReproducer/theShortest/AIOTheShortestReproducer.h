@@ -1,12 +1,9 @@
 #ifndef AIO_THE_SHORTEST_REPRODUCER_H
 #define AIO_THE_SHORTEST_REPRODUCER_H
 
-typedef struct AIOTheShortestReproducer {
+#include "../../../../object/AIOObject.h"
 
-
-
-
-
-} AIOTheShortestReproducer;
+void reproduceTheShortestMethod(AIOObject *object, AIOMethodDefinition *methodDefinition, AIOVariableMap *variableMap,
+                                AIOBundle *bundle);
 
 #endif //AIO_THE_SHORTEST_REPRODUCER_H

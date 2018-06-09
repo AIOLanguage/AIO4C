@@ -23,7 +23,7 @@ typedef struct AIOObject {
     struct AIOMethodManager* methodManager;
 } AIOObject;
 
-StringPair *extractNameAnfFolderPathFromPath(char *path);
+StringPair *extractNameAndFolderPathFromPath(char *path);
 
 void createAIOObject(AIOObject **object, AIOMethodManager* methodManager, char *path);
 

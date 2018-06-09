@@ -1,10 +1,7 @@
 #ifndef AIO_DEFAULT_REPRODUCER_H
 #define AIO_DEFAULT_REPRODUCER_H
 
-typedef struct AIODefaultReproducer {
-
-
-
-} AIODefaultReproducer;
+void reproduceDefaultMethod(AIOObject *object, AIOMethodDefinition *methodDefinition, AIOMethodContainer *methodContainer,
+                       AIOBundle *bundle);
 
 #endif //AIO_DEFAULT_REPRODUCER_H

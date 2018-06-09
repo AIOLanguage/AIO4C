@@ -13,9 +13,9 @@ void initAIOObjectManager(AIOObjectManager **objectManager) {
     AIOObjectMap *objectMap;
     createAIOObjectMap(&objectMap);
     (*objectManager)->objectMap = objectMap;
-    (*objectManager)->lastVisitedObject = calloc(1, sizeof(AIOObject));
-    if ((*objectManager)->lastVisitedObject == NULL) {
-        perror("cannot create lastVisitedObject");
+    (*objectManager)->currentObject = calloc(1, sizeof(AIOObject));
+    if ((*objectManager)->currentObject == NULL) {
+        perror("cannot create currentObject");
         exit(1);
     }
     //Set default behaviour:

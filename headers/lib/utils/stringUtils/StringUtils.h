@@ -1,7 +1,7 @@
 #ifndef AIO_STRING_UTILS_H
 #define AIO_STRING_UTILS_H
 
-int splitByChar(char *string, char delimiter, char ***dst);
+int splitByChar(char *src, char delimiter, char ***dst);
 
 int trimStart(const char *src, char **dst);
 

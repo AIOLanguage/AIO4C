@@ -28,7 +28,7 @@ void createAIOMethodManager(AIOMethodManager **methodManager, AIOMethodDefinitio
 }
 
 //Passed JUnitTest!
-StringPair *extractNameAnfFolderPathFromPath(char *path) {
+StringPair *extractNameAndFolderPathFromPath(char *path) {
     //*.aio:
     int pathLength = strlen(path);
     if (pathLength > 4) {
@@ -139,7 +139,7 @@ void createAIOObject(AIOObject **object, AIOMethodManager *methodManager, char *
     //Set method manager:
     (*object)->methodManager = methodManager;
     //Set name from path:
-    StringPair *nameVsFolder = extractNameAnfFolderPathFromPath(path);
+    StringPair *nameVsFolder = extractNameAndFolderPathFromPath(path);
     (*object)->name = nameVsFolder->first;
     //Set folder path from path:
     (*object)->folderPath = nameVsFolder->second;
@@ -149,7 +149,6 @@ void createAIOObject(AIOObject **object, AIOMethodManager *methodManager, char *
 }
 
 void invokeMethodInManager(AIOObject *object, char *methodName, AIOBundle *bundle) {
-    aioObjectManager->lastVisitedObject = object;
     AIOMethodDefinition *methodDefinition = getAIOMethodDefinitionInMapByName(
             object->methodManager->methodDefinitionMap, methodName);
     if (methodDefinition->declaration != NULL) {
@@ -159,7 +158,7 @@ void invokeMethodInManager(AIOObject *object, char *methodName, AIOBundle *bundl
     }
     AIOMethod *method;
     createAIOMethod(&method, methodDefinition, bundle);
-    invokeAIOMethod(method);
+    invokeAIOMethod(method, object);
 }
 
 /*
@@ -252,7 +251,7 @@ int main() {
 
 /*//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
  * char* path = "../aioPrograms/starter.aio";
-    StringPair* stringPair = extractNameAnfFolderPathFromPath(path);
+    StringPair* stringPair = extractNameAndFolderPathFromPath(path);
     char* first = stringPair->first;
     char* second = stringPair->second;
     printf("NAME: %s\n", first);

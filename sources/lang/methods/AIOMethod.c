@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <process.h>
 #include "../../../headers/lang/methods/AIOMethod.h"
+#include "../../../headers/lang/object/AIOObject.h"
 
 void createAIOMethodContainer(AIOMethodContainer **container) {
     //Create the same aio method container:
@@ -29,6 +30,6 @@ void createAIOMethod(AIOMethod **method, AIOMethodDefinition *methodDefinition, 
     setArgs(methodDefinition->declaration, bundle->inputValues);
 }
 
-void invokeAIOMethod(AIOMethod *method) {
+void invokeAIOMethod(AIOMethod *methodIn, AIOObject* aioObject) {
 
 }

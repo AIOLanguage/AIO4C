@@ -21,6 +21,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/AIOMethodReproducer.c.obj"
   "CMakeFiles/AIO.dir/sources/lib/collections/maps/AIOVariableMap.c.obj"
   "CMakeFiles/AIO.dir/sources/lib/utils/operationUtils/OperationUtils.c.obj"
+  "CMakeFiles/AIO.dir/sources/lib/utils/pathUtils/FileUtils.c.obj"
+  "CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/theShortest/AIOTheShortestReproducer.c.obj"
   "AIO.pdb"
   "AIO.exe"
   "AIO.exe.manifest"
