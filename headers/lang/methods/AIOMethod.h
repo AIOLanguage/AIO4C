@@ -13,8 +13,7 @@ typedef struct AIOMethod {
 } AIOMethod;
 
 
-void createAIOMethod(AIOMethod **method, AIOMethodDefinition *methodDefinition, AIOBundle *bundle);
-
-void invokeAIOMethod(AIOMethod *methodIn , AIOObject* aioObject);
+void createAIOMethodAndInvoke(AIOObject* object, AIOMethod **method, AIOMethodDefinition *methodDefinition
+        , AIOBundle *bundle);
 
 #endif //AIO_METHOD_H

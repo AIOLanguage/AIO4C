@@ -10,9 +10,10 @@
 #include "../../../../../../headers/lib/collections/maps/AIOObjectMap.h"
 #include "../../../../../../headers/lang/object/objectManager/AIOObjectManager.h"
 #include "../../../../../../headers/lib/utils/pathUtils/FileUtils.h"
+#include "../../../../../../headers/lang/methods/AIOMethodContainer.h"
 
-void makeForEachCustomMethodInvokation(AIOObject* nextObject, AIOVariableMap* variableMap, char* nextMethodName
-        , AIOBundle* bundle){
+void makeForEachCustomMethodInvocation(AIOObject *nextObject, AIOVariableMap *variableMap, char *nextMethodName,
+                                       AIOBundle *bundle){
     for (int i = 0; i < *variableMap->size; ++i) {
         AIOBundle *newBundle;
         StringList *valueList;
@@ -26,21 +27,21 @@ void makeForEachCustomMethodInvokation(AIOObject* nextObject, AIOVariableMap* va
     }
 }
 
-void reproduceTheShortestMethod(AIOObject *object, AIOMethodDefinition *methodDefinition, AIOVariableMap *variableMap,
-                                AIOBundle *bundle) {
+void reproduceTheShortestMethod(AIOObject *object, AIOMethodDefinition *methodDefinition
+        , AIOMethodContainer* methodContainer, AIOBundle *bundle) {
     printf("The shortest reproducing...\n");
     char *word;
     trim(methodDefinition->sourceCode->strings[0], &word);
     if (isPlusOperation(word) == 0) {
-        plusForEachReproduce(variableMap);
+        plusForEachReproduce(methodContainer->variableMap);
         return;
     }
     if (isMultiplyOperation(word) == 0) {
-        multiplyForEachReproduce(variableMap);
+        multiplyForEachReproduce(methodContainer->variableMap);
         return;
     }
     if (isConcatOperation(word)) {
-        concatForEachReproduce(variableMap);
+        concatForEachReproduce(methodContainer->variableMap);
         return;
     }
     if (isTheShortestInTheSameObject(word)) {
@@ -49,7 +50,7 @@ void reproduceTheShortestMethod(AIOObject *object, AIOMethodDefinition *methodDe
             perror("cannot allocate memory for nextMethodName! in reproduceTheShortestMethod!");
         }
         removeSuffix(word, "~", &nextMethodName);
-        makeForEachCustomMethodInvokation(object, variableMap, nextMethodName, bundle);
+        makeForEachCustomMethodInvocation(object, methodContainer->variableMap, nextMethodName, bundle);
     }
     if (isTheShortestInTheOtherObject(word)) {
         char **nextObjectNameVsMethod;
@@ -70,6 +71,6 @@ void reproduceTheShortestMethod(AIOObject *object, AIOMethodDefinition *methodDe
             nextObjectName = nextObjectPathPlusName;
         }
         nextObject = getAIOObjectInMapByName(aioObjectManager->objectMap, nextObjectName);
-        makeForEachCustomMethodInvokation(nextObject, variableMap, nextMethodName, bundle);
+        makeForEachCustomMethodInvocation(nextObject, methodContainer->variableMap, nextMethodName, bundle);
     }
 }

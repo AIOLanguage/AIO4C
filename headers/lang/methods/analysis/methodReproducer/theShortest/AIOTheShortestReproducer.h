@@ -3,7 +3,7 @@
 
 #include "../../../../object/AIOObject.h"
 
-void reproduceTheShortestMethod(AIOObject *object, AIOMethodDefinition *methodDefinition, AIOVariableMap *variableMap,
-                                AIOBundle *bundle);
+void reproduceTheShortestMethod(AIOObject *object, AIOMethodDefinition *methodDefinition,
+                                AIOMethodContainer *methodContainer, AIOBundle *bundle);
 
 #endif //AIO_THE_SHORTEST_REPRODUCER_H

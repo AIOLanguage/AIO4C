@@ -19,4 +19,7 @@ char toCha(char* word);
 int matchesStr(char* word);
 
 char* toStr(char* word);
+
+void setType(char *value, enum AIOType *type);
+
 #endif //AIO_AIO_TYPE_H

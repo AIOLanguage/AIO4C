@@ -5,6 +5,7 @@
 #include "../../../headers/lang/object/objectManager/AIOObjectManager.h"
 #include "../../../headers/lang/methods/methodDefinition/AIOMethodDefinitionBuilder.h"
 #include "../../../headers/lang/methods/AIOMethod.h"
+#include "../../../headers/lib/utils/fileUtils/FileUtils.h"
 
 AIOObjectManager *aioObjectManager;
 
@@ -25,75 +26,6 @@ void createAIOMethodManager(AIOMethodManager **methodManager, AIOMethodDefinitio
         exit(1);
     }
     *(*methodManager)->hasMain = -1;
-}
-
-//Passed JUnitTest!
-StringPair *extractNameAndFolderPathFromPath(char *path) {
-    //*.aio:
-    int pathLength = strlen(path);
-    if (pathLength > 4) {
-        //without last .aio:
-        int startOfObjectName = 0;
-        char pointer;
-        int endOfObjectName = pathLength - 5;
-        for (int i = endOfObjectName; i >= 0; --i) {
-            pointer = path[i];
-            if (pointer == '/') {
-                break;
-            }
-            startOfObjectName = i;
-        }
-        unsigned size = (unsigned int) (endOfObjectName - startOfObjectName + 1);
-        char *objectName = calloc(size + 1, sizeof(char));
-        if (objectName == NULL) {
-            perror("can not calloc memory for object name!");
-        }
-        for (int j = 0; j < size; ++j) {
-            objectName[j] = path[j + startOfObjectName];
-        }
-        char *folderPath = calloc((size_t) endOfObjectName + 1, sizeof(char));
-        if (folderPath == NULL) {
-            perror("can not allocate memory for folder path!");
-        }
-        for (int k = 0; k < startOfObjectName - 1; ++k) {
-            folderPath[k] = path[k];
-        }
-        StringPair *nameVsFolder = calloc(1, sizeof(StringPair));
-        nameVsFolder->first = objectName;
-        nameVsFolder->second = folderPath;
-        return nameVsFolder;
-    }
-    perror("invalid aio object name error!");
-}
-
-#define CHUNK 1024
-
-//Path example:
-//"../aioPrograms/test.txt", "r"
-//Passed JUnitTest!
-void loadSourceCodeInAIOObject(AIOObject *object, char *path) {
-    printf("Loading source code...\n");
-    //Create source code mutable list:
-    StringList *sourceCode;
-    createListOfString(&sourceCode);
-    //Create file:
-    FILE *file;
-    //Create line buffer:
-    char buffer[CHUNK];
-    if ((file = fopen(path, "r")) == NULL) {
-        perror("cannot open source-file");
-    }
-    while (fgets(buffer, sizeof(buffer), file) != NULL) {
-        buffer[strlen(buffer) - 1] = '\0';
-        //Create string:
-        char *line = calloc(1, CHUNK);
-        strcpy(line, buffer);
-        //put string in list:
-        addInListOfString(sourceCode, line);
-    }
-    fclose(file);
-    //Set source code:
-    object->sourceCode = sourceCode;
 }
 
 //Passed JUnitTest!
@@ -132,6 +64,36 @@ void findMethodsInManager(AIOObject *aioObject) {
     }
 }
 
+#define CHUNK 1024
+
+//Path example:
+//"../aioPrograms/test.txt", "r"
+//Passed JUnitTest!
+void loadSourceCodeInAIOObject(AIOObject *object, char *path) {
+    printf("Loading source code...\n");
+    //Create source code mutable list:
+    StringList *sourceCode;
+    createListOfString(&sourceCode);
+    //Create file:
+    FILE *file;
+    //Create line buffer:
+    char buffer[CHUNK];
+    if ((file = fopen(path, "r")) == NULL) {
+        perror("cannot open source-file");
+    }
+    while (fgets(buffer, sizeof(buffer), file) != NULL) {
+        buffer[strlen(buffer) - 1] = '\0';
+        //Create string:
+        char *line = calloc(1, CHUNK);
+        strcpy(line, buffer);
+        //put string in list:
+        addInListOfString(sourceCode, line);
+    }
+    fclose(file);
+    //Set source code:
+    object->sourceCode = sourceCode;
+}
+
 //Passed JUnitTest!
 void createAIOObject(AIOObject **object, AIOMethodManager *methodManager, char *path) {
     //Create the same object:
@@ -157,8 +119,7 @@ void invokeMethodInManager(AIOObject *object, char *methodName, AIOBundle *bundl
         }
     }
     AIOMethod *method;
-    createAIOMethod(&method, methodDefinition, bundle);
-    invokeAIOMethod(method, object);
+    createAIOMethodAndInvoke(object, &method, methodDefinition, bundle);
 }
 
 /*

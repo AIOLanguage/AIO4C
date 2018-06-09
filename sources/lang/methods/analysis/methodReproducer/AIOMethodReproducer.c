@@ -14,26 +14,17 @@
 #include <stdio.h>
 #include <process.h>
 
-AIOObjectManager *aioObjectManager;
-
-
-
-void shortReproduce(AIOShortReproducer *shortReproducer) {
-
-}
-
-
 void reproduceMethod(AIOObject* object, AIOMethodDefinition *methodDefinition, AIOMethodContainer *methodContainer
         , AIOBundle *bundle) {
     switch (methodDefinition->methodSizeType) {
         case THE_SHORTEST:
-            reproduceTheShortestMethod(object, methodDefinition, methodContainer->variableMap, bundle);
+            reproduceTheShortestMethod(object, methodDefinition, methodContainer, bundle);
             break;
         case SHORT:
-            shortReproduce();
+            reproduceShortMethod(object, methodDefinition, methodContainer, bundle);
             break;
         case DEFAULT:
-            defaultReproduce();
+            reproduceDefaultMethod(object, methodDefinition, methodContainer, bundle);
             break;
     }
 }

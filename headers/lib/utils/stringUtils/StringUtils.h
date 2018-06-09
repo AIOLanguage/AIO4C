@@ -29,4 +29,6 @@ int isWord(char *line);
 
 void substring(const char* string, int offset, int length, char** dst);
 
+void intToString(int src, char **dst);
+
 #endif //AIO_STRING_UTILS_H

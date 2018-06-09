@@ -167,16 +167,16 @@ int trim(const char *src, char **dst) {
     return lp + rp;
 }
 
-void trimAll(char** strings, size_t lineNumber, char*** dst){
-    *dst = (char**) calloc(lineNumber, sizeof(char*));
-    if (*dst == NULL){
+void trimAll(char **strings, size_t lineNumber, char ***dst) {
+    *dst = (char **) calloc(lineNumber, sizeof(char *));
+    if (*dst == NULL) {
         perror("cannot allocate memory for dst when trim all is occurs!");
         exit(1);
     }
     for (int i = 0; i < lineNumber; ++i) {
-        char* trimLine = calloc(strlen(strings[i]) + 1, sizeof(char));
+        char *trimLine = calloc(strlen(strings[i]) + 1, sizeof(char));
         trim(strings[i], &trimLine);
-        (*dst)[i ] = trimLine;
+        (*dst)[i] = trimLine;
     }
 }
 
@@ -359,10 +359,29 @@ int isWord(char *line) {
     return 0;
 }
 
-void substring(const char* string, int offset, int length, char** dst){
+void substring(const char *string, int offset, int length, char **dst) {
     *dst = calloc((size_t) (length - offset + 1), sizeof(char));
     for (int i = 0; i < length; ++i) {
         (*dst)[i] = string[offset + i];
+    }
+}
+
+void intToString(int src, char **dst) {
+    int division = src;
+    unsigned intSizeInString = 0;
+    while (division > 0) {
+        division = division / 10;
+        intSizeInString = intSizeInString + 1;
+    }
+    *dst = calloc(intSizeInString + 1, sizeof(char));
+    if (*dst == NULL) {
+        perror("cannot allocate memory for dst in intToString");
+    }
+    division = src;
+    int pointer = intSizeInString - 1;
+    while (division > 0){
+        (*dst)[pointer] = (char) (division % 10);
+        division = division / 10;
     }
 }
 

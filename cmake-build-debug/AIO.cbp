@@ -155,10 +155,10 @@
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lib/collections/maps/AIOVariableMap.h">
 			<Option target="AIO"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/operationUtils/OperationUtils.h">
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/fileUtils/FileUtils.h">
 			<Option target="AIO"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/pathUtils/FileUtils.h">
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/operationUtils/OperationUtils.h">
 			<Option target="AIO"/>
 		</Unit>
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/stringUtils/StringUtils.h">
@@ -227,10 +227,10 @@
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lib/collections/maps/AIOVariableMap.c">
 			<Option target="AIO"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/operationUtils/OperationUtils.c">
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/fileUtils/FileUtils.c">
 			<Option target="AIO"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/pathUtils/FileUtils.c">
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/operationUtils/OperationUtils.c">
 			<Option target="AIO"/>
 		</Unit>
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/stringUtils/StringUtils.c">
