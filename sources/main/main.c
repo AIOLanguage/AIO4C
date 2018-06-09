@@ -17,12 +17,10 @@ void make() {
 }
 
 int main() {
-  char * a = "0123456789";
-  char* b;
-  substring(a, 3, 3, &b);
-  printf("\nSUBSTRING: -%s-\n", b);
-
-
+    int a = 410;
+    char *b;
+    intToString(a, &b);
+    printf("\nSTRING: %s\n", b);
     return 0;
 }
 

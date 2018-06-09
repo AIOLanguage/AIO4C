@@ -51,8 +51,6 @@ void findMethodsInManager(AIOObject *aioObject) {
                 for (int k = 0; k < nameSize; ++k) {
                     methodName[k] = line[k];
                 }
-                free(&nameSize);
-                free(&pointer);
                 if (strcmp(methodName, "@main") == 0) {
                     *aioObject->methodManager->hasMain = 0;
                     printf("HAS MAIN: %d\n", *aioObject->methodManager->hasMain);

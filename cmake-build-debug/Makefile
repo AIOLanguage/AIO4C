@@ -230,6 +230,33 @@ sources/lang/methods/analysis/methodReproducer/AIOMethodReproducer.c.s:
 	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/AIOMethodReproducer.c.s
 .PHONY : sources/lang/methods/analysis/methodReproducer/AIOMethodReproducer.c.s
 
+sources/lang/methods/analysis/methodReproducer/theShortest/AIOAbstractForEachOperationReproducer.obj: sources/lang/methods/analysis/methodReproducer/theShortest/AIOAbstractForEachOperationReproducer.c.obj
+
+.PHONY : sources/lang/methods/analysis/methodReproducer/theShortest/AIOAbstractForEachOperationReproducer.obj
+
+# target to build an object file
+sources/lang/methods/analysis/methodReproducer/theShortest/AIOAbstractForEachOperationReproducer.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/theShortest/AIOAbstractForEachOperationReproducer.c.obj
+.PHONY : sources/lang/methods/analysis/methodReproducer/theShortest/AIOAbstractForEachOperationReproducer.c.obj
+
+sources/lang/methods/analysis/methodReproducer/theShortest/AIOAbstractForEachOperationReproducer.i: sources/lang/methods/analysis/methodReproducer/theShortest/AIOAbstractForEachOperationReproducer.c.i
+
+.PHONY : sources/lang/methods/analysis/methodReproducer/theShortest/AIOAbstractForEachOperationReproducer.i
+
+# target to preprocess a source file
+sources/lang/methods/analysis/methodReproducer/theShortest/AIOAbstractForEachOperationReproducer.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/theShortest/AIOAbstractForEachOperationReproducer.c.i
+.PHONY : sources/lang/methods/analysis/methodReproducer/theShortest/AIOAbstractForEachOperationReproducer.c.i
+
+sources/lang/methods/analysis/methodReproducer/theShortest/AIOAbstractForEachOperationReproducer.s: sources/lang/methods/analysis/methodReproducer/theShortest/AIOAbstractForEachOperationReproducer.c.s
+
+.PHONY : sources/lang/methods/analysis/methodReproducer/theShortest/AIOAbstractForEachOperationReproducer.s
+
+# target to generate assembly for a file
+sources/lang/methods/analysis/methodReproducer/theShortest/AIOAbstractForEachOperationReproducer.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/theShortest/AIOAbstractForEachOperationReproducer.c.s
+.PHONY : sources/lang/methods/analysis/methodReproducer/theShortest/AIOAbstractForEachOperationReproducer.c.s
+
 sources/lang/methods/analysis/methodReproducer/theShortest/AIOTheShortestReproducer.obj: sources/lang/methods/analysis/methodReproducer/theShortest/AIOTheShortestReproducer.c.obj
 
 .PHONY : sources/lang/methods/analysis/methodReproducer/theShortest/AIOTheShortestReproducer.obj
@@ -256,6 +283,33 @@ sources/lang/methods/analysis/methodReproducer/theShortest/AIOTheShortestReprodu
 sources/lang/methods/analysis/methodReproducer/theShortest/AIOTheShortestReproducer.c.s:
 	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/theShortest/AIOTheShortestReproducer.c.s
 .PHONY : sources/lang/methods/analysis/methodReproducer/theShortest/AIOTheShortestReproducer.c.s
+
+sources/lang/methods/analysis/methodReproducer/theShortest/plusForEachReproducer/AIOPlusForEachReproducer.obj: sources/lang/methods/analysis/methodReproducer/theShortest/plusForEachReproducer/AIOPlusForEachReproducer.c.obj
+
+.PHONY : sources/lang/methods/analysis/methodReproducer/theShortest/plusForEachReproducer/AIOPlusForEachReproducer.obj
+
+# target to build an object file
+sources/lang/methods/analysis/methodReproducer/theShortest/plusForEachReproducer/AIOPlusForEachReproducer.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/theShortest/plusForEachReproducer/AIOPlusForEachReproducer.c.obj
+.PHONY : sources/lang/methods/analysis/methodReproducer/theShortest/plusForEachReproducer/AIOPlusForEachReproducer.c.obj
+
+sources/lang/methods/analysis/methodReproducer/theShortest/plusForEachReproducer/AIOPlusForEachReproducer.i: sources/lang/methods/analysis/methodReproducer/theShortest/plusForEachReproducer/AIOPlusForEachReproducer.c.i
+
+.PHONY : sources/lang/methods/analysis/methodReproducer/theShortest/plusForEachReproducer/AIOPlusForEachReproducer.i
+
+# target to preprocess a source file
+sources/lang/methods/analysis/methodReproducer/theShortest/plusForEachReproducer/AIOPlusForEachReproducer.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/theShortest/plusForEachReproducer/AIOPlusForEachReproducer.c.i
+.PHONY : sources/lang/methods/analysis/methodReproducer/theShortest/plusForEachReproducer/AIOPlusForEachReproducer.c.i
+
+sources/lang/methods/analysis/methodReproducer/theShortest/plusForEachReproducer/AIOPlusForEachReproducer.s: sources/lang/methods/analysis/methodReproducer/theShortest/plusForEachReproducer/AIOPlusForEachReproducer.c.s
+
+.PHONY : sources/lang/methods/analysis/methodReproducer/theShortest/plusForEachReproducer/AIOPlusForEachReproducer.s
+
+# target to generate assembly for a file
+sources/lang/methods/analysis/methodReproducer/theShortest/plusForEachReproducer/AIOPlusForEachReproducer.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/theShortest/plusForEachReproducer/AIOPlusForEachReproducer.c.s
+.PHONY : sources/lang/methods/analysis/methodReproducer/theShortest/plusForEachReproducer/AIOPlusForEachReproducer.c.s
 
 sources/lang/methods/bundle/AIOBundle.obj: sources/lang/methods/bundle/AIOBundle.c.obj
 
@@ -791,9 +845,15 @@ help:
 	@echo ... sources/lang/methods/analysis/methodReproducer/AIOMethodReproducer.obj
 	@echo ... sources/lang/methods/analysis/methodReproducer/AIOMethodReproducer.i
 	@echo ... sources/lang/methods/analysis/methodReproducer/AIOMethodReproducer.s
+	@echo ... sources/lang/methods/analysis/methodReproducer/theShortest/AIOAbstractForEachOperationReproducer.obj
+	@echo ... sources/lang/methods/analysis/methodReproducer/theShortest/AIOAbstractForEachOperationReproducer.i
+	@echo ... sources/lang/methods/analysis/methodReproducer/theShortest/AIOAbstractForEachOperationReproducer.s
 	@echo ... sources/lang/methods/analysis/methodReproducer/theShortest/AIOTheShortestReproducer.obj
 	@echo ... sources/lang/methods/analysis/methodReproducer/theShortest/AIOTheShortestReproducer.i
 	@echo ... sources/lang/methods/analysis/methodReproducer/theShortest/AIOTheShortestReproducer.s
+	@echo ... sources/lang/methods/analysis/methodReproducer/theShortest/plusForEachReproducer/AIOPlusForEachReproducer.obj
+	@echo ... sources/lang/methods/analysis/methodReproducer/theShortest/plusForEachReproducer/AIOPlusForEachReproducer.i
+	@echo ... sources/lang/methods/analysis/methodReproducer/theShortest/plusForEachReproducer/AIOPlusForEachReproducer.s
 	@echo ... sources/lang/methods/bundle/AIOBundle.obj
 	@echo ... sources/lang/methods/bundle/AIOBundle.i
 	@echo ... sources/lang/methods/bundle/AIOBundle.s

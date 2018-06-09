@@ -1,6 +1,8 @@
 #ifndef AIO_STRING_UTILS_H
 #define AIO_STRING_UTILS_H
 
+#include <stddef.h>
+
 int splitByChar(char *src, char delimiter, char ***dst);
 
 int trimStart(const char *src, char **dst);
@@ -9,7 +11,7 @@ int trimEnd(const char *src, char **dst);
 
 int trim(const char *src, char **dst);
 
-void trimAll(char** strings, size_t lineNumber, char*** dst);
+void trimAll(char **strings, size_t lineNumber, char ***dst);
 
 int removePrefix(const char *src, const char *prefix, char **dst);
 
@@ -27,8 +29,12 @@ int joinToString(char **srcStrings, char *delimiter, char **dst);
 
 int isWord(char *line);
 
-void substring(const char* string, int offset, int length, char** dst);
+void substring(const char *string, int offset, int length, char **dst);
 
 void intToString(int src, char **dst);
+
+void doubleToString(double src, char **dst);
+
+void charToString(char src, char **dst);
 
 #endif //AIO_STRING_UTILS_H

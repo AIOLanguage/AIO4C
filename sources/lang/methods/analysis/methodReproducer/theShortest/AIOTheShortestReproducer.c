@@ -1,19 +1,17 @@
 #include <stdio.h>
 #include "../../../../../../headers/lang/object/AIOObject.h"
 #include "../../../../../../headers/lib/collections/maps/AIOVariableMap.h"
-#include "../../../../../../headers/lib/utils/stringUtils/StringUtils.h"
-#include "../../../../../../headers/lib/utils/operationUtils/OperationUtils.h"
-#include "../../../../../../headers/lang/methods/analysis/methodReproducer/theShortest/plusForEachReproducer/AIOPlusForEachReproducer.h"
-#include "../../../../../../headers/lang/methods/analysis/methodReproducer/theShortest/multiplyForEachReproducer/AIOMultiplyForEachReproducer.h"
-#include "../../../../../../headers/lang/methods/analysis/methodReproducer/theShortest/concatForEachReproducer/AIOConcatForEachReproducer.h"
-#include "../../../../../../headers/lang/methods/methodDefinition/AIOMethodDefinitionBuilder.h"
-#include "../../../../../../headers/lib/collections/maps/AIOObjectMap.h"
-#include "../../../../../../headers/lang/object/objectManager/AIOObjectManager.h"
-#include "../../../../../../headers/lib/utils/pathUtils/FileUtils.h"
 #include "../../../../../../headers/lang/methods/AIOMethodContainer.h"
+#include "../../../../../../headers/lang/methods/analysis/methodReproducer/theShortest/concatForEachReproducer/AIOConcatForEachReproducer.h"
+#include "../../../../../../headers/lib/utils/operationUtils/OperationUtils.h"
+#include "../../../../../../headers/lang/methods/analysis/methodReproducer/theShortest/multiplyForEachReproducer/AIOMultiplyForEachReproducer.h"
+#include "../../../../../../headers/lang/methods/analysis/methodReproducer/theShortest/plusForEachReproducer/AIOPlusForEachReproducer.h"
+#include "../../../../../../headers/lang/object/objectManager/AIOObjectManager.h"
+#include "../../../../../../headers/lib/utils/fileUtils/FileUtils.h"
+#include "../../../../../../headers/lang/methods/methodDefinition/AIOMethodDefinitionBuilder.h"
 
 void makeForEachCustomMethodInvocation(AIOObject *nextObject, AIOVariableMap *variableMap, char *nextMethodName,
-                                       AIOBundle *bundle){
+                                       AIOBundle *bundle) {
     for (int i = 0; i < *variableMap->size; ++i) {
         AIOBundle *newBundle;
         StringList *valueList;
@@ -27,21 +25,21 @@ void makeForEachCustomMethodInvocation(AIOObject *nextObject, AIOVariableMap *va
     }
 }
 
-void reproduceTheShortestMethod(AIOObject *object, AIOMethodDefinition *methodDefinition
-        , AIOMethodContainer* methodContainer, AIOBundle *bundle) {
+void reproduceTheShortestMethod(AIOObject *object, AIOMethodDefinition *methodDefinition,
+                                AIOMethodContainer *methodContainer, AIOBundle *bundle) {
     printf("The shortest reproducing...\n");
     char *word;
     trim(methodDefinition->sourceCode->strings[0], &word);
     if (isPlusOperation(word) == 0) {
-        plusForEachReproduce(methodContainer->variableMap);
+        plusForEachReproduce(object, methodDefinition, methodContainer, bundle);
         return;
     }
     if (isMultiplyOperation(word) == 0) {
-        multiplyForEachReproduce(methodContainer->variableMap);
+//        multiplyForEachReproduce(methodContainer->variableMap);
         return;
     }
     if (isConcatOperation(word)) {
-        concatForEachReproduce(methodContainer->variableMap);
+//        concatForEachReproduce(methodContainer->variableMap);
         return;
     }
     if (isTheShortestInTheSameObject(word)) {
@@ -59,7 +57,7 @@ void reproduceTheShortestMethod(AIOObject *object, AIOMethodDefinition *methodDe
         char *nextMethodName;
         removeSuffix(nextObjectNameVsMethod[1], "~", &nextMethodName);
         AIOObject *nextObject = getAIOObjectInMapByName(aioObjectManager->objectMap, nextObjectPathPlusName);
-        char* nextObjectName;
+        char *nextObjectName;
         if (nextObject == NULL) {
             StringPair *relativePathVsObjectName = extractNameAndFolderPathFromPath(nextObjectPathPlusName);
             char *relativeNextObjectPath = relativePathVsObjectName->first;

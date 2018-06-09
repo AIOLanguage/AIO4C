@@ -4,6 +4,7 @@
 #include <malloc.h>
 #include <ctype.h>
 #include <assert.h>
+#include <stddef.h>
 
 //Passed JUnitTests!
 int splitByChar(char *src, char delimiter, char ***dst) {
@@ -360,46 +361,122 @@ int isWord(char *line) {
 }
 
 void substring(const char *string, int offset, int length, char **dst) {
-    *dst = calloc((size_t) (length - offset + 1), sizeof(char));
+    *dst = calloc((size_t) (length + 1), sizeof(char));
     for (int i = 0; i < length; ++i) {
         (*dst)[i] = string[offset + i];
     }
 }
 
+//Passed JUnitTest!
 void intToString(int src, char **dst) {
     int division = src;
     unsigned intSizeInString = 0;
-    while (division > 0) {
+    while (division != 0) {
         division = division / 10;
         intSizeInString = intSizeInString + 1;
     }
-    *dst = calloc(intSizeInString + 1, sizeof(char));
+    char *integerArray;
+    int negativeShift = 0;
+    if (intSizeInString > 0) {
+        if (src < 0) {
+            negativeShift = 1;
+        }
+        integerArray = calloc(intSizeInString + 1 + negativeShift, sizeof(char));
+        if (integerArray == NULL) {
+            perror("cannot allocate memory for integerArray in intToString");
+        }
+        division = src;
+        integerArray[0] = '-';
+        int pointer = intSizeInString - 1 + negativeShift;
+        while (division != 0) {
+            (integerArray)[pointer] = (char) (abs(division % 10) + '0');
+            division = division / 10;
+            pointer--;
+        }
+    } else {
+        integerArray = calloc(2, sizeof(char));
+        if (integerArray == NULL) {
+            perror("cannot allocate memory for integerArray in intToString");
+        }
+        integerArray[0] = '0';
+        intSizeInString = 1;
+    }
+    (*dst) = calloc(intSizeInString + 1 + negativeShift, sizeof(char));
     if (*dst == NULL) {
-        perror("cannot allocate memory for dst in intToString");
+        perror("cannot allocate memory for dst array!");
+        exit(1);
     }
-    division = src;
-    int pointer = intSizeInString - 1;
-    while (division > 0){
-        (*dst)[pointer] = (char) (division % 10);
-        division = division / 10;
+    for (int k = 0; k < intSizeInString + negativeShift; ++k) {
+        (*dst)[k] = integerArray[k];
     }
+    free(integerArray);
 }
 
-/*
- * Split debug:
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
- //    char* a = " Hello      AIO!  ";
-//    char** b;
-//    splitByChar(a, ' ', &b);
-//    printf("SIZE:    %d\n", _msize(b) / 4);
-//    for (int i = 0; i < _msize(b) / 4; ++i) {
-//        printf("LINE->: -%s-\n", b[i]);
-//    }
-//    char** clean = calloc(_msize(b) / 4, sizeof(char*));
-//    filter(b, _msize(b) / 4 , &clean, isNotEmpty);
-//    for (int i = 0; i < _msize(clean) / 4; ++i) {
-//        printf("CLEAN LINES->: -%s-\n", clean[i]);
-//    }
-//
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-*/
+//Passed JUnitTest!
+void doubleToString(double src, char **dst) {
+    int division = (int) src;
+    unsigned intSizeInString = 0;
+    while (division != 0) {
+        division = division / 10;
+        intSizeInString = intSizeInString + 1;
+    }
+    char *integerArray;
+    int negativeShift = 0;
+    if (intSizeInString > 0) {
+        if (src < 0) {
+            negativeShift = 1;
+        }
+        integerArray = calloc(intSizeInString + 1 + negativeShift, sizeof(char));
+        if (integerArray == NULL) {
+            perror("cannot allocate memory for integerArray in intToString");
+        }
+        division = (int) src;
+        integerArray[0] = '-';
+        int pointer = intSizeInString - 1 + negativeShift;
+        while (division != 0) {
+            (integerArray)[pointer] = (char) (abs(division % 10) + '0');
+            division = division / 10;
+            pointer--;
+        }
+    } else {
+        integerArray = calloc(2, sizeof(char));
+        if (integerArray == NULL) {
+            perror("cannot allocate memory for integerArray in intToString");
+        }
+        integerArray[0] = '0';
+        intSizeInString = 1;
+    }
+    double fractionalPart;
+    if (src < 0) {
+        fractionalPart = src * (-1.0) - (int) ((-1) * src);
+    } else {
+        fractionalPart = src - abs((int) src);
+    }
+    //Until 1E-9:
+    int *fractionalArray = calloc(9, sizeof(int));
+    if (fractionalArray == NULL) {
+        perror("cannot allocate memory for fractional array!");
+        exit(1);
+    }
+    int fractionalSizeInString = 1;
+    for (int i = 0; i < 9; ++i) {
+        fractionalPart = fractionalPart * 10;
+        fractionalArray[i] = (int) fractionalPart;
+        fractionalPart = fractionalPart - (int) fractionalPart;
+        fractionalSizeInString = fractionalSizeInString + 1;
+    }
+    (*dst) = calloc(intSizeInString + fractionalSizeInString + 2 + negativeShift, sizeof(char));
+    if (*dst == NULL) {
+        perror("cannot allocate memory for dst array!");
+        exit(1);
+    }
+    for (int k = 0; k < intSizeInString + negativeShift; ++k) {
+        (*dst)[k] = integerArray[k];
+    }
+    (*dst)[intSizeInString + negativeShift] = '.';
+    for (int j = 0; j < fractionalSizeInString; ++j) {
+        (*dst)[intSizeInString + 1 + j + negativeShift] = (char) (fractionalArray[j] + '0');
+    }
+    free(integerArray);
+    free(fractionalArray);
+}

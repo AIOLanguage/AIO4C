@@ -114,3 +114,36 @@ void setType(char *value, enum AIOType *type) {
         *type = AIO_STR;
     }
 }
+
+
+int isAIOIntType(enum AIOType type) {
+    if (type == AIO_INT) {
+        return 0;
+    } else {
+        return -1;
+    }
+}
+
+int isAIODouType(enum AIOType type) {
+    if (type == AIO_DOU) {
+        return 0;
+    } else {
+        return -1;
+    }
+}
+
+int isAIOChaType(enum AIOType type) {
+    if (type == AIO_CHA) {
+        return 0;
+    } else {
+        return -1;
+    }
+}
+
+int isAIOStrType(enum AIOType type) {
+    if (type == AIO_STR) {
+        return 0;
+    } else {
+        return -1;
+    }
+}

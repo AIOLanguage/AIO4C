@@ -26,7 +26,7 @@ void setArgs(AIOMethodContainer *methodContainer, AIODeclaration *declaration, S
             AIOVariable *argument;
             enum AIOType type;
             setType(inputArgs->strings[i], &type);
-            createAIOVariable(&argument, declaration->argList->strings[i], inputArgs->strings[i], -1,);
+            createAIOVariable(&argument, declaration->argList->strings[i], inputArgs->strings[i], -1, &type);
             putAIOVariableInMap(methodContainer->argMap, argument);
         }
     } else {
@@ -57,7 +57,7 @@ void createAIOMethodAndInvoke(AIOObject *object, AIOMethod **method, AIOMethodDe
     //Create method container:
     createAIOMethodContainer(&(*method)->methodContainer);
     //Create method methodReproducer:
-    createAIOMethodReproducer(&(*method)->methodReproducer, methodDefinition, (*method)->methodContainer, bundle);
+//    createAIOMethodReproducer(&(*method)->methodReproducer, methodDefinition, (*method)->methodContainer, bundle);
     //Set args:
     setArgs((*method)->methodContainer, methodDefinition->declaration, bundle->inputValues);
     //Reproduce method:

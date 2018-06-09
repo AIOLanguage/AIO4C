@@ -30,6 +30,22 @@ add_executable(AIO sources/main/main.c
         headers/lang/methods/result/AIOResult.h sources/lang/methods/result/AIOResult.c
         headers/lang/methods/defaultMethodContainer/AIODefaultMethodContainer.h
         sources/lang/methods/defaultMethodContainer/AIODefaultMethodContainer.c
-        sources/lib/utils/stringUtils/StringUtils.c headers/lib/utils/stringUtils/StringUtils.h headers/lang/methods/methodDefinition/AIOMethodDefinitionBuilder.h sources/lang/methods/methodDefinition/AIOMethodDefinitionBuilder.c headers/lang/methods/AIOMethod.h sources/lang/methods/AIOMethod.c headers/lang/methods/analysis/methodReproducer/AIOMethodReproducer.h sources/lang/methods/analysis/methodReproducer/AIOMethodReproducer.c
+        sources/lib/utils/stringUtils/StringUtils.c headers/lib/utils/stringUtils/StringUtils.h
+        headers/lang/methods/methodDefinition/AIOMethodDefinitionBuilder.h
+        sources/lang/methods/methodDefinition/AIOMethodDefinitionBuilder.c
+        headers/lang/methods/AIOMethod.h sources/lang/methods/AIOMethod.c
+        headers/lang/methods/analysis/methodReproducer/AIOMethodReproducer.h
+        sources/lang/methods/analysis/methodReproducer/AIOMethodReproducer.c
         headers/lib/collections/maps/AIOVariableMap.h
-        sources/lib/collections/maps/AIOVariableMap.c headers/lang/methods/AIOMethodContainer.h headers/lang/methods/analysis/methodReproducer/theShortest/AIOTheShortestReproducer.h headers/lang/methods/analysis/methodReproducer/default/AIODefaultReproducer.h headers/lang/methods/analysis/methodReproducer/short/AIOShortReproducer.h headers/lib/utils/operationUtils/OperationUtils.h sources/lib/utils/operationUtils/OperationUtils.c headers/lang/methods/analysis/methodReproducer/theShortest/plusForEachReproducer/AIOPlusForEachReproducer.h headers/lang/methods/analysis/methodReproducer/theShortest/AIOAbstractForEachOperationReproducer.h headers/lang/methods/analysis/methodReproducer/theShortest/multiplyForEachReproducer/AIOMultiplyForEachReproducer.h headers/lang/methods/analysis/methodReproducer/theShortest/concatForEachReproducer/AIOConcatForEachReproducer.h sources/lib/utils/fileUtils/FileUtils.c headers/lib/utils/fileUtils/FileUtils.h sources/lang/methods/analysis/methodReproducer/theShortest/AIOTheShortestReproducer.c)
+        sources/lib/collections/maps/AIOVariableMap.c
+        headers/lang/methods/AIOMethodContainer.h
+        headers/lang/methods/analysis/methodReproducer/theShortest/AIOTheShortestReproducer.h
+        headers/lang/methods/analysis/methodReproducer/default/AIODefaultReproducer.h
+        headers/lang/methods/analysis/methodReproducer/short/AIOShortReproducer.h
+        headers/lib/utils/operationUtils/OperationUtils.h
+        sources/lib/utils/operationUtils/OperationUtils.c
+        headers/lang/methods/analysis/methodReproducer/theShortest/plusForEachReproducer/AIOPlusForEachReproducer.h
+        headers/lang/methods/analysis/methodReproducer/theShortest/AIOAbstractForEachOperationReproducer.h
+        headers/lang/methods/analysis/methodReproducer/theShortest/multiplyForEachReproducer/AIOMultiplyForEachReproducer.h
+        headers/lang/methods/analysis/methodReproducer/theShortest/concatForEachReproducer/AIOConcatForEachReproducer.h sources/lib/utils/fileUtils/FileUtils.c headers/lib/utils/fileUtils/FileUtils.h
+        sources/lang/methods/analysis/methodReproducer/theShortest/AIOTheShortestReproducer.c sources/lang/methods/analysis/methodReproducer/theShortest/plusForEachReproducer/AIOPlusForEachReproducer.c sources/lang/methods/analysis/methodReproducer/theShortest/AIOAbstractForEachOperationReproducer.c)

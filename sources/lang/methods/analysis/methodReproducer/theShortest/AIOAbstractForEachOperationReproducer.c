@@ -1,45 +1,25 @@
-#ifndef AIO_ABSTRACT_FOR_EACH_OPERATION_REPRODUCER_H
-#define AIO_ABSTRACT_FOR_EACH_OPERATION_REPRODUCER_H
+#include "../../../../../../headers/lib/collections/maps/AIOVariableMap.h"
+#include "../../../../../../headers/lang/methods/AIOMethodContainer.h"
+#include "../../../../../../headers/lang/methods/bundle/AIOBundle.h"
 
-
-#include "../../../AIOMethodContainer.h"
-#include "../../../bundle/AIOBundle.h"
-
-abstract fun createAIOType(): AIOType
-
-    abstract fun apply(result: T, value: T): T
-
-    //List is not empty:
-    void reproduceForEachIntOperationReproducer(AIOVariableMap* argMap, AIOMethodContainer* methodContainer, AIOBundle* bundle) {
-        val firstAIOVariable = argList[0]
-        val firstValue = firstAIOVariable.value
-        val aioType = this.createAIOType()
-
-
-        if(argMap[0])
-
-
-
-
-        if (aioType.matches(firstValue)) {
-            firstAIOVariable.type = aioType
-            var result = aioType.toType(firstValue) as T
-            for (i in 1 until argList.size) {
-                val aioVariable = argList[i]
-                val value = aioVariable.value
-                if (firstAIOVariable.type.matches(value)) {
-                    val intValue = aioType.toType(value) as T
-                    result = this.apply(result, intValue)
-                } else {
-                    throw AIOIncomparableTypesException()
-                }
+void reproduceForEachOperation(AIOVariableMap *argMap, AIOBundle *bundle,
+                               int (equalsType)(enum AIOType variableType),
+                               int (matchesType)(char *),
+                               void (toType)(char *src, void **dst),
+                               void (apply)(void **result, void *value),
+                               void (toString)(void *src, char **dst)) {
+    if (equalsType(*argMap->variables[0]->type) == 0) {
+        void *result;
+        toType(argMap->variables[0]->value, &result);
+        for (int i = 1; i < *argMap->size; ++i) {
+            if (matchesType(argMap->variables[i]->value) == 0) {
+                void *argValue;
+                toType(argMap->variables[i]->value, &argValue);
+                apply(&result, argValue);
             }
-            this.bundle.outputValues.add(result.toString())
         }
+        char *outputResult;
+        toString(result, &outputResult);
+        addInListOfString(bundle->outputValues, outputResult);
     }
 }
-
-
-
-
-#endif //AIO_ABSTRACT_FOR_EACH_OPERATION_REPRODUCER_H

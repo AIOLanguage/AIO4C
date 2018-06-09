@@ -179,7 +179,13 @@
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lang/methods/analysis/methodReproducer/AIOMethodReproducer.c">
 			<Option target="AIO"/>
 		</Unit>
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lang/methods/analysis/methodReproducer/theShortest/AIOAbstractForEachOperationReproducer.c">
+			<Option target="AIO"/>
+		</Unit>
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lang/methods/analysis/methodReproducer/theShortest/AIOTheShortestReproducer.c">
+			<Option target="AIO"/>
+		</Unit>
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lang/methods/analysis/methodReproducer/theShortest/plusForEachReproducer/AIOPlusForEachReproducer.c">
 			<Option target="AIO"/>
 		</Unit>
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lang/methods/bundle/AIOBundle.c">

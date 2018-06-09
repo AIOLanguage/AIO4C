@@ -13,11 +13,6 @@ void initAIOObjectManager(AIOObjectManager **objectManager) {
     AIOObjectMap *objectMap;
     createAIOObjectMap(&objectMap);
     (*objectManager)->objectMap = objectMap;
-    (*objectManager)->currentObject = calloc(1, sizeof(AIOObject));
-    if ((*objectManager)->currentObject == NULL) {
-        perror("cannot create currentObject");
-        exit(1);
-    }
     //Set default behaviour:
     (*objectManager)->behaviour = 0;
 }
