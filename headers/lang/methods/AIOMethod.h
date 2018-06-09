@@ -11,8 +11,9 @@ typedef struct AIOMethod {
     AIOMethodReproducer *methodReproducer;
 } AIOMethod;
 
-#endif //AIO_METHOD_H
 
 void createAIOMethod(AIOMethod **method, AIOMethodDefinition *methodDefinition, AIOBundle *bundle);
 
 void invokeAIOMethod(AIOMethod *method);
+
+#endif //AIO_METHOD_H

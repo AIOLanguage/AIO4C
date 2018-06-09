@@ -27,6 +27,6 @@ StringPair *extractNameAnfFolderPathFromPath(char *path);
 
 void createAIOObject(AIOObject **object, AIOMethodManager* methodManager, char *path);
 
-//void invokeMethodInManager(AIOObjectManager* objectManager, AIOObject* object, char* methodName, AIOBundle* bundle);
+void invokeMethodInManager(AIOObject* object, char* methodName, AIOBundle* bundle);
 
 #endif //AIO_AIO_OBJECT_H

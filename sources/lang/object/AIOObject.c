@@ -1,17 +1,29 @@
 #include <mem.h>
 #include <malloc.h>
 #include <stdio.h>
-#include "../../../headers/lang/methods/methodDefinition/AIOMethodDefinitionBuilder.h"
+#include <process.h>
 #include "../../../headers/lang/object/objectManager/AIOObjectManager.h"
+#include "../../../headers/lang/methods/methodDefinition/AIOMethodDefinitionBuilder.h"
+#include "../../../headers/lang/methods/AIOMethod.h"
+
+AIOObjectManager *aioObjectManager;
 
 //Passed JUnitTest!
 void createAIOMethodManager(AIOMethodManager **methodManager, AIOMethodDefinitionMap *methodDefinitionMap) {
     //Create the same method manager:
-    *methodManager = malloc(sizeof(AIOMethodManager));
+    *methodManager = calloc(1, sizeof(AIOMethodManager));
+    if (*methodManager == NULL) {
+        perror("cannot allocate memory for aio method manager!");
+        exit(1);
+    }
     //Set method definition map:
     (*methodManager)->methodDefinitionMap = methodDefinitionMap;
     //Set boolean "has main": (default false)
-    (*methodManager)->hasMain = malloc(sizeof(int));
+    (*methodManager)->hasMain = calloc(1, sizeof(int));
+    if ((*methodManager)->hasMain == NULL) {
+        perror("cannot allocate memory for hasMain property in aio method manager!");
+        exit(1);
+    }
     *(*methodManager)->hasMain = -1;
 }
 
@@ -39,7 +51,6 @@ StringPair *extractNameAnfFolderPathFromPath(char *path) {
         for (int j = 0; j < size; ++j) {
             objectName[j] = path[j + startOfObjectName];
         }
-        printf("OBJECT NAME: %s\n", objectName);
         char *folderPath = calloc((size_t) endOfObjectName + 1, sizeof(char));
         if (folderPath == NULL) {
             perror("can not allocate memory for folder path!");
@@ -47,7 +58,6 @@ StringPair *extractNameAnfFolderPathFromPath(char *path) {
         for (int k = 0; k < startOfObjectName - 1; ++k) {
             folderPath[k] = path[k];
         }
-        printf("FOLDER PATH: %s\n", folderPath);
         StringPair *nameVsFolder = calloc(1, sizeof(StringPair));
         nameVsFolder->first = objectName;
         nameVsFolder->second = folderPath;
@@ -137,20 +147,20 @@ void createAIOObject(AIOObject **object, AIOMethodManager *methodManager, char *
     loadSourceCodeInAIOObject(*object, path);
     findMethodsInManager(*object);
 }
-//
-//void invokeMethodInManager(AIOObjectManager *objectManager, AIOObject *object, char *methodName, AIOBundle *bundle) {
-//    objectManager->lastVisitedObject = object;
-//    AIOMethodDefinition *methodDefinition = getAIOMethodDefinitionInMapByName(
-//            object->methodManager->methodDefinitionMap, methodName);
-//    if (methodDefinition->declaration != NULL) {
-//        if (*methodDefinition->declaration->argList->size != *bundle->inputValues->size) {
-//            perror("number of args not matches with arg size of declaration!");
-//        }
-//    }
-//    AIOMethod *method;
-//    createAIOMethod(&method, methodDefinition, bundle);
-//    invokeAIOMethod(method);
-//}
+
+void invokeMethodInManager(AIOObject *object, char *methodName, AIOBundle *bundle) {
+    aioObjectManager->lastVisitedObject = object;
+    AIOMethodDefinition *methodDefinition = getAIOMethodDefinitionInMapByName(
+            object->methodManager->methodDefinitionMap, methodName);
+    if (methodDefinition->declaration != NULL) {
+        if (*methodDefinition->declaration->argList->size != *bundle->inputValues->size) {
+            perror("number of args not matches with arg size of declaration!");
+        }
+    }
+    AIOMethod *method;
+    createAIOMethod(&method, methodDefinition, bundle);
+    invokeAIOMethod(method);
+}
 
 /*
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

@@ -359,6 +359,13 @@ int isWord(char *line) {
     return 0;
 }
 
+void substring(const char* string, int offset, int length, char** dst){
+    *dst = calloc((size_t) (length - offset + 1), sizeof(char));
+    for (int i = 0; i < length; ++i) {
+        (*dst)[i] = string[offset + i];
+    }
+}
+
 /*
  * Split debug:
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

@@ -1,7 +1,6 @@
 #ifndef AIO_AIO_OBJECT_MANAGER_H
 #define AIO_AIO_OBJECT_MANAGER_H
 
-#include "../../../lang/object/AIOObject.h"
 #include "../../../lib/collections/maps/AIOObjectMap.h"
 
 typedef struct AIOObjectManager {

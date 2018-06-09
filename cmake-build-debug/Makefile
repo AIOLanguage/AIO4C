@@ -635,6 +635,33 @@ sources/lib/collections/maps/AIOVariableMap.c.s:
 	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/collections/maps/AIOVariableMap.c.s
 .PHONY : sources/lib/collections/maps/AIOVariableMap.c.s
 
+sources/lib/utils/operationUtils/OperationUtils.obj: sources/lib/utils/operationUtils/OperationUtils.c.obj
+
+.PHONY : sources/lib/utils/operationUtils/OperationUtils.obj
+
+# target to build an object file
+sources/lib/utils/operationUtils/OperationUtils.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/operationUtils/OperationUtils.c.obj
+.PHONY : sources/lib/utils/operationUtils/OperationUtils.c.obj
+
+sources/lib/utils/operationUtils/OperationUtils.i: sources/lib/utils/operationUtils/OperationUtils.c.i
+
+.PHONY : sources/lib/utils/operationUtils/OperationUtils.i
+
+# target to preprocess a source file
+sources/lib/utils/operationUtils/OperationUtils.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/operationUtils/OperationUtils.c.i
+.PHONY : sources/lib/utils/operationUtils/OperationUtils.c.i
+
+sources/lib/utils/operationUtils/OperationUtils.s: sources/lib/utils/operationUtils/OperationUtils.c.s
+
+.PHONY : sources/lib/utils/operationUtils/OperationUtils.s
+
+# target to generate assembly for a file
+sources/lib/utils/operationUtils/OperationUtils.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/operationUtils/OperationUtils.c.s
+.PHONY : sources/lib/utils/operationUtils/OperationUtils.c.s
+
 sources/lib/utils/stringUtils/StringUtils.obj: sources/lib/utils/stringUtils/StringUtils.c.obj
 
 .PHONY : sources/lib/utils/stringUtils/StringUtils.obj
@@ -755,6 +782,9 @@ help:
 	@echo ... sources/lib/collections/maps/AIOVariableMap.obj
 	@echo ... sources/lib/collections/maps/AIOVariableMap.i
 	@echo ... sources/lib/collections/maps/AIOVariableMap.s
+	@echo ... sources/lib/utils/operationUtils/OperationUtils.obj
+	@echo ... sources/lib/utils/operationUtils/OperationUtils.i
+	@echo ... sources/lib/utils/operationUtils/OperationUtils.s
 	@echo ... sources/lib/utils/stringUtils/StringUtils.obj
 	@echo ... sources/lib/utils/stringUtils/StringUtils.i
 	@echo ... sources/lib/utils/stringUtils/StringUtils.s

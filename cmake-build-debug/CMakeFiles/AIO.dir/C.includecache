@@ -35,6 +35,18 @@ C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/methodDefinition/AIOMeth
 C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/bundle/AIOBundle.h
 ../../AIOMethodContainer.h
 C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/AIOMethodContainer.h
+theShortest/AIOTheShortestReproducer.h
+C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/analysis/methodReproducer/theShortest/AIOTheShortestReproducer.h
+default/AIODefaultReproducer.h
+C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/analysis/methodReproducer/default/AIODefaultReproducer.h
+short/AIOShortReproducer.h
+C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/analysis/methodReproducer/short/AIOShortReproducer.h
+
+C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/analysis/methodReproducer/default/AIODefaultReproducer.h
+
+C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/analysis/methodReproducer/short/AIOShortReproducer.h
+
+C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/analysis/methodReproducer/theShortest/AIOTheShortestReproducer.h
 
 C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/bundle/AIOBundle.h
 ../../../lib/collections/lists/StringList.h
@@ -73,8 +85,6 @@ C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/bundle/AIOBundle.h
 C:/Users/StarKRE/CLionProjects/AIO/headers/lib/collections/maps/AIOMethodDefinitionMap.h
 
 C:/Users/StarKRE/CLionProjects/AIO/headers/lang/object/objectManager/AIOObjectManager.h
-../../../lang/object/AIOObject.h
-C:/Users/StarKRE/CLionProjects/AIO/headers/lang/object/AIOObject.h
 ../../../lib/collections/maps/AIOObjectMap.h
 C:/Users/StarKRE/CLionProjects/AIO/headers/lib/collections/maps/AIOObjectMap.h
 
@@ -98,7 +108,11 @@ C:/Users/StarKRE/CLionProjects/AIO/headers/lib/collections/maps/AIOVariableMap.h
 ../../../lang/methods/variable/AIOVariable.h
 C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/variable/AIOVariable.h
 
-C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/StringUtils.h
+C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/operationUtils/OperationUtils.h
+mem.h
+-
+
+C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/stringUtils/StringUtils.h
 
 C:/Users/StarKRE/CLionProjects/AIO/sources/lang/annotations/AIOAnnotation.c
 malloc.h
@@ -131,6 +145,12 @@ C:/Users/StarKRE/CLionProjects/AIO/sources/lang/methods/analysis/methodReproduce
 C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/bundle/AIOBundle.h
 ../../../../../headers/lang/methods/analysis/methodReproducer/AIOMethodReproducer.h
 C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/analysis/methodReproducer/AIOMethodReproducer.h
+mem.h
+-
+stdio.h
+-
+process.h
+-
 
 C:/Users/StarKRE/CLionProjects/AIO/sources/lang/methods/bundle/AIOBundle.c
 malloc.h
@@ -171,10 +191,12 @@ process.h
 -
 ../../../../headers/lang/methods/methodDefinition/AIOMethodDefinition.h
 C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/methodDefinition/AIOMethodDefinition.h
-../../../../headers/lib/utils/StringUtils.h
-C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/StringUtils.h
+../../../../headers/lib/utils/stringUtils/StringUtils.h
+C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/stringUtils/StringUtils.h
 ../../../../headers/lang/object/objectManager/AIOObjectManager.h
 C:/Users/StarKRE/CLionProjects/AIO/headers/lang/object/objectManager/AIOObjectManager.h
+../../../../headers/lib/utils/operationUtils/OperationUtils.h
+C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/operationUtils/OperationUtils.h
 
 C:/Users/StarKRE/CLionProjects/AIO/sources/lang/methods/result/AIOResult.c
 malloc.h
@@ -201,10 +223,14 @@ malloc.h
 -
 stdio.h
 -
-../../../headers/lang/methods/methodDefinition/AIOMethodDefinitionBuilder.h
-C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/methodDefinition/AIOMethodDefinitionBuilder.h
+process.h
+-
 ../../../headers/lang/object/objectManager/AIOObjectManager.h
 C:/Users/StarKRE/CLionProjects/AIO/headers/lang/object/objectManager/AIOObjectManager.h
+../../../headers/lang/methods/methodDefinition/AIOMethodDefinitionBuilder.h
+C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/methodDefinition/AIOMethodDefinitionBuilder.h
+../../../headers/lang/methods/AIOMethod.h
+C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/AIOMethod.h
 
 C:/Users/StarKRE/CLionProjects/AIO/sources/lang/object/objectManager/AIOObjectManager.c
 mem.h
@@ -279,8 +305,6 @@ stdio.h
 -
 malloc.h
 -
-../../../../headers/lang/object/AIOObject.h
-C:/Users/StarKRE/CLionProjects/AIO/headers/lang/object/AIOObject.h
 ../../../../headers/lib/collections/maps/AIOObjectMap.h
 C:/Users/StarKRE/CLionProjects/AIO/headers/lib/collections/maps/AIOObjectMap.h
 
@@ -295,6 +319,10 @@ process.h
 -
 ../../../../headers/lib/collections/maps/AIOVariableMap.h
 C:/Users/StarKRE/CLionProjects/AIO/headers/lib/collections/maps/AIOVariableMap.h
+
+C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/operationUtils/OperationUtils.c
+mem.h
+-
 
 C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/stringUtils/StringUtils.c
 stdio.h
@@ -319,4 +347,6 @@ mem.h
 -
 ../../headers/lang/object/objectManager/AIOObjectManager.h
 C:/Users/StarKRE/CLionProjects/AIO/headers/lang/object/objectManager/AIOObjectManager.h
+../../headers/lib/utils/stringUtils/StringUtils.h
+C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/stringUtils/StringUtils.h
 

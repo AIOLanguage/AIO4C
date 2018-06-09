@@ -3,8 +3,9 @@
 #include <ctype.h>
 #include <process.h>
 #include "../../../../headers/lang/methods/methodDefinition/AIOMethodDefinition.h"
-#include "../../../../headers/lib/utils/StringUtils.h"
+#include "../../../../headers/lib/utils/stringUtils/StringUtils.h"
 #include "../../../../headers/lang/object/objectManager/AIOObjectManager.h"
+#include "../../../../headers/lib/utils/operationUtils/OperationUtils.h"
 
 AIOObjectManager* aioObjectManager;
 
@@ -152,14 +153,7 @@ int isTheShortestInTheSameObject(const char *operation) {
 }
 
 //Passed JUnitTest!
-int isDefaultOperations(const char *operation) {
-    if (strlen(operation) == 1) {
-        if (operation[0] == '+' || operation[0] == '*' || operation[0] == '&') {
-            return 0;
-        }
-    }
-    return -1;
-}
+
 
 //Passed JUnitTest!
 int isTheShortestInTheOtherObject(const char *operation) {
