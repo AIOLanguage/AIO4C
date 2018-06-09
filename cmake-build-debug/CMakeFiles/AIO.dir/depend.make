@@ -11,6 +11,7 @@ CMakeFiles/AIO.dir/sources/lang/declarations/AIODeclaration.c.obj: ../sources/la
 CMakeFiles/AIO.dir/sources/lang/methods/AIOMethod.c.obj: ../headers/lang/annotations/AIOAnnotation.h
 CMakeFiles/AIO.dir/sources/lang/methods/AIOMethod.c.obj: ../headers/lang/declarations/AIODeclaration.h
 CMakeFiles/AIO.dir/sources/lang/methods/AIOMethod.c.obj: ../headers/lang/methods/AIOMethod.h
+CMakeFiles/AIO.dir/sources/lang/methods/AIOMethod.c.obj: ../headers/lang/methods/AIOMethodContainer.h
 CMakeFiles/AIO.dir/sources/lang/methods/AIOMethod.c.obj: ../headers/lang/methods/analysis/methodReproducer/AIOMethodReproducer.h
 CMakeFiles/AIO.dir/sources/lang/methods/AIOMethod.c.obj: ../headers/lang/methods/bundle/AIOBundle.h
 CMakeFiles/AIO.dir/sources/lang/methods/AIOMethod.c.obj: ../headers/lang/methods/methodDefinition/AIOMethodDefinition.h
@@ -24,7 +25,7 @@ CMakeFiles/AIO.dir/sources/lang/methods/AIOMethod.c.obj: ../sources/lang/methods
 
 CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/AIOMethodReproducer.c.obj: ../headers/lang/annotations/AIOAnnotation.h
 CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/AIOMethodReproducer.c.obj: ../headers/lang/declarations/AIODeclaration.h
-CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/AIOMethodReproducer.c.obj: ../headers/lang/methods/AIOMethod.h
+CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/AIOMethodReproducer.c.obj: ../headers/lang/methods/AIOMethodContainer.h
 CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/AIOMethodReproducer.c.obj: ../headers/lang/methods/analysis/methodReproducer/AIOMethodReproducer.h
 CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/AIOMethodReproducer.c.obj: ../headers/lang/methods/bundle/AIOBundle.h
 CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/AIOMethodReproducer.c.obj: ../headers/lang/methods/methodDefinition/AIOMethodDefinition.h
@@ -74,21 +75,16 @@ CMakeFiles/AIO.dir/sources/lang/methods/variable/AIOVariable.c.obj: ../sources/l
 
 CMakeFiles/AIO.dir/sources/lang/object/AIOObject.c.obj: ../headers/lang/annotations/AIOAnnotation.h
 CMakeFiles/AIO.dir/sources/lang/object/AIOObject.c.obj: ../headers/lang/declarations/AIODeclaration.h
-CMakeFiles/AIO.dir/sources/lang/object/AIOObject.c.obj: ../headers/lang/methods/AIOMethod.h
-CMakeFiles/AIO.dir/sources/lang/object/AIOObject.c.obj: ../headers/lang/methods/analysis/methodReproducer/AIOMethodReproducer.h
 CMakeFiles/AIO.dir/sources/lang/object/AIOObject.c.obj: ../headers/lang/methods/bundle/AIOBundle.h
 CMakeFiles/AIO.dir/sources/lang/object/AIOObject.c.obj: ../headers/lang/methods/methodDefinition/AIOMethodDefinition.h
 CMakeFiles/AIO.dir/sources/lang/object/AIOObject.c.obj: ../headers/lang/methods/methodDefinition/AIOMethodDefinitionBuilder.h
 CMakeFiles/AIO.dir/sources/lang/object/AIOObject.c.obj: ../headers/lang/methods/methodDefinition/AIOMethodSizeType.h
-CMakeFiles/AIO.dir/sources/lang/object/AIOObject.c.obj: ../headers/lang/methods/variable/AIOVariable.h
 CMakeFiles/AIO.dir/sources/lang/object/AIOObject.c.obj: ../headers/lang/object/AIOObject.h
 CMakeFiles/AIO.dir/sources/lang/object/AIOObject.c.obj: ../headers/lang/object/objectManager/AIOObjectManager.h
-CMakeFiles/AIO.dir/sources/lang/object/AIOObject.c.obj: ../headers/lang/types/AIOType.h
 CMakeFiles/AIO.dir/sources/lang/object/AIOObject.c.obj: ../headers/lib/collections/lists/AIOAnnotationList.h
 CMakeFiles/AIO.dir/sources/lang/object/AIOObject.c.obj: ../headers/lib/collections/lists/StringList.h
 CMakeFiles/AIO.dir/sources/lang/object/AIOObject.c.obj: ../headers/lib/collections/maps/AIOMethodDefinitionMap.h
 CMakeFiles/AIO.dir/sources/lang/object/AIOObject.c.obj: ../headers/lib/collections/maps/AIOObjectMap.h
-CMakeFiles/AIO.dir/sources/lang/object/AIOObject.c.obj: ../headers/lib/collections/maps/AIOVariableMap.h
 CMakeFiles/AIO.dir/sources/lang/object/AIOObject.c.obj: ../sources/lang/object/AIOObject.c
 
 CMakeFiles/AIO.dir/sources/lang/object/objectManager/AIOObjectManager.c.obj: ../headers/lang/annotations/AIOAnnotation.h
@@ -130,7 +126,6 @@ CMakeFiles/AIO.dir/sources/lib/collections/maps/AIOObjectMap.c.obj: ../headers/l
 CMakeFiles/AIO.dir/sources/lib/collections/maps/AIOObjectMap.c.obj: ../headers/lang/methods/methodDefinition/AIOMethodDefinition.h
 CMakeFiles/AIO.dir/sources/lib/collections/maps/AIOObjectMap.c.obj: ../headers/lang/methods/methodDefinition/AIOMethodSizeType.h
 CMakeFiles/AIO.dir/sources/lib/collections/maps/AIOObjectMap.c.obj: ../headers/lang/object/AIOObject.h
-CMakeFiles/AIO.dir/sources/lib/collections/maps/AIOObjectMap.c.obj: ../headers/lang/object/objectManager/AIOObjectManager.h
 CMakeFiles/AIO.dir/sources/lib/collections/maps/AIOObjectMap.c.obj: ../headers/lib/collections/lists/AIOAnnotationList.h
 CMakeFiles/AIO.dir/sources/lib/collections/maps/AIOObjectMap.c.obj: ../headers/lib/collections/lists/StringList.h
 CMakeFiles/AIO.dir/sources/lib/collections/maps/AIOObjectMap.c.obj: ../headers/lib/collections/maps/AIOMethodDefinitionMap.h

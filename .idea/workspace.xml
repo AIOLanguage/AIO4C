@@ -14,46 +14,23 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77c54fc7-a37a-4eaf-a794-282c0598671e" name="Default" comment="08.06.2018 all is work #LOVE_AIO_&amp;_C =)">
-      <change afterPath="$PROJECT_DIR$/headers/lang/methods/AIOMethod.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/headers/lang/methods/analysis/methodReproducer/AIOMethodReproducer.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/headers/lib/collections/maps/AIOVariableMap.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/lang/methods/AIOMethod.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/lang/methods/analysis/methodReproducer/AIOMethodReproducer.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/lib/collections/maps/AIOVariableMap.c" afterDir="false" />
+    <list default="true" id="77c54fc7-a37a-4eaf-a794-282c0598671e" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/headers/lang/methods/AIOMethodContainer.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aioPrograms/test.aio" beforeDir="false" afterPath="$PROJECT_DIR$/aioPrograms/test.aio" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/AIO.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/AIO.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/AIO.exe" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/C.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/C.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/DependInfo.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/cmake_clean.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/depend.internal" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/objects.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/objects1.rsp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/objects1.rsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/sources/lang/annotations/AIOAnnotation.c.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/sources/lang/methods/variable/AIOVariable.c.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/sources/lang/object/objectManager/AIOObjectManager.c.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/sources/lang/reservedNames/AIOReservedNamesContainer.c.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/sources/lang/types/AIOType.c.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/sources/lang/object/objectManager/AIOObjectManager.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/sources/lang/object/objectManager/AIOObjectManager.c.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/headers/lang/methods/AIOMethod.h" beforeDir="false" afterPath="$PROJECT_DIR$/headers/lang/methods/AIOMethod.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/headers/lang/methods/analysis/methodReproducer/AIOMethodReproducer.h" beforeDir="false" afterPath="$PROJECT_DIR$/headers/lang/methods/analysis/methodReproducer/AIOMethodReproducer.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/headers/lang/object/AIOObject.h" beforeDir="false" afterPath="$PROJECT_DIR$/headers/lang/object/AIOObject.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/headers/lang/object/objectManager/AIOObjectManager.h" beforeDir="false" afterPath="$PROJECT_DIR$/headers/lang/object/objectManager/AIOObjectManager.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/headers/lib/collections/lists/AIOAnnotationList.h" beforeDir="false" afterPath="$PROJECT_DIR$/headers/lib/collections/lists/AIOAnnotationList.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/headers/lib/collections/maps/AIOMethodDefinitionMap.h" beforeDir="false" afterPath="$PROJECT_DIR$/headers/lib/collections/maps/AIOMethodDefinitionMap.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sources/lang/methods/methodDefinition/AIOMethodDefinition.c" beforeDir="false" afterPath="$PROJECT_DIR$/sources/lang/methods/methodDefinition/AIOMethodDefinition.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sources/lang/methods/methodDefinition/AIOMethodDefinitionBuilder.c" beforeDir="false" afterPath="$PROJECT_DIR$/sources/lang/methods/methodDefinition/AIOMethodDefinitionBuilder.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sources/lang/methods/AIOMethod.c" beforeDir="false" afterPath="$PROJECT_DIR$/sources/lang/methods/AIOMethod.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sources/lang/methods/analysis/methodReproducer/AIOMethodReproducer.c" beforeDir="false" afterPath="$PROJECT_DIR$/sources/lang/methods/analysis/methodReproducer/AIOMethodReproducer.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sources/lang/object/AIOObject.c" beforeDir="false" afterPath="$PROJECT_DIR$/sources/lang/object/AIOObject.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sources/lib/collections/lists/AIOAnnotationList.c" beforeDir="false" afterPath="$PROJECT_DIR$/sources/lib/collections/lists/AIOAnnotationList.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sources/lib/collections/maps/AIOMethodDefinitionMap.c" beforeDir="false" afterPath="$PROJECT_DIR$/sources/lib/collections/maps/AIOMethodDefinitionMap.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sources/lib/collections/maps/AIOObjectMap.c" beforeDir="false" afterPath="$PROJECT_DIR$/sources/lib/collections/maps/AIOObjectMap.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sources/main/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/sources/main/main.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sources/lib/collections/maps/AIOVariableMap.c" beforeDir="false" afterPath="$PROJECT_DIR$/sources/lib/collections/maps/AIOVariableMap.c" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -66,11 +43,14 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="AIOObjectMap.h" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/headers/lib/collections/maps/AIOObjectMap.h">
+      <file leaf-file-name="AIOVariableMap.c" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/sources/lib/collections/maps/AIOVariableMap.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" selection-start-line="9" selection-end-line="9" />
+            <state relative-caret-position="272">
+              <caret line="16" column="35" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
+              <folding>
+                <element signature="e#0#19#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -94,7 +74,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/headers/lang/methods/defaultMethodContainer/AIODefaultMethodContainer.h" />
         <option value="$PROJECT_DIR$/sources/lang/methods/defaultMethodContainer/AIODefaultMethodContainer.c" />
         <option value="$PROJECT_DIR$/sources/interpreter/text.txt" />
         <option value="$PROJECT_DIR$/text.txt" />
@@ -117,7 +96,6 @@
         <option value="$PROJECT_DIR$/headers/lib/collections/lists/AnnotationList.h" />
         <option value="$PROJECT_DIR$/headers/lib/collections/maps/MethodDefinitionMap.h" />
         <option value="$PROJECT_DIR$/headers/lib/collections/lists/AIOAnnotationList.h" />
-        <option value="$PROJECT_DIR$/headers/lib/collections/maps/AIOObjectMap.h" />
         <option value="$PROJECT_DIR$/headers/lib/collections/lists/StringList.h" />
         <option value="$PROJECT_DIR$/sources/lib/collections/lists/StringList.c" />
         <option value="$PROJECT_DIR$/aioPrograms/primitive.aio" />
@@ -130,21 +108,23 @@
         <option value="$PROJECT_DIR$/sources/lang/methods/methodDefinition/AIOMethodDefinition.c" />
         <option value="$PROJECT_DIR$/aioPrograms/test.aio" />
         <option value="$PROJECT_DIR$/sources/lang/methods/methodDefinition/AIOMethodDefinitionBuilder.c" />
-        <option value="$PROJECT_DIR$/headers/lang/methods/analysis/methodReproducer/AIOMethodReproducer.h" />
-        <option value="$PROJECT_DIR$/sources/lang/methods/analysis/methodReproducer/AIOMethodReproducer.c" />
         <option value="$PROJECT_DIR$/sources/lang/methods/AIOMethod.c" />
         <option value="$PROJECT_DIR$/headers/lib/collections/maps/AIOMethodDefinitionMap.h" />
-        <option value="$PROJECT_DIR$/headers/lang/methods/AIOMethod.h" />
         <option value="$PROJECT_DIR$/sources/lib/collections/maps/AIOMethodDefinitionMap.c" />
         <option value="$PROJECT_DIR$/sources/lib/collections/lists/AIOAnnotationList.c" />
         <option value="$PROJECT_DIR$/headers/lib/collections/maps/AIOVariableMap.h" />
-        <option value="$PROJECT_DIR$/sources/lib/collections/maps/AIOVariableMap.c" />
         <option value="$PROJECT_DIR$/sources/lang/object/AIOObject.c" />
-        <option value="$PROJECT_DIR$/headers/lang/object/AIOObject.h" />
         <option value="$PROJECT_DIR$/sources/main/main.c" />
         <option value="$PROJECT_DIR$/headers/lang/object/objectManager/AIOObjectManager.h" />
-        <option value="$PROJECT_DIR$/sources/lib/collections/maps/AIOObjectMap.c" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/headers/lib/collections/maps/AIOObjectMap.h" />
+        <option value="$PROJECT_DIR$/headers/lang/object/AIOObject.h" />
+        <option value="$PROJECT_DIR$/sources/lib/collections/maps/AIOObjectMap.c" />
+        <option value="$PROJECT_DIR$/headers/lang/methods/AIOMethodContainer.h" />
+        <option value="$PROJECT_DIR$/headers/lang/methods/AIOMethod.h" />
+        <option value="$PROJECT_DIR$/sources/lang/methods/analysis/methodReproducer/AIOMethodReproducer.c" />
+        <option value="$PROJECT_DIR$/headers/lang/methods/analysis/methodReproducer/AIOMethodReproducer.h" />
+        <option value="$PROJECT_DIR$/sources/lib/collections/maps/AIOVariableMap.c" />
       </list>
     </option>
   </component>
@@ -156,9 +136,9 @@
   </component>
   <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-9" />
-    <option name="width" value="978" />
-    <option name="height" value="1039" />
+    <option name="x" value="-10" />
+    <option name="width" value="980" />
+    <option name="height" value="1040" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -197,8 +177,7 @@
               <item name="AIO" type="462c0819:PsiDirectoryNode" />
               <item name="headers" type="462c0819:PsiDirectoryNode" />
               <item name="lang" type="462c0819:PsiDirectoryNode" />
-              <item name="methods" type="462c0819:PsiDirectoryNode" />
-              <item name="analysis" type="462c0819:PsiDirectoryNode" />
+              <item name="object" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="AIO" type="b2602c69:ProjectViewProjectNode" />
@@ -315,7 +294,9 @@
       <workItem from="1528231717814" duration="3415000" />
       <workItem from="1528279153154" duration="48220000" />
       <workItem from="1528371766124" duration="29438000" />
-      <workItem from="1528404186627" duration="21202000" />
+      <workItem from="1528404186627" duration="21299000" />
+      <workItem from="1528530977295" duration="582000" />
+      <workItem from="1528531912551" duration="265000" />
     </task>
     <task id="LOCAL-00001" summary="05.06.2018 Developed AIOObjectManager =) #LOVE_AIO_&amp;_C =)">
       <created>1528196702392</created>
@@ -443,11 +424,18 @@
       <option name="project" value="LOCAL" />
       <updated>1528420129621</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="08.06.2018 cannot find .c files! Need fix!!! #LOVE_AIO_&amp;_C =)">
+      <created>1528425713888</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1528425713888</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="160889000" />
+    <option name="totallyTimeSpent" value="161833000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -463,11 +451,11 @@
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3298611" />
-      <window_info active="true" anchor="bottom" id="Messages" order="7" visible="true" weight="0.32647815" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.32647815" />
       <window_info anchor="bottom" id="CMake" order="7" weight="0.32904884" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.50899744" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.50899744" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26822916" />
       <window_info anchor="right" id="LuaJ" order="3" weight="0.3294271" />
@@ -479,8 +467,8 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="right" x="0" y="0" width="337" height="638" id="Documentation" order="4" side_tool="true" weight="0.3294271" />
+      <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
     </layout>
   </component>
@@ -504,21 +492,33 @@
     <MESSAGE value="07.06.2018 all is work in debug, but need to work #LOVE_AIO_&amp;_C =)" />
     <MESSAGE value="08.06.2018 all is work in debug, but need to work #LOVE_AIO_&amp;_C =)" />
     <MESSAGE value="08.06.2018 all is work #LOVE_AIO_&amp;_C =)" />
-    <option name="LAST_COMMIT_MESSAGE" value="08.06.2018 all is work #LOVE_AIO_&amp;_C =)" />
+    <MESSAGE value="08.06.2018 cannot find .c files! Need fix!!! #LOVE_AIO_&amp;_C =)" />
+    <option name="LAST_COMMIT_MESSAGE" value="08.06.2018 cannot find .c files! Need fix!!! #LOVE_AIO_&amp;_C =)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="18" />
+      <option name="time" value="19" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/sources/lang/object/AIOObject.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/headers/lib/collections/maps/AIOObjectMap.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/headers/lang/object/objectManager/AIOMutableObjectMap.h" />
     <entry file="file://$PROJECT_DIR$/headers/lib/collections/AIOCollectionUtils.h" />
     <entry file="file://$PROJECT_DIR$/aioPrograms/text.txt" />
     <entry file="file://$PROJECT_DIR$/aioPrograms/test.txt" />
-    <entry file="file://$PROJECT_DIR$/aioPrograms/primitive.aio">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/headers/lib/utils/StringUtils.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -575,40 +575,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/headers/lang/methods/analysis/methodReproducer/AIOMethodReproducer.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="31" column="32" lean-forward="true" selection-start-line="31" selection-start-column="32" selection-end-line="31" selection-end-column="32" />
-          <folding>
-            <element signature="e#65#120#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sources/lang/methods/analysis/methodReproducer/AIOMethodReproducer.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
-          <folding>
-            <element signature="e#0#94#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/headers/lib/collections/maps/AIOMethodDefinitionMap.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="12" column="10" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sources/lang/methods/AIOMethod.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="16" lean-forward="true" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#16#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -633,23 +603,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sources/lib/collections/maps/AIOVariableMap.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret lean-forward="true" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sources/lib/collections/maps/AIOMethodDefinitionMap.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="646">
           <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
-          <folding>
-            <element signature="e#0#16#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -657,36 +614,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="380">
           <caret line="46" column="5" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sources/lang/object/objectManager/AIOObjectManager.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-          <folding>
-            <element signature="e#0#16#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/headers/lang/methods/AIOMethod.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="17" lean-forward="true" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#49#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sources/main/main.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="16" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -704,58 +631,119 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sources/lib/collections/maps/AIOObjectMap.c">
+    <entry file="file://$PROJECT_DIR$/sources/lang/methods/methodDefinition/AIOMethodDefinitionBuilder.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="43" selection-start-line="4" selection-start-column="43" selection-end-line="4" selection-end-column="43" />
+        <state relative-caret-position="143">
+          <caret line="226" column="5" lean-forward="true" selection-start-line="226" selection-start-column="5" selection-end-line="226" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/headers/lang/object/AIOObject.h">
+    <entry file="file://$PROJECT_DIR$/sources/main/main.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="10" column="8" lean-forward="true" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
-          <folding>
-            <element signature="e#51#91#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="85">
+          <caret line="5" column="11" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sources/lang/object/objectManager/AIOObjectManager.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" column="6" lean-forward="true" selection-start-line="26" selection-start-column="6" selection-end-line="26" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/headers/lib/collections/maps/AIOObjectMap.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="7" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/headers/lang/object/objectManager/AIOObjectManager.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="31" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
-          <folding>
-            <element signature="e#67#110#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="68">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sources/lang/methods/methodDefinition/AIOMethodDefinitionBuilder.c">
+    <entry file="file://$PROJECT_DIR$/sources/lib/collections/maps/AIOObjectMap.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="226" column="5" lean-forward="true" selection-start-line="226" selection-start-column="5" selection-end-line="226" selection-end-column="5" />
-          <folding>
-            <element signature="e#328#1715#0" />
-            <element signature="e#1717#1936#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sources/lang/object/AIOObject.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="466">
-          <caret line="158" selection-start-line="158" selection-end-line="158" />
+        <state relative-caret-position="85">
+          <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
           <folding>
             <element signature="e#0#16#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/headers/lib/collections/maps/AIOObjectMap.h">
+    <entry file="file://$PROJECT_DIR$/headers/lang/object/AIOObject.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        <state relative-caret-position="187">
+          <caret line="11" column="33" lean-forward="true" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sources/lang/methods/AIOMethod.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret lean-forward="true" />
+          <folding>
+            <element signature="e#0#16#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sources/lang/object/AIOObject.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/headers/lang/methods/AIOMethodContainer.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="31" lean-forward="true" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sources/lang/methods/analysis/methodReproducer/AIOMethodReproducer.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="82" selection-start-line="4" selection-start-column="82" selection-end-line="4" selection-end-column="82" />
+          <folding>
+            <element signature="e#0#65#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/headers/lang/methods/AIOMethod.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+          <folding>
+            <element signature="e#0#49#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/headers/lang/methods/analysis/methodReproducer/AIOMethodReproducer.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="466">
+          <caret line="31" column="32" lean-forward="true" selection-start-line="31" selection-start-column="32" selection-end-line="31" selection-end-column="32" />
+          <folding>
+            <element signature="e#65#120#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sources/lib/collections/maps/AIOVariableMap.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="35" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

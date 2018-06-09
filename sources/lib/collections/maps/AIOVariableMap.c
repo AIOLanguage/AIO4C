@@ -40,7 +40,7 @@ void createAIOVariableMap(AIOVariableMap **variableMap) {
 }
 
 //Passed JUnitTests!
-void updateMemoryInMutableMapOfObjects(AIOVariableMap *variableMap) {
+void updateMemoryInVariableMapOfObjects(AIOVariableMap *variableMap) {
     if (*variableMap->size + 1 == *variableMap->capacity) {
         *variableMap->capacity = *variableMap->capacity * 2;
         variableMap->names = realloc(variableMap->names, *variableMap->capacity * sizeof(char *));
@@ -55,7 +55,7 @@ void putAIOVariableInMap(AIOVariableMap *variableMap, AIOVariable *variable) {
         }
     }
     //Check to update:
-    updateMemoryInMutableMapOfObjects(variableMap);
+    updateMemoryInVariableMapOfObjects(variableMap);
     //Set key:
     variableMap->names[*variableMap->size] = malloc(strlen(variable->name));
     if (variableMap->names[*variableMap->size] == NULL) {

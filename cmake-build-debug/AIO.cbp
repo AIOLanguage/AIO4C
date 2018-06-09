@@ -83,6 +83,9 @@
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/AIOMethod.h">
 			<Option target="AIO"/>
 		</Unit>
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/AIOMethodContainer.h">
+			<Option target="AIO"/>
+		</Unit>
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/analysis/methodReproducer/AIOMethodReproducer.h">
 			<Option target="AIO"/>
 		</Unit>

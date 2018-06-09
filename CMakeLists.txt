@@ -32,4 +32,4 @@ add_executable(AIO sources/main/main.c
         sources/lang/methods/defaultMethodContainer/AIODefaultMethodContainer.c
         sources/lib/utils/stringUtils/StringUtils.c headers/lib/utils/StringUtils.h headers/lang/methods/methodDefinition/AIOMethodDefinitionBuilder.h sources/lang/methods/methodDefinition/AIOMethodDefinitionBuilder.c headers/lang/methods/AIOMethod.h sources/lang/methods/AIOMethod.c headers/lang/methods/analysis/methodReproducer/AIOMethodReproducer.h sources/lang/methods/analysis/methodReproducer/AIOMethodReproducer.c
         headers/lib/collections/maps/AIOVariableMap.h
-        sources/lib/collections/maps/AIOVariableMap.c)
+        sources/lib/collections/maps/AIOVariableMap.c headers/lang/methods/AIOMethodContainer.h)

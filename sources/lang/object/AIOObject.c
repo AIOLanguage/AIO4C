@@ -1,10 +1,8 @@
 #include <mem.h>
 #include <malloc.h>
 #include <stdio.h>
-#include "../../../headers/lang/object/AIOObject.h"
 #include "../../../headers/lang/methods/methodDefinition/AIOMethodDefinitionBuilder.h"
 #include "../../../headers/lang/object/objectManager/AIOObjectManager.h"
-#include "../../../headers/lang/methods/AIOMethod.h"
 
 //Passed JUnitTest!
 void createAIOMethodManager(AIOMethodManager **methodManager, AIOMethodDefinitionMap *methodDefinitionMap) {
@@ -51,8 +49,8 @@ StringPair *extractNameAnfFolderPathFromPath(char *path) {
         }
         printf("FOLDER PATH: %s\n", folderPath);
         StringPair *nameVsFolder = calloc(1, sizeof(StringPair));
-        nameVsFolder->objectName = objectName;
-        nameVsFolder->folderPath = folderPath;
+        nameVsFolder->first = objectName;
+        nameVsFolder->second = folderPath;
         return nameVsFolder;
     }
     perror("invalid aio object name error!");
@@ -132,9 +130,9 @@ void createAIOObject(AIOObject **object, AIOMethodManager *methodManager, char *
     (*object)->methodManager = methodManager;
     //Set name from path:
     StringPair *nameVsFolder = extractNameAnfFolderPathFromPath(path);
-    (*object)->name = nameVsFolder->objectName;
+    (*object)->name = nameVsFolder->first;
     //Set folder path from path:
-    (*object)->folderPath = nameVsFolder->folderPath;
+    (*object)->folderPath = nameVsFolder->second;
     //Loading code:
     loadSourceCodeInAIOObject(*object, path);
     findMethodsInManager(*object);
@@ -245,8 +243,8 @@ int main() {
 /*//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
  * char* path = "../aioPrograms/starter.aio";
     StringPair* stringPair = extractNameAnfFolderPathFromPath(path);
-    char* objectName = stringPair->objectName;
-    char* folderPath = stringPair->folderPath;
-    printf("NAME: %s\n", objectName);
-    printf("FOLDER: %s\n", folderPath);
+    char* first = stringPair->first;
+    char* second = stringPair->second;
+    printf("NAME: %s\n", first);
+    printf("FOLDER: %s\n", second);
  */

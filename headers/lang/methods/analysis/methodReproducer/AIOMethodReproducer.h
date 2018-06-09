@@ -3,7 +3,7 @@
 
 #include "../../methodDefinition/AIOMethodDefinition.h"
 #include "../../bundle/AIOBundle.h"
-#include "../../AIOMethod.h"
+#include "../../AIOMethodContainer.h"
 
 typedef struct AIOTheShortestReproducer {
 

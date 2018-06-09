@@ -3,11 +3,10 @@
 
 #include "../methods/bundle/AIOBundle.h"
 #include "../../lib/collections/maps/AIOMethodDefinitionMap.h"
-#include "objectManager/AIOObjectManager.h"
 
 typedef struct StringPair {
-    char* objectName;
-    char* folderPath;
+    char* first;
+    char* second;
 } StringPair;
 
 typedef struct AIOMethodManager {

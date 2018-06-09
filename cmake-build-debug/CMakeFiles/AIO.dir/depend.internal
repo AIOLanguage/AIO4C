@@ -12,6 +12,7 @@ CMakeFiles/AIO.dir/sources/lang/methods/AIOMethod.c.obj
  C:/Users/StarKRE/CLionProjects/AIO/headers/lang/annotations/AIOAnnotation.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lang/declarations/AIODeclaration.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/AIOMethod.h
+ C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/AIOMethodContainer.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/analysis/methodReproducer/AIOMethodReproducer.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/bundle/AIOBundle.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/methodDefinition/AIOMethodDefinition.h
@@ -25,7 +26,7 @@ CMakeFiles/AIO.dir/sources/lang/methods/AIOMethod.c.obj
 CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/AIOMethodReproducer.c.obj
  C:/Users/StarKRE/CLionProjects/AIO/headers/lang/annotations/AIOAnnotation.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lang/declarations/AIODeclaration.h
- C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/AIOMethod.h
+ C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/AIOMethodContainer.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/analysis/methodReproducer/AIOMethodReproducer.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/bundle/AIOBundle.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/methodDefinition/AIOMethodDefinition.h
@@ -75,21 +76,16 @@ CMakeFiles/AIO.dir/sources/lang/methods/variable/AIOVariable.c.obj
 CMakeFiles/AIO.dir/sources/lang/object/AIOObject.c.obj
  C:/Users/StarKRE/CLionProjects/AIO/headers/lang/annotations/AIOAnnotation.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lang/declarations/AIODeclaration.h
- C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/AIOMethod.h
- C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/analysis/methodReproducer/AIOMethodReproducer.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/bundle/AIOBundle.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/methodDefinition/AIOMethodDefinition.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/methodDefinition/AIOMethodDefinitionBuilder.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/methodDefinition/AIOMethodSizeType.h
- C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/variable/AIOVariable.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lang/object/AIOObject.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lang/object/objectManager/AIOObjectManager.h
- C:/Users/StarKRE/CLionProjects/AIO/headers/lang/types/AIOType.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/collections/lists/AIOAnnotationList.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/collections/lists/StringList.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/collections/maps/AIOMethodDefinitionMap.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/collections/maps/AIOObjectMap.h
- C:/Users/StarKRE/CLionProjects/AIO/headers/lib/collections/maps/AIOVariableMap.h
  C:/Users/StarKRE/CLionProjects/AIO/sources/lang/object/AIOObject.c
 CMakeFiles/AIO.dir/sources/lang/object/objectManager/AIOObjectManager.c.obj
  C:/Users/StarKRE/CLionProjects/AIO/headers/lang/annotations/AIOAnnotation.h
@@ -131,7 +127,6 @@ CMakeFiles/AIO.dir/sources/lib/collections/maps/AIOObjectMap.c.obj
  C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/methodDefinition/AIOMethodDefinition.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/methodDefinition/AIOMethodSizeType.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lang/object/AIOObject.h
- C:/Users/StarKRE/CLionProjects/AIO/headers/lang/object/objectManager/AIOObjectManager.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/collections/lists/AIOAnnotationList.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/collections/lists/StringList.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/collections/maps/AIOMethodDefinitionMap.h
