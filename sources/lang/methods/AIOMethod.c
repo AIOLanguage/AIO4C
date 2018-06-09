@@ -18,11 +18,8 @@ void createAIOMethodContainer(AIOMethodContainer **container) {
 }
 
 void setArgs(AIOMethodContainer *methodContainer, AIODeclaration *declaration, StringList *inputArgs) {
+    //I checked args size with declaration before creating of method!
     if (declaration != NULL) {
-        if (*declaration->argList->size != *inputArgs->size) {
-            perror("not matches number of arg with declaration!");
-            exit(1);
-        }
         for (int i = 0; i < *declaration->argList->size; ++i) {
             //Input args is immutable:
             //Compare input value type:
@@ -63,5 +60,6 @@ void createAIOMethodAndInvoke(AIOObject *object, AIOMethod **method, AIOMethodDe
     createAIOMethodReproducer(&(*method)->methodReproducer, methodDefinition, (*method)->methodContainer, bundle);
     //Set args:
     setArgs((*method)->methodContainer, methodDefinition->declaration, bundle->inputValues);
+    //Reproduce method:
     reproduceMethod(object, methodDefinition, (*method)->methodContainer, bundle);
 }

@@ -41,7 +41,7 @@ void findMethodsInManager(AIOObject *aioObject) {
                 for (int j = 1; j < length; ++j) {
                     if (line[j] == ' ') {
                         if (j == 1) {
-                            perror("incorrect method mane @");
+                            perror("incorrect method name @");
                         }
                         break;
                     }
@@ -121,100 +121,3 @@ void invokeMethodInManager(AIOObject *object, char *methodName, AIOBundle *bundl
     AIOMethod *method;
     createAIOMethodAndInvoke(object, &method, methodDefinition, bundle);
 }
-
-/*
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-*/
-//int main() {
-//    //Create methodName:
-//    char* methodName = "@main";
-//    //Create declaration:
-//    StringList* args;
-//    createListOfString(&args);
-//    printf("%d\n", *args->size);
-//    AIODeclaration* declaration;
-//    createAIODeclaration(&declaration, methodName, args);
-//    printf("%s\n", declaration->methodName);
-//    //Create annotation list:
-//    AIOAnnotationList* annotations;
-//    createAnnotationList(&annotations);
-//    printf("%d\n", *annotations->size);
-//    //Create source code:
-//    StringList* sourceCode;
-//    createListOfString(&sourceCode);
-//    //Create method size type:
-//    enum AIOMethodSizeType methodSizeType = DEFAULT;
-//    AIOMethodDefinition *definition;
-//    createAIOMethodDefinition(&definition, methodName, declaration, annotations, sourceCode, &methodSizeType);
-//    printf("%s\n", definition->name);
-//
-//    //Create method definition map:
-//    AIOMethodDefinitionMap* methodDefinitionMap;
-//    createAIOMethodDefinitionMap(&methodDefinitionMap);
-//
-//    putAIOMethodDefinitionInMap(methodDefinitionMap, definition);
-//
-//    AIOMethodDefinition* definition1;
-//    createAIOMethodDefinition(&definition1, "def1", declaration, annotations, sourceCode, &methodSizeType);
-//
-//    putAIOMethodDefinitionInMap(methodDefinitionMap, definition1);
-//
-//    AIOMethodDefinition* definition2;
-//    createAIOMethodDefinition(&definition2, "def2", declaration, annotations, sourceCode, &methodSizeType);
-//
-//    putAIOMethodDefinitionInMap(methodDefinitionMap, definition2);
-//
-//    //Create method manager:
-//    AIOMethodManager* methodManager;
-//    createAIOMethodManager(&methodManager, methodDefinitionMap);
-//
-//    //Create AIO object:
-//    AIOObject* aioObject;
-//    createAIOObject(&aioObject, methodManager, "starter");
-//    printf("%s\n", aioObject->name);
-//
-//    //let's make get!
-//    AIOMethodDefinition* aioMethodDefinition = getAIOMethodDefinitionInMapByName(methodDefinitionMap, "def1");
-//    printf("%s", aioMethodDefinition->declaration->methodName);
-//
-//    return 0;
-//}
-
-/*
- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-#define CHUNK 1024
-
-int main() {
-    StringList* sourceCode;
-    createListOfString(&sourceCode);
-    FILE *file;
-    char buffer[CHUNK];
-    if ((file = fopen("../aioPrograms/test.aio", "r")) == NULL) {
-        perror("cannot open source-file");
-        return 1;
-    }
-    while (fgets(buffer, sizeof(buffer), file) != NULL) {
-        buffer[strlen(buffer) - 1] = '\0';
-        printf("%d\n", strlen(buffer));
-        char *line = calloc(1, CHUNK);
-        strcpy(line, buffer);
-        addInListOfString(sourceCode, line);
-    }
-    fclose(file);
-    for (int i = 0; i < *sourceCode->size; ++i) {
-        printf("%s\n", sourceCode->strings[i]);
-    }
-    printf("4 line: %s\n", getStringInListByIndex(sourceCode, 4));
-    return 0;
-}
- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
- */
-
-/*//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
- * char* path = "../aioPrograms/starter.aio";
-    StringPair* stringPair = extractNameAndFolderPathFromPath(path);
-    char* first = stringPair->first;
-    char* second = stringPair->second;
-    printf("NAME: %s\n", first);
-    printf("FOLDER: %s\n", second);
- */
