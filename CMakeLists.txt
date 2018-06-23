@@ -45,7 +45,6 @@ add_executable(AIO sources/main/main.c
         headers/lib/utils/operationUtils/OperationUtils.h
         sources/lib/utils/operationUtils/OperationUtils.c
         headers/lang/methods/analysis/methodReproducer/theShortest/plusForEachReproducer/AIOPlusForEachReproducer.h
-        headers/lang/methods/analysis/methodReproducer/theShortest/AIOAbstractForEachOperationReproducer.h
         headers/lang/methods/analysis/methodReproducer/theShortest/multiplyForEachReproducer/AIOMultiplyForEachReproducer.h
         headers/lang/methods/analysis/methodReproducer/theShortest/concatForEachReproducer/AIOConcatForEachReproducer.h sources/lib/utils/fileUtils/FileUtils.c headers/lib/utils/fileUtils/FileUtils.h
-        sources/lang/methods/analysis/methodReproducer/theShortest/AIOTheShortestReproducer.c sources/lang/methods/analysis/methodReproducer/theShortest/plusForEachReproducer/AIOPlusForEachReproducer.c sources/lang/methods/analysis/methodReproducer/theShortest/AIOAbstractForEachOperationReproducer.c)
+        sources/lang/methods/analysis/methodReproducer/theShortest/AIOTheShortestReproducer.c sources/lang/methods/analysis/methodReproducer/theShortest/plusForEachReproducer/AIOPlusForEachReproducer.c sources/lang/methods/analysis/methodReproducer/default/AIODefaultReproducer.c sources/lang/methods/analysis/methodReproducer/short/AIOShortReproducer.c sources/lang/methods/analysis/methodReproducer/theShortest/concatForEachReproducer/AIOConcatForEachReproducer.c sources/lang/methods/analysis/methodReproducer/theShortest/multiplyForEachReproducer/AIOMultiplyForEachReproducer.c headers/tools/parsers/AIOParser.h)

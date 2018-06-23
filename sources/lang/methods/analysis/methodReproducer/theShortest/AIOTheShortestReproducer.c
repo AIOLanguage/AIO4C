@@ -30,18 +30,20 @@ void reproduceTheShortestMethod(AIOObject *object, AIOMethodDefinition *methodDe
     printf("The shortest reproducing...\n");
     char *word;
     trim(methodDefinition->sourceCode->strings[0], &word);
+    AIOVariableMap *argMap = methodContainer->variableMap;
     if (isPlusOperation(word) == 0) {
-        plusForEachReproduce(object, methodDefinition, methodContainer, bundle);
+        plusForEachReproduce(argMap, bundle);
         return;
     }
     if (isMultiplyOperation(word) == 0) {
-//        multiplyForEachReproduce(methodContainer->variableMap);
+        multiplyForEachReproduce(argMap, bundle);
         return;
     }
-    if (isConcatOperation(word)) {
-//        concatForEachReproduce(methodContainer->variableMap);
+    if (isConcatOperation(word) == 0) {
+        concatForEachReproduce(argMap, bundle);
         return;
     }
+    //뭔가 있을지도 모른다.
     if (isTheShortestInTheSameObject(word)) {
         char *nextMethodName = calloc(strlen(word), sizeof(char));
         if (nextMethodName == NULL) {
@@ -71,4 +73,41 @@ void reproduceTheShortestMethod(AIOObject *object, AIOMethodDefinition *methodDe
         nextObject = getAIOObjectInMapByName(aioObjectManager->objectMap, nextObjectName);
         makeForEachCustomMethodInvocation(nextObject, methodContainer->variableMap, nextMethodName, bundle);
     }
+}
+
+//Abstract operations for int and dou:
+int
+intOperationForEachTypeOperationReproduce(AIOVariableMap *argMap, AIOBundle *bundle, aioInt (apply)(aioInt, aioInt)) {
+    if (*(argMap->variables[0]->type) == AIO_INT) {
+        aioInt *result;
+        strToInt(argMap->variables[0]->value, &result);
+        for (int i = 1; i < *argMap->size; ++i) {
+            aioInt *argValue;
+            strToInt(argMap->variables[i]->value, &argValue);
+            *result = apply(*result, *argValue);
+        }
+        aioStr outputResult;
+        intToStr(*result, &outputResult);
+        addInListOfString(bundle->outputValues, outputResult);
+        return 0;
+    }
+    return 1;
+}
+
+int
+douOperationForEachTypeOperationReproduce(AIOVariableMap *argMap, AIOBundle *bundle, aioDou (apply)(aioDou, aioDou)) {
+    if (*(argMap->variables[0]->type) == AIO_DOU) {
+        aioDou *result;
+        strToDou(argMap->variables[0]->value, &result);
+        for (int i = 1; i < *argMap->size; ++i) {
+            aioDou *argValue;
+            strToDou(argMap->variables[i]->value, &argValue);
+            *result = apply(*result, *argValue);
+        }
+        aioStr outputResult;
+        douToStr(*result, &outputResult);
+        addInListOfString(bundle->outputValues, outputResult);
+        return 0;
+    }
+    return 1;
 }

@@ -4,6 +4,6 @@
 
 #include "../../../../../../lib/collections/lists/StringList.h"
 
-void multiplyForEachReproduce(AIOVariableMap *list);
+void multiplyForEachReproduce(AIOVariableMap *argMap, AIOBundle *aioBundle);
 
 #endif //AIO_MULTIPLY_FOR_EACH_REPRODUCER_H

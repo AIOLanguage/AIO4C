@@ -9,16 +9,6 @@
 #include "short/AIOShortReproducer.h"
 #include "../../../object/AIOObject.h"
 
-typedef struct AIOMethodReproducer {
-    AIOMethodDefinition *methodDefinition;
-    AIOMethodContainer *methodContainer;
-    AIOBundle *bundle;
-} AIOMethodReproducer;
-
-
-void createAIOMethodReproducer(AIOMethodReproducer **methodReproducer, AIOMethodDefinition *methodDefinition,
-                               AIOMethodContainer *methodContainer, AIOBundle *bundle);
-
 void reproduceMethod(AIOObject *object, AIOMethodDefinition *methodDefinition, AIOMethodContainer *methodContainer
         , AIOBundle *bundle);
 

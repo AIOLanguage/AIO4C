@@ -17,9 +17,8 @@ void make() {
 }
 
 int main() {
-    int a = 410;
+    char a = '3';
     char *b;
-    intToString(a, &b);
     printf("\nSTRING: %s\n", b);
     return 0;
 }

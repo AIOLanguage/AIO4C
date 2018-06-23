@@ -14,12 +14,8 @@ StringList *getSourceCodeOfMethod(char *methodName, StringList *sourceCode, int 
     StringList *methodCode;
     createListOfString(&methodCode);
     int currentIndex = startIndex;
-    char *trimmedLine = calloc(strlen(sourceCode->strings[currentIndex]) + 1, sizeof(char));
-    if (trimmedLine == NULL) {
-        perror("can not allocate memory for trimmed line in during get source code method procedure performs!");
-    }
+    char *trimmedLine;
     trim(sourceCode->strings[currentIndex], &trimmedLine);
-
     if (strcmp(trimmedLine, "") != 0) {
         char *cleanFirstLine = calloc(strlen(trimmedLine) + 1, sizeof(char));
         if (cleanFirstLine == NULL) {
@@ -30,12 +26,12 @@ StringList *getSourceCodeOfMethod(char *methodName, StringList *sourceCode, int 
             addInListOfString(methodCode, cleanFirstLine);
         }
         while (++currentIndex < *sourceCode->size) {
-            trimmedLine = malloc(strlen(sourceCode->strings[currentIndex]));
-            trim(sourceCode->strings[currentIndex], &trimmedLine);
-            if (strcmp(trimmedLine, "") == 0) {
+            char* currentLine;
+            trim(sourceCode->strings[currentIndex], &currentLine);
+            if (strcmp(currentLine, "") == 0) {
                 break;
             } else {
-                addInListOfString(methodCode, trimmedLine);
+                addInListOfString(methodCode, currentLine);
             }
         }
     }
@@ -82,11 +78,7 @@ StringList *getArgsIfCorrect(char **args) {
 AIODeclaration *getDeclarationOfMethod(char *methodName, StringList *sourceCode, int startIndex) {
     int currentIndex = startIndex - 1;
     char *inputLine = getStringInListByIndex(sourceCode, currentIndex);
-    char *currentLine = malloc(strlen(inputLine));
-    if (currentLine == NULL) {
-        perror("cannot allocate memory for current line when was creating of declaration!");
-        exit(1);
-    }
+    char *currentLine;
     trim(inputLine, &currentLine);
     while (strcmp(currentLine, "") != 0 && currentIndex >= 0) {
         char *declarationPrefix = "~dec:";
@@ -198,7 +190,7 @@ int isTheShortestInTheOtherObject(const char *operation) {
 //Passed JUnitTest!
 enum AIOMethodSizeType getSizeTypeOfMethod(StringList *methodCode) {
     if (*methodCode->size == 1) {
-        char *trimLine = calloc(strlen(methodCode->strings[0]) + 1, sizeof(char));
+        char *trimLine;
         trim(methodCode->strings[0], &trimLine);
         if (isTheShortestInTheSameObject(trimLine) == 0
             || isDefaultOperations(trimLine) == 0

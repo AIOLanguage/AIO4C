@@ -1,25 +1,32 @@
-#include "../../../../../../../headers/lang/object/AIOObject.h"
-#include "../../../../../../../headers/lib/utils/stringUtils/StringUtils.h"
+#include "../../../../../../../headers/lib/collections/maps/AIOVariableMap.h"
+#include "../../../../../../../headers/lang/methods/bundle/AIOBundle.h"
 #include "../../../../../../../headers/lang/methods/AIOMethodContainer.h"
-#include "../../../../../../../headers/lang/methods/analysis/methodReproducer/theShortest/AIOAbstractForEachOperationReproducer.h"
+#include "../../../../../../../headers/lang/methods/analysis/methodReproducer/theShortest/AIOTheShortestReproducer.h"
 
-void douPlusForEachTypeOperationReproduce() {
-
+aioInt plusInt(aioInt first, aioInt second) {
+    return first + second;
 }
 
-void apply(void **result, void *value) {
-    **((int **) result) = **((int **) result) + *((int *) value);
+aioDou plusDou(aioDou first, aioDou second) {
+    return first + second;
 }
-//
-//void intPlusForEachTypeOperationReproduce(AIOObject *object, AIOMethodDefinition *methodDefinition,
-//                                          AIOMethodContainer *methodContainer, AIOBundle *bundle) {
-//    reproduceForEachOperation(methodContainer->variableMap, bundle, isAIOIntType, matchesInt, toInt, apply, intToString);
-//}
 
-void plusForEachReproduce(AIOObject *object, AIOMethodDefinition *methodDefinition,
-                          AIOMethodContainer *methodContainer, AIOBundle *bundle) {
-//    if (*argMap->size != 0) {
-//       intPlusForEachTypeOperationReproduce();
-//        douPlusForEachTypeOperationReproduce();
-//    }
+int intPlusForEachTypeOperationReproduce(AIOVariableMap *argMap, AIOBundle *bundle) {
+    intOperationForEachTypeOperationReproduce(argMap, bundle, plusInt);
+}
+
+int douPlusForEachTypeOperationReproduce(AIOVariableMap *argMap, AIOBundle *bundle) {
+    return douOperationForEachTypeOperationReproduce(argMap, bundle, plusDou);
+}
+
+void plusForEachReproduce(AIOVariableMap *argMap, AIOBundle *bundle) {
+    if (argMap->size != 0) {
+        if (intPlusForEachTypeOperationReproduce(argMap, bundle) == 0) {
+            return;
+        }
+        if (douPlusForEachTypeOperationReproduce(argMap, bundle) == 0) {
+            return;
+        }
+        // 아마있을거야 long 또는 float =)
+    }
 }

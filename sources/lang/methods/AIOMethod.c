@@ -38,7 +38,7 @@ void setArgs(AIOMethodContainer *methodContainer, AIODeclaration *declaration, S
             setType(inputArgs->strings[i], &type);
             char *implicitArgumentName = "<<";
             char *index;
-            intToString(i, &index);
+            intToStr(i, &index);
             strcat(implicitArgumentName, index);
             createAIOVariable(&argument, implicitArgumentName, inputArgs->strings[i], -1, &type);
             putAIOVariableInMap(methodContainer->argMap, argument);

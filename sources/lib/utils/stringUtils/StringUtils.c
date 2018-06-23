@@ -18,6 +18,7 @@ int splitByChar(char *src, char delimiter, char ***dst) {
     unsigned *indices = calloc(length, sizeof(int));
     if (indices == NULL) {
         perror("cannot allocate memory for indices in split by char!");
+        exit(1);
     }
     unsigned pointers = 0;
     //Mark split points:
@@ -40,18 +41,21 @@ int splitByChar(char *src, char delimiter, char ***dst) {
     *dst = (char **) calloc(parts, sizeof(char *));
     if (*dst == NULL) {
         perror("cannot allocate memory for *dst in split by char!");
+        exit(1);
     }
     //Create first path:
     if (indices[0] == 0) {
         (*dst)[0] = calloc(2, sizeof(char));
         if ((*dst)[0] == NULL) {
             perror("cannot allocate memory for *dst[0] in split by char!");
+            exit(1);
         }
         (*dst)[0] = "";
     } else {
         (*dst)[0] = calloc(indices[0] + 1, sizeof(char));
         if ((*dst)[0] == NULL) {
             perror("cannot allocate memory for *dst[0] in split by char!");
+            exit(1);
         }
         for (int i = 0; i < indices[0]; ++i) {
             (*dst)[0][i] = src[i];
@@ -63,12 +67,14 @@ int splitByChar(char *src, char delimiter, char ***dst) {
         (*dst)[last] = calloc(2, sizeof(char));
         if ((*dst)[last] == NULL) {
             perror("cannot allocate memory for *dst[last] in split by char!");
+            exit(1);
         }
         (*dst)[last] = "";
     } else {
         (*dst)[last] = calloc(length - indices[pointers - 1], sizeof(char));
         if ((*dst)[last] == NULL) {
             perror("cannot allocate memory for *dst[last] in split by char!");
+            exit(1);
         }
         int k = 0;
         for (int i = indices[pointers - 1] + 1; i < length; ++i) {
@@ -83,6 +89,7 @@ int splitByChar(char *src, char delimiter, char ***dst) {
                 (*dst)[j + 1] = calloc(indices[j + 1] - indices[j] + 1, sizeof(char));
                 if ((*dst)[j + 1] == NULL) {
                     perror("cannot allocate memory for *dst[j] in split by char!");
+                    exit(1);
                 }
                 for (int i = 0; i < indices[j + 1] - indices[j] - 1; ++i) {
                     (*dst)[j + 1][i] = src[indices[j] + i + 1];
@@ -91,6 +98,7 @@ int splitByChar(char *src, char delimiter, char ***dst) {
                 (*dst)[j + 1] = calloc(2, sizeof(char));
                 if ((*dst)[j + 1] == NULL) {
                     perror("cannot allocate memory for *dst[j] in split by char!");
+                    exit(1);
                 }
                 (*dst)[j + 1] = "";
             }
@@ -118,7 +126,11 @@ int trimStart(const char *src, char **dst) {
     int lp = 0;
     while (isWhiteSpace(src[lp]) && ++lp);
     if (lp != 0) {
-        (*dst) = (char *) realloc((*dst), sizeof(char) * srcSize - lp);
+        (*dst) = calloc(srcSize - lp, sizeof(char));
+        if (*dst == NULL){
+            perror("cannot allocate memory for dst in trimStart!");
+            exit(1);
+        }
     }
     int i;
     for (i = lp; i < srcSize; ++i) {
@@ -137,7 +149,11 @@ int trimEnd(const char *src, char **dst) {
     int rp = 0;
     while (isWhiteSpace(src[srcSize - rp - 1]) && ++rp);
     if (rp != 0) {
-        (*dst) = (char *) realloc((*dst), sizeof(char) * srcSize - rp);
+        (*dst) = calloc(srcSize - rp, sizeof(char));
+        if (*dst == NULL){
+            perror("cannot allocate memory for dst in trimEnd!");
+            exit(1);
+        }
     }
     int i;
     for (i = 0; i < srcSize - rp; ++i) {
@@ -158,7 +174,11 @@ int trim(const char *src, char **dst) {
     while (isWhiteSpace(src[lp]) && ++lp);
     while (isWhiteSpace(src[srcSize - rp - 1]) && ++rp);
     if (lp + rp != 0) {
-        (*dst) = (char *) realloc((*dst), sizeof(char) * srcSize - lp - rp);
+        (*dst) = calloc(srcSize - lp - rp, sizeof(char));
+        if (*dst == NULL){
+            perror("cannot allocate memory for dst in trim!");
+            exit(1);
+        }
     }
     int i;
     for (i = lp; i < srcSize - rp; ++i) {
@@ -175,7 +195,7 @@ void trimAll(char **strings, size_t lineNumber, char ***dst) {
         exit(1);
     }
     for (int i = 0; i < lineNumber; ++i) {
-        char *trimLine = calloc(strlen(strings[i]) + 1, sizeof(char));
+        char *trimLine;
         trim(strings[i], &trimLine);
         (*dst)[i] = trimLine;
     }
@@ -365,118 +385,4 @@ void substring(const char *string, int offset, int length, char **dst) {
     for (int i = 0; i < length; ++i) {
         (*dst)[i] = string[offset + i];
     }
-}
-
-//Passed JUnitTest!
-void intToString(int src, char **dst) {
-    int division = src;
-    unsigned intSizeInString = 0;
-    while (division != 0) {
-        division = division / 10;
-        intSizeInString = intSizeInString + 1;
-    }
-    char *integerArray;
-    int negativeShift = 0;
-    if (intSizeInString > 0) {
-        if (src < 0) {
-            negativeShift = 1;
-        }
-        integerArray = calloc(intSizeInString + 1 + negativeShift, sizeof(char));
-        if (integerArray == NULL) {
-            perror("cannot allocate memory for integerArray in intToString");
-        }
-        division = src;
-        integerArray[0] = '-';
-        int pointer = intSizeInString - 1 + negativeShift;
-        while (division != 0) {
-            (integerArray)[pointer] = (char) (abs(division % 10) + '0');
-            division = division / 10;
-            pointer--;
-        }
-    } else {
-        integerArray = calloc(2, sizeof(char));
-        if (integerArray == NULL) {
-            perror("cannot allocate memory for integerArray in intToString");
-        }
-        integerArray[0] = '0';
-        intSizeInString = 1;
-    }
-    (*dst) = calloc(intSizeInString + 1 + negativeShift, sizeof(char));
-    if (*dst == NULL) {
-        perror("cannot allocate memory for dst array!");
-        exit(1);
-    }
-    for (int k = 0; k < intSizeInString + negativeShift; ++k) {
-        (*dst)[k] = integerArray[k];
-    }
-    free(integerArray);
-}
-
-//Passed JUnitTest!
-void doubleToString(double src, char **dst) {
-    int division = (int) src;
-    unsigned intSizeInString = 0;
-    while (division != 0) {
-        division = division / 10;
-        intSizeInString = intSizeInString + 1;
-    }
-    char *integerArray;
-    int negativeShift = 0;
-    if (intSizeInString > 0) {
-        if (src < 0) {
-            negativeShift = 1;
-        }
-        integerArray = calloc(intSizeInString + 1 + negativeShift, sizeof(char));
-        if (integerArray == NULL) {
-            perror("cannot allocate memory for integerArray in intToString");
-        }
-        division = (int) src;
-        integerArray[0] = '-';
-        int pointer = intSizeInString - 1 + negativeShift;
-        while (division != 0) {
-            (integerArray)[pointer] = (char) (abs(division % 10) + '0');
-            division = division / 10;
-            pointer--;
-        }
-    } else {
-        integerArray = calloc(2, sizeof(char));
-        if (integerArray == NULL) {
-            perror("cannot allocate memory for integerArray in intToString");
-        }
-        integerArray[0] = '0';
-        intSizeInString = 1;
-    }
-    double fractionalPart;
-    if (src < 0) {
-        fractionalPart = src * (-1.0) - (int) ((-1) * src);
-    } else {
-        fractionalPart = src - abs((int) src);
-    }
-    //Until 1E-9:
-    int *fractionalArray = calloc(9, sizeof(int));
-    if (fractionalArray == NULL) {
-        perror("cannot allocate memory for fractional array!");
-        exit(1);
-    }
-    int fractionalSizeInString = 1;
-    for (int i = 0; i < 9; ++i) {
-        fractionalPart = fractionalPart * 10;
-        fractionalArray[i] = (int) fractionalPart;
-        fractionalPart = fractionalPart - (int) fractionalPart;
-        fractionalSizeInString = fractionalSizeInString + 1;
-    }
-    (*dst) = calloc(intSizeInString + fractionalSizeInString + 2 + negativeShift, sizeof(char));
-    if (*dst == NULL) {
-        perror("cannot allocate memory for dst array!");
-        exit(1);
-    }
-    for (int k = 0; k < intSizeInString + negativeShift; ++k) {
-        (*dst)[k] = integerArray[k];
-    }
-    (*dst)[intSizeInString + negativeShift] = '.';
-    for (int j = 0; j < fractionalSizeInString; ++j) {
-        (*dst)[intSizeInString + 1 + j + negativeShift] = (char) (fractionalArray[j] + '0');
-    }
-    free(integerArray);
-    free(fractionalArray);
 }
