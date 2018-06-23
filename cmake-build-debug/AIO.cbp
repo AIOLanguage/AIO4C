@@ -158,7 +158,7 @@
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/operationUtils/OperationUtils.h">
 			<Option target="AIO"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/stringUtils/StringUtils.h">
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/stringUtils/string_utils.h">
 			<Option target="AIO"/>
 		</Unit>
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/reservedNames/AIOReservedNamesContainer.h">
@@ -248,10 +248,34 @@
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/operationUtils/OperationUtils.c">
 			<Option target="AIO"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/stringUtils/StringUtils.c">
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/stringUtils/remove_prefix_suffix.c">
+			<Option target="AIO"/>
+		</Unit>
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/stringUtils/split.c">
+			<Option target="AIO"/>
+		</Unit>
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/stringUtils/string_utils.c">
+			<Option target="AIO"/>
+		</Unit>
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/stringUtils/trim.c">
 			<Option target="AIO"/>
 		</Unit>
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/main/main.c">
+			<Option target="AIO"/>
+		</Unit>
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/tools/parsers/AIOParser.c">
+			<Option target="AIO"/>
+		</Unit>
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/tools/parsers/chaParser/AIOChaParser.c">
+			<Option target="AIO"/>
+		</Unit>
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/tools/parsers/douParser/AIODouParser.c">
+			<Option target="AIO"/>
+		</Unit>
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/tools/parsers/intParser/AIOIntParser.c">
+			<Option target="AIO"/>
+		</Unit>
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/tools/parsers/strParser/AIOStrParser.c">
 			<Option target="AIO"/>
 		</Unit>
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/CMakeLists.txt">

@@ -15,7 +15,8 @@ void reproduceMethod(AIOObject *object, AIOMethodDefinition *methodDefinition, A
             reproduceTheShortestMethod(object, methodDefinition, methodContainer, bundle);
             break;
         case SHORT:
-            reproduceShortMethod(object, methodDefinition, methodContainer, bundle);
+            reproduceShortMethod(object, methodDefinition, methodContainer, bundle,
+                                 methodDefinition->sourceCode->strings[0]);
             break;
         case DEFAULT:
             reproduceDefaultMethod(object, methodDefinition, methodContainer, bundle);

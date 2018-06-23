@@ -3,11 +3,11 @@
 #include "../../../../../../../headers/lang/methods/AIOMethodContainer.h"
 #include "../../../../../../../headers/lang/methods/analysis/methodReproducer/theShortest/AIOTheShortestReproducer.h"
 
-aioInt multiplyInt(aioInt first, aioInt second) {
+AIOInt multiplyInt(AIOInt first, AIOInt second) {
     return first * second;
 }
 
-aioDou multiplyDou(aioDou first, aioDou second) {
+AIODou multiplyDou(AIODou first, AIODou second) {
     return first * second;
 }
 

@@ -4,13 +4,13 @@ enum AIOType {
     AIO_INT, AIO_DOU, AIO_CHA, AIO_STR
 };
 
-typedef int aioInt;
+typedef int AIOInt;
 
-typedef double aioDou;
+typedef double AIODou;
 
-typedef char aioCha;
+typedef char AIOCha;
 
-typedef char* aioStr;
+typedef char* AIOStr;
 
 int matchesInt(char* word);
 

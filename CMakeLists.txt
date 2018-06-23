@@ -30,7 +30,7 @@ add_executable(AIO sources/main/main.c
         headers/lang/methods/result/AIOResult.h sources/lang/methods/result/AIOResult.c
         headers/lang/methods/defaultMethodContainer/AIODefaultMethodContainer.h
         sources/lang/methods/defaultMethodContainer/AIODefaultMethodContainer.c
-        sources/lib/utils/stringUtils/StringUtils.c headers/lib/utils/stringUtils/StringUtils.h
+        sources/lib/utils/stringUtils/string_utils.c headers/lib/utils/stringUtils/string_utils.h
         headers/lang/methods/methodDefinition/AIOMethodDefinitionBuilder.h
         sources/lang/methods/methodDefinition/AIOMethodDefinitionBuilder.c
         headers/lang/methods/AIOMethod.h sources/lang/methods/AIOMethod.c
@@ -47,4 +47,4 @@ add_executable(AIO sources/main/main.c
         headers/lang/methods/analysis/methodReproducer/theShortest/plusForEachReproducer/AIOPlusForEachReproducer.h
         headers/lang/methods/analysis/methodReproducer/theShortest/multiplyForEachReproducer/AIOMultiplyForEachReproducer.h
         headers/lang/methods/analysis/methodReproducer/theShortest/concatForEachReproducer/AIOConcatForEachReproducer.h sources/lib/utils/fileUtils/FileUtils.c headers/lib/utils/fileUtils/FileUtils.h
-        sources/lang/methods/analysis/methodReproducer/theShortest/AIOTheShortestReproducer.c sources/lang/methods/analysis/methodReproducer/theShortest/plusForEachReproducer/AIOPlusForEachReproducer.c sources/lang/methods/analysis/methodReproducer/default/AIODefaultReproducer.c sources/lang/methods/analysis/methodReproducer/short/AIOShortReproducer.c sources/lang/methods/analysis/methodReproducer/theShortest/concatForEachReproducer/AIOConcatForEachReproducer.c sources/lang/methods/analysis/methodReproducer/theShortest/multiplyForEachReproducer/AIOMultiplyForEachReproducer.c headers/tools/parsers/AIOParser.h)
+        sources/lang/methods/analysis/methodReproducer/theShortest/AIOTheShortestReproducer.c sources/lang/methods/analysis/methodReproducer/theShortest/plusForEachReproducer/AIOPlusForEachReproducer.c sources/lang/methods/analysis/methodReproducer/default/AIODefaultReproducer.c sources/lang/methods/analysis/methodReproducer/short/AIOShortReproducer.c sources/lang/methods/analysis/methodReproducer/theShortest/concatForEachReproducer/AIOConcatForEachReproducer.c sources/lang/methods/analysis/methodReproducer/theShortest/multiplyForEachReproducer/AIOMultiplyForEachReproducer.c headers/tools/parsers/AIOParser.h sources/tools/parsers/AIOParser.c sources/tools/parsers/intParser/AIOIntParser.c sources/tools/parsers/douParser/AIODouParser.c sources/tools/parsers/chaParser/AIOChaParser.c sources/tools/parsers/strParser/AIOStrParser.c sources/lib/utils/stringUtils/split.c sources/lib/utils/stringUtils/trim.c sources/lib/utils/stringUtils/remove_prefix_suffix.c)

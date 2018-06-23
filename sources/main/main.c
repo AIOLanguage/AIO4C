@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <mem.h>
 #include "../../headers/lang/object/objectManager/AIOObjectManager.h"
-#include "../../headers/lib/utils/stringUtils/StringUtils.h"
+#include "../../headers/lib/utils/stringUtils/string_utils.h"
 
 AIOObjectManager *aioObjectManager;
 
@@ -17,10 +17,22 @@ void make() {
 }
 
 int main() {
-    char a = '3';
-    char *b;
-    printf("\nSTRING: %s\n", b);
+    StringList *strings;
+    createStringList(&strings);
+    addInStringList(strings, "    fwbm   ");
+    addInStringList(strings, "ddv  ");
+    addInStringList(strings, "");
+    addInStringList(strings, "     ");
+    addInStringList(strings, "f");
+
+
+
+    char* a = "+++ efnk";
+    char* b;
+    remove_prefix_suffix(a, "+++ ef", "k", &b);
+    printf("\n-%s-\n", b);
+
     return 0;
 }
 
-//printf("\nAIO OBJECT: -%s-\n", test->name)
+//printf("\n-%s-\n", test)

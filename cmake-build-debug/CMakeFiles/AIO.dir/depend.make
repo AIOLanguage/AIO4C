@@ -26,12 +26,14 @@ CMakeFiles/AIO.dir/sources/lang/methods/AIOMethod.c.obj: ../headers/lib/collecti
 CMakeFiles/AIO.dir/sources/lang/methods/AIOMethod.c.obj: ../headers/lib/collections/lists/StringList.h
 CMakeFiles/AIO.dir/sources/lang/methods/AIOMethod.c.obj: ../headers/lib/collections/maps/AIOMethodDefinitionMap.h
 CMakeFiles/AIO.dir/sources/lang/methods/AIOMethod.c.obj: ../headers/lib/collections/maps/AIOVariableMap.h
-CMakeFiles/AIO.dir/sources/lang/methods/AIOMethod.c.obj: ../headers/lib/utils/stringUtils/StringUtils.h
+CMakeFiles/AIO.dir/sources/lang/methods/AIOMethod.c.obj: ../headers/lib/utils/stringUtils/string_utils.h
+CMakeFiles/AIO.dir/sources/lang/methods/AIOMethod.c.obj: ../headers/reservedNames/AIOReservedNamesContainer.h
 CMakeFiles/AIO.dir/sources/lang/methods/AIOMethod.c.obj: ../sources/lang/methods/AIOMethod.c
 
 CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/AIOMethodReproducer.c.obj: ../headers/lang/annotations/AIOAnnotation.h
 CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/AIOMethodReproducer.c.obj: ../headers/lang/declarations/AIODeclaration.h
 CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/AIOMethodReproducer.c.obj: ../headers/lang/methods/AIOMethodContainer.h
+CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/AIOMethodReproducer.c.obj: ../headers/lang/methods/analysis/methodReproducer/AIOMethodReproducer.h
 CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/AIOMethodReproducer.c.obj: ../headers/lang/methods/analysis/methodReproducer/default/AIODefaultReproducer.h
 CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/AIOMethodReproducer.c.obj: ../headers/lang/methods/analysis/methodReproducer/short/AIOShortReproducer.h
 CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/AIOMethodReproducer.c.obj: ../headers/lang/methods/analysis/methodReproducer/theShortest/AIOTheShortestReproducer.h
@@ -47,22 +49,43 @@ CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/AIOMethodRepro
 CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/AIOMethodReproducer.c.obj: ../headers/lib/collections/maps/AIOVariableMap.h
 CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/AIOMethodReproducer.c.obj: ../sources/lang/methods/analysis/methodReproducer/AIOMethodReproducer.c
 
+CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/default/AIODefaultReproducer.c.obj: ../headers/lang/annotations/AIOAnnotation.h
+CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/default/AIODefaultReproducer.c.obj: ../headers/lang/declarations/AIODeclaration.h
+CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/default/AIODefaultReproducer.c.obj: ../headers/lang/methods/AIOMethodContainer.h
+CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/default/AIODefaultReproducer.c.obj: ../headers/lang/methods/analysis/methodReproducer/short/AIOShortReproducer.h
+CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/default/AIODefaultReproducer.c.obj: ../headers/lang/methods/bundle/AIOBundle.h
+CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/default/AIODefaultReproducer.c.obj: ../headers/lang/methods/methodDefinition/AIOMethodDefinition.h
+CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/default/AIODefaultReproducer.c.obj: ../headers/lang/methods/methodDefinition/AIOMethodSizeType.h
+CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/default/AIODefaultReproducer.c.obj: ../headers/lang/methods/variable/AIOVariable.h
+CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/default/AIODefaultReproducer.c.obj: ../headers/lang/object/AIOObject.h
+CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/default/AIODefaultReproducer.c.obj: ../headers/lang/types/AIOType.h
+CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/default/AIODefaultReproducer.c.obj: ../headers/lib/collections/lists/AIOAnnotationList.h
+CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/default/AIODefaultReproducer.c.obj: ../headers/lib/collections/lists/StringList.h
+CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/default/AIODefaultReproducer.c.obj: ../headers/lib/collections/maps/AIOMethodDefinitionMap.h
+CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/default/AIODefaultReproducer.c.obj: ../headers/lib/collections/maps/AIOVariableMap.h
+CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/default/AIODefaultReproducer.c.obj: ../headers/lib/utils/stringUtils/string_utils.h
 CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/default/AIODefaultReproducer.c.obj: ../sources/lang/methods/analysis/methodReproducer/default/AIODefaultReproducer.c
 
+CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/short/AIOShortReproducer.c.obj: ../headers/lang/annotations/AIOAnnotation.h
+CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/short/AIOShortReproducer.c.obj: ../headers/lang/declarations/AIODeclaration.h
+CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/short/AIOShortReproducer.c.obj: ../headers/lang/methods/AIOMethodContainer.h
+CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/short/AIOShortReproducer.c.obj: ../headers/lang/methods/bundle/AIOBundle.h
+CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/short/AIOShortReproducer.c.obj: ../headers/lang/methods/methodDefinition/AIOMethodDefinition.h
+CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/short/AIOShortReproducer.c.obj: ../headers/lang/methods/methodDefinition/AIOMethodSizeType.h
+CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/short/AIOShortReproducer.c.obj: ../headers/lang/methods/variable/AIOVariable.h
+CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/short/AIOShortReproducer.c.obj: ../headers/lang/object/AIOObject.h
+CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/short/AIOShortReproducer.c.obj: ../headers/lang/types/AIOType.h
+CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/short/AIOShortReproducer.c.obj: ../headers/lib/collections/lists/AIOAnnotationList.h
+CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/short/AIOShortReproducer.c.obj: ../headers/lib/collections/lists/StringList.h
+CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/short/AIOShortReproducer.c.obj: ../headers/lib/collections/maps/AIOMethodDefinitionMap.h
+CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/short/AIOShortReproducer.c.obj: ../headers/lib/collections/maps/AIOVariableMap.h
+CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/short/AIOShortReproducer.c.obj: ../headers/lib/utils/stringUtils/string_utils.h
+CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/short/AIOShortReproducer.c.obj: ../headers/tools/parsers/AIOParser.h
 CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/short/AIOShortReproducer.c.obj: ../sources/lang/methods/analysis/methodReproducer/short/AIOShortReproducer.c
-
-CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/theShortest/AIOAbstractForEachOperationReproducer.c.obj: ../headers/lang/methods/AIOMethodContainer.h
-CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/theShortest/AIOAbstractForEachOperationReproducer.c.obj: ../headers/lang/methods/bundle/AIOBundle.h
-CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/theShortest/AIOAbstractForEachOperationReproducer.c.obj: ../headers/lang/methods/variable/AIOVariable.h
-CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/theShortest/AIOAbstractForEachOperationReproducer.c.obj: ../headers/lang/types/AIOType.h
-CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/theShortest/AIOAbstractForEachOperationReproducer.c.obj: ../headers/lib/collections/lists/StringList.h
-CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/theShortest/AIOAbstractForEachOperationReproducer.c.obj: ../headers/lib/collections/maps/AIOVariableMap.h
-CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/theShortest/AIOAbstractForEachOperationReproducer.c.obj: ../sources/lang/methods/analysis/methodReproducer/theShortest/AIOAbstractForEachOperationReproducer.c
 
 CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/theShortest/AIOTheShortestReproducer.c.obj: ../headers/lang/annotations/AIOAnnotation.h
 CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/theShortest/AIOTheShortestReproducer.c.obj: ../headers/lang/declarations/AIODeclaration.h
 CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/theShortest/AIOTheShortestReproducer.c.obj: ../headers/lang/methods/AIOMethodContainer.h
-CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/theShortest/AIOTheShortestReproducer.c.obj: ../headers/lang/methods/analysis/methodReproducer/theShortest/AIOAbstractForEachOperationReproducer.h
 CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/theShortest/AIOTheShortestReproducer.c.obj: ../headers/lang/methods/analysis/methodReproducer/theShortest/concatForEachReproducer/AIOConcatForEachReproducer.h
 CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/theShortest/AIOTheShortestReproducer.c.obj: ../headers/lang/methods/analysis/methodReproducer/theShortest/multiplyForEachReproducer/AIOMultiplyForEachReproducer.h
 CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/theShortest/AIOTheShortestReproducer.c.obj: ../headers/lang/methods/analysis/methodReproducer/theShortest/plusForEachReproducer/AIOPlusForEachReproducer.h
@@ -81,17 +104,36 @@ CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/theShortest/AI
 CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/theShortest/AIOTheShortestReproducer.c.obj: ../headers/lib/collections/maps/AIOVariableMap.h
 CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/theShortest/AIOTheShortestReproducer.c.obj: ../headers/lib/utils/fileUtils/FileUtils.h
 CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/theShortest/AIOTheShortestReproducer.c.obj: ../headers/lib/utils/operationUtils/OperationUtils.h
-CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/theShortest/AIOTheShortestReproducer.c.obj: ../headers/lib/utils/stringUtils/StringUtils.h
+CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/theShortest/AIOTheShortestReproducer.c.obj: ../headers/lib/utils/stringUtils/string_utils.h
 CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/theShortest/AIOTheShortestReproducer.c.obj: ../sources/lang/methods/analysis/methodReproducer/theShortest/AIOTheShortestReproducer.c
 
+CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/theShortest/concatForEachReproducer/AIOConcatForEachReproducer.c.obj: ../headers/lang/methods/bundle/AIOBundle.h
+CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/theShortest/concatForEachReproducer/AIOConcatForEachReproducer.c.obj: ../headers/lang/methods/variable/AIOVariable.h
+CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/theShortest/concatForEachReproducer/AIOConcatForEachReproducer.c.obj: ../headers/lang/types/AIOType.h
+CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/theShortest/concatForEachReproducer/AIOConcatForEachReproducer.c.obj: ../headers/lib/collections/lists/StringList.h
+CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/theShortest/concatForEachReproducer/AIOConcatForEachReproducer.c.obj: ../headers/lib/collections/maps/AIOVariableMap.h
 CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/theShortest/concatForEachReproducer/AIOConcatForEachReproducer.c.obj: ../sources/lang/methods/analysis/methodReproducer/theShortest/concatForEachReproducer/AIOConcatForEachReproducer.c
 
+CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/theShortest/multiplyForEachReproducer/AIOMultiplyForEachReproducer.c.obj: ../headers/lang/annotations/AIOAnnotation.h
+CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/theShortest/multiplyForEachReproducer/AIOMultiplyForEachReproducer.c.obj: ../headers/lang/declarations/AIODeclaration.h
+CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/theShortest/multiplyForEachReproducer/AIOMultiplyForEachReproducer.c.obj: ../headers/lang/methods/AIOMethodContainer.h
+CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/theShortest/multiplyForEachReproducer/AIOMultiplyForEachReproducer.c.obj: ../headers/lang/methods/analysis/methodReproducer/theShortest/AIOTheShortestReproducer.h
+CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/theShortest/multiplyForEachReproducer/AIOMultiplyForEachReproducer.c.obj: ../headers/lang/methods/bundle/AIOBundle.h
+CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/theShortest/multiplyForEachReproducer/AIOMultiplyForEachReproducer.c.obj: ../headers/lang/methods/methodDefinition/AIOMethodDefinition.h
+CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/theShortest/multiplyForEachReproducer/AIOMultiplyForEachReproducer.c.obj: ../headers/lang/methods/methodDefinition/AIOMethodSizeType.h
+CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/theShortest/multiplyForEachReproducer/AIOMultiplyForEachReproducer.c.obj: ../headers/lang/methods/variable/AIOVariable.h
+CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/theShortest/multiplyForEachReproducer/AIOMultiplyForEachReproducer.c.obj: ../headers/lang/object/AIOObject.h
+CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/theShortest/multiplyForEachReproducer/AIOMultiplyForEachReproducer.c.obj: ../headers/lang/types/AIOType.h
+CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/theShortest/multiplyForEachReproducer/AIOMultiplyForEachReproducer.c.obj: ../headers/lib/collections/lists/AIOAnnotationList.h
+CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/theShortest/multiplyForEachReproducer/AIOMultiplyForEachReproducer.c.obj: ../headers/lib/collections/lists/StringList.h
+CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/theShortest/multiplyForEachReproducer/AIOMultiplyForEachReproducer.c.obj: ../headers/lib/collections/maps/AIOMethodDefinitionMap.h
+CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/theShortest/multiplyForEachReproducer/AIOMultiplyForEachReproducer.c.obj: ../headers/lib/collections/maps/AIOVariableMap.h
 CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/theShortest/multiplyForEachReproducer/AIOMultiplyForEachReproducer.c.obj: ../sources/lang/methods/analysis/methodReproducer/theShortest/multiplyForEachReproducer/AIOMultiplyForEachReproducer.c
 
 CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/theShortest/plusForEachReproducer/AIOPlusForEachReproducer.c.obj: ../headers/lang/annotations/AIOAnnotation.h
 CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/theShortest/plusForEachReproducer/AIOPlusForEachReproducer.c.obj: ../headers/lang/declarations/AIODeclaration.h
 CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/theShortest/plusForEachReproducer/AIOPlusForEachReproducer.c.obj: ../headers/lang/methods/AIOMethodContainer.h
-CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/theShortest/plusForEachReproducer/AIOPlusForEachReproducer.c.obj: ../headers/lang/methods/analysis/methodReproducer/theShortest/AIOAbstractForEachOperationReproducer.h
+CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/theShortest/plusForEachReproducer/AIOPlusForEachReproducer.c.obj: ../headers/lang/methods/analysis/methodReproducer/theShortest/AIOTheShortestReproducer.h
 CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/theShortest/plusForEachReproducer/AIOPlusForEachReproducer.c.obj: ../headers/lang/methods/bundle/AIOBundle.h
 CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/theShortest/plusForEachReproducer/AIOPlusForEachReproducer.c.obj: ../headers/lang/methods/methodDefinition/AIOMethodDefinition.h
 CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/theShortest/plusForEachReproducer/AIOPlusForEachReproducer.c.obj: ../headers/lang/methods/methodDefinition/AIOMethodSizeType.h
@@ -102,7 +144,6 @@ CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/theShortest/pl
 CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/theShortest/plusForEachReproducer/AIOPlusForEachReproducer.c.obj: ../headers/lib/collections/lists/StringList.h
 CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/theShortest/plusForEachReproducer/AIOPlusForEachReproducer.c.obj: ../headers/lib/collections/maps/AIOMethodDefinitionMap.h
 CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/theShortest/plusForEachReproducer/AIOPlusForEachReproducer.c.obj: ../headers/lib/collections/maps/AIOVariableMap.h
-CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/theShortest/plusForEachReproducer/AIOPlusForEachReproducer.c.obj: ../headers/lib/utils/stringUtils/StringUtils.h
 CMakeFiles/AIO.dir/sources/lang/methods/analysis/methodReproducer/theShortest/plusForEachReproducer/AIOPlusForEachReproducer.c.obj: ../sources/lang/methods/analysis/methodReproducer/theShortest/plusForEachReproducer/AIOPlusForEachReproducer.c
 
 CMakeFiles/AIO.dir/sources/lang/methods/bundle/AIOBundle.c.obj: ../headers/lang/methods/bundle/AIOBundle.h
@@ -132,7 +173,7 @@ CMakeFiles/AIO.dir/sources/lang/methods/methodDefinition/AIOMethodDefinitionBuil
 CMakeFiles/AIO.dir/sources/lang/methods/methodDefinition/AIOMethodDefinitionBuilder.c.obj: ../headers/lib/collections/maps/AIOMethodDefinitionMap.h
 CMakeFiles/AIO.dir/sources/lang/methods/methodDefinition/AIOMethodDefinitionBuilder.c.obj: ../headers/lib/collections/maps/AIOObjectMap.h
 CMakeFiles/AIO.dir/sources/lang/methods/methodDefinition/AIOMethodDefinitionBuilder.c.obj: ../headers/lib/utils/operationUtils/OperationUtils.h
-CMakeFiles/AIO.dir/sources/lang/methods/methodDefinition/AIOMethodDefinitionBuilder.c.obj: ../headers/lib/utils/stringUtils/StringUtils.h
+CMakeFiles/AIO.dir/sources/lang/methods/methodDefinition/AIOMethodDefinitionBuilder.c.obj: ../headers/lib/utils/stringUtils/string_utils.h
 CMakeFiles/AIO.dir/sources/lang/methods/methodDefinition/AIOMethodDefinitionBuilder.c.obj: ../sources/lang/methods/methodDefinition/AIOMethodDefinitionBuilder.c
 
 CMakeFiles/AIO.dir/sources/lang/methods/result/AIOResult.c.obj: ../headers/lang/methods/result/AIOResult.h
@@ -164,6 +205,7 @@ CMakeFiles/AIO.dir/sources/lang/object/AIOObject.c.obj: ../headers/lib/collectio
 CMakeFiles/AIO.dir/sources/lang/object/AIOObject.c.obj: ../headers/lib/collections/maps/AIOObjectMap.h
 CMakeFiles/AIO.dir/sources/lang/object/AIOObject.c.obj: ../headers/lib/collections/maps/AIOVariableMap.h
 CMakeFiles/AIO.dir/sources/lang/object/AIOObject.c.obj: ../headers/lib/utils/fileUtils/FileUtils.h
+CMakeFiles/AIO.dir/sources/lang/object/AIOObject.c.obj: ../headers/reservedNames/AIOReservedNamesContainer.h
 CMakeFiles/AIO.dir/sources/lang/object/AIOObject.c.obj: ../sources/lang/object/AIOObject.c
 
 CMakeFiles/AIO.dir/sources/lang/object/objectManager/AIOObjectManager.c.obj: ../headers/lang/annotations/AIOAnnotation.h
@@ -226,12 +268,19 @@ CMakeFiles/AIO.dir/sources/lib/utils/fileUtils/FileUtils.c.obj: ../headers/lang/
 CMakeFiles/AIO.dir/sources/lib/utils/fileUtils/FileUtils.c.obj: ../headers/lib/collections/lists/AIOAnnotationList.h
 CMakeFiles/AIO.dir/sources/lib/utils/fileUtils/FileUtils.c.obj: ../headers/lib/collections/lists/StringList.h
 CMakeFiles/AIO.dir/sources/lib/utils/fileUtils/FileUtils.c.obj: ../headers/lib/collections/maps/AIOMethodDefinitionMap.h
-CMakeFiles/AIO.dir/sources/lib/utils/fileUtils/FileUtils.c.obj: ../headers/lib/utils/stringUtils/StringUtils.h
+CMakeFiles/AIO.dir/sources/lib/utils/fileUtils/FileUtils.c.obj: ../headers/lib/utils/stringUtils/string_utils.h
 CMakeFiles/AIO.dir/sources/lib/utils/fileUtils/FileUtils.c.obj: ../sources/lib/utils/fileUtils/FileUtils.c
 
 CMakeFiles/AIO.dir/sources/lib/utils/operationUtils/OperationUtils.c.obj: ../sources/lib/utils/operationUtils/OperationUtils.c
 
-CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/StringUtils.c.obj: ../sources/lib/utils/stringUtils/StringUtils.c
+CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/remove_prefix_suffix.c.obj: ../sources/lib/utils/stringUtils/remove_prefix_suffix.c
+
+CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/split.c.obj: ../sources/lib/utils/stringUtils/split.c
+
+CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/string_utils.c.obj: ../sources/lib/utils/stringUtils/string_utils.c
+
+CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/trim.c.obj: ../headers/lib/utils/stringUtils/string_utils.h
+CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/trim.c.obj: ../sources/lib/utils/stringUtils/trim.c
 
 CMakeFiles/AIO.dir/sources/main/main.c.obj: ../headers/lang/annotations/AIOAnnotation.h
 CMakeFiles/AIO.dir/sources/main/main.c.obj: ../headers/lang/declarations/AIODeclaration.h
@@ -244,6 +293,92 @@ CMakeFiles/AIO.dir/sources/main/main.c.obj: ../headers/lib/collections/lists/AIO
 CMakeFiles/AIO.dir/sources/main/main.c.obj: ../headers/lib/collections/lists/StringList.h
 CMakeFiles/AIO.dir/sources/main/main.c.obj: ../headers/lib/collections/maps/AIOMethodDefinitionMap.h
 CMakeFiles/AIO.dir/sources/main/main.c.obj: ../headers/lib/collections/maps/AIOObjectMap.h
-CMakeFiles/AIO.dir/sources/main/main.c.obj: ../headers/lib/utils/stringUtils/StringUtils.h
+CMakeFiles/AIO.dir/sources/main/main.c.obj: ../headers/lib/utils/stringUtils/string_utils.h
 CMakeFiles/AIO.dir/sources/main/main.c.obj: ../sources/main/main.c
+
+CMakeFiles/AIO.dir/sources/tools/parsers/AIOParser.c.obj: ../headers/lang/annotations/AIOAnnotation.h
+CMakeFiles/AIO.dir/sources/tools/parsers/AIOParser.c.obj: ../headers/lang/declarations/AIODeclaration.h
+CMakeFiles/AIO.dir/sources/tools/parsers/AIOParser.c.obj: ../headers/lang/methods/AIOMethod.h
+CMakeFiles/AIO.dir/sources/tools/parsers/AIOParser.c.obj: ../headers/lang/methods/AIOMethodContainer.h
+CMakeFiles/AIO.dir/sources/tools/parsers/AIOParser.c.obj: ../headers/lang/methods/analysis/methodReproducer/AIOMethodReproducer.h
+CMakeFiles/AIO.dir/sources/tools/parsers/AIOParser.c.obj: ../headers/lang/methods/analysis/methodReproducer/default/AIODefaultReproducer.h
+CMakeFiles/AIO.dir/sources/tools/parsers/AIOParser.c.obj: ../headers/lang/methods/analysis/methodReproducer/short/AIOShortReproducer.h
+CMakeFiles/AIO.dir/sources/tools/parsers/AIOParser.c.obj: ../headers/lang/methods/analysis/methodReproducer/theShortest/AIOTheShortestReproducer.h
+CMakeFiles/AIO.dir/sources/tools/parsers/AIOParser.c.obj: ../headers/lang/methods/bundle/AIOBundle.h
+CMakeFiles/AIO.dir/sources/tools/parsers/AIOParser.c.obj: ../headers/lang/methods/methodDefinition/AIOMethodDefinition.h
+CMakeFiles/AIO.dir/sources/tools/parsers/AIOParser.c.obj: ../headers/lang/methods/methodDefinition/AIOMethodSizeType.h
+CMakeFiles/AIO.dir/sources/tools/parsers/AIOParser.c.obj: ../headers/lang/methods/variable/AIOVariable.h
+CMakeFiles/AIO.dir/sources/tools/parsers/AIOParser.c.obj: ../headers/lang/object/AIOObject.h
+CMakeFiles/AIO.dir/sources/tools/parsers/AIOParser.c.obj: ../headers/lang/types/AIOType.h
+CMakeFiles/AIO.dir/sources/tools/parsers/AIOParser.c.obj: ../headers/lib/collections/lists/AIOAnnotationList.h
+CMakeFiles/AIO.dir/sources/tools/parsers/AIOParser.c.obj: ../headers/lib/collections/lists/StringList.h
+CMakeFiles/AIO.dir/sources/tools/parsers/AIOParser.c.obj: ../headers/lib/collections/maps/AIOMethodDefinitionMap.h
+CMakeFiles/AIO.dir/sources/tools/parsers/AIOParser.c.obj: ../headers/lib/collections/maps/AIOVariableMap.h
+CMakeFiles/AIO.dir/sources/tools/parsers/AIOParser.c.obj: ../headers/reservedNames/AIOReservedNamesContainer.h
+CMakeFiles/AIO.dir/sources/tools/parsers/AIOParser.c.obj: ../headers/tools/parsers/AIOParser.h
+CMakeFiles/AIO.dir/sources/tools/parsers/AIOParser.c.obj: ../sources/tools/parsers/AIOParser.c
+
+CMakeFiles/AIO.dir/sources/tools/parsers/chaParser/AIOChaParser.c.obj: ../headers/lang/annotations/AIOAnnotation.h
+CMakeFiles/AIO.dir/sources/tools/parsers/chaParser/AIOChaParser.c.obj: ../headers/lang/declarations/AIODeclaration.h
+CMakeFiles/AIO.dir/sources/tools/parsers/chaParser/AIOChaParser.c.obj: ../headers/lang/methods/AIOMethodContainer.h
+CMakeFiles/AIO.dir/sources/tools/parsers/chaParser/AIOChaParser.c.obj: ../headers/lang/methods/bundle/AIOBundle.h
+CMakeFiles/AIO.dir/sources/tools/parsers/chaParser/AIOChaParser.c.obj: ../headers/lang/methods/methodDefinition/AIOMethodDefinition.h
+CMakeFiles/AIO.dir/sources/tools/parsers/chaParser/AIOChaParser.c.obj: ../headers/lang/methods/methodDefinition/AIOMethodSizeType.h
+CMakeFiles/AIO.dir/sources/tools/parsers/chaParser/AIOChaParser.c.obj: ../headers/lang/methods/variable/AIOVariable.h
+CMakeFiles/AIO.dir/sources/tools/parsers/chaParser/AIOChaParser.c.obj: ../headers/lang/object/AIOObject.h
+CMakeFiles/AIO.dir/sources/tools/parsers/chaParser/AIOChaParser.c.obj: ../headers/lang/types/AIOType.h
+CMakeFiles/AIO.dir/sources/tools/parsers/chaParser/AIOChaParser.c.obj: ../headers/lib/collections/lists/AIOAnnotationList.h
+CMakeFiles/AIO.dir/sources/tools/parsers/chaParser/AIOChaParser.c.obj: ../headers/lib/collections/lists/StringList.h
+CMakeFiles/AIO.dir/sources/tools/parsers/chaParser/AIOChaParser.c.obj: ../headers/lib/collections/maps/AIOMethodDefinitionMap.h
+CMakeFiles/AIO.dir/sources/tools/parsers/chaParser/AIOChaParser.c.obj: ../headers/lib/collections/maps/AIOVariableMap.h
+CMakeFiles/AIO.dir/sources/tools/parsers/chaParser/AIOChaParser.c.obj: ../sources/tools/parsers/chaParser/AIOChaParser.c
+
+CMakeFiles/AIO.dir/sources/tools/parsers/douParser/AIODouParser.c.obj: ../headers/lang/annotations/AIOAnnotation.h
+CMakeFiles/AIO.dir/sources/tools/parsers/douParser/AIODouParser.c.obj: ../headers/lang/declarations/AIODeclaration.h
+CMakeFiles/AIO.dir/sources/tools/parsers/douParser/AIODouParser.c.obj: ../headers/lang/methods/AIOMethodContainer.h
+CMakeFiles/AIO.dir/sources/tools/parsers/douParser/AIODouParser.c.obj: ../headers/lang/methods/bundle/AIOBundle.h
+CMakeFiles/AIO.dir/sources/tools/parsers/douParser/AIODouParser.c.obj: ../headers/lang/methods/defaultMethodContainer/AIODefaultMethodContainer.h
+CMakeFiles/AIO.dir/sources/tools/parsers/douParser/AIODouParser.c.obj: ../headers/lang/methods/methodDefinition/AIOMethodDefinition.h
+CMakeFiles/AIO.dir/sources/tools/parsers/douParser/AIODouParser.c.obj: ../headers/lang/methods/methodDefinition/AIOMethodSizeType.h
+CMakeFiles/AIO.dir/sources/tools/parsers/douParser/AIODouParser.c.obj: ../headers/lang/methods/result/AIOResult.h
+CMakeFiles/AIO.dir/sources/tools/parsers/douParser/AIODouParser.c.obj: ../headers/lang/methods/variable/AIOVariable.h
+CMakeFiles/AIO.dir/sources/tools/parsers/douParser/AIODouParser.c.obj: ../headers/lang/object/AIOObject.h
+CMakeFiles/AIO.dir/sources/tools/parsers/douParser/AIODouParser.c.obj: ../headers/lang/types/AIOType.h
+CMakeFiles/AIO.dir/sources/tools/parsers/douParser/AIODouParser.c.obj: ../headers/lib/collections/lists/AIOAnnotationList.h
+CMakeFiles/AIO.dir/sources/tools/parsers/douParser/AIODouParser.c.obj: ../headers/lib/collections/lists/StringList.h
+CMakeFiles/AIO.dir/sources/tools/parsers/douParser/AIODouParser.c.obj: ../headers/lib/collections/maps/AIOMethodDefinitionMap.h
+CMakeFiles/AIO.dir/sources/tools/parsers/douParser/AIODouParser.c.obj: ../headers/lib/collections/maps/AIOVariableMap.h
+CMakeFiles/AIO.dir/sources/tools/parsers/douParser/AIODouParser.c.obj: ../headers/lib/utils/stringUtils/string_utils.h
+CMakeFiles/AIO.dir/sources/tools/parsers/douParser/AIODouParser.c.obj: ../headers/tools/parsers/AIOParser.h
+CMakeFiles/AIO.dir/sources/tools/parsers/douParser/AIODouParser.c.obj: ../sources/tools/parsers/douParser/AIODouParser.c
+
+CMakeFiles/AIO.dir/sources/tools/parsers/intParser/AIOIntParser.c.obj: ../headers/lang/annotations/AIOAnnotation.h
+CMakeFiles/AIO.dir/sources/tools/parsers/intParser/AIOIntParser.c.obj: ../headers/lang/declarations/AIODeclaration.h
+CMakeFiles/AIO.dir/sources/tools/parsers/intParser/AIOIntParser.c.obj: ../headers/lang/methods/AIOMethodContainer.h
+CMakeFiles/AIO.dir/sources/tools/parsers/intParser/AIOIntParser.c.obj: ../headers/lang/methods/bundle/AIOBundle.h
+CMakeFiles/AIO.dir/sources/tools/parsers/intParser/AIOIntParser.c.obj: ../headers/lang/methods/methodDefinition/AIOMethodDefinition.h
+CMakeFiles/AIO.dir/sources/tools/parsers/intParser/AIOIntParser.c.obj: ../headers/lang/methods/methodDefinition/AIOMethodSizeType.h
+CMakeFiles/AIO.dir/sources/tools/parsers/intParser/AIOIntParser.c.obj: ../headers/lang/methods/variable/AIOVariable.h
+CMakeFiles/AIO.dir/sources/tools/parsers/intParser/AIOIntParser.c.obj: ../headers/lang/object/AIOObject.h
+CMakeFiles/AIO.dir/sources/tools/parsers/intParser/AIOIntParser.c.obj: ../headers/lang/types/AIOType.h
+CMakeFiles/AIO.dir/sources/tools/parsers/intParser/AIOIntParser.c.obj: ../headers/lib/collections/lists/AIOAnnotationList.h
+CMakeFiles/AIO.dir/sources/tools/parsers/intParser/AIOIntParser.c.obj: ../headers/lib/collections/lists/StringList.h
+CMakeFiles/AIO.dir/sources/tools/parsers/intParser/AIOIntParser.c.obj: ../headers/lib/collections/maps/AIOMethodDefinitionMap.h
+CMakeFiles/AIO.dir/sources/tools/parsers/intParser/AIOIntParser.c.obj: ../headers/lib/collections/maps/AIOVariableMap.h
+CMakeFiles/AIO.dir/sources/tools/parsers/intParser/AIOIntParser.c.obj: ../sources/tools/parsers/intParser/AIOIntParser.c
+
+CMakeFiles/AIO.dir/sources/tools/parsers/strParser/AIOStrParser.c.obj: ../headers/lang/annotations/AIOAnnotation.h
+CMakeFiles/AIO.dir/sources/tools/parsers/strParser/AIOStrParser.c.obj: ../headers/lang/declarations/AIODeclaration.h
+CMakeFiles/AIO.dir/sources/tools/parsers/strParser/AIOStrParser.c.obj: ../headers/lang/methods/AIOMethodContainer.h
+CMakeFiles/AIO.dir/sources/tools/parsers/strParser/AIOStrParser.c.obj: ../headers/lang/methods/bundle/AIOBundle.h
+CMakeFiles/AIO.dir/sources/tools/parsers/strParser/AIOStrParser.c.obj: ../headers/lang/methods/methodDefinition/AIOMethodDefinition.h
+CMakeFiles/AIO.dir/sources/tools/parsers/strParser/AIOStrParser.c.obj: ../headers/lang/methods/methodDefinition/AIOMethodSizeType.h
+CMakeFiles/AIO.dir/sources/tools/parsers/strParser/AIOStrParser.c.obj: ../headers/lang/methods/variable/AIOVariable.h
+CMakeFiles/AIO.dir/sources/tools/parsers/strParser/AIOStrParser.c.obj: ../headers/lang/object/AIOObject.h
+CMakeFiles/AIO.dir/sources/tools/parsers/strParser/AIOStrParser.c.obj: ../headers/lang/types/AIOType.h
+CMakeFiles/AIO.dir/sources/tools/parsers/strParser/AIOStrParser.c.obj: ../headers/lib/collections/lists/AIOAnnotationList.h
+CMakeFiles/AIO.dir/sources/tools/parsers/strParser/AIOStrParser.c.obj: ../headers/lib/collections/lists/StringList.h
+CMakeFiles/AIO.dir/sources/tools/parsers/strParser/AIOStrParser.c.obj: ../headers/lib/collections/maps/AIOMethodDefinitionMap.h
+CMakeFiles/AIO.dir/sources/tools/parsers/strParser/AIOStrParser.c.obj: ../headers/lib/collections/maps/AIOVariableMap.h
+CMakeFiles/AIO.dir/sources/tools/parsers/strParser/AIOStrParser.c.obj: ../sources/tools/parsers/strParser/AIOStrParser.c
 

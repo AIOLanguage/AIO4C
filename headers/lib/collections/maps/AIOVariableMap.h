@@ -12,7 +12,7 @@ typedef struct AIOVariableMap {
 
 void createAIOVariableMap(AIOVariableMap **variableMap);
 
-void putAIOVariableInMap(AIOVariableMap *variableMap, AIOVariable *variable);
+void putInAIOVariableInMap(AIOVariableMap *variableMap, AIOVariable *variable);
 
 AIOVariable *getAIOVariableInMapByName(AIOVariableMap *variableMap, char *name);
 

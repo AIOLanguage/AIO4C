@@ -3,7 +3,7 @@
 #include <ctype.h>
 #include <process.h>
 #include "../../../../headers/lang/methods/methodDefinition/AIOMethodDefinition.h"
-#include "../../../../headers/lib/utils/stringUtils/StringUtils.h"
+#include "../../../../headers/lib/utils/stringUtils/string_utils.h"
 #include "../../../../headers/lang/object/objectManager/AIOObjectManager.h"
 #include "../../../../headers/lib/utils/operationUtils/OperationUtils.h"
 
@@ -12,7 +12,7 @@ AIOObjectManager* aioObjectManager;
 //Passed JUnitTest!
 StringList *getSourceCodeOfMethod(char *methodName, StringList *sourceCode, int startIndex) {
     StringList *methodCode;
-    createListOfString(&methodCode);
+    createStringList(&methodCode);
     int currentIndex = startIndex;
     char *trimmedLine;
     trim(sourceCode->strings[currentIndex], &trimmedLine);
@@ -21,9 +21,9 @@ StringList *getSourceCodeOfMethod(char *methodName, StringList *sourceCode, int 
         if (cleanFirstLine == NULL) {
             perror("can not allocate memory for clean first line in during get source code method procedure performs!");
         }
-        removePrefix(trimmedLine, methodName, &cleanFirstLine);
+        remove_prefix(trimmedLine, methodName, &cleanFirstLine);
         if (strcmp(cleanFirstLine, "") != 0) {
-            addInListOfString(methodCode, cleanFirstLine);
+            addInStringList(methodCode, cleanFirstLine);
         }
         while (++currentIndex < *sourceCode->size) {
             char* currentLine;
@@ -31,7 +31,7 @@ StringList *getSourceCodeOfMethod(char *methodName, StringList *sourceCode, int 
             if (strcmp(currentLine, "") == 0) {
                 break;
             } else {
-                addInListOfString(methodCode, currentLine);
+                addInStringList(methodCode, currentLine);
             }
         }
     }
@@ -62,13 +62,13 @@ int isCorrectPlacedBrackets(char *line) {
 //Passed JUnitTest!
 StringList *getArgsIfCorrect(char **args) {
     StringList *argList;
-    createListOfString(&argList);
+    createStringList(&argList);
     for (int j = 0; j < _msize(args) / 4; ++j) {
-        if (isWord(args[j]) == -1) {
+        if (is_word(args[j]) == -1) {
             perror("arg in declaration has invalid name!");
             exit(1);
         } else {
-            addInListOfString(argList, args[j]);
+            addInStringList(argList, args[j]);
         }
     }
     return argList;
@@ -82,7 +82,7 @@ AIODeclaration *getDeclarationOfMethod(char *methodName, StringList *sourceCode,
     trim(inputLine, &currentLine);
     while (strcmp(currentLine, "") != 0 && currentIndex >= 0) {
         char *declarationPrefix = "~dec:";
-        int startsAsDeclaration = startsWith(currentLine, declarationPrefix);
+        int startsAsDeclaration = starts_with(currentLine, declarationPrefix);
         if (startsAsDeclaration == 0) {
             //Remove declaration prefix:
             char *bracketLine = malloc(strlen(currentLine));
@@ -90,7 +90,7 @@ AIODeclaration *getDeclarationOfMethod(char *methodName, StringList *sourceCode,
                 perror("cannot allocate memory for bracket line when was creating of declaration!");
                 exit(1);
             }
-            removePrefix(currentLine, declarationPrefix, &bracketLine);
+            remove_prefix(currentLine, declarationPrefix, &bracketLine);
             //<<w+<<:
             if (strlen(bracketLine) > 4 && isCorrectPlacedBrackets(bracketLine) == 0) {
                 //Remove brackets:
@@ -99,19 +99,19 @@ AIODeclaration *getDeclarationOfMethod(char *methodName, StringList *sourceCode,
                     perror("cannot allocate memory for left padding when was creating of declaration!");
                     exit(1);
                 }
-                removePrefix(bracketLine, "<<", &lp);
+                remove_prefix(bracketLine, "<<", &lp);
                 char *rp = malloc(strlen(lp));
                 if (rp == NULL) {
                     perror("cannot allocate memory for right padding when was creating of declaration!");
                     exit(1);
                 }
-                removeSuffix(lp, "<<", &rp);
+                remove_suffix(lp, "<<", &rp);
                 //Split naked args;
                 char **dirtySplitArgs;
-                splitByChar(rp, ',', &dirtySplitArgs);
+                split_by_char(rp, ',', &dirtySplitArgs);
                 //Trim all args:
                 char **args;
-                trimAll(dirtySplitArgs, _msize(dirtySplitArgs) / 4, &args);
+                trim_all(dirtySplitArgs, _msize(dirtySplitArgs) / 4, &args);
                 StringList *argList = getArgsIfCorrect(args);
                 AIODeclaration *aioDeclaration;
                 createAIODeclaration(&aioDeclaration, methodName, argList);

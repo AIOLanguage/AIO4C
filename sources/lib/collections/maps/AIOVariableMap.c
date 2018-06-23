@@ -48,7 +48,7 @@ void updateMemoryInVariableMapOfObjects(AIOVariableMap *variableMap) {
     }
 }
 
-void putAIOVariableInMap(AIOVariableMap *variableMap, AIOVariable *variable) {
+void putInAIOVariableInMap(AIOVariableMap *variableMap, AIOVariable *variable) {
     for (int i = 0; i < *variableMap->size; ++i) {
         if (strcmp(variableMap->names[i], variable->name) == 0) {
             perror("Cannot put AIOObject in definition map");

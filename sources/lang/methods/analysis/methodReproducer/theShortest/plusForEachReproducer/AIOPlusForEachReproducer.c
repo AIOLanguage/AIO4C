@@ -3,11 +3,11 @@
 #include "../../../../../../../headers/lang/methods/AIOMethodContainer.h"
 #include "../../../../../../../headers/lang/methods/analysis/methodReproducer/theShortest/AIOTheShortestReproducer.h"
 
-aioInt plusInt(aioInt first, aioInt second) {
+AIOInt plusInt(AIOInt first, AIOInt second) {
     return first + second;
 }
 
-aioDou plusDou(aioDou first, aioDou second) {
+AIODou plusDou(AIODou first, AIODou second) {
     return first + second;
 }
 

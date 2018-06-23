@@ -10,11 +10,11 @@ void concatForEachReproduce(AIOVariableMap *argMap, AIOBundle *bundle) {
         for (int i = 0; i < *argMap->size; ++i) {
             length = length + strlen(argMap->variables[i]->value);
         }
-        aioStr result = calloc(length + 1, sizeof(char));
+        AIOStr result = calloc(length + 1, sizeof(char));
         strcpy(result, argMap->variables[0]->value);
         for (int i = 1; i < *argMap->size; ++i) {
             strcat(result, argMap->variables[i]->value);
         }
-        addInListOfString(bundle->outputValues, result);
+        addInStringList(bundle->outputValues, result);
     }
 }

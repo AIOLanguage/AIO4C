@@ -10,7 +10,7 @@ void createAIOBundle(AIOBundle **bundle, StringList *inputValues) {
     (*bundle)->inputValues = inputValues;
     //Create output values:
     StringList *outputValues;
-    createListOfString(&outputValues);
+    createStringList(&outputValues);
     (*bundle)->outputValues = calloc(1, sizeof(StringList));
     (*bundle)->outputValues = outputValues;
 }
@@ -19,10 +19,10 @@ void createAIOBundle(AIOBundle **bundle, StringList *inputValues) {
  * /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     AIOBundle* bundle;
     StringList* inputValues;
-    createListOfString(&inputValues);
+    createStringList(&inputValues);
     addInMutableListOfString(inputValues, "1ut");
     addInMutableListOfString(inputValues, "200y");
-    addInListOfString(inputValues, "3vc");
+    addInStringList(inputValues, "3vc");
     createAIOBundle(&bundle, inputValues);
     printf("%s", *bundle->inputValues->strings);
  */

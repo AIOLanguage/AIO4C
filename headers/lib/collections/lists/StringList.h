@@ -8,9 +8,9 @@ typedef struct StringList {
     char** strings;
 } StringList;
 
-void createListOfString(StringList **listOfString);
+void createStringList(StringList **listOfString);
 
-void addInListOfString(StringList *listOfString, char *);
+void addInStringList(StringList *listOfString, char *);
 
 char* getStringInListByIndex(StringList *listOfString, int index);
 

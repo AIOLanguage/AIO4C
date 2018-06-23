@@ -6,7 +6,7 @@
 
 @toStr &
 
-@trimAll trim~
+@trim_all trim~
 
 ~dec: <<string<<
 @trim

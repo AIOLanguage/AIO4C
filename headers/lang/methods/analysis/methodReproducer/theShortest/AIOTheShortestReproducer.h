@@ -7,9 +7,9 @@ void reproduceTheShortestMethod(AIOObject *object, AIOMethodDefinition *methodDe
                                 AIOMethodContainer *methodContainer, AIOBundle *bundle);
 
 int
-intOperationForEachTypeOperationReproduce(AIOVariableMap *argMap, AIOBundle *bundle, aioInt (apply)(aioInt, aioInt));
+intOperationForEachTypeOperationReproduce(AIOVariableMap *argMap, AIOBundle *bundle, AIOInt (apply)(AIOInt, AIOInt));
 
 int
-douOperationForEachTypeOperationReproduce(AIOVariableMap *argMap, AIOBundle *bundle, aioDou (apply)(aioDou, aioDou));
+douOperationForEachTypeOperationReproduce(AIOVariableMap *argMap, AIOBundle *bundle, AIODou (apply)(AIODou, AIODou));
 
 #endif //AIO_THE_SHORTEST_REPRODUCER_H

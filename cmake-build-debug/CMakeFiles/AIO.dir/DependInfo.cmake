@@ -31,8 +31,16 @@ set(CMAKE_DEPENDS_CHECK_C
   "C:/Users/StarKRE/CLionProjects/AIO/sources/lib/collections/maps/AIOVariableMap.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lib/collections/maps/AIOVariableMap.c.obj"
   "C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/fileUtils/FileUtils.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lib/utils/fileUtils/FileUtils.c.obj"
   "C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/operationUtils/OperationUtils.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lib/utils/operationUtils/OperationUtils.c.obj"
-  "C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/stringUtils/StringUtils.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/StringUtils.c.obj"
+  "C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/stringUtils/remove_prefix_suffix.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/remove_prefix_suffix.c.obj"
+  "C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/stringUtils/split.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/split.c.obj"
+  "C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/stringUtils/string_utils.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/string_utils.c.obj"
+  "C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/stringUtils/trim.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/trim.c.obj"
   "C:/Users/StarKRE/CLionProjects/AIO/sources/main/main.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/main/main.c.obj"
+  "C:/Users/StarKRE/CLionProjects/AIO/sources/tools/parsers/AIOParser.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/tools/parsers/AIOParser.c.obj"
+  "C:/Users/StarKRE/CLionProjects/AIO/sources/tools/parsers/chaParser/AIOChaParser.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/tools/parsers/chaParser/AIOChaParser.c.obj"
+  "C:/Users/StarKRE/CLionProjects/AIO/sources/tools/parsers/douParser/AIODouParser.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/tools/parsers/douParser/AIODouParser.c.obj"
+  "C:/Users/StarKRE/CLionProjects/AIO/sources/tools/parsers/intParser/AIOIntParser.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/tools/parsers/intParser/AIOIntParser.c.obj"
+  "C:/Users/StarKRE/CLionProjects/AIO/sources/tools/parsers/strParser/AIOStrParser.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/tools/parsers/strParser/AIOStrParser.c.obj"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

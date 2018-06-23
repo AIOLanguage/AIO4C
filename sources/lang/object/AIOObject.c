@@ -71,7 +71,7 @@ void loadSourceCodeInAIOObject(AIOObject *object, char *path) {
     printf("Loading source code...\n");
     //Create source code mutable list:
     StringList *sourceCode;
-    createListOfString(&sourceCode);
+    createStringList(&sourceCode);
     //Create file:
     FILE *file;
     //Create line buffer:
@@ -85,7 +85,7 @@ void loadSourceCodeInAIOObject(AIOObject *object, char *path) {
         char *line = calloc(1, CHUNK);
         strcpy(line, buffer);
         //put string in list:
-        addInListOfString(sourceCode, line);
+        addInStringList(sourceCode, line);
     }
     fclose(file);
     //Set source code:

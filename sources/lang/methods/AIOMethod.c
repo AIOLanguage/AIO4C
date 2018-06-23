@@ -3,7 +3,7 @@
 #include <process.h>
 #include "../../../headers/lang/methods/AIOMethod.h"
 #include "../../../headers/lang/object/AIOObject.h"
-#include "../../../headers/lib/utils/stringUtils/StringUtils.h"
+#include "../../../headers/lib/utils/stringUtils/string_utils.h"
 
 void createAIOMethodContainer(AIOMethodContainer **container) {
     //Create the same aio method container:
@@ -27,7 +27,7 @@ void setArgs(AIOMethodContainer *methodContainer, AIODeclaration *declaration, S
             enum AIOType type;
             setType(inputArgs->strings[i], &type);
             createAIOVariable(&argument, declaration->argList->strings[i], inputArgs->strings[i], -1, &type);
-            putAIOVariableInMap(methodContainer->argMap, argument);
+            putInAIOVariableInMap(methodContainer->argMap, argument);
         }
     } else {
         for (int i = 0; i < *inputArgs->size; i++) {
@@ -41,8 +41,39 @@ void setArgs(AIOMethodContainer *methodContainer, AIODeclaration *declaration, S
             intToStr(i, &index);
             strcat(implicitArgumentName, index);
             createAIOVariable(&argument, implicitArgumentName, inputArgs->strings[i], -1, &type);
-            putAIOVariableInMap(methodContainer->argMap, argument);
+            putInAIOVariableInMap(methodContainer->argMap, argument);
         }
+    }
+}
+
+int containsVariableInMap(const char *variableName, const AIOVariableMap *variableMap) {
+    for (int i = 0; i < *variableMap->size; ++i) {
+        if (strcmp(variableName, variableMap->names[i]) == 0) {
+            return 0;
+        }
+    }
+    return 1;
+}
+
+
+int containsVariable(char *variableName, AIOMethodContainer *methodContainer) {
+    const AIOVariableMap *argMap = methodContainer->argMap;
+    const AIOVariableMap *variableMap = methodContainer->variableMap;
+    if (containsVariableInMap(variableName, argMap) == 0) {
+        return 0;
+    }
+    if (containsVariableInMap(variableName, variableMap)) {
+        return 0;
+    }
+    return 1;
+}
+
+void setVariable(AIOVariable *variable, AIOMethodContainer *methodContainer) {
+    if (canUseName(variable->name) == 0 && containsVariable(variable->name, methodContainer) == 0) {
+        putInAIOVariableInMap(methodContainer->variableMap, variable);
+    } else {
+        perror("there is variable already exists!");
+        exit(1);
     }
 }
 
@@ -56,8 +87,6 @@ void createAIOMethodAndInvoke(AIOObject *object, AIOMethod **method, AIOMethodDe
     }
     //Create method container:
     createAIOMethodContainer(&(*method)->methodContainer);
-    //Create method methodReproducer:
-//    createAIOMethodReproducer(&(*method)->methodReproducer, methodDefinition, (*method)->methodContainer, bundle);
     //Set args:
     setArgs((*method)->methodContainer, methodDefinition->declaration, bundle->inputValues);
     //Reproduce method:

@@ -1,4 +1,4 @@
-#include "../../../../headers/lib/utils/stringUtils/StringUtils.h"
+#include "../../../../headers/lib/utils/stringUtils/string_utils.h"
 #include "../../../../headers/lang/object/AIOObject.h"
 #include <malloc.h>
 #include <mem.h>
@@ -6,11 +6,11 @@
 
 void mergeNewFolderPath(char *folderPath, char *nextObjectName, char **absoluteNextObjectPath) {
     //Not supported:
-    //While easy make concat =)
+    //While easy make concat_string_to_string =)
     char **paths = calloc(2, sizeof(char *));
     paths[0] = folderPath;
     paths[1] = nextObjectName;
-    joinToStringWithoutSpaces(paths, absoluteNextObjectPath);
+    join_to_string_without_spaces(paths, absoluteNextObjectPath);
 }
 
 

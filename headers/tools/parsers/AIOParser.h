@@ -4,24 +4,28 @@
 #include "../../lang/methods/AIOMethodContainer.h"
 #include "../../lang/object/AIOObject.h"
 
-aioStr
+AIOStr
 parseLineExpression(AIOObject *object, AIOMethodDefinition *methodDefinition, AIOMethodContainer *methodContainer,
                     char *codeLine);
 
-aioStr
+//제목들:
+
+AIOStr
 parseIntLineExpression(AIOObject *object, AIOMethodDefinition *methodDefinition, AIOMethodContainer *methodContainer,
                        char *codeLine);
 
-aioStr
+AIOStr
 parseDouLineExpression(AIOObject *object, AIOMethodDefinition *methodDefinition, AIOMethodContainer *methodContainer,
                        char *codeLine);
 
-aioStr
+AIOStr
 parseChaLineExpression(AIOObject *object, AIOMethodDefinition *methodDefinition, AIOMethodContainer *methodContainer,
                        char *codeLine);
 
-aioStr
+AIOStr
 parseStrLineExpression(AIOObject *object, AIOMethodDefinition *methodDefinition, AIOMethodContainer *methodContainer,
                        char *codeLine);
+
+AIOVariable *getVariable(char *variableName, AIOMethodContainer *methodContainer);
 
 #endif //AIO_PARSER_H

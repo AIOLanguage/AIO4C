@@ -6,7 +6,7 @@
 #include <ctype.h>
 
 //Passed JUnitTest!
-void createListOfString(StringList **listOfString) {
+void createStringList(StringList **listOfString) {
     //Create the same mutable list:
     *listOfString = calloc(1, sizeof(StringList));
     //Create capacity:
@@ -37,7 +37,7 @@ void updateMemoryInListOfString(StringList *listOfString) {
 }
 
 //Passed JUnitTests!
-void addInListOfString(StringList *listOfString, char *string) {
+void addInStringList(StringList *listOfString, char *string) {
     //Check to update capacity:
     updateMemoryInListOfString(listOfString);
     //Set string:

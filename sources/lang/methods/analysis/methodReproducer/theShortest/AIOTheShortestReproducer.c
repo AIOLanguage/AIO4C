@@ -15,12 +15,12 @@ void makeForEachCustomMethodInvocation(AIOObject *nextObject, AIOVariableMap *va
     for (int i = 0; i < *variableMap->size; ++i) {
         AIOBundle *newBundle;
         StringList *valueList;
-        createListOfString(&valueList);
-        addInListOfString(valueList, variableMap->variables[i]->value);
+        createStringList(&valueList);
+        addInStringList(valueList, variableMap->variables[i]->value);
         createAIOBundle(&newBundle, valueList);
         invokeMethodInManager(nextObject, nextMethodName, newBundle);
         for (int j = 0; j < *newBundle->outputValues->size; ++j) {
-            addInListOfString(bundle->outputValues, newBundle->outputValues->strings[j]);
+            addInStringList(bundle->outputValues, newBundle->outputValues->strings[j]);
         }
     }
 }
@@ -49,15 +49,15 @@ void reproduceTheShortestMethod(AIOObject *object, AIOMethodDefinition *methodDe
         if (nextMethodName == NULL) {
             perror("cannot allocate memory for nextMethodName! in reproduceTheShortestMethod!");
         }
-        removeSuffix(word, "~", &nextMethodName);
+        remove_suffix(word, "~", &nextMethodName);
         makeForEachCustomMethodInvocation(object, methodContainer->variableMap, nextMethodName, bundle);
     }
     if (isTheShortestInTheOtherObject(word)) {
         char **nextObjectNameVsMethod;
-        splitByChar(word, '.', &nextObjectNameVsMethod);
+        split_by_char(word, '.', &nextObjectNameVsMethod);
         char *nextObjectPathPlusName = nextObjectNameVsMethod[0];
         char *nextMethodName;
-        removeSuffix(nextObjectNameVsMethod[1], "~", &nextMethodName);
+        remove_suffix(nextObjectNameVsMethod[1], "~", &nextMethodName);
         AIOObject *nextObject = getAIOObjectInMapByName(aioObjectManager->objectMap, nextObjectPathPlusName);
         char *nextObjectName;
         if (nextObject == NULL) {
@@ -77,36 +77,36 @@ void reproduceTheShortestMethod(AIOObject *object, AIOMethodDefinition *methodDe
 
 //Abstract operations for int and dou:
 int
-intOperationForEachTypeOperationReproduce(AIOVariableMap *argMap, AIOBundle *bundle, aioInt (apply)(aioInt, aioInt)) {
+intOperationForEachTypeOperationReproduce(AIOVariableMap *argMap, AIOBundle *bundle, AIOInt (apply)(AIOInt, AIOInt)) {
     if (*(argMap->variables[0]->type) == AIO_INT) {
-        aioInt *result;
+        AIOInt *result;
         strToInt(argMap->variables[0]->value, &result);
         for (int i = 1; i < *argMap->size; ++i) {
-            aioInt *argValue;
+            AIOInt *argValue;
             strToInt(argMap->variables[i]->value, &argValue);
             *result = apply(*result, *argValue);
         }
-        aioStr outputResult;
+        AIOStr outputResult;
         intToStr(*result, &outputResult);
-        addInListOfString(bundle->outputValues, outputResult);
+        addInStringList(bundle->outputValues, outputResult);
         return 0;
     }
     return 1;
 }
 
 int
-douOperationForEachTypeOperationReproduce(AIOVariableMap *argMap, AIOBundle *bundle, aioDou (apply)(aioDou, aioDou)) {
+douOperationForEachTypeOperationReproduce(AIOVariableMap *argMap, AIOBundle *bundle, AIODou (apply)(AIODou, AIODou)) {
     if (*(argMap->variables[0]->type) == AIO_DOU) {
-        aioDou *result;
+        AIODou *result;
         strToDou(argMap->variables[0]->value, &result);
         for (int i = 1; i < *argMap->size; ++i) {
-            aioDou *argValue;
+            AIODou *argValue;
             strToDou(argMap->variables[i]->value, &argValue);
             *result = apply(*result, *argValue);
         }
-        aioStr outputResult;
+        AIOStr outputResult;
         douToStr(*result, &outputResult);
-        addInListOfString(bundle->outputValues, outputResult);
+        addInStringList(bundle->outputValues, outputResult);
         return 0;
     }
     return 1;

@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "../../../../../../headers/lang/object/AIOObject.h"
 #include "../../../../../../headers/lang/methods/AIOMethodContainer.h"
-#include "../../../../../../headers/lib/utils/stringUtils/StringUtils.h"
+#include "../../../../../../headers/lib/utils/stringUtils/string_utils.h"
 #include "../../../../../../headers/lang/methods/analysis/methodReproducer/short/AIOShortReproducer.h"
 
 void
@@ -16,7 +16,7 @@ reproduceDefaultMethod(AIOObject *object, AIOMethodDefinition *methodDefinition,
         // if (wasCreatingVariable == 0){
         //      continue;
         // }
-        if (startsWith(sourceCode->strings[i], ">>") == 0) {
+        if (starts_with(sourceCode->strings[i], ">>") == 0) {
             reproduceShortMethod(object, methodDefinition, methodContainer, bundle, codeLine);
             break;
         }
