@@ -16,45 +16,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="77c54fc7-a37a-4eaf-a794-282c0598671e" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/headers/tools/parsers/AIOParser.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/AIO.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/AIO.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/C.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/C.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/DependInfo.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/cmake_clean.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/depend.internal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/objects.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/objects1.rsp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/objects1.rsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/sources/lang/types/AIOType.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/sources/lang/types/AIOType.c.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/headers/lang/methods/analysis/methodReproducer/AIOMethodReproducer.h" beforeDir="false" afterPath="$PROJECT_DIR$/headers/lang/methods/analysis/methodReproducer/AIOMethodReproducer.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/headers/lang/methods/analysis/methodReproducer/short/AIOShortReproducer.h" beforeDir="false" afterPath="$PROJECT_DIR$/headers/lang/methods/analysis/methodReproducer/short/AIOShortReproducer.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/headers/lang/methods/analysis/methodReproducer/theShortest/AIOAbstractForEachOperationReproducer.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/headers/lang/methods/analysis/methodReproducer/theShortest/AIOTheShortestReproducer.h" beforeDir="false" afterPath="$PROJECT_DIR$/headers/lang/methods/analysis/methodReproducer/theShortest/AIOTheShortestReproducer.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/headers/lang/methods/analysis/methodReproducer/theShortest/concatForEachReproducer/AIOConcatForEachReproducer.h" beforeDir="false" afterPath="$PROJECT_DIR$/headers/lang/methods/analysis/methodReproducer/theShortest/concatForEachReproducer/AIOConcatForEachReproducer.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/headers/lang/methods/analysis/methodReproducer/theShortest/multiplyForEachReproducer/AIOMultiplyForEachReproducer.h" beforeDir="false" afterPath="$PROJECT_DIR$/headers/lang/methods/analysis/methodReproducer/theShortest/multiplyForEachReproducer/AIOMultiplyForEachReproducer.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/headers/lang/methods/analysis/methodReproducer/theShortest/plusForEachReproducer/AIOPlusForEachReproducer.h" beforeDir="false" afterPath="$PROJECT_DIR$/headers/lang/methods/analysis/methodReproducer/theShortest/plusForEachReproducer/AIOPlusForEachReproducer.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/headers/lang/types/AIOType.h" beforeDir="false" afterPath="$PROJECT_DIR$/headers/lang/types/AIOType.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/headers/lib/utils/stringUtils/StringUtils.h" beforeDir="false" afterPath="$PROJECT_DIR$/headers/lib/utils/stringUtils/StringUtils.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sources/lang/methods/AIOMethod.c" beforeDir="false" afterPath="$PROJECT_DIR$/sources/lang/methods/AIOMethod.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sources/lang/methods/analysis/methodReproducer/AIOMethodReproducer.c" beforeDir="false" afterPath="$PROJECT_DIR$/sources/lang/methods/analysis/methodReproducer/AIOMethodReproducer.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sources/lang/methods/analysis/methodReproducer/default/AIODefaultReproducer.c" beforeDir="false" afterPath="$PROJECT_DIR$/sources/lang/methods/analysis/methodReproducer/default/AIODefaultReproducer.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sources/lang/methods/analysis/methodReproducer/short/AIOShortReproducer.c" beforeDir="false" afterPath="$PROJECT_DIR$/sources/lang/methods/analysis/methodReproducer/short/AIOShortReproducer.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sources/lang/methods/analysis/methodReproducer/theShortest/AIOAbstractForEachOperationReproducer.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sources/lang/methods/analysis/methodReproducer/theShortest/AIOTheShortestReproducer.c" beforeDir="false" afterPath="$PROJECT_DIR$/sources/lang/methods/analysis/methodReproducer/theShortest/AIOTheShortestReproducer.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sources/lang/methods/analysis/methodReproducer/theShortest/concatForEachReproducer/AIOConcatForEachReproducer.c" beforeDir="false" afterPath="$PROJECT_DIR$/sources/lang/methods/analysis/methodReproducer/theShortest/concatForEachReproducer/AIOConcatForEachReproducer.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sources/lang/methods/analysis/methodReproducer/theShortest/multiplyForEachReproducer/AIOMultiplyForEachReproducer.c" beforeDir="false" afterPath="$PROJECT_DIR$/sources/lang/methods/analysis/methodReproducer/theShortest/multiplyForEachReproducer/AIOMultiplyForEachReproducer.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sources/lang/methods/analysis/methodReproducer/theShortest/plusForEachReproducer/AIOPlusForEachReproducer.c" beforeDir="false" afterPath="$PROJECT_DIR$/sources/lang/methods/analysis/methodReproducer/theShortest/plusForEachReproducer/AIOPlusForEachReproducer.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sources/lang/methods/methodDefinition/AIOMethodDefinitionBuilder.c" beforeDir="false" afterPath="$PROJECT_DIR$/sources/lang/methods/methodDefinition/AIOMethodDefinitionBuilder.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sources/lang/types/AIOType.c" beforeDir="false" afterPath="$PROJECT_DIR$/sources/lang/types/AIOType.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sources/lib/utils/stringUtils/StringUtils.c" beforeDir="false" afterPath="$PROJECT_DIR$/sources/lib/utils/stringUtils/StringUtils.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sources/main/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/sources/main/main.c" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -67,14 +31,14 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="AIODefaultReproducer.c" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/sources/lang/methods/analysis/methodReproducer/default/AIODefaultReproducer.c">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="10" lean-forward="true" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
-              <folding>
-                <element signature="e#0#18#0" expanded="true" />
-              </folding>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="670">
+                <caret line="92" column="13" lean-forward="true" selection-start-line="92" selection-start-column="13" selection-end-line="92" selection-end-column="13" />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -101,7 +65,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/headers/lib/collections/maps/AIOMethodDefinitionMap.h" />
         <option value="$PROJECT_DIR$/sources/lib/collections/maps/AIOMethodDefinitionMap.c" />
         <option value="$PROJECT_DIR$/sources/lib/collections/lists/AIOAnnotationList.c" />
         <option value="$PROJECT_DIR$/headers/lib/collections/maps/AIOVariableMap.h" />
@@ -149,9 +112,10 @@
         <option value="$PROJECT_DIR$/sources/lang/methods/analysis/methodReproducer/theShortest/AIOTheShortestReproducer.c" />
         <option value="$PROJECT_DIR$/sources/lang/methods/methodDefinition/AIOMethodDefinitionBuilder.c" />
         <option value="$PROJECT_DIR$/sources/lib/utils/stringUtils/StringUtils.c" />
-        <option value="$PROJECT_DIR$/sources/lang/methods/analysis/methodReproducer/short/AIOShortReproducer.c" />
         <option value="$PROJECT_DIR$/headers/tools/parsers/AIOParser.h" />
         <option value="$PROJECT_DIR$/sources/lang/methods/analysis/methodReproducer/default/AIODefaultReproducer.c" />
+        <option value="$PROJECT_DIR$/sources/lang/methods/analysis/methodReproducer/short/AIOShortReproducer.c" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -395,7 +359,7 @@
       <workItem from="1528531912551" duration="8343000" />
       <workItem from="1528540438575" duration="25416000" />
       <workItem from="1528912844333" duration="453000" />
-      <workItem from="1529687137425" duration="14520000" />
+      <workItem from="1529687137425" duration="16141000" />
     </task>
     <task id="LOCAL-00001" summary="05.06.2018 Developed AIOObjectManager =) #LOVE_AIO_&amp;_C =)">
       <created>1528196702392</created>
@@ -572,11 +536,18 @@
       <option name="project" value="LOCAL" />
       <updated>1528569876662</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="23.06.2018 developed the shortest reproducer!">
+      <created>1529713297638</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1529713297638</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="210300000" />
+    <option name="totallyTimeSpent" value="211921000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -598,7 +569,7 @@
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.311054" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2669271" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.2669271" />
       <window_info anchor="right" id="LuaJ" order="3" weight="0.3294271" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32407406" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -637,7 +608,8 @@
     <MESSAGE value="09.06.2018 fixed bugs #LOVE_AIO_&amp;_C =)" />
     <MESSAGE value="09.06.2018 NOT COMPILED COMMIT! #LOVE_AIO_&amp;_C =)" />
     <MESSAGE value="09.06.2018 ADDED intToString &amp; doubleToString #LOVE_AIO_&amp;_C =)" />
-    <option name="LAST_COMMIT_MESSAGE" value="09.06.2018 ADDED intToString &amp; doubleToString #LOVE_AIO_&amp;_C =)" />
+    <MESSAGE value="23.06.2018 developed the shortest reproducer!" />
+    <option name="LAST_COMMIT_MESSAGE" value="23.06.2018 developed the shortest reproducer!" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -678,16 +650,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sources/lang/methods/analysis/methodReproducer/short/AIOShortReproducer.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sources/lang/methods/analysis/methodReproducer/default/AIODefaultReproducer.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -695,6 +657,26 @@
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sources/lang/methods/analysis/methodReproducer/short/AIOShortReproducer.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="1" lean-forward="true" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="670">
+            <caret line="92" column="13" lean-forward="true" selection-start-line="92" selection-start-column="13" selection-end-line="92" selection-end-column="13" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>

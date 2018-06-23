@@ -80,3 +80,17 @@ This method very difficult to understand. Then ***declaration*** comes to help u
 Declarations indicate the exact number of arguments:
 
 ![image](https://user-images.githubusercontent.com/22048950/39088667-cd9e10ae-45be-11e8-9618-0788fe02f4e7.png)
+
+### Ants:
+
+Ants is the most amazing part of AIO.
+
+Foreword.
+In 2000, aspect-oriented programming appeared. It was then possible to change the work of methods, functions, and procedures in runtime. 
+One of the most popular ways is to proxy and create interceptors. Unfortunately, the most primitive proxy allows you to wrap methods only at the beginning and end, in order to do something more complicated to get to the bodies, you need to know how to do it. aspects work very slowly, since each method interceptor intercepts that too much effort on the performance.
+So, you need to come up with an easy way to change the body of methods in the execution of the program.
+
+AIO POINTERS:
+In fact, the body of any method is an algorithm. Accordingly, it can be represented as a sequence of commands, where each command is essentially an implicit function that has arguments and a return value. And that if we consider every primitive operation, for example (a + b) as a microunion: give it a name: "addition", define the arguments (a, b) (for simplicity of the example there will be an integer), the return value is integer. Thus, the body of the method consists of elementary operations. Let's create links to these operations, and we will work with them.
+
+With this approach, you can easily change the operation right inside the program process.
