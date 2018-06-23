@@ -273,7 +273,7 @@ CMakeFiles/AIO.dir/sources/lib/utils/fileUtils/FileUtils.c.obj: ../sources/lib/u
 
 CMakeFiles/AIO.dir/sources/lib/utils/operationUtils/OperationUtils.c.obj: ../sources/lib/utils/operationUtils/OperationUtils.c
 
-CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/remove_prefix_suffix.c.obj: ../sources/lib/utils/stringUtils/remove_prefix_suffix.c
+CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/prefix_suffix.c.obj: ../sources/lib/utils/stringUtils/prefix_suffix.c
 
 CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/split.c.obj: ../sources/lib/utils/stringUtils/split.c
 

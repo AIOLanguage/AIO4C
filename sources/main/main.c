@@ -25,13 +25,8 @@ int main() {
     addInStringList(strings, "     ");
     addInStringList(strings, "f");
 
-
-
-    char* a = "+++ efnk";
-    char* b;
-    remove_prefix_suffix(a, "+++ ef", "k", &b);
-    printf("\n-%s-\n", b);
-
+    char *a = "   fadvv    ";
+    printf("\n-%s-\n", trim(a));
     return 0;
 }
 

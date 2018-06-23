@@ -6,17 +6,17 @@
 
 void deleteBorders(char *codeLine, char **cleanLine) {
     char *trimmedLine;
-    trim(codeLine, &trimmedLine);
+//    trim(codeLine, &trimmedLine);
     char *withoutPrefix;
-    remove_prefix(trimmedLine, ">>", &withoutPrefix);
-    trim_start(withoutPrefix, cleanLine);
+//    remove_prefix(trimmedLine, ">>", &withoutPrefix);
+  //  trim_start(withoutPrefix, cleanLine);
     free(trimmedLine);
     free(withoutPrefix);
 }
 
 void squeezeCodeLine(char *codeLine, char **cleanLine) {
     char **words;
-    split_by_char(codeLine, ' ', &words);
+//    split_by_string(codeLine, " ", &words);
     char **cleanedWords;
     filter(words, _msize(words) / 4, &cleanedWords, is_not_empty_string);
     join_to_string_without_spaces(cleanedWords, cleanLine);

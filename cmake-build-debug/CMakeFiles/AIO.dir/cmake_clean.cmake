@@ -35,7 +35,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/AIO.dir/sources/tools/parsers/strParser/AIOStrParser.c.obj"
   "CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/split.c.obj"
   "CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/trim.c.obj"
-  "CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/remove_prefix_suffix.c.obj"
+  "CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/prefix_suffix.c.obj"
   "AIO.pdb"
   "AIO.exe"
   "AIO.exe.manifest"

@@ -15,56 +15,39 @@ int is_white_space(const char c) {
 }
 
 //Passed JUnitTest!
-int starts_with(const char *src, char *prefix) {
-    for (int i = 0; i < strlen(prefix); ++i) {
-        if (src[i] != prefix[i]) {
-            return FALSE;
-        }
-    }
-    return TRUE;
-}
-
-int ends_with(const char *src, char *suffix) {
-    const size_t src_length = strlen(src);
-    const size_t suffix_length = strlen(suffix);
-    for (int j = 0; j < suffix_length; ++j) {
-        if (src[src_length - suffix_length + j] != suffix[j]) {
-            return FALSE;
-        }
-    }
-    return TRUE;
-}
-
-//Passed JUnitTest!
-int **filter(char **src, size_t srcSize, char ***dst, int (*filterFunction)(char *)) {
+int filter(char **src, size_t srcSize, char ***dst, int (*filterFunction)(char *)) {
     int *new_indices = calloc(srcSize, sizeof(int));
     if (*new_indices == NULL) {
         perror("cannot allocate memory for *new indices in filter");
         exit(1);
     }
-    int newSize = 0;
+    size_t new_length = 0;
     //Look at strings and measure new string:
     for (int i = 0; i < srcSize; ++i) {
         if (filterFunction(src[i]) == 0) {
             new_indices[i] = i;
-            newSize = newSize + 1;
+            new_length = new_length + 1;
         } else {
             new_indices[i] = -1;
         }
     }
-    if (newSize > 0) {
-        (*dst) = (char **) realloc((*dst), sizeof(char *) * newSize);
+    if (new_length > 0) {
+        *dst = calloc(new_length, sizeof(char *));
+        if (*dst == NULL) {
+            perror("cannot allocate memory for *dst in filter");
+            exit(1);
+        }
     }
-    int newPointer = 0;
+    int new_pointer = 0;
     for (int j = 0; j < srcSize; ++j) {
         if (new_indices[j] != -1) {
-            (*dst)[newPointer] = src[j];
-            newPointer = newPointer + 1;
+            (*dst)[new_pointer] = src[j];
+            new_pointer = new_pointer + 1;
         }
     }
     free(new_indices);
-    free(&newSize);
-    free(&newPointer);
+    free(&new_length);
+    free(&new_pointer);
     return 0;
 }
 

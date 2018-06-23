@@ -478,7 +478,7 @@ C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/operationUtils/OperationUti
 mem.h
 -
 
-C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/stringUtils/remove_prefix_suffix.c
+C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/stringUtils/prefix_suffix.c
 stdio.h
 -
 stdlib.h

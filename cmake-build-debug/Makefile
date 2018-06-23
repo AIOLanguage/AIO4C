@@ -851,32 +851,32 @@ sources/lib/utils/operationUtils/OperationUtils.c.s:
 	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/operationUtils/OperationUtils.c.s
 .PHONY : sources/lib/utils/operationUtils/OperationUtils.c.s
 
-sources/lib/utils/stringUtils/remove_prefix_suffix.obj: sources/lib/utils/stringUtils/remove_prefix_suffix.c.obj
+sources/lib/utils/stringUtils/prefix_suffix.obj: sources/lib/utils/stringUtils/prefix_suffix.c.obj
 
-.PHONY : sources/lib/utils/stringUtils/remove_prefix_suffix.obj
+.PHONY : sources/lib/utils/stringUtils/prefix_suffix.obj
 
 # target to build an object file
-sources/lib/utils/stringUtils/remove_prefix_suffix.c.obj:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/remove_prefix_suffix.c.obj
-.PHONY : sources/lib/utils/stringUtils/remove_prefix_suffix.c.obj
+sources/lib/utils/stringUtils/prefix_suffix.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/prefix_suffix.c.obj
+.PHONY : sources/lib/utils/stringUtils/prefix_suffix.c.obj
 
-sources/lib/utils/stringUtils/remove_prefix_suffix.i: sources/lib/utils/stringUtils/remove_prefix_suffix.c.i
+sources/lib/utils/stringUtils/prefix_suffix.i: sources/lib/utils/stringUtils/prefix_suffix.c.i
 
-.PHONY : sources/lib/utils/stringUtils/remove_prefix_suffix.i
+.PHONY : sources/lib/utils/stringUtils/prefix_suffix.i
 
 # target to preprocess a source file
-sources/lib/utils/stringUtils/remove_prefix_suffix.c.i:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/remove_prefix_suffix.c.i
-.PHONY : sources/lib/utils/stringUtils/remove_prefix_suffix.c.i
+sources/lib/utils/stringUtils/prefix_suffix.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/prefix_suffix.c.i
+.PHONY : sources/lib/utils/stringUtils/prefix_suffix.c.i
 
-sources/lib/utils/stringUtils/remove_prefix_suffix.s: sources/lib/utils/stringUtils/remove_prefix_suffix.c.s
+sources/lib/utils/stringUtils/prefix_suffix.s: sources/lib/utils/stringUtils/prefix_suffix.c.s
 
-.PHONY : sources/lib/utils/stringUtils/remove_prefix_suffix.s
+.PHONY : sources/lib/utils/stringUtils/prefix_suffix.s
 
 # target to generate assembly for a file
-sources/lib/utils/stringUtils/remove_prefix_suffix.c.s:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/remove_prefix_suffix.c.s
-.PHONY : sources/lib/utils/stringUtils/remove_prefix_suffix.c.s
+sources/lib/utils/stringUtils/prefix_suffix.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/prefix_suffix.c.s
+.PHONY : sources/lib/utils/stringUtils/prefix_suffix.c.s
 
 sources/lib/utils/stringUtils/split.obj: sources/lib/utils/stringUtils/split.c.obj
 
@@ -1211,9 +1211,9 @@ help:
 	@echo ... sources/lib/utils/operationUtils/OperationUtils.obj
 	@echo ... sources/lib/utils/operationUtils/OperationUtils.i
 	@echo ... sources/lib/utils/operationUtils/OperationUtils.s
-	@echo ... sources/lib/utils/stringUtils/remove_prefix_suffix.obj
-	@echo ... sources/lib/utils/stringUtils/remove_prefix_suffix.i
-	@echo ... sources/lib/utils/stringUtils/remove_prefix_suffix.s
+	@echo ... sources/lib/utils/stringUtils/prefix_suffix.obj
+	@echo ... sources/lib/utils/stringUtils/prefix_suffix.i
+	@echo ... sources/lib/utils/stringUtils/prefix_suffix.s
 	@echo ... sources/lib/utils/stringUtils/split.obj
 	@echo ... sources/lib/utils/stringUtils/split.i
 	@echo ... sources/lib/utils/stringUtils/split.s

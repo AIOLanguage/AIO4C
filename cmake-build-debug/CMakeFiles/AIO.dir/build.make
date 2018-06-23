@@ -920,28 +920,28 @@ CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/trim.c.obj.provides: CMakeFiles
 CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/trim.c.obj.provides.build: CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/trim.c.obj
 
 
-CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/remove_prefix_suffix.c.obj: CMakeFiles/AIO.dir/flags.make
-CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/remove_prefix_suffix.c.obj: ../sources/lib/utils/stringUtils/remove_prefix_suffix.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\StarKRE\CLionProjects\AIO\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building C object CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/remove_prefix_suffix.c.obj"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\AIO.dir\sources\lib\utils\stringUtils\remove_prefix_suffix.c.obj   -c C:\Users\StarKRE\CLionProjects\AIO\sources\lib\utils\stringUtils\remove_prefix_suffix.c
+CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/prefix_suffix.c.obj: CMakeFiles/AIO.dir/flags.make
+CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/prefix_suffix.c.obj: ../sources/lib/utils/stringUtils/prefix_suffix.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\StarKRE\CLionProjects\AIO\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building C object CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/prefix_suffix.c.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\AIO.dir\sources\lib\utils\stringUtils\prefix_suffix.c.obj   -c C:\Users\StarKRE\CLionProjects\AIO\sources\lib\utils\stringUtils\prefix_suffix.c
 
-CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/remove_prefix_suffix.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/remove_prefix_suffix.c.i"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\StarKRE\CLionProjects\AIO\sources\lib\utils\stringUtils\remove_prefix_suffix.c > CMakeFiles\AIO.dir\sources\lib\utils\stringUtils\remove_prefix_suffix.c.i
+CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/prefix_suffix.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/prefix_suffix.c.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\StarKRE\CLionProjects\AIO\sources\lib\utils\stringUtils\prefix_suffix.c > CMakeFiles\AIO.dir\sources\lib\utils\stringUtils\prefix_suffix.c.i
 
-CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/remove_prefix_suffix.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/remove_prefix_suffix.c.s"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\StarKRE\CLionProjects\AIO\sources\lib\utils\stringUtils\remove_prefix_suffix.c -o CMakeFiles\AIO.dir\sources\lib\utils\stringUtils\remove_prefix_suffix.c.s
+CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/prefix_suffix.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/prefix_suffix.c.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\StarKRE\CLionProjects\AIO\sources\lib\utils\stringUtils\prefix_suffix.c -o CMakeFiles\AIO.dir\sources\lib\utils\stringUtils\prefix_suffix.c.s
 
-CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/remove_prefix_suffix.c.obj.requires:
+CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/prefix_suffix.c.obj.requires:
 
-.PHONY : CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/remove_prefix_suffix.c.obj.requires
+.PHONY : CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/prefix_suffix.c.obj.requires
 
-CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/remove_prefix_suffix.c.obj.provides: CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/remove_prefix_suffix.c.obj.requires
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/remove_prefix_suffix.c.obj.provides.build
-.PHONY : CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/remove_prefix_suffix.c.obj.provides
+CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/prefix_suffix.c.obj.provides: CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/prefix_suffix.c.obj.requires
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/prefix_suffix.c.obj.provides.build
+.PHONY : CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/prefix_suffix.c.obj.provides
 
-CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/remove_prefix_suffix.c.obj.provides.build: CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/remove_prefix_suffix.c.obj
+CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/prefix_suffix.c.obj.provides.build: CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/prefix_suffix.c.obj
 
 
 # Object files for target AIO
@@ -982,7 +982,7 @@ AIO_OBJECTS = \
 "CMakeFiles/AIO.dir/sources/tools/parsers/strParser/AIOStrParser.c.obj" \
 "CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/split.c.obj" \
 "CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/trim.c.obj" \
-"CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/remove_prefix_suffix.c.obj"
+"CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/prefix_suffix.c.obj"
 
 # External object files for target AIO
 AIO_EXTERNAL_OBJECTS =
@@ -1023,7 +1023,7 @@ AIO.exe: CMakeFiles/AIO.dir/sources/tools/parsers/chaParser/AIOChaParser.c.obj
 AIO.exe: CMakeFiles/AIO.dir/sources/tools/parsers/strParser/AIOStrParser.c.obj
 AIO.exe: CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/split.c.obj
 AIO.exe: CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/trim.c.obj
-AIO.exe: CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/remove_prefix_suffix.c.obj
+AIO.exe: CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/prefix_suffix.c.obj
 AIO.exe: CMakeFiles/AIO.dir/build.make
 AIO.exe: CMakeFiles/AIO.dir/linklibs.rsp
 AIO.exe: CMakeFiles/AIO.dir/objects1.rsp
@@ -1072,7 +1072,7 @@ CMakeFiles/AIO.dir/requires: CMakeFiles/AIO.dir/sources/tools/parsers/chaParser/
 CMakeFiles/AIO.dir/requires: CMakeFiles/AIO.dir/sources/tools/parsers/strParser/AIOStrParser.c.obj.requires
 CMakeFiles/AIO.dir/requires: CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/split.c.obj.requires
 CMakeFiles/AIO.dir/requires: CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/trim.c.obj.requires
-CMakeFiles/AIO.dir/requires: CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/remove_prefix_suffix.c.obj.requires
+CMakeFiles/AIO.dir/requires: CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/prefix_suffix.c.obj.requires
 
 .PHONY : CMakeFiles/AIO.dir/requires
 

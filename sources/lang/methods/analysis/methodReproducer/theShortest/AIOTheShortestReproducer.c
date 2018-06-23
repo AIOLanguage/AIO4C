@@ -29,7 +29,7 @@ void reproduceTheShortestMethod(AIOObject *object, AIOMethodDefinition *methodDe
                                 AIOMethodContainer *methodContainer, AIOBundle *bundle) {
     printf("The shortest reproducing...\n");
     char *word;
-    trim(methodDefinition->sourceCode->strings[0], &word);
+//    trim(methodDefinition->sourceCode->strings[0], &word);
     AIOVariableMap *argMap = methodContainer->variableMap;
     if (isPlusOperation(word) == 0) {
         plusForEachReproduce(argMap, bundle);
@@ -49,15 +49,15 @@ void reproduceTheShortestMethod(AIOObject *object, AIOMethodDefinition *methodDe
         if (nextMethodName == NULL) {
             perror("cannot allocate memory for nextMethodName! in reproduceTheShortestMethod!");
         }
-        remove_suffix(word, "~", &nextMethodName);
+//        remove_suffix(word, "~", &nextMethodName);
         makeForEachCustomMethodInvocation(object, methodContainer->variableMap, nextMethodName, bundle);
     }
     if (isTheShortestInTheOtherObject(word)) {
         char **nextObjectNameVsMethod;
-        split_by_char(word, '.', &nextObjectNameVsMethod);
+//        split_by_string(word, ".", &nextObjectNameVsMethod);
         char *nextObjectPathPlusName = nextObjectNameVsMethod[0];
         char *nextMethodName;
-        remove_suffix(nextObjectNameVsMethod[1], "~", &nextMethodName);
+  //      remove_suffix(nextObjectNameVsMethod[1], "~", &nextMethodName);
         AIOObject *nextObject = getAIOObjectInMapByName(aioObjectManager->objectMap, nextObjectPathPlusName);
         char *nextObjectName;
         if (nextObject == NULL) {

@@ -11,12 +11,12 @@ reproduceDefaultMethod(AIOObject *object, AIOMethodDefinition *methodDefinition,
     StringList *sourceCode = methodDefinition->sourceCode;
     for (int i = 0; i < *sourceCode->size; ++i) {
         char *cleanLine;
-        trim(sourceCode->strings[i], &cleanLine);
+//        trim(sourceCode->strings[i], &cleanLine);
         //variableCreator:
         // if (wasCreatingVariable == 0){
         //      continue;
         // }
-        if (starts_with(sourceCode->strings[i], ">>") == 0) {
+        if (starts_with_prefix(sourceCode->strings[i], ">>") == 0) {
             reproduceShortMethod(object, methodDefinition, methodContainer, bundle, codeLine);
             break;
         }

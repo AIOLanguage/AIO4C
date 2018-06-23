@@ -248,7 +248,7 @@
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/operationUtils/OperationUtils.c">
 			<Option target="AIO"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/stringUtils/remove_prefix_suffix.c">
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/stringUtils/prefix_suffix.c">
 			<Option target="AIO"/>
 		</Unit>
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/stringUtils/split.c">

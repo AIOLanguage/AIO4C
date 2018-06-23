@@ -15,19 +15,19 @@ StringList *getSourceCodeOfMethod(char *methodName, StringList *sourceCode, int 
     createStringList(&methodCode);
     int currentIndex = startIndex;
     char *trimmedLine;
-    trim(sourceCode->strings[currentIndex], &trimmedLine);
+//    trim(sourceCode->strings[currentIndex], &trimmedLine);
     if (strcmp(trimmedLine, "") != 0) {
         char *cleanFirstLine = calloc(strlen(trimmedLine) + 1, sizeof(char));
         if (cleanFirstLine == NULL) {
             perror("can not allocate memory for clean first line in during get source code method procedure performs!");
         }
-        remove_prefix(trimmedLine, methodName, &cleanFirstLine);
+        //remove_prefix(trimmedLine, methodName, &cleanFirstLine);
         if (strcmp(cleanFirstLine, "") != 0) {
             addInStringList(methodCode, cleanFirstLine);
         }
         while (++currentIndex < *sourceCode->size) {
             char* currentLine;
-            trim(sourceCode->strings[currentIndex], &currentLine);
+//            trim(sourceCode->strings[currentIndex], &currentLine);
             if (strcmp(currentLine, "") == 0) {
                 break;
             } else {
@@ -79,10 +79,10 @@ AIODeclaration *getDeclarationOfMethod(char *methodName, StringList *sourceCode,
     int currentIndex = startIndex - 1;
     char *inputLine = getStringInListByIndex(sourceCode, currentIndex);
     char *currentLine;
-    trim(inputLine, &currentLine);
+//    trim(inputLine, &currentLine);
     while (strcmp(currentLine, "") != 0 && currentIndex >= 0) {
         char *declarationPrefix = "~dec:";
-        int startsAsDeclaration = starts_with(currentLine, declarationPrefix);
+        int startsAsDeclaration = starts_with_prefix(currentLine, declarationPrefix);
         if (startsAsDeclaration == 0) {
             //Remove declaration prefix:
             char *bracketLine = malloc(strlen(currentLine));
@@ -90,7 +90,7 @@ AIODeclaration *getDeclarationOfMethod(char *methodName, StringList *sourceCode,
                 perror("cannot allocate memory for bracket line when was creating of declaration!");
                 exit(1);
             }
-            remove_prefix(currentLine, declarationPrefix, &bracketLine);
+//            remove_prefix(currentLine, declarationPrefix, &bracketLine);
             //<<w+<<:
             if (strlen(bracketLine) > 4 && isCorrectPlacedBrackets(bracketLine) == 0) {
                 //Remove brackets:
@@ -99,19 +99,19 @@ AIODeclaration *getDeclarationOfMethod(char *methodName, StringList *sourceCode,
                     perror("cannot allocate memory for left padding when was creating of declaration!");
                     exit(1);
                 }
-                remove_prefix(bracketLine, "<<", &lp);
+//                remove_prefix(bracketLine, "<<", &lp);
                 char *rp = malloc(strlen(lp));
                 if (rp == NULL) {
                     perror("cannot allocate memory for right padding when was creating of declaration!");
                     exit(1);
                 }
-                remove_suffix(lp, "<<", &rp);
+//                remove_suffix(lp, "<<", &rp);
                 //Split naked args;
                 char **dirtySplitArgs;
-                split_by_char(rp, ',', &dirtySplitArgs);
+//                split_by_string(rp, ",", &dirtySplitArgs);
                 //Trim all args:
                 char **args;
-                trim_all(dirtySplitArgs, _msize(dirtySplitArgs) / 4, &args);
+//                trim_all(dirtySplitArgs, _msize(dirtySplitArgs) / 4, &args);
                 StringList *argList = getArgsIfCorrect(args);
                 AIODeclaration *aioDeclaration;
                 createAIODeclaration(&aioDeclaration, methodName, argList);
@@ -191,7 +191,7 @@ int isTheShortestInTheOtherObject(const char *operation) {
 enum AIOMethodSizeType getSizeTypeOfMethod(StringList *methodCode) {
     if (*methodCode->size == 1) {
         char *trimLine;
-        trim(methodCode->strings[0], &trimLine);
+//        trim(methodCode->strings[0], &trimLine);
         if (isTheShortestInTheSameObject(trimLine) == 0
             || isDefaultOperations(trimLine) == 0
             || isTheShortestInTheOtherObject(trimLine) == 0){

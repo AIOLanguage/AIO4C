@@ -31,7 +31,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "C:/Users/StarKRE/CLionProjects/AIO/sources/lib/collections/maps/AIOVariableMap.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lib/collections/maps/AIOVariableMap.c.obj"
   "C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/fileUtils/FileUtils.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lib/utils/fileUtils/FileUtils.c.obj"
   "C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/operationUtils/OperationUtils.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lib/utils/operationUtils/OperationUtils.c.obj"
-  "C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/stringUtils/remove_prefix_suffix.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/remove_prefix_suffix.c.obj"
+  "C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/stringUtils/prefix_suffix.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/prefix_suffix.c.obj"
   "C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/stringUtils/split.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/split.c.obj"
   "C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/stringUtils/string_utils.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/string_utils.c.obj"
   "C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/stringUtils/trim.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/trim.c.obj"
