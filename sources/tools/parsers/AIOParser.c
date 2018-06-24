@@ -1,8 +1,8 @@
 #include <stdio.h>
-#include "../../../headers/lang/types/AIOType.h"
+#include "../../../headers/lang/types/aio_type.h"
 #include "../../../headers/lang/object/AIOObject.h"
 #include "../../../headers/lang/methods/AIOMethodContainer.h"
-#include "../../../headers/lang/methods/AIOMethod.h"
+#include "../../../headers/lang/methods/aio_method.h"
 #include "../../../headers/tools/parsers/AIOParser.h"
 
 aio_str
@@ -20,11 +20,11 @@ parse_line_expression(aio_object *object, aio_method_definition *methodDefinitio
     result = parseStrLineExpression(object, methodDefinition, methodContainer, codeLine);
 }
 
-AIOVariable *getVariable(char *variableName, aio_method_container *methodContainer) {
-    if (containsVariableInMap(variableName, methodContainer->argMap) == 0) {
+aio_variable *getVariable(char *variableName, aio_method_container *methodContainer) {
+    if (contains_variable_in_map(variableName, methodContainer->argMap) == 0) {
         return getAIOVariableInMapByName(methodContainer->argMap, variableName);
     }
-    if (containsVariableInMap(variableName, methodContainer->variableMap) == 0) {
+    if (contains_variable_in_map(variableName, methodContainer->variableMap) == 0) {
         return getAIOVariableInMapByName(methodContainer->variableMap, variableName);
     }
     perror("error: try get not exist variable!");

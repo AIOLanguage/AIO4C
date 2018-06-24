@@ -13,8 +13,8 @@ add_executable(AIO sources/main/main.c
         headers/lang/methods/bundle/aio_bundle.h
         headers/lang/methods/methodDefinition/aio_method_size_type.h
         headers/lang/methods/methodDefinition/aio_method_definition.h
-        headers/lang/methods/variable/AIOVariable.h headers/lang/types/AIOType.h
-        sources/lang/types/AIOType.c sources/lib/collections/maps/AIOObjectMap.c
+        headers/lang/methods/variable/aio_variable.h headers/lang/types/aio_type.h
+        sources/lang/types/aio_type.c sources/lib/collections/maps/AIOObjectMap.c
         headers/lib/collections/maps/AIOObjectMap.h headers/lang/object/objectManager/AIOObjectManager.h
         sources/lang/object/objectManager/AIOObjectManager.c
         headers/lib/collections/maps/AIOMethodDefinitionMap.h
@@ -26,14 +26,14 @@ add_executable(AIO sources/main/main.c
         headers/lib/collections/lists/AIOAnnotationList.h
         sources/lib/collections/lists/AIOAnnotationList.c
         sources/lang/methods/bundle/aio_bundle.c
-        sources/lang/methods/variable/AIOVariable.c
+        sources/lang/methods/variable/aio_variable.c
         headers/lang/methods/result/aio_result.h sources/lang/methods/result/aio_result.c
         headers/lang/methods/defaultMethodContainer/aio_default_method_container.h
         sources/lang/methods/defaultMethodContainer/aio_default_method_container.c
         sources/lib/utils/stringUtils/string_utils.c headers/lib/utils/stringUtils/string_utils.h
         headers/lang/methods/methodDefinition/aio_method_definition_builder.h
         sources/lang/methods/methodDefinition/aio_method_definition_builder.c
-        headers/lang/methods/AIOMethod.h sources/lang/methods/AIOMethod.c
+        headers/lang/methods/aio_method.h sources/lang/methods/aio_method.c
         headers/lang/methods/analysis/methodReproducer/aio_method_reproducer.h
         sources/lang/methods/analysis/methodReproducer/aio_method_reproducer.c
         headers/lib/collections/maps/AIOVariableMap.h

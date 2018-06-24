@@ -2,7 +2,7 @@
 #include <mem.h>
 #include <stdio.h>
 #include <process.h>
-#include "../../../../headers/lang/methods/variable/AIOVariable.h"
+#include "../../../../headers/lang/methods/variable/aio_variable.h"
 
 //Passed JUnitTest!
 char *removeBracketsAndReturnValue(char *value) {
@@ -26,7 +26,7 @@ char *removeBracketsAndReturnValue(char *value) {
 }
 
 //Passed JUnitTest!
-void checkType(const enum AIOType *inputType, enum AIOType matcherType, char *value, int (*matcherFunction)(char *)) {
+void checkType(const enum aio_type *inputType, enum aio_type matcherType, char *value, int (*matcherFunction)(char *)) {
     if (*inputType == matcherType) {
         int matchesType = matcherFunction(value);
         if (matchesType == -1) {
@@ -39,14 +39,14 @@ void checkType(const enum AIOType *inputType, enum AIOType matcherType, char *va
 }
 
 //Passed JUnitTest!
-void createAIOVariable(AIOVariable **variable, char *name, char *value, int mutable, enum AIOType *type) {
+void new_aio_variable(aio_variable **variable, char *name, char *value, int mutable, enum aio_type *type) {
     //Need to crush a program:
     checkType(type, AIO_INT, value, matchesInt);
     checkType(type, AIO_DOU, value, matchesDou);
     checkType(type, AIO_CHA, value, matchesCha);
     checkType(type, AIO_STR, value, matchesStr);
     //Create the same variable:
-    *variable = (AIOVariable *) calloc(1, sizeof(AIOVariable));
+    *variable = (aio_variable *) calloc(1, sizeof(aio_variable));
     //Set name:
     (*variable)->name = name;
     //Set value:
@@ -62,9 +62,9 @@ void createAIOVariable(AIOVariable **variable, char *name, char *value, int muta
 /*
  * /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
  * int main(){
-    AIOVariable* aioVariable;
-    enum AIOType aioType = AIO_STR;
-    createAIOVariable(&aioVariable, "a", "'0.008'", 0, &aioType);
+    aio_variable* aioVariable;
+    enum aio_type aioType = AIO_STR;
+    new_aio_variable(&aioVariable, "a", "'0.008'", 0, &aioType);
     printf("%s\n", aioVariable->name);
     printf("%s\n", aioVariable->value);
     printf("%d\n", *aioVariable->mutable);

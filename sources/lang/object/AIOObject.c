@@ -4,7 +4,7 @@
 #include <process.h>
 #include "../../../headers/lang/object/objectManager/AIOObjectManager.h"
 #include "../../../headers/lang/methods/methodDefinition/aio_method_definition_builder.h"
-#include "../../../headers/lang/methods/AIOMethod.h"
+#include "../../../headers/lang/methods/aio_method.h"
 #include "../../../headers/lib/utils/fileUtils/FileUtils.h"
 
 AIOObjectManager *aio_object_manager;
@@ -117,6 +117,6 @@ void invokeMethodInManager(aio_object *object, char *methodName, aio_bundle *bun
             perror("number of args not matches with arg size of declaration!");
         }
     }
-    AIOMethod *method;
-    createAIOMethodAndInvoke(object, &method, methodDefinition, bundle);
+    aio_method *method;
+    new_aio_method_and_invoke(object, &method, methodDefinition, bundle);
 }

@@ -1,6 +1,6 @@
 #ifndef AIO_AIO_TYPE_H
 #define AIO_AIO_TYPE_H
-enum AIOType {
+enum aio_type {
     AIO_INT, AIO_DOU, AIO_CHA, AIO_STR
 };
 
@@ -26,9 +26,9 @@ char strToCha(char *word, void **dst);
 
 int matchesStr(char* word);
 
-void setType(char *value, enum AIOType *type);
+void setType(char *value, enum aio_type *type);
 
-int isAIOIntType(enum AIOType type);
+int isAIOIntType(enum aio_type type);
 
 void int_to_str(int src, char **dst);
 

@@ -80,10 +80,10 @@
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lang/declarations/aio_declaration.h">
 			<Option target="AIO"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/AIOMethod.h">
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/AIOMethodContainer.h">
 			<Option target="AIO"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/AIOMethodContainer.h">
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/aio_method.h">
 			<Option target="AIO"/>
 		</Unit>
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/analysis/methodReproducer/aio_method_reproducer.h">
@@ -125,7 +125,7 @@
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/result/aio_result.h">
 			<Option target="AIO"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/variable/AIOVariable.h">
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/variable/aio_variable.h">
 			<Option target="AIO"/>
 		</Unit>
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lang/object/AIOObject.h">
@@ -134,7 +134,7 @@
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lang/object/objectManager/AIOObjectManager.h">
 			<Option target="AIO"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lang/types/AIOType.h">
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lang/types/aio_type.h">
 			<Option target="AIO"/>
 		</Unit>
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lib/collections/lists/AIOAnnotationList.h">
@@ -176,7 +176,7 @@
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lang/declarations/aio_declaration.c">
 			<Option target="AIO"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lang/methods/AIOMethod.c">
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lang/methods/aio_method.c">
 			<Option target="AIO"/>
 		</Unit>
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lang/methods/analysis/methodReproducer/aio_method_reproducer.c">
@@ -215,7 +215,7 @@
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lang/methods/result/aio_result.c">
 			<Option target="AIO"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lang/methods/variable/AIOVariable.c">
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lang/methods/variable/aio_variable.c">
 			<Option target="AIO"/>
 		</Unit>
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lang/object/AIOObject.c">
@@ -227,7 +227,7 @@
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lang/reservedNames/AIOReservedNamesContainer.c">
 			<Option target="AIO"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lang/types/AIOType.c">
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lang/types/aio_type.c">
 			<Option target="AIO"/>
 		</Unit>
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lib/collections/lists/AIOAnnotationList.c">

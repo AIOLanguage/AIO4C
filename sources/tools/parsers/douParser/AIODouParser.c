@@ -2,7 +2,7 @@
 #include <process.h>
 #include <mem.h>
 #include <ctype.h>
-#include "../../../../headers/lang/types/AIOType.h"
+#include "../../../../headers/lang/types/aio_type.h"
 #include "../../../../headers/lang/object/AIOObject.h"
 #include "../../../../headers/lang/methods/AIOMethodContainer.h"
 #include "../../../../headers/lang/methods/result/aio_result.h"
@@ -167,7 +167,7 @@ makeMethodOrVariable(aio_object *object, aio_method_definition *methodDefinition
             }
         } else { //그것은 변수이다:
             char *variableName = methodOrVariableName;
-            AIOVariable *variable = getVariable(variableName, methodContainer);
+            aio_variable *variable = getVariable(variableName, methodContainer);
             char *rest;
 //            substring(codeLine, methodOrVariableStrLength, codeLineLength - methodOrVariableStrLength, &rest);
             aio_dou_result *douResult;

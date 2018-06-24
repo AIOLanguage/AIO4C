@@ -32,7 +32,7 @@ void createAIOVariableMap(aio_variable_map **variableMap) {
         exit(1);
     }
     //Create definitions that equals 2:
-    (*variableMap)->variables = calloc(2, sizeof(AIOVariable *));
+    (*variableMap)->variables = calloc(2, sizeof(aio_variable *));
     if ((*variableMap)->variables == NULL) {
         perror("can not allocate memory for variables in aio variable map");
         exit(1);
@@ -44,11 +44,11 @@ void updateMemoryInVariableMapOfObjects(aio_variable_map *variableMap) {
     if (*variableMap->size + 1 == *variableMap->capacity) {
         *variableMap->capacity = *variableMap->capacity * 2;
         variableMap->names = realloc(variableMap->names, *variableMap->capacity * sizeof(char *));
-        variableMap->variables = realloc(variableMap->variables, *variableMap->capacity * sizeof(AIOVariable *));
+        variableMap->variables = realloc(variableMap->variables, *variableMap->capacity * sizeof(aio_variable *));
     }
 }
 
-void putInAIOVariableInMap(aio_variable_map *variableMap, AIOVariable *variable) {
+void putInAIOVariableInMap(aio_variable_map *variableMap, aio_variable *variable) {
     for (int i = 0; i < *variableMap->size; ++i) {
         if (strcmp(variableMap->names[i], variable->name) == 0) {
             perror("Cannot put aio_object in definition map");
@@ -67,7 +67,7 @@ void putInAIOVariableInMap(aio_variable_map *variableMap, AIOVariable *variable)
     *variableMap->size = *variableMap->size + 1;
 }
 
-AIOVariable *getAIOVariableInMapByName(aio_variable_map *variableMap, char *name) {
+aio_variable *getAIOVariableInMapByName(aio_variable_map *variableMap, char *name) {
     for (int i = 0; i < strlen(name); ++i) {
         if (strcmp(variableMap->names[i], name) == 0) {
             return variableMap->variables[i];

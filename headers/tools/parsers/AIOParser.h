@@ -27,6 +27,6 @@ aio_str
 parseStrLineExpression(aio_object *object, aio_method_definition *methodDefinition, aio_method_container *methodContainer,
                        char *codeLine);
 
-AIOVariable *getVariable(char *variableName, aio_method_container *methodContainer);
+aio_variable *getVariable(char *variableName, aio_method_container *methodContainer);
 
 #endif //AIO_PARSER_H

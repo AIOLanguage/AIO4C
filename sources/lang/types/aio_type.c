@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <mem.h>
 #include <comip.h>
-#include "../../../headers/lang/types/AIOType.h"
+#include "../../../headers/lang/types/aio_type.h"
 
 //Passed JUnitTest!
 int matchesInt(char *word) {
@@ -86,7 +86,7 @@ int matchesStr(char *word) {
 }
 
 //끝난!
-void setType(char *value, enum AIOType *type) {
+void setType(char *value, enum aio_type *type) {
     if (matchesInt(value)) {
         *type = AIO_INT;
     } else if (matchesDou(value)) {
@@ -99,7 +99,7 @@ void setType(char *value, enum AIOType *type) {
 }
 
 //끝난!
-int isAIOIntType(enum AIOType type) {
+int isAIOIntType(enum aio_type type) {
     if (type == AIO_INT) {
         return 0;
     } else {
@@ -108,7 +108,7 @@ int isAIOIntType(enum AIOType type) {
 }
 
 //끝난!
-int isAIODouType(enum AIOType type) {
+int isAIODouType(enum aio_type type) {
     if (type == AIO_DOU) {
         return 0;
     } else {
@@ -117,7 +117,7 @@ int isAIODouType(enum AIOType type) {
 }
 
 //끝난!
-int isAIOChaType(enum AIOType type) {
+int isAIOChaType(enum aio_type type) {
     if (type == AIO_CHA) {
         return 0;
     } else {
@@ -126,7 +126,7 @@ int isAIOChaType(enum AIOType type) {
 }
 
 //끝난!
-int isAIOStrType(enum AIOType type) {
+int isAIOStrType(enum aio_type type) {
     if (type == AIO_STR) {
         return 0;
     } else {

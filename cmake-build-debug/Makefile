@@ -176,32 +176,32 @@ sources/lang/declarations/aio_declaration.c.s:
 	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/declarations/aio_declaration.c.s
 .PHONY : sources/lang/declarations/aio_declaration.c.s
 
-sources/lang/methods/AIOMethod.obj: sources/lang/methods/AIOMethod.c.obj
+sources/lang/methods/aio_method.obj: sources/lang/methods/aio_method.c.obj
 
-.PHONY : sources/lang/methods/AIOMethod.obj
+.PHONY : sources/lang/methods/aio_method.obj
 
 # target to build an object file
-sources/lang/methods/AIOMethod.c.obj:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/methods/AIOMethod.c.obj
-.PHONY : sources/lang/methods/AIOMethod.c.obj
+sources/lang/methods/aio_method.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/methods/aio_method.c.obj
+.PHONY : sources/lang/methods/aio_method.c.obj
 
-sources/lang/methods/AIOMethod.i: sources/lang/methods/AIOMethod.c.i
+sources/lang/methods/aio_method.i: sources/lang/methods/aio_method.c.i
 
-.PHONY : sources/lang/methods/AIOMethod.i
+.PHONY : sources/lang/methods/aio_method.i
 
 # target to preprocess a source file
-sources/lang/methods/AIOMethod.c.i:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/methods/AIOMethod.c.i
-.PHONY : sources/lang/methods/AIOMethod.c.i
+sources/lang/methods/aio_method.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/methods/aio_method.c.i
+.PHONY : sources/lang/methods/aio_method.c.i
 
-sources/lang/methods/AIOMethod.s: sources/lang/methods/AIOMethod.c.s
+sources/lang/methods/aio_method.s: sources/lang/methods/aio_method.c.s
 
-.PHONY : sources/lang/methods/AIOMethod.s
+.PHONY : sources/lang/methods/aio_method.s
 
 # target to generate assembly for a file
-sources/lang/methods/AIOMethod.c.s:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/methods/AIOMethod.c.s
-.PHONY : sources/lang/methods/AIOMethod.c.s
+sources/lang/methods/aio_method.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/methods/aio_method.c.s
+.PHONY : sources/lang/methods/aio_method.c.s
 
 sources/lang/methods/analysis/methodReproducer/aio_method_reproducer.obj: sources/lang/methods/analysis/methodReproducer/aio_method_reproducer.c.obj
 
@@ -527,32 +527,32 @@ sources/lang/methods/result/aio_result.c.s:
 	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/methods/result/aio_result.c.s
 .PHONY : sources/lang/methods/result/aio_result.c.s
 
-sources/lang/methods/variable/AIOVariable.obj: sources/lang/methods/variable/AIOVariable.c.obj
+sources/lang/methods/variable/aio_variable.obj: sources/lang/methods/variable/aio_variable.c.obj
 
-.PHONY : sources/lang/methods/variable/AIOVariable.obj
+.PHONY : sources/lang/methods/variable/aio_variable.obj
 
 # target to build an object file
-sources/lang/methods/variable/AIOVariable.c.obj:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/methods/variable/AIOVariable.c.obj
-.PHONY : sources/lang/methods/variable/AIOVariable.c.obj
+sources/lang/methods/variable/aio_variable.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/methods/variable/aio_variable.c.obj
+.PHONY : sources/lang/methods/variable/aio_variable.c.obj
 
-sources/lang/methods/variable/AIOVariable.i: sources/lang/methods/variable/AIOVariable.c.i
+sources/lang/methods/variable/aio_variable.i: sources/lang/methods/variable/aio_variable.c.i
 
-.PHONY : sources/lang/methods/variable/AIOVariable.i
+.PHONY : sources/lang/methods/variable/aio_variable.i
 
 # target to preprocess a source file
-sources/lang/methods/variable/AIOVariable.c.i:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/methods/variable/AIOVariable.c.i
-.PHONY : sources/lang/methods/variable/AIOVariable.c.i
+sources/lang/methods/variable/aio_variable.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/methods/variable/aio_variable.c.i
+.PHONY : sources/lang/methods/variable/aio_variable.c.i
 
-sources/lang/methods/variable/AIOVariable.s: sources/lang/methods/variable/AIOVariable.c.s
+sources/lang/methods/variable/aio_variable.s: sources/lang/methods/variable/aio_variable.c.s
 
-.PHONY : sources/lang/methods/variable/AIOVariable.s
+.PHONY : sources/lang/methods/variable/aio_variable.s
 
 # target to generate assembly for a file
-sources/lang/methods/variable/AIOVariable.c.s:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/methods/variable/AIOVariable.c.s
-.PHONY : sources/lang/methods/variable/AIOVariable.c.s
+sources/lang/methods/variable/aio_variable.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/methods/variable/aio_variable.c.s
+.PHONY : sources/lang/methods/variable/aio_variable.c.s
 
 sources/lang/object/AIOObject.obj: sources/lang/object/AIOObject.c.obj
 
@@ -635,32 +635,32 @@ sources/lang/reservedNames/AIOReservedNamesContainer.c.s:
 	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/reservedNames/AIOReservedNamesContainer.c.s
 .PHONY : sources/lang/reservedNames/AIOReservedNamesContainer.c.s
 
-sources/lang/types/AIOType.obj: sources/lang/types/AIOType.c.obj
+sources/lang/types/aio_type.obj: sources/lang/types/aio_type.c.obj
 
-.PHONY : sources/lang/types/AIOType.obj
+.PHONY : sources/lang/types/aio_type.obj
 
 # target to build an object file
-sources/lang/types/AIOType.c.obj:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/types/AIOType.c.obj
-.PHONY : sources/lang/types/AIOType.c.obj
+sources/lang/types/aio_type.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/types/aio_type.c.obj
+.PHONY : sources/lang/types/aio_type.c.obj
 
-sources/lang/types/AIOType.i: sources/lang/types/AIOType.c.i
+sources/lang/types/aio_type.i: sources/lang/types/aio_type.c.i
 
-.PHONY : sources/lang/types/AIOType.i
+.PHONY : sources/lang/types/aio_type.i
 
 # target to preprocess a source file
-sources/lang/types/AIOType.c.i:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/types/AIOType.c.i
-.PHONY : sources/lang/types/AIOType.c.i
+sources/lang/types/aio_type.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/types/aio_type.c.i
+.PHONY : sources/lang/types/aio_type.c.i
 
-sources/lang/types/AIOType.s: sources/lang/types/AIOType.c.s
+sources/lang/types/aio_type.s: sources/lang/types/aio_type.c.s
 
-.PHONY : sources/lang/types/AIOType.s
+.PHONY : sources/lang/types/aio_type.s
 
 # target to generate assembly for a file
-sources/lang/types/AIOType.c.s:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/types/AIOType.c.s
-.PHONY : sources/lang/types/AIOType.c.s
+sources/lang/types/aio_type.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/types/aio_type.c.s
+.PHONY : sources/lang/types/aio_type.c.s
 
 sources/lib/collections/lists/AIOAnnotationList.obj: sources/lib/collections/lists/AIOAnnotationList.c.obj
 
@@ -1163,9 +1163,9 @@ help:
 	@echo ... sources/lang/declarations/aio_declaration.obj
 	@echo ... sources/lang/declarations/aio_declaration.i
 	@echo ... sources/lang/declarations/aio_declaration.s
-	@echo ... sources/lang/methods/AIOMethod.obj
-	@echo ... sources/lang/methods/AIOMethod.i
-	@echo ... sources/lang/methods/AIOMethod.s
+	@echo ... sources/lang/methods/aio_method.obj
+	@echo ... sources/lang/methods/aio_method.i
+	@echo ... sources/lang/methods/aio_method.s
 	@echo ... sources/lang/methods/analysis/methodReproducer/aio_method_reproducer.obj
 	@echo ... sources/lang/methods/analysis/methodReproducer/aio_method_reproducer.i
 	@echo ... sources/lang/methods/analysis/methodReproducer/aio_method_reproducer.s
@@ -1202,9 +1202,9 @@ help:
 	@echo ... sources/lang/methods/result/aio_result.obj
 	@echo ... sources/lang/methods/result/aio_result.i
 	@echo ... sources/lang/methods/result/aio_result.s
-	@echo ... sources/lang/methods/variable/AIOVariable.obj
-	@echo ... sources/lang/methods/variable/AIOVariable.i
-	@echo ... sources/lang/methods/variable/AIOVariable.s
+	@echo ... sources/lang/methods/variable/aio_variable.obj
+	@echo ... sources/lang/methods/variable/aio_variable.i
+	@echo ... sources/lang/methods/variable/aio_variable.s
 	@echo ... sources/lang/object/AIOObject.obj
 	@echo ... sources/lang/object/AIOObject.i
 	@echo ... sources/lang/object/AIOObject.s
@@ -1214,9 +1214,9 @@ help:
 	@echo ... sources/lang/reservedNames/AIOReservedNamesContainer.obj
 	@echo ... sources/lang/reservedNames/AIOReservedNamesContainer.i
 	@echo ... sources/lang/reservedNames/AIOReservedNamesContainer.s
-	@echo ... sources/lang/types/AIOType.obj
-	@echo ... sources/lang/types/AIOType.i
-	@echo ... sources/lang/types/AIOType.s
+	@echo ... sources/lang/types/aio_type.obj
+	@echo ... sources/lang/types/aio_type.i
+	@echo ... sources/lang/types/aio_type.s
 	@echo ... sources/lib/collections/lists/AIOAnnotationList.obj
 	@echo ... sources/lib/collections/lists/AIOAnnotationList.i
 	@echo ... sources/lib/collections/lists/AIOAnnotationList.s
