@@ -6,7 +6,7 @@
 
 //Passed JUnitTest!
 aio_declaration* create_aio_declaration(char *methodName, string_list *args) {
-    //Create the same declaration:
+    //Create declaration:
     aio_declaration* declaration = calloc(1, sizeof(aio_declaration));
     if (declaration == NULL){
         perror("cannot allocate memory for aio_declaration");

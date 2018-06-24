@@ -6,7 +6,7 @@
 
 //Passed JUnitTest!
 aio_annotation *new_aio_annotation(char *methodName, char *annotationType) {
-    //Create the same annotation:
+    //Create annotation:
     aio_annotation *annotation = calloc(1, sizeof(aio_annotation));
     if (annotation == NULL) {
         perror("cannot allocate memory for aio_annotation");

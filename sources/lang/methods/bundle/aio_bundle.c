@@ -17,4 +17,5 @@ aio_bundle* new_aio_bundle(string_list *input_values) {
     bundle->input_values = input_values;
     //Create output values:
     bundle->output_values = new_string_list();
+    return bundle;
 }

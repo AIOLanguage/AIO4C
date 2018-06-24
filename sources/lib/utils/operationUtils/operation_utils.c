@@ -27,7 +27,7 @@ int is_concat_operation(char *string) {
     return -1;
 }
 
-int isDefaultOperations(const char *string) {
+int is_default_operations(const char *string) {
     if (strlen(string) == 1) {
         if (string[0] == '+' || string[0] == '*' || string[0] == '&') {
             return 0;

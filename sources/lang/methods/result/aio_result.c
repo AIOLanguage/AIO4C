@@ -4,58 +4,58 @@
 #include <process.h>
 #include "../../../../headers/lang/methods/result/aio_result.h"
 
-void new_aio_int_result(aio_int_result **result, int acc, char *rest) {
-    //Create the same result:
-    *result = calloc(1, sizeof(aio_int_result));
-    if (*result == NULL){
-        perror("cannot allocate memory for aioIntResult!");
+aio_int_result *new_aio_int_result(int acc, char *rest) {
+    //Create result:
+    aio_int_result *result = calloc(1, sizeof(aio_int_result));
+    if (result == NULL) {
+        perror("cannot allocate memory for aio_int_result!");
         exit(1);
     }
     //Set acc:
-    (*result)->acc = calloc(1, sizeof(int));
-    if ((*result)->acc == NULL){
-        perror("cannot allocate memory for acc in aioIntResult!");
-        exit(1);
-    }
-    *(*result)->acc = acc;
+    result->acc = acc;
     //Set rest:
-    (*result)->rest = rest;
+    result->rest = rest;
+    return result;
 }
 
-void new_aio_dou_result(aio_dou_result **result, double acc, char *rest) {
+aio_dou_result *new_aio_dou_result(double acc, char *rest) {
     //Create the same result:
-    *result = calloc(1, sizeof(aio_dou_result));
-    if (*result == NULL){
-        perror("cannot allocate memory for aioDouResult!");
+    aio_dou_result *result = calloc(1, sizeof(aio_dou_result));
+    if (result == NULL) {
+        perror("cannot allocate memory for aio_dou_result!");
         exit(1);
     }
     //Set acc:
-    (*result)->acc = calloc(1, sizeof(double));
-    if ((*result)->acc == NULL){
-        perror("cannot allocate memory for acc in aioDouResult!");
+    result->acc = acc;
+    //Set rest:
+    result->rest = rest;
+    return result;
+}
+
+aio_cha_result *new_aio_cha_result(char acc, char *rest) {
+    //Create the same result:
+    aio_cha_result *result = calloc(1, sizeof(aio_cha_result));
+    if (result == NULL) {
+        perror("cannot allocate memory for aio_cha_result!");
         exit(1);
     }
-    *(*result)->acc = acc;
+    //Set acc:
+    result->acc = acc;
     //Set rest:
-    (*result)->rest = rest;
+    result->rest = rest;
+    return result;
 }
 
-void new_aio_cha_result(aio_cha_result **result, char acc, char *rest) {
+aio_str_result *new_aio_str_result(char *acc, char *rest) {
     //Create the same result:
-    *result = malloc(sizeof(aio_cha_result));
+    aio_str_result *result = calloc(1, sizeof(aio_str_result));
+    if (result == NULL) {
+        perror("cannot allocate memory for aio_str_result!");
+        exit(1);
+    }
     //Set acc:
-    (*result)->acc = malloc(sizeof(char));
-    *(*result)->acc = acc;
-    free(&acc);
+    result->acc = acc;
     //Set rest:
-    (*result)->rest = rest;
-}
-
-void new_aio_str_result(aio_str_result **result, char *acc, char *rest) {
-    //Create the same result:
-    *result = malloc(sizeof(aio_cha_result));
-    //Set acc:
-    (*result)->acc = acc;
-    //Set rest:
-    (*result)->rest = rest;
+    result->rest = rest;
+    return result;
 }

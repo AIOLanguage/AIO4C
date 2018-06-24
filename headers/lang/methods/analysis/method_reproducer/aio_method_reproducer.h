@@ -9,7 +9,7 @@
 #include "short/aio_short_reproducer.h"
 #include "../../../object/aio_object.h"
 
-void reproduceMethod(aio_object *object, aio_method_definition *method_definition,
-                     aio_method_container *method_container, aio_bundle *bundle);
+void reproduce_method(aio_object *object, aio_method_definition *method_definition,
+                      aio_method_container *method_container, aio_bundle *bundle);
 
 #endif //AIO_METHOD_REPRODUCER_H
