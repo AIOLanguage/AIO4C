@@ -2,7 +2,7 @@
 
 ![image](https://user-images.githubusercontent.com/22048950/39088894-46e43e94-45c3-11e8-838a-cae1fae978c2.png)
 
-### **AIO** is a ultra short programming language which contains basic types and allows write code more faster for multi threading.
+### **AIO** is a ultra short micro operationally oriented programming language (MOP) which contains basic types and allows get access to any operation in you method body, so fused that to write code more faster, use for big projects, services, games and also for multi threading.
 
 # Philosophy
 ### First, building, then launching:
