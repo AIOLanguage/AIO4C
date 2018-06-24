@@ -62,7 +62,7 @@ makePlusOrMinus(AIOObject *object, AIOMethodDefinition *methodDefinition, AIOMet
             break;
         }
         char *next;
-        substring(current->rest, 1, strlen(current->rest) - 1, &next);
+//        substring(current->rest, 1, strlen(current->rest) - 1, &next);
         current = makeMultiplicationOrDivision(object, methodDefinition, methodContainer, next);
         if (sign == '+') {
             acc = acc + *current->acc;
@@ -89,7 +89,7 @@ AIODouResult *makeMultiplicationOrDivision(AIOObject *object, AIOMethodDefinitio
             return current;
         }
         char *next;
-        substring(current->rest, 1, strlen(current->rest) - 1, &next);
+//        substring(current->rest, 1, strlen(current->rest) - 1, &next);
         AIODouResult *aioBracketResult = makeBrackets(object, methodDefinition, methodContainer, next);
         if (sign == '*') {
             acc = acc * *aioBracketResult->acc;
@@ -108,12 +108,12 @@ makeBrackets(AIOObject *object, AIOMethodDefinition *methodDefinition, AIOMethod
     const char zeroChar = codeLine[0];
     if (zeroChar == '(') {
         char *inBracketsCodeLine;
-        substring(codeLine, 1, strlen(codeLine) - 1, &inBracketsCodeLine);
+//        substring(codeLine, 1, strlen(codeLine) - 1, &inBracketsCodeLine);
         AIODouResult *inBracketsAIOResult = makePlusOrMinus(object, methodDefinition, methodContainer,
                                                             inBracketsCodeLine);
         if (is_not_empty_string(inBracketsAIOResult->rest) == 0 && inBracketsAIOResult->rest[0] == ')') {
             char *afterBracketsCodeLine;
-            substring(inBracketsAIOResult->rest, 1, strlen(inBracketsAIOResult->rest) - 1, &afterBracketsCodeLine);
+          //  substring(inBracketsAIOResult->rest, 1, strlen(inBracketsAIOResult->rest) - 1, &afterBracketsCodeLine);
             inBracketsAIOResult->rest = afterBracketsCodeLine;
         } else {
             perror("cannot close bracket!");
@@ -145,8 +145,8 @@ makeMethodOrVariable(AIOObject *object, AIOMethodDefinition *methodDefinition, A
             if (codeLine[i] == '(') {
                 // 그것은 함수이다:
                 char *inBracketsLine;
-                substring(methodOrVariableName, methodOrVariableStrLength, codeLineLength - methodOrVariableStrLength,
-                          &inBracketsLine);
+//                substring(methodOrVariableName, methodOrVariableStrLength, codeLineLength - methodOrVariableStrLength,
+                    //      &inBracketsLine);
                 AIODouResult *inFunctionAIOResult = makeBrackets(object, methodDefinition, methodContainer,
                                                                  inBracketsLine);
                 //하나의 arg:
@@ -159,8 +159,8 @@ makeMethodOrVariable(AIOObject *object, AIOMethodDefinition *methodDefinition, A
                 char *accStrResult;
                 douToStr(*insteadMethod->acc, &accStrResult);
                 char *nextCodeLine;
-                substring(codeLine, methodOrVariableStrLength + 1, codeLineLength - methodOrVariableStrLength - 1,
-                          &nextCodeLine);
+          //      substring(codeLine, methodOrVariableStrLength + 1, codeLineLength - methodOrVariableStrLength - 1,
+                       //   &nextCodeLine);
                 concat_string_to_string(accStrResult, &nextCodeLine);
                 free(nextCodeLine);
                 return makePlusOrMinus(object, methodDefinition, methodContainer, accStrResult);
@@ -169,7 +169,7 @@ makeMethodOrVariable(AIOObject *object, AIOMethodDefinition *methodDefinition, A
             char *variableName = methodOrVariableName;
             AIOVariable *variable = getVariable(variableName, methodContainer);
             char *rest;
-            substring(codeLine, methodOrVariableStrLength, codeLineLength - methodOrVariableStrLength, &rest);
+//            substring(codeLine, methodOrVariableStrLength, codeLineLength - methodOrVariableStrLength, &rest);
             AIODouResult *douResult;
             AIODou *acc;
             strToDou(variable->value, &acc);
@@ -189,7 +189,7 @@ AIODouResult *makeNumber(char *codeLine) {
     char *newNumber;
     if (inputLine[0] == '-') {
         negative = 0;
-        substring(inputLine, 1, strlen(inputLine) - 1, &newNumber);
+   //     substring(inputLine, 1, strlen(inputLine) - 1, &newNumber);
     }
     // 숫자와 점을 허용하다:
     int lineLength = strlen(inputLine);
@@ -206,14 +206,14 @@ AIODouResult *makeNumber(char *codeLine) {
         exit(1);
     }
     char *foundedNumberStr;
-    substring(inputLine, 0, i, &foundedNumberStr);
+//    substring(inputLine, 0, i, &foundedNumberStr);
     AIODou *doubleNumber;
     strToDou(foundedNumberStr, &doubleNumber);
     if (negative == 0) {
         *doubleNumber = (-1.0) * *doubleNumber;
     }
     char *restPart;
-    substring(inputLine, i, lineLength - i, &restPart);
+   // substring(inputLine, i, lineLength - i, &restPart);
     AIODouResult *douResult;
     createAIODouResult(&douResult, *doubleNumber, restPart);
     return douResult;

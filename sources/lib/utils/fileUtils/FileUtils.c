@@ -10,7 +10,7 @@ void mergeNewFolderPath(char *folderPath, char *nextObjectName, char **absoluteN
     char **paths = calloc(2, sizeof(char *));
     paths[0] = folderPath;
     paths[1] = nextObjectName;
-    join_to_string_without_spaces(paths, absoluteNextObjectPath);
+//    join_to_string_without_spaces(paths, absoluteNextObjectPath);
 }
 
 

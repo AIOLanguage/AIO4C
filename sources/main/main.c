@@ -22,11 +22,25 @@ int main() {
     addInStringList(strings, "    fwbm   ");
     addInStringList(strings, "ddv  ");
     addInStringList(strings, "");
-    addInStringList(strings, "     ");
-    addInStringList(strings, "f");
+    addInStringList(strings, "s");
+    addInStringList(strings, "");
+    printf("\nSIZE:-%d-\n", *strings->size);
+    char **clean_strings = filter(strings->strings, *strings->size, is_not_empty_string);
 
-    char *a = "   fadvv    ";
-    printf("\n-%s-\n", trim(a));
+    for (int i = 0; i < _msize(clean_strings) / 4; ++i) {
+        strings->strings[i] = trim(clean_strings[i]);
+        printf("\n-%s-\n", strings->strings[i]);
+    }
+    printf("\n-%s-\n", join_to_string(strings->strings, "|", *strings->size));
+
+    char* a = "sffsfs";
+    char* b = substring("ssw||||", 2, 4);
+    printf("\nB   -%s-\n", b);
+    printf("\nA   -%s-\n", a);
+
+
+    concat_char_to_string(b, '!');;
+    printf("\nCONCAT:-%s-\n", b);
     return 0;
 }
 

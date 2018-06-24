@@ -2,7 +2,7 @@
 <project version="4">
   <component name="BookmarkManager">
     <bookmark url="file://$PROJECT_DIR$/CMakeLists.txt" line="5" mnemonic="1" />
-    <bookmark url="file://$PROJECT_DIR$/sources/main/main.c" line="37" mnemonic="2" />
+    <bookmark url="file://$PROJECT_DIR$/sources/main/main.c" line="46" mnemonic="2" />
   </component>
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true" buildAllGenerated="true">
     <generated>
@@ -16,58 +16,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="77c54fc7-a37a-4eaf-a794-282c0598671e" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/headers/lib/utils/stringUtils/string_utils.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/lib/utils/stringUtils/remove_prefix_suffix.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/lib/utils/stringUtils/split.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/lib/utils/stringUtils/trim.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/tools/parsers/AIOParser.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/tools/parsers/chaParser/AIOChaParser.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/tools/parsers/douParser/AIODouParser.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/tools/parsers/intParser/AIOIntParser.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/tools/parsers/strParser/AIOStrParser.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aioPrograms/utils.aio" beforeDir="false" afterPath="$PROJECT_DIR$/aioPrograms/utils.aio" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/AIO.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/AIO.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/C.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/C.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/DependInfo.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/cmake_clean.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/depend.internal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/objects.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/objects1.rsp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/objects1.rsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/sources/lang/types/AIOType.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/sources/lang/types/AIOType.c.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/headers/lang/methods/AIOMethod.h" beforeDir="false" afterPath="$PROJECT_DIR$/headers/lang/methods/AIOMethod.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/headers/lang/methods/analysis/methodReproducer/short/AIOShortReproducer.h" beforeDir="false" afterPath="$PROJECT_DIR$/headers/lang/methods/analysis/methodReproducer/short/AIOShortReproducer.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/headers/lang/methods/analysis/methodReproducer/theShortest/AIOTheShortestReproducer.h" beforeDir="false" afterPath="$PROJECT_DIR$/headers/lang/methods/analysis/methodReproducer/theShortest/AIOTheShortestReproducer.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/headers/lang/methods/analysis/methodReproducer/theShortest/plusForEachReproducer/AIOPlusForEachReproducer.h" beforeDir="false" afterPath="$PROJECT_DIR$/headers/lang/methods/analysis/methodReproducer/theShortest/plusForEachReproducer/AIOPlusForEachReproducer.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/headers/lang/types/AIOType.h" beforeDir="false" afterPath="$PROJECT_DIR$/headers/lang/types/AIOType.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/headers/lib/collections/lists/StringList.h" beforeDir="false" afterPath="$PROJECT_DIR$/headers/lib/collections/lists/StringList.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/headers/lib/collections/maps/AIOVariableMap.h" beforeDir="false" afterPath="$PROJECT_DIR$/headers/lib/collections/maps/AIOVariableMap.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/headers/lib/utils/stringUtils/StringUtils.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/headers/tools/parsers/AIOParser.h" beforeDir="false" afterPath="$PROJECT_DIR$/headers/tools/parsers/AIOParser.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sources/lang/methods/AIOMethod.c" beforeDir="false" afterPath="$PROJECT_DIR$/sources/lang/methods/AIOMethod.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sources/lang/methods/analysis/methodReproducer/AIOMethodReproducer.c" beforeDir="false" afterPath="$PROJECT_DIR$/sources/lang/methods/analysis/methodReproducer/AIOMethodReproducer.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sources/lang/methods/analysis/methodReproducer/default/AIODefaultReproducer.c" beforeDir="false" afterPath="$PROJECT_DIR$/sources/lang/methods/analysis/methodReproducer/default/AIODefaultReproducer.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/headers/lib/utils/stringUtils/string_utils.h" beforeDir="false" afterPath="$PROJECT_DIR$/headers/lib/utils/stringUtils/string_utils.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sources/lang/methods/analysis/methodReproducer/short/AIOShortReproducer.c" beforeDir="false" afterPath="$PROJECT_DIR$/sources/lang/methods/analysis/methodReproducer/short/AIOShortReproducer.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sources/lang/methods/analysis/methodReproducer/theShortest/AIOTheShortestReproducer.c" beforeDir="false" afterPath="$PROJECT_DIR$/sources/lang/methods/analysis/methodReproducer/theShortest/AIOTheShortestReproducer.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sources/lang/methods/analysis/methodReproducer/theShortest/concatForEachReproducer/AIOConcatForEachReproducer.c" beforeDir="false" afterPath="$PROJECT_DIR$/sources/lang/methods/analysis/methodReproducer/theShortest/concatForEachReproducer/AIOConcatForEachReproducer.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sources/lang/methods/analysis/methodReproducer/theShortest/multiplyForEachReproducer/AIOMultiplyForEachReproducer.c" beforeDir="false" afterPath="$PROJECT_DIR$/sources/lang/methods/analysis/methodReproducer/theShortest/multiplyForEachReproducer/AIOMultiplyForEachReproducer.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sources/lang/methods/analysis/methodReproducer/theShortest/plusForEachReproducer/AIOPlusForEachReproducer.c" beforeDir="false" afterPath="$PROJECT_DIR$/sources/lang/methods/analysis/methodReproducer/theShortest/plusForEachReproducer/AIOPlusForEachReproducer.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sources/lang/methods/bundle/AIOBundle.c" beforeDir="false" afterPath="$PROJECT_DIR$/sources/lang/methods/bundle/AIOBundle.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sources/lang/methods/methodDefinition/AIOMethodDefinitionBuilder.c" beforeDir="false" afterPath="$PROJECT_DIR$/sources/lang/methods/methodDefinition/AIOMethodDefinitionBuilder.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sources/lang/methods/result/AIOResult.c" beforeDir="false" afterPath="$PROJECT_DIR$/sources/lang/methods/result/AIOResult.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sources/lang/object/AIOObject.c" beforeDir="false" afterPath="$PROJECT_DIR$/sources/lang/object/AIOObject.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sources/lib/collections/lists/StringList.c" beforeDir="false" afterPath="$PROJECT_DIR$/sources/lib/collections/lists/StringList.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sources/lib/collections/maps/AIOVariableMap.c" beforeDir="false" afterPath="$PROJECT_DIR$/sources/lib/collections/maps/AIOVariableMap.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sources/lib/utils/fileUtils/FileUtils.c" beforeDir="false" afterPath="$PROJECT_DIR$/sources/lib/utils/fileUtils/FileUtils.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sources/lib/utils/stringUtils/StringUtils.c" beforeDir="false" afterPath="$PROJECT_DIR$/sources/lib/utils/stringUtils/string_utils.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sources/lib/utils/stringUtils/string_utils.c" beforeDir="false" afterPath="$PROJECT_DIR$/sources/lib/utils/stringUtils/string_utils.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sources/main/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/sources/main/main.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sources/tools/parsers/douParser/AIODouParser.c" beforeDir="false" afterPath="$PROJECT_DIR$/sources/tools/parsers/douParser/AIODouParser.c" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -83,8 +38,8 @@
       <file leaf-file-name="string_utils.c" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sources/lib/utils/stringUtils/string_utils.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="23" column="10" lean-forward="true" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="10" />
+            <state relative-caret-position="1235">
+              <caret line="150" column="1" lean-forward="true" selection-start-line="150" selection-start-column="1" selection-end-line="150" selection-end-column="1" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -114,12 +69,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/sources/lib/utils/pathUtils/PathUtils.c" />
         <option value="$PROJECT_DIR$/headers/lib/utils/pathUtils/PathUtils.h" />
         <option value="$PROJECT_DIR$/headers/lang/methods/analysis/methodReproducer/default/AIODefaultReproducer.h" />
         <option value="$PROJECT_DIR$/headers/lang/object/AIOObject.h" />
         <option value="$PROJECT_DIR$/headers/lib/utils/fileUtils/FileUtils.h" />
-        <option value="$PROJECT_DIR$/sources/lib/utils/fileUtils/FileUtils.c" />
         <option value="$PROJECT_DIR$/sources/lang/methods/variable/AIOVariable.c" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/sources/lang/methods/analysis/methodReproducer/theShortest/aaaa.c" />
@@ -133,8 +86,6 @@
         <option value="$PROJECT_DIR$/sources/lang/methods/analysis/methodReproducer/theShortest/concatForEachReproducer/AIOConcatForEachReproducer.c" />
         <option value="$PROJECT_DIR$/headers/lang/methods/analysis/methodReproducer/theShortest/concatForEachReproducer/AIOConcatForEachReproducer.h" />
         <option value="$PROJECT_DIR$/headers/lang/methods/analysis/methodReproducer/AIOMethodReproducer.h" />
-        <option value="$PROJECT_DIR$/sources/lang/methods/methodDefinition/AIOMethodDefinitionBuilder.c" />
-        <option value="$PROJECT_DIR$/sources/lang/methods/analysis/methodReproducer/default/AIODefaultReproducer.c" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/sources/lang/methods/AIOMethod.c" />
         <option value="$PROJECT_DIR$/headers/lang/methods/AIOMethod.h" />
@@ -149,21 +100,25 @@
         <option value="$PROJECT_DIR$/headers/tools/parsers/AIOParser.h" />
         <option value="$PROJECT_DIR$/sources/lib/collections/lists/StringList.c" />
         <option value="$PROJECT_DIR$/headers/lang/methods/analysis/methodReproducer/theShortest/AIOTheShortestReproducer.h" />
-        <option value="$PROJECT_DIR$/sources/lang/methods/analysis/methodReproducer/theShortest/AIOTheShortestReproducer.c" />
         <option value="$PROJECT_DIR$/sources/lang/methods/analysis/methodReproducer/theShortest/plusForEachReproducer/AIOPlusForEachReproducer.c" />
         <option value="$PROJECT_DIR$/sources/lang/methods/analysis/methodReproducer/theShortest/multiplyForEachReproducer/AIOMultiplyForEachReproducer.c" />
-        <option value="$PROJECT_DIR$/sources/lang/methods/analysis/methodReproducer/short/AIOShortReproducer.c" />
         <option value="$PROJECT_DIR$/headers/lang/methods/analysis/methodReproducer/short/AIOShortReproducer.h" />
         <option value="$PROJECT_DIR$/sources/lang/methods/analysis/methodReproducer/AIOMethodReproducer.c" />
-        <option value="$PROJECT_DIR$/sources/tools/parsers/douParser/AIODouParser.c" />
         <option value="$PROJECT_DIR$/sources/lib/utils/stringUtils/Split.c" />
         <option value="$PROJECT_DIR$/sources/lib/utils/stringUtils/StringUtils.c" />
         <option value="$PROJECT_DIR$/headers/lib/utils/stringUtils/StringUtils.h" />
-        <option value="$PROJECT_DIR$/sources/lib/utils/stringUtils/trim.c" />
-        <option value="$PROJECT_DIR$/sources/lib/utils/stringUtils/split.c" />
         <option value="$PROJECT_DIR$/sources/lib/utils/stringUtils/remove_prefix_suffix.c" />
-        <option value="$PROJECT_DIR$/sources/main/main.c" />
+        <option value="$PROJECT_DIR$/sources/lib/utils/stringUtils/prefix_suffix.c" />
+        <option value="$PROJECT_DIR$/sources/lang/methods/analysis/methodReproducer/theShortest/AIOTheShortestReproducer.c" />
+        <option value="$PROJECT_DIR$/sources/lang/methods/analysis/methodReproducer/default/AIODefaultReproducer.c" />
+        <option value="$PROJECT_DIR$/sources/lang/methods/methodDefinition/AIOMethodDefinitionBuilder.c" />
+        <option value="$PROJECT_DIR$/sources/lib/utils/stringUtils/split.c" />
+        <option value="$PROJECT_DIR$/sources/lib/utils/stringUtils/trim.c" />
+        <option value="$PROJECT_DIR$/sources/lib/utils/fileUtils/FileUtils.c" />
+        <option value="$PROJECT_DIR$/sources/lang/methods/analysis/methodReproducer/short/AIOShortReproducer.c" />
+        <option value="$PROJECT_DIR$/sources/tools/parsers/douParser/AIODouParser.c" />
         <option value="$PROJECT_DIR$/headers/lib/utils/stringUtils/string_utils.h" />
+        <option value="$PROJECT_DIR$/sources/main/main.c" />
         <option value="$PROJECT_DIR$/sources/lib/utils/stringUtils/string_utils.c" />
       </list>
     </option>
@@ -578,7 +533,7 @@
       <workItem from="1528531912551" duration="8343000" />
       <workItem from="1528540438575" duration="25416000" />
       <workItem from="1528912844333" duration="453000" />
-      <workItem from="1529687137425" duration="46883000" />
+      <workItem from="1529687137425" duration="59615000" />
     </task>
     <task id="LOCAL-00001" summary="05.06.2018 Developed AIOObjectManager =) #LOVE_AIO_&amp;_C =)">
       <created>1528196702392</created>
@@ -776,11 +731,25 @@
       <option name="project" value="LOCAL" />
       <updated>1529757417356</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="23.06.2018 developed the shortest reproducer!">
+      <created>1529789553630</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1529789553630</updated>
+    </task>
+    <task id="LOCAL-00030" summary="23.06.2018 developed the shortest reproducer!">
+      <created>1529795280863</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1529795280863</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="242663000" />
+    <option name="totallyTimeSpent" value="255395000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -800,9 +769,9 @@
       <window_info anchor="bottom" id="CMake" order="7" weight="0.32904884" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3101852" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.42824075" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info content_ui="combo" id="Project" order="0" weight="0.2669271" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2669271" />
       <window_info anchor="right" id="LuaJ" order="3" weight="0.3294271" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32407406" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -846,7 +815,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="20" />
+      <option name="time" value="29" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -873,13 +842,6 @@
     <entry file="file://$PROJECT_DIR$/headers/lang/methods/analysis/methodReproducer/theShortest/AIOAbstractForEachOperationReproducer.h">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/sources/lang/methods/methodDefinition/AIOMethodDefinitionBuilder.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret lean-forward="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/headers/lib/collections/lists/StringList.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -887,17 +849,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sources/main/main.c">
+    <entry file="file://$PROJECT_DIR$/headers/lang/methods/analysis/methodReproducer/theShortest/plusForEachReproducer/AIOPlusForEachReproducer.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="30" column="12" lean-forward="true" selection-start-line="30" selection-start-column="12" selection-end-line="30" selection-end-column="12" />
+        <state relative-caret-position="68">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sources/lang/methods/analysis/methodReproducer/theShortest/AIOTheShortestReproducer.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="31" column="2" selection-start-line="31" selection-start-column="2" selection-end-line="31" selection-end-column="2" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sources/lib/utils/stringUtils/split.c">
+    <entry file="file://$PROJECT_DIR$/sources/lang/methods/analysis/methodReproducer/default/AIODefaultReproducer.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="13" column="2" selection-start-line="13" selection-start-column="2" selection-end-line="13" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sources/lang/methods/methodDefinition/AIOMethodDefinitionBuilder.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="193" column="2" selection-start-line="193" selection-start-column="2" selection-end-line="193" selection-end-column="2" />
+          <folding>
+            <element signature="e#0#16#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sources/lib/utils/stringUtils/prefix_suffix.c">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret lean-forward="true" />
@@ -909,25 +895,56 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sources/lib/utils/stringUtils/trim.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        <state relative-caret-position="738">
+          <caret line="86" column="1" lean-forward="true" selection-start-line="86" selection-start-column="1" selection-end-line="86" selection-end-column="1" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/headers/lib/utils/stringUtils/string_utils.h">
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="26" column="43" selection-start-line="26" selection-end-line="26" selection-end-column="45" />
+        <state relative-caret-position="85">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sources/lib/utils/stringUtils/remove_prefix_suffix.c">
+    <entry file="file://$PROJECT_DIR$/sources/lib/utils/fileUtils/FileUtils.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="466">
-          <caret line="51" column="4" lean-forward="true" selection-start-line="43" selection-start-column="4" selection-end-line="51" selection-end-column="4" />
+        <state relative-caret-position="136">
+          <caret line="12" column="2" selection-start-line="12" selection-start-column="2" selection-end-line="12" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sources/lang/methods/analysis/methodReproducer/short/AIOShortReproducer.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="2" selection-start-line="21" selection-start-column="2" selection-end-line="21" selection-end-column="2" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sources/tools/parsers/douParser/AIODouParser.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="305">
+          <caret line="215" column="5" selection-start-line="215" selection-start-column="5" selection-end-line="215" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/headers/lib/utils/stringUtils/string_utils.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="39" column="17" lean-forward="true" selection-start-line="39" selection-start-column="17" selection-end-line="39" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sources/main/main.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="283">
+          <caret line="41" column="20" lean-forward="true" selection-start-line="41" selection-start-column="20" selection-end-line="41" selection-end-column="20" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
@@ -936,8 +953,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sources/lib/utils/stringUtils/string_utils.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="23" column="10" lean-forward="true" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="10" />
+        <state relative-caret-position="1235">
+          <caret line="150" column="1" lean-forward="true" selection-start-line="150" selection-start-column="1" selection-end-line="150" selection-end-column="1" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>

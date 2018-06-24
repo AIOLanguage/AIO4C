@@ -25,22 +25,20 @@ int starts_with_prefix(const char *src, char *prefix);
 
 int ends_with_suffix(const char *src, char *suffix);
 
-int filter(char **src, size_t srcSize, char ***dst, int (*filterFunction)(char *));
+char** filter(char **src, int src_size, int (*filterFunction)(char *));
 
 int is_not_empty_string(char *string);
 
 int is_empty_string(char *string);
 
-void join_to_string_without_spaces(char **srcStrings, char **dst);
-
-int join_to_string(char **srcStrings, char *delimiter, char **dst);
+char* join_to_string(char **srcStrings, char *delimiter, int src_size);
 
 int is_word(char *line);
 
-void substring(const char *string, int offset, int length, char **dst);
+char* substring(const char *string, int offset, int length);
 
-void concat_string_to_string(char *src, char **dst);
+void concat_string_to_string(char *dst, char *src);
 
-void concat_char_to_string(char src, char **dst);
+void concat_char_to_string(char *dst, char src);
 
 #endif //AIO_STRING_UTILS_H

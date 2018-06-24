@@ -18,8 +18,8 @@ void squeezeCodeLine(char *codeLine, char **cleanLine) {
     char **words;
 //    split_by_string(codeLine, " ", &words);
     char **cleanedWords;
-    filter(words, _msize(words) / 4, &cleanedWords, is_not_empty_string);
-    join_to_string_without_spaces(cleanedWords, cleanLine);
+ //   filter(words, _msize(words) / 4, &cleanedWords, is_not_empty_string);
+//    join_to_string_without_spaces(cleanedWords, cleanLine);
     free(words);
     free(cleanedWords);
 }
