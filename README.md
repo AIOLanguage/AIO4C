@@ -7,7 +7,7 @@
 # Philosophy
 ### First, building, then launching:
 
-First, the AIO interpreter, collects all the information about the script and builds AIOObject
+First, the AIO interpreter, collects all the information about the script and builds aio_object
 
 ![image](https://user-images.githubusercontent.com/22048950/41033429-285a9a78-698f-11e8-8ffc-2fe4430863b6.png)
 

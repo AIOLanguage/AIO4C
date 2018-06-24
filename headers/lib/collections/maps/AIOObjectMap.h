@@ -7,13 +7,13 @@ typedef struct AIOObjectMap {
     int *capacity;
     int *size;
     char **names;
-    AIOObject **objects;
+    aio_object **objects;
 } AIOObjectMap;
 
 void createAIOObjectMap(AIOObjectMap **objectMap);
 
-void putAIOObjectInMap(AIOObjectMap *objectMap, AIOObject *object);
+void putAIOObjectInMap(AIOObjectMap *objectMap, aio_object *object);
 
-AIOObject *getAIOObjectInMapByName(AIOObjectMap *objectMap, char *name);
+aio_object *get_aio_object_in_map_by_name(AIOObjectMap *objectMap, char *name);
 
 #endif //AIO_OBJECT_MAP_H

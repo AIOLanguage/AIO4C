@@ -5,57 +5,57 @@
 #include "../../../../headers/lang/types/AIOType.h"
 #include "../../../../headers/lang/object/AIOObject.h"
 #include "../../../../headers/lang/methods/AIOMethodContainer.h"
-#include "../../../../headers/lang/methods/result/AIOResult.h"
+#include "../../../../headers/lang/methods/result/aio_result.h"
 #include "../../../../headers/lib/utils/stringUtils/string_utils.h"
 #include "../../../../headers/tools/parsers/AIOParser.h"
-#include "../../../../headers/lang/methods/defaultMethodContainer/AIODefaultMethodContainer.h"
+#include "../../../../headers/lang/methods/defaultMethodContainer/aio_default_method_container.h"
 
 //제목들:
 
-AIODouResult *
-makePlusOrMinus(AIOObject *object, AIOMethodDefinition *methodDefinition, AIOMethodContainer *methodContainer,
+aio_dou_result *
+makePlusOrMinus(aio_object *object, aio_method_definition *methodDefinition, aio_method_container *methodContainer,
                 char *codeLine);
 
-AIODouResult *makeMultiplicationOrDivision(AIOObject *object, AIOMethodDefinition *methodDefinition,
-                                           AIOMethodContainer *methodContainer,
+aio_dou_result *makeMultiplicationOrDivision(aio_object *object, aio_method_definition *methodDefinition,
+                                           aio_method_container *methodContainer,
                                            char *codeLine);
 
-AIODouResult *
-makeBrackets(AIOObject *object, AIOMethodDefinition *methodDefinition, AIOMethodContainer *methodContainer,
+aio_dou_result *
+makeBrackets(aio_object *object, aio_method_definition *methodDefinition, aio_method_container *methodContainer,
              char *codeLine);
 
-AIODouResult *
-makeMethodOrVariable(AIOObject *object, AIOMethodDefinition *methodDefinition, AIOMethodContainer *methodContainer,
+aio_dou_result *
+makeMethodOrVariable(aio_object *object, aio_method_definition *methodDefinition, aio_method_container *methodContainer,
                      char *codeLine);
 
-AIODouResult *
-makeMethod(char *methodName, AIODouResult *douResult, AIOObject *object);
+aio_dou_result *
+makeMethod(char *methodName, aio_dou_result *douResult, aio_object *object);
 
-AIODouResult *makeNumber(char *codeLine);
+aio_dou_result *makeNumber(char *codeLine);
 
 /**
  * parseDouLineExpression
  * plusOrMinus -> multiplicationOrDivision -> brackets -> method or variable or number:
  */
 
-AIOStr
-parseDouLineExpression(AIOObject *object, AIOMethodDefinition *methodDefinition, AIOMethodContainer *methodContainer,
+aio_str
+parseDouLineExpression(aio_object *object, aio_method_definition *methodDefinition, aio_method_container *methodContainer,
                        char *codeLine) {
-    const AIODouResult *douResult = makePlusOrMinus(object, methodDefinition, methodContainer, codeLine);
+    const aio_dou_result *douResult = makePlusOrMinus(object, methodDefinition, methodContainer, codeLine);
     if (is_not_empty_string(douResult->rest) == 0) {
         perror("cannot full parse code line!");
         exit(1);
     }
-    AIOStr result;
-    douToStr(*douResult->acc, &result);
+    aio_str result;
+    dou_to_str(*douResult->acc, &result);
     return result;
 }
 
-AIODouResult *
-makePlusOrMinus(AIOObject *object, AIOMethodDefinition *methodDefinition, AIOMethodContainer *methodContainer,
+aio_dou_result *
+makePlusOrMinus(aio_object *object, aio_method_definition *methodDefinition, aio_method_container *methodContainer,
                 char *codeLine) {
-    AIODouResult *current = makeMultiplicationOrDivision(object, methodDefinition, methodContainer, codeLine);
-    AIODou acc = *current->acc;
+    aio_dou_result *current = makeMultiplicationOrDivision(object, methodDefinition, methodContainer, codeLine);
+    aio_dou acc = *current->acc;
     while (is_empty_string(current->rest) == 0) {
         const char sign = current->rest[0];
         if (!(sign == '+' || sign == '-')) {
@@ -70,16 +70,16 @@ makePlusOrMinus(AIOObject *object, AIOMethodDefinition *methodDefinition, AIOMet
             acc = acc - *current->acc;
         }
     }
-    AIODouResult *douResult;
-    createAIODouResult(&douResult, acc, current->rest);
+    aio_dou_result *douResult;
+    new_aio_dou_result(&douResult, acc, current->rest);
     return douResult;
 }
 
-AIODouResult *makeMultiplicationOrDivision(AIOObject *object, AIOMethodDefinition *methodDefinition,
-                                           AIOMethodContainer *methodContainer,
+aio_dou_result *makeMultiplicationOrDivision(aio_object *object, aio_method_definition *methodDefinition,
+                                           aio_method_container *methodContainer,
                                            char *codeLine) {
-    AIODouResult *current = makeBrackets(object, methodDefinition, methodContainer, codeLine);
-    AIODou acc = *current->acc;
+    aio_dou_result *current = makeBrackets(object, methodDefinition, methodContainer, codeLine);
+    aio_dou acc = *current->acc;
     while (1) {
         if (is_empty_string(current->rest) == 0) {
             return current;
@@ -90,26 +90,26 @@ AIODouResult *makeMultiplicationOrDivision(AIOObject *object, AIOMethodDefinitio
         }
         char *next;
 //        substring(current->rest, 1, strlen(current->rest) - 1, &next);
-        AIODouResult *aioBracketResult = makeBrackets(object, methodDefinition, methodContainer, next);
+        aio_dou_result *aioBracketResult = makeBrackets(object, methodDefinition, methodContainer, next);
         if (sign == '*') {
             acc = acc * *aioBracketResult->acc;
         } else {
             acc = acc / *aioBracketResult->acc;
         }
-        AIODouResult *douResult;
-        createAIODouResult(&douResult, acc, aioBracketResult->rest);
+        aio_dou_result *douResult;
+        new_aio_dou_result(&douResult, acc, aioBracketResult->rest);
         current = douResult;
     }
 }
 
-AIODouResult *
-makeBrackets(AIOObject *object, AIOMethodDefinition *methodDefinition, AIOMethodContainer *methodContainer,
+aio_dou_result *
+makeBrackets(aio_object *object, aio_method_definition *methodDefinition, aio_method_container *methodContainer,
              char *codeLine) {
     const char zeroChar = codeLine[0];
     if (zeroChar == '(') {
         char *inBracketsCodeLine;
 //        substring(codeLine, 1, strlen(codeLine) - 1, &inBracketsCodeLine);
-        AIODouResult *inBracketsAIOResult = makePlusOrMinus(object, methodDefinition, methodContainer,
+        aio_dou_result *inBracketsAIOResult = makePlusOrMinus(object, methodDefinition, methodContainer,
                                                             inBracketsCodeLine);
         if (is_not_empty_string(inBracketsAIOResult->rest) == 0 && inBracketsAIOResult->rest[0] == ')') {
             char *afterBracketsCodeLine;
@@ -124,8 +124,8 @@ makeBrackets(AIOObject *object, AIOMethodDefinition *methodDefinition, AIOMethod
     return makeMethodOrVariable(object, methodDefinition, methodContainer, codeLine);
 }
 
-AIODouResult *
-makeMethodOrVariable(AIOObject *object, AIOMethodDefinition *methodDefinition, AIOMethodContainer *methodContainer,
+aio_dou_result *
+makeMethodOrVariable(aio_object *object, aio_method_definition *methodDefinition, aio_method_container *methodContainer,
                      char *codeLine) {
     char *methodOrVariableName = "";
     int i = 0;
@@ -147,17 +147,17 @@ makeMethodOrVariable(AIOObject *object, AIOMethodDefinition *methodDefinition, A
                 char *inBracketsLine;
 //                substring(methodOrVariableName, methodOrVariableStrLength, codeLineLength - methodOrVariableStrLength,
                     //      &inBracketsLine);
-                AIODouResult *inFunctionAIOResult = makeBrackets(object, methodDefinition, methodContainer,
+                aio_dou_result *inFunctionAIOResult = makeBrackets(object, methodDefinition, methodContainer,
                                                                  inBracketsLine);
                 //하나의 arg:
                 return makeMethod(methodOrVariableName, inFunctionAIOResult, object);
             } else {
                 //arg 이없는:
-                AIODouResult *emptyDouResult;
-                createAIODouResult(&emptyDouResult, 0.0, "");
-                AIODouResult *insteadMethod = makeMethod(methodOrVariableName, emptyDouResult, object);
+                aio_dou_result *emptyDouResult;
+                new_aio_dou_result(&emptyDouResult, 0.0, "");
+                aio_dou_result *insteadMethod = makeMethod(methodOrVariableName, emptyDouResult, object);
                 char *accStrResult;
-                douToStr(*insteadMethod->acc, &accStrResult);
+                dou_to_str(*insteadMethod->acc, &accStrResult);
                 char *nextCodeLine;
           //      substring(codeLine, methodOrVariableStrLength + 1, codeLineLength - methodOrVariableStrLength - 1,
                        //   &nextCodeLine);
@@ -170,17 +170,17 @@ makeMethodOrVariable(AIOObject *object, AIOMethodDefinition *methodDefinition, A
             AIOVariable *variable = getVariable(variableName, methodContainer);
             char *rest;
 //            substring(codeLine, methodOrVariableStrLength, codeLineLength - methodOrVariableStrLength, &rest);
-            AIODouResult *douResult;
-            AIODou *acc;
-            strToDou(variable->value, &acc);
-            createAIODouResult(&douResult, *acc, rest);
+            aio_dou_result *douResult;
+            aio_dou *acc;
+            str_to_dou(variable->value, &acc);
+            new_aio_dou_result(&douResult, *acc, rest);
             return douResult;
         }
     }
     return makeNumber(codeLine);
 }
 
-AIODouResult *makeNumber(char *codeLine) {
+aio_dou_result *makeNumber(char *codeLine) {
     char *inputLine = codeLine;
     int i = 0;
     int dot = 0;
@@ -207,35 +207,35 @@ AIODouResult *makeNumber(char *codeLine) {
     }
     char *foundedNumberStr;
 //    substring(inputLine, 0, i, &foundedNumberStr);
-    AIODou *doubleNumber;
-    strToDou(foundedNumberStr, &doubleNumber);
+    aio_dou *doubleNumber;
+    str_to_dou(foundedNumberStr, &doubleNumber);
     if (negative == 0) {
         *doubleNumber = (-1.0) * *doubleNumber;
     }
     char *restPart;
    // substring(inputLine, i, lineLength - i, &restPart);
-    AIODouResult *douResult;
-    createAIODouResult(&douResult, *doubleNumber, restPart);
+    aio_dou_result *douResult;
+    new_aio_dou_result(&douResult, *doubleNumber, restPart);
     return douResult;
 }
 
-AIODouResult *
-makeMethod(char *methodName, AIODouResult *douResult, AIOObject *object) {
+aio_dou_result *
+makeMethod(char *methodName, aio_dou_result *douResult, aio_object *object) {
     //덩으롼 객체에있는 메소드로 작업하기:
-    if (isDefaultDouMethod(methodName, douResult) != 0) {
-        AIOBundle *bundle;
-        StringList *inputValues;
-        createStringList(&inputValues);
-        AIOStr strResult;
-        douToStr(*douResult->acc, &strResult);
-        addInStringList(inputValues, strResult);
-        createAIOBundle(&bundle, inputValues);
+    if (is_default_dou_method(methodName, douResult) != 0) {
+        aio_bundle *bundle;
+        string_list *inputValues;
+        new_string_list(&inputValues);
+        aio_str strResult;
+        dou_to_str(*douResult->acc, &strResult);
+        add_in_string_list(inputValues, strResult);
+        new_aio_bundle(&bundle, inputValues);
         char *correctedMethodName = "@";
         concat_string_to_string(methodName, &correctedMethodName);
         invokeMethodInManager(object, correctedMethodName, bundle);
-        AIOStr stringAcc = bundle->outputValues->strings[0];
-        AIODou *acc;
-        strToDou(stringAcc, &acc);
+        aio_str stringAcc = bundle->output_values->strings[0];
+        aio_dou *acc;
+        str_to_dou(stringAcc, &acc);
         *douResult->acc = *acc;
     }
     return douResult;

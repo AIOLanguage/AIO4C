@@ -135,14 +135,14 @@ int isAIOStrType(enum AIOType type) {
 }
 
 //끝난!
-void strToInt(char *word, int **dst) {
+void str_to_int(char *word, int **dst) {
     *dst = calloc(1, sizeof(int));
     if (*dst == NULL) {
-        perror("cannot allocate memory for dst in strToInt!");
+        perror("cannot allocate memory for dst in str_to_int!");
         exit(1);
     }
     if (matchesInt(word) != 0) {
-        perror("cannot convert string to int in strToInt!");
+        perror("cannot convert string to int in str_to_int!");
         exit(1);
     }
     **dst = 0;
@@ -152,14 +152,14 @@ void strToInt(char *word, int **dst) {
 }
 
 //끝난!
-void strToDou(char *word, double **dst) {
+void str_to_dou(char *word, double **dst) {
     *dst = calloc(1, sizeof(double));
     if (*dst == NULL) {
-        perror("cannot allocate memory for dst in strToDou!");
+        perror("cannot allocate memory for dst in str_to_dou!");
         exit(1);
     }
     if (matchesDou(word) != 0) {
-        perror("cannot convert string to int in strToDou!");
+        perror("cannot convert string to int in str_to_dou!");
         exit(1);
     }
     int integerPart = 0;
@@ -183,7 +183,7 @@ void strToDou(char *word, double **dst) {
 
 
 //Passed JUnitTest!
-void intToStr(int src, char **dst) {
+void int_to_str(int src, char **dst) {
     int division = src;
     unsigned intSizeInString = 0;
     while (division != 0) {
@@ -198,7 +198,7 @@ void intToStr(int src, char **dst) {
         }
         integerArray = calloc(intSizeInString + 1 + negativeShift, sizeof(char));
         if (integerArray == NULL) {
-            perror("cannot allocate memory for integerArray in intToStr");
+            perror("cannot allocate memory for integerArray in int_to_str");
             exit(1);
         }
         division = src;
@@ -212,7 +212,7 @@ void intToStr(int src, char **dst) {
     } else {
         integerArray = calloc(2, sizeof(char));
         if (integerArray == NULL) {
-            perror("cannot allocate memory for integerArray in intToStr");
+            perror("cannot allocate memory for integerArray in int_to_str");
             exit(1);
         }
         integerArray[0] = '0';
@@ -230,7 +230,7 @@ void intToStr(int src, char **dst) {
 }
 
 //Passed JUnitTest!
-void douToStr(double src, char **dst) {
+void dou_to_str(double src, char **dst) {
     int division = (int) src;
     unsigned intSizeInString = 0;
     while (division != 0) {
@@ -245,7 +245,7 @@ void douToStr(double src, char **dst) {
         }
         integerArray = calloc(intSizeInString + 1 + negativeShift, sizeof(char));
         if (integerArray == NULL) {
-            perror("cannot allocate memory for integerArray in intToStr");
+            perror("cannot allocate memory for integerArray in int_to_str");
             exit(1);
         }
         division = (int) src;
@@ -259,7 +259,7 @@ void douToStr(double src, char **dst) {
     } else {
         integerArray = calloc(2, sizeof(char));
         if (integerArray == NULL) {
-            perror("cannot allocate memory for integerArray in intToStr");
+            perror("cannot allocate memory for integerArray in int_to_str");
             exit(1);
         }
         integerArray[0] = '0';

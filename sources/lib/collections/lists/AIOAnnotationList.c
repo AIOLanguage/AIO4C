@@ -5,9 +5,9 @@
 #include "../../../../headers/lib/collections/lists/AIOAnnotationList.h"
 
 //Passed JUnitTest!
-void createAnnotationList(AIOAnnotationList **annotationList) {
+void createAnnotationList(aio_annotation_list **annotationList) {
     //Create the same mutable list:
-    *annotationList = calloc(1, sizeof(AIOAnnotationList));
+    *annotationList = calloc(1, sizeof(aio_annotation_list));
     if (*annotationList == NULL) {
         perror("can not allocate memory for aio annotation list");
         exit(1);
@@ -27,7 +27,7 @@ void createAnnotationList(AIOAnnotationList **annotationList) {
     }
     *(*annotationList)->size = 0;
     //Create char capacity that equals 2:
-    (*annotationList)->annotations = calloc(2, sizeof(AIOAnnotation *));
+    (*annotationList)->annotations = calloc(2, sizeof(aio_annotation *));
     if ((*annotationList)->annotations == NULL) {
         perror("can not allocate memory for annotations in aio annotation list");
         exit(1);
@@ -35,16 +35,16 @@ void createAnnotationList(AIOAnnotationList **annotationList) {
 }
 
 //Passed JUnitTest!
-void updateMemoryInMutableListOfAnnotations(AIOAnnotationList *listOfAnnotations) {
+void updateMemoryInMutableListOfAnnotations(aio_annotation_list *listOfAnnotations) {
     if (*listOfAnnotations->size + 1 == *listOfAnnotations->capacity) {
         *listOfAnnotations->capacity = *listOfAnnotations->capacity * 2;
         listOfAnnotations->annotations = realloc(listOfAnnotations->annotations,
-                                                 *listOfAnnotations->capacity * sizeof(AIOAnnotation));
+                                                 *listOfAnnotations->capacity * sizeof(aio_annotation));
     }
 }
 
 //Passed JUnitTests!
-void addInAnnotationList(AIOAnnotationList *listOfAnnotations, AIOAnnotation *annotation) {
+void addInAnnotationList(aio_annotation_list *listOfAnnotations, aio_annotation *annotation) {
     //Check to update capacity:
     updateMemoryInMutableListOfAnnotations(listOfAnnotations);
     //Set annotation:
@@ -53,7 +53,7 @@ void addInAnnotationList(AIOAnnotationList *listOfAnnotations, AIOAnnotation *an
 }
 
 //Passed JUnitTests!
-AIOAnnotation *getAnnotationInListByIndex(AIOAnnotationList *listOfAnnotations, int index) {
+aio_annotation *getAnnotationInListByIndex(aio_annotation_list *listOfAnnotations, int index) {
     if (index < 0 || *listOfAnnotations->size <= index) {
         perror("Cannot get index: %d in MutableList");
         exit(1);

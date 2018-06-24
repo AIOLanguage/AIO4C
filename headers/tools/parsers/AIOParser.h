@@ -4,28 +4,29 @@
 #include "../../lang/methods/AIOMethodContainer.h"
 #include "../../lang/object/AIOObject.h"
 
-AIOStr
-parseLineExpression(AIOObject *object, AIOMethodDefinition *methodDefinition, AIOMethodContainer *methodContainer,
-                    char *codeLine);
+aio_str
+parse_line_expression(aio_object *object, aio_method_definition *methodDefinition,
+                      aio_method_container *methodContainer,
+                      char *codeLine);
 
 //제목들:
 
-AIOStr
-parseIntLineExpression(AIOObject *object, AIOMethodDefinition *methodDefinition, AIOMethodContainer *methodContainer,
+aio_str
+parseIntLineExpression(aio_object *object, aio_method_definition *methodDefinition, aio_method_container *methodContainer,
                        char *codeLine);
 
-AIOStr
-parseDouLineExpression(AIOObject *object, AIOMethodDefinition *methodDefinition, AIOMethodContainer *methodContainer,
+aio_str
+parseDouLineExpression(aio_object *object, aio_method_definition *methodDefinition, aio_method_container *methodContainer,
                        char *codeLine);
 
-AIOStr
-parseChaLineExpression(AIOObject *object, AIOMethodDefinition *methodDefinition, AIOMethodContainer *methodContainer,
+aio_str
+parseChaLineExpression(aio_object *object, aio_method_definition *methodDefinition, aio_method_container *methodContainer,
                        char *codeLine);
 
-AIOStr
-parseStrLineExpression(AIOObject *object, AIOMethodDefinition *methodDefinition, AIOMethodContainer *methodContainer,
+aio_str
+parseStrLineExpression(aio_object *object, aio_method_definition *methodDefinition, aio_method_container *methodContainer,
                        char *codeLine);
 
-AIOVariable *getVariable(char *variableName, AIOMethodContainer *methodContainer);
+AIOVariable *getVariable(char *variableName, aio_method_container *methodContainer);
 
 #endif //AIO_PARSER_H

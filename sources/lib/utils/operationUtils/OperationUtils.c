@@ -1,6 +1,6 @@
 #include <mem.h>
 
-int isPlusOperation(char *string) {
+int is_plus_operation(char *string) {
     if (strlen(string)){
         if (string[0] == '+'){
             return 0;
@@ -9,7 +9,7 @@ int isPlusOperation(char *string) {
     return -1;
 }
 
-int isMultiplyOperation(char *string) {
+int is_multiply_operation(char *string) {
     if (strlen(string)){
         if (string[0] == '*'){
             return 0;
@@ -18,7 +18,7 @@ int isMultiplyOperation(char *string) {
     return -1;
 }
 
-int isConcatOperation(char *string) {
+int is_concat_operation(char *string) {
     if (strlen(string)){
         if (string[0] == '&'){
             return 0;

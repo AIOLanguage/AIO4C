@@ -4,26 +4,26 @@
 #include "../../headers/lang/object/objectManager/AIOObjectManager.h"
 #include "../../headers/lib/utils/stringUtils/string_utils.h"
 
-AIOObjectManager *aioObjectManager;
+AIOObjectManager *aio_object_manager;
 
 void init() {
-    initAIOObjectManager(&aioObjectManager);
+    initAIOObjectManager(&aio_object_manager);
 }
 
 void make() {
     init();
     char *path = "../aioPrograms/test.aio";
-    buildAIOObjectAndPutInAIOObjectManager(aioObjectManager, path);
+    build_aio_object_and_put_in_object_manager(aio_object_manager, path);
 }
 
 int main() {
-    StringList *strings;
-    createStringList(&strings);
-    addInStringList(strings, "    fwbm   ");
-    addInStringList(strings, "ddv  ");
-    addInStringList(strings, "");
-    addInStringList(strings, "s");
-    addInStringList(strings, "");
+    string_list *strings;
+    new_string_list(&strings);
+    add_in_string_list(strings, "    fwbm   ");
+    add_in_string_list(strings, "ddv  ");
+    add_in_string_list(strings, "");
+    add_in_string_list(strings, "s");
+    add_in_string_list(strings, "");
     printf("\nSIZE:-%d-\n", *strings->size);
     char **clean_strings = filter(strings->strings, *strings->size, is_not_empty_string);
 

@@ -8,11 +8,11 @@ typedef struct AIOObjectManager {
     int behaviour;
 } AIOObjectManager;
 
-extern AIOObjectManager* aioObjectManager;
+extern AIOObjectManager* aio_object_manager;
 
 void initAIOObjectManager(AIOObjectManager** objectManager);
 
-void buildAIOObjectAndPutInAIOObjectManager(AIOObjectManager *objectManager, char *path);
+void build_aio_object_and_put_in_object_manager(AIOObjectManager *objectManager, char *path);
 
 int isDefaultBehaviour(AIOObjectManager* objectManager);
 

@@ -9,7 +9,7 @@ void createAIOObjectMap(AIOObjectMap **objectMap) {
     //Create the same definition map:
     *objectMap = calloc(1, sizeof(AIOObjectMap));
     if (*objectMap == NULL) {
-        perror("cannot allocate memory for AIOObject!");
+        perror("cannot allocate memory for aio_object!");
     }
     //Create capacity:
     (*objectMap)->capacity = calloc(1, sizeof(int));
@@ -29,7 +29,7 @@ void createAIOObjectMap(AIOObjectMap **objectMap) {
         perror("cannot allocate memory for names!");
     }
     //Create definitions that equals 2:
-    (*objectMap)->objects = calloc(2, sizeof(AIOObject *));
+    (*objectMap)->objects = calloc(2, sizeof(aio_object *));
     if ((*objectMap)->objects == NULL) {
         perror("cannot allocate memory for objects!");
     }
@@ -40,15 +40,15 @@ void updateMemoryInMutableMapOfObjects(AIOObjectMap *objectMap) {
     if (*objectMap->size + 1 == *objectMap->capacity) {
         *objectMap->capacity = *objectMap->capacity * 2;
         objectMap->names = realloc(objectMap->names, *objectMap->capacity * sizeof(char *));
-        objectMap->objects = realloc(objectMap->objects, *objectMap->capacity * sizeof(AIOObject *));
+        objectMap->objects = realloc(objectMap->objects, *objectMap->capacity * sizeof(aio_object *));
     }
 }
 
 //Passed JUnitTests!
-void putAIOObjectInMap(AIOObjectMap *objectMap, AIOObject *object) {
+void putAIOObjectInMap(AIOObjectMap *objectMap, aio_object *object) {
     for (int i = 0; i < *objectMap->size; ++i) {
         if (strcmp(objectMap->names[i], object->name) == 0) {
-            perror("Cannot put AIOObject in definition map");
+            perror("Cannot put aio_object in definition map");
         }
     }
     //Check to update:
@@ -65,7 +65,7 @@ void putAIOObjectInMap(AIOObjectMap *objectMap, AIOObject *object) {
 }
 
 //Passed JUnitTests!
-AIOObject *getAIOObjectInMapByName(AIOObjectMap *objectMap, char *name) {
+aio_object *get_aio_object_in_map_by_name(AIOObjectMap *objectMap, char *name) {
     for (int i = 0; i < strlen(name); ++i) {
         if (strcmp(objectMap->names[i], name) == 0) {
             return objectMap->objects[i];
@@ -87,11 +87,11 @@ AIOObject *getAIOObjectInMapByName(AIOObjectMap *objectMap, char *name) {
     AIOMethodManager* aioMethodManager;
     createAIOMethodManager(&aioMethodManager, definitionMap);
 
-    AIOObject* aioObject;
+    aio_object* aioObject;
     createAIOObject(&aioObject, aioMethodManager, "starter");
 
     putAIOObjectInMap(objectMap, aioObject);
-    AIOObject* o = getAIOObjectInMapByName(objectMap, "starter");
+    aio_object* o = get_aio_object_in_map_by_name(objectMap, "starter");
     printf("%d", *o->methodManager->hasMain);
 
     return 0;

@@ -1,18 +1,18 @@
 #ifndef AIO_ANNOTATION_LIST_H
 #define AIO_ANNOTATION_LIST_H
 
-#include "../../../lang/annotations/AIOAnnotation.h"
+#include "../../../lang/annotations/aio_annotation.h"
 
 typedef struct AIOAnnotationList {
     int* capacity;
     int* size;
-    AIOAnnotation** annotations;
-} AIOAnnotationList;
+    aio_annotation** annotations;
+} aio_annotation_list;
 
-void createAnnotationList(AIOAnnotationList **annotationList);
+void createAnnotationList(aio_annotation_list **annotationList);
 
-void addInAnnotationList(AIOAnnotationList *listOfAnnotations, AIOAnnotation *annotation);
+void addInAnnotationList(aio_annotation_list *listOfAnnotations, aio_annotation *annotation);
 
-AIOAnnotation* getAnnotationInListByIndex(AIOAnnotationList *listOfAnnotations, int index);
+aio_annotation* getAnnotationInListByIndex(aio_annotation_list *listOfAnnotations, int index);
 
 #endif //AIO_ANNOTATION_LIST_H

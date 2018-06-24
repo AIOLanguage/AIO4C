@@ -1,7 +1,7 @@
-#include "methodDefinition/AIOMethodDefinition.h"
-#include "bundle/AIOBundle.h"
+#include "methodDefinition/aio_method_definition.h"
+#include "bundle/aio_bundle.h"
 #include "../../lib/collections/maps/AIOVariableMap.h"
-#include "analysis/methodReproducer/AIOMethodReproducer.h"
+#include "analysis/methodReproducer/aio_method_reproducer.h"
 #include "AIOMethodContainer.h"
 #include "../object/AIOObject.h"
 #include "../../reservedNames/AIOReservedNamesContainer.h"
@@ -9,16 +9,16 @@
 #ifndef AIO_METHOD_H
 
 typedef struct AIOMethod {
-    AIOMethodContainer *methodContainer;
+    aio_method_container *methodContainer;
 } AIOMethod;
 
-void createAIOMethodAndInvoke(AIOObject *object, AIOMethod **method, AIOMethodDefinition *methodDefinition,
-                              AIOBundle *bundle);
+void createAIOMethodAndInvoke(aio_object *object, AIOMethod **method, aio_method_definition *methodDefinition,
+                              aio_bundle *bundle);
 
-int containsVariable(char *variableName, AIOMethodContainer *methodContainer);
+int containsVariable(char *variableName, aio_method_container *methodContainer);
 
-int containsVariableInMap(const char *variableName, const AIOVariableMap *variableMap);
+int containsVariableInMap(const char *variableName, const aio_variable_map *variableMap);
 
-void setVariable(AIOVariable* variable, AIOMethodContainer* methodContainer);
+void setVariable(AIOVariable* variable, aio_method_container* methodContainer);
 
 #endif //AIO_METHOD_H

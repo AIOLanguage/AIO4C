@@ -3,11 +3,11 @@
 #include <stdio.h>
 #include <process.h>
 #include "../../../headers/lang/object/objectManager/AIOObjectManager.h"
-#include "../../../headers/lang/methods/methodDefinition/AIOMethodDefinitionBuilder.h"
+#include "../../../headers/lang/methods/methodDefinition/aio_method_definition_builder.h"
 #include "../../../headers/lang/methods/AIOMethod.h"
 #include "../../../headers/lib/utils/fileUtils/FileUtils.h"
 
-AIOObjectManager *aioObjectManager;
+AIOObjectManager *aio_object_manager;
 
 //Passed JUnitTest!
 void createAIOMethodManager(AIOMethodManager **methodManager, AIOMethodDefinitionMap *methodDefinitionMap) {
@@ -29,7 +29,7 @@ void createAIOMethodManager(AIOMethodManager **methodManager, AIOMethodDefinitio
 }
 
 //Passed JUnitTest!
-void findMethodsInManager(AIOObject *aioObject) {
+void findMethodsInManager(aio_object *aioObject) {
     for (int i = 0; i < *aioObject->sourceCode->size; ++i) {
         char *line = aioObject->sourceCode->strings[i];
         int length = strlen(line);
@@ -55,7 +55,8 @@ void findMethodsInManager(AIOObject *aioObject) {
                     *aioObject->methodManager->hasMain = 0;
                     printf("HAS MAIN: %d\n", *aioObject->methodManager->hasMain);
                 }
-                AIOMethodDefinition *methodDefinition = buildAIOMethodDefinition(methodName, aioObject->sourceCode, i);
+                aio_method_definition *methodDefinition = build_aio_method_definition(methodName, aioObject->sourceCode,
+                                                                                      i);
                 putAIOMethodDefinitionInMap(aioObject->methodManager->methodDefinitionMap, methodDefinition);
             }
         }
@@ -67,11 +68,11 @@ void findMethodsInManager(AIOObject *aioObject) {
 //Path example:
 //"../aioPrograms/test.txt", "r"
 //Passed JUnitTest!
-void loadSourceCodeInAIOObject(AIOObject *object, char *path) {
+void loadSourceCodeInAIOObject(aio_object *object, char *path) {
     printf("Loading source code...\n");
     //Create source code mutable list:
-    StringList *sourceCode;
-    createStringList(&sourceCode);
+    string_list *sourceCode;
+    new_string_list(&sourceCode);
     //Create file:
     FILE *file;
     //Create line buffer:
@@ -85,7 +86,7 @@ void loadSourceCodeInAIOObject(AIOObject *object, char *path) {
         char *line = calloc(1, CHUNK);
         strcpy(line, buffer);
         //put string in list:
-        addInStringList(sourceCode, line);
+        add_in_string_list(sourceCode, line);
     }
     fclose(file);
     //Set source code:
@@ -93,13 +94,13 @@ void loadSourceCodeInAIOObject(AIOObject *object, char *path) {
 }
 
 //Passed JUnitTest!
-void createAIOObject(AIOObject **object, AIOMethodManager *methodManager, char *path) {
+void createAIOObject(aio_object **object, AIOMethodManager *methodManager, char *path) {
     //Create the same object:
-    *object = malloc(sizeof(AIOObject));
+    *object = malloc(sizeof(aio_object));
     //Set method manager:
     (*object)->methodManager = methodManager;
     //Set name from path:
-    StringPair *nameVsFolder = extractNameAndFolderPathFromPath(path);
+    string_pair *nameVsFolder = extract_name_and_folder_path_from_path(path);
     (*object)->name = nameVsFolder->first;
     //Set folder path from path:
     (*object)->folderPath = nameVsFolder->second;
@@ -108,11 +109,11 @@ void createAIOObject(AIOObject **object, AIOMethodManager *methodManager, char *
     findMethodsInManager(*object);
 }
 
-void invokeMethodInManager(AIOObject *object, char *methodName, AIOBundle *bundle) {
-    AIOMethodDefinition *methodDefinition = getAIOMethodDefinitionInMapByName(
+void invokeMethodInManager(aio_object *object, char *methodName, aio_bundle *bundle) {
+    aio_method_definition *methodDefinition = getAIOMethodDefinitionInMapByName(
             object->methodManager->methodDefinitionMap, methodName);
     if (methodDefinition->declaration != NULL) {
-        if (*methodDefinition->declaration->argList->size != *bundle->inputValues->size) {
+        if (*methodDefinition->declaration->argList->size != *bundle->input_values->size) {
             perror("number of args not matches with arg size of declaration!");
         }
     }

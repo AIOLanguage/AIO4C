@@ -2,8 +2,8 @@
 #include "../../../../headers/lang/object/AIOObject.h"
 #include "../../../../headers/lang/methods/AIOMethodContainer.h"
 
-AIOStr
-parseChaLineExpression(AIOObject *object, AIOMethodDefinition *methodDefinition, AIOMethodContainer *methodContainer,
+aio_str
+parseChaLineExpression(aio_object *object, aio_method_definition *methodDefinition, aio_method_container *methodContainer,
                        char *codeLine) {
 
 }

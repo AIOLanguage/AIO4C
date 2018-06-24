@@ -5,9 +5,9 @@
 #include "../../../headers/lang/object/AIOObject.h"
 #include "../../../headers/lib/utils/stringUtils/string_utils.h"
 
-void createAIOMethodContainer(AIOMethodContainer **container) {
+void createAIOMethodContainer(aio_method_container **container) {
     //Create the same aio method container:
-    *container = calloc(1, sizeof(AIOMethodContainer));
+    *container = calloc(1, sizeof(aio_method_container));
     if (*container == NULL) {
         perror("can not allocate memory for aio method container!");
     }
@@ -17,7 +17,7 @@ void createAIOMethodContainer(AIOMethodContainer **container) {
     createAIOVariableMap(&(*container)->variableMap);
 }
 
-void setArgs(AIOMethodContainer *methodContainer, AIODeclaration *declaration, StringList *inputArgs) {
+void setArgs(aio_method_container *methodContainer, aio_declaration *declaration, string_list *inputArgs) {
     //I checked args size with declaration before creating of method!
     if (declaration != NULL) {
         for (int i = 0; i < *declaration->argList->size; ++i) {
@@ -38,7 +38,7 @@ void setArgs(AIOMethodContainer *methodContainer, AIODeclaration *declaration, S
             setType(inputArgs->strings[i], &type);
             char *implicitArgumentName = "<<";
             char *index;
-            intToStr(i, &index);
+            int_to_str(i, &index);
             strcat(implicitArgumentName, index);
             createAIOVariable(&argument, implicitArgumentName, inputArgs->strings[i], -1, &type);
             putInAIOVariableInMap(methodContainer->argMap, argument);
@@ -46,7 +46,7 @@ void setArgs(AIOMethodContainer *methodContainer, AIODeclaration *declaration, S
     }
 }
 
-int containsVariableInMap(const char *variableName, const AIOVariableMap *variableMap) {
+int containsVariableInMap(const char *variableName, const aio_variable_map *variableMap) {
     for (int i = 0; i < *variableMap->size; ++i) {
         if (strcmp(variableName, variableMap->names[i]) == 0) {
             return 0;
@@ -56,9 +56,9 @@ int containsVariableInMap(const char *variableName, const AIOVariableMap *variab
 }
 
 
-int containsVariable(char *variableName, AIOMethodContainer *methodContainer) {
-    const AIOVariableMap *argMap = methodContainer->argMap;
-    const AIOVariableMap *variableMap = methodContainer->variableMap;
+int containsVariable(char *variableName, aio_method_container *methodContainer) {
+    const aio_variable_map *argMap = methodContainer->argMap;
+    const aio_variable_map *variableMap = methodContainer->variableMap;
     if (containsVariableInMap(variableName, argMap) == 0) {
         return 0;
     }
@@ -68,7 +68,7 @@ int containsVariable(char *variableName, AIOMethodContainer *methodContainer) {
     return 1;
 }
 
-void setVariable(AIOVariable *variable, AIOMethodContainer *methodContainer) {
+void setVariable(AIOVariable *variable, aio_method_container *methodContainer) {
     if (canUseName(variable->name) == 0 && containsVariable(variable->name, methodContainer) == 0) {
         putInAIOVariableInMap(methodContainer->variableMap, variable);
     } else {
@@ -77,8 +77,8 @@ void setVariable(AIOVariable *variable, AIOMethodContainer *methodContainer) {
     }
 }
 
-void createAIOMethodAndInvoke(AIOObject *object, AIOMethod **method, AIOMethodDefinition *methodDefinition,
-                              AIOBundle *bundle) {
+void createAIOMethodAndInvoke(aio_object *object, AIOMethod **method, aio_method_definition *methodDefinition,
+                              aio_bundle *bundle) {
     //Create the same aio method:
     *method = calloc(1, sizeof(AIOMethod));
     if (*method == NULL) {
@@ -88,7 +88,7 @@ void createAIOMethodAndInvoke(AIOObject *object, AIOMethod **method, AIOMethodDe
     //Create method container:
     createAIOMethodContainer(&(*method)->methodContainer);
     //Set args:
-    setArgs((*method)->methodContainer, methodDefinition->declaration, bundle->inputValues);
+    setArgs((*method)->methodContainer, methodDefinition->declaration, bundle->input_values);
     //Reproduce method:
     reproduceMethod(object, methodDefinition, (*method)->methodContainer, bundle);
 }

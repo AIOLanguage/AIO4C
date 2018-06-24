@@ -3,11 +3,11 @@
 
 #include <mem.h>
 
-int isPlusOperation(char *string);
+int is_plus_operation(char *string);
 
-int isMultiplyOperation(char *string);
+int is_multiply_operation(char *string);
 
-int isConcatOperation(char *string);
+int is_concat_operation(char *string);
 
 int isDefaultOperations(const char* string);
 

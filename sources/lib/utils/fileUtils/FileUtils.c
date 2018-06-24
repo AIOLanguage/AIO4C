@@ -4,7 +4,7 @@
 #include <mem.h>
 #include <stdio.h>
 
-void mergeNewFolderPath(char *folderPath, char *nextObjectName, char **absoluteNextObjectPath) {
+void merge_new_folder_path(char *folderPath, char *nextObjectName, char **absoluteNextObjectPath) {
     //Not supported:
     //While easy make concat_string_to_string =)
     char **paths = calloc(2, sizeof(char *));
@@ -15,7 +15,7 @@ void mergeNewFolderPath(char *folderPath, char *nextObjectName, char **absoluteN
 
 
 //Passed JUnitTest!
-StringPair *extractNameAndFolderPathFromPath(char *path) {
+string_pair *extract_name_and_folder_path_from_path(char *path) {
     //*.aio:
     int pathLength = strlen(path);
     if (pathLength > 4) {
@@ -45,7 +45,7 @@ StringPair *extractNameAndFolderPathFromPath(char *path) {
         for (int k = 0; k < startOfObjectName - 1; ++k) {
             folderPath[k] = path[k];
         }
-        StringPair *nameVsFolder = calloc(1, sizeof(StringPair));
+        string_pair *nameVsFolder = calloc(1, sizeof(string_pair));
         nameVsFolder->first = objectName;
         nameVsFolder->second = folderPath;
         return nameVsFolder;

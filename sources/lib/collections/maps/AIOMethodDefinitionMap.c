@@ -33,7 +33,7 @@ void createAIOMethodDefinitionMap(AIOMethodDefinitionMap **definitionMap) {
         exit(1);
     }
     //Create definitions that equals 2:
-    (*definitionMap)->definitions = calloc(2, sizeof(AIOMethodDefinition*));
+    (*definitionMap)->definitions = calloc(2, sizeof(aio_method_definition*));
     if ((*definitionMap)->definitions == NULL){
         perror("can not allocate memory for definitions in aio variable map");
         exit(1);
@@ -46,12 +46,12 @@ void updateMemoryInMutableMapOfDefinitions(AIOMethodDefinitionMap *definitionMap
         *definitionMap->capacity = *definitionMap->capacity * 2;
         definitionMap->names = realloc(definitionMap->names, *definitionMap->capacity * sizeof(char));
         definitionMap->definitions = realloc(definitionMap->definitions,
-                                             *definitionMap->capacity * sizeof(AIOMethodDefinition));
+                                             *definitionMap->capacity * sizeof(aio_method_definition));
     }
 }
 
 //Passed JUnitTests!
-void putAIOMethodDefinitionInMap(AIOMethodDefinitionMap *definitionMap, AIOMethodDefinition *methodDefinition) {
+void putAIOMethodDefinitionInMap(AIOMethodDefinitionMap *definitionMap, aio_method_definition *methodDefinition) {
     for (int i = 0; i < *definitionMap->size; ++i) {
         if (strcmp(definitionMap->names[i], methodDefinition->name) == 0) {
             perror("AIODuplicate definition error!");
@@ -68,7 +68,7 @@ void putAIOMethodDefinitionInMap(AIOMethodDefinitionMap *definitionMap, AIOMetho
 }
 
 //Passed JUnitTests!
-AIOMethodDefinition *getAIOMethodDefinitionInMapByName(AIOMethodDefinitionMap *definitionMap, char *name) {
+aio_method_definition *getAIOMethodDefinitionInMapByName(AIOMethodDefinitionMap *definitionMap, char *name) {
     for (int i = 0; i < *definitionMap->size; ++i) {
         if (strcmp(definitionMap->names[i], name) == 0) {
             return definitionMap->definitions[i];

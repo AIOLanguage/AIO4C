@@ -3,9 +3,9 @@
 
 #include "../../../lang/object/AIOObject.h"
 
-void mergeNewFolderPath(char *folderPath, char *nextObjectName, char **absoluteNextObjectPath);
+void merge_new_folder_path(char *folderPath, char *nextObjectName, char **absoluteNextObjectPath);
 
 
-StringPair *extractNameAndFolderPathFromPath(char *path);
+string_pair *extract_name_and_folder_path_from_path(char *path);
 
 #endif //AIO_PATH_UTILS_H

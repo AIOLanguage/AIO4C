@@ -74,10 +74,10 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lang/annotations/AIOAnnotation.h">
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lang/annotations/aio_annotation.h">
 			<Option target="AIO"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lang/declarations/AIODeclaration.h">
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lang/declarations/aio_declaration.h">
 			<Option target="AIO"/>
 		</Unit>
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/AIOMethod.h">
@@ -86,43 +86,43 @@
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/AIOMethodContainer.h">
 			<Option target="AIO"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/analysis/methodReproducer/AIOMethodReproducer.h">
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/analysis/methodReproducer/aio_method_reproducer.h">
 			<Option target="AIO"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/analysis/methodReproducer/default/AIODefaultReproducer.h">
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/analysis/methodReproducer/default/aio_default_reproducer.h">
 			<Option target="AIO"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/analysis/methodReproducer/short/AIOShortReproducer.h">
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/analysis/methodReproducer/short/aio_short_reproducer.h">
 			<Option target="AIO"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/analysis/methodReproducer/theShortest/AIOTheShortestReproducer.h">
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/analysis/methodReproducer/theShortest/aio_the_shortest_reproducer.h">
 			<Option target="AIO"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/analysis/methodReproducer/theShortest/concatForEachReproducer/AIOConcatForEachReproducer.h">
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/analysis/methodReproducer/theShortest/concatForEachReproducer/aio_concat_for_each_reproducer.h">
 			<Option target="AIO"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/analysis/methodReproducer/theShortest/multiplyForEachReproducer/AIOMultiplyForEachReproducer.h">
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/analysis/methodReproducer/theShortest/multiplyForEachReproducer/aio_multiply_for_each_reproducer.h">
 			<Option target="AIO"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/analysis/methodReproducer/theShortest/plusForEachReproducer/AIOPlusForEachReproducer.h">
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/analysis/methodReproducer/theShortest/plusForEachReproducer/aio_plus_for_each_reproducer.h">
 			<Option target="AIO"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/bundle/AIOBundle.h">
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/bundle/aio_bundle.h">
 			<Option target="AIO"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/defaultMethodContainer/AIODefaultMethodContainer.h">
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/defaultMethodContainer/aio_default_method_container.h">
 			<Option target="AIO"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/methodDefinition/AIOMethodDefinition.h">
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/methodDefinition/aio_method_definition.h">
 			<Option target="AIO"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/methodDefinition/AIOMethodDefinitionBuilder.h">
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/methodDefinition/aio_method_definition_builder.h">
 			<Option target="AIO"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/methodDefinition/AIOMethodSizeType.h">
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/methodDefinition/aio_method_size_type.h">
 			<Option target="AIO"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/result/AIOResult.h">
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/result/aio_result.h">
 			<Option target="AIO"/>
 		</Unit>
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lang/methods/variable/AIOVariable.h">
@@ -140,7 +140,7 @@
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lib/collections/lists/AIOAnnotationList.h">
 			<Option target="AIO"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lib/collections/lists/StringList.h">
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lib/collections/lists/string_list.h">
 			<Option target="AIO"/>
 		</Unit>
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lib/collections/maps/AIOMethodDefinitionMap.h">
@@ -150,6 +150,9 @@
 			<Option target="AIO"/>
 		</Unit>
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lib/collections/maps/AIOVariableMap.h">
+			<Option target="AIO"/>
+		</Unit>
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lib/pair/string_pair.h">
 			<Option target="AIO"/>
 		</Unit>
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/fileUtils/FileUtils.h">
@@ -167,49 +170,49 @@
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/tools/parsers/AIOParser.h">
 			<Option target="AIO"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lang/annotations/AIOAnnotation.c">
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lang/annotations/aio_annotation.c">
 			<Option target="AIO"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lang/declarations/AIODeclaration.c">
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lang/declarations/aio_declaration.c">
 			<Option target="AIO"/>
 		</Unit>
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lang/methods/AIOMethod.c">
 			<Option target="AIO"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lang/methods/analysis/methodReproducer/AIOMethodReproducer.c">
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lang/methods/analysis/methodReproducer/aio_method_reproducer.c">
 			<Option target="AIO"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lang/methods/analysis/methodReproducer/default/AIODefaultReproducer.c">
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lang/methods/analysis/methodReproducer/default/aio_default_reproducer.c">
 			<Option target="AIO"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lang/methods/analysis/methodReproducer/short/AIOShortReproducer.c">
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lang/methods/analysis/methodReproducer/short/aio_short_reproducer.c">
 			<Option target="AIO"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lang/methods/analysis/methodReproducer/theShortest/AIOTheShortestReproducer.c">
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lang/methods/analysis/methodReproducer/theShortest/aio_the_shortest_reproducer.c">
 			<Option target="AIO"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lang/methods/analysis/methodReproducer/theShortest/concatForEachReproducer/AIOConcatForEachReproducer.c">
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lang/methods/analysis/methodReproducer/theShortest/concatForEachReproducer/aio_concat_for_each_reproducer.c">
 			<Option target="AIO"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lang/methods/analysis/methodReproducer/theShortest/multiplyForEachReproducer/AIOMultiplyForEachReproducer.c">
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lang/methods/analysis/methodReproducer/theShortest/multiplyForEachReproducer/aio_multiply_for_each_reproducer.c">
 			<Option target="AIO"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lang/methods/analysis/methodReproducer/theShortest/plusForEachReproducer/AIOPlusForEachReproducer.c">
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lang/methods/analysis/methodReproducer/theShortest/plusForEachReproducer/aio_plus_for_each_reproducer.c">
 			<Option target="AIO"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lang/methods/bundle/AIOBundle.c">
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lang/methods/bundle/aio_bundle.c">
 			<Option target="AIO"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lang/methods/defaultMethodContainer/AIODefaultMethodContainer.c">
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lang/methods/defaultMethodContainer/aio_default_method_container.c">
 			<Option target="AIO"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lang/methods/methodDefinition/AIOMethodDefinition.c">
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lang/methods/methodDefinition/aio_method_definition.c">
 			<Option target="AIO"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lang/methods/methodDefinition/AIOMethodDefinitionBuilder.c">
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lang/methods/methodDefinition/aio_method_definition_builder.c">
 			<Option target="AIO"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lang/methods/result/AIOResult.c">
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lang/methods/result/aio_result.c">
 			<Option target="AIO"/>
 		</Unit>
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lang/methods/variable/AIOVariable.c">
@@ -230,7 +233,7 @@
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lib/collections/lists/AIOAnnotationList.c">
 			<Option target="AIO"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lib/collections/lists/StringList.c">
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lib/collections/lists/string_list.c">
 			<Option target="AIO"/>
 		</Unit>
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lib/collections/maps/AIOMethodDefinitionMap.c">
@@ -240,6 +243,9 @@
 			<Option target="AIO"/>
 		</Unit>
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lib/collections/maps/AIOVariableMap.c">
+			<Option target="AIO"/>
+		</Unit>
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lib/pair/string_pair.c">
 			<Option target="AIO"/>
 		</Unit>
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/fileUtils/FileUtils.c">

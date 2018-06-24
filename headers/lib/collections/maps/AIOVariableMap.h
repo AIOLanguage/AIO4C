@@ -8,12 +8,12 @@ typedef struct AIOVariableMap {
     int *size;
     char **names;
     AIOVariable **variables;
-} AIOVariableMap;
+} aio_variable_map;
 
-void createAIOVariableMap(AIOVariableMap **variableMap);
+void createAIOVariableMap(aio_variable_map **variableMap);
 
-void putInAIOVariableInMap(AIOVariableMap *variableMap, AIOVariable *variable);
+void putInAIOVariableInMap(aio_variable_map *variableMap, AIOVariable *variable);
 
-AIOVariable *getAIOVariableInMapByName(AIOVariableMap *variableMap, char *name);
+AIOVariable *getAIOVariableInMapByName(aio_variable_map *variableMap, char *name);
 
 #endif //AIO_VARIABLE_MAP_H

@@ -17,9 +17,9 @@ void initAIOObjectManager(AIOObjectManager **objectManager) {
     (*objectManager)->behaviour = 0;
 }
 
-void buildAIOObjectAndPutInAIOObjectManager(AIOObjectManager *objectManager, char *path) {
+void build_aio_object_and_put_in_object_manager(AIOObjectManager *objectManager, char *path) {
     //Init aio object:
-    AIOObject *aioObject;
+    aio_object *aioObject;
     //Init aio method manager for aio object:
     AIOMethodManager *methodManager;
     //Create definition map for aio method manager:
@@ -39,6 +39,6 @@ int isDefaultBehaviour(AIOObjectManager* objectManager) {
 
 /*
  * /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
- * initAIOObjectManager(&aioObjectManager);
- * printf("%d", *aioObjectManager->objectMap->size);
+ * initAIOObjectManager(&aio_object_manager);
+ * printf("%d", *aio_object_manager->objectMap->size);
  */
