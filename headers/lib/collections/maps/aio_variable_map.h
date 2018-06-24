@@ -10,7 +10,7 @@ typedef struct aio_variable_map {
     aio_variable **variables;
 } aio_variable_map;
 
-aio_variable_map new_aio_variable_map();
+aio_variable_map *new_aio_variable_map();
 
 void put_in_aio_variable_in_map(aio_variable_map *variable_map, aio_variable *variable);
 

@@ -31,8 +31,8 @@ int matches_int(char *word) {
 //Passed JUnitTest!
 int matches_dou(char *word) {
     int result = -1;
-    int wasDot = -1;
-    int wasFraction = -1;
+    int was_dot = -1;
+    int was_fraction = -1;
     int start = 0;
     int length = strlen(word);
     if (length == 0) {
@@ -49,17 +49,17 @@ int matches_dou(char *word) {
     for (int i = start; i < strlen(word); ++i) {
         int e = word[i] - '0';
         if ((e < 0 || e > 9)) {
-            if (word[i] == '.' && wasDot == -1) {
-                wasDot = 0;
+            if (word[i] == '.' && was_dot == -1) {
+                was_dot = 0;
             } else {
                 return -1;
             }
         }
-        if (e >= 0 && e < 10 && wasDot == 0) {
-            wasFraction = 0;
+        if (e >= 0 && e < 10 && was_dot == 0) {
+            was_fraction = 0;
         }
     }
-    if (wasDot == 0 && wasFraction == 0) {
+    if (was_dot == 0 && was_fraction == 0) {
         result = 0;
     }
     return result;
@@ -108,7 +108,7 @@ int is_aio_int_type(enum aio_type type) {
 }
 
 //끝난!
-int isAIODouType(enum aio_type type) {
+int is_aio_dou_type(enum aio_type type) {
     if (type == AIO_DOU) {
         return 0;
     } else {
@@ -117,7 +117,7 @@ int isAIODouType(enum aio_type type) {
 }
 
 //끝난!
-int isAIOChaType(enum aio_type type) {
+int is_aio_cha_type(enum aio_type type) {
     if (type == AIO_CHA) {
         return 0;
     } else {
@@ -126,7 +126,7 @@ int isAIOChaType(enum aio_type type) {
 }
 
 //끝난!
-int isAIOStrType(enum aio_type type) {
+int is_aio_str_type(enum aio_type type) {
     if (type == AIO_STR) {
         return 0;
     } else {
@@ -135,176 +135,170 @@ int isAIOStrType(enum aio_type type) {
 }
 
 //끝난!
-void str_to_int(char *word, int **dst) {
-    *dst = calloc(1, sizeof(int));
-    if (*dst == NULL) {
-        perror("cannot allocate memory for dst in str_to_int!");
-        exit(1);
-    }
+int str_to_int(char *word) {
     if (matches_int(word) != 0) {
         perror("cannot convert string to int in str_to_int!");
         exit(1);
     }
-    **dst = 0;
+    int result = 0;
     for (int i = 0; i < strlen(word); i++) {
-        **dst = **dst * 10 + (word[i] - '0');
+        result = result * 10 + (word[i] - '0');
     }
+    return result;
 }
 
 //끝난!
-void str_to_dou(char *word, double **dst) {
-    *dst = calloc(1, sizeof(double));
-    if (*dst == NULL) {
-        perror("cannot allocate memory for dst in str_to_dou!");
-        exit(1);
-    }
+double str_to_dou(char *word) {
     if (matches_dou(word) != 0) {
         perror("cannot convert string to int in str_to_dou!");
         exit(1);
     }
-    int integerPart = 0;
+    int integer_part = 0;
     int i = 0;
     while (1) {
         if (word[i] == '.') {
             break;
         } else {
-            integerPart = integerPart * 10 + (word[i] - '0');
+            integer_part = integer_part * 10 + (word[i] - '0');
             i = i + 1;
         }
     }
-    double fractionPart = 0.0;
-    int fractionCounter = 1;
+    double fraction_part = 0.0;
+    int fraction_counter = 1;
     for (int j = i + 1; j < strlen(word); ++j) {
-        fractionPart = fractionPart + (((double) (word[i] - '0')) / fractionCounter);
-        fractionCounter = fractionCounter * 10;
+        fraction_part = fraction_part + (((double) (word[i] - '0')) / fraction_counter);
+        fraction_counter = fraction_counter * 10;
     }
-    **dst = ((double) integerPart) + fractionPart;
+    return ((double) integer_part) + fraction_part;
 }
 
 
 //Passed JUnitTest!
-void int_to_str(int src, char **dst) {
+char *int_to_str(int src) {
     int division = src;
-    unsigned intSizeInString = 0;
+    unsigned int_size_in_string = 0;
     while (division != 0) {
         division = division / 10;
-        intSizeInString = intSizeInString + 1;
+        int_size_in_string = int_size_in_string + 1;
     }
-    char *integerArray;
-    int negativeShift = 0;
-    if (intSizeInString > 0) {
+    char *integer_array;
+    int negative_shift = 0;
+    if (int_size_in_string > 0) {
         if (src < 0) {
-            negativeShift = 1;
+            negative_shift = 1;
         }
-        integerArray = calloc(intSizeInString + 1 + negativeShift, sizeof(char));
-        if (integerArray == NULL) {
-            perror("cannot allocate memory for integerArray in int_to_str");
+        integer_array = calloc(int_size_in_string + 1 + negative_shift, sizeof(char));
+        if (integer_array == NULL) {
+            perror("cannot allocate memory for integer_array in int_to_str");
             exit(1);
         }
         division = src;
-        integerArray[0] = '-';
-        int pointer = intSizeInString - 1 + negativeShift;
+        integer_array[0] = '-';
+        int pointer = int_size_in_string - 1 + negative_shift;
         while (division != 0) {
-            (integerArray)[pointer] = (char) (abs(division % 10) + '0');
+            (integer_array)[pointer] = (char) (abs(division % 10) + '0');
             division = division / 10;
             pointer--;
         }
     } else {
-        integerArray = calloc(2, sizeof(char));
-        if (integerArray == NULL) {
-            perror("cannot allocate memory for integerArray in int_to_str");
+        integer_array = calloc(2, sizeof(char));
+        if (integer_array == NULL) {
+            perror("cannot allocate memory for integer_array in int_to_str");
             exit(1);
         }
-        integerArray[0] = '0';
-        intSizeInString = 1;
+        integer_array[0] = '0';
+        int_size_in_string = 1;
     }
-    (*dst) = calloc(intSizeInString + 1 + negativeShift, sizeof(char));
-    if (*dst == NULL) {
+    char *dst = calloc(int_size_in_string + 1 + negative_shift, sizeof(char));
+    if (dst == NULL) {
         perror("cannot allocate memory for dst array!");
         exit(1);
     }
-    for (int k = 0; k < intSizeInString + negativeShift; ++k) {
-        (*dst)[k] = integerArray[k];
+    for (int k = 0; k < int_size_in_string + negative_shift; ++k) {
+        dst[k] = integer_array[k];
     }
-    free(integerArray);
+    free(integer_array);
+    return dst;
 }
 
 //Passed JUnitTest!
-void dou_to_str(double src, char **dst) {
+char *dou_to_str(double src) {
     int division = (int) src;
-    unsigned intSizeInString = 0;
+    unsigned int_size_in_string = 0;
     while (division != 0) {
         division = division / 10;
-        intSizeInString = intSizeInString + 1;
+        int_size_in_string = int_size_in_string + 1;
     }
-    char *integerArray;
-    int negativeShift = 0;
-    if (intSizeInString > 0) {
+    char *integer_array;
+    int negative_shift = 0;
+    if (int_size_in_string > 0) {
         if (src < 0) {
-            negativeShift = 1;
+            negative_shift = 1;
         }
-        integerArray = calloc(intSizeInString + 1 + negativeShift, sizeof(char));
-        if (integerArray == NULL) {
-            perror("cannot allocate memory for integerArray in int_to_str");
+        integer_array = calloc(int_size_in_string + 1 + negative_shift, sizeof(char));
+        if (integer_array == NULL) {
+            perror("cannot allocate memory for integer_array in int_to_str");
             exit(1);
         }
         division = (int) src;
-        integerArray[0] = '-';
-        int pointer = intSizeInString - 1 + negativeShift;
+        integer_array[0] = '-';
+        int pointer = int_size_in_string - 1 + negative_shift;
         while (division != 0) {
-            (integerArray)[pointer] = (char) (abs(division % 10) + '0');
+            (integer_array)[pointer] = (char) (abs(division % 10) + '0');
             division = division / 10;
             pointer--;
         }
     } else {
-        integerArray = calloc(2, sizeof(char));
-        if (integerArray == NULL) {
-            perror("cannot allocate memory for integerArray in int_to_str");
+        integer_array = calloc(2, sizeof(char));
+        if (integer_array == NULL) {
+            perror("cannot allocate memory for integer_array in int_to_str");
             exit(1);
         }
-        integerArray[0] = '0';
-        intSizeInString = 1;
+        integer_array[0] = '0';
+        int_size_in_string = 1;
     }
-    double fractionalPart;
+    double fractional_part;
     if (src < 0) {
-        fractionalPart = src * (-1.0) - (int) ((-1) * src);
+        fractional_part = src * (-1.0) - (int) ((-1) * src);
     } else {
-        fractionalPart = src - abs((int) src);
+        fractional_part = src - abs((int) src);
     }
     //Until 1E-9:
-    int *fractionalArray = calloc(9, sizeof(int));
-    if (fractionalArray == NULL) {
+    int *fractional_array = calloc(9, sizeof(int));
+    if (fractional_array == NULL) {
         perror("cannot allocate memory for fractional array!");
         exit(1);
     }
-    int fractionalSizeInString = 1;
+    int fractional_size_in_string = 1;
     for (int i = 0; i < 9; ++i) {
-        fractionalPart = fractionalPart * 10;
-        fractionalArray[i] = (int) fractionalPart;
-        fractionalPart = fractionalPart - (int) fractionalPart;
-        fractionalSizeInString = fractionalSizeInString + 1;
+        fractional_part = fractional_part * 10;
+        fractional_array[i] = (int) fractional_part;
+        fractional_part = fractional_part - (int) fractional_part;
+        fractional_size_in_string = fractional_size_in_string + 1;
     }
-    (*dst) = calloc(intSizeInString + fractionalSizeInString + 2 + negativeShift, sizeof(char));
-    if (*dst == NULL) {
+    char *dst = calloc(int_size_in_string + fractional_size_in_string + 2 + negative_shift, sizeof(char));
+    if (dst == NULL) {
         perror("cannot allocate memory for dst array!");
         exit(1);
     }
-    for (int k = 0; k < intSizeInString + negativeShift; ++k) {
-        (*dst)[k] = integerArray[k];
+    for (int k = 0; k < int_size_in_string + negative_shift; ++k) {
+        dst[k] = integer_array[k];
     }
-    (*dst)[intSizeInString + negativeShift] = '.';
-    for (int j = 0; j < fractionalSizeInString; ++j) {
-        (*dst)[intSizeInString + 1 + j + negativeShift] = (char) (fractionalArray[j] + '0');
+    dst[int_size_in_string + negative_shift] = '.';
+    for (int j = 0; j < fractional_size_in_string; ++j) {
+        dst[int_size_in_string + 1 + j + negative_shift] = (char) (fractional_array[j] + '0');
     }
-    free(integerArray);
-    free(fractionalArray);
+    free(integer_array);
+    free(fractional_array);
+    return dst;
 }
 
-void cha_to_str(char src, char **dst) {
-    *dst = calloc(2, sizeof(char));
-    if (*dst == NULL) {
+char *cha_to_str(char src) {
+    char *dst = calloc(2, sizeof(char));
+    if (dst == NULL) {
         perror("cannot allocate memory for dst array!");
         exit(1);
     }
-    *dst[0] = src;
+    dst[0] = src;
+    return dst;
 }

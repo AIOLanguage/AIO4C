@@ -12,4 +12,5 @@ string_pair* new_string_pair(char* first, char* second){
     }
     pair->first = first;
     pair->second = second;
+    return pair;
 }

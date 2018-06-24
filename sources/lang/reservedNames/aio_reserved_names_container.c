@@ -2,7 +2,7 @@
 #include <string.h>
 
 //Done!
-char reservedNames[5][4] = {
+char reserved_names[5][4] = {
         {"im"},
         {"int"},
         {"dou"},
@@ -12,8 +12,8 @@ char reservedNames[5][4] = {
 //Passed JUnitTest!
 int can_use_name(char *name) {
     for (int i = 0; i < 5; i++) {
-        printf("%s\n", reservedNames[i]);
-        if (strcmp(name, reservedNames[i]) == 0) {
+        printf("%s\n", reserved_names[i]);
+        if (strcmp(name, reserved_names[i]) == 0) {
             return -1;
         }
     }

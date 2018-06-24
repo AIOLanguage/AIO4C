@@ -1,44 +1,28 @@
 #include <mem.h>
 #include <stdio.h>
 #include <process.h>
-#include "../../../../headers/lang/object/objectManager/AIOObjectManager.h"
+#include "../../../../headers/lang/object/object_manager/aio_object_manager.h"
 
 //Passed JUnitTest!
-void initAIOObjectManager(AIOObjectManager **objectManager) {
-    *objectManager = calloc(1, sizeof(AIOObjectManager));
-    if (*objectManager == NULL) {
-        perror("cannot create aio_object_manager");
+aio_object_manager *init_aio_object_manager() {
+    aio_object_manager *object_manager = calloc(1, sizeof(aio_object_manager));
+    if (object_manager == NULL) {
+        perror("cannot allocate memory for object_manager");
         exit(1);
     }
-    AIOObjectMap *objectMap;
-    createAIOObjectMap(&objectMap);
-    (*objectManager)->objectMap = objectMap;
+    //Set new object map:
+    object_manager->objectMap = new_aio_object_map();
     //Set default behaviour:
-    (*objectManager)->behaviour = 0;
+    object_manager->behaviour = 0;
 }
 
-void build_aio_object_and_put_in_object_manager(AIOObjectManager *objectManager, char *path) {
-    //Init aio object:
-    aio_object *aioObject;
-    //Init aio method manager for aio object:
-    AIOMethodManager *methodManager;
-    //Create definition map for aio method manager:
-    AIOMethodDefinitionMap *methodDefinitionMap;
-    createAIOMethodDefinitionMap(&methodDefinitionMap);
-    //Create aio method manager:
-    createAIOMethodManager(&methodManager, methodDefinitionMap);
+void build_aio_object_and_put_in_object_manager(aio_object_manager *object_manager, char *path) {
     //Create aio object:
-    createAIOObject(&aioObject, methodManager, path);
+    aio_object *aio_object = new_aio_object(new_aio_method_manager(new_aio_method_definition_map()), path);
     //Put new aio object in aio object manager map:
-    putAIOObjectInMap(objectManager->objectMap, aioObject);
+    put_aio_object_in_map(object_manager->objectMap, aio_object);
 }
 
 int is_default_behaviour(struct aio_object_manager *object_manager) {
     return object_manager->behaviour;
 }
-
-/*
- * /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
- * init_aio_object_manager(&aio_object_manager);
- * printf("%d", *aio_object_manager->objectMap->size);
- */

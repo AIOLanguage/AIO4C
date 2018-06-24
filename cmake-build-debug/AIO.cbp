@@ -248,22 +248,22 @@
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lib/pair/string_pair.c">
 			<Option target="AIO"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/fileUtils/file_utils.c">
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/file_utils/file_utils.c">
 			<Option target="AIO"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/operationUtils/operation_utils.c">
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/operation_utils/operation_utils.c">
 			<Option target="AIO"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/stringUtils/prefix_suffix.c">
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/string_utils/prefix_suffix.c">
 			<Option target="AIO"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/stringUtils/split.c">
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/string_utils/split.c">
 			<Option target="AIO"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/stringUtils/string_utils.c">
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/string_utils/string_utils.c">
 			<Option target="AIO"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/stringUtils/trim.c">
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/string_utils/trim.c">
 			<Option target="AIO"/>
 		</Unit>
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/main/main.c">
@@ -272,10 +272,10 @@
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/tools/parsers/aio_parser.c">
 			<Option target="AIO"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/tools/parsers/chaParser/AIOChaParser.c">
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/tools/parsers/chaParser/aio_cha_parser.c">
 			<Option target="AIO"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/tools/parsers/douParser/AIODouParser.c">
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/tools/parsers/douParser/aio_dou_parser.c">
 			<Option target="AIO"/>
 		</Unit>
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/tools/parsers/intParser/AIOIntParser.c">

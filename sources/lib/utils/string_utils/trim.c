@@ -5,7 +5,7 @@
 #include <ctype.h>
 #include <assert.h>
 #include <stddef.h>
-#include "../../../../headers/lib/utils/stringUtils/string_utils.h"
+#include "../../../../headers/lib/utils/string_utils/string_utils.h"
 
 #define TRUE 0
 #define FALSE (-1)

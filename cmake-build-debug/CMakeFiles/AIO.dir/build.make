@@ -440,28 +440,28 @@ CMakeFiles/AIO.dir/sources/lang/methods/default_method_container/aio_default_met
 CMakeFiles/AIO.dir/sources/lang/methods/default_method_container/aio_default_method_container.c.obj.provides.build: CMakeFiles/AIO.dir/sources/lang/methods/default_method_container/aio_default_method_container.c.obj
 
 
-CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/string_utils.c.obj: CMakeFiles/AIO.dir/flags.make
-CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/string_utils.c.obj: ../sources/lib/utils/stringUtils/string_utils.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\StarKRE\CLionProjects\AIO\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/string_utils.c.obj"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\AIO.dir\sources\lib\utils\stringUtils\string_utils.c.obj   -c C:\Users\StarKRE\CLionProjects\AIO\sources\lib\utils\stringUtils\string_utils.c
+CMakeFiles/AIO.dir/sources/lib/utils/string_utils/string_utils.c.obj: CMakeFiles/AIO.dir/flags.make
+CMakeFiles/AIO.dir/sources/lib/utils/string_utils/string_utils.c.obj: ../sources/lib/utils/string_utils/string_utils.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\StarKRE\CLionProjects\AIO\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object CMakeFiles/AIO.dir/sources/lib/utils/string_utils/string_utils.c.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\AIO.dir\sources\lib\utils\string_utils\string_utils.c.obj   -c C:\Users\StarKRE\CLionProjects\AIO\sources\lib\utils\string_utils\string_utils.c
 
-CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/string_utils.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/string_utils.c.i"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\StarKRE\CLionProjects\AIO\sources\lib\utils\stringUtils\string_utils.c > CMakeFiles\AIO.dir\sources\lib\utils\stringUtils\string_utils.c.i
+CMakeFiles/AIO.dir/sources/lib/utils/string_utils/string_utils.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/AIO.dir/sources/lib/utils/string_utils/string_utils.c.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\StarKRE\CLionProjects\AIO\sources\lib\utils\string_utils\string_utils.c > CMakeFiles\AIO.dir\sources\lib\utils\string_utils\string_utils.c.i
 
-CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/string_utils.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/string_utils.c.s"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\StarKRE\CLionProjects\AIO\sources\lib\utils\stringUtils\string_utils.c -o CMakeFiles\AIO.dir\sources\lib\utils\stringUtils\string_utils.c.s
+CMakeFiles/AIO.dir/sources/lib/utils/string_utils/string_utils.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/AIO.dir/sources/lib/utils/string_utils/string_utils.c.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\StarKRE\CLionProjects\AIO\sources\lib\utils\string_utils\string_utils.c -o CMakeFiles\AIO.dir\sources\lib\utils\string_utils\string_utils.c.s
 
-CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/string_utils.c.obj.requires:
+CMakeFiles/AIO.dir/sources/lib/utils/string_utils/string_utils.c.obj.requires:
 
-.PHONY : CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/string_utils.c.obj.requires
+.PHONY : CMakeFiles/AIO.dir/sources/lib/utils/string_utils/string_utils.c.obj.requires
 
-CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/string_utils.c.obj.provides: CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/string_utils.c.obj.requires
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/string_utils.c.obj.provides.build
-.PHONY : CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/string_utils.c.obj.provides
+CMakeFiles/AIO.dir/sources/lib/utils/string_utils/string_utils.c.obj.provides: CMakeFiles/AIO.dir/sources/lib/utils/string_utils/string_utils.c.obj.requires
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/string_utils/string_utils.c.obj.provides.build
+.PHONY : CMakeFiles/AIO.dir/sources/lib/utils/string_utils/string_utils.c.obj.provides
 
-CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/string_utils.c.obj.provides.build: CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/string_utils.c.obj
+CMakeFiles/AIO.dir/sources/lib/utils/string_utils/string_utils.c.obj.provides.build: CMakeFiles/AIO.dir/sources/lib/utils/string_utils/string_utils.c.obj
 
 
 CMakeFiles/AIO.dir/sources/lang/methods/method_definition/aio_method_definition_builder.c.obj: CMakeFiles/AIO.dir/flags.make
@@ -560,52 +560,52 @@ CMakeFiles/AIO.dir/sources/lib/collections/maps/aio_variable_map.c.obj.provides:
 CMakeFiles/AIO.dir/sources/lib/collections/maps/aio_variable_map.c.obj.provides.build: CMakeFiles/AIO.dir/sources/lib/collections/maps/aio_variable_map.c.obj
 
 
-CMakeFiles/AIO.dir/sources/lib/utils/operationUtils/operation_utils.c.obj: CMakeFiles/AIO.dir/flags.make
-CMakeFiles/AIO.dir/sources/lib/utils/operationUtils/operation_utils.c.obj: ../sources/lib/utils/operationUtils/operation_utils.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\StarKRE\CLionProjects\AIO\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object CMakeFiles/AIO.dir/sources/lib/utils/operationUtils/operation_utils.c.obj"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\AIO.dir\sources\lib\utils\operationUtils\operation_utils.c.obj   -c C:\Users\StarKRE\CLionProjects\AIO\sources\lib\utils\operationUtils\operation_utils.c
+CMakeFiles/AIO.dir/sources/lib/utils/operation_utils/operation_utils.c.obj: CMakeFiles/AIO.dir/flags.make
+CMakeFiles/AIO.dir/sources/lib/utils/operation_utils/operation_utils.c.obj: ../sources/lib/utils/operation_utils/operation_utils.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\StarKRE\CLionProjects\AIO\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object CMakeFiles/AIO.dir/sources/lib/utils/operation_utils/operation_utils.c.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\AIO.dir\sources\lib\utils\operation_utils\operation_utils.c.obj   -c C:\Users\StarKRE\CLionProjects\AIO\sources\lib\utils\operation_utils\operation_utils.c
 
-CMakeFiles/AIO.dir/sources/lib/utils/operationUtils/operation_utils.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/AIO.dir/sources/lib/utils/operationUtils/operation_utils.c.i"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\StarKRE\CLionProjects\AIO\sources\lib\utils\operationUtils\operation_utils.c > CMakeFiles\AIO.dir\sources\lib\utils\operationUtils\operation_utils.c.i
+CMakeFiles/AIO.dir/sources/lib/utils/operation_utils/operation_utils.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/AIO.dir/sources/lib/utils/operation_utils/operation_utils.c.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\StarKRE\CLionProjects\AIO\sources\lib\utils\operation_utils\operation_utils.c > CMakeFiles\AIO.dir\sources\lib\utils\operation_utils\operation_utils.c.i
 
-CMakeFiles/AIO.dir/sources/lib/utils/operationUtils/operation_utils.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/AIO.dir/sources/lib/utils/operationUtils/operation_utils.c.s"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\StarKRE\CLionProjects\AIO\sources\lib\utils\operationUtils\operation_utils.c -o CMakeFiles\AIO.dir\sources\lib\utils\operationUtils\operation_utils.c.s
+CMakeFiles/AIO.dir/sources/lib/utils/operation_utils/operation_utils.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/AIO.dir/sources/lib/utils/operation_utils/operation_utils.c.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\StarKRE\CLionProjects\AIO\sources\lib\utils\operation_utils\operation_utils.c -o CMakeFiles\AIO.dir\sources\lib\utils\operation_utils\operation_utils.c.s
 
-CMakeFiles/AIO.dir/sources/lib/utils/operationUtils/operation_utils.c.obj.requires:
+CMakeFiles/AIO.dir/sources/lib/utils/operation_utils/operation_utils.c.obj.requires:
 
-.PHONY : CMakeFiles/AIO.dir/sources/lib/utils/operationUtils/operation_utils.c.obj.requires
+.PHONY : CMakeFiles/AIO.dir/sources/lib/utils/operation_utils/operation_utils.c.obj.requires
 
-CMakeFiles/AIO.dir/sources/lib/utils/operationUtils/operation_utils.c.obj.provides: CMakeFiles/AIO.dir/sources/lib/utils/operationUtils/operation_utils.c.obj.requires
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/operationUtils/operation_utils.c.obj.provides.build
-.PHONY : CMakeFiles/AIO.dir/sources/lib/utils/operationUtils/operation_utils.c.obj.provides
+CMakeFiles/AIO.dir/sources/lib/utils/operation_utils/operation_utils.c.obj.provides: CMakeFiles/AIO.dir/sources/lib/utils/operation_utils/operation_utils.c.obj.requires
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/operation_utils/operation_utils.c.obj.provides.build
+.PHONY : CMakeFiles/AIO.dir/sources/lib/utils/operation_utils/operation_utils.c.obj.provides
 
-CMakeFiles/AIO.dir/sources/lib/utils/operationUtils/operation_utils.c.obj.provides.build: CMakeFiles/AIO.dir/sources/lib/utils/operationUtils/operation_utils.c.obj
+CMakeFiles/AIO.dir/sources/lib/utils/operation_utils/operation_utils.c.obj.provides.build: CMakeFiles/AIO.dir/sources/lib/utils/operation_utils/operation_utils.c.obj
 
 
-CMakeFiles/AIO.dir/sources/lib/utils/fileUtils/file_utils.c.obj: CMakeFiles/AIO.dir/flags.make
-CMakeFiles/AIO.dir/sources/lib/utils/fileUtils/file_utils.c.obj: ../sources/lib/utils/fileUtils/file_utils.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\StarKRE\CLionProjects\AIO\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building C object CMakeFiles/AIO.dir/sources/lib/utils/fileUtils/file_utils.c.obj"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\AIO.dir\sources\lib\utils\fileUtils\file_utils.c.obj   -c C:\Users\StarKRE\CLionProjects\AIO\sources\lib\utils\fileUtils\file_utils.c
+CMakeFiles/AIO.dir/sources/lib/utils/file_utils/file_utils.c.obj: CMakeFiles/AIO.dir/flags.make
+CMakeFiles/AIO.dir/sources/lib/utils/file_utils/file_utils.c.obj: ../sources/lib/utils/file_utils/file_utils.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\StarKRE\CLionProjects\AIO\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building C object CMakeFiles/AIO.dir/sources/lib/utils/file_utils/file_utils.c.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\AIO.dir\sources\lib\utils\file_utils\file_utils.c.obj   -c C:\Users\StarKRE\CLionProjects\AIO\sources\lib\utils\file_utils\file_utils.c
 
-CMakeFiles/AIO.dir/sources/lib/utils/fileUtils/file_utils.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/AIO.dir/sources/lib/utils/fileUtils/file_utils.c.i"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\StarKRE\CLionProjects\AIO\sources\lib\utils\fileUtils\file_utils.c > CMakeFiles\AIO.dir\sources\lib\utils\fileUtils\file_utils.c.i
+CMakeFiles/AIO.dir/sources/lib/utils/file_utils/file_utils.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/AIO.dir/sources/lib/utils/file_utils/file_utils.c.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\StarKRE\CLionProjects\AIO\sources\lib\utils\file_utils\file_utils.c > CMakeFiles\AIO.dir\sources\lib\utils\file_utils\file_utils.c.i
 
-CMakeFiles/AIO.dir/sources/lib/utils/fileUtils/file_utils.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/AIO.dir/sources/lib/utils/fileUtils/file_utils.c.s"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\StarKRE\CLionProjects\AIO\sources\lib\utils\fileUtils\file_utils.c -o CMakeFiles\AIO.dir\sources\lib\utils\fileUtils\file_utils.c.s
+CMakeFiles/AIO.dir/sources/lib/utils/file_utils/file_utils.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/AIO.dir/sources/lib/utils/file_utils/file_utils.c.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\StarKRE\CLionProjects\AIO\sources\lib\utils\file_utils\file_utils.c -o CMakeFiles\AIO.dir\sources\lib\utils\file_utils\file_utils.c.s
 
-CMakeFiles/AIO.dir/sources/lib/utils/fileUtils/file_utils.c.obj.requires:
+CMakeFiles/AIO.dir/sources/lib/utils/file_utils/file_utils.c.obj.requires:
 
-.PHONY : CMakeFiles/AIO.dir/sources/lib/utils/fileUtils/file_utils.c.obj.requires
+.PHONY : CMakeFiles/AIO.dir/sources/lib/utils/file_utils/file_utils.c.obj.requires
 
-CMakeFiles/AIO.dir/sources/lib/utils/fileUtils/file_utils.c.obj.provides: CMakeFiles/AIO.dir/sources/lib/utils/fileUtils/file_utils.c.obj.requires
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/fileUtils/file_utils.c.obj.provides.build
-.PHONY : CMakeFiles/AIO.dir/sources/lib/utils/fileUtils/file_utils.c.obj.provides
+CMakeFiles/AIO.dir/sources/lib/utils/file_utils/file_utils.c.obj.provides: CMakeFiles/AIO.dir/sources/lib/utils/file_utils/file_utils.c.obj.requires
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/file_utils/file_utils.c.obj.provides.build
+.PHONY : CMakeFiles/AIO.dir/sources/lib/utils/file_utils/file_utils.c.obj.provides
 
-CMakeFiles/AIO.dir/sources/lib/utils/fileUtils/file_utils.c.obj.provides.build: CMakeFiles/AIO.dir/sources/lib/utils/fileUtils/file_utils.c.obj
+CMakeFiles/AIO.dir/sources/lib/utils/file_utils/file_utils.c.obj.provides.build: CMakeFiles/AIO.dir/sources/lib/utils/file_utils/file_utils.c.obj
 
 
 CMakeFiles/AIO.dir/sources/lang/methods/analysis/method_reproducer/the_shortest/aio_the_shortest_reproducer.c.obj: CMakeFiles/AIO.dir/flags.make
@@ -800,52 +800,52 @@ CMakeFiles/AIO.dir/sources/tools/parsers/intParser/AIOIntParser.c.obj.provides: 
 CMakeFiles/AIO.dir/sources/tools/parsers/intParser/AIOIntParser.c.obj.provides.build: CMakeFiles/AIO.dir/sources/tools/parsers/intParser/AIOIntParser.c.obj
 
 
-CMakeFiles/AIO.dir/sources/tools/parsers/douParser/AIODouParser.c.obj: CMakeFiles/AIO.dir/flags.make
-CMakeFiles/AIO.dir/sources/tools/parsers/douParser/AIODouParser.c.obj: ../sources/tools/parsers/douParser/AIODouParser.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\StarKRE\CLionProjects\AIO\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building C object CMakeFiles/AIO.dir/sources/tools/parsers/douParser/AIODouParser.c.obj"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\AIO.dir\sources\tools\parsers\douParser\AIODouParser.c.obj   -c C:\Users\StarKRE\CLionProjects\AIO\sources\tools\parsers\douParser\AIODouParser.c
+CMakeFiles/AIO.dir/sources/tools/parsers/douParser/aio_dou_parser.c.obj: CMakeFiles/AIO.dir/flags.make
+CMakeFiles/AIO.dir/sources/tools/parsers/douParser/aio_dou_parser.c.obj: ../sources/tools/parsers/douParser/aio_dou_parser.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\StarKRE\CLionProjects\AIO\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building C object CMakeFiles/AIO.dir/sources/tools/parsers/douParser/aio_dou_parser.c.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\AIO.dir\sources\tools\parsers\douParser\aio_dou_parser.c.obj   -c C:\Users\StarKRE\CLionProjects\AIO\sources\tools\parsers\douParser\aio_dou_parser.c
 
-CMakeFiles/AIO.dir/sources/tools/parsers/douParser/AIODouParser.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/AIO.dir/sources/tools/parsers/douParser/AIODouParser.c.i"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\StarKRE\CLionProjects\AIO\sources\tools\parsers\douParser\AIODouParser.c > CMakeFiles\AIO.dir\sources\tools\parsers\douParser\AIODouParser.c.i
+CMakeFiles/AIO.dir/sources/tools/parsers/douParser/aio_dou_parser.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/AIO.dir/sources/tools/parsers/douParser/aio_dou_parser.c.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\StarKRE\CLionProjects\AIO\sources\tools\parsers\douParser\aio_dou_parser.c > CMakeFiles\AIO.dir\sources\tools\parsers\douParser\aio_dou_parser.c.i
 
-CMakeFiles/AIO.dir/sources/tools/parsers/douParser/AIODouParser.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/AIO.dir/sources/tools/parsers/douParser/AIODouParser.c.s"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\StarKRE\CLionProjects\AIO\sources\tools\parsers\douParser\AIODouParser.c -o CMakeFiles\AIO.dir\sources\tools\parsers\douParser\AIODouParser.c.s
+CMakeFiles/AIO.dir/sources/tools/parsers/douParser/aio_dou_parser.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/AIO.dir/sources/tools/parsers/douParser/aio_dou_parser.c.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\StarKRE\CLionProjects\AIO\sources\tools\parsers\douParser\aio_dou_parser.c -o CMakeFiles\AIO.dir\sources\tools\parsers\douParser\aio_dou_parser.c.s
 
-CMakeFiles/AIO.dir/sources/tools/parsers/douParser/AIODouParser.c.obj.requires:
+CMakeFiles/AIO.dir/sources/tools/parsers/douParser/aio_dou_parser.c.obj.requires:
 
-.PHONY : CMakeFiles/AIO.dir/sources/tools/parsers/douParser/AIODouParser.c.obj.requires
+.PHONY : CMakeFiles/AIO.dir/sources/tools/parsers/douParser/aio_dou_parser.c.obj.requires
 
-CMakeFiles/AIO.dir/sources/tools/parsers/douParser/AIODouParser.c.obj.provides: CMakeFiles/AIO.dir/sources/tools/parsers/douParser/AIODouParser.c.obj.requires
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/parsers/douParser/AIODouParser.c.obj.provides.build
-.PHONY : CMakeFiles/AIO.dir/sources/tools/parsers/douParser/AIODouParser.c.obj.provides
+CMakeFiles/AIO.dir/sources/tools/parsers/douParser/aio_dou_parser.c.obj.provides: CMakeFiles/AIO.dir/sources/tools/parsers/douParser/aio_dou_parser.c.obj.requires
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/parsers/douParser/aio_dou_parser.c.obj.provides.build
+.PHONY : CMakeFiles/AIO.dir/sources/tools/parsers/douParser/aio_dou_parser.c.obj.provides
 
-CMakeFiles/AIO.dir/sources/tools/parsers/douParser/AIODouParser.c.obj.provides.build: CMakeFiles/AIO.dir/sources/tools/parsers/douParser/AIODouParser.c.obj
+CMakeFiles/AIO.dir/sources/tools/parsers/douParser/aio_dou_parser.c.obj.provides.build: CMakeFiles/AIO.dir/sources/tools/parsers/douParser/aio_dou_parser.c.obj
 
 
-CMakeFiles/AIO.dir/sources/tools/parsers/chaParser/AIOChaParser.c.obj: CMakeFiles/AIO.dir/flags.make
-CMakeFiles/AIO.dir/sources/tools/parsers/chaParser/AIOChaParser.c.obj: ../sources/tools/parsers/chaParser/AIOChaParser.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\StarKRE\CLionProjects\AIO\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building C object CMakeFiles/AIO.dir/sources/tools/parsers/chaParser/AIOChaParser.c.obj"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\AIO.dir\sources\tools\parsers\chaParser\AIOChaParser.c.obj   -c C:\Users\StarKRE\CLionProjects\AIO\sources\tools\parsers\chaParser\AIOChaParser.c
+CMakeFiles/AIO.dir/sources/tools/parsers/chaParser/aio_cha_parser.c.obj: CMakeFiles/AIO.dir/flags.make
+CMakeFiles/AIO.dir/sources/tools/parsers/chaParser/aio_cha_parser.c.obj: ../sources/tools/parsers/chaParser/aio_cha_parser.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\StarKRE\CLionProjects\AIO\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building C object CMakeFiles/AIO.dir/sources/tools/parsers/chaParser/aio_cha_parser.c.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\AIO.dir\sources\tools\parsers\chaParser\aio_cha_parser.c.obj   -c C:\Users\StarKRE\CLionProjects\AIO\sources\tools\parsers\chaParser\aio_cha_parser.c
 
-CMakeFiles/AIO.dir/sources/tools/parsers/chaParser/AIOChaParser.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/AIO.dir/sources/tools/parsers/chaParser/AIOChaParser.c.i"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\StarKRE\CLionProjects\AIO\sources\tools\parsers\chaParser\AIOChaParser.c > CMakeFiles\AIO.dir\sources\tools\parsers\chaParser\AIOChaParser.c.i
+CMakeFiles/AIO.dir/sources/tools/parsers/chaParser/aio_cha_parser.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/AIO.dir/sources/tools/parsers/chaParser/aio_cha_parser.c.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\StarKRE\CLionProjects\AIO\sources\tools\parsers\chaParser\aio_cha_parser.c > CMakeFiles\AIO.dir\sources\tools\parsers\chaParser\aio_cha_parser.c.i
 
-CMakeFiles/AIO.dir/sources/tools/parsers/chaParser/AIOChaParser.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/AIO.dir/sources/tools/parsers/chaParser/AIOChaParser.c.s"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\StarKRE\CLionProjects\AIO\sources\tools\parsers\chaParser\AIOChaParser.c -o CMakeFiles\AIO.dir\sources\tools\parsers\chaParser\AIOChaParser.c.s
+CMakeFiles/AIO.dir/sources/tools/parsers/chaParser/aio_cha_parser.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/AIO.dir/sources/tools/parsers/chaParser/aio_cha_parser.c.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\StarKRE\CLionProjects\AIO\sources\tools\parsers\chaParser\aio_cha_parser.c -o CMakeFiles\AIO.dir\sources\tools\parsers\chaParser\aio_cha_parser.c.s
 
-CMakeFiles/AIO.dir/sources/tools/parsers/chaParser/AIOChaParser.c.obj.requires:
+CMakeFiles/AIO.dir/sources/tools/parsers/chaParser/aio_cha_parser.c.obj.requires:
 
-.PHONY : CMakeFiles/AIO.dir/sources/tools/parsers/chaParser/AIOChaParser.c.obj.requires
+.PHONY : CMakeFiles/AIO.dir/sources/tools/parsers/chaParser/aio_cha_parser.c.obj.requires
 
-CMakeFiles/AIO.dir/sources/tools/parsers/chaParser/AIOChaParser.c.obj.provides: CMakeFiles/AIO.dir/sources/tools/parsers/chaParser/AIOChaParser.c.obj.requires
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/parsers/chaParser/AIOChaParser.c.obj.provides.build
-.PHONY : CMakeFiles/AIO.dir/sources/tools/parsers/chaParser/AIOChaParser.c.obj.provides
+CMakeFiles/AIO.dir/sources/tools/parsers/chaParser/aio_cha_parser.c.obj.provides: CMakeFiles/AIO.dir/sources/tools/parsers/chaParser/aio_cha_parser.c.obj.requires
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/parsers/chaParser/aio_cha_parser.c.obj.provides.build
+.PHONY : CMakeFiles/AIO.dir/sources/tools/parsers/chaParser/aio_cha_parser.c.obj.provides
 
-CMakeFiles/AIO.dir/sources/tools/parsers/chaParser/AIOChaParser.c.obj.provides.build: CMakeFiles/AIO.dir/sources/tools/parsers/chaParser/AIOChaParser.c.obj
+CMakeFiles/AIO.dir/sources/tools/parsers/chaParser/aio_cha_parser.c.obj.provides.build: CMakeFiles/AIO.dir/sources/tools/parsers/chaParser/aio_cha_parser.c.obj
 
 
 CMakeFiles/AIO.dir/sources/tools/parsers/strParser/AIOStrParser.c.obj: CMakeFiles/AIO.dir/flags.make
@@ -872,76 +872,76 @@ CMakeFiles/AIO.dir/sources/tools/parsers/strParser/AIOStrParser.c.obj.provides: 
 CMakeFiles/AIO.dir/sources/tools/parsers/strParser/AIOStrParser.c.obj.provides.build: CMakeFiles/AIO.dir/sources/tools/parsers/strParser/AIOStrParser.c.obj
 
 
-CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/split.c.obj: CMakeFiles/AIO.dir/flags.make
-CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/split.c.obj: ../sources/lib/utils/stringUtils/split.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\StarKRE\CLionProjects\AIO\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building C object CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/split.c.obj"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\AIO.dir\sources\lib\utils\stringUtils\split.c.obj   -c C:\Users\StarKRE\CLionProjects\AIO\sources\lib\utils\stringUtils\split.c
+CMakeFiles/AIO.dir/sources/lib/utils/string_utils/split.c.obj: CMakeFiles/AIO.dir/flags.make
+CMakeFiles/AIO.dir/sources/lib/utils/string_utils/split.c.obj: ../sources/lib/utils/string_utils/split.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\StarKRE\CLionProjects\AIO\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building C object CMakeFiles/AIO.dir/sources/lib/utils/string_utils/split.c.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\AIO.dir\sources\lib\utils\string_utils\split.c.obj   -c C:\Users\StarKRE\CLionProjects\AIO\sources\lib\utils\string_utils\split.c
 
-CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/split.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/split.c.i"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\StarKRE\CLionProjects\AIO\sources\lib\utils\stringUtils\split.c > CMakeFiles\AIO.dir\sources\lib\utils\stringUtils\split.c.i
+CMakeFiles/AIO.dir/sources/lib/utils/string_utils/split.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/AIO.dir/sources/lib/utils/string_utils/split.c.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\StarKRE\CLionProjects\AIO\sources\lib\utils\string_utils\split.c > CMakeFiles\AIO.dir\sources\lib\utils\string_utils\split.c.i
 
-CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/split.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/split.c.s"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\StarKRE\CLionProjects\AIO\sources\lib\utils\stringUtils\split.c -o CMakeFiles\AIO.dir\sources\lib\utils\stringUtils\split.c.s
+CMakeFiles/AIO.dir/sources/lib/utils/string_utils/split.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/AIO.dir/sources/lib/utils/string_utils/split.c.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\StarKRE\CLionProjects\AIO\sources\lib\utils\string_utils\split.c -o CMakeFiles\AIO.dir\sources\lib\utils\string_utils\split.c.s
 
-CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/split.c.obj.requires:
+CMakeFiles/AIO.dir/sources/lib/utils/string_utils/split.c.obj.requires:
 
-.PHONY : CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/split.c.obj.requires
+.PHONY : CMakeFiles/AIO.dir/sources/lib/utils/string_utils/split.c.obj.requires
 
-CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/split.c.obj.provides: CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/split.c.obj.requires
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/split.c.obj.provides.build
-.PHONY : CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/split.c.obj.provides
+CMakeFiles/AIO.dir/sources/lib/utils/string_utils/split.c.obj.provides: CMakeFiles/AIO.dir/sources/lib/utils/string_utils/split.c.obj.requires
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/string_utils/split.c.obj.provides.build
+.PHONY : CMakeFiles/AIO.dir/sources/lib/utils/string_utils/split.c.obj.provides
 
-CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/split.c.obj.provides.build: CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/split.c.obj
-
-
-CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/trim.c.obj: CMakeFiles/AIO.dir/flags.make
-CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/trim.c.obj: ../sources/lib/utils/stringUtils/trim.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\StarKRE\CLionProjects\AIO\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building C object CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/trim.c.obj"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\AIO.dir\sources\lib\utils\stringUtils\trim.c.obj   -c C:\Users\StarKRE\CLionProjects\AIO\sources\lib\utils\stringUtils\trim.c
-
-CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/trim.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/trim.c.i"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\StarKRE\CLionProjects\AIO\sources\lib\utils\stringUtils\trim.c > CMakeFiles\AIO.dir\sources\lib\utils\stringUtils\trim.c.i
-
-CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/trim.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/trim.c.s"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\StarKRE\CLionProjects\AIO\sources\lib\utils\stringUtils\trim.c -o CMakeFiles\AIO.dir\sources\lib\utils\stringUtils\trim.c.s
-
-CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/trim.c.obj.requires:
-
-.PHONY : CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/trim.c.obj.requires
-
-CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/trim.c.obj.provides: CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/trim.c.obj.requires
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/trim.c.obj.provides.build
-.PHONY : CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/trim.c.obj.provides
-
-CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/trim.c.obj.provides.build: CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/trim.c.obj
+CMakeFiles/AIO.dir/sources/lib/utils/string_utils/split.c.obj.provides.build: CMakeFiles/AIO.dir/sources/lib/utils/string_utils/split.c.obj
 
 
-CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/prefix_suffix.c.obj: CMakeFiles/AIO.dir/flags.make
-CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/prefix_suffix.c.obj: ../sources/lib/utils/stringUtils/prefix_suffix.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\StarKRE\CLionProjects\AIO\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building C object CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/prefix_suffix.c.obj"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\AIO.dir\sources\lib\utils\stringUtils\prefix_suffix.c.obj   -c C:\Users\StarKRE\CLionProjects\AIO\sources\lib\utils\stringUtils\prefix_suffix.c
+CMakeFiles/AIO.dir/sources/lib/utils/string_utils/trim.c.obj: CMakeFiles/AIO.dir/flags.make
+CMakeFiles/AIO.dir/sources/lib/utils/string_utils/trim.c.obj: ../sources/lib/utils/string_utils/trim.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\StarKRE\CLionProjects\AIO\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building C object CMakeFiles/AIO.dir/sources/lib/utils/string_utils/trim.c.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\AIO.dir\sources\lib\utils\string_utils\trim.c.obj   -c C:\Users\StarKRE\CLionProjects\AIO\sources\lib\utils\string_utils\trim.c
 
-CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/prefix_suffix.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/prefix_suffix.c.i"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\StarKRE\CLionProjects\AIO\sources\lib\utils\stringUtils\prefix_suffix.c > CMakeFiles\AIO.dir\sources\lib\utils\stringUtils\prefix_suffix.c.i
+CMakeFiles/AIO.dir/sources/lib/utils/string_utils/trim.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/AIO.dir/sources/lib/utils/string_utils/trim.c.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\StarKRE\CLionProjects\AIO\sources\lib\utils\string_utils\trim.c > CMakeFiles\AIO.dir\sources\lib\utils\string_utils\trim.c.i
 
-CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/prefix_suffix.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/prefix_suffix.c.s"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\StarKRE\CLionProjects\AIO\sources\lib\utils\stringUtils\prefix_suffix.c -o CMakeFiles\AIO.dir\sources\lib\utils\stringUtils\prefix_suffix.c.s
+CMakeFiles/AIO.dir/sources/lib/utils/string_utils/trim.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/AIO.dir/sources/lib/utils/string_utils/trim.c.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\StarKRE\CLionProjects\AIO\sources\lib\utils\string_utils\trim.c -o CMakeFiles\AIO.dir\sources\lib\utils\string_utils\trim.c.s
 
-CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/prefix_suffix.c.obj.requires:
+CMakeFiles/AIO.dir/sources/lib/utils/string_utils/trim.c.obj.requires:
 
-.PHONY : CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/prefix_suffix.c.obj.requires
+.PHONY : CMakeFiles/AIO.dir/sources/lib/utils/string_utils/trim.c.obj.requires
 
-CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/prefix_suffix.c.obj.provides: CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/prefix_suffix.c.obj.requires
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/prefix_suffix.c.obj.provides.build
-.PHONY : CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/prefix_suffix.c.obj.provides
+CMakeFiles/AIO.dir/sources/lib/utils/string_utils/trim.c.obj.provides: CMakeFiles/AIO.dir/sources/lib/utils/string_utils/trim.c.obj.requires
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/string_utils/trim.c.obj.provides.build
+.PHONY : CMakeFiles/AIO.dir/sources/lib/utils/string_utils/trim.c.obj.provides
 
-CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/prefix_suffix.c.obj.provides.build: CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/prefix_suffix.c.obj
+CMakeFiles/AIO.dir/sources/lib/utils/string_utils/trim.c.obj.provides.build: CMakeFiles/AIO.dir/sources/lib/utils/string_utils/trim.c.obj
+
+
+CMakeFiles/AIO.dir/sources/lib/utils/string_utils/prefix_suffix.c.obj: CMakeFiles/AIO.dir/flags.make
+CMakeFiles/AIO.dir/sources/lib/utils/string_utils/prefix_suffix.c.obj: ../sources/lib/utils/string_utils/prefix_suffix.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\StarKRE\CLionProjects\AIO\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building C object CMakeFiles/AIO.dir/sources/lib/utils/string_utils/prefix_suffix.c.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\AIO.dir\sources\lib\utils\string_utils\prefix_suffix.c.obj   -c C:\Users\StarKRE\CLionProjects\AIO\sources\lib\utils\string_utils\prefix_suffix.c
+
+CMakeFiles/AIO.dir/sources/lib/utils/string_utils/prefix_suffix.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/AIO.dir/sources/lib/utils/string_utils/prefix_suffix.c.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\StarKRE\CLionProjects\AIO\sources\lib\utils\string_utils\prefix_suffix.c > CMakeFiles\AIO.dir\sources\lib\utils\string_utils\prefix_suffix.c.i
+
+CMakeFiles/AIO.dir/sources/lib/utils/string_utils/prefix_suffix.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/AIO.dir/sources/lib/utils/string_utils/prefix_suffix.c.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\StarKRE\CLionProjects\AIO\sources\lib\utils\string_utils\prefix_suffix.c -o CMakeFiles\AIO.dir\sources\lib\utils\string_utils\prefix_suffix.c.s
+
+CMakeFiles/AIO.dir/sources/lib/utils/string_utils/prefix_suffix.c.obj.requires:
+
+.PHONY : CMakeFiles/AIO.dir/sources/lib/utils/string_utils/prefix_suffix.c.obj.requires
+
+CMakeFiles/AIO.dir/sources/lib/utils/string_utils/prefix_suffix.c.obj.provides: CMakeFiles/AIO.dir/sources/lib/utils/string_utils/prefix_suffix.c.obj.requires
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/string_utils/prefix_suffix.c.obj.provides.build
+.PHONY : CMakeFiles/AIO.dir/sources/lib/utils/string_utils/prefix_suffix.c.obj.provides
+
+CMakeFiles/AIO.dir/sources/lib/utils/string_utils/prefix_suffix.c.obj.provides.build: CMakeFiles/AIO.dir/sources/lib/utils/string_utils/prefix_suffix.c.obj
 
 
 CMakeFiles/AIO.dir/sources/lib/pair/string_pair.c.obj: CMakeFiles/AIO.dir/flags.make
@@ -986,13 +986,13 @@ AIO_OBJECTS = \
 "CMakeFiles/AIO.dir/sources/lang/methods/variable/aio_variable.c.obj" \
 "CMakeFiles/AIO.dir/sources/lang/methods/result/aio_result.c.obj" \
 "CMakeFiles/AIO.dir/sources/lang/methods/default_method_container/aio_default_method_container.c.obj" \
-"CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/string_utils.c.obj" \
+"CMakeFiles/AIO.dir/sources/lib/utils/string_utils/string_utils.c.obj" \
 "CMakeFiles/AIO.dir/sources/lang/methods/method_definition/aio_method_definition_builder.c.obj" \
 "CMakeFiles/AIO.dir/sources/lang/methods/aio_method.c.obj" \
 "CMakeFiles/AIO.dir/sources/lang/methods/analysis/method_reproducer/aio_method_reproducer.c.obj" \
 "CMakeFiles/AIO.dir/sources/lib/collections/maps/aio_variable_map.c.obj" \
-"CMakeFiles/AIO.dir/sources/lib/utils/operationUtils/operation_utils.c.obj" \
-"CMakeFiles/AIO.dir/sources/lib/utils/fileUtils/file_utils.c.obj" \
+"CMakeFiles/AIO.dir/sources/lib/utils/operation_utils/operation_utils.c.obj" \
+"CMakeFiles/AIO.dir/sources/lib/utils/file_utils/file_utils.c.obj" \
 "CMakeFiles/AIO.dir/sources/lang/methods/analysis/method_reproducer/the_shortest/aio_the_shortest_reproducer.c.obj" \
 "CMakeFiles/AIO.dir/sources/lang/methods/analysis/method_reproducer/the_shortest/plus_for_each_reproducer/aio_plus_for_each_reproducer.c.obj" \
 "CMakeFiles/AIO.dir/sources/lang/methods/analysis/method_reproducer/default/aio_default_reproducer.c.obj" \
@@ -1001,12 +1001,12 @@ AIO_OBJECTS = \
 "CMakeFiles/AIO.dir/sources/lang/methods/analysis/method_reproducer/the_shortest/multiply_for_each_reproducer/aio_multiply_for_each_reproducer.c.obj" \
 "CMakeFiles/AIO.dir/sources/tools/parsers/aio_parser.c.obj" \
 "CMakeFiles/AIO.dir/sources/tools/parsers/intParser/AIOIntParser.c.obj" \
-"CMakeFiles/AIO.dir/sources/tools/parsers/douParser/AIODouParser.c.obj" \
-"CMakeFiles/AIO.dir/sources/tools/parsers/chaParser/AIOChaParser.c.obj" \
+"CMakeFiles/AIO.dir/sources/tools/parsers/douParser/aio_dou_parser.c.obj" \
+"CMakeFiles/AIO.dir/sources/tools/parsers/chaParser/aio_cha_parser.c.obj" \
 "CMakeFiles/AIO.dir/sources/tools/parsers/strParser/AIOStrParser.c.obj" \
-"CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/split.c.obj" \
-"CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/trim.c.obj" \
-"CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/prefix_suffix.c.obj" \
+"CMakeFiles/AIO.dir/sources/lib/utils/string_utils/split.c.obj" \
+"CMakeFiles/AIO.dir/sources/lib/utils/string_utils/trim.c.obj" \
+"CMakeFiles/AIO.dir/sources/lib/utils/string_utils/prefix_suffix.c.obj" \
 "CMakeFiles/AIO.dir/sources/lib/pair/string_pair.c.obj"
 
 # External object files for target AIO
@@ -1028,13 +1028,13 @@ AIO.exe: CMakeFiles/AIO.dir/sources/lang/methods/bundle/aio_bundle.c.obj
 AIO.exe: CMakeFiles/AIO.dir/sources/lang/methods/variable/aio_variable.c.obj
 AIO.exe: CMakeFiles/AIO.dir/sources/lang/methods/result/aio_result.c.obj
 AIO.exe: CMakeFiles/AIO.dir/sources/lang/methods/default_method_container/aio_default_method_container.c.obj
-AIO.exe: CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/string_utils.c.obj
+AIO.exe: CMakeFiles/AIO.dir/sources/lib/utils/string_utils/string_utils.c.obj
 AIO.exe: CMakeFiles/AIO.dir/sources/lang/methods/method_definition/aio_method_definition_builder.c.obj
 AIO.exe: CMakeFiles/AIO.dir/sources/lang/methods/aio_method.c.obj
 AIO.exe: CMakeFiles/AIO.dir/sources/lang/methods/analysis/method_reproducer/aio_method_reproducer.c.obj
 AIO.exe: CMakeFiles/AIO.dir/sources/lib/collections/maps/aio_variable_map.c.obj
-AIO.exe: CMakeFiles/AIO.dir/sources/lib/utils/operationUtils/operation_utils.c.obj
-AIO.exe: CMakeFiles/AIO.dir/sources/lib/utils/fileUtils/file_utils.c.obj
+AIO.exe: CMakeFiles/AIO.dir/sources/lib/utils/operation_utils/operation_utils.c.obj
+AIO.exe: CMakeFiles/AIO.dir/sources/lib/utils/file_utils/file_utils.c.obj
 AIO.exe: CMakeFiles/AIO.dir/sources/lang/methods/analysis/method_reproducer/the_shortest/aio_the_shortest_reproducer.c.obj
 AIO.exe: CMakeFiles/AIO.dir/sources/lang/methods/analysis/method_reproducer/the_shortest/plus_for_each_reproducer/aio_plus_for_each_reproducer.c.obj
 AIO.exe: CMakeFiles/AIO.dir/sources/lang/methods/analysis/method_reproducer/default/aio_default_reproducer.c.obj
@@ -1043,12 +1043,12 @@ AIO.exe: CMakeFiles/AIO.dir/sources/lang/methods/analysis/method_reproducer/the_
 AIO.exe: CMakeFiles/AIO.dir/sources/lang/methods/analysis/method_reproducer/the_shortest/multiply_for_each_reproducer/aio_multiply_for_each_reproducer.c.obj
 AIO.exe: CMakeFiles/AIO.dir/sources/tools/parsers/aio_parser.c.obj
 AIO.exe: CMakeFiles/AIO.dir/sources/tools/parsers/intParser/AIOIntParser.c.obj
-AIO.exe: CMakeFiles/AIO.dir/sources/tools/parsers/douParser/AIODouParser.c.obj
-AIO.exe: CMakeFiles/AIO.dir/sources/tools/parsers/chaParser/AIOChaParser.c.obj
+AIO.exe: CMakeFiles/AIO.dir/sources/tools/parsers/douParser/aio_dou_parser.c.obj
+AIO.exe: CMakeFiles/AIO.dir/sources/tools/parsers/chaParser/aio_cha_parser.c.obj
 AIO.exe: CMakeFiles/AIO.dir/sources/tools/parsers/strParser/AIOStrParser.c.obj
-AIO.exe: CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/split.c.obj
-AIO.exe: CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/trim.c.obj
-AIO.exe: CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/prefix_suffix.c.obj
+AIO.exe: CMakeFiles/AIO.dir/sources/lib/utils/string_utils/split.c.obj
+AIO.exe: CMakeFiles/AIO.dir/sources/lib/utils/string_utils/trim.c.obj
+AIO.exe: CMakeFiles/AIO.dir/sources/lib/utils/string_utils/prefix_suffix.c.obj
 AIO.exe: CMakeFiles/AIO.dir/sources/lib/pair/string_pair.c.obj
 AIO.exe: CMakeFiles/AIO.dir/build.make
 AIO.exe: CMakeFiles/AIO.dir/linklibs.rsp
@@ -1078,13 +1078,13 @@ CMakeFiles/AIO.dir/requires: CMakeFiles/AIO.dir/sources/lang/methods/bundle/aio_
 CMakeFiles/AIO.dir/requires: CMakeFiles/AIO.dir/sources/lang/methods/variable/aio_variable.c.obj.requires
 CMakeFiles/AIO.dir/requires: CMakeFiles/AIO.dir/sources/lang/methods/result/aio_result.c.obj.requires
 CMakeFiles/AIO.dir/requires: CMakeFiles/AIO.dir/sources/lang/methods/default_method_container/aio_default_method_container.c.obj.requires
-CMakeFiles/AIO.dir/requires: CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/string_utils.c.obj.requires
+CMakeFiles/AIO.dir/requires: CMakeFiles/AIO.dir/sources/lib/utils/string_utils/string_utils.c.obj.requires
 CMakeFiles/AIO.dir/requires: CMakeFiles/AIO.dir/sources/lang/methods/method_definition/aio_method_definition_builder.c.obj.requires
 CMakeFiles/AIO.dir/requires: CMakeFiles/AIO.dir/sources/lang/methods/aio_method.c.obj.requires
 CMakeFiles/AIO.dir/requires: CMakeFiles/AIO.dir/sources/lang/methods/analysis/method_reproducer/aio_method_reproducer.c.obj.requires
 CMakeFiles/AIO.dir/requires: CMakeFiles/AIO.dir/sources/lib/collections/maps/aio_variable_map.c.obj.requires
-CMakeFiles/AIO.dir/requires: CMakeFiles/AIO.dir/sources/lib/utils/operationUtils/operation_utils.c.obj.requires
-CMakeFiles/AIO.dir/requires: CMakeFiles/AIO.dir/sources/lib/utils/fileUtils/file_utils.c.obj.requires
+CMakeFiles/AIO.dir/requires: CMakeFiles/AIO.dir/sources/lib/utils/operation_utils/operation_utils.c.obj.requires
+CMakeFiles/AIO.dir/requires: CMakeFiles/AIO.dir/sources/lib/utils/file_utils/file_utils.c.obj.requires
 CMakeFiles/AIO.dir/requires: CMakeFiles/AIO.dir/sources/lang/methods/analysis/method_reproducer/the_shortest/aio_the_shortest_reproducer.c.obj.requires
 CMakeFiles/AIO.dir/requires: CMakeFiles/AIO.dir/sources/lang/methods/analysis/method_reproducer/the_shortest/plus_for_each_reproducer/aio_plus_for_each_reproducer.c.obj.requires
 CMakeFiles/AIO.dir/requires: CMakeFiles/AIO.dir/sources/lang/methods/analysis/method_reproducer/default/aio_default_reproducer.c.obj.requires
@@ -1093,12 +1093,12 @@ CMakeFiles/AIO.dir/requires: CMakeFiles/AIO.dir/sources/lang/methods/analysis/me
 CMakeFiles/AIO.dir/requires: CMakeFiles/AIO.dir/sources/lang/methods/analysis/method_reproducer/the_shortest/multiply_for_each_reproducer/aio_multiply_for_each_reproducer.c.obj.requires
 CMakeFiles/AIO.dir/requires: CMakeFiles/AIO.dir/sources/tools/parsers/aio_parser.c.obj.requires
 CMakeFiles/AIO.dir/requires: CMakeFiles/AIO.dir/sources/tools/parsers/intParser/AIOIntParser.c.obj.requires
-CMakeFiles/AIO.dir/requires: CMakeFiles/AIO.dir/sources/tools/parsers/douParser/AIODouParser.c.obj.requires
-CMakeFiles/AIO.dir/requires: CMakeFiles/AIO.dir/sources/tools/parsers/chaParser/AIOChaParser.c.obj.requires
+CMakeFiles/AIO.dir/requires: CMakeFiles/AIO.dir/sources/tools/parsers/douParser/aio_dou_parser.c.obj.requires
+CMakeFiles/AIO.dir/requires: CMakeFiles/AIO.dir/sources/tools/parsers/chaParser/aio_cha_parser.c.obj.requires
 CMakeFiles/AIO.dir/requires: CMakeFiles/AIO.dir/sources/tools/parsers/strParser/AIOStrParser.c.obj.requires
-CMakeFiles/AIO.dir/requires: CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/split.c.obj.requires
-CMakeFiles/AIO.dir/requires: CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/trim.c.obj.requires
-CMakeFiles/AIO.dir/requires: CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/prefix_suffix.c.obj.requires
+CMakeFiles/AIO.dir/requires: CMakeFiles/AIO.dir/sources/lib/utils/string_utils/split.c.obj.requires
+CMakeFiles/AIO.dir/requires: CMakeFiles/AIO.dir/sources/lib/utils/string_utils/trim.c.obj.requires
+CMakeFiles/AIO.dir/requires: CMakeFiles/AIO.dir/sources/lib/utils/string_utils/prefix_suffix.c.obj.requires
 CMakeFiles/AIO.dir/requires: CMakeFiles/AIO.dir/sources/lib/pair/string_pair.c.obj.requires
 
 .PHONY : CMakeFiles/AIO.dir/requires

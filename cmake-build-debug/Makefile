@@ -824,167 +824,167 @@ sources/lib/pair/string_pair.c.s:
 	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/pair/string_pair.c.s
 .PHONY : sources/lib/pair/string_pair.c.s
 
-sources/lib/utils/fileUtils/file_utils.obj: sources/lib/utils/fileUtils/file_utils.c.obj
+sources/lib/utils/file_utils/file_utils.obj: sources/lib/utils/file_utils/file_utils.c.obj
 
-.PHONY : sources/lib/utils/fileUtils/file_utils.obj
-
-# target to build an object file
-sources/lib/utils/fileUtils/file_utils.c.obj:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/fileUtils/file_utils.c.obj
-.PHONY : sources/lib/utils/fileUtils/file_utils.c.obj
-
-sources/lib/utils/fileUtils/file_utils.i: sources/lib/utils/fileUtils/file_utils.c.i
-
-.PHONY : sources/lib/utils/fileUtils/file_utils.i
-
-# target to preprocess a source file
-sources/lib/utils/fileUtils/file_utils.c.i:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/fileUtils/file_utils.c.i
-.PHONY : sources/lib/utils/fileUtils/file_utils.c.i
-
-sources/lib/utils/fileUtils/file_utils.s: sources/lib/utils/fileUtils/file_utils.c.s
-
-.PHONY : sources/lib/utils/fileUtils/file_utils.s
-
-# target to generate assembly for a file
-sources/lib/utils/fileUtils/file_utils.c.s:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/fileUtils/file_utils.c.s
-.PHONY : sources/lib/utils/fileUtils/file_utils.c.s
-
-sources/lib/utils/operationUtils/operation_utils.obj: sources/lib/utils/operationUtils/operation_utils.c.obj
-
-.PHONY : sources/lib/utils/operationUtils/operation_utils.obj
+.PHONY : sources/lib/utils/file_utils/file_utils.obj
 
 # target to build an object file
-sources/lib/utils/operationUtils/operation_utils.c.obj:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/operationUtils/operation_utils.c.obj
-.PHONY : sources/lib/utils/operationUtils/operation_utils.c.obj
+sources/lib/utils/file_utils/file_utils.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/file_utils/file_utils.c.obj
+.PHONY : sources/lib/utils/file_utils/file_utils.c.obj
 
-sources/lib/utils/operationUtils/operation_utils.i: sources/lib/utils/operationUtils/operation_utils.c.i
+sources/lib/utils/file_utils/file_utils.i: sources/lib/utils/file_utils/file_utils.c.i
 
-.PHONY : sources/lib/utils/operationUtils/operation_utils.i
+.PHONY : sources/lib/utils/file_utils/file_utils.i
 
 # target to preprocess a source file
-sources/lib/utils/operationUtils/operation_utils.c.i:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/operationUtils/operation_utils.c.i
-.PHONY : sources/lib/utils/operationUtils/operation_utils.c.i
+sources/lib/utils/file_utils/file_utils.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/file_utils/file_utils.c.i
+.PHONY : sources/lib/utils/file_utils/file_utils.c.i
 
-sources/lib/utils/operationUtils/operation_utils.s: sources/lib/utils/operationUtils/operation_utils.c.s
+sources/lib/utils/file_utils/file_utils.s: sources/lib/utils/file_utils/file_utils.c.s
 
-.PHONY : sources/lib/utils/operationUtils/operation_utils.s
+.PHONY : sources/lib/utils/file_utils/file_utils.s
 
 # target to generate assembly for a file
-sources/lib/utils/operationUtils/operation_utils.c.s:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/operationUtils/operation_utils.c.s
-.PHONY : sources/lib/utils/operationUtils/operation_utils.c.s
+sources/lib/utils/file_utils/file_utils.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/file_utils/file_utils.c.s
+.PHONY : sources/lib/utils/file_utils/file_utils.c.s
 
-sources/lib/utils/stringUtils/prefix_suffix.obj: sources/lib/utils/stringUtils/prefix_suffix.c.obj
+sources/lib/utils/operation_utils/operation_utils.obj: sources/lib/utils/operation_utils/operation_utils.c.obj
 
-.PHONY : sources/lib/utils/stringUtils/prefix_suffix.obj
+.PHONY : sources/lib/utils/operation_utils/operation_utils.obj
 
 # target to build an object file
-sources/lib/utils/stringUtils/prefix_suffix.c.obj:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/prefix_suffix.c.obj
-.PHONY : sources/lib/utils/stringUtils/prefix_suffix.c.obj
+sources/lib/utils/operation_utils/operation_utils.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/operation_utils/operation_utils.c.obj
+.PHONY : sources/lib/utils/operation_utils/operation_utils.c.obj
 
-sources/lib/utils/stringUtils/prefix_suffix.i: sources/lib/utils/stringUtils/prefix_suffix.c.i
+sources/lib/utils/operation_utils/operation_utils.i: sources/lib/utils/operation_utils/operation_utils.c.i
 
-.PHONY : sources/lib/utils/stringUtils/prefix_suffix.i
+.PHONY : sources/lib/utils/operation_utils/operation_utils.i
 
 # target to preprocess a source file
-sources/lib/utils/stringUtils/prefix_suffix.c.i:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/prefix_suffix.c.i
-.PHONY : sources/lib/utils/stringUtils/prefix_suffix.c.i
+sources/lib/utils/operation_utils/operation_utils.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/operation_utils/operation_utils.c.i
+.PHONY : sources/lib/utils/operation_utils/operation_utils.c.i
 
-sources/lib/utils/stringUtils/prefix_suffix.s: sources/lib/utils/stringUtils/prefix_suffix.c.s
+sources/lib/utils/operation_utils/operation_utils.s: sources/lib/utils/operation_utils/operation_utils.c.s
 
-.PHONY : sources/lib/utils/stringUtils/prefix_suffix.s
+.PHONY : sources/lib/utils/operation_utils/operation_utils.s
 
 # target to generate assembly for a file
-sources/lib/utils/stringUtils/prefix_suffix.c.s:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/prefix_suffix.c.s
-.PHONY : sources/lib/utils/stringUtils/prefix_suffix.c.s
+sources/lib/utils/operation_utils/operation_utils.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/operation_utils/operation_utils.c.s
+.PHONY : sources/lib/utils/operation_utils/operation_utils.c.s
 
-sources/lib/utils/stringUtils/split.obj: sources/lib/utils/stringUtils/split.c.obj
+sources/lib/utils/string_utils/prefix_suffix.obj: sources/lib/utils/string_utils/prefix_suffix.c.obj
 
-.PHONY : sources/lib/utils/stringUtils/split.obj
+.PHONY : sources/lib/utils/string_utils/prefix_suffix.obj
 
 # target to build an object file
-sources/lib/utils/stringUtils/split.c.obj:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/split.c.obj
-.PHONY : sources/lib/utils/stringUtils/split.c.obj
+sources/lib/utils/string_utils/prefix_suffix.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/string_utils/prefix_suffix.c.obj
+.PHONY : sources/lib/utils/string_utils/prefix_suffix.c.obj
 
-sources/lib/utils/stringUtils/split.i: sources/lib/utils/stringUtils/split.c.i
+sources/lib/utils/string_utils/prefix_suffix.i: sources/lib/utils/string_utils/prefix_suffix.c.i
 
-.PHONY : sources/lib/utils/stringUtils/split.i
+.PHONY : sources/lib/utils/string_utils/prefix_suffix.i
 
 # target to preprocess a source file
-sources/lib/utils/stringUtils/split.c.i:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/split.c.i
-.PHONY : sources/lib/utils/stringUtils/split.c.i
+sources/lib/utils/string_utils/prefix_suffix.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/string_utils/prefix_suffix.c.i
+.PHONY : sources/lib/utils/string_utils/prefix_suffix.c.i
 
-sources/lib/utils/stringUtils/split.s: sources/lib/utils/stringUtils/split.c.s
+sources/lib/utils/string_utils/prefix_suffix.s: sources/lib/utils/string_utils/prefix_suffix.c.s
 
-.PHONY : sources/lib/utils/stringUtils/split.s
+.PHONY : sources/lib/utils/string_utils/prefix_suffix.s
 
 # target to generate assembly for a file
-sources/lib/utils/stringUtils/split.c.s:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/split.c.s
-.PHONY : sources/lib/utils/stringUtils/split.c.s
+sources/lib/utils/string_utils/prefix_suffix.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/string_utils/prefix_suffix.c.s
+.PHONY : sources/lib/utils/string_utils/prefix_suffix.c.s
 
-sources/lib/utils/stringUtils/string_utils.obj: sources/lib/utils/stringUtils/string_utils.c.obj
+sources/lib/utils/string_utils/split.obj: sources/lib/utils/string_utils/split.c.obj
 
-.PHONY : sources/lib/utils/stringUtils/string_utils.obj
+.PHONY : sources/lib/utils/string_utils/split.obj
 
 # target to build an object file
-sources/lib/utils/stringUtils/string_utils.c.obj:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/string_utils.c.obj
-.PHONY : sources/lib/utils/stringUtils/string_utils.c.obj
+sources/lib/utils/string_utils/split.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/string_utils/split.c.obj
+.PHONY : sources/lib/utils/string_utils/split.c.obj
 
-sources/lib/utils/stringUtils/string_utils.i: sources/lib/utils/stringUtils/string_utils.c.i
+sources/lib/utils/string_utils/split.i: sources/lib/utils/string_utils/split.c.i
 
-.PHONY : sources/lib/utils/stringUtils/string_utils.i
+.PHONY : sources/lib/utils/string_utils/split.i
 
 # target to preprocess a source file
-sources/lib/utils/stringUtils/string_utils.c.i:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/string_utils.c.i
-.PHONY : sources/lib/utils/stringUtils/string_utils.c.i
+sources/lib/utils/string_utils/split.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/string_utils/split.c.i
+.PHONY : sources/lib/utils/string_utils/split.c.i
 
-sources/lib/utils/stringUtils/string_utils.s: sources/lib/utils/stringUtils/string_utils.c.s
+sources/lib/utils/string_utils/split.s: sources/lib/utils/string_utils/split.c.s
 
-.PHONY : sources/lib/utils/stringUtils/string_utils.s
+.PHONY : sources/lib/utils/string_utils/split.s
 
 # target to generate assembly for a file
-sources/lib/utils/stringUtils/string_utils.c.s:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/string_utils.c.s
-.PHONY : sources/lib/utils/stringUtils/string_utils.c.s
+sources/lib/utils/string_utils/split.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/string_utils/split.c.s
+.PHONY : sources/lib/utils/string_utils/split.c.s
 
-sources/lib/utils/stringUtils/trim.obj: sources/lib/utils/stringUtils/trim.c.obj
+sources/lib/utils/string_utils/string_utils.obj: sources/lib/utils/string_utils/string_utils.c.obj
 
-.PHONY : sources/lib/utils/stringUtils/trim.obj
+.PHONY : sources/lib/utils/string_utils/string_utils.obj
 
 # target to build an object file
-sources/lib/utils/stringUtils/trim.c.obj:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/trim.c.obj
-.PHONY : sources/lib/utils/stringUtils/trim.c.obj
+sources/lib/utils/string_utils/string_utils.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/string_utils/string_utils.c.obj
+.PHONY : sources/lib/utils/string_utils/string_utils.c.obj
 
-sources/lib/utils/stringUtils/trim.i: sources/lib/utils/stringUtils/trim.c.i
+sources/lib/utils/string_utils/string_utils.i: sources/lib/utils/string_utils/string_utils.c.i
 
-.PHONY : sources/lib/utils/stringUtils/trim.i
+.PHONY : sources/lib/utils/string_utils/string_utils.i
 
 # target to preprocess a source file
-sources/lib/utils/stringUtils/trim.c.i:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/trim.c.i
-.PHONY : sources/lib/utils/stringUtils/trim.c.i
+sources/lib/utils/string_utils/string_utils.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/string_utils/string_utils.c.i
+.PHONY : sources/lib/utils/string_utils/string_utils.c.i
 
-sources/lib/utils/stringUtils/trim.s: sources/lib/utils/stringUtils/trim.c.s
+sources/lib/utils/string_utils/string_utils.s: sources/lib/utils/string_utils/string_utils.c.s
 
-.PHONY : sources/lib/utils/stringUtils/trim.s
+.PHONY : sources/lib/utils/string_utils/string_utils.s
 
 # target to generate assembly for a file
-sources/lib/utils/stringUtils/trim.c.s:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/stringUtils/trim.c.s
-.PHONY : sources/lib/utils/stringUtils/trim.c.s
+sources/lib/utils/string_utils/string_utils.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/string_utils/string_utils.c.s
+.PHONY : sources/lib/utils/string_utils/string_utils.c.s
+
+sources/lib/utils/string_utils/trim.obj: sources/lib/utils/string_utils/trim.c.obj
+
+.PHONY : sources/lib/utils/string_utils/trim.obj
+
+# target to build an object file
+sources/lib/utils/string_utils/trim.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/string_utils/trim.c.obj
+.PHONY : sources/lib/utils/string_utils/trim.c.obj
+
+sources/lib/utils/string_utils/trim.i: sources/lib/utils/string_utils/trim.c.i
+
+.PHONY : sources/lib/utils/string_utils/trim.i
+
+# target to preprocess a source file
+sources/lib/utils/string_utils/trim.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/string_utils/trim.c.i
+.PHONY : sources/lib/utils/string_utils/trim.c.i
+
+sources/lib/utils/string_utils/trim.s: sources/lib/utils/string_utils/trim.c.s
+
+.PHONY : sources/lib/utils/string_utils/trim.s
+
+# target to generate assembly for a file
+sources/lib/utils/string_utils/trim.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/string_utils/trim.c.s
+.PHONY : sources/lib/utils/string_utils/trim.c.s
 
 sources/main/main.obj: sources/main/main.c.obj
 
@@ -1040,59 +1040,59 @@ sources/tools/parsers/aio_parser.c.s:
 	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/parsers/aio_parser.c.s
 .PHONY : sources/tools/parsers/aio_parser.c.s
 
-sources/tools/parsers/chaParser/AIOChaParser.obj: sources/tools/parsers/chaParser/AIOChaParser.c.obj
+sources/tools/parsers/chaParser/aio_cha_parser.obj: sources/tools/parsers/chaParser/aio_cha_parser.c.obj
 
-.PHONY : sources/tools/parsers/chaParser/AIOChaParser.obj
-
-# target to build an object file
-sources/tools/parsers/chaParser/AIOChaParser.c.obj:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/parsers/chaParser/AIOChaParser.c.obj
-.PHONY : sources/tools/parsers/chaParser/AIOChaParser.c.obj
-
-sources/tools/parsers/chaParser/AIOChaParser.i: sources/tools/parsers/chaParser/AIOChaParser.c.i
-
-.PHONY : sources/tools/parsers/chaParser/AIOChaParser.i
-
-# target to preprocess a source file
-sources/tools/parsers/chaParser/AIOChaParser.c.i:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/parsers/chaParser/AIOChaParser.c.i
-.PHONY : sources/tools/parsers/chaParser/AIOChaParser.c.i
-
-sources/tools/parsers/chaParser/AIOChaParser.s: sources/tools/parsers/chaParser/AIOChaParser.c.s
-
-.PHONY : sources/tools/parsers/chaParser/AIOChaParser.s
-
-# target to generate assembly for a file
-sources/tools/parsers/chaParser/AIOChaParser.c.s:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/parsers/chaParser/AIOChaParser.c.s
-.PHONY : sources/tools/parsers/chaParser/AIOChaParser.c.s
-
-sources/tools/parsers/douParser/AIODouParser.obj: sources/tools/parsers/douParser/AIODouParser.c.obj
-
-.PHONY : sources/tools/parsers/douParser/AIODouParser.obj
+.PHONY : sources/tools/parsers/chaParser/aio_cha_parser.obj
 
 # target to build an object file
-sources/tools/parsers/douParser/AIODouParser.c.obj:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/parsers/douParser/AIODouParser.c.obj
-.PHONY : sources/tools/parsers/douParser/AIODouParser.c.obj
+sources/tools/parsers/chaParser/aio_cha_parser.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/parsers/chaParser/aio_cha_parser.c.obj
+.PHONY : sources/tools/parsers/chaParser/aio_cha_parser.c.obj
 
-sources/tools/parsers/douParser/AIODouParser.i: sources/tools/parsers/douParser/AIODouParser.c.i
+sources/tools/parsers/chaParser/aio_cha_parser.i: sources/tools/parsers/chaParser/aio_cha_parser.c.i
 
-.PHONY : sources/tools/parsers/douParser/AIODouParser.i
+.PHONY : sources/tools/parsers/chaParser/aio_cha_parser.i
 
 # target to preprocess a source file
-sources/tools/parsers/douParser/AIODouParser.c.i:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/parsers/douParser/AIODouParser.c.i
-.PHONY : sources/tools/parsers/douParser/AIODouParser.c.i
+sources/tools/parsers/chaParser/aio_cha_parser.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/parsers/chaParser/aio_cha_parser.c.i
+.PHONY : sources/tools/parsers/chaParser/aio_cha_parser.c.i
 
-sources/tools/parsers/douParser/AIODouParser.s: sources/tools/parsers/douParser/AIODouParser.c.s
+sources/tools/parsers/chaParser/aio_cha_parser.s: sources/tools/parsers/chaParser/aio_cha_parser.c.s
 
-.PHONY : sources/tools/parsers/douParser/AIODouParser.s
+.PHONY : sources/tools/parsers/chaParser/aio_cha_parser.s
 
 # target to generate assembly for a file
-sources/tools/parsers/douParser/AIODouParser.c.s:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/parsers/douParser/AIODouParser.c.s
-.PHONY : sources/tools/parsers/douParser/AIODouParser.c.s
+sources/tools/parsers/chaParser/aio_cha_parser.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/parsers/chaParser/aio_cha_parser.c.s
+.PHONY : sources/tools/parsers/chaParser/aio_cha_parser.c.s
+
+sources/tools/parsers/douParser/aio_dou_parser.obj: sources/tools/parsers/douParser/aio_dou_parser.c.obj
+
+.PHONY : sources/tools/parsers/douParser/aio_dou_parser.obj
+
+# target to build an object file
+sources/tools/parsers/douParser/aio_dou_parser.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/parsers/douParser/aio_dou_parser.c.obj
+.PHONY : sources/tools/parsers/douParser/aio_dou_parser.c.obj
+
+sources/tools/parsers/douParser/aio_dou_parser.i: sources/tools/parsers/douParser/aio_dou_parser.c.i
+
+.PHONY : sources/tools/parsers/douParser/aio_dou_parser.i
+
+# target to preprocess a source file
+sources/tools/parsers/douParser/aio_dou_parser.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/parsers/douParser/aio_dou_parser.c.i
+.PHONY : sources/tools/parsers/douParser/aio_dou_parser.c.i
+
+sources/tools/parsers/douParser/aio_dou_parser.s: sources/tools/parsers/douParser/aio_dou_parser.c.s
+
+.PHONY : sources/tools/parsers/douParser/aio_dou_parser.s
+
+# target to generate assembly for a file
+sources/tools/parsers/douParser/aio_dou_parser.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/parsers/douParser/aio_dou_parser.c.s
+.PHONY : sources/tools/parsers/douParser/aio_dou_parser.c.s
 
 sources/tools/parsers/intParser/AIOIntParser.obj: sources/tools/parsers/intParser/AIOIntParser.c.obj
 
@@ -1235,36 +1235,36 @@ help:
 	@echo ... sources/lib/pair/string_pair.obj
 	@echo ... sources/lib/pair/string_pair.i
 	@echo ... sources/lib/pair/string_pair.s
-	@echo ... sources/lib/utils/fileUtils/file_utils.obj
-	@echo ... sources/lib/utils/fileUtils/file_utils.i
-	@echo ... sources/lib/utils/fileUtils/file_utils.s
-	@echo ... sources/lib/utils/operationUtils/operation_utils.obj
-	@echo ... sources/lib/utils/operationUtils/operation_utils.i
-	@echo ... sources/lib/utils/operationUtils/operation_utils.s
-	@echo ... sources/lib/utils/stringUtils/prefix_suffix.obj
-	@echo ... sources/lib/utils/stringUtils/prefix_suffix.i
-	@echo ... sources/lib/utils/stringUtils/prefix_suffix.s
-	@echo ... sources/lib/utils/stringUtils/split.obj
-	@echo ... sources/lib/utils/stringUtils/split.i
-	@echo ... sources/lib/utils/stringUtils/split.s
-	@echo ... sources/lib/utils/stringUtils/string_utils.obj
-	@echo ... sources/lib/utils/stringUtils/string_utils.i
-	@echo ... sources/lib/utils/stringUtils/string_utils.s
-	@echo ... sources/lib/utils/stringUtils/trim.obj
-	@echo ... sources/lib/utils/stringUtils/trim.i
-	@echo ... sources/lib/utils/stringUtils/trim.s
+	@echo ... sources/lib/utils/file_utils/file_utils.obj
+	@echo ... sources/lib/utils/file_utils/file_utils.i
+	@echo ... sources/lib/utils/file_utils/file_utils.s
+	@echo ... sources/lib/utils/operation_utils/operation_utils.obj
+	@echo ... sources/lib/utils/operation_utils/operation_utils.i
+	@echo ... sources/lib/utils/operation_utils/operation_utils.s
+	@echo ... sources/lib/utils/string_utils/prefix_suffix.obj
+	@echo ... sources/lib/utils/string_utils/prefix_suffix.i
+	@echo ... sources/lib/utils/string_utils/prefix_suffix.s
+	@echo ... sources/lib/utils/string_utils/split.obj
+	@echo ... sources/lib/utils/string_utils/split.i
+	@echo ... sources/lib/utils/string_utils/split.s
+	@echo ... sources/lib/utils/string_utils/string_utils.obj
+	@echo ... sources/lib/utils/string_utils/string_utils.i
+	@echo ... sources/lib/utils/string_utils/string_utils.s
+	@echo ... sources/lib/utils/string_utils/trim.obj
+	@echo ... sources/lib/utils/string_utils/trim.i
+	@echo ... sources/lib/utils/string_utils/trim.s
 	@echo ... sources/main/main.obj
 	@echo ... sources/main/main.i
 	@echo ... sources/main/main.s
 	@echo ... sources/tools/parsers/aio_parser.obj
 	@echo ... sources/tools/parsers/aio_parser.i
 	@echo ... sources/tools/parsers/aio_parser.s
-	@echo ... sources/tools/parsers/chaParser/AIOChaParser.obj
-	@echo ... sources/tools/parsers/chaParser/AIOChaParser.i
-	@echo ... sources/tools/parsers/chaParser/AIOChaParser.s
-	@echo ... sources/tools/parsers/douParser/AIODouParser.obj
-	@echo ... sources/tools/parsers/douParser/AIODouParser.i
-	@echo ... sources/tools/parsers/douParser/AIODouParser.s
+	@echo ... sources/tools/parsers/chaParser/aio_cha_parser.obj
+	@echo ... sources/tools/parsers/chaParser/aio_cha_parser.i
+	@echo ... sources/tools/parsers/chaParser/aio_cha_parser.s
+	@echo ... sources/tools/parsers/douParser/aio_dou_parser.obj
+	@echo ... sources/tools/parsers/douParser/aio_dou_parser.i
+	@echo ... sources/tools/parsers/douParser/aio_dou_parser.s
 	@echo ... sources/tools/parsers/intParser/AIOIntParser.obj
 	@echo ... sources/tools/parsers/intParser/AIOIntParser.i
 	@echo ... sources/tools/parsers/intParser/AIOIntParser.s

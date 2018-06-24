@@ -2,41 +2,38 @@
 #include <malloc.h>
 #include <stdio.h>
 #include <process.h>
-#include "../../../headers/lang/object/objectManager/AIOObjectManager.h"
-#include "../../../headers/lang/methods/methodDefinition/aio_method_definition_builder.h"
+#include "../../../headers/lang/object/object_manager/aio_object_manager.h"
+#include "../../../headers/lang/methods/method_definition/aio_method_definition_builder.h"
+#include "../../../headers/lib/pair/string_pair.h"
+#include "../../../headers/lib/utils/file_utils/file_utils.h"
 #include "../../../headers/lang/methods/aio_method.h"
-#include "../../../headers/lib/utils/fileUtils/file_utils.h"
 
-AIOObjectManager *aio_object_manager;
+aio_object_manager *object_manager;
 
 //Passed JUnitTest!
-void new_aio_method_manager(aio_method_manager **methodManager, aio_method_definition_map *methodDefinitionMap) {
-    //Create the same method manager:
-    *methodManager = calloc(1, sizeof(aio_method_manager));
-    if (*methodManager == NULL) {
+aio_method_manager *new_aio_method_manager(aio_method_definition_map *method_definition_map) {
+    //Create method manager:
+    aio_method_manager *method_manager = calloc(1, sizeof(aio_method_manager));
+    if (method_manager == NULL) {
         perror("cannot allocate memory for aio method manager!");
         exit(1);
     }
     //Set method definition map:
-    (*methodManager)->method_definition_map = methodDefinitionMap;
+    method_manager->method_definition_map = method_definition_map;
     //Set boolean "has main": (default false)
-    (*methodManager)->hasMain = calloc(1, sizeof(int));
-    if ((*methodManager)->hasMain == NULL) {
-        perror("cannot allocate memory for hasMain property in aio method manager!");
-        exit(1);
-    }
-    *(*methodManager)->hasMain = -1;
+    method_manager->has_main = -1;
+    return method_manager;
 }
 
 //Passed JUnitTest!
-void findMethodsInManager(aio_object *aioObject) {
-    for (int i = 0; i < *aioObject->source_code->size; ++i) {
-        char *line = aioObject->source_code->strings[i];
+void find_methods_in_manager(aio_object *aio_object) {
+    for (int i = 0; i < aio_object->source_code->size; ++i) {
+        char *line = aio_object->source_code->strings[i];
         int length = strlen(line);
         if (length > 1) {
             //starts with @
             if (line[0] == '@') {
-                unsigned nameSize = 1;
+                unsigned name_size = 1;
                 char pointer;
                 for (int j = 1; j < length; ++j) {
                     if (line[j] == ' ') {
@@ -45,19 +42,18 @@ void findMethodsInManager(aio_object *aioObject) {
                         }
                         break;
                     }
-                    nameSize = nameSize + 1;
+                    name_size = name_size + 1;
                 }
-                char *methodName = calloc(nameSize + 1, sizeof(char));
-                for (int k = 0; k < nameSize; ++k) {
-                    methodName[k] = line[k];
+                char *method_name = calloc(name_size + 1, sizeof(char));
+                for (int k = 0; k < name_size; ++k) {
+                    method_name[k] = line[k];
                 }
-                if (strcmp(methodName, "@main") == 0) {
-                    *aioObject->method_manager->hasMain = 0;
-                    printf("HAS MAIN: %d\n", *aioObject->method_manager->hasMain);
+                if (strcmp(method_name, "@main") == 0) {
+                    aio_object->method_manager->has_main = 0;
                 }
-                aio_method_definition *methodDefinition = build_aio_method_definition(methodName, aioObject->source_code,
-                                                                                      i);
-                put_aio_method_definition_in_map(aioObject->method_manager->method_definition_map, methodDefinition);
+                aio_method_definition *method_definition = build_aio_method_definition(method_name,
+                                                                                       aio_object->source_code, i);
+                put_aio_method_definition_in_map(aio_object->method_manager->method_definition_map, method_definition);
             }
         }
     }
@@ -68,17 +64,17 @@ void findMethodsInManager(aio_object *aioObject) {
 //Path example:
 //"../aioPrograms/test.txt", "r"
 //Passed JUnitTest!
-void loadSourceCodeInAIOObject(aio_object *object, char *path) {
+void load_source_code_in_aio_object(aio_object *object, char *path) {
     printf("Loading source code...\n");
     //Create source code mutable list:
-    string_list *sourceCode;
-    new_string_list(&sourceCode);
+    string_list *source_code = new_string_list();
     //Create file:
     FILE *file;
     //Create line buffer:
     char buffer[CHUNK];
     if ((file = fopen(path, "r")) == NULL) {
         perror("cannot open source-file");
+        exit(1);
     }
     while (fgets(buffer, sizeof(buffer), file) != NULL) {
         buffer[strlen(buffer) - 1] = '\0';
@@ -86,37 +82,42 @@ void loadSourceCodeInAIOObject(aio_object *object, char *path) {
         char *line = calloc(1, CHUNK);
         strcpy(line, buffer);
         //put string in list:
-        add_in_string_list(sourceCode, line);
+        add_in_string_list(source_code, line);
     }
     fclose(file);
     //Set source code:
-    object->source_code = sourceCode;
+    object->source_code = source_code;
 }
 
 //Passed JUnitTest!
-void new_aio_object(aio_object **object, aio_method_manager *methodManager, char *path) {
+aio_object *new_aio_object(aio_method_manager *method_manager, char *path) {
     //Create the same object:
-    *object = malloc(sizeof(aio_object));
+    aio_object *object = calloc(1, sizeof(aio_object));
+    if (object == NULL) {
+        perror("cannot allocate memory for aio object!");
+        exit(1);
+    }
     //Set method manager:
-    (*object)->method_manager = methodManager;
+    object->method_manager = method_manager;
     //Set name from path:
     string_pair *nameVsFolder = extract_name_and_folder_path_from_path(path);
-    (*object)->name = nameVsFolder->first;
+    object->name = nameVsFolder->first;
     //Set folder path from path:
-    (*object)->folder_path = nameVsFolder->second;
+    object->folder_path = nameVsFolder->second;
     //Loading code:
-    loadSourceCodeInAIOObject(*object, path);
-    findMethodsInManager(*object);
+    load_source_code_in_aio_object(object, path);
+    find_methods_in_manager(object);
+    return object;
 }
 
 void invoke_method_in_manager(aio_object *object, char *method_name, aio_bundle *bundle) {
-    aio_method_definition *methodDefinition = get_aio_method_definition_in_map_by_name(
+    aio_method_definition *method_definition = get_aio_method_definition_in_map_by_name(
             object->method_manager->method_definition_map, method_name);
-    if (methodDefinition->declaration != NULL) {
-        if (*methodDefinition->declaration->argList->size != *bundle->input_values->size) {
+    if (method_definition->declaration != NULL) {
+        if (method_definition->declaration->argList->size != bundle->input_values->size) {
             perror("number of args not matches with arg size of declaration!");
+            exit(1);
         }
     }
-    aio_method *method;
-    new_aio_method_and_invoke(object, &method, methodDefinition, bundle);
+    invoke_new_aio_method(object, method_definition, bundle);
 }

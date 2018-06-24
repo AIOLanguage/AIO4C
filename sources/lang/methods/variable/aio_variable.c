@@ -3,20 +3,13 @@
 #include <stdio.h>
 #include <process.h>
 #include "../../../../headers/lang/methods/variable/aio_variable.h"
+#include "../../../../headers/lib/utils/string_utils/string_utils.h"
 
 //Passed JUnitTest!
-char *removeBracketsAndReturnValue(char *value) {
+char *remove_brackets_and_return_value(char *value) {
     unsigned length = strlen(value);
-    printf("VALUES\n");
-    printf("%s\n", value);
-    printf("%c\n", value[0]);
-    printf("%c\n", value[length - 1]);
     if (value[0] == '\'' && value[length - 1] == '\'') {
-        char *newValue = malloc(length - 2);
-        for (int i = 1; i < length - 1; ++i) {
-            newValue[i] = value[i];
-        }
-        free(&length);
+        char *newValue = remove_prefix_suffix(value, "\'", "\'");
         free(value);
         return newValue;
     } else {
@@ -26,49 +19,37 @@ char *removeBracketsAndReturnValue(char *value) {
 }
 
 //Passed JUnitTest!
-void checkType(const enum aio_type *inputType, enum aio_type matcherType, char *value, int (*matcherFunction)(char *)) {
-    if (*inputType == matcherType) {
-        int matchesType = matcherFunction(value);
-        if (matchesType == -1) {
-            printf("Not matches %d!", matcherType);
-            free(&matchesType);
+void check_type(const enum aio_type *input_type, enum aio_type matcher_type, char *value,
+                int (*matcher_function)(char *)) {
+    if (*input_type == matcher_type) {
+        int matches_type = matcher_function(value);
+        if (matches_type == -1) {
+            perror("not matches type!");
             exit(1);
         }
-        free(&matchesType);
     }
 }
 
 //Passed JUnitTest!
-void new_aio_variable(aio_variable **variable, char *name, char *value, int mutable, enum aio_type *type) {
+aio_variable *new_aio_variable(char *name, char *value, int mutable, enum aio_type *type) {
     //Need to crush a program:
-    checkType(type, AIO_INT, value, matches_int);
-    checkType(type, AIO_DOU, value, matches_dou);
-    checkType(type, AIO_CHA, value, matches_cha);
-    checkType(type, AIO_STR, value, matches_str);
+    check_type(type, AIO_INT, value, matches_int);
+    check_type(type, AIO_DOU, value, matches_dou);
+    check_type(type, AIO_CHA, value, matches_cha);
+    check_type(type, AIO_STR, value, matches_str);
     //Create the same variable:
-    *variable = (aio_variable *) calloc(1, sizeof(aio_variable));
+    aio_variable *variable = calloc(1, sizeof(aio_variable));
+    if (variable == NULL) {
+        perror("cannot allocate memory for aio_variable!");
+        exit(1);
+    }
     //Set name:
-    (*variable)->name = name;
+    variable->name = name;
     //Set value:
-    (*variable)->value = value;
+    variable->value = value;
     //Set mutable:
-    (*variable)->mutable = malloc(sizeof(int));
-    *(*variable)->mutable = mutable;
-    free(&mutable);
+    variable->mutable = mutable;
     //Set type:
-    (*variable)->type = type;
+    variable->type = type;
+    return variable;
 }
-
-/*
- * /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
- * int main(){
-    aio_variable* aioVariable;
-    enum aio_type aioType = AIO_STR;
-    new_aio_variable(&aioVariable, "a", "'0.008'", 0, &aioType);
-    printf("%s\n", aioVariable->name);
-    printf("%s\n", aioVariable->value);
-    printf("%d\n", *aioVariable->mutable);
-    printf("%d\n", *aioVariable->type);
-    return 0;
-}
- */

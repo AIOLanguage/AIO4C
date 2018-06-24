@@ -30,7 +30,7 @@ add_executable(AIO sources/main/main.c
         headers/lang/methods/result/aio_result.h sources/lang/methods/result/aio_result.c
         headers/lang/methods/default_method_container/aio_default_method_container.h
         sources/lang/methods/default_method_container/aio_default_method_container.c
-        sources/lib/utils/stringUtils/string_utils.c headers/lib/utils/string_utils/string_utils.h
+        sources/lib/utils/string_utils/string_utils.c headers/lib/utils/string_utils/string_utils.h
         headers/lang/methods/method_definition/aio_method_definition_builder.h
         sources/lang/methods/method_definition/aio_method_definition_builder.c
         headers/lang/methods/aio_method.h sources/lang/methods/aio_method.c
@@ -43,8 +43,8 @@ add_executable(AIO sources/main/main.c
         headers/lang/methods/analysis/method_reproducer/default/aio_default_reproducer.h
         headers/lang/methods/analysis/method_reproducer/short/aio_short_reproducer.h
         headers/lib/utils/operation_utils/operation_utils.h
-        sources/lib/utils/operationUtils/operation_utils.c
+        sources/lib/utils/operation_utils/operation_utils.c
         headers/lang/methods/analysis/method_reproducer/the_shortest/plus_for_each_reproducer/aio_plus_for_each_reproducer.h
         headers/lang/methods/analysis/method_reproducer/the_shortest/multiply_for_each_reproducer/aio_multiply_for_each_reproducer.h
-        headers/lang/methods/analysis/method_reproducer/the_shortest/concat_for_each_reproducer/aio_concat_for_each_reproducer.h sources/lib/utils/fileUtils/file_utils.c headers/lib/utils/file_utils/file_utils.h
-        sources/lang/methods/analysis/method_reproducer/the_shortest/aio_the_shortest_reproducer.c sources/lang/methods/analysis/method_reproducer/the_shortest/plus_for_each_reproducer/aio_plus_for_each_reproducer.c sources/lang/methods/analysis/method_reproducer/default/aio_default_reproducer.c sources/lang/methods/analysis/method_reproducer/short/aio_short_reproducer.c sources/lang/methods/analysis/method_reproducer/the_shortest/concat_for_each_reproducer/aio_concat_for_each_reproducer.c sources/lang/methods/analysis/method_reproducer/the_shortest/multiply_for_each_reproducer/aio_multiply_for_each_reproducer.c headers/tools/parsers/aio_parser.h sources/tools/parsers/aio_parser.c sources/tools/parsers/intParser/AIOIntParser.c sources/tools/parsers/douParser/AIODouParser.c sources/tools/parsers/chaParser/AIOChaParser.c sources/tools/parsers/strParser/AIOStrParser.c sources/lib/utils/stringUtils/split.c sources/lib/utils/stringUtils/trim.c sources/lib/utils/stringUtils/prefix_suffix.c headers/lib/pair/string_pair.h sources/lib/pair/string_pair.c)
+        headers/lang/methods/analysis/method_reproducer/the_shortest/concat_for_each_reproducer/aio_concat_for_each_reproducer.h sources/lib/utils/file_utils/file_utils.c headers/lib/utils/file_utils/file_utils.h
+        sources/lang/methods/analysis/method_reproducer/the_shortest/aio_the_shortest_reproducer.c sources/lang/methods/analysis/method_reproducer/the_shortest/plus_for_each_reproducer/aio_plus_for_each_reproducer.c sources/lang/methods/analysis/method_reproducer/default/aio_default_reproducer.c sources/lang/methods/analysis/method_reproducer/short/aio_short_reproducer.c sources/lang/methods/analysis/method_reproducer/the_shortest/concat_for_each_reproducer/aio_concat_for_each_reproducer.c sources/lang/methods/analysis/method_reproducer/the_shortest/multiply_for_each_reproducer/aio_multiply_for_each_reproducer.c headers/tools/parsers/aio_parser.h sources/tools/parsers/aio_parser.c sources/tools/parsers/intParser/AIOIntParser.c sources/tools/parsers/douParser/aio_dou_parser.c sources/tools/parsers/chaParser/aio_cha_parser.c sources/tools/parsers/strParser/AIOStrParser.c sources/lib/utils/string_utils/split.c sources/lib/utils/string_utils/trim.c sources/lib/utils/string_utils/prefix_suffix.c headers/lib/pair/string_pair.h sources/lib/pair/string_pair.c)

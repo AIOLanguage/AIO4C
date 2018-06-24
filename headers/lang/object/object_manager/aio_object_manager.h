@@ -12,7 +12,7 @@ extern aio_object_manager *object_manager;
 
 aio_object_manager *init_aio_object_manager();
 
-void build_aio_object_and_put_in_object_manager(aio_object_manager *objectManager, char *path);
+void build_aio_object_and_put_in_object_manager(aio_object_manager *object_manager, char *path);
 
 int is_default_behaviour(aio_object_manager *object_manager);
 

@@ -6,5 +6,4 @@ aio_str
 parse_cha_line_expression(aio_object *object, aio_method_definition *method_definition,
                           aio_method_container *method_container,
                           char *code_line) {
-
 }

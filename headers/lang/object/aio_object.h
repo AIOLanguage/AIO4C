@@ -6,7 +6,7 @@
 
 typedef struct aio_method_manager {
     aio_method_definition_map* method_definition_map;
-    int hasMain;
+    int has_main;
 } aio_method_manager;
 
 aio_method_manager* new_aio_method_manager(aio_method_definition_map *method_definition_map);

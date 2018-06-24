@@ -4,8 +4,8 @@
 #include "../../../lang/object/aio_object.h"
 
 typedef struct aio_object_map {
-    int *capacity;
-    int *size;
+    int capacity;
+    int size;
     char **names;
     aio_object **objects;
 } aio_object_map;

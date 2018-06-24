@@ -6,7 +6,7 @@
 typedef struct aio_variable {
     char *name;
     char *value;
-    int *mutable;
+    int mutable;
     enum aio_type *type;
 } aio_variable;
 
