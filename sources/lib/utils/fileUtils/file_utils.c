@@ -1,16 +1,16 @@
 #include "../../../../headers/lib/utils/stringUtils/string_utils.h"
-#include "../../../../headers/lang/object/AIOObject.h"
+#include "../../../../headers/lang/object/aio_object.h"
 #include <malloc.h>
 #include <mem.h>
 #include <stdio.h>
 
-void merge_new_folder_path(char *folderPath, char *nextObjectName, char **absoluteNextObjectPath) {
+void merge_new_folder_path(char *folder_path, char *next_object_name, char **absolute_next_object_path) {
     //Not supported:
     //While easy make concat_string_to_string =)
     char **paths = calloc(2, sizeof(char *));
-    paths[0] = folderPath;
-    paths[1] = nextObjectName;
-//    join_to_string_without_spaces(paths, absoluteNextObjectPath);
+    paths[0] = folder_path;
+    paths[1] = next_object_name;
+//    join_to_string_without_spaces(paths, absolute_next_object_path);
 }
 
 

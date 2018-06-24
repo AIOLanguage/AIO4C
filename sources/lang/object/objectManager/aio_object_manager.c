@@ -7,7 +7,7 @@
 void initAIOObjectManager(AIOObjectManager **objectManager) {
     *objectManager = calloc(1, sizeof(AIOObjectManager));
     if (*objectManager == NULL) {
-        perror("cannot create AIOObjectManager");
+        perror("cannot create aio_object_manager");
         exit(1);
     }
     AIOObjectMap *objectMap;
@@ -33,12 +33,12 @@ void build_aio_object_and_put_in_object_manager(AIOObjectManager *objectManager,
     putAIOObjectInMap(objectManager->objectMap, aioObject);
 }
 
-int isDefaultBehaviour(AIOObjectManager* objectManager) {
-    return objectManager->behaviour;
+int is_default_behaviour(struct aio_object_manager *object_manager) {
+    return object_manager->behaviour;
 }
 
 /*
  * /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
- * initAIOObjectManager(&aio_object_manager);
+ * init_aio_object_manager(&aio_object_manager);
  * printf("%d", *aio_object_manager->objectMap->size);
  */

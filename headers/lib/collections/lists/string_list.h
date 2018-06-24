@@ -12,8 +12,8 @@ string_list *new_string_list();
 
 void add_in_string_list(string_list *string_list, char *string);
 
-char *get_string_in_list_by_index(string_list *listOfString, int index);
+char *get_string_in_list_by_index(string_list *string_list, int index);
 
-int is_string_list_empty(string_list *listOfString);
+int is_string_list_empty(string_list *string_list);
 
 #endif //STRING_LIST_H

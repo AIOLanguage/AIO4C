@@ -5,7 +5,7 @@
 #include "../../../headers/lang/types/aio_type.h"
 
 //Passed JUnitTest!
-int matchesInt(char *word) {
+int matches_int(char *word) {
     int start = 0;
     int length = strlen(word);
     if (length == 0) {
@@ -29,7 +29,7 @@ int matchesInt(char *word) {
 }
 
 //Passed JUnitTest!
-int matchesDou(char *word) {
+int matches_dou(char *word) {
     int result = -1;
     int wasDot = -1;
     int wasFraction = -1;
@@ -66,7 +66,7 @@ int matchesDou(char *word) {
 }
 
 //Passed JUnitTest!
-int matchesCha(char *word) {
+int matches_cha(char *word) {
     int result = -1;
     int length = strlen(word);
     if (length == 3 && word[0] == '\'' && word[length - 1] == '\'') {
@@ -76,7 +76,7 @@ int matchesCha(char *word) {
 }
 
 //Passed JUnitTest!
-int matchesStr(char *word) {
+int matches_str(char *word) {
     int result = -1;
     int length = strlen(word);
     if ((length == 2 || length > 3) && word[0] == '\'' && word[length - 1] == '\'') {
@@ -86,20 +86,20 @@ int matchesStr(char *word) {
 }
 
 //끝난!
-void setType(char *value, enum aio_type *type) {
-    if (matchesInt(value)) {
+void set_type(char *value, enum aio_type *type) {
+    if (matches_int(value)) {
         *type = AIO_INT;
-    } else if (matchesDou(value)) {
+    } else if (matches_dou(value)) {
         *type = AIO_DOU;
-    } else if (matchesCha(value)) {
+    } else if (matches_cha(value)) {
         *type = AIO_CHA;
-    } else if (matchesStr(value)) {
+    } else if (matches_str(value)) {
         *type = AIO_STR;
     }
 }
 
 //끝난!
-int isAIOIntType(enum aio_type type) {
+int is_aio_int_type(enum aio_type type) {
     if (type == AIO_INT) {
         return 0;
     } else {
@@ -141,7 +141,7 @@ void str_to_int(char *word, int **dst) {
         perror("cannot allocate memory for dst in str_to_int!");
         exit(1);
     }
-    if (matchesInt(word) != 0) {
+    if (matches_int(word) != 0) {
         perror("cannot convert string to int in str_to_int!");
         exit(1);
     }
@@ -158,7 +158,7 @@ void str_to_dou(char *word, double **dst) {
         perror("cannot allocate memory for dst in str_to_dou!");
         exit(1);
     }
-    if (matchesDou(word) != 0) {
+    if (matches_dou(word) != 0) {
         perror("cannot convert string to int in str_to_dou!");
         exit(1);
     }
@@ -300,7 +300,7 @@ void dou_to_str(double src, char **dst) {
     free(fractionalArray);
 }
 
-void chaToStr(char src, char **dst) {
+void cha_to_str(char src, char **dst) {
     *dst = calloc(2, sizeof(char));
     if (*dst == NULL) {
         perror("cannot allocate memory for dst array!");

@@ -2,12 +2,12 @@
 #include <process.h>
 #include <stdio.h>
 #include <malloc.h>
-#include "../../../../headers/lib/collections/maps/AIOObjectMap.h"
+#include "../../../../headers/lib/collections/maps/aio_object_map.h"
 
 //Passed JUnitTests!
-void createAIOObjectMap(AIOObjectMap **objectMap) {
+void new_aio_object_map(aio_object_map **objectMap) {
     //Create the same definition map:
-    *objectMap = calloc(1, sizeof(AIOObjectMap));
+    *objectMap = calloc(1, sizeof(aio_object_map));
     if (*objectMap == NULL) {
         perror("cannot allocate memory for aio_object!");
     }
@@ -36,7 +36,7 @@ void createAIOObjectMap(AIOObjectMap **objectMap) {
 }
 
 //Passed JUnitTests!
-void updateMemoryInMutableMapOfObjects(AIOObjectMap *objectMap) {
+void updateMemoryInMutableMapOfObjects(aio_object_map *objectMap) {
     if (*objectMap->size + 1 == *objectMap->capacity) {
         *objectMap->capacity = *objectMap->capacity * 2;
         objectMap->names = realloc(objectMap->names, *objectMap->capacity * sizeof(char *));
@@ -45,30 +45,30 @@ void updateMemoryInMutableMapOfObjects(AIOObjectMap *objectMap) {
 }
 
 //Passed JUnitTests!
-void putAIOObjectInMap(AIOObjectMap *objectMap, aio_object *object) {
-    for (int i = 0; i < *objectMap->size; ++i) {
-        if (strcmp(objectMap->names[i], object->name) == 0) {
+void put_aio_object_in_map(aio_object_map *object_map, aio_object *object) {
+    for (int i = 0; i < *object_map->size; ++i) {
+        if (strcmp(object_map->names[i], object->name) == 0) {
             perror("Cannot put aio_object in definition map");
         }
     }
     //Check to update:
-    updateMemoryInMutableMapOfObjects(objectMap);
+    updateMemoryInMutableMapOfObjects(object_map);
     //Set key:
-    objectMap->names[*objectMap->size] = malloc(strlen(object->name));
-    if (objectMap->names[*objectMap->size] == NULL) {
+    object_map->names[*object_map->size] = malloc(strlen(object->name));
+    if (object_map->names[*object_map->size] == NULL) {
         perror("cannot allocate memory for names!");
     }
-    objectMap->names[*objectMap->size] = object->name;
+    object_map->names[*object_map->size] = object->name;
     //Set value:
-    objectMap->objects[*objectMap->size] = object;
-    *objectMap->size = *objectMap->size + 1;
+    object_map->objects[*object_map->size] = object;
+    *object_map->size = *object_map->size + 1;
 }
 
 //Passed JUnitTests!
-aio_object *get_aio_object_in_map_by_name(AIOObjectMap *objectMap, char *name) {
+aio_object *get_aio_object_in_map_by_name(aio_object_map *object_map, char *name) {
     for (int i = 0; i < strlen(name); ++i) {
-        if (strcmp(objectMap->names[i], name) == 0) {
-            return objectMap->objects[i];
+        if (strcmp(object_map->names[i], name) == 0) {
+            return object_map->objects[i];
         }
     }
     return NULL;
@@ -77,22 +77,22 @@ aio_object *get_aio_object_in_map_by_name(AIOObjectMap *objectMap, char *name) {
 /*
  * /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
  * int main() {
-    AIOObjectMap* objectMap;
-    createAIOObjectMap(&objectMap);
+    aio_object_map* objectMap;
+    new_aio_object_map(&objectMap);
     printf("%d", *objectMap->size);
 
-    AIOMethodDefinitionMap* definitionMap;
-    createAIOMethodDefinitionMap(&definitionMap);
+    aio_method_definition_map* definitionMap;
+    new_aio_method_definition_map(&definitionMap);
 
-    AIOMethodManager* aioMethodManager;
-    createAIOMethodManager(&aioMethodManager, definitionMap);
+    aio_method_manager* aioMethodManager;
+    new_aio_method_manager(&aioMethodManager, definitionMap);
 
     aio_object* aioObject;
-    createAIOObject(&aioObject, aioMethodManager, "starter");
+    new_aio_object(&aioObject, aioMethodManager, "starter");
 
-    putAIOObjectInMap(objectMap, aioObject);
+    put_aio_object_in_map(objectMap, aioObject);
     aio_object* o = get_aio_object_in_map_by_name(objectMap, "starter");
-    printf("%d", *o->methodManager->hasMain);
+    printf("%d", *o->method_manager->hasMain);
 
     return 0;
 }

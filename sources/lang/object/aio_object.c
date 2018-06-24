@@ -5,20 +5,20 @@
 #include "../../../headers/lang/object/objectManager/AIOObjectManager.h"
 #include "../../../headers/lang/methods/methodDefinition/aio_method_definition_builder.h"
 #include "../../../headers/lang/methods/aio_method.h"
-#include "../../../headers/lib/utils/fileUtils/FileUtils.h"
+#include "../../../headers/lib/utils/fileUtils/file_utils.h"
 
 AIOObjectManager *aio_object_manager;
 
 //Passed JUnitTest!
-void createAIOMethodManager(AIOMethodManager **methodManager, AIOMethodDefinitionMap *methodDefinitionMap) {
+void new_aio_method_manager(aio_method_manager **methodManager, aio_method_definition_map *methodDefinitionMap) {
     //Create the same method manager:
-    *methodManager = calloc(1, sizeof(AIOMethodManager));
+    *methodManager = calloc(1, sizeof(aio_method_manager));
     if (*methodManager == NULL) {
         perror("cannot allocate memory for aio method manager!");
         exit(1);
     }
     //Set method definition map:
-    (*methodManager)->methodDefinitionMap = methodDefinitionMap;
+    (*methodManager)->method_definition_map = methodDefinitionMap;
     //Set boolean "has main": (default false)
     (*methodManager)->hasMain = calloc(1, sizeof(int));
     if ((*methodManager)->hasMain == NULL) {
@@ -30,8 +30,8 @@ void createAIOMethodManager(AIOMethodManager **methodManager, AIOMethodDefinitio
 
 //Passed JUnitTest!
 void findMethodsInManager(aio_object *aioObject) {
-    for (int i = 0; i < *aioObject->sourceCode->size; ++i) {
-        char *line = aioObject->sourceCode->strings[i];
+    for (int i = 0; i < *aioObject->source_code->size; ++i) {
+        char *line = aioObject->source_code->strings[i];
         int length = strlen(line);
         if (length > 1) {
             //starts with @
@@ -52,12 +52,12 @@ void findMethodsInManager(aio_object *aioObject) {
                     methodName[k] = line[k];
                 }
                 if (strcmp(methodName, "@main") == 0) {
-                    *aioObject->methodManager->hasMain = 0;
-                    printf("HAS MAIN: %d\n", *aioObject->methodManager->hasMain);
+                    *aioObject->method_manager->hasMain = 0;
+                    printf("HAS MAIN: %d\n", *aioObject->method_manager->hasMain);
                 }
-                aio_method_definition *methodDefinition = build_aio_method_definition(methodName, aioObject->sourceCode,
+                aio_method_definition *methodDefinition = build_aio_method_definition(methodName, aioObject->source_code,
                                                                                       i);
-                putAIOMethodDefinitionInMap(aioObject->methodManager->methodDefinitionMap, methodDefinition);
+                put_aio_method_definition_in_map(aioObject->method_manager->method_definition_map, methodDefinition);
             }
         }
     }
@@ -90,28 +90,28 @@ void loadSourceCodeInAIOObject(aio_object *object, char *path) {
     }
     fclose(file);
     //Set source code:
-    object->sourceCode = sourceCode;
+    object->source_code = sourceCode;
 }
 
 //Passed JUnitTest!
-void createAIOObject(aio_object **object, AIOMethodManager *methodManager, char *path) {
+void new_aio_object(aio_object **object, aio_method_manager *methodManager, char *path) {
     //Create the same object:
     *object = malloc(sizeof(aio_object));
     //Set method manager:
-    (*object)->methodManager = methodManager;
+    (*object)->method_manager = methodManager;
     //Set name from path:
     string_pair *nameVsFolder = extract_name_and_folder_path_from_path(path);
     (*object)->name = nameVsFolder->first;
     //Set folder path from path:
-    (*object)->folderPath = nameVsFolder->second;
+    (*object)->folder_path = nameVsFolder->second;
     //Loading code:
     loadSourceCodeInAIOObject(*object, path);
     findMethodsInManager(*object);
 }
 
-void invokeMethodInManager(aio_object *object, char *methodName, aio_bundle *bundle) {
-    aio_method_definition *methodDefinition = getAIOMethodDefinitionInMapByName(
-            object->methodManager->methodDefinitionMap, methodName);
+void invoke_method_in_manager(aio_object *object, char *method_name, aio_bundle *bundle) {
+    aio_method_definition *methodDefinition = get_aio_method_definition_in_map_by_name(
+            object->method_manager->method_definition_map, method_name);
     if (methodDefinition->declaration != NULL) {
         if (*methodDefinition->declaration->argList->size != *bundle->input_values->size) {
             perror("number of args not matches with arg size of declaration!");

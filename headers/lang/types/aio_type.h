@@ -8,32 +8,32 @@ typedef int aio_int;
 
 typedef double aio_dou;
 
-typedef char AIOCha;
+typedef char aio_cha;
 
-typedef char* aio_str;
+typedef char *aio_str;
 
-int matchesInt(char* word);
+int matches_int(char *word);
 
-void str_to_int(char *word, int **dst);
+int str_to_int(char *word);
 
-int matchesDou(char* word);
+int matches_dou(char *word);
 
-void str_to_dou(char *word, double **dst);
+double str_to_dou(char *word);
 
-int matchesCha(char* word);
+int matches_cha(char *word);
 
-char strToCha(char *word, void **dst);
+char str_to_cha(char *word);
 
-int matchesStr(char* word);
+int matches_str(char *word);
 
-void setType(char *value, enum aio_type *type);
+void set_type(char *value, enum aio_type *type);
 
-int isAIOIntType(enum aio_type type);
+int is_aio_int_type(enum aio_type type);
 
-void int_to_str(int src, char **dst);
+char* int_to_str(int src);
 
-void dou_to_str(double src, char **dst);
+char* dou_to_str(double src);
 
-void chaToStr(char src, char **dst);
+char* cha_to_str(char src);
 
 #endif //AIO_AIO_TYPE_H

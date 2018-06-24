@@ -1,6 +1,6 @@
-#include "../../../../../../../headers/lib/collections/maps/AIOVariableMap.h"
+#include "../../../../../../../headers/lib/collections/maps/aio_variable_map.h"
 #include "../../../../../../../headers/lang/methods/bundle/aio_bundle.h"
-#include "../../../../../../../headers/lang/methods/AIOMethodContainer.h"
+#include "../../../../../../../headers/lang/methods/aio_method_container.h"
 #include "../../../../../../../headers/lang/methods/analysis/methodReproducer/theShortest/aio_the_shortest_reproducer.h"
 
 aio_int multiply_int(aio_int first, aio_int second) {

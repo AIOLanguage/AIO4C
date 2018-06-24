@@ -2,7 +2,7 @@
 #include "../../declarations/aio_declaration.h"
 #include "../../annotations/aio_annotation.h"
 #include "aio_method_size_type.h"
-#include "../../../lib/collections/lists/AIOAnnotationList.h"
+#include "../../../lib/collections/lists/aio_annotation_list.h"
 #include "../../../lib/collections/lists/string_list.h"
 
 #ifndef AIO_METHOD_DEFINITION_H

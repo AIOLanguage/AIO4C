@@ -5,7 +5,7 @@
 #include "../../../../headers/lang/methods/methodDefinition/aio_method_definition.h"
 #include "../../../../headers/lib/utils/stringUtils/string_utils.h"
 #include "../../../../headers/lang/object/objectManager/AIOObjectManager.h"
-#include "../../../../headers/lib/utils/operationUtils/OperationUtils.h"
+#include "../../../../headers/lib/utils/operationUtils/operation_utils.h"
 
 AIOObjectManager* aio_object_manager;
 

@@ -3,11 +3,11 @@
 #include <mem.h>
 #include <ctype.h>
 #include "../../../../headers/lang/types/aio_type.h"
-#include "../../../../headers/lang/object/AIOObject.h"
-#include "../../../../headers/lang/methods/AIOMethodContainer.h"
+#include "../../../../headers/lang/object/aio_object.h"
+#include "../../../../headers/lang/methods/aio_method_container.h"
 #include "../../../../headers/lang/methods/result/aio_result.h"
 #include "../../../../headers/lib/utils/stringUtils/string_utils.h"
-#include "../../../../headers/tools/parsers/AIOParser.h"
+#include "../../../../headers/tools/parsers/aio_parser.h"
 #include "../../../../headers/lang/methods/defaultMethodContainer/aio_default_method_container.h"
 
 //제목들:
@@ -39,9 +39,10 @@ aio_dou_result *makeNumber(char *codeLine);
  */
 
 aio_str
-parseDouLineExpression(aio_object *object, aio_method_definition *methodDefinition, aio_method_container *methodContainer,
-                       char *codeLine) {
-    const aio_dou_result *douResult = makePlusOrMinus(object, methodDefinition, methodContainer, codeLine);
+parse_dou_line_expression(aio_object *object, aio_method_definition *method_definition,
+                          aio_method_container *method_container,
+                          char *code_line) {
+    const aio_dou_result *douResult = makePlusOrMinus(object, method_definition, method_container, code_line);
     if (is_not_empty_string(douResult->rest) == 0) {
         perror("cannot full parse code line!");
         exit(1);
@@ -167,7 +168,7 @@ makeMethodOrVariable(aio_object *object, aio_method_definition *methodDefinition
             }
         } else { //그것은 변수이다:
             char *variableName = methodOrVariableName;
-            aio_variable *variable = getVariable(variableName, methodContainer);
+            aio_variable *variable = get_variable_from_method_container(variableName, methodContainer);
             char *rest;
 //            substring(codeLine, methodOrVariableStrLength, codeLineLength - methodOrVariableStrLength, &rest);
             aio_dou_result *douResult;
@@ -232,7 +233,7 @@ makeMethod(char *methodName, aio_dou_result *douResult, aio_object *object) {
         new_aio_bundle(&bundle, inputValues);
         char *correctedMethodName = "@";
         concat_string_to_string(methodName, &correctedMethodName);
-        invokeMethodInManager(object, correctedMethodName, bundle);
+        invoke_method_in_manager(object, correctedMethodName, bundle);
         aio_str stringAcc = bundle->output_values->strings[0];
         aio_dou *acc;
         str_to_dou(stringAcc, &acc);

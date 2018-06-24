@@ -1,11 +1,11 @@
 #ifndef AIO_METHOD_CONTAINER_H
 #define AIO_METHOD_CONTAINER_H
 
-#include "../../lib/collections/maps/AIOVariableMap.h"
+#include "../../lib/collections/maps/aio_variable_map.h"
 
-typedef struct AIOMethodContainer {
+typedef struct aio_method_container {
     aio_variable_map *argMap;
-    aio_variable_map *variableMap;
+    aio_variable_map *variable_map;
 } aio_method_container;
 
 #endif //AIO_METHOD_CONTAINER_H

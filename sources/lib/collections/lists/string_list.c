@@ -44,17 +44,17 @@ void add_in_string_list(string_list *string_list, char *string) {
 }
 
 //Passed JUnitTests!
-char *get_string_in_list_by_index(string_list *listOfString, int index) {
-    if (index < 0 || listOfString->size <= index) {
+char *get_string_in_list_by_index(string_list *string_list1, int index) {
+    if (index < 0 || string_list1->size <= index) {
         perror("cannot get index in string_list");
         exit(1);
     } else {
-        return listOfString->strings[index];
+        return string_list1->strings[index];
     }
 }
 
-int is_string_list_empty(string_list *listOfString) {
-    if (listOfString->size == 0) {
+int is_string_list_empty(string_list *string_list1) {
+    if (string_list1->size == 0) {
         return 0;
     } else {
         return -1;

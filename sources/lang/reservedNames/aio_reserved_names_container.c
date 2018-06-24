@@ -10,7 +10,7 @@ char reservedNames[5][4] = {
         {"str"}};
 
 //Passed JUnitTest!
-int canUseName(char* name) {
+int can_use_name(char *name) {
     for (int i = 0; i < 5; i++) {
         printf("%s\n", reservedNames[i]);
         if (strcmp(name, reservedNames[i]) == 0) {

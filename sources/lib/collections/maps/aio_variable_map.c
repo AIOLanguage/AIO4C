@@ -2,9 +2,9 @@
 #include <mem.h>
 #include <stdio.h>
 #include <process.h>
-#include "../../../../headers/lib/collections/maps/AIOVariableMap.h"
+#include "../../../../headers/lib/collections/maps/aio_variable_map.h"
 
-void createAIOVariableMap(aio_variable_map **variableMap) {
+void new_aio_variable_map(aio_variable_map **variableMap) {
     //Create the same variable map:
     *variableMap = calloc(1, sizeof(aio_variable_map));
     if (*variableMap == NULL) {
@@ -48,29 +48,29 @@ void updateMemoryInVariableMapOfObjects(aio_variable_map *variableMap) {
     }
 }
 
-void putInAIOVariableInMap(aio_variable_map *variableMap, aio_variable *variable) {
-    for (int i = 0; i < *variableMap->size; ++i) {
-        if (strcmp(variableMap->names[i], variable->name) == 0) {
+void put_in_aio_variable_in_map(aio_variable_map *variable_map, aio_variable *variable) {
+    for (int i = 0; i < *variable_map->size; ++i) {
+        if (strcmp(variable_map->names[i], variable->name) == 0) {
             perror("Cannot put aio_object in definition map");
         }
     }
     //Check to update:
-    updateMemoryInVariableMapOfObjects(variableMap);
+    updateMemoryInVariableMapOfObjects(variable_map);
     //Set key:
-    variableMap->names[*variableMap->size] = malloc(strlen(variable->name));
-    if (variableMap->names[*variableMap->size] == NULL) {
+    variable_map->names[*variable_map->size] = malloc(strlen(variable->name));
+    if (variable_map->names[*variable_map->size] == NULL) {
         perror("cannot allocate memory for names!");
     }
-    variableMap->names[*variableMap->size] = variable->name;
+    variable_map->names[*variable_map->size] = variable->name;
     //Set value:
-    variableMap->variables[*variableMap->size] = variable;
-    *variableMap->size = *variableMap->size + 1;
+    variable_map->variables[*variable_map->size] = variable;
+    *variable_map->size = *variable_map->size + 1;
 }
 
-aio_variable *getAIOVariableInMapByName(aio_variable_map *variableMap, char *name) {
+aio_variable *get_aio_variable_in_map_by_name(aio_variable_map *variable_map, char *name) {
     for (int i = 0; i < strlen(name); ++i) {
-        if (strcmp(variableMap->names[i], name) == 0) {
-            return variableMap->variables[i];
+        if (strcmp(variable_map->names[i], name) == 0) {
+            return variable_map->variables[i];
         }
     }
     perror("cannot get aio variable in map");

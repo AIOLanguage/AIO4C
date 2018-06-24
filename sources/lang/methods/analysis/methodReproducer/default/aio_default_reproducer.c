@@ -1,6 +1,6 @@
 #include <stdio.h>
-#include "../../../../../../headers/lang/object/AIOObject.h"
-#include "../../../../../../headers/lang/methods/AIOMethodContainer.h"
+#include "../../../../../../headers/lang/object/aio_object.h"
+#include "../../../../../../headers/lang/methods/aio_method_container.h"
 #include "../../../../../../headers/lib/utils/stringUtils/string_utils.h"
 #include "../../../../../../headers/lang/methods/analysis/methodReproducer/short/aio_short_reproducer.h"
 

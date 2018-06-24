@@ -41,10 +41,10 @@ void checkType(const enum aio_type *inputType, enum aio_type matcherType, char *
 //Passed JUnitTest!
 void new_aio_variable(aio_variable **variable, char *name, char *value, int mutable, enum aio_type *type) {
     //Need to crush a program:
-    checkType(type, AIO_INT, value, matchesInt);
-    checkType(type, AIO_DOU, value, matchesDou);
-    checkType(type, AIO_CHA, value, matchesCha);
-    checkType(type, AIO_STR, value, matchesStr);
+    checkType(type, AIO_INT, value, matches_int);
+    checkType(type, AIO_DOU, value, matches_dou);
+    checkType(type, AIO_CHA, value, matches_cha);
+    checkType(type, AIO_STR, value, matches_str);
     //Create the same variable:
     *variable = (aio_variable *) calloc(1, sizeof(aio_variable));
     //Set name:

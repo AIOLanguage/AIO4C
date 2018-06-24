@@ -1,14 +1,14 @@
 #include <stdio.h>
 #include <process.h>
-#include "../../../../../../headers/lang/object/AIOObject.h"
-#include "../../../../../../headers/lib/collections/maps/AIOVariableMap.h"
-#include "../../../../../../headers/lang/methods/AIOMethodContainer.h"
+#include "../../../../../../headers/lang/object/aio_object.h"
+#include "../../../../../../headers/lib/collections/maps/aio_variable_map.h"
+#include "../../../../../../headers/lang/methods/aio_method_container.h"
 #include "../../../../../../headers/lang/methods/analysis/methodReproducer/theShortest/concatForEachReproducer/aio_concat_for_each_reproducer.h"
-#include "../../../../../../headers/lib/utils/operationUtils/OperationUtils.h"
+#include "../../../../../../headers/lib/utils/operationUtils/operation_utils.h"
 #include "../../../../../../headers/lang/methods/analysis/methodReproducer/theShortest/multiplyForEachReproducer/aio_multiply_for_each_reproducer.h"
 #include "../../../../../../headers/lang/methods/analysis/methodReproducer/theShortest/plusForEachReproducer/aio_plus_for_each_reproducer.h"
 #include "../../../../../../headers/lang/object/objectManager/AIOObjectManager.h"
-#include "../../../../../../headers/lib/utils/fileUtils/FileUtils.h"
+#include "../../../../../../headers/lib/utils/fileUtils/file_utils.h"
 #include "../../../../../../headers/lang/methods/methodDefinition/aio_method_definition_builder.h"
 #include "../../../../../../headers/lib/pair/string_pair.h"
 
@@ -18,7 +18,7 @@ void make_for_each_custom_method_invocation(aio_object *next_object, aio_variabl
         string_list *value_list = new_string_list();
         add_in_string_list(value_list, variable_map->variables[i]->value);
         aio_bundle *new_bundle = new_aio_bundle(value_list);
-        invokeMethodInManager(next_object, next_method_name, new_bundle);
+        invoke_method_in_manager(next_object, next_method_name, new_bundle);
         for (int j = 0; j < new_bundle->output_values->size; ++j) {
             add_in_string_list(bundle->output_values, new_bundle->output_values->strings[j]);
         }
@@ -29,7 +29,7 @@ void reproduceTheShortestMethod(aio_object *object, aio_method_definition *metho
                                 aio_method_container *method_container, aio_bundle *bundle) {
     printf("the shortest reproducing...\n");
     char *word = trim(method_definition->source_code->strings[0]);
-    aio_variable_map *arg_map = method_container->variableMap;
+    aio_variable_map *arg_map = method_container->variable_map;
     if (is_plus_operation(word) == 0) {
         plus_for_each_reproduce(arg_map, bundle);
         return;
@@ -45,7 +45,7 @@ void reproduceTheShortestMethod(aio_object *object, aio_method_definition *metho
     //뭔가 있을지도 모른다.
     if (is_the_shortest_in_the_same_object(word)) {
         char *next_method_name = remove_suffix(word, "~");
-        make_for_each_custom_method_invocation(object, method_container->variableMap, next_method_name, bundle);
+        make_for_each_custom_method_invocation(object, method_container->variable_map, next_method_name, bundle);
     }
     if (is_the_shortest_in_the_other_object(word)) {
         char **next_object_name_vs_method = split_by_string(word, ".");
@@ -59,14 +59,14 @@ void reproduceTheShortestMethod(aio_object *object, aio_method_definition *metho
                     next_object_path_plus_name);
             char *relative_next_object_path = relative_path_vs_object_name->first;
             char *absolute_next_object_path;
-            merge_new_folder_path(object->folderPath, relative_next_object_path, &absolute_next_object_path);
+            merge_new_folder_path(object->folder_path, relative_next_object_path, &absolute_next_object_path);
             build_aio_object_and_put_in_object_manager(aio_object_manager, absolute_next_object_path);
             next_object_name = relative_path_vs_object_name->second;
         } else {
             next_object_name = next_object_path_plus_name;
         }
         next_object = get_aio_object_in_map_by_name(aio_object_manager->objectMap, next_object_name);
-        make_for_each_custom_method_invocation(next_object, method_container->variableMap, next_method_name, bundle);
+        make_for_each_custom_method_invocation(next_object, method_container->variable_map, next_method_name, bundle);
     }
 }
 
