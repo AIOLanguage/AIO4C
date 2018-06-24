@@ -8,6 +8,6 @@ typedef struct aio_declaration {
     string_list* argList;
 } aio_declaration;
 
-aio_declaration* new_aio_declaration(char *methodName, string_list *args);
+aio_declaration* new_aio_declaration(char *method_name, string_list *args);
 
 #endif //AIO_DECLARATION_H
