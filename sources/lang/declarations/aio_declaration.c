@@ -5,7 +5,7 @@
 #include "../../../headers/lang/declarations/aio_declaration.h"
 
 //Passed JUnitTest!
-aio_declaration* create_aio_declaration(char *methodName, string_list *args) {
+aio_declaration* new_aio_declaration(char *methodName, string_list *args) {
     //Create declaration:
     aio_declaration* declaration = calloc(1, sizeof(aio_declaration));
     if (declaration == NULL){

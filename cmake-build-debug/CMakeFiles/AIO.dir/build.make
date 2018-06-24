@@ -776,100 +776,100 @@ CMakeFiles/AIO.dir/sources/tools/parsers/aio_parser.c.obj.provides: CMakeFiles/A
 CMakeFiles/AIO.dir/sources/tools/parsers/aio_parser.c.obj.provides.build: CMakeFiles/AIO.dir/sources/tools/parsers/aio_parser.c.obj
 
 
-CMakeFiles/AIO.dir/sources/tools/parsers/intParser/AIOIntParser.c.obj: CMakeFiles/AIO.dir/flags.make
-CMakeFiles/AIO.dir/sources/tools/parsers/intParser/AIOIntParser.c.obj: ../sources/tools/parsers/intParser/AIOIntParser.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\StarKRE\CLionProjects\AIO\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building C object CMakeFiles/AIO.dir/sources/tools/parsers/intParser/AIOIntParser.c.obj"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\AIO.dir\sources\tools\parsers\intParser\AIOIntParser.c.obj   -c C:\Users\StarKRE\CLionProjects\AIO\sources\tools\parsers\intParser\AIOIntParser.c
+CMakeFiles/AIO.dir/sources/tools/parsers/int_parser/aio_int_parser.c.obj: CMakeFiles/AIO.dir/flags.make
+CMakeFiles/AIO.dir/sources/tools/parsers/int_parser/aio_int_parser.c.obj: ../sources/tools/parsers/int_parser/aio_int_parser.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\StarKRE\CLionProjects\AIO\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building C object CMakeFiles/AIO.dir/sources/tools/parsers/int_parser/aio_int_parser.c.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\AIO.dir\sources\tools\parsers\int_parser\aio_int_parser.c.obj   -c C:\Users\StarKRE\CLionProjects\AIO\sources\tools\parsers\int_parser\aio_int_parser.c
 
-CMakeFiles/AIO.dir/sources/tools/parsers/intParser/AIOIntParser.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/AIO.dir/sources/tools/parsers/intParser/AIOIntParser.c.i"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\StarKRE\CLionProjects\AIO\sources\tools\parsers\intParser\AIOIntParser.c > CMakeFiles\AIO.dir\sources\tools\parsers\intParser\AIOIntParser.c.i
+CMakeFiles/AIO.dir/sources/tools/parsers/int_parser/aio_int_parser.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/AIO.dir/sources/tools/parsers/int_parser/aio_int_parser.c.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\StarKRE\CLionProjects\AIO\sources\tools\parsers\int_parser\aio_int_parser.c > CMakeFiles\AIO.dir\sources\tools\parsers\int_parser\aio_int_parser.c.i
 
-CMakeFiles/AIO.dir/sources/tools/parsers/intParser/AIOIntParser.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/AIO.dir/sources/tools/parsers/intParser/AIOIntParser.c.s"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\StarKRE\CLionProjects\AIO\sources\tools\parsers\intParser\AIOIntParser.c -o CMakeFiles\AIO.dir\sources\tools\parsers\intParser\AIOIntParser.c.s
+CMakeFiles/AIO.dir/sources/tools/parsers/int_parser/aio_int_parser.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/AIO.dir/sources/tools/parsers/int_parser/aio_int_parser.c.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\StarKRE\CLionProjects\AIO\sources\tools\parsers\int_parser\aio_int_parser.c -o CMakeFiles\AIO.dir\sources\tools\parsers\int_parser\aio_int_parser.c.s
 
-CMakeFiles/AIO.dir/sources/tools/parsers/intParser/AIOIntParser.c.obj.requires:
+CMakeFiles/AIO.dir/sources/tools/parsers/int_parser/aio_int_parser.c.obj.requires:
 
-.PHONY : CMakeFiles/AIO.dir/sources/tools/parsers/intParser/AIOIntParser.c.obj.requires
+.PHONY : CMakeFiles/AIO.dir/sources/tools/parsers/int_parser/aio_int_parser.c.obj.requires
 
-CMakeFiles/AIO.dir/sources/tools/parsers/intParser/AIOIntParser.c.obj.provides: CMakeFiles/AIO.dir/sources/tools/parsers/intParser/AIOIntParser.c.obj.requires
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/parsers/intParser/AIOIntParser.c.obj.provides.build
-.PHONY : CMakeFiles/AIO.dir/sources/tools/parsers/intParser/AIOIntParser.c.obj.provides
+CMakeFiles/AIO.dir/sources/tools/parsers/int_parser/aio_int_parser.c.obj.provides: CMakeFiles/AIO.dir/sources/tools/parsers/int_parser/aio_int_parser.c.obj.requires
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/parsers/int_parser/aio_int_parser.c.obj.provides.build
+.PHONY : CMakeFiles/AIO.dir/sources/tools/parsers/int_parser/aio_int_parser.c.obj.provides
 
-CMakeFiles/AIO.dir/sources/tools/parsers/intParser/AIOIntParser.c.obj.provides.build: CMakeFiles/AIO.dir/sources/tools/parsers/intParser/AIOIntParser.c.obj
-
-
-CMakeFiles/AIO.dir/sources/tools/parsers/douParser/aio_dou_parser.c.obj: CMakeFiles/AIO.dir/flags.make
-CMakeFiles/AIO.dir/sources/tools/parsers/douParser/aio_dou_parser.c.obj: ../sources/tools/parsers/douParser/aio_dou_parser.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\StarKRE\CLionProjects\AIO\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building C object CMakeFiles/AIO.dir/sources/tools/parsers/douParser/aio_dou_parser.c.obj"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\AIO.dir\sources\tools\parsers\douParser\aio_dou_parser.c.obj   -c C:\Users\StarKRE\CLionProjects\AIO\sources\tools\parsers\douParser\aio_dou_parser.c
-
-CMakeFiles/AIO.dir/sources/tools/parsers/douParser/aio_dou_parser.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/AIO.dir/sources/tools/parsers/douParser/aio_dou_parser.c.i"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\StarKRE\CLionProjects\AIO\sources\tools\parsers\douParser\aio_dou_parser.c > CMakeFiles\AIO.dir\sources\tools\parsers\douParser\aio_dou_parser.c.i
-
-CMakeFiles/AIO.dir/sources/tools/parsers/douParser/aio_dou_parser.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/AIO.dir/sources/tools/parsers/douParser/aio_dou_parser.c.s"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\StarKRE\CLionProjects\AIO\sources\tools\parsers\douParser\aio_dou_parser.c -o CMakeFiles\AIO.dir\sources\tools\parsers\douParser\aio_dou_parser.c.s
-
-CMakeFiles/AIO.dir/sources/tools/parsers/douParser/aio_dou_parser.c.obj.requires:
-
-.PHONY : CMakeFiles/AIO.dir/sources/tools/parsers/douParser/aio_dou_parser.c.obj.requires
-
-CMakeFiles/AIO.dir/sources/tools/parsers/douParser/aio_dou_parser.c.obj.provides: CMakeFiles/AIO.dir/sources/tools/parsers/douParser/aio_dou_parser.c.obj.requires
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/parsers/douParser/aio_dou_parser.c.obj.provides.build
-.PHONY : CMakeFiles/AIO.dir/sources/tools/parsers/douParser/aio_dou_parser.c.obj.provides
-
-CMakeFiles/AIO.dir/sources/tools/parsers/douParser/aio_dou_parser.c.obj.provides.build: CMakeFiles/AIO.dir/sources/tools/parsers/douParser/aio_dou_parser.c.obj
+CMakeFiles/AIO.dir/sources/tools/parsers/int_parser/aio_int_parser.c.obj.provides.build: CMakeFiles/AIO.dir/sources/tools/parsers/int_parser/aio_int_parser.c.obj
 
 
-CMakeFiles/AIO.dir/sources/tools/parsers/chaParser/aio_cha_parser.c.obj: CMakeFiles/AIO.dir/flags.make
-CMakeFiles/AIO.dir/sources/tools/parsers/chaParser/aio_cha_parser.c.obj: ../sources/tools/parsers/chaParser/aio_cha_parser.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\StarKRE\CLionProjects\AIO\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building C object CMakeFiles/AIO.dir/sources/tools/parsers/chaParser/aio_cha_parser.c.obj"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\AIO.dir\sources\tools\parsers\chaParser\aio_cha_parser.c.obj   -c C:\Users\StarKRE\CLionProjects\AIO\sources\tools\parsers\chaParser\aio_cha_parser.c
+CMakeFiles/AIO.dir/sources/tools/parsers/dou_parser/aio_dou_parser.c.obj: CMakeFiles/AIO.dir/flags.make
+CMakeFiles/AIO.dir/sources/tools/parsers/dou_parser/aio_dou_parser.c.obj: ../sources/tools/parsers/dou_parser/aio_dou_parser.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\StarKRE\CLionProjects\AIO\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building C object CMakeFiles/AIO.dir/sources/tools/parsers/dou_parser/aio_dou_parser.c.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\AIO.dir\sources\tools\parsers\dou_parser\aio_dou_parser.c.obj   -c C:\Users\StarKRE\CLionProjects\AIO\sources\tools\parsers\dou_parser\aio_dou_parser.c
 
-CMakeFiles/AIO.dir/sources/tools/parsers/chaParser/aio_cha_parser.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/AIO.dir/sources/tools/parsers/chaParser/aio_cha_parser.c.i"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\StarKRE\CLionProjects\AIO\sources\tools\parsers\chaParser\aio_cha_parser.c > CMakeFiles\AIO.dir\sources\tools\parsers\chaParser\aio_cha_parser.c.i
+CMakeFiles/AIO.dir/sources/tools/parsers/dou_parser/aio_dou_parser.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/AIO.dir/sources/tools/parsers/dou_parser/aio_dou_parser.c.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\StarKRE\CLionProjects\AIO\sources\tools\parsers\dou_parser\aio_dou_parser.c > CMakeFiles\AIO.dir\sources\tools\parsers\dou_parser\aio_dou_parser.c.i
 
-CMakeFiles/AIO.dir/sources/tools/parsers/chaParser/aio_cha_parser.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/AIO.dir/sources/tools/parsers/chaParser/aio_cha_parser.c.s"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\StarKRE\CLionProjects\AIO\sources\tools\parsers\chaParser\aio_cha_parser.c -o CMakeFiles\AIO.dir\sources\tools\parsers\chaParser\aio_cha_parser.c.s
+CMakeFiles/AIO.dir/sources/tools/parsers/dou_parser/aio_dou_parser.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/AIO.dir/sources/tools/parsers/dou_parser/aio_dou_parser.c.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\StarKRE\CLionProjects\AIO\sources\tools\parsers\dou_parser\aio_dou_parser.c -o CMakeFiles\AIO.dir\sources\tools\parsers\dou_parser\aio_dou_parser.c.s
 
-CMakeFiles/AIO.dir/sources/tools/parsers/chaParser/aio_cha_parser.c.obj.requires:
+CMakeFiles/AIO.dir/sources/tools/parsers/dou_parser/aio_dou_parser.c.obj.requires:
 
-.PHONY : CMakeFiles/AIO.dir/sources/tools/parsers/chaParser/aio_cha_parser.c.obj.requires
+.PHONY : CMakeFiles/AIO.dir/sources/tools/parsers/dou_parser/aio_dou_parser.c.obj.requires
 
-CMakeFiles/AIO.dir/sources/tools/parsers/chaParser/aio_cha_parser.c.obj.provides: CMakeFiles/AIO.dir/sources/tools/parsers/chaParser/aio_cha_parser.c.obj.requires
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/parsers/chaParser/aio_cha_parser.c.obj.provides.build
-.PHONY : CMakeFiles/AIO.dir/sources/tools/parsers/chaParser/aio_cha_parser.c.obj.provides
+CMakeFiles/AIO.dir/sources/tools/parsers/dou_parser/aio_dou_parser.c.obj.provides: CMakeFiles/AIO.dir/sources/tools/parsers/dou_parser/aio_dou_parser.c.obj.requires
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/parsers/dou_parser/aio_dou_parser.c.obj.provides.build
+.PHONY : CMakeFiles/AIO.dir/sources/tools/parsers/dou_parser/aio_dou_parser.c.obj.provides
 
-CMakeFiles/AIO.dir/sources/tools/parsers/chaParser/aio_cha_parser.c.obj.provides.build: CMakeFiles/AIO.dir/sources/tools/parsers/chaParser/aio_cha_parser.c.obj
+CMakeFiles/AIO.dir/sources/tools/parsers/dou_parser/aio_dou_parser.c.obj.provides.build: CMakeFiles/AIO.dir/sources/tools/parsers/dou_parser/aio_dou_parser.c.obj
 
 
-CMakeFiles/AIO.dir/sources/tools/parsers/strParser/AIOStrParser.c.obj: CMakeFiles/AIO.dir/flags.make
-CMakeFiles/AIO.dir/sources/tools/parsers/strParser/AIOStrParser.c.obj: ../sources/tools/parsers/strParser/AIOStrParser.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\StarKRE\CLionProjects\AIO\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building C object CMakeFiles/AIO.dir/sources/tools/parsers/strParser/AIOStrParser.c.obj"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\AIO.dir\sources\tools\parsers\strParser\AIOStrParser.c.obj   -c C:\Users\StarKRE\CLionProjects\AIO\sources\tools\parsers\strParser\AIOStrParser.c
+CMakeFiles/AIO.dir/sources/tools/parsers/cha_parser/aio_cha_parser.c.obj: CMakeFiles/AIO.dir/flags.make
+CMakeFiles/AIO.dir/sources/tools/parsers/cha_parser/aio_cha_parser.c.obj: ../sources/tools/parsers/cha_parser/aio_cha_parser.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\StarKRE\CLionProjects\AIO\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building C object CMakeFiles/AIO.dir/sources/tools/parsers/cha_parser/aio_cha_parser.c.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\AIO.dir\sources\tools\parsers\cha_parser\aio_cha_parser.c.obj   -c C:\Users\StarKRE\CLionProjects\AIO\sources\tools\parsers\cha_parser\aio_cha_parser.c
 
-CMakeFiles/AIO.dir/sources/tools/parsers/strParser/AIOStrParser.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/AIO.dir/sources/tools/parsers/strParser/AIOStrParser.c.i"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\StarKRE\CLionProjects\AIO\sources\tools\parsers\strParser\AIOStrParser.c > CMakeFiles\AIO.dir\sources\tools\parsers\strParser\AIOStrParser.c.i
+CMakeFiles/AIO.dir/sources/tools/parsers/cha_parser/aio_cha_parser.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/AIO.dir/sources/tools/parsers/cha_parser/aio_cha_parser.c.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\StarKRE\CLionProjects\AIO\sources\tools\parsers\cha_parser\aio_cha_parser.c > CMakeFiles\AIO.dir\sources\tools\parsers\cha_parser\aio_cha_parser.c.i
 
-CMakeFiles/AIO.dir/sources/tools/parsers/strParser/AIOStrParser.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/AIO.dir/sources/tools/parsers/strParser/AIOStrParser.c.s"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\StarKRE\CLionProjects\AIO\sources\tools\parsers\strParser\AIOStrParser.c -o CMakeFiles\AIO.dir\sources\tools\parsers\strParser\AIOStrParser.c.s
+CMakeFiles/AIO.dir/sources/tools/parsers/cha_parser/aio_cha_parser.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/AIO.dir/sources/tools/parsers/cha_parser/aio_cha_parser.c.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\StarKRE\CLionProjects\AIO\sources\tools\parsers\cha_parser\aio_cha_parser.c -o CMakeFiles\AIO.dir\sources\tools\parsers\cha_parser\aio_cha_parser.c.s
 
-CMakeFiles/AIO.dir/sources/tools/parsers/strParser/AIOStrParser.c.obj.requires:
+CMakeFiles/AIO.dir/sources/tools/parsers/cha_parser/aio_cha_parser.c.obj.requires:
 
-.PHONY : CMakeFiles/AIO.dir/sources/tools/parsers/strParser/AIOStrParser.c.obj.requires
+.PHONY : CMakeFiles/AIO.dir/sources/tools/parsers/cha_parser/aio_cha_parser.c.obj.requires
 
-CMakeFiles/AIO.dir/sources/tools/parsers/strParser/AIOStrParser.c.obj.provides: CMakeFiles/AIO.dir/sources/tools/parsers/strParser/AIOStrParser.c.obj.requires
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/parsers/strParser/AIOStrParser.c.obj.provides.build
-.PHONY : CMakeFiles/AIO.dir/sources/tools/parsers/strParser/AIOStrParser.c.obj.provides
+CMakeFiles/AIO.dir/sources/tools/parsers/cha_parser/aio_cha_parser.c.obj.provides: CMakeFiles/AIO.dir/sources/tools/parsers/cha_parser/aio_cha_parser.c.obj.requires
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/parsers/cha_parser/aio_cha_parser.c.obj.provides.build
+.PHONY : CMakeFiles/AIO.dir/sources/tools/parsers/cha_parser/aio_cha_parser.c.obj.provides
 
-CMakeFiles/AIO.dir/sources/tools/parsers/strParser/AIOStrParser.c.obj.provides.build: CMakeFiles/AIO.dir/sources/tools/parsers/strParser/AIOStrParser.c.obj
+CMakeFiles/AIO.dir/sources/tools/parsers/cha_parser/aio_cha_parser.c.obj.provides.build: CMakeFiles/AIO.dir/sources/tools/parsers/cha_parser/aio_cha_parser.c.obj
+
+
+CMakeFiles/AIO.dir/sources/tools/parsers/str_parser/aio_str_parser.c.obj: CMakeFiles/AIO.dir/flags.make
+CMakeFiles/AIO.dir/sources/tools/parsers/str_parser/aio_str_parser.c.obj: ../sources/tools/parsers/str_parser/aio_str_parser.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\StarKRE\CLionProjects\AIO\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building C object CMakeFiles/AIO.dir/sources/tools/parsers/str_parser/aio_str_parser.c.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\AIO.dir\sources\tools\parsers\str_parser\aio_str_parser.c.obj   -c C:\Users\StarKRE\CLionProjects\AIO\sources\tools\parsers\str_parser\aio_str_parser.c
+
+CMakeFiles/AIO.dir/sources/tools/parsers/str_parser/aio_str_parser.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/AIO.dir/sources/tools/parsers/str_parser/aio_str_parser.c.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\StarKRE\CLionProjects\AIO\sources\tools\parsers\str_parser\aio_str_parser.c > CMakeFiles\AIO.dir\sources\tools\parsers\str_parser\aio_str_parser.c.i
+
+CMakeFiles/AIO.dir/sources/tools/parsers/str_parser/aio_str_parser.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/AIO.dir/sources/tools/parsers/str_parser/aio_str_parser.c.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\StarKRE\CLionProjects\AIO\sources\tools\parsers\str_parser\aio_str_parser.c -o CMakeFiles\AIO.dir\sources\tools\parsers\str_parser\aio_str_parser.c.s
+
+CMakeFiles/AIO.dir/sources/tools/parsers/str_parser/aio_str_parser.c.obj.requires:
+
+.PHONY : CMakeFiles/AIO.dir/sources/tools/parsers/str_parser/aio_str_parser.c.obj.requires
+
+CMakeFiles/AIO.dir/sources/tools/parsers/str_parser/aio_str_parser.c.obj.provides: CMakeFiles/AIO.dir/sources/tools/parsers/str_parser/aio_str_parser.c.obj.requires
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/parsers/str_parser/aio_str_parser.c.obj.provides.build
+.PHONY : CMakeFiles/AIO.dir/sources/tools/parsers/str_parser/aio_str_parser.c.obj.provides
+
+CMakeFiles/AIO.dir/sources/tools/parsers/str_parser/aio_str_parser.c.obj.provides.build: CMakeFiles/AIO.dir/sources/tools/parsers/str_parser/aio_str_parser.c.obj
 
 
 CMakeFiles/AIO.dir/sources/lib/utils/string_utils/split.c.obj: CMakeFiles/AIO.dir/flags.make
@@ -1000,10 +1000,10 @@ AIO_OBJECTS = \
 "CMakeFiles/AIO.dir/sources/lang/methods/analysis/method_reproducer/the_shortest/concat_for_each_reproducer/aio_concat_for_each_reproducer.c.obj" \
 "CMakeFiles/AIO.dir/sources/lang/methods/analysis/method_reproducer/the_shortest/multiply_for_each_reproducer/aio_multiply_for_each_reproducer.c.obj" \
 "CMakeFiles/AIO.dir/sources/tools/parsers/aio_parser.c.obj" \
-"CMakeFiles/AIO.dir/sources/tools/parsers/intParser/AIOIntParser.c.obj" \
-"CMakeFiles/AIO.dir/sources/tools/parsers/douParser/aio_dou_parser.c.obj" \
-"CMakeFiles/AIO.dir/sources/tools/parsers/chaParser/aio_cha_parser.c.obj" \
-"CMakeFiles/AIO.dir/sources/tools/parsers/strParser/AIOStrParser.c.obj" \
+"CMakeFiles/AIO.dir/sources/tools/parsers/int_parser/aio_int_parser.c.obj" \
+"CMakeFiles/AIO.dir/sources/tools/parsers/dou_parser/aio_dou_parser.c.obj" \
+"CMakeFiles/AIO.dir/sources/tools/parsers/cha_parser/aio_cha_parser.c.obj" \
+"CMakeFiles/AIO.dir/sources/tools/parsers/str_parser/aio_str_parser.c.obj" \
 "CMakeFiles/AIO.dir/sources/lib/utils/string_utils/split.c.obj" \
 "CMakeFiles/AIO.dir/sources/lib/utils/string_utils/trim.c.obj" \
 "CMakeFiles/AIO.dir/sources/lib/utils/string_utils/prefix_suffix.c.obj" \
@@ -1042,10 +1042,10 @@ AIO.exe: CMakeFiles/AIO.dir/sources/lang/methods/analysis/method_reproducer/shor
 AIO.exe: CMakeFiles/AIO.dir/sources/lang/methods/analysis/method_reproducer/the_shortest/concat_for_each_reproducer/aio_concat_for_each_reproducer.c.obj
 AIO.exe: CMakeFiles/AIO.dir/sources/lang/methods/analysis/method_reproducer/the_shortest/multiply_for_each_reproducer/aio_multiply_for_each_reproducer.c.obj
 AIO.exe: CMakeFiles/AIO.dir/sources/tools/parsers/aio_parser.c.obj
-AIO.exe: CMakeFiles/AIO.dir/sources/tools/parsers/intParser/AIOIntParser.c.obj
-AIO.exe: CMakeFiles/AIO.dir/sources/tools/parsers/douParser/aio_dou_parser.c.obj
-AIO.exe: CMakeFiles/AIO.dir/sources/tools/parsers/chaParser/aio_cha_parser.c.obj
-AIO.exe: CMakeFiles/AIO.dir/sources/tools/parsers/strParser/AIOStrParser.c.obj
+AIO.exe: CMakeFiles/AIO.dir/sources/tools/parsers/int_parser/aio_int_parser.c.obj
+AIO.exe: CMakeFiles/AIO.dir/sources/tools/parsers/dou_parser/aio_dou_parser.c.obj
+AIO.exe: CMakeFiles/AIO.dir/sources/tools/parsers/cha_parser/aio_cha_parser.c.obj
+AIO.exe: CMakeFiles/AIO.dir/sources/tools/parsers/str_parser/aio_str_parser.c.obj
 AIO.exe: CMakeFiles/AIO.dir/sources/lib/utils/string_utils/split.c.obj
 AIO.exe: CMakeFiles/AIO.dir/sources/lib/utils/string_utils/trim.c.obj
 AIO.exe: CMakeFiles/AIO.dir/sources/lib/utils/string_utils/prefix_suffix.c.obj
@@ -1092,10 +1092,10 @@ CMakeFiles/AIO.dir/requires: CMakeFiles/AIO.dir/sources/lang/methods/analysis/me
 CMakeFiles/AIO.dir/requires: CMakeFiles/AIO.dir/sources/lang/methods/analysis/method_reproducer/the_shortest/concat_for_each_reproducer/aio_concat_for_each_reproducer.c.obj.requires
 CMakeFiles/AIO.dir/requires: CMakeFiles/AIO.dir/sources/lang/methods/analysis/method_reproducer/the_shortest/multiply_for_each_reproducer/aio_multiply_for_each_reproducer.c.obj.requires
 CMakeFiles/AIO.dir/requires: CMakeFiles/AIO.dir/sources/tools/parsers/aio_parser.c.obj.requires
-CMakeFiles/AIO.dir/requires: CMakeFiles/AIO.dir/sources/tools/parsers/intParser/AIOIntParser.c.obj.requires
-CMakeFiles/AIO.dir/requires: CMakeFiles/AIO.dir/sources/tools/parsers/douParser/aio_dou_parser.c.obj.requires
-CMakeFiles/AIO.dir/requires: CMakeFiles/AIO.dir/sources/tools/parsers/chaParser/aio_cha_parser.c.obj.requires
-CMakeFiles/AIO.dir/requires: CMakeFiles/AIO.dir/sources/tools/parsers/strParser/AIOStrParser.c.obj.requires
+CMakeFiles/AIO.dir/requires: CMakeFiles/AIO.dir/sources/tools/parsers/int_parser/aio_int_parser.c.obj.requires
+CMakeFiles/AIO.dir/requires: CMakeFiles/AIO.dir/sources/tools/parsers/dou_parser/aio_dou_parser.c.obj.requires
+CMakeFiles/AIO.dir/requires: CMakeFiles/AIO.dir/sources/tools/parsers/cha_parser/aio_cha_parser.c.obj.requires
+CMakeFiles/AIO.dir/requires: CMakeFiles/AIO.dir/sources/tools/parsers/str_parser/aio_str_parser.c.obj.requires
 CMakeFiles/AIO.dir/requires: CMakeFiles/AIO.dir/sources/lib/utils/string_utils/split.c.obj.requires
 CMakeFiles/AIO.dir/requires: CMakeFiles/AIO.dir/sources/lib/utils/string_utils/trim.c.obj.requires
 CMakeFiles/AIO.dir/requires: CMakeFiles/AIO.dir/sources/lib/utils/string_utils/prefix_suffix.c.obj.requires

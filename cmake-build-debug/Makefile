@@ -1040,113 +1040,113 @@ sources/tools/parsers/aio_parser.c.s:
 	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/parsers/aio_parser.c.s
 .PHONY : sources/tools/parsers/aio_parser.c.s
 
-sources/tools/parsers/chaParser/aio_cha_parser.obj: sources/tools/parsers/chaParser/aio_cha_parser.c.obj
+sources/tools/parsers/cha_parser/aio_cha_parser.obj: sources/tools/parsers/cha_parser/aio_cha_parser.c.obj
 
-.PHONY : sources/tools/parsers/chaParser/aio_cha_parser.obj
-
-# target to build an object file
-sources/tools/parsers/chaParser/aio_cha_parser.c.obj:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/parsers/chaParser/aio_cha_parser.c.obj
-.PHONY : sources/tools/parsers/chaParser/aio_cha_parser.c.obj
-
-sources/tools/parsers/chaParser/aio_cha_parser.i: sources/tools/parsers/chaParser/aio_cha_parser.c.i
-
-.PHONY : sources/tools/parsers/chaParser/aio_cha_parser.i
-
-# target to preprocess a source file
-sources/tools/parsers/chaParser/aio_cha_parser.c.i:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/parsers/chaParser/aio_cha_parser.c.i
-.PHONY : sources/tools/parsers/chaParser/aio_cha_parser.c.i
-
-sources/tools/parsers/chaParser/aio_cha_parser.s: sources/tools/parsers/chaParser/aio_cha_parser.c.s
-
-.PHONY : sources/tools/parsers/chaParser/aio_cha_parser.s
-
-# target to generate assembly for a file
-sources/tools/parsers/chaParser/aio_cha_parser.c.s:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/parsers/chaParser/aio_cha_parser.c.s
-.PHONY : sources/tools/parsers/chaParser/aio_cha_parser.c.s
-
-sources/tools/parsers/douParser/aio_dou_parser.obj: sources/tools/parsers/douParser/aio_dou_parser.c.obj
-
-.PHONY : sources/tools/parsers/douParser/aio_dou_parser.obj
+.PHONY : sources/tools/parsers/cha_parser/aio_cha_parser.obj
 
 # target to build an object file
-sources/tools/parsers/douParser/aio_dou_parser.c.obj:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/parsers/douParser/aio_dou_parser.c.obj
-.PHONY : sources/tools/parsers/douParser/aio_dou_parser.c.obj
+sources/tools/parsers/cha_parser/aio_cha_parser.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/parsers/cha_parser/aio_cha_parser.c.obj
+.PHONY : sources/tools/parsers/cha_parser/aio_cha_parser.c.obj
 
-sources/tools/parsers/douParser/aio_dou_parser.i: sources/tools/parsers/douParser/aio_dou_parser.c.i
+sources/tools/parsers/cha_parser/aio_cha_parser.i: sources/tools/parsers/cha_parser/aio_cha_parser.c.i
 
-.PHONY : sources/tools/parsers/douParser/aio_dou_parser.i
+.PHONY : sources/tools/parsers/cha_parser/aio_cha_parser.i
 
 # target to preprocess a source file
-sources/tools/parsers/douParser/aio_dou_parser.c.i:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/parsers/douParser/aio_dou_parser.c.i
-.PHONY : sources/tools/parsers/douParser/aio_dou_parser.c.i
+sources/tools/parsers/cha_parser/aio_cha_parser.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/parsers/cha_parser/aio_cha_parser.c.i
+.PHONY : sources/tools/parsers/cha_parser/aio_cha_parser.c.i
 
-sources/tools/parsers/douParser/aio_dou_parser.s: sources/tools/parsers/douParser/aio_dou_parser.c.s
+sources/tools/parsers/cha_parser/aio_cha_parser.s: sources/tools/parsers/cha_parser/aio_cha_parser.c.s
 
-.PHONY : sources/tools/parsers/douParser/aio_dou_parser.s
+.PHONY : sources/tools/parsers/cha_parser/aio_cha_parser.s
 
 # target to generate assembly for a file
-sources/tools/parsers/douParser/aio_dou_parser.c.s:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/parsers/douParser/aio_dou_parser.c.s
-.PHONY : sources/tools/parsers/douParser/aio_dou_parser.c.s
+sources/tools/parsers/cha_parser/aio_cha_parser.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/parsers/cha_parser/aio_cha_parser.c.s
+.PHONY : sources/tools/parsers/cha_parser/aio_cha_parser.c.s
 
-sources/tools/parsers/intParser/AIOIntParser.obj: sources/tools/parsers/intParser/AIOIntParser.c.obj
+sources/tools/parsers/dou_parser/aio_dou_parser.obj: sources/tools/parsers/dou_parser/aio_dou_parser.c.obj
 
-.PHONY : sources/tools/parsers/intParser/AIOIntParser.obj
+.PHONY : sources/tools/parsers/dou_parser/aio_dou_parser.obj
 
 # target to build an object file
-sources/tools/parsers/intParser/AIOIntParser.c.obj:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/parsers/intParser/AIOIntParser.c.obj
-.PHONY : sources/tools/parsers/intParser/AIOIntParser.c.obj
+sources/tools/parsers/dou_parser/aio_dou_parser.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/parsers/dou_parser/aio_dou_parser.c.obj
+.PHONY : sources/tools/parsers/dou_parser/aio_dou_parser.c.obj
 
-sources/tools/parsers/intParser/AIOIntParser.i: sources/tools/parsers/intParser/AIOIntParser.c.i
+sources/tools/parsers/dou_parser/aio_dou_parser.i: sources/tools/parsers/dou_parser/aio_dou_parser.c.i
 
-.PHONY : sources/tools/parsers/intParser/AIOIntParser.i
+.PHONY : sources/tools/parsers/dou_parser/aio_dou_parser.i
 
 # target to preprocess a source file
-sources/tools/parsers/intParser/AIOIntParser.c.i:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/parsers/intParser/AIOIntParser.c.i
-.PHONY : sources/tools/parsers/intParser/AIOIntParser.c.i
+sources/tools/parsers/dou_parser/aio_dou_parser.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/parsers/dou_parser/aio_dou_parser.c.i
+.PHONY : sources/tools/parsers/dou_parser/aio_dou_parser.c.i
 
-sources/tools/parsers/intParser/AIOIntParser.s: sources/tools/parsers/intParser/AIOIntParser.c.s
+sources/tools/parsers/dou_parser/aio_dou_parser.s: sources/tools/parsers/dou_parser/aio_dou_parser.c.s
 
-.PHONY : sources/tools/parsers/intParser/AIOIntParser.s
+.PHONY : sources/tools/parsers/dou_parser/aio_dou_parser.s
 
 # target to generate assembly for a file
-sources/tools/parsers/intParser/AIOIntParser.c.s:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/parsers/intParser/AIOIntParser.c.s
-.PHONY : sources/tools/parsers/intParser/AIOIntParser.c.s
+sources/tools/parsers/dou_parser/aio_dou_parser.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/parsers/dou_parser/aio_dou_parser.c.s
+.PHONY : sources/tools/parsers/dou_parser/aio_dou_parser.c.s
 
-sources/tools/parsers/strParser/AIOStrParser.obj: sources/tools/parsers/strParser/AIOStrParser.c.obj
+sources/tools/parsers/int_parser/aio_int_parser.obj: sources/tools/parsers/int_parser/aio_int_parser.c.obj
 
-.PHONY : sources/tools/parsers/strParser/AIOStrParser.obj
+.PHONY : sources/tools/parsers/int_parser/aio_int_parser.obj
 
 # target to build an object file
-sources/tools/parsers/strParser/AIOStrParser.c.obj:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/parsers/strParser/AIOStrParser.c.obj
-.PHONY : sources/tools/parsers/strParser/AIOStrParser.c.obj
+sources/tools/parsers/int_parser/aio_int_parser.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/parsers/int_parser/aio_int_parser.c.obj
+.PHONY : sources/tools/parsers/int_parser/aio_int_parser.c.obj
 
-sources/tools/parsers/strParser/AIOStrParser.i: sources/tools/parsers/strParser/AIOStrParser.c.i
+sources/tools/parsers/int_parser/aio_int_parser.i: sources/tools/parsers/int_parser/aio_int_parser.c.i
 
-.PHONY : sources/tools/parsers/strParser/AIOStrParser.i
+.PHONY : sources/tools/parsers/int_parser/aio_int_parser.i
 
 # target to preprocess a source file
-sources/tools/parsers/strParser/AIOStrParser.c.i:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/parsers/strParser/AIOStrParser.c.i
-.PHONY : sources/tools/parsers/strParser/AIOStrParser.c.i
+sources/tools/parsers/int_parser/aio_int_parser.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/parsers/int_parser/aio_int_parser.c.i
+.PHONY : sources/tools/parsers/int_parser/aio_int_parser.c.i
 
-sources/tools/parsers/strParser/AIOStrParser.s: sources/tools/parsers/strParser/AIOStrParser.c.s
+sources/tools/parsers/int_parser/aio_int_parser.s: sources/tools/parsers/int_parser/aio_int_parser.c.s
 
-.PHONY : sources/tools/parsers/strParser/AIOStrParser.s
+.PHONY : sources/tools/parsers/int_parser/aio_int_parser.s
 
 # target to generate assembly for a file
-sources/tools/parsers/strParser/AIOStrParser.c.s:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/parsers/strParser/AIOStrParser.c.s
-.PHONY : sources/tools/parsers/strParser/AIOStrParser.c.s
+sources/tools/parsers/int_parser/aio_int_parser.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/parsers/int_parser/aio_int_parser.c.s
+.PHONY : sources/tools/parsers/int_parser/aio_int_parser.c.s
+
+sources/tools/parsers/str_parser/aio_str_parser.obj: sources/tools/parsers/str_parser/aio_str_parser.c.obj
+
+.PHONY : sources/tools/parsers/str_parser/aio_str_parser.obj
+
+# target to build an object file
+sources/tools/parsers/str_parser/aio_str_parser.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/parsers/str_parser/aio_str_parser.c.obj
+.PHONY : sources/tools/parsers/str_parser/aio_str_parser.c.obj
+
+sources/tools/parsers/str_parser/aio_str_parser.i: sources/tools/parsers/str_parser/aio_str_parser.c.i
+
+.PHONY : sources/tools/parsers/str_parser/aio_str_parser.i
+
+# target to preprocess a source file
+sources/tools/parsers/str_parser/aio_str_parser.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/parsers/str_parser/aio_str_parser.c.i
+.PHONY : sources/tools/parsers/str_parser/aio_str_parser.c.i
+
+sources/tools/parsers/str_parser/aio_str_parser.s: sources/tools/parsers/str_parser/aio_str_parser.c.s
+
+.PHONY : sources/tools/parsers/str_parser/aio_str_parser.s
+
+# target to generate assembly for a file
+sources/tools/parsers/str_parser/aio_str_parser.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/parsers/str_parser/aio_str_parser.c.s
+.PHONY : sources/tools/parsers/str_parser/aio_str_parser.c.s
 
 # Help Target
 help:
@@ -1259,18 +1259,18 @@ help:
 	@echo ... sources/tools/parsers/aio_parser.obj
 	@echo ... sources/tools/parsers/aio_parser.i
 	@echo ... sources/tools/parsers/aio_parser.s
-	@echo ... sources/tools/parsers/chaParser/aio_cha_parser.obj
-	@echo ... sources/tools/parsers/chaParser/aio_cha_parser.i
-	@echo ... sources/tools/parsers/chaParser/aio_cha_parser.s
-	@echo ... sources/tools/parsers/douParser/aio_dou_parser.obj
-	@echo ... sources/tools/parsers/douParser/aio_dou_parser.i
-	@echo ... sources/tools/parsers/douParser/aio_dou_parser.s
-	@echo ... sources/tools/parsers/intParser/AIOIntParser.obj
-	@echo ... sources/tools/parsers/intParser/AIOIntParser.i
-	@echo ... sources/tools/parsers/intParser/AIOIntParser.s
-	@echo ... sources/tools/parsers/strParser/AIOStrParser.obj
-	@echo ... sources/tools/parsers/strParser/AIOStrParser.i
-	@echo ... sources/tools/parsers/strParser/AIOStrParser.s
+	@echo ... sources/tools/parsers/cha_parser/aio_cha_parser.obj
+	@echo ... sources/tools/parsers/cha_parser/aio_cha_parser.i
+	@echo ... sources/tools/parsers/cha_parser/aio_cha_parser.s
+	@echo ... sources/tools/parsers/dou_parser/aio_dou_parser.obj
+	@echo ... sources/tools/parsers/dou_parser/aio_dou_parser.i
+	@echo ... sources/tools/parsers/dou_parser/aio_dou_parser.s
+	@echo ... sources/tools/parsers/int_parser/aio_int_parser.obj
+	@echo ... sources/tools/parsers/int_parser/aio_int_parser.i
+	@echo ... sources/tools/parsers/int_parser/aio_int_parser.s
+	@echo ... sources/tools/parsers/str_parser/aio_str_parser.obj
+	@echo ... sources/tools/parsers/str_parser/aio_str_parser.i
+	@echo ... sources/tools/parsers/str_parser/aio_str_parser.s
 .PHONY : help
 
 

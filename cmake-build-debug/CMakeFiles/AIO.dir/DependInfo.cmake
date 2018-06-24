@@ -38,10 +38,10 @@ set(CMAKE_DEPENDS_CHECK_C
   "C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/string_utils/trim.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lib/utils/string_utils/trim.c.obj"
   "C:/Users/StarKRE/CLionProjects/AIO/sources/main/main.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/main/main.c.obj"
   "C:/Users/StarKRE/CLionProjects/AIO/sources/tools/parsers/aio_parser.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/tools/parsers/aio_parser.c.obj"
-  "C:/Users/StarKRE/CLionProjects/AIO/sources/tools/parsers/chaParser/aio_cha_parser.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/tools/parsers/chaParser/aio_cha_parser.c.obj"
-  "C:/Users/StarKRE/CLionProjects/AIO/sources/tools/parsers/douParser/aio_dou_parser.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/tools/parsers/douParser/aio_dou_parser.c.obj"
-  "C:/Users/StarKRE/CLionProjects/AIO/sources/tools/parsers/intParser/AIOIntParser.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/tools/parsers/intParser/AIOIntParser.c.obj"
-  "C:/Users/StarKRE/CLionProjects/AIO/sources/tools/parsers/strParser/AIOStrParser.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/tools/parsers/strParser/AIOStrParser.c.obj"
+  "C:/Users/StarKRE/CLionProjects/AIO/sources/tools/parsers/cha_parser/aio_cha_parser.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/tools/parsers/cha_parser/aio_cha_parser.c.obj"
+  "C:/Users/StarKRE/CLionProjects/AIO/sources/tools/parsers/dou_parser/aio_dou_parser.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/tools/parsers/dou_parser/aio_dou_parser.c.obj"
+  "C:/Users/StarKRE/CLionProjects/AIO/sources/tools/parsers/int_parser/aio_int_parser.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/tools/parsers/int_parser/aio_int_parser.c.obj"
+  "C:/Users/StarKRE/CLionProjects/AIO/sources/tools/parsers/str_parser/aio_str_parser.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/tools/parsers/str_parser/aio_str_parser.c.obj"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 
