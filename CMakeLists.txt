@@ -4,7 +4,7 @@ project(AIO C)
 set(CMAKE_C_STANDARD 11)
 
 add_executable(AIO sources/main/main.c
-        sources/lang/reservedNames/aio_reserved_names_container.c
+        sources/lang/reserved_names/aio_reserved_names_container.c
         headers/lang/declarations/aio_declaration.h
         headers/lang/annotations/aio_annotation.h
         headers/reserved_names/aio_reserved_names_container.h

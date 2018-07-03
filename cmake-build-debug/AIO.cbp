@@ -224,7 +224,7 @@
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lang/object/objectManager/aio_object_manager.c">
 			<Option target="AIO"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lang/reservedNames/aio_reserved_names_container.c">
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lang/reserved_names/aio_reserved_names_container.c">
 			<Option target="AIO"/>
 		</Unit>
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lang/types/aio_type.c">

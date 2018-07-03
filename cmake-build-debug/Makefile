@@ -608,32 +608,32 @@ sources/lang/object/objectManager/aio_object_manager.c.s:
 	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/object/objectManager/aio_object_manager.c.s
 .PHONY : sources/lang/object/objectManager/aio_object_manager.c.s
 
-sources/lang/reservedNames/aio_reserved_names_container.obj: sources/lang/reservedNames/aio_reserved_names_container.c.obj
+sources/lang/reserved_names/aio_reserved_names_container.obj: sources/lang/reserved_names/aio_reserved_names_container.c.obj
 
-.PHONY : sources/lang/reservedNames/aio_reserved_names_container.obj
+.PHONY : sources/lang/reserved_names/aio_reserved_names_container.obj
 
 # target to build an object file
-sources/lang/reservedNames/aio_reserved_names_container.c.obj:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/reservedNames/aio_reserved_names_container.c.obj
-.PHONY : sources/lang/reservedNames/aio_reserved_names_container.c.obj
+sources/lang/reserved_names/aio_reserved_names_container.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/reserved_names/aio_reserved_names_container.c.obj
+.PHONY : sources/lang/reserved_names/aio_reserved_names_container.c.obj
 
-sources/lang/reservedNames/aio_reserved_names_container.i: sources/lang/reservedNames/aio_reserved_names_container.c.i
+sources/lang/reserved_names/aio_reserved_names_container.i: sources/lang/reserved_names/aio_reserved_names_container.c.i
 
-.PHONY : sources/lang/reservedNames/aio_reserved_names_container.i
+.PHONY : sources/lang/reserved_names/aio_reserved_names_container.i
 
 # target to preprocess a source file
-sources/lang/reservedNames/aio_reserved_names_container.c.i:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/reservedNames/aio_reserved_names_container.c.i
-.PHONY : sources/lang/reservedNames/aio_reserved_names_container.c.i
+sources/lang/reserved_names/aio_reserved_names_container.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/reserved_names/aio_reserved_names_container.c.i
+.PHONY : sources/lang/reserved_names/aio_reserved_names_container.c.i
 
-sources/lang/reservedNames/aio_reserved_names_container.s: sources/lang/reservedNames/aio_reserved_names_container.c.s
+sources/lang/reserved_names/aio_reserved_names_container.s: sources/lang/reserved_names/aio_reserved_names_container.c.s
 
-.PHONY : sources/lang/reservedNames/aio_reserved_names_container.s
+.PHONY : sources/lang/reserved_names/aio_reserved_names_container.s
 
 # target to generate assembly for a file
-sources/lang/reservedNames/aio_reserved_names_container.c.s:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/reservedNames/aio_reserved_names_container.c.s
-.PHONY : sources/lang/reservedNames/aio_reserved_names_container.c.s
+sources/lang/reserved_names/aio_reserved_names_container.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/reserved_names/aio_reserved_names_container.c.s
+.PHONY : sources/lang/reserved_names/aio_reserved_names_container.c.s
 
 sources/lang/types/aio_type.obj: sources/lang/types/aio_type.c.obj
 
@@ -1211,9 +1211,9 @@ help:
 	@echo ... sources/lang/object/objectManager/aio_object_manager.obj
 	@echo ... sources/lang/object/objectManager/aio_object_manager.i
 	@echo ... sources/lang/object/objectManager/aio_object_manager.s
-	@echo ... sources/lang/reservedNames/aio_reserved_names_container.obj
-	@echo ... sources/lang/reservedNames/aio_reserved_names_container.i
-	@echo ... sources/lang/reservedNames/aio_reserved_names_container.s
+	@echo ... sources/lang/reserved_names/aio_reserved_names_container.obj
+	@echo ... sources/lang/reserved_names/aio_reserved_names_container.i
+	@echo ... sources/lang/reserved_names/aio_reserved_names_container.s
 	@echo ... sources/lang/types/aio_type.obj
 	@echo ... sources/lang/types/aio_type.i
 	@echo ... sources/lang/types/aio_type.s

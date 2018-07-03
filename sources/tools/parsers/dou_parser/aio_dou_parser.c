@@ -48,7 +48,7 @@ aio_dou_result *make_plus_or_minus(aio_object *object, aio_method_definition *me
                                    aio_method_container *method_container, char *code_line) {
     aio_dou_result *current = make_multiplication_or_division(object, method_definition, method_container, code_line);
     aio_dou acc = current->acc;
-    while (is_empty_string(current->rest) == 0) {
+    while (is_not_empty_string(current->rest) == 0) {
         const char sign = current->rest[0];
         if (!(sign == '+' || sign == '-')) {
             break;

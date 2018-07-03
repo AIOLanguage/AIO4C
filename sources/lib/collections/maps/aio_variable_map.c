@@ -4,6 +4,11 @@
 #include <process.h>
 #include "../../../../headers/lib/collections/maps/aio_variable_map.h"
 
+#define CHECK_MEMORY(var) \
+    if (var == NULL) { \
+        \\ ... \
+    }\
+
 aio_variable_map *new_aio_variable_map() {
     //Create the same variable map:
     aio_variable_map *variable_map = calloc(1, sizeof(aio_variable_map));

@@ -80,28 +80,28 @@ CMakeFiles/AIO.dir/sources/main/main.c.obj.provides: CMakeFiles/AIO.dir/sources/
 CMakeFiles/AIO.dir/sources/main/main.c.obj.provides.build: CMakeFiles/AIO.dir/sources/main/main.c.obj
 
 
-CMakeFiles/AIO.dir/sources/lang/reservedNames/aio_reserved_names_container.c.obj: CMakeFiles/AIO.dir/flags.make
-CMakeFiles/AIO.dir/sources/lang/reservedNames/aio_reserved_names_container.c.obj: ../sources/lang/reservedNames/aio_reserved_names_container.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\StarKRE\CLionProjects\AIO\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/AIO.dir/sources/lang/reservedNames/aio_reserved_names_container.c.obj"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\AIO.dir\sources\lang\reservedNames\aio_reserved_names_container.c.obj   -c C:\Users\StarKRE\CLionProjects\AIO\sources\lang\reservedNames\aio_reserved_names_container.c
+CMakeFiles/AIO.dir/sources/lang/reserved_names/aio_reserved_names_container.c.obj: CMakeFiles/AIO.dir/flags.make
+CMakeFiles/AIO.dir/sources/lang/reserved_names/aio_reserved_names_container.c.obj: ../sources/lang/reserved_names/aio_reserved_names_container.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\StarKRE\CLionProjects\AIO\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/AIO.dir/sources/lang/reserved_names/aio_reserved_names_container.c.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\AIO.dir\sources\lang\reserved_names\aio_reserved_names_container.c.obj   -c C:\Users\StarKRE\CLionProjects\AIO\sources\lang\reserved_names\aio_reserved_names_container.c
 
-CMakeFiles/AIO.dir/sources/lang/reservedNames/aio_reserved_names_container.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/AIO.dir/sources/lang/reservedNames/aio_reserved_names_container.c.i"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\StarKRE\CLionProjects\AIO\sources\lang\reservedNames\aio_reserved_names_container.c > CMakeFiles\AIO.dir\sources\lang\reservedNames\aio_reserved_names_container.c.i
+CMakeFiles/AIO.dir/sources/lang/reserved_names/aio_reserved_names_container.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/AIO.dir/sources/lang/reserved_names/aio_reserved_names_container.c.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\StarKRE\CLionProjects\AIO\sources\lang\reserved_names\aio_reserved_names_container.c > CMakeFiles\AIO.dir\sources\lang\reserved_names\aio_reserved_names_container.c.i
 
-CMakeFiles/AIO.dir/sources/lang/reservedNames/aio_reserved_names_container.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/AIO.dir/sources/lang/reservedNames/aio_reserved_names_container.c.s"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\StarKRE\CLionProjects\AIO\sources\lang\reservedNames\aio_reserved_names_container.c -o CMakeFiles\AIO.dir\sources\lang\reservedNames\aio_reserved_names_container.c.s
+CMakeFiles/AIO.dir/sources/lang/reserved_names/aio_reserved_names_container.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/AIO.dir/sources/lang/reserved_names/aio_reserved_names_container.c.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\StarKRE\CLionProjects\AIO\sources\lang\reserved_names\aio_reserved_names_container.c -o CMakeFiles\AIO.dir\sources\lang\reserved_names\aio_reserved_names_container.c.s
 
-CMakeFiles/AIO.dir/sources/lang/reservedNames/aio_reserved_names_container.c.obj.requires:
+CMakeFiles/AIO.dir/sources/lang/reserved_names/aio_reserved_names_container.c.obj.requires:
 
-.PHONY : CMakeFiles/AIO.dir/sources/lang/reservedNames/aio_reserved_names_container.c.obj.requires
+.PHONY : CMakeFiles/AIO.dir/sources/lang/reserved_names/aio_reserved_names_container.c.obj.requires
 
-CMakeFiles/AIO.dir/sources/lang/reservedNames/aio_reserved_names_container.c.obj.provides: CMakeFiles/AIO.dir/sources/lang/reservedNames/aio_reserved_names_container.c.obj.requires
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/reservedNames/aio_reserved_names_container.c.obj.provides.build
-.PHONY : CMakeFiles/AIO.dir/sources/lang/reservedNames/aio_reserved_names_container.c.obj.provides
+CMakeFiles/AIO.dir/sources/lang/reserved_names/aio_reserved_names_container.c.obj.provides: CMakeFiles/AIO.dir/sources/lang/reserved_names/aio_reserved_names_container.c.obj.requires
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/reserved_names/aio_reserved_names_container.c.obj.provides.build
+.PHONY : CMakeFiles/AIO.dir/sources/lang/reserved_names/aio_reserved_names_container.c.obj.provides
 
-CMakeFiles/AIO.dir/sources/lang/reservedNames/aio_reserved_names_container.c.obj.provides.build: CMakeFiles/AIO.dir/sources/lang/reservedNames/aio_reserved_names_container.c.obj
+CMakeFiles/AIO.dir/sources/lang/reserved_names/aio_reserved_names_container.c.obj.provides.build: CMakeFiles/AIO.dir/sources/lang/reserved_names/aio_reserved_names_container.c.obj
 
 
 CMakeFiles/AIO.dir/sources/lib/collections/lists/string_list.c.obj: CMakeFiles/AIO.dir/flags.make
@@ -971,7 +971,7 @@ CMakeFiles/AIO.dir/sources/lib/pair/string_pair.c.obj.provides.build: CMakeFiles
 # Object files for target AIO
 AIO_OBJECTS = \
 "CMakeFiles/AIO.dir/sources/main/main.c.obj" \
-"CMakeFiles/AIO.dir/sources/lang/reservedNames/aio_reserved_names_container.c.obj" \
+"CMakeFiles/AIO.dir/sources/lang/reserved_names/aio_reserved_names_container.c.obj" \
 "CMakeFiles/AIO.dir/sources/lib/collections/lists/string_list.c.obj" \
 "CMakeFiles/AIO.dir/sources/lang/types/aio_type.c.obj" \
 "CMakeFiles/AIO.dir/sources/lib/collections/maps/aio_object_map.c.obj" \
@@ -1013,7 +1013,7 @@ AIO_OBJECTS = \
 AIO_EXTERNAL_OBJECTS =
 
 AIO.exe: CMakeFiles/AIO.dir/sources/main/main.c.obj
-AIO.exe: CMakeFiles/AIO.dir/sources/lang/reservedNames/aio_reserved_names_container.c.obj
+AIO.exe: CMakeFiles/AIO.dir/sources/lang/reserved_names/aio_reserved_names_container.c.obj
 AIO.exe: CMakeFiles/AIO.dir/sources/lib/collections/lists/string_list.c.obj
 AIO.exe: CMakeFiles/AIO.dir/sources/lang/types/aio_type.c.obj
 AIO.exe: CMakeFiles/AIO.dir/sources/lib/collections/maps/aio_object_map.c.obj
@@ -1063,7 +1063,7 @@ CMakeFiles/AIO.dir/build: AIO.exe
 .PHONY : CMakeFiles/AIO.dir/build
 
 CMakeFiles/AIO.dir/requires: CMakeFiles/AIO.dir/sources/main/main.c.obj.requires
-CMakeFiles/AIO.dir/requires: CMakeFiles/AIO.dir/sources/lang/reservedNames/aio_reserved_names_container.c.obj.requires
+CMakeFiles/AIO.dir/requires: CMakeFiles/AIO.dir/sources/lang/reserved_names/aio_reserved_names_container.c.obj.requires
 CMakeFiles/AIO.dir/requires: CMakeFiles/AIO.dir/sources/lib/collections/lists/string_list.c.obj.requires
 CMakeFiles/AIO.dir/requires: CMakeFiles/AIO.dir/sources/lang/types/aio_type.c.obj.requires
 CMakeFiles/AIO.dir/requires: CMakeFiles/AIO.dir/sources/lib/collections/maps/aio_object_map.c.obj.requires

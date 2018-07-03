@@ -22,7 +22,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "C:/Users/StarKRE/CLionProjects/AIO/sources/lang/methods/variable/aio_variable.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lang/methods/variable/aio_variable.c.obj"
   "C:/Users/StarKRE/CLionProjects/AIO/sources/lang/object/aio_object.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lang/object/aio_object.c.obj"
   "C:/Users/StarKRE/CLionProjects/AIO/sources/lang/object/objectManager/aio_object_manager.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lang/object/objectManager/aio_object_manager.c.obj"
-  "C:/Users/StarKRE/CLionProjects/AIO/sources/lang/reservedNames/aio_reserved_names_container.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lang/reservedNames/aio_reserved_names_container.c.obj"
+  "C:/Users/StarKRE/CLionProjects/AIO/sources/lang/reserved_names/aio_reserved_names_container.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lang/reserved_names/aio_reserved_names_container.c.obj"
   "C:/Users/StarKRE/CLionProjects/AIO/sources/lang/types/aio_type.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lang/types/aio_type.c.obj"
   "C:/Users/StarKRE/CLionProjects/AIO/sources/lib/collections/lists/aio_annotation_list.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lib/collections/lists/aio_annotation_list.c.obj"
   "C:/Users/StarKRE/CLionProjects/AIO/sources/lib/collections/lists/string_list.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lib/collections/lists/string_list.c.obj"
