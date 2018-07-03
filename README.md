@@ -48,11 +48,11 @@
 
 ![image](https://user-images.githubusercontent.com/22048950/42231457-41b7a022-7ef4-11e8-804e-51a6e35e50ed.png)
 
-####equal loops
+#### equal loops
 
 ![image](https://user-images.githubusercontent.com/22048950/42231703-ec4a00c0-7ef4-11e8-827d-6b30856a6831.png)
 
-####equal loops
+#### equal loops
 
 ![image](https://user-images.githubusercontent.com/22048950/42231753-0e55abb0-7ef5-11e8-8361-5455f7a548ca.png)
 
