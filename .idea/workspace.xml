@@ -37,8 +37,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="649">
-                <caret line="68" lean-forward="true" selection-start-line="68" selection-end-line="68" />
+              <first_editor relative-caret-position="527">
+                <caret line="61" lean-forward="true" selection-start-line="61" selection-end-line="61" />
               </first_editor>
               <second_editor />
             </state>
@@ -632,7 +632,7 @@
       <workItem from="1530295426868" duration="2817000" />
       <workItem from="1530362907208" duration="2644000" />
       <workItem from="1530440471610" duration="114000" />
-      <workItem from="1530631426264" duration="3616000" />
+      <workItem from="1530631426264" duration="4541000" />
     </task>
     <task id="LOCAL-00001" summary="05.06.2018 Developed AIOObjectManager =) #LOVE_AIO_&amp;_C =)">
       <created>1528196702392</created>
@@ -921,11 +921,25 @@
       <option name="project" value="LOCAL" />
       <updated>1530632324188</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="03.07.2018 added info in README! &#10;#LOVE AIO &amp; C =)">
+      <created>1530635257869</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1530635257869</updated>
+    </task>
+    <task id="LOCAL-00043" summary="03.07.2018 added info in README! &#10;#LOVE AIO &amp; C =)">
+      <created>1530635345615</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1530635345615</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="298749000" />
+    <option name="totallyTimeSpent" value="299674000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -991,7 +1005,8 @@
     <MESSAGE value="24.06.2018 upgraded headers!" />
     <MESSAGE value="24.06.2018 upgraded headers &amp; sources! &#10;#LOVE AIO &amp; C" />
     <MESSAGE value="24.06.2018 added info in README! &#10;#LOVE AIO &amp; C" />
-    <option name="LAST_COMMIT_MESSAGE" value="24.06.2018 added info in README! &#10;#LOVE AIO &amp; C" />
+    <MESSAGE value="03.07.2018 added info in README! &#10;#LOVE AIO &amp; C =)" />
+    <option name="LAST_COMMIT_MESSAGE" value="03.07.2018 added info in README! &#10;#LOVE AIO &amp; C =)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1339,8 +1354,8 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="649">
-            <caret line="68" lean-forward="true" selection-start-line="68" selection-end-line="68" />
+          <first_editor relative-caret-position="527">
+            <caret line="61" lean-forward="true" selection-start-line="61" selection-end-line="61" />
           </first_editor>
           <second_editor />
         </state>

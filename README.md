@@ -58,7 +58,7 @@
 
 ### 4.2. mutable pointer
 
-![image](https://user-images.githubusercontent.com/22048950/42231531-68c82f2e-7ef4-11e8-9421-c45091429e4a.png)
+![image](https://user-images.githubusercontent.com/22048950/42232945-b36a9f54-7ef8-11e8-96a0-3fa66a1e46cf.png)
 
 
 # Usage
