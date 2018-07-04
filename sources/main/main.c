@@ -1,18 +1,18 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <mem.h>
-#include "../../headers/lang/object/object_manager/aio_object_manager.h"
+#include "../../headers/lang/object/object_manager/aio_nexus.h"
 
-aio_object_manager *object_manager;
+aio_nexus *core;
 
 void init() {
-    object_manager = init_aio_object_manager();
+    core = init_aio_object_manager();
 }
 
 void make() {
     init();
     char *path = "../aioPrograms/test.aio";
-    build_aio_object_and_put_in_object_manager(object_manager, path);
+    build_aio_object_and_put_in_object_manager(core, path);
 }
 
 int main() {

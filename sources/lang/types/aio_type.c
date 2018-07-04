@@ -91,10 +91,10 @@ void set_type(char *value, enum aio_type *type) {
         *type = AIO_INT;
     } else if (matches_dou(value)) {
         *type = AIO_DOU;
-    } else if (matches_cha(value)) {
-        *type = AIO_CHA;
     } else if (matches_str(value)) {
         *type = AIO_STR;
+    } else {
+        *type = AIO_VOI;
     }
 }
 
@@ -137,7 +137,7 @@ int is_aio_str_type(enum aio_type type) {
 //끝난!
 int str_to_int(char *word) {
     if (matches_int(word) != 0) {
-        perror("cannot convert string to int in str_to_int!");
+        perror("cannot convert string to int in string_to_int!");
         exit(1);
     }
     int result = 0;
@@ -222,7 +222,7 @@ char *int_to_str(int src) {
 }
 
 //Passed JUnitTest!
-char *dou_to_str(double src) {
+char *double_to_str(double src) {
     int division = (int) src;
     unsigned int_size_in_string = 0;
     while (division != 0) {

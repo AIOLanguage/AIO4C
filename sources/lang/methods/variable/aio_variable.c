@@ -47,8 +47,8 @@ aio_variable *new_aio_variable(char *name, char *value, int mutable, enum aio_ty
     variable->name = name;
     //Set value:
     variable->value = value;
-    //Set mutable:
-    variable->mutable = mutable;
+    //Set mutable_by_type:
+    variable->mutable_by_type = mutable;
     //Set type:
     variable->type = type;
     return variable;

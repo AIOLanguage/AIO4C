@@ -7,13 +7,9 @@
 #include <stddef.h>
 #include "../../../../headers/lib/utils/string_utils/string_utils.h"
 
-#define TRUE 0
-#define FALSE (-1)
-
-//끝난!
 //Passed JUnitTest!
-char* border_trim(const char *src, const int has_left, const int has_right) {
-    char* dst;
+char *border_trim(const char *src, const int has_left, const int has_right) {
+    char *dst;
     const size_t src_length = strlen(src);
     if (src_length == TRUE) {
         dst = calloc(2, sizeof(char));
@@ -56,32 +52,29 @@ char* border_trim(const char *src, const int has_left, const int has_right) {
 
 //끝난!
 //Passed JUnitTest!
-char* trim_start(const char *src) {
+char *trim_start(const char *src) {
     return border_trim(src, TRUE, FALSE);
 }
 
 //끝난!
 //Passed JUnitTest!
-char* trim_end(const char *src) {
+char *trim_end(const char *src) {
     return border_trim(src, FALSE, TRUE);
 }
 
 //끝난!
 //Passed JUnitTest!
-char* trim(const char *src) {
+char *trim(const char *src) {
     return border_trim(src, TRUE, TRUE);
 }
 
 //끝난!
 //PassedJUnit Test!
-char** trim_all(char **strings, int number_of_strings) {
-    char** dst;
+char **trim_all(char **strings, int number_of_strings) {
+    char **dst;
     dst = calloc((size_t) number_of_strings, sizeof(char *));
-    if (dst == NULL) {
-        perror("cannot allocate memory for dst when trim all is occurs!");
-        exit(1);
-    }
     for (int i = 0; i < number_of_strings; ++i) {
         dst[i] = trim(strings[i]);
     }
+    return dst;
 }

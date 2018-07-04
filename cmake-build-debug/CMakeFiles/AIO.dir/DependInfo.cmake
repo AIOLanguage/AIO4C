@@ -5,7 +5,6 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
   "C:/Users/StarKRE/CLionProjects/AIO/sources/lang/annotations/aio_annotation.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lang/annotations/aio_annotation.c.obj"
-  "C:/Users/StarKRE/CLionProjects/AIO/sources/lang/declarations/aio_declaration.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lang/declarations/aio_declaration.c.obj"
   "C:/Users/StarKRE/CLionProjects/AIO/sources/lang/methods/aio_method.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lang/methods/aio_method.c.obj"
   "C:/Users/StarKRE/CLionProjects/AIO/sources/lang/methods/analysis/method_reproducer/aio_method_reproducer.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lang/methods/analysis/method_reproducer/aio_method_reproducer.c.obj"
   "C:/Users/StarKRE/CLionProjects/AIO/sources/lang/methods/analysis/method_reproducer/default/aio_default_reproducer.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lang/methods/analysis/method_reproducer/default/aio_default_reproducer.c.obj"
@@ -20,8 +19,8 @@ set(CMAKE_DEPENDS_CHECK_C
   "C:/Users/StarKRE/CLionProjects/AIO/sources/lang/methods/method_definition/aio_method_definition_builder.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lang/methods/method_definition/aio_method_definition_builder.c.obj"
   "C:/Users/StarKRE/CLionProjects/AIO/sources/lang/methods/result/aio_result.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lang/methods/result/aio_result.c.obj"
   "C:/Users/StarKRE/CLionProjects/AIO/sources/lang/methods/variable/aio_variable.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lang/methods/variable/aio_variable.c.obj"
-  "C:/Users/StarKRE/CLionProjects/AIO/sources/lang/object/aio_object.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lang/object/aio_object.c.obj"
-  "C:/Users/StarKRE/CLionProjects/AIO/sources/lang/object/objectManager/aio_object_manager.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lang/object/objectManager/aio_object_manager.c.obj"
+  "C:/Users/StarKRE/CLionProjects/AIO/sources/lang/object/aio_file.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lang/object/aio_file.c.obj"
+  "C:/Users/StarKRE/CLionProjects/AIO/sources/lang/object/objectManager/aio_core.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lang/object/objectManager/aio_core.c.obj"
   "C:/Users/StarKRE/CLionProjects/AIO/sources/lang/reserved_names/aio_reserved_names_container.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lang/reserved_names/aio_reserved_names_container.c.obj"
   "C:/Users/StarKRE/CLionProjects/AIO/sources/lang/types/aio_type.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lang/types/aio_type.c.obj"
   "C:/Users/StarKRE/CLionProjects/AIO/sources/lib/collections/lists/aio_annotation_list.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lib/collections/lists/aio_annotation_list.c.obj"
@@ -30,7 +29,8 @@ set(CMAKE_DEPENDS_CHECK_C
   "C:/Users/StarKRE/CLionProjects/AIO/sources/lib/collections/maps/aio_object_map.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lib/collections/maps/aio_object_map.c.obj"
   "C:/Users/StarKRE/CLionProjects/AIO/sources/lib/collections/maps/aio_variable_map.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lib/collections/maps/aio_variable_map.c.obj"
   "C:/Users/StarKRE/CLionProjects/AIO/sources/lib/pair/string_pair.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lib/pair/string_pair.c.obj"
-  "C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/file_utils/file_utils.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lib/utils/file_utils/file_utils.c.obj"
+  "C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/double_utils/string_to_double.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lib/utils/double_utils/string_to_double.c.obj"
+  "C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/file_utils/file_reader.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lib/utils/file_utils/file_reader.c.obj"
   "C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/operation_utils/operation_utils.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lib/utils/operation_utils/operation_utils.c.obj"
   "C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/string_utils/prefix_suffix.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lib/utils/string_utils/prefix_suffix.c.obj"
   "C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/string_utils/split.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lib/utils/string_utils/split.c.obj"

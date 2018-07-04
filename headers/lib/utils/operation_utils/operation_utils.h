@@ -2,13 +2,14 @@
 #define AIO_OPERATION_UTILS_H
 
 #include <mem.h>
+#include "../boolean_utils/boolean_utils.h"
 
-int is_plus_operation(char *string);
+boolean is_plus_operation(const_string string);
 
-int is_multiply_operation(char *string);
+boolean is_multiply_operation(const_string string);
 
-int is_concat_operation(char *string);
+boolean is_concat_operation(const_string string);
 
-int is_default_operations(const char *string);
+boolean is_default_operations(const_string string);
 
 #endif //AIO_OPERATION_UTILS_H

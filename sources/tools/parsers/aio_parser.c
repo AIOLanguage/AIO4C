@@ -1,12 +1,12 @@
 #include <stdio.h>
 #include "../../../headers/lang/types/aio_type.h"
-#include "../../../headers/lang/object/aio_object.h"
+#include "../../../headers/lang/object/aio_file.h"
 #include "../../../headers/lang/methods/aio_method_container.h"
 #include "../../../headers/lang/methods/aio_method.h"
 #include "../../../headers/tools/parsers/aio_parser.h"
 
 aio_str
-parse_line_expression(aio_object *object, aio_method_definition *method_definition,
+parse_line_expression(aio_file *object, aio_method_definition *method_definition,
                       aio_method_container *method_container,
                       char *code_line) {
     char *result;
@@ -21,8 +21,8 @@ parse_line_expression(aio_object *object, aio_method_definition *method_definiti
 }
 
 aio_variable *get_variable_from_method_container(char *variable_name, aio_method_container *method_container) {
-    if (contains_variable_in_map(variable_name, method_container->argMap) == 0) {
-        return get_aio_variable_in_map_by_name(method_container->argMap, variable_name);
+    if (contains_variable_in_map(variable_name, method_container->arg_map) == 0) {
+        return get_aio_variable_in_map_by_name(method_container->arg_map, variable_name);
     }
     if (contains_variable_in_map(variable_name, method_container->variable_map) == 0) {
         return get_aio_variable_in_map_by_name(method_container->variable_map, variable_name);

@@ -5,11 +5,11 @@
 #include "../../../../headers/lib/collections/maps/aio_object_map.h"
 
 //Passed JUnitTests!
-aio_object_map *new_aio_object_map() {
+aio_file_map *new_aio_object_map() {
     //Create the same definition map:
-    aio_object_map *object_map = calloc(1, sizeof(aio_object_map));
+    aio_file_map *object_map = calloc(1, sizeof(aio_file_map));
     if (object_map == NULL) {
-        perror("cannot allocate memory for aio_object!");
+        perror("cannot allocate memory for aio_file!");
         exit(1);
     }
     //Create capacity:
@@ -23,7 +23,7 @@ aio_object_map *new_aio_object_map() {
         exit(1);
     }
     //Create definitions that equals 2:
-    object_map->objects = calloc(2, sizeof(aio_object *));
+    object_map->objects = calloc(2, sizeof(aio_file *));
     if (object_map->objects == NULL) {
         perror("cannot allocate memory for objects!");
         exit(1);
@@ -32,19 +32,19 @@ aio_object_map *new_aio_object_map() {
 }
 
 //Passed JUnitTests!
-void update_memory_in_object_map(aio_object_map *object_map) {
+void update_memory_in_object_map(aio_file_map *object_map) {
     if (object_map->size + 1 == object_map->capacity) {
         object_map->capacity = object_map->capacity * 2;
         object_map->names = realloc(object_map->names, object_map->capacity * sizeof(char *));
-        object_map->objects = realloc(object_map->objects, object_map->capacity * sizeof(aio_object *));
+        object_map->objects = realloc(object_map->objects, object_map->capacity * sizeof(aio_file *));
     }
 }
 
 //Passed JUnitTests!
-void put_aio_object_in_map(aio_object_map *object_map, aio_object *object) {
+void put_aio_object_in_map(aio_file_map *object_map, aio_file *object) {
     for (int i = 0; i < object_map->size; ++i) {
         if (strcmp(object_map->names[i], object->name) == 0) {
-            perror("Cannot put aio_object in definition map");
+            perror("Cannot put aio_file in definition map");
             exit(1);
         }
     }
@@ -63,7 +63,7 @@ void put_aio_object_in_map(aio_object_map *object_map, aio_object *object) {
 }
 
 //Passed JUnitTests!
-aio_object *get_aio_object_in_map_by_name(aio_object_map *object_map, char *name) {
+aio_file *get_aio_object_in_map_by_name(aio_file_map *object_map, char *name) {
     for (int i = 0; i < strlen(name); ++i) {
         if (strcmp(object_map->names[i], name) == 0) {
             return object_map->objects[i];

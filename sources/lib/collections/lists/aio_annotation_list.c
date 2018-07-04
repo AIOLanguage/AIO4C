@@ -6,12 +6,8 @@
 
 //Passed JUnitTest!
 aio_annotation_list *new_annotation_list() {
-    //Create the same mutable list:
+    //Create the same mutable_by_type list:
     aio_annotation_list *annotation_list = calloc(1, sizeof(aio_annotation_list));
-    if (annotation_list == NULL) {
-        perror("can not allocate memory for aio annotation list");
-        exit(1);
-    }
     //Create capacity:
     annotation_list->capacity = 2;
     //Create size:
@@ -19,7 +15,7 @@ aio_annotation_list *new_annotation_list() {
     //Create char capacity that equals 2:
     annotation_list->annotations = calloc(2, sizeof(aio_annotation *));
     if (annotation_list->annotations == NULL) {
-        perror("can not allocate memory for annotations in aio annotation list");
+        perror("can not allocate memory for aio_annotation in aio annotation list");
         exit(1);
     }
     return annotation_list;

@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <process.h>
-#include "../../../../../../headers/lang/object/aio_object.h"
+#include "../../../../../../headers/lang/object/aio_file.h"
 #include "../../../../../../headers/lib/collections/maps/aio_variable_map.h"
 #include "../../../../../../headers/lang/methods/aio_method_container.h"
 #include "../../../../../../headers/lib/utils/string_utils/string_utils.h"
@@ -10,10 +10,10 @@
 #include "../../../../../../headers/lang/methods/analysis/method_reproducer/the_shortest/concat_for_each_reproducer/aio_concat_for_each_reproducer.h"
 #include "../../../../../../headers/lang/methods/method_definition/aio_method_definition_builder.h"
 #include "../../../../../../headers/lib/collections/maps/aio_object_map.h"
-#include "../../../../../../headers/lang/object/object_manager/aio_object_manager.h"
+#include "../../../../../../headers/lang/object/object_manager/aio_nexus.h"
 #include "../../../../../../headers/lib/utils/file_utils/file_utils.h"
 
-void make_for_each_custom_method_invocation(aio_object *next_object, aio_variable_map *variable_map,
+void make_for_each_custom_method_invocation(aio_file *next_object, aio_variable_map *variable_map,
                                             char *next_method_name, aio_bundle *bundle) {
     for (int i = 0; i < variable_map->size; ++i) {
         string_list *value_list = new_string_list();
@@ -26,7 +26,7 @@ void make_for_each_custom_method_invocation(aio_object *next_object, aio_variabl
     }
 }
 
-void reproduceTheShortestMethod(aio_object *object, aio_method_definition *method_definition,
+void reproduceTheShortestMethod(aio_file *object, aio_method_definition *method_definition,
                                 aio_method_container *method_container, aio_bundle *bundle) {
     printf("the shortest reproducing...\n");
     char *word = trim(method_definition->source_code->strings[0]);
@@ -44,15 +44,15 @@ void reproduceTheShortestMethod(aio_object *object, aio_method_definition *metho
         return;
     }
     //뭔가 있을지도 모른다.
-    if (is_the_shortest_in_the_same_object(word)) {
+    if (is_method_in_the_same_file(word)) {
         char *next_method_name = remove_suffix(word, "~");
         make_for_each_custom_method_invocation(object, method_container->variable_map, next_method_name, bundle);
     }
-    if (is_the_shortest_in_the_other_object(word)) {
+    if (is_method_in_the_other_file(word)) {
         char **next_object_name_vs_method = split_by_string(word, ".");
         char *next_object_path_plus_name = next_object_name_vs_method[0];
         char *next_method_name = remove_suffix(next_object_name_vs_method[1], "~");
-        aio_object *next_object = get_aio_object_in_map_by_name(object_manager->objectMap,
+        aio_file *next_object = get_aio_object_in_map_by_name(object_manager->objectMap,
                                                                 next_object_path_plus_name);
         char *next_object_name;
         if (next_object == NULL) {
@@ -94,7 +94,7 @@ int dou_operation_for_each_type_operation_reproduce(aio_variable_map *arg_map, a
             aio_dou arg_value = str_to_dou(arg_map->variables[i]->value);
             result = apply(result, arg_value);
         }
-        aio_str output_result = dou_to_str(result);
+        aio_str output_result = double_to_str(result);
         add_in_string_list(bundle->output_values, output_result);
         return 0;
     }

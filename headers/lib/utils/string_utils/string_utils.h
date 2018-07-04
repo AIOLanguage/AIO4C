@@ -1,44 +1,66 @@
-#ifndef AIO_STRING_UTILS_H
-#define AIO_STRING_UTILS_H
+#ifndef STRING_UTILS_H
+#define STRING_UTILS_H
 
 #include <stddef.h>
+#include "../boolean_utils/boolean_utils.h"
 
-char** split_by_string(const char *src, const char *delimiter); //끝난!
+#define TRUE 0
+#define FALSE (-1)
 
-char* trim_start(const char *src);
+typedef char *string;
 
-char* trim_end(const char *src);
+typedef const char *const_string;
 
-char* trim(const char *src);
+typedef char **string_array;
 
-int is_white_space(char src);
+typedef const char **const_string_array;
 
-char** trim_all(char **strings, int number_of_strings);
+string double_to_string(double src);
 
-char *remove_prefix(const char *src, const char *prefix); //끝난!
+string_array split_by_string(const_string src, const_string delimiter); //끝난!
 
-char *remove_suffix(const char *src, const char *suffix); //끝난!
+string trim_start(const_string src);
 
-char *remove_prefix_suffix(const char *src, const char *prefix, const char *suffix);
+string trim_end(const_string src);
 
-int starts_with_prefix(const char *src, char *prefix);
+string trim(const_string src);
 
-int ends_with_suffix(const char *src, char *suffix);
+string squeeze_string(const_string src);
 
-char** filter(char **src, int src_size, int (*filterFunction)(char *));
+boolean is_white_space(char src);
 
-int is_not_empty_string(char *string);
+string_array trim_all(const_string_array strings, int number_of_strings);
 
-int is_empty_string(char *string);
+string remove_prefix(const_string src, const_string prefix); //끝난!
 
-char* join_to_string(char **srcStrings, char *delimiter, int src_size);
+string remove_suffix(const_string src, const_string suffix); //끝난!
 
-int is_word(char *line);
+string remove_prefix_suffix(const_string src, const_string prefix, const_string suffix);
 
-char* substring(const char *string, int offset, int length);
+boolean starts_with_prefix(const_string src, const_string prefix);
 
-void concat_string_to_string(char *dst, char *src);
+boolean ends_with_suffix(const_string src, const_string suffix);
 
-void concat_char_to_string(char *dst, char src);
+string_array filter(string_array src, int src_size, int (*filter_function)(const_string));
 
-#endif //AIO_STRING_UTILS_H
+boolean is_not_empty_string(const_string string);
+
+boolean is_empty_string(const_string string);
+
+const_string join_to_string(const_string_array src_strings, const_string delimiter, int src_size);
+
+boolean is_word(const_string line);
+
+string substring(const_string string, int offset, int length);
+
+void concat_string_to_string(string dst, const_string src);
+
+void concat_char_to_string(string *dst, char src);
+
+int strings_size(const_string_array src);
+
+boolean matches_string(const_string word);
+
+void delete_strings(string_array src);
+
+#endif //STRING_UTILS_H

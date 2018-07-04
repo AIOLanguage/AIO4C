@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <process.h>
 #include "../../../headers/lang/methods/aio_method.h"
-#include "../../../headers/lang/object/aio_object.h"
+#include "../../../headers/lang/object/aio_file.h"
 #include "../../../headers/lib/utils/string_utils/string_utils.h"
 #include "../../../headers/reserved_names/aio_reserved_names_container.h"
 #include "../../../headers/lang/methods/analysis/method_reproducer/aio_method_reproducer.h"
@@ -15,7 +15,7 @@ aio_method_container *new_aio_method_container() {
         exit(1);
     }
     //Create arg map:
-    container->argMap = new_aio_variable_map();
+    container->arg_map = new_aio_variable_map();
     //Create variable map:
     container->variable_map = new_aio_variable_map();
     return container;
@@ -31,7 +31,7 @@ void set_args_in_method_container(aio_method_container *method_container, aio_de
             enum aio_type type;
             set_type(input_args->strings[i], &type);
             aio_variable *arg = new_aio_variable(declaration->argList->strings[i], input_args->strings[i], -1, &type);
-            put_in_aio_variable_in_map(method_container->argMap, arg);
+            put_in_aio_variable_in_map(method_container->arg_map, arg);
         }
     } else {
         for (int i = 0; i < input_args->size; i++) {
@@ -43,7 +43,7 @@ void set_args_in_method_container(aio_method_container *method_container, aio_de
             char *index = int_to_str(i);
             concat_string_to_string(implicit_argument_name, index);
             aio_variable *arg = new_aio_variable(implicit_argument_name, input_args->strings[i], -1, &type);
-            put_in_aio_variable_in_map(method_container->argMap, arg);
+            put_in_aio_variable_in_map(method_container->arg_map, arg);
         }
     }
 }
@@ -59,7 +59,7 @@ int contains_variable_in_map(const char *variable_name, const aio_variable_map *
 
 
 int contains_variable(char *variable_name, aio_method_container *method_container) {
-    const aio_variable_map *argMap = method_container->argMap;
+    const aio_variable_map *argMap = method_container->arg_map;
     const aio_variable_map *variabl_map = method_container->variable_map;
     if (contains_variable_in_map(variable_name, argMap) == 0) {
         return 0;
@@ -79,7 +79,7 @@ void set_variable(aio_variable *variable, aio_method_container *method_container
     }
 }
 
-void invoke_new_aio_method(aio_object *object, aio_method_definition *method_definition, aio_bundle *bundle) {
+void invoke_new_aio_method(aio_file *object, aio_method_definition *method_definition, aio_bundle *bundle) {
     //Create the same aio method:
     aio_method *method = calloc(1, sizeof(aio_method));
     if (method == NULL) {
@@ -87,9 +87,9 @@ void invoke_new_aio_method(aio_object *object, aio_method_definition *method_def
         exit(1);
     }
     //Create method container:
-    method->methodContainer = new_aio_method_container();
+    method->method_container = new_aio_method_container();
     //Set args:
-    set_args_in_method_container(method->methodContainer, method_definition->declaration, bundle->input_values);
+    set_args_in_method_container(method->method_container, method_definition->declaration, bundle->input_values);
     //Reproduce method:
-    reproduce_method(object, method_definition, method->methodContainer, bundle);
+    reproduce_method(object, method_definition, method->method_container, bundle);
 }

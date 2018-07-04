@@ -149,33 +149,6 @@ sources/lang/annotations/aio_annotation.c.s:
 	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/annotations/aio_annotation.c.s
 .PHONY : sources/lang/annotations/aio_annotation.c.s
 
-sources/lang/declarations/aio_declaration.obj: sources/lang/declarations/aio_declaration.c.obj
-
-.PHONY : sources/lang/declarations/aio_declaration.obj
-
-# target to build an object file
-sources/lang/declarations/aio_declaration.c.obj:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/declarations/aio_declaration.c.obj
-.PHONY : sources/lang/declarations/aio_declaration.c.obj
-
-sources/lang/declarations/aio_declaration.i: sources/lang/declarations/aio_declaration.c.i
-
-.PHONY : sources/lang/declarations/aio_declaration.i
-
-# target to preprocess a source file
-sources/lang/declarations/aio_declaration.c.i:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/declarations/aio_declaration.c.i
-.PHONY : sources/lang/declarations/aio_declaration.c.i
-
-sources/lang/declarations/aio_declaration.s: sources/lang/declarations/aio_declaration.c.s
-
-.PHONY : sources/lang/declarations/aio_declaration.s
-
-# target to generate assembly for a file
-sources/lang/declarations/aio_declaration.c.s:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/declarations/aio_declaration.c.s
-.PHONY : sources/lang/declarations/aio_declaration.c.s
-
 sources/lang/methods/aio_method.obj: sources/lang/methods/aio_method.c.obj
 
 .PHONY : sources/lang/methods/aio_method.obj
@@ -554,59 +527,59 @@ sources/lang/methods/variable/aio_variable.c.s:
 	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/methods/variable/aio_variable.c.s
 .PHONY : sources/lang/methods/variable/aio_variable.c.s
 
-sources/lang/object/aio_object.obj: sources/lang/object/aio_object.c.obj
+sources/lang/object/aio_file.obj: sources/lang/object/aio_file.c.obj
 
-.PHONY : sources/lang/object/aio_object.obj
-
-# target to build an object file
-sources/lang/object/aio_object.c.obj:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/object/aio_object.c.obj
-.PHONY : sources/lang/object/aio_object.c.obj
-
-sources/lang/object/aio_object.i: sources/lang/object/aio_object.c.i
-
-.PHONY : sources/lang/object/aio_object.i
-
-# target to preprocess a source file
-sources/lang/object/aio_object.c.i:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/object/aio_object.c.i
-.PHONY : sources/lang/object/aio_object.c.i
-
-sources/lang/object/aio_object.s: sources/lang/object/aio_object.c.s
-
-.PHONY : sources/lang/object/aio_object.s
-
-# target to generate assembly for a file
-sources/lang/object/aio_object.c.s:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/object/aio_object.c.s
-.PHONY : sources/lang/object/aio_object.c.s
-
-sources/lang/object/objectManager/aio_object_manager.obj: sources/lang/object/objectManager/aio_object_manager.c.obj
-
-.PHONY : sources/lang/object/objectManager/aio_object_manager.obj
+.PHONY : sources/lang/object/aio_file.obj
 
 # target to build an object file
-sources/lang/object/objectManager/aio_object_manager.c.obj:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/object/objectManager/aio_object_manager.c.obj
-.PHONY : sources/lang/object/objectManager/aio_object_manager.c.obj
+sources/lang/object/aio_file.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/object/aio_file.c.obj
+.PHONY : sources/lang/object/aio_file.c.obj
 
-sources/lang/object/objectManager/aio_object_manager.i: sources/lang/object/objectManager/aio_object_manager.c.i
+sources/lang/object/aio_file.i: sources/lang/object/aio_file.c.i
 
-.PHONY : sources/lang/object/objectManager/aio_object_manager.i
+.PHONY : sources/lang/object/aio_file.i
 
 # target to preprocess a source file
-sources/lang/object/objectManager/aio_object_manager.c.i:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/object/objectManager/aio_object_manager.c.i
-.PHONY : sources/lang/object/objectManager/aio_object_manager.c.i
+sources/lang/object/aio_file.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/object/aio_file.c.i
+.PHONY : sources/lang/object/aio_file.c.i
 
-sources/lang/object/objectManager/aio_object_manager.s: sources/lang/object/objectManager/aio_object_manager.c.s
+sources/lang/object/aio_file.s: sources/lang/object/aio_file.c.s
 
-.PHONY : sources/lang/object/objectManager/aio_object_manager.s
+.PHONY : sources/lang/object/aio_file.s
 
 # target to generate assembly for a file
-sources/lang/object/objectManager/aio_object_manager.c.s:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/object/objectManager/aio_object_manager.c.s
-.PHONY : sources/lang/object/objectManager/aio_object_manager.c.s
+sources/lang/object/aio_file.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/object/aio_file.c.s
+.PHONY : sources/lang/object/aio_file.c.s
+
+sources/lang/object/objectManager/aio_core.obj: sources/lang/object/objectManager/aio_core.c.obj
+
+.PHONY : sources/lang/object/objectManager/aio_core.obj
+
+# target to build an object file
+sources/lang/object/objectManager/aio_core.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/object/objectManager/aio_core.c.obj
+.PHONY : sources/lang/object/objectManager/aio_core.c.obj
+
+sources/lang/object/objectManager/aio_core.i: sources/lang/object/objectManager/aio_core.c.i
+
+.PHONY : sources/lang/object/objectManager/aio_core.i
+
+# target to preprocess a source file
+sources/lang/object/objectManager/aio_core.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/object/objectManager/aio_core.c.i
+.PHONY : sources/lang/object/objectManager/aio_core.c.i
+
+sources/lang/object/objectManager/aio_core.s: sources/lang/object/objectManager/aio_core.c.s
+
+.PHONY : sources/lang/object/objectManager/aio_core.s
+
+# target to generate assembly for a file
+sources/lang/object/objectManager/aio_core.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/object/objectManager/aio_core.c.s
+.PHONY : sources/lang/object/objectManager/aio_core.c.s
 
 sources/lang/reserved_names/aio_reserved_names_container.obj: sources/lang/reserved_names/aio_reserved_names_container.c.obj
 
@@ -824,32 +797,59 @@ sources/lib/pair/string_pair.c.s:
 	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/pair/string_pair.c.s
 .PHONY : sources/lib/pair/string_pair.c.s
 
-sources/lib/utils/file_utils/file_utils.obj: sources/lib/utils/file_utils/file_utils.c.obj
+sources/lib/utils/double_utils/string_to_double.obj: sources/lib/utils/double_utils/string_to_double.c.obj
 
-.PHONY : sources/lib/utils/file_utils/file_utils.obj
+.PHONY : sources/lib/utils/double_utils/string_to_double.obj
 
 # target to build an object file
-sources/lib/utils/file_utils/file_utils.c.obj:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/file_utils/file_utils.c.obj
-.PHONY : sources/lib/utils/file_utils/file_utils.c.obj
+sources/lib/utils/double_utils/string_to_double.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/double_utils/string_to_double.c.obj
+.PHONY : sources/lib/utils/double_utils/string_to_double.c.obj
 
-sources/lib/utils/file_utils/file_utils.i: sources/lib/utils/file_utils/file_utils.c.i
+sources/lib/utils/double_utils/string_to_double.i: sources/lib/utils/double_utils/string_to_double.c.i
 
-.PHONY : sources/lib/utils/file_utils/file_utils.i
+.PHONY : sources/lib/utils/double_utils/string_to_double.i
 
 # target to preprocess a source file
-sources/lib/utils/file_utils/file_utils.c.i:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/file_utils/file_utils.c.i
-.PHONY : sources/lib/utils/file_utils/file_utils.c.i
+sources/lib/utils/double_utils/string_to_double.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/double_utils/string_to_double.c.i
+.PHONY : sources/lib/utils/double_utils/string_to_double.c.i
 
-sources/lib/utils/file_utils/file_utils.s: sources/lib/utils/file_utils/file_utils.c.s
+sources/lib/utils/double_utils/string_to_double.s: sources/lib/utils/double_utils/string_to_double.c.s
 
-.PHONY : sources/lib/utils/file_utils/file_utils.s
+.PHONY : sources/lib/utils/double_utils/string_to_double.s
 
 # target to generate assembly for a file
-sources/lib/utils/file_utils/file_utils.c.s:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/file_utils/file_utils.c.s
-.PHONY : sources/lib/utils/file_utils/file_utils.c.s
+sources/lib/utils/double_utils/string_to_double.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/double_utils/string_to_double.c.s
+.PHONY : sources/lib/utils/double_utils/string_to_double.c.s
+
+sources/lib/utils/file_utils/file_reader.obj: sources/lib/utils/file_utils/file_reader.c.obj
+
+.PHONY : sources/lib/utils/file_utils/file_reader.obj
+
+# target to build an object file
+sources/lib/utils/file_utils/file_reader.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/file_utils/file_reader.c.obj
+.PHONY : sources/lib/utils/file_utils/file_reader.c.obj
+
+sources/lib/utils/file_utils/file_reader.i: sources/lib/utils/file_utils/file_reader.c.i
+
+.PHONY : sources/lib/utils/file_utils/file_reader.i
+
+# target to preprocess a source file
+sources/lib/utils/file_utils/file_reader.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/file_utils/file_reader.c.i
+.PHONY : sources/lib/utils/file_utils/file_reader.c.i
+
+sources/lib/utils/file_utils/file_reader.s: sources/lib/utils/file_utils/file_reader.c.s
+
+.PHONY : sources/lib/utils/file_utils/file_reader.s
+
+# target to generate assembly for a file
+sources/lib/utils/file_utils/file_reader.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/file_utils/file_reader.c.s
+.PHONY : sources/lib/utils/file_utils/file_reader.c.s
 
 sources/lib/utils/operation_utils/operation_utils.obj: sources/lib/utils/operation_utils/operation_utils.c.obj
 
@@ -1160,9 +1160,6 @@ help:
 	@echo ... sources/lang/annotations/aio_annotation.obj
 	@echo ... sources/lang/annotations/aio_annotation.i
 	@echo ... sources/lang/annotations/aio_annotation.s
-	@echo ... sources/lang/declarations/aio_declaration.obj
-	@echo ... sources/lang/declarations/aio_declaration.i
-	@echo ... sources/lang/declarations/aio_declaration.s
 	@echo ... sources/lang/methods/aio_method.obj
 	@echo ... sources/lang/methods/aio_method.i
 	@echo ... sources/lang/methods/aio_method.s
@@ -1205,12 +1202,12 @@ help:
 	@echo ... sources/lang/methods/variable/aio_variable.obj
 	@echo ... sources/lang/methods/variable/aio_variable.i
 	@echo ... sources/lang/methods/variable/aio_variable.s
-	@echo ... sources/lang/object/aio_object.obj
-	@echo ... sources/lang/object/aio_object.i
-	@echo ... sources/lang/object/aio_object.s
-	@echo ... sources/lang/object/objectManager/aio_object_manager.obj
-	@echo ... sources/lang/object/objectManager/aio_object_manager.i
-	@echo ... sources/lang/object/objectManager/aio_object_manager.s
+	@echo ... sources/lang/object/aio_file.obj
+	@echo ... sources/lang/object/aio_file.i
+	@echo ... sources/lang/object/aio_file.s
+	@echo ... sources/lang/object/objectManager/aio_core.obj
+	@echo ... sources/lang/object/objectManager/aio_core.i
+	@echo ... sources/lang/object/objectManager/aio_core.s
 	@echo ... sources/lang/reserved_names/aio_reserved_names_container.obj
 	@echo ... sources/lang/reserved_names/aio_reserved_names_container.i
 	@echo ... sources/lang/reserved_names/aio_reserved_names_container.s
@@ -1235,9 +1232,12 @@ help:
 	@echo ... sources/lib/pair/string_pair.obj
 	@echo ... sources/lib/pair/string_pair.i
 	@echo ... sources/lib/pair/string_pair.s
-	@echo ... sources/lib/utils/file_utils/file_utils.obj
-	@echo ... sources/lib/utils/file_utils/file_utils.i
-	@echo ... sources/lib/utils/file_utils/file_utils.s
+	@echo ... sources/lib/utils/double_utils/string_to_double.obj
+	@echo ... sources/lib/utils/double_utils/string_to_double.i
+	@echo ... sources/lib/utils/double_utils/string_to_double.s
+	@echo ... sources/lib/utils/file_utils/file_reader.obj
+	@echo ... sources/lib/utils/file_utils/file_reader.i
+	@echo ... sources/lib/utils/file_utils/file_reader.s
 	@echo ... sources/lib/utils/operation_utils/operation_utils.obj
 	@echo ... sources/lib/utils/operation_utils/operation_utils.i
 	@echo ... sources/lib/utils/operation_utils/operation_utils.s

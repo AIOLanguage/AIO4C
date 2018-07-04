@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "../../../../../../headers/lang/object/aio_object.h"
+#include "../../../../../../headers/lang/object/aio_file.h"
 #include "../../../../../../headers/lang/methods/aio_method_container.h"
 #include "../../../../../../headers/lib/utils/string_utils/string_utils.h"
 #include "../../../../../../headers/tools/parsers/aio_parser.h"
@@ -22,7 +22,7 @@ char *squeeze_code_line(char *code_line) {
     return clean_line;
 }
 
-void reproduce_short_method(aio_object *object, aio_method_definition *method_definition,
+void reproduce_short_method(aio_file *object, aio_method_definition *method_definition,
                             aio_method_container *method_container,
                             aio_bundle *bundle, char *code_line) {
     printf("Short reproducing... %s\n", method_definition->name);

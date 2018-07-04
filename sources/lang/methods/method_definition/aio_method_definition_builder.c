@@ -3,12 +3,12 @@
 #include <stdio.h>
 #include <ctype.h>
 #include <process.h>
-#include "../../../../headers/lang/object/object_manager/aio_object_manager.h"
+#include "../../../../headers/lang/object/object_manager/aio_nexus.h"
 #include "../../../../headers/lib/collections/lists/string_list.h"
 #include "../../../../headers/lib/utils/string_utils/string_utils.h"
 #include "../../../../headers/lib/utils/operation_utils/operation_utils.h"
 
-aio_object_manager *object_manager;
+aio_nexus *core;
 
 //Passed JUnitTest!
 string_list *get_source_code_of_method(char *method_name, string_list *source_code, int start_index) {
@@ -103,13 +103,13 @@ aio_declaration *get_declaration_of_method(char *method_name, string_list *sourc
 }
 
 //Passed JUnitTest!
-int is_the_shortest_in_the_same_object(const char *operation) {
-    int length = strlen(operation);
+int is_method_in_the_same_file(const char *expression) {
+    int length = strlen(expression);
     //w+~
     if (length > 1) {
-        if (isalpha(operation[0]) && operation[length - 1] == '~') {
+        if (isalpha(expression[0]) && expression[length - 1] == '~') {
             for (int i = 1; i < length - 1; ++i) {
-                if (!isalnum(operation[i])) {
+                if (!isalnum(expression[i])) {
                     return -1;
                 }
             }
@@ -120,19 +120,19 @@ int is_the_shortest_in_the_same_object(const char *operation) {
 }
 
 //Passed JUnitTest!
-int is_the_shortest_in_the_other_object(const char *operation) {
-    int length = strlen(operation);
+int is_method_in_the_other_file(const char *expression) {
+    int length = strlen(expression);
     //w+.@w+~
     if (length > 4) {
         //first is letter and ends with ~:
-        if (isalpha(operation[0]) && operation[length - 1] == '~') {
+        if (isalpha(expression[0]) && expression[length - 1] == '~') {
             int was_delimiter = -1;
             int start_method_name_index = 0;
             for (int i = 1; i < length - 1; ++i) {
                 //across with dot:
-                if (operation[i] == '.') {
+                if (expression[i] == '.') {
                     //.@w+
-                    if (i + 2 < length - 1 && operation[i + 1] == '@') {
+                    if (i + 2 < length - 1 && expression[i + 1] == '@') {
                         was_delimiter = 0;
                         start_method_name_index = i + 2;
                         break;
@@ -140,13 +140,13 @@ int is_the_shortest_in_the_other_object(const char *operation) {
                         perror("illegal aio line with method invocation");
                         exit(1);
                     }
-                } else if (!isalnum(operation[i])) {
+                } else if (!isalnum(expression[i])) {
                     return -1;
                 }
             }
             if (was_delimiter == 0) {
                 for (int i = start_method_name_index; i < length - 1; ++i) {
-                    if (!isalnum(operation[i])) {
+                    if (!isalnum(expression[i])) {
                         return -1;
                     }
                 }
@@ -163,9 +163,9 @@ int is_the_shortest_in_the_other_object(const char *operation) {
 enum aio_method_size_type get_size_type_of_method(string_list *method_code) {
     if (method_code->size == 1) {
         char *trim_line = trim(method_code->strings[0]);
-        if (is_the_shortest_in_the_same_object(trim_line) == 0
+        if (is_method_in_the_same_file(trim_line) == 0
             || is_default_operations(trim_line) == 0
-            || is_the_shortest_in_the_other_object(trim_line) == 0) {
+            || is_method_in_the_other_file(trim_line) == 0) {
             return THE_SHORTEST;
         } else {
             return SHORT;
@@ -180,7 +180,7 @@ aio_method_definition *build_aio_method_definition(char *method_name, string_lis
     aio_declaration *declaration = get_declaration_of_method(method_name, source_code, start_index);
     //Create aio annotation list:
     aio_annotation_list *annotation_list = get_annotations_of_method(method_name, source_code, start_index);
-    if (is_default_behaviour(object_manager) == 0) {
+    if (is_default_behaviour(core) == 0) {
         //Create string list of method code:
         string_list *method_code = get_source_code_of_method(method_name, source_code, start_index);
         //Set method size type:
