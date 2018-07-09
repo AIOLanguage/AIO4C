@@ -11,8 +11,6 @@
 #include "../../../headers/lang/aio_types/aio_type.h"
 #include "../../../headers/lib/collections/maps/aio_variable_map.h"
 
-boolean is_valid_args(const_string code_line, aio_variable_map *variable_map_ref, int *next_point);
-
 const_string extract_name_from_path(const_string path) {
     if (ends_with_suffix(path, AIO_SUFFIX)) {
         const int last_index = strlen(path) - 1;
@@ -37,7 +35,7 @@ const_string extract_name_from_path(const_string path) {
 /**
  * function is_valid_return_types:
  *
- * @param code_line - string, method signature;
+ * @param code_line - string that starts with return types;
  * @param ref_list - empty reference of string list which will be filled with return types;
  * @param next_point - start point of rest code line. This is a next point for future parsing of code_line.
  * @return has string method return types or not.
@@ -85,6 +83,15 @@ boolean is_valid_return_types(const_string code_line, string_list **ref_list, in
     }
 }
 
+/**
+ * function is_valid_method_name:
+ *
+ * @param code_line - string that starts with method name;
+ * @param method_name_ref - empty reference of string which will be filled with method name;
+ * @param next_point - start point of rest code line. This is a next point for future parsing of code_line.
+ * @return has string method name or not.
+ */
+
 boolean is_valid_method_name(const_string code_line, const_string *method_name_ref, int *next_point) {
     const int code_line_length = strlen(code_line);
     for (int i = 0; i < code_line_length; ++i) {
@@ -102,9 +109,67 @@ boolean is_valid_method_name(const_string code_line, const_string *method_name_r
     return false;
 }
 
+
+/**
+* function is_valid_args:
+*
+* @param code_line - string that starts with args;
+* @param variable_map_ref - empty reference of variable map which will be filled with args;
+* @param next_point - start point of rest code line. This is a next point for future parsing of code_line.
+* @return valid args or not
+*/
+
+boolean is_valid_args(const_string code_line, aio_variable_map **variable_map_ref, int *next_point) {
+    *variable_map_ref = new_aio_variable_map();
+    const int code_line_length = strlen(code_line);
+    for (int i = 0; i < code_line_length; ++i) {
+        if (code_line[i] == ')') {
+            const_string args_chunk = substring(code_line, 0, i);
+            *next_point = i + 1;
+            if (is_empty_string(args_chunk)) {
+                return true;
+            }
+            string_array arg_chunks = split_by_comma(args_chunk);
+            for (int j = 0; j < sizeof(arg_chunks); ++j) {
+                string_array mu_type_vs_arg_chunks = split_by_spaces(arg_chunks[j]);
+                string_array mu_vs_type_vs_arg = filter(mu_type_vs_arg_chunks, strings_size(
+                        (const_string_array) mu_type_vs_arg_chunks), is_not_empty_string);
+                boolean is_mutable = false;
+                const_string type_string = NULL;
+                const_string arg_name = NULL;
+                switch (strings_size((const_string_array) mu_vs_type_vs_arg)) {
+                    case 2:
+                        is_mutable = false;
+                        type_string = mu_vs_type_vs_arg[0];
+                        arg_name = mu_vs_type_vs_arg[1];
+                        break;
+                    case 3:
+                        if (strcmp(mu_vs_type_vs_arg[0], "mu") != 0) {
+                            throw_error("invalid mutable modifier!");
+                        } else {
+                            is_mutable = true;
+                        }
+                        type_string = mu_vs_type_vs_arg[1];
+                        arg_name = mu_vs_type_vs_arg[2];
+                        break;
+                    default:
+                        throw_error("invalid method signature");
+                }
+                if (!contains_aio_type_in_set(type_string)) {
+                    throw_error("cannot get aio type from method signature!");
+                }
+                aio_variable *arg = new_aio_arg(is_mutable, type_string, arg_name);
+                put_aio_variable_in_map(*variable_map_ref, arg);
+            }
+            return true;
+        }
+    }
+    return false;
+}
+
 void find_methods_in_manager(aio_file *aio_object) {
     for (int i = 0; i < aio_object->source_code->size; ++i) {
-        const_string code_line = trim(aio_object->source_code->strings[i]);
+        string code_line = trim(aio_object->source_code->strings[i]);
         int code_line_length = strlen(code_line);
         if (code_line_length > 1) {
             if (starts_with_prefix(code_line, AIO_COMMENTS)) {
@@ -123,37 +188,76 @@ void find_methods_in_manager(aio_file *aio_object) {
                 throw_error("cannot get method name!");
             }
             const_string rest_args_and_brace = substring(code_line, next_point, code_line_length - next_point);
-            aio_variable_map arg_map;
+            aio_variable_map *arg_map;
             if (!is_valid_args(rest_args_and_brace, &arg_map, &next_point)) {
                 throw_error("cannot get args!");
             }
             const_string rest_string = substring(code_line, next_point, code_line_length - next_point);
             const_string trim_rest_string = trim(rest_string);
-            if (strcmp(trim_rest_string, "{") != 0) {
-                throw_error("cannot get open brace");
+            string_list *source_code = new_string_list();
+            boolean is_found_open_brace = false;
+            boolean is_found_close_brace = false;
+            int start_body = 0;
+            int up_down_counter = 0;
+            int rest_length = strlen(trim_rest_string);
+            for (int k = 0; k < strlen(trim_rest_string); ++k) {
+                if (trim_rest_string[k] == '{') {
+                    if (!is_found_open_brace) {
+                        is_found_open_brace = true;
+                        start_body = k + 1;
+                    }
+                    up_down_counter++;
+                }
+                if (trim_rest_string[k] == '}') {
+                    if (is_found_open_brace) {
+                        if (up_down_counter == 1) {
+                            const_string source_code_string = substring(trim_rest_string, start_body, k - start_body);
+                            add_in_string_list(source_code, source_code_string);
+                            is_found_close_brace = true;
+                            break;
+                        } else {
+                            up_down_counter--;
+                        }
+                    } else {
+                        throw_error("body cannot starts with '}' !");
+                    }
+                }
             }
+            if (!is_found_close_brace) {
+                add_in_string_list(source_code, substring(trim_rest_string, start_body, rest_length - start_body));
+                for (int j = i + 1; j < aio_object->source_code->size; ++j) {
+                    code_line = aio_object->source_code->strings[j];
+                    code_line_length = strlen(code_line);
+                    for (int k = 0; k < code_line_length; ++k) {
+                        if (trim_rest_string[k] == '{') {
+                            if (!is_found_open_brace) {
+                                is_found_open_brace = true;
+                                start_body = k + 1;
+                            }
+                            up_down_counter++;
+                        }
+                        if (trim_rest_string[k] == '}') {
+                            if (is_found_open_brace) {
+                                if (up_down_counter == 1) {
+                                    const_string source_code_string = substring(trim_rest_string, start_body,
+                                                                                k - start_body);
+                                    add_in_string_list(source_code, source_code_string);
+                                    is_found_close_brace = true;
+                                    break;
+                                } else {
+                                    up_down_counter--;
+                                }
+                            } else {
+                                throw_error("body cannot starts with '}' !");
+                            }
+                        }
+                    }
+                }
+            }
+            if (!is_found_close_brace) {
+                throw_error("cannot close method brace!");
+            }
+            aio_method_definition *method_definition = new_aio_method_definition(method_name, arg_map, source_code);
         }
     }
-}
-
-boolean is_valid_args(const_string code_line, aio_variable_map *variable_map_ref, int *next_point) {
-
-
-
-
-
-
-
-    const int code_line_length = strlen(code_line);
-
-
-    for (int i = 0; i < code_line_length; ++i) {
-        if ()
-
-
-
-    }
-
-
-    return 0;
 }

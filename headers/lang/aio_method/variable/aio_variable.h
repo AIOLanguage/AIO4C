@@ -13,7 +13,9 @@ typedef struct aio_variable {
     enum aio_type *type;
 } aio_variable;
 
-aio_variable *new_aio_variable(const_string name, aio_value *value, boolean mutable, enum aio_type *type);
+aio_variable *new_aio_variable(const_string name, aio_value *value, boolean mutable, const_string type);
+
+aio_variable *new_aio_arg(boolean mutable, const_string type, const_string name);
 
 void delete_aio_variable(aio_variable *variable);
 
