@@ -19,6 +19,10 @@ string double_to_string(double src);
 
 string_array split_by_string(const_string src, const_string delimiter); //끝난!
 
+string_array split_by_spaces(const_string src);
+
+string_array split_by_comma(const_string src);
+
 string trim_start(const_string src);
 
 string trim_end(const_string src);
@@ -41,7 +45,7 @@ boolean starts_with_prefix(const_string src, const_string prefix);
 
 boolean ends_with_suffix(const_string src, const_string suffix);
 
-string_array filter(string_array src, int src_size, int (*filter_function)(const_string));
+string_array filter(string_array src, int src_size, boolean (*filter_function)(const_string));
 
 boolean is_not_empty_string(const_string string);
 
@@ -61,6 +65,6 @@ int strings_size(const_string_array src);
 
 boolean matches_string(const_string word);
 
-void delete_strings(string_array src);
+void delete_strings(const_string_array src);
 
 #endif //STRING_UTILS_H

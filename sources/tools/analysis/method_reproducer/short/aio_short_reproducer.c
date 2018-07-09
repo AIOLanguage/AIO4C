@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include "../../../../../../headers/lang/object/aio_file.h"
 #include "../../../../../../headers/lang/methods/aio_method_container.h"
-#include "../../../../../../headers/lib/utils/string_utils/string_utils.h"
-#include "../../../../../../headers/tools/parsers/aio_parser.h"
+#include "../../../../../headers/lib/utils/string_utils/string_utils.h"
+#include "../../../../../headers/tools/parsers/aio_parser.h"
 
 char *delete_borders(char *code_line) {
     char *trimmed_line = trim(code_line);

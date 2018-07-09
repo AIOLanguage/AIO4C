@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "../../../../../../headers/lang/object/aio_file.h"
 #include "../../../../../../headers/lang/methods/aio_method_container.h"
-#include "../../../../../../headers/lib/utils/string_utils/string_utils.h"
+#include "../../../../../headers/lib/utils/string_utils/string_utils.h"
 #include "../../../../../../headers/lang/methods/analysis/method_reproducer/short/aio_short_reproducer.h"
 
 void reproduce_default_method(aio_file *object, aio_method_definition *method_definition,

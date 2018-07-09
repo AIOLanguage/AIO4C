@@ -2,9 +2,9 @@
 #include <mem.h>
 #include <stdio.h>
 #include <process.h>
-#include "../../../../../../../headers/lib/collections/maps/aio_variable_map.h"
+#include "../../../../../../headers/lib/collections/maps/aio_variable_map.h"
 #include "../../../../../../../headers/lang/methods/bundle/aio_bundle.h"
-#include "../../../../../../../headers/lib/utils/string_utils/string_utils.h"
+#include "../../../../../../headers/lib/utils/string_utils/string_utils.h"
 
 void concat_for_each_reproduce(aio_variable_map *arg_map, aio_bundle *bundle) {
     if (*(arg_map->variables[0]->type) == AIO_STR) {

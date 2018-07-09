@@ -4,6 +4,8 @@
 #include "../../lib/utils/string_utils/string_utils.h"
 #include "../../lib/utils/boolean_utils/boolean_utils.h"
 
+#define VOID "Voi"
+
 enum aio_type {
     AIO_INT, AIO_DOU, AIO_STR, AIO_VOI
 };

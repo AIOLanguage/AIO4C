@@ -1,11 +1,13 @@
-#ifndef AIO_STRING_PAIR_H
-#define AIO_STRING_PAIR_H
+#ifndef STRING_PAIR_H
+#define STRING_PAIR_H
+
+#include "../utils/string_utils/string_utils.h"
 
 typedef struct string_pair {
-    char* first;
-    char* second;
+    string first;
+    string second;
 } string_pair;
 
-string_pair* new_string_pair(char* first, char* second);
+string_pair *new_string_pair(string first, string second);
 
-#endif //AIO_STRING_PAIR_H
+#endif //STRING_PAIR_H

@@ -1,5 +1,5 @@
-#ifndef AIO_AIO_BUNDLE_H
-#define AIO_AIO_BUNDLE_H
+#ifndef AIO_BUNDLE_H
+#define AIO_BUNDLE_H
 
 #include "../../../lib/collections/lists/string_list.h"
 
@@ -12,4 +12,4 @@ aio_bundle *new_aio_bundle(string_list *input_values);
 
 void delete_aio_bundle(aio_bundle *bundle);
 
-#endif //AIO_AIO_BUNDLE_H
+#endif //AIO_BUNDLE_H

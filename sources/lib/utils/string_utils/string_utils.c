@@ -5,12 +5,13 @@
 #include <ctype.h>
 #include <assert.h>
 #include <stddef.h>
+#include "../../../../headers/lib/utils/string_utils/string_utils.h"
 
 #define TRUE 0
 #define FALSE (-1)
 
 //Passed JUnitTest!
-int is_white_space(const char c) {
+boolean is_white_space(char c) {
     return c == ' ';
 }
 
@@ -135,13 +136,27 @@ void concat_char_to_string(char **dst, char src) {
     *dst[dst_length] = src;
 }
 
-int strings_size(char **src) {
+int strings_size(const_string_array src) {
     return _msize(src) / 4;
 }
 
-void delete_strings(char **src){
+void delete_strings(const_string_array src) {
     for (int i = 0; i < strings_size(src); ++i) {
-        free(src[i]);
+        free((void *) src[i]);
     }
     free(src);
+}
+
+string squeeze_string(const_string src) {
+    const unsigned src_length = strlen(src);
+    string dst = calloc(src_length + 1, sizeof(char));
+    int position = 0;
+    for (int i = 0; i < src_length; ++i) {
+        const char symbol = src[i];
+        if (!is_white_space(symbol)) {
+            dst[position++] = symbol;
+        }
+    }
+    dst = realloc(dst, position * sizeof(char));
+    return dst;
 }

@@ -3,6 +3,7 @@
 
 #include "../../lib/utils/string_utils/string_utils.h"
 #include "../../lib/utils/boolean_utils/boolean_utils.h"
+#include "../../lib/collections/sets/string_set.h"
 
 boolean can_use_name(const_string name);
 

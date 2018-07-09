@@ -122,464 +122,329 @@ AIO/fast:
 	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/build
 .PHONY : AIO/fast
 
-sources/lang/annotations/aio_annotation.obj: sources/lang/annotations/aio_annotation.c.obj
+sources/lang/aio_annotation/aio_annotation.obj: sources/lang/aio_annotation/aio_annotation.c.obj
 
-.PHONY : sources/lang/annotations/aio_annotation.obj
-
-# target to build an object file
-sources/lang/annotations/aio_annotation.c.obj:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/annotations/aio_annotation.c.obj
-.PHONY : sources/lang/annotations/aio_annotation.c.obj
-
-sources/lang/annotations/aio_annotation.i: sources/lang/annotations/aio_annotation.c.i
-
-.PHONY : sources/lang/annotations/aio_annotation.i
-
-# target to preprocess a source file
-sources/lang/annotations/aio_annotation.c.i:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/annotations/aio_annotation.c.i
-.PHONY : sources/lang/annotations/aio_annotation.c.i
-
-sources/lang/annotations/aio_annotation.s: sources/lang/annotations/aio_annotation.c.s
-
-.PHONY : sources/lang/annotations/aio_annotation.s
-
-# target to generate assembly for a file
-sources/lang/annotations/aio_annotation.c.s:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/annotations/aio_annotation.c.s
-.PHONY : sources/lang/annotations/aio_annotation.c.s
-
-sources/lang/methods/aio_method.obj: sources/lang/methods/aio_method.c.obj
-
-.PHONY : sources/lang/methods/aio_method.obj
+.PHONY : sources/lang/aio_annotation/aio_annotation.obj
 
 # target to build an object file
-sources/lang/methods/aio_method.c.obj:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/methods/aio_method.c.obj
-.PHONY : sources/lang/methods/aio_method.c.obj
+sources/lang/aio_annotation/aio_annotation.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_annotation/aio_annotation.c.obj
+.PHONY : sources/lang/aio_annotation/aio_annotation.c.obj
 
-sources/lang/methods/aio_method.i: sources/lang/methods/aio_method.c.i
+sources/lang/aio_annotation/aio_annotation.i: sources/lang/aio_annotation/aio_annotation.c.i
 
-.PHONY : sources/lang/methods/aio_method.i
+.PHONY : sources/lang/aio_annotation/aio_annotation.i
 
 # target to preprocess a source file
-sources/lang/methods/aio_method.c.i:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/methods/aio_method.c.i
-.PHONY : sources/lang/methods/aio_method.c.i
+sources/lang/aio_annotation/aio_annotation.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_annotation/aio_annotation.c.i
+.PHONY : sources/lang/aio_annotation/aio_annotation.c.i
 
-sources/lang/methods/aio_method.s: sources/lang/methods/aio_method.c.s
+sources/lang/aio_annotation/aio_annotation.s: sources/lang/aio_annotation/aio_annotation.c.s
 
-.PHONY : sources/lang/methods/aio_method.s
+.PHONY : sources/lang/aio_annotation/aio_annotation.s
 
 # target to generate assembly for a file
-sources/lang/methods/aio_method.c.s:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/methods/aio_method.c.s
-.PHONY : sources/lang/methods/aio_method.c.s
+sources/lang/aio_annotation/aio_annotation.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_annotation/aio_annotation.c.s
+.PHONY : sources/lang/aio_annotation/aio_annotation.c.s
 
-sources/lang/methods/analysis/method_reproducer/aio_method_reproducer.obj: sources/lang/methods/analysis/method_reproducer/aio_method_reproducer.c.obj
+sources/lang/aio_core/aio_core.obj: sources/lang/aio_core/aio_core.c.obj
 
-.PHONY : sources/lang/methods/analysis/method_reproducer/aio_method_reproducer.obj
+.PHONY : sources/lang/aio_core/aio_core.obj
 
 # target to build an object file
-sources/lang/methods/analysis/method_reproducer/aio_method_reproducer.c.obj:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/methods/analysis/method_reproducer/aio_method_reproducer.c.obj
-.PHONY : sources/lang/methods/analysis/method_reproducer/aio_method_reproducer.c.obj
+sources/lang/aio_core/aio_core.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_core/aio_core.c.obj
+.PHONY : sources/lang/aio_core/aio_core.c.obj
 
-sources/lang/methods/analysis/method_reproducer/aio_method_reproducer.i: sources/lang/methods/analysis/method_reproducer/aio_method_reproducer.c.i
+sources/lang/aio_core/aio_core.i: sources/lang/aio_core/aio_core.c.i
 
-.PHONY : sources/lang/methods/analysis/method_reproducer/aio_method_reproducer.i
+.PHONY : sources/lang/aio_core/aio_core.i
 
 # target to preprocess a source file
-sources/lang/methods/analysis/method_reproducer/aio_method_reproducer.c.i:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/methods/analysis/method_reproducer/aio_method_reproducer.c.i
-.PHONY : sources/lang/methods/analysis/method_reproducer/aio_method_reproducer.c.i
+sources/lang/aio_core/aio_core.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_core/aio_core.c.i
+.PHONY : sources/lang/aio_core/aio_core.c.i
 
-sources/lang/methods/analysis/method_reproducer/aio_method_reproducer.s: sources/lang/methods/analysis/method_reproducer/aio_method_reproducer.c.s
+sources/lang/aio_core/aio_core.s: sources/lang/aio_core/aio_core.c.s
 
-.PHONY : sources/lang/methods/analysis/method_reproducer/aio_method_reproducer.s
+.PHONY : sources/lang/aio_core/aio_core.s
 
 # target to generate assembly for a file
-sources/lang/methods/analysis/method_reproducer/aio_method_reproducer.c.s:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/methods/analysis/method_reproducer/aio_method_reproducer.c.s
-.PHONY : sources/lang/methods/analysis/method_reproducer/aio_method_reproducer.c.s
+sources/lang/aio_core/aio_core.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_core/aio_core.c.s
+.PHONY : sources/lang/aio_core/aio_core.c.s
 
-sources/lang/methods/analysis/method_reproducer/default/aio_default_reproducer.obj: sources/lang/methods/analysis/method_reproducer/default/aio_default_reproducer.c.obj
+sources/lang/aio_file/aio_file.obj: sources/lang/aio_file/aio_file.c.obj
 
-.PHONY : sources/lang/methods/analysis/method_reproducer/default/aio_default_reproducer.obj
+.PHONY : sources/lang/aio_file/aio_file.obj
 
 # target to build an object file
-sources/lang/methods/analysis/method_reproducer/default/aio_default_reproducer.c.obj:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/methods/analysis/method_reproducer/default/aio_default_reproducer.c.obj
-.PHONY : sources/lang/methods/analysis/method_reproducer/default/aio_default_reproducer.c.obj
+sources/lang/aio_file/aio_file.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_file/aio_file.c.obj
+.PHONY : sources/lang/aio_file/aio_file.c.obj
 
-sources/lang/methods/analysis/method_reproducer/default/aio_default_reproducer.i: sources/lang/methods/analysis/method_reproducer/default/aio_default_reproducer.c.i
+sources/lang/aio_file/aio_file.i: sources/lang/aio_file/aio_file.c.i
 
-.PHONY : sources/lang/methods/analysis/method_reproducer/default/aio_default_reproducer.i
+.PHONY : sources/lang/aio_file/aio_file.i
 
 # target to preprocess a source file
-sources/lang/methods/analysis/method_reproducer/default/aio_default_reproducer.c.i:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/methods/analysis/method_reproducer/default/aio_default_reproducer.c.i
-.PHONY : sources/lang/methods/analysis/method_reproducer/default/aio_default_reproducer.c.i
+sources/lang/aio_file/aio_file.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_file/aio_file.c.i
+.PHONY : sources/lang/aio_file/aio_file.c.i
 
-sources/lang/methods/analysis/method_reproducer/default/aio_default_reproducer.s: sources/lang/methods/analysis/method_reproducer/default/aio_default_reproducer.c.s
+sources/lang/aio_file/aio_file.s: sources/lang/aio_file/aio_file.c.s
 
-.PHONY : sources/lang/methods/analysis/method_reproducer/default/aio_default_reproducer.s
+.PHONY : sources/lang/aio_file/aio_file.s
 
 # target to generate assembly for a file
-sources/lang/methods/analysis/method_reproducer/default/aio_default_reproducer.c.s:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/methods/analysis/method_reproducer/default/aio_default_reproducer.c.s
-.PHONY : sources/lang/methods/analysis/method_reproducer/default/aio_default_reproducer.c.s
+sources/lang/aio_file/aio_file.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_file/aio_file.c.s
+.PHONY : sources/lang/aio_file/aio_file.c.s
 
-sources/lang/methods/analysis/method_reproducer/short/aio_short_reproducer.obj: sources/lang/methods/analysis/method_reproducer/short/aio_short_reproducer.c.obj
+sources/lang/aio_file/aio_file_builder.obj: sources/lang/aio_file/aio_file_builder.c.obj
 
-.PHONY : sources/lang/methods/analysis/method_reproducer/short/aio_short_reproducer.obj
+.PHONY : sources/lang/aio_file/aio_file_builder.obj
 
 # target to build an object file
-sources/lang/methods/analysis/method_reproducer/short/aio_short_reproducer.c.obj:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/methods/analysis/method_reproducer/short/aio_short_reproducer.c.obj
-.PHONY : sources/lang/methods/analysis/method_reproducer/short/aio_short_reproducer.c.obj
+sources/lang/aio_file/aio_file_builder.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_file/aio_file_builder.c.obj
+.PHONY : sources/lang/aio_file/aio_file_builder.c.obj
 
-sources/lang/methods/analysis/method_reproducer/short/aio_short_reproducer.i: sources/lang/methods/analysis/method_reproducer/short/aio_short_reproducer.c.i
+sources/lang/aio_file/aio_file_builder.i: sources/lang/aio_file/aio_file_builder.c.i
 
-.PHONY : sources/lang/methods/analysis/method_reproducer/short/aio_short_reproducer.i
+.PHONY : sources/lang/aio_file/aio_file_builder.i
 
 # target to preprocess a source file
-sources/lang/methods/analysis/method_reproducer/short/aio_short_reproducer.c.i:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/methods/analysis/method_reproducer/short/aio_short_reproducer.c.i
-.PHONY : sources/lang/methods/analysis/method_reproducer/short/aio_short_reproducer.c.i
+sources/lang/aio_file/aio_file_builder.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_file/aio_file_builder.c.i
+.PHONY : sources/lang/aio_file/aio_file_builder.c.i
 
-sources/lang/methods/analysis/method_reproducer/short/aio_short_reproducer.s: sources/lang/methods/analysis/method_reproducer/short/aio_short_reproducer.c.s
+sources/lang/aio_file/aio_file_builder.s: sources/lang/aio_file/aio_file_builder.c.s
 
-.PHONY : sources/lang/methods/analysis/method_reproducer/short/aio_short_reproducer.s
+.PHONY : sources/lang/aio_file/aio_file_builder.s
 
 # target to generate assembly for a file
-sources/lang/methods/analysis/method_reproducer/short/aio_short_reproducer.c.s:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/methods/analysis/method_reproducer/short/aio_short_reproducer.c.s
-.PHONY : sources/lang/methods/analysis/method_reproducer/short/aio_short_reproducer.c.s
+sources/lang/aio_file/aio_file_builder.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_file/aio_file_builder.c.s
+.PHONY : sources/lang/aio_file/aio_file_builder.c.s
 
-sources/lang/methods/analysis/method_reproducer/the_shortest/aio_the_shortest_reproducer.obj: sources/lang/methods/analysis/method_reproducer/the_shortest/aio_the_shortest_reproducer.c.obj
+sources/lang/aio_method/aio_method.obj: sources/lang/aio_method/aio_method.c.obj
 
-.PHONY : sources/lang/methods/analysis/method_reproducer/the_shortest/aio_the_shortest_reproducer.obj
+.PHONY : sources/lang/aio_method/aio_method.obj
 
 # target to build an object file
-sources/lang/methods/analysis/method_reproducer/the_shortest/aio_the_shortest_reproducer.c.obj:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/methods/analysis/method_reproducer/the_shortest/aio_the_shortest_reproducer.c.obj
-.PHONY : sources/lang/methods/analysis/method_reproducer/the_shortest/aio_the_shortest_reproducer.c.obj
+sources/lang/aio_method/aio_method.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_method/aio_method.c.obj
+.PHONY : sources/lang/aio_method/aio_method.c.obj
 
-sources/lang/methods/analysis/method_reproducer/the_shortest/aio_the_shortest_reproducer.i: sources/lang/methods/analysis/method_reproducer/the_shortest/aio_the_shortest_reproducer.c.i
+sources/lang/aio_method/aio_method.i: sources/lang/aio_method/aio_method.c.i
 
-.PHONY : sources/lang/methods/analysis/method_reproducer/the_shortest/aio_the_shortest_reproducer.i
+.PHONY : sources/lang/aio_method/aio_method.i
 
 # target to preprocess a source file
-sources/lang/methods/analysis/method_reproducer/the_shortest/aio_the_shortest_reproducer.c.i:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/methods/analysis/method_reproducer/the_shortest/aio_the_shortest_reproducer.c.i
-.PHONY : sources/lang/methods/analysis/method_reproducer/the_shortest/aio_the_shortest_reproducer.c.i
+sources/lang/aio_method/aio_method.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_method/aio_method.c.i
+.PHONY : sources/lang/aio_method/aio_method.c.i
 
-sources/lang/methods/analysis/method_reproducer/the_shortest/aio_the_shortest_reproducer.s: sources/lang/methods/analysis/method_reproducer/the_shortest/aio_the_shortest_reproducer.c.s
+sources/lang/aio_method/aio_method.s: sources/lang/aio_method/aio_method.c.s
 
-.PHONY : sources/lang/methods/analysis/method_reproducer/the_shortest/aio_the_shortest_reproducer.s
+.PHONY : sources/lang/aio_method/aio_method.s
 
 # target to generate assembly for a file
-sources/lang/methods/analysis/method_reproducer/the_shortest/aio_the_shortest_reproducer.c.s:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/methods/analysis/method_reproducer/the_shortest/aio_the_shortest_reproducer.c.s
-.PHONY : sources/lang/methods/analysis/method_reproducer/the_shortest/aio_the_shortest_reproducer.c.s
+sources/lang/aio_method/aio_method.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_method/aio_method.c.s
+.PHONY : sources/lang/aio_method/aio_method.c.s
 
-sources/lang/methods/analysis/method_reproducer/the_shortest/concat_for_each_reproducer/aio_concat_for_each_reproducer.obj: sources/lang/methods/analysis/method_reproducer/the_shortest/concat_for_each_reproducer/aio_concat_for_each_reproducer.c.obj
+sources/lang/aio_method/bundle/aio_bundle.obj: sources/lang/aio_method/bundle/aio_bundle.c.obj
 
-.PHONY : sources/lang/methods/analysis/method_reproducer/the_shortest/concat_for_each_reproducer/aio_concat_for_each_reproducer.obj
+.PHONY : sources/lang/aio_method/bundle/aio_bundle.obj
 
 # target to build an object file
-sources/lang/methods/analysis/method_reproducer/the_shortest/concat_for_each_reproducer/aio_concat_for_each_reproducer.c.obj:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/methods/analysis/method_reproducer/the_shortest/concat_for_each_reproducer/aio_concat_for_each_reproducer.c.obj
-.PHONY : sources/lang/methods/analysis/method_reproducer/the_shortest/concat_for_each_reproducer/aio_concat_for_each_reproducer.c.obj
+sources/lang/aio_method/bundle/aio_bundle.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_method/bundle/aio_bundle.c.obj
+.PHONY : sources/lang/aio_method/bundle/aio_bundle.c.obj
 
-sources/lang/methods/analysis/method_reproducer/the_shortest/concat_for_each_reproducer/aio_concat_for_each_reproducer.i: sources/lang/methods/analysis/method_reproducer/the_shortest/concat_for_each_reproducer/aio_concat_for_each_reproducer.c.i
+sources/lang/aio_method/bundle/aio_bundle.i: sources/lang/aio_method/bundle/aio_bundle.c.i
 
-.PHONY : sources/lang/methods/analysis/method_reproducer/the_shortest/concat_for_each_reproducer/aio_concat_for_each_reproducer.i
+.PHONY : sources/lang/aio_method/bundle/aio_bundle.i
 
 # target to preprocess a source file
-sources/lang/methods/analysis/method_reproducer/the_shortest/concat_for_each_reproducer/aio_concat_for_each_reproducer.c.i:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/methods/analysis/method_reproducer/the_shortest/concat_for_each_reproducer/aio_concat_for_each_reproducer.c.i
-.PHONY : sources/lang/methods/analysis/method_reproducer/the_shortest/concat_for_each_reproducer/aio_concat_for_each_reproducer.c.i
+sources/lang/aio_method/bundle/aio_bundle.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_method/bundle/aio_bundle.c.i
+.PHONY : sources/lang/aio_method/bundle/aio_bundle.c.i
 
-sources/lang/methods/analysis/method_reproducer/the_shortest/concat_for_each_reproducer/aio_concat_for_each_reproducer.s: sources/lang/methods/analysis/method_reproducer/the_shortest/concat_for_each_reproducer/aio_concat_for_each_reproducer.c.s
+sources/lang/aio_method/bundle/aio_bundle.s: sources/lang/aio_method/bundle/aio_bundle.c.s
 
-.PHONY : sources/lang/methods/analysis/method_reproducer/the_shortest/concat_for_each_reproducer/aio_concat_for_each_reproducer.s
+.PHONY : sources/lang/aio_method/bundle/aio_bundle.s
 
 # target to generate assembly for a file
-sources/lang/methods/analysis/method_reproducer/the_shortest/concat_for_each_reproducer/aio_concat_for_each_reproducer.c.s:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/methods/analysis/method_reproducer/the_shortest/concat_for_each_reproducer/aio_concat_for_each_reproducer.c.s
-.PHONY : sources/lang/methods/analysis/method_reproducer/the_shortest/concat_for_each_reproducer/aio_concat_for_each_reproducer.c.s
+sources/lang/aio_method/bundle/aio_bundle.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_method/bundle/aio_bundle.c.s
+.PHONY : sources/lang/aio_method/bundle/aio_bundle.c.s
 
-sources/lang/methods/analysis/method_reproducer/the_shortest/multiply_for_each_reproducer/aio_multiply_for_each_reproducer.obj: sources/lang/methods/analysis/method_reproducer/the_shortest/multiply_for_each_reproducer/aio_multiply_for_each_reproducer.c.obj
+sources/lang/aio_method/default_method_container/aio_default_method_container.obj: sources/lang/aio_method/default_method_container/aio_default_method_container.c.obj
 
-.PHONY : sources/lang/methods/analysis/method_reproducer/the_shortest/multiply_for_each_reproducer/aio_multiply_for_each_reproducer.obj
+.PHONY : sources/lang/aio_method/default_method_container/aio_default_method_container.obj
 
 # target to build an object file
-sources/lang/methods/analysis/method_reproducer/the_shortest/multiply_for_each_reproducer/aio_multiply_for_each_reproducer.c.obj:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/methods/analysis/method_reproducer/the_shortest/multiply_for_each_reproducer/aio_multiply_for_each_reproducer.c.obj
-.PHONY : sources/lang/methods/analysis/method_reproducer/the_shortest/multiply_for_each_reproducer/aio_multiply_for_each_reproducer.c.obj
+sources/lang/aio_method/default_method_container/aio_default_method_container.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_method/default_method_container/aio_default_method_container.c.obj
+.PHONY : sources/lang/aio_method/default_method_container/aio_default_method_container.c.obj
 
-sources/lang/methods/analysis/method_reproducer/the_shortest/multiply_for_each_reproducer/aio_multiply_for_each_reproducer.i: sources/lang/methods/analysis/method_reproducer/the_shortest/multiply_for_each_reproducer/aio_multiply_for_each_reproducer.c.i
+sources/lang/aio_method/default_method_container/aio_default_method_container.i: sources/lang/aio_method/default_method_container/aio_default_method_container.c.i
 
-.PHONY : sources/lang/methods/analysis/method_reproducer/the_shortest/multiply_for_each_reproducer/aio_multiply_for_each_reproducer.i
+.PHONY : sources/lang/aio_method/default_method_container/aio_default_method_container.i
 
 # target to preprocess a source file
-sources/lang/methods/analysis/method_reproducer/the_shortest/multiply_for_each_reproducer/aio_multiply_for_each_reproducer.c.i:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/methods/analysis/method_reproducer/the_shortest/multiply_for_each_reproducer/aio_multiply_for_each_reproducer.c.i
-.PHONY : sources/lang/methods/analysis/method_reproducer/the_shortest/multiply_for_each_reproducer/aio_multiply_for_each_reproducer.c.i
+sources/lang/aio_method/default_method_container/aio_default_method_container.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_method/default_method_container/aio_default_method_container.c.i
+.PHONY : sources/lang/aio_method/default_method_container/aio_default_method_container.c.i
 
-sources/lang/methods/analysis/method_reproducer/the_shortest/multiply_for_each_reproducer/aio_multiply_for_each_reproducer.s: sources/lang/methods/analysis/method_reproducer/the_shortest/multiply_for_each_reproducer/aio_multiply_for_each_reproducer.c.s
+sources/lang/aio_method/default_method_container/aio_default_method_container.s: sources/lang/aio_method/default_method_container/aio_default_method_container.c.s
 
-.PHONY : sources/lang/methods/analysis/method_reproducer/the_shortest/multiply_for_each_reproducer/aio_multiply_for_each_reproducer.s
+.PHONY : sources/lang/aio_method/default_method_container/aio_default_method_container.s
 
 # target to generate assembly for a file
-sources/lang/methods/analysis/method_reproducer/the_shortest/multiply_for_each_reproducer/aio_multiply_for_each_reproducer.c.s:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/methods/analysis/method_reproducer/the_shortest/multiply_for_each_reproducer/aio_multiply_for_each_reproducer.c.s
-.PHONY : sources/lang/methods/analysis/method_reproducer/the_shortest/multiply_for_each_reproducer/aio_multiply_for_each_reproducer.c.s
+sources/lang/aio_method/default_method_container/aio_default_method_container.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_method/default_method_container/aio_default_method_container.c.s
+.PHONY : sources/lang/aio_method/default_method_container/aio_default_method_container.c.s
 
-sources/lang/methods/analysis/method_reproducer/the_shortest/plus_for_each_reproducer/aio_plus_for_each_reproducer.obj: sources/lang/methods/analysis/method_reproducer/the_shortest/plus_for_each_reproducer/aio_plus_for_each_reproducer.c.obj
+sources/lang/aio_method/method_definition/aio_method_definition.obj: sources/lang/aio_method/method_definition/aio_method_definition.c.obj
 
-.PHONY : sources/lang/methods/analysis/method_reproducer/the_shortest/plus_for_each_reproducer/aio_plus_for_each_reproducer.obj
+.PHONY : sources/lang/aio_method/method_definition/aio_method_definition.obj
 
 # target to build an object file
-sources/lang/methods/analysis/method_reproducer/the_shortest/plus_for_each_reproducer/aio_plus_for_each_reproducer.c.obj:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/methods/analysis/method_reproducer/the_shortest/plus_for_each_reproducer/aio_plus_for_each_reproducer.c.obj
-.PHONY : sources/lang/methods/analysis/method_reproducer/the_shortest/plus_for_each_reproducer/aio_plus_for_each_reproducer.c.obj
+sources/lang/aio_method/method_definition/aio_method_definition.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_method/method_definition/aio_method_definition.c.obj
+.PHONY : sources/lang/aio_method/method_definition/aio_method_definition.c.obj
 
-sources/lang/methods/analysis/method_reproducer/the_shortest/plus_for_each_reproducer/aio_plus_for_each_reproducer.i: sources/lang/methods/analysis/method_reproducer/the_shortest/plus_for_each_reproducer/aio_plus_for_each_reproducer.c.i
+sources/lang/aio_method/method_definition/aio_method_definition.i: sources/lang/aio_method/method_definition/aio_method_definition.c.i
 
-.PHONY : sources/lang/methods/analysis/method_reproducer/the_shortest/plus_for_each_reproducer/aio_plus_for_each_reproducer.i
+.PHONY : sources/lang/aio_method/method_definition/aio_method_definition.i
 
 # target to preprocess a source file
-sources/lang/methods/analysis/method_reproducer/the_shortest/plus_for_each_reproducer/aio_plus_for_each_reproducer.c.i:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/methods/analysis/method_reproducer/the_shortest/plus_for_each_reproducer/aio_plus_for_each_reproducer.c.i
-.PHONY : sources/lang/methods/analysis/method_reproducer/the_shortest/plus_for_each_reproducer/aio_plus_for_each_reproducer.c.i
+sources/lang/aio_method/method_definition/aio_method_definition.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_method/method_definition/aio_method_definition.c.i
+.PHONY : sources/lang/aio_method/method_definition/aio_method_definition.c.i
 
-sources/lang/methods/analysis/method_reproducer/the_shortest/plus_for_each_reproducer/aio_plus_for_each_reproducer.s: sources/lang/methods/analysis/method_reproducer/the_shortest/plus_for_each_reproducer/aio_plus_for_each_reproducer.c.s
+sources/lang/aio_method/method_definition/aio_method_definition.s: sources/lang/aio_method/method_definition/aio_method_definition.c.s
 
-.PHONY : sources/lang/methods/analysis/method_reproducer/the_shortest/plus_for_each_reproducer/aio_plus_for_each_reproducer.s
+.PHONY : sources/lang/aio_method/method_definition/aio_method_definition.s
 
 # target to generate assembly for a file
-sources/lang/methods/analysis/method_reproducer/the_shortest/plus_for_each_reproducer/aio_plus_for_each_reproducer.c.s:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/methods/analysis/method_reproducer/the_shortest/plus_for_each_reproducer/aio_plus_for_each_reproducer.c.s
-.PHONY : sources/lang/methods/analysis/method_reproducer/the_shortest/plus_for_each_reproducer/aio_plus_for_each_reproducer.c.s
+sources/lang/aio_method/method_definition/aio_method_definition.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_method/method_definition/aio_method_definition.c.s
+.PHONY : sources/lang/aio_method/method_definition/aio_method_definition.c.s
 
-sources/lang/methods/bundle/aio_bundle.obj: sources/lang/methods/bundle/aio_bundle.c.obj
+sources/lang/aio_method/method_definition/aio_method_definition_builder.obj: sources/lang/aio_method/method_definition/aio_method_definition_builder.c.obj
 
-.PHONY : sources/lang/methods/bundle/aio_bundle.obj
+.PHONY : sources/lang/aio_method/method_definition/aio_method_definition_builder.obj
 
 # target to build an object file
-sources/lang/methods/bundle/aio_bundle.c.obj:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/methods/bundle/aio_bundle.c.obj
-.PHONY : sources/lang/methods/bundle/aio_bundle.c.obj
+sources/lang/aio_method/method_definition/aio_method_definition_builder.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_method/method_definition/aio_method_definition_builder.c.obj
+.PHONY : sources/lang/aio_method/method_definition/aio_method_definition_builder.c.obj
 
-sources/lang/methods/bundle/aio_bundle.i: sources/lang/methods/bundle/aio_bundle.c.i
+sources/lang/aio_method/method_definition/aio_method_definition_builder.i: sources/lang/aio_method/method_definition/aio_method_definition_builder.c.i
 
-.PHONY : sources/lang/methods/bundle/aio_bundle.i
+.PHONY : sources/lang/aio_method/method_definition/aio_method_definition_builder.i
 
 # target to preprocess a source file
-sources/lang/methods/bundle/aio_bundle.c.i:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/methods/bundle/aio_bundle.c.i
-.PHONY : sources/lang/methods/bundle/aio_bundle.c.i
+sources/lang/aio_method/method_definition/aio_method_definition_builder.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_method/method_definition/aio_method_definition_builder.c.i
+.PHONY : sources/lang/aio_method/method_definition/aio_method_definition_builder.c.i
 
-sources/lang/methods/bundle/aio_bundle.s: sources/lang/methods/bundle/aio_bundle.c.s
+sources/lang/aio_method/method_definition/aio_method_definition_builder.s: sources/lang/aio_method/method_definition/aio_method_definition_builder.c.s
 
-.PHONY : sources/lang/methods/bundle/aio_bundle.s
+.PHONY : sources/lang/aio_method/method_definition/aio_method_definition_builder.s
 
 # target to generate assembly for a file
-sources/lang/methods/bundle/aio_bundle.c.s:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/methods/bundle/aio_bundle.c.s
-.PHONY : sources/lang/methods/bundle/aio_bundle.c.s
+sources/lang/aio_method/method_definition/aio_method_definition_builder.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_method/method_definition/aio_method_definition_builder.c.s
+.PHONY : sources/lang/aio_method/method_definition/aio_method_definition_builder.c.s
 
-sources/lang/methods/default_method_container/aio_default_method_container.obj: sources/lang/methods/default_method_container/aio_default_method_container.c.obj
+sources/lang/aio_method/result/aio_result.obj: sources/lang/aio_method/result/aio_result.c.obj
 
-.PHONY : sources/lang/methods/default_method_container/aio_default_method_container.obj
+.PHONY : sources/lang/aio_method/result/aio_result.obj
 
 # target to build an object file
-sources/lang/methods/default_method_container/aio_default_method_container.c.obj:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/methods/default_method_container/aio_default_method_container.c.obj
-.PHONY : sources/lang/methods/default_method_container/aio_default_method_container.c.obj
+sources/lang/aio_method/result/aio_result.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_method/result/aio_result.c.obj
+.PHONY : sources/lang/aio_method/result/aio_result.c.obj
 
-sources/lang/methods/default_method_container/aio_default_method_container.i: sources/lang/methods/default_method_container/aio_default_method_container.c.i
+sources/lang/aio_method/result/aio_result.i: sources/lang/aio_method/result/aio_result.c.i
 
-.PHONY : sources/lang/methods/default_method_container/aio_default_method_container.i
+.PHONY : sources/lang/aio_method/result/aio_result.i
 
 # target to preprocess a source file
-sources/lang/methods/default_method_container/aio_default_method_container.c.i:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/methods/default_method_container/aio_default_method_container.c.i
-.PHONY : sources/lang/methods/default_method_container/aio_default_method_container.c.i
+sources/lang/aio_method/result/aio_result.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_method/result/aio_result.c.i
+.PHONY : sources/lang/aio_method/result/aio_result.c.i
 
-sources/lang/methods/default_method_container/aio_default_method_container.s: sources/lang/methods/default_method_container/aio_default_method_container.c.s
+sources/lang/aio_method/result/aio_result.s: sources/lang/aio_method/result/aio_result.c.s
 
-.PHONY : sources/lang/methods/default_method_container/aio_default_method_container.s
+.PHONY : sources/lang/aio_method/result/aio_result.s
 
 # target to generate assembly for a file
-sources/lang/methods/default_method_container/aio_default_method_container.c.s:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/methods/default_method_container/aio_default_method_container.c.s
-.PHONY : sources/lang/methods/default_method_container/aio_default_method_container.c.s
+sources/lang/aio_method/result/aio_result.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_method/result/aio_result.c.s
+.PHONY : sources/lang/aio_method/result/aio_result.c.s
 
-sources/lang/methods/method_definition/aio_method_definition.obj: sources/lang/methods/method_definition/aio_method_definition.c.obj
+sources/lang/aio_method/variable/aio_variable.obj: sources/lang/aio_method/variable/aio_variable.c.obj
 
-.PHONY : sources/lang/methods/method_definition/aio_method_definition.obj
+.PHONY : sources/lang/aio_method/variable/aio_variable.obj
 
 # target to build an object file
-sources/lang/methods/method_definition/aio_method_definition.c.obj:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/methods/method_definition/aio_method_definition.c.obj
-.PHONY : sources/lang/methods/method_definition/aio_method_definition.c.obj
+sources/lang/aio_method/variable/aio_variable.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_method/variable/aio_variable.c.obj
+.PHONY : sources/lang/aio_method/variable/aio_variable.c.obj
 
-sources/lang/methods/method_definition/aio_method_definition.i: sources/lang/methods/method_definition/aio_method_definition.c.i
+sources/lang/aio_method/variable/aio_variable.i: sources/lang/aio_method/variable/aio_variable.c.i
 
-.PHONY : sources/lang/methods/method_definition/aio_method_definition.i
+.PHONY : sources/lang/aio_method/variable/aio_variable.i
 
 # target to preprocess a source file
-sources/lang/methods/method_definition/aio_method_definition.c.i:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/methods/method_definition/aio_method_definition.c.i
-.PHONY : sources/lang/methods/method_definition/aio_method_definition.c.i
+sources/lang/aio_method/variable/aio_variable.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_method/variable/aio_variable.c.i
+.PHONY : sources/lang/aio_method/variable/aio_variable.c.i
 
-sources/lang/methods/method_definition/aio_method_definition.s: sources/lang/methods/method_definition/aio_method_definition.c.s
+sources/lang/aio_method/variable/aio_variable.s: sources/lang/aio_method/variable/aio_variable.c.s
 
-.PHONY : sources/lang/methods/method_definition/aio_method_definition.s
+.PHONY : sources/lang/aio_method/variable/aio_variable.s
 
 # target to generate assembly for a file
-sources/lang/methods/method_definition/aio_method_definition.c.s:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/methods/method_definition/aio_method_definition.c.s
-.PHONY : sources/lang/methods/method_definition/aio_method_definition.c.s
+sources/lang/aio_method/variable/aio_variable.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_method/variable/aio_variable.c.s
+.PHONY : sources/lang/aio_method/variable/aio_variable.c.s
 
-sources/lang/methods/method_definition/aio_method_definition_builder.obj: sources/lang/methods/method_definition/aio_method_definition_builder.c.obj
+sources/lang/aio_types/aio_type.obj: sources/lang/aio_types/aio_type.c.obj
 
-.PHONY : sources/lang/methods/method_definition/aio_method_definition_builder.obj
+.PHONY : sources/lang/aio_types/aio_type.obj
 
 # target to build an object file
-sources/lang/methods/method_definition/aio_method_definition_builder.c.obj:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/methods/method_definition/aio_method_definition_builder.c.obj
-.PHONY : sources/lang/methods/method_definition/aio_method_definition_builder.c.obj
+sources/lang/aio_types/aio_type.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_types/aio_type.c.obj
+.PHONY : sources/lang/aio_types/aio_type.c.obj
 
-sources/lang/methods/method_definition/aio_method_definition_builder.i: sources/lang/methods/method_definition/aio_method_definition_builder.c.i
+sources/lang/aio_types/aio_type.i: sources/lang/aio_types/aio_type.c.i
 
-.PHONY : sources/lang/methods/method_definition/aio_method_definition_builder.i
-
-# target to preprocess a source file
-sources/lang/methods/method_definition/aio_method_definition_builder.c.i:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/methods/method_definition/aio_method_definition_builder.c.i
-.PHONY : sources/lang/methods/method_definition/aio_method_definition_builder.c.i
-
-sources/lang/methods/method_definition/aio_method_definition_builder.s: sources/lang/methods/method_definition/aio_method_definition_builder.c.s
-
-.PHONY : sources/lang/methods/method_definition/aio_method_definition_builder.s
-
-# target to generate assembly for a file
-sources/lang/methods/method_definition/aio_method_definition_builder.c.s:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/methods/method_definition/aio_method_definition_builder.c.s
-.PHONY : sources/lang/methods/method_definition/aio_method_definition_builder.c.s
-
-sources/lang/methods/result/aio_result.obj: sources/lang/methods/result/aio_result.c.obj
-
-.PHONY : sources/lang/methods/result/aio_result.obj
-
-# target to build an object file
-sources/lang/methods/result/aio_result.c.obj:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/methods/result/aio_result.c.obj
-.PHONY : sources/lang/methods/result/aio_result.c.obj
-
-sources/lang/methods/result/aio_result.i: sources/lang/methods/result/aio_result.c.i
-
-.PHONY : sources/lang/methods/result/aio_result.i
+.PHONY : sources/lang/aio_types/aio_type.i
 
 # target to preprocess a source file
-sources/lang/methods/result/aio_result.c.i:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/methods/result/aio_result.c.i
-.PHONY : sources/lang/methods/result/aio_result.c.i
+sources/lang/aio_types/aio_type.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_types/aio_type.c.i
+.PHONY : sources/lang/aio_types/aio_type.c.i
 
-sources/lang/methods/result/aio_result.s: sources/lang/methods/result/aio_result.c.s
+sources/lang/aio_types/aio_type.s: sources/lang/aio_types/aio_type.c.s
 
-.PHONY : sources/lang/methods/result/aio_result.s
-
-# target to generate assembly for a file
-sources/lang/methods/result/aio_result.c.s:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/methods/result/aio_result.c.s
-.PHONY : sources/lang/methods/result/aio_result.c.s
-
-sources/lang/methods/variable/aio_variable.obj: sources/lang/methods/variable/aio_variable.c.obj
-
-.PHONY : sources/lang/methods/variable/aio_variable.obj
-
-# target to build an object file
-sources/lang/methods/variable/aio_variable.c.obj:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/methods/variable/aio_variable.c.obj
-.PHONY : sources/lang/methods/variable/aio_variable.c.obj
-
-sources/lang/methods/variable/aio_variable.i: sources/lang/methods/variable/aio_variable.c.i
-
-.PHONY : sources/lang/methods/variable/aio_variable.i
-
-# target to preprocess a source file
-sources/lang/methods/variable/aio_variable.c.i:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/methods/variable/aio_variable.c.i
-.PHONY : sources/lang/methods/variable/aio_variable.c.i
-
-sources/lang/methods/variable/aio_variable.s: sources/lang/methods/variable/aio_variable.c.s
-
-.PHONY : sources/lang/methods/variable/aio_variable.s
+.PHONY : sources/lang/aio_types/aio_type.s
 
 # target to generate assembly for a file
-sources/lang/methods/variable/aio_variable.c.s:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/methods/variable/aio_variable.c.s
-.PHONY : sources/lang/methods/variable/aio_variable.c.s
-
-sources/lang/object/aio_file.obj: sources/lang/object/aio_file.c.obj
-
-.PHONY : sources/lang/object/aio_file.obj
-
-# target to build an object file
-sources/lang/object/aio_file.c.obj:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/object/aio_file.c.obj
-.PHONY : sources/lang/object/aio_file.c.obj
-
-sources/lang/object/aio_file.i: sources/lang/object/aio_file.c.i
-
-.PHONY : sources/lang/object/aio_file.i
-
-# target to preprocess a source file
-sources/lang/object/aio_file.c.i:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/object/aio_file.c.i
-.PHONY : sources/lang/object/aio_file.c.i
-
-sources/lang/object/aio_file.s: sources/lang/object/aio_file.c.s
-
-.PHONY : sources/lang/object/aio_file.s
-
-# target to generate assembly for a file
-sources/lang/object/aio_file.c.s:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/object/aio_file.c.s
-.PHONY : sources/lang/object/aio_file.c.s
-
-sources/lang/object/objectManager/aio_core.obj: sources/lang/object/objectManager/aio_core.c.obj
-
-.PHONY : sources/lang/object/objectManager/aio_core.obj
-
-# target to build an object file
-sources/lang/object/objectManager/aio_core.c.obj:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/object/objectManager/aio_core.c.obj
-.PHONY : sources/lang/object/objectManager/aio_core.c.obj
-
-sources/lang/object/objectManager/aio_core.i: sources/lang/object/objectManager/aio_core.c.i
-
-.PHONY : sources/lang/object/objectManager/aio_core.i
-
-# target to preprocess a source file
-sources/lang/object/objectManager/aio_core.c.i:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/object/objectManager/aio_core.c.i
-.PHONY : sources/lang/object/objectManager/aio_core.c.i
-
-sources/lang/object/objectManager/aio_core.s: sources/lang/object/objectManager/aio_core.c.s
-
-.PHONY : sources/lang/object/objectManager/aio_core.s
-
-# target to generate assembly for a file
-sources/lang/object/objectManager/aio_core.c.s:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/object/objectManager/aio_core.c.s
-.PHONY : sources/lang/object/objectManager/aio_core.c.s
+sources/lang/aio_types/aio_type.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_types/aio_type.c.s
+.PHONY : sources/lang/aio_types/aio_type.c.s
 
 sources/lang/reserved_names/aio_reserved_names_container.obj: sources/lang/reserved_names/aio_reserved_names_container.c.obj
 
@@ -607,33 +472,6 @@ sources/lang/reserved_names/aio_reserved_names_container.s: sources/lang/reserve
 sources/lang/reserved_names/aio_reserved_names_container.c.s:
 	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/reserved_names/aio_reserved_names_container.c.s
 .PHONY : sources/lang/reserved_names/aio_reserved_names_container.c.s
-
-sources/lang/types/aio_type.obj: sources/lang/types/aio_type.c.obj
-
-.PHONY : sources/lang/types/aio_type.obj
-
-# target to build an object file
-sources/lang/types/aio_type.c.obj:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/types/aio_type.c.obj
-.PHONY : sources/lang/types/aio_type.c.obj
-
-sources/lang/types/aio_type.i: sources/lang/types/aio_type.c.i
-
-.PHONY : sources/lang/types/aio_type.i
-
-# target to preprocess a source file
-sources/lang/types/aio_type.c.i:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/types/aio_type.c.i
-.PHONY : sources/lang/types/aio_type.c.i
-
-sources/lang/types/aio_type.s: sources/lang/types/aio_type.c.s
-
-.PHONY : sources/lang/types/aio_type.s
-
-# target to generate assembly for a file
-sources/lang/types/aio_type.c.s:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/types/aio_type.c.s
-.PHONY : sources/lang/types/aio_type.c.s
 
 sources/lib/collections/lists/aio_annotation_list.obj: sources/lib/collections/lists/aio_annotation_list.c.obj
 
@@ -689,6 +527,33 @@ sources/lib/collections/lists/string_list.c.s:
 	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/collections/lists/string_list.c.s
 .PHONY : sources/lib/collections/lists/string_list.c.s
 
+sources/lib/collections/maps/aio_file_map.obj: sources/lib/collections/maps/aio_file_map.c.obj
+
+.PHONY : sources/lib/collections/maps/aio_file_map.obj
+
+# target to build an object file
+sources/lib/collections/maps/aio_file_map.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/collections/maps/aio_file_map.c.obj
+.PHONY : sources/lib/collections/maps/aio_file_map.c.obj
+
+sources/lib/collections/maps/aio_file_map.i: sources/lib/collections/maps/aio_file_map.c.i
+
+.PHONY : sources/lib/collections/maps/aio_file_map.i
+
+# target to preprocess a source file
+sources/lib/collections/maps/aio_file_map.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/collections/maps/aio_file_map.c.i
+.PHONY : sources/lib/collections/maps/aio_file_map.c.i
+
+sources/lib/collections/maps/aio_file_map.s: sources/lib/collections/maps/aio_file_map.c.s
+
+.PHONY : sources/lib/collections/maps/aio_file_map.s
+
+# target to generate assembly for a file
+sources/lib/collections/maps/aio_file_map.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/collections/maps/aio_file_map.c.s
+.PHONY : sources/lib/collections/maps/aio_file_map.c.s
+
 sources/lib/collections/maps/aio_method_definition_map.obj: sources/lib/collections/maps/aio_method_definition_map.c.obj
 
 .PHONY : sources/lib/collections/maps/aio_method_definition_map.obj
@@ -716,33 +581,6 @@ sources/lib/collections/maps/aio_method_definition_map.c.s:
 	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/collections/maps/aio_method_definition_map.c.s
 .PHONY : sources/lib/collections/maps/aio_method_definition_map.c.s
 
-sources/lib/collections/maps/aio_object_map.obj: sources/lib/collections/maps/aio_object_map.c.obj
-
-.PHONY : sources/lib/collections/maps/aio_object_map.obj
-
-# target to build an object file
-sources/lib/collections/maps/aio_object_map.c.obj:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/collections/maps/aio_object_map.c.obj
-.PHONY : sources/lib/collections/maps/aio_object_map.c.obj
-
-sources/lib/collections/maps/aio_object_map.i: sources/lib/collections/maps/aio_object_map.c.i
-
-.PHONY : sources/lib/collections/maps/aio_object_map.i
-
-# target to preprocess a source file
-sources/lib/collections/maps/aio_object_map.c.i:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/collections/maps/aio_object_map.c.i
-.PHONY : sources/lib/collections/maps/aio_object_map.c.i
-
-sources/lib/collections/maps/aio_object_map.s: sources/lib/collections/maps/aio_object_map.c.s
-
-.PHONY : sources/lib/collections/maps/aio_object_map.s
-
-# target to generate assembly for a file
-sources/lib/collections/maps/aio_object_map.c.s:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/collections/maps/aio_object_map.c.s
-.PHONY : sources/lib/collections/maps/aio_object_map.c.s
-
 sources/lib/collections/maps/aio_variable_map.obj: sources/lib/collections/maps/aio_variable_map.c.obj
 
 .PHONY : sources/lib/collections/maps/aio_variable_map.obj
@@ -769,6 +607,33 @@ sources/lib/collections/maps/aio_variable_map.s: sources/lib/collections/maps/ai
 sources/lib/collections/maps/aio_variable_map.c.s:
 	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/collections/maps/aio_variable_map.c.s
 .PHONY : sources/lib/collections/maps/aio_variable_map.c.s
+
+sources/lib/collections/sets/string_set.obj: sources/lib/collections/sets/string_set.c.obj
+
+.PHONY : sources/lib/collections/sets/string_set.obj
+
+# target to build an object file
+sources/lib/collections/sets/string_set.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/collections/sets/string_set.c.obj
+.PHONY : sources/lib/collections/sets/string_set.c.obj
+
+sources/lib/collections/sets/string_set.i: sources/lib/collections/sets/string_set.c.i
+
+.PHONY : sources/lib/collections/sets/string_set.i
+
+# target to preprocess a source file
+sources/lib/collections/sets/string_set.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/collections/sets/string_set.c.i
+.PHONY : sources/lib/collections/sets/string_set.c.i
+
+sources/lib/collections/sets/string_set.s: sources/lib/collections/sets/string_set.c.s
+
+.PHONY : sources/lib/collections/sets/string_set.s
+
+# target to generate assembly for a file
+sources/lib/collections/sets/string_set.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/collections/sets/string_set.c.s
+.PHONY : sources/lib/collections/sets/string_set.c.s
 
 sources/lib/pair/string_pair.obj: sources/lib/pair/string_pair.c.obj
 
@@ -1013,6 +878,195 @@ sources/main/main.c.s:
 	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/main/main.c.s
 .PHONY : sources/main/main.c.s
 
+sources/tools/analysis/method_reproducer/aio_method_reproducer.obj: sources/tools/analysis/method_reproducer/aio_method_reproducer.c.obj
+
+.PHONY : sources/tools/analysis/method_reproducer/aio_method_reproducer.obj
+
+# target to build an object file
+sources/tools/analysis/method_reproducer/aio_method_reproducer.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/analysis/method_reproducer/aio_method_reproducer.c.obj
+.PHONY : sources/tools/analysis/method_reproducer/aio_method_reproducer.c.obj
+
+sources/tools/analysis/method_reproducer/aio_method_reproducer.i: sources/tools/analysis/method_reproducer/aio_method_reproducer.c.i
+
+.PHONY : sources/tools/analysis/method_reproducer/aio_method_reproducer.i
+
+# target to preprocess a source file
+sources/tools/analysis/method_reproducer/aio_method_reproducer.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/analysis/method_reproducer/aio_method_reproducer.c.i
+.PHONY : sources/tools/analysis/method_reproducer/aio_method_reproducer.c.i
+
+sources/tools/analysis/method_reproducer/aio_method_reproducer.s: sources/tools/analysis/method_reproducer/aio_method_reproducer.c.s
+
+.PHONY : sources/tools/analysis/method_reproducer/aio_method_reproducer.s
+
+# target to generate assembly for a file
+sources/tools/analysis/method_reproducer/aio_method_reproducer.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/analysis/method_reproducer/aio_method_reproducer.c.s
+.PHONY : sources/tools/analysis/method_reproducer/aio_method_reproducer.c.s
+
+sources/tools/analysis/method_reproducer/default/aio_default_reproducer.obj: sources/tools/analysis/method_reproducer/default/aio_default_reproducer.c.obj
+
+.PHONY : sources/tools/analysis/method_reproducer/default/aio_default_reproducer.obj
+
+# target to build an object file
+sources/tools/analysis/method_reproducer/default/aio_default_reproducer.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/analysis/method_reproducer/default/aio_default_reproducer.c.obj
+.PHONY : sources/tools/analysis/method_reproducer/default/aio_default_reproducer.c.obj
+
+sources/tools/analysis/method_reproducer/default/aio_default_reproducer.i: sources/tools/analysis/method_reproducer/default/aio_default_reproducer.c.i
+
+.PHONY : sources/tools/analysis/method_reproducer/default/aio_default_reproducer.i
+
+# target to preprocess a source file
+sources/tools/analysis/method_reproducer/default/aio_default_reproducer.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/analysis/method_reproducer/default/aio_default_reproducer.c.i
+.PHONY : sources/tools/analysis/method_reproducer/default/aio_default_reproducer.c.i
+
+sources/tools/analysis/method_reproducer/default/aio_default_reproducer.s: sources/tools/analysis/method_reproducer/default/aio_default_reproducer.c.s
+
+.PHONY : sources/tools/analysis/method_reproducer/default/aio_default_reproducer.s
+
+# target to generate assembly for a file
+sources/tools/analysis/method_reproducer/default/aio_default_reproducer.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/analysis/method_reproducer/default/aio_default_reproducer.c.s
+.PHONY : sources/tools/analysis/method_reproducer/default/aio_default_reproducer.c.s
+
+sources/tools/analysis/method_reproducer/short/aio_short_reproducer.obj: sources/tools/analysis/method_reproducer/short/aio_short_reproducer.c.obj
+
+.PHONY : sources/tools/analysis/method_reproducer/short/aio_short_reproducer.obj
+
+# target to build an object file
+sources/tools/analysis/method_reproducer/short/aio_short_reproducer.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/analysis/method_reproducer/short/aio_short_reproducer.c.obj
+.PHONY : sources/tools/analysis/method_reproducer/short/aio_short_reproducer.c.obj
+
+sources/tools/analysis/method_reproducer/short/aio_short_reproducer.i: sources/tools/analysis/method_reproducer/short/aio_short_reproducer.c.i
+
+.PHONY : sources/tools/analysis/method_reproducer/short/aio_short_reproducer.i
+
+# target to preprocess a source file
+sources/tools/analysis/method_reproducer/short/aio_short_reproducer.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/analysis/method_reproducer/short/aio_short_reproducer.c.i
+.PHONY : sources/tools/analysis/method_reproducer/short/aio_short_reproducer.c.i
+
+sources/tools/analysis/method_reproducer/short/aio_short_reproducer.s: sources/tools/analysis/method_reproducer/short/aio_short_reproducer.c.s
+
+.PHONY : sources/tools/analysis/method_reproducer/short/aio_short_reproducer.s
+
+# target to generate assembly for a file
+sources/tools/analysis/method_reproducer/short/aio_short_reproducer.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/analysis/method_reproducer/short/aio_short_reproducer.c.s
+.PHONY : sources/tools/analysis/method_reproducer/short/aio_short_reproducer.c.s
+
+sources/tools/analysis/method_reproducer/the_shortest/aio_the_shortest_reproducer.obj: sources/tools/analysis/method_reproducer/the_shortest/aio_the_shortest_reproducer.c.obj
+
+.PHONY : sources/tools/analysis/method_reproducer/the_shortest/aio_the_shortest_reproducer.obj
+
+# target to build an object file
+sources/tools/analysis/method_reproducer/the_shortest/aio_the_shortest_reproducer.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/analysis/method_reproducer/the_shortest/aio_the_shortest_reproducer.c.obj
+.PHONY : sources/tools/analysis/method_reproducer/the_shortest/aio_the_shortest_reproducer.c.obj
+
+sources/tools/analysis/method_reproducer/the_shortest/aio_the_shortest_reproducer.i: sources/tools/analysis/method_reproducer/the_shortest/aio_the_shortest_reproducer.c.i
+
+.PHONY : sources/tools/analysis/method_reproducer/the_shortest/aio_the_shortest_reproducer.i
+
+# target to preprocess a source file
+sources/tools/analysis/method_reproducer/the_shortest/aio_the_shortest_reproducer.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/analysis/method_reproducer/the_shortest/aio_the_shortest_reproducer.c.i
+.PHONY : sources/tools/analysis/method_reproducer/the_shortest/aio_the_shortest_reproducer.c.i
+
+sources/tools/analysis/method_reproducer/the_shortest/aio_the_shortest_reproducer.s: sources/tools/analysis/method_reproducer/the_shortest/aio_the_shortest_reproducer.c.s
+
+.PHONY : sources/tools/analysis/method_reproducer/the_shortest/aio_the_shortest_reproducer.s
+
+# target to generate assembly for a file
+sources/tools/analysis/method_reproducer/the_shortest/aio_the_shortest_reproducer.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/analysis/method_reproducer/the_shortest/aio_the_shortest_reproducer.c.s
+.PHONY : sources/tools/analysis/method_reproducer/the_shortest/aio_the_shortest_reproducer.c.s
+
+sources/tools/analysis/method_reproducer/the_shortest/concat_for_each_reproducer/aio_concat_for_each_reproducer.obj: sources/tools/analysis/method_reproducer/the_shortest/concat_for_each_reproducer/aio_concat_for_each_reproducer.c.obj
+
+.PHONY : sources/tools/analysis/method_reproducer/the_shortest/concat_for_each_reproducer/aio_concat_for_each_reproducer.obj
+
+# target to build an object file
+sources/tools/analysis/method_reproducer/the_shortest/concat_for_each_reproducer/aio_concat_for_each_reproducer.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/analysis/method_reproducer/the_shortest/concat_for_each_reproducer/aio_concat_for_each_reproducer.c.obj
+.PHONY : sources/tools/analysis/method_reproducer/the_shortest/concat_for_each_reproducer/aio_concat_for_each_reproducer.c.obj
+
+sources/tools/analysis/method_reproducer/the_shortest/concat_for_each_reproducer/aio_concat_for_each_reproducer.i: sources/tools/analysis/method_reproducer/the_shortest/concat_for_each_reproducer/aio_concat_for_each_reproducer.c.i
+
+.PHONY : sources/tools/analysis/method_reproducer/the_shortest/concat_for_each_reproducer/aio_concat_for_each_reproducer.i
+
+# target to preprocess a source file
+sources/tools/analysis/method_reproducer/the_shortest/concat_for_each_reproducer/aio_concat_for_each_reproducer.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/analysis/method_reproducer/the_shortest/concat_for_each_reproducer/aio_concat_for_each_reproducer.c.i
+.PHONY : sources/tools/analysis/method_reproducer/the_shortest/concat_for_each_reproducer/aio_concat_for_each_reproducer.c.i
+
+sources/tools/analysis/method_reproducer/the_shortest/concat_for_each_reproducer/aio_concat_for_each_reproducer.s: sources/tools/analysis/method_reproducer/the_shortest/concat_for_each_reproducer/aio_concat_for_each_reproducer.c.s
+
+.PHONY : sources/tools/analysis/method_reproducer/the_shortest/concat_for_each_reproducer/aio_concat_for_each_reproducer.s
+
+# target to generate assembly for a file
+sources/tools/analysis/method_reproducer/the_shortest/concat_for_each_reproducer/aio_concat_for_each_reproducer.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/analysis/method_reproducer/the_shortest/concat_for_each_reproducer/aio_concat_for_each_reproducer.c.s
+.PHONY : sources/tools/analysis/method_reproducer/the_shortest/concat_for_each_reproducer/aio_concat_for_each_reproducer.c.s
+
+sources/tools/analysis/method_reproducer/the_shortest/multiply_for_each_reproducer/aio_multiply_for_each_reproducer.obj: sources/tools/analysis/method_reproducer/the_shortest/multiply_for_each_reproducer/aio_multiply_for_each_reproducer.c.obj
+
+.PHONY : sources/tools/analysis/method_reproducer/the_shortest/multiply_for_each_reproducer/aio_multiply_for_each_reproducer.obj
+
+# target to build an object file
+sources/tools/analysis/method_reproducer/the_shortest/multiply_for_each_reproducer/aio_multiply_for_each_reproducer.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/analysis/method_reproducer/the_shortest/multiply_for_each_reproducer/aio_multiply_for_each_reproducer.c.obj
+.PHONY : sources/tools/analysis/method_reproducer/the_shortest/multiply_for_each_reproducer/aio_multiply_for_each_reproducer.c.obj
+
+sources/tools/analysis/method_reproducer/the_shortest/multiply_for_each_reproducer/aio_multiply_for_each_reproducer.i: sources/tools/analysis/method_reproducer/the_shortest/multiply_for_each_reproducer/aio_multiply_for_each_reproducer.c.i
+
+.PHONY : sources/tools/analysis/method_reproducer/the_shortest/multiply_for_each_reproducer/aio_multiply_for_each_reproducer.i
+
+# target to preprocess a source file
+sources/tools/analysis/method_reproducer/the_shortest/multiply_for_each_reproducer/aio_multiply_for_each_reproducer.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/analysis/method_reproducer/the_shortest/multiply_for_each_reproducer/aio_multiply_for_each_reproducer.c.i
+.PHONY : sources/tools/analysis/method_reproducer/the_shortest/multiply_for_each_reproducer/aio_multiply_for_each_reproducer.c.i
+
+sources/tools/analysis/method_reproducer/the_shortest/multiply_for_each_reproducer/aio_multiply_for_each_reproducer.s: sources/tools/analysis/method_reproducer/the_shortest/multiply_for_each_reproducer/aio_multiply_for_each_reproducer.c.s
+
+.PHONY : sources/tools/analysis/method_reproducer/the_shortest/multiply_for_each_reproducer/aio_multiply_for_each_reproducer.s
+
+# target to generate assembly for a file
+sources/tools/analysis/method_reproducer/the_shortest/multiply_for_each_reproducer/aio_multiply_for_each_reproducer.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/analysis/method_reproducer/the_shortest/multiply_for_each_reproducer/aio_multiply_for_each_reproducer.c.s
+.PHONY : sources/tools/analysis/method_reproducer/the_shortest/multiply_for_each_reproducer/aio_multiply_for_each_reproducer.c.s
+
+sources/tools/analysis/method_reproducer/the_shortest/plus_for_each_reproducer/aio_plus_for_each_reproducer.obj: sources/tools/analysis/method_reproducer/the_shortest/plus_for_each_reproducer/aio_plus_for_each_reproducer.c.obj
+
+.PHONY : sources/tools/analysis/method_reproducer/the_shortest/plus_for_each_reproducer/aio_plus_for_each_reproducer.obj
+
+# target to build an object file
+sources/tools/analysis/method_reproducer/the_shortest/plus_for_each_reproducer/aio_plus_for_each_reproducer.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/analysis/method_reproducer/the_shortest/plus_for_each_reproducer/aio_plus_for_each_reproducer.c.obj
+.PHONY : sources/tools/analysis/method_reproducer/the_shortest/plus_for_each_reproducer/aio_plus_for_each_reproducer.c.obj
+
+sources/tools/analysis/method_reproducer/the_shortest/plus_for_each_reproducer/aio_plus_for_each_reproducer.i: sources/tools/analysis/method_reproducer/the_shortest/plus_for_each_reproducer/aio_plus_for_each_reproducer.c.i
+
+.PHONY : sources/tools/analysis/method_reproducer/the_shortest/plus_for_each_reproducer/aio_plus_for_each_reproducer.i
+
+# target to preprocess a source file
+sources/tools/analysis/method_reproducer/the_shortest/plus_for_each_reproducer/aio_plus_for_each_reproducer.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/analysis/method_reproducer/the_shortest/plus_for_each_reproducer/aio_plus_for_each_reproducer.c.i
+.PHONY : sources/tools/analysis/method_reproducer/the_shortest/plus_for_each_reproducer/aio_plus_for_each_reproducer.c.i
+
+sources/tools/analysis/method_reproducer/the_shortest/plus_for_each_reproducer/aio_plus_for_each_reproducer.s: sources/tools/analysis/method_reproducer/the_shortest/plus_for_each_reproducer/aio_plus_for_each_reproducer.c.s
+
+.PHONY : sources/tools/analysis/method_reproducer/the_shortest/plus_for_each_reproducer/aio_plus_for_each_reproducer.s
+
+# target to generate assembly for a file
+sources/tools/analysis/method_reproducer/the_shortest/plus_for_each_reproducer/aio_plus_for_each_reproducer.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/analysis/method_reproducer/the_shortest/plus_for_each_reproducer/aio_plus_for_each_reproducer.c.s
+.PHONY : sources/tools/analysis/method_reproducer/the_shortest/plus_for_each_reproducer/aio_plus_for_each_reproducer.c.s
+
 sources/tools/parsers/aio_parser.obj: sources/tools/parsers/aio_parser.c.obj
 
 .PHONY : sources/tools/parsers/aio_parser.obj
@@ -1157,78 +1211,63 @@ help:
 	@echo ... edit_cache
 	@echo ... AIO
 	@echo ... rebuild_cache
-	@echo ... sources/lang/annotations/aio_annotation.obj
-	@echo ... sources/lang/annotations/aio_annotation.i
-	@echo ... sources/lang/annotations/aio_annotation.s
-	@echo ... sources/lang/methods/aio_method.obj
-	@echo ... sources/lang/methods/aio_method.i
-	@echo ... sources/lang/methods/aio_method.s
-	@echo ... sources/lang/methods/analysis/method_reproducer/aio_method_reproducer.obj
-	@echo ... sources/lang/methods/analysis/method_reproducer/aio_method_reproducer.i
-	@echo ... sources/lang/methods/analysis/method_reproducer/aio_method_reproducer.s
-	@echo ... sources/lang/methods/analysis/method_reproducer/default/aio_default_reproducer.obj
-	@echo ... sources/lang/methods/analysis/method_reproducer/default/aio_default_reproducer.i
-	@echo ... sources/lang/methods/analysis/method_reproducer/default/aio_default_reproducer.s
-	@echo ... sources/lang/methods/analysis/method_reproducer/short/aio_short_reproducer.obj
-	@echo ... sources/lang/methods/analysis/method_reproducer/short/aio_short_reproducer.i
-	@echo ... sources/lang/methods/analysis/method_reproducer/short/aio_short_reproducer.s
-	@echo ... sources/lang/methods/analysis/method_reproducer/the_shortest/aio_the_shortest_reproducer.obj
-	@echo ... sources/lang/methods/analysis/method_reproducer/the_shortest/aio_the_shortest_reproducer.i
-	@echo ... sources/lang/methods/analysis/method_reproducer/the_shortest/aio_the_shortest_reproducer.s
-	@echo ... sources/lang/methods/analysis/method_reproducer/the_shortest/concat_for_each_reproducer/aio_concat_for_each_reproducer.obj
-	@echo ... sources/lang/methods/analysis/method_reproducer/the_shortest/concat_for_each_reproducer/aio_concat_for_each_reproducer.i
-	@echo ... sources/lang/methods/analysis/method_reproducer/the_shortest/concat_for_each_reproducer/aio_concat_for_each_reproducer.s
-	@echo ... sources/lang/methods/analysis/method_reproducer/the_shortest/multiply_for_each_reproducer/aio_multiply_for_each_reproducer.obj
-	@echo ... sources/lang/methods/analysis/method_reproducer/the_shortest/multiply_for_each_reproducer/aio_multiply_for_each_reproducer.i
-	@echo ... sources/lang/methods/analysis/method_reproducer/the_shortest/multiply_for_each_reproducer/aio_multiply_for_each_reproducer.s
-	@echo ... sources/lang/methods/analysis/method_reproducer/the_shortest/plus_for_each_reproducer/aio_plus_for_each_reproducer.obj
-	@echo ... sources/lang/methods/analysis/method_reproducer/the_shortest/plus_for_each_reproducer/aio_plus_for_each_reproducer.i
-	@echo ... sources/lang/methods/analysis/method_reproducer/the_shortest/plus_for_each_reproducer/aio_plus_for_each_reproducer.s
-	@echo ... sources/lang/methods/bundle/aio_bundle.obj
-	@echo ... sources/lang/methods/bundle/aio_bundle.i
-	@echo ... sources/lang/methods/bundle/aio_bundle.s
-	@echo ... sources/lang/methods/default_method_container/aio_default_method_container.obj
-	@echo ... sources/lang/methods/default_method_container/aio_default_method_container.i
-	@echo ... sources/lang/methods/default_method_container/aio_default_method_container.s
-	@echo ... sources/lang/methods/method_definition/aio_method_definition.obj
-	@echo ... sources/lang/methods/method_definition/aio_method_definition.i
-	@echo ... sources/lang/methods/method_definition/aio_method_definition.s
-	@echo ... sources/lang/methods/method_definition/aio_method_definition_builder.obj
-	@echo ... sources/lang/methods/method_definition/aio_method_definition_builder.i
-	@echo ... sources/lang/methods/method_definition/aio_method_definition_builder.s
-	@echo ... sources/lang/methods/result/aio_result.obj
-	@echo ... sources/lang/methods/result/aio_result.i
-	@echo ... sources/lang/methods/result/aio_result.s
-	@echo ... sources/lang/methods/variable/aio_variable.obj
-	@echo ... sources/lang/methods/variable/aio_variable.i
-	@echo ... sources/lang/methods/variable/aio_variable.s
-	@echo ... sources/lang/object/aio_file.obj
-	@echo ... sources/lang/object/aio_file.i
-	@echo ... sources/lang/object/aio_file.s
-	@echo ... sources/lang/object/objectManager/aio_core.obj
-	@echo ... sources/lang/object/objectManager/aio_core.i
-	@echo ... sources/lang/object/objectManager/aio_core.s
+	@echo ... sources/lang/aio_annotation/aio_annotation.obj
+	@echo ... sources/lang/aio_annotation/aio_annotation.i
+	@echo ... sources/lang/aio_annotation/aio_annotation.s
+	@echo ... sources/lang/aio_core/aio_core.obj
+	@echo ... sources/lang/aio_core/aio_core.i
+	@echo ... sources/lang/aio_core/aio_core.s
+	@echo ... sources/lang/aio_file/aio_file.obj
+	@echo ... sources/lang/aio_file/aio_file.i
+	@echo ... sources/lang/aio_file/aio_file.s
+	@echo ... sources/lang/aio_file/aio_file_builder.obj
+	@echo ... sources/lang/aio_file/aio_file_builder.i
+	@echo ... sources/lang/aio_file/aio_file_builder.s
+	@echo ... sources/lang/aio_method/aio_method.obj
+	@echo ... sources/lang/aio_method/aio_method.i
+	@echo ... sources/lang/aio_method/aio_method.s
+	@echo ... sources/lang/aio_method/bundle/aio_bundle.obj
+	@echo ... sources/lang/aio_method/bundle/aio_bundle.i
+	@echo ... sources/lang/aio_method/bundle/aio_bundle.s
+	@echo ... sources/lang/aio_method/default_method_container/aio_default_method_container.obj
+	@echo ... sources/lang/aio_method/default_method_container/aio_default_method_container.i
+	@echo ... sources/lang/aio_method/default_method_container/aio_default_method_container.s
+	@echo ... sources/lang/aio_method/method_definition/aio_method_definition.obj
+	@echo ... sources/lang/aio_method/method_definition/aio_method_definition.i
+	@echo ... sources/lang/aio_method/method_definition/aio_method_definition.s
+	@echo ... sources/lang/aio_method/method_definition/aio_method_definition_builder.obj
+	@echo ... sources/lang/aio_method/method_definition/aio_method_definition_builder.i
+	@echo ... sources/lang/aio_method/method_definition/aio_method_definition_builder.s
+	@echo ... sources/lang/aio_method/result/aio_result.obj
+	@echo ... sources/lang/aio_method/result/aio_result.i
+	@echo ... sources/lang/aio_method/result/aio_result.s
+	@echo ... sources/lang/aio_method/variable/aio_variable.obj
+	@echo ... sources/lang/aio_method/variable/aio_variable.i
+	@echo ... sources/lang/aio_method/variable/aio_variable.s
+	@echo ... sources/lang/aio_types/aio_type.obj
+	@echo ... sources/lang/aio_types/aio_type.i
+	@echo ... sources/lang/aio_types/aio_type.s
 	@echo ... sources/lang/reserved_names/aio_reserved_names_container.obj
 	@echo ... sources/lang/reserved_names/aio_reserved_names_container.i
 	@echo ... sources/lang/reserved_names/aio_reserved_names_container.s
-	@echo ... sources/lang/types/aio_type.obj
-	@echo ... sources/lang/types/aio_type.i
-	@echo ... sources/lang/types/aio_type.s
 	@echo ... sources/lib/collections/lists/aio_annotation_list.obj
 	@echo ... sources/lib/collections/lists/aio_annotation_list.i
 	@echo ... sources/lib/collections/lists/aio_annotation_list.s
 	@echo ... sources/lib/collections/lists/string_list.obj
 	@echo ... sources/lib/collections/lists/string_list.i
 	@echo ... sources/lib/collections/lists/string_list.s
+	@echo ... sources/lib/collections/maps/aio_file_map.obj
+	@echo ... sources/lib/collections/maps/aio_file_map.i
+	@echo ... sources/lib/collections/maps/aio_file_map.s
 	@echo ... sources/lib/collections/maps/aio_method_definition_map.obj
 	@echo ... sources/lib/collections/maps/aio_method_definition_map.i
 	@echo ... sources/lib/collections/maps/aio_method_definition_map.s
-	@echo ... sources/lib/collections/maps/aio_object_map.obj
-	@echo ... sources/lib/collections/maps/aio_object_map.i
-	@echo ... sources/lib/collections/maps/aio_object_map.s
 	@echo ... sources/lib/collections/maps/aio_variable_map.obj
 	@echo ... sources/lib/collections/maps/aio_variable_map.i
 	@echo ... sources/lib/collections/maps/aio_variable_map.s
+	@echo ... sources/lib/collections/sets/string_set.obj
+	@echo ... sources/lib/collections/sets/string_set.i
+	@echo ... sources/lib/collections/sets/string_set.s
 	@echo ... sources/lib/pair/string_pair.obj
 	@echo ... sources/lib/pair/string_pair.i
 	@echo ... sources/lib/pair/string_pair.s
@@ -1256,6 +1295,27 @@ help:
 	@echo ... sources/main/main.obj
 	@echo ... sources/main/main.i
 	@echo ... sources/main/main.s
+	@echo ... sources/tools/analysis/method_reproducer/aio_method_reproducer.obj
+	@echo ... sources/tools/analysis/method_reproducer/aio_method_reproducer.i
+	@echo ... sources/tools/analysis/method_reproducer/aio_method_reproducer.s
+	@echo ... sources/tools/analysis/method_reproducer/default/aio_default_reproducer.obj
+	@echo ... sources/tools/analysis/method_reproducer/default/aio_default_reproducer.i
+	@echo ... sources/tools/analysis/method_reproducer/default/aio_default_reproducer.s
+	@echo ... sources/tools/analysis/method_reproducer/short/aio_short_reproducer.obj
+	@echo ... sources/tools/analysis/method_reproducer/short/aio_short_reproducer.i
+	@echo ... sources/tools/analysis/method_reproducer/short/aio_short_reproducer.s
+	@echo ... sources/tools/analysis/method_reproducer/the_shortest/aio_the_shortest_reproducer.obj
+	@echo ... sources/tools/analysis/method_reproducer/the_shortest/aio_the_shortest_reproducer.i
+	@echo ... sources/tools/analysis/method_reproducer/the_shortest/aio_the_shortest_reproducer.s
+	@echo ... sources/tools/analysis/method_reproducer/the_shortest/concat_for_each_reproducer/aio_concat_for_each_reproducer.obj
+	@echo ... sources/tools/analysis/method_reproducer/the_shortest/concat_for_each_reproducer/aio_concat_for_each_reproducer.i
+	@echo ... sources/tools/analysis/method_reproducer/the_shortest/concat_for_each_reproducer/aio_concat_for_each_reproducer.s
+	@echo ... sources/tools/analysis/method_reproducer/the_shortest/multiply_for_each_reproducer/aio_multiply_for_each_reproducer.obj
+	@echo ... sources/tools/analysis/method_reproducer/the_shortest/multiply_for_each_reproducer/aio_multiply_for_each_reproducer.i
+	@echo ... sources/tools/analysis/method_reproducer/the_shortest/multiply_for_each_reproducer/aio_multiply_for_each_reproducer.s
+	@echo ... sources/tools/analysis/method_reproducer/the_shortest/plus_for_each_reproducer/aio_plus_for_each_reproducer.obj
+	@echo ... sources/tools/analysis/method_reproducer/the_shortest/plus_for_each_reproducer/aio_plus_for_each_reproducer.i
+	@echo ... sources/tools/analysis/method_reproducer/the_shortest/plus_for_each_reproducer/aio_plus_for_each_reproducer.s
 	@echo ... sources/tools/parsers/aio_parser.obj
 	@echo ... sources/tools/parsers/aio_parser.i
 	@echo ... sources/tools/parsers/aio_parser.s

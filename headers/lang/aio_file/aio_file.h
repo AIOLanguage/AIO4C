@@ -1,24 +1,31 @@
-#ifndef AIO_AIO_OBJECT_H
-#define AIO_AIO_OBJECT_H
+#ifndef AIO_FILE_H
+#define AIO_FILE_H
 
-#include "../methods/bundle/aio_bundle.h"
 #include "../../lib/collections/maps/aio_method_definition_map.h"
+#include "../../lib/utils/string_utils/string_utils.h"
+#include "../../lib/collections/lists/string_list.h"
+#include "../aio_method/bundle/aio_bundle.h"
+
+#define AIO_COMMENTS "//"
+
+#define AIO_SUFFIX ".aio"
+
+#define AIO_SUFFIX_LENGTH 4
 
 typedef struct aio_method_manager {
-    aio_method_definition_map* method_definition_map;
+    aio_method_definition_map *method_definition_map;
 } aio_method_manager;
 
-aio_method_manager* new_aio_method_manager(aio_method_definition_map *method_definition_map);
+aio_method_manager *new_aio_method_manager();
 
 typedef struct aio_file {
     const_string name;
-    const_string folder_path;
-    string_list* source_code;
-    aio_method_manager* method_manager;
+    string_list *source_code;
+    aio_method_manager *method_manager;
 } aio_file;
 
-aio_file* new_aio_file(aio_method_manager *method_manager, const_string path);
+aio_file *new_aio_file(const_string path);
 
 void invoke_method_in_manager(aio_file *object, const_string method_name, aio_bundle *bundle);
 
-#endif //AIO_AIO_OBJECT_H
+#endif //AIO_FILE_H

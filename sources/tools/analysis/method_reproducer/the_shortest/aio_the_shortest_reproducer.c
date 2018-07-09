@@ -1,15 +1,15 @@
 #include <stdio.h>
 #include <process.h>
 #include "../../../../../../headers/lang/object/aio_file.h"
-#include "../../../../../../headers/lib/collections/maps/aio_variable_map.h"
+#include "../../../../../headers/lib/collections/maps/aio_variable_map.h"
 #include "../../../../../../headers/lang/methods/aio_method_container.h"
-#include "../../../../../../headers/lib/utils/string_utils/string_utils.h"
-#include "../../../../../../headers/lib/utils/operation_utils/operation_utils.h"
+#include "../../../../../headers/lib/utils/string_utils/string_utils.h"
+#include "../../../../../headers/lib/utils/operation_utils/operation_utils.h"
 #include "../../../../../../headers/lang/methods/analysis/method_reproducer/the_shortest/plus_for_each_reproducer/aio_plus_for_each_reproducer.h"
 #include "../../../../../../headers/lang/methods/analysis/method_reproducer/the_shortest/multiply_for_each_reproducer/aio_multiply_for_each_reproducer.h"
 #include "../../../../../../headers/lang/methods/analysis/method_reproducer/the_shortest/concat_for_each_reproducer/aio_concat_for_each_reproducer.h"
 #include "../../../../../../headers/lang/methods/method_definition/aio_method_definition_builder.h"
-#include "../../../../../../headers/lib/collections/maps/aio_object_map.h"
+#include "../../../../../headers/lib/collections/maps/aio_file_map.h"
 #include "../../../../../../headers/lang/object/object_manager/aio_nexus.h"
 #include "../../../../../../headers/lib/utils/file_utils/file_utils.h"
 
@@ -52,8 +52,8 @@ void reproduceTheShortestMethod(aio_file *object, aio_method_definition *method_
         char **next_object_name_vs_method = split_by_string(word, ".");
         char *next_object_path_plus_name = next_object_name_vs_method[0];
         char *next_method_name = remove_suffix(next_object_name_vs_method[1], "~");
-        aio_file *next_object = get_aio_object_in_map_by_name(object_manager->objectMap,
-                                                                next_object_path_plus_name);
+        aio_file *next_object = get_aio_file_in_map_by_name(object_manager->objectMap,
+                                                            next_object_path_plus_name);
         char *next_object_name;
         if (next_object == NULL) {
             string_pair *relative_path_vs_object_name = extract_name_and_folder_path_from_path(
@@ -65,7 +65,7 @@ void reproduceTheShortestMethod(aio_file *object, aio_method_definition *method_
         } else {
             next_object_name = next_object_path_plus_name;
         }
-        next_object = get_aio_object_in_map_by_name(object_manager->objectMap, next_object_name);
+        next_object = get_aio_file_in_map_by_name(object_manager->objectMap, next_object_name);
         make_for_each_custom_method_invocation(next_object, method_container->variable_map, next_method_name, bundle);
     }
 }
