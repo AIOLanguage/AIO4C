@@ -23,7 +23,7 @@
 
 ![image](https://user-images.githubusercontent.com/22048950/42230366-7e8c5022-7ef1-11e8-888e-11b195916a76.png)
 
-### 1.4. Define mutable_by_type variables: 
+### 1.4. Define is_mutable_by_type variables: 
 
 ![image](https://user-images.githubusercontent.com/22048950/42230408-985f08dc-7ef1-11e8-811a-d6556160851d.png)
 
@@ -56,7 +56,7 @@
 
 ![image](https://user-images.githubusercontent.com/22048950/42231753-0e55abb0-7ef5-11e8-8361-5455f7a548ca.png)
 
-### 4.2. mutable_by_type pointer
+### 4.2. is_mutable_by_type pointer
 
 ![image](https://user-images.githubusercontent.com/22048950/42232945-b36a9f54-7ef8-11e8-96a0-3fa66a1e46cf.png)
 

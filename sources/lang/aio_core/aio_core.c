@@ -6,28 +6,28 @@
 
 aio_core *core;
 
-char core_types[4][4] = {
+char core_types[5][4] = {
         {"Int"},
         {"Dou"},
         {"Str"},
+        {"Boo"},
         {VOID}
 };
 
 aio_core *init_aio_core() {
-    core = calloc(1, sizeof(aio_core));
-    core->core_file_map = new_aio_file_map();
-    core->aio_type_set = new_string_set();
-    //add aio core types:
-    for (int i = 0; i < 3; ++i) {
-        add_string_in_set(core->aio_type_set, core_types[i]);
+    string_set *type_set = new_string_set();
+    for (int i = 0; i < sizeof(core_types); ++i) {
+        const_string core_type = core_types[i];
+        add_string_in_set(type_set, core_type);
     }
+    core = calloc(1, sizeof(aio_core));
+    core->core_context_map = new_aio_context_map();
+    core->aio_type_set = type_set;
 }
 
-void build_aio_file_and_put_in_core_file_map(const_string path) {
-    //create new aio_file:
-    aio_file *aio_object = new_aio_file(path);
-    //put new aio_file in aio_file_map:
-    put_aio_object_in_map(core->core_file_map, aio_object);
+void build_aio_context_and_put_in_core_contex_map(const_string path) {
+    aio_context *aio_context = new_aio_context(path);
+    put_aio_context_in_map(core->core_context_map, aio_context);
 }
 
 boolean contains_aio_type_in_set(const_string string) {

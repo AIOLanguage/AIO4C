@@ -29,7 +29,7 @@ void update_memory_in_variable_map(aio_variable_map *variable_map) {
 void put_aio_variable_in_map(aio_variable_map *variable_map, aio_variable *variable) {
     for (int i = 0; i < variable_map->size; ++i) {
         if (strcmp(variable_map->names[i], variable->name) == 0) {
-            perror("Cannot put aio_file in definition map");
+            perror("Cannot put aio_context in definition map");
         }
     }
     //Check to update:

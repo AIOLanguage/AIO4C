@@ -79,7 +79,7 @@ void set_variable(aio_variable *variable, aio_method_container *method_container
     }
 }
 
-void invoke_new_aio_method(aio_file *object, aio_method_definition *method_definition, aio_bundle *bundle) {
+void invoke_new_aio_method(aio_file *aio_context, aio_method_definition *method_definition, aio_bundle *bundle) {
     //Create the same aio method:
     aio_method *method = calloc(1, sizeof(aio_method));
     if (method == NULL) {
@@ -91,5 +91,5 @@ void invoke_new_aio_method(aio_file *object, aio_method_definition *method_defin
     //Set args:
     set_args_in_method_container(method->method_container, method_definition->declaration, bundle->input_values);
     //Reproduce method:
-    reproduce_method(object, method_definition, method->method_container, bundle);
+    reproduce_method(aio_context, method_definition, method->method_container, bundle);
 }

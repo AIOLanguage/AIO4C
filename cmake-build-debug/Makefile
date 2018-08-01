@@ -176,59 +176,59 @@ sources/lang/aio_core/aio_core.c.s:
 	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_core/aio_core.c.s
 .PHONY : sources/lang/aio_core/aio_core.c.s
 
-sources/lang/aio_file/aio_file.obj: sources/lang/aio_file/aio_file.c.obj
+sources/lang/aio_file/aio_context.obj: sources/lang/aio_file/aio_context.c.obj
 
-.PHONY : sources/lang/aio_file/aio_file.obj
-
-# target to build an object file
-sources/lang/aio_file/aio_file.c.obj:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_file/aio_file.c.obj
-.PHONY : sources/lang/aio_file/aio_file.c.obj
-
-sources/lang/aio_file/aio_file.i: sources/lang/aio_file/aio_file.c.i
-
-.PHONY : sources/lang/aio_file/aio_file.i
-
-# target to preprocess a source file
-sources/lang/aio_file/aio_file.c.i:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_file/aio_file.c.i
-.PHONY : sources/lang/aio_file/aio_file.c.i
-
-sources/lang/aio_file/aio_file.s: sources/lang/aio_file/aio_file.c.s
-
-.PHONY : sources/lang/aio_file/aio_file.s
-
-# target to generate assembly for a file
-sources/lang/aio_file/aio_file.c.s:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_file/aio_file.c.s
-.PHONY : sources/lang/aio_file/aio_file.c.s
-
-sources/lang/aio_file/aio_file_builder.obj: sources/lang/aio_file/aio_file_builder.c.obj
-
-.PHONY : sources/lang/aio_file/aio_file_builder.obj
+.PHONY : sources/lang/aio_file/aio_context.obj
 
 # target to build an object file
-sources/lang/aio_file/aio_file_builder.c.obj:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_file/aio_file_builder.c.obj
-.PHONY : sources/lang/aio_file/aio_file_builder.c.obj
+sources/lang/aio_file/aio_context.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_file/aio_context.c.obj
+.PHONY : sources/lang/aio_file/aio_context.c.obj
 
-sources/lang/aio_file/aio_file_builder.i: sources/lang/aio_file/aio_file_builder.c.i
+sources/lang/aio_file/aio_context.i: sources/lang/aio_file/aio_context.c.i
 
-.PHONY : sources/lang/aio_file/aio_file_builder.i
+.PHONY : sources/lang/aio_file/aio_context.i
 
 # target to preprocess a source file
-sources/lang/aio_file/aio_file_builder.c.i:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_file/aio_file_builder.c.i
-.PHONY : sources/lang/aio_file/aio_file_builder.c.i
+sources/lang/aio_file/aio_context.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_file/aio_context.c.i
+.PHONY : sources/lang/aio_file/aio_context.c.i
 
-sources/lang/aio_file/aio_file_builder.s: sources/lang/aio_file/aio_file_builder.c.s
+sources/lang/aio_file/aio_context.s: sources/lang/aio_file/aio_context.c.s
 
-.PHONY : sources/lang/aio_file/aio_file_builder.s
+.PHONY : sources/lang/aio_file/aio_context.s
 
 # target to generate assembly for a file
-sources/lang/aio_file/aio_file_builder.c.s:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_file/aio_file_builder.c.s
-.PHONY : sources/lang/aio_file/aio_file_builder.c.s
+sources/lang/aio_file/aio_context.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_file/aio_context.c.s
+.PHONY : sources/lang/aio_file/aio_context.c.s
+
+sources/lang/aio_file/aio_context_builder.obj: sources/lang/aio_file/aio_context_builder.c.obj
+
+.PHONY : sources/lang/aio_file/aio_context_builder.obj
+
+# target to build an object file
+sources/lang/aio_file/aio_context_builder.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_file/aio_context_builder.c.obj
+.PHONY : sources/lang/aio_file/aio_context_builder.c.obj
+
+sources/lang/aio_file/aio_context_builder.i: sources/lang/aio_file/aio_context_builder.c.i
+
+.PHONY : sources/lang/aio_file/aio_context_builder.i
+
+# target to preprocess a source file
+sources/lang/aio_file/aio_context_builder.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_file/aio_context_builder.c.i
+.PHONY : sources/lang/aio_file/aio_context_builder.c.i
+
+sources/lang/aio_file/aio_context_builder.s: sources/lang/aio_file/aio_context_builder.c.s
+
+.PHONY : sources/lang/aio_file/aio_context_builder.s
+
+# target to generate assembly for a file
+sources/lang/aio_file/aio_context_builder.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_file/aio_context_builder.c.s
+.PHONY : sources/lang/aio_file/aio_context_builder.c.s
 
 sources/lang/aio_method/aio_method.obj: sources/lang/aio_method/aio_method.c.obj
 
@@ -283,33 +283,6 @@ sources/lang/aio_method/bundle/aio_bundle.s: sources/lang/aio_method/bundle/aio_
 sources/lang/aio_method/bundle/aio_bundle.c.s:
 	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_method/bundle/aio_bundle.c.s
 .PHONY : sources/lang/aio_method/bundle/aio_bundle.c.s
-
-sources/lang/aio_method/default_method_container/aio_default_method_container.obj: sources/lang/aio_method/default_method_container/aio_default_method_container.c.obj
-
-.PHONY : sources/lang/aio_method/default_method_container/aio_default_method_container.obj
-
-# target to build an object file
-sources/lang/aio_method/default_method_container/aio_default_method_container.c.obj:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_method/default_method_container/aio_default_method_container.c.obj
-.PHONY : sources/lang/aio_method/default_method_container/aio_default_method_container.c.obj
-
-sources/lang/aio_method/default_method_container/aio_default_method_container.i: sources/lang/aio_method/default_method_container/aio_default_method_container.c.i
-
-.PHONY : sources/lang/aio_method/default_method_container/aio_default_method_container.i
-
-# target to preprocess a source file
-sources/lang/aio_method/default_method_container/aio_default_method_container.c.i:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_method/default_method_container/aio_default_method_container.c.i
-.PHONY : sources/lang/aio_method/default_method_container/aio_default_method_container.c.i
-
-sources/lang/aio_method/default_method_container/aio_default_method_container.s: sources/lang/aio_method/default_method_container/aio_default_method_container.c.s
-
-.PHONY : sources/lang/aio_method/default_method_container/aio_default_method_container.s
-
-# target to generate assembly for a file
-sources/lang/aio_method/default_method_container/aio_default_method_container.c.s:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_method/default_method_container/aio_default_method_container.c.s
-.PHONY : sources/lang/aio_method/default_method_container/aio_default_method_container.c.s
 
 sources/lang/aio_method/method_definition/aio_method_definition.obj: sources/lang/aio_method/method_definition/aio_method_definition.c.obj
 
@@ -527,32 +500,32 @@ sources/lib/collections/lists/string_list.c.s:
 	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/collections/lists/string_list.c.s
 .PHONY : sources/lib/collections/lists/string_list.c.s
 
-sources/lib/collections/maps/aio_file_map.obj: sources/lib/collections/maps/aio_file_map.c.obj
+sources/lib/collections/maps/aio_context_map.obj: sources/lib/collections/maps/aio_context_map.c.obj
 
-.PHONY : sources/lib/collections/maps/aio_file_map.obj
+.PHONY : sources/lib/collections/maps/aio_context_map.obj
 
 # target to build an object file
-sources/lib/collections/maps/aio_file_map.c.obj:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/collections/maps/aio_file_map.c.obj
-.PHONY : sources/lib/collections/maps/aio_file_map.c.obj
+sources/lib/collections/maps/aio_context_map.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/collections/maps/aio_context_map.c.obj
+.PHONY : sources/lib/collections/maps/aio_context_map.c.obj
 
-sources/lib/collections/maps/aio_file_map.i: sources/lib/collections/maps/aio_file_map.c.i
+sources/lib/collections/maps/aio_context_map.i: sources/lib/collections/maps/aio_context_map.c.i
 
-.PHONY : sources/lib/collections/maps/aio_file_map.i
+.PHONY : sources/lib/collections/maps/aio_context_map.i
 
 # target to preprocess a source file
-sources/lib/collections/maps/aio_file_map.c.i:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/collections/maps/aio_file_map.c.i
-.PHONY : sources/lib/collections/maps/aio_file_map.c.i
+sources/lib/collections/maps/aio_context_map.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/collections/maps/aio_context_map.c.i
+.PHONY : sources/lib/collections/maps/aio_context_map.c.i
 
-sources/lib/collections/maps/aio_file_map.s: sources/lib/collections/maps/aio_file_map.c.s
+sources/lib/collections/maps/aio_context_map.s: sources/lib/collections/maps/aio_context_map.c.s
 
-.PHONY : sources/lib/collections/maps/aio_file_map.s
+.PHONY : sources/lib/collections/maps/aio_context_map.s
 
 # target to generate assembly for a file
-sources/lib/collections/maps/aio_file_map.c.s:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/collections/maps/aio_file_map.c.s
-.PHONY : sources/lib/collections/maps/aio_file_map.c.s
+sources/lib/collections/maps/aio_context_map.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/collections/maps/aio_context_map.c.s
+.PHONY : sources/lib/collections/maps/aio_context_map.c.s
 
 sources/lib/collections/maps/aio_method_definition_map.obj: sources/lib/collections/maps/aio_method_definition_map.c.obj
 
@@ -1217,21 +1190,18 @@ help:
 	@echo ... sources/lang/aio_core/aio_core.obj
 	@echo ... sources/lang/aio_core/aio_core.i
 	@echo ... sources/lang/aio_core/aio_core.s
-	@echo ... sources/lang/aio_file/aio_file.obj
-	@echo ... sources/lang/aio_file/aio_file.i
-	@echo ... sources/lang/aio_file/aio_file.s
-	@echo ... sources/lang/aio_file/aio_file_builder.obj
-	@echo ... sources/lang/aio_file/aio_file_builder.i
-	@echo ... sources/lang/aio_file/aio_file_builder.s
+	@echo ... sources/lang/aio_file/aio_context.obj
+	@echo ... sources/lang/aio_file/aio_context.i
+	@echo ... sources/lang/aio_file/aio_context.s
+	@echo ... sources/lang/aio_file/aio_context_builder.obj
+	@echo ... sources/lang/aio_file/aio_context_builder.i
+	@echo ... sources/lang/aio_file/aio_context_builder.s
 	@echo ... sources/lang/aio_method/aio_method.obj
 	@echo ... sources/lang/aio_method/aio_method.i
 	@echo ... sources/lang/aio_method/aio_method.s
 	@echo ... sources/lang/aio_method/bundle/aio_bundle.obj
 	@echo ... sources/lang/aio_method/bundle/aio_bundle.i
 	@echo ... sources/lang/aio_method/bundle/aio_bundle.s
-	@echo ... sources/lang/aio_method/default_method_container/aio_default_method_container.obj
-	@echo ... sources/lang/aio_method/default_method_container/aio_default_method_container.i
-	@echo ... sources/lang/aio_method/default_method_container/aio_default_method_container.s
 	@echo ... sources/lang/aio_method/method_definition/aio_method_definition.obj
 	@echo ... sources/lang/aio_method/method_definition/aio_method_definition.i
 	@echo ... sources/lang/aio_method/method_definition/aio_method_definition.s
@@ -1256,9 +1226,9 @@ help:
 	@echo ... sources/lib/collections/lists/string_list.obj
 	@echo ... sources/lib/collections/lists/string_list.i
 	@echo ... sources/lib/collections/lists/string_list.s
-	@echo ... sources/lib/collections/maps/aio_file_map.obj
-	@echo ... sources/lib/collections/maps/aio_file_map.i
-	@echo ... sources/lib/collections/maps/aio_file_map.s
+	@echo ... sources/lib/collections/maps/aio_context_map.obj
+	@echo ... sources/lib/collections/maps/aio_context_map.i
+	@echo ... sources/lib/collections/maps/aio_context_map.s
 	@echo ... sources/lib/collections/maps/aio_method_definition_map.obj
 	@echo ... sources/lib/collections/maps/aio_method_definition_map.i
 	@echo ... sources/lib/collections/maps/aio_method_definition_map.s

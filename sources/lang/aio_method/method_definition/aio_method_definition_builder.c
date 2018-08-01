@@ -3,12 +3,12 @@
 #include <stdio.h>
 #include <ctype.h>
 #include <process.h>
-#include "../../../../headers/lang/object/object_manager/aio_nexus.h"
 #include "../../../../headers/lib/collections/lists/string_list.h"
 #include "../../../../headers/lib/utils/string_utils/string_utils.h"
 #include "../../../../headers/lib/utils/operation_utils/operation_utils.h"
+#include "../../../../headers/lang/aio_core/aio_core.h"
 
-aio_nexus *core;
+aio_core *core;
 
 //Passed JUnitTest!
 string_list *get_source_code_of_method(char *method_name, string_list *source_code, int start_index) {
@@ -65,41 +65,6 @@ string_list *get_args_if_correct(char **args) {
         }
     }
     return arg_list;
-}
-
-//FIXME: Make declaration list because you can create overloading =)
-//Passed JUnitTest!
-aio_declaration *get_declaration_of_method(char *method_name, string_list *source_code, int start_index) {
-    int current_index = start_index - 1;
-    char *input_line = get_string_in_list_by_index(source_code, current_index);
-    char *current_line = trim(input_line);
-    while (strcmp(current_line, "") != 0 && current_index >= 0) {
-        char *declaration_prefix = "~dec:";
-        int starts_as_declaration = starts_with_prefix(current_line, declaration_prefix);
-        if (starts_as_declaration == 0) {
-            //Remove declaration prefix:
-            char *bracket_line = remove_prefix(current_line, declaration_prefix);
-            //<<w+<<:
-            if (strlen(bracket_line) > 4 && is_correct_placed_brackets(bracket_line) == 0) {
-                //Remove brackets:
-                char *left_padding = remove_prefix(bracket_line, "<<");
-                char *right_padding = remove_suffix(left_padding, "<<");
-                //Split naked args;
-                char **dirty_split_args = split_by_string(right_padding, ",");
-                //Trim all args:
-                char **args = trim_all(dirty_split_args, _msize(dirty_split_args) / 4);
-                string_list *arg_list = get_args_if_correct(args);
-                aio_declaration *aio_declaration = new_aio_declaration(method_name, arg_list);
-                return aio_declaration;
-            } else {
-                perror("invalid bracket placement in declaration!");
-                exit(1);
-            }
-        } else {
-            current_line = get_string_in_list_by_index(source_code, --current_index);
-        }
-    }
-    return NULL;
 }
 
 //Passed JUnitTest!
@@ -159,34 +124,20 @@ int is_method_in_the_other_file(const char *expression) {
     return -1;
 }
 
-//Passed JUnitTest!
-enum aio_method_size_type get_size_type_of_method(string_list *method_code) {
-    if (method_code->size == 1) {
-        char *trim_line = trim(method_code->strings[0]);
-        if (is_method_in_the_same_file(trim_line) == 0
-            || is_default_operations(trim_line) == 0
-            || is_method_in_the_other_file(trim_line) == 0) {
-            return THE_SHORTEST;
-        } else {
-            return SHORT;
-        }
-    }
-    return DEFAULT;
+aio_variable_definition_map *get_arg_definition_map() {
+    return NULL;
+}
+
+string_list *get_return_type_list() {
+    return NULL;
 }
 
 //Passed JUnitTest!
 aio_method_definition *build_aio_method_definition(char *method_name, string_list *source_code, int start_index) {
-    //Create aio declaration:
-    aio_declaration *declaration = get_declaration_of_method(method_name, source_code, start_index);
-    //Create aio annotation list:
-    aio_annotation_list *annotation_list = get_annotations_of_method(method_name, source_code, start_index);
-    if (is_default_behaviour(core) == 0) {
-        //Create string list of method code:
-        string_list *method_code = get_source_code_of_method(method_name, source_code, start_index);
-        //Set method size type:
-        enum aio_method_size_type size_type = get_size_type_of_method(method_code);
-        return new_aio_method_definition(method_name, declaration, annotation_list, method_code, size_type);
-    } else {
-        return NULL;
-    }
+    aio_variable_definition_map *arg_definition_map = get_arg_definition_map();
+    string_list *return_type_list = get_return_type_list();
+    //Create string list of method code:
+    string_list *method_code = get_source_code_of_method(method_name, source_code, start_index);
+    //Set method size type:
+    return new_aio_method_definition(method_name, arg_definition_map, method_code, return_type_list);
 }

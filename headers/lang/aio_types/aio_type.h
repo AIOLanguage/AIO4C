@@ -7,7 +7,7 @@
 #define VOID "Voi"
 
 enum aio_type {
-    AIO_INT, AIO_DOU, AIO_STR, AIO_VOI
+    AIO_INT, AIO_DOU, AIO_STR, AIO_BOO, AIO_VOI
 };
 
 void set_aio_type(const_string, enum aio_type *type);
@@ -18,8 +18,8 @@ boolean is_aio_dou_type(enum aio_type type);
 
 boolean is_aio_str_type(enum aio_type type);
 
-string int_to_str(int src);
+boolean is_aio_boo_type(enum aio_type type);
 
-string double_to_str(double src);
+boolean is_aio_voi_type(enum aio_type type);
 
 #endif //AIO_TYPE_H

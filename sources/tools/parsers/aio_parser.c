@@ -6,18 +6,18 @@
 #include "../../../headers/tools/parsers/aio_parser.h"
 
 aio_str
-parse_line_expression(aio_file *object, aio_method_definition *method_definition,
+parse_line_expression(aio_file *context, aio_method_definition *method_definition,
                       aio_method_container *method_container,
                       char *code_line) {
     char *result;
     //첫 단어는 "int"입니다.
-    result = parse_in_line_expression(object, method_definition, method_container, code_line);
+    result = parse_in_line_expression(context, method_definition, method_container, code_line);
     //첫 단어는 "dou"입니다.
-    result = parse_dou_line_expression(object, method_definition, method_container, code_line);
+    result = parse_dou_line_expression(context, method_definition, method_container, code_line);
     //첫 단어는 "dou"입니다.
-    result = parse_cha_line_expression(object, method_definition, method_container, code_line);
+    result = parse_cha_line_expression(context, method_definition, method_container, code_line);
     //첫 단어는 "dou"입니다.
-    result = parse_str_line_expression(object, method_definition, method_container, code_line);
+    result = parse_str_line_expression(context, method_definition, method_container, code_line);
 }
 
 aio_variable *get_variable_from_method_container(char *variable_name, aio_method_container *method_container) {

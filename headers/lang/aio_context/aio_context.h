@@ -18,14 +18,14 @@ typedef struct aio_method_manager {
 
 aio_method_manager *new_aio_method_manager();
 
-typedef struct aio_file {
+typedef struct aio_context {
     const_string name;
     string_list *source_code;
     aio_method_manager *method_manager;
-} aio_file;
+} aio_context;
 
-aio_file *new_aio_file(const_string path);
+aio_context *new_aio_context(const_string path);
 
-void invoke_method_in_manager(aio_file *object, const_string method_name, aio_bundle *bundle);
+void invoke_method_in_manager(aio_context *context, const_string method_name, aio_bundle *bundle);
 
 #endif //AIO_FILE_H

@@ -5,7 +5,6 @@
 #include <ctype.h>
 #include <stdbool.h>
 #include "../../../headers/lib/utils/string_utils/string_utils.h"
-#include "../../../headers/lang/aio_file/aio_file.h"
 #include "../../../headers/lib/utils/error_utils/error_utils.h"
 #include "../../../headers/lang/aio_core/aio_core.h"
 #include "../../../headers/lang/aio_types/aio_type.h"
@@ -167,9 +166,9 @@ boolean is_valid_args(const_string code_line, aio_variable_map **variable_map_re
     return false;
 }
 
-void find_methods_in_manager(aio_file *aio_object) {
-    for (int i = 0; i < aio_object->source_code->size; ++i) {
-        string code_line = trim(aio_object->source_code->strings[i]);
+void find_methods_in_manager(aio_context *context) {
+    for (int i = 0; i < context->source_code->size; ++i) {
+        string code_line = trim(context->source_code->strings[i]);
         int code_line_length = strlen(code_line);
         if (code_line_length > 1) {
             if (starts_with_prefix(code_line, AIO_COMMENTS)) {
@@ -225,8 +224,8 @@ void find_methods_in_manager(aio_file *aio_object) {
             }
             if (!is_found_close_brace) {
                 add_in_string_list(source_code, substring(trim_rest_string, start_body, rest_length - start_body));
-                for (int j = i + 1; j < aio_object->source_code->size; ++j) {
-                    code_line = aio_object->source_code->strings[j];
+                for (int j = i + 1; j < context->source_code->size; ++j) {
+                    code_line = context->source_code->strings[j];
                     code_line_length = strlen(code_line);
                     for (int k = 0; k < code_line_length; ++k) {
                         if (trim_rest_string[k] == '{') {
@@ -257,7 +256,8 @@ void find_methods_in_manager(aio_file *aio_object) {
             if (!is_found_close_brace) {
                 throw_error("cannot close method brace!");
             }
-            aio_method_definition *method_definition = new_aio_method_definition(method_name, arg_map, source_code);
+            aio_method_definition *method_definition = new_aio_method_definition(method_name, arg_map, source_code,
+                                                                                 NULL);
         }
     }
 }

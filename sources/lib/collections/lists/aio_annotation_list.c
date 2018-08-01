@@ -6,7 +6,7 @@
 
 //Passed JUnitTest!
 aio_annotation_list *new_annotation_list() {
-    //Create the same mutable_by_type list:
+    //Create the same is_mutable_by_type list:
     aio_annotation_list *annotation_list = calloc(1, sizeof(aio_annotation_list));
     //Create capacity:
     annotation_list->capacity = 2;

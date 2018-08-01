@@ -15,6 +15,8 @@ typedef char **string_array;
 
 typedef const char **const_string_array;
 
+string int_to_string(int src);
+
 string double_to_string(double src);
 
 string_array split_by_string(const_string src, const_string delimiter); //끝난!

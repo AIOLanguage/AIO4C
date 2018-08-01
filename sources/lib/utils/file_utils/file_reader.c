@@ -35,7 +35,7 @@ string_pair *extract_name_and_folder_path_from_path(char *path) {
         unsigned size = (unsigned int) (end_of_object_name - start_of_object_name + 1);
         char *object_name = calloc(size + 1, sizeof(char));
         if (object_name == NULL) {
-            perror("can not allocate memory for aio_file name!");
+            perror("can not allocate memory for aio_context name!");
             exit(1);
         }
         for (int j = 0; j < size; ++j) {
@@ -52,7 +52,7 @@ string_pair *extract_name_and_folder_path_from_path(char *path) {
         string_pair *nameVsFolder = new_string_pair(object_name, folder_path);
         return nameVsFolder;
     }
-    perror("invalid aio aio_file name error!");
+    perror("invalid aio aio_context name error!");
     exit(1);
 }
 

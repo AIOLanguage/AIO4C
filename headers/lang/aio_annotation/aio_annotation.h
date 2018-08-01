@@ -4,11 +4,10 @@
 #define AIO_ANNOTATION_H
 
 typedef struct aio_annotation {
-    const_string method_name;
-    const_string annotation_type;
+    const_string name;
 } aio_annotation;
 
-aio_annotation *new_aio_annotation(const_string methodName, const_string annotationType);
+aio_annotation *new_aio_annotation(const_string name);
 
 void delete_aio_annotation(aio_annotation *annotation);
 

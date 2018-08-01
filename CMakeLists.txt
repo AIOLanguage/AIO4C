@@ -7,19 +7,20 @@ add_executable(AIO sources/main/main.c
         sources/lang/reserved_names/aio_reserved_names_container.c
         headers/lang/aio_annotation/aio_annotation.h
         headers/lang/aio_reserved_names/aio_reserved_names_container.h
-        headers/lang/aio_file/aio_file.h headers/lib/collections/lists/string_list.h
+        headers/lang/aio_context/aio_context.h headers/lib/collections/lists/string_list.h
         sources/lib/collections/lists/string_list.c
         headers/lang/aio_method/bundle/aio_bundle.h
-        headers/lang/aio_method/method_definition/aio_method_size_type.h
         headers/lang/aio_method/method_definition/aio_method_definition.h
-        headers/lang/aio_method/variable/aio_variable.h headers/lang/aio_types/aio_type.h
-        sources/lang/aio_types/aio_type.c sources/lib/collections/maps/aio_file_map.c
-        headers/lib/collections/maps/aio_file_map.h headers/lang/aio_core/aio_core.h
+        headers/lang/aio_method/variable/aio_variable.h
+        headers/lang/aio_method/variable/aio_variable_definition.h
+        headers/lang/aio_types/aio_type.h
+        sources/lang/aio_types/aio_type.c sources/lib/collections/maps/aio_context_map.c
+        headers/lib/collections/maps/aio_context_map.h headers/lang/aio_core/aio_core.h
         sources/lang/aio_core/aio_core.c
         headers/lib/collections/maps/aio_method_definition_map.h
         sources/lib/collections/maps/aio_method_definition_map.c
-        sources/lang/aio_file/aio_file.c
-        sources/lang/aio_file/aio_file_builder.c
+        sources/lang/aio_file/aio_context.c
+        sources/lang/aio_file/aio_context_builder.c
         sources/lang/aio_method/method_definition/aio_method_definition.c
         sources/lang/aio_annotation/aio_annotation.c
         headers/lib/collections/lists/aio_annotation_list.h
@@ -27,8 +28,6 @@ add_executable(AIO sources/main/main.c
         sources/lang/aio_method/bundle/aio_bundle.c
         sources/lang/aio_method/variable/aio_variable.c
         headers/lang/aio_method/result/aio_result.h sources/lang/aio_method/result/aio_result.c
-        headers/lang/aio_native/aio_default_method_container/aio_default_method_container.h
-        sources/lang/aio_method/default_method_container/aio_default_method_container.c
         sources/lib/utils/string_utils/string_utils.c headers/lib/utils/string_utils/string_utils.h
         headers/lang/aio_method/method_definition/aio_method_definition_builder.h
         sources/lang/aio_method/method_definition/aio_method_definition_builder.c
@@ -36,16 +35,11 @@ add_executable(AIO sources/main/main.c
         headers/tools/analysis/method_reproducer/aio_method_reproducer.h
         sources/tools/analysis/method_reproducer/aio_method_reproducer.c
         headers/lib/collections/maps/aio_variable_map.h
+        headers/lib/collections/maps/aio_variable_definition_map.h
         sources/lib/collections/maps/aio_variable_map.c
         headers/lang/aio_method/aio_method_container.h
-        headers/tools/analysis/method_reproducer/the_shortest/aio_the_shortest_reproducer.h
-        headers/tools/analysis/method_reproducer/default/aio_default_reproducer.h
-        headers/tools/analysis/method_reproducer/short/aio_short_reproducer.h
         headers/lib/utils/operation_utils/operation_utils.h
         sources/lib/utils/operation_utils/operation_utils.c
-        headers/tools/analysis/method_reproducer/the_shortest/plus_for_each_reproducer/aio_plus_for_each_reproducer.h
-        headers/tools/analysis/method_reproducer/the_shortest/multiply_for_each_reproducer/aio_multiply_for_each_reproducer.h
-        headers/tools/analysis/method_reproducer/the_shortest/concat_for_each_reproducer/aio_concat_for_each_reproducer.h
         sources/lib/utils/file_utils/file_reader.c
         headers/lib/utils/file_utils/file_reader.h
         sources/tools/analysis/method_reproducer/the_shortest/aio_the_shortest_reproducer.c

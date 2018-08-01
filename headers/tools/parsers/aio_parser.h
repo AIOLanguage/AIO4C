@@ -1,26 +1,27 @@
 #ifndef AIO_PARSER_H
 #define AIO_PARSER_H
 
-#include "../../lang/methods/aio_method_container.h"
-#include "../../lang/object/aio_file.h"
 
+//제목들 (headers):
 
-//제목들:
+#include "../../lang/aio_method/aio_method_container.h"
+#include "../../lang/aio_method/method_definition/aio_method_definition.h"
+#include "../../lang/aio_context/aio_context.h"
 
-aio_str parse_line_expression(aio_file *object, aio_method_definition *method_definition,
-                              aio_method_container *method_container, char *code_line);
+string parse_line_expression(aio_context *context, aio_method_definition *method_definition,
+                             aio_method_container *method_container, const_string code_line);
 
-aio_str parse_in_line_expression(aio_file *object, aio_method_definition *method_definition,
-                                 aio_method_container *method_container, char *code_line);
+string parse_in_line_expression(aio_context *context, aio_method_definition *method_definition,
+                                aio_method_container *method_container, const_string code_line);
 
-aio_str parse_dou_line_expression(aio_file *object, aio_method_definition *method_definition,
-                                  aio_method_container *method_container, char *code_line);
+string parse_dou_line_expression(aio_context *context, aio_method_definition *method_definition,
+                                 aio_method_container *method_container, const_string code_line);
 
-aio_str parse_cha_line_expression(aio_file *object, aio_method_definition *method_definition,
-                                  aio_method_container *method_container, char *code_line);
+string parse_str_line_expression(aio_context *context, aio_method_definition *method_definition,
+                                 aio_method_container *method_container, const_string code_line);
 
-aio_str parse_str_line_expression(aio_file *object, aio_method_definition *method_definition,
-                                  aio_method_container *method_container, char *code_line);
+string parse_boo_line_expression(aio_context *context, aio_method_definition *method_definition,
+                                 aio_method_container *method_container, const_string code_line);
 
 aio_variable *get_variable_from_method_container(char *variable_name, aio_method_container *method_container);
 

@@ -3,6 +3,7 @@
 #include <mem.h>
 #include <comip.h>
 #include "../../../headers/lang/types/aio_type.h"
+#include "../../../headers/lang/aio_types/aio_type.h"
 
 //Passed JUnitTest!
 int matches_int(char *word) {
