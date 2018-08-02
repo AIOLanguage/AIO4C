@@ -11,6 +11,10 @@ add_executable(AIO sources/main/main.c
         sources/lib/collections/lists/string_list.c
         headers/lang/aio_method/bundle/aio_bundle.h
         headers/lang/aio_method/method_definition/aio_method_definition.h
+        headers/lang/aio_method/method_definition/instructions/aio_instruction_holder.h
+        headers/lang/aio_method/method_definition/instructions/aio_instructions.h
+        headers/lang/aio_method/method_definition/instructions/aio_instruction_entry.h
+        headers/lib/collections/lists/aio_instruction_list.h
         headers/lang/aio_method/variable/aio_variable.h
         headers/lang/aio_method/variable/aio_variable_definition.h
         headers/lang/aio_types/aio_type.h

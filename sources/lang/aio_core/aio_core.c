@@ -14,7 +14,7 @@ char core_types[5][4] = {
         {VOID}
 };
 
-aio_core *init_aio_core() {
+void inflate_aio_core() {
     string_set *type_set = new_string_set();
     for (int i = 0; i < sizeof(core_types); ++i) {
         const_string core_type = core_types[i];
@@ -25,7 +25,7 @@ aio_core *init_aio_core() {
     core->aio_type_set = type_set;
 }
 
-void build_aio_context_and_put_in_core_contex_map(const_string path) {
+void inflate_aio_context_and_put_in_core(const_string path) {
     aio_context *aio_context = new_aio_context(path);
     put_aio_context_in_map(core->core_context_map, aio_context);
 }
@@ -34,6 +34,6 @@ boolean contains_aio_type_in_set(const_string string) {
     return contains_string_in_set(core->aio_type_set, string);
 }
 
-void delete_aio_core() {
+void destroy_aio_core() {
 
 }

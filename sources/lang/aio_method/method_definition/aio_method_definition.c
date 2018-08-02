@@ -9,6 +9,6 @@ new_aio_method_definition(const_string name, aio_variable_definition_map *arg_de
     aio_method_definition *method_definition = calloc(1, sizeof(aio_method_definition));
     method_definition->name = name;
     method_definition->source_code = source_code;
-    method_definition->arg_definition_map = arg_definition_map;
+    method_definition->input_argument_definition_map = arg_definition_map;
     return method_definition;
 }

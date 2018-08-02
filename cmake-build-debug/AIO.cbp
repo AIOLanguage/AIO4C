@@ -98,6 +98,15 @@
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lang/aio_method/method_definition/aio_method_definition_builder.h">
 			<Option target="AIO"/>
 		</Unit>
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lang/aio_method/method_definition/instructions/aio_instruction_entry.h">
+			<Option target="AIO"/>
+		</Unit>
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lang/aio_method/method_definition/instructions/aio_instruction_holder.h">
+			<Option target="AIO"/>
+		</Unit>
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lang/aio_method/method_definition/instructions/aio_instructions.h">
+			<Option target="AIO"/>
+		</Unit>
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lang/aio_method/result/aio_result.h">
 			<Option target="AIO"/>
 		</Unit>
@@ -117,6 +126,9 @@
 			<Option target="AIO"/>
 		</Unit>
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lib/collections/lists/aio_annotation_list.h">
+			<Option target="AIO"/>
+		</Unit>
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lib/collections/lists/aio_instruction_list.h">
 			<Option target="AIO"/>
 		</Unit>
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lib/collections/lists/string_list.h">

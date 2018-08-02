@@ -2,6 +2,7 @@
 #define AIO_VALUE_H
 
 #include "../../../lib/utils/string_utils/string_utils.h"
+#include "../variable/aio_variable.h"
 
 typedef union aio_value {
     int int_acc;

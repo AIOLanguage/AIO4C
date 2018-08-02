@@ -3,15 +3,16 @@
 #include "../../../lib/collections/lists/string_list.h"
 #include "../../../lib/collections/maps/aio_variable_map.h"
 #include "../../../lib/collections/maps/aio_variable_definition_map.h"
+#include "instructions/aio_instruction_holder.h"
 
 #ifndef AIO_METHOD_DEFINITION_H
 #define AIO_METHOD_DEFINITION_H
 
 typedef struct aio_method_definition {
     const_string name;
-    aio_variable_definition_map *arg_definition_map;
-    string_list *return_type_list;
-    string_list *source_code;
+    aio_variable_definition_map *input_argument_definition_map;
+    string_list *output_type_list;
+    aio_instruction_holder *instruction;
     aio_annotation_list *annotation_list;
 } aio_method_definition;
 
