@@ -7,7 +7,7 @@
 typedef struct aio_variable_map {
     int capacity;
     int size;
-    string_array names;
+    const_string_array names;
     aio_variable **variables;
 } aio_variable_map;
 

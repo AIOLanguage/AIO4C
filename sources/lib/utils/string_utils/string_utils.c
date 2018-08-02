@@ -17,7 +17,7 @@ boolean is_white_space(char c) {
 
 //박수!
 //Passed JUnitTest!
-char **filter(char **src, int src_size, int (*filter_function)(const char *)) {
+string_array filter(string_array src, int src_size, const_boolean (*filter_function)(const_string)) {
     int *new_indices = calloc((size_t) src_size, sizeof(int));
     char **dst;
     size_t new_length = 0;
@@ -48,7 +48,7 @@ char **filter(char **src, int src_size, int (*filter_function)(const char *)) {
 }
 
 //Passed JUnitTest!
-int is_not_empty_string(const char *string) {
+const_boolean is_not_empty_string(const_string string) {
     if (strcmp(string, "") != 0) {
         return TRUE;
     } else {
@@ -57,13 +57,13 @@ int is_not_empty_string(const char *string) {
 }
 
 //Passed JUnitTest!
-int is_empty_string(char *string) {
-    return strcmp(string, "");
+const_boolean is_empty_string(const_string string) {
+    return strcmp(string, "") == 0;
 }
 
 //준비된!
 //Passed JUnitTest!
-char *join_to_string(char **src_strings, char *delimiter, const int src_size) {
+const_string join_to_string(const_string_array src_strings, const_string delimiter, const int src_size) {
     char *dst;
     int delimiter_length = strlen(delimiter);
     //Delimiters less than values by 1:
@@ -98,7 +98,7 @@ char *join_to_string(char **src_strings, char *delimiter, const int src_size) {
 }
 
 //Passed JUnitTest!
-int is_word(char *line) {
+const_boolean is_word(const_string line) {
     int length = strlen(line);
     if (length < 1) {
         return FALSE;
@@ -125,7 +125,7 @@ char *substring(const char *string, int offset, int length) {
 }
 
 //Passed JUnitTest!
-void concat_string_to_string(char *dst, const char *src) {
+void concat_string_to_string(string dst, const_string src) {
     strcat(dst, src);
 }
 

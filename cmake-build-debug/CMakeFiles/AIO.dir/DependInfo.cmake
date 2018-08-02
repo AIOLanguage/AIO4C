@@ -5,9 +5,9 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
   "C:/Users/StarKRE/CLionProjects/AIO/sources/lang/aio_annotation/aio_annotation.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lang/aio_annotation/aio_annotation.c.obj"
+  "C:/Users/StarKRE/CLionProjects/AIO/sources/lang/aio_context/aio_context.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lang/aio_context/aio_context.c.obj"
+  "C:/Users/StarKRE/CLionProjects/AIO/sources/lang/aio_context/aio_context_builder.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lang/aio_context/aio_context_builder.c.obj"
   "C:/Users/StarKRE/CLionProjects/AIO/sources/lang/aio_core/aio_core.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lang/aio_core/aio_core.c.obj"
-  "C:/Users/StarKRE/CLionProjects/AIO/sources/lang/aio_file/aio_context.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lang/aio_file/aio_context.c.obj"
-  "C:/Users/StarKRE/CLionProjects/AIO/sources/lang/aio_file/aio_context_builder.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lang/aio_file/aio_context_builder.c.obj"
   "C:/Users/StarKRE/CLionProjects/AIO/sources/lang/aio_method/aio_method.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lang/aio_method/aio_method.c.obj"
   "C:/Users/StarKRE/CLionProjects/AIO/sources/lang/aio_method/bundle/aio_bundle.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lang/aio_method/bundle/aio_bundle.c.obj"
   "C:/Users/StarKRE/CLionProjects/AIO/sources/lang/aio_method/method_definition/aio_method_definition.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lang/aio_method/method_definition/aio_method_definition.c.obj"

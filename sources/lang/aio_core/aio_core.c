@@ -26,8 +26,8 @@ void inflate_aio_core() {
 }
 
 void inflate_aio_context_and_put_in_core(const_string path) {
-    aio_context *aio_context = new_aio_context(path);
-    put_aio_context_in_map(core->core_context_map, aio_context);
+    aio_context *context = new_aio_context(path);
+    put_aio_context_in_map(core->core_context_map, context);
 }
 
 boolean contains_aio_type_in_set(const_string string) {

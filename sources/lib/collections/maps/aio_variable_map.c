@@ -3,16 +3,13 @@
 #include <stdio.h>
 #include <process.h>
 #include "../../../../headers/lib/collections/maps/aio_variable_map.h"
+#include "../../../../headers/lib/utils/error_utils/error_utils.h"
 
 aio_variable_map *new_aio_variable_map() {
     aio_variable_map *variable_map = calloc(1, sizeof(aio_variable_map));
-    //create capacity:
     variable_map->capacity = 2;
-    //create size:
     variable_map->size = 0;
-    //create char capacity that equals 2:
     variable_map->names = calloc(2, sizeof(string));
-    //create definitions that equals 2:
     variable_map->variables = calloc(2, sizeof(aio_variable *));
     return variable_map;
 }
@@ -28,28 +25,28 @@ void update_memory_in_variable_map(aio_variable_map *variable_map) {
 
 void put_aio_variable_in_map(aio_variable_map *variable_map, aio_variable *variable) {
     for (int i = 0; i < variable_map->size; ++i) {
-        if (strcmp(variable_map->names[i], variable->name) == 0) {
+        if (strcmp(variable_map->names[i], variable->variable_definition->name) == 0) {
             perror("Cannot put aio_context in definition map");
         }
     }
     //Check to update:
     update_memory_in_variable_map(variable_map);
     //Set key:
-    variable_map->names[variable_map->size] = malloc(strlen(variable->name));
+    variable_map->names[variable_map->size] = malloc(strlen(variable->variable_definition->name));
     if (variable_map->names[variable_map->size] == NULL) {
         perror("cannot allocate memory for names!");
     }
-    variable_map->names[variable_map->size] = variable->name;
+    variable_map->names[variable_map->size] = variable->variable_definition->name;
     //Set value:
     variable_map->variables[variable_map->size] = variable;
     variable_map->size++;
 }
 
-aio_variable *get_aio_variable_in_map_by_name(aio_variable_map *variable_map, char *name) {
+aio_variable *get_aio_variable_in_map_by_name(aio_variable_map *variable_map, const_string name) {
     for (int i = 0; i < strlen(name); ++i) {
         if (strcmp(variable_map->names[i], name) == 0) {
             return variable_map->variables[i];
         }
     }
-    perror("cannot get aio variable in map");
+    throw_error("cannot get aio variable in map");
 }

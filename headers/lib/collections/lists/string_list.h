@@ -8,7 +8,7 @@
 typedef struct string_list {
     int capacity;
     int size;
-    string_array strings;
+    const_string_array strings;
 } string_list;
 
 string_list *new_string_list();

@@ -20,7 +20,7 @@ aio_method_manager *new_aio_method_manager();
 
 typedef struct aio_context {
     const_string name;
-    string_list *source_code;
+    const_string source_code;
     aio_method_manager *method_manager;
 } aio_context;
 

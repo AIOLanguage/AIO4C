@@ -6,6 +6,6 @@
 
 #define CHUNK 1024
 
-string_list *read_file_and_collect_to_string_list(const_string path);
+string read_file_and_join_to_string_without_comments(const_string path);
 
 #endif //FILE_READER_H

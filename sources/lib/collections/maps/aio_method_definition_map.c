@@ -3,31 +3,20 @@
 #include <stdio.h>
 #include <malloc.h>
 #include "../../../../headers/lib/collections/maps/aio_method_definition_map.h"
+#include "../../../../headers/lib/utils/error_utils/error_utils.h"
 
 //Passed JUnitTests!
 aio_method_definition_map *new_aio_method_definition_map() {
     //Create the same definition map:
     aio_method_definition_map *definition_map = calloc(1, sizeof(aio_method_definition_map));
-    if (definition_map == NULL) {
-        perror("can not allocate memory for aio definition map");
-        exit(1);
-    }
     //Create capacity:
     definition_map->capacity = 2;
     //Create size:
     definition_map->size = 0;
     //Create char capacity that equals 2:
     definition_map->names = calloc(2, sizeof(char *));
-    if (definition_map->names == NULL) {
-        perror("can not allocate memory for capacity in aio definition map");
-        exit(1);
-    }
     //Create definitions that equals 2:
     definition_map->definitions = calloc(2, sizeof(aio_method_definition *));
-    if (definition_map->definitions == NULL) {
-        perror("can not allocate memory for definitions in aio variable map");
-        exit(1);
-    }
     return definition_map;
 }
 
@@ -42,8 +31,8 @@ void update_memory_in_method_definition_map(aio_method_definition_map *definitio
 }
 
 //Passed JUnitTests!
-void
-put_aio_method_definition_in_map(aio_method_definition_map *definition_map, aio_method_definition *method_definition) {
+void put_aio_method_definition_in_map(aio_method_definition_map *definition_map,
+                                      aio_method_definition *method_definition) {
     for (int i = 0; i < definition_map->size; ++i) {
         if (strcmp(definition_map->names[i], method_definition->name) == 0) {
             perror("duplicate definition of method error!");
@@ -61,12 +50,12 @@ put_aio_method_definition_in_map(aio_method_definition_map *definition_map, aio_
 }
 
 //Passed JUnitTests!
-aio_method_definition *get_aio_method_definition_in_map_by_name(aio_method_definition_map *definition_map, char *name) {
+aio_method_definition *get_aio_method_definition_in_map_by_name(aio_method_definition_map *definition_map,
+                                                                const_string name) {
     for (int i = 0; i < definition_map->size; ++i) {
         if (strcmp(definition_map->names[i], name) == 0) {
             return definition_map->definitions[i];
         }
     }
-    perror("can not get aio method definition in map!!!");
-    exit(1);
+    throw_error("can not get aio method definition in map!!!");
 }

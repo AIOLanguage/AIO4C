@@ -8,7 +8,7 @@ typedef struct aio_context_map {
     int capacity;
     int size;
     const_string_array names;
-    aio_context **objects;
+    aio_context **contexts;
 } aio_context_map;
 
 aio_context_map *new_aio_context_map();

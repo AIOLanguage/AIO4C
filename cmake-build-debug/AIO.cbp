@@ -182,13 +182,13 @@
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lang/aio_annotation/aio_annotation.c">
 			<Option target="AIO"/>
 		</Unit>
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lang/aio_context/aio_context.c">
+			<Option target="AIO"/>
+		</Unit>
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lang/aio_context/aio_context_builder.c">
+			<Option target="AIO"/>
+		</Unit>
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lang/aio_core/aio_core.c">
-			<Option target="AIO"/>
-		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lang/aio_file/aio_context.c">
-			<Option target="AIO"/>
-		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lang/aio_file/aio_context_builder.c">
 			<Option target="AIO"/>
 		</Unit>
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lang/aio_method/aio_method.c">

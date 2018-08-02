@@ -23,8 +23,8 @@ add_executable(AIO sources/main/main.c
         sources/lang/aio_core/aio_core.c
         headers/lib/collections/maps/aio_method_definition_map.h
         sources/lib/collections/maps/aio_method_definition_map.c
-        sources/lang/aio_file/aio_context.c
-        sources/lang/aio_file/aio_context_builder.c
+        sources/lang/aio_context/aio_context.c
+        sources/lang/aio_context/aio_context_builder.c
         sources/lang/aio_method/method_definition/aio_method_definition.c
         sources/lang/aio_annotation/aio_annotation.c
         headers/lib/collections/lists/aio_annotation_list.h

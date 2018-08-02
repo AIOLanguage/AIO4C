@@ -70,7 +70,7 @@ char *trim(const char *src) {
 
 //끝난!
 //PassedJUnit Test!
-char **trim_all(char **strings, int number_of_strings) {
+string_array trim_all(const_string_array strings, int number_of_strings) {
     char **dst;
     dst = calloc((size_t) number_of_strings, sizeof(char *));
     for (int i = 0; i < number_of_strings; ++i) {

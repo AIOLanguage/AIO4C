@@ -2,7 +2,6 @@
 #include <stdio.h>
 #include <mem.h>
 #include <comip.h>
-#include "../../../headers/lang/types/aio_type.h"
 #include "../../../headers/lang/aio_types/aio_type.h"
 
 //Passed JUnitTest!
@@ -96,42 +95,6 @@ void set_type(char *value, enum aio_type *type) {
         *type = AIO_STR;
     } else {
         *type = AIO_VOI;
-    }
-}
-
-//끝난!
-int is_aio_int_type(enum aio_type type) {
-    if (type == AIO_INT) {
-        return 0;
-    } else {
-        return -1;
-    }
-}
-
-//끝난!
-int is_aio_dou_type(enum aio_type type) {
-    if (type == AIO_DOU) {
-        return 0;
-    } else {
-        return -1;
-    }
-}
-
-//끝난!
-int is_aio_cha_type(enum aio_type type) {
-    if (type == AIO_CHA) {
-        return 0;
-    } else {
-        return -1;
-    }
-}
-
-//끝난!
-int is_aio_str_type(enum aio_type type) {
-    if (type == AIO_STR) {
-        return 0;
-    } else {
-        return -1;
     }
 }
 

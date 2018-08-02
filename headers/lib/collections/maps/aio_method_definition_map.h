@@ -6,7 +6,7 @@
 typedef struct aio_method_definition_map {
     int capacity;
     int size;
-    string_array names;
+    const_string_array names;
     aio_method_definition **definitions;
 } aio_method_definition_map;
 

@@ -35,7 +35,7 @@ void update_memory_in_string_list(string_list *string_list) {
 }
 
 //Passed JUnitTests!
-void add_in_string_list(string_list *string_list, char *string) {
+void add_in_string_list(string_list *string_list, const_string string) {
     //Check to update capacity:
     update_memory_in_string_list(string_list);
     //Set string:
@@ -48,17 +48,7 @@ void add_in_string_list(string_list *string_list, char *string) {
     string_list->size++;
 }
 
-//Passed JUnitTests!
-char *get_string_in_list_by_index(string_list *string_list, int index) {
-    if (index < 0 || string_list->size <= index) {
-        perror("cannot get index in string_list");
-        exit(1);
-    } else {
-        return string_list->strings[index];
-    }
-}
-
-int is_string_list_empty(string_list *string_list) {
+boolean is_string_list_empty(string_list *string_list) {
     if (string_list->size == 0) {
         return 0;
     } else {

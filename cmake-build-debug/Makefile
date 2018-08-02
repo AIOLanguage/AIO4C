@@ -149,6 +149,60 @@ sources/lang/aio_annotation/aio_annotation.c.s:
 	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_annotation/aio_annotation.c.s
 .PHONY : sources/lang/aio_annotation/aio_annotation.c.s
 
+sources/lang/aio_context/aio_context.obj: sources/lang/aio_context/aio_context.c.obj
+
+.PHONY : sources/lang/aio_context/aio_context.obj
+
+# target to build an object file
+sources/lang/aio_context/aio_context.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_context/aio_context.c.obj
+.PHONY : sources/lang/aio_context/aio_context.c.obj
+
+sources/lang/aio_context/aio_context.i: sources/lang/aio_context/aio_context.c.i
+
+.PHONY : sources/lang/aio_context/aio_context.i
+
+# target to preprocess a source file
+sources/lang/aio_context/aio_context.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_context/aio_context.c.i
+.PHONY : sources/lang/aio_context/aio_context.c.i
+
+sources/lang/aio_context/aio_context.s: sources/lang/aio_context/aio_context.c.s
+
+.PHONY : sources/lang/aio_context/aio_context.s
+
+# target to generate assembly for a file
+sources/lang/aio_context/aio_context.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_context/aio_context.c.s
+.PHONY : sources/lang/aio_context/aio_context.c.s
+
+sources/lang/aio_context/aio_context_builder.obj: sources/lang/aio_context/aio_context_builder.c.obj
+
+.PHONY : sources/lang/aio_context/aio_context_builder.obj
+
+# target to build an object file
+sources/lang/aio_context/aio_context_builder.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_context/aio_context_builder.c.obj
+.PHONY : sources/lang/aio_context/aio_context_builder.c.obj
+
+sources/lang/aio_context/aio_context_builder.i: sources/lang/aio_context/aio_context_builder.c.i
+
+.PHONY : sources/lang/aio_context/aio_context_builder.i
+
+# target to preprocess a source file
+sources/lang/aio_context/aio_context_builder.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_context/aio_context_builder.c.i
+.PHONY : sources/lang/aio_context/aio_context_builder.c.i
+
+sources/lang/aio_context/aio_context_builder.s: sources/lang/aio_context/aio_context_builder.c.s
+
+.PHONY : sources/lang/aio_context/aio_context_builder.s
+
+# target to generate assembly for a file
+sources/lang/aio_context/aio_context_builder.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_context/aio_context_builder.c.s
+.PHONY : sources/lang/aio_context/aio_context_builder.c.s
+
 sources/lang/aio_core/aio_core.obj: sources/lang/aio_core/aio_core.c.obj
 
 .PHONY : sources/lang/aio_core/aio_core.obj
@@ -175,60 +229,6 @@ sources/lang/aio_core/aio_core.s: sources/lang/aio_core/aio_core.c.s
 sources/lang/aio_core/aio_core.c.s:
 	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_core/aio_core.c.s
 .PHONY : sources/lang/aio_core/aio_core.c.s
-
-sources/lang/aio_file/aio_context.obj: sources/lang/aio_file/aio_context.c.obj
-
-.PHONY : sources/lang/aio_file/aio_context.obj
-
-# target to build an object file
-sources/lang/aio_file/aio_context.c.obj:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_file/aio_context.c.obj
-.PHONY : sources/lang/aio_file/aio_context.c.obj
-
-sources/lang/aio_file/aio_context.i: sources/lang/aio_file/aio_context.c.i
-
-.PHONY : sources/lang/aio_file/aio_context.i
-
-# target to preprocess a source file
-sources/lang/aio_file/aio_context.c.i:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_file/aio_context.c.i
-.PHONY : sources/lang/aio_file/aio_context.c.i
-
-sources/lang/aio_file/aio_context.s: sources/lang/aio_file/aio_context.c.s
-
-.PHONY : sources/lang/aio_file/aio_context.s
-
-# target to generate assembly for a file
-sources/lang/aio_file/aio_context.c.s:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_file/aio_context.c.s
-.PHONY : sources/lang/aio_file/aio_context.c.s
-
-sources/lang/aio_file/aio_context_builder.obj: sources/lang/aio_file/aio_context_builder.c.obj
-
-.PHONY : sources/lang/aio_file/aio_context_builder.obj
-
-# target to build an object file
-sources/lang/aio_file/aio_context_builder.c.obj:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_file/aio_context_builder.c.obj
-.PHONY : sources/lang/aio_file/aio_context_builder.c.obj
-
-sources/lang/aio_file/aio_context_builder.i: sources/lang/aio_file/aio_context_builder.c.i
-
-.PHONY : sources/lang/aio_file/aio_context_builder.i
-
-# target to preprocess a source file
-sources/lang/aio_file/aio_context_builder.c.i:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_file/aio_context_builder.c.i
-.PHONY : sources/lang/aio_file/aio_context_builder.c.i
-
-sources/lang/aio_file/aio_context_builder.s: sources/lang/aio_file/aio_context_builder.c.s
-
-.PHONY : sources/lang/aio_file/aio_context_builder.s
-
-# target to generate assembly for a file
-sources/lang/aio_file/aio_context_builder.c.s:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_file/aio_context_builder.c.s
-.PHONY : sources/lang/aio_file/aio_context_builder.c.s
 
 sources/lang/aio_method/aio_method.obj: sources/lang/aio_method/aio_method.c.obj
 
@@ -1187,15 +1187,15 @@ help:
 	@echo ... sources/lang/aio_annotation/aio_annotation.obj
 	@echo ... sources/lang/aio_annotation/aio_annotation.i
 	@echo ... sources/lang/aio_annotation/aio_annotation.s
+	@echo ... sources/lang/aio_context/aio_context.obj
+	@echo ... sources/lang/aio_context/aio_context.i
+	@echo ... sources/lang/aio_context/aio_context.s
+	@echo ... sources/lang/aio_context/aio_context_builder.obj
+	@echo ... sources/lang/aio_context/aio_context_builder.i
+	@echo ... sources/lang/aio_context/aio_context_builder.s
 	@echo ... sources/lang/aio_core/aio_core.obj
 	@echo ... sources/lang/aio_core/aio_core.i
 	@echo ... sources/lang/aio_core/aio_core.s
-	@echo ... sources/lang/aio_file/aio_context.obj
-	@echo ... sources/lang/aio_file/aio_context.i
-	@echo ... sources/lang/aio_file/aio_context.s
-	@echo ... sources/lang/aio_file/aio_context_builder.obj
-	@echo ... sources/lang/aio_file/aio_context_builder.i
-	@echo ... sources/lang/aio_file/aio_context_builder.s
 	@echo ... sources/lang/aio_method/aio_method.obj
 	@echo ... sources/lang/aio_method/aio_method.i
 	@echo ... sources/lang/aio_method/aio_method.s

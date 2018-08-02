@@ -9,15 +9,16 @@
 #define AIO_METHOD_DEFINITION_H
 
 typedef struct aio_method_definition {
-    const_string name;
-    aio_variable_definition_map *input_argument_definition_map;
-    string_list *output_type_list;
-    aio_instruction_holder *instruction;
     aio_annotation_list *annotation_list;
+    string_list *output_type_list;
+    const_string name;
+    aio_variable_definition_map *arg_definition_map;
+    aio_instruction_holder *instruction_holder;
 } aio_method_definition;
 
-aio_method_definition *new_aio_method_definition(const_string name, aio_variable_definition_map *arg_definition_map,
-                                                 string_list *source_code, string_list *return_type_list);
+aio_method_definition *
+new_aio_method_definition(aio_annotation_list *annotations, string_list *output_type_list, const_string name,
+                          aio_variable_definition_map *arg_definition_map, aio_instruction_holder *instruction_holder);
 
 void delete_aio_method_definition(aio_method_definition *method_definition);
 
