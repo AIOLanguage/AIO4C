@@ -5,7 +5,7 @@
 
 void make_test() {
     inflate_aio_core();
-    const_string aio_file_path = "../aio_programs/test.aio";
+    string aio_file_path = "../aio_programs/test.aio";
     inflate_aio_context_and_put_in_core(aio_file_path);
 }
 

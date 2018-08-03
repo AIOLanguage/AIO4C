@@ -6,7 +6,7 @@
 #include "../../../../headers/lib/utils/double_utils/double_utils.h"
 #include "../../../../headers/lib/utils/error_utils/error_utils.h"
 
-aio_value *new_aio_value(const_string undefined_value) {
+aio_value *new_aio_value(string undefined_value) {
     aio_value *value = calloc(1, sizeof(aio_value *));
     if (matches_int(undefined_value)) {
         const int int_value = string_to_int(undefined_value);

@@ -10,20 +10,12 @@
 string_list *new_string_list() {
     //Create string list:
     string_list *string_list = calloc(1, sizeof(string_list));
-    if (string_list == NULL) {
-        perror("cannot allocate memory for string_list");
-        exit(1);
-    }
     //Create capacity:
     string_list->capacity = 2;
     //Create size:
     string_list->size = 0;
     //Create char capacity that equals 2:
     string_list->strings = calloc(2, sizeof(string));
-    if (string_list->strings == NULL) {
-        perror("can not allocate memory for strings in is_mutable_by_type list of string");
-        exit(1);
-    }
     return string_list;
 }
 

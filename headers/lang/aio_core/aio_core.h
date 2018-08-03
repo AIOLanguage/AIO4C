@@ -9,7 +9,7 @@
 
 typedef struct aio_core {
     aio_context_map *core_context_map;
-    //유형 포함 (keep instruction_types):
+    //유형 포함 (Keep types):
     string_set *aio_type_set;
 } aio_core;
 
@@ -19,7 +19,7 @@ void inflate_aio_core();
 
 void inflate_aio_context_and_put_in_core(const_string path);
 
-boolean contains_aio_type_in_set(const_string string);
+boolean contains_aio_type_in_set(string string);
 
 void destroy_aio_core();
 

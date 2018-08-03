@@ -5,7 +5,7 @@
 #include "../../../../headers/lang/aio_function/aio_function_definition/aio_function_definition.h"
 
 aio_function_definition *
-new_aio_method_definition(aio_annotation_list *annotations, string_list *output_type_list, const_string name,
+new_aio_method_definition(aio_annotation_list *annotations, string_list *output_type_list, string name,
                           aio_variable_definition_map *arg_definition_map, aio_instruction_holder *instruction_holder) {
     aio_function_definition *method_definition = calloc(1, sizeof(aio_function_definition));
     method_definition->annotation_list = annotations;

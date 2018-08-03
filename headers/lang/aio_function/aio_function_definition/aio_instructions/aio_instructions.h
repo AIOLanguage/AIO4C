@@ -44,13 +44,13 @@ typedef struct aio_instruction_holder {
 
 typedef struct aio_assign_instruction {
     aio_instruction_entry *parent_entry_instruction;
-    const_string source_expression_or_variable_name;
-    const_string destination_variable_name;
+    string source_expression_or_variable_name;
+    string destination_variable_name;
 } aio_assign_instruction;
 
 typedef struct aio_if_instruction {
     aio_instruction_entry *parent_entry_instruction;
-    const_string expression;
+    string expression;
     aio_instruction_holder *true_instruction;
     aio_instruction_holder *false_instruction;
 } aio_if_instruction;
@@ -66,7 +66,7 @@ typedef struct aio_loop_instruction {
     aio_variable_definition *pointer_variable_definition;
     //Often for init pointer:
     aio_assign_instruction *start_assign_instruction;
-    const_string loop_condition;
+    string loop_condition;
     //Instructions:
     aio_instruction_list *instruction_list;
     //Often for change counter:
@@ -75,7 +75,7 @@ typedef struct aio_loop_instruction {
 
 typedef struct aio_procedure_instruction {
     aio_instruction_entry *parent_entry_instruction;
-    const_string expression;
+    string expression;
 } aio_procedure_instruction;
 
 typedef struct aio_out_instruction {

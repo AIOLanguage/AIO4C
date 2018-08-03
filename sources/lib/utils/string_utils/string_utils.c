@@ -62,7 +62,7 @@ const_boolean is_empty_string(const_string string) {
 
 //준비된!
 //Passed JUnitTest!
-const_string join_to_string(const_string_array src_strings, const_string delimiter, const int src_size) {
+string join_to_string(string_array src_strings, const_string delimiter, const int src_size) {
     char *dst;
     int delimiter_length = strlen(delimiter);
     //Delimiters less than values by 1:

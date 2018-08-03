@@ -4,10 +4,10 @@
 #define AIO_ANNOTATION_H
 
 typedef struct aio_annotation {
-    const_string name;
+    string name;
 } aio_annotation;
 
-aio_annotation *new_aio_annotation(const_string name);
+aio_annotation *new_aio_annotation(string name);
 
 void delete_aio_annotation(aio_annotation *annotation);
 

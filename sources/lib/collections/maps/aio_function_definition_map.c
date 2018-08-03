@@ -16,7 +16,7 @@ aio_function_definition_map *new_aio_method_definition_map() {
     //Create char capacity that equals 2:
     definition_map->names = calloc(2, sizeof(char *));
     //Create definitions that equals 2:
-    definition_map->definitions = calloc(2, sizeof(aio_function_definition * ));
+    definition_map->definitions = calloc(2, sizeof(aio_function_definition *));
     return definition_map;
 }
 
@@ -35,8 +35,7 @@ void put_aio_method_definition_in_map(aio_function_definition_map *definition_ma
                                       aio_function_definition *method_definition) {
     for (int i = 0; i < definition_map->size; ++i) {
         if (strcmp(definition_map->names[i], method_definition->name) == 0) {
-            perror("duplicate definition of method error!");
-            exit(1);
+            throw_error("duplicate definition of method error!");
         }
     }
     //Check to update:

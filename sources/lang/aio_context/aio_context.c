@@ -5,7 +5,7 @@
 
 void collect_method_definitions_in_manager(aio_context *context);
 
-const_string extract_name_from_path(const_string path);
+string extract_name_from_path(const_string path);
 
 //경로 예 (Path example):
 //"../aio_programs/test.aio", "r"
@@ -26,7 +26,7 @@ aio_function_manager *new_aio_function_manager() {
     return method_manager;
 }
 
-void invoke_function_in_context(aio_context *context, const_string function_name, aio_bundle *bundle) {
+void invoke_function_in_context(aio_context *context, string function_name, aio_bundle *bundle) {
     aio_function_definition_map *definition_map = context->function_manager->function_definition_map;
     aio_function_definition *definition = get_aio_method_definition_in_map_by_name(definition_map, function_name);
     invoke_new_aio_function(context, definition, bundle);

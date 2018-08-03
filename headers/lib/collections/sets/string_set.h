@@ -11,7 +11,7 @@ typedef struct string_set {
 
 string_set *new_string_set();
 
-void add_string_in_set(string_set *set, const_string string);
+void add_string_in_set(string_set *set, string string);
 
 boolean contains_string_in_set(string_set *set, const_string string);
 

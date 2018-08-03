@@ -21,7 +21,7 @@ void update_memory_in_string_set(string_set *set) {
     }
 }
 
-void add_string_in_set(string_set *set, const_string string) {
+void add_string_in_set(string_set *set, string string) {
     for (int i = 0; i < set->size; ++i) {
         if (strcmp(set->strings[i], string) == 0) {
             return;

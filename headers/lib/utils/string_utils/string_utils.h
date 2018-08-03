@@ -54,7 +54,7 @@ const_boolean is_not_empty_string(const_string string);
 
 const_boolean is_empty_string(const_string string);
 
-const_string join_to_string(const_string_array src_strings, const_string delimiter, int src_size);
+string join_to_string(string_array src_strings, const_string delimiter, const int src_size);
 
 const_boolean is_word(const_string line);
 

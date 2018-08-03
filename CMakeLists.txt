@@ -45,7 +45,8 @@ add_executable(AIO sources/main/main.c
         sources/lib/utils/string_utils/split.c
         sources/lib/utils/string_utils/trim.c
         sources/lib/utils/string_utils/prefix_suffix.c
-        headers/lib/pair/string_pair.h sources/lib/pair/string_pair.c
+        headers/lib/pair/string_pair.h
+        sources/lib/pair/string_pair.c
         sources/lib/utils/double_utils/double_utils.c
         headers/lib/utils/boolean_utils/boolean_utils.h
         headers/lib/utils/int_utils/int_utils.h
