@@ -2,7 +2,7 @@
 #include <mem.h>
 #include <stdio.h>
 #include <process.h>
-#include "../../../../headers/lang/aio_method/result/aio_result.h"
+#include "../../../../headers/lang/aio_function/result/aio_result.h"
 
 aio_result *new_aio_int_result(int int_acc, string rest) {
     //Create result:

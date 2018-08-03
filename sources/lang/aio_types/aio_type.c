@@ -86,19 +86,6 @@ int matches_str(char *word) {
 }
 
 //끝난!
-void set_type(char *value, enum aio_type *type) {
-    if (matches_int(value)) {
-        *type = AIO_INT;
-    } else if (matches_dou(value)) {
-        *type = AIO_DOU;
-    } else if (matches_str(value)) {
-        *type = AIO_STR;
-    } else {
-        *type = AIO_VOI;
-    }
-}
-
-//끝난!
 int str_to_int(char *word) {
     if (matches_int(word) != 0) {
         perror("cannot convert string to int in string_to_int!");

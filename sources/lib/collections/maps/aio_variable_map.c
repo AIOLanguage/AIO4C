@@ -4,6 +4,7 @@
 #include <process.h>
 #include "../../../../headers/lib/collections/maps/aio_variable_map.h"
 #include "../../../../headers/lib/utils/error_utils/error_utils.h"
+#include "../../../../headers/lang/aio_function/variable/aio_variable.h"
 
 aio_variable_map *new_aio_variable_map() {
     aio_variable_map *variable_map = calloc(1, sizeof(aio_variable_map));

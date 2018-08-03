@@ -9,21 +9,21 @@
 # Features!
 
 
-## 1. Define variables:
+## 1. Define variable_definitions:
 
-### 1.1. Define const variables:
+### 1.1. Define const variable_definitions:
 
 ![image](https://user-images.githubusercontent.com/22048950/42229842-1c42363a-7ef0-11e8-8b86-5203e0fb6784.png)
 
-### 1.2. Define reference variables:
+### 1.2. Define reference variable_definitions:
 
 ![image](https://user-images.githubusercontent.com/22048950/42230273-3f85211a-7ef1-11e8-866e-470323cb151f.png)
 
-### 1.3. Define immutable variables: 
+### 1.3. Define immutable variable_definitions: 
 
 ![image](https://user-images.githubusercontent.com/22048950/42230366-7e8c5022-7ef1-11e8-888e-11b195916a76.png)
 
-### 1.4. Define is_mutable_by_type variables: 
+### 1.4. Define is_mutable_by_type variable_definitions: 
 
 ![image](https://user-images.githubusercontent.com/22048950/42230408-985f08dc-7ef1-11e8-811a-d6556160851d.png)
 

@@ -2,7 +2,7 @@
 #define AIO_VARIABLE_MAP_H
 
 #include "../../utils/string_utils/string_utils.h"
-#include "../../../lang/aio_method/variable/aio_variable.h"
+#include "../../../lang/aio_function/variable/aio_variable.h"
 
 typedef struct aio_variable_map {
     int capacity;

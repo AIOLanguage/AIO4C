@@ -3,11 +3,11 @@
 #include <stdio.h>
 #include <process.h>
 #include "../../../../headers/lib/collections/lists/string_list.h"
-#include "../../../../headers/lang/aio_method/bundle/aio_bundle.h"
+#include "../../../../headers/lang/aio_function/aio_bundle/aio_bundle.h"
 
 //Passed JUnitTest!
 aio_bundle *new_aio_bundle(string_list *input_values) {
-    //Create the same bundle:
+    //Create the same aio_bundle:
     aio_bundle *bundle = calloc(1, sizeof(aio_bundle));
     //Set input values:
     bundle->input_values = input_values;

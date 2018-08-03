@@ -51,11 +51,11 @@ string_array filter(string_array src, int src_size, const_boolean (*filter_funct
 
 const_boolean is_not_empty_string(const_string string);
 
-boolean is_empty_string(const_string string);
+const_boolean is_empty_string(const_string string);
 
 const_string join_to_string(const_string_array src_strings, const_string delimiter, int src_size);
 
-boolean is_word(const_string line);
+const_boolean is_word(const_string line);
 
 string substring(const_string string, int offset, int length);
 
