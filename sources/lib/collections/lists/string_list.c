@@ -1,4 +1,5 @@
 #include "../../../../headers/lib/collections/lists/string_list.h"
+#include "../../../../headers/lib/utils/error_utils/error_utils.h"
 #include <string.h>
 #include <process.h>
 #include <stdio.h>
@@ -18,7 +19,7 @@ string_list *new_string_list() {
     //Create size:
     string_list->size = 0;
     //Create char capacity that equals 2:
-    string_list->strings = calloc(2, sizeof(char *));
+    string_list->strings = calloc(2, sizeof(string));
     if (string_list->strings == NULL) {
         perror("can not allocate memory for strings in is_mutable_by_type list of string");
         exit(1);
@@ -30,21 +31,21 @@ string_list *new_string_list() {
 void update_memory_in_string_list(string_list *string_list) {
     if (string_list->size + 1 == string_list->capacity) {
         string_list->capacity = string_list->capacity * 2;
-        string_list->strings = realloc(string_list->strings, string_list->capacity * sizeof(char *));
+        string_list->strings = realloc(string_list->strings, string_list->capacity * sizeof(string));
     }
 }
 
 //Passed JUnitTests!
-void add_in_string_list(string_list *string_list, const_string string) {
+void add_in_string_list(string_list *string_list, char *source) {
     //Check to update capacity:
+    printf("\nBEFORE UPDATE! %d-\n", string_list->size);
+    printf("\nBEFORE UPDATE! %d-\n", string_list->capacity);
     update_memory_in_string_list(string_list);
     //Set string:
-    string_list->strings[string_list->size] = calloc(1, sizeof(string));
-    if (string_list->strings[string_list->size] == NULL) {
-        perror("cannot allocate memory for string in list!");
-        exit(1);
-    }
-    string_list->strings[string_list->size] = string;
+    printf("\nAFTER UPDATE! %d-\n", string_list->size);
+    printf("\nAFTER UPDATE! %d-\n", string_list->capacity);
+    string_list->strings[string_list->size] = source;
+    printf("\nAFTER ASSIGN!-\n");
     string_list->size++;
 }
 

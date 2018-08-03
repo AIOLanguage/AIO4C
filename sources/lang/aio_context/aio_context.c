@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "../../../headers/lib/utils/file_utils/file_reader.h"
 #include "../../../headers/lang/aio_context/aio_context.h"
 #include "../../../headers/lang/aio_function/aio_function.h"
@@ -15,7 +16,7 @@ aio_context *new_aio_context(const_string path) {
     context->name = extract_name_from_path(path);
     //깨끗한 소스 코드로드 (Load clean source code):
     context->source_code = read_file_and_join_to_string_without_comments(path);
-    collect_method_definitions_in_manager(context);
+    //collect_method_definitions_in_manager(context);
     return context;
 }
 

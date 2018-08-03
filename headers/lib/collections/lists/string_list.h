@@ -8,12 +8,12 @@
 typedef struct string_list {
     int capacity;
     int size;
-    const_string_array strings;
+    string_array strings;
 } string_list;
 
 string_list *new_string_list();
 
-void add_in_string_list(string_list *string_list, const_string string);
+void add_in_string_list(string_list *string_list, string source);
 
 boolean is_string_list_empty(string_list *string_list);
 

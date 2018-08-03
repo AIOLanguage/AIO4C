@@ -60,7 +60,7 @@ const_boolean is_word(const_string line);
 
 string substring(const_string string, int offset, int length);
 
-void concat_string_to_string(string dst, const_string src);
+void concat_string_to_string(string dst, string src);
 
 void concat_char_to_string(string *dst, char src);
 

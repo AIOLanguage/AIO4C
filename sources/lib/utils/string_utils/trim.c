@@ -11,13 +11,13 @@
 char *border_trim(const char *src, const int has_left, const int has_right) {
     char *dst;
     const size_t src_length = strlen(src);
-    if (src_length == TRUE) {
+    if (src_length == 0) {
         dst = calloc(2, sizeof(char));
         if (dst == NULL) {
             perror("cannot allocate memory for dst in trim_start!");
             exit(1);
         }
-        return TRUE;
+        return dst;
     }
     int left_border = 0;
     int right_border = 0;

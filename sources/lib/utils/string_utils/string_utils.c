@@ -56,6 +56,7 @@ const_boolean is_not_empty_string(const_string string) {
 
 //Passed JUnitTest!
 const_boolean is_empty_string(const_string string) {
+    printf("IS_EMPTY\n-%s-\n", string);
     return strcmp(string, "") == 0;
 }
 
@@ -123,15 +124,15 @@ char *substring(const char *string, int offset, int length) {
 }
 
 //Passed JUnitTest!
-void concat_string_to_string(string dst, const_string src) {
+void concat_string_to_string(string dst, string src) {
     strcat(dst, src);
 }
 
 //Passed JUnitTest!
 void concat_char_to_string(char **dst, char src) {
     int dst_length = strlen(*dst);
-    *dst = realloc(*dst, (dst_length + 2) * sizeof(char));
-    *dst[dst_length] = src;
+    *dst = realloc((*dst), (dst_length + 1) * sizeof(char));
+    (*dst)[dst_length] = src;
 }
 
 int strings_size(const_string_array src) {

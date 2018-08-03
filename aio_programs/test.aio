@@ -1,6 +1,6 @@
 //Test.aio
 
-~dec:<<aq, be, cd<<
-@test >> a + b * cjjj
-
-@main *
+Int sum(Int a, Int b){
+    c = a + b
+    out c
+}
