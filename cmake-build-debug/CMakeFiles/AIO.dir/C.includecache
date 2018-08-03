@@ -535,6 +535,8 @@ assert.h
 -
 stddef.h
 -
+../../../../headers/lib/utils/boolean_utils/boolean_utils.h
+C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/boolean_utils/boolean_utils.h
 
 C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/string_utils/split.c
 stdio.h

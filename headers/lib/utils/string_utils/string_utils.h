@@ -44,9 +44,9 @@ string remove_suffix(const_string src, const_string suffix); //끝난!
 
 string remove_prefix_suffix(const_string src, const_string prefix, const_string suffix);
 
-boolean starts_with_prefix(const_string src, const_string prefix);
+const_boolean starts_with_prefix(const_string src, const_string prefix);
 
-boolean ends_with_suffix(const_string src, const_string suffix);
+const_boolean ends_with_suffix(const_string src, const_string suffix);
 
 string_array filter(string_array src, int src_size, const_boolean (*filter_function)(const_string));
 

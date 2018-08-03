@@ -304,6 +304,8 @@ CMakeFiles/AIO.dir/sources/lib/utils/int_utils/int_utils.c.obj: ../sources/lib/u
 
 CMakeFiles/AIO.dir/sources/lib/utils/operation_utils/operation_utils.c.obj: ../sources/lib/utils/operation_utils/operation_utils.c
 
+CMakeFiles/AIO.dir/sources/lib/utils/string_utils/prefix_suffix.c.obj: ../headers/lib/utils/boolean_utils/boolean_utils.h
+CMakeFiles/AIO.dir/sources/lib/utils/string_utils/prefix_suffix.c.obj: ../headers/lib/utils/string_utils/string_utils.h
 CMakeFiles/AIO.dir/sources/lib/utils/string_utils/prefix_suffix.c.obj: ../sources/lib/utils/string_utils/prefix_suffix.c
 
 CMakeFiles/AIO.dir/sources/lib/utils/string_utils/split.c.obj: ../sources/lib/utils/string_utils/split.c

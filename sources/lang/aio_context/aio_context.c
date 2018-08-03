@@ -6,14 +6,14 @@ void collect_method_definitions_in_manager(aio_context *context);
 
 const_string extract_name_from_path(const_string path);
 
-//Path example:
+//경로 예 (Path example):
 //"../aio_programs/test.aio", "r"
 aio_context *new_aio_context(const_string path) {
     aio_context *context = calloc(1, sizeof(aio_context));
     context->function_manager = new_aio_function_manager();
-    //Set name from path:
+    //경로에서 이름을 넣다 (Put name from path):
     context->name = extract_name_from_path(path);
-    //Loading clean source code:
+    //깨끗한 소스 코드로드 (Load clean source code):
     context->source_code = read_file_and_join_to_string_without_comments(path);
     collect_method_definitions_in_manager(context);
     return context;

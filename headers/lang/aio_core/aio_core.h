@@ -5,6 +5,8 @@
 #include "../../lib/utils/string_utils/string_utils.h"
 #include "../../lib/collections/sets/string_set.h"
 
+#define NUMBER_OF_CORE_TYPES 5
+
 typedef struct aio_core {
     aio_context_map *core_context_map;
     //유형 포함 (keep instruction_types):

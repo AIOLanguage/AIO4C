@@ -6,7 +6,7 @@
 
 aio_core *core;
 
-char core_types[5][4] = {
+char core_types[NUMBER_OF_CORE_TYPES][4] = {
         {"Int"},
         {"Dou"},
         {"Str"},
@@ -16,7 +16,8 @@ char core_types[5][4] = {
 
 void inflate_aio_core() {
     string_set *type_set = new_string_set();
-    for (int i = 0; i < sizeof(core_types); ++i) {
+    //유형를 넣다 (Put core types):
+    for (int i = 0; i < NUMBER_OF_CORE_TYPES; ++i) {
         const_string core_type = core_types[i];
         add_string_in_set(type_set, core_type);
     }

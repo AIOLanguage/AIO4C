@@ -17,16 +17,16 @@ const_string extract_name_from_path(const_string path) {
             const char symbol = path[i];
             //패스 파일 이름 (Pass file name):
             if (symbol == '/') {
-                const_string aio_file_name = substring(path, i + 1, last_path_index - i - AIO_SUFFIX_LENGTH);
-                if (is_word(aio_file_name)) {
-                    return aio_file_name;
+                const_string file_name = substring(path, i + 1, last_path_index - i - AIO_SUFFIX_LENGTH);
+                if (is_word(file_name)) {
+                    return file_name;
                 } else {
-                    throw_error("invalid aio_file_name:0!");
+                    throw_error("잘못된 .aio 파일 이름 (Invalid .aio file name!");
                 }
             }
         }
     } else {
-        throw_error("invalid aio_file_name:2!");
+        throw_error("파일이 .aio 타입을 없는 (The file doesn't have .aio type!");
     }
 }
 

@@ -5,9 +5,7 @@
 #include <ctype.h>
 #include <assert.h>
 #include <stddef.h>
-
-#define TRUE 0
-#define FALSE (-1)
+#include "../../../../headers/lib/utils/boolean_utils/boolean_utils.h"
 
 //끝난!
 int is_correct_src_prefix(const size_t src_length, const size_t prefix_length, const size_t suffix_length,
@@ -82,7 +80,7 @@ char *remove_suffix(const char *src, const char *suffix) {
 
 //끝난!
 //Passed JUnitTest!
-int starts_with_prefix(const char *src, char *prefix) {
+const_boolean starts_with_prefix(const_string src, const_string prefix) {
     for (int i = 0; i < strlen(prefix); ++i) {
         if (src[i] != prefix[i]) {
             return FALSE;
@@ -93,7 +91,7 @@ int starts_with_prefix(const char *src, char *prefix) {
 
 //끝난!
 //Passed JUnitTest!
-int ends_with_suffix(const char *src, char *suffix) {
+const_boolean ends_with_suffix(const_string src, const_string suffix) {
     const size_t src_length = strlen(src);
     const size_t suffix_length = strlen(suffix);
     for (int j = 0; j < suffix_length; ++j) {
@@ -101,5 +99,6 @@ int ends_with_suffix(const char *src, char *suffix) {
             return FALSE;
         }
     }
+    printf("\n-%s-\n", "!");
     return TRUE;
 }

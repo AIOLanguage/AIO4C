@@ -10,6 +10,7 @@ void make_test() {
 }
 
 int main() {
+    make_test();
     return 0;
 }
 

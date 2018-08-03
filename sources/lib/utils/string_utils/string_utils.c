@@ -8,9 +8,6 @@
 #include "../../../../headers/lib/utils/string_utils/string_utils.h"
 #include "../../../../headers/lib/utils/error_utils/error_utils.h"
 
-#define TRUE 0
-#define FALSE (-1)
-
 //Passed JUnitTest!
 boolean is_white_space(char c) {
     return c == ' ';
