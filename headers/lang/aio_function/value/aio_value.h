@@ -11,7 +11,7 @@ typedef union aio_value {
     boolean boolean_acc;
 } aio_value;
 
-aio_value *new_aio_value(const_string undefined_acc);
+aio_value *new_aio_value(const_string undefined_value);
 
 aio_value *new_aio_value_as_int(int int_acc);
 

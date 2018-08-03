@@ -257,6 +257,33 @@ sources/lang/aio_method/aio_function.c.s:
 	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_method/aio_function.c.s
 .PHONY : sources/lang/aio_method/aio_function.c.s
 
+sources/lang/aio_method/aio_value/aio_value.obj: sources/lang/aio_method/aio_value/aio_value.c.obj
+
+.PHONY : sources/lang/aio_method/aio_value/aio_value.obj
+
+# target to build an object file
+sources/lang/aio_method/aio_value/aio_value.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_method/aio_value/aio_value.c.obj
+.PHONY : sources/lang/aio_method/aio_value/aio_value.c.obj
+
+sources/lang/aio_method/aio_value/aio_value.i: sources/lang/aio_method/aio_value/aio_value.c.i
+
+.PHONY : sources/lang/aio_method/aio_value/aio_value.i
+
+# target to preprocess a source file
+sources/lang/aio_method/aio_value/aio_value.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_method/aio_value/aio_value.c.i
+.PHONY : sources/lang/aio_method/aio_value/aio_value.c.i
+
+sources/lang/aio_method/aio_value/aio_value.s: sources/lang/aio_method/aio_value/aio_value.c.s
+
+.PHONY : sources/lang/aio_method/aio_value/aio_value.s
+
+# target to generate assembly for a file
+sources/lang/aio_method/aio_value/aio_value.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_method/aio_value/aio_value.c.s
+.PHONY : sources/lang/aio_method/aio_value/aio_value.c.s
+
 sources/lang/aio_method/bundle/aio_bundle.obj: sources/lang/aio_method/bundle/aio_bundle.c.obj
 
 .PHONY : sources/lang/aio_method/bundle/aio_bundle.obj
@@ -392,32 +419,32 @@ sources/lang/aio_method/variable/aio_variable.c.s:
 	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_method/variable/aio_variable.c.s
 .PHONY : sources/lang/aio_method/variable/aio_variable.c.s
 
-sources/lang/aio_types/aio_type.obj: sources/lang/aio_types/aio_type.c.obj
+sources/lang/aio_method/variable/aio_variable_definition.obj: sources/lang/aio_method/variable/aio_variable_definition.c.obj
 
-.PHONY : sources/lang/aio_types/aio_type.obj
+.PHONY : sources/lang/aio_method/variable/aio_variable_definition.obj
 
 # target to build an object file
-sources/lang/aio_types/aio_type.c.obj:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_types/aio_type.c.obj
-.PHONY : sources/lang/aio_types/aio_type.c.obj
+sources/lang/aio_method/variable/aio_variable_definition.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_method/variable/aio_variable_definition.c.obj
+.PHONY : sources/lang/aio_method/variable/aio_variable_definition.c.obj
 
-sources/lang/aio_types/aio_type.i: sources/lang/aio_types/aio_type.c.i
+sources/lang/aio_method/variable/aio_variable_definition.i: sources/lang/aio_method/variable/aio_variable_definition.c.i
 
-.PHONY : sources/lang/aio_types/aio_type.i
+.PHONY : sources/lang/aio_method/variable/aio_variable_definition.i
 
 # target to preprocess a source file
-sources/lang/aio_types/aio_type.c.i:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_types/aio_type.c.i
-.PHONY : sources/lang/aio_types/aio_type.c.i
+sources/lang/aio_method/variable/aio_variable_definition.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_method/variable/aio_variable_definition.c.i
+.PHONY : sources/lang/aio_method/variable/aio_variable_definition.c.i
 
-sources/lang/aio_types/aio_type.s: sources/lang/aio_types/aio_type.c.s
+sources/lang/aio_method/variable/aio_variable_definition.s: sources/lang/aio_method/variable/aio_variable_definition.c.s
 
-.PHONY : sources/lang/aio_types/aio_type.s
+.PHONY : sources/lang/aio_method/variable/aio_variable_definition.s
 
 # target to generate assembly for a file
-sources/lang/aio_types/aio_type.c.s:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_types/aio_type.c.s
-.PHONY : sources/lang/aio_types/aio_type.c.s
+sources/lang/aio_method/variable/aio_variable_definition.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_method/variable/aio_variable_definition.c.s
+.PHONY : sources/lang/aio_method/variable/aio_variable_definition.c.s
 
 sources/lang/reserved_names/aio_reserved_names_container.obj: sources/lang/reserved_names/aio_reserved_names_container.c.obj
 
@@ -635,32 +662,59 @@ sources/lib/pair/string_pair.c.s:
 	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/pair/string_pair.c.s
 .PHONY : sources/lib/pair/string_pair.c.s
 
-sources/lib/utils/double_utils/string_to_double.obj: sources/lib/utils/double_utils/string_to_double.c.obj
+sources/lib/utils/boolean_utils/boolean_utils.obj: sources/lib/utils/boolean_utils/boolean_utils.c.obj
 
-.PHONY : sources/lib/utils/double_utils/string_to_double.obj
+.PHONY : sources/lib/utils/boolean_utils/boolean_utils.obj
 
 # target to build an object file
-sources/lib/utils/double_utils/string_to_double.c.obj:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/double_utils/string_to_double.c.obj
-.PHONY : sources/lib/utils/double_utils/string_to_double.c.obj
+sources/lib/utils/boolean_utils/boolean_utils.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/boolean_utils/boolean_utils.c.obj
+.PHONY : sources/lib/utils/boolean_utils/boolean_utils.c.obj
 
-sources/lib/utils/double_utils/string_to_double.i: sources/lib/utils/double_utils/string_to_double.c.i
+sources/lib/utils/boolean_utils/boolean_utils.i: sources/lib/utils/boolean_utils/boolean_utils.c.i
 
-.PHONY : sources/lib/utils/double_utils/string_to_double.i
+.PHONY : sources/lib/utils/boolean_utils/boolean_utils.i
 
 # target to preprocess a source file
-sources/lib/utils/double_utils/string_to_double.c.i:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/double_utils/string_to_double.c.i
-.PHONY : sources/lib/utils/double_utils/string_to_double.c.i
+sources/lib/utils/boolean_utils/boolean_utils.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/boolean_utils/boolean_utils.c.i
+.PHONY : sources/lib/utils/boolean_utils/boolean_utils.c.i
 
-sources/lib/utils/double_utils/string_to_double.s: sources/lib/utils/double_utils/string_to_double.c.s
+sources/lib/utils/boolean_utils/boolean_utils.s: sources/lib/utils/boolean_utils/boolean_utils.c.s
 
-.PHONY : sources/lib/utils/double_utils/string_to_double.s
+.PHONY : sources/lib/utils/boolean_utils/boolean_utils.s
 
 # target to generate assembly for a file
-sources/lib/utils/double_utils/string_to_double.c.s:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/double_utils/string_to_double.c.s
-.PHONY : sources/lib/utils/double_utils/string_to_double.c.s
+sources/lib/utils/boolean_utils/boolean_utils.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/boolean_utils/boolean_utils.c.s
+.PHONY : sources/lib/utils/boolean_utils/boolean_utils.c.s
+
+sources/lib/utils/double_utils/double_utils.obj: sources/lib/utils/double_utils/double_utils.c.obj
+
+.PHONY : sources/lib/utils/double_utils/double_utils.obj
+
+# target to build an object file
+sources/lib/utils/double_utils/double_utils.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/double_utils/double_utils.c.obj
+.PHONY : sources/lib/utils/double_utils/double_utils.c.obj
+
+sources/lib/utils/double_utils/double_utils.i: sources/lib/utils/double_utils/double_utils.c.i
+
+.PHONY : sources/lib/utils/double_utils/double_utils.i
+
+# target to preprocess a source file
+sources/lib/utils/double_utils/double_utils.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/double_utils/double_utils.c.i
+.PHONY : sources/lib/utils/double_utils/double_utils.c.i
+
+sources/lib/utils/double_utils/double_utils.s: sources/lib/utils/double_utils/double_utils.c.s
+
+.PHONY : sources/lib/utils/double_utils/double_utils.s
+
+# target to generate assembly for a file
+sources/lib/utils/double_utils/double_utils.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/double_utils/double_utils.c.s
+.PHONY : sources/lib/utils/double_utils/double_utils.c.s
 
 sources/lib/utils/file_utils/file_reader.obj: sources/lib/utils/file_utils/file_reader.c.obj
 
@@ -688,6 +742,33 @@ sources/lib/utils/file_utils/file_reader.s: sources/lib/utils/file_utils/file_re
 sources/lib/utils/file_utils/file_reader.c.s:
 	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/file_utils/file_reader.c.s
 .PHONY : sources/lib/utils/file_utils/file_reader.c.s
+
+sources/lib/utils/int_utils/int_utils.obj: sources/lib/utils/int_utils/int_utils.c.obj
+
+.PHONY : sources/lib/utils/int_utils/int_utils.obj
+
+# target to build an object file
+sources/lib/utils/int_utils/int_utils.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/int_utils/int_utils.c.obj
+.PHONY : sources/lib/utils/int_utils/int_utils.c.obj
+
+sources/lib/utils/int_utils/int_utils.i: sources/lib/utils/int_utils/int_utils.c.i
+
+.PHONY : sources/lib/utils/int_utils/int_utils.i
+
+# target to preprocess a source file
+sources/lib/utils/int_utils/int_utils.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/int_utils/int_utils.c.i
+.PHONY : sources/lib/utils/int_utils/int_utils.c.i
+
+sources/lib/utils/int_utils/int_utils.s: sources/lib/utils/int_utils/int_utils.c.s
+
+.PHONY : sources/lib/utils/int_utils/int_utils.s
+
+# target to generate assembly for a file
+sources/lib/utils/int_utils/int_utils.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/int_utils/int_utils.c.s
+.PHONY : sources/lib/utils/int_utils/int_utils.c.s
 
 sources/lib/utils/operation_utils/operation_utils.obj: sources/lib/utils/operation_utils/operation_utils.c.obj
 
@@ -851,6 +932,33 @@ sources/main/main.c.s:
 	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/main/main.c.s
 .PHONY : sources/main/main.c.s
 
+sources/tools/analysis/method_reproducer/aio_function_reproducer.obj: sources/tools/analysis/method_reproducer/aio_function_reproducer.c.obj
+
+.PHONY : sources/tools/analysis/method_reproducer/aio_function_reproducer.obj
+
+# target to build an object file
+sources/tools/analysis/method_reproducer/aio_function_reproducer.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/analysis/method_reproducer/aio_function_reproducer.c.obj
+.PHONY : sources/tools/analysis/method_reproducer/aio_function_reproducer.c.obj
+
+sources/tools/analysis/method_reproducer/aio_function_reproducer.i: sources/tools/analysis/method_reproducer/aio_function_reproducer.c.i
+
+.PHONY : sources/tools/analysis/method_reproducer/aio_function_reproducer.i
+
+# target to preprocess a source file
+sources/tools/analysis/method_reproducer/aio_function_reproducer.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/analysis/method_reproducer/aio_function_reproducer.c.i
+.PHONY : sources/tools/analysis/method_reproducer/aio_function_reproducer.c.i
+
+sources/tools/analysis/method_reproducer/aio_function_reproducer.s: sources/tools/analysis/method_reproducer/aio_function_reproducer.c.s
+
+.PHONY : sources/tools/analysis/method_reproducer/aio_function_reproducer.s
+
+# target to generate assembly for a file
+sources/tools/analysis/method_reproducer/aio_function_reproducer.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/analysis/method_reproducer/aio_function_reproducer.c.s
+.PHONY : sources/tools/analysis/method_reproducer/aio_function_reproducer.c.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -875,6 +983,9 @@ help:
 	@echo ... sources/lang/aio_method/aio_function.obj
 	@echo ... sources/lang/aio_method/aio_function.i
 	@echo ... sources/lang/aio_method/aio_function.s
+	@echo ... sources/lang/aio_method/aio_value/aio_value.obj
+	@echo ... sources/lang/aio_method/aio_value/aio_value.i
+	@echo ... sources/lang/aio_method/aio_value/aio_value.s
 	@echo ... sources/lang/aio_method/bundle/aio_bundle.obj
 	@echo ... sources/lang/aio_method/bundle/aio_bundle.i
 	@echo ... sources/lang/aio_method/bundle/aio_bundle.s
@@ -890,9 +1001,9 @@ help:
 	@echo ... sources/lang/aio_method/variable/aio_variable.obj
 	@echo ... sources/lang/aio_method/variable/aio_variable.i
 	@echo ... sources/lang/aio_method/variable/aio_variable.s
-	@echo ... sources/lang/aio_types/aio_type.obj
-	@echo ... sources/lang/aio_types/aio_type.i
-	@echo ... sources/lang/aio_types/aio_type.s
+	@echo ... sources/lang/aio_method/variable/aio_variable_definition.obj
+	@echo ... sources/lang/aio_method/variable/aio_variable_definition.i
+	@echo ... sources/lang/aio_method/variable/aio_variable_definition.s
 	@echo ... sources/lang/reserved_names/aio_reserved_names_container.obj
 	@echo ... sources/lang/reserved_names/aio_reserved_names_container.i
 	@echo ... sources/lang/reserved_names/aio_reserved_names_container.s
@@ -917,12 +1028,18 @@ help:
 	@echo ... sources/lib/pair/string_pair.obj
 	@echo ... sources/lib/pair/string_pair.i
 	@echo ... sources/lib/pair/string_pair.s
-	@echo ... sources/lib/utils/double_utils/string_to_double.obj
-	@echo ... sources/lib/utils/double_utils/string_to_double.i
-	@echo ... sources/lib/utils/double_utils/string_to_double.s
+	@echo ... sources/lib/utils/boolean_utils/boolean_utils.obj
+	@echo ... sources/lib/utils/boolean_utils/boolean_utils.i
+	@echo ... sources/lib/utils/boolean_utils/boolean_utils.s
+	@echo ... sources/lib/utils/double_utils/double_utils.obj
+	@echo ... sources/lib/utils/double_utils/double_utils.i
+	@echo ... sources/lib/utils/double_utils/double_utils.s
 	@echo ... sources/lib/utils/file_utils/file_reader.obj
 	@echo ... sources/lib/utils/file_utils/file_reader.i
 	@echo ... sources/lib/utils/file_utils/file_reader.s
+	@echo ... sources/lib/utils/int_utils/int_utils.obj
+	@echo ... sources/lib/utils/int_utils/int_utils.i
+	@echo ... sources/lib/utils/int_utils/int_utils.s
 	@echo ... sources/lib/utils/operation_utils/operation_utils.obj
 	@echo ... sources/lib/utils/operation_utils/operation_utils.i
 	@echo ... sources/lib/utils/operation_utils/operation_utils.s
@@ -941,6 +1058,9 @@ help:
 	@echo ... sources/main/main.obj
 	@echo ... sources/main/main.i
 	@echo ... sources/main/main.s
+	@echo ... sources/tools/analysis/method_reproducer/aio_function_reproducer.obj
+	@echo ... sources/tools/analysis/method_reproducer/aio_function_reproducer.i
+	@echo ... sources/tools/analysis/method_reproducer/aio_function_reproducer.s
 .PHONY : help
 
 

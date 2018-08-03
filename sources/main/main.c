@@ -13,4 +13,9 @@ int main() {
     return 0;
 }
 
+void throw_error(const_string message){
+    perror(message);
+    exit(1);
+}
+
 //printf("\n-%s-\n", test)

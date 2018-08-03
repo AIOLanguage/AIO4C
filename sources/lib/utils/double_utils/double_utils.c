@@ -1,9 +1,12 @@
+#include <malloc.h>
 #include <mem.h>
 #include <stdio.h>
 #include <process.h>
+#include <math.h>
+#include "../../../../headers/lib/utils/string_utils/string_utils.h"
 
-int matches_double(const char *word) {
-    int result = -1;
+const_boolean matches_double(const_string word) {
+    boolean result = FALSE;
     int was_dot = -1;
     int was_fraction = -1;
     int start = 0;
@@ -33,12 +36,12 @@ int matches_double(const char *word) {
         }
     }
     if (was_dot == 0 && was_fraction == 0) {
-        result = 0;
+        result = TRUE;
     }
     return result;
 }
 
-double string_to_double(const char *word) {
+double string_to_double(const_string word) {
     if (matches_double(word) != 0) {
         perror("cannot convert string to double!");
         exit(1);

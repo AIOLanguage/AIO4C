@@ -13,4 +13,6 @@ typedef struct aio_variable_definition {
 aio_variable_definition *new_aio_variable_definition(const_string name,const_string type,
                                                      const_boolean is_mutable_by_value);
 
+void delete_aio_variable_definition(aio_variable_definition* definition);
+
 #endif //AIO_VARIABLE_DEFINITION_H

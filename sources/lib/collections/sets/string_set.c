@@ -14,7 +14,7 @@ string_set *new_string_set() {
     return set;
 }
 
-void update_memory_in_object_map(string_set *set) {
+void update_memory_in_string_set(string_set *set) {
     if (set->size + 1 == set->capacity) {
         set->capacity = set->capacity * 2;
         set->strings = realloc(set->strings, set->capacity * sizeof(string));
@@ -27,7 +27,7 @@ void add_string_in_set(string_set *set, const_string string) {
             return;
         }
     }
-    update_memory_in_object_map(set);
+    update_memory_in_string_set(set);
     set->strings[set->size] = string;
     set->size++;
 }

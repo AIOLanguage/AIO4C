@@ -16,7 +16,7 @@ add_executable(AIO sources/main/main.c
         headers/lang/aio_function/variable/aio_variable.h
         headers/lang/aio_function/variable/aio_variable_definition.h
         headers/lang/aio_types/aio_type.h
-        sources/lang/aio_types/aio_type.c sources/lib/collections/maps/aio_context_map.c
+        sources/lib/collections/maps/aio_context_map.c
         headers/lib/collections/maps/aio_context_map.h headers/lang/aio_core/aio_core.h
         sources/lang/aio_core/aio_core.c
         headers/lib/collections/maps/aio_function_definition_map.h
@@ -34,7 +34,7 @@ add_executable(AIO sources/main/main.c
         headers/lang/aio_function/aio_function_definition/aio_function_definition_builder.h
         sources/lang/aio_method/method_definition/aio_function_definition_builder.c
         headers/lang/aio_function/aio_function.h sources/lang/aio_method/aio_function.c
-        headers/tools/analysis/method_reproducer/aio_method_reproducer.h
+        headers/tools/analysis/function_reproducer/aio_function_reproducer.h
         headers/lib/collections/maps/aio_variable_map.h
         headers/lib/collections/maps/aio_variable_definition_map.h
         sources/lib/collections/maps/aio_variable_map.c
@@ -46,11 +46,12 @@ add_executable(AIO sources/main/main.c
         sources/lib/utils/string_utils/trim.c
         sources/lib/utils/string_utils/prefix_suffix.c
         headers/lib/pair/string_pair.h sources/lib/pair/string_pair.c
-        sources/lib/utils/double_utils/string_to_double.c
+        sources/lib/utils/double_utils/double_utils.c
         headers/lib/utils/boolean_utils/boolean_utils.h
         headers/lib/utils/int_utils/int_utils.h
         headers/lib/utils/double_utils/double_utils.h
         headers/lib/utils/error_utils/error_utils.h
         headers/lang/aio_function/value/aio_value.h
         headers/lib/collections/sets/string_set.h
-        sources/lib/collections/sets/string_set.c)
+        sources/lib/collections/sets/string_set.c sources/lang/aio_method/aio_value/aio_value.c
+        sources/lib/utils/int_utils/int_utils.c sources/lib/utils/boolean_utils/boolean_utils.c sources/lang/aio_method/variable/aio_variable_definition.c sources/tools/analysis/method_reproducer/aio_function_reproducer.c)

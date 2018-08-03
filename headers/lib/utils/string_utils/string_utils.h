@@ -4,8 +4,9 @@
 #include <stddef.h>
 #include "../boolean_utils/boolean_utils.h"
 
-#define TRUE 0
-#define FALSE (-1)
+typedef _Bool boolean;
+
+typedef const _Bool const_boolean;
 
 typedef char *string;
 
@@ -65,7 +66,7 @@ void concat_char_to_string(string *dst, char src);
 
 int strings_size(const_string_array src);
 
-boolean matches_string(const_string word);
+const_boolean matches_string(const_string word);
 
 void delete_strings(const_string_array src);
 

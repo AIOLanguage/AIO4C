@@ -7,10 +7,6 @@
 #include "../../../headers/lang/aio_context/aio_context.h"
 #include "../../../headers/lang/aio_function/aio_function.h"
 
-
-void reproduce_method(aio_context *context, aio_function_definition *function_definition, aio_function *function,
-                      aio_bundle *bundle);
-
 void invoke_new_aio_function(aio_context *aio_context, aio_function_definition *function_definition,
                              aio_bundle *bundle) {
     aio_variable_map *arg_map = new_aio_variable_map();
