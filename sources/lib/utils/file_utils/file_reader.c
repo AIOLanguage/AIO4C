@@ -52,7 +52,6 @@ string read_file_and_join_to_string_without_comments(const_string path) {
     if ((file_reference = fopen(path, READ)) == NULL) {
         throw_error("cannot open source file");
     }
-    printf("READING: \n");
     while ((read_pointer = (char) fgetc(file_reference)) != EOF) {
         if (read_position == code_size) {
             code_size *= 2;
@@ -61,7 +60,6 @@ string read_file_and_join_to_string_without_comments(const_string path) {
         file_content[read_position] = read_pointer;
         read_position++;
     }
-    printf("READING: \n");
     fclose(file_reference);
     string clean_code = get_code_without_comments(file_content);
     //찌꺼기 수집기 (Garbage collector):
