@@ -9,7 +9,9 @@
 #include <stdio.h>
 #include <process.h>
 
-#define AIO_DEBUG
+//#define AIO_DEBUG
+
+#define READ "r"
 
 string get_code_without_comments(const_string file_content) {
     string_list *clean_line_list = new_string_list();
@@ -45,7 +47,7 @@ string read_file_and_join_to_string_without_comments(const_string path) {
     char read_pointer;
     //Create file:
     FILE *file_reference;
-    if ((file_reference = fopen(path, "r")) == NULL) {
+    if ((file_reference = fopen(path, READ)) == NULL) {
         throw_error("cannot open source file");
     }
     while ((read_pointer = (char) fgetc(file_reference)) != EOF) {
