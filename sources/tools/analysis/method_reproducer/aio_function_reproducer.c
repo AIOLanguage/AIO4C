@@ -2,7 +2,7 @@
 #include "../../../../headers/lang/aio_function/aio_function_definition/aio_function_definition.h"
 #include "../../../../headers/lang/aio_function/aio_function.h"
 
-void reproduce_method(aio_context *context, aio_function_definition *function_definition, aio_function *function,
+void reproduce_function(aio_context *context, aio_function_definition *function_definition, aio_function *function,
                       aio_bundle *bundle) {
 
 }

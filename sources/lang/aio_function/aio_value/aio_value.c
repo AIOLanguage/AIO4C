@@ -1,10 +1,11 @@
 #include <malloc.h>
 #include <mem.h>
 #include "../../../../headers/lib/utils/boolean_utils/boolean_utils.h"
-#include "../../../../headers/lang/aio_function/value/aio_value.h"
 #include "../../../../headers/lib/utils/int_utils/int_utils.h"
 #include "../../../../headers/lib/utils/double_utils/double_utils.h"
 #include "../../../../headers/lib/utils/error_utils/error_utils.h"
+#include "../../../../headers/lang/aio_function/aio_value/aio_value.h"
+#include "../../../../headers/lang/aio_types/aio_type.h"
 
 aio_value *new_aio_value(string undefined_value) {
     aio_value *value = calloc(1, sizeof(aio_value *));
@@ -32,7 +33,7 @@ aio_value *new_aio_value(string undefined_value) {
         value->string_acc = (string) undefined_value;
         return value;
     }
-    throw_error("can not define type of aio value");
+    throw_error("can not define type of aio aio_value");
 }
 
 aio_value *new_aio_value_as_int(int int_acc) {

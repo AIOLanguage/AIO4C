@@ -22,12 +22,12 @@ char *border_trim(const char *src, const int has_left, const int has_right) {
     int left_border = 0;
     int right_border = 0;
     if (has_left == TRUE) {
-        while (is_white_space(src[left_border])) {
+        while (is_space(src[left_border])) {
             left_border++;
         }
     }
     if (has_right == TRUE) {
-        while (is_white_space(src[src_length - right_border - 1])) {
+        while (is_space(src[src_length - right_border - 1])) {
             right_border++;
         }
     }

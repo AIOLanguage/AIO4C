@@ -5,8 +5,8 @@
 #include "../../aio_types/aio_type.h"
 
 typedef struct aio_variable_definition {
-    const_string name;
-    const_string type;
+    string name;
+    string type;
     boolean is_mutable_by_value;
 } aio_variable_definition;
 

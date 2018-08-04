@@ -1,9 +1,10 @@
-#ifndef AIO_AIO_INSTRUCTIONS_H
-#define AIO_AIO_INSTRUCTIONS_H
+#ifndef AIO_INSTRUCTIONS_H
+#define AIO_INSTRUCTIONS_H
 
 #include "../../../../lib/collections/lists/aio_instruction_list.h"
 #include "../../../../lib/collections/maps/aio_variable_definition_map.h"
 #include "../../../../lib/collections/lists/string_list.h"
+#include "../../aio_variable/aio_variable_definition.h"
 
 typedef struct aio_assign_instruction;
 
@@ -64,7 +65,7 @@ typedef struct aio_switch_instruction {
 typedef struct aio_loop_instruction {
     aio_instruction_entry *parent_entry_instruction;
     aio_variable_definition *pointer_variable_definition;
-    //Often for init pointer:
+    //Often for init point_watcher:
     aio_assign_instruction *start_assign_instruction;
     string loop_condition;
     //Instructions:
@@ -87,4 +88,4 @@ typedef struct aio_break_instruction {
     aio_instruction_entry *parent_entry_instruction;
 } aio_break_instruction;
 
-#endif //AIO_AIO_INSTRUCTIONS_H
+#endif //AIO_INSTRUCTIONS_H

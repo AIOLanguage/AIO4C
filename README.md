@@ -44,7 +44,7 @@
 
 ## 4. Define loop:
 
-### 4.1. immutable pointer
+### 4.1. immutable point_watcher
 
 ![image](https://user-images.githubusercontent.com/22048950/42231457-41b7a022-7ef4-11e8-804e-51a6e35e50ed.png)
 
@@ -56,7 +56,7 @@
 
 ![image](https://user-images.githubusercontent.com/22048950/42231753-0e55abb0-7ef5-11e8-8361-5455f7a548ca.png)
 
-### 4.2. is_mutable_by_type pointer
+### 4.2. is_mutable_by_type point_watcher
 
 ![image](https://user-images.githubusercontent.com/22048950/42232945-b36a9f54-7ef8-11e8-96a0-3fa66a1e46cf.png)
 

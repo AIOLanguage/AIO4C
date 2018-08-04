@@ -2,7 +2,7 @@
 #define AIO_RESULT_H
 
 #include "../../../lib/utils/string_utils/string_utils.h"
-#include "../value/aio_value.h"
+#include "../aio_value/aio_value.h"
 
 typedef struct aio_result {
     aio_value *value;

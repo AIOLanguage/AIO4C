@@ -1,6 +1,6 @@
 #include <malloc.h>
 #include "../../../../headers/lib/utils/boolean_utils/boolean_utils.h"
-#include "../../../../headers/lang/aio_function/variable/aio_variable_definition.h"
+#include "../../../../headers/lang/aio_function/aio_variable/aio_variable_definition.h"
 
 aio_variable_definition *new_aio_variable_definition(const_string name, const_string type,
                                                      const_boolean is_mutable_by_value) {

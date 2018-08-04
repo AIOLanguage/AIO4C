@@ -37,7 +37,7 @@ void inflate_aio_context_and_put_in_core(const_string path) {
     //put_aio_context_in_map(core->core_context_map, context);
 }
 
-boolean contains_aio_type_in_set(string string) {
+boolean contains_aio_type_in_set(const_string string) {
     return contains_string_in_set(core->aio_type_set, string);
 }
 

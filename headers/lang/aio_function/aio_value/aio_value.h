@@ -2,7 +2,6 @@
 #define AIO_VALUE_H
 
 #include "../../../lib/utils/string_utils/string_utils.h"
-#include "../variable/aio_variable.h"
 
 typedef union aio_value {
     int int_acc;
@@ -13,13 +12,13 @@ typedef union aio_value {
 
 aio_value *new_aio_value(string undefined_value);
 
-aio_value *new_aio_value_as_int(int int_acc);
+aio_value *new_aio_value_as_int(const int int_acc);
 
-aio_value *new_aio_value_as_double(double double_acc);
+aio_value *new_aio_value_as_double(const double double_acc);
 
 aio_value *new_aio_value_as_string(string string_acc);
 
-aio_value *new_aio_value_as_boolean(boolean boolean_acc);
+aio_value *new_aio_value_as_boolean(const_boolean boolean_acc);
 
 void delete_aio_value(aio_value *value);
 

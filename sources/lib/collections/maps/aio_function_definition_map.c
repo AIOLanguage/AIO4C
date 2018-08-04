@@ -42,7 +42,7 @@ void put_aio_method_definition_in_map(aio_function_definition_map *definition_ma
     update_memory_in_method_definition_map(definition_map);
     //Set key:
     definition_map->names[definition_map->size] = method_definition->name;
-    //Set value:
+    //Set aio_value:
     definition_map->definitions[definition_map->size] = method_definition;
     definition_map->size++;
 }

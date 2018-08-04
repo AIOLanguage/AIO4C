@@ -36,7 +36,13 @@ string trim(const_string src);
 
 string squeeze_string(const_string src);
 
-boolean is_white_space(char src);
+boolean is_space(const char src);
+
+boolean is_line_break(const char c);
+
+boolean is_open_parenthesis(const char c);
+
+boolean is_close_parenthesis(const char c);
 
 string_array trim_all(const_string_array strings, int number_of_strings);
 
@@ -60,7 +66,9 @@ string join_to_string(string_array src_strings, const_string delimiter, const in
 
 const_boolean is_word(const_string line);
 
-string substring(const_string string, int offset, int length);
+string substring_by_offset(const_string string, int offset, int length);
+
+string substring(const_string string, int start, int end);
 
 void concat_string_to_string(string dst, string src);
 

@@ -4,7 +4,6 @@ project(AIO C)
 set(CMAKE_C_STANDARD 11)
 
 add_executable(AIO sources/main/main.c
-        sources/lang/reserved_names/aio_reserved_names_container.c
         headers/lang/aio_annotation/aio_annotation.h
         headers/lang/aio_reserved_names/aio_reserved_names_container.h
         headers/lang/aio_context/aio_context.h headers/lib/collections/lists/string_list.h
@@ -13,8 +12,6 @@ add_executable(AIO sources/main/main.c
         headers/lang/aio_function/aio_function_definition/aio_function_definition.h
         headers/lang/aio_function/aio_function_definition/aio_instructions/aio_instructions.h
         headers/lib/collections/lists/aio_instruction_list.h
-        headers/lang/aio_function/variable/aio_variable.h
-        headers/lang/aio_function/variable/aio_variable_definition.h
         headers/lang/aio_types/aio_type.h
         sources/lib/collections/maps/aio_context_map.c
         headers/lib/collections/maps/aio_context_map.h headers/lang/aio_core/aio_core.h
@@ -23,17 +20,12 @@ add_executable(AIO sources/main/main.c
         sources/lib/collections/maps/aio_function_definition_map.c
         sources/lang/aio_context/aio_context.c
         sources/lang/aio_context/aio_context_builder.c
-        sources/lang/aio_method/method_definition/aio_function_definition.c
         sources/lang/aio_annotation/aio_annotation.c
         headers/lib/collections/lists/aio_annotation_list.h
         sources/lib/collections/lists/aio_annotation_list.c
-        sources/lang/aio_method/bundle/aio_bundle.c
-        sources/lang/aio_method/variable/aio_variable.c
-        headers/lang/aio_function/result/aio_result.h sources/lang/aio_method/result/aio_result.c
         sources/lib/utils/string_utils/string_utils.c headers/lib/utils/string_utils/string_utils.h
         headers/lang/aio_function/aio_function_definition/aio_function_definition_builder.h
-        sources/lang/aio_method/method_definition/aio_function_definition_builder.c
-        headers/lang/aio_function/aio_function.h sources/lang/aio_method/aio_function.c
+        headers/lang/aio_function/aio_function.h
         headers/tools/analysis/function_reproducer/aio_function_reproducer.h
         headers/lib/collections/maps/aio_variable_map.h
         headers/lib/collections/maps/aio_variable_definition_map.h
@@ -45,6 +37,21 @@ add_executable(AIO sources/main/main.c
         sources/lib/utils/string_utils/split.c
         sources/lib/utils/string_utils/trim.c
         sources/lib/utils/string_utils/prefix_suffix.c
+        headers/tools/parsers/aio_parser.h
+        sources/lang/aio_function/aio_bundle/aio_bundle.c
+        sources/lang/aio_function/aio_function_definition/aio_function_definition.c
+        sources/lang/aio_function/aio_function_definition/aio_builder/aio_function_definition_builder.c
+        sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_output_devler.c
+        sources/lang/aio_function/aio_result/aio_result.c
+        headers/lang/aio_function/aio_result/aio_result.h
+        sources/lang/aio_function/aio_value/aio_value.c
+        sources/lang/aio_function/aio_variable/aio_variable.c
+        sources/lang/aio_function/aio_variable/aio_variable_definition.c
+        headers/lang/aio_function/aio_value/aio_value.h
+        headers/lang/aio_function/aio_variable/aio_variable.h
+        headers/lang/aio_function/aio_variable/aio_variable_definition.h
+        sources/lang/aio_function/aio_function.c
+        sources/lang/aio_reserved_names/aio_reserved_names_container.c
         headers/lib/pair/string_pair.h
         sources/lib/pair/string_pair.c
         sources/lib/utils/double_utils/double_utils.c
@@ -52,7 +59,8 @@ add_executable(AIO sources/main/main.c
         headers/lib/utils/int_utils/int_utils.h
         headers/lib/utils/double_utils/double_utils.h
         headers/lib/utils/error_utils/error_utils.h
-        headers/lang/aio_function/value/aio_value.h
         headers/lib/collections/sets/string_set.h
-        sources/lib/collections/sets/string_set.c sources/lang/aio_method/aio_value/aio_value.c
-        sources/lib/utils/int_utils/int_utils.c sources/lib/utils/boolean_utils/boolean_utils.c sources/lang/aio_method/variable/aio_variable_definition.c sources/tools/analysis/method_reproducer/aio_function_reproducer.c)
+        sources/lib/collections/sets/string_set.c
+        sources/lib/utils/int_utils/int_utils.c sources/lib/utils/boolean_utils/boolean_utils.c
+        sources/tools/analysis/method_reproducer/aio_function_reproducer.c
+        headers/lib/point_watcher/point_watcher.h sources/lib/point_watcher/point_watcher.c sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_annotation_delver.c sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_function_name_delver.c sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_arg_delver.c sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_instruction_delver.c)

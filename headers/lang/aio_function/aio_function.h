@@ -1,8 +1,9 @@
-#include "../../lib/collections/maps/aio_variable_map.h"
-#include "variable/aio_variable.h"
-#include "../aio_context/aio_context.h"
+#ifndef AIO_FUNCTION_H
+#define AIO_FUNCTION_H
 
-#ifndef AIO_METHOD_H
+#include "../../lib/collections/maps/aio_variable_map.h"
+#include "../aio_context/aio_context.h"
+#include "aio_variable/aio_variable.h"
 
 typedef struct aio_function {
     aio_variable_map *variable_map;
@@ -18,4 +19,4 @@ void set_variable(aio_variable *variable, aio_function *function);
 
 void close_aio_method(aio_function *method);
 
-#endif //AIO_METHOD_H
+#endif //AIO_FUNCTION_H

@@ -16,8 +16,8 @@ int main() {
 
 
 //    string_list *list = new_string_list();
-//    add_in_string_list(list, "fffff");
-//    add_in_string_list(list, "\n");
+//    add_string_in_list(list, "fffff");
+//    add_string_in_list(list, "\n");
 //    for (int i = 0; i < list->size; ++i) {
 //        printf("\n-%s-\n", list->strings[i]);
 //    }

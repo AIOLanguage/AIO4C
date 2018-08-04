@@ -15,8 +15,20 @@ string new_string(const_string src) {
 }
 
 //Passed JUnitTest!
-boolean is_white_space(char c) {
+boolean is_space(const char c) {
     return c == ' ';
+}
+
+boolean is_line_break(const char c) {
+    return c == '\n';
+}
+
+boolean is_open_parenthesis(const char c) {
+    return c == '(';
+}
+
+boolean is_close_parenthesis(const char c) {
+    return c == ')';
 }
 
 //박수!
@@ -123,12 +135,21 @@ const_boolean is_word(const_string line) {
 }
 
 //Passed JUnitTest!
-char *substring(const char *string, int offset, int length) {
+string substring_by_offset(const_string string, int offset, int length) {
     char *dst = calloc((size_t) (length + 1), sizeof(char));
     for (int i = 0; i < length; ++i) {
         dst[i] = string[offset + i];
     }
     return dst;
+}
+
+string substring(const_string string, int start, int end) {
+    const size_t dst_size = (const size_t) (end - start + 1);
+    char* dst = calloc(dst_size, sizeof(char));
+    int position = 0;
+    for (int i = start; i < end; ++i) {
+        dst[position++] = string[i];
+    }
 }
 
 //Passed JUnitTest!
@@ -160,7 +181,7 @@ string squeeze_string(const_string src) {
     int position = 0;
     for (int i = 0; i < src_length; ++i) {
         const char symbol = src[i];
-        if (!is_white_space(symbol)) {
+        if (!is_space(symbol)) {
             dst[position++] = symbol;
         }
     }

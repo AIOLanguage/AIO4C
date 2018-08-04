@@ -4,7 +4,6 @@
 #include <process.h>
 #include "../../../../headers/lib/collections/maps/aio_variable_map.h"
 #include "../../../../headers/lib/utils/error_utils/error_utils.h"
-#include "../../../../headers/lang/aio_function/variable/aio_variable.h"
 
 aio_variable_map *new_aio_variable_map() {
     aio_variable_map *variable_map = calloc(1, sizeof(aio_variable_map));
@@ -38,7 +37,7 @@ void put_aio_variable_in_map(aio_variable_map *variable_map, aio_variable *varia
         perror("cannot allocate memory for names!");
     }
     variable_map->names[variable_map->size] = variable->variable_definition->name;
-    //Set value:
+    //Set aio_value:
     variable_map->variables[variable_map->size] = variable;
     variable_map->size++;
 }
@@ -49,5 +48,5 @@ aio_variable *get_aio_variable_in_map_by_name(aio_variable_map *variable_map, co
             return variable_map->variables[i];
         }
     }
-    throw_error("cannot get aio variable in map");
+    throw_error("cannot get aio aio_variable in map");
 }

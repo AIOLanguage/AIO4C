@@ -1,5 +1,5 @@
-#ifndef AIO_METHOD_DEFINITION_BUILDER_H
-#define AIO_METHOD_DEFINITION_BUILDER_H
+#ifndef AIO_FUNCTION_DEFINITION_BUILDER_H
+#define AIO_FUNCTION_DEFINITION_BUILDER_H
 
 #include "aio_function_definition.h"
 #include "../../../lib/utils/boolean_utils/boolean_utils.h"
@@ -10,4 +10,4 @@ boolean is_method_in_the_same_file(string expression);
 
 boolean is_method_in_the_other_file(string expression);
 
-#endif //AIO_METHOD_DEFINITION_BUILDER_H
+#endif //AIO_FUNCTION_DEFINITION_BUILDER_H

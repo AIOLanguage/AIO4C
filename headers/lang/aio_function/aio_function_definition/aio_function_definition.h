@@ -5,8 +5,8 @@
 #include "../../../lib/collections/maps/aio_variable_definition_map.h"
 #include "aio_instructions/aio_instructions.h"
 
-#ifndef AIO_METHOD_DEFINITION_H
-#define AIO_METHOD_DEFINITION_H
+#ifndef AIO_FUNCTION_DEFINITION_H
+#define AIO_FUNCTION_DEFINITION_H
 
 typedef struct aio_function_definition {
     aio_annotation_list *annotation_list;
@@ -22,4 +22,4 @@ aio_function_definition *new_aio_method_definition(aio_annotation_list *annotati
 
 void delete_aio_method_definition(aio_function_definition *method_definition);
 
-#endif //AIO_METHOD_DEFINITION_H
+#endif //AIO_FUNCTION_DEFINITION_H

@@ -23,7 +23,7 @@ string get_code_without_comments(const_string file_content) {
             string dirty_line = new_string(dirty_line_with_comments[0]);
             string clean_line = trim(dirty_line);
             if (is_not_empty_string(clean_line)) {
-                add_in_string_list(clean_line_list, clean_line);
+                add_string_in_list(clean_line_list, clean_line);
             }
             //----------------------------------------------------------------------------------------------------------
             //찌꺼기 수집기 (Garbage collector):
@@ -77,7 +77,7 @@ string extract_name_from_path(const_string path) {
             if (symbol == '/') {
                 const int offset = i + 1;
                 const int length = last_path_index - i - AIO_SUFFIX_LENGTH;
-                string file_name = substring(path, offset, length);
+                string file_name = substring_by_offset(path, offset, length);
                 if (is_word(file_name)) {
 #ifdef AIO_DEBUG
                     printf("CONTEXT NAME: \n-%s-\n", file_name);

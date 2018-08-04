@@ -18,5 +18,5 @@ const_boolean string_to_boolean(const_string string) {
     if (strcmp(string, FALSE_STRING) == 0) {
         return FALSE;
     }
-    throw_error("can not recognize boolean value!");
+    throw_error("can not recognize boolean aio_value!");
 }

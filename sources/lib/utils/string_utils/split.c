@@ -18,6 +18,10 @@ void create_right_part(const char *src, const unsigned *indices, char ***dst, in
 
 void create_left_part(const char *src, const unsigned *indices, size_t delimiter_length, char ***dst);
 
+string_array split_by_comma(const_string src){
+    return split_by_string(src,  ",");
+}
+
 //끝난!
 //Passed JUnitTests!
 string_array split_by_string(const_string src, const_string delimiter) {

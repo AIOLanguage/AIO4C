@@ -38,7 +38,7 @@ void put_aio_context_in_map(aio_context_map *map, aio_context *context) {
         exit(1);
     }
     map->names[map->size] = context->name;
-    //Set value:
+    //Set aio_value:
     map->contexts[map->size] = context;
     map->size++;
 }
