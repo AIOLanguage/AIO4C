@@ -22,6 +22,7 @@ void collect_function_definitions_in_manager(aio_context *context) {
     int pointer = 0;
     while (pointer < source_code_length) {
         aio_function_definition *method_definition = build_function_definition(source_code, &pointer);
+        break;
         //put_aio_method_definition_in_map(definition_map, method_definition);
     }
 }

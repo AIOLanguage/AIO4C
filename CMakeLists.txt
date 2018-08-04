@@ -41,7 +41,6 @@ add_executable(AIO sources/main/main.c
         sources/lang/aio_function/aio_bundle/aio_bundle.c
         sources/lang/aio_function/aio_function_definition/aio_function_definition.c
         sources/lang/aio_function/aio_function_definition/aio_builder/aio_function_definition_builder.c
-        sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_output_devler.c
         sources/lang/aio_function/aio_result/aio_result.c
         headers/lang/aio_function/aio_result/aio_result.h
         sources/lang/aio_function/aio_value/aio_value.c
@@ -52,6 +51,11 @@ add_executable(AIO sources/main/main.c
         headers/lang/aio_function/aio_variable/aio_variable_definition.h
         sources/lang/aio_function/aio_function.c
         sources/lang/aio_reserved_names/aio_reserved_names_container.c
+        sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_annotation_ripper.c
+        sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_arg_ripper.c
+        sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_function_name_ripper.c
+        sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_instruction_ripper.c
+        sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_output_ripper.c
         headers/lib/pair/string_pair.h
         sources/lib/pair/string_pair.c
         sources/lib/utils/double_utils/double_utils.c
@@ -63,4 +67,4 @@ add_executable(AIO sources/main/main.c
         sources/lib/collections/sets/string_set.c
         sources/lib/utils/int_utils/int_utils.c sources/lib/utils/boolean_utils/boolean_utils.c
         sources/tools/analysis/method_reproducer/aio_function_reproducer.c
-        headers/lib/point_watcher/point_watcher.h sources/lib/point_watcher/point_watcher.c sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_annotation_delver.c sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_function_name_delver.c sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_arg_delver.c sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_instruction_delver.c)
+        headers/lib/point_watcher/point_watcher.h sources/lib/point_watcher/point_watcher.c)

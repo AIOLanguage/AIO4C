@@ -150,6 +150,7 @@ string substring(const_string string, int start, int end) {
     for (int i = start; i < end; ++i) {
         dst[position++] = string[i];
     }
+    return dst;
 }
 
 //Passed JUnitTest!

@@ -284,141 +284,6 @@ sources/lang/aio_function/aio_function.c.s:
 	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function.c.s
 .PHONY : sources/lang/aio_function/aio_function.c.s
 
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_annotation_delver.obj: sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_annotation_delver.c.obj
-
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_annotation_delver.obj
-
-# target to build an object file
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_annotation_delver.c.obj:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_annotation_delver.c.obj
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_annotation_delver.c.obj
-
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_annotation_delver.i: sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_annotation_delver.c.i
-
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_annotation_delver.i
-
-# target to preprocess a source file
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_annotation_delver.c.i:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_annotation_delver.c.i
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_annotation_delver.c.i
-
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_annotation_delver.s: sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_annotation_delver.c.s
-
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_annotation_delver.s
-
-# target to generate assembly for a file
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_annotation_delver.c.s:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_annotation_delver.c.s
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_annotation_delver.c.s
-
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_arg_delver.obj: sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_arg_delver.c.obj
-
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_arg_delver.obj
-
-# target to build an object file
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_arg_delver.c.obj:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_arg_delver.c.obj
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_arg_delver.c.obj
-
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_arg_delver.i: sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_arg_delver.c.i
-
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_arg_delver.i
-
-# target to preprocess a source file
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_arg_delver.c.i:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_arg_delver.c.i
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_arg_delver.c.i
-
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_arg_delver.s: sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_arg_delver.c.s
-
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_arg_delver.s
-
-# target to generate assembly for a file
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_arg_delver.c.s:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_arg_delver.c.s
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_arg_delver.c.s
-
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_function_name_delver.obj: sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_function_name_delver.c.obj
-
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_function_name_delver.obj
-
-# target to build an object file
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_function_name_delver.c.obj:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_function_name_delver.c.obj
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_function_name_delver.c.obj
-
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_function_name_delver.i: sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_function_name_delver.c.i
-
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_function_name_delver.i
-
-# target to preprocess a source file
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_function_name_delver.c.i:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_function_name_delver.c.i
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_function_name_delver.c.i
-
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_function_name_delver.s: sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_function_name_delver.c.s
-
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_function_name_delver.s
-
-# target to generate assembly for a file
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_function_name_delver.c.s:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_function_name_delver.c.s
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_function_name_delver.c.s
-
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_instruction_delver.obj: sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_instruction_delver.c.obj
-
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_instruction_delver.obj
-
-# target to build an object file
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_instruction_delver.c.obj:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_instruction_delver.c.obj
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_instruction_delver.c.obj
-
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_instruction_delver.i: sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_instruction_delver.c.i
-
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_instruction_delver.i
-
-# target to preprocess a source file
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_instruction_delver.c.i:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_instruction_delver.c.i
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_instruction_delver.c.i
-
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_instruction_delver.s: sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_instruction_delver.c.s
-
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_instruction_delver.s
-
-# target to generate assembly for a file
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_instruction_delver.c.s:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_instruction_delver.c.s
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_instruction_delver.c.s
-
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_output_devler.obj: sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_output_devler.c.obj
-
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_output_devler.obj
-
-# target to build an object file
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_output_devler.c.obj:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_output_devler.c.obj
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_output_devler.c.obj
-
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_output_devler.i: sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_output_devler.c.i
-
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_output_devler.i
-
-# target to preprocess a source file
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_output_devler.c.i:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_output_devler.c.i
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_output_devler.c.i
-
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_output_devler.s: sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_output_devler.c.s
-
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_output_devler.s
-
-# target to generate assembly for a file
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_output_devler.c.s:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_output_devler.c.s
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_output_devler.c.s
-
 sources/lang/aio_function/aio_function_definition/aio_builder/aio_function_definition_builder.obj: sources/lang/aio_function/aio_function_definition/aio_builder/aio_function_definition_builder.c.obj
 
 .PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_function_definition_builder.obj
@@ -445,6 +310,141 @@ sources/lang/aio_function/aio_function_definition/aio_builder/aio_function_defin
 sources/lang/aio_function/aio_function_definition/aio_builder/aio_function_definition_builder.c.s:
 	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_function_definition_builder.c.s
 .PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_function_definition_builder.c.s
+
+sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_annotation_ripper.obj: sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_annotation_ripper.c.obj
+
+.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_annotation_ripper.obj
+
+# target to build an object file
+sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_annotation_ripper.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_annotation_ripper.c.obj
+.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_annotation_ripper.c.obj
+
+sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_annotation_ripper.i: sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_annotation_ripper.c.i
+
+.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_annotation_ripper.i
+
+# target to preprocess a source file
+sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_annotation_ripper.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_annotation_ripper.c.i
+.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_annotation_ripper.c.i
+
+sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_annotation_ripper.s: sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_annotation_ripper.c.s
+
+.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_annotation_ripper.s
+
+# target to generate assembly for a file
+sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_annotation_ripper.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_annotation_ripper.c.s
+.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_annotation_ripper.c.s
+
+sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_arg_ripper.obj: sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_arg_ripper.c.obj
+
+.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_arg_ripper.obj
+
+# target to build an object file
+sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_arg_ripper.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_arg_ripper.c.obj
+.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_arg_ripper.c.obj
+
+sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_arg_ripper.i: sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_arg_ripper.c.i
+
+.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_arg_ripper.i
+
+# target to preprocess a source file
+sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_arg_ripper.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_arg_ripper.c.i
+.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_arg_ripper.c.i
+
+sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_arg_ripper.s: sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_arg_ripper.c.s
+
+.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_arg_ripper.s
+
+# target to generate assembly for a file
+sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_arg_ripper.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_arg_ripper.c.s
+.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_arg_ripper.c.s
+
+sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_function_name_ripper.obj: sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_function_name_ripper.c.obj
+
+.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_function_name_ripper.obj
+
+# target to build an object file
+sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_function_name_ripper.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_function_name_ripper.c.obj
+.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_function_name_ripper.c.obj
+
+sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_function_name_ripper.i: sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_function_name_ripper.c.i
+
+.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_function_name_ripper.i
+
+# target to preprocess a source file
+sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_function_name_ripper.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_function_name_ripper.c.i
+.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_function_name_ripper.c.i
+
+sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_function_name_ripper.s: sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_function_name_ripper.c.s
+
+.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_function_name_ripper.s
+
+# target to generate assembly for a file
+sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_function_name_ripper.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_function_name_ripper.c.s
+.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_function_name_ripper.c.s
+
+sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_instruction_ripper.obj: sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_instruction_ripper.c.obj
+
+.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_instruction_ripper.obj
+
+# target to build an object file
+sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_instruction_ripper.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_instruction_ripper.c.obj
+.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_instruction_ripper.c.obj
+
+sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_instruction_ripper.i: sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_instruction_ripper.c.i
+
+.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_instruction_ripper.i
+
+# target to preprocess a source file
+sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_instruction_ripper.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_instruction_ripper.c.i
+.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_instruction_ripper.c.i
+
+sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_instruction_ripper.s: sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_instruction_ripper.c.s
+
+.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_instruction_ripper.s
+
+# target to generate assembly for a file
+sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_instruction_ripper.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_instruction_ripper.c.s
+.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_instruction_ripper.c.s
+
+sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_output_ripper.obj: sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_output_ripper.c.obj
+
+.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_output_ripper.obj
+
+# target to build an object file
+sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_output_ripper.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_output_ripper.c.obj
+.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_output_ripper.c.obj
+
+sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_output_ripper.i: sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_output_ripper.c.i
+
+.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_output_ripper.i
+
+# target to preprocess a source file
+sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_output_ripper.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_output_ripper.c.i
+.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_output_ripper.c.i
+
+sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_output_ripper.s: sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_output_ripper.c.s
+
+.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_output_ripper.s
+
+# target to generate assembly for a file
+sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_output_ripper.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_output_ripper.c.s
+.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_output_ripper.c.s
 
 sources/lang/aio_function/aio_function_definition/aio_function_definition.obj: sources/lang/aio_function/aio_function_definition/aio_function_definition.c.obj
 
@@ -1148,24 +1148,24 @@ help:
 	@echo ... sources/lang/aio_function/aio_function.obj
 	@echo ... sources/lang/aio_function/aio_function.i
 	@echo ... sources/lang/aio_function/aio_function.s
-	@echo ... sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_annotation_delver.obj
-	@echo ... sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_annotation_delver.i
-	@echo ... sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_annotation_delver.s
-	@echo ... sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_arg_delver.obj
-	@echo ... sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_arg_delver.i
-	@echo ... sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_arg_delver.s
-	@echo ... sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_function_name_delver.obj
-	@echo ... sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_function_name_delver.i
-	@echo ... sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_function_name_delver.s
-	@echo ... sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_instruction_delver.obj
-	@echo ... sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_instruction_delver.i
-	@echo ... sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_instruction_delver.s
-	@echo ... sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_output_devler.obj
-	@echo ... sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_output_devler.i
-	@echo ... sources/lang/aio_function/aio_function_definition/aio_builder/aio_delvers/aio_output_devler.s
 	@echo ... sources/lang/aio_function/aio_function_definition/aio_builder/aio_function_definition_builder.obj
 	@echo ... sources/lang/aio_function/aio_function_definition/aio_builder/aio_function_definition_builder.i
 	@echo ... sources/lang/aio_function/aio_function_definition/aio_builder/aio_function_definition_builder.s
+	@echo ... sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_annotation_ripper.obj
+	@echo ... sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_annotation_ripper.i
+	@echo ... sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_annotation_ripper.s
+	@echo ... sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_arg_ripper.obj
+	@echo ... sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_arg_ripper.i
+	@echo ... sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_arg_ripper.s
+	@echo ... sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_function_name_ripper.obj
+	@echo ... sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_function_name_ripper.i
+	@echo ... sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_function_name_ripper.s
+	@echo ... sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_instruction_ripper.obj
+	@echo ... sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_instruction_ripper.i
+	@echo ... sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_instruction_ripper.s
+	@echo ... sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_output_ripper.obj
+	@echo ... sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_output_ripper.i
+	@echo ... sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_output_ripper.s
 	@echo ... sources/lang/aio_function/aio_function_definition/aio_function_definition.obj
 	@echo ... sources/lang/aio_function/aio_function_definition/aio_function_definition.i
 	@echo ... sources/lang/aio_function/aio_function_definition/aio_function_definition.s
