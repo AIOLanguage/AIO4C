@@ -9,6 +9,31 @@
 #include <stdio.h>
 #include <process.h>
 
+string get_code_without_comments(const_string file_content) {
+    string_list *clean_line_list = new_string_list();
+    string_array lines = split_by_string(file_content, "\n");
+    for (int i = 0; i < strings_size(lines); ++i) {
+        const_string line = lines[i];
+        if (!starts_with_prefix(line, AIO_COMMENTS) && !is_empty_string(line)) {
+            string_array dirty_line_with_comments = split_by_string(line, AIO_COMMENTS);
+            string clean_line = dirty_line_with_comments[0];
+            printf("\nCLEAN!\n-%s-\n", clean_line);
+            if (is_not_empty_string(clean_line)) {
+                add_in_string_list(clean_line_list, clean_line);
+            }
+        }
+    }
+    printf("\nBUILD LIST\n");
+    for (int j = 0; j < clean_line_list->size; ++j) {
+        printf("-%s-\n", clean_line_list->strings[j]);
+    }
+    string clean_code = join_to_string(clean_line_list->strings, "\n", clean_line_list->size);
+    //찌꺼기 수집기 (Garbage collector):
+    printf("\nREADY!\n\n%s\n", clean_code);
+
+    return clean_code;
+}
+
 string read_file_and_join_to_string_without_comments(const_string path) {
     int read_position = 0;
     size_t code_size = CHUNK;
@@ -28,19 +53,9 @@ string read_file_and_join_to_string_without_comments(const_string path) {
         read_position++;
     }
     fclose(file_reference);
-    printf("\nLOADED!\n\n%s\n", file_content);
-    //Remove comments:
-    string_list *clean_line_list = new_string_list();
-    const_string_array lines = (const_string_array) split_by_string(file_content, "\n");
-    for (int i = 0; i < strings_size(lines); ++i) {
-        const_string line = lines[i];
-        if (!starts_with_prefix(line, AIO_COMMENTS)) {
-            string_array dirty_line_with_comments = split_by_string(line, AIO_COMMENTS);
-            add_in_string_list(clean_line_list, dirty_line_with_comments[0]);
-        }
-    }
-    string clean_code = join_to_string(clean_line_list->strings, "\n", clean_line_list->size);
-    //Delete local variables:
-    printf("\nREADY!\n\n%s\n", clean_code);
+    string clean_code = get_code_without_comments(file_content);
+    //Garbage collector:
+
+
     return clean_code;
 }

@@ -10,14 +10,17 @@
 #include "../../../headers/lang/aio_types/aio_type.h"
 #include "../../../headers/lib/collections/maps/aio_variable_map.h"
 
+//깨끗한 소스 코드 (Clean source code):
 string extract_name_from_path(const_string path) {
     if (ends_with_suffix(path, AIO_SUFFIX)) {
         const int last_path_index = strlen(path) - 1;
         for (int i = last_path_index; i >= 0; --i) {
             const char symbol = path[i];
-            //패스 파일 이름 (Pass file name):
+            //파일 이름 되다 (Pass file name):
             if (symbol == '/') {
-                string file_name = substring(path, i + 1, last_path_index - i - AIO_SUFFIX_LENGTH);
+                const int offset = i + 1;
+                const int length = last_path_index - i - AIO_SUFFIX_LENGTH;
+                string file_name = substring(path, offset, length);
                 if (is_word(file_name)) {
                     return file_name;
                 } else {

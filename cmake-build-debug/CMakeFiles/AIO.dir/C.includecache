@@ -557,6 +557,8 @@ assert.h
 -
 stddef.h
 -
+../../../../headers/lib/utils/string_utils/string_utils.h
+C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/string_utils/string_utils.h
 
 C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/string_utils/string_utils.c
 stdio.h

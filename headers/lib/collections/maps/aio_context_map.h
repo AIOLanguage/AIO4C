@@ -7,7 +7,7 @@
 typedef struct aio_context_map {
     int capacity;
     int size;
-    const_string_array names;
+    string_array names;
     aio_context **contexts;
 } aio_context_map;
 

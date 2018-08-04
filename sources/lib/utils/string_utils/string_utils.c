@@ -47,6 +47,9 @@ string_array filter(string_array src, int src_size, const_boolean (*filter_funct
 
 //Passed JUnitTest!
 const_boolean is_not_empty_string(const_string string) {
+    if (string == NULL){
+        return FALSE;
+    }
     if (strcmp(string, "") != 0) {
         return TRUE;
     } else {
@@ -56,7 +59,6 @@ const_boolean is_not_empty_string(const_string string) {
 
 //Passed JUnitTest!
 const_boolean is_empty_string(const_string string) {
-    printf("IS_EMPTY\n-%s-\n", string);
     return strcmp(string, "") == 0;
 }
 

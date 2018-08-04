@@ -5,6 +5,7 @@
 #include <ctype.h>
 #include <assert.h>
 #include <stddef.h>
+#include "../../../../headers/lib/utils/string_utils/string_utils.h"
 
 #define TRUE 0
 #define FALSE (-1)
@@ -19,7 +20,7 @@ void create_left_part(const char *src, const unsigned *indices, size_t delimiter
 
 //끝난!
 //Passed JUnitTests!
-char **split_by_string(const char *src, const char *delimiter) {
+string_array split_by_string(const_string src, const_string delimiter) {
     char **dst;
     const size_t src_length = strlen(src);
     //Is empty string:

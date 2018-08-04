@@ -6,7 +6,7 @@
 typedef struct string_set {
     int capacity;
     int size;
-    const_string_array strings;
+    string_array strings;
 } string_set;
 
 string_set *new_string_set();
