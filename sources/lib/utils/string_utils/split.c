@@ -106,13 +106,13 @@ void move_empty_string_to_dst(const char *src, char ***dst) {
 
 void move_string_to_dst(const char *src, const size_t string_length, char ***dst) {
     //allocate memory for string array:
-    *dst = calloc(1, sizeof(char *));
+    *dst = calloc(1, sizeof(string));
     if (*dst == NULL) {
         perror("cannot allocate memory for *dst in split by char!");
         exit(1);
     }
     //allocate memory for only string:
-    **dst = calloc(string_length, sizeof(char));
+    **dst = calloc(string_length, sizeof(char) + 1);
     if (**dst == NULL) {
         perror("cannot allocate memory for **dst in split by char!");
         exit(1);

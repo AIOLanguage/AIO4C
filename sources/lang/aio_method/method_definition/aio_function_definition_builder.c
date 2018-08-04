@@ -11,11 +11,16 @@
 
 
 aio_annotation_list *delve_annotations(const_string source_code, int *pointer_reference) {
-    return NULL;
+    return new_annotation_list();
 }
 
 string_list *delve_output_types(const_string source_code, int *pointer_reference) {
-    return NULL;
+    const size_t source_code_length = strlen(source_code);
+    for (int i = 0; i < source_code_length; ++i) {
+
+
+    }
+    //return ;
 }
 
 const_string delve_function_name(const_string source_code, int *poiner_reference) {

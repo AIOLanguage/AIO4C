@@ -20,12 +20,14 @@ string get_code_without_comments(const_string file_content) {
         const_string line = lines[i];
         if (!starts_with_prefix(line, AIO_COMMENTS) && !is_empty_string(line)) {
             string_array dirty_line_with_comments = split_by_string(line, AIO_COMMENTS);
-            string clean_line = new_string(dirty_line_with_comments[0]);
+            string dirty_line = new_string(dirty_line_with_comments[0]);
+            string clean_line = trim(dirty_line);
             if (is_not_empty_string(clean_line)) {
                 add_in_string_list(clean_line_list, clean_line);
             }
             //----------------------------------------------------------------------------------------------------------
             //찌꺼기 수집기 (Garbage collector):
+            free(dirty_line);
             free(dirty_line_with_comments);
         }
     }
@@ -50,6 +52,7 @@ string read_file_and_join_to_string_without_comments(const_string path) {
     if ((file_reference = fopen(path, READ)) == NULL) {
         throw_error("cannot open source file");
     }
+    printf("READING: \n");
     while ((read_pointer = (char) fgetc(file_reference)) != EOF) {
         if (read_position == code_size) {
             code_size *= 2;
@@ -58,6 +61,7 @@ string read_file_and_join_to_string_without_comments(const_string path) {
         file_content[read_position] = read_pointer;
         read_position++;
     }
+    printf("READING: \n");
     fclose(file_reference);
     string clean_code = get_code_without_comments(file_content);
     //찌꺼기 수집기 (Garbage collector):
@@ -77,6 +81,9 @@ string extract_name_from_path(const_string path) {
                 const int length = last_path_index - i - AIO_SUFFIX_LENGTH;
                 string file_name = substring(path, offset, length);
                 if (is_word(file_name)) {
+#ifdef AIO_DEBUG
+                    printf("CONTEXT NAME: \n-%s-\n", file_name);
+#endif
                     return file_name;
                 } else {
                     throw_error("잘못된 .aio 파일 이름 (Invalid .aio file name!");

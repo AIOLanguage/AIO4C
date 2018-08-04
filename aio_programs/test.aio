@@ -4,3 +4,8 @@ Int sum(Int a, Int b){
     c = a + b
     out c
 }
+
+Int minus(Int a, Int b){
+    c = a - b
+    out c
+}

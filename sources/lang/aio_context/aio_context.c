@@ -17,7 +17,7 @@ aio_context *new_aio_context(const_string path) {
     //깨끗한 소스 코드로드 (Load clean source code):
     context->source_code = read_file_and_join_to_string_without_comments(path);
     //직능 해상력을 문맥에 모으다 (Collect function definitions in context):
-    collect_function_definitions_in_manager(context);
+//    collect_function_definitions_in_manager(context);
     return context;
 }
 
