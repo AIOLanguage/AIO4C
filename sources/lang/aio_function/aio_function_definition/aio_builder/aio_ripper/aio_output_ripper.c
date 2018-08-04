@@ -51,6 +51,10 @@ string_list *dig_output_types(const_string source_code, int *pointer_reference) 
     }
     //유형 함유량 줄 받다 (Get type content string):
     string type_content = substring(source_code, watcher->start_index, watcher->end_index);
+    //------------------------------------------------------------------------------------------------------------------
+    //찌꺼기 수집기 (Garbage collector):
+    free_point_watcher(watcher);
+    //------------------------------------------------------------------------------------------------------------------
 #ifdef AIO_DEBUG
     printf("TYPE CONTENT: \n-%s-\n", type_content);
 #endif
@@ -75,6 +79,10 @@ string_list *dig_output_types(const_string source_code, int *pointer_reference) 
                     throw_error("AIO 핵심이 유형 지원하지 않습니다 (AIO core doesn't support type)!");
                 }
             }
+            //----------------------------------------------------------------------------------------------------------
+            //찌꺼기 수집기 (Garbage collector):
+            free(type_content);
+            free(dirty_types);
             return output_type_list;
         }
         case OUTPUT_UNDEFINED:

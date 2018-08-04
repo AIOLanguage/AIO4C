@@ -13,4 +13,6 @@ typedef struct point_watcher {
 
 point_watcher *new_point_watcher();
 
+void free_point_watcher(point_watcher *watcher);
+
 #endif //POINTER_H
