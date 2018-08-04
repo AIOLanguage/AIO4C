@@ -10,29 +10,6 @@
 #include "../../../headers/lang/aio_types/aio_type.h"
 #include "../../../headers/lib/collections/maps/aio_variable_map.h"
 
-//깨끗한 소스 코드 (Clean source code):
-string extract_name_from_path(const_string path) {
-    if (ends_with_suffix(path, AIO_SUFFIX)) {
-        const int last_path_index = strlen(path) - 1;
-        for (int i = last_path_index; i >= 0; --i) {
-            const char symbol = path[i];
-            //파일 이름 되다 (Pass file name):
-            if (symbol == '/') {
-                const int offset = i + 1;
-                const int length = last_path_index - i - AIO_SUFFIX_LENGTH;
-                string file_name = substring(path, offset, length);
-                if (is_word(file_name)) {
-                    return file_name;
-                } else {
-                    throw_error("잘못된 .aio 파일 이름 (Invalid .aio file name!");
-                }
-            }
-        }
-    } else {
-        throw_error("파일이 .aio 타입을 없는 (The file doesn't have .aio type!");
-    }
-}
-
 aio_function_definition *delve_method_definition(const_string source_code, int *pointer_reference);
 
 void collect_method_definitions_in_manager(aio_context *context) {

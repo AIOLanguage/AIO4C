@@ -8,6 +8,12 @@
 #include "../../../../headers/lib/utils/string_utils/string_utils.h"
 #include "../../../../headers/lib/utils/error_utils/error_utils.h"
 
+string new_string(const_string src) {
+    string new_string = calloc(strlen(src) + 1, sizeof(char));
+    strcpy(new_string, src);
+    return new_string;
+}
+
 //Passed JUnitTest!
 boolean is_white_space(char c) {
     return c == ' ';
@@ -47,7 +53,7 @@ string_array filter(string_array src, int src_size, const_boolean (*filter_funct
 
 //Passed JUnitTest!
 const_boolean is_not_empty_string(const_string string) {
-    if (string == NULL){
+    if (string == NULL) {
         return FALSE;
     }
     if (strcmp(string, "") != 0) {

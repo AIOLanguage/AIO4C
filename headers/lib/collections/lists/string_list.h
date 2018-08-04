@@ -17,6 +17,6 @@ void add_in_string_list(string_list *string_list, string source);
 
 boolean is_string_list_empty(string_list *string_list);
 
-void delete_string_list(string_list *stringList);
+void free_string_list(string_list *list);
 
 #endif //STRING_LIST_H

@@ -16,6 +16,8 @@ typedef char **string_array;
 
 typedef const string_array const_string_array;
 
+string new_string(const_string src);
+
 string int_to_string(int src);
 
 string double_to_string(double src);

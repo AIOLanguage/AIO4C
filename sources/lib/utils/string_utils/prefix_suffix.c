@@ -99,6 +99,5 @@ const_boolean ends_with_suffix(const_string src, const_string suffix) {
             return FALSE;
         }
     }
-    printf("\n-%s-\n", "!");
     return TRUE;
 }

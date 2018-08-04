@@ -43,3 +43,7 @@ boolean is_string_list_empty(string_list *string_list) {
         return -1;
     }
 }
+
+void free_string_list(string_list *list){
+    free(list);
+}

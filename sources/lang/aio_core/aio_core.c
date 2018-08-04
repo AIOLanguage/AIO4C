@@ -6,6 +6,8 @@
 
 aio_core *core;
 
+#define AIO_DEBUG
+
 char core_types[NUMBER_OF_CORE_TYPES][4] = {
         {"Int"},
         {"Dou"},
@@ -28,6 +30,10 @@ void inflate_aio_core() {
 
 void inflate_aio_context_and_put_in_core(const_string path) {
     aio_context *context = new_aio_context(path);
+#ifdef AIO_DEBUG
+    printf("\nCONTEXT NAME\n%s\n", context->name);
+    printf("\nSOURCE CODE\n%s\n", context->source_code);
+#endif
     //put_aio_context_in_map(core->core_context_map, context);
 }
 
