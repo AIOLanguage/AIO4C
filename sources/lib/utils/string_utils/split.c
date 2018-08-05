@@ -7,9 +7,6 @@
 #include <stddef.h>
 #include "../../../../headers/lib/utils/string_utils/string_utils.h"
 
-#define TRUE 0
-#define FALSE (-1)
-
 void move_empty_string_to_dst(const char *src, char ***dst);
 
 void move_string_to_dst(const char *src, size_t string_length, char ***dst);
@@ -20,6 +17,10 @@ void create_left_part(const char *src, const unsigned *indices, size_t delimiter
 
 string_array split_by_comma(const_string src){
     return split_by_string(src,  ",");
+}
+
+string_array split_by_space(const_string src){
+    return split_by_string(src, " ");
 }
 
 //끝난!

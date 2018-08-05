@@ -1,6 +1,6 @@
 //Test.aio
 
-Int sum(Int a, Int b){
+Int sum(mu Int a, Int b){
     c = a + b
     out c
 }

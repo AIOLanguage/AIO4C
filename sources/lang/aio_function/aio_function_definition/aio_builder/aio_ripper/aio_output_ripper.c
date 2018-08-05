@@ -6,7 +6,7 @@
 #include "../../../../../../headers/lib/collections/lists/string_list.h"
 #include "../../../../../../headers/lang/aio_core/aio_core.h"
 
-#define AIO_DEBUG
+#define AIO_OUTPUT_RIPPER_DEBUG
 
 enum output_mode {
     OUTPUT_UNDEFINED, SINGLE_OUTPUT_MODE, MULTI_OUTPUT_MODE
@@ -20,15 +20,15 @@ string_list *dig_output_types(const_string source_code, int *pointer_reference) 
     for (int i = *pointer_reference; i < source_code_length; ++i) {
         const char symbol = source_code[i];
         //틈새 또는 줄 바꿈 (Space or line break):
-        const_boolean is_space_or_break_line = is_space(symbol) || is_line_break(symbol);
+        const_boolean is_space_or_line_break_condition = is_space_or_line_break(symbol);
         //기호로 시작하다 (Starts with symbol):
         if (isalpha(symbol) && mode == OUTPUT_UNDEFINED) {
             //하나의 출력 유형 (Single output type):
             mode = SINGLE_OUTPUT_MODE;
             watcher->start_index = i;
             watcher->mode = POINT_READING_MODE;
-#ifdef AIO_DEBUG
-            printf("\nSTART SINGLE READING...\n");
+#ifdef AIO_OUTPUT_RIPPER_DEBUG
+            printf("\nOUTPUT RIPPER: START SINGLE READING...\n");
 #endif
         }
         //괄호로 시작하다 (Starts with parenthesis):
@@ -37,15 +37,15 @@ string_list *dig_output_types(const_string source_code, int *pointer_reference) 
             mode = MULTI_OUTPUT_MODE;
             watcher->start_index = i + 1;
             watcher->mode = POINT_READING_MODE;
-#ifdef AIO_DEBUG
-            printf("\nSTART MULTI READING...\n");
+#ifdef AIO_OUTPUT_RIPPER_DEBUG
+            printf("\nOUTPUT RIPPER: START MULTI READING...\n");
 #endif
         }
         //하나의 또는 많은 출력 방법 독서 중지 (Stop single or multi output mode reading):
-        if ((is_space_or_break_line && mode == SINGLE_OUTPUT_MODE)
+        if ((is_space_or_line_break_condition && mode == SINGLE_OUTPUT_MODE)
             || (is_close_parenthesis(symbol) && mode == MULTI_OUTPUT_MODE)) {
             watcher->end_index = i;
-            if (is_space_or_break_line) {
+            if (is_space_or_line_break_condition) {
                 *pointer_reference = i;
             } else {
                 //괄호로 호 (After parenthesis):
@@ -60,8 +60,8 @@ string_list *dig_output_types(const_string source_code, int *pointer_reference) 
     //찌꺼기 수집기 (Garbage collector):
     free_point_watcher(watcher);
     //------------------------------------------------------------------------------------------------------------------
-#ifdef AIO_DEBUG
-    printf("TYPE CONTENT: \n-%s-\n", type_content);
+#ifdef AIO_OUTPUT_RIPPER_DEBUG
+    printf("OUTPUT RIPPER: RETURN TYPE CONTENT: \n-%s-\n", type_content);
 #endif
     switch (mode) {
         case SINGLE_OUTPUT_MODE:
@@ -69,7 +69,7 @@ string_list *dig_output_types(const_string source_code, int *pointer_reference) 
                 add_string_in_list(output_type_list, type_content);
                 return output_type_list;
             } else {
-                throw_error("AIO 핵심이 유형 지원하지 않습니다 (AIO core doesn't support type)!");
+                throw_error("OUTPUT RIPPER: AIO 핵심이 유형 지원하지 않습니다 (AIO core doesn't support type)!");
             }
             break;
         case MULTI_OUTPUT_MODE: {
@@ -81,16 +81,16 @@ string_list *dig_output_types(const_string source_code, int *pointer_reference) 
                 if (contains_aio_type_in_set(type)) {
                     add_string_in_list(output_type_list, type);
                 } else {
-                    throw_error("AIO 핵심이 유형 지원하지 않습니다 (AIO core doesn't support type)!");
+                    throw_error("OUTPUT RIPPER: AIO 핵심이 유형 지원하지 않습니다 (AIO core doesn't support type)!");
                 }
             }
             //----------------------------------------------------------------------------------------------------------
             //찌꺼기 수집기 (Garbage collector):
             free(type_content);
-            free(dirty_types);
+            free_strings(&dirty_types);
             return output_type_list;
         }
         case OUTPUT_UNDEFINED:
-            throw_error("출력 유형들을 찿을 수 없습니다! (Output types not found!)");
+            throw_error("OUTPUT RIPPER: 출력 유형들을 찿을 수 없습니다! (Output types not found!)");
     }
 }

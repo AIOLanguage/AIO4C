@@ -36,6 +36,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/AIO.dir/sources/lib/utils/boolean_utils/boolean_utils.c.obj"
   "CMakeFiles/AIO.dir/sources/tools/analysis/method_reproducer/aio_function_reproducer.c.obj"
   "CMakeFiles/AIO.dir/sources/lib/point_watcher/point_watcher.c.obj"
+  "CMakeFiles/AIO.dir/sources/lib/collections/maps/aio_variable_definition_map.c.obj"
   "AIO.pdb"
   "AIO.exe"
   "AIO.exe.manifest"

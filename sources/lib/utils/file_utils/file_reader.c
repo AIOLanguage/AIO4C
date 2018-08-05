@@ -9,7 +9,7 @@
 #include <stdio.h>
 #include <process.h>
 
-//#define AIO_DEBUG
+//#define FILE_READER_DEBUG
 
 #define READ "r"
 
@@ -34,9 +34,12 @@ string get_code_without_comments(const_string file_content) {
     string clean_code = join_to_string(clean_line_list->strings, "\n", clean_line_list->size);
     //------------------------------------------------------------------------------------------------------------------
     //찌꺼기 수집기 (Garbage collector):
+    for (int j = 0; j < clean_line_list->size; ++j) {
+        free(clean_line_list->strings[j]);
+    }
     free_string_list(clean_line_list);
     free(lines);
-#ifdef AIO_DEBUG
+#ifdef FILE_READER_DEBUG
     printf("\nREADY!\n\n%s\n", clean_code);
 #endif
     return clean_code;
@@ -62,6 +65,7 @@ string read_file_and_join_to_string_without_comments(const_string path) {
     }
     fclose(file_reference);
     string clean_code = get_code_without_comments(file_content);
+    //------------------------------------------------------------------------------------------------------------------
     //찌꺼기 수집기 (Garbage collector):
     free(file_content);
     return clean_code;
@@ -79,7 +83,7 @@ string extract_name_from_path(const_string path) {
                 const int length = last_path_index - i - AIO_SUFFIX_LENGTH;
                 string file_name = substring_by_offset(path, offset, length);
                 if (is_word(file_name)) {
-#ifdef AIO_DEBUG
+#ifdef FILE_READER_DEBUG
                     printf("CONTEXT NAME: \n-%s-\n", file_name);
 #endif
                     return file_name;

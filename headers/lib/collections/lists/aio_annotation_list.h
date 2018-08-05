@@ -11,7 +11,7 @@ typedef struct aio_annotation_list {
 
 aio_annotation_list *new_annotation_list();
 
-void add_in_annotation_list(aio_annotation_list *annotation_list, aio_annotation *annotation);
+void add_annotation_in_list(aio_annotation_list *annotation_list, aio_annotation *annotation);
 
 void delete_annotation_list(aio_annotation_list *annotation_list);
 

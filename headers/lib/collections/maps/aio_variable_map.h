@@ -13,7 +13,7 @@ typedef struct aio_variable_map {
 
 aio_variable_map *new_aio_variable_map();
 
-void put_aio_variable_in_map(aio_variable_map *variable_map, aio_variable *variable);
+void put_aio_variable_in_map(aio_variable_map *map, aio_variable *variable);
 
 aio_variable *get_aio_variable_in_map_by_name(aio_variable_map *variable_map, const_string name);
 

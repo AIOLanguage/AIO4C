@@ -26,6 +26,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "C:/Users/StarKRE/CLionProjects/AIO/sources/lib/collections/lists/string_list.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lib/collections/lists/string_list.c.obj"
   "C:/Users/StarKRE/CLionProjects/AIO/sources/lib/collections/maps/aio_context_map.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lib/collections/maps/aio_context_map.c.obj"
   "C:/Users/StarKRE/CLionProjects/AIO/sources/lib/collections/maps/aio_function_definition_map.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lib/collections/maps/aio_function_definition_map.c.obj"
+  "C:/Users/StarKRE/CLionProjects/AIO/sources/lib/collections/maps/aio_variable_definition_map.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lib/collections/maps/aio_variable_definition_map.c.obj"
   "C:/Users/StarKRE/CLionProjects/AIO/sources/lib/collections/maps/aio_variable_map.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lib/collections/maps/aio_variable_map.c.obj"
   "C:/Users/StarKRE/CLionProjects/AIO/sources/lib/collections/sets/string_set.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lib/collections/sets/string_set.c.obj"
   "C:/Users/StarKRE/CLionProjects/AIO/sources/lib/pair/string_pair.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lib/pair/string_pair.c.obj"

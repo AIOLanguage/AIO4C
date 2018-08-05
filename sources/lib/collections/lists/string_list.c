@@ -45,5 +45,6 @@ boolean is_string_list_empty(string_list *string_list) {
 }
 
 void free_string_list(string_list *list){
+    free(list->strings);
     free(list);
 }

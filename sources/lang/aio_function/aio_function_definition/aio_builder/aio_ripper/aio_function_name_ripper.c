@@ -5,7 +5,7 @@
 #include "../../../../../../headers/lib/collections/lists/string_list.h"
 #include "../../../../../../headers/lib/point_watcher/point_watcher.h"
 
-#define AIO_DEBUG
+#define AIO_FUNCTION_NAME_RIPPER_DEBUG
 
 string dig_function_name(const_string source_code, int *pointer_reference) {
     const size_t source_code_length = strlen(source_code);
@@ -19,8 +19,8 @@ string dig_function_name(const_string source_code, int *pointer_reference) {
         if (isalpha(symbol) && watcher->mode == POINT_UNDEFINED) {
             watcher->start_index = i;
             watcher->mode = POINT_READING_MODE;
-#ifdef AIO_DEBUG
-            printf("\nSTART READING...\n");
+#ifdef AIO_FUNCTION_NAME_RIPPER_DEBUG
+            printf("\nFUNCTION RIPPER: START READING...\n");
 #endif
         }
         //독서 중지 (Stop reading):
@@ -36,8 +36,8 @@ string dig_function_name(const_string source_code, int *pointer_reference) {
     //찌꺼기 수집기 (Garbage collector):
     free_point_watcher(watcher);
     //------------------------------------------------------------------------------------------------------------------
-#ifdef AIO_DEBUG
-    printf("FUNCTION NAME: \n-%s-\n", function_name);
+#ifdef AIO_FUNCTION_NAME_RIPPER_DEBUG
+    printf("\nFUNCTION RIPPER: FUNCTION NAME: \n-%s-\n\n", function_name);
 #endif
     return function_name;
 }

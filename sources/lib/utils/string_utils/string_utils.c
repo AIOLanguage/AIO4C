@@ -23,6 +23,10 @@ boolean is_line_break(const char c) {
     return c == '\n';
 }
 
+boolean is_space_or_line_break(const char c){
+    return is_space(c) || is_line_break(c);
+}
+
 boolean is_open_parenthesis(const char c) {
     return c == '(';
 }
@@ -33,13 +37,13 @@ boolean is_close_parenthesis(const char c) {
 
 //박수!
 //Passed JUnitTest!
-string_array filter(string_array src, int src_size, const_boolean (*filter_function)(const_string)) {
+string_array filter(string_array src, int src_size, const_boolean (*filter_condition)(const_string)) {
     int *new_indices = calloc((size_t) src_size, sizeof(int));
     char **dst;
     size_t new_length = 0;
     //Look at values and measure new string:
     for (int i = 0; i < src_size; ++i) {
-        if (filter_function(src[i]) == 0) {
+        if (filter_condition(src[i]) == 0) {
             new_indices[i] = i;
             new_length++;
         } else {
@@ -169,11 +173,11 @@ int strings_size(const_string_array src) {
     return _msize(src) / 4;
 }
 
-void delete_strings(const_string_array src) {
-    for (int i = 0; i < strings_size(src); ++i) {
-        free((void *) src[i]);
+void free_strings(const_string_array *src_reference) {
+    for (int i = 0; i < strings_size(*src_reference); ++i) {
+        free((void *) (*src_reference)[i]);
     }
-    free(src);
+    free(*src_reference);
 }
 
 string squeeze_string(const_string src) {
@@ -229,14 +233,16 @@ string int_to_string(int src) {
     } else {
         integer_array = calloc(2, sizeof(char));
         if (integer_array == NULL) {
-            throw_error("cannot allocate memory for integer_array in int_to_str");
+            perror("cannot allocate memory for integer_array in int_to_str");
+            exit(1);
         }
         integer_array[0] = '0';
         int_size_in_string = 1;
     }
     char *dst = calloc(int_size_in_string + 1 + negative_shift, sizeof(char));
     if (dst == NULL) {
-        throw_error("cannot allocate memory for dst array!");
+        perror("cannot allocate memory for dst array!");
+        exit(1);
     }
     for (int k = 0; k < int_size_in_string + negative_shift; ++k) {
         dst[k] = integer_array[k];

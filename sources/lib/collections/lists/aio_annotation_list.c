@@ -3,21 +3,14 @@
 #include <stdio.h>
 #include <process.h>
 #include "../../../../headers/lib/collections/lists/aio_annotation_list.h"
+#include "../../../../headers/lib/utils/error_utils/error_utils.h"
 
 //Passed JUnitTest!
 aio_annotation_list *new_annotation_list() {
-    //Create the same is_mutable_by_type list:
     aio_annotation_list *annotation_list = calloc(1, sizeof(aio_annotation_list));
-    //Create capacity:
     annotation_list->capacity = 2;
-    //Create size:
     annotation_list->size = 0;
-    //Create char capacity that equals 2:
     annotation_list->annotations = calloc(2, sizeof(aio_annotation *));
-    if (annotation_list->annotations == NULL) {
-        perror("can not allocate memory for aio_annotation in aio annotation list");
-        exit(1);
-    }
     return annotation_list;
 }
 
@@ -31,7 +24,7 @@ void update_memory_in_mutable_annotation_list(aio_annotation_list *annotation_li
 }
 
 //Passed JUnitTests!
-void add_in_annotation_list(aio_annotation_list *annotation_list, aio_annotation *annotation) {
+void add_annotation_in_list(aio_annotation_list *annotation_list, aio_annotation *annotation) {
     //Check to update capacity:
     update_memory_in_mutable_annotation_list(annotation_list);
     //Set annotation:
@@ -42,8 +35,7 @@ void add_in_annotation_list(aio_annotation_list *annotation_list, aio_annotation
 //Passed JUnitTests!
 aio_annotation *get_annotation_in_list_by_index(aio_annotation_list *annotation_list, int index) {
     if (index < 0 || annotation_list->size <= index) {
-        perror("Cannot get index: %d in MutableList");
-        exit(1);
+        throw_error("Cannot get index in annotation list!");
     } else {
         return annotation_list->annotations[index];
     }

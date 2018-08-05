@@ -239,6 +239,9 @@
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lib/collections/maps/aio_function_definition_map.c">
 			<Option target="AIO"/>
 		</Unit>
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lib/collections/maps/aio_variable_definition_map.c">
+			<Option target="AIO"/>
+		</Unit>
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lib/collections/maps/aio_variable_map.c">
 			<Option target="AIO"/>
 		</Unit>

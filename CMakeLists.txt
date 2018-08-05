@@ -67,4 +67,4 @@ add_executable(AIO sources/main/main.c
         sources/lib/collections/sets/string_set.c
         sources/lib/utils/int_utils/int_utils.c sources/lib/utils/boolean_utils/boolean_utils.c
         sources/tools/analysis/method_reproducer/aio_function_reproducer.c
-        headers/lib/point_watcher/point_watcher.h sources/lib/point_watcher/point_watcher.c)
+        headers/lib/point_watcher/point_watcher.h sources/lib/point_watcher/point_watcher.c sources/lib/collections/maps/aio_variable_definition_map.c)

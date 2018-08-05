@@ -17,7 +17,7 @@ void collect_function_definitions_in_manager(aio_context *context) {
     const size_t source_code_length = strlen(source_code);
     aio_function_definition_map *definition_map = context->function_manager->function_definition_map;
     if (is_empty_string(source_code)) {
-        throw_error("aio context is empty!");
+        throw_error("AIO 컨텍스트가 비어있다 (AIO context is empty)!");
     }
     int pointer = 0;
     while (pointer < source_code_length) {

@@ -716,6 +716,33 @@ sources/lib/collections/maps/aio_function_definition_map.c.s:
 	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/collections/maps/aio_function_definition_map.c.s
 .PHONY : sources/lib/collections/maps/aio_function_definition_map.c.s
 
+sources/lib/collections/maps/aio_variable_definition_map.obj: sources/lib/collections/maps/aio_variable_definition_map.c.obj
+
+.PHONY : sources/lib/collections/maps/aio_variable_definition_map.obj
+
+# target to build an object file
+sources/lib/collections/maps/aio_variable_definition_map.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/collections/maps/aio_variable_definition_map.c.obj
+.PHONY : sources/lib/collections/maps/aio_variable_definition_map.c.obj
+
+sources/lib/collections/maps/aio_variable_definition_map.i: sources/lib/collections/maps/aio_variable_definition_map.c.i
+
+.PHONY : sources/lib/collections/maps/aio_variable_definition_map.i
+
+# target to preprocess a source file
+sources/lib/collections/maps/aio_variable_definition_map.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/collections/maps/aio_variable_definition_map.c.i
+.PHONY : sources/lib/collections/maps/aio_variable_definition_map.c.i
+
+sources/lib/collections/maps/aio_variable_definition_map.s: sources/lib/collections/maps/aio_variable_definition_map.c.s
+
+.PHONY : sources/lib/collections/maps/aio_variable_definition_map.s
+
+# target to generate assembly for a file
+sources/lib/collections/maps/aio_variable_definition_map.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/collections/maps/aio_variable_definition_map.c.s
+.PHONY : sources/lib/collections/maps/aio_variable_definition_map.c.s
+
 sources/lib/collections/maps/aio_variable_map.obj: sources/lib/collections/maps/aio_variable_map.c.obj
 
 .PHONY : sources/lib/collections/maps/aio_variable_map.obj
@@ -1196,6 +1223,9 @@ help:
 	@echo ... sources/lib/collections/maps/aio_function_definition_map.obj
 	@echo ... sources/lib/collections/maps/aio_function_definition_map.i
 	@echo ... sources/lib/collections/maps/aio_function_definition_map.s
+	@echo ... sources/lib/collections/maps/aio_variable_definition_map.obj
+	@echo ... sources/lib/collections/maps/aio_variable_definition_map.i
+	@echo ... sources/lib/collections/maps/aio_variable_definition_map.s
 	@echo ... sources/lib/collections/maps/aio_variable_map.obj
 	@echo ... sources/lib/collections/maps/aio_variable_map.i
 	@echo ... sources/lib/collections/maps/aio_variable_map.s
