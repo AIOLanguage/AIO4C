@@ -6,7 +6,7 @@
 #include "../../../../../../headers/lib/collections/lists/string_list.h"
 #include "../../../../../../headers/lang/aio_core/aio_core.h"
 
-//#define AIO_DEBUG
+#define AIO_DEBUG
 
 enum output_mode {
     OUTPUT_UNDEFINED, SINGLE_OUTPUT_MODE, MULTI_OUTPUT_MODE
@@ -31,7 +31,7 @@ string_list *dig_output_types(const_string source_code, int *pointer_reference) 
             printf("\nSTART SINGLE READING...\n");
 #endif
         }
-        //괄호로 삽입구로 시작하다 (Starts with parenthesis):
+        //괄호로 시작하다 (Starts with parenthesis):
         if (is_open_parenthesis(symbol) && mode == OUTPUT_UNDEFINED) {
             //많은 출력 유형들 (Many output types):
             mode = MULTI_OUTPUT_MODE;
@@ -41,11 +41,16 @@ string_list *dig_output_types(const_string source_code, int *pointer_reference) 
             printf("\nSTART MULTI READING...\n");
 #endif
         }
-        //하나의 또는 많은 출력 방법 독서 서다 (Stop single or multi output mode reading):
+        //하나의 또는 많은 출력 방법 독서 중지 (Stop single or multi output mode reading):
         if ((is_space_or_break_line && mode == SINGLE_OUTPUT_MODE)
             || (is_close_parenthesis(symbol) && mode == MULTI_OUTPUT_MODE)) {
             watcher->end_index = i;
-            *pointer_reference = i;
+            if (is_space_or_break_line) {
+                *pointer_reference = i;
+            } else {
+                //괄호로 호 (After parenthesis):
+                *pointer_reference = i + 1;
+            }
             break;
         }
     }

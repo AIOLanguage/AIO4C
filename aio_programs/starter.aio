@@ -1,21 +1,11 @@
 //Starter.aio
 
-@define
-    im int a = 3
-    int b = 5
-    c = 3.2
-    im dou d = 4.8
-    im str name = 'Ilya'
-    im char = '2'
-    im int z = 345.0
-    im y = 'ssss'
-    >> a + d * c
+Int sum(Int a, Int b){
+    c = a + b
+    out c
+}
 
-@main
-    im math = -<<'math'-<<
-    im utils = -<<'utils'-<<
-    im a = 3
-    im b = 4
-    println <a, b<
-    im sum = math.sum(a, b)
-    println<sum<
+Int minus(Int a, Int b){
+    c = a - b
+    out c
+}
