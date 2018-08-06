@@ -6,7 +6,7 @@
 #include "../../../../../../../headers/lib/utils/char_utils/char_utils.h"
 #include "../../../../../../../headers/lib/utils/error_utils/error_utils.h"
 #include "../../../../../../../headers/lib/utils/string_utils/string_builder.h"
-#include "../../../../../../../headers/lang/aio_function/aio_function_definition/aio_spider/aio_spider.h"
+#include "../../../../../../../headers/lang/aio_function/aio_function_definition/aio_spider/aio_spiders.h"
 
 const_string dig_function_body(const_string source_code, int *pointer_reference);
 
@@ -35,6 +35,7 @@ aio_instruction_holder *dig_instruction_holder(const_string source_code, int *po
             }
         }
     }
+    free_aio_spiders(&spiders);
     return current_holder;
 }
 
