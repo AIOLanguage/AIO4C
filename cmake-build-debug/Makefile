@@ -500,6 +500,33 @@ sources/lang/aio_function/aio_function_definition/aio_function_definition.c.s:
 	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_function_definition.c.s
 .PHONY : sources/lang/aio_function/aio_function_definition/aio_function_definition.c.s
 
+sources/lang/aio_function/aio_function_definition/aio_instructions/aio_instructions.obj: sources/lang/aio_function/aio_function_definition/aio_instructions/aio_instructions.c.obj
+
+.PHONY : sources/lang/aio_function/aio_function_definition/aio_instructions/aio_instructions.obj
+
+# target to build an object file
+sources/lang/aio_function/aio_function_definition/aio_instructions/aio_instructions.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_instructions/aio_instructions.c.obj
+.PHONY : sources/lang/aio_function/aio_function_definition/aio_instructions/aio_instructions.c.obj
+
+sources/lang/aio_function/aio_function_definition/aio_instructions/aio_instructions.i: sources/lang/aio_function/aio_function_definition/aio_instructions/aio_instructions.c.i
+
+.PHONY : sources/lang/aio_function/aio_function_definition/aio_instructions/aio_instructions.i
+
+# target to preprocess a source file
+sources/lang/aio_function/aio_function_definition/aio_instructions/aio_instructions.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_instructions/aio_instructions.c.i
+.PHONY : sources/lang/aio_function/aio_function_definition/aio_instructions/aio_instructions.c.i
+
+sources/lang/aio_function/aio_function_definition/aio_instructions/aio_instructions.s: sources/lang/aio_function/aio_function_definition/aio_instructions/aio_instructions.c.s
+
+.PHONY : sources/lang/aio_function/aio_function_definition/aio_instructions/aio_instructions.s
+
+# target to generate assembly for a file
+sources/lang/aio_function/aio_function_definition/aio_instructions/aio_instructions.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_instructions/aio_instructions.c.s
+.PHONY : sources/lang/aio_function/aio_function_definition/aio_instructions/aio_instructions.c.s
+
 sources/lang/aio_function/aio_result/aio_result.obj: sources/lang/aio_function/aio_result/aio_result.c.obj
 
 .PHONY : sources/lang/aio_function/aio_result/aio_result.obj
@@ -1280,6 +1307,9 @@ help:
 	@echo ... sources/lang/aio_function/aio_function_definition/aio_function_definition.obj
 	@echo ... sources/lang/aio_function/aio_function_definition/aio_function_definition.i
 	@echo ... sources/lang/aio_function/aio_function_definition/aio_function_definition.s
+	@echo ... sources/lang/aio_function/aio_function_definition/aio_instructions/aio_instructions.obj
+	@echo ... sources/lang/aio_function/aio_function_definition/aio_instructions/aio_instructions.i
+	@echo ... sources/lang/aio_function/aio_function_definition/aio_instructions/aio_instructions.s
 	@echo ... sources/lang/aio_function/aio_result/aio_result.obj
 	@echo ... sources/lang/aio_function/aio_result/aio_result.i
 	@echo ... sources/lang/aio_function/aio_result/aio_result.s

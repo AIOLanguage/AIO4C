@@ -224,6 +224,9 @@
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lang/aio_function/aio_function_definition/aio_function_definition.c">
 			<Option target="AIO"/>
 		</Unit>
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lang/aio_function/aio_function_definition/aio_instructions/aio_instructions.c">
+			<Option target="AIO"/>
+		</Unit>
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lang/aio_function/aio_result/aio_result.c">
 			<Option target="AIO"/>
 		</Unit>

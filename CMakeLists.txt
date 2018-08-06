@@ -69,4 +69,4 @@ add_executable(AIO sources/main/main.c
         sources/tools/analysis/method_reproducer/aio_function_reproducer.c
         headers/lib/point_watcher/point_watcher.h sources/lib/point_watcher/point_watcher.c
         sources/lib/collections/maps/aio_variable_definition_map.c headers/lib/utils/string_utils/string_builder.h sources/lib/utils/string_utils/string_builder.c headers/lib/utils/char_utils/char_utils.h sources/lib/utils/char_utils/char_utils.c
-        sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_spider.c headers/lang/aio_function/aio_function_definition/aio_spider/aio_spider.h)
+        sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_spider.c headers/lang/aio_function/aio_function_definition/aio_spider/aio_spider.h sources/lang/aio_function/aio_function_definition/aio_instructions/aio_instructions.c)

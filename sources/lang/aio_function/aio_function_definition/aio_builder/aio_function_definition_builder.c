@@ -18,13 +18,16 @@ string dig_function_name(const_string source_code, int *pointer_reference);
 
 aio_variable_definition_map *dig_arguments(const_string source_code, int *pointer_reference);
 
-aio_instruction_holder *dig_instructions(const_string source_code, int *pointer_reference);
+aio_instruction_holder *dig_instruction_holder(const_string source_code, int *pointer_reference,
+                                               aio_instruction_holder *parent_holder);
 
 aio_function_definition *build_function_definition(const_string source_code, int *pointer_reference) {
     aio_annotation_list *annotations = dig_annotations(source_code, pointer_reference);
     string_list *output_types = dig_output_types(source_code, pointer_reference);
     string method_name = dig_function_name(source_code, pointer_reference);
     aio_variable_definition_map *arg_definition_map = dig_arguments(source_code, pointer_reference);
-    aio_instruction_holder *instruction_holder = dig_instructions(source_code, pointer_reference);
+    //Dig instruction holder:
+    aio_instruction_holder *parent_holder = NULL;
+    aio_instruction_holder *instruction_holder = dig_instruction_holder(source_code, pointer_reference, parent_holder);
     return new_aio_method_definition(annotations, output_types, method_name, arg_definition_map, instruction_holder);
 }

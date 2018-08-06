@@ -6,87 +6,115 @@
 #include "../../../../lib/collections/lists/string_list.h"
 #include "../../aio_variable/aio_variable_definition.h"
 
-typedef struct aio_assign_instruction;
+/**
+ * Declare instruction holder.
+ */
 
-typedef struct aio_if_instruction;
+typedef struct aio_instruction_holder;
 
-typedef struct aio_switch_instruction;
+/**
+ * Declare tasks.
+ */
 
-typedef struct aio_loop_instruction;
+typedef struct aio_assign_task;
 
-typedef struct aio_procedure_instruction;
+typedef struct aio_if_task;
 
-typedef struct aio_break_instruction;
+typedef struct aio_switch_task;
 
-typedef struct aio_out_instruction;
+typedef struct aio_loop_task;
 
-enum aio_instruction_type {
-    AIO_INSTRUCTION_ASSIGN, AIO_INSTRUCTION_IF, AIO_INSTRUCTION_SWITCH, AIO_INSTRUCTION_LOOP,
-    AIO_INSTRUCTION_PROCEDURE, AIO_INSTRUCTION_BREAK, AIO_INSTRUCTION_OUT
+typedef struct aio_procedure_task;
+
+typedef struct aio_break_task;
+
+typedef struct aio_return_task;
+
+/**
+ * Task type.
+ */
+
+enum aio_task_type {
+    AIO_TASK_ASSIGN, AIO_TASK_IF, AIO_TASK_SWITCH, AIO_TASK_LOOP, AIO_TASK_PROCEDURE, AIO_TASK_BREAK, AIO_TASK_RETURN
 };
 
-typedef union aio_instruction_entry {
-    enum aio_instruction_type instruction_type;
-    struct aio_assign_instruction *assign_instruction;
-    struct aio_if_instruction *if_instruction;
-    struct aio_switch_instruction *switch_instruction;
-    struct aio_loop_instruction *loop_instruction;
-    struct aio_procedure_instruction *procedure_instruction;
-    struct aio_break_instruction *break_instruction;
-    struct aio_out_instruction *out_instruction;
-} aio_instruction_entry;
+/**
+ * Implement instruction holder.
+ */
 
 typedef struct aio_instruction_holder {
-    aio_instruction_entry *parent_entry_instruction;
-    //Keep string expression, key is index:
+    struct aio_instruction_holder *parent_holder;
     aio_variable_definition_map *local_variable_definition_map;
-    aio_instruction_list *instructions;
+    aio_instruction_list *instruction_entry_list;
 } aio_instruction_holder;
 
+aio_instruction_holder *new_aio_instruction_holder(aio_instruction_holder *parent_holder);
 
-typedef struct aio_assign_instruction {
-    aio_instruction_entry *parent_entry_instruction;
-    string source_expression_or_variable_name;
-    string destination_variable_name;
-} aio_assign_instruction;
+/**
+ * Create instruction ("generic task").
+ */
 
-typedef struct aio_if_instruction {
-    aio_instruction_entry *parent_entry_instruction;
-    string expression;
-    aio_instruction_holder *true_instruction;
-    aio_instruction_holder *false_instruction;
-} aio_if_instruction;
+typedef struct aio_instruction {
+    struct aio_instruction_holder *parent_holder;
+    enum aio_task_type task_type;
+    union aio_union_task get;
+} aio_instruction;
 
-typedef struct aio_switch_instruction {
-    aio_instruction_entry *parent_entry_instruction;
-    string_list *expressions;
-    aio_instruction_list *instruction_list;
-} aio_switch_instruction;
+/**
+ * Create union task.
+ */
 
-typedef struct aio_loop_instruction {
-    aio_instruction_entry *parent_entry_instruction;
-    aio_variable_definition *pointer_variable_definition;
+typedef union aio_union_task {
+    struct aio_assign_task *assign_task;
+    struct aio_if_task *if_task;
+    struct aio_switch_task *switch_task;
+    struct aio_loop_task *loop_task;
+    struct aio_procedure_task *procedure_task;
+    struct aio_break_task *break_task;
+    struct aio_return_task *return_task;
+} aio_union_task;
+
+/**
+ * Implement tasks.
+ */
+
+typedef struct aio_assign_task {
+    string from_expression_or_name;
+    string to_variable_name;
+} aio_assign_task;
+
+typedef struct aio_if_task {
+    string if_expression;
+    aio_instruction_holder *true_holder;
+    aio_instruction_holder *false_holder;
+} aio_if_task;
+
+typedef struct aio_switch_task {
+    string switch_expression;
+    string_list *case_expressions;
+    aio_instruction_holder **case_holders;
+} aio_switch_task;
+
+typedef struct aio_loop_task {
+    aio_variable_definition *pointer_definition;
     //Often for init point_watcher:
-    aio_assign_instruction *start_assign_instruction;
+    aio_assign_task *start_assign_tash;
+    //Loop condition:
     string loop_condition;
-    //Instructions:
-    aio_instruction_list *instruction_list;
     //Often for change counter:
-    aio_assign_instruction *loop_assign_instruction;
-} aio_loop_instruction;
+    aio_assign_task *loop_assign_task;
+    aio_instruction_holder *loop_holder;
+} aio_loop_task;
 
-typedef struct aio_procedure_instruction {
-    aio_instruction_entry *parent_entry_instruction;
-    string expression;
-} aio_procedure_instruction;
+typedef struct aio_procedure_task {
+    string procedure_expression;
+} aio_procedure_task;
 
-typedef struct aio_out_instruction {
-    aio_instruction_entry *parent_entry_instruction;
-    string_list *expressions;
-} aio_out_instruction;
+typedef struct aio_return_task {
+    string_list *return_expressions;
+} aio_return_task;
 
-typedef struct aio_break_instruction {
-    aio_instruction_entry *parent_entry_instruction;
-} aio_break_instruction;
+typedef struct aio_break_task {
+} aio_break_task;
 
 #endif //AIO_INSTRUCTIONS_H

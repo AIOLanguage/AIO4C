@@ -40,6 +40,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/AIO.dir/sources/lib/utils/string_utils/string_builder.c.obj"
   "CMakeFiles/AIO.dir/sources/lib/utils/char_utils/char_utils.c.obj"
   "CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_spider.c.obj"
+  "CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_instructions/aio_instructions.c.obj"
   "AIO.pdb"
   "AIO.exe"
   "AIO.exe.manifest"
