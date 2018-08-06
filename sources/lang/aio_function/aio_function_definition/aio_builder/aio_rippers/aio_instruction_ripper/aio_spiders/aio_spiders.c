@@ -1,21 +1,42 @@
 #include <malloc.h>
 #include "../../../../../../../../headers/lang/aio_function/aio_function_definition/aio_spider/aio_spiders.h"
 
+#define AIO_START_SPIDER_STATE 0;
+
 aio_spider *new_aio_spider(
+
+        /**
+         * Function which creates spider states:
+         */
+
+        int *(*create_spider_states)(),
 
         /**
          * Function which finds instruction:
          */
 
-        const_boolean (*is_found_instruction)(const_string string_web),
+        const_boolean (*is_found_instruction)(const_string string_web,
+                                              int *spider_pointer_reference,
+                                              int *spider_state_reference),
 
         /**
          * Function which builds instruction for holder:
          */
 
-        void (*weave_instruction_for)(aio_instruction_holder *instruction_holder, const_string string_web, int *pointer)
+        void (*weave_instruction_for)(
+                aio_instruction_holder *instruction_holder,
+                const_string string_web,
+                int *pointer),
+
+        /**
+         * Function which frees spider:
+         */
+
+        void *(free_spider)(aio_spider *spider)
 ) {
     aio_spider *spider = calloc(1, sizeof(aio_spider));
+    spider->start_pointer = 0;
+    spider->spider_states = AIO_START_SPIDER_STATE;
     spider->is_found_instruction = is_found_instruction;
     spider->weave_instruction_for = weave_instruction_for;
     return spider;
@@ -25,7 +46,9 @@ aio_spider *new_aio_spider(
  * Assign spider functions.
  */
 
-const_boolean is_found_assign_instruction(const_string string_web);
+const_boolean is_found_assign_instruction(const_string string_web,
+                                          int *spider_pointer_reference,
+                                          int *spider_states);
 
 void weave_assign_instruction_for(aio_instruction_holder *instruction_holder, const_string string_web, int *pointer);
 
@@ -34,7 +57,9 @@ void weave_assign_instruction_for(aio_instruction_holder *instruction_holder, co
  * Break spider functions.
  */
 
-const_boolean is_found_break_instruction(const_string string_web);
+const_boolean is_found_break_instruction(const_string string_web,
+                                         int *spider_pointer_reference,
+                                         int *spider_state_reference);
 
 void weave_break_instruction_for(aio_instruction_holder *instruction_holder, const_string string_web, int *pointer);
 
@@ -42,7 +67,9 @@ void weave_break_instruction_for(aio_instruction_holder *instruction_holder, con
  * If spider functions.
  */
 
-const_boolean is_found_if_instruction(const_string string_web);
+const_boolean is_found_if_instruction(const_string string_web,
+                                      int *spider_pointer_reference,
+                                      int *spider_state_reference);
 
 void weave_if_instruction_for(aio_instruction_holder *instruction_holder, const_string string_web, int *pointer);
 
@@ -50,7 +77,9 @@ void weave_if_instruction_for(aio_instruction_holder *instruction_holder, const_
  * Loop spider functions.
  */
 
-const_boolean is_found_loop_instruction(const_string string_web);
+const_boolean is_found_loop_instruction(const_string string_web,
+                                        int *spider_pointer_reference,
+                                        int *spider_state_reference);
 
 void weave_loop_instruction_for(aio_instruction_holder *instruction_holder, const_string string_web, int *pointer);
 
@@ -58,7 +87,9 @@ void weave_loop_instruction_for(aio_instruction_holder *instruction_holder, cons
  * Out spider functions.
  */
 
-const_boolean is_found_out_instruction(const_string string_web);
+const_boolean is_found_out_instruction(const_string string_web,
+                                       int *spider_pointer_reference,
+                                       int *spider_state_reference);
 
 void weave_out_instruction_for(aio_instruction_holder *instruction_holder, const_string string_web, int *pointer);
 
@@ -66,7 +97,9 @@ void weave_out_instruction_for(aio_instruction_holder *instruction_holder, const
  * Procedure spider functions.
  */
 
-const_boolean is_found_procedure_instruction(const_string string_web);
+const_boolean is_found_procedure_instruction(const_string string_web,
+                                             int *spider_pointer_reference,
+                                             int *spider_state_reference);
 
 void weave_procedure_instruction_for(aio_instruction_holder *instruction_holder, const_string string_web, int *pointer);
 
@@ -74,7 +107,9 @@ void weave_procedure_instruction_for(aio_instruction_holder *instruction_holder,
  * Switch spider functions.
  */
 
-const_boolean is_found_switch_instruction(const_string string_web);
+const_boolean is_found_switch_instruction(const_string string_web,
+                                          int *spider_pointer_reference,
+                                          int *spider_state_reference);
 
 void weave_switch_instruction_for(aio_instruction_holder *instruction_holder, const_string string_web, int *pointer);
 

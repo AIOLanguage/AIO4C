@@ -9,12 +9,25 @@
 typedef struct aio_spider {
 
     /**
+     * Spider's pointer defines start scanning spider position.
+     */
+
+    int start_pointer;
+
+    /**
+     * Spider's states work instead enums as state fields.
+     */
+
+    int *spider_states;
+
+    /**
      * Find instruction.
      * @param string_web - instruction string in function body.
      * @return can recognize instruction or not.
      */
 
-    const_boolean (*is_found_instruction)(const_string string_web);
+    const_boolean (*is_found_instruction)(const_string string_web, int *spider_pointer_reference,
+                                          int *spider_state_reference);
 
     /**
      * Take instruction holder & build instruction for it.

@@ -5,17 +5,19 @@
 #include "../../lib/utils/boolean_utils/boolean_utils.h"
 #include "../../lib/collections/sets/string_set.h"
 
-#define AIO_MUTABLE "mu"
+#define AIO_MUTABLE_MODIFIER "mu"
 
-#define AIO_IN "in"
+#define AIO_IN_MODIFIER "in"
 
-#define AIO_LOOP "loo"
+#define AIO_LOOP_MODIFIER "loo"
 
-#define AIO_RETURN "out"
+#define AIO_RETURN_MODIFIER "out"
 
-#define AIO_WHEN "whe"
+#define AIO_WHEN_MODIFIER "whe"
 
-#define AIO_BREAK "brk"
+#define AIO_BREAK_MODIFIER "brk"
+
+const_boolean is_aio_mutable_modifier(const_string string);
 
 boolean can_use_name(const_string name);
 

@@ -18,4 +18,6 @@ boolean is_open_brace(const char c);
 
 boolean is_close_brace(const char c);
 
+boolean is_equal_sign(const char c);
+
 #endif //CHAR_UTILS_H

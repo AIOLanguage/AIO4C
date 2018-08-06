@@ -70,8 +70,8 @@ aio_variable_definition_map *dig_arguments(const_string source_code, int *pointe
                 is_mutable = FALSE;
                 break;
             case MUTABLE_VS_TYPE_VS_NAME: {
-                const_string is_mutable_string = clean_arg_content[0];
-                if (strcmp(is_mutable_string, AIO_MUTABLE) == 0) {
+                const_string mutable_modifier_string = clean_arg_content[0];
+                if (is_aio_mutable_modifier(mutable_modifier_string)) {
                     arg_type = new_string(clean_arg_content[1]);
                     arg_name = new_string(clean_arg_content[2]);
                     is_mutable = TRUE;

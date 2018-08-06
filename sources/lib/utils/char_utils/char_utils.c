@@ -27,3 +27,7 @@ boolean is_open_brace(const char c) {
 boolean is_close_brace(const char c) {
     return c == '}';
 }
+
+boolean is_equal_sign(const char c) {
+    return c == '=';
+}
