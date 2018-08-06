@@ -21,7 +21,8 @@ typedef struct aio_break_instruction;
 typedef struct aio_out_instruction;
 
 enum aio_instruction_type {
-    ASSIGN, IF, SWITCH, LOOP, PROCEDURE, BREAK, OUT
+    AIO_INSTRUCTION_ASSIGN, AIO_INSTRUCTION_IF, AIO_INSTRUCTION_SWITCH, AIO_INSTRUCTION_LOOP,
+    AIO_INSTRUCTION_PROCEDURE, AIO_INSTRUCTION_BREAK, AIO_INSTRUCTION_OUT
 };
 
 typedef union aio_instruction_entry {

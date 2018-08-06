@@ -656,124 +656,124 @@ CMakeFiles/AIO.dir/sources/lang/aio_reserved_names/aio_reserved_names_container.
 CMakeFiles/AIO.dir/sources/lang/aio_reserved_names/aio_reserved_names_container.c.obj.provides.build: CMakeFiles/AIO.dir/sources/lang/aio_reserved_names/aio_reserved_names_container.c.obj
 
 
-CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_annotation_ripper.c.obj: CMakeFiles/AIO.dir/flags.make
-CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_annotation_ripper.c.obj: ../sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_annotation_ripper.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\StarKRE\CLionProjects\AIO\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building C object CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_annotation_ripper.c.obj"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\AIO.dir\sources\lang\aio_function\aio_function_definition\aio_builder\aio_ripper\aio_annotation_ripper.c.obj   -c C:\Users\StarKRE\CLionProjects\AIO\sources\lang\aio_function\aio_function_definition\aio_builder\aio_ripper\aio_annotation_ripper.c
+CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_output_ripper.c.obj: CMakeFiles/AIO.dir/flags.make
+CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_output_ripper.c.obj: ../sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_output_ripper.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\StarKRE\CLionProjects\AIO\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building C object CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_output_ripper.c.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\AIO.dir\sources\lang\aio_function\aio_function_definition\aio_builder\aio_rippers\aio_output_ripper.c.obj   -c C:\Users\StarKRE\CLionProjects\AIO\sources\lang\aio_function\aio_function_definition\aio_builder\aio_rippers\aio_output_ripper.c
 
-CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_annotation_ripper.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_annotation_ripper.c.i"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\StarKRE\CLionProjects\AIO\sources\lang\aio_function\aio_function_definition\aio_builder\aio_ripper\aio_annotation_ripper.c > CMakeFiles\AIO.dir\sources\lang\aio_function\aio_function_definition\aio_builder\aio_ripper\aio_annotation_ripper.c.i
+CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_output_ripper.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_output_ripper.c.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\StarKRE\CLionProjects\AIO\sources\lang\aio_function\aio_function_definition\aio_builder\aio_rippers\aio_output_ripper.c > CMakeFiles\AIO.dir\sources\lang\aio_function\aio_function_definition\aio_builder\aio_rippers\aio_output_ripper.c.i
 
-CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_annotation_ripper.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_annotation_ripper.c.s"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\StarKRE\CLionProjects\AIO\sources\lang\aio_function\aio_function_definition\aio_builder\aio_ripper\aio_annotation_ripper.c -o CMakeFiles\AIO.dir\sources\lang\aio_function\aio_function_definition\aio_builder\aio_ripper\aio_annotation_ripper.c.s
+CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_output_ripper.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_output_ripper.c.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\StarKRE\CLionProjects\AIO\sources\lang\aio_function\aio_function_definition\aio_builder\aio_rippers\aio_output_ripper.c -o CMakeFiles\AIO.dir\sources\lang\aio_function\aio_function_definition\aio_builder\aio_rippers\aio_output_ripper.c.s
 
-CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_annotation_ripper.c.obj.requires:
+CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_output_ripper.c.obj.requires:
 
-.PHONY : CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_annotation_ripper.c.obj.requires
+.PHONY : CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_output_ripper.c.obj.requires
 
-CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_annotation_ripper.c.obj.provides: CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_annotation_ripper.c.obj.requires
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_annotation_ripper.c.obj.provides.build
-.PHONY : CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_annotation_ripper.c.obj.provides
+CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_output_ripper.c.obj.provides: CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_output_ripper.c.obj.requires
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_output_ripper.c.obj.provides.build
+.PHONY : CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_output_ripper.c.obj.provides
 
-CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_annotation_ripper.c.obj.provides.build: CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_annotation_ripper.c.obj
-
-
-CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_arg_ripper.c.obj: CMakeFiles/AIO.dir/flags.make
-CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_arg_ripper.c.obj: ../sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_arg_ripper.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\StarKRE\CLionProjects\AIO\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building C object CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_arg_ripper.c.obj"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\AIO.dir\sources\lang\aio_function\aio_function_definition\aio_builder\aio_ripper\aio_arg_ripper.c.obj   -c C:\Users\StarKRE\CLionProjects\AIO\sources\lang\aio_function\aio_function_definition\aio_builder\aio_ripper\aio_arg_ripper.c
-
-CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_arg_ripper.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_arg_ripper.c.i"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\StarKRE\CLionProjects\AIO\sources\lang\aio_function\aio_function_definition\aio_builder\aio_ripper\aio_arg_ripper.c > CMakeFiles\AIO.dir\sources\lang\aio_function\aio_function_definition\aio_builder\aio_ripper\aio_arg_ripper.c.i
-
-CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_arg_ripper.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_arg_ripper.c.s"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\StarKRE\CLionProjects\AIO\sources\lang\aio_function\aio_function_definition\aio_builder\aio_ripper\aio_arg_ripper.c -o CMakeFiles\AIO.dir\sources\lang\aio_function\aio_function_definition\aio_builder\aio_ripper\aio_arg_ripper.c.s
-
-CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_arg_ripper.c.obj.requires:
-
-.PHONY : CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_arg_ripper.c.obj.requires
-
-CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_arg_ripper.c.obj.provides: CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_arg_ripper.c.obj.requires
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_arg_ripper.c.obj.provides.build
-.PHONY : CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_arg_ripper.c.obj.provides
-
-CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_arg_ripper.c.obj.provides.build: CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_arg_ripper.c.obj
+CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_output_ripper.c.obj.provides.build: CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_output_ripper.c.obj
 
 
-CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_function_name_ripper.c.obj: CMakeFiles/AIO.dir/flags.make
-CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_function_name_ripper.c.obj: ../sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_function_name_ripper.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\StarKRE\CLionProjects\AIO\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building C object CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_function_name_ripper.c.obj"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\AIO.dir\sources\lang\aio_function\aio_function_definition\aio_builder\aio_ripper\aio_function_name_ripper.c.obj   -c C:\Users\StarKRE\CLionProjects\AIO\sources\lang\aio_function\aio_function_definition\aio_builder\aio_ripper\aio_function_name_ripper.c
+CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_function_name_ripper.c.obj: CMakeFiles/AIO.dir/flags.make
+CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_function_name_ripper.c.obj: ../sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_function_name_ripper.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\StarKRE\CLionProjects\AIO\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building C object CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_function_name_ripper.c.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\AIO.dir\sources\lang\aio_function\aio_function_definition\aio_builder\aio_rippers\aio_function_name_ripper.c.obj   -c C:\Users\StarKRE\CLionProjects\AIO\sources\lang\aio_function\aio_function_definition\aio_builder\aio_rippers\aio_function_name_ripper.c
 
-CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_function_name_ripper.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_function_name_ripper.c.i"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\StarKRE\CLionProjects\AIO\sources\lang\aio_function\aio_function_definition\aio_builder\aio_ripper\aio_function_name_ripper.c > CMakeFiles\AIO.dir\sources\lang\aio_function\aio_function_definition\aio_builder\aio_ripper\aio_function_name_ripper.c.i
+CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_function_name_ripper.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_function_name_ripper.c.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\StarKRE\CLionProjects\AIO\sources\lang\aio_function\aio_function_definition\aio_builder\aio_rippers\aio_function_name_ripper.c > CMakeFiles\AIO.dir\sources\lang\aio_function\aio_function_definition\aio_builder\aio_rippers\aio_function_name_ripper.c.i
 
-CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_function_name_ripper.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_function_name_ripper.c.s"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\StarKRE\CLionProjects\AIO\sources\lang\aio_function\aio_function_definition\aio_builder\aio_ripper\aio_function_name_ripper.c -o CMakeFiles\AIO.dir\sources\lang\aio_function\aio_function_definition\aio_builder\aio_ripper\aio_function_name_ripper.c.s
+CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_function_name_ripper.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_function_name_ripper.c.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\StarKRE\CLionProjects\AIO\sources\lang\aio_function\aio_function_definition\aio_builder\aio_rippers\aio_function_name_ripper.c -o CMakeFiles\AIO.dir\sources\lang\aio_function\aio_function_definition\aio_builder\aio_rippers\aio_function_name_ripper.c.s
 
-CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_function_name_ripper.c.obj.requires:
+CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_function_name_ripper.c.obj.requires:
 
-.PHONY : CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_function_name_ripper.c.obj.requires
+.PHONY : CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_function_name_ripper.c.obj.requires
 
-CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_function_name_ripper.c.obj.provides: CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_function_name_ripper.c.obj.requires
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_function_name_ripper.c.obj.provides.build
-.PHONY : CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_function_name_ripper.c.obj.provides
+CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_function_name_ripper.c.obj.provides: CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_function_name_ripper.c.obj.requires
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_function_name_ripper.c.obj.provides.build
+.PHONY : CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_function_name_ripper.c.obj.provides
 
-CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_function_name_ripper.c.obj.provides.build: CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_function_name_ripper.c.obj
-
-
-CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_instruction_ripper.c.obj: CMakeFiles/AIO.dir/flags.make
-CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_instruction_ripper.c.obj: ../sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_instruction_ripper.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\StarKRE\CLionProjects\AIO\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building C object CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_instruction_ripper.c.obj"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\AIO.dir\sources\lang\aio_function\aio_function_definition\aio_builder\aio_ripper\aio_instruction_ripper.c.obj   -c C:\Users\StarKRE\CLionProjects\AIO\sources\lang\aio_function\aio_function_definition\aio_builder\aio_ripper\aio_instruction_ripper.c
-
-CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_instruction_ripper.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_instruction_ripper.c.i"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\StarKRE\CLionProjects\AIO\sources\lang\aio_function\aio_function_definition\aio_builder\aio_ripper\aio_instruction_ripper.c > CMakeFiles\AIO.dir\sources\lang\aio_function\aio_function_definition\aio_builder\aio_ripper\aio_instruction_ripper.c.i
-
-CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_instruction_ripper.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_instruction_ripper.c.s"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\StarKRE\CLionProjects\AIO\sources\lang\aio_function\aio_function_definition\aio_builder\aio_ripper\aio_instruction_ripper.c -o CMakeFiles\AIO.dir\sources\lang\aio_function\aio_function_definition\aio_builder\aio_ripper\aio_instruction_ripper.c.s
-
-CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_instruction_ripper.c.obj.requires:
-
-.PHONY : CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_instruction_ripper.c.obj.requires
-
-CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_instruction_ripper.c.obj.provides: CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_instruction_ripper.c.obj.requires
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_instruction_ripper.c.obj.provides.build
-.PHONY : CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_instruction_ripper.c.obj.provides
-
-CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_instruction_ripper.c.obj.provides.build: CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_instruction_ripper.c.obj
+CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_function_name_ripper.c.obj.provides.build: CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_function_name_ripper.c.obj
 
 
-CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_output_ripper.c.obj: CMakeFiles/AIO.dir/flags.make
-CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_output_ripper.c.obj: ../sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_output_ripper.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\StarKRE\CLionProjects\AIO\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building C object CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_output_ripper.c.obj"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\AIO.dir\sources\lang\aio_function\aio_function_definition\aio_builder\aio_ripper\aio_output_ripper.c.obj   -c C:\Users\StarKRE\CLionProjects\AIO\sources\lang\aio_function\aio_function_definition\aio_builder\aio_ripper\aio_output_ripper.c
+CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_arg_ripper.c.obj: CMakeFiles/AIO.dir/flags.make
+CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_arg_ripper.c.obj: ../sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_arg_ripper.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\StarKRE\CLionProjects\AIO\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building C object CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_arg_ripper.c.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\AIO.dir\sources\lang\aio_function\aio_function_definition\aio_builder\aio_rippers\aio_arg_ripper.c.obj   -c C:\Users\StarKRE\CLionProjects\AIO\sources\lang\aio_function\aio_function_definition\aio_builder\aio_rippers\aio_arg_ripper.c
 
-CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_output_ripper.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_output_ripper.c.i"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\StarKRE\CLionProjects\AIO\sources\lang\aio_function\aio_function_definition\aio_builder\aio_ripper\aio_output_ripper.c > CMakeFiles\AIO.dir\sources\lang\aio_function\aio_function_definition\aio_builder\aio_ripper\aio_output_ripper.c.i
+CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_arg_ripper.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_arg_ripper.c.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\StarKRE\CLionProjects\AIO\sources\lang\aio_function\aio_function_definition\aio_builder\aio_rippers\aio_arg_ripper.c > CMakeFiles\AIO.dir\sources\lang\aio_function\aio_function_definition\aio_builder\aio_rippers\aio_arg_ripper.c.i
 
-CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_output_ripper.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_output_ripper.c.s"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\StarKRE\CLionProjects\AIO\sources\lang\aio_function\aio_function_definition\aio_builder\aio_ripper\aio_output_ripper.c -o CMakeFiles\AIO.dir\sources\lang\aio_function\aio_function_definition\aio_builder\aio_ripper\aio_output_ripper.c.s
+CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_arg_ripper.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_arg_ripper.c.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\StarKRE\CLionProjects\AIO\sources\lang\aio_function\aio_function_definition\aio_builder\aio_rippers\aio_arg_ripper.c -o CMakeFiles\AIO.dir\sources\lang\aio_function\aio_function_definition\aio_builder\aio_rippers\aio_arg_ripper.c.s
 
-CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_output_ripper.c.obj.requires:
+CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_arg_ripper.c.obj.requires:
 
-.PHONY : CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_output_ripper.c.obj.requires
+.PHONY : CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_arg_ripper.c.obj.requires
 
-CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_output_ripper.c.obj.provides: CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_output_ripper.c.obj.requires
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_output_ripper.c.obj.provides.build
-.PHONY : CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_output_ripper.c.obj.provides
+CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_arg_ripper.c.obj.provides: CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_arg_ripper.c.obj.requires
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_arg_ripper.c.obj.provides.build
+.PHONY : CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_arg_ripper.c.obj.provides
 
-CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_output_ripper.c.obj.provides.build: CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_output_ripper.c.obj
+CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_arg_ripper.c.obj.provides.build: CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_arg_ripper.c.obj
+
+
+CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_annotation_ripper.c.obj: CMakeFiles/AIO.dir/flags.make
+CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_annotation_ripper.c.obj: ../sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_annotation_ripper.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\StarKRE\CLionProjects\AIO\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building C object CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_annotation_ripper.c.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\AIO.dir\sources\lang\aio_function\aio_function_definition\aio_builder\aio_rippers\aio_annotation_ripper.c.obj   -c C:\Users\StarKRE\CLionProjects\AIO\sources\lang\aio_function\aio_function_definition\aio_builder\aio_rippers\aio_annotation_ripper.c
+
+CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_annotation_ripper.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_annotation_ripper.c.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\StarKRE\CLionProjects\AIO\sources\lang\aio_function\aio_function_definition\aio_builder\aio_rippers\aio_annotation_ripper.c > CMakeFiles\AIO.dir\sources\lang\aio_function\aio_function_definition\aio_builder\aio_rippers\aio_annotation_ripper.c.i
+
+CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_annotation_ripper.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_annotation_ripper.c.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\StarKRE\CLionProjects\AIO\sources\lang\aio_function\aio_function_definition\aio_builder\aio_rippers\aio_annotation_ripper.c -o CMakeFiles\AIO.dir\sources\lang\aio_function\aio_function_definition\aio_builder\aio_rippers\aio_annotation_ripper.c.s
+
+CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_annotation_ripper.c.obj.requires:
+
+.PHONY : CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_annotation_ripper.c.obj.requires
+
+CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_annotation_ripper.c.obj.provides: CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_annotation_ripper.c.obj.requires
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_annotation_ripper.c.obj.provides.build
+.PHONY : CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_annotation_ripper.c.obj.provides
+
+CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_annotation_ripper.c.obj.provides.build: CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_annotation_ripper.c.obj
+
+
+CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_instruction_ripper.c.obj: CMakeFiles/AIO.dir/flags.make
+CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_instruction_ripper.c.obj: ../sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_instruction_ripper.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\StarKRE\CLionProjects\AIO\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building C object CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_instruction_ripper.c.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\AIO.dir\sources\lang\aio_function\aio_function_definition\aio_builder\aio_rippers\aio_instruction_ripper\aio_instruction_ripper.c.obj   -c C:\Users\StarKRE\CLionProjects\AIO\sources\lang\aio_function\aio_function_definition\aio_builder\aio_rippers\aio_instruction_ripper\aio_instruction_ripper.c
+
+CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_instruction_ripper.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_instruction_ripper.c.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\StarKRE\CLionProjects\AIO\sources\lang\aio_function\aio_function_definition\aio_builder\aio_rippers\aio_instruction_ripper\aio_instruction_ripper.c > CMakeFiles\AIO.dir\sources\lang\aio_function\aio_function_definition\aio_builder\aio_rippers\aio_instruction_ripper\aio_instruction_ripper.c.i
+
+CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_instruction_ripper.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_instruction_ripper.c.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\StarKRE\CLionProjects\AIO\sources\lang\aio_function\aio_function_definition\aio_builder\aio_rippers\aio_instruction_ripper\aio_instruction_ripper.c -o CMakeFiles\AIO.dir\sources\lang\aio_function\aio_function_definition\aio_builder\aio_rippers\aio_instruction_ripper\aio_instruction_ripper.c.s
+
+CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_instruction_ripper.c.obj.requires:
+
+.PHONY : CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_instruction_ripper.c.obj.requires
+
+CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_instruction_ripper.c.obj.provides: CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_instruction_ripper.c.obj.requires
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_instruction_ripper.c.obj.provides.build
+.PHONY : CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_instruction_ripper.c.obj.provides
+
+CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_instruction_ripper.c.obj.provides.build: CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_instruction_ripper.c.obj
 
 
 CMakeFiles/AIO.dir/sources/lib/pair/string_pair.c.obj: CMakeFiles/AIO.dir/flags.make
@@ -1016,6 +1016,30 @@ CMakeFiles/AIO.dir/sources/lib/utils/char_utils/char_utils.c.obj.provides: CMake
 CMakeFiles/AIO.dir/sources/lib/utils/char_utils/char_utils.c.obj.provides.build: CMakeFiles/AIO.dir/sources/lib/utils/char_utils/char_utils.c.obj
 
 
+CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_spider.c.obj: CMakeFiles/AIO.dir/flags.make
+CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_spider.c.obj: ../sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_spider.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\StarKRE\CLionProjects\AIO\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building C object CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_spider.c.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\AIO.dir\sources\lang\aio_function\aio_function_definition\aio_builder\aio_rippers\aio_instruction_ripper\aio_spiders\aio_spider.c.obj   -c C:\Users\StarKRE\CLionProjects\AIO\sources\lang\aio_function\aio_function_definition\aio_builder\aio_rippers\aio_instruction_ripper\aio_spiders\aio_spider.c
+
+CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_spider.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_spider.c.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\StarKRE\CLionProjects\AIO\sources\lang\aio_function\aio_function_definition\aio_builder\aio_rippers\aio_instruction_ripper\aio_spiders\aio_spider.c > CMakeFiles\AIO.dir\sources\lang\aio_function\aio_function_definition\aio_builder\aio_rippers\aio_instruction_ripper\aio_spiders\aio_spider.c.i
+
+CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_spider.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_spider.c.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\StarKRE\CLionProjects\AIO\sources\lang\aio_function\aio_function_definition\aio_builder\aio_rippers\aio_instruction_ripper\aio_spiders\aio_spider.c -o CMakeFiles\AIO.dir\sources\lang\aio_function\aio_function_definition\aio_builder\aio_rippers\aio_instruction_ripper\aio_spiders\aio_spider.c.s
+
+CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_spider.c.obj.requires:
+
+.PHONY : CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_spider.c.obj.requires
+
+CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_spider.c.obj.provides: CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_spider.c.obj.requires
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_spider.c.obj.provides.build
+.PHONY : CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_spider.c.obj.provides
+
+CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_spider.c.obj.provides.build: CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_spider.c.obj
+
+
 # Object files for target AIO
 AIO_OBJECTS = \
 "CMakeFiles/AIO.dir/sources/main/main.c.obj" \
@@ -1043,11 +1067,11 @@ AIO_OBJECTS = \
 "CMakeFiles/AIO.dir/sources/lang/aio_function/aio_variable/aio_variable_definition.c.obj" \
 "CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function.c.obj" \
 "CMakeFiles/AIO.dir/sources/lang/aio_reserved_names/aio_reserved_names_container.c.obj" \
-"CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_annotation_ripper.c.obj" \
-"CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_arg_ripper.c.obj" \
-"CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_function_name_ripper.c.obj" \
-"CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_instruction_ripper.c.obj" \
-"CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_output_ripper.c.obj" \
+"CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_output_ripper.c.obj" \
+"CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_function_name_ripper.c.obj" \
+"CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_arg_ripper.c.obj" \
+"CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_annotation_ripper.c.obj" \
+"CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_instruction_ripper.c.obj" \
 "CMakeFiles/AIO.dir/sources/lib/pair/string_pair.c.obj" \
 "CMakeFiles/AIO.dir/sources/lib/utils/double_utils/double_utils.c.obj" \
 "CMakeFiles/AIO.dir/sources/lib/collections/sets/string_set.c.obj" \
@@ -1057,7 +1081,8 @@ AIO_OBJECTS = \
 "CMakeFiles/AIO.dir/sources/lib/point_watcher/point_watcher.c.obj" \
 "CMakeFiles/AIO.dir/sources/lib/collections/maps/aio_variable_definition_map.c.obj" \
 "CMakeFiles/AIO.dir/sources/lib/utils/string_utils/string_builder.c.obj" \
-"CMakeFiles/AIO.dir/sources/lib/utils/char_utils/char_utils.c.obj"
+"CMakeFiles/AIO.dir/sources/lib/utils/char_utils/char_utils.c.obj" \
+"CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_spider.c.obj"
 
 # External object files for target AIO
 AIO_EXTERNAL_OBJECTS =
@@ -1087,11 +1112,11 @@ AIO.exe: CMakeFiles/AIO.dir/sources/lang/aio_function/aio_variable/aio_variable.
 AIO.exe: CMakeFiles/AIO.dir/sources/lang/aio_function/aio_variable/aio_variable_definition.c.obj
 AIO.exe: CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function.c.obj
 AIO.exe: CMakeFiles/AIO.dir/sources/lang/aio_reserved_names/aio_reserved_names_container.c.obj
-AIO.exe: CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_annotation_ripper.c.obj
-AIO.exe: CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_arg_ripper.c.obj
-AIO.exe: CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_function_name_ripper.c.obj
-AIO.exe: CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_instruction_ripper.c.obj
-AIO.exe: CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_output_ripper.c.obj
+AIO.exe: CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_output_ripper.c.obj
+AIO.exe: CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_function_name_ripper.c.obj
+AIO.exe: CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_arg_ripper.c.obj
+AIO.exe: CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_annotation_ripper.c.obj
+AIO.exe: CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_instruction_ripper.c.obj
 AIO.exe: CMakeFiles/AIO.dir/sources/lib/pair/string_pair.c.obj
 AIO.exe: CMakeFiles/AIO.dir/sources/lib/utils/double_utils/double_utils.c.obj
 AIO.exe: CMakeFiles/AIO.dir/sources/lib/collections/sets/string_set.c.obj
@@ -1102,11 +1127,12 @@ AIO.exe: CMakeFiles/AIO.dir/sources/lib/point_watcher/point_watcher.c.obj
 AIO.exe: CMakeFiles/AIO.dir/sources/lib/collections/maps/aio_variable_definition_map.c.obj
 AIO.exe: CMakeFiles/AIO.dir/sources/lib/utils/string_utils/string_builder.c.obj
 AIO.exe: CMakeFiles/AIO.dir/sources/lib/utils/char_utils/char_utils.c.obj
+AIO.exe: CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_spider.c.obj
 AIO.exe: CMakeFiles/AIO.dir/build.make
 AIO.exe: CMakeFiles/AIO.dir/linklibs.rsp
 AIO.exe: CMakeFiles/AIO.dir/objects1.rsp
 AIO.exe: CMakeFiles/AIO.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\StarKRE\CLionProjects\AIO\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Linking C executable AIO.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\StarKRE\CLionProjects\AIO\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Linking C executable AIO.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\AIO.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -1139,11 +1165,11 @@ CMakeFiles/AIO.dir/requires: CMakeFiles/AIO.dir/sources/lang/aio_function/aio_va
 CMakeFiles/AIO.dir/requires: CMakeFiles/AIO.dir/sources/lang/aio_function/aio_variable/aio_variable_definition.c.obj.requires
 CMakeFiles/AIO.dir/requires: CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function.c.obj.requires
 CMakeFiles/AIO.dir/requires: CMakeFiles/AIO.dir/sources/lang/aio_reserved_names/aio_reserved_names_container.c.obj.requires
-CMakeFiles/AIO.dir/requires: CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_annotation_ripper.c.obj.requires
-CMakeFiles/AIO.dir/requires: CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_arg_ripper.c.obj.requires
-CMakeFiles/AIO.dir/requires: CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_function_name_ripper.c.obj.requires
-CMakeFiles/AIO.dir/requires: CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_instruction_ripper.c.obj.requires
-CMakeFiles/AIO.dir/requires: CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_output_ripper.c.obj.requires
+CMakeFiles/AIO.dir/requires: CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_output_ripper.c.obj.requires
+CMakeFiles/AIO.dir/requires: CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_function_name_ripper.c.obj.requires
+CMakeFiles/AIO.dir/requires: CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_arg_ripper.c.obj.requires
+CMakeFiles/AIO.dir/requires: CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_annotation_ripper.c.obj.requires
+CMakeFiles/AIO.dir/requires: CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_instruction_ripper.c.obj.requires
 CMakeFiles/AIO.dir/requires: CMakeFiles/AIO.dir/sources/lib/pair/string_pair.c.obj.requires
 CMakeFiles/AIO.dir/requires: CMakeFiles/AIO.dir/sources/lib/utils/double_utils/double_utils.c.obj.requires
 CMakeFiles/AIO.dir/requires: CMakeFiles/AIO.dir/sources/lib/collections/sets/string_set.c.obj.requires
@@ -1154,6 +1180,7 @@ CMakeFiles/AIO.dir/requires: CMakeFiles/AIO.dir/sources/lib/point_watcher/point_
 CMakeFiles/AIO.dir/requires: CMakeFiles/AIO.dir/sources/lib/collections/maps/aio_variable_definition_map.c.obj.requires
 CMakeFiles/AIO.dir/requires: CMakeFiles/AIO.dir/sources/lib/utils/string_utils/string_builder.c.obj.requires
 CMakeFiles/AIO.dir/requires: CMakeFiles/AIO.dir/sources/lib/utils/char_utils/char_utils.c.obj.requires
+CMakeFiles/AIO.dir/requires: CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_spider.c.obj.requires
 
 .PHONY : CMakeFiles/AIO.dir/requires
 
