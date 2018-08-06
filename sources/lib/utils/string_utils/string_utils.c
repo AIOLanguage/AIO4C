@@ -14,27 +14,6 @@ string new_string(const_string src) {
     return new_string;
 }
 
-//Passed JUnitTest!
-boolean is_space(const char c) {
-    return c == ' ';
-}
-
-boolean is_line_break(const char c) {
-    return c == '\n';
-}
-
-boolean is_space_or_line_break(const char c){
-    return is_space(c) || is_line_break(c);
-}
-
-boolean is_open_parenthesis(const char c) {
-    return c == '(';
-}
-
-boolean is_close_parenthesis(const char c) {
-    return c == ')';
-}
-
 //박수!
 //Passed JUnitTest!
 string_array filter(string_array src, int src_size, const_boolean (*filter_condition)(const_string)) {

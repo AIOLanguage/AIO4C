@@ -24,7 +24,6 @@ aio_context *new_aio_context(const_string path) {
     printf("\nCONTEXT: NAME\n%s\n", context->name);
     printf("\nCONTEXT: SOURCE CODE\n%s\n", context->source_code);
 #endif
-
     return context;
 }
 

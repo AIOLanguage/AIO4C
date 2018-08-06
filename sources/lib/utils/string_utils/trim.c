@@ -6,6 +6,7 @@
 #include <assert.h>
 #include <stddef.h>
 #include "../../../../headers/lib/utils/string_utils/string_utils.h"
+#include "../../../../headers/lib/utils/char_utils/char_utils.h"
 
 //Passed JUnitTest!
 string abstract_border_trim(const_string src, const int has_left, const int has_right,

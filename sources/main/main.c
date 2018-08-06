@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <mem.h>
 #include "../../headers/lang/aio_core/aio_core.h"
+#include "../../headers/lib/utils/string_utils/string_builder.h"
 
 void make_test() {
     inflate_aio_core();
@@ -13,16 +14,6 @@ void make_test() {
 
 int main() {
     make_test();
-
-
-//    string_list *list = new_string_list();
-//    add_string_in_list(list, "fffff");
-//    add_string_in_list(list, "\n");
-//    for (int i = 0; i < list->size; ++i) {
-//        printf("\n-%s-\n", list->strings[i]);
-//    }
-
-
 
     return 0;
 }

@@ -133,6 +133,7 @@ CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder
 CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_arg_ripper.c.obj: ../headers/lib/collections/sets/string_set.h
 CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_arg_ripper.c.obj: ../headers/lib/point_watcher/point_watcher.h
 CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_arg_ripper.c.obj: ../headers/lib/utils/boolean_utils/boolean_utils.h
+CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_arg_ripper.c.obj: ../headers/lib/utils/char_utils/char_utils.h
 CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_arg_ripper.c.obj: ../headers/lib/utils/error_utils/error_utils.h
 CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_arg_ripper.c.obj: ../headers/lib/utils/string_utils/string_utils.h
 CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_arg_ripper.c.obj: ../sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_arg_ripper.c
@@ -140,6 +141,8 @@ CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder
 CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_function_name_ripper.c.obj: ../headers/lib/collections/lists/string_list.h
 CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_function_name_ripper.c.obj: ../headers/lib/point_watcher/point_watcher.h
 CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_function_name_ripper.c.obj: ../headers/lib/utils/boolean_utils/boolean_utils.h
+CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_function_name_ripper.c.obj: ../headers/lib/utils/char_utils/char_utils.h
+CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_function_name_ripper.c.obj: ../headers/lib/utils/error_utils/error_utils.h
 CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_function_name_ripper.c.obj: ../headers/lib/utils/string_utils/string_utils.h
 CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_function_name_ripper.c.obj: ../sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_function_name_ripper.c
 
@@ -149,7 +152,9 @@ CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder
 CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_instruction_ripper.c.obj: ../headers/lib/collections/lists/aio_instruction_list.h
 CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_instruction_ripper.c.obj: ../headers/lib/collections/lists/string_list.h
 CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_instruction_ripper.c.obj: ../headers/lib/collections/maps/aio_variable_definition_map.h
+CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_instruction_ripper.c.obj: ../headers/lib/point_watcher/point_watcher.h
 CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_instruction_ripper.c.obj: ../headers/lib/utils/boolean_utils/boolean_utils.h
+CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_instruction_ripper.c.obj: ../headers/lib/utils/char_utils/char_utils.h
 CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_instruction_ripper.c.obj: ../headers/lib/utils/string_utils/string_utils.h
 CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_instruction_ripper.c.obj: ../sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_instruction_ripper.c
 
@@ -172,6 +177,7 @@ CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder
 CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_output_ripper.c.obj: ../headers/lib/collections/sets/string_set.h
 CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_output_ripper.c.obj: ../headers/lib/point_watcher/point_watcher.h
 CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_output_ripper.c.obj: ../headers/lib/utils/boolean_utils/boolean_utils.h
+CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_output_ripper.c.obj: ../headers/lib/utils/char_utils/char_utils.h
 CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_output_ripper.c.obj: ../headers/lib/utils/error_utils/error_utils.h
 CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_output_ripper.c.obj: ../headers/lib/utils/string_utils/string_utils.h
 CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_output_ripper.c.obj: ../sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_output_ripper.c
@@ -327,6 +333,10 @@ CMakeFiles/AIO.dir/sources/lib/utils/boolean_utils/boolean_utils.c.obj: ../heade
 CMakeFiles/AIO.dir/sources/lib/utils/boolean_utils/boolean_utils.c.obj: ../headers/lib/utils/string_utils/string_utils.h
 CMakeFiles/AIO.dir/sources/lib/utils/boolean_utils/boolean_utils.c.obj: ../sources/lib/utils/boolean_utils/boolean_utils.c
 
+CMakeFiles/AIO.dir/sources/lib/utils/char_utils/char_utils.c.obj: ../headers/lib/utils/boolean_utils/boolean_utils.h
+CMakeFiles/AIO.dir/sources/lib/utils/char_utils/char_utils.c.obj: ../headers/lib/utils/string_utils/string_utils.h
+CMakeFiles/AIO.dir/sources/lib/utils/char_utils/char_utils.c.obj: ../sources/lib/utils/char_utils/char_utils.c
+
 CMakeFiles/AIO.dir/sources/lib/utils/double_utils/double_utils.c.obj: ../headers/lib/utils/boolean_utils/boolean_utils.h
 CMakeFiles/AIO.dir/sources/lib/utils/double_utils/double_utils.c.obj: ../headers/lib/utils/string_utils/string_utils.h
 CMakeFiles/AIO.dir/sources/lib/utils/double_utils/double_utils.c.obj: ../sources/lib/utils/double_utils/double_utils.c
@@ -367,12 +377,18 @@ CMakeFiles/AIO.dir/sources/lib/utils/string_utils/split.c.obj: ../headers/lib/ut
 CMakeFiles/AIO.dir/sources/lib/utils/string_utils/split.c.obj: ../headers/lib/utils/string_utils/string_utils.h
 CMakeFiles/AIO.dir/sources/lib/utils/string_utils/split.c.obj: ../sources/lib/utils/string_utils/split.c
 
+CMakeFiles/AIO.dir/sources/lib/utils/string_utils/string_builder.c.obj: ../headers/lib/utils/boolean_utils/boolean_utils.h
+CMakeFiles/AIO.dir/sources/lib/utils/string_utils/string_builder.c.obj: ../headers/lib/utils/string_utils/string_builder.h
+CMakeFiles/AIO.dir/sources/lib/utils/string_utils/string_builder.c.obj: ../headers/lib/utils/string_utils/string_utils.h
+CMakeFiles/AIO.dir/sources/lib/utils/string_utils/string_builder.c.obj: ../sources/lib/utils/string_utils/string_builder.c
+
 CMakeFiles/AIO.dir/sources/lib/utils/string_utils/string_utils.c.obj: ../headers/lib/utils/boolean_utils/boolean_utils.h
 CMakeFiles/AIO.dir/sources/lib/utils/string_utils/string_utils.c.obj: ../headers/lib/utils/error_utils/error_utils.h
 CMakeFiles/AIO.dir/sources/lib/utils/string_utils/string_utils.c.obj: ../headers/lib/utils/string_utils/string_utils.h
 CMakeFiles/AIO.dir/sources/lib/utils/string_utils/string_utils.c.obj: ../sources/lib/utils/string_utils/string_utils.c
 
 CMakeFiles/AIO.dir/sources/lib/utils/string_utils/trim.c.obj: ../headers/lib/utils/boolean_utils/boolean_utils.h
+CMakeFiles/AIO.dir/sources/lib/utils/string_utils/trim.c.obj: ../headers/lib/utils/char_utils/char_utils.h
 CMakeFiles/AIO.dir/sources/lib/utils/string_utils/trim.c.obj: ../headers/lib/utils/string_utils/string_utils.h
 CMakeFiles/AIO.dir/sources/lib/utils/string_utils/trim.c.obj: ../sources/lib/utils/string_utils/trim.c
 
@@ -394,6 +410,7 @@ CMakeFiles/AIO.dir/sources/main/main.c.obj: ../headers/lib/collections/maps/aio_
 CMakeFiles/AIO.dir/sources/main/main.c.obj: ../headers/lib/collections/maps/aio_variable_map.h
 CMakeFiles/AIO.dir/sources/main/main.c.obj: ../headers/lib/collections/sets/string_set.h
 CMakeFiles/AIO.dir/sources/main/main.c.obj: ../headers/lib/utils/boolean_utils/boolean_utils.h
+CMakeFiles/AIO.dir/sources/main/main.c.obj: ../headers/lib/utils/string_utils/string_builder.h
 CMakeFiles/AIO.dir/sources/main/main.c.obj: ../headers/lib/utils/string_utils/string_utils.h
 CMakeFiles/AIO.dir/sources/main/main.c.obj: ../sources/main/main.c
 

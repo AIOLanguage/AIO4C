@@ -5,6 +5,7 @@
 #include "../../../../../../headers/lib/point_watcher/point_watcher.h"
 #include "../../../../../../headers/lib/utils/error_utils/error_utils.h"
 #include "../../../../../../headers/lang/aio_reserved_names/aio_reserved_names_container.h"
+#include "../../../../../../headers/lib/utils/char_utils/char_utils.h"
 
 #define AIO_ARG_RIPPER_DEBUG
 
@@ -21,7 +22,7 @@ aio_variable_definition_map *dig_arguments(const_string source_code, int *pointe
         //독서를 시작하다 (Begin reading):
         if (is_open_parenthesis(symbol) && watcher->mode == POINT_UNDEFINED) {
             watcher->start_index = i + 1;
-            watcher->mode = POINT_READING_MODE;
+            watcher->mode = POINT_WATCHING_MODE;
         }
         //독서 중지 (Stop reading):
         if (is_close_parenthesis(symbol)) {
@@ -29,6 +30,12 @@ aio_variable_definition_map *dig_arguments(const_string source_code, int *pointe
             //괄호로 호 (After parenthesis):
             *pointer_reference = i + 1;
             break;
+        }
+        //지켜보기 잔에 공백과 줄 바꿈 건너 뙤기 (Skip whitespace and line breaks before watching):
+        if (watcher->mode == POINT_UNDEFINED) {
+            if (!is_space_or_line_break(symbol)) {
+                throw_error("OUTPUT RIPPER: 잘못된 함수 함유량 (Invalid function content)!");
+            }
         }
     }
     //함수 인수들 함유량 줄 얻는다 (Get function arguments content string):
@@ -69,12 +76,12 @@ aio_variable_definition_map *dig_arguments(const_string source_code, int *pointe
                     arg_name = new_string(clean_arg_content[2]);
                     is_mutable = TRUE;
                 } else {
-                    throw_error("incorrect mutable string!");
+                    throw_error(" 잘못된 'mu' 수정 자 (Invalid 'mu' modifier)!");
                 }
             }
                 break;
             default:
-                throw_error("Can not define arg content!");
+                throw_error("함수 인수 함유량을 밝힐 수 없어 (Can not define arg content)!");
         }
         definition = new_aio_variable_definition(arg_name, arg_type, is_mutable);
         put_aio_variable_definition_in_map(arg_definition_map, definition);
@@ -89,10 +96,10 @@ aio_variable_definition_map *dig_arguments(const_string source_code, int *pointe
         aio_variable_definition *definition = arg_definition_map->variable_definitions[k];
         printf("\nARG RIPPER: %s, %s, %d \n", definition->type, definition->name, definition->is_mutable_by_value);
     }
+#endif
     //------------------------------------------------------------------------------------------------------------------
     //찌꺼기 수집기 (Garbage collector):
     free_strings(&dirty_arg_chunks);
     free_strings(&clean_arg_chunks);
-#endif
     return arg_definition_map;
 }

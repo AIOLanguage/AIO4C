@@ -134,6 +134,7 @@ CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/collections/sets/string_set.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/point_watcher/point_watcher.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/boolean_utils/boolean_utils.h
+ C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/char_utils/char_utils.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/error_utils/error_utils.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/string_utils/string_utils.h
  C:/Users/StarKRE/CLionProjects/AIO/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_arg_ripper.c
@@ -141,6 +142,8 @@ CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/collections/lists/string_list.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/point_watcher/point_watcher.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/boolean_utils/boolean_utils.h
+ C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/char_utils/char_utils.h
+ C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/error_utils/error_utils.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/string_utils/string_utils.h
  C:/Users/StarKRE/CLionProjects/AIO/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_function_name_ripper.c
 CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_instruction_ripper.c.obj
@@ -150,7 +153,9 @@ CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/collections/lists/aio_instruction_list.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/collections/lists/string_list.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/collections/maps/aio_variable_definition_map.h
+ C:/Users/StarKRE/CLionProjects/AIO/headers/lib/point_watcher/point_watcher.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/boolean_utils/boolean_utils.h
+ C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/char_utils/char_utils.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/string_utils/string_utils.h
  C:/Users/StarKRE/CLionProjects/AIO/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_instruction_ripper.c
 CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_output_ripper.c.obj
@@ -173,6 +178,7 @@ CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/collections/sets/string_set.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/point_watcher/point_watcher.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/boolean_utils/boolean_utils.h
+ C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/char_utils/char_utils.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/error_utils/error_utils.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/string_utils/string_utils.h
  C:/Users/StarKRE/CLionProjects/AIO/sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_output_ripper.c
@@ -327,6 +333,10 @@ CMakeFiles/AIO.dir/sources/lib/utils/boolean_utils/boolean_utils.c.obj
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/error_utils/error_utils.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/string_utils/string_utils.h
  C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/boolean_utils/boolean_utils.c
+CMakeFiles/AIO.dir/sources/lib/utils/char_utils/char_utils.c.obj
+ C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/boolean_utils/boolean_utils.h
+ C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/string_utils/string_utils.h
+ C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/char_utils/char_utils.c
 CMakeFiles/AIO.dir/sources/lib/utils/double_utils/double_utils.c.obj
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/boolean_utils/boolean_utils.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/string_utils/string_utils.h
@@ -367,6 +377,11 @@ CMakeFiles/AIO.dir/sources/lib/utils/string_utils/split.c.obj
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/boolean_utils/boolean_utils.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/string_utils/string_utils.h
  C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/string_utils/split.c
+CMakeFiles/AIO.dir/sources/lib/utils/string_utils/string_builder.c.obj
+ C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/boolean_utils/boolean_utils.h
+ C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/string_utils/string_builder.h
+ C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/string_utils/string_utils.h
+ C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/string_utils/string_builder.c
 CMakeFiles/AIO.dir/sources/lib/utils/string_utils/string_utils.c.obj
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/boolean_utils/boolean_utils.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/error_utils/error_utils.h
@@ -374,6 +389,7 @@ CMakeFiles/AIO.dir/sources/lib/utils/string_utils/string_utils.c.obj
  C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/string_utils/string_utils.c
 CMakeFiles/AIO.dir/sources/lib/utils/string_utils/trim.c.obj
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/boolean_utils/boolean_utils.h
+ C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/char_utils/char_utils.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/string_utils/string_utils.h
  C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/string_utils/trim.c
 CMakeFiles/AIO.dir/sources/main/main.c.obj
@@ -395,6 +411,7 @@ CMakeFiles/AIO.dir/sources/main/main.c.obj
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/collections/maps/aio_variable_map.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/collections/sets/string_set.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/boolean_utils/boolean_utils.h
+ C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/string_utils/string_builder.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/string_utils/string_utils.h
  C:/Users/StarKRE/CLionProjects/AIO/sources/main/main.c
 CMakeFiles/AIO.dir/sources/tools/analysis/method_reproducer/aio_function_reproducer.c.obj

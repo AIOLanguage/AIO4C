@@ -16,7 +16,7 @@ char *remove_brackets_and_return_value(string value) {
         free(value);
         return newValue;
     } else {
-        printf("\nThis is not char or str!");
+        printf("\nThis is not char or string_value!");
         exit(1);
     }
 }

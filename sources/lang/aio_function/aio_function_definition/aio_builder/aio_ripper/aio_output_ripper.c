@@ -5,6 +5,7 @@
 #include "../../../../../../headers/lib/point_watcher/point_watcher.h"
 #include "../../../../../../headers/lib/collections/lists/string_list.h"
 #include "../../../../../../headers/lang/aio_core/aio_core.h"
+#include "../../../../../../headers/lib/utils/char_utils/char_utils.h"
 
 #define AIO_OUTPUT_RIPPER_DEBUG
 
@@ -26,7 +27,7 @@ string_list *dig_output_types(const_string source_code, int *pointer_reference) 
             //하나의 출력 유형 (Single output type):
             mode = SINGLE_OUTPUT_MODE;
             watcher->start_index = i;
-            watcher->mode = POINT_READING_MODE;
+            watcher->mode = POINT_WATCHING_MODE;
 #ifdef AIO_OUTPUT_RIPPER_DEBUG
             printf("\nOUTPUT RIPPER: START SINGLE READING...\n");
 #endif
@@ -36,7 +37,7 @@ string_list *dig_output_types(const_string source_code, int *pointer_reference) 
             //많은 출력 유형들 (Many output types):
             mode = MULTI_OUTPUT_MODE;
             watcher->start_index = i + 1;
-            watcher->mode = POINT_READING_MODE;
+            watcher->mode = POINT_WATCHING_MODE;
 #ifdef AIO_OUTPUT_RIPPER_DEBUG
             printf("\nOUTPUT RIPPER: START MULTI READING...\n");
 #endif
@@ -52,6 +53,12 @@ string_list *dig_output_types(const_string source_code, int *pointer_reference) 
                 *pointer_reference = i + 1;
             }
             break;
+        }
+        //지켜보기 잔에 공백과 줄 바꿈 건너 뛰기 (Skip whitespace and line breaks before watching):
+        if (mode == OUTPUT_UNDEFINED){
+            if (!is_space_or_line_break_condition){
+                throw_error("OUTPUT RIPPER: 잘못된 함수 함유량 (Invalid function content)!");
+            }
         }
     }
     //유형 함유량 줄 받다 (Get type content string):

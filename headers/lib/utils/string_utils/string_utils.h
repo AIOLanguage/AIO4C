@@ -36,16 +36,6 @@ string trim(const_string src);
 
 string squeeze_string(const_string src);
 
-boolean is_space(const char src);
-
-boolean is_line_break(const char c);
-
-boolean is_space_or_line_break(const char c);
-
-boolean is_open_parenthesis(const char c);
-
-boolean is_close_parenthesis(const char c);
-
 string_array trim_all(const_string_array strings, const int number_of_strings);
 
 string trim_start_with_line_break(const_string src);
