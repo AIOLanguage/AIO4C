@@ -18,24 +18,29 @@ aio_instruction_holder *dig_instruction_holder(const_string source_code, int *po
     //Dig function body:
     const_string function_body = dig_function_body(source_code, pointer_reference);
     const size_t function_body_length = strlen(function_body);
-    //Start to find instruction_entry_list:
-    aio_spider **spiders = breed_aio_spiders();
-    string_builder *str_builder = new_string_builder();
-    int pointer = 0;
-    for (pointer; pointer < function_body_length; ++pointer) {
-        const char symbol = function_body[pointer];
-        append_char(str_builder, symbol);
-        const_string string_web = str_builder->string_value;
-        for (int i = 0; i < NUMBER_OF_AIO_SPIDERS; ++i) {
-            aio_spider *spider = spiders[i];
-            const_boolean is_successful_detected = spider->is_found_instruction(string_web);
-            if (is_successful_detected) {
-                spider->weave_instruction_for(current_holder, string_web, &pointer);
-                break;
+    if (function_body_length >= 0) {
+        //Start to find instruction_entry_list:
+        aio_spider **spiders = breed_aio_spiders();
+        string_builder *str_builder = new_string_builder();
+        int pointer = 0;
+        for (pointer; pointer < function_body_length; ++pointer) {
+            const char symbol = function_body[pointer];
+            append_char(str_builder, symbol);
+            const_string string_web = str_builder->string_value;
+            for (int i = 0; i < NUMBER_OF_AIO_SPIDERS; ++i) {
+                aio_spider *spider = spiders[i];
+                const_boolean is_found_instruction = spider->is_found_instruction(string_web);
+                if (is_found_instruction) {
+                    spider->weave_instruction_for(current_holder, string_web, &pointer);
+                    break;
+                }
             }
         }
+        free_aio_spiders(&spiders);
     }
-    free_aio_spiders(&spiders);
+    //------------------------------------------------------------------------------------------------------------------
+    //찌꺼기 수집기 (Garbage collector):
+    free((void *) function_body);
     return current_holder;
 }
 
@@ -72,11 +77,11 @@ const_string dig_function_body(const_string source_code, int *pointer_reference)
         }
     }
     //Dig function body:
-    const_string dirty_function_body_chunk = substring(source_code, watcher->start_index, watcher->end_index);
-    const_string clean_function_body_chunk = trim_with_line_break(dirty_function_body_chunk);
+    const_string dirty_function_body = substring(source_code, watcher->start_index, watcher->end_index);
+    const_string clean_function_body = trim_with_line_break(dirty_function_body);
     //------------------------------------------------------------------------------------------------------------------
     //찌꺼기 수집기 (Garbage collector):
     free_point_watcher(watcher);
-    free((void *) dirty_function_body_chunk);
-    return clean_function_body_chunk;
+    free((void *) dirty_function_body);
+    return clean_function_body;
 }
