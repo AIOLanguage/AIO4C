@@ -9,14 +9,14 @@
 
 #define AIO_OUTPUT_RIPPER_DEBUG
 
-enum output_mode {
+enum aio_output_mode {
     OUTPUT_UNDEFINED, SINGLE_OUTPUT_MODE, MULTI_OUTPUT_MODE
 };
 
 string_list *dig_output_types(const_string source_code, int *pointer_reference) {
     string_list *output_type_list = new_string_list();
     const size_t source_code_length = strlen(source_code);
-    enum output_mode mode = OUTPUT_UNDEFINED;
+    enum aio_output_mode mode = OUTPUT_UNDEFINED;
     point_watcher *watcher = new_point_watcher();
     for (int i = *pointer_reference; i < source_code_length; ++i) {
         const char symbol = source_code[i];
