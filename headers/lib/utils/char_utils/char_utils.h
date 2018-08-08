@@ -20,4 +20,8 @@ boolean is_close_brace(const char c);
 
 boolean is_equal_sign(const char c);
 
+boolean is_sign(const char c);
+
+boolean is_dot(const char c);
+
 #endif //CHAR_UTILS_H

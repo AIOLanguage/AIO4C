@@ -9,10 +9,10 @@ aio_core *core;
 #define AIO_CORE_DEBUG
 
 char core_types[NUMBER_OF_CORE_TYPES][4] = {
-        {"Int"},
-        {"Dou"},
-        {"Str"},
-        {"Boo"},
+        {INTEGER},
+        {DOUBLE},
+        {STRING},
+        {BOOLEAN},
         {VOID}
 };
 

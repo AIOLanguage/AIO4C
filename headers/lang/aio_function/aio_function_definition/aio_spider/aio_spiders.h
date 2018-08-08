@@ -6,6 +6,8 @@
 
 #define NUMBER_OF_AIO_SPIDERS 7
 
+typedef string_list **spider_materials;
+
 typedef struct aio_spider {
 
     /**
@@ -15,10 +17,17 @@ typedef struct aio_spider {
     int start_pointer;
 
     /**
-     * Spider's states work instead enums as state fields.
+     * Spider's protocol has keys for work with "spider web" and weaving instruction.
      */
 
-    int *spider_states;
+    int *spider_protocol;
+
+    /**
+     * Spider collects materials when it founds regex.
+     * After successful searching spider weave instruction for holder by materials.
+     */
+
+    spider_materials spider_collected_materials;
 
     /**
      * Find instruction.

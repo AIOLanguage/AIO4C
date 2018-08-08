@@ -28,6 +28,6 @@ boolean can_use_name(const_string name) {
             return false;
         }
     }
-    //check in aio_type_set:
+    //Check in aio type set:
     return contains_string_in_set(core->aio_type_set, name);
 }

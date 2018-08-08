@@ -45,20 +45,10 @@ enum aio_task_type {
 typedef struct aio_instruction_holder {
     struct aio_instruction_holder *parent_holder;
     aio_variable_definition_map *local_variable_definition_map;
-    aio_instruction_list *instruction_entry_list;
+    aio_instruction_list *instruction_list;
 } aio_instruction_holder;
 
 aio_instruction_holder *new_aio_instruction_holder(aio_instruction_holder *parent_holder);
-
-/**
- * Create instruction ("generic task").
- */
-
-typedef struct aio_instruction {
-    struct aio_instruction_holder *parent_holder;
-    enum aio_task_type task_type;
-    union aio_union_task get;
-} aio_instruction;
 
 /**
  * Create union task.
@@ -75,13 +65,26 @@ typedef union aio_union_task {
 } aio_union_task;
 
 /**
+ * Create instruction ("generic task").
+ */
+
+typedef struct aio_instruction {
+    aio_instruction_holder *parent_holder;
+    enum aio_task_type task_type;
+    union aio_union_task get;
+} aio_instruction;
+
+/**
  * Implement tasks.
  */
 
 typedef struct aio_assign_task {
-    string from_expression_or_name;
-    string to_variable_name;
+    const_string source;
+    const_string destination;
 } aio_assign_task;
+
+aio_instruction *new_aio_assign_instruction(aio_instruction_holder *parent_holder, const_string source,
+                                            const_string destination);
 
 typedef struct aio_if_task {
     string if_expression;

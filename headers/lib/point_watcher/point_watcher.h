@@ -2,7 +2,7 @@
 #define POINTER_H
 
 enum point_mode {
-    POINT_UNDEFINED, POINT_WATCHING_MODE
+    POINT_UNDEFINED_MODE, POINT_PASSIVE_MODE, POINT_ACTIVE_MODE
 };
 
 typedef struct point_watcher {

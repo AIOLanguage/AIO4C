@@ -23,6 +23,7 @@ aio_instruction_holder *dig_instruction_holder(const_string source_code, int *po
         aio_spider **spiders = breed_aio_spiders();
         string_builder *str_builder = new_string_builder();
         //Start to find instruction:
+        int next_start_spider_position = 0;
         int pointer = 0;
         for (pointer; pointer < function_body_length; ++pointer) {
             const char symbol = function_body[pointer];
@@ -34,11 +35,13 @@ aio_instruction_holder *dig_instruction_holder(const_string source_code, int *po
                 //Spider try to match "string web" with it task:
                 const_boolean is_found_instruction = spider->is_found_instruction(string_web,
                                                                                   &spider->start_pointer,
-                                                                                  &spider->spider_states);
+                                                                                  spider->spider_protocol);
                 //Spider found instruction:
                 if (is_found_instruction) {
                     //Spider takes current holder and weave for holder instruction:
-                    spider->weave_instruction_for(current_holder, string_web, &pointer);
+                    spider->weave_instruction_for(current_holder, string_web, &next_start_spider_position);
+                    pointer = next_start_spider_position;
+                    reset_aio_spiders(spiders);
                     break;
                 }
             }
@@ -59,16 +62,16 @@ const_string dig_function_body(const_string source_code, int *pointer_reference)
         const char symbol = source_code[i];
         const_boolean is_open_brace_condition = is_open_brace(symbol);
         //독서를 시작하다 (Begin reading):
-        if (is_open_brace_condition && watcher->mode == POINT_UNDEFINED) {
+        if (is_open_brace_condition && watcher->mode == POINT_PASSIVE_MODE) {
             watcher->start_index = i + 1;
-            watcher->mode = POINT_WATCHING_MODE;
+            watcher->mode = POINT_ACTIVE_MODE;
             watcher->counter++;
         }
-        if (is_open_brace_condition && watcher->mode == POINT_WATCHING_MODE) {
+        if (is_open_brace_condition && watcher->mode == POINT_ACTIVE_MODE) {
             watcher->counter++;
         }
         //독서 중지 (Stop reading):
-        if (is_close_brace(symbol) && watcher->mode == POINT_WATCHING_MODE) {
+        if (is_close_brace(symbol) && watcher->mode == POINT_ACTIVE_MODE) {
             watcher->counter--;
             if (watcher->counter == 0) {
                 watcher->end_index = i;
@@ -77,7 +80,7 @@ const_string dig_function_body(const_string source_code, int *pointer_reference)
             }
         }
         //지켜보기 잔에 공백과 줄 바꿈 건너 뙤기 (Skip whitespace and line breaks before watching):
-        if (watcher->mode == POINT_UNDEFINED) {
+        if (watcher->mode == POINT_PASSIVE_MODE) {
             if (!is_space_or_line_break(symbol)) {
                 throw_error("OUTPUT RIPPER: 잘못된 함수 함유량 (Invalid function content)!");
             }

@@ -36,7 +36,7 @@ aio_spider *new_aio_spider(
 ) {
     aio_spider *spider = calloc(1, sizeof(aio_spider));
     spider->start_pointer = 0;
-    spider->spider_states = AIO_START_SPIDER_STATE;
+    spider->spider_protocol = AIO_START_SPIDER_STATE;
     spider->is_found_instruction = is_found_instruction;
     spider->weave_instruction_for = weave_instruction_for;
     return spider;
