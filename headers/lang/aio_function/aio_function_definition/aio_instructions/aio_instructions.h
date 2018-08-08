@@ -43,36 +43,55 @@ enum aio_task_type {
  */
 
 typedef struct aio_instruction_holder {
-    struct aio_instruction_holder *parent_holder;
+    struct aio_instruction_holder *parent;
     aio_variable_definition_map *local_variable_definition_map;
     aio_instruction_list *instruction_list;
 } aio_instruction_holder;
 
-aio_instruction_holder *new_aio_instruction_holder(aio_instruction_holder *parent_holder);
-
 /**
- * Create union task.
- */
-
-typedef union aio_union_task {
-    struct aio_assign_task *assign_task;
-    struct aio_if_task *if_task;
-    struct aio_switch_task *switch_task;
-    struct aio_loop_task *loop_task;
-    struct aio_procedure_task *procedure_task;
-    struct aio_break_task *break_task;
-    struct aio_return_task *return_task;
-} aio_union_task;
-
-/**
- * Create instruction ("generic task").
+ * Instruction.
  */
 
 typedef struct aio_instruction {
-    aio_instruction_holder *parent_holder;
+
+    aio_instruction_holder *holder;
+
     enum aio_task_type task_type;
-    union aio_union_task get;
+
+    union get {
+        struct aio_assign_task *assign_task;
+        struct aio_if_task *if_task;
+        struct aio_switch_task *switch_task;
+        struct aio_loop_task *loop_task;
+        struct aio_procedure_task *procedure_task;
+        struct aio_break_task *break_task;
+        struct aio_return_task *return_task;
+    } get;
+
 } aio_instruction;
+
+aio_instruction_holder *new_aio_instruction_holder(aio_instruction_holder *parent_holder);
+
+aio_instruction *new_aio_assign_instruction(aio_instruction_holder *holder, const_string source,
+                                            const_string destination);
+
+aio_instruction *new_aio_if_instruction(aio_instruction_holder *parent_holder, const_string source,
+                                        const_string destination);
+
+aio_instruction *new_aio_switch_instruction(aio_instruction_holder *parent_holder, const_string source,
+                                            const_string destination);
+
+aio_instruction *new_aio_loop_instruction(aio_instruction_holder *parent_holder, const_string source,
+                                          const_string destination);
+
+aio_instruction *new_aio_procedure_instuction(aio_instruction_holder *parent_holder, const_string source,
+                                              const_string destination);
+
+aio_instruction *new_aio_return_instruction(aio_instruction_holder *parent_holder, const_string source,
+                                            const_string destination);
+
+aio_instruction *new_aio_break_instruction(aio_instruction_holder *parent_holder, const_string source,
+                                           const_string destination);
 
 /**
  * Implement tasks.
@@ -82,9 +101,6 @@ typedef struct aio_assign_task {
     const_string source;
     const_string destination;
 } aio_assign_task;
-
-aio_instruction *new_aio_assign_instruction(aio_instruction_holder *parent_holder, const_string source,
-                                            const_string destination);
 
 typedef struct aio_if_task {
     string if_expression;

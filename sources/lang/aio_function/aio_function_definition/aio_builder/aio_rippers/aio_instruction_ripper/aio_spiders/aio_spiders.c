@@ -1,143 +1,96 @@
 #include <malloc.h>
 #include "../../../../../../../../headers/lang/aio_function/aio_function_definition/aio_spider/aio_spiders.h"
 
-#define AIO_START_SPIDER_STATE 0;
+/**
+ * Declare spider constructors.
+ */
 
-aio_spider *new_aio_spider(
+aio_spider *new_aio_assign_spider();
 
-        /**
-         * Function which creates spider states:
-         */
+aio_spider *new_aio_break_spider();
 
-        int *(*create_spider_states)(),
+aio_spider *new_aio_if_spider();
 
-        /**
-         * Function which finds instruction:
-         */
+aio_spider *new_aio_loop_spider();
 
-        const_boolean (*is_found_instruction)(const_string string_web,
-                                              int *spider_pointer_reference,
-                                              int *spider_state_reference),
+aio_spider *new_aio_out_spider();
 
-        /**
-         * Function which builds instruction for holder:
-         */
+aio_spider *new_aio_procedure_spider();
 
-        void (*weave_instruction_for)(
-                aio_instruction_holder *instruction_holder,
-                const_string string_web,
-                int *pointer),
+aio_spider *new_aio_switch_spider();
 
-        /**
-         * Function which frees spider:
-         */
+/**
+ * Spider materials constructor.
+ */
 
-        void *(free_spider)(aio_spider *spider)
-) {
-    aio_spider *spider = calloc(1, sizeof(aio_spider));
-    spider->start_pointer = 0;
-    spider->spider_protocol = AIO_START_SPIDER_STATE;
-    spider->is_found_instruction = is_found_instruction;
-    spider->weave_instruction_for = weave_instruction_for;
-    return spider;
+aio_spider_materials new_aio_spider_materials(const size_t number_of_materials) {
+    aio_spider_materials materials = calloc(number_of_materials, sizeof(string_list *));
+    for (int i = 0; i < number_of_materials; ++i) {
+        materials[i] = new_string_list();
+    }
+    return materials;
 }
 
 /**
- * Assign spider functions.
+ * Reset strings in spider materials.
+ * @param materials array of string list
+ * @param number_of_materials array size.
  */
 
-const_boolean is_found_assign_instruction(const_string string_web,
-                                          int *spider_pointer_reference,
-                                          int *spider_states);
-
-void weave_assign_instruction_for(aio_instruction_holder *instruction_holder, const_string string_web, int *pointer);
-
+void reset_aio_spider_materials(aio_spider_materials materials, const size_t number_of_materials) {
+    for (int i = 0; i < number_of_materials; ++i) {
+        string_list *material_list = materials[i];
+        //Deep clear list and all string references:
+        for (int j = 0; j < material_list->size; ++j) {
+            free(material_list->strings[j]);
+        }
+        clear_string_list(material_list);
+    }
+}
 
 /**
- * Break spider functions.
+ * Reset each spider fields.
+ * @param spiders array of spiders.
  */
 
-const_boolean is_found_break_instruction(const_string string_web,
-                                         int *spider_pointer_reference,
-                                         int *spider_state_reference);
-
-void weave_break_instruction_for(aio_instruction_holder *instruction_holder, const_string string_web, int *pointer);
+void reset_aio_spiders(aio_spider **spiders) {
+    for (int i = 0; i < AIO_NUMBER_OF_SPIDERS; ++i) {
+        aio_spider *spider = spiders[i];
+        //Reset himself:
+        spider->reset(spider);
+    }
+}
 
 /**
- * If spider functions.
+ * Create spiders.
+ * @return array of spiders.
  */
-
-const_boolean is_found_if_instruction(const_string string_web,
-                                      int *spider_pointer_reference,
-                                      int *spider_state_reference);
-
-void weave_if_instruction_for(aio_instruction_holder *instruction_holder, const_string string_web, int *pointer);
-
-/**
- * Loop spider functions.
- */
-
-const_boolean is_found_loop_instruction(const_string string_web,
-                                        int *spider_pointer_reference,
-                                        int *spider_state_reference);
-
-void weave_loop_instruction_for(aio_instruction_holder *instruction_holder, const_string string_web, int *pointer);
-
-/**
- * Out spider functions.
- */
-
-const_boolean is_found_out_instruction(const_string string_web,
-                                       int *spider_pointer_reference,
-                                       int *spider_state_reference);
-
-void weave_out_instruction_for(aio_instruction_holder *instruction_holder, const_string string_web, int *pointer);
-
-/**
- * Procedure spider functions.
- */
-
-const_boolean is_found_procedure_instruction(const_string string_web,
-                                             int *spider_pointer_reference,
-                                             int *spider_state_reference);
-
-void weave_procedure_instruction_for(aio_instruction_holder *instruction_holder, const_string string_web, int *pointer);
-
-/**
- * Switch spider functions.
- */
-
-const_boolean is_found_switch_instruction(const_string string_web,
-                                          int *spider_pointer_reference,
-                                          int *spider_state_reference);
-
-void weave_switch_instruction_for(aio_instruction_holder *instruction_holder, const_string string_web, int *pointer);
 
 aio_spider **breed_aio_spiders() {
-    aio_spider **spiders = calloc(NUMBER_OF_AIO_SPIDERS, sizeof(aio_spider *));
+    aio_spider **spiders = calloc(AIO_NUMBER_OF_SPIDERS, sizeof(aio_spider *));
     //Create spiders:
-    aio_spider *assign_spider = new_aio_spider(is_found_assign_instruction, weave_assign_instruction_for);
-    aio_spider *break_spider = new_aio_spider(is_found_break_instruction, weave_break_instruction_for);
-    aio_spider *if_spider = new_aio_spider(is_found_if_instruction, weave_if_instruction_for);
-    aio_spider *loop_spider = new_aio_spider(is_found_loop_instruction, weave_loop_instruction_for);
-    aio_spider *out_spider = new_aio_spider(is_found_out_instruction, weave_out_instruction_for);
-    aio_spider *procedure_spider = new_aio_spider(is_found_procedure_instruction, weave_procedure_instruction_for);
-    aio_spider *switch_spider = new_aio_spider(is_found_switch_instruction, weave_switch_instruction_for);
-    //Assign spiders:
-    spiders[0] = assign_spider;
-    spiders[1] = break_spider;
-    spiders[2] = if_spider;
-    spiders[3] = loop_spider;
-    spiders[4] = out_spider;
-    spiders[5] = procedure_spider;
-    spiders[6] = switch_spider;
+    spiders[0] = new_aio_assign_spider();
+    spiders[1] = new_aio_break_spider();
+    spiders[2] = new_aio_if_spider();
+    spiders[3] = new_aio_loop_spider();
+    spiders[4] = new_aio_out_spider();
+    spiders[5] = new_aio_procedure_spider();
+    spiders[6] = new_aio_switch_spider();
     return spiders;
 }
 
+/**
+ * Free all spiders.
+ * @param spiders_reference - reference of spider array.
+ */
+
 void free_aio_spiders(aio_spider ***spiders_reference) {
     aio_spider **spiders = *spiders_reference;
-    for (int i = 0; i < NUMBER_OF_AIO_SPIDERS; ++i) {
-        free(spiders[i]);
+    for (int i = 0; i < AIO_NUMBER_OF_SPIDERS; ++i) {
+        aio_spider *spider = spiders[i];
+        //Spider frees himself:
+        spider->free(spider);
+
     }
     free(spiders);
 }

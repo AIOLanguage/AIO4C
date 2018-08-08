@@ -30,16 +30,14 @@ aio_instruction_holder *dig_instruction_holder(const_string source_code, int *po
             append_char(str_builder, symbol);
             const_string string_web = str_builder->string_value;
             //Give "string web" to spiders:
-            for (int i = 0; i < NUMBER_OF_AIO_SPIDERS; ++i) {
+            for (int i = 0; i < AIO_NUMBER_OF_SPIDERS; ++i) {
                 aio_spider *spider = spiders[i];
                 //Spider try to match "string web" with it task:
-                const_boolean is_found_instruction = spider->is_found_instruction(string_web,
-                                                                                  &spider->start_pointer,
-                                                                                  spider->spider_protocol);
+                const_boolean is_found_instruction = spider->is_found_instruction(string_web, spider);
                 //Spider found instruction:
                 if (is_found_instruction) {
                     //Spider takes current holder and weave for holder instruction:
-                    spider->weave_instruction_for(current_holder, string_web, &next_start_spider_position);
+                    spider->weave_instruction_for(current_holder, &next_start_spider_position, spider);
                     pointer = next_start_spider_position;
                     reset_aio_spiders(spiders);
                     break;

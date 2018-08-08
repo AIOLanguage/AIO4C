@@ -4,9 +4,9 @@
 #include "../../../../lib/utils/string_utils/string_utils.h"
 #include "../aio_instructions/aio_instructions.h"
 
-#define NUMBER_OF_AIO_SPIDERS 7
+#define AIO_NUMBER_OF_SPIDERS 7
 
-typedef string_list **spider_materials;
+typedef string_list **aio_spider_materials;
 
 typedef struct aio_spider {
 
@@ -27,29 +27,51 @@ typedef struct aio_spider {
      * After successful searching spider weave instruction for holder by materials.
      */
 
-    spider_materials spider_collected_materials;
+    aio_spider_materials collected_materials;
+
+    /**
+     * Reset spider's fields.
+     * @param spider - this
+     */
+
+    void (*reset)(struct aio_spider *spider);
 
     /**
      * Find instruction.
-     * @param string_web - instruction string in function body.
+     * @param string_web - instruction string in function body;
+     * @param spider - this.
      * @return can recognize instruction or not.
      */
 
-    const_boolean (*is_found_instruction)(const_string string_web, int *spider_pointer_reference,
-                                          int *spider_state_reference);
+    const_boolean (*is_found_instruction)(const_string string_web, struct aio_spider *spider);
 
     /**
      * Take instruction holder & build instruction for it.
      * @param instruction_holder - make instruction for.
-     * @param string_web - instruction string in function body.
-     * @param pointer - pointer reference in instruction ripper's loop.
+     * @param next_ripper_point_reference - pointer reference in instruction ripper's loop.
+     * @param spider - this.
      * After building ripper will know new start position that it again
      * will begin build string in function body and give "string web" for spiders.
      */
 
-    void (*weave_instruction_for)(aio_instruction_holder *instruction_holder, const_string string_web, int *pointer);
+    void (*weave_instruction_for)(aio_instruction_holder *instruction_holder, int *next_ripper_point_reference,
+                                  struct aio_spider *spider);
 
+    /**
+     * Free spider.
+     * @param spider - this.
+     */
+
+    void (*free)(struct aio_spider *spider);
 } aio_spider;
+
+aio_spider_materials new_aio_spider_materials(const size_t number_of_materials);
+
+void reset_aio_spider_materials(aio_spider_materials materials, const size_t number_of_materials);
+
+void reset_aio_spider(aio_spider *spider);
+
+void reset_aio_spiders(aio_spider **spiders);
 
 aio_spider **breed_aio_spiders();
 
