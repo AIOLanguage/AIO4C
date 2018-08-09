@@ -8,19 +8,16 @@
 #include "../../../../../../../headers/lib/utils/string_utils/string_builder.h"
 #include "../../../../../../../headers/lang/aio_function/aio_function_definition/aio_spider/aio_spiders.h"
 
-const_string dig_function_body(const_string source_code, int *pointer_reference);
 
+const_boolean has_function_content_rest(const_string function_body_string, const int start_position,
+                                        const int end_position);
 
-const_boolean has_function_content_rest(const_string function_body_string, const int position, const size_t length);
-
-aio_instruction_holder *dig_instruction_holder(const_string source_code, int *pointer_reference,
-                                               aio_instruction_holder *parent_holder) {
+aio_instruction_holder *dig_aio_instruction_holder(const_string source_code, aio_instruction_holder *parent_holder,
+                                                   const int start_position, const int end_position) {
     //Create instruction holder:
     aio_instruction_holder *current_holder = new_aio_instruction_holder(parent_holder);
-    //Dig function body:
-    const_string function_body = dig_function_body(source_code, pointer_reference);
-    const size_t function_body_length = strlen(function_body);
-    if (function_body_length >= 0) {
+//    const size_t function_body_length = (const size_t) (end_position - start_position);
+    if (end_position - start_position >= 0) {
         //Create spider swarm for searching instructions:
         aio_spider_swarm *spider_swarm = breed_aio_spider_swarm();
         string_builder *str_builder = new_string_builder();
@@ -28,13 +25,13 @@ aio_instruction_holder *dig_instruction_holder(const_string source_code, int *po
         point_watcher *watcher = new_point_watcher();
         //After weaving instruction need to check function body string rest:
         boolean is_needed_check_body = TRUE;
-        for (watcher->pointer; watcher->pointer < function_body_length; ++watcher->pointer) {
-            const char symbol = function_body[watcher->pointer];
+        for (watcher->pointer = start_position; watcher->pointer < end_position; ++watcher->pointer) {
+            const char symbol = source_code[watcher->pointer];
             //Check string content to define:
             //Do spiders need to search instructions or not?
             if (is_needed_check_body) {
                 is_needed_check_body = FALSE;
-                if (!has_function_content_rest(function_body, watcher->pointer, function_body_length)) {
+                if (!has_function_content_rest(source_code, watcher->pointer, end_position)) {
                     break;
                 } else {
                     watcher->mode = POINT_PASSIVE_MODE;
@@ -86,19 +83,18 @@ aio_instruction_holder *dig_instruction_holder(const_string source_code, int *po
                 }
             }
         }
+        //------------------------------------------------------------------------------------------------------------------
+        //찌꺼기 수집기 (Garbage collector):
         free_aio_spider_swarm(spider_swarm);
     }
-    //------------------------------------------------------------------------------------------------------------------
-    //찌꺼기 수집기 (Garbage collector):
-    free((void *) function_body);
     return current_holder;
 }
 
-const_string dig_function_body(const_string source_code, int *pointer_reference) {
+void dig_block_body(const_string source_code, int *start_index, int *end_index) {
     const size_t source_code_length = strlen(source_code);
     point_watcher *watcher = new_point_watcher();
     //함수 바지 멜빵 찾다 (Find function braces):
-    for (int i = *pointer_reference; i < source_code_length; ++i) {
+    for (int i = *start_index; i < source_code_length; ++i) {
         const char symbol = source_code[i];
         const_boolean is_open_brace_condition = is_open_brace(symbol);
         //독서를 시작하다 (Begin reading):
@@ -115,7 +111,7 @@ const_string dig_function_body(const_string source_code, int *pointer_reference)
             watcher->pointer--;
             if (watcher->pointer == 0) {
                 watcher->end_index = i;
-                *pointer_reference = i + 1;
+                *start_index = i + 1;
                 break;
             }
         }
@@ -126,18 +122,16 @@ const_string dig_function_body(const_string source_code, int *pointer_reference)
             }
         }
     }
-    //Dig function body:
-    const_string dirty_function_body = substring(source_code, watcher->start_index, watcher->end_index);
-    const_string clean_function_body = trim_with_line_break(dirty_function_body);
+    *start_index = watcher->start_index;
+    *end_index = watcher->end_index;
     //------------------------------------------------------------------------------------------------------------------
     //찌꺼기 수집기 (Garbage collector):
     free_point_watcher(watcher);
-    free((void *) dirty_function_body);
-    return clean_function_body;
 }
 
-const_boolean has_function_content_rest(const_string function_body_string, const int position, const size_t length) {
-    for (int i = position; i < length; ++i) {
+const_boolean has_function_content_rest(const_string function_body_string, const int start_position,
+                                        const int end_position) {
+    for (int i = start_position; i < end_position; ++i) {
         const char symbol = function_body_string[i];
         if (!is_space_or_line_break(symbol)) {
             return TRUE;

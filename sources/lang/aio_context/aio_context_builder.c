@@ -10,7 +10,7 @@
 #include "../../../headers/lang/aio_types/aio_type.h"
 #include "../../../headers/lib/collections/maps/aio_variable_map.h"
 
-aio_function_definition *build_function_definition(const_string source_code, int *pointer_reference);
+aio_function_definition *build_aio_function_definition(const_string source_code, int *start_index_ref);
 
 void collect_function_definitions_in_manager(aio_context *context) {
     const_string source_code = context->source_code;
@@ -21,7 +21,7 @@ void collect_function_definitions_in_manager(aio_context *context) {
     }
     int pointer = 0;
     while (pointer < source_code_length) {
-        aio_function_definition *method_definition = build_function_definition(source_code, &pointer);
+        aio_function_definition *method_definition = build_aio_function_definition(source_code, &pointer);
         break;
         //put_aio_method_definition_in_map(definition_map, method_definition);
     }

@@ -24,9 +24,12 @@ typedef struct aio_instruction_holder {
     aio_instruction_list *instruction_list;
 } aio_instruction_holder;
 
+aio_instruction_holder *dig_aio_instruction_holder(const_string source_code, aio_instruction_holder *parent_holder,
+                                                   const int start_position, const int end_position);
+
 /**
  * Instruction.
- */
+ **/
 
 typedef struct aio_instruction {
 
@@ -52,8 +55,8 @@ aio_instruction *new_aio_assign_instruction(aio_instruction_holder *holder, cons
 
 aio_instruction *new_aio_break_instruction(aio_instruction_holder *holder);
 
-aio_instruction *new_aio_if_instruction(aio_instruction_holder *parent_holder, const_string source,
-                                        const_string destination);
+aio_instruction *new_aio_if_instruction(aio_instruction_holder *parent_holder, const_string if_condition,
+                                        aio_instruction_holder *true_holder, aio_instruction_holder *false_holder);
 
 aio_instruction *new_aio_switch_instruction(aio_instruction_holder *parent_holder, const_string source,
                                             const_string destination);
@@ -77,7 +80,7 @@ typedef struct aio_assign_task {
 } aio_assign_task;
 
 typedef struct aio_if_task {
-    string if_expression;
+    string if_condition;
     aio_instruction_holder *true_holder;
     aio_instruction_holder *false_holder;
 } aio_if_task;
