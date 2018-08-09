@@ -9,6 +9,6 @@ typedef struct aio_annotation {
 
 aio_annotation *new_aio_annotation(string name);
 
-void delete_aio_annotation(aio_annotation *annotation);
+void free_aio_annotation(aio_annotation *annotation);
 
 #endif //AIO_ANNOTATION_H

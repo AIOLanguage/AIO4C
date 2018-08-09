@@ -3,8 +3,6 @@
 
 #include "../../../lang/aio_function/aio_function_definition/aio_instructions/aio_instructions.h"
 
-typedef struct aio_instruction;
-
 typedef struct aio_instruction_list {
     int capacity;
     int size;

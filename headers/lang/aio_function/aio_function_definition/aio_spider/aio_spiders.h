@@ -8,6 +8,11 @@
 
 typedef string_list **aio_spider_materials;
 
+
+enum aio_spider_message {
+    AIO_SPIDER_NOT_FOUND, AIO_SPIDER_FOUND_MATERIALS, AIO_SPIDER_IS_READY_FOR_WEAVING, AIO_SPIDER_WAS_CRUSH
+};
+
 typedef struct aio_spider {
 
     /**
@@ -43,7 +48,7 @@ typedef struct aio_spider {
      * @return can recognize instruction or not.
      */
 
-    const_boolean (*is_found_instruction)(const_string string_web, struct aio_spider *spider);
+    const enum aio_spider_message (*is_found_instruction)(const_string string_web, struct aio_spider *spider);
 
     /**
      * Take instruction holder & build instruction for it.
@@ -63,18 +68,29 @@ typedef struct aio_spider {
      */
 
     void (*free)(struct aio_spider *spider);
+
 } aio_spider;
+
+enum aio_spider_swarm_mode {
+    AIO_ONE_SPIDER_WORKS, AIO_ALL_SPIDERS_WORK
+};
+
+typedef struct aio_spider_swarm {
+    aio_spider **spiders;
+    aio_spider *active_spider;
+    enum aio_spider_swarm_mode mode;
+} aio_spider_swarm;
 
 aio_spider_materials new_aio_spider_materials(const size_t number_of_materials);
 
 void reset_aio_spider_materials(aio_spider_materials materials, const size_t number_of_materials);
 
-void reset_aio_spider(aio_spider *spider);
+void reset_assign_spider(aio_spider *spider);
 
-void reset_aio_spiders(aio_spider **spiders);
+void reset_aio_spiders(aio_spider_swarm *swarm);
 
-aio_spider **breed_aio_spiders();
+aio_spider_swarm *breed_aio_spider_swarm();
 
-void free_aio_spiders(aio_spider ***spiders_reference);
+void free_aio_spider_swarm(aio_spider_swarm *spider_swarm);
 
 #endif //AIO_SPIDER_H

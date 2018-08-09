@@ -11,7 +11,7 @@ typedef struct string_builder {
 
 string_builder *new_string_builder();
 
-void append_char(string_builder *builder, const char c);
+void append_char_to(string_builder *builder, const char c);
 
 void append_string(string_builder *builder, const_string string);
 

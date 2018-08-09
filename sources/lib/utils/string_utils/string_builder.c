@@ -27,7 +27,7 @@ void update_string_builder_memory(string_builder *builder, const size_t other_le
     }
 }
 
-void append_char(string_builder *builder, const char c) {
+void append_char_to(string_builder *builder, const char c) {
     update_string_builder_memory(builder, 1);
     builder->string_value[builder->length++] = c;
 }

@@ -10,6 +10,6 @@ aio_annotation *new_aio_annotation(string name) {
     return annotation;
 }
 
-void delete_aio_annotation(aio_annotation *annotation) {
-
+void free_aio_annotation(aio_annotation *annotation) {
+    free(annotation);
 }

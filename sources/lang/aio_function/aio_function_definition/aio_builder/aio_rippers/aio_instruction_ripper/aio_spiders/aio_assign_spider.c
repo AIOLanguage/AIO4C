@@ -56,13 +56,13 @@ const int AIO_MUTABLE_BY_VALUE_MODE = 5;
 
 const int AIO_VARIABLE_MATERIAL_INDEX = 0;
 
-const AIO_ASSIGN_MATERIAL_INDEX = 1;
+const int AIO_ASSIGN_MATERIAL_INDEX = 1;
 
 /**
  * Declare functions.
  */
 
-const_boolean is_found_assign_instruction(const_string string_web, aio_spider *spider);
+const enum aio_spider_message is_found_assign_instruction(const_string string_web, aio_spider *spider);
 
 
 void weave_assign_instruction_for(aio_instruction_holder *instruction_holder, int *next_ripper_point_reference,
@@ -84,7 +84,7 @@ aio_variable_definition *weave_local_variable_definition(const int variable_decl
  * Reset.
  */
 
-void reset_aio_spider(aio_spider *spider) {
+void reset_assign_spider(aio_spider *spider) {
     spider->start_pointer = 0;
     //Set start search scope - declaration scope:
     spider->spider_protocol[AIO_SCOPE_INDEX] = AIO_DECLARATION_SCOPE;
@@ -113,7 +113,7 @@ void free_assign_spider(aio_spider *spider) {
 aio_spider *new_aio_assign_spider() {
     aio_spider *spider = calloc(1, sizeof(aio_spider));
     //Bind main spider's functions:
-    spider->reset = reset_aio_spider;
+    spider->reset = reset_assign_spider;
     spider->is_found_instruction = is_found_assign_instruction;
     spider->weave_instruction_for = weave_assign_instruction_for;
     spider->free = free_assign_spider;
@@ -130,7 +130,7 @@ aio_spider *new_aio_assign_spider() {
  * Searching.
  */
 
-const_boolean is_found_assign_instruction(const_string string_web, aio_spider *spider) {
+const enum aio_spider_message is_found_assign_instruction(const_string string_web, aio_spider *spider) {
     int *start_pointer_reference = &spider->start_pointer;
     int *spider_protocol = spider->spider_protocol;
     aio_spider_materials materials = spider->collected_materials;
@@ -166,7 +166,7 @@ const_boolean is_found_assign_instruction(const_string string_web, aio_spider *s
                     const_boolean is_changed_state = handle_declaration_scope(chunk, i, spider_protocol,
                                                                               start_pointer_reference, materials);
                     if (!is_changed_state) {
-                        return FALSE;
+                        return AIO_SPIDER_NOT_FOUND;
                     }
                 }
                     break;
@@ -177,7 +177,7 @@ const_boolean is_found_assign_instruction(const_string string_web, aio_spider *s
                                                                              start_pointer_reference);
                     watcher->mode = POINT_PASSIVE_MODE;
                     if (!is_changed_state) {
-                        return FALSE;
+                        return AIO_SPIDER_FOUND_MATERIALS;
                     }
                 }
                     break;
@@ -188,14 +188,18 @@ const_boolean is_found_assign_instruction(const_string string_web, aio_spider *s
         //--------------------------------------------------------------------------------------------------------------
         //Assign scope:
         if (spider_protocol[AIO_SCOPE_INDEX] == AIO_ASSIGN_SCOPE && watcher->mode == POINT_UNDEFINED_MODE) {
-            append_char(str_builder, symbol);
+            append_char_to(str_builder, symbol);
             string chunk = str_builder->string_value;
             const_boolean is_ready_for_weaving
                     = handle_assign_scope(chunk, spider_protocol, start_pointer_reference, materials);
-            return is_ready_for_weaving;
+            if (is_ready_for_weaving){
+                return AIO_SPIDER_IS_READY_FOR_WEAVING;
+            } else {
+                return AIO_SPIDER_FOUND_MATERIALS;
+            }
         }
     }
-    return FALSE;
+    return AIO_SPIDER_NOT_FOUND;
 }
 
 /**

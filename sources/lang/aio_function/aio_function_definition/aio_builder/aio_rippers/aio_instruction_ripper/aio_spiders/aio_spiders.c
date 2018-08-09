@@ -50,12 +50,12 @@ void reset_aio_spider_materials(aio_spider_materials materials, const size_t num
 
 /**
  * Reset each spider fields.
- * @param spiders array of spiders.
+ * @param swarm array of spiders.
  */
 
-void reset_aio_spiders(aio_spider **spiders) {
+void reset_aio_spiders(aio_spider_swarm *swarm) {
     for (int i = 0; i < AIO_NUMBER_OF_SPIDERS; ++i) {
-        aio_spider *spider = spiders[i];
+        aio_spider *spider = swarm->spiders[i];
         //Reset himself:
         spider->reset(spider);
     }
@@ -66,9 +66,9 @@ void reset_aio_spiders(aio_spider **spiders) {
  * @return array of spiders.
  */
 
-aio_spider **breed_aio_spiders() {
-    aio_spider **spiders = calloc(AIO_NUMBER_OF_SPIDERS, sizeof(aio_spider *));
+aio_spider_swarm *breed_aio_spider_swarm() {
     //Create spiders:
+    aio_spider **spiders = calloc(AIO_NUMBER_OF_SPIDERS, sizeof(aio_spider *));
     spiders[0] = new_aio_assign_spider();
     spiders[1] = new_aio_break_spider();
     spiders[2] = new_aio_if_spider();
@@ -76,21 +76,25 @@ aio_spider **breed_aio_spiders() {
     spiders[4] = new_aio_out_spider();
     spiders[5] = new_aio_procedure_spider();
     spiders[6] = new_aio_switch_spider();
-    return spiders;
+    aio_spider_swarm *swarm = calloc(1, sizeof(aio_spider_swarm));
+    swarm->spiders = spiders;
+    swarm->active_spider = NULL;
+    swarm->mode = AIO_ALL_SPIDERS_WORK;
+    return swarm;
 }
 
 /**
  * Free all spiders.
- * @param spiders_reference - reference of spider array.
+ * @param spider_swarm - reference of spider array.
  */
 
-void free_aio_spiders(aio_spider ***spiders_reference) {
-    aio_spider **spiders = *spiders_reference;
+void free_aio_spider_swarm(aio_spider_swarm *spider_swarm) {
+    aio_spider **spiders = spider_swarm->spiders;
     for (int i = 0; i < AIO_NUMBER_OF_SPIDERS; ++i) {
         aio_spider *spider = spiders[i];
         //Spider frees himself:
         spider->free(spider);
-
     }
     free(spiders);
+    free(spider_swarm);
 }

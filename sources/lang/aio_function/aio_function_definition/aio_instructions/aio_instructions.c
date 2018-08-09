@@ -21,3 +21,10 @@ aio_instruction *new_aio_assign_instruction(aio_instruction_holder *holder, cons
     instruction->get.assign_task = task;
     return instruction;
 }
+
+aio_instruction *new_aio_break_instruction(aio_instruction_holder *holder) {
+    aio_instruction *instruction = calloc(1, sizeof(aio_instruction));
+    instruction->holder = holder;
+    instruction->task_type = AIO_TASK_BREAK;
+    return instruction;
+}

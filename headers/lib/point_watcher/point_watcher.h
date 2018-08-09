@@ -6,7 +6,7 @@ enum point_mode {
 };
 
 typedef struct point_watcher {
-    int counter;
+    int pointer;
     int start_index;
     int end_index;
     enum point_mode mode;

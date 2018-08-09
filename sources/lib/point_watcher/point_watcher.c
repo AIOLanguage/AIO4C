@@ -8,7 +8,7 @@ point_watcher *new_point_watcher() {
 }
 
 void reset_point_watcher(point_watcher *watcher){
-    watcher->counter = 0;
+    watcher->pointer = 0;
     watcher->start_index = 0;
     watcher->end_index = 0;
     watcher->mode = POINT_PASSIVE_MODE;
