@@ -7,6 +7,7 @@
 #include <stddef.h>
 #include "../../../../headers/lib/utils/string_utils/string_utils.h"
 #include "../../../../headers/lib/utils/error_utils/error_utils.h"
+#include "../../../../headers/lib/utils/char_utils/char_utils.h"
 
 string new_string(const_string src) {
     string new_string = calloc(strlen(src) + 1, sizeof(char));
@@ -165,7 +166,7 @@ string squeeze_string(const_string src) {
     int position = 0;
     for (int i = 0; i < src_length; ++i) {
         const char symbol = src[i];
-        if (!is_space(symbol)) {
+        if (!is_space_or_line_break(symbol)) {
             dst[position++] = symbol;
         }
     }

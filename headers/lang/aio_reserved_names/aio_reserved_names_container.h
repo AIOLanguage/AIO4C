@@ -7,17 +7,21 @@
 
 #define AIO_MUTABLE_MODIFIER "mu"
 
+#define AIO_IF_MODIFIER "if"
+
 #define AIO_IN_MODIFIER "in"
 
 #define AIO_LOOP_MODIFIER "loo"
 
 #define AIO_RETURN_MODIFIER "out"
 
-#define AIO_WHEN_MODIFIER "whe"
+#define AIO_SWITCH_MODIFIER "whe"
 
 #define AIO_BREAK_MODIFIER "brk"
 
 const_boolean is_aio_mutable_modifier(const_string string);
+
+const_boolean is_aio_if_modifier(const_string string);
 
 boolean can_use_name(const_string name);
 

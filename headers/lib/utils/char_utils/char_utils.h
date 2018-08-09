@@ -10,7 +10,7 @@ boolean is_line_break(const char c);
 
 boolean is_space_or_line_break(const char c);
 
-boolean is_open_parenthesis(const char c);
+boolean is_open_parentheses(const char c);
 
 boolean is_close_parenthesis(const char c);
 
@@ -23,5 +23,7 @@ boolean is_equal_sign(const char c);
 boolean is_sign(const char c);
 
 boolean is_dot(const char c);
+
+boolean is_colon(const char c);
 
 #endif //CHAR_UTILS_H

@@ -33,7 +33,7 @@ string_list *dig_output_types(const_string source_code, int *pointer_reference) 
 #endif
         }
         //괄호로 시작하다 (Starts with parenthesis):
-        if (is_open_parenthesis(symbol) && mode == OUTPUT_UNDEFINED) {
+        if (is_open_parentheses(symbol) && mode == OUTPUT_UNDEFINED) {
             //많은 출력 유형들 (Many output types):
             mode = MULTI_OUTPUT_MODE;
             watcher->start_index = i + 1;

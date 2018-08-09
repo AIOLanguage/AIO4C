@@ -64,7 +64,7 @@ const enum aio_spider_message is_found_break_instruction(const_string string_web
                 return AIO_SPIDER_FOUND_MATERIALS;
             }
         } else {
-            return AIO_SPIDER_NOT_FOUND;
+            return AIO_SPIDER_NOT_FOUND_MATERIALS;
         }
     }
 }

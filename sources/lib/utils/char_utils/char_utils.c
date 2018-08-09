@@ -12,7 +12,7 @@ boolean is_space_or_line_break(const char c) {
     return is_space(c) || is_line_break(c);
 }
 
-boolean is_open_parenthesis(const char c) {
+boolean is_open_parentheses(const char c) {
     return c == '(';
 }
 
@@ -30,4 +30,16 @@ boolean is_close_brace(const char c) {
 
 boolean is_equal_sign(const char c) {
     return c == '=';
+}
+
+boolean is_sign(const char c) {
+    return c == '+' || c == '-' || c == '*' || c == '/' || c == '&';
+}
+
+boolean is_dot(const char c) {
+    return c == '.';
+}
+
+boolean is_colon(const char c) {
+    return c == ':';
 }

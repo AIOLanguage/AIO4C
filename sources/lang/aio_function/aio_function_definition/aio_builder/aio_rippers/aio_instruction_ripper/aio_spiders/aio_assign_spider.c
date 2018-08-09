@@ -10,9 +10,10 @@
 #include "../../../../../../../../headers/lang/aio_function/aio_function_definition/aio_spider/aio_spiders.h"
 #include "../../../../../../../../headers/lib/utils/string_utils/string_builder.h"
 
-#define AIO_NUMBER_OF_PROTOCOL_CELLS 5
+//----------------------------------------------------------------------------------------------------------------------
+//PROTOCOL:
 
-#define AIO_NUMBER_OF_MATERIALS 2
+#define AIO_NUMBER_OF_PROTOCOL_CELLS 2
 
 /**
  * Protocol indices:
@@ -50,6 +51,11 @@ const int AIO_IMMUTABLE_MODE = 4;
 
 const int AIO_MUTABLE_BY_VALUE_MODE = 5;
 
+//----------------------------------------------------------------------------------------------------------------------
+//MATERIALS:
+
+#define AIO_NUMBER_OF_MATERIALS 2
+
 /**
  * Material indices:
  */
@@ -57,6 +63,8 @@ const int AIO_MUTABLE_BY_VALUE_MODE = 5;
 const int AIO_VARIABLE_MATERIAL_INDEX = 0;
 
 const int AIO_ASSIGN_MATERIAL_INDEX = 1;
+
+//----------------------------------------------------------------------------------------------------------------------
 
 /**
  * Declare functions.
@@ -74,7 +82,7 @@ const_boolean handle_declaration_scope(string chunk, const int position, int *sp
 const_boolean handle_equal_sign_scope(string chunk, const int position, int *spider_protocol,
                                       int *spider_pointer_reference);
 
-const_boolean handle_assign_scope(string chunk, int *spider_protocol, int *spider_pointer_reference,
+const_boolean handle_assign_scope(const_string chunk, int *spider_protocol, int *spider_pointer_reference,
                                   aio_spider_materials materials);
 
 aio_variable_definition *weave_local_variable_definition(const int variable_declaration_mode,
@@ -131,24 +139,26 @@ aio_spider *new_aio_assign_spider() {
  */
 
 const enum aio_spider_message is_found_assign_instruction(const_string string_web, aio_spider *spider) {
+    //Extract spider fields:
     int *start_pointer_reference = &spider->start_pointer;
     int *spider_protocol = spider->spider_protocol;
     aio_spider_materials materials = spider->collected_materials;
+    //Prepare to scanning:
     const int start_point = *start_pointer_reference;
     const size_t string_web_length = strlen(string_web);
     point_watcher *watcher = new_point_watcher();
-    string_builder *str_builder = new_string_builder();
+    //Start to scan:
     for (int i = start_point; i < string_web_length; ++i) {
         const char symbol = string_web[i];
         const_boolean is_space_or_line_break_condition = is_space_or_line_break(symbol);
         const_boolean is_assign_scope = spider_protocol[AIO_SCOPE_INDEX] == AIO_ASSIGN_SCOPE;
         //Start read word:
         if (!is_space_or_line_break_condition && watcher->mode == POINT_PASSIVE_MODE) {
-            if (!is_assign_scope) {
+            if (is_assign_scope) {
+                watcher->mode = POINT_UNDEFINED_MODE;
+            } else {
                 watcher->mode = POINT_ACTIVE_MODE;
                 watcher->start_index = i;
-            } else {
-                watcher->mode = POINT_UNDEFINED_MODE;
             }
         }
         //End read word:
@@ -162,21 +172,15 @@ const enum aio_spider_message is_found_assign_instruction(const_string string_we
             switch (spider_protocol[AIO_SCOPE_INDEX]) {
                 //------------------------------------------------------------------------------------------------------
                 //Declaration scope:
-                case 0: {
-                    const_boolean is_changed_state = handle_declaration_scope(chunk, i, spider_protocol,
-                                                                              start_pointer_reference, materials);
-                    if (!is_changed_state) {
-                        return AIO_SPIDER_NOT_FOUND;
-                    }
-                }
+                case 0:
+                    handle_declaration_scope(chunk, i, spider_protocol, start_pointer_reference, materials);
                     break;
                     //--------------------------------------------------------------------------------------------------
                     //Equal sign scope:
                 case 1: {
                     const_boolean is_changed_state = handle_equal_sign_scope(chunk, i, spider_protocol,
                                                                              start_pointer_reference);
-                    watcher->mode = POINT_PASSIVE_MODE;
-                    if (!is_changed_state) {
+                    if (is_changed_state) {
                         return AIO_SPIDER_FOUND_MATERIALS;
                     }
                 }
@@ -184,27 +188,26 @@ const enum aio_spider_message is_found_assign_instruction(const_string string_we
                 default:
                     break;
             }
+            return AIO_SPIDER_NOT_FOUND_MATERIALS;
         }
         //--------------------------------------------------------------------------------------------------------------
         //Assign scope:
         if (spider_protocol[AIO_SCOPE_INDEX] == AIO_ASSIGN_SCOPE && watcher->mode == POINT_UNDEFINED_MODE) {
-            append_char_to(str_builder, symbol);
-            string chunk = str_builder->string_value;
             const_boolean is_ready_for_weaving
-                    = handle_assign_scope(chunk, spider_protocol, start_pointer_reference, materials);
-            if (is_ready_for_weaving){
+                    = handle_assign_scope(string_web, spider_protocol, start_pointer_reference, materials);
+            if (is_ready_for_weaving) {
                 return AIO_SPIDER_IS_READY_FOR_WEAVING;
             } else {
                 return AIO_SPIDER_FOUND_MATERIALS;
             }
         }
     }
-    return AIO_SPIDER_NOT_FOUND;
+    return AIO_SPIDER_NOT_FOUND_MATERIALS;
 }
 
 /**
  * Extra handlers:
- */
+ **/
 
 const_boolean handle_declaration_scope(string chunk,
                                        const int position,
@@ -303,7 +306,7 @@ const_boolean handle_equal_sign_scope(string chunk,
     }
 }
 
-const_boolean handle_assign_scope(string chunk,
+const_boolean handle_assign_scope(const_string chunk,
                                   int *spider_protocol,
                                   int *spider_pointer_reference,
                                   aio_spider_materials materials) {
