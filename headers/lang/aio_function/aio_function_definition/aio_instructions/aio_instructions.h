@@ -10,9 +10,9 @@
  * Task type.
  */
 
-enum aio_task_type {
-    AIO_TASK_ASSIGN, AIO_TASK_IF, AIO_TASK_SWITCH, AIO_TASK_LOOP, AIO_TASK_PROCEDURE, AIO_TASK_BREAK, AIO_TASK_RETURN
-};
+typedef enum aio_task_type {
+    AIO_ASSIGN_TASK, AIO_IF_TASK, AIO_SWITCH_TASK, AIO_LOOP_TASK, AIO_PROCEDURE_TASK, AIO_BREAK_TASK, AIO_RETURN_TASK
+} aio_task_type;
 
 /**
  * Implement instruction holder.
@@ -35,7 +35,7 @@ typedef struct aio_instruction {
 
     aio_instruction_holder *holder;
 
-    enum aio_task_type task_type;
+    aio_task_type task_type;
 
     union get {
         struct aio_assign_task *assign_task;
@@ -55,7 +55,7 @@ aio_instruction *new_aio_assign_instruction(aio_instruction_holder *holder, cons
 
 aio_instruction *new_aio_break_instruction(aio_instruction_holder *holder);
 
-aio_instruction *new_aio_if_instruction(aio_instruction_holder *parent_holder, const_string if_condition,
+aio_instruction *new_aio_if_instruction(aio_instruction_holder *holder, const_string if_condition,
                                         aio_instruction_holder *true_holder, aio_instruction_holder *false_holder);
 
 aio_instruction *new_aio_switch_instruction(aio_instruction_holder *parent_holder, const_string source,
@@ -80,7 +80,7 @@ typedef struct aio_assign_task {
 } aio_assign_task;
 
 typedef struct aio_if_task {
-    string if_condition;
+    const_string if_condition;
     aio_instruction_holder *true_holder;
     aio_instruction_holder *false_holder;
 } aio_if_task;
@@ -94,7 +94,7 @@ typedef struct aio_switch_task {
 typedef struct aio_loop_task {
     aio_variable_definition *pointer_definition;
     //Often for init point_watcher:
-    aio_assign_task *start_assign_tash;
+    aio_assign_task *start_assign_task;
     //Loop condition:
     string loop_condition;
     //Often for change pointer:

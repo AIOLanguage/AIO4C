@@ -44,7 +44,7 @@ boolean is_string_list_empty(string_list *string_list) {
     }
 }
 
-void clear_string_list(string_list *list){
+void clear_string_list(string_list *list) {
     for (int i = 0; i < list->size; ++i) {
         list->strings[i] = NULL;
     }
@@ -53,7 +53,14 @@ void clear_string_list(string_list *list){
     list->strings = realloc(list->strings, list->capacity * sizeof(string));
 }
 
-void free_string_list(string_list *list){
+void free_strings_in_list(string_list *list) {
+    for (int i = 0; i < list->size; ++i) {
+        free(list->strings[i]);
+    }
+    clear_string_list(list);
+}
+
+void free_string_list(string_list *list) {
     free(list->strings);
     free(list);
 }

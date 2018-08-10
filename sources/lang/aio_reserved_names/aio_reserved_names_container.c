@@ -28,6 +28,10 @@ const_boolean is_aio_if_modifier(const_string string) {
     return strcmp(string, AIO_IF_MODIFIER) == 0;
 }
 
+const_boolean is_aio_loop_modifier(const_string string) {
+    return strcmp(string, AIO_LOOP_MODIFIER) == 0;
+}
+
 boolean can_use_name(const_string name) {
     for (int i = 0; i < AIO_NUMBER_OF_RESERVED_NAMES; i++) {
         if (strcmp(name, reserved_names[i]) == 0) {

@@ -19,7 +19,7 @@ aio_instruction_holder *dig_aio_instruction_holder(const_string source_code, aio
 //    const size_t function_body_length = (const size_t) (end_position - start_position);
     if (end_position - start_position >= 0) {
         //Create spider swarm for searching instructions:
-        aio_spider_swarm *spider_swarm = breed_aio_spider_swarm();
+        aio_spider_swarm *spider_swarm = breed_aio_function_spider_swarm();
         string_builder *str_builder = new_string_builder();
         //Start to find instruction:
         point_watcher *watcher = new_point_watcher();
@@ -60,7 +60,7 @@ aio_instruction_holder *dig_aio_instruction_holder(const_string source_code, aio
                     }
                     if (message == AIO_SPIDER_IS_READY_FOR_WEAVING) {
                         //Spider takes current holder and weave for holder instruction:
-                        spider->weave_instruction_for(current_holder, &watcher->start_index, spider);
+                        spider->weave_instruction_for(current_holder, source_code, &watcher->start_index, spider);
                         reset_aio_spiders(spider_swarm);
                         reset_string_builder(str_builder);
                         watcher->pointer = watcher->start_index;

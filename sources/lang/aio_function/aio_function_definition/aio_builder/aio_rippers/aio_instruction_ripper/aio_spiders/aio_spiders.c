@@ -20,35 +20,6 @@ aio_spider *new_aio_procedure_spider();
 aio_spider *new_aio_switch_spider();
 
 /**
- * Spider materials constructor.
- */
-
-aio_spider_materials new_aio_spider_materials(const size_t number_of_materials) {
-    aio_spider_materials materials = calloc(number_of_materials, sizeof(string_list *));
-    for (int i = 0; i < number_of_materials; ++i) {
-        materials[i] = new_string_list();
-    }
-    return materials;
-}
-
-/**
- * Reset strings in spider materials.
- * @param materials array of string list
- * @param number_of_materials array size.
- */
-
-void reset_aio_spider_materials(aio_spider_materials materials, const size_t number_of_materials) {
-    for (int i = 0; i < number_of_materials; ++i) {
-        string_list *material_list = materials[i];
-        //Deep clear list and all string references:
-        for (int j = 0; j < material_list->size; ++j) {
-            free(material_list->strings[j]);
-        }
-        clear_string_list(material_list);
-    }
-}
-
-/**
  * Reset each spider fields.
  * @param swarm array of spiders.
  */
@@ -66,7 +37,7 @@ void reset_aio_spiders(aio_spider_swarm *swarm) {
  * @return array of spiders.
  */
 
-aio_spider_swarm *breed_aio_spider_swarm() {
+aio_spider_swarm *breed_aio_function_spider_swarm() {
     //Create spiders:
     aio_spider **spiders = calloc(AIO_NUMBER_OF_SPIDERS, sizeof(aio_spider *));
     spiders[0] = new_aio_assign_spider();

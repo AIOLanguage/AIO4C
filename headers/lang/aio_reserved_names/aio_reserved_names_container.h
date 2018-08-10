@@ -23,6 +23,8 @@ const_boolean is_aio_mutable_modifier(const_string string);
 
 const_boolean is_aio_if_modifier(const_string string);
 
+const_boolean is_aio_loop_modifier(const_string string);
+
 boolean can_use_name(const_string name);
 
 #endif //AIO_RESERVED_NAMES_CONTAINER_H

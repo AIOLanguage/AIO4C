@@ -12,7 +12,7 @@ boolean is_space_or_line_break(const char c) {
     return is_space(c) || is_line_break(c);
 }
 
-boolean is_open_parentheses(const char c) {
+boolean is_open_parenthesis(const char c) {
     return c == '(';
 }
 

@@ -10,72 +10,17 @@
 #include "../../../../../../../../headers/lib/utils/string_utils/string_builder.h"
 #include "../../../../../../../../headers/lang/aio_reserved_names/aio_reserved_names_container.h"
 
-//----------------------------------------------------------------------------------------------------------------------
-//PROTOCOL:
-
-#define AIO_NUMBER_OF_PROTOCOL_CELLS 6
-
-/**
- * Scopes.
- */
-
-#define AIO_SCOPE_INDEX 0
-
-const int AIO_IF_SCOPE = 0;
-
-const int AIO_CONDITION_SCOPE = 1;
-
-const int AIO_TRUE_BODY_SCOPE = 2;
-
-const int AIO_FALSE_BODY_SCOPE = 3;
-
-const int AIO_IS_READY_FOR_WEAVING = 4;
-
-/**
- * Branches.
- */
-
-#define AIO_IF_BRANCHES_INDEX 1
-
-const int AIO_UNDEFINED_BRANCHES = 0;
-
-const int AIO_HAS_TRUE_BRANCH = 1;
-
-const int AIO_HAS_TRUE_AND_FALSE_BRANCHES = 2;
-
-/**
- * Start & end true & false branch index.
- */
-
-#define AIO_START_TRUE_POSITION_INDEX 2
-
-#define AIO_END_TRUE_POSITION_INDEX 3
-
-#define AIO_START_FALSE_POSITION_INDEX 4
-
-#define AIO_END_FALSE_POSITION_INDEX 5
-
-//----------------------------------------------------------------------------------------------------------------------
-//MATERIALS:
-
-#define AIO_NUMBER_OF_MATERIALS 2
-
-const int AIO_IF_CONDITION_INDEX = 0;
-
-const int AIO_STRING_WEB_INDEX = 1;
-
-//----------------------------------------------------------------------------------------------------------------------
-
 /**
  * Declare functions.
  */
 
 void reset_if_spider(struct aio_spider *spider);
 
-const enum aio_spider_message is_found_if_instruction(const_string string_web, aio_spider *spider);
+const aio_spider_message is_found_if_instruction(const_string string_web, aio_spider *spider);
 
-void weave_if_instruction_for(aio_instruction_holder *holder, int *next_ripper_point_reference,
-                              struct aio_spider *spider);
+void
+weave_if_instruction_for(aio_instruction_holder *holder, const_string source_code, int *next_ripper_point_reference,
+                         struct aio_spider *spider);
 
 void free_if_spider(struct aio_spider *spider);
 
@@ -85,11 +30,9 @@ const_boolean handle_condition_scope(string chunk, int *spider_protocol, int *sp
 aio_instruction_holder *dig_aio_instruction_holder(const_string source_code, aio_instruction_holder *parent_holder,
                                                    const int start_position, const int end_position);
 
-void save_string_web_in(aio_spider_materials materials, string string_web);
+void handle_true_body(const_string chunk, int *spider_protocol, int *spider_pointer_reference);
 
-void handle_true_body(const_string chunk, int *spider_protocol, int *spider_pointer_reference) ;
-
-void handle_false_body(const_string chunk, int *spider_protocol, int *spider_pointer_reference) ;
+void handle_false_body(const_string chunk, int *spider_protocol, int *spider_pointer_reference);
 
 /**
  * Constructor.
@@ -102,12 +45,15 @@ aio_spider *new_aio_if_spider() {
     spider->is_found_instruction = is_found_if_instruction;
     spider->weave_instruction_for = weave_if_instruction_for;
     spider->free = free_if_spider;
-    //Init start scanning position:
-    spider->start_pointer = 0;
-    //Create spider's protocol:
-    spider->spider_protocol = calloc(AIO_NUMBER_OF_PROTOCOL_CELLS, sizeof(int));
-    //Create spider materials:
-    spider->collected_materials = new_aio_spider_materials(AIO_NUMBER_OF_MATERIALS);
+    //Create materials:
+    aio_if_materials *materials = calloc(1, sizeof(aio_if_materials));
+    materials->true_watcher = new_point_watcher();
+    materials->false_watcher = new_point_watcher();
+    materials->scope_type = AIO_IF_SCOPE;
+    materials->branches_type = AIO_UNDEFINED_BRANCHES;
+    //Set materials:
+    spider->get.if_materials = materials;
+    spider->message = AIO_SPIDER_NOT_FOUND_MATERIALS;
     return spider;
 }
 
@@ -115,29 +61,26 @@ aio_spider *new_aio_if_spider() {
  * Reset.
  */
 
-void reset_if_spider(struct aio_spider *spider) {
-    spider->start_pointer = 0;
+void reset_if_spider(aio_spider *spider) {
+    aio_if_materials *materials = spider->get.if_materials;
+    reset_point_watcher(materials->true_watcher);
+    reset_point_watcher(materials->false_watcher);
     //Reset protocol:
-    int *protocol = spider->spider_protocol;
-    protocol[AIO_SCOPE_INDEX] = AIO_IF_SCOPE;
-    protocol[AIO_IF_BRANCHES_INDEX] = AIO_UNDEFINED_BRANCHES;
-    protocol[AIO_START_TRUE_POSITION_INDEX] = -1;
-    protocol[AIO_END_TRUE_POSITION_INDEX] = -1;
-    protocol[AIO_START_FALSE_POSITION_INDEX] = -1;
-    protocol[AIO_END_FALSE_POSITION_INDEX] = -1;
-    reset_aio_spider_materials(spider->collected_materials, AIO_NUMBER_OF_MATERIALS);
+    materials->scope_type = AIO_IF_SCOPE;
+    materials->branches_type = AIO_UNDEFINED_BRANCHES;
+    free(materials->condition);
 }
 
 /**
  * Destructor.
  */
 
-void free_if_spider(struct aio_spider *spider) {
-    free(spider->spider_protocol);
-    for (int i = 0; i < AIO_NUMBER_OF_MATERIALS; ++i) {
-        string_list *material_list = spider->collected_materials[i];
-        free_string_list(material_list);
-    }
+void free_if_spider(aio_spider *spider) {
+    aio_if_materials *materials = spider->get.if_materials;
+    free_point_watcher(materials->true_watcher);
+    free_point_watcher(materials->false_watcher);
+    free(materials->condition);
+    free(materials);
     free(spider);
 }
 
@@ -145,44 +88,76 @@ void free_if_spider(struct aio_spider *spider) {
  * Searching.
  */
 
+//FIXME: NOT RETURN MESSAGE: "IS READY FOR WEAVING"
 const enum aio_spider_message is_found_if_instruction(const_string string_web, aio_spider *spider) {
     //Extract spider fields:
-    int *start_scan_position_reference = &spider->start_pointer;
-    int *spider_protocol = spider->spider_protocol;
-    aio_spider_materials materials = spider->collected_materials;
-    //Extract protocol:
-    const int scanning_scope = spider_protocol[AIO_SCOPE_INDEX];
-    //Save string web:
-    save_string_web_in(materials, (string) string_web);
+    const aio_assign_materials *materials = spider->get.assign_materials;
+    const aio_assign_scope_type scope_type = materials->scope_type;
+    point_watcher *watcher = materials->watcher;
+    watcher->end_index++;
     //Prepare to scanning:
-    const size_t string_web_length = strlen(string_web);
+    const char last_symbol = string_web[watcher->end_index - 1];
+    //Spider waits string data:
+    if (watcher->mode == POINT_PASSIVE_MODE) {
+        if (is_space_or_line_break(last_symbol)) {
+            //Spider waiting:
+            watcher->start_index++;
+        } else {
+            //Spider is ready for analysing:
+            watcher->mode = POINT_ACTIVE_MODE;
+        }
+    }
+    //Spider works:
+    if (watcher->mode == POINT_ACTIVE_MODE) {
+        switch (scope_type) {
+            case AIO_DECLARATION_SCOPE:
+                handle_declaration_scope(string_web, spider);
+                break;
+            case AIO_EQUAL_SIGN_IN_SCOPE:
+                handle_equal_sign_scope(string_web, spider);
+                break;
+            case AIO_VALUE_SCOPE:
+                handle_assign_scope(string_web, spider);
+                break;
+            case AIO_IS_WEAVING_SCOPE:
+                break;
+        }
+    }
+    return spider->message;
+
+
+
+
+
+    //Extract spider fields:
+    aio_if_materials *materials = spider->get.if_materials;
+    const aio_if_scope_type scope_type = materials->scope_type;
     //Catch "if" modifier:
-    const_boolean is_if_scanning_scope = scanning_scope == AIO_IF_SCOPE;
-    if (is_if_scanning_scope) {
+    if (scope_type == AIO_IF_SCOPE) {
         if (is_aio_if_modifier(string_web)) {
             spider_protocol[AIO_SCOPE_INDEX] = AIO_CONDITION_SCOPE;
-            *start_scan_position_reference = 2;
+            *start_position_ref = 2;
             return AIO_SPIDER_FOUND_MATERIALS;
         } else {
             return AIO_SPIDER_NOT_FOUND_MATERIALS;
         }
     } else {
         //Scan string web:
-        const int start_point = *start_scan_position_reference;
+        const int start_point = *start_position_ref;
         //Extract necessary part of string web:
         string chunk = substring(string_web, start_point, string_web_length);
-        switch (scanning_scope) {
+        switch (scope_type) {
             //Condition scope:
             case 1:
-                handle_condition_scope(chunk, spider_protocol, start_scan_position_reference, materials);
+                handle_condition_scope(chunk, spider_protocol, start_position_ref, materials);
                 break;
                 //True body scope;
             case 2:
-                handle_true_body(chunk, spider_protocol, start_scan_position_reference);
+                handle_true_body(chunk, spider_protocol, start_position_ref);
                 break;
                 //False body scope
             case 4:
-                handle_false_body(chunk, spider_protocol, start_scan_position_reference);
+                handle_false_body(chunk, spider_protocol, start_position_ref);
                 break;
                 //Unreachable case:
             default:
@@ -192,30 +167,20 @@ const enum aio_spider_message is_found_if_instruction(const_string string_web, a
     return AIO_SPIDER_SEARCH_OTHER_MATERIALS;
 }
 
-void save_string_web_in(aio_spider_materials materials, string string_web) {
-    //Bind input string in materials:
-    string_list *material_list = materials[AIO_STRING_WEB_INDEX];
-    if (material_list->size == 0) {
-        add_string_in_list(material_list, string_web);
-    } else {
-        material_list->strings[0] = string_web;
-    }
-}
-
 const_boolean handle_condition_scope(string chunk, int *spider_protocol, int *spider_pointer_reference,
                                      aio_spider_materials materials) {
     const size_t chunk_length = strlen(chunk);
     const int last_position = chunk_length - 1;
     if (chunk_length >= 3) {
         const_boolean starts_and_ends_with_parenthesises =
-                is_open_parentheses(chunk[0])
+                is_open_parenthesis(chunk[0])
                 && is_close_parenthesis(chunk[last_position]);
         if (starts_and_ends_with_parenthesises) {
             //After that need to check inner parentheses:
             int parenthesis_counter = 0;
             for (int i = 1; i < last_position; ++i) {
                 const char symbol = chunk[i];
-                if (is_open_parentheses(symbol)) {
+                if (is_open_parenthesis(symbol)) {
                     parenthesis_counter++;
                 }
                 if (is_close_parenthesis(symbol)) {
@@ -379,14 +344,15 @@ void handle_false_body(const_string chunk, int *spider_protocol, int *spider_poi
  * Weaving.
  */
 
-void weave_if_instruction_for(aio_instruction_holder *holder, int *next_ripper_point_reference,
-                              struct aio_spider *spider) {
+void
+weave_if_instruction_for(aio_instruction_holder *holder, const_string source_code, int *next_ripper_point_reference,
+                         struct aio_spider *spider) {
     //Extract spider fields:
     int *protocol = spider->spider_protocol;
     aio_spider_materials materials = spider->collected_materials;
     const_boolean is_ready_for_weaving = protocol[AIO_SCOPE_INDEX] == AIO_IS_READY_FOR_WEAVING;
     if (is_ready_for_weaving) {
-        *next_ripper_point_reference += spider->start_pointer;
+        *next_ripper_point_reference += spider->start_scanning_position;
         //Get spider's materials:
         const_string_array if_condition_materials = materials[AIO_IF_CONDITION_INDEX]->strings;
         //Get true-false chunk:
