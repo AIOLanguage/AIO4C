@@ -10,92 +10,65 @@
 #include "../../../../../../../../headers/lib/utils/string_utils/string_builder.h"
 #include "../../../../../../../../headers/lib/point_watcher/point_watcher.h"
 
-//----------------------------------------------------------------------------------------------------------------------
-//PROTOCOL:
-
-#define AIO_NUMBER_OF_PROTOCOL_CELLS 6
-
-/**
- * Scopes.
- */
-
-#define AIO_SCOPE_INDEX 0
-
-const int AIO_LOOP_SCOPE = 0;
-
-const int AIO_LOOP_HEADER_SCOPE = 1;
-
-const int AIO_LOOP_BODY_SCOPE = 2;
-
-const int AIO_IF_WEAVING_SCOPE = 3;
-
-/**
- * Body.
- */
-
-#define AIO_LOOP_BODY_INDEX 1
-
-const int AIO_UNDEFINED_BODY = 0;
-
-const int AIO_HAS_BODY = 1;
-
-/**
- * Start & end loop body bounds.
- */
-
-
-/**
- * Header.
- */
-
-#define AIO_START_HEADER_INDEX 2
-
-#define AIO_END_HEADER_INDEX
-
-#define AIO_HEADER_COUNTER_INDEX 4
-
-/**
- * Body
- */
-
-#define AIO_START_BODY_POSITION_INDEX 5
-
-#define AIO_END_BODY_POSITION_INDEX 6
-
-#define AIO_BODY_COUNTER_INDEX 7
-
-//----------------------------------------------------------------------------------------------------------------------
-//MATERIALS:
-
-#define AIO_NUMBER_OF_MATERIALS 5
-
-const int AIO_POINTER_DEFINITION_INDEX = 0;
-
-const int AIO_START_VALUE_INDEX = 1;
-
-const int AIO_CONDITION_INDEX = 2;
-
-const int AIO_STEP_INDEX = 3;
-
-const int AIO_STRING_WEB_INDEX = 4;
-
-//----------------------------------------------------------------------------------------------------------------------
+#define AIO_NUMBER_OF_SPIDERS 3
 
 /**
  * Declare functions.
  */
 
-void reset_loop_spider(struct aio_spider *spider);
+const_boolean is_end_of_body(const_string function_body_string, point_watcher *watcher);
 
-const_boolean is_found_loop_instruction(const_string string_web, aio_spider *spider);
+const aio_spider_message is_found_loop_instruction(const_string string_web, aio_spider *spider);
 
-void weave_loop_instruction_for(aio_instruction_holder *holder, int *next_ripper_point_reference,
-                                struct aio_spider *spider);
+void handle_loop_modifier_scope(const_string string_web, aio_spider *spider);
 
-void free_loop_spider(struct aio_spider *spider);
+void handle_loop_header_scope(const_string string_web, aio_spider *spider);
 
-void
-handle_loop_header_scope(const_string string_web, aio_spider *spider, const int end_position);
+aio_spider_swarm *breed_aio_loop_header_spider_swarm();
+
+void handle_loop_body_scope(const_string string_web, aio_spider *spider);
+
+void dig_header_materials(const_string string_web, aio_spider *parent_spider);
+
+void weave_loop_instruction_for(aio_instruction_holder *instruction_holder, const_string source_code,
+                                int *next_ripper_point_reference, aio_spider *spider);
+
+/**
+ * Reset.
+ */
+
+void reset_loop_spider(aio_spider *spider) {
+    aio_loop_materials *materials = spider->get.loop_materials;
+    //Reset point watchers:
+    reset_point_watcher(materials->main_watcher);
+    reset_point_watcher(materials->header_watcher);
+    reset_point_watcher(materials->body_watcher);
+    //Reset state:
+    materials->scope_type = AIO_LOOP_MODIFIER_SCOPE;
+    materials->body_type = AIO_LOOP_UNDEFINED_BODY;
+    //Free materials:
+    free_strings_in_list(materials->pointer_data_list);
+    free(materials->start_variable);
+    free(materials->start_value);
+    free(materials->condition);
+    free(materials->changeable_variable);
+    free(materials->step_value);
+}
+
+/**
+ * Destructor.
+ */
+
+void free_loop_spider(aio_spider *spider) {
+    reset_loop_spider(spider);
+    aio_loop_materials *materials = spider->get.loop_materials;
+    free(materials->main_watcher);
+    free(materials->header_watcher);
+    free(materials->body_watcher);
+    free_string_list(materials->pointer_data_list);
+    free(materials);
+    free(spider);
+}
 
 /**
  * Constructor.
@@ -108,249 +81,249 @@ aio_spider *new_aio_loop_spider() {
     spider->is_found_instruction = is_found_loop_instruction;
     spider->weave_instruction_for = weave_loop_instruction_for;
     spider->free = free_loop_spider;
-    //Init start scanning position:
-    spider->start_scanning_position = 0;
-    //Create spider's protocol:
-    spider->spider_protocol = calloc(AIO_NUMBER_OF_PROTOCOL_CELLS, sizeof(int));
-    //Create spider materials:
-    spider->collected_materials = new_aio_spider_materials(AIO_NUMBER_OF_MATERIALS);
+    //Create materials:
+    aio_loop_materials *materials = calloc(1, sizeof(aio_loop_materials));
+    materials->main_watcher = new_point_watcher();
+    materials->header_watcher = new_point_watcher();
+    materials->body_watcher = new_point_watcher();
+    materials->scope_type = AIO_LOOP_MODIFIER_SCOPE;
+    materials->body_type = AIO_LOOP_UNDEFINED_BODY;
+    materials->pointer_data_list = new_string_list();
+    //Set materials:
+    spider->get.loop_materials = materials;
+    spider->message = AIO_SPIDER_NOT_FOUND_MATERIALS;
     return spider;
 }
 
-/**
- * Reset.
- */
-
-void reset_loop_spider(struct aio_spider *spider) {
-    spider->start_scanning_position = 0;
-    //Reset protocol:
-    int *protocol = spider->spider_protocol;
-    protocol[AIO_SCOPE_INDEX] = AIO_LOOP_SCOPE;
-    protocol[AIO_LOOP_BODY_INDEX] = AIO_UNDEFINED_BODY;
-    protocol[AIO_START_BODY_POSITION_INDEX] = -1;
-    protocol[AIO_END_BODY_POSITION_INDEX] = -1;
-    protocol[AIO_HEADER_COUNTER_INDEX] = 0;
-    protocol[AIO_BODY_COUNTER_INDEX] = 0;
-    reset_aio_spider_materials(spider->collected_materials, AIO_NUMBER_OF_MATERIALS);
-}
-
-/**
- * Destructor.
- */
-
-void free_loop_spider(struct aio_spider *spider) {
-    free(spider->spider_protocol);
-    for (int i = 0; i < AIO_NUMBER_OF_MATERIALS; ++i) {
-        string_list *material_list = spider->collected_materials[i];
-        free_string_list(material_list);
-    }
-    free(spider);
-}
-
-
-const_boolean is_found_loop_instruction(const_string string_web, aio_spider *spider) {
-    //Extract spider materials:
-    int *protocol = spider->spider_protocol;
-    aio_spider_materials materials = spider->collected_materials;
-    //Save string web in materials:
-    save_string_web_in(materials, (string) string_web, AIO_STRING_WEB_INDEX);
-    //Define string web length:
-    const size_t string_web_length = strlen(string_web);
-    //Catch loop modifier:
-    const int scanning_scope = protocol[AIO_SCOPE_INDEX];
-    const_boolean is_loop_scanning_scope = scanning_scope == AIO_LOOP_SCOPE;
-    if (is_loop_scanning_scope) {
-        if (is_aio_loop_modifier(string_web)) {
-            protocol[AIO_SCOPE_INDEX] = AIO_LOOP_HEADER_SCOPE;
-            spider->start_scanning_position = 2;
-            return AIO_SPIDER_FOUND_MATERIALS;
-        } else {
-            return AIO_SPIDER_NOT_FOUND_MATERIALS;
-        }
-    } else {
-        //Scan string web:
-        const int end_position = string_web_length - 1;
-        switch (scanning_scope) {
-            //Pointer scope:
-            case 1:
-                handle_loop_header_scope(string_web, spider, end_position);
-                break;
-                //Mandatory condition scope:
-            case 4:
-                handle_loop_body_scope(string_web, end_position, materials);
-                break;
-                //Unreachable case:
-            default:
-                break;
-        }
-    }
-    return AIO_SPIDER_SEARCH_OTHER_MATERIALS;
-}
-
-void handle_loop_header_scope(const_string string_web, aio_spider *spider, const int end_position) {
+const aio_spider_message is_found_loop_instruction(const_string string_web, aio_spider *spider) {
     //Extract spider fields:
-    int *protocol = spider->spider_protocol;
-    int i = spider->start_scanning_position;
-    aio_spider_materials materials = spider->collected_materials;
-    //Check parentheses:
-    const char last_symbol = string_web[end_position];
-    if (is_open_parenthesis(last_symbol)) {
-        protocol[AIO_HEADER_COUNTER_INDEX]++;
-    }
-    if (is_close_parenthesis(last_symbol)) {
-        protocol[AIO_HEADER_COUNTER_INDEX]--;
-        const int parenthesis_counter = protocol[AIO_HEADER_COUNTER_INDEX];
-        if (parenthesis_counter == 0){
-
-        }
-        if (parenthesis_counter < 0){
-            throw_error("LOOP SPIDER: invalid loop header!");
+    const aio_loop_materials *materials = spider->get.loop_materials;
+    const aio_loop_scope_type scope_type = materials->scope_type;
+    point_watcher *main_watcher = materials->main_watcher;
+    main_watcher->end_index++;
+    //Prepare to scanning:
+    const char last_symbol = string_web[main_watcher->end_index - 1];
+    //Spider waits string data:
+    if (main_watcher->mode == POINT_PASSIVE_MODE) {
+        if (is_space_or_line_break(last_symbol)) {
+            //Spider waiting:
+            main_watcher->start_index++;
+        } else {
+            //Spider is ready for analysing:
+            main_watcher->mode = POINT_ACTIVE_MODE;
         }
     }
-    //Go to start pointer definition:
-    while (is_space_or_line_break(string_web[++i]));
-    if (!is_open_parenthesis(string_web[i])) {
-
+    //Spider works:
+    if (main_watcher->mode == POINT_ACTIVE_MODE) {
+        switch (scope_type) {
+            case AIO_LOOP_MODIFIER_SCOPE:
+                handle_loop_modifier_scope(string_web, spider);
+                break;
+            case AIO_LOOP_HEADER_SCOPE:
+                handle_loop_header_scope(NULL, NULL);
+                break;
+            case AIO_LOOP_BODY_SCOPE:
+                handle_loop_body_scope(string_web, spider);
+                break;
+            case AIO_LOOP_WEAVING_SCOPE:
+                break;
+        }
     }
+    return spider->message;
+}
 
+void handle_loop_modifier_scope(const_string string_web, aio_spider *spider) {
+    aio_loop_materials *materials = spider->get.loop_materials;
+    point_watcher *watcher = materials->main_watcher;
+    const char last_symbol = string_web[watcher->end_index - 1];
+    if (is_space_or_line_break(last_symbol)) {
+        const int start_index = watcher->start_index;
+        const int end_index = watcher->end_index;
+        const int hold_positions = end_index - start_index;
+        if (hold_positions == 3) {
+            const_boolean is_loop_modifier =
+                    string_web[start_index] == 'l'
+                    && string_web[start_index + 1] == 'o'
+                    && string_web[start_index + 2] == 'o';
+            if (is_loop_modifier) {
+                //Shift watcher:
+                watcher->start_index = end_index;
+                watcher->mode = POINT_PASSIVE_MODE;
+                //Set scope:
+                materials->scope_type = AIO_LOOP_HEADER_SCOPE;
+                //Set message:
+                spider->message = AIO_SPIDER_FOUND_MATERIALS;
+            }
+        }
+    }
+}
 
+void handle_loop_header_scope(const_string string_web, aio_spider *spider) {
+    aio_loop_materials *materials = spider->get.loop_materials;
+    point_watcher *main_watcher = materials->main_watcher;
+    point_watcher *header_watcher = materials->header_watcher;
+    //Define last position:
+    const int last_position = main_watcher->end_index - 1;
+    const char last_symbol = string_web[last_position];
+    //Scanning:
+    const_boolean is_passive = header_watcher->mode == POINT_PASSIVE_MODE;
+    const_boolean is_active = header_watcher->mode == POINT_ACTIVE_MODE;
+    const_boolean is_whitespace_cond = is_space_or_line_break(last_symbol);
+    const_boolean is_open_parenthesis_cond = is_open_parenthesis(last_symbol);
+    const_boolean is_close_parenthesis_cond = is_close_parenthesis(last_symbol);
+    //Meet open parenthesis:
+    if (is_open_parenthesis_cond) {
+        //Start of loop header:
+        if (is_passive) {
+            //Jump over open parenthesis:
+            header_watcher->start_index = main_watcher->end_index;
+            header_watcher->mode = POINT_ACTIVE_MODE;
+        }
+        //Parenthesis in condition:
+        if (is_active) {
+            //Count parentheses:
+            header_watcher->pointer++;
+        }
+    }
+    //Meet close parenthesis:
+    if (is_close_parenthesis_cond) {
+        //Doesn't start loop  header:
+        if (is_passive) {
+            throw_error("LOOP SPIDER: condition can not start with ')'");
+        }
+        //In loop header:
+        if (is_active) {
+            header_watcher->pointer--;
+            //Parenthesis closes condition:
+            if (header_watcher->pointer == 0) {
+                //End of condition:
+                //Doesn't hold close parenthesis:
+                header_watcher->end_index = last_position;
+                //Shift main watcher:
+                main_watcher->start_index = main_watcher->end_index;
+                main_watcher->mode = POINT_PASSIVE_MODE;
+                //Set scope:
+                materials->scope_type = AIO_LOOP_BODY_SCOPE;
+                //Dig header materials:
+                dig_header_materials(string_web, spider);
+            }
+        }
+    }
+    //Skip whitespaces before condition:
+    if (!is_whitespace_cond && is_passive) {
+        throw_error("IF SPIDER: invalid context after 'if' modifier!");
+    }
+}
 
+//----------------------------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------------------------------
+//HEADER ANALYSING START:
 
-    //If is loop header:
-    if (last_parenthesis_position == end_position) {
-        *start_position_ref
-
-
-
+void dig_header_materials(const_string string_web, aio_spider *parent_spider) {
+    point_watcher *header_watcher = parent_spider->get.loop_materials->header_watcher;
+    //Header watcher pointer is already useless. Thus we can use pointer again!
+    header_watcher->pointer = header_watcher->start_index;
+    if (header_watcher->end_index - header_watcher->start_index >= 0) {
         //Create spider swarm for searching instructions:
-        aio_spider_swarm *spider_swarm = breed_aio_loop_spider_swarm();
+        aio_spider_swarm *spider_swarm = breed_aio_loop_header_spider_swarm();
         string_builder *str_builder = new_string_builder();
-        //Start to find instruction:
-        point_watcher *watcher = new_point_watcher();
         //After weaving instruction need to check function body string rest:
-        boolean is_needed_check_body = TRUE;
-        for (watcher->pointer = start_position; watcher->pointer < end_position; ++watcher->pointer) {
-            const char symbol = source_code[watcher->pointer];
+        while (header_watcher->pointer < header_watcher->end_index) {
+            const char symbol = string_web[header_watcher->pointer++];
+            const_boolean is_active = header_watcher->mode == POINT_ACTIVE_MODE;
+            const_boolean is_passive = header_watcher->mode == POINT_PASSIVE_MODE;
             //Check string content to define:
             //Do spiders need to search instructions or not?
-            if (is_needed_check_body) {
-                is_needed_check_body = FALSE;
-                if (!has_function_content_rest(source_code, watcher->pointer, end_position)) {
+            if (is_passive) {
+                if (is_end_of_body(string_web, header_watcher)) {
                     break;
-                } else {
-                    watcher->mode = POINT_PASSIVE_MODE;
-                }
-            }
-            //Skip whitespaces and line breaks:
-            if (watcher->mode == POINT_PASSIVE_MODE) {
-                if (is_space_or_line_break(symbol)) {
-                    watcher->pointer++;
-                } else {
-                    watcher->mode = POINT_ACTIVE_MODE;
                 }
             }
             //Active mode for spider swarm:
-            if (watcher->mode == POINT_ACTIVE_MODE) {
+            if (is_active) {
                 //Add symbol in string builder:
                 append_char_to(str_builder, symbol);
-                const_string string_web = str_builder->string_value;
+                const_string substring_web = str_builder->string_value;
                 //Give "string web" to spider swarm:
-                const enum aio_spider_swarm_mode swarm_mode = spider_swarm->mode;
-                if (swarm_mode == AIO_ONE_SPIDER_WORKS) {
-                    aio_spider *spider = spider_swarm->active_spider;
-                    const enum aio_spider_message message = spider->is_found_instruction(string_web, spider);
-                    if (message == AIO_SPIDER_WAS_CRUSH) {
-                        throw_error("INSTRUCTION RIPPER: invalid context!");
-                    }
-                    if (message == AIO_SPIDER_IS_READY_FOR_WEAVING) {
-                        //Spider takes current holder and weave for holder instruction:
-                        spider->weave_instruction_for(current_holder, &watcher->start_index, spider);
-                        reset_aio_spiders(spider_swarm);
-                        reset_string_builder(str_builder);
-                        watcher->pointer = watcher->start_index;
-                        is_needed_check_body = TRUE;
-                    }
-                }
+                const aio_spider_swarm_mode swarm_mode = spider_swarm->mode;
                 if (swarm_mode == AIO_ALL_SPIDERS_WORK) {
                     for (int j = 0; j < AIO_NUMBER_OF_SPIDERS; ++j) {
-                        aio_spider *spider = spider_swarm->spiders[j];
+                        aio_spider *child_spider = spider_swarm->spiders[j];
                         //Spider try to match "string web" with it task:
-                        enum aio_spider_message message = spider->is_found_instruction(string_web, spider);
+                        aio_spider_message message = child_spider->is_found_instruction(substring_web, child_spider);
                         if (message == AIO_SPIDER_FOUND_MATERIALS) {
-                            spider_swarm->active_spider = spider;
+                            spider_swarm->active_spider = child_spider;
                             spider_swarm->mode = AIO_ONE_SPIDER_WORKS;
+                            break;
                         }
-                        if (message == AIO_SPIDER_WAS_CRUSH) {
-                            throw_error("INSTRUCTION RIPPER: invalid context!");
-                        }
+                    }
+                }
+                if (swarm_mode == AIO_ONE_SPIDER_WORKS) {
+                    aio_spider *child_spider = spider_swarm->active_spider;
+                    const aio_spider_message message = child_spider->is_found_instruction(substring_web, child_spider);
+                    if (message == AIO_SPIDER_IS_READY_FOR_WEAVING) {
+                        //Spider takes current holder and weave for holder instruction:
+                        child_spider->weave_materials_for(parent_spider, child_spider, string_web,
+                                                          &header_watcher->start_index, AIO_LOOP_TASK);
+                        //Reset spiders:
+                        reset_aio_spiders(spider_swarm);
+                        //Reset string builder:
+                        reset_string_builder(str_builder);
+                        //Shift watcher:
+                        header_watcher->pointer = header_watcher->start_index;
+                        header_watcher->mode = POINT_PASSIVE_MODE;
                     }
                 }
             }
         }
-
-
+        //--------------------------------------------------------------------------------------------------------------
+        //찌꺼기 수집기 (Garbage collector):
+        free_aio_spider_swarm(spider_swarm);
+    } else {
+        throw_error("LOOP SPIDER: loop header is empty!");
     }
-
-
-
-
-
-
-//
 }
 
+typedef struct aio_loop_short_header_materials {
 
-void handle_condition_scope(const_string string_web, int *start_position_ref, const int end_position,
-                            aio_spider_materials materials) {
+} aio_loop_short_header_materials;
+
+aio_spider *new_aio_loop_short_spider() {
 
 }
 
-void weave_loop_instruction_for(aio_instruction_holder *holder, int *next_ripper_point_reference,
-                                struct aio_spider *spider) {
+typedef struct aio_loop_shortest_header_materials {
+
+} aio_loop_shortest_header_materials;
+
+aio_spider *new_aio_loop_shortest_spider() {
+
 }
 
+aio_spider_swarm *breed_aio_loop_header_spider_swarm() {
+    //Create spiders:
+    aio_spider **spiders = calloc(AIO_NUMBER_OF_SPIDERS, sizeof(aio_spider *));
+    spiders[0] = new_aio_assign_spider();
+    spiders[]
+    spiders[1] = new_aio_loop_short_spider();
+    spiders[2] = new_aio_loop_shortest_spider();
+    aio_spider_swarm *swarm = calloc(1, sizeof(aio_spider_swarm));
+    swarm->number_of_spiders = AIO_NUMBER_OF_SPIDERS;
+    swarm->spiders = spiders;
+    swarm->active_spider = NULL;
+    swarm->mode = AIO_ALL_SPIDERS_WORK;
+    return swarm;
+}
+
+//HEADER ANALYSING END:
+//----------------------------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------------------------------
 
 
+void handle_loop_body_scope(const_string string_web, aio_spider *spider) {
 
+}
 
-
-
-
-
-
-
-
-
-//if (is_open_parenthesis(string_web[i])) {
-//
-//
-//        i++;
-//        while (is_space_or_line_break(string_web[i++]));
-//        if (isalnum(string_web[i])) {
-//            *start_position_ref = i;
-//        } else {
-//            throw_error("LOOP SPIDER: invalid loop header!");
-//        }
-//    }
-//
-//
-//    const char last_symbol = string_web[end_position];
-//    if (isalnum(last_symbol)) {
-//        int whitespace_counter = 0;
-//        for (int i = end_position; i >= *start_position_ref; --i) {
-//            const char symbol = string_web[i];
-//            if (is_space_or_line_break(symbol)) {
-//                whitespace_counter++;
-//            } else {
-//                const_boolean ends_previous_definition = (isalnum(symbol) || is_close_parenthesis(symbol));
-//                if (whitespace_counter > 0 && ends_previous_definition) {
-//
-//
-//                } else {
-//                    return;
-//                }
-//            }
-//        }
-//    } else {
-//        return;
-//    }
+void weave_loop_instruction_for(aio_instruction_holder *instruction_holder, const_string source_code,
+                                int *next_ripper_point_reference, struct aio_spider *spider) {
+}

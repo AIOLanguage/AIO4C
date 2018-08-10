@@ -11,16 +11,32 @@
  * Declare functions. 
  */
 
-const enum aio_spider_message is_found_break_instruction(const_string string_web, aio_spider *spider);
+const aio_spider_message is_found_break_instruction(const_string string_web, aio_spider *spider);
 
 void weave_break_instruction_for(aio_instruction_holder *instruction_holder, const_string _,
-                                 int *next_ripper_point_reference, struct aio_spider *spider);
-
-void free_break_function(struct aio_spider *spider);
-
-void reset_break_spider(struct aio_spider *spider);
+                                 int *next_ripper_point_reference, aio_spider *spider);
 
 void handle_break_scope(const_string string_web, aio_spider *spider);
+
+/**
+ * Reset.
+ */
+
+void reset_break_spider(aio_spider *spider) {
+    reset_point_watcher(spider->get.break_materials->watcher);
+}
+
+/**
+ * Destructor.
+ */
+
+void free_break_function(aio_spider *spider) {
+    aio_break_materials *materials = spider->get.break_materials;
+    point_watcher *watcher = materials->watcher;
+    free_point_watcher(watcher);
+    free(materials);
+    free(spider);
+}
 
 /**
  * Constructor.
@@ -90,7 +106,7 @@ void handle_break_scope(const_string string_web, aio_spider *spider) {
 }
 
 void weave_break_instruction_for(aio_instruction_holder *instruction_holder, const_string _,
-                                 int *next_ripper_point_reference, struct aio_spider *spider) {
+                                 int *next_ripper_point_reference, aio_spider *spider) {
     *next_ripper_point_reference += spider->get.break_materials->watcher->start_index;
     //Weave break instruction:
     aio_instruction *break_instruction = new_aio_break_instruction(instruction_holder);
@@ -98,16 +114,4 @@ void weave_break_instruction_for(aio_instruction_holder *instruction_holder, con
     aio_instruction_list *instruction_list = instruction_holder->instruction_list;
     add_aio_instruction_in_list(instruction_list, break_instruction);
     //Weaving complete!
-}
-
-void reset_break_spider(struct aio_spider *spider) {
-    reset_point_watcher(spider->get.break_materials->watcher);
-}
-
-void free_break_function(struct aio_spider *spider) {
-    aio_break_materials *materials = spider->get.break_materials;
-    point_watcher *watcher = materials->watcher;
-    free_point_watcher(watcher);
-    free(materials);
-    free(spider);
 }

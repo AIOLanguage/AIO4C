@@ -25,7 +25,7 @@ typedef struct aio_instruction_holder {
 } aio_instruction_holder;
 
 aio_instruction_holder *dig_aio_instruction_holder(const_string source_code, aio_instruction_holder *parent_holder,
-                                                   const int start_position, const int end_position);
+                                                   const int start_index, const int end_index);
 
 /**
  * Instruction.

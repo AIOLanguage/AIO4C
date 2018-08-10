@@ -14,22 +14,49 @@
  * Declare functions.
  */
 
-void reset_if_spider(aio_spider *spider);
-
 const aio_spider_message is_found_if_instruction(const_string string_web, aio_spider *spider);
 
-void weave_if_instruction_for(aio_instruction_holder *holder, const_string source_code,
-                              int *next_ripper_point_reference, struct aio_spider *spider);
-
-void free_if_spider(aio_spider *spider);
-
-void handle_if_scope(const_string string_web, aio_spider *spider);
+void handle_if_modifier_scope(const_string string_web, aio_spider *spider);
 
 void handle_condition_scope(const_string string_web, aio_spider *spider);
 
 void handle_true_body_scope(const_string string_web, aio_spider *spider);
 
 void handle_false_body_scope(const_string string_web, aio_spider *spider);
+
+void weave_if_instruction_for(aio_instruction_holder *holder, const_string source_code,
+                              int *next_ripper_point_reference, aio_spider *spider);
+
+/**
+ * Reset.
+ */
+
+void reset_if_spider(aio_spider *spider) {
+    aio_if_materials *materials = spider->get.if_materials;
+    reset_point_watcher(materials->main_watcher);
+    reset_point_watcher(materials->header_watcher);
+    reset_point_watcher(materials->true_watcher);
+    reset_point_watcher(materials->false_watcher);
+    //Reset state:
+    materials->scope_type = AIO_IF_MODIFIER_SCOPE;
+    materials->branch_type = AIO_UNDEFINED_BRANCHES;
+    free(materials->condition);
+}
+
+/**
+ * Destructor.
+ */
+
+void free_if_spider(aio_spider *spider) {
+    aio_if_materials *materials = spider->get.if_materials;
+    free_point_watcher(materials->main_watcher);
+    free_point_watcher(materials->header_watcher);
+    free_point_watcher(materials->true_watcher);
+    free_point_watcher(materials->false_watcher);
+    free(materials->condition);
+    free(materials);
+    free(spider);
+}
 
 /**
  * Constructor.
@@ -47,39 +74,12 @@ aio_spider *new_aio_if_spider() {
     materials->header_watcher = new_point_watcher();
     materials->true_watcher = new_point_watcher();
     materials->false_watcher = new_point_watcher();
-    materials->scope_type = AIO_IF_IF_SCOPE;
+    materials->scope_type = AIO_IF_MODIFIER_SCOPE;
     materials->branch_type = AIO_UNDEFINED_BRANCHES;
     //Set materials:
     spider->get.if_materials = materials;
     spider->message = AIO_SPIDER_NOT_FOUND_MATERIALS;
     return spider;
-}
-
-/**
- * Reset.
- */
-
-void reset_if_spider(aio_spider *spider) {
-    aio_if_materials *materials = spider->get.if_materials;
-    reset_point_watcher(materials->true_watcher);
-    reset_point_watcher(materials->false_watcher);
-    //Reset protocol:
-    materials->scope_type = AIO_IF_IF_SCOPE;
-    materials->branch_type = AIO_UNDEFINED_BRANCHES;
-    free(materials->condition);
-}
-
-/**
- * Destructor.
- */
-
-void free_if_spider(aio_spider *spider) {
-    aio_if_materials *materials = spider->get.if_materials;
-    free_point_watcher(materials->true_watcher);
-    free_point_watcher(materials->false_watcher);
-    free(materials->condition);
-    free(materials);
-    free(spider);
 }
 
 /**
@@ -107,8 +107,8 @@ const aio_spider_message is_found_if_instruction(const_string string_web, aio_sp
     //Spider works:
     if (main_watcher->mode == POINT_ACTIVE_MODE) {
         switch (scope_type) {
-            case AIO_IF_IF_SCOPE:
-                handle_if_scope(string_web, spider);
+            case AIO_IF_MODIFIER_SCOPE:
+                handle_if_modifier_scope(string_web, spider);
                 break;
             case AIO_IF_CONDITION_SCOPE:
                 handle_condition_scope(string_web, spider);
@@ -126,7 +126,7 @@ const aio_spider_message is_found_if_instruction(const_string string_web, aio_sp
     return spider->message;
 }
 
-void handle_if_scope(const_string string_web, aio_spider *spider) {
+void handle_if_modifier_scope(const_string string_web, aio_spider *spider) {
     aio_if_materials *materials = spider->get.if_materials;
     point_watcher *watcher = materials->main_watcher;
     const char last_symbol = string_web[watcher->end_index - 1];
@@ -342,7 +342,7 @@ void handle_false_body_scope(const_string string_web, aio_spider *spider) {
  */
 
 void weave_if_instruction_for(aio_instruction_holder *holder, const_string source_code,
-                              int *next_ripper_point_reference, struct aio_spider *spider) {
+                              int *next_ripper_point_reference, aio_spider *spider) {
     //Extract spider fields:
     const aio_if_materials *materials = spider->get.if_materials;
     const point_watcher *main_watcher = materials->main_watcher;

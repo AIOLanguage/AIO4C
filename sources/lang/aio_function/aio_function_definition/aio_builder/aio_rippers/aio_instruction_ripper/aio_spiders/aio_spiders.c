@@ -1,23 +1,7 @@
 #include <malloc.h>
 #include "../../../../../../../../headers/lang/aio_function/aio_function_definition/aio_spider/aio_spiders.h"
 
-/**
- * Declare spider constructors.
- */
-
-aio_spider *new_aio_assign_spider();
-
-aio_spider *new_aio_break_spider();
-
-aio_spider *new_aio_if_spider();
-
-aio_spider *new_aio_loop_spider();
-
-aio_spider *new_aio_out_spider();
-
-aio_spider *new_aio_procedure_spider();
-
-aio_spider *new_aio_switch_spider();
+#define AIO_NUMBER_OF_SPIDERS 7
 
 /**
  * Reset each spider fields.
@@ -48,6 +32,7 @@ aio_spider_swarm *breed_aio_function_spider_swarm() {
     spiders[5] = new_aio_procedure_spider();
     spiders[6] = new_aio_switch_spider();
     aio_spider_swarm *swarm = calloc(1, sizeof(aio_spider_swarm));
+    swarm->number_of_spiders = AIO_NUMBER_OF_SPIDERS;
     swarm->spiders = spiders;
     swarm->active_spider = NULL;
     swarm->mode = AIO_ALL_SPIDERS_WORK;
@@ -61,7 +46,7 @@ aio_spider_swarm *breed_aio_function_spider_swarm() {
 
 void free_aio_spider_swarm(aio_spider_swarm *spider_swarm) {
     aio_spider **spiders = spider_swarm->spiders;
-    for (int i = 0; i < AIO_NUMBER_OF_SPIDERS; ++i) {
+    for (int i = 0; i < spider_swarm->number_of_spiders; ++i) {
         aio_spider *spider = spiders[i];
         //Spider frees himself:
         spider->free(spider);

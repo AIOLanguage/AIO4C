@@ -16,6 +16,8 @@ typedef struct point_watcher {
 
 point_watcher *new_point_watcher();
 
+point_watcher *new_point_watcher_with_pointer(const int pointer_value);
+
 void reset_point_watcher(point_watcher *watcher);
 
 void free_point_watcher(point_watcher *watcher);

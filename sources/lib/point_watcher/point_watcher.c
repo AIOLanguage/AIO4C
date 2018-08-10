@@ -7,6 +7,12 @@ point_watcher *new_point_watcher() {
     return watcher;
 }
 
+point_watcher *new_point_watcher_with_pointer(const int pointer_value){
+    point_watcher *watcher = new_point_watcher();
+    watcher->pointer = pointer_value;
+    return watcher;
+}
+
 void reset_point_watcher(point_watcher *watcher){
     watcher->pointer = 0;
     watcher->start_index = 0;

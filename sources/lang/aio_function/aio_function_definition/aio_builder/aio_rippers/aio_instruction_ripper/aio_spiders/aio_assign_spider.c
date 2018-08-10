@@ -10,28 +10,29 @@
 #include "../../../../../../../../headers/lang/aio_function/aio_function_definition/aio_spider/aio_spiders.h"
 #include "../../../../../../../../headers/lib/utils/string_utils/string_builder.h"
 
-
 /**
  * Declare functions.
  */
 
-const enum aio_spider_message is_found_assign_instruction(const_string string_web, aio_spider *spider);
+const aio_spider_message is_found_assign_instruction(const_string string_web, aio_spider *spider);
 
+void handle_declaration_scope(const_string string_web, aio_spider *spider);
+
+void refresh_declaration_scope(aio_spider *spider, string chunk, aio_assign_variable_declaration_type type,
+                               aio_spider_message message);
+
+void handle_equal_sign_scope(const_string string_web, aio_spider *spider);
+
+void handle_assign_scope(const_string string_web, aio_spider *spider);
 
 void weave_assign_instruction_for(aio_instruction_holder *instruction_holder, const_string _,
                                   int *next_ripper_point_reference, aio_spider *spider);
 
-void handle_declaration_scope(const_string string_web, aio_spider *spider);
-
-const_boolean handle_equal_sign_scope(const_string string_web, aio_spider *spider);
-
-void handle_assign_scope(const_string string_web, aio_spider *spider);
-
 aio_variable_definition *weave_local_variable_definition(const aio_assign_variable_declaration_type declaration_type,
                                                          const_string_array variable_materials);
 
-void refresh_declaration_scope(aio_spider *spider, string chunk, aio_assign_variable_declaration_type type,
-                               aio_spider_message message);
+void weave_assign_materials_for(aio_spider *dst_spider, aio_spider *src_spider, const_string source_code,
+                                int *next_spider_point_reference, aio_task_type task_type);
 
 /**
  * Reset.
@@ -73,6 +74,7 @@ aio_spider *new_aio_assign_spider() {
     spider->reset = reset_assign_spider;
     spider->is_found_instruction = is_found_assign_instruction;
     spider->weave_instruction_for = weave_assign_instruction_for;
+    spider->weave_materials_for = weave_assign_materials_for;
     spider->free = free_assign_spider;
     //Create materials:
     aio_assign_materials *materials = calloc(1, sizeof(aio_assign_materials));
@@ -150,7 +152,8 @@ void handle_declaration_scope(const_string string_web, aio_spider *spider) {
             case AIO_ASSIGN_UNDEFINED_DECLARATION:
                 //Maybe string is the "mu" modifier?
                 if (is_mutable_modifier) {
-                    refresh_declaration_scope(spider, chunk, AIO_ASSIGN_WAS_MUTABLE_MODIFIER, AIO_SPIDER_FOUND_MATERIALS);
+                    refresh_declaration_scope(spider, chunk, AIO_ASSIGN_WAS_MUTABLE_MODIFIER,
+                                              AIO_SPIDER_FOUND_MATERIALS);
                 }
                 //Maybe string is a type?
                 if (is_type) {
@@ -216,7 +219,7 @@ void refresh_declaration_scope(aio_spider *spider, string chunk, aio_assign_vari
     spider->message = message;
 }
 
-const_boolean handle_equal_sign_scope(const_string string_web, aio_spider *spider) {
+void handle_equal_sign_scope(const_string string_web, aio_spider *spider) {
     aio_assign_materials *materials = spider->get.assign_materials;
     point_watcher *watcher = materials->watcher;
     const int start_scanning_index = watcher->start_index;
@@ -269,7 +272,7 @@ void handle_assign_scope(const_string string_web, aio_spider *spider) {
 }
 
 /**
- * Weaving.
+ * Instruction weaving.
  */
 
 void weave_assign_instruction_for(aio_instruction_holder *instruction_holder, const_string _,
@@ -336,4 +339,13 @@ aio_variable_definition *weave_local_variable_definition(const aio_assign_variab
     }
     aio_variable_definition *definition = new_aio_variable_definition(variable_name, variable_type, is_mutable);
     return definition;
+}
+
+/**
+ * Material weaving.
+ */
+
+void weave_assign_materials_for(aio_spider *dst_spider, aio_spider *src_spider, const_string source_code,
+                                int *next_spider_point_reference, aio_task_type task_type) {
+
 }
