@@ -12,6 +12,8 @@
 
 #define AIO_NUMBER_OF_SPIDERS 3
 
+#define AIO_DOUBLE_STRING_SPIDER "DOUBLE_STRING_SPIDER"
+
 /**
  * Declare functions.
  */
@@ -46,6 +48,7 @@ void reset_loop_spider(aio_spider *spider) {
     //Reset state:
     materials->scope_type = AIO_LOOP_MODIFIER_SCOPE;
     materials->body_type = AIO_LOOP_UNDEFINED_BODY;
+    materials->header_scope_type = AIO_LOOP_HEADER_DEFINE;
     //Free materials:
     free_strings_in_list(materials->pointer_data_list);
     free(materials->start_variable);
@@ -86,8 +89,11 @@ aio_spider *new_aio_loop_spider() {
     materials->main_watcher = new_point_watcher();
     materials->header_watcher = new_point_watcher();
     materials->body_watcher = new_point_watcher();
+    //Init state:
     materials->scope_type = AIO_LOOP_MODIFIER_SCOPE;
     materials->body_type = AIO_LOOP_UNDEFINED_BODY;
+    materials->header_scope_type = AIO_LOOP_HEADER_DEFINE;
+    //Init pointer data:
     materials->pointer_data_list = new_string_list();
     //Set materials:
     spider->get.loop_materials = materials;
@@ -120,7 +126,7 @@ const aio_spider_message is_found_loop_instruction(const_string string_web, aio_
                 handle_loop_modifier_scope(string_web, spider);
                 break;
             case AIO_LOOP_HEADER_SCOPE:
-                handle_loop_header_scope(NULL, NULL);
+                handle_loop_header_scope(string_web, spider);
                 break;
             case AIO_LOOP_BODY_SCOPE:
                 handle_loop_body_scope(string_web, spider);
@@ -220,7 +226,8 @@ void handle_loop_header_scope(const_string string_web, aio_spider *spider) {
 //HEADER ANALYSING START:
 
 void dig_header_materials(const_string string_web, aio_spider *parent_spider) {
-    point_watcher *header_watcher = parent_spider->get.loop_materials->header_watcher;
+    aio_loop_materials *materials = parent_spider->get.loop_materials;
+    point_watcher *header_watcher = materials->header_watcher;
     //Header watcher pointer is already useless. Thus we can use pointer again!
     header_watcher->pointer = header_watcher->start_index;
     if (header_watcher->end_index - header_watcher->start_index >= 0) {
@@ -248,11 +255,11 @@ void dig_header_materials(const_string string_web, aio_spider *parent_spider) {
                 const aio_spider_swarm_mode swarm_mode = spider_swarm->mode;
                 if (swarm_mode == AIO_ALL_SPIDERS_WORK) {
                     for (int j = 0; j < AIO_NUMBER_OF_SPIDERS; ++j) {
-                        aio_spider *child_spider = spider_swarm->spiders[j];
+                        aio_spider *child = spider_swarm->spiders[j];
                         //Spider try to match "string web" with it task:
-                        aio_spider_message message = child_spider->is_found_instruction(substring_web, child_spider);
+                        const aio_spider_message message = child->is_found_instruction(substring_web, child);
                         if (message == AIO_SPIDER_FOUND_MATERIALS) {
-                            spider_swarm->active_spider = child_spider;
+                            spider_swarm->active_spider = child;
                             spider_swarm->mode = AIO_ONE_SPIDER_WORKS;
                             break;
                         }
@@ -304,9 +311,9 @@ aio_spider_swarm *breed_aio_loop_header_spider_swarm() {
     //Create spiders:
     aio_spider **spiders = calloc(AIO_NUMBER_OF_SPIDERS, sizeof(aio_spider *));
     spiders[0] = new_aio_assign_spider();
-    spiders[]
     spiders[1] = new_aio_loop_short_spider();
     spiders[2] = new_aio_loop_shortest_spider();
+    spiders[3] = new_aio_define_vs_condition_spider();
     aio_spider_swarm *swarm = calloc(1, sizeof(aio_spider_swarm));
     swarm->number_of_spiders = AIO_NUMBER_OF_SPIDERS;
     swarm->spiders = spiders;

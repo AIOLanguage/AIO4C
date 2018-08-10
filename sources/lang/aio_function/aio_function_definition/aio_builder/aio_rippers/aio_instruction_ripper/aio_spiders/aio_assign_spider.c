@@ -70,6 +70,7 @@ void free_assign_spider(aio_spider *spider) {
 
 aio_spider *new_aio_assign_spider() {
     aio_spider *spider = calloc(1, sizeof(aio_spider));
+    spider->name = AIO_ASSIGN_SPIDER;
     //Bind spider's functions:
     spider->reset = reset_assign_spider;
     spider->is_found_instruction = is_found_assign_instruction;
