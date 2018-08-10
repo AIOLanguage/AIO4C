@@ -27,7 +27,7 @@ const int AIO_LOOP_HEADER_SCOPE = 1;
 
 const int AIO_LOOP_BODY_SCOPE = 2;
 
-const int AIO_IS_READY_FOR_WEAVING = 3;
+const int AIO_IF_WEAVING_SCOPE = 3;
 
 /**
  * Body.

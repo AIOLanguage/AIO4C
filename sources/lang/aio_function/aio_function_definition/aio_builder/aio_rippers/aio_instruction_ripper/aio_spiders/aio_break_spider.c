@@ -67,7 +67,7 @@ const aio_spider_message is_found_break_instruction(const_string string_web, aio
 }
 
 void handle_break_scope(const_string string_web, aio_spider *spider) {
-    const aio_assign_materials *materials = spider->get.assign_materials;
+    const aio_break_materials *materials = spider->get.break_materials;
     point_watcher *watcher = materials->watcher;
     const char last_symbol = string_web[watcher->end_index - 1];
     if (is_space_or_line_break(last_symbol)) {
@@ -79,7 +79,10 @@ void handle_break_scope(const_string string_web, aio_spider *spider) {
                                           && string_web[start_index + 1] == 'r'
                                           && string_web[start_index + 2] == 'k';
             if (is_break_word) {
+                //Shift watcher:
                 watcher->start_index = end_index;
+                watcher->mode = POINT_PASSIVE_MODE;
+                //Set message:
                 spider->message = AIO_SPIDER_FOUND_MATERIALS;
             }
         }

@@ -17,3 +17,7 @@ void reset_point_watcher(point_watcher *watcher){
 void free_point_watcher(point_watcher *watcher) {
     free(watcher);
 }
+
+string substring_by_point_watcher(const_string src, point_watcher *watcher){
+    return substring(src, watcher->start_index, watcher->end_index);
+}

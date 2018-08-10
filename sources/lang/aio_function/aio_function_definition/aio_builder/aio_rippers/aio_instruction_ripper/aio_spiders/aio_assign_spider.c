@@ -41,8 +41,8 @@ void reset_assign_spider(aio_spider *spider) {
     spider->message = AIO_SPIDER_NOT_FOUND_MATERIALS;
     aio_assign_materials *materials = spider->get.assign_materials;
     reset_point_watcher(materials->watcher);
-    materials->scope_type = AIO_DECLARATION_SCOPE;
-    materials->declaration_type = AIO_UNDEFINED_DECLARATION;
+    materials->scope_type = AIO_ASSIGN_DECLARATION_SCOPE;
+    materials->declaration_type = AIO_ASSIGN_UNDEFINED_DECLARATION;
     //------------------------------------------------------------------------------------------------------------------
     //찌꺼기 수집기 (Garbage collector):
     free(materials->value);
@@ -77,8 +77,8 @@ aio_spider *new_aio_assign_spider() {
     //Create materials:
     aio_assign_materials *materials = calloc(1, sizeof(aio_assign_materials));
     materials->watcher = new_point_watcher();
-    materials->scope_type = AIO_DECLARATION_SCOPE;
-    materials->declaration_type = AIO_UNDEFINED_DECLARATION;
+    materials->scope_type = AIO_ASSIGN_DECLARATION_SCOPE;
+    materials->declaration_type = AIO_ASSIGN_UNDEFINED_DECLARATION;
     materials->variable_data_list = new_string_list();
     //Set materials:
     spider->get.assign_materials = materials;
@@ -112,16 +112,16 @@ const aio_spider_message is_found_assign_instruction(const_string string_web, ai
     //Spider works:
     if (watcher->mode == POINT_ACTIVE_MODE) {
         switch (scope_type) {
-            case AIO_DECLARATION_SCOPE:
+            case AIO_ASSIGN_DECLARATION_SCOPE:
                 handle_declaration_scope(string_web, spider);
                 break;
-            case AIO_EQUAL_SIGN_IN_SCOPE:
+            case AIO_ASSIGN_EQUAL_SIGN_IN_SCOPE:
                 handle_equal_sign_scope(string_web, spider);
                 break;
-            case AIO_VALUE_SCOPE:
+            case AIO_ASSIGN_VALUE_SCOPE:
                 handle_assign_scope(string_web, spider);
                 break;
-            case AIO_IS_WEAVING_SCOPE:
+            case AIO_ASSIGN_WEAVING_SCOPE:
                 break;
         }
     }
@@ -147,36 +147,36 @@ void handle_declaration_scope(const_string string_web, aio_spider *spider) {
         const_boolean is_type = contains_aio_type_in_set(string_web);
         const_boolean is_variable_name = is_word(string_web) && can_use_name(string_web);
         switch (declaration_type) {
-            case AIO_UNDEFINED_DECLARATION:
+            case AIO_ASSIGN_UNDEFINED_DECLARATION:
                 //Maybe string is the "mu" modifier?
                 if (is_mutable_modifier) {
-                    refresh_declaration_scope(spider, chunk, AIO_WAS_MUTABLE_MODIFIER, AIO_SPIDER_FOUND_MATERIALS);
+                    refresh_declaration_scope(spider, chunk, AIO_ASSIGN_WAS_MUTABLE_MODIFIER, AIO_SPIDER_FOUND_MATERIALS);
                 }
                 //Maybe string is a type?
                 if (is_type) {
-                    refresh_declaration_scope(spider, chunk, AIO_IMMUTABLE_MODE, AIO_SPIDER_NOT_FOUND_MATERIALS);
+                    refresh_declaration_scope(spider, chunk, AIO_ASSIGN_IMMUTABLE, AIO_SPIDER_NOT_FOUND_MATERIALS);
                 }
                 //Maybe is a variable name?
                 if (is_variable_name) {
-                    refresh_declaration_scope(spider, chunk, AIO_CONST_MODE, AIO_SPIDER_NOT_FOUND_MATERIALS);
+                    refresh_declaration_scope(spider, chunk, AIO_ASSIGN_CONST, AIO_SPIDER_NOT_FOUND_MATERIALS);
                     //Change scope:
-                    materials->scope_type = AIO_EQUAL_SIGN_IN_SCOPE;
+                    materials->scope_type = AIO_ASSIGN_EQUAL_SIGN_IN_SCOPE;
                 } else {
                     //Not a variable name:
                     //--------------------------------------------------------------------------------------------------
                     //찌꺼기 수집기 (Garbage collector):
                     free(chunk);
                 }
-            case AIO_WAS_MUTABLE_MODIFIER:
+            case AIO_ASSIGN_WAS_MUTABLE_MODIFIER:
                 //Maybe string is a type?
                 if (is_type) {
-                    refresh_declaration_scope(spider, chunk, AIO_IMMUTABLE_MODE, AIO_SPIDER_NOT_FOUND_MATERIALS);
+                    refresh_declaration_scope(spider, chunk, AIO_ASSIGN_IMMUTABLE, AIO_SPIDER_NOT_FOUND_MATERIALS);
                 }
                 //Maybe string is a variable name?
                 if (is_variable_name) {
-                    refresh_declaration_scope(spider, chunk, AIO_CONST_MODE, AIO_SPIDER_NOT_FOUND_MATERIALS);
+                    refresh_declaration_scope(spider, chunk, AIO_ASSIGN_CONST, AIO_SPIDER_NOT_FOUND_MATERIALS);
                     //Change scope:
-                    materials->scope_type = AIO_EQUAL_SIGN_IN_SCOPE;
+                    materials->scope_type = AIO_ASSIGN_EQUAL_SIGN_IN_SCOPE;
                 } else {
                     //Not a variable name:
                     //--------------------------------------------------------------------------------------------------
@@ -184,12 +184,12 @@ void handle_declaration_scope(const_string string_web, aio_spider *spider) {
                     free(chunk);
                 }
                 //Mutable by value mode:
-            case AIO_MUTABLE_BY_VALUE_MODE:
+            case AIO_ASSIGN_MUTABLE:
                 //Must be variable name:
                 if (is_variable_name) {
-                    refresh_declaration_scope(spider, chunk, AIO_MUTABLE_BY_VALUE_MODE, AIO_SPIDER_FOUND_MATERIALS);
+                    refresh_declaration_scope(spider, chunk, AIO_ASSIGN_MUTABLE, AIO_SPIDER_FOUND_MATERIALS);
                     //Change scope:
-                    materials->scope_type = AIO_EQUAL_SIGN_IN_SCOPE;
+                    materials->scope_type = AIO_ASSIGN_EQUAL_SIGN_IN_SCOPE;
                 } else {
                     throw_error("ASSIGN SPIDER invalid variable name!");
                 }
@@ -223,7 +223,7 @@ const_boolean handle_equal_sign_scope(const_string string_web, aio_spider *spide
     const_boolean is_equal_sign_symbol = is_equal_sign(string_web[start_scanning_index]);
     if (is_equal_sign_symbol) {
         //Set value scope:
-        materials->scope_type = AIO_VALUE_SCOPE;
+        materials->scope_type = AIO_ASSIGN_VALUE_SCOPE;
         //Shift start index to end index:
         watcher->start_index = watcher->end_index;
         watcher->mode = POINT_PASSIVE_MODE;
@@ -258,7 +258,7 @@ void handle_assign_scope(const_string string_web, aio_spider *spider) {
             if (!is_space_or_line_break_condition && whitespace_counter > 0) {
                 if (isalnum(symbol) || is_close_parenthesis(symbol)) {
                     watcher->end_index = i;
-                    materials->scope_type = AIO_IS_WEAVING_SCOPE;
+                    materials->scope_type = AIO_ASSIGN_WEAVING_SCOPE;
                     materials->value = substring(string_web, watcher->start_index, watcher->end_index);
                     watcher->start_index = watcher->end_index;
                     spider->message = AIO_SPIDER_IS_READY_FOR_WEAVING;
@@ -280,7 +280,7 @@ void weave_assign_instruction_for(aio_instruction_holder *instruction_holder, co
     const_string value_string = materials->value;
     const point_watcher *watcher = materials->watcher;
     const aio_assign_variable_declaration_type declaration_type = materials->declaration_type;
-    const_boolean is_ready_for_weaving = materials->scope_type == AIO_IS_WEAVING_SCOPE;
+    const_boolean is_ready_for_weaving = materials->scope_type == AIO_ASSIGN_WEAVING_SCOPE;
     if (is_ready_for_weaving) {
         *next_ripper_point_reference += watcher->end_index;
         //Weave variable definition:
@@ -309,24 +309,24 @@ aio_variable_definition *weave_local_variable_definition(const aio_assign_variab
     string variable_type = NULL;
     boolean is_mutable = FALSE;
     switch (declaration_type) {
-        case AIO_CONST_MODE:
+        case AIO_ASSIGN_CONST:
             variable_name = new_string(variable_materials[0]);
             variable_type = AIO_CONST_TYPE;
             is_mutable = FALSE;
             break;
-        case AIO_REFERENCE_MODE:
+        case AIO_ASSIGN_REFERENCE:
             variable_name = new_string(variable_materials[1]);
             variable_type = VOID;
             is_mutable = TRUE;
             break;
             //Immutable mode:
-        case AIO_IMMUTABLE_MODE:
+        case AIO_ASSIGN_IMMUTABLE:
             variable_name = new_string(variable_materials[1]);
             variable_type = new_string(variable_materials[0]);
             is_mutable = FALSE;
             break;
             //Mutable by value mode:
-        case AIO_MUTABLE_BY_VALUE_MODE:
+        case AIO_ASSIGN_MUTABLE:
             variable_name = new_string(variable_materials[1]);
             variable_type = new_string(variable_materials[0]);
             is_mutable = TRUE;

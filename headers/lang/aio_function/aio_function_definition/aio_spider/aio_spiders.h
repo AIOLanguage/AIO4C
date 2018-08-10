@@ -17,12 +17,12 @@ typedef enum aio_spider_message {
  */
 
 typedef enum aio_assign_scope_type {
-    AIO_DECLARATION_SCOPE, AIO_EQUAL_SIGN_IN_SCOPE, AIO_VALUE_SCOPE, AIO_IS_WEAVING_SCOPE
+    AIO_ASSIGN_DECLARATION_SCOPE, AIO_ASSIGN_EQUAL_SIGN_IN_SCOPE, AIO_ASSIGN_VALUE_SCOPE, AIO_ASSIGN_WEAVING_SCOPE
 } aio_assign_scope_type;
 
 typedef enum aio_assign_variable_declaration_type {
-    AIO_UNDEFINED_DECLARATION, AIO_WAS_MUTABLE_MODIFIER, AIO_CONST_MODE, AIO_REFERENCE_MODE, AIO_IMMUTABLE_MODE,
-    AIO_MUTABLE_BY_VALUE_MODE
+    AIO_ASSIGN_UNDEFINED_DECLARATION, AIO_ASSIGN_WAS_MUTABLE_MODIFIER, AIO_ASSIGN_CONST, AIO_ASSIGN_REFERENCE,
+    AIO_ASSIGN_IMMUTABLE, AIO_ASSIGN_MUTABLE
 } aio_assign_variable_declaration_type;
 
 typedef struct aio_assign_materials {
@@ -46,17 +46,19 @@ typedef struct aio_break_materials {
  */
 
 typedef enum aio_if_scope_type {
-    AIO_IF_SCOPE, AIO_CONDITION_SCOPE, AIO_TRUE_BODY_SCOPE, AIO_FALSE_BODY_SCOPE, AIO_IS_READY_FOR_WEAVING
+    AIO_IF_IF_SCOPE, AIO_IF_CONDITION_SCOPE, AIO_IF_TRUE_BODY_SCOPE, AIO_IF_FALSE_BODY_SCOPE, AIO_IF_WEAVING_SCOPE
 } aio_if_scope_type;
 
-typedef enum aio_if_branches_type {
+typedef enum aio_if_branch_type {
     AIO_UNDEFINED_BRANCHES, AIO_HAS_TRUE_BRANCH, AIO_HAS_TRUE_AND_FALSE_BRANCHES
-} aio_if_branches_type;
+} aio_if_branch_type;
 
 typedef struct aio_if_materials {
     aio_if_scope_type scope_type;
-    aio_if_branches_type branches_type;
+    aio_if_branch_type branch_type;
+    point_watcher *main_watcher;
     point_watcher *true_watcher;
+    point_watcher *header_watcher;
     point_watcher *false_watcher;
     string condition;
 } aio_if_materials;
