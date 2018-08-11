@@ -1,38 +1,5 @@
-#include <mem.h>
-#include <ctype.h>
-#include "../../../../../../../../headers/lib/utils/boolean_utils/boolean_utils.h"
-#include "../../../../../../../../headers/lang/aio_function/aio_function_definition/aio_instructions/aio_instructions.h"
-#include "../../../../../../../../headers/lib/utils/char_utils/char_utils.h"
-#include "../../../../../../../../headers/lib/utils/error_utils/error_utils.h"
-#include "../../../../../../../../headers/lib/point_watcher/point_watcher.h"
-#include "../../../../../../../../headers/lang/aio_reserved_names/aio_reserved_names_container.h"
-#include "../../../../../../../../headers/lang/aio_core/aio_core.h"
-#include "../../../../../../../../headers/lang/aio_function/aio_function_definition/aio_spiders/aio_spider.h"
-#include "../../../../../../../../headers/lib/utils/string_utils/string_builder.h"
 
-/**
- * Declare functions.
- */
 
-const aio_spider_message is_found_assign_instruction(const_string string_web, aio_spider *spider);
-
-void handle_declaration_scope(const_string string_web, aio_spider *spider);
-
-void refresh_declaration_scope(aio_spider *spider, string chunk, aio_assign_variable_declaration_type type,
-                               aio_spider_message message);
-
-void handle_equal_sign_scope(const_string string_web, aio_spider *spider);
-
-void handle_assign_scope(const_string string_web, aio_spider *spider);
-
-void weave_assign_instruction_for(aio_instruction_holder *holder, const_string _,
-                                  int *next_ripper_point_reference, aio_spider *spider);
-
-aio_variable_definition *create_local_variable_definition(const aio_assign_variable_declaration_type declaration_type,
-                                                          const_string_array variable_materials);
-
-void weave_assign_materials_for(aio_spider *dst_spider, aio_spider *src_spider, const_string source_code,
-                                int *next_spider_point_reference, aio_task_type task_type);
 
 /**
  * Reset.
@@ -351,4 +318,56 @@ aio_variable_definition *create_local_variable_definition(const aio_assign_varia
             throw_error("ASSIGN SPIDER: undefined variable declaration mode for weaving!");
     }
     return new_aio_variable_definition(variable_name, variable_type, is_mutable);
+}
+
+/**
+ * Material weaving.
+ */
+
+void weave_assign_materials_for(aio_spider *dst_spider, aio_spider *src_spider, const_string source_code,
+                                int *next_spider_point_reference, aio_task_type task_type) {
+    switch (task_type) {
+        case AIO_LOOP_TASK:
+            weave_assign_materials_for_loop_spider(dst_spider, src_spider, next_spider_point_reference);
+            break;
+        default:
+            break;
+    }
+}
+
+void weave_assign_materials_for_loop_spider(aio_spider *dst_spider, aio_spider *src_spider,
+                                            int *next_spider_point_reference) {
+    //Extract source spider fields:
+    const aio_assign_materials *src_materials = src_spider->get.assign_materials;
+    const_string_array variable_data = src_materials->variable_data_list->strings;
+    const_string value_string = src_materials->value;
+    const point_watcher *watcher = src_materials->watcher;
+    const aio_assign_variable_declaration_type declaration_type = src_materials->declaration_type;
+    const_boolean is_ready_for_weaving = src_materials->scope_type == AIO_ASSIGN_WEAVING_SCOPE;
+    if (is_ready_for_weaving) {
+        *next_spider_point_reference += watcher->end_index;
+        aio_loop_materials *dst_materials = dst_spider->get.loop_materials;
+        aio_loop_header_scope_type header_scope_type = dst_materials->header_scope_type;
+        aio_variable_definition *pointer_definition = create_local_variable_definition(declaration_type, variable_data);
+        aio_instruction *assign_instruction = new_aio_assign_instruction(NULL, value_string, pointer_definition->name);
+        switch (header_scope_type) {
+            case AIO_LOOP_HEADER_DEFINE: {
+                dst_materials->start_assign_instruction = assign_instruction;
+                dst_materials->pointer_definition = pointer_definition;
+            }
+                break;
+            case AIO_LOOP_HEADER_CONDITION:
+                throw_error("ASSIGN SPIDER: Ops! It's a bug!");
+                break;
+            case AIO_LOOP_HEADER_STEP: {
+                aio_variable_definition* dst_pointer_definition = dst_materials->pointer_definition;
+                if (dst_pointer_definition->is_mutable_by_value){
+                    throw_error("ASSIGN SPIDER: mutable pointer can not be changed in loop header!");
+                }
+                dst_materials->step_assign_instruction = assign_instruction;
+            }
+        }
+    } else {
+        throw_error("ASSIGN SPIDER: not ready for weaving!");
+    }
 }

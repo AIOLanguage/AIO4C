@@ -1,14 +1,18 @@
 #include <malloc.h>
 #include <mem.h>
 #include <ctype.h>
-#include "../../../../../../../../headers/lib/utils/boolean_utils/boolean_utils.h"
-#include "../../../../../../../../headers/lang/aio_function/aio_function_definition/aio_instructions/aio_instructions.h"
-#include "../../../../../../../../headers/lang/aio_function/aio_function_definition/aio_spider/aio_spiders.h"
-#include "../../../../../../../../headers/lang/aio_reserved_names/aio_reserved_names_container.h"
-#include "../../../../../../../../headers/lib/utils/error_utils/error_utils.h"
-#include "../../../../../../../../headers/lib/utils/char_utils/char_utils.h"
-#include "../../../../../../../../headers/lib/utils/string_utils/string_builder.h"
-#include "../../../../../../../../headers/lib/point_watcher/point_watcher.h"
+#include "../../../../../../../../../headers/lib/utils/boolean_utils/boolean_utils.h"
+#include "../../../../../../../../../headers/lang/aio_function/aio_function_definition/aio_instructions/aio_instructions.h"
+#include "../../../../../../../../../headers/lang/aio_function/aio_function_definition/aio_spiders/aio_spider.h"
+#include "../../../../../../../../../headers/lang/aio_reserved_names/aio_reserved_names_container.h"
+#include "../../../../../../../../../headers/lib/utils/error_utils/error_utils.h"
+#include "../../../../../../../../../headers/lib/utils/char_utils/char_utils.h"
+#include "../../../../../../../../../headers/lib/utils/string_utils/string_builder.h"
+#include "../../../../../../../../../headers/lib/point_watcher/point_watcher.h"
+#include "../../../../../../../../../headers/lang/aio_function/aio_function_definition/aio_spiders/aio_spider_swarm.h"
+#include "../../../../../../../../../headers/lang/aio_function/aio_function_definition/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_default_loop_header_spider.h"
+#include "../../../../../../../../../headers/lang/aio_function/aio_function_definition/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_in_loop_header_spider.h"
+#include "../../../../../../../../../headers/lang/aio_function/aio_function_definition/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_tiny_loop_header_spider.h"
 
 #define AIO_NUMBER_OF_SPIDERS 3
 
@@ -318,10 +322,9 @@ aio_spider *new_aio_loop_condition_spider() {
 aio_spider_swarm *breed_aio_loop_header_spider_swarm() {
     //Create spiders:
     aio_spider **spiders = calloc(AIO_NUMBER_OF_SPIDERS, sizeof(aio_spider *));
-    spiders[0] = new_aio_assign_spider();
-    spiders[1] = new_aio_loop_short_spider();
-    spiders[2] = new_aio_loop_shortest_spider();
-    spiders[3] = new_aio_loop_condition_spider();
+    spiders[0] = new_aio_default_loop_header_spider();
+    spiders[1] = new_aio_in_loop_header_spider();
+    spiders[2] = new_aio_tiny_loop_header_spider();
     aio_spider_swarm *swarm = calloc(1, sizeof(aio_spider_swarm));
     swarm->number_of_spiders = AIO_NUMBER_OF_SPIDERS;
     swarm->spiders = spiders;
