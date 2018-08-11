@@ -116,7 +116,7 @@ void handle_default_loop_header_declaration_scope(const_string string_web, aio_s
         const_boolean is_type = contains_aio_type_in_set(chunk);
         const_boolean is_variable_name = is_word(chunk) && can_use_name(chunk);
         switch (declaration_type) {
-            case AIO_DEFAULT_LOOP_HEADER_UNDEFINED:
+            case AIO_DEFAULT_LOOP_HEADER_VARIABLE_UNDEFINED:
                 //Maybe string is the "mu" modifier?
                 if (is_mutable_modifier) {
                     refresh_default_loop_header_declaration_scope(spider, chunk,
@@ -192,7 +192,7 @@ void refresh_default_loop_header_declaration_scope(aio_spider *spider, string ch
                                                    aio_spider_message message) {
     //Extract materials:
     aio_default_loop_header_materials *materials = spider->get.loop_materials->get.default_loop_header_materials;
-    string_list *variable_data_list = materials->variable_data_list;
+    string_list *variable_data_list = materials->pointer_data_list;
     point_watcher *watcher = materials->main_watcher;
     //Change declaration type:
     materials->declaration_type = type;
@@ -292,7 +292,6 @@ void handle_default_loop_header_condition_scope(const_string string_web, aio_spi
         }
             break;
         case AIO_DEFAULT_LOOP_HEADER_IMMUTABLE: {
-            //Hypothesis 1: end of loop condition:
             if (is_letter_or_number_or_close_parenthesis_cond && in_loop_condition) {
                 condition_watcher->mode = POINT_ACTIVE_MODE;
             }
@@ -305,6 +304,7 @@ void handle_default_loop_header_condition_scope(const_string string_web, aio_spi
                 string clean_condition = squeeze_string(dirty_condition);
                 materials->loop_condition = clean_condition;
                 materials->scope_type = AIO_DEFAULT_LOOP_HEADER_STEP_SCOPE;
+                main_watcher->start_index = main_watcher->end_index;
                 //------------------------------------------------------------------------------------------------------
                 //찌꺼기 수집기 (Garbage collector):
                 free(dirty_condition);
@@ -321,7 +321,53 @@ void handle_default_loop_header_condition_scope(const_string string_web, aio_spi
 }
 
 void handle_default_loop_header_step_scope(const_string string_web, aio_spider *spider) {
-
+    //Extract materials:
+    aio_default_loop_header_materials *materials = spider->get.loop_materials->get.default_loop_header_materials;
+    point_watcher *main_watcher = materials->main_watcher;
+    const aio_default_loop_header_step_type step_scope = materials->step_type;
+    //Check string web:
+    const char last_symbol = string_web[main_watcher->end_index - 1];
+    //If was word:
+    if (!isalnum(last_symbol)) {
+        string chunk = substring_by_point_watcher(string_web, main_watcher);
+        const_boolean is_variable_name = is_word(chunk) && can_use_name(chunk);
+        switch (step_scope) {
+            case AIO_DEFAULT_LOOP_HEADER_STEP_VARIABLE:
+                //Must be variable name:
+                if (is_variable_name) {
+                    //Change declaration type:
+                    materials->step_type = AIO_DEFAULT_LOOP_HEADER_STEP_EQUAL_SIGN_SCOPE;
+                    //Shift main_watcher:
+                    main_watcher->start_index = main_watcher->end_index;
+                    main_watcher->mode = POINT_PASSIVE_MODE;
+                    //Set message:
+                    spider->message = AIO_SPIDER_FOUND_MATERIALS;
+                } else {
+                    throw_error("DEFAULT LOOP HEADER SPIDER: invalid variable name in loop header!");
+                }
+                break;
+            case AIO_DEFAULT_LOOP_HEADER_STEP_EQUAL_SIGN_SCOPE:
+                if (is_equal_sign(string_web[main_watcher->start_index])) {
+                    //Set value scope:
+                    materials->step_type = AIO_DEFAULT_LOOP_HEADER_STEP_VALUE_SCOPE;
+                    //Shift start index to end index:
+                    main_watcher->start_index = main_watcher->end_index;
+                    main_watcher->mode = POINT_PASSIVE_MODE;
+                    //Set message:
+                    spider->message = AIO_SPIDER_FOUND_MATERIALS;
+                }
+                if (!is_space_or_line_break(last_symbol)) {
+                    throw_error("ASSIGN SPIDER: invalid variable definition!");
+                }
+                break;
+            case AIO_DEFAULT_LOOP_HEADER_STEP_VALUE_SCOPE: {
+                //Get rest:
+                string dirty_step_value = substring_by_point_watcher(string_web, main_watcher);
+                string clean_step_value = squeeze_string(dirty_step_value);
+            }
+                break;
+        }
+    }
 }
 
 aio_variable_definition *create_local_variable_definition(const aio_assign_variable_declaration_type declaration_type,
@@ -360,37 +406,5 @@ aio_variable_definition *create_local_variable_definition(const aio_assign_varia
 
 void weave_default_loop_header_materials_for(aio_spider *dst_spider, aio_spider *src_spider,
                                              int *next_spider_point_reference) {
-    //Extract source spider fields:
-    const aio_assign_materials *src_materials = src_spider->get.assign_materials;
-    const_string_array variable_data = src_materials->variable_data_list->strings;
-    const_string value_string = src_materials->value;
-    const point_watcher *watcher = src_materials->watcher;
-    const aio_assign_variable_declaration_type declaration_type = src_materials->declaration_type;
-    const_boolean is_ready_for_weaving = src_materials->scope_type == AIO_ASSIGN_WEAVING_SCOPE;
-    if (is_ready_for_weaving) {
-        *next_spider_point_reference += watcher->end_index;
-        aio_loop_materials *dst_materials = dst_spider->get.loop_materials;
-        aio_loop_header_scope_type header_scope_type = dst_materials->header_scope_type;
-        aio_variable_definition *pointer_definition = create_local_variable_definition(declaration_type, variable_data);
-        aio_instruction *assign_instruction = new_aio_assign_instruction(NULL, value_string, pointer_definition->name);
-        switch (header_scope_type) {
-            case AIO_LOOP_HEADER_DEFINE: {
-                dst_materials->start_assign_instruction = assign_instruction;
-                dst_materials->pointer_definition = pointer_definition;
-            }
-                break;
-            case AIO_LOOP_HEADER_CONDITION:
-                throw_error("ASSIGN SPIDER: Ops! It's a bug!");
-                break;
-            case AIO_LOOP_HEADER_STEP: {
-                aio_variable_definition *dst_pointer_definition = dst_materials->pointer_definition;
-                if (dst_pointer_definition->is_mutable_by_value) {
-                    throw_error("ASSIGN SPIDER: mutable pointer can not be changed in loop header!");
-                }
-                dst_materials->step_assign_instruction = assign_instruction;
-            }
-        }
-    } else {
-        throw_error("ASSIGN SPIDER: not ready for weaving!");
-    }
+
 }
