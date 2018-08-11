@@ -38,7 +38,7 @@ void put_aio_method_definition_in_map(aio_function_definition_map *definition_ma
             throw_error("duplicate definition of method error!");
         }
     }
-    //Check to update:
+    //Check from update:
     update_memory_in_method_definition_map(definition_map);
     //Set key:
     definition_map->names[definition_map->size] = method_definition->name;
@@ -55,5 +55,5 @@ aio_function_definition *get_aio_method_definition_in_map_by_name(aio_function_d
             return definition_map->definitions[i];
         }
     }
-    throw_error("can not get aio method definition in map!!!");
+    throw_error("can not from aio method definition in map!!!");
 }

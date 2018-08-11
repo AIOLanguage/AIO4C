@@ -25,7 +25,7 @@ void put_aio_variable_definition_in_map(aio_variable_definition_map *map, aio_va
             throw_error("Cannot put variable definition in map!");
         }
     }
-    //Check to update:
+    //Check from update:
     update_memory_in_variable_definition_map(map);
     //Set aio_value:
     map->variable_definitions[map->size] = definition;

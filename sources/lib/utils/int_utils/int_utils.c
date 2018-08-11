@@ -29,7 +29,7 @@ const_boolean matches_int(const_string word) {
 //끝난!
 int string_to_int(const_string word) {
     if (matches_int(word) != 0) {
-        throw_error("cannot convert string to int in string_to_int!");
+        throw_error("cannot convert string from int in string_to_int!");
     }
     int result = 0;
     for (int i = 0; i < strlen(word); i++) {

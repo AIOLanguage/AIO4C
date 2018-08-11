@@ -5,8 +5,6 @@
 #include "../../../lib/utils/boolean_utils/boolean_utils.h"
 #include "aio_variable_definition.h"
 
-typedef union aio_value;
-
 typedef struct aio_variable {
     aio_variable_definition *variable_definition;
     union aio_value *value;

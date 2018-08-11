@@ -43,7 +43,7 @@ const_boolean matches_double(const_string word) {
 
 double string_to_double(const_string word) {
     if (matches_double(word) != 0) {
-        perror("cannot convert string to double!");
+        perror("cannot convert string from double!");
         exit(1);
     }
     const int shift = 10;

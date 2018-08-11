@@ -7,7 +7,6 @@
 #include "../../../headers/lang/aio_context/aio_context.h"
 #include "../../../headers/lang/aio_function/aio_function.h"
 #include "../../../headers/lang/aio_function/aio_value/aio_value.h"
-#include "../../../headers/tools/analysis/function_reproducer/aio_function_reproducer.h"
 
 void invoke_new_aio_function(aio_context *aio_context, aio_function_definition *function_definition,
                              aio_bundle *bundle) {
@@ -24,5 +23,4 @@ void invoke_new_aio_function(aio_context *aio_context, aio_function_definition *
     //Create function container:
     function->variable_map = arg_map;
     //Reproduce function:
-    reproduce_function(aio_context, function_definition, function, bundle);
 }

@@ -29,7 +29,7 @@ void put_aio_variable_in_map(aio_variable_map *variable_map, aio_variable *varia
             perror("Cannot put aio_context in definition map");
         }
     }
-    //Check to update:
+    //Check from update:
     update_memory_in_variable_map(variable_map);
     //Set key:
     variable_map->names[variable_map->size] = malloc(strlen(variable->variable_definition->name));
@@ -48,5 +48,5 @@ aio_variable *get_aio_variable_in_map_by_name(aio_variable_map *variable_map, co
             return variable_map->variables[i];
         }
     }
-    throw_error("cannot get aio aio_variable in map");
+    throw_error("cannot from aio aio_variable in map");
 }

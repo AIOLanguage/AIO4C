@@ -4,7 +4,7 @@
 # compile C with C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/gcc.exe
 C_FLAGS = -g   -std=gnu11
 
-C_DEFINES = 
+C_DEFINES = -DSOME_IMPORTANT_DEFINITION
 
 C_INCLUDES = 
 

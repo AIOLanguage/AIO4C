@@ -25,7 +25,7 @@ void update_memory_in_mutable_annotation_list(aio_annotation_list *annotation_li
 
 //Passed JUnitTests!
 void add_annotation_in_list(aio_annotation_list *annotation_list, aio_annotation *annotation) {
-    //Check to update capacity:
+    //Check from update capacity:
     update_memory_in_mutable_annotation_list(annotation_list);
     //Set annotation:
     annotation_list->annotations[annotation_list->size] = annotation;
@@ -35,7 +35,7 @@ void add_annotation_in_list(aio_annotation_list *annotation_list, aio_annotation
 //Passed JUnitTests!
 aio_annotation *get_annotation_in_list_by_index(aio_annotation_list *annotation_list, int index) {
     if (index < 0 || annotation_list->size <= index) {
-        throw_error("Cannot get index in annotation list!");
+        throw_error("Cannot from index in annotation list!");
     } else {
         return annotation_list->annotations[index];
     }

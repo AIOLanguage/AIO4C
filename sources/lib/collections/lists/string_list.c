@@ -29,7 +29,7 @@ void update_memory_in_string_list(string_list *string_list) {
 
 //Passed JUnitTests!
 void add_string_in_list(string_list *string_list, string source) {
-    //Check to update capacity:
+    //Check from update capacity:
     update_memory_in_string_list(string_list);
     //Set string:
     string_list->strings[string_list->size] = source;

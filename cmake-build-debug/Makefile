@@ -122,32 +122,32 @@ AIO/fast:
 	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/build
 .PHONY : AIO/fast
 
-9b6eb4be14a659841b767a1c846618d9/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_default_loop_header_spider.obj: 9b6eb4be14a659841b767a1c846618d9/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_default_loop_header_spider.c.obj
+main/main.obj: main/main.c.obj
 
-.PHONY : 9b6eb4be14a659841b767a1c846618d9/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_default_loop_header_spider.obj
+.PHONY : main/main.obj
 
 # target to build an object file
-9b6eb4be14a659841b767a1c846618d9/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_default_loop_header_spider.c.obj:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/9b6eb4be14a659841b767a1c846618d9/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_default_loop_header_spider.c.obj
-.PHONY : 9b6eb4be14a659841b767a1c846618d9/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_default_loop_header_spider.c.obj
+main/main.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/main/main.c.obj
+.PHONY : main/main.c.obj
 
-9b6eb4be14a659841b767a1c846618d9/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_default_loop_header_spider.i: 9b6eb4be14a659841b767a1c846618d9/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_default_loop_header_spider.c.i
+main/main.i: main/main.c.i
 
-.PHONY : 9b6eb4be14a659841b767a1c846618d9/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_default_loop_header_spider.i
+.PHONY : main/main.i
 
 # target to preprocess a source file
-9b6eb4be14a659841b767a1c846618d9/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_default_loop_header_spider.c.i:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/9b6eb4be14a659841b767a1c846618d9/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_default_loop_header_spider.c.i
-.PHONY : 9b6eb4be14a659841b767a1c846618d9/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_default_loop_header_spider.c.i
+main/main.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/main/main.c.i
+.PHONY : main/main.c.i
 
-9b6eb4be14a659841b767a1c846618d9/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_default_loop_header_spider.s: 9b6eb4be14a659841b767a1c846618d9/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_default_loop_header_spider.c.s
+main/main.s: main/main.c.s
 
-.PHONY : 9b6eb4be14a659841b767a1c846618d9/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_default_loop_header_spider.s
+.PHONY : main/main.s
 
 # target to generate assembly for a file
-9b6eb4be14a659841b767a1c846618d9/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_default_loop_header_spider.c.s:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/9b6eb4be14a659841b767a1c846618d9/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_default_loop_header_spider.c.s
-.PHONY : 9b6eb4be14a659841b767a1c846618d9/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_default_loop_header_spider.c.s
+main/main.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/main/main.c.s
+.PHONY : main/main.c.s
 
 sources/lang/aio_annotation/aio_annotation.obj: sources/lang/aio_annotation/aio_annotation.c.obj
 
@@ -202,33 +202,6 @@ sources/lang/aio_context/aio_context.s: sources/lang/aio_context/aio_context.c.s
 sources/lang/aio_context/aio_context.c.s:
 	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_context/aio_context.c.s
 .PHONY : sources/lang/aio_context/aio_context.c.s
-
-sources/lang/aio_context/aio_context_builder.obj: sources/lang/aio_context/aio_context_builder.c.obj
-
-.PHONY : sources/lang/aio_context/aio_context_builder.obj
-
-# target to build an object file
-sources/lang/aio_context/aio_context_builder.c.obj:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_context/aio_context_builder.c.obj
-.PHONY : sources/lang/aio_context/aio_context_builder.c.obj
-
-sources/lang/aio_context/aio_context_builder.i: sources/lang/aio_context/aio_context_builder.c.i
-
-.PHONY : sources/lang/aio_context/aio_context_builder.i
-
-# target to preprocess a source file
-sources/lang/aio_context/aio_context_builder.c.i:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_context/aio_context_builder.c.i
-.PHONY : sources/lang/aio_context/aio_context_builder.c.i
-
-sources/lang/aio_context/aio_context_builder.s: sources/lang/aio_context/aio_context_builder.c.s
-
-.PHONY : sources/lang/aio_context/aio_context_builder.s
-
-# target to generate assembly for a file
-sources/lang/aio_context/aio_context_builder.c.s:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_context/aio_context_builder.c.s
-.PHONY : sources/lang/aio_context/aio_context_builder.c.s
 
 sources/lang/aio_core/aio_core.obj: sources/lang/aio_core/aio_core.c.obj
 
@@ -311,438 +284,6 @@ sources/lang/aio_function/aio_function.c.s:
 	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function.c.s
 .PHONY : sources/lang/aio_function/aio_function.c.s
 
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_function_definition_builder.obj: sources/lang/aio_function/aio_function_definition/aio_builder/aio_function_definition_builder.c.obj
-
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_function_definition_builder.obj
-
-# target to build an object file
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_function_definition_builder.c.obj:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_function_definition_builder.c.obj
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_function_definition_builder.c.obj
-
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_function_definition_builder.i: sources/lang/aio_function/aio_function_definition/aio_builder/aio_function_definition_builder.c.i
-
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_function_definition_builder.i
-
-# target to preprocess a source file
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_function_definition_builder.c.i:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_function_definition_builder.c.i
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_function_definition_builder.c.i
-
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_function_definition_builder.s: sources/lang/aio_function/aio_function_definition/aio_builder/aio_function_definition_builder.c.s
-
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_function_definition_builder.s
-
-# target to generate assembly for a file
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_function_definition_builder.c.s:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_function_definition_builder.c.s
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_function_definition_builder.c.s
-
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_annotation_ripper.obj: sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_annotation_ripper.c.obj
-
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_annotation_ripper.obj
-
-# target to build an object file
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_annotation_ripper.c.obj:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_annotation_ripper.c.obj
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_annotation_ripper.c.obj
-
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_annotation_ripper.i: sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_annotation_ripper.c.i
-
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_annotation_ripper.i
-
-# target to preprocess a source file
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_annotation_ripper.c.i:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_annotation_ripper.c.i
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_annotation_ripper.c.i
-
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_annotation_ripper.s: sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_annotation_ripper.c.s
-
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_annotation_ripper.s
-
-# target to generate assembly for a file
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_annotation_ripper.c.s:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_annotation_ripper.c.s
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_annotation_ripper.c.s
-
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_arg_ripper.obj: sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_arg_ripper.c.obj
-
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_arg_ripper.obj
-
-# target to build an object file
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_arg_ripper.c.obj:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_arg_ripper.c.obj
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_arg_ripper.c.obj
-
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_arg_ripper.i: sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_arg_ripper.c.i
-
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_arg_ripper.i
-
-# target to preprocess a source file
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_arg_ripper.c.i:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_arg_ripper.c.i
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_arg_ripper.c.i
-
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_arg_ripper.s: sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_arg_ripper.c.s
-
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_arg_ripper.s
-
-# target to generate assembly for a file
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_arg_ripper.c.s:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_arg_ripper.c.s
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_arg_ripper.c.s
-
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_function_name_ripper.obj: sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_function_name_ripper.c.obj
-
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_function_name_ripper.obj
-
-# target to build an object file
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_function_name_ripper.c.obj:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_function_name_ripper.c.obj
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_function_name_ripper.c.obj
-
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_function_name_ripper.i: sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_function_name_ripper.c.i
-
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_function_name_ripper.i
-
-# target to preprocess a source file
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_function_name_ripper.c.i:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_function_name_ripper.c.i
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_function_name_ripper.c.i
-
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_function_name_ripper.s: sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_function_name_ripper.c.s
-
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_function_name_ripper.s
-
-# target to generate assembly for a file
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_function_name_ripper.c.s:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_function_name_ripper.c.s
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_function_name_ripper.c.s
-
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_instruction_ripper.obj: sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_instruction_ripper.c.obj
-
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_instruction_ripper.obj
-
-# target to build an object file
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_instruction_ripper.c.obj:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_instruction_ripper.c.obj
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_instruction_ripper.c.obj
-
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_instruction_ripper.i: sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_instruction_ripper.c.i
-
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_instruction_ripper.i
-
-# target to preprocess a source file
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_instruction_ripper.c.i:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_instruction_ripper.c.i
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_instruction_ripper.c.i
-
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_instruction_ripper.s: sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_instruction_ripper.c.s
-
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_instruction_ripper.s
-
-# target to generate assembly for a file
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_instruction_ripper.c.s:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_instruction_ripper.c.s
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_instruction_ripper.c.s
-
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_assign_spider.obj: sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_assign_spider.c.obj
-
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_assign_spider.obj
-
-# target to build an object file
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_assign_spider.c.obj:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_assign_spider.c.obj
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_assign_spider.c.obj
-
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_assign_spider.i: sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_assign_spider.c.i
-
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_assign_spider.i
-
-# target to preprocess a source file
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_assign_spider.c.i:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_assign_spider.c.i
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_assign_spider.c.i
-
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_assign_spider.s: sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_assign_spider.c.s
-
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_assign_spider.s
-
-# target to generate assembly for a file
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_assign_spider.c.s:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_assign_spider.c.s
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_assign_spider.c.s
-
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_break_spider.obj: sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_break_spider.c.obj
-
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_break_spider.obj
-
-# target to build an object file
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_break_spider.c.obj:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_break_spider.c.obj
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_break_spider.c.obj
-
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_break_spider.i: sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_break_spider.c.i
-
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_break_spider.i
-
-# target to preprocess a source file
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_break_spider.c.i:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_break_spider.c.i
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_break_spider.c.i
-
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_break_spider.s: sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_break_spider.c.s
-
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_break_spider.s
-
-# target to generate assembly for a file
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_break_spider.c.s:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_break_spider.c.s
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_break_spider.c.s
-
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_if_spider.obj: sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_if_spider.c.obj
-
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_if_spider.obj
-
-# target to build an object file
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_if_spider.c.obj:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_if_spider.c.obj
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_if_spider.c.obj
-
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_if_spider.i: sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_if_spider.c.i
-
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_if_spider.i
-
-# target to preprocess a source file
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_if_spider.c.i:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_if_spider.c.i
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_if_spider.c.i
-
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_if_spider.s: sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_if_spider.c.s
-
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_if_spider.s
-
-# target to generate assembly for a file
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_if_spider.c.s:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_if_spider.c.s
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_if_spider.c.s
-
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_in_loop_header_spider.obj: sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_in_loop_header_spider.c.obj
-
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_in_loop_header_spider.obj
-
-# target to build an object file
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_in_loop_header_spider.c.obj:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_in_loop_header_spider.c.obj
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_in_loop_header_spider.c.obj
-
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_in_loop_header_spider.i: sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_in_loop_header_spider.c.i
-
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_in_loop_header_spider.i
-
-# target to preprocess a source file
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_in_loop_header_spider.c.i:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_in_loop_header_spider.c.i
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_in_loop_header_spider.c.i
-
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_in_loop_header_spider.s: sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_in_loop_header_spider.c.s
-
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_in_loop_header_spider.s
-
-# target to generate assembly for a file
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_in_loop_header_spider.c.s:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_in_loop_header_spider.c.s
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_in_loop_header_spider.c.s
-
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_tiny_loop_header_spider.obj: sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_tiny_loop_header_spider.c.obj
-
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_tiny_loop_header_spider.obj
-
-# target to build an object file
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_tiny_loop_header_spider.c.obj:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_tiny_loop_header_spider.c.obj
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_tiny_loop_header_spider.c.obj
-
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_tiny_loop_header_spider.i: sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_tiny_loop_header_spider.c.i
-
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_tiny_loop_header_spider.i
-
-# target to preprocess a source file
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_tiny_loop_header_spider.c.i:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_tiny_loop_header_spider.c.i
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_tiny_loop_header_spider.c.i
-
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_tiny_loop_header_spider.s: sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_tiny_loop_header_spider.c.s
-
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_tiny_loop_header_spider.s
-
-# target to generate assembly for a file
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_tiny_loop_header_spider.c.s:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_tiny_loop_header_spider.c.s
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_tiny_loop_header_spider.c.s
-
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_loop_spider/aio_loop_spider.obj: sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_loop_spider/aio_loop_spider.c.obj
-
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_loop_spider/aio_loop_spider.obj
-
-# target to build an object file
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_loop_spider/aio_loop_spider.c.obj:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_loop_spider/aio_loop_spider.c.obj
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_loop_spider/aio_loop_spider.c.obj
-
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_loop_spider/aio_loop_spider.i: sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_loop_spider/aio_loop_spider.c.i
-
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_loop_spider/aio_loop_spider.i
-
-# target to preprocess a source file
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_loop_spider/aio_loop_spider.c.i:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_loop_spider/aio_loop_spider.c.i
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_loop_spider/aio_loop_spider.c.i
-
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_loop_spider/aio_loop_spider.s: sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_loop_spider/aio_loop_spider.c.s
-
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_loop_spider/aio_loop_spider.s
-
-# target to generate assembly for a file
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_loop_spider/aio_loop_spider.c.s:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_loop_spider/aio_loop_spider.c.s
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_loop_spider/aio_loop_spider.c.s
-
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_out_spider.obj: sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_out_spider.c.obj
-
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_out_spider.obj
-
-# target to build an object file
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_out_spider.c.obj:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_out_spider.c.obj
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_out_spider.c.obj
-
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_out_spider.i: sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_out_spider.c.i
-
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_out_spider.i
-
-# target to preprocess a source file
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_out_spider.c.i:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_out_spider.c.i
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_out_spider.c.i
-
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_out_spider.s: sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_out_spider.c.s
-
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_out_spider.s
-
-# target to generate assembly for a file
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_out_spider.c.s:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_out_spider.c.s
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_out_spider.c.s
-
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_procedure_spider.obj: sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_procedure_spider.c.obj
-
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_procedure_spider.obj
-
-# target to build an object file
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_procedure_spider.c.obj:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_procedure_spider.c.obj
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_procedure_spider.c.obj
-
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_procedure_spider.i: sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_procedure_spider.c.i
-
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_procedure_spider.i
-
-# target to preprocess a source file
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_procedure_spider.c.i:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_procedure_spider.c.i
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_procedure_spider.c.i
-
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_procedure_spider.s: sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_procedure_spider.c.s
-
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_procedure_spider.s
-
-# target to generate assembly for a file
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_procedure_spider.c.s:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_procedure_spider.c.s
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_procedure_spider.c.s
-
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_spider.obj: sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_spider.c.obj
-
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_spider.obj
-
-# target to build an object file
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_spider.c.obj:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_spider.c.obj
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_spider.c.obj
-
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_spider.i: sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_spider.c.i
-
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_spider.i
-
-# target to preprocess a source file
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_spider.c.i:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_spider.c.i
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_spider.c.i
-
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_spider.s: sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_spider.c.s
-
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_spider.s
-
-# target to generate assembly for a file
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_spider.c.s:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_spider.c.s
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_spider.c.s
-
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_switch_spider.obj: sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_switch_spider.c.obj
-
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_switch_spider.obj
-
-# target to build an object file
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_switch_spider.c.obj:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_switch_spider.c.obj
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_switch_spider.c.obj
-
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_switch_spider.i: sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_switch_spider.c.i
-
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_switch_spider.i
-
-# target to preprocess a source file
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_switch_spider.c.i:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_switch_spider.c.i
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_switch_spider.c.i
-
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_switch_spider.s: sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_switch_spider.c.s
-
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_switch_spider.s
-
-# target to generate assembly for a file
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_switch_spider.c.s:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_switch_spider.c.s
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_switch_spider.c.s
-
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_output_ripper.obj: sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_output_ripper.c.obj
-
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_output_ripper.obj
-
-# target to build an object file
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_output_ripper.c.obj:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_output_ripper.c.obj
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_output_ripper.c.obj
-
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_output_ripper.i: sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_output_ripper.c.i
-
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_output_ripper.i
-
-# target to preprocess a source file
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_output_ripper.c.i:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_output_ripper.c.i
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_output_ripper.c.i
-
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_output_ripper.s: sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_output_ripper.c.s
-
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_output_ripper.s
-
-# target to generate assembly for a file
-sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_output_ripper.c.s:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_output_ripper.c.s
-.PHONY : sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_output_ripper.c.s
-
 sources/lang/aio_function/aio_function_definition/aio_function_definition.obj: sources/lang/aio_function/aio_function_definition/aio_function_definition.c.obj
 
 .PHONY : sources/lang/aio_function/aio_function_definition/aio_function_definition.obj
@@ -769,6 +310,33 @@ sources/lang/aio_function/aio_function_definition/aio_function_definition.s: sou
 sources/lang/aio_function/aio_function_definition/aio_function_definition.c.s:
 	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_function_definition.c.s
 .PHONY : sources/lang/aio_function/aio_function_definition/aio_function_definition.c.s
+
+sources/lang/aio_function/aio_function_definition/aio_function_definition_builder.obj: sources/lang/aio_function/aio_function_definition/aio_function_definition_builder.c.obj
+
+.PHONY : sources/lang/aio_function/aio_function_definition/aio_function_definition_builder.obj
+
+# target to build an object file
+sources/lang/aio_function/aio_function_definition/aio_function_definition_builder.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_function_definition_builder.c.obj
+.PHONY : sources/lang/aio_function/aio_function_definition/aio_function_definition_builder.c.obj
+
+sources/lang/aio_function/aio_function_definition/aio_function_definition_builder.i: sources/lang/aio_function/aio_function_definition/aio_function_definition_builder.c.i
+
+.PHONY : sources/lang/aio_function/aio_function_definition/aio_function_definition_builder.i
+
+# target to preprocess a source file
+sources/lang/aio_function/aio_function_definition/aio_function_definition_builder.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_function_definition_builder.c.i
+.PHONY : sources/lang/aio_function/aio_function_definition/aio_function_definition_builder.c.i
+
+sources/lang/aio_function/aio_function_definition/aio_function_definition_builder.s: sources/lang/aio_function/aio_function_definition/aio_function_definition_builder.c.s
+
+.PHONY : sources/lang/aio_function/aio_function_definition/aio_function_definition_builder.s
+
+# target to generate assembly for a file
+sources/lang/aio_function/aio_function_definition/aio_function_definition_builder.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_function_definition_builder.c.s
+.PHONY : sources/lang/aio_function/aio_function_definition/aio_function_definition_builder.c.s
 
 sources/lang/aio_function/aio_function_definition/aio_instructions/aio_instructions.obj: sources/lang/aio_function/aio_function_definition/aio_instructions/aio_instructions.c.obj
 
@@ -958,6 +526,33 @@ sources/lib/collections/lists/aio_annotation_list.s: sources/lib/collections/lis
 sources/lib/collections/lists/aio_annotation_list.c.s:
 	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/collections/lists/aio_annotation_list.c.s
 .PHONY : sources/lib/collections/lists/aio_annotation_list.c.s
+
+sources/lib/collections/lists/aio_instruction_list.obj: sources/lib/collections/lists/aio_instruction_list.c.obj
+
+.PHONY : sources/lib/collections/lists/aio_instruction_list.obj
+
+# target to build an object file
+sources/lib/collections/lists/aio_instruction_list.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/collections/lists/aio_instruction_list.c.obj
+.PHONY : sources/lib/collections/lists/aio_instruction_list.c.obj
+
+sources/lib/collections/lists/aio_instruction_list.i: sources/lib/collections/lists/aio_instruction_list.c.i
+
+.PHONY : sources/lib/collections/lists/aio_instruction_list.i
+
+# target to preprocess a source file
+sources/lib/collections/lists/aio_instruction_list.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/collections/lists/aio_instruction_list.c.i
+.PHONY : sources/lib/collections/lists/aio_instruction_list.c.i
+
+sources/lib/collections/lists/aio_instruction_list.s: sources/lib/collections/lists/aio_instruction_list.c.s
+
+.PHONY : sources/lib/collections/lists/aio_instruction_list.s
+
+# target to generate assembly for a file
+sources/lib/collections/lists/aio_instruction_list.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/collections/lists/aio_instruction_list.c.s
+.PHONY : sources/lib/collections/lists/aio_instruction_list.c.s
 
 sources/lib/collections/lists/string_list.obj: sources/lib/collections/lists/string_list.c.obj
 
@@ -1256,6 +851,33 @@ sources/lib/utils/double_utils/double_utils.c.s:
 	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/double_utils/double_utils.c.s
 .PHONY : sources/lib/utils/double_utils/double_utils.c.s
 
+sources/lib/utils/error_utils/error_utils.obj: sources/lib/utils/error_utils/error_utils.c.obj
+
+.PHONY : sources/lib/utils/error_utils/error_utils.obj
+
+# target to build an object file
+sources/lib/utils/error_utils/error_utils.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/error_utils/error_utils.c.obj
+.PHONY : sources/lib/utils/error_utils/error_utils.c.obj
+
+sources/lib/utils/error_utils/error_utils.i: sources/lib/utils/error_utils/error_utils.c.i
+
+.PHONY : sources/lib/utils/error_utils/error_utils.i
+
+# target to preprocess a source file
+sources/lib/utils/error_utils/error_utils.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/error_utils/error_utils.c.i
+.PHONY : sources/lib/utils/error_utils/error_utils.c.i
+
+sources/lib/utils/error_utils/error_utils.s: sources/lib/utils/error_utils/error_utils.c.s
+
+.PHONY : sources/lib/utils/error_utils/error_utils.s
+
+# target to generate assembly for a file
+sources/lib/utils/error_utils/error_utils.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/error_utils/error_utils.c.s
+.PHONY : sources/lib/utils/error_utils/error_utils.c.s
+
 sources/lib/utils/file_utils/file_reader.obj: sources/lib/utils/file_utils/file_reader.c.obj
 
 .PHONY : sources/lib/utils/file_utils/file_reader.obj
@@ -1337,60 +959,6 @@ sources/lib/utils/operation_utils/operation_utils.c.s:
 	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/operation_utils/operation_utils.c.s
 .PHONY : sources/lib/utils/operation_utils/operation_utils.c.s
 
-sources/lib/utils/string_utils/prefix_suffix.obj: sources/lib/utils/string_utils/prefix_suffix.c.obj
-
-.PHONY : sources/lib/utils/string_utils/prefix_suffix.obj
-
-# target to build an object file
-sources/lib/utils/string_utils/prefix_suffix.c.obj:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/string_utils/prefix_suffix.c.obj
-.PHONY : sources/lib/utils/string_utils/prefix_suffix.c.obj
-
-sources/lib/utils/string_utils/prefix_suffix.i: sources/lib/utils/string_utils/prefix_suffix.c.i
-
-.PHONY : sources/lib/utils/string_utils/prefix_suffix.i
-
-# target to preprocess a source file
-sources/lib/utils/string_utils/prefix_suffix.c.i:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/string_utils/prefix_suffix.c.i
-.PHONY : sources/lib/utils/string_utils/prefix_suffix.c.i
-
-sources/lib/utils/string_utils/prefix_suffix.s: sources/lib/utils/string_utils/prefix_suffix.c.s
-
-.PHONY : sources/lib/utils/string_utils/prefix_suffix.s
-
-# target to generate assembly for a file
-sources/lib/utils/string_utils/prefix_suffix.c.s:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/string_utils/prefix_suffix.c.s
-.PHONY : sources/lib/utils/string_utils/prefix_suffix.c.s
-
-sources/lib/utils/string_utils/split.obj: sources/lib/utils/string_utils/split.c.obj
-
-.PHONY : sources/lib/utils/string_utils/split.obj
-
-# target to build an object file
-sources/lib/utils/string_utils/split.c.obj:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/string_utils/split.c.obj
-.PHONY : sources/lib/utils/string_utils/split.c.obj
-
-sources/lib/utils/string_utils/split.i: sources/lib/utils/string_utils/split.c.i
-
-.PHONY : sources/lib/utils/string_utils/split.i
-
-# target to preprocess a source file
-sources/lib/utils/string_utils/split.c.i:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/string_utils/split.c.i
-.PHONY : sources/lib/utils/string_utils/split.c.i
-
-sources/lib/utils/string_utils/split.s: sources/lib/utils/string_utils/split.c.s
-
-.PHONY : sources/lib/utils/string_utils/split.s
-
-# target to generate assembly for a file
-sources/lib/utils/string_utils/split.c.s:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/string_utils/split.c.s
-.PHONY : sources/lib/utils/string_utils/split.c.s
-
 sources/lib/utils/string_utils/string_builder.obj: sources/lib/utils/string_utils/string_builder.c.obj
 
 .PHONY : sources/lib/utils/string_utils/string_builder.obj
@@ -1445,86 +1013,437 @@ sources/lib/utils/string_utils/string_utils.c.s:
 	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/string_utils/string_utils.c.s
 .PHONY : sources/lib/utils/string_utils/string_utils.c.s
 
-sources/lib/utils/string_utils/trim.obj: sources/lib/utils/string_utils/trim.c.obj
+sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_annotation_ripper.obj: sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_annotation_ripper.c.obj
 
-.PHONY : sources/lib/utils/string_utils/trim.obj
-
-# target to build an object file
-sources/lib/utils/string_utils/trim.c.obj:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/string_utils/trim.c.obj
-.PHONY : sources/lib/utils/string_utils/trim.c.obj
-
-sources/lib/utils/string_utils/trim.i: sources/lib/utils/string_utils/trim.c.i
-
-.PHONY : sources/lib/utils/string_utils/trim.i
-
-# target to preprocess a source file
-sources/lib/utils/string_utils/trim.c.i:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/string_utils/trim.c.i
-.PHONY : sources/lib/utils/string_utils/trim.c.i
-
-sources/lib/utils/string_utils/trim.s: sources/lib/utils/string_utils/trim.c.s
-
-.PHONY : sources/lib/utils/string_utils/trim.s
-
-# target to generate assembly for a file
-sources/lib/utils/string_utils/trim.c.s:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/string_utils/trim.c.s
-.PHONY : sources/lib/utils/string_utils/trim.c.s
-
-sources/main/main.obj: sources/main/main.c.obj
-
-.PHONY : sources/main/main.obj
+.PHONY : sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_annotation_ripper.obj
 
 # target to build an object file
-sources/main/main.c.obj:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/main/main.c.obj
-.PHONY : sources/main/main.c.obj
+sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_annotation_ripper.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_annotation_ripper.c.obj
+.PHONY : sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_annotation_ripper.c.obj
 
-sources/main/main.i: sources/main/main.c.i
+sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_annotation_ripper.i: sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_annotation_ripper.c.i
 
-.PHONY : sources/main/main.i
+.PHONY : sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_annotation_ripper.i
 
 # target to preprocess a source file
-sources/main/main.c.i:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/main/main.c.i
-.PHONY : sources/main/main.c.i
+sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_annotation_ripper.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_annotation_ripper.c.i
+.PHONY : sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_annotation_ripper.c.i
 
-sources/main/main.s: sources/main/main.c.s
+sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_annotation_ripper.s: sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_annotation_ripper.c.s
 
-.PHONY : sources/main/main.s
+.PHONY : sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_annotation_ripper.s
 
 # target to generate assembly for a file
-sources/main/main.c.s:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/main/main.c.s
-.PHONY : sources/main/main.c.s
+sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_annotation_ripper.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_annotation_ripper.c.s
+.PHONY : sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_annotation_ripper.c.s
 
-sources/tools/analysis/method_reproducer/aio_function_reproducer.obj: sources/tools/analysis/method_reproducer/aio_function_reproducer.c.obj
+sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_arg_ripper.obj: sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_arg_ripper.c.obj
 
-.PHONY : sources/tools/analysis/method_reproducer/aio_function_reproducer.obj
+.PHONY : sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_arg_ripper.obj
 
 # target to build an object file
-sources/tools/analysis/method_reproducer/aio_function_reproducer.c.obj:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/analysis/method_reproducer/aio_function_reproducer.c.obj
-.PHONY : sources/tools/analysis/method_reproducer/aio_function_reproducer.c.obj
+sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_arg_ripper.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_arg_ripper.c.obj
+.PHONY : sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_arg_ripper.c.obj
 
-sources/tools/analysis/method_reproducer/aio_function_reproducer.i: sources/tools/analysis/method_reproducer/aio_function_reproducer.c.i
+sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_arg_ripper.i: sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_arg_ripper.c.i
 
-.PHONY : sources/tools/analysis/method_reproducer/aio_function_reproducer.i
+.PHONY : sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_arg_ripper.i
 
 # target to preprocess a source file
-sources/tools/analysis/method_reproducer/aio_function_reproducer.c.i:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/analysis/method_reproducer/aio_function_reproducer.c.i
-.PHONY : sources/tools/analysis/method_reproducer/aio_function_reproducer.c.i
+sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_arg_ripper.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_arg_ripper.c.i
+.PHONY : sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_arg_ripper.c.i
 
-sources/tools/analysis/method_reproducer/aio_function_reproducer.s: sources/tools/analysis/method_reproducer/aio_function_reproducer.c.s
+sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_arg_ripper.s: sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_arg_ripper.c.s
 
-.PHONY : sources/tools/analysis/method_reproducer/aio_function_reproducer.s
+.PHONY : sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_arg_ripper.s
 
 # target to generate assembly for a file
-sources/tools/analysis/method_reproducer/aio_function_reproducer.c.s:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/analysis/method_reproducer/aio_function_reproducer.c.s
-.PHONY : sources/tools/analysis/method_reproducer/aio_function_reproducer.c.s
+sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_arg_ripper.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_arg_ripper.c.s
+.PHONY : sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_arg_ripper.c.s
+
+sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_function_name_ripper.obj: sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_function_name_ripper.c.obj
+
+.PHONY : sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_function_name_ripper.obj
+
+# target to build an object file
+sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_function_name_ripper.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_function_name_ripper.c.obj
+.PHONY : sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_function_name_ripper.c.obj
+
+sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_function_name_ripper.i: sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_function_name_ripper.c.i
+
+.PHONY : sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_function_name_ripper.i
+
+# target to preprocess a source file
+sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_function_name_ripper.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_function_name_ripper.c.i
+.PHONY : sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_function_name_ripper.c.i
+
+sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_function_name_ripper.s: sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_function_name_ripper.c.s
+
+.PHONY : sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_function_name_ripper.s
+
+# target to generate assembly for a file
+sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_function_name_ripper.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_function_name_ripper.c.s
+.PHONY : sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_function_name_ripper.c.s
+
+sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_instruction_ripper.obj: sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_instruction_ripper.c.obj
+
+.PHONY : sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_instruction_ripper.obj
+
+# target to build an object file
+sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_instruction_ripper.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_instruction_ripper.c.obj
+.PHONY : sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_instruction_ripper.c.obj
+
+sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_instruction_ripper.i: sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_instruction_ripper.c.i
+
+.PHONY : sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_instruction_ripper.i
+
+# target to preprocess a source file
+sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_instruction_ripper.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_instruction_ripper.c.i
+.PHONY : sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_instruction_ripper.c.i
+
+sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_instruction_ripper.s: sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_instruction_ripper.c.s
+
+.PHONY : sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_instruction_ripper.s
+
+# target to generate assembly for a file
+sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_instruction_ripper.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_instruction_ripper.c.s
+.PHONY : sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_instruction_ripper.c.s
+
+sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_output_ripper.obj: sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_output_ripper.c.obj
+
+.PHONY : sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_output_ripper.obj
+
+# target to build an object file
+sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_output_ripper.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_output_ripper.c.obj
+.PHONY : sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_output_ripper.c.obj
+
+sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_output_ripper.i: sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_output_ripper.c.i
+
+.PHONY : sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_output_ripper.i
+
+# target to preprocess a source file
+sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_output_ripper.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_output_ripper.c.i
+.PHONY : sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_output_ripper.c.i
+
+sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_output_ripper.s: sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_output_ripper.c.s
+
+.PHONY : sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_output_ripper.s
+
+# target to generate assembly for a file
+sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_output_ripper.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_output_ripper.c.s
+.PHONY : sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_output_ripper.c.s
+
+sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_assign_spider/aio_assign_spider.obj: sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_assign_spider/aio_assign_spider.c.obj
+
+.PHONY : sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_assign_spider/aio_assign_spider.obj
+
+# target to build an object file
+sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_assign_spider/aio_assign_spider.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_assign_spider/aio_assign_spider.c.obj
+.PHONY : sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_assign_spider/aio_assign_spider.c.obj
+
+sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_assign_spider/aio_assign_spider.i: sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_assign_spider/aio_assign_spider.c.i
+
+.PHONY : sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_assign_spider/aio_assign_spider.i
+
+# target to preprocess a source file
+sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_assign_spider/aio_assign_spider.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_assign_spider/aio_assign_spider.c.i
+.PHONY : sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_assign_spider/aio_assign_spider.c.i
+
+sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_assign_spider/aio_assign_spider.s: sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_assign_spider/aio_assign_spider.c.s
+
+.PHONY : sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_assign_spider/aio_assign_spider.s
+
+# target to generate assembly for a file
+sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_assign_spider/aio_assign_spider.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_assign_spider/aio_assign_spider.c.s
+.PHONY : sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_assign_spider/aio_assign_spider.c.s
+
+sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_break_spider/aio_break_spider.obj: sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_break_spider/aio_break_spider.c.obj
+
+.PHONY : sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_break_spider/aio_break_spider.obj
+
+# target to build an object file
+sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_break_spider/aio_break_spider.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_break_spider/aio_break_spider.c.obj
+.PHONY : sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_break_spider/aio_break_spider.c.obj
+
+sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_break_spider/aio_break_spider.i: sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_break_spider/aio_break_spider.c.i
+
+.PHONY : sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_break_spider/aio_break_spider.i
+
+# target to preprocess a source file
+sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_break_spider/aio_break_spider.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_break_spider/aio_break_spider.c.i
+.PHONY : sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_break_spider/aio_break_spider.c.i
+
+sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_break_spider/aio_break_spider.s: sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_break_spider/aio_break_spider.c.s
+
+.PHONY : sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_break_spider/aio_break_spider.s
+
+# target to generate assembly for a file
+sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_break_spider/aio_break_spider.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_break_spider/aio_break_spider.c.s
+.PHONY : sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_break_spider/aio_break_spider.c.s
+
+sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_if_spider/aio_if_spider.obj: sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_if_spider/aio_if_spider.c.obj
+
+.PHONY : sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_if_spider/aio_if_spider.obj
+
+# target to build an object file
+sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_if_spider/aio_if_spider.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_if_spider/aio_if_spider.c.obj
+.PHONY : sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_if_spider/aio_if_spider.c.obj
+
+sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_if_spider/aio_if_spider.i: sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_if_spider/aio_if_spider.c.i
+
+.PHONY : sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_if_spider/aio_if_spider.i
+
+# target to preprocess a source file
+sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_if_spider/aio_if_spider.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_if_spider/aio_if_spider.c.i
+.PHONY : sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_if_spider/aio_if_spider.c.i
+
+sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_if_spider/aio_if_spider.s: sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_if_spider/aio_if_spider.c.s
+
+.PHONY : sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_if_spider/aio_if_spider.s
+
+# target to generate assembly for a file
+sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_if_spider/aio_if_spider.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_if_spider/aio_if_spider.c.s
+.PHONY : sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_if_spider/aio_if_spider.c.s
+
+sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_default_loop_header_spider.obj: sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_default_loop_header_spider.c.obj
+
+.PHONY : sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_default_loop_header_spider.obj
+
+# target to build an object file
+sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_default_loop_header_spider.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_default_loop_header_spider.c.obj
+.PHONY : sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_default_loop_header_spider.c.obj
+
+sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_default_loop_header_spider.i: sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_default_loop_header_spider.c.i
+
+.PHONY : sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_default_loop_header_spider.i
+
+# target to preprocess a source file
+sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_default_loop_header_spider.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_default_loop_header_spider.c.i
+.PHONY : sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_default_loop_header_spider.c.i
+
+sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_default_loop_header_spider.s: sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_default_loop_header_spider.c.s
+
+.PHONY : sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_default_loop_header_spider.s
+
+# target to generate assembly for a file
+sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_default_loop_header_spider.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_default_loop_header_spider.c.s
+.PHONY : sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_default_loop_header_spider.c.s
+
+sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_in_loop_header_spider.obj: sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_in_loop_header_spider.c.obj
+
+.PHONY : sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_in_loop_header_spider.obj
+
+# target to build an object file
+sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_in_loop_header_spider.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_in_loop_header_spider.c.obj
+.PHONY : sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_in_loop_header_spider.c.obj
+
+sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_in_loop_header_spider.i: sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_in_loop_header_spider.c.i
+
+.PHONY : sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_in_loop_header_spider.i
+
+# target to preprocess a source file
+sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_in_loop_header_spider.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_in_loop_header_spider.c.i
+.PHONY : sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_in_loop_header_spider.c.i
+
+sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_in_loop_header_spider.s: sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_in_loop_header_spider.c.s
+
+.PHONY : sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_in_loop_header_spider.s
+
+# target to generate assembly for a file
+sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_in_loop_header_spider.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_in_loop_header_spider.c.s
+.PHONY : sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_in_loop_header_spider.c.s
+
+sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_tiny_loop_header_spider.obj: sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_tiny_loop_header_spider.c.obj
+
+.PHONY : sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_tiny_loop_header_spider.obj
+
+# target to build an object file
+sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_tiny_loop_header_spider.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_tiny_loop_header_spider.c.obj
+.PHONY : sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_tiny_loop_header_spider.c.obj
+
+sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_tiny_loop_header_spider.i: sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_tiny_loop_header_spider.c.i
+
+.PHONY : sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_tiny_loop_header_spider.i
+
+# target to preprocess a source file
+sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_tiny_loop_header_spider.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_tiny_loop_header_spider.c.i
+.PHONY : sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_tiny_loop_header_spider.c.i
+
+sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_tiny_loop_header_spider.s: sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_tiny_loop_header_spider.c.s
+
+.PHONY : sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_tiny_loop_header_spider.s
+
+# target to generate assembly for a file
+sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_tiny_loop_header_spider.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_tiny_loop_header_spider.c.s
+.PHONY : sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_tiny_loop_header_spider.c.s
+
+sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_loop_spider.obj: sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_loop_spider.c.obj
+
+.PHONY : sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_loop_spider.obj
+
+# target to build an object file
+sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_loop_spider.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_loop_spider.c.obj
+.PHONY : sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_loop_spider.c.obj
+
+sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_loop_spider.i: sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_loop_spider.c.i
+
+.PHONY : sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_loop_spider.i
+
+# target to preprocess a source file
+sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_loop_spider.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_loop_spider.c.i
+.PHONY : sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_loop_spider.c.i
+
+sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_loop_spider.s: sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_loop_spider.c.s
+
+.PHONY : sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_loop_spider.s
+
+# target to generate assembly for a file
+sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_loop_spider.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_loop_spider.c.s
+.PHONY : sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_loop_spider.c.s
+
+sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_out_spider/aio_out_spider.obj: sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_out_spider/aio_out_spider.c.obj
+
+.PHONY : sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_out_spider/aio_out_spider.obj
+
+# target to build an object file
+sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_out_spider/aio_out_spider.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_out_spider/aio_out_spider.c.obj
+.PHONY : sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_out_spider/aio_out_spider.c.obj
+
+sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_out_spider/aio_out_spider.i: sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_out_spider/aio_out_spider.c.i
+
+.PHONY : sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_out_spider/aio_out_spider.i
+
+# target to preprocess a source file
+sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_out_spider/aio_out_spider.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_out_spider/aio_out_spider.c.i
+.PHONY : sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_out_spider/aio_out_spider.c.i
+
+sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_out_spider/aio_out_spider.s: sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_out_spider/aio_out_spider.c.s
+
+.PHONY : sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_out_spider/aio_out_spider.s
+
+# target to generate assembly for a file
+sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_out_spider/aio_out_spider.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_out_spider/aio_out_spider.c.s
+.PHONY : sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_out_spider/aio_out_spider.c.s
+
+sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_procedure_spider/aio_procedure_spider.obj: sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_procedure_spider/aio_procedure_spider.c.obj
+
+.PHONY : sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_procedure_spider/aio_procedure_spider.obj
+
+# target to build an object file
+sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_procedure_spider/aio_procedure_spider.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_procedure_spider/aio_procedure_spider.c.obj
+.PHONY : sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_procedure_spider/aio_procedure_spider.c.obj
+
+sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_procedure_spider/aio_procedure_spider.i: sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_procedure_spider/aio_procedure_spider.c.i
+
+.PHONY : sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_procedure_spider/aio_procedure_spider.i
+
+# target to preprocess a source file
+sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_procedure_spider/aio_procedure_spider.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_procedure_spider/aio_procedure_spider.c.i
+.PHONY : sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_procedure_spider/aio_procedure_spider.c.i
+
+sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_procedure_spider/aio_procedure_spider.s: sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_procedure_spider/aio_procedure_spider.c.s
+
+.PHONY : sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_procedure_spider/aio_procedure_spider.s
+
+# target to generate assembly for a file
+sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_procedure_spider/aio_procedure_spider.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_procedure_spider/aio_procedure_spider.c.s
+.PHONY : sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_procedure_spider/aio_procedure_spider.c.s
+
+sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_spider_swarm.obj: sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_spider_swarm.c.obj
+
+.PHONY : sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_spider_swarm.obj
+
+# target to build an object file
+sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_spider_swarm.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_spider_swarm.c.obj
+.PHONY : sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_spider_swarm.c.obj
+
+sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_spider_swarm.i: sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_spider_swarm.c.i
+
+.PHONY : sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_spider_swarm.i
+
+# target to preprocess a source file
+sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_spider_swarm.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_spider_swarm.c.i
+.PHONY : sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_spider_swarm.c.i
+
+sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_spider_swarm.s: sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_spider_swarm.c.s
+
+.PHONY : sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_spider_swarm.s
+
+# target to generate assembly for a file
+sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_spider_swarm.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_spider_swarm.c.s
+.PHONY : sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_spider_swarm.c.s
+
+sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_switch_spider/aio_switch_spider.obj: sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_switch_spider/aio_switch_spider.c.obj
+
+.PHONY : sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_switch_spider/aio_switch_spider.obj
+
+# target to build an object file
+sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_switch_spider/aio_switch_spider.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_switch_spider/aio_switch_spider.c.obj
+.PHONY : sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_switch_spider/aio_switch_spider.c.obj
+
+sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_switch_spider/aio_switch_spider.i: sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_switch_spider/aio_switch_spider.c.i
+
+.PHONY : sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_switch_spider/aio_switch_spider.i
+
+# target to preprocess a source file
+sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_switch_spider/aio_switch_spider.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_switch_spider/aio_switch_spider.c.i
+.PHONY : sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_switch_spider/aio_switch_spider.c.i
+
+sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_switch_spider/aio_switch_spider.s: sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_switch_spider/aio_switch_spider.c.s
+
+.PHONY : sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_switch_spider/aio_switch_spider.s
+
+# target to generate assembly for a file
+sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_switch_spider/aio_switch_spider.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_switch_spider/aio_switch_spider.c.s
+.PHONY : sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_switch_spider/aio_switch_spider.c.s
 
 # Help Target
 help:
@@ -1535,18 +1454,15 @@ help:
 	@echo ... edit_cache
 	@echo ... AIO
 	@echo ... rebuild_cache
-	@echo ... 9b6eb4be14a659841b767a1c846618d9/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_default_loop_header_spider.obj
-	@echo ... 9b6eb4be14a659841b767a1c846618d9/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_default_loop_header_spider.i
-	@echo ... 9b6eb4be14a659841b767a1c846618d9/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_default_loop_header_spider.s
+	@echo ... main/main.obj
+	@echo ... main/main.i
+	@echo ... main/main.s
 	@echo ... sources/lang/aio_annotation/aio_annotation.obj
 	@echo ... sources/lang/aio_annotation/aio_annotation.i
 	@echo ... sources/lang/aio_annotation/aio_annotation.s
 	@echo ... sources/lang/aio_context/aio_context.obj
 	@echo ... sources/lang/aio_context/aio_context.i
 	@echo ... sources/lang/aio_context/aio_context.s
-	@echo ... sources/lang/aio_context/aio_context_builder.obj
-	@echo ... sources/lang/aio_context/aio_context_builder.i
-	@echo ... sources/lang/aio_context/aio_context_builder.s
 	@echo ... sources/lang/aio_core/aio_core.obj
 	@echo ... sources/lang/aio_core/aio_core.i
 	@echo ... sources/lang/aio_core/aio_core.s
@@ -1556,57 +1472,12 @@ help:
 	@echo ... sources/lang/aio_function/aio_function.obj
 	@echo ... sources/lang/aio_function/aio_function.i
 	@echo ... sources/lang/aio_function/aio_function.s
-	@echo ... sources/lang/aio_function/aio_function_definition/aio_builder/aio_function_definition_builder.obj
-	@echo ... sources/lang/aio_function/aio_function_definition/aio_builder/aio_function_definition_builder.i
-	@echo ... sources/lang/aio_function/aio_function_definition/aio_builder/aio_function_definition_builder.s
-	@echo ... sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_annotation_ripper.obj
-	@echo ... sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_annotation_ripper.i
-	@echo ... sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_annotation_ripper.s
-	@echo ... sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_arg_ripper.obj
-	@echo ... sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_arg_ripper.i
-	@echo ... sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_arg_ripper.s
-	@echo ... sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_function_name_ripper.obj
-	@echo ... sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_function_name_ripper.i
-	@echo ... sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_function_name_ripper.s
-	@echo ... sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_instruction_ripper.obj
-	@echo ... sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_instruction_ripper.i
-	@echo ... sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_instruction_ripper.s
-	@echo ... sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_assign_spider.obj
-	@echo ... sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_assign_spider.i
-	@echo ... sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_assign_spider.s
-	@echo ... sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_break_spider.obj
-	@echo ... sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_break_spider.i
-	@echo ... sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_break_spider.s
-	@echo ... sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_if_spider.obj
-	@echo ... sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_if_spider.i
-	@echo ... sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_if_spider.s
-	@echo ... sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_in_loop_header_spider.obj
-	@echo ... sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_in_loop_header_spider.i
-	@echo ... sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_in_loop_header_spider.s
-	@echo ... sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_tiny_loop_header_spider.obj
-	@echo ... sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_tiny_loop_header_spider.i
-	@echo ... sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_tiny_loop_header_spider.s
-	@echo ... sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_loop_spider/aio_loop_spider.obj
-	@echo ... sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_loop_spider/aio_loop_spider.i
-	@echo ... sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_loop_spider/aio_loop_spider.s
-	@echo ... sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_out_spider.obj
-	@echo ... sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_out_spider.i
-	@echo ... sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_out_spider.s
-	@echo ... sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_procedure_spider.obj
-	@echo ... sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_procedure_spider.i
-	@echo ... sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_procedure_spider.s
-	@echo ... sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_spider.obj
-	@echo ... sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_spider.i
-	@echo ... sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_spider.s
-	@echo ... sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_switch_spider.obj
-	@echo ... sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_switch_spider.i
-	@echo ... sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_instruction_ripper/aio_spiders/aio_switch_spider.s
-	@echo ... sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_output_ripper.obj
-	@echo ... sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_output_ripper.i
-	@echo ... sources/lang/aio_function/aio_function_definition/aio_builder/aio_rippers/aio_output_ripper.s
 	@echo ... sources/lang/aio_function/aio_function_definition/aio_function_definition.obj
 	@echo ... sources/lang/aio_function/aio_function_definition/aio_function_definition.i
 	@echo ... sources/lang/aio_function/aio_function_definition/aio_function_definition.s
+	@echo ... sources/lang/aio_function/aio_function_definition/aio_function_definition_builder.obj
+	@echo ... sources/lang/aio_function/aio_function_definition/aio_function_definition_builder.i
+	@echo ... sources/lang/aio_function/aio_function_definition/aio_function_definition_builder.s
 	@echo ... sources/lang/aio_function/aio_function_definition/aio_instructions/aio_instructions.obj
 	@echo ... sources/lang/aio_function/aio_function_definition/aio_instructions/aio_instructions.i
 	@echo ... sources/lang/aio_function/aio_function_definition/aio_instructions/aio_instructions.s
@@ -1628,6 +1499,9 @@ help:
 	@echo ... sources/lib/collections/lists/aio_annotation_list.obj
 	@echo ... sources/lib/collections/lists/aio_annotation_list.i
 	@echo ... sources/lib/collections/lists/aio_annotation_list.s
+	@echo ... sources/lib/collections/lists/aio_instruction_list.obj
+	@echo ... sources/lib/collections/lists/aio_instruction_list.i
+	@echo ... sources/lib/collections/lists/aio_instruction_list.s
 	@echo ... sources/lib/collections/lists/string_list.obj
 	@echo ... sources/lib/collections/lists/string_list.i
 	@echo ... sources/lib/collections/lists/string_list.s
@@ -1661,6 +1535,9 @@ help:
 	@echo ... sources/lib/utils/double_utils/double_utils.obj
 	@echo ... sources/lib/utils/double_utils/double_utils.i
 	@echo ... sources/lib/utils/double_utils/double_utils.s
+	@echo ... sources/lib/utils/error_utils/error_utils.obj
+	@echo ... sources/lib/utils/error_utils/error_utils.i
+	@echo ... sources/lib/utils/error_utils/error_utils.s
 	@echo ... sources/lib/utils/file_utils/file_reader.obj
 	@echo ... sources/lib/utils/file_utils/file_reader.i
 	@echo ... sources/lib/utils/file_utils/file_reader.s
@@ -1670,27 +1547,60 @@ help:
 	@echo ... sources/lib/utils/operation_utils/operation_utils.obj
 	@echo ... sources/lib/utils/operation_utils/operation_utils.i
 	@echo ... sources/lib/utils/operation_utils/operation_utils.s
-	@echo ... sources/lib/utils/string_utils/prefix_suffix.obj
-	@echo ... sources/lib/utils/string_utils/prefix_suffix.i
-	@echo ... sources/lib/utils/string_utils/prefix_suffix.s
-	@echo ... sources/lib/utils/string_utils/split.obj
-	@echo ... sources/lib/utils/string_utils/split.i
-	@echo ... sources/lib/utils/string_utils/split.s
 	@echo ... sources/lib/utils/string_utils/string_builder.obj
 	@echo ... sources/lib/utils/string_utils/string_builder.i
 	@echo ... sources/lib/utils/string_utils/string_builder.s
 	@echo ... sources/lib/utils/string_utils/string_utils.obj
 	@echo ... sources/lib/utils/string_utils/string_utils.i
 	@echo ... sources/lib/utils/string_utils/string_utils.s
-	@echo ... sources/lib/utils/string_utils/trim.obj
-	@echo ... sources/lib/utils/string_utils/trim.i
-	@echo ... sources/lib/utils/string_utils/trim.s
-	@echo ... sources/main/main.obj
-	@echo ... sources/main/main.i
-	@echo ... sources/main/main.s
-	@echo ... sources/tools/analysis/method_reproducer/aio_function_reproducer.obj
-	@echo ... sources/tools/analysis/method_reproducer/aio_function_reproducer.i
-	@echo ... sources/tools/analysis/method_reproducer/aio_function_reproducer.s
+	@echo ... sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_annotation_ripper.obj
+	@echo ... sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_annotation_ripper.i
+	@echo ... sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_annotation_ripper.s
+	@echo ... sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_arg_ripper.obj
+	@echo ... sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_arg_ripper.i
+	@echo ... sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_arg_ripper.s
+	@echo ... sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_function_name_ripper.obj
+	@echo ... sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_function_name_ripper.i
+	@echo ... sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_function_name_ripper.s
+	@echo ... sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_instruction_ripper.obj
+	@echo ... sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_instruction_ripper.i
+	@echo ... sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_instruction_ripper.s
+	@echo ... sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_output_ripper.obj
+	@echo ... sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_output_ripper.i
+	@echo ... sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_output_ripper.s
+	@echo ... sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_assign_spider/aio_assign_spider.obj
+	@echo ... sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_assign_spider/aio_assign_spider.i
+	@echo ... sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_assign_spider/aio_assign_spider.s
+	@echo ... sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_break_spider/aio_break_spider.obj
+	@echo ... sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_break_spider/aio_break_spider.i
+	@echo ... sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_break_spider/aio_break_spider.s
+	@echo ... sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_if_spider/aio_if_spider.obj
+	@echo ... sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_if_spider/aio_if_spider.i
+	@echo ... sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_if_spider/aio_if_spider.s
+	@echo ... sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_default_loop_header_spider.obj
+	@echo ... sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_default_loop_header_spider.i
+	@echo ... sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_default_loop_header_spider.s
+	@echo ... sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_in_loop_header_spider.obj
+	@echo ... sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_in_loop_header_spider.i
+	@echo ... sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_in_loop_header_spider.s
+	@echo ... sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_tiny_loop_header_spider.obj
+	@echo ... sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_tiny_loop_header_spider.i
+	@echo ... sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_tiny_loop_header_spider.s
+	@echo ... sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_loop_spider.obj
+	@echo ... sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_loop_spider.i
+	@echo ... sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_loop_spider.s
+	@echo ... sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_out_spider/aio_out_spider.obj
+	@echo ... sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_out_spider/aio_out_spider.i
+	@echo ... sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_out_spider/aio_out_spider.s
+	@echo ... sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_procedure_spider/aio_procedure_spider.obj
+	@echo ... sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_procedure_spider/aio_procedure_spider.i
+	@echo ... sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_procedure_spider/aio_procedure_spider.s
+	@echo ... sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_spider_swarm.obj
+	@echo ... sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_spider_swarm.i
+	@echo ... sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_spider_swarm.s
+	@echo ... sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_switch_spider/aio_switch_spider.obj
+	@echo ... sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_switch_spider/aio_switch_spider.i
+	@echo ... sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_switch_spider/aio_switch_spider.s
 .PHONY : help
 
 
