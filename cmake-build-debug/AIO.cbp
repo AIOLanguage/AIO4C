@@ -223,6 +223,9 @@
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lang/aio_context/aio_context.c">
 			<Option target="AIO"/>
 		</Unit>
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lang/aio_context/aio_context_builder.c">
+			<Option target="AIO"/>
+		</Unit>
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lang/aio_core/aio_core.c">
 			<Option target="AIO"/>
 		</Unit>
@@ -307,10 +310,19 @@
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/operation_utils/operation_utils.c">
 			<Option target="AIO"/>
 		</Unit>
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/string_utils/prefix_suffix.c">
+			<Option target="AIO"/>
+		</Unit>
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/string_utils/split.c">
+			<Option target="AIO"/>
+		</Unit>
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/string_utils/string_builder.c">
 			<Option target="AIO"/>
 		</Unit>
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/string_utils/string_utils.c">
+			<Option target="AIO"/>
+		</Unit>
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/string_utils/trim.c">
 			<Option target="AIO"/>
 		</Unit>
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_annotation_ripper.c">

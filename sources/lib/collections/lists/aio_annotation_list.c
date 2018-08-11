@@ -15,18 +15,17 @@ aio_annotation_list *new_annotation_list() {
 }
 
 //Passed JUnitTest!
-void update_memory_in_mutable_annotation_list(aio_annotation_list *annotation_list) {
-    if (annotation_list->size + 1 == annotation_list->capacity) {
-        annotation_list->capacity = annotation_list->capacity * 2;
-        annotation_list->annotations = realloc(annotation_list->annotations,
-                                               annotation_list->capacity * sizeof(aio_annotation));
+void update_memory_in_annotation_list(aio_annotation_list *list) {
+    if (list->size + 1 == list->capacity) {
+        list->capacity = list->capacity * 2;
+        list->annotations = realloc(list->annotations, list->capacity * sizeof(aio_annotation *));
     }
 }
 
 //Passed JUnitTests!
 void add_annotation_in_list(aio_annotation_list *annotation_list, aio_annotation *annotation) {
     //Check from update capacity:
-    update_memory_in_mutable_annotation_list(annotation_list);
+    update_memory_in_annotation_list(annotation_list);
     //Set annotation:
     annotation_list->annotations[annotation_list->size] = annotation;
     annotation_list->size++;

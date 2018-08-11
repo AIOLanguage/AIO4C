@@ -72,6 +72,7 @@ add_executable(${PROJECT_NAME}
         #---------------------------------------------------------------------------------------------------------------
         #SOURCES:
         #lang:
+        sources/lang/aio_context/aio_context_builder.c
         sources/lang/aio_annotation/aio_annotation.c
         sources/lang/aio_context/aio_context.c
         sources/lang/aio_core/aio_core.c
@@ -105,6 +106,9 @@ add_executable(${PROJECT_NAME}
         sources/lib/utils/operation_utils/operation_utils.c
         sources/lib/utils/string_utils/string_builder.c
         sources/lib/utils/string_utils/string_utils.c
+        sources/lib/utils/string_utils/prefix_suffix.c
+        sources/lib/utils/string_utils/split.c
+        sources/lib/utils/string_utils/trim.c
         #tools:
         sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_annotation_ripper.c
         sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_arg_ripper.c

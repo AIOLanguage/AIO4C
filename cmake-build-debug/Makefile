@@ -203,6 +203,33 @@ sources/lang/aio_context/aio_context.c.s:
 	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_context/aio_context.c.s
 .PHONY : sources/lang/aio_context/aio_context.c.s
 
+sources/lang/aio_context/aio_context_builder.obj: sources/lang/aio_context/aio_context_builder.c.obj
+
+.PHONY : sources/lang/aio_context/aio_context_builder.obj
+
+# target to build an object file
+sources/lang/aio_context/aio_context_builder.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_context/aio_context_builder.c.obj
+.PHONY : sources/lang/aio_context/aio_context_builder.c.obj
+
+sources/lang/aio_context/aio_context_builder.i: sources/lang/aio_context/aio_context_builder.c.i
+
+.PHONY : sources/lang/aio_context/aio_context_builder.i
+
+# target to preprocess a source file
+sources/lang/aio_context/aio_context_builder.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_context/aio_context_builder.c.i
+.PHONY : sources/lang/aio_context/aio_context_builder.c.i
+
+sources/lang/aio_context/aio_context_builder.s: sources/lang/aio_context/aio_context_builder.c.s
+
+.PHONY : sources/lang/aio_context/aio_context_builder.s
+
+# target to generate assembly for a file
+sources/lang/aio_context/aio_context_builder.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_context/aio_context_builder.c.s
+.PHONY : sources/lang/aio_context/aio_context_builder.c.s
+
 sources/lang/aio_core/aio_core.obj: sources/lang/aio_core/aio_core.c.obj
 
 .PHONY : sources/lang/aio_core/aio_core.obj
@@ -959,6 +986,60 @@ sources/lib/utils/operation_utils/operation_utils.c.s:
 	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/operation_utils/operation_utils.c.s
 .PHONY : sources/lib/utils/operation_utils/operation_utils.c.s
 
+sources/lib/utils/string_utils/prefix_suffix.obj: sources/lib/utils/string_utils/prefix_suffix.c.obj
+
+.PHONY : sources/lib/utils/string_utils/prefix_suffix.obj
+
+# target to build an object file
+sources/lib/utils/string_utils/prefix_suffix.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/string_utils/prefix_suffix.c.obj
+.PHONY : sources/lib/utils/string_utils/prefix_suffix.c.obj
+
+sources/lib/utils/string_utils/prefix_suffix.i: sources/lib/utils/string_utils/prefix_suffix.c.i
+
+.PHONY : sources/lib/utils/string_utils/prefix_suffix.i
+
+# target to preprocess a source file
+sources/lib/utils/string_utils/prefix_suffix.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/string_utils/prefix_suffix.c.i
+.PHONY : sources/lib/utils/string_utils/prefix_suffix.c.i
+
+sources/lib/utils/string_utils/prefix_suffix.s: sources/lib/utils/string_utils/prefix_suffix.c.s
+
+.PHONY : sources/lib/utils/string_utils/prefix_suffix.s
+
+# target to generate assembly for a file
+sources/lib/utils/string_utils/prefix_suffix.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/string_utils/prefix_suffix.c.s
+.PHONY : sources/lib/utils/string_utils/prefix_suffix.c.s
+
+sources/lib/utils/string_utils/split.obj: sources/lib/utils/string_utils/split.c.obj
+
+.PHONY : sources/lib/utils/string_utils/split.obj
+
+# target to build an object file
+sources/lib/utils/string_utils/split.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/string_utils/split.c.obj
+.PHONY : sources/lib/utils/string_utils/split.c.obj
+
+sources/lib/utils/string_utils/split.i: sources/lib/utils/string_utils/split.c.i
+
+.PHONY : sources/lib/utils/string_utils/split.i
+
+# target to preprocess a source file
+sources/lib/utils/string_utils/split.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/string_utils/split.c.i
+.PHONY : sources/lib/utils/string_utils/split.c.i
+
+sources/lib/utils/string_utils/split.s: sources/lib/utils/string_utils/split.c.s
+
+.PHONY : sources/lib/utils/string_utils/split.s
+
+# target to generate assembly for a file
+sources/lib/utils/string_utils/split.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/string_utils/split.c.s
+.PHONY : sources/lib/utils/string_utils/split.c.s
+
 sources/lib/utils/string_utils/string_builder.obj: sources/lib/utils/string_utils/string_builder.c.obj
 
 .PHONY : sources/lib/utils/string_utils/string_builder.obj
@@ -1012,6 +1093,33 @@ sources/lib/utils/string_utils/string_utils.s: sources/lib/utils/string_utils/st
 sources/lib/utils/string_utils/string_utils.c.s:
 	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/string_utils/string_utils.c.s
 .PHONY : sources/lib/utils/string_utils/string_utils.c.s
+
+sources/lib/utils/string_utils/trim.obj: sources/lib/utils/string_utils/trim.c.obj
+
+.PHONY : sources/lib/utils/string_utils/trim.obj
+
+# target to build an object file
+sources/lib/utils/string_utils/trim.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/string_utils/trim.c.obj
+.PHONY : sources/lib/utils/string_utils/trim.c.obj
+
+sources/lib/utils/string_utils/trim.i: sources/lib/utils/string_utils/trim.c.i
+
+.PHONY : sources/lib/utils/string_utils/trim.i
+
+# target to preprocess a source file
+sources/lib/utils/string_utils/trim.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/string_utils/trim.c.i
+.PHONY : sources/lib/utils/string_utils/trim.c.i
+
+sources/lib/utils/string_utils/trim.s: sources/lib/utils/string_utils/trim.c.s
+
+.PHONY : sources/lib/utils/string_utils/trim.s
+
+# target to generate assembly for a file
+sources/lib/utils/string_utils/trim.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/string_utils/trim.c.s
+.PHONY : sources/lib/utils/string_utils/trim.c.s
 
 sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_annotation_ripper.obj: sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_annotation_ripper.c.obj
 
@@ -1463,6 +1571,9 @@ help:
 	@echo ... sources/lang/aio_context/aio_context.obj
 	@echo ... sources/lang/aio_context/aio_context.i
 	@echo ... sources/lang/aio_context/aio_context.s
+	@echo ... sources/lang/aio_context/aio_context_builder.obj
+	@echo ... sources/lang/aio_context/aio_context_builder.i
+	@echo ... sources/lang/aio_context/aio_context_builder.s
 	@echo ... sources/lang/aio_core/aio_core.obj
 	@echo ... sources/lang/aio_core/aio_core.i
 	@echo ... sources/lang/aio_core/aio_core.s
@@ -1547,12 +1658,21 @@ help:
 	@echo ... sources/lib/utils/operation_utils/operation_utils.obj
 	@echo ... sources/lib/utils/operation_utils/operation_utils.i
 	@echo ... sources/lib/utils/operation_utils/operation_utils.s
+	@echo ... sources/lib/utils/string_utils/prefix_suffix.obj
+	@echo ... sources/lib/utils/string_utils/prefix_suffix.i
+	@echo ... sources/lib/utils/string_utils/prefix_suffix.s
+	@echo ... sources/lib/utils/string_utils/split.obj
+	@echo ... sources/lib/utils/string_utils/split.i
+	@echo ... sources/lib/utils/string_utils/split.s
 	@echo ... sources/lib/utils/string_utils/string_builder.obj
 	@echo ... sources/lib/utils/string_utils/string_builder.i
 	@echo ... sources/lib/utils/string_utils/string_builder.s
 	@echo ... sources/lib/utils/string_utils/string_utils.obj
 	@echo ... sources/lib/utils/string_utils/string_utils.i
 	@echo ... sources/lib/utils/string_utils/string_utils.s
+	@echo ... sources/lib/utils/string_utils/trim.obj
+	@echo ... sources/lib/utils/string_utils/trim.i
+	@echo ... sources/lib/utils/string_utils/trim.s
 	@echo ... sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_annotation_ripper.obj
 	@echo ... sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_annotation_ripper.i
 	@echo ... sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_annotation_ripper.s

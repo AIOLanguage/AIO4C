@@ -21,7 +21,7 @@ typedef enum aio_task_type {
 typedef struct aio_instruction_holder {
     struct aio_instruction_holder *parent;
     aio_variable_definition_map *local_variable_definition_map;
-    aio_instruction_list *instruction_list;
+    struct aio_instruction_list *instruction_list;
 } aio_instruction_holder;
 
 aio_instruction_holder *dig_aio_instruction_holder(const_string source_code, aio_instruction_holder *parent_holder,
