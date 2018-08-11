@@ -95,7 +95,7 @@ void handle_break_scope(const_string string_web, aio_spider *spider) {
                                           && string_web[start_index + 1] == 'r'
                                           && string_web[start_index + 2] == 'k';
             if (is_break_word) {
-                //Shift watcher:
+                //Shift main_watcher:
                 watcher->start_index = end_index;
                 watcher->mode = POINT_PASSIVE_MODE;
                 //Set message:

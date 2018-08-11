@@ -1,5 +1,6 @@
 #include <malloc.h>
-#include "../../../../../../../../headers/lang/aio_function/aio_function_definition/aio_spider/aio_spiders.h"
+#include "../../../../../../../../headers/lang/aio_function/aio_function_definition/aio_spiders/aio_spider.h"
+#include "../../../../../../../../headers/lang/aio_function/aio_function_definition/aio_spiders/aio_spider_swarm.h"
 
 #define AIO_NUMBER_OF_SPIDERS 7
 

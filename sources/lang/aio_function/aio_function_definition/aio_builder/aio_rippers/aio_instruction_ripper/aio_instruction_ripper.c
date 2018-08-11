@@ -64,7 +64,7 @@ aio_instruction_holder *dig_aio_instruction_holder(const_string source_code, aio
                         reset_aio_spiders(spider_swarm);
                         //Reset string builder:
                         reset_string_builder(str_builder);
-                        //Shift watcher:
+                        //Shift main_watcher:
                         ripper_watcher->pointer = ripper_watcher->start_index;
                         ripper_watcher->mode = POINT_PASSIVE_MODE;
                     }

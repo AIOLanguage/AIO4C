@@ -3,7 +3,7 @@
 #include <ctype.h>
 #include "../../../../../../../../headers/lib/utils/string_utils/string_utils.h"
 #include "../../../../../../../../headers/lang/aio_function/aio_function_definition/aio_instructions/aio_instructions.h"
-#include "../../../../../../../../headers/lang/aio_function/aio_function_definition/aio_spider/aio_spiders.h"
+#include "../../../../../../../../headers/lang/aio_function/aio_function_definition/aio_spiders/aio_spider.h"
 #include "../../../../../../../../headers/lib/point_watcher/point_watcher.h"
 #include "../../../../../../../../headers/lib/utils/char_utils/char_utils.h"
 #include "../../../../../../../../headers/lib/utils/error_utils/error_utils.h"
@@ -137,7 +137,7 @@ void handle_if_modifier_scope(const_string string_web, aio_spider *spider) {
         if (hold_positions == 2) {
             const_boolean is_if_modifier = string_web[start_index] == 'i' && string_web[start_index + 1] == 'f';
             if (is_if_modifier) {
-                //Shift watcher:
+                //Shift main_watcher:
                 watcher->start_index = end_index;
                 watcher->mode = POINT_PASSIVE_MODE;
                 //Set scope:
@@ -190,7 +190,7 @@ void handle_condition_scope(const_string string_web, aio_spider *spider) {
                 //End of condition:
                 //Doesn't hold close parenthesis:
                 header_watcher->end_index = last_position;
-                //Shift main watcher:
+                //Shift main main_watcher:
                 main_watcher->start_index = main_watcher->end_index;
                 main_watcher->mode = POINT_PASSIVE_MODE;
                 //Set scope:
@@ -273,7 +273,7 @@ void handle_true_body_scope(const_string string_web, aio_spider *spider) {
                 //Set message:
                 spider->message = AIO_SPIDER_IS_READY_FOR_WEAVING;
             }
-            //Shift main watcher:
+            //Shift main main_watcher:
             main_watcher->start_index = main_watcher->end_index;
             main_watcher->mode = POINT_PASSIVE_MODE;
         }
@@ -325,7 +325,7 @@ void handle_false_body_scope(const_string string_web, aio_spider *spider) {
                 materials->scope_type = AIO_IF_WEAVING_SCOPE;
                 //Set message:
                 spider->message = AIO_SPIDER_IS_READY_FOR_WEAVING;
-                //Shift main watcher:
+                //Shift main main_watcher:
                 main_watcher->start_index = main_watcher->end_index;
                 main_watcher->mode = POINT_PASSIVE_MODE;
             }

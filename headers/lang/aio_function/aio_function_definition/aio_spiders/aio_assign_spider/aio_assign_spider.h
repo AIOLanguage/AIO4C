@@ -10,7 +10,7 @@
  */
 
 typedef enum aio_assign_scope_type {
-    AIO_ASSIGN_DECLARATION_SCOPE, AIO_ASSIGN_EQUAL_SIGN_IN_SCOPE, AIO_ASSIGN_VALUE_SCOPE, AIO_ASSIGN_WEAVING_SCOPE
+    AIO_ASSIGN_DECLARATION_SCOPE, AIO_ASSIGN_EQUAL_SIGN_SCOPE, AIO_ASSIGN_VALUE_SCOPE, AIO_ASSIGN_WEAVING_SCOPE
 } aio_assign_scope_type;
 
 typedef enum aio_assign_variable_declaration_type {
@@ -30,6 +30,6 @@ typedef struct aio_assign_materials {
     string value;
 } aio_assign_materials;
 
-aio_spider *new_aio_assign_spider();
+struct aio_spider *new_aio_assign_spider();
 
 #endif //AIO_ASSIGN_SPIDER_H
