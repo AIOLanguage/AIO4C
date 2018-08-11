@@ -7,7 +7,7 @@ typedef struct aio_annotation {
     string name;
 } aio_annotation;
 
-aio_annotation *new_aio_annotation(string name);
+aio_annotation *new_aio_annotation(const_string name);
 
 void free_aio_annotation(aio_annotation *annotation);
 

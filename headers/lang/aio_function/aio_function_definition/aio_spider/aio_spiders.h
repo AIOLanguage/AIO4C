@@ -18,7 +18,7 @@ typedef enum aio_assign_scope_type {
 } aio_assign_scope_type;
 
 typedef enum aio_assign_variable_declaration_type {
-    AIO_ASSIGN_UNDEFINED_DECLARATION, AIO_ASSIGN_WAS_MUTABLE_MODIFIER, AIO_ASSIGN_CONST, AIO_ASSIGN_REFERENCE,
+    AIO_ASSIGN_UNDEFINED_DECLARATION, AIO_ASSIGN_WAS_MUTABLE_MODIFIER, AIO_ASSIGN_WILL_DEFINED, AIO_ASSIGN_REFERENCE,
     AIO_ASSIGN_IMMUTABLE, AIO_ASSIGN_MUTABLE
 } aio_assign_variable_declaration_type;
 
@@ -89,14 +89,13 @@ typedef struct aio_loop_materials {
     point_watcher *header_watcher;
     point_watcher *body_watcher;
     //Pointer variable:
-    string_list *pointer_data_list;
-    string start_variable;
-    string start_value;
+    aio_variable_definition *pointer_definition;
+    //Init pointer:
+    aio_instruction *start_assign_instruction;
     //Condition:
     string condition;
     //Step:
-    string changeable_variable;
-    string step_value;
+    aio_instruction *step_assign_instruction;
 } aio_loop_materials;
 
 typedef struct aio_out_materials {

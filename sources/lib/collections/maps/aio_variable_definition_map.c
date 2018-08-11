@@ -40,5 +40,5 @@ aio_variable_definition *get_aio_variable_definition_in_map_by_name(aio_variable
             return definition;
         }
     }
-    throw_error("Cannot get aio aio variable definition in map");
+    return NULL;
 }

@@ -92,13 +92,6 @@ typedef struct aio_switch_task {
 } aio_switch_task;
 
 typedef struct aio_loop_task {
-    aio_variable_definition *pointer_definition;
-    //Often for init point_watcher:
-    aio_assign_task *start_assign_task;
-    //Loop condition:
-    string loop_condition;
-    //Often for change pointer:
-    aio_assign_task *loop_assign_task;
     aio_instruction_holder *loop_holder;
 } aio_loop_task;
 

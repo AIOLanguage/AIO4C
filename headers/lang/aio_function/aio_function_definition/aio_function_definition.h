@@ -20,6 +20,9 @@ aio_function_definition *new_aio_method_definition(aio_annotation_list *annotati
                                                    string name, aio_variable_definition_map *arg_definition_map,
                                                    aio_instruction_holder *instruction_holder);
 
+aio_variable_definition * get_local_variable_definition_in_function_tree(const_string variable_name,
+                                                                         aio_instruction_holder *child_holder);
+
 void delete_aio_method_definition(aio_function_definition *method_definition);
 
 #endif //AIO_FUNCTION_DEFINITION_H

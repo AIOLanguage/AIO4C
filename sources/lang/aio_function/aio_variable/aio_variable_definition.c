@@ -11,6 +11,8 @@ aio_variable_definition *new_aio_variable_definition(string name, string type,
     return definition;
 }
 
-void delete_aio_variable_definition(aio_variable_definition *definition) {
-
+void free_aio_variable_definition(aio_variable_definition *definition) {
+    free(definition->name);
+    free(definition->type);
+    free(definition);
 }

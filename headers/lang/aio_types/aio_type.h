@@ -11,6 +11,6 @@
 
 #define VOID "Voi"
 
-#define AIO_CONST_TYPE "Const"
+#define AIO_WILL_DEFINED "#"
 
 #endif //AIO_TYPE_H

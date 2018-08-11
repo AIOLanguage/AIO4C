@@ -296,7 +296,7 @@ typedef struct aio_loop_short_header_materials {
 } aio_loop_short_header_materials;
 
 aio_spider *new_aio_loop_short_spider() {
-
+    
 }
 
 typedef struct aio_loop_shortest_header_materials {
@@ -307,13 +307,21 @@ aio_spider *new_aio_loop_shortest_spider() {
 
 }
 
+typedef struct aio_loop_condition_spider {
+
+} aio_loop_condition_spider;
+
+aio_spider *new_aio_loop_condition_spider() {
+
+}
+
 aio_spider_swarm *breed_aio_loop_header_spider_swarm() {
     //Create spiders:
     aio_spider **spiders = calloc(AIO_NUMBER_OF_SPIDERS, sizeof(aio_spider *));
     spiders[0] = new_aio_assign_spider();
     spiders[1] = new_aio_loop_short_spider();
     spiders[2] = new_aio_loop_shortest_spider();
-    spiders[3] = new_aio_define_vs_condition_spider();
+    spiders[3] = new_aio_loop_condition_spider();
     aio_spider_swarm *swarm = calloc(1, sizeof(aio_spider_swarm));
     swarm->number_of_spiders = AIO_NUMBER_OF_SPIDERS;
     swarm->spiders = spiders;
