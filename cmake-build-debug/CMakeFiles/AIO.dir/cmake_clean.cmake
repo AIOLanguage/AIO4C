@@ -19,7 +19,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_function_name_ripper.c.obj"
   "CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_instruction_ripper.c.obj"
   "CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_output_ripper.c.obj"
-  "CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_spider_swarm.c.obj"
+  "CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_spider_nest.c.obj"
   "CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_assign_spider/aio_assign_spider.c.obj"
   "CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_break_spider/aio_break_spider.c.obj"
   "CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_if_spider/aio_if_spider.c.obj"

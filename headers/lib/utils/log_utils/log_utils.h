@@ -13,6 +13,6 @@ void log_info_double(const_string tag, const double value);
 
 void log_info_int(const_string tag, const_string message, const int value);
 
-void log_info_boolean_with_details(const_string tag, const_string message, const_boolean value);
+void log_info_boolean(const_string tag, const_string message, const_boolean value);
 
 #endif //LOG_UTILS_H

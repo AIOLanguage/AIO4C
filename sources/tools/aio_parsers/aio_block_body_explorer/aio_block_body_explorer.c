@@ -5,7 +5,7 @@
 #include "../../../../headers/lib/utils/char_utils/char_utils.h"
 #include "../../../../headers/lib/utils/error_utils/error_utils.h"
 
-//#define AIO_BLOCK_BODY_EXPLORER_DEBUG
+#define AIO_BLOCK_BODY_EXPLORER_DEBUG
 
 #define AIO_BLOCK_BODY_EXPLORER_TAG "AIO_BLOCK_BODY_EXPLORER"
 
@@ -93,10 +93,12 @@ void explore_block_body(const_string source_code, int *start_index, int *end_ind
 
 const_boolean is_end_of_block_body(const_string function_body_string, point_watcher *watcher) {
     while (watcher->pointer < watcher->end_index) {
-        const char symbol = function_body_string[watcher->pointer++];
+        const char symbol = function_body_string[watcher->pointer];
         if (!is_space_or_line_break(symbol)) {
             watcher->mode = POINT_ACTIVE_MODE;
             return FALSE;
+        } else {
+            watcher->pointer++;
         }
     }
     return TRUE;

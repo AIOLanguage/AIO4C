@@ -9,6 +9,7 @@
 #include "../../../../../../../headers/lang/aio_core/aio_core.h"
 #include "../../../../../../../headers/lib/utils/string_utils/string_builder.h"
 #include "../../../../../../../headers/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_assign_spider/aio_assign_spider.h"
+#include "../../../../../../../headers/lib/utils/memory_utils/memory_utils.h"
 
 /**
  * Declare functions.
@@ -31,17 +32,28 @@ void weave_assign_instruction_for(aio_instruction_holder *holder, const_string _
 aio_variable_definition *create_local_variable_definition(const aio_assign_variable_declaration_type declaration_type,
                                                           const_string_array variable_materials);
 
-void weave_assign_materials_for(aio_spider *dst_spider, aio_spider *src_spider, const_string source_code,
-                                int *next_spider_point_reference, aio_task_type task_type);
+#define AIO_ASSIGN_SPIDER_DEBUG
+
+#define AIO_ASSIGN_SPIDER_TAG "AIO_ASSIGN_SPIDER"
+
+#ifdef AIO_ASSIGN_SPIDER_DEBUG
+
+#include "../../../../../../../headers/lib/utils/log_utils/log_utils.h"
+
+#endif
+
 
 /**
  * Reset.
  */
 
 void reset_assign_spider(aio_spider *spider) {
+    //Reset spider state:
     spider->message = AIO_SPIDER_NOT_FOUND_MATERIALS;
+    //Reset materials:
     aio_assign_materials *materials = spider->get.assign_materials;
-    reset_point_watcher(materials->watcher);
+    reset_point_watcher(materials->main_watcher);
+    reset_point_watcher(materials->value_watcher);
     materials->scope_type = AIO_ASSIGN_DECLARATION_SCOPE;
     materials->declaration_type = AIO_ASSIGN_UNDEFINED_DECLARATION;
     //------------------------------------------------------------------------------------------------------------------
@@ -56,7 +68,8 @@ void reset_assign_spider(aio_spider *spider) {
 
 void free_assign_spider(aio_spider *spider) {
     aio_assign_materials *materials = spider->get.assign_materials;
-    free_point_watcher(materials->watcher);
+    free_point_watcher(materials->main_watcher);
+    free_point_watcher(materials->value_watcher);
     free_strings_in_list(materials->variable_data_list);
     free_string_list(materials->variable_data_list);
     free(materials->value);
@@ -68,19 +81,22 @@ void free_assign_spider(aio_spider *spider) {
  * Constructor.
  */
 
-aio_spider *new_aio_assign_spider() {
-    aio_spider *spider = calloc(1, sizeof(aio_spider));
+struct aio_spider *new_aio_assign_spider(const int body_length) {
+    aio_spider *spider = new_object(sizeof(aio_spider));
     //Bind spider's functions:
     spider->reset = reset_assign_spider;
     spider->is_found_instruction = is_found_assign_instruction;
     spider->weave_instruction_for = weave_assign_instruction_for;
     spider->free = free_assign_spider;
     //Create materials:
-    aio_assign_materials *materials = calloc(1, sizeof(aio_assign_materials));
-    materials->watcher = new_point_watcher();
+    aio_assign_materials *materials = new_object(sizeof(aio_assign_materials));
     materials->scope_type = AIO_ASSIGN_DECLARATION_SCOPE;
     materials->declaration_type = AIO_ASSIGN_UNDEFINED_DECLARATION;
+    materials->main_watcher = new_point_watcher();
+    materials->value_watcher = new_point_watcher();
     materials->variable_data_list = new_string_list();
+    //Set ripper info:
+    materials->function_body_length = body_length;
     //Set materials:
     spider->get.assign_materials = materials;
     //Init start message:
@@ -93,14 +109,17 @@ aio_spider *new_aio_assign_spider() {
  */
 
 const aio_spider_message is_found_assign_instruction(const_string string_web, aio_spider *spider) {
+#ifdef AIO_ASSIGN_SPIDER_DEBUG
+    log_info(AIO_ASSIGN_SPIDER_TAG, "Start founding...");
+#endif
     //Extract spider fields:
     const aio_assign_materials *materials = spider->get.assign_materials;
-    const aio_assign_scope_type scope_type = materials->scope_type;
-    point_watcher *watcher = materials->watcher;
+    point_watcher *watcher = materials->main_watcher;
     watcher->end_index++;
     //Prepare from scanning:
     const char last_symbol = string_web[watcher->end_index - 1];
-    //Spider waits string data:
+//    log_info_char(AIO_ASSIGN_SPIDER_TAG, "Last symbol:", last_symbol);
+    //Skip whitespaces:
     if (watcher->mode == POINT_PASSIVE_MODE) {
         if (is_space_or_line_break(last_symbol)) {
             //Spider waiting:
@@ -112,18 +131,24 @@ const aio_spider_message is_found_assign_instruction(const_string string_web, ai
     }
     //Spider works:
     if (watcher->mode == POINT_ACTIVE_MODE) {
-        switch (scope_type) {
-            case AIO_ASSIGN_DECLARATION_SCOPE:
-                handle_assign_declaration_scope(string_web, spider);
-                break;
-            case AIO_ASSIGN_EQUAL_SIGN_SCOPE:
-                handle_assign_equal_sign_scope(string_web, spider);
-                break;
-            case AIO_ASSIGN_VALUE_SCOPE:
-                handle_assign_value_scope(string_web, spider);
-                break;
-            case AIO_ASSIGN_WEAVING_SCOPE:
-                break;
+        if (materials->scope_type == AIO_ASSIGN_DECLARATION_SCOPE) {
+#ifdef AIO_ASSIGN_SPIDER_DEBUG
+            log_info(AIO_ASSIGN_SPIDER_TAG, "AIO_ASSIGN_DECLARATION_SCOPE");
+#endif
+            handle_assign_declaration_scope(string_web, spider);
+        }
+        if (materials->scope_type == AIO_ASSIGN_EQUAL_SIGN_SCOPE) {
+#ifdef AIO_ASSIGN_SPIDER_DEBUG
+            log_info(AIO_ASSIGN_SPIDER_TAG, "AIO_ASSIGN_EQUAL_SIGN_SCOPE");
+#endif
+            handle_assign_equal_sign_scope(string_web, spider);
+            return spider->message;
+        }
+        if (materials->scope_type == AIO_ASSIGN_VALUE_SCOPE) {
+#ifdef AIO_ASSIGN_SPIDER_DEBUG
+            log_info(AIO_ASSIGN_SPIDER_TAG, "AIO_ASSIGN_VALUE_SCOPE");
+#endif
+            handle_assign_value_scope(string_web, spider);
         }
     }
     return spider->message;
@@ -136,74 +161,101 @@ const aio_spider_message is_found_assign_instruction(const_string string_web, ai
 void handle_assign_declaration_scope(const_string string_web, aio_spider *spider) {
     //Extract materials:
     aio_assign_materials *materials = spider->get.assign_materials;
-    aio_assign_variable_declaration_type declaration_type = materials->declaration_type;
-    point_watcher *watcher = materials->watcher;
+    point_watcher *watcher = materials->main_watcher;
     //Check string web:
     const char last_symbol = string_web[watcher->end_index - 1];
     //If was word:
     if (is_space_or_line_break(last_symbol)) {
+#ifdef AIO_ASSIGN_SPIDER_DEBUG
+        log_info(AIO_ASSIGN_SPIDER_TAG, "Was whitespace!");
+#endif
         string chunk = substring(string_web, watcher->start_index, watcher->end_index - 1);
+#ifdef AIO_ASSIGN_SPIDER_DEBUG
+        log_info_string(AIO_ASSIGN_SPIDER_TAG, "Chunk:", chunk);
+#endif
         //Check conditions:
         const_boolean is_mutable_modifier = is_aio_mutable_modifier(chunk);
         const_boolean is_type = contains_aio_type_in_set(chunk);
         const_boolean is_variable_name = is_word(chunk) && can_use_name(chunk);
-        switch (declaration_type) {
-            case AIO_ASSIGN_UNDEFINED_DECLARATION:
-                //Maybe string is the "mu" modifier?
-                if (is_mutable_modifier) {
-                    refresh_assign_declaration_scope(spider, chunk, AIO_ASSIGN_WAS_MUTABLE_MODIFIER,
-                                                     AIO_SPIDER_FOUND_MATERIALS);
-                }
-                //Maybe string is a type?
-                if (is_type) {
-                    refresh_assign_declaration_scope(spider, chunk, AIO_ASSIGN_IMMUTABLE,
-                                                     AIO_SPIDER_NOT_FOUND_MATERIALS);
-                }
-                //Maybe is a variable name?
-                if (is_variable_name) {
-                    refresh_assign_declaration_scope(spider, chunk, AIO_ASSIGN_WILL_DEFINED,
-                                                     AIO_SPIDER_NOT_FOUND_MATERIALS);
-                    //Change scope:
-                    materials->scope_type = AIO_ASSIGN_EQUAL_SIGN_SCOPE;
-                } else {
-                    //Not a variable name:
-                    //--------------------------------------------------------------------------------------------------
-                    //찌꺼기 수집기 (Garbage collector):
-                    free(chunk);
-                }
-                break;
-            case AIO_ASSIGN_WAS_MUTABLE_MODIFIER:
-                //Maybe string is a type?
-                if (is_type) {
-                    refresh_assign_declaration_scope(spider, chunk, AIO_ASSIGN_MUTABLE,
-                                                     AIO_SPIDER_NOT_FOUND_MATERIALS);
-                }
-                //Maybe string is a variable name?
-                if (is_variable_name) {
-                    refresh_assign_declaration_scope(spider, chunk, AIO_ASSIGN_REFERENCE,
-                                                     AIO_SPIDER_NOT_FOUND_MATERIALS);
-                    //Change scope:
-                    materials->scope_type = AIO_ASSIGN_EQUAL_SIGN_SCOPE;
-                } else {
-                    //Not a variable name:
-                    //--------------------------------------------------------------------------------------------------
-                    //찌꺼기 수집기 (Garbage collector):
-                    free(chunk);
-                }
-                break;
-                //Mutable by value mode:
-            case AIO_ASSIGN_MUTABLE:
-                //Must be variable name:
-                if (is_variable_name) {
-                    refresh_assign_declaration_scope(spider, chunk, AIO_ASSIGN_MUTABLE, AIO_SPIDER_FOUND_MATERIALS);
-                    //Change scope:
-                    materials->scope_type = AIO_ASSIGN_EQUAL_SIGN_SCOPE;
-                } else {
-                    throw_error("ASSIGN SPIDER invalid variable name!");
-                }
-                break;
-            default:
-                throw_error("ASSIGN SPIDER: Unreachable case!");
+        if (materials->declaration_type == AIO_ASSIGN_UNDEFINED_DECLARATION) {
+#ifdef AIO_ASSIGN_SPIDER_DEBUG
+            log_info(AIO_ASSIGN_SPIDER_TAG, "AIO_ASSIGN_UNDEFINED_DECLARATION");
+#endif
+            //Maybe string is the "mu" modifier?
+            if (is_mutable_modifier) {
+#ifdef AIO_ASSIGN_SPIDER_DEBUG
+                log_info_string(AIO_ASSIGN_SPIDER_TAG, "Put mutable modifier:", chunk);
+#endif
+                refresh_assign_declaration_scope(spider, chunk, AIO_ASSIGN_WAS_MUTABLE_MODIFIER,
+                                                 AIO_SPIDER_FOUND_MATERIALS);
+            }
+            //Maybe string is a type?
+            if (is_type) {
+#ifdef AIO_ASSIGN_SPIDER_DEBUG
+                log_info_string(AIO_ASSIGN_SPIDER_TAG, "Put type:", chunk);
+#endif
+                refresh_assign_declaration_scope(spider, chunk, AIO_ASSIGN_IMMUTABLE,
+                                                 AIO_SPIDER_NOT_FOUND_MATERIALS);
+            }
+            //Maybe is a variable name?
+            if (is_variable_name) {
+#ifdef AIO_ASSIGN_SPIDER_DEBUG
+                log_info_string(AIO_ASSIGN_SPIDER_TAG, "Put variable name:", chunk);
+#endif
+                refresh_assign_declaration_scope(spider, chunk, AIO_ASSIGN_WILL_DEFINED,
+                                                 AIO_SPIDER_NOT_FOUND_MATERIALS);
+                //Change scope:
+                materials->scope_type = AIO_ASSIGN_EQUAL_SIGN_SCOPE;
+            } else {
+                //Not a variable name:
+                //--------------------------------------------------------------------------------------------------
+                //찌꺼기 수집기 (Garbage collector):
+                free(chunk);
+            }
+        }
+        if (materials->declaration_type == AIO_ASSIGN_WAS_MUTABLE_MODIFIER) {
+#ifdef AIO_ASSIGN_SPIDER_DEBUG
+            log_info(AIO_ASSIGN_SPIDER_TAG, "AIO_ASSIGN_WAS_MUTABLE_MODIFIER");
+#endif
+            //Maybe string is a type?
+            if (is_type) {
+#ifdef AIO_ASSIGN_SPIDER_DEBUG
+                log_info_string(AIO_ASSIGN_SPIDER_TAG, "Put type:", chunk);
+#endif
+                refresh_assign_declaration_scope(spider, chunk, AIO_ASSIGN_MUTABLE,
+                                                 AIO_SPIDER_NOT_FOUND_MATERIALS);
+            }
+            //Maybe string is a variable name?
+            if (is_variable_name) {
+#ifdef AIO_ASSIGN_SPIDER_DEBUG
+                log_info_string(AIO_ASSIGN_SPIDER_TAG, "Put variable name:", chunk);
+#endif
+                refresh_assign_declaration_scope(spider, chunk, AIO_ASSIGN_REFERENCE,
+                                                 AIO_SPIDER_NOT_FOUND_MATERIALS);
+                //Change scope:
+                materials->scope_type = AIO_ASSIGN_EQUAL_SIGN_SCOPE;
+            } else {
+                //Not a variable name:
+                //--------------------------------------------------------------------------------------------------
+                //찌꺼기 수집기 (Garbage collector):
+                free(chunk);
+            }
+        }
+        if (materials->declaration_type == AIO_ASSIGN_MUTABLE) {
+#ifdef AIO_ASSIGN_SPIDER_DEBUG
+            log_info(AIO_ASSIGN_SPIDER_TAG, "AIO_ASSIGN_MUTABLE");
+#endif
+            //Must be variable name:
+            if (is_variable_name) {
+#ifdef AIO_ASSIGN_SPIDER_DEBUG
+                log_info_string(AIO_ASSIGN_SPIDER_TAG, "Put variable name:", chunk);
+#endif
+                refresh_assign_declaration_scope(spider, chunk, AIO_ASSIGN_MUTABLE, AIO_SPIDER_FOUND_MATERIALS);
+                //Change scope:
+                materials->scope_type = AIO_ASSIGN_EQUAL_SIGN_SCOPE;
+            } else {
+                throw_error_with_tag(AIO_ASSIGN_SPIDER_TAG, "Invalid variable name!");
+            }
         }
     }
 }
@@ -213,10 +265,13 @@ void refresh_assign_declaration_scope(aio_spider *spider, string chunk, aio_assi
     //Extract materials:
     aio_assign_materials *materials = spider->get.assign_materials;
     string_list *variable_data_list = materials->variable_data_list;
-    point_watcher *watcher = materials->watcher;
+    point_watcher *watcher = materials->main_watcher;
     //Change declaration type:
     materials->declaration_type = type;
-    //Put "mu" modifier in list:
+    //Put chunk in list:
+#ifdef AIO_ASSIGN_SPIDER_DEBUG
+    log_info_string(AIO_ASSIGN_SPIDER_TAG, "PUT IN VARIABLE DATA LIST:", chunk);
+#endif
     add_string_in_list(variable_data_list, chunk);
     //Shift main_watcher:
     watcher->start_index = watcher->end_index;
@@ -227,8 +282,8 @@ void refresh_assign_declaration_scope(aio_spider *spider, string chunk, aio_assi
 
 void handle_assign_equal_sign_scope(const_string string_web, aio_spider *spider) {
     aio_assign_materials *materials = spider->get.assign_materials;
-    point_watcher *watcher = materials->watcher;
-    const int start_scanning_index = watcher->start_index;
+    point_watcher *watcher = materials->main_watcher;
+    const int start_scanning_index = watcher->end_index - 1;
     const_boolean is_equal_sign_symbol = is_equal_sign(string_web[start_scanning_index]);
     if (is_equal_sign_symbol) {
         //Set value scope:
@@ -248,32 +303,54 @@ void handle_assign_equal_sign_scope(const_string string_web, aio_spider *spider)
 void handle_assign_value_scope(const_string string_web, aio_spider *spider) {
     //Extract fields:
     aio_assign_materials *materials = spider->get.assign_materials;
-    point_watcher *watcher = materials->watcher;
+    point_watcher *main_watcher = materials->main_watcher;
+    point_watcher *value_watcher = materials->value_watcher;
+    //Define last symbol:
+    const int current_position = main_watcher->end_index - 1;
+    const char current_symbol = string_web[current_position];
+#ifdef AIO_ASSIGN_SPIDER_DEBUG
+    log_info_int(AIO_ASSIGN_SPIDER_TAG, "CURRENT INDEX", main_watcher->end_index);
+    log_info_int(AIO_ASSIGN_SPIDER_TAG, "LAST INDEX", materials->function_body_length);
+    log_info_char(AIO_ASSIGN_SPIDER_TAG, "CURRENT SYMBOL:", current_symbol);
+#endif
     //Check last symbol:
-    const int last_position = watcher->end_index - 1;
-    const char last_symbol = string_web[last_position];
-    const int hold_positions = watcher->end_index - watcher->start_index;
-    //Try from find regex: "//w|)//s+//w|(|{":
-    int whitespace_counter = 0;
-    if (isalpha(last_symbol)
-        || is_open_parenthesis(last_symbol)
-        || is_open_brace(last_symbol) && hold_positions >= 3) {
-        for (int i = last_position - 1; i > 0; --i) {
-            const char symbol = string_web[i];
-            const_boolean is_space_or_line_break_condition = is_space_or_line_break(symbol);
-            if (is_space_or_line_break_condition) {
-                whitespace_counter++;
-            }
-            if (!is_space_or_line_break_condition && whitespace_counter > 0) {
-                if (isalnum(symbol) || is_close_parenthesis(symbol)) {
-                    watcher->end_index = i;
-                    materials->scope_type = AIO_ASSIGN_WEAVING_SCOPE;
-                    materials->value = substring(string_web, watcher->start_index, watcher->end_index);
-                    watcher->start_index = watcher->end_index;
-                    spider->message = AIO_SPIDER_IS_READY_FOR_WEAVING;
-                }
-            }
+    const_boolean is_whitespace_cond = is_space_or_line_break(current_symbol);
+    const_boolean is_close_parenthesis_cond = is_close_parenthesis(current_symbol);
+    const_boolean is_letter_cond = isalpha(current_symbol);
+    const_boolean is_letter_or_number_or_close_parenthesis_cond = isalnum(current_symbol) || is_close_parenthesis_cond;
+    const_boolean is_last_function_body_position = materials->function_body_length - 1 == current_position;
+    //Check value watcher conditions:
+    if (is_letter_or_number_or_close_parenthesis_cond && value_watcher->mode == POINT_PASSIVE_MODE) {
+        value_watcher->mode = POINT_ACTIVE_MODE;
+        if (is_last_function_body_position) {
+            value_watcher->end_index = main_watcher->end_index - value_watcher->pointer + 1;
+            materials->scope_type = AIO_ASSIGN_WEAVING_SCOPE;
+            materials->value = substring(string_web, main_watcher->start_index, value_watcher->end_index);
+#ifdef AIO_ASSIGN_SPIDER_DEBUG
+            log_info_string(AIO_ASSIGN_SPIDER_TAG, "VALUE:", materials->value);
+#endif
+            main_watcher->start_index = main_watcher->end_index;
+            spider->message = AIO_SPIDER_IS_READY_FOR_WEAVING;
         }
+        return;
+    }
+    if (is_whitespace_cond && value_watcher->mode == POINT_ACTIVE_MODE) {
+        value_watcher->pointer++;
+        return;
+    }
+    if ((is_letter_cond) && value_watcher->mode == POINT_ACTIVE_MODE) {
+        value_watcher->end_index = main_watcher->end_index - value_watcher->pointer - 1;
+        materials->scope_type = AIO_ASSIGN_WEAVING_SCOPE;
+        materials->value = substring(string_web, main_watcher->start_index, value_watcher->end_index);
+#ifdef AIO_ASSIGN_SPIDER_DEBUG
+        log_info_string(AIO_ASSIGN_SPIDER_TAG, "VALUE:", materials->value);
+#endif
+
+        main_watcher->start_index = main_watcher->end_index;
+        spider->message = AIO_SPIDER_IS_READY_FOR_WEAVING;
+    } else {
+        value_watcher->mode = POINT_PASSIVE_MODE;
+        value_watcher->pointer = 0;
     }
 }
 
@@ -287,7 +364,7 @@ void weave_assign_instruction_for(aio_instruction_holder *holder, const_string _
     const aio_assign_materials *materials = spider->get.assign_materials;
     const_string_array variable_data = materials->variable_data_list->strings;
     const_string value_string = materials->value;
-    const point_watcher *watcher = materials->watcher;
+    const point_watcher *watcher = materials->main_watcher;
     const aio_assign_variable_declaration_type declaration_type = materials->declaration_type;
     const_boolean is_ready_for_weaving = materials->scope_type == AIO_ASSIGN_WEAVING_SCOPE;
     if (is_ready_for_weaving) {

@@ -8,7 +8,7 @@
 #include "../../../../../../../headers/lib/utils/string_utils/string_builder.h"
 #include "../../../../../../../headers/lib/point_watcher/point_watcher.h"
 #include "../../../../../../../headers/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_spider.h"
-#include "../../../../../../../headers/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_spider_swarm.h"
+#include "../../../../../../../headers/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_spider_nest.h"
 #include "../../../../../../../headers/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_loop_spider.h"
 
 #define AIO_NUMBER_OF_SPIDERS 3
@@ -27,7 +27,7 @@ void handle_loop_modifier_scope(const_string string_web, aio_spider *spider);
 
 void handle_loop_header_scope(const_string string_web, aio_spider *spider);
 
-aio_spider_swarm *breed_aio_loop_header_spider_swarm(aio_main_loop_materials *parent_materials);
+aio_spider_nest *breed_aio_loop_header_spider_swarm(aio_main_loop_materials *parent_materials);
 
 void handle_loop_body_scope(const_string string_web, aio_spider *spider);
 
@@ -195,7 +195,7 @@ void dig_header_materials(const_string string_web, aio_spider *parent_spider) {
     const int loop_header_length = header_watcher->end_index - header_watcher->start_index;
     if (loop_header_length >= 0) {
         //Create spider swarm for searching instructions:
-        aio_spider_swarm *spider_swarm = breed_aio_loop_header_spider_swarm(materials);
+        aio_spider_nest *spider_swarm = breed_aio_loop_header_spider_swarm(materials);
         string_builder *str_builder = new_string_builder();
         //After weaving instruction need from check function body string rest:
         while (header_watcher->pointer < header_watcher->end_index) {
@@ -278,13 +278,13 @@ aio_spider *new_aio_loop_condition_spider() {
 
 }
 
-aio_spider_swarm *breed_aio_loop_header_spider_swarm(aio_main_loop_materials *parent_materials) {
+aio_spider_nest *breed_aio_loop_header_spider_swarm(aio_main_loop_materials *parent_materials) {
     //Create spiders:
     aio_spider **spiders = calloc(AIO_NUMBER_OF_SPIDERS, sizeof(aio_spider *));
     spiders[0] = new_aio_default_loop_header_spider(parent_materials);
     spiders[1] = new_aio_in_loop_header_spider(parent_materials);
     spiders[2] = new_aio_tiny_loop_header_spider(parent_materials);
-    aio_spider_swarm *swarm = calloc(1, sizeof(aio_spider_swarm));
+    aio_spider_nest *swarm = calloc(1, sizeof(aio_spider_nest));
     swarm->number_of_spiders = AIO_NUMBER_OF_SPIDERS;
     swarm->spiders = spiders;
     swarm->active_spider = NULL;

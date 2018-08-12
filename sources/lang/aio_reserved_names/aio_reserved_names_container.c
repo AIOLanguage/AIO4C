@@ -39,5 +39,5 @@ boolean can_use_name(const_string name) {
         }
     }
     //Check in aio type set:
-    return contains_string_in_set(core->aio_type_set, name);
+    return !contains_string_in_set(core->aio_type_set, name);
 }

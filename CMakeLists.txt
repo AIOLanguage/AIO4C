@@ -35,7 +35,7 @@ add_executable(${PROJECT_NAME}
         #tools:
         headers/tools/aio_parsers/aio_function_parser/aio_rippers/aio_rippers.h
         headers/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_spider.h
-        headers/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_spider_swarm.h
+        headers/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_spider_nest.h
         headers/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_assign_spider/aio_assign_spider.h
         headers/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_break_spider/aio_break_spider.h
         headers/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_if_spider/aio_if_spider.h
@@ -95,7 +95,7 @@ add_executable(${PROJECT_NAME}
         sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_function_name_ripper.c
         sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_instruction_ripper.c
         sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_output_ripper.c
-        sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_spider_swarm.c
+        sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_spider_nest.c
         sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_assign_spider/aio_assign_spider.c
         sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_break_spider/aio_break_spider.c
         sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_if_spider/aio_if_spider.c

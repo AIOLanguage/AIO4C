@@ -22,14 +22,17 @@ typedef struct aio_assign_materials {
     //States:
     aio_assign_scope_type scope_type;
     aio_assign_variable_declaration_type declaration_type;
-    //Watcher:
-    point_watcher *watcher;
+    //Watchers:
+    point_watcher *main_watcher;
+    point_watcher *value_watcher;
     //Variable:
     string_list *variable_data_list;
     //Value:
     string value;
+    //Ripper info:
+    int function_body_length;
 } aio_assign_materials;
 
-struct aio_spider *new_aio_assign_spider();
+struct aio_spider *new_aio_assign_spider(const int body_length);
 
 #endif //AIO_ASSIGN_SPIDER_H

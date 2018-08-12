@@ -22,8 +22,10 @@ void update_string_builder_memory(string_builder *builder, const size_t other_le
         while (new_length >= builder->capacity) {
             builder->capacity *= 2;
         }
-        //const_string new_str = calloc(builder->capacity, sizeof(char));
-        builder->string_value = realloc(builder->string_value, builder->capacity);
+        string new_string = calloc(builder->capacity, sizeof(char));
+        strcpy(new_string, builder->string_value);
+        free(builder->string_value);
+        builder->string_value = new_string;
     }
 }
 
@@ -41,7 +43,6 @@ void append_string(string_builder *builder, const_string string) {
     for (int i = start_position; i < new_length; ++i) {
         builder->string_value[i] = string[other_string_counter++];
     }
-    builder->string_value[new_length] = '\0';
     builder->length = new_length;
 }
 

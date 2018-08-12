@@ -28,7 +28,7 @@ void log_info_int(const_string tag, const_string message, const int value) {
     free((void *) message);
 }
 
-void log_info_boolean_with_details(const_string tag, const_string message, const_boolean value){
+void log_info_boolean(const_string tag, const_string message, const_boolean value){
     const_string boolean_string = NULL;
     if (value){
         boolean_string = TRUE_STRING;

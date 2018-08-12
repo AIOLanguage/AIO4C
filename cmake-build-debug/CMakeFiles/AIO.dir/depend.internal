@@ -443,7 +443,7 @@ CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio
  C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_out_spider/aio_out_spider.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_procedure_spider/aio_procedure_spider.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_spider.h
- C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_spider_swarm.h
+ C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_spider_nest.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_switch_spider/aio_switch_spider.h
  C:/Users/StarKRE/CLionProjects/AIO/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_instruction_ripper.c
 CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_output_ripper.c.obj
@@ -494,6 +494,8 @@ CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/boolean_utils/boolean_utils.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/char_utils/char_utils.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/error_utils/error_utils.h
+ C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/log_utils/log_utils.h
+ C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/memory_utils/memory_utils.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/string_utils/string_builder.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/string_utils/string_utils.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_assign_spider/aio_assign_spider.h
@@ -624,7 +626,7 @@ CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio
  C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_out_spider/aio_out_spider.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_procedure_spider/aio_procedure_spider.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_spider.h
- C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_spider_swarm.h
+ C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_spider_nest.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_switch_spider/aio_switch_spider.h
  C:/Users/StarKRE/CLionProjects/AIO/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_loop_spider.c
 CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_out_spider/aio_out_spider.c.obj
@@ -647,7 +649,7 @@ CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/boolean_utils/boolean_utils.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/string_utils/string_utils.h
  C:/Users/StarKRE/CLionProjects/AIO/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_procedure_spider/aio_procedure_spider.c
-CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_spider_swarm.c.obj
+CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_spider_nest.c.obj
  C:/Users/StarKRE/CLionProjects/AIO/headers/lang/aio_function/aio_function_definition/aio_instructions/aio_instructions.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lang/aio_function/aio_variable/aio_variable_definition.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lang/aio_types/aio_type.h
@@ -656,6 +658,8 @@ CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/collections/maps/aio_variable_definition_map.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/point_watcher/point_watcher.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/boolean_utils/boolean_utils.h
+ C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/log_utils/log_utils.h
+ C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/memory_utils/memory_utils.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/string_utils/string_utils.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_assign_spider/aio_assign_spider.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_break_spider/aio_break_spider.h
@@ -667,9 +671,9 @@ CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio
  C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_out_spider/aio_out_spider.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_procedure_spider/aio_procedure_spider.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_spider.h
- C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_spider_swarm.h
+ C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_spider_nest.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_switch_spider/aio_switch_spider.h
- C:/Users/StarKRE/CLionProjects/AIO/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_spider_swarm.c
+ C:/Users/StarKRE/CLionProjects/AIO/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_spider_nest.c
 CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_switch_spider/aio_switch_spider.c.obj
  C:/Users/StarKRE/CLionProjects/AIO/headers/lang/aio_function/aio_function_definition/aio_instructions/aio_instructions.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lang/aio_function/aio_variable/aio_variable_definition.h
