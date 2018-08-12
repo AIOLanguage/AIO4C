@@ -7,7 +7,15 @@
 #include "../../../../../headers/lang/aio_core/aio_core.h"
 #include "../../../../../headers/lib/utils/char_utils/char_utils.h"
 
-#define AIO_OUTPUT_RIPPER_DEBUG
+//#define AIO_OUTPUT_RIPPER_DEBUG
+
+#define AIO_OUTPUT_RIPPER_TAG "AIO_OUTPUT_RIPPER"
+
+#ifdef AIO_OUTPUT_RIPPER_DEBUG
+
+#include "../../../../../headers/lib/utils/log_utils/log_utils.h"
+
+#endif
 
 enum aio_output_mode {
     OUTPUT_UNDEFINED, SINGLE_OUTPUT_MODE, MULTI_OUTPUT_MODE
@@ -29,7 +37,7 @@ string_list *dig_output_types(const_string source_code, int *pointer_reference) 
             watcher->start_index = i;
             watcher->mode = POINT_ACTIVE_MODE;
 #ifdef AIO_OUTPUT_RIPPER_DEBUG
-            printf("\nOUTPUT RIPPER: START SINGLE READING...\n");
+            log_info(AIO_OUTPUT_RIPPER_TAG, "Start single reading...");
 #endif
         }
         //괄호로 시작하다 (Starts with parenthesis):
@@ -39,7 +47,7 @@ string_list *dig_output_types(const_string source_code, int *pointer_reference) 
             watcher->start_index = i + 1;
             watcher->mode = POINT_ACTIVE_MODE;
 #ifdef AIO_OUTPUT_RIPPER_DEBUG
-            printf("\nOUTPUT RIPPER: START MULTI READING...\n");
+            log_info(AIO_OUTPUT_RIPPER_TAG, "Start multi reading...");
 #endif
         }
         //하나의 또는 많은 출력 방법 독서 중지 (Stop single or multi output mode reading):
@@ -55,9 +63,9 @@ string_list *dig_output_types(const_string source_code, int *pointer_reference) 
             break;
         }
         //지켜보기 잔에 공백과 줄 바꿈 건너 뛰기 (Skip whitespace and line breaks before watching):
-        if (mode == OUTPUT_UNDEFINED){
-            if (!is_space_or_line_break_condition){
-                throw_error("OUTPUT RIPPER: 잘못된 함수 함유량 (Invalid function content)!");
+        if (mode == OUTPUT_UNDEFINED) {
+            if (!is_space_or_line_break_condition) {
+                throw_error_with_tag(AIO_OUTPUT_RIPPER_TAG, "잘못된 함수 함유량 (Invalid function content)!");
             }
         }
     }
@@ -68,7 +76,7 @@ string_list *dig_output_types(const_string source_code, int *pointer_reference) 
     free_point_watcher(watcher);
     //------------------------------------------------------------------------------------------------------------------
 #ifdef AIO_OUTPUT_RIPPER_DEBUG
-    printf("OUTPUT RIPPER: RETURN TYPE CONTENT: \n-%s-\n", type_content);
+    log_info_string(AIO_OUTPUT_RIPPER_TAG, "Return type content:", type_content);
 #endif
     switch (mode) {
         case SINGLE_OUTPUT_MODE:
@@ -76,7 +84,8 @@ string_list *dig_output_types(const_string source_code, int *pointer_reference) 
                 add_string_in_list(output_type_list, type_content);
                 return output_type_list;
             } else {
-                throw_error("OUTPUT RIPPER: AIO 핵심이 유형 지원하지 않습니다 (AIO core doesn't support type)!");
+                throw_error_with_tag(AIO_OUTPUT_RIPPER_TAG,
+                                     "AIO 핵심이 유형 지원하지 않습니다 (AIO core doesn't support type)!");
             }
             break;
         case MULTI_OUTPUT_MODE: {
@@ -88,7 +97,8 @@ string_list *dig_output_types(const_string source_code, int *pointer_reference) 
                 if (contains_aio_type_in_set(type)) {
                     add_string_in_list(output_type_list, type);
                 } else {
-                    throw_error("OUTPUT RIPPER: AIO 핵심이 유형 지원하지 않습니다 (AIO core doesn't support type)!");
+                    throw_error_with_tag(AIO_OUTPUT_RIPPER_TAG,
+                                         "AIO 핵심이 유형 지원하지 않습니다 (AIO core doesn't support type)!");
                 }
             }
             //----------------------------------------------------------------------------------------------------------
@@ -98,6 +108,6 @@ string_list *dig_output_types(const_string source_code, int *pointer_reference) 
             return output_type_list;
         }
         case OUTPUT_UNDEFINED:
-            throw_error("OUTPUT RIPPER: 출력 유형들을 찿을 수 없습니다! (Output types not found!)");
+            throw_error_with_tag(AIO_OUTPUT_RIPPER_TAG, "출력 유형들을 찿을 수 없습니다! (Output types not found!)");
     }
 }

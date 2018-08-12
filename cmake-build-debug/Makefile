@@ -959,6 +959,60 @@ sources/lib/utils/int_utils/int_utils.c.s:
 	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/int_utils/int_utils.c.s
 .PHONY : sources/lib/utils/int_utils/int_utils.c.s
 
+sources/lib/utils/log_utils/log_utils.obj: sources/lib/utils/log_utils/log_utils.c.obj
+
+.PHONY : sources/lib/utils/log_utils/log_utils.obj
+
+# target to build an object file
+sources/lib/utils/log_utils/log_utils.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/log_utils/log_utils.c.obj
+.PHONY : sources/lib/utils/log_utils/log_utils.c.obj
+
+sources/lib/utils/log_utils/log_utils.i: sources/lib/utils/log_utils/log_utils.c.i
+
+.PHONY : sources/lib/utils/log_utils/log_utils.i
+
+# target to preprocess a source file
+sources/lib/utils/log_utils/log_utils.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/log_utils/log_utils.c.i
+.PHONY : sources/lib/utils/log_utils/log_utils.c.i
+
+sources/lib/utils/log_utils/log_utils.s: sources/lib/utils/log_utils/log_utils.c.s
+
+.PHONY : sources/lib/utils/log_utils/log_utils.s
+
+# target to generate assembly for a file
+sources/lib/utils/log_utils/log_utils.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/log_utils/log_utils.c.s
+.PHONY : sources/lib/utils/log_utils/log_utils.c.s
+
+sources/lib/utils/memory_utils/memory_utils.obj: sources/lib/utils/memory_utils/memory_utils.c.obj
+
+.PHONY : sources/lib/utils/memory_utils/memory_utils.obj
+
+# target to build an object file
+sources/lib/utils/memory_utils/memory_utils.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/memory_utils/memory_utils.c.obj
+.PHONY : sources/lib/utils/memory_utils/memory_utils.c.obj
+
+sources/lib/utils/memory_utils/memory_utils.i: sources/lib/utils/memory_utils/memory_utils.c.i
+
+.PHONY : sources/lib/utils/memory_utils/memory_utils.i
+
+# target to preprocess a source file
+sources/lib/utils/memory_utils/memory_utils.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/memory_utils/memory_utils.c.i
+.PHONY : sources/lib/utils/memory_utils/memory_utils.c.i
+
+sources/lib/utils/memory_utils/memory_utils.s: sources/lib/utils/memory_utils/memory_utils.c.s
+
+.PHONY : sources/lib/utils/memory_utils/memory_utils.s
+
+# target to generate assembly for a file
+sources/lib/utils/memory_utils/memory_utils.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/memory_utils/memory_utils.c.s
+.PHONY : sources/lib/utils/memory_utils/memory_utils.c.s
+
 sources/lib/utils/operation_utils/operation_utils.obj: sources/lib/utils/operation_utils/operation_utils.c.obj
 
 .PHONY : sources/lib/utils/operation_utils/operation_utils.obj
@@ -1120,6 +1174,33 @@ sources/lib/utils/string_utils/trim.s: sources/lib/utils/string_utils/trim.c.s
 sources/lib/utils/string_utils/trim.c.s:
 	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/string_utils/trim.c.s
 .PHONY : sources/lib/utils/string_utils/trim.c.s
+
+sources/tools/aio_parsers/aio_block_body_explorer/aio_block_body_explorer.obj: sources/tools/aio_parsers/aio_block_body_explorer/aio_block_body_explorer.c.obj
+
+.PHONY : sources/tools/aio_parsers/aio_block_body_explorer/aio_block_body_explorer.obj
+
+# target to build an object file
+sources/tools/aio_parsers/aio_block_body_explorer/aio_block_body_explorer.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_block_body_explorer/aio_block_body_explorer.c.obj
+.PHONY : sources/tools/aio_parsers/aio_block_body_explorer/aio_block_body_explorer.c.obj
+
+sources/tools/aio_parsers/aio_block_body_explorer/aio_block_body_explorer.i: sources/tools/aio_parsers/aio_block_body_explorer/aio_block_body_explorer.c.i
+
+.PHONY : sources/tools/aio_parsers/aio_block_body_explorer/aio_block_body_explorer.i
+
+# target to preprocess a source file
+sources/tools/aio_parsers/aio_block_body_explorer/aio_block_body_explorer.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_block_body_explorer/aio_block_body_explorer.c.i
+.PHONY : sources/tools/aio_parsers/aio_block_body_explorer/aio_block_body_explorer.c.i
+
+sources/tools/aio_parsers/aio_block_body_explorer/aio_block_body_explorer.s: sources/tools/aio_parsers/aio_block_body_explorer/aio_block_body_explorer.c.s
+
+.PHONY : sources/tools/aio_parsers/aio_block_body_explorer/aio_block_body_explorer.s
+
+# target to generate assembly for a file
+sources/tools/aio_parsers/aio_block_body_explorer/aio_block_body_explorer.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_block_body_explorer/aio_block_body_explorer.c.s
+.PHONY : sources/tools/aio_parsers/aio_block_body_explorer/aio_block_body_explorer.c.s
 
 sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_annotation_ripper.obj: sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_annotation_ripper.c.obj
 
@@ -1655,6 +1736,12 @@ help:
 	@echo ... sources/lib/utils/int_utils/int_utils.obj
 	@echo ... sources/lib/utils/int_utils/int_utils.i
 	@echo ... sources/lib/utils/int_utils/int_utils.s
+	@echo ... sources/lib/utils/log_utils/log_utils.obj
+	@echo ... sources/lib/utils/log_utils/log_utils.i
+	@echo ... sources/lib/utils/log_utils/log_utils.s
+	@echo ... sources/lib/utils/memory_utils/memory_utils.obj
+	@echo ... sources/lib/utils/memory_utils/memory_utils.i
+	@echo ... sources/lib/utils/memory_utils/memory_utils.s
 	@echo ... sources/lib/utils/operation_utils/operation_utils.obj
 	@echo ... sources/lib/utils/operation_utils/operation_utils.i
 	@echo ... sources/lib/utils/operation_utils/operation_utils.s
@@ -1673,6 +1760,9 @@ help:
 	@echo ... sources/lib/utils/string_utils/trim.obj
 	@echo ... sources/lib/utils/string_utils/trim.i
 	@echo ... sources/lib/utils/string_utils/trim.s
+	@echo ... sources/tools/aio_parsers/aio_block_body_explorer/aio_block_body_explorer.obj
+	@echo ... sources/tools/aio_parsers/aio_block_body_explorer/aio_block_body_explorer.i
+	@echo ... sources/tools/aio_parsers/aio_block_body_explorer/aio_block_body_explorer.s
 	@echo ... sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_annotation_ripper.obj
 	@echo ... sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_annotation_ripper.i
 	@echo ... sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_annotation_ripper.s

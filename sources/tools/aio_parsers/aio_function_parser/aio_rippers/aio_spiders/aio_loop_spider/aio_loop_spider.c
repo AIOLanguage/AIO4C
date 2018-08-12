@@ -19,7 +19,7 @@
  * Declare functions.
  */
 
-const_boolean is_end_of_body(const_string function_body_string, point_watcher *watcher);
+const_boolean is_end_of_block_body(const_string function_body_string, point_watcher *watcher);
 
 const aio_spider_message is_found_loop_instruction(const_string string_web, aio_spider *spider);
 
@@ -205,7 +205,7 @@ void dig_header_materials(const_string string_web, aio_spider *parent_spider) {
             //Check string content from define:
             //Do spiders need from search instructions or not?
             if (is_passive) {
-                if (is_end_of_body(string_web, header_watcher)) {
+                if (is_end_of_block_body(string_web, header_watcher)) {
                     break;
                 }
             }

@@ -7,8 +7,34 @@
 #include "../../../../../headers/lib/utils/error_utils/error_utils.h"
 #include "../../../../../headers/lib/utils/string_utils/string_builder.h"
 #include "../../../../../headers/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_spider_swarm.h"
+#include "../../../../../headers/lib/utils/log_utils/log_utils.h"
+#include "../../../../../headers/tools/aio_parsers/aio_block_body_explorer/aio_block_body_explorer.h"
 
-const_boolean is_end_of_body(const_string function_body_string, point_watcher *watcher);
+#define AIO_INSTRUCTION_RIPPER_DEBUG
+
+#define AIO_INSTRUCTION_RIPPER_TAG "AIO_INSTRUCTION_RIPPER"
+
+aio_instruction_holder *dig_aio_root_instruction_holder(const_string source_code, int *start_index_ref) {
+#ifdef AIO_INSTRUCTION_RIPPER_DEBUG
+    log_info(AIO_INSTRUCTION_RIPPER_TAG, "Dig root holder...");
+#endif
+    //Dig instruction holder:
+    aio_instruction_holder *parent_holder = NULL;
+    //Pre start with previous start index:
+    int start_index = *start_index_ref;
+    int end_index = 0;
+    //Init block bounds: start & end indices:
+#ifdef AIO_INSTRUCTION_RIPPER_DEBUG
+    log_info(AIO_INSTRUCTION_RIPPER_TAG, "Dig function body...");
+    log_info_int(AIO_INSTRUCTION_RIPPER_TAG, "Start index:", start_index);
+    log_info_char(AIO_INSTRUCTION_RIPPER_TAG, "Start index:", source_code[start_index]);
+#endif
+    explore_block_body(source_code, &start_index, &end_index);
+    //Change global pointer:
+    *start_index_ref = end_index + 1; //Jump over "}":
+    //aio_instruction_holder *holder = dig_aio_instruction_holder(source_code, parent_holder, start_index, end_index);
+    return NULL;
+}
 
 aio_instruction_holder *dig_aio_instruction_holder(const_string source_code, aio_instruction_holder *parent_holder,
                                                    const int start_index, const int end_index) {
@@ -31,7 +57,7 @@ aio_instruction_holder *dig_aio_instruction_holder(const_string source_code, aio
             //Check string content from define:
             //Do spiders need from search instructions or not?
             if (is_passive) {
-                if (is_end_of_body(source_code, ripper_watcher)) {
+                if (is_end_of_block_body(source_code, ripper_watcher)) {
                     break;
                 }
             }
@@ -76,54 +102,4 @@ aio_instruction_holder *dig_aio_instruction_holder(const_string source_code, aio
         free_aio_spider_swarm(spider_swarm);
     }
     return holder;
-}
-
-void dig_block_body(const_string source_code, int *start_index, int *end_index) {
-    const size_t source_code_length = strlen(source_code);
-    point_watcher *watcher = new_point_watcher();
-    //함수 바지 멜빵 찾다 (Find function braces):
-    for (int i = *start_index; i < source_code_length; ++i) {
-        const char symbol = source_code[i];
-        const_boolean is_open_brace_condition = is_open_brace(symbol);
-        //독서를 시작하다 (Begin reading):
-        if (is_open_brace_condition && watcher->mode == POINT_PASSIVE_MODE) {
-            watcher->start_index = i + 1;
-            watcher->mode = POINT_ACTIVE_MODE;
-            watcher->pointer++;
-        }
-        if (is_open_brace_condition && watcher->mode == POINT_ACTIVE_MODE) {
-            watcher->pointer++;
-        }
-        //독서 중지 (Stop reading):
-        if (is_close_brace(symbol) && watcher->mode == POINT_ACTIVE_MODE) {
-            watcher->pointer--;
-            if (watcher->pointer == 0) {
-                watcher->end_index = i;
-                *start_index = i + 1;
-                break;
-            }
-        }
-        //지켜보기 잔에 공백과 줄 바꿈 건너 뙤기 (Skip whitespace and line breaks before watching):
-        if (watcher->mode == POINT_PASSIVE_MODE) {
-            if (!is_space_or_line_break(symbol)) {
-                throw_error("INSTRUCTION RIPPER: 잘못된 함수 함유량 (Invalid function content)!");
-            }
-        }
-    }
-    *start_index = watcher->start_index;
-    *end_index = watcher->end_index;
-    //------------------------------------------------------------------------------------------------------------------
-    //찌꺼기 수집기 (Garbage collector):
-    free_point_watcher(watcher);
-}
-
-const_boolean is_end_of_body(const_string function_body_string, point_watcher *watcher) {
-    while (watcher->pointer < watcher->end_index) {
-        const char symbol = function_body_string[watcher->pointer++];
-        if (!is_space_or_line_break(symbol)) {
-            watcher->mode = POINT_ACTIVE_MODE;
-            return FALSE;
-        }
-    }
-    return TRUE;
 }

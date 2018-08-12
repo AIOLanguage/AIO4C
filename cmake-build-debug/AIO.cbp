@@ -166,6 +166,12 @@
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/int_utils/int_utils.h">
 			<Option target="AIO"/>
 		</Unit>
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/log_utils/log_utils.h">
+			<Option target="AIO"/>
+		</Unit>
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/memory_utils/memory_utils.h">
+			<Option target="AIO"/>
+		</Unit>
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/operation_utils/operation_utils.h">
 			<Option target="AIO"/>
 		</Unit>
@@ -173,6 +179,9 @@
 			<Option target="AIO"/>
 		</Unit>
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/string_utils/string_utils.h">
+			<Option target="AIO"/>
+		</Unit>
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_block_body_explorer/aio_block_body_explorer.h">
 			<Option target="AIO"/>
 		</Unit>
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_function_parser/aio_rippers/aio_rippers.h">
@@ -307,6 +316,12 @@
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/int_utils/int_utils.c">
 			<Option target="AIO"/>
 		</Unit>
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/log_utils/log_utils.c">
+			<Option target="AIO"/>
+		</Unit>
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/memory_utils/memory_utils.c">
+			<Option target="AIO"/>
+		</Unit>
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/operation_utils/operation_utils.c">
 			<Option target="AIO"/>
 		</Unit>
@@ -323,6 +338,9 @@
 			<Option target="AIO"/>
 		</Unit>
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/string_utils/trim.c">
+			<Option target="AIO"/>
+		</Unit>
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/tools/aio_parsers/aio_block_body_explorer/aio_block_body_explorer.c">
 			<Option target="AIO"/>
 		</Unit>
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_annotation_ripper.c">

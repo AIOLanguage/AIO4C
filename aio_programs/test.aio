@@ -1,22 +1,6 @@
 //Test.aio
 
-Int sum(mu Int a, Int b){
+Int sum(mu Int a, Int b)        {
     c = a + b
     out c
 }
-
-loo (a < 3) {
-
-}
-
-loo(Int i = 0 (cond+) i = i + 7) {
-
-}
-
-loo(mu Int a = b (cond)){
-
-}
-
-Graph: cond
-
-i in a..b

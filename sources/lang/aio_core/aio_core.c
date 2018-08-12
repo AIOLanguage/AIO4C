@@ -3,6 +3,7 @@
 #include <process.h>
 #include "../../../headers/lang/aio_core/aio_core.h"
 #include "../../../headers/lang/aio_types/aio_type.h"
+#include "../../../headers/lib/utils/memory_utils/memory_utils.h"
 
 aio_core *core;
 
@@ -23,7 +24,7 @@ void inflate_aio_core() {
         string core_type = core_types[i];
         add_string_in_set(type_set, core_type);
     }
-    core = calloc(1, sizeof(aio_core));
+    core = new_object(sizeof(aio_core));
     core->core_context_map = new_aio_context_map();
     core->aio_type_set = type_set;
 }

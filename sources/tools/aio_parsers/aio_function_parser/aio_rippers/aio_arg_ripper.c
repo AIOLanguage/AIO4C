@@ -7,11 +7,19 @@
 #include "../../../../../headers/lang/aio_reserved_names/aio_reserved_names_container.h"
 #include "../../../../../headers/lib/utils/char_utils/char_utils.h"
 
-#define AIO_ARG_RIPPER_DEBUG
-
 #define TYPE_VS_NAME 2
 
 #define MUTABLE_VS_TYPE_VS_NAME 3
+
+#define AIO_ARG_RIPPER_TAG "AIO_ARG_RIPPER"
+
+//#define AIO_ARG_RIPPER_DEBUG
+
+#ifdef AIO_ARG_RIPPER_DEBUG
+
+#include "../../../../../headers/lib/utils/log_utils/log_utils.h"
+
+#endif
 
 aio_variable_definition_map *dig_arguments(const_string source_code, int *pointer_reference) {
     aio_variable_definition_map *arg_definition_map = new_aio_variable_definition_map();
@@ -34,7 +42,7 @@ aio_variable_definition_map *dig_arguments(const_string source_code, int *pointe
         //지켜보기 잔에 공백과 줄 바꿈 건너 뙤기 (Skip whitespace and line breaks before watching):
         if (watcher->mode == POINT_PASSIVE_MODE) {
             if (!is_space_or_line_break(symbol)) {
-                throw_error("OUTPUT RIPPER: 잘못된 함수 함유량 (Invalid function content)!");
+                throw_error_with_tag(AIO_ARG_RIPPER_TAG, "잘못된 함수 함유량 (Invalid function content)!");
             }
         }
     }
@@ -45,7 +53,7 @@ aio_variable_definition_map *dig_arguments(const_string source_code, int *pointe
     free_point_watcher(watcher);
     //------------------------------------------------------------------------------------------------------------------
 #ifdef AIO_ARG_RIPPER_DEBUG
-    printf("ARG RIPPER: ARGUMENT CONTENT: \n-%s-\n", argument_content);
+    log_info_string(AIO_ARG_RIPPER_TAG, "Argument content:", argument_content);
 #endif
     //함수 인수 함유량들 파다 (Dig arg contents):
     const_string_array dirty_arg_chunks = split_by_comma(argument_content);
@@ -76,12 +84,12 @@ aio_variable_definition_map *dig_arguments(const_string source_code, int *pointe
                     arg_name = new_string(clean_arg_content[2]);
                     is_mutable = TRUE;
                 } else {
-                    throw_error(" 잘못된 'mu' 수정 자 (Invalid 'mu' modifier)!");
+                    throw_error_with_tag(AIO_ARG_RIPPER_TAG, "잘못된 'mu' 수정 자 (Invalid 'mu' modifier)!");
                 }
             }
                 break;
             default:
-                throw_error("함수 인수 함유량을 밝힐 수 없어 (Can not define arg content)!");
+                throw_error_with_tag(AIO_ARG_RIPPER_TAG, "함수 인수 함유량을 밝힐 수 없어 (Can not define arg content)!");
         }
         definition = new_aio_variable_definition(arg_name, arg_type, is_mutable);
         put_aio_variable_definition_in_map(arg_definition_map, definition);
@@ -93,8 +101,9 @@ aio_variable_definition_map *dig_arguments(const_string source_code, int *pointe
     }
 #ifdef AIO_ARG_RIPPER_DEBUG
     for (int k = 0; k < arg_definition_map->size; ++k) {
-        aio_variable_definition *definition = arg_definition_map->variable_definitions[k];
-        printf("\nARG RIPPER: %s, %s, %d \n", definition->type, definition->name, definition->is_mutable_by_value);
+        const aio_variable_definition *definition = arg_definition_map->variable_definitions[k];
+        printf("\n%s: %s, %s, %d \n", AIO_ARG_RIPPER_TAG, definition->type, definition->name,
+               definition->is_mutable_by_value);
     }
 #endif
     //------------------------------------------------------------------------------------------------------------------
