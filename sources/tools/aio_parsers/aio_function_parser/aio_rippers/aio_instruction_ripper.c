@@ -8,8 +8,9 @@
 #include "../../../../../headers/lib/utils/string_utils/string_builder.h"
 #include "../../../../../headers/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_spider_nest.h"
 #include "../../../../../headers/tools/aio_parsers/aio_block_body_explorer/aio_block_body_explorer.h"
+#include "../../../../../headers/lib/utils/log_utils/log_utils.h"
 
-//#define AIO_INSTRUCTION_RIPPER_DEBUG
+#define AIO_INSTRUCTION_RIPPER_DEBUG
 
 #define AIO_INSTRUCTION_RIPPER_TAG "AIO_INSTRUCTION_RIPPER"
 
@@ -75,6 +76,9 @@ aio_instruction_holder *dig_aio_instruction_holder(const_string source_code, aio
                         //(A spider is trying to find a regex for "string web"):
                         aio_spider_message message = spider->is_found_instruction(string_web, spider);
                         if (message == AIO_SPIDER_FOUND_MATERIALS) {
+#ifdef AIO_INSTRUCTION_RIPPER_DEBUG
+                            log_info(AIO_INSTRUCTION_RIPPER_TAG, "One spider works:");
+#endif
                             spider_nest->active_spider = spider;
                             spider_nest->mode = AIO_ONE_SPIDER_WORKS;
                             break;
@@ -88,13 +92,19 @@ aio_instruction_holder *dig_aio_instruction_holder(const_string source_code, aio
                         //거미가 현재 보유자를 붙잡고 지침을 길쌈한다:
                         //(A spider takes current holder and weaves instruction):
                         spider->weave_instruction_for(holder, source_code, &ripper_watcher->start_index, spider);
-                        //거미들 리셋 (Reset spiders):
+                        //거미들를 리셋 (Reset spiders):
                         reset_aio_spiders(spider_nest);
-                        //줄 빌더 리셋 (Reset string builder):
+                        //줄 빌더를 리셋 (Reset string builder):
                         reset_string_builder(str_builder);
                         //리퍼 당직자를 바꾼다 (Shift ripper watcher):
                         ripper_watcher->pointer = ripper_watcher->start_index;
                         ripper_watcher->mode = POINT_PASSIVE_MODE;
+                        //거미 무리를 리셋 (Spider nest reset):
+                        spider_nest->mode = AIO_ALL_SPIDERS_WORK;
+                        spider_nest->active_spider = NULL;
+#ifdef AIO_INSTRUCTION_RIPPER_DEBUG
+                        log_info(AIO_INSTRUCTION_RIPPER_TAG, "All spiders work:");
+#endif
                     }
                 }
             }

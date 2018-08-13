@@ -154,14 +154,17 @@ void free_strings(const_string_array *src_reference) {
 string squeeze_string(const_string src) {
     const unsigned src_length = strlen(src);
     string dst = calloc(src_length + 1, sizeof(char));
-    int position = 0;
+    unsigned int new_length = 0;
     for (int i = 0; i < src_length; ++i) {
         const char symbol = src[i];
         if (!is_space_or_line_break(symbol)) {
-            dst[position++] = symbol;
+            dst[new_length++] = symbol;
         }
     }
-    dst = realloc(dst, position * sizeof(char));
+    string old_string = dst;
+    dst = calloc(new_length, sizeof(char));
+    strcpy(dst, old_string);
+    free(old_string);
     return dst;
 }
 

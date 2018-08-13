@@ -247,8 +247,8 @@ void refresh_assign_declaration_scope(aio_spider *spider, string chunk, aio_assi
 
 void handle_assign_equal_sign_scope(const_string string_web, aio_spider *spider) {
     aio_assign_materials *materials = spider->get.assign_materials;
-    point_watcher *watcher = materials->main_watcher;
-    const int current_position = watcher->end_index - 1;
+    point_watcher *main_watcher = materials->main_watcher;
+    const int current_position = main_watcher->end_index - 1;
     const char current_symbol = string_web[current_position];
     const_boolean is_equal_sign_symbol = is_equal_sign(current_symbol);
     const_boolean is_whitespace = is_space_or_line_break(current_symbol);
@@ -257,8 +257,8 @@ void handle_assign_equal_sign_scope(const_string string_web, aio_spider *spider)
     }
     if (is_equal_sign_symbol) {
         materials->scope_type = AIO_ASSIGN_VALUE_SCOPE;
-        watcher->start_index = watcher->end_index;
-        watcher->mode = POINT_PASSIVE_MODE;
+        main_watcher->start_index = main_watcher->end_index;
+        main_watcher->mode = POINT_PASSIVE_MODE;
         spider->message = AIO_SPIDER_FOUND_MATERIALS;
     } else {
         if (spider->message == AIO_SPIDER_FOUND_MATERIALS) {
@@ -289,10 +289,17 @@ void handle_assign_value_scope(const_string string_web, aio_spider *spider) {
     }
     if ((is_letter_cond || is_close_brace_cond) && value_watcher->mode == POINT_ACTIVE_MODE) {
         value_watcher->end_index = main_watcher->end_index - value_watcher->pointer - 1;
+        //Set value:
+        string dirty_value = substring(string_web, main_watcher->start_index, value_watcher->end_index);
+        string clean_value = squeeze_string(dirty_value);
+        materials->value = clean_value;
+        //Prepare to weaving:
         materials->scope_type = AIO_ASSIGN_WEAVING_SCOPE;
-        materials->value = substring(string_web, main_watcher->start_index, value_watcher->end_index);
         main_watcher->start_index = main_watcher->end_index;
         spider->message = AIO_SPIDER_IS_READY_FOR_WEAVING;
+        //--------------------------------------------------------------------------------------------------------------
+        //찌거기 수집기 (Garbage collector):
+        free((void *) dirty_value);
     } else {
         value_watcher->mode = POINT_PASSIVE_MODE;
         value_watcher->pointer = 0;

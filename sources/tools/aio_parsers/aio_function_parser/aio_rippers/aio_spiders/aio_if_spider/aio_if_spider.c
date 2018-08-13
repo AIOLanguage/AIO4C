@@ -9,6 +9,8 @@
 #include "../../../../../../../headers/lib/utils/string_utils/string_builder.h"
 #include "../../../../../../../headers/lang/aio_reserved_names/aio_reserved_names_container.h"
 #include "../../../../../../../headers/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_spider.h"
+#include "../../../../../../../headers/lib/utils/memory_utils/memory_utils.h"
+#include "../../../../../../../headers/lib/utils/log_utils/log_utils.h"
 
 /**
  * Declare functions.
@@ -26,6 +28,16 @@ void handle_false_body_scope(const_string string_web, aio_spider *spider);
 
 void weave_if_instruction_for(aio_instruction_holder *holder, const_string source_code,
                               int *next_ripper_point_reference, aio_spider *spider);
+
+#define AIO_IF_SPIDER_DEBUG
+
+#define AIO_IF_SPIDER_TAG "AIO_IF_SPIDER"
+
+#ifdef AIO_IF_SPIDER_DEBUG
+
+
+#endif
+
 
 /**
  * Reset.
@@ -63,17 +75,20 @@ void free_if_spider(aio_spider *spider) {
  */
 
 aio_spider *new_aio_if_spider() {
-    aio_spider *spider = calloc(1, sizeof(aio_spider));
+    aio_spider *spider = new_object(sizeof(aio_spider));
     //Bind main spider's functions:
     spider->reset = reset_if_spider;
     spider->is_found_instruction = is_found_if_instruction;
     spider->weave_instruction_for = weave_if_instruction_for;
     spider->free = free_if_spider;
     //Create materials:
-    aio_if_materials *materials = calloc(1, sizeof(aio_if_materials));
+    aio_if_materials *materials = new_object(sizeof(aio_if_materials));
+    //Init watchers:
+    materials->main_watcher = new_point_watcher();
     materials->header_watcher = new_point_watcher();
     materials->true_watcher = new_point_watcher();
     materials->false_watcher = new_point_watcher();
+    //Init states:
     materials->scope_type = AIO_IF_MODIFIER_SCOPE;
     materials->branch_type = AIO_UNDEFINED_BRANCHES;
     //Set materials:
@@ -89,14 +104,13 @@ aio_spider *new_aio_if_spider() {
 const aio_spider_message is_found_if_instruction(const_string string_web, aio_spider *spider) {
     //Extract spider fields:
     const aio_if_materials *materials = spider->get.if_materials;
-    const aio_if_scope_type scope_type = materials->scope_type;
     point_watcher *main_watcher = materials->main_watcher;
     main_watcher->end_index++;
-    //Prepare from scanning:
-    const char last_symbol = string_web[main_watcher->end_index - 1];
-    //Spider waits string data:
+    //Prepare to scanning:
+    const int current_position = main_watcher->end_index - 1;
+    const char current_symbol = string_web[current_position];
     if (main_watcher->mode == POINT_PASSIVE_MODE) {
-        if (is_space_or_line_break(last_symbol)) {
+        if (is_space_or_line_break(current_symbol)) {
             //Spider waiting:
             main_watcher->start_index++;
         } else {
@@ -104,23 +118,18 @@ const aio_spider_message is_found_if_instruction(const_string string_web, aio_sp
             main_watcher->mode = POINT_ACTIVE_MODE;
         }
     }
-    //Spider works:
     if (main_watcher->mode == POINT_ACTIVE_MODE) {
-        switch (scope_type) {
-            case AIO_IF_MODIFIER_SCOPE:
-                handle_if_modifier_scope(string_web, spider);
-                break;
-            case AIO_IF_CONDITION_SCOPE:
-                handle_condition_scope(string_web, spider);
-                break;
-            case AIO_IF_TRUE_BODY_SCOPE:
-                handle_true_body_scope(string_web, spider);
-                break;
-            case AIO_IF_FALSE_BODY_SCOPE:
-                handle_false_body_scope(string_web, spider);
-                break;
-            case AIO_IF_WEAVING_SCOPE:
-                break;
+        if (materials->scope_type == AIO_IF_MODIFIER_SCOPE) {
+            handle_if_modifier_scope(string_web, spider);
+        }
+        if (materials->scope_type == AIO_IF_CONDITION_SCOPE) {
+            handle_condition_scope(string_web, spider);
+        }
+        if (materials->scope_type == AIO_IF_TRUE_BODY_SCOPE) {
+            handle_true_body_scope(string_web, spider);
+        }
+        if (materials->scope_type == AIO_IF_FALSE_BODY_SCOPE) {
+            handle_false_body_scope(string_web, spider);
         }
     }
     return spider->message;
@@ -129,12 +138,12 @@ const aio_spider_message is_found_if_instruction(const_string string_web, aio_sp
 void handle_if_modifier_scope(const_string string_web, aio_spider *spider) {
     aio_if_materials *materials = spider->get.if_materials;
     point_watcher *watcher = materials->main_watcher;
-    const char last_symbol = string_web[watcher->end_index - 1];
-    if (is_space_or_line_break(last_symbol)) {
+    const char current_symbol = string_web[watcher->end_index - 1];
+    if (is_space_or_line_break(current_symbol)) {
         const int start_index = watcher->start_index;
         const int end_index = watcher->end_index;
         const int hold_positions = end_index - start_index;
-        if (hold_positions == 2) {
+        if (hold_positions == 3) {
             const_boolean is_if_modifier = string_web[start_index] == 'i' && string_web[start_index + 1] == 'f';
             if (is_if_modifier) {
                 //Shift main_watcher:
@@ -154,57 +163,60 @@ void handle_condition_scope(const_string string_web, aio_spider *spider) {
     point_watcher *main_watcher = materials->main_watcher;
     point_watcher *header_watcher = materials->header_watcher;
     //Define last position:
-    const int last_position = main_watcher->end_index - 1;
-    const char last_symbol = string_web[last_position];
+    const int current_position = main_watcher->end_index - 1;
+    const char current_symbol = string_web[current_position];
     //Scanning:
-    const_boolean is_passive = header_watcher->mode == POINT_PASSIVE_MODE;
-    const_boolean is_active = header_watcher->mode == POINT_ACTIVE_MODE;
-    const_boolean is_whitespace_cond = is_space_or_line_break(last_symbol);
-    const_boolean is_open_parenthesis_cond = is_open_parenthesis(last_symbol);
-    const_boolean is_close_parenthesis_cond = is_close_parenthesis(last_symbol);
+    const_boolean is_whitespace_cond = is_space_or_line_break(current_symbol);
+    const_boolean is_open_parenthesis_cond = is_open_parenthesis(current_symbol);
+    const_boolean is_close_parenthesis_cond = is_close_parenthesis(current_symbol);
     //Meet open parenthesis:
     if (is_open_parenthesis_cond) {
         //Start of condition:
-        if (is_passive) {
+        if (header_watcher->mode == POINT_PASSIVE_MODE) {
             //Jump over open parenthesis:
             header_watcher->start_index = main_watcher->end_index;
             header_watcher->mode = POINT_ACTIVE_MODE;
         }
         //Parenthesis in condition:
-        if (is_active) {
+        if (header_watcher->mode == POINT_ACTIVE_MODE) {
             //Count parentheses:
             header_watcher->pointer++;
         }
+        return;
     }
     //Meet close parenthesis:
     if (is_close_parenthesis_cond) {
         //Doesn't start condition:
-        if (is_passive) {
-            throw_error("IF SPIDER: condition can not start with ')'");
+        if (header_watcher->mode == POINT_PASSIVE_MODE) {
+            throw_error_with_tag(AIO_IF_SPIDER_TAG, "Condition can not start with close parenthesis!");
         }
         //In condition:
-        if (is_active) {
+        if (header_watcher->mode == POINT_ACTIVE_MODE) {
             header_watcher->pointer--;
             //Parenthesis closes condition:
             if (header_watcher->pointer == 0) {
                 //End of condition:
                 //Doesn't hold close parenthesis:
-                header_watcher->end_index = last_position;
+                header_watcher->end_index = current_position;
                 //Shift main main_watcher:
                 main_watcher->start_index = main_watcher->end_index;
                 main_watcher->mode = POINT_PASSIVE_MODE;
                 //Set scope:
                 materials->scope_type = AIO_IF_TRUE_BODY_SCOPE;
                 //Extract condition:
-                string dirty_condition = substring_by_point_watcher(string_web, header_watcher);
+                const_string dirty_condition = substring_by_point_watcher(string_web, header_watcher);
                 string clean_condition = squeeze_string(dirty_condition);
                 materials->condition = clean_condition;
+                //------------------------------------------------------------------------------------------------------
+                //찌꺼기 수집기 (Garbage collector):
+                free((void *) dirty_condition);
             }
         }
+        return;
     }
     //Skip whitespaces before condition:
-    if (!is_whitespace_cond && is_passive) {
-        throw_error("IF SPIDER: invalid context after 'if' modifier!");
+    if (!is_whitespace_cond && header_watcher->mode == POINT_PASSIVE_MODE) {
+        throw_error_with_tag(AIO_IF_SPIDER_TAG, "Invalid context after 'if' modifier!");
     }
 }
 

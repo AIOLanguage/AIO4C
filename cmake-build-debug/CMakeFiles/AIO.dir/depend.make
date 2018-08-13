@@ -548,6 +548,8 @@ CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio
 CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_if_spider/aio_if_spider.c.obj: ../headers/lib/utils/boolean_utils/boolean_utils.h
 CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_if_spider/aio_if_spider.c.obj: ../headers/lib/utils/char_utils/char_utils.h
 CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_if_spider/aio_if_spider.c.obj: ../headers/lib/utils/error_utils/error_utils.h
+CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_if_spider/aio_if_spider.c.obj: ../headers/lib/utils/log_utils/log_utils.h
+CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_if_spider/aio_if_spider.c.obj: ../headers/lib/utils/memory_utils/memory_utils.h
 CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_if_spider/aio_if_spider.c.obj: ../headers/lib/utils/string_utils/string_builder.h
 CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_if_spider/aio_if_spider.c.obj: ../headers/lib/utils/string_utils/string_utils.h
 CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_if_spider/aio_if_spider.c.obj: ../headers/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_assign_spider/aio_assign_spider.h
