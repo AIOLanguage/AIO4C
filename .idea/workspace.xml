@@ -14,28 +14,12 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77c54fc7-a37a-4eaf-a794-282c0598671e" name="Default" comment="-&gt; 'Assign' 거미 디버깅 (Debugging)&#10;#LOVE AIO &amp; C =)">
+    <list default="true" id="77c54fc7-a37a-4eaf-a794-282c0598671e" name="Default" comment="-&gt; 지침 리퍼를 디버깅 (Debugging of instruction ripper)&#10;#LOVE AIO &amp; C =)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aio_programs/test.aio" beforeDir="false" afterPath="$PROJECT_DIR$/aio_programs/test.aio" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/C.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/C.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/depend.internal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/depend.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/objects.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/sources/lib/collections/lists/string_list.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/sources/lib/collections/lists/string_list.c.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/sources/lib/utils/string_utils/string_utils.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/sources/lib/utils/string_utils/string_utils.c.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/headers/lib/collections/lists/string_list.h" beforeDir="false" afterPath="$PROJECT_DIR$/headers/lib/collections/lists/string_list.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/headers/lib/utils/string_utils/string_utils.h" beforeDir="false" afterPath="$PROJECT_DIR$/headers/lib/utils/string_utils/string_utils.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/headers/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_assign_spider/aio_assign_spider.h" beforeDir="false" afterPath="$PROJECT_DIR$/headers/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_assign_spider/aio_assign_spider.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/headers/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_spider_nest.h" beforeDir="false" afterPath="$PROJECT_DIR$/headers/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_spider_nest.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sources/lang/aio_function/aio_variable/aio_variable_definition.c" beforeDir="false" afterPath="$PROJECT_DIR$/sources/lang/aio_function/aio_variable/aio_variable_definition.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sources/lib/collections/lists/string_list.c" beforeDir="false" afterPath="$PROJECT_DIR$/sources/lib/collections/lists/string_list.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sources/lib/utils/error_utils/error_utils.c" beforeDir="false" afterPath="$PROJECT_DIR$/sources/lib/utils/error_utils/error_utils.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sources/lib/utils/string_utils/string_utils.c" beforeDir="false" afterPath="$PROJECT_DIR$/sources/lib/utils/string_utils/string_utils.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sources/tools/aio_parsers/aio_block_body_explorer/aio_block_body_explorer.c" beforeDir="false" afterPath="$PROJECT_DIR$/sources/tools/aio_parsers/aio_block_body_explorer/aio_block_body_explorer.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_instruction_ripper.c" beforeDir="false" afterPath="$PROJECT_DIR$/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_instruction_ripper.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_assign_spider/aio_assign_spider.c" beforeDir="false" afterPath="$PROJECT_DIR$/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_assign_spider/aio_assign_spider.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_default_loop_header_spider.c" beforeDir="false" afterPath="$PROJECT_DIR$/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_default_loop_header_spider.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_spider_nest.c" beforeDir="false" afterPath="$PROJECT_DIR$/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_spider_nest.c" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -75,7 +59,7 @@
         <counts>
           <entry key="Build All (disassembly)" value="1" />
           <entry key="aio" value="45" />
-          <entry key="c" value="1338" />
+          <entry key="c" value="1365" />
           <entry key="h" value="643" />
           <entry key="txt" value="75" />
         </counts>
@@ -85,25 +69,25 @@
           <entry key="CMakeCache.txt" value="1" />
           <entry key="CMakeLists.txt" value="74" />
           <entry key="Disassembly" value="1" />
-          <entry key="ObjectiveC" value="1981" />
+          <entry key="ObjectiveC" value="2008" />
           <entry key="PLAIN_TEXT" value="45" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="aio" value="923" />
-          <entry key="c" value="34343" />
+          <entry key="c" value="36729" />
           <entry key="h" value="5602" />
           <entry key="m" value="371" />
-          <entry key="txt" value="1034" />
+          <entry key="txt" value="1095" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CMakeLists.txt" value="609" />
-          <entry key="Doxygen file" value="49" />
-          <entry key="ObjectiveC" value="40267" />
-          <entry key="PLAIN_TEXT" value="1348" />
+          <entry key="Doxygen file" value="61" />
+          <entry key="ObjectiveC" value="42641" />
+          <entry key="PLAIN_TEXT" value="1409" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages">
@@ -121,8 +105,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_assign_spider/aio_assign_spider.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="612">
-              <caret line="36" column="3" lean-forward="true" selection-start-line="36" selection-start-column="3" selection-end-line="36" selection-end-column="3" />
+            <state relative-caret-position="748">
+              <caret line="347" column="10" lean-forward="true" selection-start-line="347" selection-start-column="10" selection-end-line="347" selection-end-column="22" />
               <folding>
                 <element signature="e#0#16#0" expanded="true" />
               </folding>
@@ -134,13 +118,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>trim</find>
-      <find>is_s</find>
-      <find>Can not define</find>
-      <find>split</find>
-      <find>free</find>
-      <find>throw</find>
-      <find>is</find>
       <find>sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_annotation_ripper.c</find>
       <find>sources/lang/aio_function/aio_function_definition/aio_builder/aio_ripper/aio_arg_ripper.c</find>
       <find>assign</find>
@@ -164,6 +141,13 @@
       <find>return</find>
       <find>CURRENT SYM</find>
       <find>log</find>
+      <find>check</find>
+      <find>web</find>
+      <find>throw_error</find>
+      <find>currr</find>
+      <find>ㅑㅜㄴ</find>
+      <find>instruc</find>
+      <find>add</find>
     </findStrings>
     <replaceStrings>
       <replace>function_definition</replace>
@@ -229,7 +213,6 @@
         <option value="$PROJECT_DIR$/sources/tools/aio_parsers/aio_block_body_explorer/aio_block_body_explorer.c" />
         <option value="$PROJECT_DIR$/headers/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_assign_spider/aio_assign_spider.h" />
         <option value="$PROJECT_DIR$/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_spider_nest.c" />
-        <option value="$PROJECT_DIR$/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_instruction_ripper.c" />
         <option value="$PROJECT_DIR$/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_default_loop_header_spider.c" />
         <option value="$PROJECT_DIR$/sources/lib/utils/error_utils/error_utils.c" />
         <option value="$PROJECT_DIR$/headers/lib/collections/lists/string_list.h" />
@@ -238,6 +221,7 @@
         <option value="$PROJECT_DIR$/headers/lib/utils/string_utils/string_utils.h" />
         <option value="$PROJECT_DIR$/sources/lib/utils/string_utils/string_utils.c" />
         <option value="$PROJECT_DIR$/aio_programs/test.aio" />
+        <option value="$PROJECT_DIR$/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_instruction_ripper.c" />
         <option value="$PROJECT_DIR$/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_assign_spider/aio_assign_spider.c" />
       </list>
     </option>
@@ -255,7 +239,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
     <option name="x" value="951" />
     <option name="width" value="978" />
     <option name="height" value="1039" />
@@ -327,54 +311,6 @@
               <item name="AIO" type="462c0819:PsiDirectoryNode" />
               <item name="sources" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="AIO" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AIO" type="462c0819:PsiDirectoryNode" />
-              <item name="sources" type="462c0819:PsiDirectoryNode" />
-              <item name="tools" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AIO" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AIO" type="462c0819:PsiDirectoryNode" />
-              <item name="sources" type="462c0819:PsiDirectoryNode" />
-              <item name="tools" type="462c0819:PsiDirectoryNode" />
-              <item name="aio_parsers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AIO" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AIO" type="462c0819:PsiDirectoryNode" />
-              <item name="sources" type="462c0819:PsiDirectoryNode" />
-              <item name="tools" type="462c0819:PsiDirectoryNode" />
-              <item name="aio_parsers" type="462c0819:PsiDirectoryNode" />
-              <item name="aio_block_body_explorer" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AIO" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AIO" type="462c0819:PsiDirectoryNode" />
-              <item name="sources" type="462c0819:PsiDirectoryNode" />
-              <item name="tools" type="462c0819:PsiDirectoryNode" />
-              <item name="aio_parsers" type="462c0819:PsiDirectoryNode" />
-              <item name="aio_function_parser" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AIO" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AIO" type="462c0819:PsiDirectoryNode" />
-              <item name="sources" type="462c0819:PsiDirectoryNode" />
-              <item name="tools" type="462c0819:PsiDirectoryNode" />
-              <item name="aio_parsers" type="462c0819:PsiDirectoryNode" />
-              <item name="aio_function_parser" type="462c0819:PsiDirectoryNode" />
-              <item name="aio_rippers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AIO" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AIO" type="462c0819:PsiDirectoryNode" />
-              <item name="sources" type="462c0819:PsiDirectoryNode" />
-              <item name="tools" type="462c0819:PsiDirectoryNode" />
-              <item name="aio_parsers" type="462c0819:PsiDirectoryNode" />
-              <item name="aio_function_parser" type="462c0819:PsiDirectoryNode" />
-              <item name="aio_rippers" type="462c0819:PsiDirectoryNode" />
-              <item name="aio_spiders" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -384,7 +320,7 @@
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/string_utils/string_utils.c" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="full.screen.before.presentation.mode" value="false" />
+    <property name="full.screen.before.presentation.mode" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -481,21 +417,7 @@
       <workItem from="1534019158333" duration="11064000" />
       <workItem from="1534090490044" duration="6711000" />
       <workItem from="1534100056515" duration="5761000" />
-      <workItem from="1534158183134" duration="6750000" />
-    </task>
-    <task id="LOCAL-00041" summary="24.06.2018 added info in README! &#10;#LOVE AIO &amp; C">
-      <created>1530632324188</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1530632324188</updated>
-    </task>
-    <task id="LOCAL-00042" summary="03.07.2018 added info in README! &#10;#LOVE AIO &amp; C =)">
-      <created>1530635257869</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1530635257869</updated>
+      <workItem from="1534158183134" duration="20783000" />
     </task>
     <task id="LOCAL-00043" summary="03.07.2018 added info in README! &#10;#LOVE AIO &amp; C =)">
       <created>1530635345615</created>
@@ -826,11 +748,25 @@
       <option name="project" value="LOCAL" />
       <updated>1534105598364</updated>
     </task>
-    <option name="localTasksCounter" value="90" />
+    <task id="LOCAL-00090" summary="-&gt; 'Assign' 거미 디버깅 (Debugging)&#10;#LOVE AIO &amp; C =)">
+      <created>1534167314955</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1534167314955</updated>
+    </task>
+    <task id="LOCAL-00091" summary="-&gt; 지침 리퍼를 디버깅 (Debugging of instruction ripper)&#10;#LOVE AIO &amp; C =)">
+      <created>1534174098995</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1534174098995</updated>
+    </task>
+    <option name="localTasksCounter" value="92" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="624031000" />
+    <option name="totallyTimeSpent" value="638064000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -842,20 +778,20 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="0" y="0" width="1536" height="864" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49801326" weight="0.2442953" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49801326" weight="0.24414062" />
       <window_info id="Structure" order="1" sideWeight="0.50198674" side_tool="true" weight="0.36040267" />
       <window_info id="Favorites" order="2" sideWeight="0.50198674" side_tool="true" weight="0.36040267" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3152318" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.59072846" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.31510106" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.5897741" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4688742" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32980132" />
-      <window_info anchor="bottom" id="Messages" order="7" weight="0.5178808" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.5160523" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="10" />
@@ -869,21 +805,21 @@
       <window_info anchor="right" id="Database" order="5" weight="0.3295302" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49801326" visible="true" weight="0.3657718" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49801326" visible="true" weight="0.24414062" />
       <window_info id="Structure" order="1" sideWeight="0.50198674" side_tool="true" weight="0.36040267" />
       <window_info id="Favorites" order="2" sideWeight="0.50198674" side_tool="true" weight="0.36040267" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3174792" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.6412037" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.46915168" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3152318" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.5897741" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4688742" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.3298611" />
-      <window_info anchor="bottom" id="Messages" order="7" weight="0.5104167" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32980132" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.5160523" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="10" />
-      <window_info anchor="bottom" id="CMake" order="11" weight="0.3258278" />
+      <window_info anchor="bottom" id="CMake" order="11" weight="0.32580262" />
       <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -900,7 +836,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="01.08.2018 GO!&#10;#LOVE AIO &amp; C =)" />
     <MESSAGE value="02.08.2018 Added instructions&#10;#LOVE AIO &amp; C =)" />
     <MESSAGE value="-&gt; 03.08.2018 -&gt;&#10;-&gt; Prepare to test inflating aio context -&gt;&#10;#LOVE AIO &amp; C =)" />
     <MESSAGE value="-&gt; 03.08.2018 -&gt;&#10;-&gt; Repaired aio project -&gt;&#10;-&gt; Prepare to test inflating aio context -&gt;&#10;#LOVE AIO &amp; C =)" />
@@ -925,39 +860,10 @@
     <MESSAGE value="-&gt; 개발중인 'loop' 거미 ('loop' spider in development!)&#10;#LOVE AIO &amp; C =)" />
     <MESSAGE value="-&gt; 디버깅 (Debugging)&#10;#LOVE AIO &amp; C =)" />
     <MESSAGE value="-&gt; 'Assign' 거미 디버깅 (Debugging)&#10;#LOVE AIO &amp; C =)" />
-    <option name="LAST_COMMIT_MESSAGE" value="-&gt; 'Assign' 거미 디버깅 (Debugging)&#10;#LOVE AIO &amp; C =)" />
+    <MESSAGE value="-&gt; 지침 리퍼를 디버깅 (Debugging of instruction ripper)&#10;#LOVE AIO &amp; C =)" />
+    <option name="LAST_COMMIT_MESSAGE" value="-&gt; 지침 리퍼를 디버깅 (Debugging of instruction ripper)&#10;#LOVE AIO &amp; C =)" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/sources/tools/aio_parsers/aio_block_body_explorer/aio_block_body_explorer.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="35" column="40" selection-start-line="35" selection-start-column="40" selection-end-line="35" selection-end-column="40" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_spider_nest.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="28" column="19" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_instruction_ripper.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="696">
-          <caret line="102" column="1" lean-forward="true" selection-start-line="102" selection-start-column="1" selection-end-line="102" selection-end-column="1" />
-          <folding>
-            <element signature="e#0#16#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/headers/lang/aio_function/aio_function_definition/aio_instructions/aio_instructions.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="251">
@@ -1047,10 +953,50 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/sources/tools/aio_parsers/aio_block_body_explorer/aio_block_body_explorer.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="35" column="40" selection-start-line="35" selection-start-column="40" selection-end-line="35" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_spider_nest.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="454">
+          <caret line="28" column="19" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sources/lang/aio_function/aio_function_definition/aio_function_definition_builder.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="42" selection-start-line="17" selection-start-column="42" selection-end-line="17" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#16#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_instruction_ripper.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="293">
+          <caret line="66" column="28" lean-forward="true" selection-start-line="66" selection-start-column="28" selection-end-line="66" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#16#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_assign_spider/aio_assign_spider.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="36" column="3" lean-forward="true" selection-start-line="36" selection-start-column="3" selection-end-line="36" selection-end-column="3" />
+        <state relative-caret-position="748">
+          <caret line="347" column="10" lean-forward="true" selection-start-line="347" selection-start-column="10" selection-end-line="347" selection-end-column="22" />
           <folding>
             <element signature="e#0#16#0" expanded="true" />
           </folding>

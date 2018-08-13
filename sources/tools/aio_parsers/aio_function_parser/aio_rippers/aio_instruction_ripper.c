@@ -92,7 +92,7 @@ aio_instruction_holder *dig_aio_instruction_holder(const_string source_code, aio
                         reset_aio_spiders(spider_nest);
                         //줄 빌더 리셋 (Reset string builder):
                         reset_string_builder(str_builder);
-                        //리퍼 당직자 시프트 (Shift ripper watcher):
+                        //리퍼 당직자를 바꾼다 (Shift ripper watcher):
                         ripper_watcher->pointer = ripper_watcher->start_index;
                         ripper_watcher->mode = POINT_PASSIVE_MODE;
                     }
