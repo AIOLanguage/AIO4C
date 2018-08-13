@@ -14,7 +14,7 @@ typedef struct aio_spider_swarm {
     aio_spider_swarm_mode mode;
 } aio_spider_nest;
 
-aio_spider_nest *breed_aio_function_spider_nest(const int body_length);
+aio_spider_nest *breed_aio_function_spider_nest();
 
 void reset_aio_spiders(aio_spider_nest *nest);
 

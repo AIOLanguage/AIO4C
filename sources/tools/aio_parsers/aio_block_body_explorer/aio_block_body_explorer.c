@@ -33,7 +33,7 @@ void explore_block_body(const_string source_code, int *start_index, int *end_ind
             //독서를 시작하다 (Begin reading):
             if (watcher->mode == POINT_PASSIVE_MODE) {
                 //Skip first brace:
-                watcher->start_index = i + 1;
+                watcher->start_index = i;
                 watcher->mode = POINT_ACTIVE_MODE;
                 is_found_start_index = TRUE;
 #ifdef AIO_BLOCK_BODY_EXPLORER_DEBUG
@@ -55,7 +55,7 @@ void explore_block_body(const_string source_code, int *start_index, int *end_ind
                 //독서 중지 (Stop reading):
                 const_boolean is_last_close_brace = watcher->pointer == 0;
                 if (is_last_close_brace) {
-                    watcher->end_index = i;
+                    watcher->end_index = i + 1;
                     is_found_end_index = TRUE;
 #ifdef AIO_BLOCK_BODY_EXPLORER_DEBUG
                     log_info_char(AIO_BLOCK_BODY_EXPLORER_TAG, "FIND LAST BRACE:", symbol);

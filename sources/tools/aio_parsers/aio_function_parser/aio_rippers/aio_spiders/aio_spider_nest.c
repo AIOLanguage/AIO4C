@@ -20,13 +20,13 @@
  * @return array of spiders.
  */
 
-aio_spider_nest *breed_aio_function_spider_nest(const int body_length) {
+aio_spider_nest *breed_aio_function_spider_nest() {
 #ifdef AIO_SPIDER_NEST_DEBUG
     log_info_int(AIO_SPIDER_NEST_TAG, "Breed aio function spiders... Number of spiders:", AIO_NUMBER_OF_SPIDERS);
 #endif
     //Create spiders:
     aio_spider **spiders = calloc(AIO_NUMBER_OF_SPIDERS, sizeof(aio_spider *));
-    spiders[0] = new_aio_assign_spider(body_length);
+    spiders[0] = new_aio_assign_spider();
 //    spiders[1] = new_aio_break_spider();
 //    spiders[2] = new_aio_if_spider();
 //    spiders[3] = new_aio_loop_spider();

@@ -29,10 +29,8 @@ typedef struct aio_assign_materials {
     string_list *variable_data_list;
     //Value:
     string value;
-    //Ripper info:
-    int function_body_length;
 } aio_assign_materials;
 
-struct aio_spider *new_aio_assign_spider(const int body_length);
+struct aio_spider *new_aio_assign_spider();
 
 #endif //AIO_ASSIGN_SPIDER_H

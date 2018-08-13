@@ -1,4 +1,6 @@
 //Test.aio
 
 Int sum(mu Int a, Int b)        {
-    c = a + b f = 5 + 7}
+    mu c = a + b
+
+       c = 5 + 7}

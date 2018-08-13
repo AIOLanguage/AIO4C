@@ -190,6 +190,7 @@ CMakeFiles/AIO.dir/sources/lang/aio_function/aio_variable/aio_variable.c.obj: ..
 CMakeFiles/AIO.dir/sources/lang/aio_function/aio_variable/aio_variable_definition.c.obj: ../headers/lang/aio_function/aio_variable/aio_variable_definition.h
 CMakeFiles/AIO.dir/sources/lang/aio_function/aio_variable/aio_variable_definition.c.obj: ../headers/lang/aio_types/aio_type.h
 CMakeFiles/AIO.dir/sources/lang/aio_function/aio_variable/aio_variable_definition.c.obj: ../headers/lib/utils/boolean_utils/boolean_utils.h
+CMakeFiles/AIO.dir/sources/lang/aio_function/aio_variable/aio_variable_definition.c.obj: ../headers/lib/utils/memory_utils/memory_utils.h
 CMakeFiles/AIO.dir/sources/lang/aio_function/aio_variable/aio_variable_definition.c.obj: ../headers/lib/utils/string_utils/string_utils.h
 CMakeFiles/AIO.dir/sources/lang/aio_function/aio_variable/aio_variable_definition.c.obj: ../sources/lang/aio_function/aio_variable/aio_variable_definition.c
 
@@ -374,6 +375,7 @@ CMakeFiles/AIO.dir/sources/lib/utils/string_utils/string_builder.c.obj: ../sourc
 CMakeFiles/AIO.dir/sources/lib/utils/string_utils/string_utils.c.obj: ../headers/lib/utils/boolean_utils/boolean_utils.h
 CMakeFiles/AIO.dir/sources/lib/utils/string_utils/string_utils.c.obj: ../headers/lib/utils/char_utils/char_utils.h
 CMakeFiles/AIO.dir/sources/lib/utils/string_utils/string_utils.c.obj: ../headers/lib/utils/error_utils/error_utils.h
+CMakeFiles/AIO.dir/sources/lib/utils/string_utils/string_utils.c.obj: ../headers/lib/utils/log_utils/log_utils.h
 CMakeFiles/AIO.dir/sources/lib/utils/string_utils/string_utils.c.obj: ../headers/lib/utils/string_utils/string_utils.h
 CMakeFiles/AIO.dir/sources/lib/utils/string_utils/string_utils.c.obj: ../sources/lib/utils/string_utils/string_utils.c
 

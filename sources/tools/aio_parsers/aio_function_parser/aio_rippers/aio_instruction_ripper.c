@@ -28,8 +28,7 @@ aio_instruction_holder *dig_aio_root_instruction_holder(const_string source_code
     log_info(AIO_INSTRUCTION_RIPPER_TAG, "Explore function body...");
 #endif
     explore_block_body(source_code, &start_index, &end_index);
-    //Change source code pointer & jump over close brace:
-    *start_code_pointer_ref = end_index + 1;
+    *start_code_pointer_ref = end_index;
     aio_instruction_holder *holder = dig_aio_instruction_holder(source_code, parent_holder, start_index, end_index);
     return holder;
 }
@@ -39,14 +38,16 @@ aio_instruction_holder *dig_aio_instruction_holder(const_string source_code, aio
     //Create instruction holder:
     aio_instruction_holder *holder = new_aio_instruction_holder(parent_holder);
     const int body_length = end_index - start_index;
-    if (body_length >= 0) {
+    const_boolean is_not_empty_block = body_length > 2;
+    const_boolean starts_with_open_brace = is_open_brace(source_code[start_index]);
+    if (is_not_empty_block && starts_with_open_brace) {
         //Create spider swarm for searching instructions:
-        aio_spider_nest *spider_nest = breed_aio_function_spider_nest(body_length - 1);
+        aio_spider_nest *spider_nest = breed_aio_function_spider_nest();
         string_builder *str_builder = new_string_builder();
         //Create point ripper_watcher:
         point_watcher *ripper_watcher = new_point_watcher();
-        ripper_watcher->pointer = start_index;
-        ripper_watcher->start_index = start_index;
+        ripper_watcher->pointer = start_index + 1;
+        ripper_watcher->start_index = start_index + 1;
         ripper_watcher->end_index = end_index;
         //After weaving instruction need from check function body string rest:
         while (ripper_watcher->pointer < end_index) {
@@ -57,18 +58,11 @@ aio_instruction_holder *dig_aio_instruction_holder(const_string source_code, aio
                     break;
                 }
             }
-
-//#ifdef AIO_INSTRUCTION_RIPPER_DEBUG
-//            log_info_char(AIO_INSTRUCTION_RIPPER_TAG, "SYMBOL:", source_code[ripper_watcher->pointer]);
-//#endif
             //Active mode for spider swarm:
             if (ripper_watcher->mode == POINT_ACTIVE_MODE) {
                 //Add symbol in string builder:
                 append_char_to(str_builder, source_code[ripper_watcher->pointer]);
                 const_string string_web = str_builder->string_value;
-//#ifdef AIO_INSTRUCTION_RIPPER_DEBUG
-//                log_info_string(AIO_INSTRUCTION_RIPPER_TAG, "STRING WEB", string_web);
-//#endif
                 //Give "string web" from spider swarm:
                 const aio_spider_swarm_mode swarm_mode = spider_nest->mode;
                 if (swarm_mode == AIO_ALL_SPIDERS_WORK) {
@@ -101,7 +95,7 @@ aio_instruction_holder *dig_aio_instruction_holder(const_string source_code, aio
             }
             ripper_watcher->pointer++;
         }
-        //------------------------------------------------------------------------------------------------------------------
+        //--------------------------------------------------------------------------------------------------------------
         //찌꺼기 수집기 (Garbage collector):
         free_aio_spider_swarm(spider_nest);
     }

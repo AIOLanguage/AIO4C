@@ -191,6 +191,7 @@ CMakeFiles/AIO.dir/sources/lang/aio_function/aio_variable/aio_variable_definitio
  C:/Users/StarKRE/CLionProjects/AIO/headers/lang/aio_function/aio_variable/aio_variable_definition.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lang/aio_types/aio_type.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/boolean_utils/boolean_utils.h
+ C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/memory_utils/memory_utils.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/string_utils/string_utils.h
  C:/Users/StarKRE/CLionProjects/AIO/sources/lang/aio_function/aio_variable/aio_variable_definition.c
 CMakeFiles/AIO.dir/sources/lang/aio_reserved_names/aio_reserved_names_container.c.obj
@@ -375,6 +376,7 @@ CMakeFiles/AIO.dir/sources/lib/utils/string_utils/string_utils.c.obj
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/boolean_utils/boolean_utils.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/char_utils/char_utils.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/error_utils/error_utils.h
+ C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/log_utils/log_utils.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/string_utils/string_utils.h
  C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/string_utils/string_utils.c
 CMakeFiles/AIO.dir/sources/lib/utils/string_utils/trim.c.obj

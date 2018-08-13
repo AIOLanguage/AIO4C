@@ -70,10 +70,6 @@ string substring_by_offset(const_string string, int offset, int length);
 
 string substring(const_string string, int start, int end);
 
-void concat_string_to_string(string dst, string src);
-
-void concat_char_to_string(string *dst, char src);
-
 int strings_size(const_string_array src);
 
 const_boolean matches_string(const_string word);

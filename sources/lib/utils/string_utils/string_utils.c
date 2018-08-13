@@ -8,6 +8,9 @@
 #include "../../../../headers/lib/utils/string_utils/string_utils.h"
 #include "../../../../headers/lib/utils/error_utils/error_utils.h"
 #include "../../../../headers/lib/utils/char_utils/char_utils.h"
+#include "../../../../headers/lib/utils/log_utils/log_utils.h"
+
+#define STRING_UTILS_TAG "STRING_UTILS"
 
 string new_string(const_string src) {
     string new_string = calloc(strlen(src) + 1, sizeof(char));
@@ -137,18 +140,6 @@ string substring(const_string string, int start, int end) {
     return dst;
 }
 
-//Passed JUnitTest!
-void concat_string_to_string(string dst, string src) {
-    strcat(dst, src);
-}
-
-//Passed JUnitTest!
-void concat_char_to_string(char **dst, char src) {
-    int dst_length = strlen(*dst);
-    *dst = realloc((*dst), (dst_length + 1) * sizeof(char));
-    (*dst)[dst_length] = src;
-}
-
 int strings_size(const_string_array src) {
     return _msize(src) / 4;
 }
@@ -199,9 +190,6 @@ string int_to_string(int src) {
             negative_shift = 1;
         }
         integer_array = calloc(int_size_in_string + 1 + negative_shift, sizeof(char));
-        if (integer_array == NULL) {
-            throw_error("cannot allocate memory for integer_array in int_to_str");
-        }
         division = src;
         integer_array[0] = '-';
         int pointer = int_size_in_string - 1 + negative_shift;
