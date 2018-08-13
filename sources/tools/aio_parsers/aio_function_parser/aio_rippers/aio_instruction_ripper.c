@@ -9,7 +9,7 @@
 #include "../../../../../headers/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_spider_nest.h"
 #include "../../../../../headers/tools/aio_parsers/aio_block_body_explorer/aio_block_body_explorer.h"
 
-#define AIO_INSTRUCTION_RIPPER_DEBUG
+//#define AIO_INSTRUCTION_RIPPER_DEBUG
 
 #define AIO_INSTRUCTION_RIPPER_TAG "AIO_INSTRUCTION_RIPPER"
 

@@ -5,7 +5,7 @@
 #include "../../../../headers/lib/utils/char_utils/char_utils.h"
 #include "../../../../headers/lib/utils/error_utils/error_utils.h"
 
-#define AIO_BLOCK_BODY_EXPLORER_DEBUG
+//#define AIO_BLOCK_BODY_EXPLORER_DEBUG
 
 #define AIO_BLOCK_BODY_EXPLORER_TAG "AIO_BLOCK_BODY_EXPLORER"
 
