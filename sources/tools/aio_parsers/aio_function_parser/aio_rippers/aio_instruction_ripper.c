@@ -49,8 +49,6 @@ aio_instruction_holder *dig_aio_instruction_holder(const_string source_code, aio
     if (is_not_empty_block && starts_with_open_brace) {
         //검색 지침을 위해 거미 무리를 만들다 (Create spider swarm for searching instructions):
         aio_spider_nest *spider_nest = breed_aio_function_spider_nest();
-        //TODO: 업그레이드 위해 문자열 빌더를 만들지 않다 (Make without string builder for upgrade)!
-        string_builder *str_builder = new_string_builder();
         //리퍼 당직자 만들다 (Create ripper watcher):
         point_watcher *ripper_watcher = new_point_watcher();
         ripper_watcher->pointer = start_index + 1;
@@ -68,15 +66,14 @@ aio_instruction_holder *dig_aio_instruction_holder(const_string source_code, aio
             if (ripper_watcher->mode == POINT_ACTIVE_MODE) {
                 //줄 빌더에 기호를 추가하다 (Add symbol in string builder):
                 //TODO: '문자열 웹' 대신 소스 코드 문자열과 포인터를 보내다 (Pass source code & pointer instead string_web!
-                append_char_to(str_builder, source_code[ripper_watcher->pointer]);
-                const_string string_web = str_builder->string_value;
                 const aio_spider_swarm_mode swarm_mode = spider_nest->mode;
                 if (swarm_mode == AIO_ALL_SPIDERS_WORK) {
                     for (int j = 0; j < spider_nest->number_of_spiders; ++j) {
                         aio_spider *spider = spider_nest->spiders[j];
                         //거미가 '문자열 웹'에 대한 정규식을 찾으려고합니다
                         //(A spider is trying to find a regex for "string web"):
-                        aio_spider_message message = spider->is_found_instruction(string_web, spider);
+                        aio_spider_message message = spider->is_found_instruction(source_code,
+                                                                                  ripper_watcher->pointer, spider);
                         if (message == AIO_SPIDER_FOUND_MATERIALS) {
 #ifdef AIO_INSTRUCTION_RIPPER_DEBUG
                             log_info(AIO_INSTRUCTION_RIPPER_TAG, "One spider works:");
@@ -89,17 +86,28 @@ aio_instruction_holder *dig_aio_instruction_holder(const_string source_code, aio
                 }
                 if (swarm_mode == AIO_ONE_SPIDER_WORKS) {
                     aio_spider *spider = spider_nest->active_spider;
-                    const aio_spider_message message = spider->is_found_instruction(string_web, spider);
+                    const aio_spider_message message = spider->is_found_instruction(source_code,
+                                                                                    ripper_watcher->pointer, spider);
                     if (message == AIO_SPIDER_IS_READY_FOR_WEAVING) {
                         //거미가 현재 보유자를 붙잡고 지침을 길쌈한다:
                         //(A spider takes current holder and weaves instruction):
-                        spider->weave_instruction_for(holder, source_code, &ripper_watcher->start_index, spider);
+                        spider->weave_instruction_for(holder, source_code, &ripper_watcher->pointer, spider);
                         //거미 리셋 (Reset spiders):
                         reset_aio_spiders(spider_nest);
-                        //줄 빌더 리셋 (Reset string builder):
-                        reset_string_builder(str_builder);
                         //리퍼 당직자를 바꾼다 (Shift ripper watcher):
                         ripper_watcher->pointer = ripper_watcher->start_index;
+#ifdef AIO_INSTRUCTION_RIPPER_DEBUG
+                        log_info_char(AIO_INSTRUCTION_RIPPER_TAG, "mCharacter:",
+                                      source_code[ripper_watcher->pointer - 4]);
+                        log_info_char(AIO_INSTRUCTION_RIPPER_TAG, "mCharacter:",
+                                      source_code[ripper_watcher->pointer - 3]);
+                        log_info_char(AIO_INSTRUCTION_RIPPER_TAG, "mCharacter:",
+                                      source_code[ripper_watcher->pointer - 2]);
+                        log_info_char(AIO_INSTRUCTION_RIPPER_TAG, "<>:",
+                                      source_code[ripper_watcher->pointer - 1]);
+                        log_info_char(AIO_INSTRUCTION_RIPPER_TAG, "mCharacter:",
+                                      source_code[ripper_watcher->pointer]);
+#endif
                         ripper_watcher->mode = POINT_PASSIVE_MODE;
                         //거미 무리 리셋 (Spider nest reset):
                         spider_nest->mode = AIO_ALL_SPIDERS_WORK;

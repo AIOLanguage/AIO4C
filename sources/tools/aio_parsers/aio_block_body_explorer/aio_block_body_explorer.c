@@ -98,6 +98,7 @@ const_boolean is_end_of_block_body(const_string function_body_string, point_watc
             watcher->mode = POINT_ACTIVE_MODE;
             return FALSE;
         } else {
+            watcher->start_index++;
             watcher->pointer++;
         }
     }

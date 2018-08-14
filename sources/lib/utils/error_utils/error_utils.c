@@ -17,7 +17,7 @@ void throw_error_with_tag(const_string tag, const_string message){
     exit(1);
 }
 
-void throw_error_string_with_details(const_string tag, const_string message, const_string value){
+void throw_error_with_details(const_string tag, const_string message, const_string value){
     printf("\n%s %s: %s %s\n", ERROR_TAG, tag, message, value);
     free((void *) message);
     exit(1);

@@ -247,7 +247,7 @@ void handle_default_loop_header_value_scope(const_string string_web, aio_spider 
                 if (isalnum(symbol) || is_closing_parenthesis(symbol)) {
                     main_watcher->end_index = i;
                     materials->scope_type = AIO_DEFAULT_LOOP_HEADER_CONDITION_SCOPE;
-                    materials->start_value = substring_by_point_watcher(string_web, main_watcher);
+                    materials->init_value = substring_by_point_watcher(string_web, main_watcher);
                     main_watcher->start_index = main_watcher->end_index;
                 }
             }
@@ -277,17 +277,17 @@ void handle_default_loop_header_condition_scope(const_string string_web, aio_spi
         case AIO_DEFAULT_LOOP_HEADER_ABSENT:
         case AIO_DEFAULT_LOOP_HEADER_MUTABLE:
         case AIO_DEFAULT_LOOP_HEADER_REFERENCE: {
-            if (end_index == materials->end_of_loop_header) {
-                condition_watcher->end_index = end_index;
-                string dirty_condition = substring_by_point_watcher(string_web, condition_watcher);
-                string clean_condition = squeeze_string(dirty_condition);
-                materials->loop_condition = clean_condition;
-                materials->scope_type = AIO_DEFAULT_LOOP_HEADER_WEAVING_SCOPE;
-                spider->message = AIO_SPIDER_IS_READY_FOR_WEAVING;
-                //------------------------------------------------------------------------------------------------------
-                //찌꺼기 수집기 (Garbage collector):
-                free(dirty_condition);
-            }
+//            if (end_index == materials->end_of_loop_header) {
+//                condition_watcher->end_index = end_index;
+//                string dirty_condition = substring_by_point_watcher(string_web, condition_watcher);
+//                string clean_condition = squeeze_string(dirty_condition);
+//                materials->loop_condition = clean_condition;
+//                materials->scope_type = AIO_DEFAULT_LOOP_HEADER_WEAVING_SCOPE;
+//                spider->message = AIO_SPIDER_IS_READY_FOR_WEAVING;
+//                //------------------------------------------------------------------------------------------------------
+//                //찌꺼기 수집기 (Garbage collector):
+//                free(dirty_condition);
+//            }
         }
             break;
         case AIO_DEFAULT_LOOP_HEADER_IMMUTABLE: {

@@ -15,7 +15,8 @@
  * 함수들을 선언하다 (Declare functions).
  */
 
-const aio_spider_message is_found_assign_instruction(const_string string_web, aio_spider *spider);
+const aio_spider_message
+is_found_assign_instruction(const_string source_code, const int current_position, aio_spider *spider);
 
 void handle_assign_declaration_scope(const_string string_web, aio_spider *spider);
 
@@ -113,13 +114,14 @@ struct aio_spider *new_aio_assign_spider() {
  * 수색 (Searching).
  */
 
-const aio_spider_message is_found_assign_instruction(const_string string_web, aio_spider *spider) {
+const aio_spider_message is_found_assign_instruction(const_string source_code, const int current_position,
+        aio_spider *spider) {
     //재료들을 추출하다 (Extract materials):
     const aio_assign_materials *materials = spider->get.assign_materials;
     point_watcher *watcher = materials->main_watcher;
-    watcher->end_index++;
+    watcher->end_index = current_position;
     //스캐닝 준비 (Prepare for scanning):
-    const char last_symbol = string_web[watcher->end_index - 1];
+    const char last_symbol = source_code[watcher->end_index - 1];
     //간격을 건너 뛰다 (Skip whitespaces):
     //TODO:  코드 복제 (Code duplication)!
     if (watcher->mode == POINT_PASSIVE_MODE) {
@@ -132,14 +134,14 @@ const aio_spider_message is_found_assign_instruction(const_string string_web, ai
     //거미 작품 (Spider works):
     if (watcher->mode == POINT_ACTIVE_MODE) {
         if (materials->scope_type == AIO_ASSIGN_DECLARATION_SCOPE) {
-            handle_assign_declaration_scope(string_web, spider);
+            handle_assign_declaration_scope(source_code, spider);
         }
         if (materials->scope_type == AIO_ASSIGN_EQUAL_SIGN_SCOPE) {
-            handle_assign_equal_sign_scope(string_web, spider);
+            handle_assign_equal_sign_scope(source_code, spider);
             return spider->message;
         }
         if (materials->scope_type == AIO_ASSIGN_VALUE_SCOPE) {
-            handle_assign_value_scope(string_web, spider);
+            handle_assign_value_scope(source_code, spider);
         }
     }
     return spider->message;
@@ -320,34 +322,41 @@ void weave_assign_instruction_for(aio_instruction_holder *holder, const_string _
     const aio_assign_materials *materials = spider->get.assign_materials;
     const_string_array variable_data = materials->variable_data_list->strings;
     const_string value_string = materials->value;
-    const point_watcher *watcher = materials->main_watcher;
     const aio_assign_variable_declaration_type declaration_type = materials->declaration_type;
     const_boolean is_ready_for_weaving = materials->scope_type == AIO_ASSIGN_WEAVING_SCOPE;
     if (is_ready_for_weaving) {
-        *next_ripper_point_reference += watcher->end_index - 1;
+        *next_ripper_point_reference += materials->value_watcher->end_index;
         //변수 정의를 짜다 (Weave variable definition):
         aio_variable_definition *new_definition = create_local_variable_definition(declaration_type, variable_data);
-        const_string variable_name = new_definition->name;
-        aio_variable_definition *definition = get_local_variable_definition_in_function_tree(variable_name, holder);
+        aio_variable_definition *definition = get_local_variable_definition_in_function_tree(new_definition->name,
+                                                                                             holder);
         if (definition == NULL) {
             definition = new_definition;
             //지도에게 지역 변수 정의를 놓다 (Put local definition in variable definition map):
             aio_variable_definition_map *map = holder->local_variable_definition_map;
             put_aio_variable_definition_in_map(map, definition);
         } else {
+#ifdef AIO_ASSIGN_SPIDER_DEBUG
+            log_info_string(AIO_ASSIGN_SPIDER_TAG, "<FOUNDED DEFINITION>:", definition->name);
+            log_info_string(AIO_ASSIGN_SPIDER_TAG, "<TYPE>:", definition->type);
+            log_info_boolean(AIO_ASSIGN_SPIDER_TAG, "<IS MUTABLE>:", definition->is_mutable_by_value);
+#endif
             if (declaration_type != AIO_ASSIGN_WILL_DEFINED) {
                 throw_error_with_tag(AIO_ASSIGN_SPIDER_TAG, "Variable already was defined in function tree!");
             }
             if (!definition->is_mutable_by_value) {
-                throw_error_with_tag(AIO_ASSIGN_SPIDER_TAG, "Immutable variable can not change value!");
+                throw_error_with_details(AIO_ASSIGN_SPIDER_TAG, "Immutable variable can not change value!",
+                                         definition->name);
             }
             //----------------------------------------------------------------------------------------------------------
             //찌거기 수집기 (Garbage collector):
+            free(new_definition->name);
+            free(new_definition->type);
             free_aio_variable_definition(new_definition);
         }
         //'Assign' 지침을  짜다 (Weave 'assign' instruction):
         const_string assign_task_source = new_string(value_string);
-        const_string assign_task_destination = new_string(variable_name);
+        const_string assign_task_destination = new_string(definition->name);
         aio_instruction *assign_instruction = new_aio_assign_instruction(holder, assign_task_source,
                                                                          assign_task_destination);
         //명부에게 지침을 추가하다 (Add 'assign' instruction in holder's instructions):

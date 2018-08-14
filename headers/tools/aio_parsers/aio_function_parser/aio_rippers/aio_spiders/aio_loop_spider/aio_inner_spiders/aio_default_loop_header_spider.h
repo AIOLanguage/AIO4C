@@ -40,10 +40,8 @@ typedef struct aio_default_loop_header_materials {
     point_watcher *condition_watcher;
     //Data:
     string_list *pointer_data_list;
-    string start_value;
+    string init_value;
     string loop_condition;
-    //Get from parent materials:
-    int end_of_loop_header;
 } aio_default_loop_header_materials;
 
 typedef struct aio_default_loop_header_spider {

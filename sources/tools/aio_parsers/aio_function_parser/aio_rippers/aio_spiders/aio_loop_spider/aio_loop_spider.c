@@ -11,9 +11,11 @@
 #include "../../../../../../../headers/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_spider_nest.h"
 #include "../../../../../../../headers/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_loop_spider.h"
 
+#include "../../../../../../../headers/lib/utils/memory_utils/memory_utils.h"
+
+
 #define AIO_NUMBER_OF_SPIDERS 3
 
-#define AIO_DOUBLE_STRING_SPIDER "DOUBLE_STRING_SPIDER"
 
 /**
  * Declare functions.
@@ -37,60 +39,110 @@ void weave_loop_instruction_for(aio_instruction_holder *instruction_holder, cons
                                 int *next_ripper_point_reference, aio_spider *spider);
 
 /**
- * Reset.
+ * 주 논리 (Business logic).
+ */
+
+//#define AIO_LOOP_SPIDER_DEBUG
+
+#define AIO_LOOP_SPIDER_TAG "AIO_LOOP_SPIDER"
+
+#ifdef AIO_LOOP_SPIDER_DEBUG
+
+#include "../../../../../../../headers/lib/utils/log_utils/log_utils.h"
+
+#endif
+
+/**
+ * 리셋 (Reset).
  */
 
 void reset_loop_spider(aio_spider *spider) {
-
+#ifdef AIO_LOOP_SPIDER_DEBUG
+    log_info(AIO_LOOP_SPIDER_TAG, "Start to reset 'loop' spider...");
+#endif
+    aio_main_loop_materials *materials = spider->get.loop_materials->from.main;
+    materials->scope_type = AIO_LOOP_MODIFIER_SCOPE;
+    reset_point_watcher(materials->main_watcher);
+    reset_point_watcher(materials->header_watcher);
+    reset_point_watcher(materials->body_watcher);
+    spider->message = AIO_SPIDER_NOT_FOUND_MATERIALS;
+#ifdef AIO_LOOP_SPIDER_DEBUG
+    log_info(AIO_LOOP_SPIDER_TAG, "Reset of 'loop' spider is complete!");
+#endif
 }
 
 /**
- * Destructor.
+ * 거미를 비우다 (Free spider).
  */
 
 void free_loop_spider(aio_spider *spider) {
-
+    aio_loop_materials *materials = spider->get.loop_materials;
+    aio_main_loop_materials *main_loop_materials = materials->from.main;
+    free_point_watcher(main_loop_materials->main_watcher);
+    free_point_watcher(main_loop_materials->header_watcher);
+    free_point_watcher(main_loop_materials->body_watcher);
+    free(main_loop_materials);
+    free(materials);
+    free(spider);
 }
 
 /**
- * Constructor.
+ * 건설자 (Constructor).
  */
 
 aio_spider *new_aio_loop_spider() {
+#ifdef AIO_LOOP_SPIDER_DEBUG
+    log_info(AIO_LOOP_SPIDER_TAG, "Start to create 'loop' spider...");
+#endif
+    aio_spider *spider = new_object(sizeof(aio_spider));
+    //함수들을 놓다 (Put functions):
+    spider->reset = reset_loop_spider;
+    spider->is_found_instruction = is_found_loop_instruction;
+    spider->weave_instruction_for = weave_loop_instruction_for;
+    spider->free = free_loop_spider;
+    //재료들을 만들다 (Create materials):
+    aio_loop_materials *materials = new_object(sizeof(aio_loop_materials));
+    materials->type = AIO_LOOP_MATERIALS_MAIN;
+    aio_main_loop_materials *main_loop_materials = new_object(sizeof(aio_main_loop_materials));
+    main_loop_materials->scope_type = AIO_LOOP_MODIFIER_SCOPE;
+    main_loop_materials->main_watcher = new_point_watcher();
+    main_loop_materials->header_watcher = new_point_watcher();
+    main_loop_materials->body_watcher = new_point_watcher();
+    materials->from.main = main_loop_materials;
+    //재료들을 놓다 (Set materials):
+    spider->get.loop_materials = materials;
+    spider->message = AIO_SPIDER_NOT_FOUND_MATERIALS;
+#ifdef AIO_LOOP_SPIDER_DEBUG
+    log_info(AIO_LOOP_SPIDER_TAG, "Loop spider was created!");
+#endif
+    return spider;
 }
 
 const aio_spider_message is_found_loop_instruction(const_string string_web, aio_spider *spider) {
-    //Extract spider fields:
+    //재료들을 추출하다 (Extract materials):
     const aio_main_loop_materials *materials = spider->get.loop_materials->from.main;
-    const aio_loop_scope_type scope_type = materials->scope_type;
     point_watcher *main_watcher = materials->main_watcher;
     main_watcher->end_index++;
-    //Prepare from scanning:
-    const char last_symbol = string_web[main_watcher->end_index - 1];
-    //Spider waits string data:
+    const char current_symbol = string_web[main_watcher->end_index - 1];
+#ifdef AIO_LOOP_SPIDER_DEBUG
+    log_info_char(AIO_LOOP_SPIDER_TAG, "Current symbol:", current_symbol);
+#endif
     if (main_watcher->mode == POINT_PASSIVE_MODE) {
-        if (is_space_or_line_break(last_symbol)) {
-            //Spider waiting:
+        if (is_space_or_line_break(current_symbol)) {
             main_watcher->start_index++;
         } else {
-            //Spider is ready for analysing:
             main_watcher->mode = POINT_ACTIVE_MODE;
         }
     }
-    //Spider works:
     if (main_watcher->mode == POINT_ACTIVE_MODE) {
-        switch (scope_type) {
-            case AIO_LOOP_MODIFIER_SCOPE:
-                handle_loop_modifier_scope(string_web, spider);
-                break;
-            case AIO_LOOP_HEADER_SCOPE:
-                handle_loop_header_scope(string_web, spider);
-                break;
-            case AIO_LOOP_BODY_SCOPE:
-                handle_loop_body_scope(string_web, spider);
-                break;
-            case AIO_LOOP_WEAVING_SCOPE:
-                break;
+        if (materials->scope_type == AIO_LOOP_MODIFIER_SCOPE) {
+            handle_loop_modifier_scope(string_web, spider);
+        }
+        if (materials->scope_type == AIO_LOOP_HEADER_SCOPE) {
+            handle_loop_header_scope(string_web, spider);
+        }
+        if (materials->scope_type == AIO_LOOP_BODY_SCOPE) {
+            handle_loop_body_scope(string_web, spider);
         }
     }
     return spider->message;
@@ -99,14 +151,16 @@ const aio_spider_message is_found_loop_instruction(const_string string_web, aio_
 void handle_loop_modifier_scope(const_string string_web, aio_spider *spider) {
     aio_main_loop_materials *materials = spider->get.loop_materials->from.main;
     point_watcher *main_watcher = materials->main_watcher;
-    const int last_position = main_watcher->end_index - 1;
-    const char last_symbol = string_web[last_position];
-    const_boolean is_open_parenthesis_cond = is_opening_parenthesis(last_symbol);
-    if (is_space_or_line_break(last_symbol) || is_open_parenthesis_cond) {
+    const int current_position = main_watcher->end_index - 1;
+    const char current_symbol = string_web[current_position];
+    //Check current symbol:
+    const_boolean is_opening_parenthesis_cond = is_opening_parenthesis(current_symbol);
+    const_boolean is_whitespace_cond = is_space_or_line_break(current_symbol);
+    if (is_whitespace_cond || is_opening_parenthesis_cond) {
         const int start_index = main_watcher->start_index;
         const int end_index = main_watcher->end_index;
         const int hold_positions = end_index - start_index;
-        if (hold_positions == 3) {
+        if (hold_positions == 4) {
             const_boolean is_loop_modifier =
                     string_web[start_index] == 'l'
                     && string_web[start_index + 1] == 'o'
@@ -119,7 +173,7 @@ void handle_loop_modifier_scope(const_string string_web, aio_spider *spider) {
                 materials->scope_type = AIO_LOOP_HEADER_SCOPE;
                 //Set message:
                 spider->message = AIO_SPIDER_FOUND_MATERIALS;
-                if (is_open_parenthesis_cond){
+                if (is_opening_parenthesis_cond) {
                     handle_loop_header_scope(string_web, spider);
                 }
             }
@@ -220,7 +274,7 @@ void dig_header_materials(const_string string_web, aio_spider *parent_spider) {
                     for (int j = 0; j < AIO_NUMBER_OF_SPIDERS; ++j) {
                         aio_spider *child = spider_swarm->spiders[j];
                         //Spider try from match "string web" with it task:
-                        const aio_spider_message message = child->is_found_instruction(substring_web, child);
+                        const aio_spider_message message = child->is_found_instruction(substring_web, 0, child);
                         if (message == AIO_SPIDER_FOUND_MATERIALS) {
                             spider_swarm->active_spider = child;
                             spider_swarm->mode = AIO_ONE_SPIDER_WORKS;
@@ -230,7 +284,8 @@ void dig_header_materials(const_string string_web, aio_spider *parent_spider) {
                 }
                 if (swarm_mode == AIO_ONE_SPIDER_WORKS) {
                     aio_spider *child_spider = spider_swarm->active_spider;
-                    const aio_spider_message message = child_spider->is_found_instruction(substring_web, child_spider);
+                    const aio_spider_message message = child_spider->is_found_instruction(substring_web,
+                                                                                          0, child_spider);
                     if (message == AIO_SPIDER_IS_READY_FOR_WEAVING) {
                         //Spider takes current holder and weave for holder instruction:
                         child_spider->weave_materials_for(parent_spider, child_spider, string_web,
@@ -259,7 +314,7 @@ typedef struct aio_loop_short_header_materials {
 } aio_loop_short_header_materials;
 
 aio_spider *new_aio_loop_short_spider() {
-    
+
 }
 
 typedef struct aio_loop_shortest_header_materials {

@@ -92,7 +92,9 @@ typedef struct aio_switch_task {
 } aio_switch_task;
 
 typedef struct aio_loop_task {
-    aio_instruction_holder *loop_holder;
+    string condition;
+    aio_instruction_holder *init_holder;
+    aio_instruction_holder *cycle_holder;
 } aio_loop_task;
 
 typedef struct aio_procedure_task {

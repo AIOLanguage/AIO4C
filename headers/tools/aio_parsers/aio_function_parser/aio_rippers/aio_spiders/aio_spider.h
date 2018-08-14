@@ -33,12 +33,13 @@ typedef struct aio_spider {
 
     /**
      * Find instruction.
-     * @param string_web - instruction string in function body;
+     * @param source_code - instruction string in function body;
      * @param spider - this.
      * @return can recognize instruction or not.
      */
 
-    const aio_spider_message (*is_found_instruction)(const_string string_web, struct aio_spider *spider);
+    const aio_spider_message (*is_found_instruction)(const_string source_code, const int current_position,
+                                                     struct aio_spider *spider);
 
     /**
      * Take instruction holder & build instruction for it.

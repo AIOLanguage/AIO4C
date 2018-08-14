@@ -26,12 +26,10 @@ typedef enum aio_loop_materials_type {
 typedef struct aio_main_loop_materials {
     //States:
     aio_loop_scope_type scope_type;
-    aio_loop_body_type body_type;
     //Watchers:
     point_watcher *main_watcher;
     point_watcher *header_watcher;
     point_watcher *body_watcher;
-    //Int count of pair parentheses:
 } aio_main_loop_materials;
 
 typedef struct aio_loop_materials {
