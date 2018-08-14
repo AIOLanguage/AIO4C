@@ -3,8 +3,9 @@
 Int sum(mu Int a, Int b)        {
     mu c = a + b
 
-      if    (c > a){
+      if(c > a){
       c = c + 5
+      if(c == 10){ c = c + 2}
 
-      }
+      }:{e = 1}
       }

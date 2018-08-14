@@ -10,7 +10,6 @@
 #include "../../../../../../../headers/lang/aio_reserved_names/aio_reserved_names_container.h"
 #include "../../../../../../../headers/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_spider.h"
 #include "../../../../../../../headers/lib/utils/memory_utils/memory_utils.h"
-#include "../../../../../../../headers/lib/utils/log_utils/log_utils.h"
 
 /**
  * Declare functions.
@@ -35,6 +34,7 @@ void weave_if_instruction_for(aio_instruction_holder *holder, const_string sourc
 
 #ifdef AIO_IF_SPIDER_DEBUG
 
+#include "../../../../../../../headers/lib/utils/log_utils/log_utils.h"
 
 #endif
 
@@ -124,9 +124,11 @@ const aio_spider_message is_found_if_instruction(const_string string_web, aio_sp
         }
         if (materials->scope_type == AIO_IF_CONDITION_SCOPE) {
             handle_condition_scope(string_web, spider);
+            return spider->message;
         }
         if (materials->scope_type == AIO_IF_TRUE_BODY_SCOPE) {
             handle_true_body_scope(string_web, spider);
+            return spider->message;
         }
         if (materials->scope_type == AIO_IF_FALSE_BODY_SCOPE) {
             handle_false_body_scope(string_web, spider);
@@ -139,7 +141,10 @@ void handle_if_modifier_scope(const_string string_web, aio_spider *spider) {
     aio_if_materials *materials = spider->get.if_materials;
     point_watcher *watcher = materials->main_watcher;
     const char current_symbol = string_web[watcher->end_index - 1];
-    if (is_space_or_line_break(current_symbol)) {
+    //Check current symbol:
+    const_boolean is_whitespace_cond = is_space_or_line_break(current_symbol);
+    const_boolean is_open_parenthesis_cond = is_open_parenthesis(current_symbol);
+    if (is_whitespace_cond || is_open_parenthesis_cond) {
         const int start_index = watcher->start_index;
         const int end_index = watcher->end_index;
         const int hold_positions = end_index - start_index;
@@ -225,25 +230,23 @@ void handle_true_body_scope(const_string string_web, aio_spider *spider) {
     point_watcher *main_watcher = materials->main_watcher;
     point_watcher *true_watcher = materials->true_watcher;
     //Define last position:
-    const int last_position = main_watcher->end_index - 1;
-    const char last_symbol = string_web[last_position];
+    const int current_position = main_watcher->end_index - 1;
+    const char current_symbol = string_web[current_position];
     //Scanning:
-    const_boolean is_passive = true_watcher->mode == POINT_PASSIVE_MODE;
-    const_boolean is_active = true_watcher->mode == POINT_ACTIVE_MODE;
-    const_boolean is_waiting_for_false_modifier = true_watcher->mode = POINT_UNDEFINED_MODE;
-    const_boolean is_whitespace_cond = is_space_or_line_break(last_symbol);
-    const_boolean is_open_brace_cond = is_open_brace(last_symbol);
-    const_boolean is_close_brace_cond = is_close_brace(last_symbol);
+    const_boolean is_whitespace_cond = is_space_or_line_break(current_symbol);
+    const_boolean is_open_brace_cond = is_open_brace(current_symbol);
+    const_boolean is_close_brace_cond = is_close_brace(current_symbol);
+    const_boolean is_colon_cond = is_colon(current_symbol);
     //Meet open brace:
     if (is_open_brace_cond) {
         //Start of true body:
-        if (is_passive) {
-            //Jump over open brace:
-            true_watcher->start_index = main_watcher->end_index;
+        if (true_watcher->mode == POINT_PASSIVE_MODE) {
+            //Hold open brace:
+            true_watcher->start_index = current_position;
             true_watcher->mode = POINT_ACTIVE_MODE;
         }
         //Brace in body:
-        if (is_active) {
+        if (true_watcher->mode == POINT_ACTIVE_MODE) {
             //Count parentheses:
             true_watcher->pointer++;
         }
@@ -251,32 +254,43 @@ void handle_true_body_scope(const_string string_web, aio_spider *spider) {
     //Meet close brace:
     if (is_close_brace_cond) {
         //Doesn't start body:
-        if (is_passive) {
-            throw_error("IF SPIDER: condition can not start with ')'");
+        if (true_watcher->mode == POINT_PASSIVE_MODE) {
+            throw_error_with_tag(AIO_IF_SPIDER_TAG, "True body can not start with close brace!");
         }
         //In true body:
-        if (is_active) {
+        if (true_watcher->mode == POINT_ACTIVE_MODE) {
             true_watcher->pointer--;
             //Brace closes true body:
             if (true_watcher->pointer == 0) {
                 //End of true body:
-                //Doesn't hold close brace:
-                true_watcher->end_index = last_position;
+                //Hold close brace:
+                true_watcher->end_index = main_watcher->end_index;
+                true_watcher->mode = POINT_UNDEFINED_MODE;
+#ifdef AIO_IF_SPIDER_DEBUG
+                const_string true_body = substring_by_point_watcher(string_web, true_watcher);
+                log_info_string(AIO_IF_SPIDER_TAG, "True body:", true_body);
+                free((void *) true_body);
+#endif
+                return;
             }
         }
     }
-    //Skip whitespaces before condition:
+    //Skip whitespaces after condition:
     if (!is_whitespace_cond) {
-        if (is_passive) {
-            throw_error("IF SPIDER: invalid context after 'if' condition!");
+        if (true_watcher->mode == POINT_PASSIVE_MODE) {
+            throw_error_with_tag(AIO_IF_SPIDER_TAG, "Invalid context after 'if' condition!");
         }
-        if (is_waiting_for_false_modifier) {
-            //Meet colon that is 'false' modifier:
-            if (is_colon(last_symbol)) {
+        //Waiting false modifier or other symbol:
+        if (true_watcher->mode == POINT_UNDEFINED_MODE) {
+            //If meet colon then this is 'false' modifier:
+            if (is_colon_cond) {
                 //Set branch type:
                 materials->branch_type = AIO_HAS_TRUE_AND_FALSE_BRANCHES;
                 //Set scope:
                 materials->scope_type = AIO_IF_FALSE_BODY_SCOPE;
+#ifdef AIO_IF_SPIDER_DEBUG
+                log_info(AIO_IF_SPIDER_TAG, "Prepare to find false body...!");
+#endif
             } else {
                 //Set branch type:
                 materials->branch_type = AIO_HAS_TRUE_BRANCH;
@@ -284,6 +298,9 @@ void handle_true_body_scope(const_string string_web, aio_spider *spider) {
                 materials->scope_type = AIO_IF_WEAVING_SCOPE;
                 //Set message:
                 spider->message = AIO_SPIDER_IS_READY_FOR_WEAVING;
+#ifdef AIO_IF_SPIDER_DEBUG
+                log_info(AIO_IF_SPIDER_TAG, "False body is absent! Prepare to weave...");
+#endif
             }
             //Shift main main_watcher:
             main_watcher->start_index = main_watcher->end_index;
@@ -297,24 +314,22 @@ void handle_false_body_scope(const_string string_web, aio_spider *spider) {
     point_watcher *main_watcher = materials->main_watcher;
     point_watcher *false_watcher = materials->false_watcher;
     //Define last position:
-    const int last_position = main_watcher->end_index - 1;
-    const char last_symbol = string_web[last_position];
+    const int current_position = main_watcher->end_index - 1;
+    const char current_symbol = string_web[current_position];
     //Scanning:
-    const_boolean is_passive = false_watcher->mode == POINT_PASSIVE_MODE;
-    const_boolean is_active = false_watcher->mode == POINT_ACTIVE_MODE;
-    const_boolean is_whitespace_cond = is_space_or_line_break(last_symbol);
-    const_boolean is_open_brace_cond = is_open_brace(last_symbol);
-    const_boolean is_close_brace_cond = is_close_brace(last_symbol);
+    const_boolean is_whitespace_cond = is_space_or_line_break(current_symbol);
+    const_boolean is_open_brace_cond = is_open_brace(current_symbol);
+    const_boolean is_close_brace_cond = is_close_brace(current_symbol);
     //Meet open brace:
     if (is_open_brace_cond) {
         //Start of true body:
-        if (is_passive) {
-            //Jump over open brace:
-            false_watcher->start_index = main_watcher->end_index;
+        if (false_watcher->mode == POINT_PASSIVE_MODE) {
+            //Hold open brace:
+            false_watcher->start_index = current_position;
             false_watcher->mode = POINT_ACTIVE_MODE;
         }
         //Brace in body:
-        if (is_active) {
+        if (false_watcher->mode == POINT_ACTIVE_MODE) {
             //Count parentheses:
             false_watcher->pointer++;
         }
@@ -322,17 +337,16 @@ void handle_false_body_scope(const_string string_web, aio_spider *spider) {
     //Meet close brace:
     if (is_close_brace_cond) {
         //Doesn't start body:
-        if (is_passive) {
-            throw_error("IF SPIDER: condition can not start with ')'");
+        if (false_watcher->mode == POINT_PASSIVE_MODE) {
+            throw_error_with_tag(AIO_IF_SPIDER_TAG, "False body can not start with close brace!");
         }
         //In true body:
-        if (is_active) {
+        if (false_watcher->mode == POINT_ACTIVE_MODE) {
             false_watcher->pointer--;
             //Brace closes true body:
             if (false_watcher->pointer == 0) {
                 //End of true body:
-                //Doesn't hold close brace:
-                false_watcher->end_index = last_position;
+                false_watcher->end_index = main_watcher->end_index;
                 //Set scope:
                 materials->scope_type = AIO_IF_WEAVING_SCOPE;
                 //Set message:
@@ -340,12 +354,18 @@ void handle_false_body_scope(const_string string_web, aio_spider *spider) {
                 //Shift main main_watcher:
                 main_watcher->start_index = main_watcher->end_index;
                 main_watcher->mode = POINT_PASSIVE_MODE;
+#ifdef AIO_IF_SPIDER_DEBUG
+                const_string false_body = substring_by_point_watcher(string_web, false_watcher);
+                log_info_string(AIO_IF_SPIDER_TAG, "False body:", false_body);
+                log_info(AIO_IF_SPIDER_TAG, "False body is exist. Prepare to weave...");
+                free((void *) false_body);
+#endif
             }
         }
     }
-    //Skip whitespaces before condition:
-    if (!is_whitespace_cond && is_passive) {
-        throw_error("IF SPIDER: invalid context after 'if' condition!");
+    //Skip whitespaces before false body:
+    if (!is_whitespace_cond && false_watcher->mode == POINT_PASSIVE_MODE) {
+        throw_error_with_tag(AIO_IF_SPIDER_TAG, "Invalid context before false body!");
     }
 }
 
@@ -355,6 +375,9 @@ void handle_false_body_scope(const_string string_web, aio_spider *spider) {
 
 void weave_if_instruction_for(aio_instruction_holder *holder, const_string source_code,
                               int *next_ripper_point_reference, aio_spider *spider) {
+#ifdef AIO_IF_SPIDER_DEBUG
+    log_info(AIO_IF_SPIDER_TAG, "Start weaving...");
+#endif
     //Extract spider fields:
     const aio_if_materials *materials = spider->get.if_materials;
     const point_watcher *main_watcher = materials->main_watcher;
@@ -363,31 +386,36 @@ void weave_if_instruction_for(aio_instruction_holder *holder, const_string sourc
     const aio_if_branch_type branch_type = materials->branch_type;
     const_boolean is_ready_for_weaving = materials->scope_type == AIO_IF_WEAVING_SCOPE;
     if (is_ready_for_weaving) {
-        *next_ripper_point_reference += main_watcher->end_index;
         //Weave if instruction:
         const_string if_condition = new_string(materials->condition);
         aio_instruction_holder *true_holder = NULL;
         aio_instruction_holder *false_holder = NULL;
-        switch (branch_type) {
-            case AIO_UNDEFINED_BRANCHES:
-                throw_error("IF SPIDER: bug in 'handle_true_body_scope' function!");
-            case AIO_HAS_TRUE_AND_FALSE_BRANCHES: {
-                const int start_position = false_watcher->start_index;
-                const int end_position = false_watcher->end_index;
-                false_holder = dig_aio_instruction_holder(source_code, holder, start_position, end_position);
-            }
-            case AIO_HAS_TRUE_BRANCH: {
-                const int start_position = true_watcher->start_index;
-                const int end_position = true_watcher->end_index;
-                true_holder = dig_aio_instruction_holder(source_code, holder, start_position, end_position);
-            }
+        int start_position = *next_ripper_point_reference + true_watcher->start_index + 1;
+        int end_position = *next_ripper_point_reference + true_watcher->end_index + 1;
+#ifdef AIO_IF_SPIDER_DEBUG
+        const_string true_body = substring(source_code, start_position, end_position);
+        log_info_string(AIO_IF_SPIDER_TAG, "Weave true branch!\n", true_body);
+        free((void *) true_body);
+#endif
+        true_holder = dig_aio_instruction_holder(source_code, holder, start_position, end_position);
+        if (branch_type == AIO_HAS_TRUE_AND_FALSE_BRANCHES) {
+            start_position = *next_ripper_point_reference + false_watcher->start_index + 1;
+            end_position = *next_ripper_point_reference + false_watcher->end_index + 1;
+#ifdef AIO_IF_SPIDER_DEBUG
+            const_string false_body = substring(source_code, start_position, end_position);
+            log_info_string(AIO_IF_SPIDER_TAG, "Weave false branch!\n", false_body);
+            free((void *) false_body);
+#endif
+            false_holder = dig_aio_instruction_holder(source_code, holder, start_position, end_position);
         }
+        //Weave instruction:
         aio_instruction *if_instruction = new_aio_if_instruction(holder, if_condition, true_holder, false_holder);
         //Add if instruction in holder's instructions:
         aio_instruction_list *instruction_list = holder->instruction_list;
         add_aio_instruction_in_list(instruction_list, if_instruction);
         //Weaving complete!
+        *next_ripper_point_reference += main_watcher->end_index;
     } else {
-        throw_error("IF SPIDER: not ready for weaving!");
+        throw_error_with_tag(AIO_IF_SPIDER_TAG, "Not ready for weaving!");
     }
 }

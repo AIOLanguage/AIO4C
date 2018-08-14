@@ -92,14 +92,14 @@ aio_instruction_holder *dig_aio_instruction_holder(const_string source_code, aio
                         //거미가 현재 보유자를 붙잡고 지침을 길쌈한다:
                         //(A spider takes current holder and weaves instruction):
                         spider->weave_instruction_for(holder, source_code, &ripper_watcher->start_index, spider);
-                        //거미들를 리셋 (Reset spiders):
+                        //거미 리셋 (Reset spiders):
                         reset_aio_spiders(spider_nest);
-                        //줄 빌더를 리셋 (Reset string builder):
+                        //줄 빌더 리셋 (Reset string builder):
                         reset_string_builder(str_builder);
-                        //리퍼 당직자를 바꾼다 (Shift ripper watcher):
+                        //리퍼 당직자 바꾼다 (Shift ripper watcher):
                         ripper_watcher->pointer = ripper_watcher->start_index;
                         ripper_watcher->mode = POINT_PASSIVE_MODE;
-                        //거미 무리를 리셋 (Spider nest reset):
+                        //거미 무리 리셋 (Spider nest reset):
                         spider_nest->mode = AIO_ALL_SPIDERS_WORK;
                         spider_nest->active_spider = NULL;
 #ifdef AIO_INSTRUCTION_RIPPER_DEBUG

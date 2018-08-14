@@ -72,4 +72,7 @@ void free_aio_spider_swarm(aio_spider_nest *nest) {
     }
     free(spiders);
     free(nest);
+#ifdef AIO_SPIDER_NEST_DEBUG
+    log_info(AIO_SPIDER_NEST_TAG, "Spider nest is destroyed!");
+#endif
 }
