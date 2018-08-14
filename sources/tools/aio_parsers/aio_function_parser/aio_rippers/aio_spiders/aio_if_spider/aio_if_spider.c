@@ -92,7 +92,6 @@ aio_spider *new_aio_if_spider() {
     materials->header_watcher = new_point_watcher();
     materials->true_watcher = new_point_watcher();
     materials->false_watcher = new_point_watcher();
-    //조건들을 놓다 (Set states):
     materials->scope_type = AIO_IF_MODIFIER_SCOPE;
     materials->branch_type = AIO_UNDEFINED_BRANCHES;
     //재료들을 놓다 (Set materials):
@@ -221,7 +220,7 @@ void handle_condition_scope(const_string string_web, aio_spider *spider) {
         }
         return;
     }
-    //조건 전 공백들을 건너 뛰다 (Skip whitespaces before condition):
+    //조건전 공백들을 건너 뛰다 (Skip whitespaces before condition):
     if (!is_whitespace_cond && header_watcher->mode == POINT_PASSIVE_MODE) {
         throw_error_with_tag(AIO_IF_SPIDER_TAG, "Invalid context after 'if' modifier!");
     }
@@ -231,41 +230,40 @@ void handle_true_body_scope(const_string string_web, aio_spider *spider) {
     aio_if_materials *materials = spider->get.if_materials;
     point_watcher *main_watcher = materials->main_watcher;
     point_watcher *true_watcher = materials->true_watcher;
-    //Define last position:
+    //현재 위치를 정의하다 (Define current position):
     const int current_position = main_watcher->end_index - 1;
     const char current_symbol = string_web[current_position];
-    //Scanning:
+    //조건들을 확인하다 (Check conditions):
     const_boolean is_whitespace_cond = is_space_or_line_break(current_symbol);
-    const_boolean is_open_brace_cond = is_opening_brace(current_symbol);
-    const_boolean is_close_brace_cond = is_closing_brace(current_symbol);
+    const_boolean is_opening_brace_cond = is_opening_brace(current_symbol);
+    const_boolean is_closing_brace_cond = is_closing_brace(current_symbol);
     const_boolean is_colon_cond = is_colon(current_symbol);
-    //Meet open brace:
-    if (is_open_brace_cond) {
-        //Start of true body:
+    //여는 중괄호를 만나다 (Meet a opening brace):
+    if (is_opening_brace_cond) {
+        //'true' 블록의 시작이 (Start of 'true' body):
         if (true_watcher->mode == POINT_PASSIVE_MODE) {
-            //Hold open brace:
+            //여는 중괄호를 보류하다 (Hold a opening brace):
             true_watcher->start_index = current_position;
             true_watcher->mode = POINT_ACTIVE_MODE;
         }
-        //Brace in body:
+        //블록안에 여는 중괄호 (Opening brace inside body):
         if (true_watcher->mode == POINT_ACTIVE_MODE) {
-            //Count parentheses:
+            //중괄호들을 계산하다 (Count braces):
             true_watcher->pointer++;
         }
     }
-    //Meet close brace:
-    if (is_close_brace_cond) {
-        //Doesn't start body:
+    //닫는 중괄호를 만나다 (Meet close brace):
+    if (is_closing_brace_cond) {
+        //블록의 시작이 아님 (Not the beginning of a condition):
         if (true_watcher->mode == POINT_PASSIVE_MODE) {
             throw_error_with_tag(AIO_IF_SPIDER_TAG, "True body can not start with close brace!");
         }
-        //In true body:
+        //블록안에 닫는 중괄호 (Closing brace inside block):
         if (true_watcher->mode == POINT_ACTIVE_MODE) {
             true_watcher->pointer--;
-            //Brace closes true body:
+            //블록의 닫는 중괄호 (Closing brace of block):
             if (true_watcher->pointer == 0) {
-                //End of true body:
-                //Hold close brace:
+                //닫는 중괄호를 보류하다 (Hold close brace):
                 true_watcher->end_index = main_watcher->end_index;
                 true_watcher->mode = POINT_UNDEFINED_MODE;
 #ifdef AIO_IF_SPIDER_DEBUG
@@ -277,34 +275,34 @@ void handle_true_body_scope(const_string string_web, aio_spider *spider) {
             }
         }
     }
-    //Skip whitespaces after condition:
+    //조건후에 공백들을 건너 뛰다 (Skip whitespaces after condition):
     if (!is_whitespace_cond) {
         if (true_watcher->mode == POINT_PASSIVE_MODE) {
             throw_error_with_tag(AIO_IF_SPIDER_TAG, "Invalid context after 'if' condition!");
         }
-        //Waiting false modifier or other symbol:
+        //'false' 수정 자 또는 다른 기호 기다리다 (Waiting for 'false' modifier or other symbol):
         if (true_watcher->mode == POINT_UNDEFINED_MODE) {
-            //If meet colon then this is 'false' modifier:
+            //콜론을 만나면 수정 자입니다 (If meet colon then this is 'false' modifier):
             if (is_colon_cond) {
-                //Set branch type:
+                //분기 유형을 놓다 (Set branch type):
                 materials->branch_type = AIO_HAS_TRUE_AND_FALSE_BRANCHES;
-                //Set scope:
+                //범위를 바꾼다 (Change scope):
                 materials->scope_type = AIO_IF_FALSE_BODY_SCOPE;
 #ifdef AIO_IF_SPIDER_DEBUG
                 log_info(AIO_IF_SPIDER_TAG, "Prepare to find false body...!");
 #endif
             } else {
-                //Set branch type:
+                //분기 유형을 놓다 (Set branch type):
                 materials->branch_type = AIO_HAS_TRUE_BRANCH;
-                //Set scope:
+                //범위를 바꾼다 (Change scope):
                 materials->scope_type = AIO_IF_WEAVING_SCOPE;
-                //Set message:
+                //메시지 놓다 (Set message):
                 spider->message = AIO_SPIDER_IS_READY_FOR_WEAVING;
 #ifdef AIO_IF_SPIDER_DEBUG
                 log_info(AIO_IF_SPIDER_TAG, "False body is absent! Prepare to weave...");
 #endif
             }
-            //Shift main main_watcher:
+            //주요 당직자를 바꾼다 (Shift main watcher):
             main_watcher->start_index = main_watcher->end_index;
             main_watcher->mode = POINT_PASSIVE_MODE;
         }
@@ -315,45 +313,44 @@ void handle_false_body_scope(const_string string_web, aio_spider *spider) {
     aio_if_materials *materials = spider->get.if_materials;
     point_watcher *main_watcher = materials->main_watcher;
     point_watcher *false_watcher = materials->false_watcher;
-    //Define last position:
+    //현재 위치를 정의하다 (Define current position):
     const int current_position = main_watcher->end_index - 1;
     const char current_symbol = string_web[current_position];
-    //Scanning:
+    //현재 기호를 확인하다 (Check current symbol):
     const_boolean is_whitespace_cond = is_space_or_line_break(current_symbol);
-    const_boolean is_open_brace_cond = is_opening_brace(current_symbol);
-    const_boolean is_close_brace_cond = is_closing_brace(current_symbol);
-    //Meet open brace:
-    if (is_open_brace_cond) {
-        //Start of true body:
+    const_boolean is_opening_brace_cond = is_opening_brace(current_symbol);
+    const_boolean is_closing_brace_cond = is_closing_brace(current_symbol);
+    //여는 중괄호를 만나다 (Meet opening brace):
+    if (is_opening_brace_cond) {
+        //'false' 블록의 시작이 (Start of 'false body):
         if (false_watcher->mode == POINT_PASSIVE_MODE) {
-            //Hold open brace:
+            //여는 중괄호를 보류하다 (Hold opening brace):
             false_watcher->start_index = current_position;
             false_watcher->mode = POINT_ACTIVE_MODE;
         }
-        //Brace in body:
+        //블록안에 여는 중괄호 (Opening brace in body):
         if (false_watcher->mode == POINT_ACTIVE_MODE) {
-            //Count parentheses:
+            //중괄호를 계산하다 (Count braces):
             false_watcher->pointer++;
         }
     }
-    //Meet close brace:
-    if (is_close_brace_cond) {
-        //Doesn't start body:
+    //닫는 중괄호를 만나다 (Meet closing brace):
+    if (is_closing_brace_cond) {
+        //블록의 시작이 아님  (Not a start of body):
         if (false_watcher->mode == POINT_PASSIVE_MODE) {
             throw_error_with_tag(AIO_IF_SPIDER_TAG, "False body can not start with close brace!");
         }
-        //In true body:
+        //'true' 블록안에 딛는 중괄호 (Closing brace in 'true' body):
         if (false_watcher->mode == POINT_ACTIVE_MODE) {
             false_watcher->pointer--;
-            //Brace closes true body:
             if (false_watcher->pointer == 0) {
-                //End of true body:
+                //'true' 블록 끝 (End of 'true' body):
                 false_watcher->end_index = main_watcher->end_index;
-                //Set scope:
+                //범위를 바꾼다 (Change scope):
                 materials->scope_type = AIO_IF_WEAVING_SCOPE;
-                //Set message:
+                //메시지 놓다 (Set message):
                 spider->message = AIO_SPIDER_IS_READY_FOR_WEAVING;
-                //Shift main main_watcher:
+                //주요 당직자를 바꾼다 (Shift main watcher):
                 main_watcher->start_index = main_watcher->end_index;
                 main_watcher->mode = POINT_PASSIVE_MODE;
 #ifdef AIO_IF_SPIDER_DEBUG
@@ -365,7 +362,7 @@ void handle_false_body_scope(const_string string_web, aio_spider *spider) {
             }
         }
     }
-    //Skip whitespaces before false body:
+    //'false' 블록전 공백들을 건너 뛰다 (Skip whitespaces before false body):
     if (!is_whitespace_cond && false_watcher->mode == POINT_PASSIVE_MODE) {
         throw_error_with_tag(AIO_IF_SPIDER_TAG, "Invalid context before false body!");
     }
@@ -380,7 +377,7 @@ void weave_if_instruction_for(aio_instruction_holder *holder, const_string sourc
 #ifdef AIO_IF_SPIDER_DEBUG
     log_info(AIO_IF_SPIDER_TAG, "Start weaving...");
 #endif
-    //Extract spider fields:
+    //재료들을 추출하다 (Extract materials):
     const aio_if_materials *materials = spider->get.if_materials;
     const point_watcher *main_watcher = materials->main_watcher;
     const point_watcher *true_watcher = materials->true_watcher;
@@ -388,7 +385,6 @@ void weave_if_instruction_for(aio_instruction_holder *holder, const_string sourc
     const aio_if_branch_type branch_type = materials->branch_type;
     const_boolean is_ready_for_weaving = materials->scope_type == AIO_IF_WEAVING_SCOPE;
     if (is_ready_for_weaving) {
-        //Weave if instruction:
         const_string if_condition = new_string(materials->condition);
         aio_instruction_holder *true_holder = NULL;
         aio_instruction_holder *false_holder = NULL;
@@ -410,12 +406,11 @@ void weave_if_instruction_for(aio_instruction_holder *holder, const_string sourc
 #endif
             false_holder = dig_aio_instruction_holder(source_code, holder, start_position, end_position);
         }
-        //Weave instruction:
+        //지침을 짜다 (Weave instruction):
         aio_instruction *if_instruction = new_aio_if_instruction(holder, if_condition, true_holder, false_holder);
-        //Add if instruction in holder's instructions:
         aio_instruction_list *instruction_list = holder->instruction_list;
         add_aio_instruction_in_list(instruction_list, if_instruction);
-        //Weaving complete!
+        //짜다가 완성되었습니다 (Weaving is complete)!
         *next_ripper_point_reference += main_watcher->end_index;
     } else {
         throw_error_with_tag(AIO_IF_SPIDER_TAG, "Not ready for weaving!");
