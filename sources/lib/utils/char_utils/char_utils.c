@@ -12,19 +12,19 @@ boolean is_space_or_line_break(const char c) {
     return is_space(c) || is_line_break(c);
 }
 
-boolean is_open_parenthesis(const char c) {
+boolean is_opening_parenthesis(const char c) {
     return c == '(';
 }
 
-boolean is_close_parenthesis(const char c) {
+boolean is_closing_parenthesis(const char c) {
     return c == ')';
 }
 
-boolean is_open_brace(const char c) {
+boolean is_opening_brace(const char c) {
     return c == '{';
 }
 
-boolean is_close_brace(const char c) {
+boolean is_closing_brace(const char c) {
     return c == '}';
 }
 

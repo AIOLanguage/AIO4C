@@ -41,7 +41,7 @@ string_list *dig_output_types(const_string source_code, int *pointer_reference) 
 #endif
         }
         //괄호로 시작하다 (Starts with parenthesis):
-        if (is_open_parenthesis(symbol) && mode == OUTPUT_UNDEFINED) {
+        if (is_opening_parenthesis(symbol) && mode == OUTPUT_UNDEFINED) {
             //많은 출력 유형들 (Many output types):
             mode = MULTI_OUTPUT_MODE;
             watcher->start_index = i + 1;
@@ -52,7 +52,7 @@ string_list *dig_output_types(const_string source_code, int *pointer_reference) 
         }
         //하나의 또는 많은 출력 방법 독서 중지 (Stop single or multi output mode reading):
         if ((is_space_or_line_break_condition && mode == SINGLE_OUTPUT_MODE)
-            || (is_close_parenthesis(symbol) && mode == MULTI_OUTPUT_MODE)) {
+            || (is_closing_parenthesis(symbol) && mode == MULTI_OUTPUT_MODE)) {
             watcher->end_index = i;
             if (is_space_or_line_break_condition) {
                 *pointer_reference = i;

@@ -25,7 +25,7 @@ string dig_function_name(const_string source_code, int *pointer_reference) {
         //틈새 또는 줄 바꿈 (Space or line break):
         const_boolean is_space_or_line_break = is_space(symbol) || is_line_break(symbol);
         const_boolean is_space_or_line_break_or_open_parenthesis = is_space_or_line_break
-                                                                   || is_open_parenthesis(symbol);
+                                                                   || is_opening_parenthesis(symbol);
         //기호로 시작하다 (Starts with symbol):
         if (isalpha(symbol) && watcher->mode == POINT_PASSIVE_MODE) {
             watcher->start_index = i;

@@ -53,7 +53,7 @@ aio_variable_definition *create_local_variable_definition(const aio_assign_varia
 void reset_assign_spider(aio_spider *spider) {
     //거미의 조건 리셋 (Reset spider state):
     spider->message = AIO_SPIDER_NOT_FOUND_MATERIALS;
-    //재료들을 리셋 (Reset materials):
+    //재료 리셋 (Reset materials):
     aio_assign_materials *materials = spider->get.assign_materials;
     reset_point_watcher(materials->main_watcher);
     reset_point_watcher(materials->value_watcher);
@@ -102,7 +102,7 @@ struct aio_spider *new_aio_assign_spider() {
     materials->main_watcher = new_point_watcher();
     materials->value_watcher = new_point_watcher();
     materials->variable_data_list = new_string_list();
-    //재료들을 놓다 (Set materials):
+    //재료들을 놀다 (Set materials):
     spider->get.assign_materials = materials;
     //시작 메시지 초기화하다 (Init start message):
     spider->message = AIO_SPIDER_NOT_FOUND_MATERIALS;
@@ -121,6 +121,7 @@ const aio_spider_message is_found_assign_instruction(const_string string_web, ai
     //스캐닝 준비 (Prepare for scanning):
     const char last_symbol = string_web[watcher->end_index - 1];
     //간격을 건너 뛰다 (Skip whitespaces):
+    //TODO:  코드 복제 (Code duplication)!
     if (watcher->mode == POINT_PASSIVE_MODE) {
         if (is_space_or_line_break(last_symbol)) {
             watcher->start_index++;
@@ -275,10 +276,10 @@ void handle_assign_value_scope(const_string string_web, aio_spider *spider) {
     const int current_position = main_watcher->end_index - 1;
     const char current_symbol = string_web[current_position];
     const_boolean is_whitespace_cond = is_space_or_line_break(current_symbol);
-    const_boolean is_close_parenthesis_cond = is_close_parenthesis(current_symbol);
+    const_boolean is_close_parenthesis_cond = is_closing_parenthesis(current_symbol);
     const_boolean is_letter_cond = isalpha(current_symbol);
     const_boolean is_letter_or_number_or_close_parenthesis_cond = isalnum(current_symbol) || is_close_parenthesis_cond;
-    const_boolean is_close_brace_cond = is_close_brace(current_symbol);
+    const_boolean is_close_brace_cond = is_closing_brace(current_symbol);
     if (is_letter_or_number_or_close_parenthesis_cond && value_watcher->mode == POINT_PASSIVE_MODE) {
         value_watcher->mode = POINT_ACTIVE_MODE;
         return;
@@ -289,11 +290,11 @@ void handle_assign_value_scope(const_string string_web, aio_spider *spider) {
     }
     if ((is_letter_cond || is_close_brace_cond) && value_watcher->mode == POINT_ACTIVE_MODE) {
         value_watcher->end_index = main_watcher->end_index - value_watcher->pointer - 1;
-        //Set value:
+        //값을 놓다 (Set value):
         string dirty_value = substring(string_web, main_watcher->start_index, value_watcher->end_index);
         string clean_value = squeeze_string(dirty_value);
         materials->value = clean_value;
-        //Prepare to weaving:
+        //위빙 준비 (Prepare for weaving):
         materials->scope_type = AIO_ASSIGN_WEAVING_SCOPE;
         main_watcher->start_index = main_watcher->end_index;
         spider->message = AIO_SPIDER_IS_READY_FOR_WEAVING;

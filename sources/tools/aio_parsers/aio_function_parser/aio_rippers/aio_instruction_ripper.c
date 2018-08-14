@@ -45,10 +45,11 @@ aio_instruction_holder *dig_aio_instruction_holder(const_string source_code, aio
     aio_instruction_holder *holder = new_aio_instruction_holder(parent_holder);
     const int body_length = end_index - start_index;
     const_boolean is_not_empty_block = body_length > 2;
-    const_boolean starts_with_open_brace = is_open_brace(source_code[start_index]);
+    const_boolean starts_with_open_brace = is_opening_brace(source_code[start_index]);
     if (is_not_empty_block && starts_with_open_brace) {
         //검색 지침을 위해 거미 무리를 만들다 (Create spider swarm for searching instructions):
         aio_spider_nest *spider_nest = breed_aio_function_spider_nest();
+        //TODO: 업그레이드 위해 문자열 빌더를 만들지 않다 (Make without string builder for upgrade)!
         string_builder *str_builder = new_string_builder();
         //리퍼 당직자 만들다 (Create ripper watcher):
         point_watcher *ripper_watcher = new_point_watcher();
@@ -66,6 +67,7 @@ aio_instruction_holder *dig_aio_instruction_holder(const_string source_code, aio
             //거미 무리의 활성 모드: Active mode of spider nest:
             if (ripper_watcher->mode == POINT_ACTIVE_MODE) {
                 //줄 빌더에 기호를 추가하다 (Add symbol in string builder):
+                //TODO: '문자열 웹' 대신 소스 코드 문자열과 포인터를 보내다 (Pass source code & pointer instead string_web!
                 append_char_to(str_builder, source_code[ripper_watcher->pointer]);
                 const_string string_web = str_builder->string_value;
                 const aio_spider_swarm_mode swarm_mode = spider_nest->mode;
@@ -96,7 +98,7 @@ aio_instruction_holder *dig_aio_instruction_holder(const_string source_code, aio
                         reset_aio_spiders(spider_nest);
                         //줄 빌더 리셋 (Reset string builder):
                         reset_string_builder(str_builder);
-                        //리퍼 당직자 바꾼다 (Shift ripper watcher):
+                        //리퍼 당직자를 바꾼다 (Shift ripper watcher):
                         ripper_watcher->pointer = ripper_watcher->start_index;
                         ripper_watcher->mode = POINT_PASSIVE_MODE;
                         //거미 무리 리셋 (Spider nest reset):

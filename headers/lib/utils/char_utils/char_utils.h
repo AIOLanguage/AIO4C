@@ -10,13 +10,13 @@ boolean is_line_break(const char c);
 
 boolean is_space_or_line_break(const char c);
 
-boolean is_open_parenthesis(const char c);
+boolean is_opening_parenthesis(const char c);
 
-boolean is_close_parenthesis(const char c);
+boolean is_closing_parenthesis(const char c);
 
-boolean is_open_brace(const char c);
+boolean is_opening_brace(const char c);
 
-boolean is_close_brace(const char c);
+boolean is_closing_brace(const char c);
 
 boolean is_equal_sign(const char c);
 

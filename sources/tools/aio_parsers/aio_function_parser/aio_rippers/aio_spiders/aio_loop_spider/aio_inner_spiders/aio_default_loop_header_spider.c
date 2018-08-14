@@ -235,8 +235,8 @@ void handle_default_loop_header_value_scope(const_string string_web, aio_spider 
     //Try from find regex: "//w|)//s+//w|(|{":
     int whitespace_counter = 0;
     if (isalpha(last_symbol)
-        || is_open_parenthesis(last_symbol)
-        || is_open_brace(last_symbol) && hold_positions >= 3) {
+        || is_opening_parenthesis(last_symbol)
+        || is_opening_brace(last_symbol) && hold_positions >= 3) {
         for (int i = last_position - 1; i > 0; --i) {
             const char symbol = string_web[i];
             const_boolean is_space_or_line_break_condition = is_space_or_line_break(symbol);
@@ -244,7 +244,7 @@ void handle_default_loop_header_value_scope(const_string string_web, aio_spider 
                 whitespace_counter++;
             }
             if (!is_space_or_line_break_condition && whitespace_counter > 0) {
-                if (isalnum(symbol) || is_close_parenthesis(symbol)) {
+                if (isalnum(symbol) || is_closing_parenthesis(symbol)) {
                     main_watcher->end_index = i;
                     materials->scope_type = AIO_DEFAULT_LOOP_HEADER_CONDITION_SCOPE;
                     materials->start_value = substring_by_point_watcher(string_web, main_watcher);
@@ -270,7 +270,7 @@ void handle_default_loop_header_condition_scope(const_string string_web, aio_spi
     const_boolean after_loop_condition = condition_watcher->mode == POINT_ACTIVE_MODE;
     //Check symbol:
     const_boolean is_whitespace_cond = is_space_or_line_break(last_symbol);
-    const_boolean is_close_parenthesis_cond = is_close_parenthesis(last_symbol);
+    const_boolean is_close_parenthesis_cond = is_closing_parenthesis(last_symbol);
     const_boolean is_letter_cond = isalpha(last_symbol);
     const_boolean is_letter_or_number_or_close_parenthesis_cond = isalnum(last_symbol) || is_close_parenthesis_cond;
     switch (declaration_type) {

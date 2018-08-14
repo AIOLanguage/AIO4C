@@ -101,7 +101,7 @@ void handle_loop_modifier_scope(const_string string_web, aio_spider *spider) {
     point_watcher *main_watcher = materials->main_watcher;
     const int last_position = main_watcher->end_index - 1;
     const char last_symbol = string_web[last_position];
-    const_boolean is_open_parenthesis_cond = is_open_parenthesis(last_symbol);
+    const_boolean is_open_parenthesis_cond = is_opening_parenthesis(last_symbol);
     if (is_space_or_line_break(last_symbol) || is_open_parenthesis_cond) {
         const int start_index = main_watcher->start_index;
         const int end_index = main_watcher->end_index;
@@ -138,8 +138,8 @@ void handle_loop_header_scope(const_string string_web, aio_spider *spider) {
     const_boolean is_passive = header_watcher->mode == POINT_PASSIVE_MODE;
     const_boolean is_active = header_watcher->mode == POINT_ACTIVE_MODE;
     const_boolean is_whitespace_cond = is_space_or_line_break(last_symbol);
-    const_boolean is_open_parenthesis_cond = is_open_parenthesis(last_symbol);
-    const_boolean is_close_parenthesis_cond = is_close_parenthesis(last_symbol);
+    const_boolean is_open_parenthesis_cond = is_opening_parenthesis(last_symbol);
+    const_boolean is_close_parenthesis_cond = is_closing_parenthesis(last_symbol);
     //Meet open parenthesis:
     if (is_open_parenthesis_cond) {
         //Start of loop header:

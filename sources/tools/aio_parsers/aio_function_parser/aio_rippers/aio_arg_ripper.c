@@ -28,12 +28,12 @@ aio_variable_definition_map *dig_arguments(const_string source_code, int *pointe
     for (int i = *pointer_reference; i < source_code_length; ++i) {
         const char symbol = source_code[i];
         //독서를 시작하다 (Begin reading):
-        if (is_open_parenthesis(symbol) && watcher->mode == POINT_PASSIVE_MODE) {
+        if (is_opening_parenthesis(symbol) && watcher->mode == POINT_PASSIVE_MODE) {
             watcher->start_index = i + 1;
             watcher->mode = POINT_ACTIVE_MODE;
         }
         //독서 중지 (Stop reading):
-        if (is_close_parenthesis(symbol)) {
+        if (is_closing_parenthesis(symbol)) {
             watcher->end_index = i;
             //괄호로 호 (After parenthesis):
             *pointer_reference = i + 1;

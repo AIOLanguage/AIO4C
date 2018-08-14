@@ -12,7 +12,7 @@
 #include "../../../../../../../headers/lib/utils/memory_utils/memory_utils.h"
 
 /**
- * Declare functions.
+ * 함수들을 선인하다 (Declare functions).
  */
 
 const aio_spider_message is_found_if_instruction(const_string string_web, aio_spider *spider);
@@ -28,6 +28,10 @@ void handle_false_body_scope(const_string string_web, aio_spider *spider);
 void weave_if_instruction_for(aio_instruction_holder *holder, const_string source_code,
                               int *next_ripper_point_reference, aio_spider *spider);
 
+/**
+ * 주 논리 (Business logic).
+ */
+
 #define AIO_IF_SPIDER_DEBUG
 
 #define AIO_IF_SPIDER_TAG "AIO_IF_SPIDER"
@@ -38,25 +42,26 @@ void weave_if_instruction_for(aio_instruction_holder *holder, const_string sourc
 
 #endif
 
-
 /**
- * Reset.
+ * 레셋 (Reset).
  */
 
 void reset_if_spider(aio_spider *spider) {
+    //거미의 조건 리셋 (Reset spider state):
+    spider->message = AIO_SPIDER_NOT_FOUND_MATERIALS;
+    //재료 리셋 (Reset materials):
     aio_if_materials *materials = spider->get.if_materials;
     reset_point_watcher(materials->main_watcher);
     reset_point_watcher(materials->header_watcher);
     reset_point_watcher(materials->true_watcher);
     reset_point_watcher(materials->false_watcher);
-    //Reset state:
     materials->scope_type = AIO_IF_MODIFIER_SCOPE;
     materials->branch_type = AIO_UNDEFINED_BRANCHES;
     free(materials->condition);
 }
 
 /**
- * Destructor.
+ * 거미를 비우다 (Free spider).
  */
 
 void free_if_spider(aio_spider *spider) {
@@ -71,50 +76,48 @@ void free_if_spider(aio_spider *spider) {
 }
 
 /**
- * Constructor.
+ * 건설자 (Constructor).
  */
 
 aio_spider *new_aio_if_spider() {
     aio_spider *spider = new_object(sizeof(aio_spider));
-    //Bind main spider's functions:
+    //함수들을 놓다 (Put functions):
     spider->reset = reset_if_spider;
     spider->is_found_instruction = is_found_if_instruction;
     spider->weave_instruction_for = weave_if_instruction_for;
     spider->free = free_if_spider;
-    //Create materials:
+    //재료들을 만들다 (Create materials):
     aio_if_materials *materials = new_object(sizeof(aio_if_materials));
-    //Init watchers:
     materials->main_watcher = new_point_watcher();
     materials->header_watcher = new_point_watcher();
     materials->true_watcher = new_point_watcher();
     materials->false_watcher = new_point_watcher();
-    //Init states:
+    //조건들을 놓다 (Set states):
     materials->scope_type = AIO_IF_MODIFIER_SCOPE;
     materials->branch_type = AIO_UNDEFINED_BRANCHES;
-    //Set materials:
+    //재료들을 놓다 (Set materials):
     spider->get.if_materials = materials;
     spider->message = AIO_SPIDER_NOT_FOUND_MATERIALS;
     return spider;
 }
 
 /**
- * Searching.
+ * 수색 (Searching).
  */
 
 const aio_spider_message is_found_if_instruction(const_string string_web, aio_spider *spider) {
-    //Extract spider fields:
+    //재료들을 추출하다 (Extract materials):
     const aio_if_materials *materials = spider->get.if_materials;
     point_watcher *main_watcher = materials->main_watcher;
     main_watcher->end_index++;
-    //Prepare to scanning:
+    //스캐닝 준비 (Prepare for scanning):
     const int current_position = main_watcher->end_index - 1;
     const char current_symbol = string_web[current_position];
+    //TODO: 코드 복제 (Code duplication)!
     if (main_watcher->mode == POINT_PASSIVE_MODE) {
         if (is_space_or_line_break(current_symbol)) {
-            //Spider waiting:
             main_watcher->start_index++;
         } else {
-            //Spider is ready for analysing:
             main_watcher->mode = POINT_ACTIVE_MODE;
         }
     }
@@ -141,9 +144,9 @@ void handle_if_modifier_scope(const_string string_web, aio_spider *spider) {
     aio_if_materials *materials = spider->get.if_materials;
     point_watcher *watcher = materials->main_watcher;
     const char current_symbol = string_web[watcher->end_index - 1];
-    //Check current symbol:
+    //현재 기호를 확인하다 (Check current symbol):
     const_boolean is_whitespace_cond = is_space_or_line_break(current_symbol);
-    const_boolean is_open_parenthesis_cond = is_open_parenthesis(current_symbol);
+    const_boolean is_open_parenthesis_cond = is_opening_parenthesis(current_symbol);
     if (is_whitespace_cond || is_open_parenthesis_cond) {
         const int start_index = watcher->start_index;
         const int end_index = watcher->end_index;
@@ -151,12 +154,12 @@ void handle_if_modifier_scope(const_string string_web, aio_spider *spider) {
         if (hold_positions == 3) {
             const_boolean is_if_modifier = string_web[start_index] == 'i' && string_web[start_index + 1] == 'f';
             if (is_if_modifier) {
-                //Shift main_watcher:
+                //주요 당직자를 바꾼다 (Shift main watcher):
                 watcher->start_index = end_index;
                 watcher->mode = POINT_PASSIVE_MODE;
-                //Set scope:
+                //범위를 바꾼다 (Change scope):
                 materials->scope_type = AIO_IF_CONDITION_SCOPE;
-                //Set message:
+                //메시지 놓다 (Set message):
                 spider->message = AIO_SPIDER_FOUND_MATERIALS;
             }
         }
@@ -167,48 +170,47 @@ void handle_condition_scope(const_string string_web, aio_spider *spider) {
     aio_if_materials *materials = spider->get.if_materials;
     point_watcher *main_watcher = materials->main_watcher;
     point_watcher *header_watcher = materials->header_watcher;
-    //Define last position:
+    //현재 위치를 정의하다 (Define current position):
     const int current_position = main_watcher->end_index - 1;
     const char current_symbol = string_web[current_position];
-    //Scanning:
+    //조건들을 확인하다 (Check conditions):
     const_boolean is_whitespace_cond = is_space_or_line_break(current_symbol);
-    const_boolean is_open_parenthesis_cond = is_open_parenthesis(current_symbol);
-    const_boolean is_close_parenthesis_cond = is_close_parenthesis(current_symbol);
-    //Meet open parenthesis:
-    if (is_open_parenthesis_cond) {
-        //Start of condition:
+    const_boolean is_opening_parenthesis_cond = is_opening_parenthesis(current_symbol);
+    const_boolean is_closing_parenthesis_cond = is_closing_parenthesis(current_symbol);
+    //여는 괄호를 만나다 (Meet opening parenthesis):
+    if (is_opening_parenthesis_cond) {
+        //조건의 시작이 (Start of condition):
         if (header_watcher->mode == POINT_PASSIVE_MODE) {
-            //Jump over open parenthesis:
+            //여는 괄호를 뛰어 넘다 (Jump over open parenthesis):
             header_watcher->start_index = main_watcher->end_index;
             header_watcher->mode = POINT_ACTIVE_MODE;
         }
-        //Parenthesis in condition:
+        //조건안의 여는 괄호 (Opening parenthesis inside condition):
         if (header_watcher->mode == POINT_ACTIVE_MODE) {
-            //Count parentheses:
+            //괄호들을 계산하다 (Count parentheses):
             header_watcher->pointer++;
         }
         return;
     }
-    //Meet close parenthesis:
-    if (is_close_parenthesis_cond) {
-        //Doesn't start condition:
+    //닫는 괄호를 만나다 (Meet closing parenthesis):
+    if (is_closing_parenthesis_cond) {
+        //조건의 시작이 아님 (Not the beginning of a condition):
         if (header_watcher->mode == POINT_PASSIVE_MODE) {
             throw_error_with_tag(AIO_IF_SPIDER_TAG, "Condition can not start with close parenthesis!");
         }
-        //In condition:
+        //조건안의 닫는 괄호 (Closing parenthesis inside condition):
         if (header_watcher->mode == POINT_ACTIVE_MODE) {
             header_watcher->pointer--;
-            //Parenthesis closes condition:
+            //조건의 닫는 괄호 (Closing parenthesis of condition):
             if (header_watcher->pointer == 0) {
-                //End of condition:
-                //Doesn't hold close parenthesis:
+                //닫는 괄호를 보류하지 않다 (Don't hold closing parenthesis):
                 header_watcher->end_index = current_position;
-                //Shift main main_watcher:
+                //주요 당직자를 바꾼다 (Shift main watcher):
                 main_watcher->start_index = main_watcher->end_index;
                 main_watcher->mode = POINT_PASSIVE_MODE;
-                //Set scope:
+                //범위를 바꾼다 (Change scope):
                 materials->scope_type = AIO_IF_TRUE_BODY_SCOPE;
-                //Extract condition:
+                //조건을 추출하다 (Extract condition):
                 const_string dirty_condition = substring_by_point_watcher(string_web, header_watcher);
                 string clean_condition = squeeze_string(dirty_condition);
                 materials->condition = clean_condition;
@@ -219,7 +221,7 @@ void handle_condition_scope(const_string string_web, aio_spider *spider) {
         }
         return;
     }
-    //Skip whitespaces before condition:
+    //조건 전 공백들을 건너 뛰다 (Skip whitespaces before condition):
     if (!is_whitespace_cond && header_watcher->mode == POINT_PASSIVE_MODE) {
         throw_error_with_tag(AIO_IF_SPIDER_TAG, "Invalid context after 'if' modifier!");
     }
@@ -234,8 +236,8 @@ void handle_true_body_scope(const_string string_web, aio_spider *spider) {
     const char current_symbol = string_web[current_position];
     //Scanning:
     const_boolean is_whitespace_cond = is_space_or_line_break(current_symbol);
-    const_boolean is_open_brace_cond = is_open_brace(current_symbol);
-    const_boolean is_close_brace_cond = is_close_brace(current_symbol);
+    const_boolean is_open_brace_cond = is_opening_brace(current_symbol);
+    const_boolean is_close_brace_cond = is_closing_brace(current_symbol);
     const_boolean is_colon_cond = is_colon(current_symbol);
     //Meet open brace:
     if (is_open_brace_cond) {
@@ -318,8 +320,8 @@ void handle_false_body_scope(const_string string_web, aio_spider *spider) {
     const char current_symbol = string_web[current_position];
     //Scanning:
     const_boolean is_whitespace_cond = is_space_or_line_break(current_symbol);
-    const_boolean is_open_brace_cond = is_open_brace(current_symbol);
-    const_boolean is_close_brace_cond = is_close_brace(current_symbol);
+    const_boolean is_open_brace_cond = is_opening_brace(current_symbol);
+    const_boolean is_close_brace_cond = is_closing_brace(current_symbol);
     //Meet open brace:
     if (is_open_brace_cond) {
         //Start of true body:

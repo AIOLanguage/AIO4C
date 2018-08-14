@@ -25,8 +25,8 @@ void explore_block_body(const_string source_code, int *start_index, int *end_ind
     for (int i = *start_index; i < source_code_length; ++i) {
         const char symbol = source_code[i];
         //Check symbol:
-        const_boolean is_open_brace_cond = is_open_brace(symbol);
-        const_boolean is_close_brace_cond = is_close_brace(symbol);
+        const_boolean is_open_brace_cond = is_opening_brace(symbol);
+        const_boolean is_close_brace_cond = is_closing_brace(symbol);
         const_boolean is_not_whitespace_cond = !is_space_or_line_break(symbol);
         //Meet open brace:
         if (is_open_brace_cond) {
