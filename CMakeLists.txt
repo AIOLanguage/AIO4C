@@ -33,20 +33,6 @@ add_executable(${PROJECT_NAME}
         headers/lang/aio_reserved_names/aio_reserved_names_container.h
         headers/lang/aio_types/aio_type.h
         #tools:
-        headers/tools/aio_parsers/aio_function_parser/aio_rippers/aio_rippers.h
-        headers/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_spider.h
-        headers/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_spider_nest.h
-        headers/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_assign_spider/aio_assign_spider.h
-        headers/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_break_spider/aio_break_spider.h
-        headers/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_if_spider/aio_if_spider.h
-        headers/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_loop_spider.h
-        headers/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_default_loop_header_spider.h
-        headers/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_in_loop_header_spider.h
-        headers/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_tiny_loop_header_spider.h
-        headers/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_out_spider/aio_out_spider.h
-        headers/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_procedure_spider/aio_procedure_spider.h
-        headers/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_switch_spider/aio_switch_spider.h
-        headers/tools/aio_parsers/aio_block_body_explorer/aio_block_body_explorer.h
         #lib:
         headers/lib/collections/lists/aio_annotation_list.h
         headers/lib/collections/lists/aio_instruction_list.h
@@ -90,24 +76,17 @@ add_executable(${PROJECT_NAME}
         sources/lang/aio_function/aio_variable/aio_variable_definition.c
         sources/lang/aio_reserved_names/aio_reserved_names_container.c
         #tools:
-        sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_annotation_ripper.c
-        sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_arg_ripper.c
-        sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_function_name_ripper.c
-        sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_instruction_ripper.c
-        sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_output_ripper.c
-        sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_spider_nest.c
-        sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_assign_spider/aio_assign_spider.c
-        sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_break_spider/aio_break_spider.c
-        sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_if_spider/aio_if_spider.c
-        sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_loop_spider.c
-        sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_default_loop_header_spider.c
-        sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_in_loop_header_spider.c
-        sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_tiny_loop_header_spider.c
-        sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_out_spider/aio_out_spider.c
-        sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_procedure_spider/aio_procedure_spider.c
-        sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_switch_spider/aio_switch_spider.c
-        sources/lib/collections/lists/aio_instruction_list.c
-        sources/lib/utils/error_utils/error_utils.c
+        headers/tools/aio_parsers/aio_block_body_explorer/aio_block_body_explorer.h
+        headers/tools/aio_parsers/aio_function_rippers/aio_function_rippers.h
+        headers/tools/aio_parsers/aio_spiders/aio_spider.h
+        headers/tools/aio_parsers/aio_spiders/aio_spider_nest.h
+        headers/tools/aio_parsers/aio_spiders/aio_assign_spider/aio_assign_spider.h
+        headers/tools/aio_parsers/aio_spiders/aio_break_spider/aio_break_spider.h
+        headers/tools/aio_parsers/aio_spiders/aio_if_spider/aio_if_spider.h
+        headers/tools/aio_parsers/aio_spiders/aio_loop_spider/aio_loop_spider.h
+        headers/tools/aio_parsers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_default_loop_header_spider.h
+        headers/tools/aio_parsers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_in_loop_header_spider.h
+        headers/tools/aio_parsers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_tiny_loop_header_spider.h
         #lib:
         sources/lib/collections/lists/aio_annotation_list.c
         sources/lib/collections/lists/aio_instruction_list.c
@@ -132,4 +111,7 @@ add_executable(${PROJECT_NAME}
         sources/lib/utils/string_utils/split.c
         sources/lib/utils/string_utils/trim.c
         sources/lib/utils/memory_utils/memory_utils.c
-        sources/lib/utils/log_utils/log_utils.c sources/tools/aio_parsers/aio_block_body_explorer/aio_block_body_explorer.c)
+        sources/lib/utils/log_utils/log_utils.c
+        sources/lib/collections/lists/aio_instruction_list.c
+        sources/lib/utils/error_utils/error_utils.c
+        )

@@ -184,43 +184,34 @@
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_block_body_explorer/aio_block_body_explorer.h">
 			<Option target="AIO"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_function_parser/aio_rippers/aio_rippers.h">
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_function_rippers/aio_function_rippers.h">
 			<Option target="AIO"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_assign_spider/aio_assign_spider.h">
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_assign_spider/aio_assign_spider.h">
 			<Option target="AIO"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_break_spider/aio_break_spider.h">
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_break_spider/aio_break_spider.h">
 			<Option target="AIO"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_if_spider/aio_if_spider.h">
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_if_spider/aio_if_spider.h">
 			<Option target="AIO"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_default_loop_header_spider.h">
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_default_loop_header_spider.h">
 			<Option target="AIO"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_in_loop_header_spider.h">
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_in_loop_header_spider.h">
 			<Option target="AIO"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_tiny_loop_header_spider.h">
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_tiny_loop_header_spider.h">
 			<Option target="AIO"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_loop_spider.h">
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_loop_spider/aio_loop_spider.h">
 			<Option target="AIO"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_out_spider/aio_out_spider.h">
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_spider.h">
 			<Option target="AIO"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_procedure_spider/aio_procedure_spider.h">
-			<Option target="AIO"/>
-		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_spider.h">
-			<Option target="AIO"/>
-		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_spider_nest.h">
-			<Option target="AIO"/>
-		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_switch_spider/aio_switch_spider.h">
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_spider_nest.h">
 			<Option target="AIO"/>
 		</Unit>
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/main/main.c">
@@ -338,57 +329,6 @@
 			<Option target="AIO"/>
 		</Unit>
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/string_utils/trim.c">
-			<Option target="AIO"/>
-		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/tools/aio_parsers/aio_block_body_explorer/aio_block_body_explorer.c">
-			<Option target="AIO"/>
-		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_annotation_ripper.c">
-			<Option target="AIO"/>
-		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_arg_ripper.c">
-			<Option target="AIO"/>
-		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_function_name_ripper.c">
-			<Option target="AIO"/>
-		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_instruction_ripper.c">
-			<Option target="AIO"/>
-		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_output_ripper.c">
-			<Option target="AIO"/>
-		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_assign_spider/aio_assign_spider.c">
-			<Option target="AIO"/>
-		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_break_spider/aio_break_spider.c">
-			<Option target="AIO"/>
-		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_if_spider/aio_if_spider.c">
-			<Option target="AIO"/>
-		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_default_loop_header_spider.c">
-			<Option target="AIO"/>
-		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_in_loop_header_spider.c">
-			<Option target="AIO"/>
-		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_tiny_loop_header_spider.c">
-			<Option target="AIO"/>
-		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_loop_spider.c">
-			<Option target="AIO"/>
-		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_out_spider/aio_out_spider.c">
-			<Option target="AIO"/>
-		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_procedure_spider/aio_procedure_spider.c">
-			<Option target="AIO"/>
-		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_spider_nest.c">
-			<Option target="AIO"/>
-		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_switch_spider/aio_switch_spider.c">
 			<Option target="AIO"/>
 		</Unit>
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/CMakeLists.txt">

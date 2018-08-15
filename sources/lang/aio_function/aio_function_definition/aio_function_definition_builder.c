@@ -4,7 +4,7 @@
 #include <ctype.h>
 #include <process.h>
 #include "../../../../headers/lang/aio_function/aio_function_definition/aio_function_definition.h"
-#include "../../../../headers/tools/aio_parsers/aio_function_parser/aio_rippers/aio_rippers.h"
+#include "../../../../headers/tools/aio_parsers/aio_function_rippers/aio_function_rippers.h"
 
 /**
  * Function definition builder.
