@@ -53,15 +53,10 @@ typedef struct aio_spider {
     /**
      * Take other spider & build materials for it.
      * Spider can be and instruction builder for holder and material builder for other spider.
-     * @param dst_spider destination spider.
-     * @param src_spider source spider.
-     * @param source_code - string.
-     * @param next_spider_point_reference - pointer reference in spider's loop.
-     * @param task_type - what is materials need to weave.
      */
 
     void (*weave_materials_for)(struct aio_spider *dst_spider, struct aio_spider *src_spider, const_string source_code,
-                                int *next_spider_point_reference, aio_task_type task_type);
+                                point_watcher *header_watcher);
 
     /**
      * Free spider.

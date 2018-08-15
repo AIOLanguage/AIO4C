@@ -12,28 +12,10 @@
 #include "../../../../../../../headers/lib/utils/memory_utils/memory_utils.h"
 
 /**
- * 함수들을 선인하다 (Declare functions).
- */
-
-const aio_spider_message
-is_found_if_instruction(const_string source_code, point_watcher *ripper_watcher, aio_spider *spider);
-
-void handle_if_modifier_scope(const_string source_code, aio_spider *spider);
-
-void handle_condition_scope(const_string string_web, aio_spider *spider);
-
-void handle_true_body_scope(const_string source_code, aio_spider *spider);
-
-void handle_false_body_scope(const_string source_code, aio_spider *spider);
-
-void weave_if_instruction_for(aio_instruction_holder *holder, const_string source_code,
-                              point_watcher *ripper_watcher, aio_spider *spider);
-
-/**
  * 주 논리 (Business logic).
  */
 
-#define AIO_IF_SPIDER_DEBUG
+//#define AIO_IF_SPIDER_DEBUG
 
 #define AIO_IF_SPIDER_TAG "AIO_IF_SPIDER"
 

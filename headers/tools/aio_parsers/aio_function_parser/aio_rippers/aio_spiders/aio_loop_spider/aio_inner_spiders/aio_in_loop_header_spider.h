@@ -12,6 +12,6 @@ typedef struct aio_in_loop_header_spider {
 
 } aio_in_loop_header_spider;
 
-struct aio_spider *new_aio_in_loop_header_spider(struct aio_main_loop_materials *parent_materials);
+struct aio_spider *new_aio_in_loop_header_spider();
 
 #endif //AIO_IN_LOOP_HEADER_SPIDER_H

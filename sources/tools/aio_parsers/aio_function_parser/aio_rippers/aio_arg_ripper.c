@@ -55,60 +55,62 @@ aio_variable_definition_map *dig_arguments(const_string source_code, int *pointe
 #ifdef AIO_ARG_RIPPER_DEBUG
     log_info_string(AIO_ARG_RIPPER_TAG, "Argument content:", argument_content);
 #endif
-    //함수 인수 함유량들 파다 (Dig arg contents):
-    const_string_array dirty_arg_chunks = split_by_comma(argument_content);
-    const int string_number = strings_size(dirty_arg_chunks);
-    const_string_array clean_arg_chunks = trim_all_with_line_break(dirty_arg_chunks, strings_size(dirty_arg_chunks));
-    //각 함수 인수 함유량 파다 (Dig each arg content):
-    for (int j = 0; j < string_number; ++j) {
-        const_string arg_chunk = clean_arg_chunks[j];
-        const_string_array dirty_arg_content = split_by_space(arg_chunk);
-        const int dirty_arg_content_length = strings_size(dirty_arg_content);
-        const_string_array arg_content = filter(dirty_arg_content, dirty_arg_content_length, is_empty_string);
-        const int arg_content_size = strings_size(arg_content);
-        const_string_array clean_arg_content = trim_all_with_line_break(arg_content, arg_content_size);
-        string arg_type = NULL;
-        string arg_name = NULL;
-        boolean is_mutable = FALSE;
-        aio_variable_definition *definition;
-        switch (arg_content_size) {
-            case TYPE_VS_NAME:
-                arg_type = new_string(clean_arg_content[0]);
-                arg_name = new_string(clean_arg_content[1]);
-                is_mutable = FALSE;
-                break;
-            case MUTABLE_VS_TYPE_VS_NAME: {
-                const_string mutable_modifier_string = clean_arg_content[0];
-                if (is_aio_mutable_modifier(mutable_modifier_string)) {
-                    arg_type = new_string(clean_arg_content[1]);
-                    arg_name = new_string(clean_arg_content[2]);
-                    is_mutable = TRUE;
-                } else {
-                    throw_error_with_tag(AIO_ARG_RIPPER_TAG, "잘못된 'mu' 수정 자 (Invalid 'mu' modifier)!");
+    if (!is_empty_string(argument_content)) {
+        //함수 인수 함유량들 파다 (Dig arg contents):
+        const_string_array dirty_arg_chunks = split_by_comma(argument_content);
+        const int string_number = strings_size(dirty_arg_chunks);
+        const_string_array clean_arg_chunks = trim_all_with_line_break(dirty_arg_chunks, strings_size(dirty_arg_chunks));
+        //각 함수 인수 함유량 파다 (Dig each arg content):
+        for (int j = 0; j < string_number; ++j) {
+            const_string arg_chunk = clean_arg_chunks[j];
+            const_string_array dirty_arg_content = split_by_space(arg_chunk);
+            const int dirty_arg_content_length = strings_size(dirty_arg_content);
+            const_string_array arg_content = filter(dirty_arg_content, dirty_arg_content_length, is_empty_string);
+            const int arg_content_size = strings_size(arg_content);
+            const_string_array clean_arg_content = trim_all_with_line_break(arg_content, arg_content_size);
+            string arg_type = NULL;
+            string arg_name = NULL;
+            boolean is_mutable = FALSE;
+            aio_variable_definition *definition;
+            switch (arg_content_size) {
+                case TYPE_VS_NAME:
+                    arg_type = new_string(clean_arg_content[0]);
+                    arg_name = new_string(clean_arg_content[1]);
+                    is_mutable = FALSE;
+                    break;
+                case MUTABLE_VS_TYPE_VS_NAME: {
+                    const_string mutable_modifier_string = clean_arg_content[0];
+                    if (is_aio_mutable_modifier(mutable_modifier_string)) {
+                        arg_type = new_string(clean_arg_content[1]);
+                        arg_name = new_string(clean_arg_content[2]);
+                        is_mutable = TRUE;
+                    } else {
+                        throw_error_with_tag(AIO_ARG_RIPPER_TAG, "잘못된 'mu' 수정 자 (Invalid 'mu' modifier)!");
+                    }
                 }
+                    break;
+                default:
+                    throw_error_with_tag(AIO_ARG_RIPPER_TAG, "함수 인수 함유량을 밝힐 수 없어 (Can not define arg content)!");
             }
-                break;
-            default:
-                throw_error_with_tag(AIO_ARG_RIPPER_TAG, "함수 인수 함유량을 밝힐 수 없어 (Can not define arg content)!");
+            definition = new_aio_variable_definition(arg_name, arg_type, is_mutable);
+            put_aio_variable_definition_in_map(arg_definition_map, definition);
+            //--------------------------------------------------------------------------------------------------------------
+            //찌꺼기 수집기 (Garbage collector):
+            free_strings(&dirty_arg_content);
+            free_strings(&arg_content);
+            free_strings(&clean_arg_content);
         }
-        definition = new_aio_variable_definition(arg_name, arg_type, is_mutable);
-        put_aio_variable_definition_in_map(arg_definition_map, definition);
-        //--------------------------------------------------------------------------------------------------------------
-        //찌꺼기 수집기 (Garbage collector):
-        free_strings(&dirty_arg_content);
-        free_strings(&arg_content);
-        free_strings(&clean_arg_content);
-    }
 #ifdef AIO_ARG_RIPPER_DEBUG
-    for (int k = 0; k < arg_definition_map->size; ++k) {
+        for (int k = 0; k < arg_definition_map->size; ++k) {
         const aio_variable_definition *definition = arg_definition_map->variable_definitions[k];
         printf("\n%s: %s, %s, %d \n", AIO_ARG_RIPPER_TAG, definition->type, definition->name,
                definition->is_mutable_by_value);
     }
 #endif
-    //------------------------------------------------------------------------------------------------------------------
-    //찌꺼기 수집기 (Garbage collector):
-    free_strings(&dirty_arg_chunks);
-    free_strings(&clean_arg_chunks);
+        //------------------------------------------------------------------------------------------------------------------
+        //찌꺼기 수집기 (Garbage collector):
+        free_strings(&dirty_arg_chunks);
+        free_strings(&clean_arg_chunks);
+    }
     return arg_definition_map;
 }

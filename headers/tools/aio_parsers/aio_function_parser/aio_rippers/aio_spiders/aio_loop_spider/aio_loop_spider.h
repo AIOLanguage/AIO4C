@@ -7,6 +7,7 @@
 #include "aio_inner_spiders/aio_default_loop_header_spider.h"
 #include "aio_inner_spiders/aio_in_loop_header_spider.h"
 #include "aio_inner_spiders/aio_tiny_loop_header_spider.h"
+#include "../aio_spider_nest.h"
 
 typedef enum aio_loop_scope_type {
     AIO_LOOP_MODIFIER_SCOPE, AIO_LOOP_HEADER_SCOPE, AIO_LOOP_BODY_SCOPE, AIO_LOOP_WEAVING_SCOPE
@@ -45,6 +46,29 @@ typedef struct aio_loop_materials {
 
 } aio_loop_materials;
 
-struct aio_spider *new_aio_loop_spider();
+struct aio_spider *new_aio_loop_spider(point_watcher *ripper_watcher);
+
+
+/**
+ *  Declare functions.
+ */
+
+const_boolean is_end_of_block_body(const_string function_body_string, point_watcher *watcher);
+
+const enum aio_spider_message is_found_loop_instruction(const_string source_code, point_watcher *ripper_watcher,
+                                                        struct aio_spider *spider);
+
+void handle_loop_modifier_scope(const_string source_code, struct aio_spider *spider);
+
+void handle_loop_header_scope(const_string source_code, struct aio_spider *spider);
+
+aio_spider_nest *breed_aio_loop_header_spider_nest();
+
+void handle_loop_body_scope(const_string string_web, struct aio_spider *spider);
+
+void dig_header_materials(const_string source_code, struct aio_spider *parent_spider);
+
+void weave_loop_instruction_for(aio_instruction_holder *instruction_holder, const_string source_code,
+                                point_watcher *ripper_watcher, struct aio_spider *spider);
 
 #endif //AIO_AIO_LOOP_SPIDER_H

@@ -31,4 +31,22 @@ typedef struct aio_if_materials {
 
 struct aio_spider *new_aio_if_spider(point_watcher *ripper_watcher);
 
+/**
+ * Declare functions.
+ */
+
+const enum aio_spider_message is_found_if_instruction(const_string source_code, point_watcher *ripper_watcher,
+                                                      struct aio_spider *spider);
+
+void handle_if_modifier_scope(const_string source_code, struct aio_spider *spider);
+
+void handle_condition_scope(const_string string_web, struct aio_spider *spider);
+
+void handle_true_body_scope(const_string source_code, struct aio_spider *spider);
+
+void handle_false_body_scope(const_string source_code, struct aio_spider *spider);
+
+void weave_if_instruction_for(aio_instruction_holder *holder, const_string source_code, point_watcher *ripper_watcher,
+                              struct aio_spider *spider);
+
 #endif //AIO_IF_SPIDER_H
