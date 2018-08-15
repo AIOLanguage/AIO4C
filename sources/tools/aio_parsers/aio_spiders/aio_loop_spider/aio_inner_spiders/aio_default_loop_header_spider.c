@@ -1,4 +1,4 @@
-#include <malloc.h>
+    #include <malloc.h>
 #include <ctype.h>
 #include <mem.h>
 #include "../../../../../../headers/lib/utils/char_utils/char_utils.h"
@@ -528,4 +528,4 @@ void weave_default_loop_materials_for(struct aio_spider *dst_spider, struct aio_
 #ifdef AIO_DEFAULT_LOOP_HEADER_SPIDER_DEBUG
     log_info(AIO_DEFAULT_LOOP_HEADER_SPIDER_TAG, "WEEEEEAVING IS COMPLETE!");
 #endif
-}/
+}
