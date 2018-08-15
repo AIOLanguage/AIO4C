@@ -14,6 +14,7 @@ string dig_function_name(const_string source_code, int *pointer_reference);
 
 aio_variable_definition_map *dig_arguments(const_string source_code, int *pointer_reference);
 
-aio_instruction_holder *dig_aio_root_instruction_holder(const_string source_code, int *start_code_pointer_ref);
+aio_instruction_holder *dig_aio_root_instruction_holder(const_string source_code, int *start_code_pointer_ref,
+                                                        aio_variable_definition_map *arg_definition_map);
 
 #endif //AIO_RIPPERS_H

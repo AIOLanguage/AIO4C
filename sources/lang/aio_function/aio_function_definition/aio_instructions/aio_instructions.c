@@ -1,10 +1,12 @@
 #include <malloc.h>
 #include "../../../../../headers/lang/aio_function/aio_function_definition/aio_instructions/aio_instructions.h"
+#include "../../../../../headers/lib/utils/memory_utils/memory_utils.h"
 
-aio_instruction_holder *new_aio_instruction_holder(aio_instruction_holder *parent_holder) {
-    aio_instruction_holder *holder = calloc(1, sizeof(aio_instruction_holder));
+
+aio_instruction_holder *new_aio_local_instruction_holder(aio_instruction_holder *parent_holder) {
+    aio_instruction_holder *holder = new_object(sizeof(aio_instruction_holder));
     holder->parent = parent_holder;
-    holder->local_variable_definition_map = new_aio_variable_definition_map();
+    holder->variable_definition_map = new_aio_variable_definition_map();
     holder->instruction_list = new_aio_instruction_list();
     return holder;
 }

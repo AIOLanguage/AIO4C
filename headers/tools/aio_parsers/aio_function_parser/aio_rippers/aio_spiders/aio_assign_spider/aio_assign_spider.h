@@ -31,6 +31,6 @@ typedef struct aio_assign_materials {
     string value;
 } aio_assign_materials;
 
-struct aio_spider *new_aio_assign_spider();
+struct aio_spider *new_aio_assign_spider(point_watcher *ripper_watcher);
 
 #endif //AIO_ASSIGN_SPIDER_H

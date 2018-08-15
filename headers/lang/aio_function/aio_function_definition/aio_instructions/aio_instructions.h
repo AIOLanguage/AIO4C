@@ -20,12 +20,15 @@ typedef enum aio_task_type {
 
 typedef struct aio_instruction_holder {
     struct aio_instruction_holder *parent;
-    aio_variable_definition_map *local_variable_definition_map;
+    aio_variable_definition_map *variable_definition_map;
     struct aio_instruction_list *instruction_list;
 } aio_instruction_holder;
 
-aio_instruction_holder *dig_aio_instruction_holder(const_string source_code, aio_instruction_holder *parent_holder,
-                                                   const int start_index, const int end_index);
+aio_instruction_holder *dig_new_aio_instruction_holder(const_string source_code, aio_instruction_holder *parent_holder,
+                                                       const int start_index, const int end_index);
+
+void dig_aio_instructions_for(aio_instruction_holder *current_holder, const_string source_code,
+                              const int start_index, const int end_index) ;
 
 /**
  * Instruction.
@@ -48,7 +51,7 @@ typedef struct aio_instruction {
 
 } aio_instruction;
 
-aio_instruction_holder *new_aio_instruction_holder(aio_instruction_holder *parent_holder);
+aio_instruction_holder *new_aio_local_instruction_holder(aio_instruction_holder *parent_holder);
 
 aio_instruction *new_aio_assign_instruction(aio_instruction_holder *holder, const_string source,
                                             const_string destination);

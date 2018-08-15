@@ -26,33 +26,29 @@ typedef struct aio_spider {
 
     /**
      * Reset spider's fields.
-     * @param spider - this
      */
 
-    void (*reset)(struct aio_spider *spider);
+    void (*refresh)(struct aio_spider *spider, point_watcher *ripper_watcher);
 
     /**
      * Find instruction.
-     * @param source_code - instruction string in function body;
-     * @param spider - this.
-     * @return can recognize instruction or not.
      */
 
-    const aio_spider_message (*is_found_instruction)(const_string source_code, const int current_position,
+    const aio_spider_message (*is_found_instruction)(const_string source_code, point_watcher *ripper_watcher,
                                                      struct aio_spider *spider);
 
     /**
      * Take instruction holder & build instruction for it.
      * @param instruction_holder - make instruction for.
      * @param source_code - string.
-     * @param next_ripper_point_reference - pointer reference in instruction ripper's loop.
+     * @param ripper_watcher - main ripper's loop mechanism.
      * @param spider - this.
      * After building ripper will know new start position that it again
      * will begin build string in function body and give "string web" for spiders.
      */
 
     void (*weave_instruction_for)(aio_instruction_holder *instruction_holder, const_string source_code,
-                                  int *next_ripper_point_reference, struct aio_spider *spider);
+                                  point_watcher *ripper_watcher, struct aio_spider *spider);
 
     /**
      * Take other spider & build materials for it.

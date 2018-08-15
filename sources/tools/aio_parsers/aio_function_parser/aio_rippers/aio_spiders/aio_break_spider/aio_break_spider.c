@@ -45,7 +45,7 @@ void free_break_function(aio_spider *spider) {
 aio_spider *new_aio_break_spider() {
     aio_spider *spider = calloc(1, sizeof(aio_spider));
     //Bind main spider's functions:
-    spider->reset = reset_break_spider;
+    spider->refresh = reset_break_spider;
     spider->is_found_instruction = is_found_break_instruction;
     spider->weave_instruction_for = weave_break_instruction_for;
     spider->free = free_break_function;

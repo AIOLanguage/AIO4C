@@ -15,18 +15,19 @@
  * 함수들을 선인하다 (Declare functions).
  */
 
-const aio_spider_message is_found_if_instruction(const_string string_web, aio_spider *spider);
+const aio_spider_message
+is_found_if_instruction(const_string source_code, point_watcher *ripper_watcher, aio_spider *spider);
 
-void handle_if_modifier_scope(const_string string_web, aio_spider *spider);
+void handle_if_modifier_scope(const_string source_code, aio_spider *spider);
 
 void handle_condition_scope(const_string string_web, aio_spider *spider);
 
-void handle_true_body_scope(const_string string_web, aio_spider *spider);
+void handle_true_body_scope(const_string source_code, aio_spider *spider);
 
-void handle_false_body_scope(const_string string_web, aio_spider *spider);
+void handle_false_body_scope(const_string source_code, aio_spider *spider);
 
 void weave_if_instruction_for(aio_instruction_holder *holder, const_string source_code,
-                              int *next_ripper_point_reference, aio_spider *spider);
+                              point_watcher *ripper_watcher, aio_spider *spider);
 
 /**
  * 주 논리 (Business logic).
@@ -39,6 +40,7 @@ void weave_if_instruction_for(aio_instruction_holder *holder, const_string sourc
 #ifdef AIO_IF_SPIDER_DEBUG
 
 #include "../../../../../../../headers/lib/utils/log_utils/log_utils.h"
+#include "../../../../../../../headers/tools/aio_parsers/aio_block_body_explorer/aio_block_body_explorer.h"
 
 #endif
 
@@ -46,12 +48,14 @@ void weave_if_instruction_for(aio_instruction_holder *holder, const_string sourc
  * 레셋 (Reset).
  */
 
-void reset_if_spider(aio_spider *spider) {
+void refresh_if_spider(aio_spider *spider, point_watcher *ripper_watcher) {
     //거미의 조건 리셋 (Reset spider state):
     spider->message = AIO_SPIDER_NOT_FOUND_MATERIALS;
     //재료 리셋 (Reset materials):
     aio_if_materials *materials = spider->get.if_materials;
-    reset_point_watcher(materials->main_watcher);
+    materials->main_watcher->start_index = ripper_watcher->pointer;
+    materials->main_watcher->end_index = ripper_watcher->pointer;
+    materials->main_watcher->mode = POINT_PASSIVE_MODE;
     reset_point_watcher(materials->header_watcher);
     reset_point_watcher(materials->true_watcher);
     reset_point_watcher(materials->false_watcher);
@@ -79,16 +83,18 @@ void free_if_spider(aio_spider *spider) {
  * 건설자 (Constructor).
  */
 
-aio_spider *new_aio_if_spider() {
+aio_spider *new_aio_if_spider(point_watcher *ripper_watcher) {
     aio_spider *spider = new_object(sizeof(aio_spider));
     //함수들을 놓다 (Put functions):
-    spider->reset = reset_if_spider;
+    spider->refresh = refresh_if_spider;
     spider->is_found_instruction = is_found_if_instruction;
     spider->weave_instruction_for = weave_if_instruction_for;
     spider->free = free_if_spider;
     //재료들을 만들다 (Create materials):
     aio_if_materials *materials = new_object(sizeof(aio_if_materials));
     materials->main_watcher = new_point_watcher();
+    materials->main_watcher->start_index = ripper_watcher->start_index;
+    materials->main_watcher->end_index = ripper_watcher->pointer;
     materials->header_watcher = new_point_watcher();
     materials->true_watcher = new_point_watcher();
     materials->false_watcher = new_point_watcher();
@@ -104,14 +110,14 @@ aio_spider *new_aio_if_spider() {
  * 수색 (Searching).
  */
 
-const aio_spider_message is_found_if_instruction(const_string string_web, aio_spider *spider) {
+const aio_spider_message
+is_found_if_instruction(const_string source_code, point_watcher *ripper_watcher, aio_spider *spider) {
     //재료들을 추출하다 (Extract materials):
     const aio_if_materials *materials = spider->get.if_materials;
     point_watcher *main_watcher = materials->main_watcher;
-    main_watcher->end_index++;
+    main_watcher->end_index = ripper_watcher->pointer;
     //스캐닝 준비 (Prepare for scanning):
-    const int current_position = main_watcher->end_index - 1;
-    const char current_symbol = string_web[current_position];
+    const char current_symbol = source_code[main_watcher->end_index];
     //TODO: 코드 복제 (Code duplication)!
     if (main_watcher->mode == POINT_PASSIVE_MODE) {
         if (is_space_or_line_break(current_symbol)) {
@@ -122,44 +128,48 @@ const aio_spider_message is_found_if_instruction(const_string string_web, aio_sp
     }
     if (main_watcher->mode == POINT_ACTIVE_MODE) {
         if (materials->scope_type == AIO_IF_MODIFIER_SCOPE) {
-            handle_if_modifier_scope(string_web, spider);
+            handle_if_modifier_scope(source_code, spider);
         }
         if (materials->scope_type == AIO_IF_CONDITION_SCOPE) {
-            handle_condition_scope(string_web, spider);
+            handle_condition_scope(source_code, spider);
             return spider->message;
         }
         if (materials->scope_type == AIO_IF_TRUE_BODY_SCOPE) {
-            handle_true_body_scope(string_web, spider);
+            handle_true_body_scope(source_code, spider);
             return spider->message;
         }
         if (materials->scope_type == AIO_IF_FALSE_BODY_SCOPE) {
-            handle_false_body_scope(string_web, spider);
+            handle_false_body_scope(source_code, spider);
         }
     }
     return spider->message;
 }
 
-void handle_if_modifier_scope(const_string string_web, aio_spider *spider) {
+void handle_if_modifier_scope(const_string source_code, aio_spider *spider) {
     aio_if_materials *materials = spider->get.if_materials;
-    point_watcher *watcher = materials->main_watcher;
-    const char current_symbol = string_web[watcher->end_index - 1];
+    point_watcher *main_watcher = materials->main_watcher;
+    const int current_position = main_watcher->end_index;
+    const char current_symbol = source_code[current_position];
     //현재 기호를 확인하다 (Check current symbol):
     const_boolean is_whitespace_cond = is_space_or_line_break(current_symbol);
     const_boolean is_open_parenthesis_cond = is_opening_parenthesis(current_symbol);
     if (is_whitespace_cond || is_open_parenthesis_cond) {
-        const int start_index = watcher->start_index;
-        const int end_index = watcher->end_index;
+        const int start_index = main_watcher->start_index;
+        const int end_index = main_watcher->end_index;
         const int hold_positions = end_index - start_index;
-        if (hold_positions == 3) {
-            const_boolean is_if_modifier = string_web[start_index] == 'i' && string_web[start_index + 1] == 'f';
+        if (hold_positions == 2) {
+            const_boolean is_if_modifier = source_code[start_index] == 'i' && source_code[start_index + 1] == 'f';
             if (is_if_modifier) {
                 //주요 당직자를 바꾼다 (Shift main watcher):
-                watcher->start_index = end_index;
-                watcher->mode = POINT_PASSIVE_MODE;
+                main_watcher->start_index = end_index;
+                main_watcher->mode = POINT_PASSIVE_MODE;
                 //범위를 바꾼다 (Change scope):
                 materials->scope_type = AIO_IF_CONDITION_SCOPE;
                 //메시지 놓다 (Set message):
                 spider->message = AIO_SPIDER_FOUND_MATERIALS;
+#ifdef AIO_IF_SPIDER_DEBUG
+                log_info(AIO_IF_SPIDER_TAG, "Pass modifier scope!");
+#endif
             }
         }
     }
@@ -170,7 +180,7 @@ void handle_condition_scope(const_string string_web, aio_spider *spider) {
     point_watcher *main_watcher = materials->main_watcher;
     point_watcher *header_watcher = materials->header_watcher;
     //현재 위치를 정의하다 (Define current position):
-    const int current_position = main_watcher->end_index - 1;
+    const int current_position = main_watcher->end_index;
     const char current_symbol = string_web[current_position];
     //조건들을 확인하다 (Check conditions):
     const_boolean is_whitespace_cond = is_space_or_line_break(current_symbol);
@@ -181,7 +191,7 @@ void handle_condition_scope(const_string string_web, aio_spider *spider) {
         //조건의 시작이 (Start of condition):
         if (header_watcher->mode == POINT_PASSIVE_MODE) {
             //여는 괄호를 뛰어 넘다 (Jump over open parenthesis):
-            header_watcher->start_index = main_watcher->end_index;
+            header_watcher->start_index = main_watcher->end_index + 1;
             header_watcher->mode = POINT_ACTIVE_MODE;
         }
         //조건안의 여는 괄호 (Opening parenthesis inside condition):
@@ -205,13 +215,16 @@ void handle_condition_scope(const_string string_web, aio_spider *spider) {
                 //닫는 괄호를 보류하지 않다 (Don't hold closing parenthesis):
                 header_watcher->end_index = current_position;
                 //주요 당직자를 바꾼다 (Shift main watcher):
-                main_watcher->start_index = main_watcher->end_index;
+                main_watcher->start_index = main_watcher->end_index + 1;
                 main_watcher->mode = POINT_PASSIVE_MODE;
                 //범위를 바꾼다 (Change scope):
                 materials->scope_type = AIO_IF_TRUE_BODY_SCOPE;
                 //조건을 추출하다 (Extract condition):
                 const_string dirty_condition = substring_by_point_watcher(string_web, header_watcher);
                 string clean_condition = squeeze_string(dirty_condition);
+#ifdef AIO_IF_SPIDER_DEBUG
+                log_info_string(AIO_IF_SPIDER_TAG, "Captured condition", clean_condition);
+#endif
                 materials->condition = clean_condition;
                 //------------------------------------------------------------------------------------------------------
                 //찌꺼기 수집기 (Garbage collector):
@@ -226,13 +239,13 @@ void handle_condition_scope(const_string string_web, aio_spider *spider) {
     }
 }
 
-void handle_true_body_scope(const_string string_web, aio_spider *spider) {
+void handle_true_body_scope(const_string source_code, aio_spider *spider) {
     aio_if_materials *materials = spider->get.if_materials;
     point_watcher *main_watcher = materials->main_watcher;
     point_watcher *true_watcher = materials->true_watcher;
     //현재 위치를 정의하다 (Define current position):
-    const int current_position = main_watcher->end_index - 1;
-    const char current_symbol = string_web[current_position];
+    const int current_position = main_watcher->end_index;
+    const char current_symbol = source_code[current_position];
     //조건들을 확인하다 (Check conditions):
     const_boolean is_whitespace_cond = is_space_or_line_break(current_symbol);
     const_boolean is_opening_brace_cond = is_opening_brace(current_symbol);
@@ -264,10 +277,10 @@ void handle_true_body_scope(const_string string_web, aio_spider *spider) {
             //블록의 닫는 중괄호 (Closing brace of block):
             if (true_watcher->pointer == 0) {
                 //닫는 중괄호를 보류하다 (Hold close brace):
-                true_watcher->end_index = main_watcher->end_index;
+                true_watcher->end_index = main_watcher->end_index + 1;
                 true_watcher->mode = POINT_UNDEFINED_MODE;
 #ifdef AIO_IF_SPIDER_DEBUG
-                const_string true_body = substring_by_point_watcher(string_web, true_watcher);
+                const_string true_body = substring_by_point_watcher(source_code, true_watcher);
                 log_info_string(AIO_IF_SPIDER_TAG, "True body:", true_body);
                 free((void *) true_body);
 #endif
@@ -300,22 +313,23 @@ void handle_true_body_scope(const_string string_web, aio_spider *spider) {
                 spider->message = AIO_SPIDER_IS_READY_FOR_WEAVING;
 #ifdef AIO_IF_SPIDER_DEBUG
                 log_info(AIO_IF_SPIDER_TAG, "False body is absent! Prepare to weave...");
+                //log_info_char(AIO_IF_SPIDER_TAG, "SYMBOL>>>:", source_code[true_watcher->end_index]);
 #endif
             }
             //주요 당직자를 바꾼다 (Shift main watcher):
-            main_watcher->start_index = main_watcher->end_index;
+            main_watcher->start_index = main_watcher->end_index + 1;
             main_watcher->mode = POINT_PASSIVE_MODE;
         }
     }
 }
 
-void handle_false_body_scope(const_string string_web, aio_spider *spider) {
+void handle_false_body_scope(const_string source_code, aio_spider *spider) {
     aio_if_materials *materials = spider->get.if_materials;
     point_watcher *main_watcher = materials->main_watcher;
     point_watcher *false_watcher = materials->false_watcher;
     //현재 위치를 정의하다 (Define current position):
-    const int current_position = main_watcher->end_index - 1;
-    const char current_symbol = string_web[current_position];
+    const int current_position = main_watcher->end_index;
+    const char current_symbol = source_code[current_position];
     //현재 기호를 확인하다 (Check current symbol):
     const_boolean is_whitespace_cond = is_space_or_line_break(current_symbol);
     const_boolean is_opening_brace_cond = is_opening_brace(current_symbol);
@@ -340,21 +354,21 @@ void handle_false_body_scope(const_string string_web, aio_spider *spider) {
         if (false_watcher->mode == POINT_PASSIVE_MODE) {
             throw_error_with_tag(AIO_IF_SPIDER_TAG, "False body can not start with close brace!");
         }
-        //'true' 블록안에 딛는 중괄호 (Closing brace in 'true' body):
+        //'false' 블록안에 딛는 중괄호 (Closing brace in 'false' body):
         if (false_watcher->mode == POINT_ACTIVE_MODE) {
             false_watcher->pointer--;
             if (false_watcher->pointer == 0) {
-                //'true' 블록 끝 (End of 'true' body):
-                false_watcher->end_index = main_watcher->end_index;
+                //'false' 블록 끝 (End of 'false' body):
+                false_watcher->end_index = main_watcher->end_index + 1;
                 //범위를 바꾼다 (Change scope):
                 materials->scope_type = AIO_IF_WEAVING_SCOPE;
                 //메시지 놓다 (Set message):
                 spider->message = AIO_SPIDER_IS_READY_FOR_WEAVING;
                 //주요 당직자를 바꾼다 (Shift main watcher):
-                main_watcher->start_index = main_watcher->end_index;
+                main_watcher->start_index = main_watcher->end_index + 1;
                 main_watcher->mode = POINT_PASSIVE_MODE;
 #ifdef AIO_IF_SPIDER_DEBUG
-                const_string false_body = substring_by_point_watcher(string_web, false_watcher);
+                const_string false_body = substring_by_point_watcher(source_code, false_watcher);
                 log_info_string(AIO_IF_SPIDER_TAG, "False body:", false_body);
                 log_info(AIO_IF_SPIDER_TAG, "False body is exist. Prepare to weave...");
                 free((void *) false_body);
@@ -373,45 +387,47 @@ void handle_false_body_scope(const_string string_web, aio_spider *spider) {
  */
 
 void weave_if_instruction_for(aio_instruction_holder *holder, const_string source_code,
-                              int *next_ripper_point_reference, aio_spider *spider) {
+                              point_watcher *ripper_watcher, aio_spider *spider) {
 #ifdef AIO_IF_SPIDER_DEBUG
     log_info(AIO_IF_SPIDER_TAG, "Start weaving...");
 #endif
     //재료들을 추출하다 (Extract materials):
     const aio_if_materials *materials = spider->get.if_materials;
-    const point_watcher *main_watcher = materials->main_watcher;
-    const point_watcher *true_watcher = materials->true_watcher;
-    const point_watcher *false_watcher = materials->false_watcher;
+    point_watcher *true_watcher = materials->true_watcher;
+    point_watcher *false_watcher = materials->false_watcher;
     const aio_if_branch_type branch_type = materials->branch_type;
     const_boolean is_ready_for_weaving = materials->scope_type == AIO_IF_WEAVING_SCOPE;
     if (is_ready_for_weaving) {
         const_string if_condition = new_string(materials->condition);
         aio_instruction_holder *true_holder = NULL;
         aio_instruction_holder *false_holder = NULL;
-        int start_position = *next_ripper_point_reference + true_watcher->start_index + 1;
-        int end_position = *next_ripper_point_reference + true_watcher->end_index + 1;
 #ifdef AIO_IF_SPIDER_DEBUG
-        const_string true_body = substring(source_code, start_position, end_position);
+        const_string true_body = substring_by_point_watcher(source_code, true_watcher);
         log_info_string(AIO_IF_SPIDER_TAG, "Weave true branch!\n", true_body);
         free((void *) true_body);
 #endif
-        true_holder = dig_aio_instruction_holder(source_code, holder, start_position, end_position);
+        true_holder = dig_new_aio_instruction_holder(source_code, holder, true_watcher->start_index,
+                                                     true_watcher->end_index);
+        if (branch_type == AIO_HAS_TRUE_BRANCH) {
+            ripper_watcher->start_index = true_watcher->end_index;
+            ripper_watcher->pointer = true_watcher->end_index;
+        }
         if (branch_type == AIO_HAS_TRUE_AND_FALSE_BRANCHES) {
-            start_position = *next_ripper_point_reference + false_watcher->start_index + 1;
-            end_position = *next_ripper_point_reference + false_watcher->end_index + 1;
 #ifdef AIO_IF_SPIDER_DEBUG
-            const_string false_body = substring(source_code, start_position, end_position);
+            const_string false_body = substring_by_point_watcher(source_code, false_watcher);
             log_info_string(AIO_IF_SPIDER_TAG, "Weave false branch!\n", false_body);
             free((void *) false_body);
 #endif
-            false_holder = dig_aio_instruction_holder(source_code, holder, start_position, end_position);
+            ripper_watcher->start_index = false_watcher->end_index;
+            ripper_watcher->pointer = false_watcher->end_index;
+            false_holder = dig_new_aio_instruction_holder(source_code, holder, false_watcher->start_index,
+                                                          false_watcher->end_index);
         }
         //지침을 짜다 (Weave instruction):
         aio_instruction *if_instruction = new_aio_if_instruction(holder, if_condition, true_holder, false_holder);
         aio_instruction_list *instruction_list = holder->instruction_list;
         add_aio_instruction_in_list(instruction_list, if_instruction);
         //짜다가 완성되었습니다 (Weaving is complete)!
-        *next_ripper_point_reference += main_watcher->end_index;
     } else {
         throw_error_with_tag(AIO_IF_SPIDER_TAG, "Not ready for weaving!");
     }

@@ -29,6 +29,6 @@ typedef struct aio_if_materials {
     string condition;
 } aio_if_materials;
 
-struct aio_spider *new_aio_if_spider();
+struct aio_spider *new_aio_if_spider(point_watcher *ripper_watcher);
 
 #endif //AIO_IF_SPIDER_H

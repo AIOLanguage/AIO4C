@@ -58,7 +58,7 @@ void weave_loop_instruction_for(aio_instruction_holder *instruction_holder, cons
 
 void reset_loop_spider(aio_spider *spider) {
 #ifdef AIO_LOOP_SPIDER_DEBUG
-    log_info(AIO_LOOP_SPIDER_TAG, "Start to reset 'loop' spider...");
+    log_info(AIO_LOOP_SPIDER_TAG, "Start to refresh 'loop' spider...");
 #endif
     aio_main_loop_materials *materials = spider->get.loop_materials->from.main;
     materials->scope_type = AIO_LOOP_MODIFIER_SCOPE;
@@ -96,7 +96,7 @@ aio_spider *new_aio_loop_spider() {
 #endif
     aio_spider *spider = new_object(sizeof(aio_spider));
     //함수들을 놓다 (Put functions):
-    spider->reset = reset_loop_spider;
+    spider->refresh = reset_loop_spider;
     spider->is_found_instruction = is_found_loop_instruction;
     spider->weave_instruction_for = weave_loop_instruction_for;
     spider->free = free_loop_spider;
@@ -269,7 +269,7 @@ void dig_header_materials(const_string string_web, aio_spider *parent_spider) {
                 append_char_to(str_builder, symbol);
                 const_string substring_web = str_builder->string_value;
                 //Give "string web" from spider swarm:
-                const aio_spider_swarm_mode swarm_mode = spider_swarm->mode;
+                const aio_spider_nest_mode swarm_mode = spider_swarm->mode;
                 if (swarm_mode == AIO_ALL_SPIDERS_WORK) {
                     for (int j = 0; j < AIO_NUMBER_OF_SPIDERS; ++j) {
                         aio_spider *child = spider_swarm->spiders[j];
@@ -291,7 +291,7 @@ void dig_header_materials(const_string string_web, aio_spider *parent_spider) {
                         child_spider->weave_materials_for(parent_spider, child_spider, string_web,
                                                           &header_watcher->start_index, AIO_LOOP_TASK);
                         //Reset spiders:
-                        reset_aio_spiders(spider_swarm);
+                        refresh_aio_spiders(spider_swarm, NULL);
                         //Reset string builder:
                         reset_string_builder(str_builder);
                         //Shift main_watcher:

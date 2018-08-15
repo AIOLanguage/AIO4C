@@ -2,7 +2,7 @@
 #include "../../../../../../headers/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_spider_nest.h"
 #include "../../../../../../headers/lib/utils/memory_utils/memory_utils.h"
 
-#define AIO_NUMBER_OF_SPIDERS 3 //7
+#define AIO_NUMBER_OF_SPIDERS 2 //7
 
 #define AIO_SPIDER_NEST_DEBUG
 
@@ -20,15 +20,15 @@
  * @return array of spiders.
  */
 
-aio_spider_nest *breed_aio_function_spider_nest() {
+aio_spider_nest *breed_aio_function_spider_nest(point_watcher *ripper_watcher) {
 #ifdef AIO_SPIDER_NEST_DEBUG
     log_info_int(AIO_SPIDER_NEST_TAG, "Breed aio function spiders... Number of spiders:", AIO_NUMBER_OF_SPIDERS);
 #endif
     //Create spiders:
     aio_spider **spiders = calloc(AIO_NUMBER_OF_SPIDERS, sizeof(aio_spider *));
-    spiders[0] = new_aio_assign_spider();
-    spiders[1] = new_aio_if_spider();
-    spiders[2] = new_aio_loop_spider();
+    spiders[0] = new_aio_assign_spider(ripper_watcher);
+    spiders[1] = new_aio_if_spider(ripper_watcher);
+//    spiders[2] = new_aio_loop_spider();
 //    spiders[2] = new_aio_break_spider();
 //    spiders[4] = new_aio_out_spider();
 //    spiders[5] = new_aio_procedure_spider();
@@ -50,11 +50,11 @@ aio_spider_nest *breed_aio_function_spider_nest() {
  * @param spider nest.
  */
 
-void reset_aio_spiders(aio_spider_nest *nest) {
+void refresh_aio_spiders(aio_spider_nest *nest, point_watcher *ripper_watcher) {
     for (int i = 0; i < AIO_NUMBER_OF_SPIDERS; ++i) {
         aio_spider *spider = nest->spiders[i];
         //Reset himself:
-        spider->reset(spider);
+        spider->refresh(spider, ripper_watcher);
     }
 }
 

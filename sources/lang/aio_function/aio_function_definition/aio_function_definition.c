@@ -18,7 +18,7 @@ aio_function_definition *new_aio_method_definition(aio_annotation_list *annotati
 
 aio_variable_definition *get_local_variable_definition_in_function_tree(const_string variable_name,
                                                                         aio_instruction_holder *child_holder) {
-    aio_variable_definition_map *map = child_holder->local_variable_definition_map;
+    aio_variable_definition_map *map = child_holder->variable_definition_map;
     const aio_variable_definition *variable_definition = get_aio_variable_definition_in_map_by_name(map, variable_name);
     if (variable_definition == NULL) {
         aio_instruction_holder *parent_holder = child_holder->parent;
