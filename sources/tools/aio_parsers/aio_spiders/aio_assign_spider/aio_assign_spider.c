@@ -8,7 +8,6 @@
 #include "../../../../../headers/lang/aio_reserved_names/aio_reserved_names_container.h"
 #include "../../../../../headers/lang/aio_core/aio_core.h"
 #include "../../../../../headers/lib/utils/string_utils/string_builder.h"
-#include "../../../../../../../headers/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_assign_spider/aio_assign_spider.h"
 #include "../../../../../headers/lib/utils/memory_utils/memory_utils.h"
 
 /**
@@ -22,6 +21,7 @@
 #ifdef AIO_ASSIGN_SPIDER_DEBUG
 
 #include "../../../../../headers/lib/utils/log_utils/log_utils.h"
+#include "../../../../../headers/tools/aio_parsers/aio_spiders/aio_spider.h"
 
 #endif
 
@@ -272,21 +272,20 @@ void handle_assign_value_scope(const_string source_code, aio_spider *spider) {
     const_boolean is_letter_cond = isalpha(current_symbol);
     const_boolean is_letter_or_number_or_close_parenthesis_cond = isalnum(current_symbol) || is_close_parenthesis_cond;
     const_boolean is_close_brace_cond = is_closing_brace(current_symbol);
-    if (is_letter_or_number_or_close_parenthesis_cond && value_watcher->mode == POINT_PASSIVE_MODE) {
-        value_watcher->mode = POINT_ACTIVE_MODE;
-        return;
-    }
     if (is_whitespace_cond && value_watcher->mode == POINT_ACTIVE_MODE) {
         value_watcher->pointer++;
         return;
     }
-    if ((is_letter_cond || is_close_brace_cond) && value_watcher->mode == POINT_ACTIVE_MODE) {
+    if ((is_letter_cond || is_close_brace_cond) && value_watcher->mode == POINT_ACTIVE_MODE && value_watcher->pointer > 0) {
         value_watcher->start_index = main_watcher->start_index;
         value_watcher->end_index = main_watcher->end_index - value_watcher->pointer;
         //값을 놓다 (Set value):
         string dirty_value = substring_by_point_watcher(source_code, value_watcher);
         string clean_value = squeeze_string(dirty_value);
         materials->value = clean_value;
+#ifdef AIO_ASSIGN_SPIDER_DEBUG
+        log_info_string(AIO_ASSIGN_SPIDER_TAG, "CAPTURED VALUE:", clean_value);
+#endif
         //위빙 준비 (Prepare for weaving):
         materials->scope_type = AIO_ASSIGN_WEAVING_SCOPE;
         main_watcher->start_index = main_watcher->end_index;
@@ -297,6 +296,10 @@ void handle_assign_value_scope(const_string source_code, aio_spider *spider) {
     } else {
         value_watcher->mode = POINT_PASSIVE_MODE;
         value_watcher->pointer = 0;
+        if (is_letter_or_number_or_close_parenthesis_cond && value_watcher->mode == POINT_PASSIVE_MODE) {
+            value_watcher->mode = POINT_ACTIVE_MODE;
+            return;
+        }
     }
 }
 
@@ -319,7 +322,8 @@ void weave_assign_instruction_for(aio_instruction_holder *holder, const_string _
         ripper_watcher->pointer = materials->value_watcher->end_index;
         ripper_watcher->start_index = materials->value_watcher->end_index;
         //변수 정의를 짜다 (Weave variable definition):
-        aio_variable_definition *new_definition = create_local_variable_definition(declaration_type, variable_data);
+        aio_variable_definition *new_definition = create_local_variable_definition_by_assign_spider(declaration_type,
+                                                                                                    variable_data);
         aio_variable_definition *definition = get_local_variable_definition_in_function_tree(new_definition->name,
                                                                                              holder);
         if (definition == NULL) {
@@ -365,8 +369,9 @@ void weave_assign_instruction_for(aio_instruction_holder *holder, const_string _
     }
 }
 
-aio_variable_definition *create_local_variable_definition(const aio_assign_variable_declaration_type declaration_type,
-                                                          const_string_array variable_materials) {
+aio_variable_definition *create_local_variable_definition_by_assign_spider(
+        const aio_assign_variable_declaration_type declaration_type,
+        const_string_array variable_materials) {
     string variable_name = NULL;
     string variable_type = NULL;
     boolean is_mutable = FALSE;

@@ -5,7 +5,7 @@
 #include "../../../../../headers/lib/point_watcher/point_watcher.h"
 #include "../../../../../headers/lib/utils/char_utils/char_utils.h"
 #include "../../../../../headers/lib/utils/error_utils/error_utils.h"
-#include "../../../../../../../headers/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_spider.h"
+#include "../../../../../headers/tools/aio_parsers/aio_spiders/aio_spider.h"
 
 /**
  * Declare functions. 

@@ -7,9 +7,6 @@
 #include "../../../../../headers/lib/utils/char_utils/char_utils.h"
 #include "../../../../../headers/lib/utils/string_utils/string_builder.h"
 #include "../../../../../headers/lib/point_watcher/point_watcher.h"
-#include "../../../../../../../headers/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_spider.h"
-#include "../../../../../../../headers/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_spider_nest.h"
-#include "../../../../../../../headers/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_loop_spider/aio_loop_spider.h"
 
 #include "../../../../../headers/lib/utils/memory_utils/memory_utils.h"
 
@@ -27,6 +24,8 @@
 #ifdef AIO_LOOP_SPIDER_DEBUG
 
 #include "../../../../../headers/lib/utils/log_utils/log_utils.h"
+#include "../../../../../headers/tools/aio_parsers/aio_spiders/aio_spider.h"
+#include "../../../../../headers/tools/aio_parsers/aio_spiders/aio_loop_spider/aio_loop_spider.h"
 
 #endif
 
@@ -34,6 +33,7 @@ void refresh_loop_spider(aio_spider *spider, point_watcher *ripper_watcher) {
 #ifdef AIO_LOOP_SPIDER_DEBUG
     log_info(AIO_LOOP_SPIDER_TAG, "Start to refresh 'loop' spider...");
 #endif
+    //Refresh main materials:
     aio_main_loop_materials *materials = spider->get.loop_materials->from.main;
     materials->scope_type = AIO_LOOP_MODIFIER_SCOPE;
     materials->main_watcher->start_index = ripper_watcher->pointer;
@@ -41,6 +41,19 @@ void refresh_loop_spider(aio_spider *spider, point_watcher *ripper_watcher) {
     materials->main_watcher->mode = POINT_PASSIVE_MODE;
     reset_point_watcher(materials->header_watcher);
     reset_point_watcher(materials->body_watcher);
+    //Refresh applied materials:
+    const aio_loop_material_type header_material_type = materials->applied_header_material_type;
+    if (header_material_type == AIO_LOOP_MATERIALS_DEFAULT_HEADER) {
+        aio_default_loop_header_materials *default_header_materials = materials->get_applied_materials_from
+                .default_loop_header;
+        refresh_default_loop_header_materials(default_header_materials, materials->header_watcher);
+    }
+    if (header_material_type == AIO_LOOP_MATERIALS_IN_HEADER) {
+
+    }
+    if (header_material_type == AIO_LOOP_MATERIALS_TINY_HEADER) {
+
+    }
     spider->message = AIO_SPIDER_NOT_FOUND_MATERIALS;
 #ifdef AIO_LOOP_SPIDER_DEBUG
     log_info(AIO_LOOP_SPIDER_TAG, "Reset of 'loop' spider is complete!");
@@ -54,6 +67,20 @@ void refresh_loop_spider(aio_spider *spider, point_watcher *ripper_watcher) {
 void free_loop_spider(aio_spider *spider) {
     aio_loop_materials *materials = spider->get.loop_materials;
     aio_main_loop_materials *main_loop_materials = materials->from.main;
+    //Free applied header materials:
+    const aio_loop_material_type header_material_type = main_loop_materials->applied_header_material_type;
+    if (header_material_type == AIO_LOOP_MATERIALS_DEFAULT_HEADER) {
+        aio_default_loop_header_materials *default_header_materials = main_loop_materials->get_applied_materials_from
+                .default_loop_header;
+        free(default_header_materials);
+    }
+    if (header_material_type == AIO_LOOP_MATERIALS_IN_HEADER) {
+
+    }
+    if (header_material_type == AIO_LOOP_MATERIALS_TINY_HEADER) {
+
+    }
+    //Free main materials:
     free_point_watcher(main_loop_materials->main_watcher);
     free_point_watcher(main_loop_materials->header_watcher);
     free_point_watcher(main_loop_materials->body_watcher);
@@ -86,6 +113,7 @@ aio_spider *new_aio_loop_spider(point_watcher *ripper_watcher) {
     main_loop_materials->main_watcher->end_index = ripper_watcher->pointer;
     main_loop_materials->header_watcher = new_point_watcher();
     main_loop_materials->body_watcher = new_point_watcher();
+    main_loop_materials->applied_header_material_type = AIO_LOOP_MATERIALS_UNDEFINED;
     materials->from.main = main_loop_materials;
     //재료들을 놓다 (Set materials):
     spider->get.loop_materials = materials;
@@ -231,11 +259,11 @@ void dig_header_materials(const_string source_code, aio_spider *parent_spider) {
     aio_main_loop_materials *materials = parent_spider->get.loop_materials->from.main;
     point_watcher *header_watcher = materials->header_watcher;
     //Header main_watcher pointer is already useless. Thus we can use pointer again!
-    header_watcher->pointer = header_watcher->start_index;
+    header_watcher->pointer = header_watcher->start_index + 1;
     const_boolean is_not_empty_header = header_watcher->end_index - header_watcher->start_index > 0;
     if (is_not_empty_header) {
         //Create spider swarm for searching instructions:
-        aio_spider_nest *spider_nest = breed_aio_loop_header_spider_nest();
+        aio_spider_nest *spider_nest = (aio_spider_nest *) breed_aio_loop_header_spider_nest(header_watcher);
         //After weaving instruction need from check function body string rest:
         while (header_watcher->pointer < header_watcher->end_index) {
             if (header_watcher->mode == POINT_PASSIVE_MODE) {
@@ -269,6 +297,9 @@ void dig_header_materials(const_string source_code, aio_spider *parent_spider) {
                     const aio_spider_message message
                             = child_spider->is_found_instruction(source_code, header_watcher, child_spider);
                     if (message == AIO_SPIDER_IS_READY_FOR_WEAVING) {
+#ifdef AIO_LOOP_SPIDER_DEBUG
+                        log_info(AIO_LOOP_SPIDER_TAG, "START WE-WE-WE");
+#endif
                         //Spider takes current holder and weave for holder instruction:
                         child_spider->weave_materials_for(parent_spider, child_spider, source_code, header_watcher);
                         //Reset spiders:
@@ -293,24 +324,23 @@ void dig_header_materials(const_string source_code, aio_spider *parent_spider) {
     }
 }
 
-struct aio_spider_nest *breed_aio_loop_header_spider_nest() {
+struct aio_spider_nest *breed_aio_loop_header_spider_nest(point_watcher *header_watcher) {
     //Create spiders:
-    aio_spider **spiders = calloc(AIO_NUMBER_OF_SPIDERS, sizeof(aio_spider *));
-    spiders[0] = new_aio_default_loop_header_spider(NULL);
+    aio_spider **spiders = calloc(AIO_NUMBER_OF_SPIDERS, sizeof(struct aio_spider *));
+    spiders[0] = new_aio_default_loop_header_spider(header_watcher);
     //spiders[1] = new_aio_in_loop_header_spider();
     //spiders[2] = new_aio_tiny_loop_header_spider();
-    aio_spider_nest *swarm = new_object(sizeof(aio_spider_nest));
-    swarm->number_of_spiders = AIO_NUMBER_OF_SPIDERS;
-    swarm->spiders = spiders;
-    swarm->active_spider = NULL;
-    swarm->mode = AIO_ALL_SPIDERS_WORK;
-    return swarm;
+    aio_spider_nest *nest = new_object(sizeof(aio_spider_nest));
+    nest->number_of_spiders = AIO_NUMBER_OF_SPIDERS;
+    nest->spiders = spiders;
+    nest->active_spider = NULL;
+    nest->mode = AIO_ALL_SPIDERS_WORK;
+    return (struct aio_spider_nest *) nest;
 }
 
 //HEADER ANALYSING END:
 //----------------------------------------------------------------------------------------------------------------------
 //----------------------------------------------------------------------------------------------------------------------
-
 
 void handle_loop_body_scope(const_string string_web, aio_spider *spider) {
 
@@ -318,6 +348,5 @@ void handle_loop_body_scope(const_string string_web, aio_spider *spider) {
 
 void weave_loop_instruction_for(aio_instruction_holder *instruction_holder, const_string source_code,
                                 point_watcher *ripper_watcher, struct aio_spider *spider) {
-
 
 }

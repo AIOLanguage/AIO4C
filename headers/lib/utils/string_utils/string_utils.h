@@ -74,6 +74,8 @@ int strings_size(const_string_array src);
 
 const_boolean matches_string(const_string word);
 
+const_boolean are_equal_strings(const_string first, const_string second);
+
 void free_strings(const_string_array *src_reference);
 
 #endif //STRING_UTILS_H

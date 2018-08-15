@@ -8,8 +8,8 @@
 #include "../../../../../headers/lib/utils/error_utils/error_utils.h"
 #include "../../../../../headers/lib/utils/string_utils/string_builder.h"
 #include "../../../../../headers/lang/aio_reserved_names/aio_reserved_names_container.h"
-#include "../../../../../../../headers/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_spider.h"
 #include "../../../../../headers/lib/utils/memory_utils/memory_utils.h"
+#include "../../../../../headers/tools/aio_parsers/aio_spiders/aio_spider.h"
 
 /**
  * 주 논리 (Business logic).
@@ -27,7 +27,7 @@
 #endif
 
 /**
- * 레셋 (Reset).
+ * Refresh
  */
 
 void refresh_if_spider(aio_spider *spider, point_watcher *ripper_watcher) {

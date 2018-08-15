@@ -1,5 +1,4 @@
 #include <malloc.h>
-#include "../../../../../../headers/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_spider_nest.h"
 #include "../../../../headers/lib/utils/memory_utils/memory_utils.h"
 
 #define AIO_NUMBER_OF_SPIDERS 3 //7
@@ -11,6 +10,7 @@
 #define AIO_SPIDER_NEST_TAG "AIO_SPIDER_NEST"
 
 #include "../../../../headers/lib/utils/log_utils/log_utils.h"
+#include "../../../../headers/tools/aio_parsers/aio_spiders/aio_spider_nest.h"
 
 #endif
 
@@ -25,7 +25,7 @@ aio_spider_nest *breed_aio_function_spider_nest(point_watcher *ripper_watcher) {
     log_info_int(AIO_SPIDER_NEST_TAG, "Breed aio function spiders... Number of spiders:", AIO_NUMBER_OF_SPIDERS);
 #endif
     //Create spiders:
-    aio_spider **spiders = calloc(AIO_NUMBER_OF_SPIDERS, sizeof(aio_spider *));
+    aio_spider **spiders = calloc(AIO_NUMBER_OF_SPIDERS, sizeof(struct aio_spider *));
     spiders[0] = new_aio_assign_spider(ripper_watcher);
     spiders[1] = new_aio_if_spider(ripper_watcher);
     spiders[2] = new_aio_loop_spider(ripper_watcher);

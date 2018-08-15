@@ -37,11 +37,13 @@ typedef struct aio_default_loop_header_materials {
     aio_default_loop_header_step_type step_type;
     //Watchers:
     point_watcher *main_watcher;
+    point_watcher *value_watcher;
     point_watcher *condition_watcher;
     //Data:
     string_list *pointer_data_list;
     string init_value;
     string loop_condition;
+    string step_value;
 } aio_default_loop_header_materials;
 
 typedef struct aio_default_loop_header_spider {
@@ -58,18 +60,30 @@ const enum aio_spider_message is_found_default_loop_header_instruction(const_str
  *  Declare functions.
  */
 
+void refresh_default_loop_header_materials(aio_default_loop_header_materials *materials, point_watcher *parent_watcher);
+
+void free_default_loop_header_materials(aio_default_loop_header_materials *materials);
+
 void refresh_default_loop_header_declaration_scope(struct aio_spider *spider, string chunk,
                                                    aio_default_loop_header_pointer_declaration_type type,
                                                    enum aio_spider_message message);
 
 void handle_default_loop_header_declaration_scope(const_string string_web, struct aio_spider *spider);
 
-void handle_default_loop_header_equal_sign_scope(const_string string_web, struct aio_spider *spider);
+void handle_default_loop_header_equal_sign_scope(const_string source_code, struct aio_spider *spider);
 
-void handle_default_loop_header_value_scope(const_string string_web, struct aio_spider *spider);
+void handle_default_loop_header_value_scope(const_string source_code, struct aio_spider *spider);
 
-void handle_default_loop_header_condition_scope(const_string string_web, struct aio_spider *spider);
+void handle_default_loop_header_condition_scope(const_string source_code, point_watcher *parent_watcher,
+                                                struct aio_spider *spider);
 
-void handle_default_loop_header_step_scope(const_string string_web, struct aio_spider *spider);
+void handle_default_loop_header_step_scope(const_string source_code, point_watcher *parent_watcher,
+                                           struct aio_spider *spider);
+
+const_boolean is_same_loop_pointer(const_string input_name, aio_default_loop_header_materials *materials);
+
+void
+weave_default_loop_materials_for(struct aio_spider *dst_spider, struct aio_spider *src_spider, const_string _,
+                                 point_watcher *header_watcher);
 
 #endif //AIO_DEFAULT_LOOP_HEADER_SPIDER_H

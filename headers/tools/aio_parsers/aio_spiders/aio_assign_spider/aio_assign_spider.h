@@ -52,8 +52,9 @@ void handle_assign_value_scope(const_string source_code, struct aio_spider *spid
 void weave_assign_instruction_for(aio_instruction_holder *holder, const_string _,
                                   point_watcher *ripper_watcher, struct aio_spider *spider);
 
-aio_variable_definition *create_local_variable_definition(const aio_assign_variable_declaration_type declaration_type,
-                                                          const_string_array variable_materials);
+aio_variable_definition *create_local_variable_definition_by_assign_spider(
+        const aio_assign_variable_declaration_type declaration_type,
+        const_string_array variable_materials);
 
 
 #endif //AIO_ASSIGN_SPIDER_H

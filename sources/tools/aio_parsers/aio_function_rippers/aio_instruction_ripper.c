@@ -6,7 +6,6 @@
 #include "../../../../headers/lib/utils/char_utils/char_utils.h"
 #include "../../../../headers/lib/utils/error_utils/error_utils.h"
 #include "../../../../headers/lib/utils/string_utils/string_builder.h"
-#include "../../../../../headers/tools/aio_parsers/aio_function_parser/aio_rippers/aio_spiders/aio_spider_nest.h"
 #include "../../../../headers/tools/aio_parsers/aio_block_body_explorer/aio_block_body_explorer.h"
 #include "../../../../headers/lib/utils/memory_utils/memory_utils.h"
 
@@ -17,6 +16,7 @@
 #ifdef AIO_INSTRUCTION_RIPPER_DEBUG
 
 #include "../../../../headers/lib/utils/log_utils/log_utils.h"
+#include "../../../../headers/tools/aio_parsers/aio_spiders/aio_spider_nest.h"
 
 #endif
 

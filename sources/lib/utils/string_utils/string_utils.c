@@ -132,7 +132,7 @@ string substring_by_offset(const_string string, int offset, int length) {
 
 string substring(const_string string, int start, int end) {
     const size_t dst_size = (const size_t) (end - start + 1);
-    char* dst = calloc(dst_size, sizeof(char));
+    char *dst = calloc(dst_size, sizeof(char));
     int position = 0;
     for (int i = start; i < end; ++i) {
         dst[position++] = string[i];
@@ -291,4 +291,8 @@ string double_to_string(double src) {
     free(integer_array);
     free(fractional_array);
     return dst;
+}
+
+const_boolean are_equal_strings(const_string first, const_string second) {
+    return strcmp(first, second) == 0;
 }
