@@ -80,10 +80,14 @@ void handle_default_loop_header_condition_scope(const_string source_code, point_
 void handle_default_loop_header_step_scope(const_string source_code, point_watcher *parent_watcher,
                                            struct aio_spider *spider);
 
-const_boolean is_same_loop_pointer(const_string input_name, aio_default_loop_header_materials *materials);
+string get_default_loop_pointer_name_by_materials(const aio_default_loop_header_materials *materials);
 
-void
-weave_default_loop_materials_for(struct aio_spider *dst_spider, struct aio_spider *src_spider, const_string _,
-                                 point_watcher *header_watcher);
+const_boolean is_same_default_loop_pointer(const_string input_name, aio_default_loop_header_materials *materials);
+
+void weave_default_loop_materials_for(struct aio_spider *dst_spider, struct aio_spider *src_spider, const_string _,
+                                      point_watcher *header_watcher);
+
+aio_variable_definition *create_pointer_variable_definition_by_default_loop_header_spider(
+        const aio_default_loop_header_pointer_declaration_type declaration_type, const_string_array pointer_data);
 
 #endif //AIO_DEFAULT_LOOP_HEADER_SPIDER_H

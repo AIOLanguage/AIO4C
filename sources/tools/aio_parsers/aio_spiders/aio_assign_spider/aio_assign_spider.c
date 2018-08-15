@@ -350,7 +350,7 @@ void weave_assign_instruction_for(aio_instruction_holder *holder, const_string _
             free(new_definition->type);
             free_aio_variable_definition(new_definition);
         }
-        //'Assign' 지침을  짜다 (Weave 'assign' instruction):
+        //'Assign' 지침을  짜다 (Weave 'Assign' instruction):
         const_string assign_task_source = new_string(value_string);
         const_string assign_task_destination = new_string(definition->name);
         aio_instruction *assign_instruction = new_aio_assign_instruction(holder, assign_task_source,

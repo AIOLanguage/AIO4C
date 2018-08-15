@@ -11,7 +11,7 @@
  */
 
 typedef enum aio_task_type {
-    AIO_ASSIGN_TASK, AIO_IF_TASK, AIO_SWITCH_TASK, AIO_LOOP_TASK, AIO_PROCEDURE_TASK, AIO_BREAK_TASK, AIO_RETURN_TASK
+    AIO_ASSIGN_TASK, AIO_BREAK_TASK, AIO_IF_TASK, AIO_LOOP_TASK, AIO_PROCEDURE_TASK, AIO_RETURN_TASK, AIO_SWITCH_TASK
 } aio_task_type;
 
 /**
@@ -28,7 +28,7 @@ aio_instruction_holder *dig_new_aio_instruction_holder(const_string source_code,
                                                        const int start_index, const int end_index);
 
 void dig_aio_instructions_for(aio_instruction_holder *current_holder, const_string source_code,
-                              const int start_index, const int end_index) ;
+                              const int start_index, const int end_index);
 
 /**
  * Instruction.
@@ -61,16 +61,16 @@ aio_instruction *new_aio_break_instruction(aio_instruction_holder *holder);
 aio_instruction *new_aio_if_instruction(aio_instruction_holder *holder, const_string if_condition,
                                         aio_instruction_holder *true_holder, aio_instruction_holder *false_holder);
 
-aio_instruction *new_aio_switch_instruction(aio_instruction_holder *parent_holder, const_string source,
-                                            const_string destination);
-
-aio_instruction *new_aio_loop_instruction(aio_instruction_holder *parent_holder, const_string source,
-                                          const_string destination);
+aio_instruction *new_aio_loop_instruction(aio_instruction_holder *holder, string loop_condition,
+                                          aio_instruction_holder *init_holder, aio_instruction_holder *cycle_holder);
 
 aio_instruction *new_aio_procedure_instuction(aio_instruction_holder *parent_holder, const_string source,
                                               const_string destination);
 
 aio_instruction *new_aio_return_instruction(aio_instruction_holder *parent_holder, const_string source,
+                                            const_string destination);
+
+aio_instruction *new_aio_switch_instruction(aio_instruction_holder *parent_holder, const_string source,
                                             const_string destination);
 
 /**
@@ -95,7 +95,7 @@ typedef struct aio_switch_task {
 } aio_switch_task;
 
 typedef struct aio_loop_task {
-    string condition;
+    string loop_condition;
     aio_instruction_holder *init_holder;
     aio_instruction_holder *cycle_holder;
 } aio_loop_task;

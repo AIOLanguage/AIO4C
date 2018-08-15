@@ -1,4 +1,4 @@
-    #include <malloc.h>
+#include <malloc.h>
 #include <ctype.h>
 #include <mem.h>
 #include "../../../../../../headers/lib/utils/char_utils/char_utils.h"
@@ -425,7 +425,7 @@ void handle_default_loop_header_step_scope(const_string source_code, point_watch
         string chunk = substring_by_point_watcher(source_code, main_watcher);
         if (materials->step_type == AIO_DEFAULT_LOOP_HEADER_STEP_VARIABLE) {
             //Must be variable name:
-            if (is_word(chunk) && can_use_name(chunk) && is_same_loop_pointer(chunk, materials)) {
+            if (is_word(chunk) && can_use_name(chunk) && is_same_default_loop_pointer(chunk, materials)) {
                 //Change declaration type:
                 materials->step_type = AIO_DEFAULT_LOOP_HEADER_STEP_EQUAL_SIGN_SCOPE;
                 //Shift main_watcher:
@@ -480,7 +480,7 @@ void handle_default_loop_header_step_scope(const_string source_code, point_watch
     }
 }
 
-const_boolean is_same_loop_pointer(const_string input_name, aio_default_loop_header_materials *materials) {
+string get_default_loop_pointer_name_by_materials(const aio_default_loop_header_materials *materials) {
     const_string_array pointer_data = materials->pointer_data_list->strings;
     const aio_default_loop_header_pointer_declaration_type declaration_type = materials->declaration_type;
     string pointer_name = NULL;
@@ -491,6 +491,11 @@ const_boolean is_same_loop_pointer(const_string input_name, aio_default_loop_hea
         || declaration_type == AIO_DEFAULT_LOOP_HEADER_REFERENCE) {
         pointer_name = pointer_data[1];
     }
+    return pointer_name;
+}
+
+const_boolean is_same_default_loop_pointer(const_string input_name, aio_default_loop_header_materials *materials) {
+    const_string pointer_name = get_default_loop_pointer_name_by_materials(materials);
     return are_equal_strings(pointer_name, input_name);
 }
 
@@ -501,7 +506,6 @@ void weave_default_loop_materials_for(struct aio_spider *dst_spider, struct aio_
     aio_default_loop_header_materials *src_materials = src_spider->get.loop_materials->from.default_loop_header;
     string_list *src_pointer_list = src_materials->pointer_data_list;
     aio_default_loop_header_materials *new_materials = new_object(sizeof(aio_default_loop_header_materials));
-
 
 
     new_materials->declaration_type = src_materials->declaration_type;
@@ -528,4 +532,27 @@ void weave_default_loop_materials_for(struct aio_spider *dst_spider, struct aio_
 #ifdef AIO_DEFAULT_LOOP_HEADER_SPIDER_DEBUG
     log_info(AIO_DEFAULT_LOOP_HEADER_SPIDER_TAG, "WEEEEEAVING IS COMPLETE!");
 #endif
+}
+
+aio_variable_definition *create_pointer_variable_definition_by_default_loop_header_spider(
+        const aio_default_loop_header_pointer_declaration_type declaration_type, const_string_array pointer_data) {
+    string pointer_name = NULL;
+    string pointer_type = NULL;
+    boolean is_mutable_pointer = FALSE;
+    if (declaration_type == AIO_DEFAULT_LOOP_HEADER_MUTABLE) {
+        pointer_name = pointer_data[2];
+        pointer_type = pointer_data[1];
+        is_mutable_pointer = TRUE;
+    }
+    if (declaration_type == AIO_DEFAULT_LOOP_HEADER_IMMUTABLE) {
+        pointer_name = pointer_data[1];
+        pointer_type = pointer_data[0];
+        is_mutable_pointer = FALSE;
+    }
+    if (declaration_type == AIO_DEFAULT_LOOP_HEADER_REFERENCE) {
+        pointer_name = pointer_data[1];
+        pointer_type = VOID;
+        is_mutable_pointer = TRUE;
+    }
+    return new_aio_variable_definition(pointer_name, pointer_type, is_mutable_pointer);
 }

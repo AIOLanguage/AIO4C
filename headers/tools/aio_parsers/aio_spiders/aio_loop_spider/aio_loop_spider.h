@@ -76,14 +76,14 @@ void handle_loop_header_scope(const_string source_code, struct aio_spider *spide
 
 struct aio_spider_nest *breed_aio_loop_header_spider_nest(point_watcher *header_watcher);
 
-void handle_loop_body_scope(const_string string_web, struct aio_spider *spider);
+void handle_loop_body_scope(const_string source_code, struct aio_spider *spider);
 
 void dig_header_materials(const_string source_code, struct aio_spider *parent_spider);
 
 \
 
 
-void weave_loop_instruction_for(aio_instruction_holder *instruction_holder, const_string source_code,
+void weave_loop_instruction_for(aio_instruction_holder *holder, const_string source_code,
                                 point_watcher *ripper_watcher, struct aio_spider *spider);
 
 

@@ -51,7 +51,7 @@ aio_spider_nest *breed_aio_function_spider_nest(point_watcher *ripper_watcher) {
  */
 
 void refresh_aio_spiders(aio_spider_nest *nest, point_watcher *ripper_watcher) {
-    for (int i = 0; i < AIO_NUMBER_OF_SPIDERS; ++i) {
+    for (int i = 0; i < nest->number_of_spiders; ++i) {
         aio_spider *spider = nest->spiders[i];
         //Reset himself:
         spider->refresh(spider, ripper_watcher);
