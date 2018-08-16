@@ -5,6 +5,7 @@
 #include "../../../../../headers/tools/aio_parsers/aio_spiders/aio_spider.h"
 #include "../../../../../headers/lib/utils/memory_utils/memory_utils.h"
 #include "../../../../../headers/lib/utils/char_utils/char_utils.h"
+#include "../../../../../headers/lang/aio_reserved_names/aio_reserved_names_container.h"
 
 #define AIO_PROCEDURE_SPIDER_DEBUG
 
@@ -13,6 +14,7 @@
 #ifdef AIO_PROCEDURE_SPIDER_DEBUG
 
 #include "../../../../../headers/lib/utils/log_utils/log_utils.h"
+#include "../../../../../headers/tools/aio_parsers/aio_block_body_explorer/aio_block_body_explorer.h"
 
 #endif
 
@@ -21,7 +23,9 @@
  */
 
 void refresh_procedure_spider(aio_spider *spider, point_watcher *ripper_watcher) {
-    point_watcher *main_watcher = spider->get.procedure_materials->watcher;
+    aio_procedure_materials *materials = spider->get.procedure_materials;
+    materials->scope_type = AIO_PROCEDURE_NAME_SCOPE;
+    point_watcher *main_watcher = materials->main_watcher;
     main_watcher->start_index = ripper_watcher->pointer;
     main_watcher->end_index = ripper_watcher->pointer;
     main_watcher->mode = POINT_PASSIVE_MODE;
@@ -33,7 +37,7 @@ void refresh_procedure_spider(aio_spider *spider, point_watcher *ripper_watcher)
 
 void free_procedure_function(aio_spider *spider) {
     aio_procedure_materials *materials = spider->get.procedure_materials;
-    point_watcher *watcher = materials->watcher;
+    point_watcher *watcher = materials->main_watcher;
     free_point_watcher(watcher);
     free(materials);
     free(spider);
@@ -48,9 +52,10 @@ struct aio_spider *new_aio_procedure_spider(point_watcher *ripper_watcher) {
     spider->free = free_procedure_function;
     //Create materials:
     aio_procedure_materials *materials = new_object(sizeof(aio_procedure_materials));
-    materials->watcher = new_point_watcher();
-    materials->watcher->start_index = ripper_watcher->start_index;
-    materials->watcher->end_index = ripper_watcher->pointer;
+    materials->scope_type = AIO_PROCEDURE_NAME_SCOPE;
+    materials->main_watcher = new_point_watcher();
+    materials->main_watcher->start_index = ripper_watcher->start_index;
+    materials->main_watcher->end_index = ripper_watcher->pointer;
     spider->get.procedure_materials = materials;
     //Init start message:
     spider->message = AIO_SPIDER_NOT_FOUND_MATERIALS;
@@ -59,12 +64,8 @@ struct aio_spider *new_aio_procedure_spider(point_watcher *ripper_watcher) {
 
 const enum aio_spider_message is_found_procedure_instruction(const_string source_code, point_watcher *ripper_watcher,
                                                              struct aio_spider *spider) {
-    if (spider->message == AIO_SPIDER_IS_READY_FOR_WEAVING) {
-        ripper_watcher->pointer--;
-        return spider->message;
-    }
     const aio_procedure_materials *materials = spider->get.procedure_materials;
-    point_watcher *watcher = materials->watcher;
+    point_watcher *watcher = materials->main_watcher;
     watcher->end_index = ripper_watcher->pointer;
     const char current_symbol = source_code[watcher->end_index];
     if (watcher->mode == POINT_PASSIVE_MODE) {
@@ -75,39 +76,56 @@ const enum aio_spider_message is_found_procedure_instruction(const_string source
         }
     }
     if (watcher->mode == POINT_ACTIVE_MODE) {
-        handle_procedure_scope(source_code, spider);
+        if (materials->scope_type == AIO_PROCEDURE_NAME_SCOPE) {
+            handle_procedure_name_scope(source_code, spider);
+        }
+        if (materials->scope_type == AIO_PROCEDURE_ARG_SCOPE) {
+            handle_procedure_arg_scope(source_code, spider);
+        }
     }
     return spider->message;
 }
 
-void handle_procedure_scope(const_string source_code, struct aio_spider *spider) {
+void handle_procedure_name_scope(const_string source_code, aio_spider *spider) {
     //재료들을 추출하다 (Extract materials):
     aio_procedure_materials *materials = spider->get.procedure_materials;
-    point_watcher *watcher = materials->watcher;
+    point_watcher *main_watcher = materials->main_watcher;
     //Define current symbol:
-    const int current_position = watcher->end_index;
+    const int current_position = main_watcher->end_index;
     const char current_symbol = source_code[current_position];
     //Check current symbol:
     const_boolean is_whitespace_cond = is_space_or_line_break(current_symbol);
-    const_boolean is_close_parenthesis_cond = is_closing_parenthesis(current_symbol);
-    const_boolean is_letter_cond = isalpha(current_symbol);
-    const_boolean is_letter_or_number_or_close_parenthesis_cond = isalnum(current_symbol) || is_close_parenthesis_cond;
-    const_boolean is_close_brace_cond = is_closing_brace(current_symbol);
-    if (is_whitespace_cond && watcher->mode == POINT_ACTIVE_MODE) {
-        watcher->pointer++;
+    const_boolean is_opening_parenthesis_cond = is_opening_parenthesis(current_symbol);
+    if (is_whitespace_cond || is_opening_parenthesis_cond) {
+        const_string chunk = substring_by_point_watcher(source_code, main_watcher);
+#ifdef AIO_PROCEDURE_SPIDER_DEBUG
+        log_info_string(AIO_PROCEDURE_SPIDER_TAG, "CAPTURE CHUNK:", chunk);
+#endif
+        const_boolean is_function_name = is_word(chunk) && can_use_name(chunk);
+        if (is_function_name) {
+            main_watcher->mode = POINT_PASSIVE_MODE;
+            materials->scope_type = AIO_PROCEDURE_ARG_SCOPE;
+        }
+    }
+}
+
+void handle_procedure_arg_scope(const_string source_code, aio_spider *spider) {
+    aio_procedure_materials *materials = spider->get.procedure_materials;
+    point_watcher *main_watcher = materials->main_watcher;
+    //Define current symbol:
+    const int current_position = main_watcher->end_index;
+    const char current_symbol = source_code[current_position];
+    //Check current symbol:
+    if (is_space_or_line_break(current_symbol)) {
         return;
     }
-    if (((is_letter_cond && watcher->pointer > 0) || is_close_brace_cond)
-        && watcher->mode == POINT_ACTIVE_MODE) {
-        watcher->end_index = watcher->end_index - watcher->pointer;
+    if (is_opening_parenthesis(current_symbol)) {
+        int start_index = current_position;
+        int end_index = 0;
+        explore_header_body(source_code, &start_index, &end_index);
+        main_watcher->end_index = end_index;
+        materials->scope_type = AIO_PROCEDURE_WEAVING_SCOPE;
         spider->message = AIO_SPIDER_IS_READY_FOR_WEAVING;
-    } else {
-        watcher->mode = POINT_PASSIVE_MODE;
-        watcher->pointer = 0;
-        if (is_letter_or_number_or_close_parenthesis_cond) {
-            watcher->mode = POINT_ACTIVE_MODE;
-            return;
-        }
     }
 }
 
@@ -118,7 +136,7 @@ void weave_procedure_instruction_for(aio_instruction_holder *holder, const_strin
 #endif
     //재료들을 추출하다 (Extract materials):
     const aio_procedure_materials *materials = spider->get.procedure_materials;
-    const point_watcher *watcher = materials->watcher;
+    const point_watcher *watcher = materials->main_watcher;
     //Change ripper_watcher:
     const int new_point = watcher->end_index;
     ripper_watcher->pointer = new_point;

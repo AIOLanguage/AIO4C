@@ -186,14 +186,14 @@ void handle_assign_declaration_scope(const_string source_code, aio_spider *spide
             //(Maybe string is a type)?
             if (is_type) {
                 refresh_assign_declaration_scope(spider, chunk, AIO_ASSIGN_MUTABLE,
-                                                 AIO_SPIDER_NOT_FOUND_MATERIALS);
+                                                 AIO_SPIDER_FOUND_MATERIALS);
                 return;
             }
             //어쩌면 문자열이 변수 이름입니까
             //(Maybe string is a variable name)?
             if (is_variable_name) {
                 refresh_assign_declaration_scope(spider, chunk, AIO_ASSIGN_REFERENCE,
-                                                 AIO_SPIDER_NOT_FOUND_MATERIALS);
+                                                 AIO_SPIDER_FOUND_MATERIALS);
                 //범위를 바꾼다 (Change scope):
                 materials->scope_type = AIO_ASSIGN_EQUAL_SIGN_SCOPE;
             } else {

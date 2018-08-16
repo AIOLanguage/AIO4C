@@ -5,7 +5,7 @@
 #include "../../../../headers/lib/utils/char_utils/char_utils.h"
 #include "../../../../headers/lib/utils/error_utils/error_utils.h"
 
-//#define AIO_BLOCK_BODY_EXPLORER_DEBUG
+#define AIO_BLOCK_BODY_EXPLORER_DEBUG
 
 #define AIO_BLOCK_BODY_EXPLORER_TAG "AIO_BLOCK_BODY_EXPLORER"
 
@@ -15,7 +15,10 @@
 
 #endif
 
-void explore_block_body(const_string source_code, int *start_index, int *end_index) {
+
+void explore_bounds(const_string source_code, int *start_index, int *end_index,
+                    boolean (*opening_bound_condition)(const char),
+                    boolean (*closing_bound_condition)(const char)) {
     const size_t source_code_length = strlen(source_code);
     //Prepare to find bounds:
     point_watcher *watcher = new_point_watcher();
@@ -25,30 +28,25 @@ void explore_block_body(const_string source_code, int *start_index, int *end_ind
     for (int i = *start_index; i < source_code_length; ++i) {
         const char symbol = source_code[i];
         //Check symbol:
-        const_boolean is_open_brace_cond = is_opening_brace(symbol);
-        const_boolean is_close_brace_cond = is_closing_brace(symbol);
+        const_boolean is_open_brace_cond = opening_bound_condition(symbol);
+        const_boolean is_close_brace_cond = closing_bound_condition(symbol);
         const_boolean is_not_whitespace_cond = !is_space_or_line_break(symbol);
         //Meet open brace:
         if (is_open_brace_cond) {
             //독서를 시작하다 (Begin reading):
             if (watcher->mode == POINT_PASSIVE_MODE) {
-                //Skip first brace:
                 watcher->start_index = i;
                 watcher->mode = POINT_ACTIVE_MODE;
                 is_found_start_index = TRUE;
-#ifdef AIO_BLOCK_BODY_EXPLORER_DEBUG
-                log_info_char(AIO_BLOCK_BODY_EXPLORER_TAG, "FIND START BRACE:", symbol);
-#endif
             }
             if (watcher->mode == POINT_ACTIVE_MODE) {
                 watcher->pointer++;
             }
         }
-        //Meet close brace:
         if (is_close_brace_cond) {
             //Body doesn't start with close brace:
             if (watcher->mode == POINT_PASSIVE_MODE) {
-                throw_error_with_tag(AIO_BLOCK_BODY_EXPLORER_TAG, "Body doesn't start with close brace!");
+                throw_error_with_tag(AIO_BLOCK_BODY_EXPLORER_TAG, "Invalid start bound!");
             }
             if (watcher->mode == POINT_ACTIVE_MODE) {
                 watcher->pointer--;
@@ -57,9 +55,6 @@ void explore_block_body(const_string source_code, int *start_index, int *end_ind
                 if (is_last_close_brace) {
                     watcher->end_index = i + 1;
                     is_found_end_index = TRUE;
-#ifdef AIO_BLOCK_BODY_EXPLORER_DEBUG
-                    log_info_char(AIO_BLOCK_BODY_EXPLORER_TAG, "FIND LAST BRACE:", symbol);
-#endif
                     break;
                 }
             }
@@ -67,7 +62,7 @@ void explore_block_body(const_string source_code, int *start_index, int *end_ind
         //지켜보기 잔에 공백과 줄 바꿈 건너 뙤기 (Skip whitespace and line breaks before watching):
         if (watcher->mode == POINT_PASSIVE_MODE) {
             if (is_not_whitespace_cond) {
-                throw_error_with_tag(AIO_BLOCK_BODY_EXPLORER_TAG, "Invalid function content!");
+                throw_error_with_tag(AIO_BLOCK_BODY_EXPLORER_TAG, "Invalid content!");
             }
         }
     }
@@ -87,8 +82,17 @@ void explore_block_body(const_string source_code, int *start_index, int *end_ind
         //찌꺼기 수집기 (Garbage collector):
         free_point_watcher(watcher);
     } else {
-        throw_error_with_tag(AIO_BLOCK_BODY_EXPLORER_TAG, "Invalid function body braces!");
+        throw_error_with_tag(AIO_BLOCK_BODY_EXPLORER_TAG, "Bounds not found!");
     }
+}
+
+
+void explore_block_body(const_string source_code, int *start_index, int *end_index) {
+    explore_bounds(source_code, start_index, end_index, is_opening_brace, is_closing_brace);
+}
+
+void explore_header_body(const_string source_code, int *start_index, int *end_index) {
+    explore_bounds(source_code, start_index, end_index, is_opening_parenthesis, is_closing_parenthesis);
 }
 
 const_boolean is_end_of_block_body(const_string function_body_string, point_watcher *watcher) {
