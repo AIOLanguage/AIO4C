@@ -63,16 +63,12 @@ struct aio_spider *new_aio_break_spider(point_watcher *ripper_watcher) {
     return spider;
 }
 
-const aio_spider_message is_found_break_instruction(const_string string_web, point_watcher *ripper_watcher,
+const aio_spider_message is_found_break_instruction(const_string source_code, point_watcher *ripper_watcher,
                                                     aio_spider *spider) {
-    if (spider->message == AIO_SPIDER_IS_READY_FOR_WEAVING) {
-        ripper_watcher->pointer--;
-        return spider->message;
-    }
     const aio_break_materials *materials = spider->get.break_materials;
     point_watcher *watcher = materials->watcher;
     watcher->end_index = ripper_watcher->pointer;
-    const char current_symbol = string_web[watcher->end_index];
+    const char current_symbol = source_code[watcher->end_index];
     if (watcher->mode == POINT_PASSIVE_MODE) {
         if (is_space_or_line_break(current_symbol)) {
             watcher->start_index++;
@@ -81,32 +77,32 @@ const aio_spider_message is_found_break_instruction(const_string string_web, poi
         }
     }
     if (watcher->mode == POINT_ACTIVE_MODE) {
-        handle_break_scope(string_web, spider);
+        handle_break_scope(source_code, spider);
     }
     return spider->message;
 }
 
-void handle_break_scope(const_string string_web, aio_spider *spider) {
+void handle_break_scope(const_string source_code, aio_spider *spider) {
     const aio_break_materials *materials = spider->get.break_materials;
     point_watcher *watcher = materials->watcher;
-    const char current_symbol = string_web[watcher->end_index];
+    const char current_symbol = source_code[watcher->end_index];
 #ifdef AIO_BREAK_SPIDER_DEBUG
     log_info_char(AIO_BREAK_SPIDER_TAG, "CURRENT SYMBOL", current_symbol);
 #endif
-    if (is_space_or_line_break(current_symbol)) {
+    if (is_space_or_line_break(current_symbol) || is_closing_brace(current_symbol)) {
         const int start_index = watcher->start_index;
         const int end_index = watcher->end_index;
         const int hold_positions = end_index - start_index;
         if (hold_positions == 3) {
-            const_boolean is_break_word = string_web[start_index] == 'b'
-                                          && string_web[start_index + 1] == 'r'
-                                          && string_web[start_index + 2] == 'k';
+            const_boolean is_break_word = source_code[start_index] == 'b'
+                                          && source_code[start_index + 1] == 'r'
+                                          && source_code[start_index + 2] == 'k';
             if (is_break_word) {
                 //Shift main_watcher:
                 watcher->start_index = end_index;
                 watcher->mode = POINT_PASSIVE_MODE;
                 //Set message:
-                spider->message = AIO_SPIDER_FOUND_MATERIALS;
+                spider->message = AIO_SPIDER_IS_READY_FOR_WEAVING;
 #ifdef AIO_BREAK_SPIDER_DEBUG
                 log_info(AIO_BREAK_SPIDER_TAG, "Found break modifier");
 #endif

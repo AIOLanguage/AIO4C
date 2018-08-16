@@ -64,8 +64,7 @@ aio_instruction *new_aio_if_instruction(aio_instruction_holder *holder, const_st
 aio_instruction *new_aio_loop_instruction(aio_instruction_holder *holder, string loop_condition,
                                           aio_instruction_holder *init_holder, aio_instruction_holder *cycle_holder);
 
-aio_instruction *new_aio_procedure_instuction(aio_instruction_holder *parent_holder, const_string source,
-                                              const_string destination);
+aio_instruction *new_aio_procedure_instruction(aio_instruction_holder *holder, string expression);
 
 aio_instruction *new_aio_return_instruction(aio_instruction_holder *holder, const string_list *return_value_list);
 

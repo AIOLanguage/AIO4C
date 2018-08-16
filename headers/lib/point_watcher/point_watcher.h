@@ -22,6 +22,6 @@ void reset_point_watcher(point_watcher *watcher);
 
 void free_point_watcher(point_watcher *watcher);
 
-string substring_by_point_watcher(const_string src, point_watcher *watcher);
+string substring_by_point_watcher(const_string src, const point_watcher *watcher);
 
 #endif //POINTER_H

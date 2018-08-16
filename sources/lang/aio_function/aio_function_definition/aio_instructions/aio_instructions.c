@@ -72,3 +72,14 @@ aio_instruction *new_aio_return_instruction(aio_instruction_holder *holder, cons
     instruction->get.return_task = task;
     return instruction;
 }
+
+aio_instruction *new_aio_procedure_instruction(aio_instruction_holder *holder, string expression) {
+    aio_instruction *instruction = new_object(sizeof(aio_instruction));
+    instruction->holder = holder;
+    instruction->task_type = AIO_PROCEDURE_TASK;
+    //Init task:
+    aio_procedure_task *task = new_object(sizeof(aio_procedure_task));
+    task->expression = expression;
+    instruction->get.procedure_task = task;
+    return instruction;
+}
