@@ -81,6 +81,9 @@ string_list *dig_output_types(const_string source_code, int *pointer_reference) 
     switch (mode) {
         case SINGLE_OUTPUT_MODE:
             if (contains_aio_type_in_set(type_content)) {
+#ifdef AIO_OUTPUT_RIPPER_DEBUG
+                log_info_string(AIO_OUTPUT_RIPPER_TAG, "<TYPE>", type_content);
+#endif
                 add_string_in_list(output_type_list, type_content);
                 return output_type_list;
             } else {
@@ -91,9 +94,12 @@ string_list *dig_output_types(const_string source_code, int *pointer_reference) 
         case MULTI_OUTPUT_MODE: {
             const_string_array dirty_types = split_by_comma(type_content);
             const int type_number = number_of_strings(dirty_types);
-            const_string_array clean_types = trim_all(dirty_types, type_number);
+            const_string_array clean_types = trim_all_with_line_break(dirty_types, type_number);
             for (int i = 0; i < type_number; ++i) {
                 string type = clean_types[i];
+#ifdef AIO_OUTPUT_RIPPER_DEBUG
+                log_info_string(AIO_OUTPUT_RIPPER_TAG, "<TYPE>", type);
+#endif
                 if (contains_aio_type_in_set(type)) {
                     add_string_in_list(output_type_list, type);
                 } else {

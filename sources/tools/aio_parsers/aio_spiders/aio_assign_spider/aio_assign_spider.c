@@ -276,8 +276,8 @@ void handle_assign_value_scope(const_string source_code, aio_spider *spider) {
         value_watcher->pointer++;
         return;
     }
-    if ((is_letter_cond || is_close_brace_cond) && value_watcher->mode == POINT_ACTIVE_MODE
-        && value_watcher->pointer > 0) {
+    if (((is_letter_cond && value_watcher->pointer > 0) || is_close_brace_cond)
+        && value_watcher->mode == POINT_ACTIVE_MODE) {
         value_watcher->start_index = main_watcher->start_index;
         value_watcher->end_index = main_watcher->end_index - value_watcher->pointer;
         //값을 놓다 (Set value):

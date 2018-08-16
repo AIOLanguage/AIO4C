@@ -43,3 +43,7 @@ boolean is_dot(const char c) {
 boolean is_colon(const char c) {
     return c == ':';
 }
+
+boolean is_comma(const char c){
+    return c == ',';
+}

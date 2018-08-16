@@ -26,4 +26,6 @@ boolean is_dot(const char c);
 
 boolean is_colon(const char c);
 
+boolean is_comma(const char c);
+
 #endif //CHAR_UTILS_H

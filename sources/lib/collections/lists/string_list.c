@@ -45,8 +45,13 @@ boolean is_string_list_empty(string_list *string_list) {
 }
 
 void free_strings_in_list(string_list *list) {
+    string_array strings = list->strings;
     for (int i = 0; i < list->size; ++i) {
-        free(list->strings[i]);
+        string old_string = strings[i];
+        if (old_string != NULL) {
+            strings[i] = NULL;
+            free((void *) old_string);
+        }
     }
 }
 

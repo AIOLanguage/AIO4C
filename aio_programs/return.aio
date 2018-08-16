@@ -3,14 +3,15 @@
 
 
 
- Int
+ (Int,
+ Dou)
  returnTest
                  (       mu
                     Int
 
 
-a) {a= a+31
+a,Str string) {a= a+31
 b
 =a*                            a
     out
-    b + a}
+    b + a    , 31.0   }

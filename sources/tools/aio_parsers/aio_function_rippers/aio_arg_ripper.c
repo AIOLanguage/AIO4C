@@ -81,12 +81,12 @@ aio_variable_definition_map *dig_arguments(const_string source_code, int *pointe
                                                     is_empty_string);
                 const int arg_content_size_2 = number_of_strings(arg_content_2);
                 for (int i = 0; i < arg_content_size_2; ++i) {
-                    add_string_in_list(arg_content_list, arg_content_2[i]);
+                    add_string_in_list(arg_content_list, new_string(arg_content_2[i]));
                 }
                 //------------------------------------------------------------------------------------------------------
                 //찌꺼기 수집기 (Garbage collector):
                 free_strings(&dirty_arg_content_2);
-                free(arg_content_2);
+                free_strings(&arg_content_2);
             }
             const int arg_content_size = arg_content_list->size;
             const_string_array clean_arg_content = trim_all_with_line_break(arg_content_list->strings,
@@ -103,6 +103,9 @@ aio_variable_definition_map *dig_arguments(const_string source_code, int *pointe
                     break;
                 case MUTABLE_VS_TYPE_VS_NAME: {
                     const_string mutable_modifier_string = clean_arg_content[0];
+#ifdef AIO_ARG_RIPPER_DEBUG
+                    log_info_string(AIO_ARG_RIPPER_TAG, "MU", mutable_modifier_string);
+#endif
                     if (is_aio_mutable_modifier(mutable_modifier_string)) {
                         arg_type = new_string(clean_arg_content[1]);
                         arg_name = new_string(clean_arg_content[2]);
@@ -117,7 +120,7 @@ aio_variable_definition_map *dig_arguments(const_string source_code, int *pointe
             }
             definition = new_aio_variable_definition(arg_name, arg_type, is_mutable);
             put_aio_variable_definition_in_map(arg_definition_map, definition);
-            //--------------------------------------------------------------------------------------------------------------
+            //----------------------------------------------------------------------------------------------------------
             //찌꺼기 수집기 (Garbage collector):
             free_strings(&dirty_arg_content_1);
             free_strings(&arg_content_1);
@@ -132,7 +135,7 @@ aio_variable_definition_map *dig_arguments(const_string source_code, int *pointe
                    definition->is_mutable_by_value);
         }
 #endif
-        //------------------------------------------------------------------------------------------------------------------
+        //--------------------------------------------------------------------------------------------------------------
         //찌꺼기 수집기 (Garbage collector):
         free_strings(&dirty_arg_chunks);
         free_strings(&clean_arg_chunks);

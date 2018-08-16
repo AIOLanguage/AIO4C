@@ -67,7 +67,7 @@ aio_instruction *new_aio_loop_instruction(aio_instruction_holder *holder, string
 aio_instruction *new_aio_procedure_instuction(aio_instruction_holder *parent_holder, const_string source,
                                               const_string destination);
 
-aio_instruction *new_aio_return_instruction(aio_instruction_holder *holder, string_list *return_value_list);
+aio_instruction *new_aio_return_instruction(aio_instruction_holder *holder, const string_list *return_value_list);
 
 aio_instruction *new_aio_switch_instruction(aio_instruction_holder *parent_holder, const_string source,
                                             const_string destination);
@@ -100,7 +100,7 @@ typedef struct aio_loop_task {
 } aio_loop_task;
 
 typedef struct aio_procedure_task {
-    string_list *procedure_values;
+    string expression;
 } aio_procedure_task;
 
 typedef struct aio_return_task {
