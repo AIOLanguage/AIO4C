@@ -125,7 +125,7 @@ void handle_procedure_arg_scope(const_string source_code, aio_spider *spider) {
         explore_header_body(source_code, &start_index, &end_index);
         main_watcher->end_index = end_index;
         materials->scope_type = AIO_PROCEDURE_WEAVING_SCOPE;
-        spider->message = AIO_SPIDER_IS_READY_FOR_WEAVING;/
+        spider->message = AIO_SPIDER_IS_READY_FOR_WEAVING;
     }
 }
 
