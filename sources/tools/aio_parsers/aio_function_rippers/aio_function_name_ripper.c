@@ -7,11 +7,11 @@
 #include "../../../../headers/lib/utils/char_utils/char_utils.h"
 #include "../../../../headers/lib/utils/error_utils/error_utils.h"
 
-//#define AIO_FUNCTION_NAME_RIPPER_DEBUG
+#define AIO_FUNCTION_NAME_RIPPER_DEBUG
 
 #ifdef AIO_FUNCTION_NAME_RIPPER_DEBUG
 
-#include "../../../../../headers/lib/utils/log_utils/log_utils.h"
+#include "../../../../headers/lib/utils/log_utils/log_utils.h"
 
 #endif
 

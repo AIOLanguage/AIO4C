@@ -32,9 +32,6 @@
 #endif
 
 void refresh_loop_spider(aio_spider *spider, point_watcher *ripper_watcher) {
-#ifdef AIO_LOOP_SPIDER_DEBUG
-    log_info(AIO_LOOP_SPIDER_TAG, "Start to refresh 'loop' spider...");
-#endif
     //Refresh main materials:
     aio_main_loop_materials *materials = spider->get.loop_materials->from.main;
     materials->scope_type = AIO_LOOP_MODIFIER_SCOPE;
@@ -57,9 +54,6 @@ void refresh_loop_spider(aio_spider *spider, point_watcher *ripper_watcher) {
 
     }
     spider->message = AIO_SPIDER_NOT_FOUND_MATERIALS;
-#ifdef AIO_LOOP_SPIDER_DEBUG
-    log_info(AIO_LOOP_SPIDER_TAG, "Reset of 'loop' spider is complete!");
-#endif
 }
 
 /**
@@ -96,9 +90,6 @@ void free_loop_spider(aio_spider *spider) {
  */
 
 aio_spider *new_aio_loop_spider(point_watcher *ripper_watcher) {
-#ifdef AIO_LOOP_SPIDER_DEBUG
-    log_info(AIO_LOOP_SPIDER_TAG, "Start to create 'loop' spider...");
-#endif
     aio_spider *spider = new_object(sizeof(aio_spider));
     //함수들을 놓다 (Put functions):
     spider->refresh = refresh_loop_spider;
@@ -120,9 +111,6 @@ aio_spider *new_aio_loop_spider(point_watcher *ripper_watcher) {
     //재료들을 놓다 (Set materials):
     spider->get.loop_materials = materials;
     spider->message = AIO_SPIDER_NOT_FOUND_MATERIALS;
-#ifdef AIO_LOOP_SPIDER_DEBUG
-    log_info(AIO_LOOP_SPIDER_TAG, "Loop spider was created!");
-#endif
     return spider;
 }
 

@@ -420,18 +420,18 @@ CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_loop_spider/aio_inn
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_tiny_loop_header_spider.c.s"
 	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\StarKRE\CLionProjects\AIO\sources\tools\aio_parsers\aio_spiders\aio_loop_spider\aio_inner_spiders\aio_tiny_loop_header_spider.c -o CMakeFiles\AIO.dir\sources\tools\aio_parsers\aio_spiders\aio_loop_spider\aio_inner_spiders\aio_tiny_loop_header_spider.c.s
 
-CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_out_spider/aio_out_spider.c.obj: CMakeFiles/AIO.dir/flags.make
-CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_out_spider/aio_out_spider.c.obj: ../sources/tools/aio_parsers/aio_spiders/aio_out_spider/aio_out_spider.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\StarKRE\CLionProjects\AIO\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building C object CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_out_spider/aio_out_spider.c.obj"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\AIO.dir\sources\tools\aio_parsers\aio_spiders\aio_out_spider\aio_out_spider.c.obj   -c C:\Users\StarKRE\CLionProjects\AIO\sources\tools\aio_parsers\aio_spiders\aio_out_spider\aio_out_spider.c
+CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_return_spider/aio_return_spider.c.obj: CMakeFiles/AIO.dir/flags.make
+CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_return_spider/aio_return_spider.c.obj: ../sources/tools/aio_parsers/aio_spiders/aio_return_spider/aio_return_spider.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\StarKRE\CLionProjects\AIO\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building C object CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_return_spider/aio_return_spider.c.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\AIO.dir\sources\tools\aio_parsers\aio_spiders\aio_return_spider\aio_return_spider.c.obj   -c C:\Users\StarKRE\CLionProjects\AIO\sources\tools\aio_parsers\aio_spiders\aio_return_spider\aio_return_spider.c
 
-CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_out_spider/aio_out_spider.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_out_spider/aio_out_spider.c.i"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\StarKRE\CLionProjects\AIO\sources\tools\aio_parsers\aio_spiders\aio_out_spider\aio_out_spider.c > CMakeFiles\AIO.dir\sources\tools\aio_parsers\aio_spiders\aio_out_spider\aio_out_spider.c.i
+CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_return_spider/aio_return_spider.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_return_spider/aio_return_spider.c.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\StarKRE\CLionProjects\AIO\sources\tools\aio_parsers\aio_spiders\aio_return_spider\aio_return_spider.c > CMakeFiles\AIO.dir\sources\tools\aio_parsers\aio_spiders\aio_return_spider\aio_return_spider.c.i
 
-CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_out_spider/aio_out_spider.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_out_spider/aio_out_spider.c.s"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\StarKRE\CLionProjects\AIO\sources\tools\aio_parsers\aio_spiders\aio_out_spider\aio_out_spider.c -o CMakeFiles\AIO.dir\sources\tools\aio_parsers\aio_spiders\aio_out_spider\aio_out_spider.c.s
+CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_return_spider/aio_return_spider.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_return_spider/aio_return_spider.c.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\StarKRE\CLionProjects\AIO\sources\tools\aio_parsers\aio_spiders\aio_return_spider\aio_return_spider.c -o CMakeFiles\AIO.dir\sources\tools\aio_parsers\aio_spiders\aio_return_spider\aio_return_spider.c.s
 
 CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_procedure_spider/aio_procedure_spider.c.obj: CMakeFiles/AIO.dir/flags.make
 CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_procedure_spider/aio_procedure_spider.c.obj: ../sources/tools/aio_parsers/aio_spiders/aio_procedure_spider/aio_procedure_spider.c
@@ -814,7 +814,7 @@ AIO_OBJECTS = \
 "CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_default_loop_header_spider.c.obj" \
 "CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_in_loop_header_spider.c.obj" \
 "CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_tiny_loop_header_spider.c.obj" \
-"CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_out_spider/aio_out_spider.c.obj" \
+"CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_return_spider/aio_return_spider.c.obj" \
 "CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_procedure_spider/aio_procedure_spider.c.obj" \
 "CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_switch_spider/aio_switch_spider.c.obj" \
 "CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_spider_nest.c.obj" \
@@ -874,7 +874,7 @@ AIO.exe: CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_loop_spide
 AIO.exe: CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_default_loop_header_spider.c.obj
 AIO.exe: CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_in_loop_header_spider.c.obj
 AIO.exe: CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_tiny_loop_header_spider.c.obj
-AIO.exe: CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_out_spider/aio_out_spider.c.obj
+AIO.exe: CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_return_spider/aio_return_spider.c.obj
 AIO.exe: CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_procedure_spider/aio_procedure_spider.c.obj
 AIO.exe: CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_switch_spider/aio_switch_spider.c.obj
 AIO.exe: CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_spider_nest.c.obj

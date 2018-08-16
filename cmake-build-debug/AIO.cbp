@@ -208,10 +208,10 @@
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_loop_spider/aio_loop_spider.h">
 			<Option target="AIO"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_out_spider/aio_out_spider.h">
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_procedure_spider/aio_procedure_spider.h">
 			<Option target="AIO"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_procedure_spider/aio_procedure_spider.h">
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_return_spider/aio_return_spider.h">
 			<Option target="AIO"/>
 		</Unit>
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_spider.h">
@@ -379,10 +379,10 @@
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/tools/aio_parsers/aio_spiders/aio_loop_spider/aio_loop_spider.c">
 			<Option target="AIO"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/tools/aio_parsers/aio_spiders/aio_out_spider/aio_out_spider.c">
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/tools/aio_parsers/aio_spiders/aio_procedure_spider/aio_procedure_spider.c">
 			<Option target="AIO"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/tools/aio_parsers/aio_spiders/aio_procedure_spider/aio_procedure_spider.c">
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/tools/aio_parsers/aio_spiders/aio_return_spider/aio_return_spider.c">
 			<Option target="AIO"/>
 		</Unit>
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/tools/aio_parsers/aio_spiders/aio_spider_nest.c">

@@ -15,12 +15,16 @@ void create_right_part(const char *src, const unsigned *indices, char ***dst, in
 
 void create_left_part(const char *src, const unsigned *indices, size_t delimiter_length, char ***dst);
 
-string_array split_by_comma(const_string src){
-    return split_by_string(src,  ",");
+string_array split_by_comma(const_string src) {
+    return split_by_string(src, ",");
 }
 
-string_array split_by_space(const_string src){
+string_array split_by_space(const_string src) {
     return split_by_string(src, " ");
+}
+
+string_array split_by_line_break(const_string src){
+    return split_by_string(src, "\n");
 }
 
 //끝난!
@@ -113,13 +117,13 @@ void move_string_to_dst(const char *src, const size_t string_length, char ***dst
     //allocate memory for string array:
     *dst = calloc(1, sizeof(string));
     if (*dst == NULL) {
-        perror("cannot allocate memory for *dst in split by char!");
+        perror("Cannot allocate memory for *dst in split by char!");
         exit(1);
     }
     //allocate memory for only string:
     **dst = calloc(string_length, sizeof(char) + 1);
     if (**dst == NULL) {
-        perror("cannot allocate memory for **dst in split by char!");
+        perror("Cannot allocate memory for **dst in split by char!");
         exit(1);
     }
     strcpy(**dst, src);

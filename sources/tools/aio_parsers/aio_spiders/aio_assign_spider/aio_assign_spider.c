@@ -9,6 +9,7 @@
 #include "../../../../../headers/lang/aio_core/aio_core.h"
 #include "../../../../../headers/lib/utils/string_utils/string_builder.h"
 #include "../../../../../headers/lib/utils/memory_utils/memory_utils.h"
+#include "../../../../../headers/tools/aio_parsers/aio_spiders/aio_spider.h"
 
 /**
  * 주 논리 (Business logic).
@@ -21,7 +22,6 @@
 #ifdef AIO_ASSIGN_SPIDER_DEBUG
 
 #include "../../../../../headers/lib/utils/log_utils/log_utils.h"
-#include "../../../../../headers/tools/aio_parsers/aio_spiders/aio_spider.h"
 
 #endif
 
@@ -276,7 +276,8 @@ void handle_assign_value_scope(const_string source_code, aio_spider *spider) {
         value_watcher->pointer++;
         return;
     }
-    if ((is_letter_cond || is_close_brace_cond) && value_watcher->mode == POINT_ACTIVE_MODE && value_watcher->pointer > 0) {
+    if ((is_letter_cond || is_close_brace_cond) && value_watcher->mode == POINT_ACTIVE_MODE
+        && value_watcher->pointer > 0) {
         value_watcher->start_index = main_watcher->start_index;
         value_watcher->end_index = main_watcher->end_index - value_watcher->pointer;
         //값을 놓다 (Set value):
@@ -296,7 +297,7 @@ void handle_assign_value_scope(const_string source_code, aio_spider *spider) {
     } else {
         value_watcher->mode = POINT_PASSIVE_MODE;
         value_watcher->pointer = 0;
-        if (is_letter_or_number_or_close_parenthesis_cond && value_watcher->mode == POINT_PASSIVE_MODE) {
+        if (is_letter_or_number_or_close_parenthesis_cond) {
             value_watcher->mode = POINT_ACTIVE_MODE;
             return;
         }
@@ -351,18 +352,18 @@ void weave_assign_instruction_for(aio_instruction_holder *holder, const_string _
             free_aio_variable_definition(new_definition);
         }
         //'Assign' 지침을  짜다 (Weave 'Assign' instruction):
-        const_string assign_task_source = new_string(value_string);
-        const_string assign_task_destination = new_string(definition->name);
-        aio_instruction *assign_instruction = new_aio_assign_instruction(holder, assign_task_source,
-                                                                         assign_task_destination);
+        const_string assign_task_value = new_string(value_string);
+        const_string assign_task_variable_name = new_string(definition->name);
+        aio_instruction *assign_instruction = new_aio_assign_instruction(holder, assign_task_value,
+                                                                         assign_task_variable_name);
         //명부에게 지침을 추가하다 (Add 'assign' instruction in holder's instructions):
         aio_instruction_list *instruction_list = holder->instruction_list;
         add_aio_instruction_in_list(instruction_list, assign_instruction);
         //위빙이 완료되었습니다 (Weaving complete)!
 #ifdef AIO_ASSIGN_SPIDER_DEBUG
         log_info(AIO_ASSIGN_SPIDER_TAG, "WEAVED INSTRUCTION:");
-        log_info_string(AIO_ASSIGN_SPIDER_TAG, "VARIABLE:", assign_instruction->get.assign_task->destination);
-        log_info_string(AIO_ASSIGN_SPIDER_TAG, "VALUE:", assign_instruction->get.assign_task->source);
+        log_info_string(AIO_ASSIGN_SPIDER_TAG, "VARIABLE:", assign_instruction->get.assign_task->variable_name);
+        log_info_string(AIO_ASSIGN_SPIDER_TAG, "VALUE:", assign_instruction->get.assign_task->value);
 #endif
     } else {
         throw_error_with_tag(AIO_ASSIGN_SPIDER_TAG, "Not ready for weaving!");

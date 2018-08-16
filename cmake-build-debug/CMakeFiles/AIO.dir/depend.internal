@@ -403,12 +403,14 @@ CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_function_rippers/aio_arg_ripper
  C:/Users/StarKRE/CLionProjects/AIO/headers/lang/aio_function/aio_variable/aio_variable_definition.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lang/aio_reserved_names/aio_reserved_names_container.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lang/aio_types/aio_type.h
+ C:/Users/StarKRE/CLionProjects/AIO/headers/lib/collections/lists/string_list.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/collections/maps/aio_variable_definition_map.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/collections/sets/string_set.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/point_watcher/point_watcher.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/boolean_utils/boolean_utils.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/char_utils/char_utils.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/error_utils/error_utils.h
+ C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/log_utils/log_utils.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/string_utils/string_utils.h
  C:/Users/StarKRE/CLionProjects/AIO/sources/tools/aio_parsers/aio_function_rippers/aio_arg_ripper.c
 CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_function_rippers/aio_function_name_ripper.c.obj
@@ -417,6 +419,7 @@ CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_function_rippers/aio_function_n
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/boolean_utils/boolean_utils.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/char_utils/char_utils.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/error_utils/error_utils.h
+ C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/log_utils/log_utils.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/string_utils/string_utils.h
  C:/Users/StarKRE/CLionProjects/AIO/sources/tools/aio_parsers/aio_function_rippers/aio_function_name_ripper.c
 CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_function_rippers/aio_instruction_ripper.c.obj
@@ -442,8 +445,8 @@ CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_function_rippers/aio_instructio
  C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_in_loop_header_spider.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_tiny_loop_header_spider.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_loop_spider/aio_loop_spider.h
- C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_out_spider/aio_out_spider.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_procedure_spider/aio_procedure_spider.h
+ C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_return_spider/aio_return_spider.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_spider.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_spider_nest.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_switch_spider/aio_switch_spider.h
@@ -470,6 +473,7 @@ CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_function_rippers/aio_output_rip
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/boolean_utils/boolean_utils.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/char_utils/char_utils.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/error_utils/error_utils.h
+ C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/log_utils/log_utils.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/string_utils/string_utils.h
  C:/Users/StarKRE/CLionProjects/AIO/sources/tools/aio_parsers/aio_function_rippers/aio_output_ripper.c
 CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_assign_spider/aio_assign_spider.c.obj
@@ -506,8 +510,8 @@ CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_assign_spider/aio_a
  C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_in_loop_header_spider.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_tiny_loop_header_spider.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_loop_spider/aio_loop_spider.h
- C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_out_spider/aio_out_spider.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_procedure_spider/aio_procedure_spider.h
+ C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_return_spider/aio_return_spider.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_spider.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_spider_nest.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_switch_spider/aio_switch_spider.h
@@ -531,8 +535,8 @@ CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_break_spider/aio_br
  C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_in_loop_header_spider.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_tiny_loop_header_spider.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_loop_spider/aio_loop_spider.h
- C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_out_spider/aio_out_spider.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_procedure_spider/aio_procedure_spider.h
+ C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_return_spider/aio_return_spider.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_spider.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_spider_nest.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_switch_spider/aio_switch_spider.h
@@ -561,8 +565,8 @@ CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_if_spider/aio_if_sp
  C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_in_loop_header_spider.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_tiny_loop_header_spider.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_loop_spider/aio_loop_spider.h
- C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_out_spider/aio_out_spider.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_procedure_spider/aio_procedure_spider.h
+ C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_return_spider/aio_return_spider.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_spider.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_spider_nest.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_switch_spider/aio_switch_spider.h
@@ -600,8 +604,8 @@ CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_loop_spider/aio_inn
  C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_in_loop_header_spider.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_tiny_loop_header_spider.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_loop_spider/aio_loop_spider.h
- C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_out_spider/aio_out_spider.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_procedure_spider/aio_procedure_spider.h
+ C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_return_spider/aio_return_spider.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_spider.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_spider_nest.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_switch_spider/aio_switch_spider.h
@@ -640,22 +644,12 @@ CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_loop_spider/aio_loo
  C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_in_loop_header_spider.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_tiny_loop_header_spider.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_loop_spider/aio_loop_spider.h
- C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_out_spider/aio_out_spider.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_procedure_spider/aio_procedure_spider.h
+ C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_return_spider/aio_return_spider.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_spider.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_spider_nest.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_switch_spider/aio_switch_spider.h
  C:/Users/StarKRE/CLionProjects/AIO/sources/tools/aio_parsers/aio_spiders/aio_loop_spider/aio_loop_spider.c
-CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_out_spider/aio_out_spider.c.obj
- C:/Users/StarKRE/CLionProjects/AIO/headers/lang/aio_function/aio_function_definition/aio_instructions/aio_instructions.h
- C:/Users/StarKRE/CLionProjects/AIO/headers/lang/aio_function/aio_variable/aio_variable_definition.h
- C:/Users/StarKRE/CLionProjects/AIO/headers/lang/aio_types/aio_type.h
- C:/Users/StarKRE/CLionProjects/AIO/headers/lib/collections/lists/aio_instruction_list.h
- C:/Users/StarKRE/CLionProjects/AIO/headers/lib/collections/lists/string_list.h
- C:/Users/StarKRE/CLionProjects/AIO/headers/lib/collections/maps/aio_variable_definition_map.h
- C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/boolean_utils/boolean_utils.h
- C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/string_utils/string_utils.h
- C:/Users/StarKRE/CLionProjects/AIO/sources/tools/aio_parsers/aio_spiders/aio_out_spider/aio_out_spider.c
 CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_procedure_spider/aio_procedure_spider.c.obj
  C:/Users/StarKRE/CLionProjects/AIO/headers/lang/aio_function/aio_function_definition/aio_instructions/aio_instructions.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lang/aio_function/aio_variable/aio_variable_definition.h
@@ -666,6 +660,32 @@ CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_procedure_spider/ai
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/boolean_utils/boolean_utils.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/string_utils/string_utils.h
  C:/Users/StarKRE/CLionProjects/AIO/sources/tools/aio_parsers/aio_spiders/aio_procedure_spider/aio_procedure_spider.c
+CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_return_spider/aio_return_spider.c.obj
+ C:/Users/StarKRE/CLionProjects/AIO/headers/lang/aio_function/aio_function_definition/aio_instructions/aio_instructions.h
+ C:/Users/StarKRE/CLionProjects/AIO/headers/lang/aio_function/aio_variable/aio_variable_definition.h
+ C:/Users/StarKRE/CLionProjects/AIO/headers/lang/aio_types/aio_type.h
+ C:/Users/StarKRE/CLionProjects/AIO/headers/lib/collections/lists/aio_instruction_list.h
+ C:/Users/StarKRE/CLionProjects/AIO/headers/lib/collections/lists/string_list.h
+ C:/Users/StarKRE/CLionProjects/AIO/headers/lib/collections/maps/aio_variable_definition_map.h
+ C:/Users/StarKRE/CLionProjects/AIO/headers/lib/point_watcher/point_watcher.h
+ C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/boolean_utils/boolean_utils.h
+ C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/char_utils/char_utils.h
+ C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/log_utils/log_utils.h
+ C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/memory_utils/memory_utils.h
+ C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/string_utils/string_utils.h
+ C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_assign_spider/aio_assign_spider.h
+ C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_break_spider/aio_break_spider.h
+ C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_if_spider/aio_if_spider.h
+ C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_default_loop_header_spider.h
+ C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_in_loop_header_spider.h
+ C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_tiny_loop_header_spider.h
+ C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_loop_spider/aio_loop_spider.h
+ C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_procedure_spider/aio_procedure_spider.h
+ C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_return_spider/aio_return_spider.h
+ C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_spider.h
+ C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_spider_nest.h
+ C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_switch_spider/aio_switch_spider.h
+ C:/Users/StarKRE/CLionProjects/AIO/sources/tools/aio_parsers/aio_spiders/aio_return_spider/aio_return_spider.c
 CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_spider_nest.c.obj
  C:/Users/StarKRE/CLionProjects/AIO/headers/lang/aio_function/aio_function_definition/aio_instructions/aio_instructions.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lang/aio_function/aio_variable/aio_variable_definition.h
@@ -685,8 +705,8 @@ CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_spider_nest.c.obj
  C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_in_loop_header_spider.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_tiny_loop_header_spider.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_loop_spider/aio_loop_spider.h
- C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_out_spider/aio_out_spider.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_procedure_spider/aio_procedure_spider.h
+ C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_return_spider/aio_return_spider.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_spider.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_spider_nest.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_switch_spider/aio_switch_spider.h

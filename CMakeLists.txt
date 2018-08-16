@@ -47,7 +47,7 @@ add_executable(${PROJECT_NAME}
         headers/tools/aio_parsers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_tiny_loop_header_spider.h
         headers/tools/aio_parsers/aio_spiders/aio_procedure_spider/aio_procedure_spider.h
         headers/tools/aio_parsers/aio_spiders/aio_switch_spider/aio_switch_spider.h
-        headers/tools/aio_parsers/aio_spiders/aio_out_spider/aio_out_spider.h
+        headers/tools/aio_parsers/aio_spiders/aio_return_spider/aio_return_spider.h
         #lib:
         headers/lib/collections/lists/aio_annotation_list.h
         headers/lib/collections/lists/aio_instruction_list.h
@@ -104,7 +104,7 @@ add_executable(${PROJECT_NAME}
         sources/tools/aio_parsers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_default_loop_header_spider.c
         sources/tools/aio_parsers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_in_loop_header_spider.c
         sources/tools/aio_parsers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_tiny_loop_header_spider.c
-        sources/tools/aio_parsers/aio_spiders/aio_out_spider/aio_out_spider.c
+        sources/tools/aio_parsers/aio_spiders/aio_return_spider/aio_return_spider.c
         sources/tools/aio_parsers/aio_spiders/aio_procedure_spider/aio_procedure_spider.c
         sources/tools/aio_parsers/aio_spiders/aio_switch_spider/aio_switch_spider.c
         sources/tools/aio_parsers/aio_spiders/aio_spider_nest.c

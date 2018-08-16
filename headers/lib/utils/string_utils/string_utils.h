@@ -28,6 +28,8 @@ string_array split_by_space(const_string src);
 
 string_array split_by_comma(const_string src);
 
+string_array split_by_line_break(const_string src);
+
 string trim_start(const_string src);
 
 string trim_end(const_string src);
@@ -70,7 +72,7 @@ string substring_by_offset(const_string string, int offset, int length);
 
 string substring(const_string string, int start, int end);
 
-int strings_size(const_string_array src);
+int number_of_strings(const_string_array src);
 
 const_boolean matches_string(const_string word);
 

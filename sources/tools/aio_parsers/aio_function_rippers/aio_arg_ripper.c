@@ -13,11 +13,12 @@
 
 #define AIO_ARG_RIPPER_TAG "AIO_ARG_RIPPER"
 
-//#define AIO_ARG_RIPPER_DEBUG
+#define AIO_ARG_RIPPER_DEBUG
 
 #ifdef AIO_ARG_RIPPER_DEBUG
 
-#include "../../../../../headers/lib/utils/log_utils/log_utils.h"
+#include "../../../../headers/lib/utils/log_utils/log_utils.h"
+#include "../../../../headers/lib/collections/lists/string_list.h"
 
 #endif
 
@@ -58,16 +59,38 @@ aio_variable_definition_map *dig_arguments(const_string source_code, int *pointe
     if (!is_empty_string(argument_content)) {
         //함수 인수 함유량들 파다 (Dig arg contents):
         const_string_array dirty_arg_chunks = split_by_comma(argument_content);
-        const int string_number = strings_size(dirty_arg_chunks);
-        const_string_array clean_arg_chunks = trim_all_with_line_break(dirty_arg_chunks, strings_size(dirty_arg_chunks));
+        const int number_of_args = number_of_strings(dirty_arg_chunks);
+        const_string_array clean_arg_chunks = trim_all_with_line_break(dirty_arg_chunks,
+                                                                       number_of_strings(dirty_arg_chunks));
         //각 함수 인수 함유량 파다 (Dig each arg content):
-        for (int j = 0; j < string_number; ++j) {
-            const_string arg_chunk = clean_arg_chunks[j];
-            const_string_array dirty_arg_content = split_by_space(arg_chunk);
-            const int dirty_arg_content_length = strings_size(dirty_arg_content);
-            const_string_array arg_content = filter(dirty_arg_content, dirty_arg_content_length, is_empty_string);
-            const int arg_content_size = strings_size(arg_content);
-            const_string_array clean_arg_content = trim_all_with_line_break(arg_content, arg_content_size);
+        for (int j = 0; j < number_of_args; ++j) {
+            const_string arg_chunk_1 = clean_arg_chunks[j];
+            //Split by space:
+            const_string_array dirty_arg_content_1 = split_by_space(arg_chunk_1);
+            const int dirty_arg_content_size_1 = number_of_strings(dirty_arg_content_1);
+            const_string_array arg_content_1 = filter(dirty_arg_content_1, dirty_arg_content_size_1, is_empty_string);
+            const int arg_content_size_1 = number_of_strings(arg_content_1);
+            //----------------------------------------------------------------------------------------------------------
+            //Split by line break;
+            string_list *arg_content_list = new_string_list();
+            for (int k = 0; k < arg_content_size_1; ++k) {
+                const_string dirty_arg_chunk_2 = arg_content_1[k];
+                string_array dirty_arg_content_2 = split_by_line_break(dirty_arg_chunk_2);
+                const int dirty_arg_content_size_2 = number_of_strings(dirty_arg_content_2);
+                string_array arg_content_2 = filter(dirty_arg_content_2, dirty_arg_content_size_2,
+                                                    is_empty_string);
+                const int arg_content_size_2 = number_of_strings(arg_content_2);
+                for (int i = 0; i < arg_content_size_2; ++i) {
+                    add_string_in_list(arg_content_list, arg_content_2[i]);
+                }
+                //------------------------------------------------------------------------------------------------------
+                //찌꺼기 수집기 (Garbage collector):
+                free_strings(&dirty_arg_content_2);
+                free(arg_content_2);
+            }
+            const int arg_content_size = arg_content_list->size;
+            const_string_array clean_arg_content = trim_all_with_line_break(arg_content_list->strings,
+                                                                            arg_content_size);
             string arg_type = NULL;
             string arg_name = NULL;
             boolean is_mutable = FALSE;
@@ -96,16 +119,18 @@ aio_variable_definition_map *dig_arguments(const_string source_code, int *pointe
             put_aio_variable_definition_in_map(arg_definition_map, definition);
             //--------------------------------------------------------------------------------------------------------------
             //찌꺼기 수집기 (Garbage collector):
-            free_strings(&dirty_arg_content);
-            free_strings(&arg_content);
+            free_strings(&dirty_arg_content_1);
+            free_strings(&arg_content_1);
+            free_strings_in_list(arg_content_list);
+            free_string_list(arg_content_list);
             free_strings(&clean_arg_content);
         }
 #ifdef AIO_ARG_RIPPER_DEBUG
         for (int k = 0; k < arg_definition_map->size; ++k) {
-        const aio_variable_definition *definition = arg_definition_map->variable_definitions[k];
-        printf("\n%s: %s, %s, %d \n", AIO_ARG_RIPPER_TAG, definition->type, definition->name,
-               definition->is_mutable_by_value);
-    }
+            const aio_variable_definition *definition = arg_definition_map->variable_definitions[k];
+            printf("\n%s: -%s-, -%s-, -%d- \n", AIO_ARG_RIPPER_TAG, definition->type, definition->name,
+                   definition->is_mutable_by_value);
+        }
 #endif
         //------------------------------------------------------------------------------------------------------------------
         //찌꺼기 수집기 (Garbage collector):

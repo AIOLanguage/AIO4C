@@ -7,13 +7,13 @@
 #include "../../../../headers/lang/aio_core/aio_core.h"
 #include "../../../../headers/lib/utils/char_utils/char_utils.h"
 
-//#define AIO_OUTPUT_RIPPER_DEBUG
+#define AIO_OUTPUT_RIPPER_DEBUG
 
 #define AIO_OUTPUT_RIPPER_TAG "AIO_OUTPUT_RIPPER"
 
 #ifdef AIO_OUTPUT_RIPPER_DEBUG
 
-#include "../../../../../headers/lib/utils/log_utils/log_utils.h"
+#include "../../../../headers/lib/utils/log_utils/log_utils.h"
 
 #endif
 
@@ -90,7 +90,7 @@ string_list *dig_output_types(const_string source_code, int *pointer_reference) 
             break;
         case MULTI_OUTPUT_MODE: {
             const_string_array dirty_types = split_by_comma(type_content);
-            const int type_number = strings_size(dirty_types);
+            const int type_number = number_of_strings(dirty_types);
             const_string_array clean_types = trim_all(dirty_types, type_number);
             for (int i = 0; i < type_number; ++i) {
                 string type = clean_types[i];

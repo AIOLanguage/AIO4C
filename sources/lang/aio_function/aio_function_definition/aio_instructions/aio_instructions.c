@@ -17,8 +17,8 @@ aio_instruction *new_aio_assign_instruction(aio_instruction_holder *holder, cons
     instruction->task_type = AIO_ASSIGN_TASK;
     //Init task:
     aio_assign_task *task = new_object(sizeof(aio_assign_task));
-    task->source = new_string(source);
-    task->destination = new_string(destination);
+    task->value = new_string(source);
+    task->variable_name = new_string(destination);
     instruction->get.assign_task = task;
     return instruction;
 }

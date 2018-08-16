@@ -80,9 +80,6 @@ void handle_loop_body_scope(const_string source_code, struct aio_spider *spider)
 
 void dig_header_materials(const_string source_code, struct aio_spider *parent_spider);
 
-\
-
-
 void weave_loop_instruction_for(aio_instruction_holder *holder, const_string source_code,
                                 point_watcher *ripper_watcher, struct aio_spider *spider);
 

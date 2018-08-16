@@ -27,7 +27,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_default_loop_header_spider.c.obj"
   "CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_in_loop_header_spider.c.obj"
   "CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_tiny_loop_header_spider.c.obj"
-  "CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_out_spider/aio_out_spider.c.obj"
+  "CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_return_spider/aio_return_spider.c.obj"
   "CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_procedure_spider/aio_procedure_spider.c.obj"
   "CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_switch_spider/aio_switch_spider.c.obj"
   "CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_spider_nest.c.obj"

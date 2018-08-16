@@ -1526,33 +1526,6 @@ sources/tools/aio_parsers/aio_spiders/aio_loop_spider/aio_loop_spider.c.s:
 	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_loop_spider/aio_loop_spider.c.s
 .PHONY : sources/tools/aio_parsers/aio_spiders/aio_loop_spider/aio_loop_spider.c.s
 
-sources/tools/aio_parsers/aio_spiders/aio_out_spider/aio_out_spider.obj: sources/tools/aio_parsers/aio_spiders/aio_out_spider/aio_out_spider.c.obj
-
-.PHONY : sources/tools/aio_parsers/aio_spiders/aio_out_spider/aio_out_spider.obj
-
-# target to build an object file
-sources/tools/aio_parsers/aio_spiders/aio_out_spider/aio_out_spider.c.obj:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_out_spider/aio_out_spider.c.obj
-.PHONY : sources/tools/aio_parsers/aio_spiders/aio_out_spider/aio_out_spider.c.obj
-
-sources/tools/aio_parsers/aio_spiders/aio_out_spider/aio_out_spider.i: sources/tools/aio_parsers/aio_spiders/aio_out_spider/aio_out_spider.c.i
-
-.PHONY : sources/tools/aio_parsers/aio_spiders/aio_out_spider/aio_out_spider.i
-
-# target to preprocess a source file
-sources/tools/aio_parsers/aio_spiders/aio_out_spider/aio_out_spider.c.i:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_out_spider/aio_out_spider.c.i
-.PHONY : sources/tools/aio_parsers/aio_spiders/aio_out_spider/aio_out_spider.c.i
-
-sources/tools/aio_parsers/aio_spiders/aio_out_spider/aio_out_spider.s: sources/tools/aio_parsers/aio_spiders/aio_out_spider/aio_out_spider.c.s
-
-.PHONY : sources/tools/aio_parsers/aio_spiders/aio_out_spider/aio_out_spider.s
-
-# target to generate assembly for a file
-sources/tools/aio_parsers/aio_spiders/aio_out_spider/aio_out_spider.c.s:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_out_spider/aio_out_spider.c.s
-.PHONY : sources/tools/aio_parsers/aio_spiders/aio_out_spider/aio_out_spider.c.s
-
 sources/tools/aio_parsers/aio_spiders/aio_procedure_spider/aio_procedure_spider.obj: sources/tools/aio_parsers/aio_spiders/aio_procedure_spider/aio_procedure_spider.c.obj
 
 .PHONY : sources/tools/aio_parsers/aio_spiders/aio_procedure_spider/aio_procedure_spider.obj
@@ -1579,6 +1552,33 @@ sources/tools/aio_parsers/aio_spiders/aio_procedure_spider/aio_procedure_spider.
 sources/tools/aio_parsers/aio_spiders/aio_procedure_spider/aio_procedure_spider.c.s:
 	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_procedure_spider/aio_procedure_spider.c.s
 .PHONY : sources/tools/aio_parsers/aio_spiders/aio_procedure_spider/aio_procedure_spider.c.s
+
+sources/tools/aio_parsers/aio_spiders/aio_return_spider/aio_return_spider.obj: sources/tools/aio_parsers/aio_spiders/aio_return_spider/aio_return_spider.c.obj
+
+.PHONY : sources/tools/aio_parsers/aio_spiders/aio_return_spider/aio_return_spider.obj
+
+# target to build an object file
+sources/tools/aio_parsers/aio_spiders/aio_return_spider/aio_return_spider.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_return_spider/aio_return_spider.c.obj
+.PHONY : sources/tools/aio_parsers/aio_spiders/aio_return_spider/aio_return_spider.c.obj
+
+sources/tools/aio_parsers/aio_spiders/aio_return_spider/aio_return_spider.i: sources/tools/aio_parsers/aio_spiders/aio_return_spider/aio_return_spider.c.i
+
+.PHONY : sources/tools/aio_parsers/aio_spiders/aio_return_spider/aio_return_spider.i
+
+# target to preprocess a source file
+sources/tools/aio_parsers/aio_spiders/aio_return_spider/aio_return_spider.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_return_spider/aio_return_spider.c.i
+.PHONY : sources/tools/aio_parsers/aio_spiders/aio_return_spider/aio_return_spider.c.i
+
+sources/tools/aio_parsers/aio_spiders/aio_return_spider/aio_return_spider.s: sources/tools/aio_parsers/aio_spiders/aio_return_spider/aio_return_spider.c.s
+
+.PHONY : sources/tools/aio_parsers/aio_spiders/aio_return_spider/aio_return_spider.s
+
+# target to generate assembly for a file
+sources/tools/aio_parsers/aio_spiders/aio_return_spider/aio_return_spider.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_return_spider/aio_return_spider.c.s
+.PHONY : sources/tools/aio_parsers/aio_spiders/aio_return_spider/aio_return_spider.c.s
 
 sources/tools/aio_parsers/aio_spiders/aio_spider_nest.obj: sources/tools/aio_parsers/aio_spiders/aio_spider_nest.c.obj
 
@@ -1799,12 +1799,12 @@ help:
 	@echo ... sources/tools/aio_parsers/aio_spiders/aio_loop_spider/aio_loop_spider.obj
 	@echo ... sources/tools/aio_parsers/aio_spiders/aio_loop_spider/aio_loop_spider.i
 	@echo ... sources/tools/aio_parsers/aio_spiders/aio_loop_spider/aio_loop_spider.s
-	@echo ... sources/tools/aio_parsers/aio_spiders/aio_out_spider/aio_out_spider.obj
-	@echo ... sources/tools/aio_parsers/aio_spiders/aio_out_spider/aio_out_spider.i
-	@echo ... sources/tools/aio_parsers/aio_spiders/aio_out_spider/aio_out_spider.s
 	@echo ... sources/tools/aio_parsers/aio_spiders/aio_procedure_spider/aio_procedure_spider.obj
 	@echo ... sources/tools/aio_parsers/aio_spiders/aio_procedure_spider/aio_procedure_spider.i
 	@echo ... sources/tools/aio_parsers/aio_spiders/aio_procedure_spider/aio_procedure_spider.s
+	@echo ... sources/tools/aio_parsers/aio_spiders/aio_return_spider/aio_return_spider.obj
+	@echo ... sources/tools/aio_parsers/aio_spiders/aio_return_spider/aio_return_spider.i
+	@echo ... sources/tools/aio_parsers/aio_spiders/aio_return_spider/aio_return_spider.s
 	@echo ... sources/tools/aio_parsers/aio_spiders/aio_spider_nest.obj
 	@echo ... sources/tools/aio_parsers/aio_spiders/aio_spider_nest.i
 	@echo ... sources/tools/aio_parsers/aio_spiders/aio_spider_nest.s

@@ -8,7 +8,7 @@
 #include "aio_switch_spider/aio_switch_spider.h"
 #include "aio_procedure_spider/aio_procedure_spider.h"
 #include "aio_loop_spider/aio_loop_spider.h"
-#include "aio_out_spider/aio_out_spider.h"
+#include "aio_return_spider/aio_return_spider.h"
 #include "aio_break_spider/aio_break_spider.h"
 #include "aio_if_spider/aio_if_spider.h"
 
@@ -70,7 +70,7 @@ typedef struct aio_spider {
         aio_break_materials *break_materials;
         aio_if_materials *if_materials;
         aio_loop_materials *loop_materials;
-        aio_out_materials *out_materials;
+        aio_return_materials *return_materials;
         aio_procedure_materials *procedure_materials;
         aio_switch_materials *switch_materials;
     } get;
