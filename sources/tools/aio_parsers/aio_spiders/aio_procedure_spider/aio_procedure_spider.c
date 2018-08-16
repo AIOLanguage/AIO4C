@@ -6,6 +6,7 @@
 #include "../../../../../headers/lib/utils/memory_utils/memory_utils.h"
 #include "../../../../../headers/lib/utils/char_utils/char_utils.h"
 #include "../../../../../headers/lang/aio_reserved_names/aio_reserved_names_container.h"
+#include "../../../../../headers/tools/aio_parsers/aio_block_body_explorer/aio_block_body_explorer.h"
 
 #define AIO_PROCEDURE_SPIDER_DEBUG
 
@@ -14,7 +15,6 @@
 #ifdef AIO_PROCEDURE_SPIDER_DEBUG
 
 #include "../../../../../headers/lib/utils/log_utils/log_utils.h"
-#include "../../../../../headers/tools/aio_parsers/aio_block_body_explorer/aio_block_body_explorer.h"
 
 #endif
 
@@ -125,7 +125,7 @@ void handle_procedure_arg_scope(const_string source_code, aio_spider *spider) {
         explore_header_body(source_code, &start_index, &end_index);
         main_watcher->end_index = end_index;
         materials->scope_type = AIO_PROCEDURE_WEAVING_SCOPE;
-        spider->message = AIO_SPIDER_IS_READY_FOR_WEAVING;
+        spider->message = AIO_SPIDER_IS_READY_FOR_WEAVING;/
     }
 }
 
