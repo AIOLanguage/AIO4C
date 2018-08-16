@@ -374,11 +374,10 @@ void weave_loop_instruction_for(aio_instruction_holder *holder, const_string sou
     const aio_main_loop_materials *main_loop_materials = materials->from.main;
     const_boolean is_ready_for_weaving = main_loop_materials->scope_type == AIO_LOOP_WEAVING_SCOPE;
     if (is_ready_for_weaving) {
-        const point_watcher *main_watcher = main_loop_materials->main_watcher;
         const point_watcher *body_watcher = main_loop_materials->body_watcher;
         //Shift ripper watcher:
-        ripper_watcher->pointer = main_watcher->start_index;
-        ripper_watcher->start_index = main_watcher->start_index;
+        ripper_watcher->pointer = body_watcher->end_index - 1;
+        ripper_watcher->start_index = body_watcher->end_index - 1;
         //Create init holder:
         aio_instruction_holder *init_holder = new_aio_local_instruction_holder(holder);
         aio_instruction_list *init_instruction_list = init_holder->instruction_list;

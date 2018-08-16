@@ -15,14 +15,13 @@
  * 주 논리 (Business logic).
  */
 
-//#define AIO_IF_SPIDER_DEBUG
+#define AIO_IF_SPIDER_DEBUG
 
 #define AIO_IF_SPIDER_TAG "AIO_IF_SPIDER"
 
 #ifdef AIO_IF_SPIDER_DEBUG
 
-#include "../../../../../../../headers/lib/utils/log_utils/log_utils.h"
-#include "../../../../../../../headers/tools/aio_parsers/aio_block_body_explorer/aio_block_body_explorer.h"
+#include "../../../../../headers/lib/utils/log_utils/log_utils.h"
 
 #endif
 
@@ -391,8 +390,8 @@ void weave_if_instruction_for(aio_instruction_holder *holder, const_string sourc
         true_holder = dig_new_aio_instruction_holder(source_code, holder, true_watcher->start_index,
                                                      true_watcher->end_index);
         if (branch_type == AIO_HAS_TRUE_BRANCH) {
-            ripper_watcher->start_index = true_watcher->end_index;
-            ripper_watcher->pointer = true_watcher->end_index;
+            ripper_watcher->start_index = true_watcher->end_index - 1;
+            ripper_watcher->pointer = true_watcher->end_index - 1;
         }
         if (branch_type == AIO_HAS_TRUE_AND_FALSE_BRANCHES) {
 #ifdef AIO_IF_SPIDER_DEBUG
@@ -400,8 +399,8 @@ void weave_if_instruction_for(aio_instruction_holder *holder, const_string sourc
             log_info_string(AIO_IF_SPIDER_TAG, "Weave false branch!\n", false_body);
             free((void *) false_body);
 #endif
-            ripper_watcher->start_index = false_watcher->end_index;
-            ripper_watcher->pointer = false_watcher->end_index;
+            ripper_watcher->start_index = false_watcher->end_index - 1;
+            ripper_watcher->pointer = false_watcher->end_index - 1;
             false_holder = dig_new_aio_instruction_holder(source_code, holder, false_watcher->start_index,
                                                           false_watcher->end_index);
         }
