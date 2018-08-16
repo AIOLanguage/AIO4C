@@ -6,28 +6,31 @@
 #include "../../../../../headers/lib/utils/char_utils/char_utils.h"
 #include "../../../../../headers/lib/utils/error_utils/error_utils.h"
 #include "../../../../../headers/tools/aio_parsers/aio_spiders/aio_spider.h"
+#include "../../../../../headers/lib/utils/memory_utils/memory_utils.h"
+
+#define AIO_BREAK_SPIDER_DEBUG
+
+#define AIO_BREAK_SPIDER_TAG "AIO_BREAK_SPIDER"
+
+#ifdef AIO_BREAK_SPIDER_DEBUG
+
+#include "../../../../../headers/lib/utils/log_utils/log_utils.h"
+
+#endif
 
 /**
- * Declare functions. 
+ * Refresh.
  */
 
-const aio_spider_message is_found_break_instruction(const_string string_web, aio_spider *spider);
-
-void weave_break_instruction_for(aio_instruction_holder *instruction_holder, const_string _,
-                                 int *next_ripper_point_reference, aio_spider *spider);
-
-void handle_break_scope(const_string string_web, aio_spider *spider);
-
-/**
- * Reset.
- */
-
-void reset_break_spider(aio_spider *spider) {
-    reset_point_watcher(spider->get.break_materials->watcher);
+void refresh_break_spider(aio_spider *spider, point_watcher *ripper_watcher) {
+    point_watcher *main_watcher = spider->get.break_materials->watcher;
+    main_watcher->start_index = ripper_watcher->pointer;
+    main_watcher->end_index = ripper_watcher->pointer;
+    main_watcher->mode = POINT_PASSIVE_MODE;
 }
 
 /**
- * Destructor.
+ * Free spider.
  */
 
 void free_break_function(aio_spider *spider) {
@@ -42,40 +45,41 @@ void free_break_function(aio_spider *spider) {
  * Constructor.
  */
 
-aio_spider *new_aio_break_spider() {
-    aio_spider *spider = calloc(1, sizeof(aio_spider));
+struct aio_spider *new_aio_break_spider(point_watcher *ripper_watcher) {
+    aio_spider *spider = new_object(sizeof(aio_spider));
     //Bind main spider's functions:
-    spider->refresh = reset_break_spider;
+    spider->refresh = refresh_break_spider;
     spider->is_found_instruction = is_found_break_instruction;
     spider->weave_instruction_for = weave_break_instruction_for;
     spider->free = free_break_function;
     //Create materials:
-    aio_break_materials *materials = calloc(1, sizeof(aio_break_materials));
+    aio_break_materials *materials = new_object(sizeof(aio_break_materials));
     materials->watcher = new_point_watcher();
+    materials->watcher->start_index = ripper_watcher->start_index;
+    materials->watcher->end_index = ripper_watcher->pointer;
     spider->get.break_materials = materials;
     //Init start message:
     spider->message = AIO_SPIDER_NOT_FOUND_MATERIALS;
     return spider;
 }
 
-const aio_spider_message is_found_break_instruction(const_string string_web, aio_spider *spider) {
-    //Extract spider fields:
+const aio_spider_message is_found_break_instruction(const_string string_web, point_watcher *ripper_watcher,
+                                                    aio_spider *spider) {
+    if (spider->message == AIO_SPIDER_IS_READY_FOR_WEAVING) {
+        ripper_watcher->pointer--;
+        return spider->message;
+    }
     const aio_break_materials *materials = spider->get.break_materials;
     point_watcher *watcher = materials->watcher;
-    watcher->end_index++;
-    //Prepare from scanning:
-    const char last_symbol = string_web[watcher->end_index - 1];
-    //Spider waits string data:
+    watcher->end_index = ripper_watcher->pointer;
+    const char current_symbol = string_web[watcher->end_index];
     if (watcher->mode == POINT_PASSIVE_MODE) {
-        if (is_space_or_line_break(last_symbol)) {
-            //Spider waiting:
+        if (is_space_or_line_break(current_symbol)) {
             watcher->start_index++;
         } else {
-            //Spider is ready for analysing:
             watcher->mode = POINT_ACTIVE_MODE;
         }
     }
-    //Spider works:
     if (watcher->mode == POINT_ACTIVE_MODE) {
         handle_break_scope(string_web, spider);
     }
@@ -85,8 +89,11 @@ const aio_spider_message is_found_break_instruction(const_string string_web, aio
 void handle_break_scope(const_string string_web, aio_spider *spider) {
     const aio_break_materials *materials = spider->get.break_materials;
     point_watcher *watcher = materials->watcher;
-    const char last_symbol = string_web[watcher->end_index - 1];
-    if (is_space_or_line_break(last_symbol)) {
+    const char current_symbol = string_web[watcher->end_index];
+#ifdef AIO_BREAK_SPIDER_DEBUG
+    log_info_char(AIO_BREAK_SPIDER_TAG, "CURRENT SYMBOL", current_symbol);
+#endif
+    if (is_space_or_line_break(current_symbol)) {
         const int start_index = watcher->start_index;
         const int end_index = watcher->end_index;
         const int hold_positions = end_index - start_index;
@@ -100,18 +107,29 @@ void handle_break_scope(const_string string_web, aio_spider *spider) {
                 watcher->mode = POINT_PASSIVE_MODE;
                 //Set message:
                 spider->message = AIO_SPIDER_FOUND_MATERIALS;
+#ifdef AIO_BREAK_SPIDER_DEBUG
+                log_info(AIO_BREAK_SPIDER_TAG, "Found break modifier");
+#endif
             }
         }
     }
 }
 
 void weave_break_instruction_for(aio_instruction_holder *instruction_holder, const_string _,
-                                 int *next_ripper_point_reference, aio_spider *spider) {
-    *next_ripper_point_reference += spider->get.break_materials->watcher->start_index;
+                                 point_watcher *ripper_watcher, aio_spider *spider) {
+#ifdef AIO_BREAK_SPIDER_DEBUG
+    log_info(AIO_BREAK_SPIDER_TAG, "Start weaving...");
+#endif
+    const int start_index = spider->get.break_materials->watcher->start_index;
+    ripper_watcher->start_index = start_index;
+    ripper_watcher->pointer = start_index;
     //Weave break instruction:
     aio_instruction *break_instruction = new_aio_break_instruction(instruction_holder);
     //Add break instruction in holder's instructions:
     aio_instruction_list *instruction_list = instruction_holder->instruction_list;
     add_aio_instruction_in_list(instruction_list, break_instruction);
-    //Weaving complete!
+    //Weaving is complete!
+#ifdef AIO_BREAK_SPIDER_DEBUG
+    log_info(AIO_BREAK_SPIDER_TAG, "Weaving is complete!");
+#endif
 }

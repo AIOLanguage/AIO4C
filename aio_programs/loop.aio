@@ -1,13 +1,20 @@
-Dou loopTest(){
+Dou loopTest(Int test){
 
-a = 4 + 28 loo(Int a = 5 + 7 * 28 - 42 a < 10 + 14 a = a + 1){
+a = 4 + 28 loo
+(Int i = 5 + 7 * 28 - 42
+a <=10
++14||a>
+712 i= a + 1 + a *a){
 
-
-  x
+if(test > 0){
+    brk}x
    =
     5
+
 }n=3+7+
 21
+
+mu vector = voi
 
 if
 (
@@ -16,8 +23,6 @@ a
 n
 ){
 l = 3
-}v =               l
-}
-}
-
+}:{vector
+=3}v =               l
 }

@@ -40,19 +40,6 @@ void refresh_loop_spider(aio_spider *spider, point_watcher *ripper_watcher) {
     materials->main_watcher->mode = POINT_PASSIVE_MODE;
     reset_point_watcher(materials->header_watcher);
     reset_point_watcher(materials->body_watcher);
-    //Refresh applied materials:
-    const aio_loop_material_type header_material_type = materials->applied_header_material_type;
-    if (header_material_type == AIO_LOOP_MATERIALS_DEFAULT_HEADER) {
-        aio_default_loop_header_materials *default_header_materials = materials->get_applied_materials_from
-                .default_loop_header;
-        refresh_default_loop_header_materials(default_header_materials, materials->header_watcher);
-    }
-    if (header_material_type == AIO_LOOP_MATERIALS_IN_HEADER) {
-
-    }
-    if (header_material_type == AIO_LOOP_MATERIALS_TINY_HEADER) {
-
-    }
     spider->message = AIO_SPIDER_NOT_FOUND_MATERIALS;
 }
 
@@ -385,6 +372,9 @@ void weave_loop_instruction_for(aio_instruction_holder *holder, const_string sou
                     = main_loop_materials->get_applied_materials_from.default_loop_header;
             const aio_default_loop_header_pointer_declaration_type declaration_type
                     = default_loop_header_materials->declaration_type;
+#ifdef AIO_LOOP_SPIDER_DEBUG
+            log_info(AIO_LOOP_SPIDER_TAG, "DEFAULT LOOP HEADER MATERIALS...");
+#endif
             loop_condition = new_string(default_loop_header_materials->loop_condition);
             const_string_array pointer_data = default_loop_header_materials->pointer_data_list->strings;
             const_string init_value = default_loop_header_materials->init_value;
@@ -415,6 +405,9 @@ void weave_loop_instruction_for(aio_instruction_holder *holder, const_string sou
         if (header_material_type == AIO_LOOP_MATERIALS_TINY_HEADER) {
 
         }
+#ifdef AIO_LOOP_SPIDER_DEBUG
+        log_info(AIO_LOOP_SPIDER_TAG, "DEFAULT LOOP HEADER MATERIALS 2...");
+#endif
         //Create loop instruction:
         aio_instruction *loop_instruction = new_aio_loop_instruction(holder, loop_condition, init_holder, cycle_holder);
         aio_instruction_list *parent_instruction_list = holder->instruction_list;

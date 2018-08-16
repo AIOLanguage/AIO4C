@@ -6,7 +6,6 @@
 #include "../../../../../headers/tools/aio_parsers/aio_spiders/aio_spider.h"
 #include "../../../../../headers/lib/utils/memory_utils/memory_utils.h"
 #include "../../../../../headers/lib/utils/char_utils/char_utils.h"
-#include "../../../../../headers/lib/utils/log_utils/log_utils.h"
 #include "../../../../../headers/lib/utils/error_utils/error_utils.h"
 
 #define AIO_RETURN_SPIDER_DEBUG
@@ -15,6 +14,7 @@
 
 #ifdef AIO_RETURN_SPIDER_DEBUG
 
+#include "../../../../../headers/lib/utils/log_utils/log_utils.h"
 
 #endif
 

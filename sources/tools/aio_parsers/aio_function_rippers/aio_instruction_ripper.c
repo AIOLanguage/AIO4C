@@ -8,6 +8,7 @@
 #include "../../../../headers/lib/utils/string_utils/string_builder.h"
 #include "../../../../headers/tools/aio_parsers/aio_block_body_explorer/aio_block_body_explorer.h"
 #include "../../../../headers/lib/utils/memory_utils/memory_utils.h"
+#include "../../../../headers/tools/aio_parsers/aio_spiders/aio_spider_nest.h"
 
 #define AIO_INSTRUCTION_RIPPER_DEBUG
 
@@ -16,7 +17,6 @@
 #ifdef AIO_INSTRUCTION_RIPPER_DEBUG
 
 #include "../../../../headers/lib/utils/log_utils/log_utils.h"
-#include "../../../../headers/tools/aio_parsers/aio_spiders/aio_spider_nest.h"
 
 #endif
 
@@ -106,9 +106,6 @@ void dig_aio_instructions_for(aio_instruction_holder *current_holder, const_stri
                         //거미가 현재 보유자를 붙잡고 지침을 길쌈한다:
                         //(A spider takes current holder and weaves instruction):
                         spider->weave_instruction_for(current_holder, source_code, ripper_watcher, spider);
-                        //Refresh spiders:
-                        refresh_aio_spiders(spider_nest, ripper_watcher);
-                        //리퍼 당직자를 바꾼다 (Shift ripper watcher):
 #ifdef AIO_INSTRUCTION_RIPPER_DEBUG
                         log_info_char(AIO_INSTRUCTION_RIPPER_TAG, "mCharacter:",
                                       source_code[ripper_watcher->pointer - 4]);
@@ -121,6 +118,9 @@ void dig_aio_instructions_for(aio_instruction_holder *current_holder, const_stri
                         log_info_char(AIO_INSTRUCTION_RIPPER_TAG, "mCharacter:",
                                       source_code[ripper_watcher->pointer]);
 #endif
+                        //Refresh spiders:
+                        refresh_aio_spiders(spider_nest, ripper_watcher);
+                        //리퍼 당직자를 바꾼다 (Shift ripper watcher):
                         ripper_watcher->mode = POINT_PASSIVE_MODE;
                         //거미 무리 리셋 (Spider nest refresh):
                         spider_nest->mode = AIO_ALL_SPIDERS_WORK;

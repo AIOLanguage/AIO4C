@@ -506,29 +506,23 @@ void weave_default_loop_materials_for(struct aio_spider *dst_spider, struct aio_
     aio_default_loop_header_materials *src_materials = src_spider->get.loop_materials->from.default_loop_header;
     string_list *src_pointer_list = src_materials->pointer_data_list;
     aio_default_loop_header_materials *new_materials = new_object(sizeof(aio_default_loop_header_materials));
-
-
     new_materials->declaration_type = src_materials->declaration_type;
-
 #ifdef AIO_DEFAULT_LOOP_HEADER_SPIDER_DEBUG
     log_info_string(AIO_DEFAULT_LOOP_HEADER_SPIDER_TAG, "START STTTEEEP VALUE", src_materials->step_value);
 #endif
-
-
     new_materials->step_value = new_string(src_materials->step_value);
 #ifdef AIO_DEFAULT_LOOP_HEADER_SPIDER_DEBUG
     log_info(AIO_DEFAULT_LOOP_HEADER_SPIDER_TAG, "START WEEEEEEEEEEEAVING!!!!");
 #endif
-
     new_materials->loop_condition = new_string(src_materials->loop_condition);
     new_materials->init_value = new_string(src_materials->init_value);
-
     string_list *new_pointer_list = new_string_list();
     for (int i = 0; i < src_pointer_list->size; ++i) {
         add_string_in_list(new_pointer_list, new_string(src_pointer_list->strings[i]));
     }
     new_materials->pointer_data_list = new_pointer_list;
-    dst_materials->get_applied_materials_from.default_loop_header = src_materials;
+    dst_materials->get_applied_materials_from.default_loop_header = new_materials;
+    dst_materials->applied_header_material_type = AIO_LOOP_MATERIALS_DEFAULT_HEADER;
 #ifdef AIO_DEFAULT_LOOP_HEADER_SPIDER_DEBUG
     log_info(AIO_DEFAULT_LOOP_HEADER_SPIDER_TAG, "WEEEEEAVING IS COMPLETE!");
 #endif
