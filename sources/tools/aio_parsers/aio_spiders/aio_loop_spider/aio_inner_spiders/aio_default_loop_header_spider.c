@@ -527,7 +527,7 @@ void weave_default_loop_materials_for(struct aio_spider *dst_spider, struct aio_
     dst_materials->get_applied_materials_from.default_loop_header = new_materials;
     dst_materials->applied_header_material_type = AIO_LOOP_MATERIALS_DEFAULT_HEADER;
 #ifdef AIO_DEFAULT_LOOP_HEADER_SPIDER_DEBUG
-    log_info(AIO_DEFAULT_LOOP_HEADER_SPIDER_TAG, "WEEEEEAVING IS COMPLETE!");
+    log_info(AIO_DEFAULT_LOOP_HEADER_SPIDER_TAG, "Weaving is complete!");
 #endif
 }
 
