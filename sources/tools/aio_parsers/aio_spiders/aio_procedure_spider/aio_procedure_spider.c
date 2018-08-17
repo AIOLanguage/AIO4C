@@ -26,8 +26,8 @@ void refresh_procedure_spider(aio_spider *spider, point_watcher *ripper_watcher)
     aio_procedure_materials *materials = spider->get.procedure_materials;
     materials->scope_type = AIO_PROCEDURE_NAME_SCOPE;
     point_watcher *main_watcher = materials->main_watcher;
-    main_watcher->start_index = ripper_watcher->pointer;
-    main_watcher->end_index = ripper_watcher->pointer;
+    main_watcher->start = ripper_watcher->pointer;
+    main_watcher->end = ripper_watcher->pointer;
     main_watcher->mode = POINT_PASSIVE_MODE;
 }
 
@@ -54,8 +54,8 @@ struct aio_spider *new_aio_procedure_spider(point_watcher *ripper_watcher) {
     aio_procedure_materials *materials = new_object(sizeof(aio_procedure_materials));
     materials->scope_type = AIO_PROCEDURE_NAME_SCOPE;
     materials->main_watcher = new_point_watcher();
-    materials->main_watcher->start_index = ripper_watcher->start_index;
-    materials->main_watcher->end_index = ripper_watcher->pointer;
+    materials->main_watcher->start = ripper_watcher->start;
+    materials->main_watcher->end = ripper_watcher->pointer;
     spider->get.procedure_materials = materials;
     //Init start message:
     spider->message = AIO_SPIDER_NOT_FOUND_MATERIALS;
@@ -66,11 +66,11 @@ const enum aio_spider_message is_found_procedure_instruction(const_string source
                                                              struct aio_spider *spider) {
     const aio_procedure_materials *materials = spider->get.procedure_materials;
     point_watcher *watcher = materials->main_watcher;
-    watcher->end_index = ripper_watcher->pointer;
-    const char current_symbol = source_code[watcher->end_index];
+    watcher->end = ripper_watcher->pointer;
+    const char current_symbol = source_code[watcher->end];
     if (watcher->mode == POINT_PASSIVE_MODE) {
         if (is_space_or_line_break(current_symbol)) {
-            watcher->start_index++;
+            watcher->start++;
         } else {
             watcher->mode = POINT_ACTIVE_MODE;
         }
@@ -91,7 +91,7 @@ void handle_procedure_name_scope(const_string source_code, aio_spider *spider) {
     aio_procedure_materials *materials = spider->get.procedure_materials;
     point_watcher *main_watcher = materials->main_watcher;
     //Define current symbol:
-    const int current_position = main_watcher->end_index;
+    const int current_position = main_watcher->end;
     const char current_symbol = source_code[current_position];
     //Check current symbol:
     const_boolean is_whitespace_cond = is_space_or_line_break(current_symbol);
@@ -99,7 +99,7 @@ void handle_procedure_name_scope(const_string source_code, aio_spider *spider) {
     if (is_whitespace_cond || is_opening_parenthesis_cond) {
         const_string chunk = substring_by_point_watcher(source_code, main_watcher);
 #ifdef AIO_PROCEDURE_SPIDER_DEBUG
-        log_info_string(AIO_PROCEDURE_SPIDER_TAG, "CAPTURE CHUNK:", chunk);
+        log_info_string(AIO_PROCEDURE_SPIDER_TAG, "CAPTURED NAME:", chunk);
 #endif
         const_boolean is_function_name = is_word(chunk) && can_use_name(chunk);
         if (is_function_name) {
@@ -113,17 +113,20 @@ void handle_procedure_arg_scope(const_string source_code, aio_spider *spider) {
     aio_procedure_materials *materials = spider->get.procedure_materials;
     point_watcher *main_watcher = materials->main_watcher;
     //Define current symbol:
-    const int current_position = main_watcher->end_index;
+    const int current_position = main_watcher->end;
     const char current_symbol = source_code[current_position];
     //Check current symbol:
     if (is_space_or_line_break(current_symbol)) {
         return;
     }
     if (is_opening_parenthesis(current_symbol)) {
+#ifdef AIO_PROCEDURE_SPIDER_DEBUG
+        log_info(AIO_PROCEDURE_SPIDER_TAG, "Found opening parenthesis!");
+#endif
         int start_index = current_position;
         int end_index = 0;
         explore_header_body(source_code, &start_index, &end_index);
-        main_watcher->end_index = end_index;
+        main_watcher->end = end_index;
         materials->scope_type = AIO_PROCEDURE_WEAVING_SCOPE;
         spider->message = AIO_SPIDER_IS_READY_FOR_WEAVING;
     }
@@ -138,9 +141,9 @@ void weave_procedure_instruction_for(aio_instruction_holder *holder, const_strin
     const aio_procedure_materials *materials = spider->get.procedure_materials;
     const point_watcher *watcher = materials->main_watcher;
     //Change ripper_watcher:
-    const int new_point = watcher->end_index;
+    const int new_point = watcher->end;
     ripper_watcher->pointer = new_point;
-    ripper_watcher->start_index = new_point;
+    ripper_watcher->start = new_point;
     string dirty_expression = substring_by_point_watcher(source_code, watcher);
     string clean_expression = squeeze_string(dirty_expression);
 #ifdef AIO_PROCEDURE_SPIDER_DEBUG

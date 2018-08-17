@@ -24,8 +24,8 @@
 
 void refresh_break_spider(aio_spider *spider, point_watcher *ripper_watcher) {
     point_watcher *main_watcher = spider->get.break_materials->watcher;
-    main_watcher->start_index = ripper_watcher->pointer;
-    main_watcher->end_index = ripper_watcher->pointer;
+    main_watcher->start = ripper_watcher->pointer;
+    main_watcher->end = ripper_watcher->pointer;
     main_watcher->mode = POINT_PASSIVE_MODE;
 }
 
@@ -55,8 +55,8 @@ struct aio_spider *new_aio_break_spider(point_watcher *ripper_watcher) {
     //Create materials:
     aio_break_materials *materials = new_object(sizeof(aio_break_materials));
     materials->watcher = new_point_watcher();
-    materials->watcher->start_index = ripper_watcher->start_index;
-    materials->watcher->end_index = ripper_watcher->pointer;
+    materials->watcher->start = ripper_watcher->start;
+    materials->watcher->end = ripper_watcher->pointer;
     spider->get.break_materials = materials;
     //Init start message:
     spider->message = AIO_SPIDER_NOT_FOUND_MATERIALS;
@@ -67,11 +67,11 @@ const aio_spider_message is_found_break_instruction(const_string source_code, po
                                                     aio_spider *spider) {
     const aio_break_materials *materials = spider->get.break_materials;
     point_watcher *watcher = materials->watcher;
-    watcher->end_index = ripper_watcher->pointer;
-    const char current_symbol = source_code[watcher->end_index];
+    watcher->end = ripper_watcher->pointer;
+    const char current_symbol = source_code[watcher->end];
     if (watcher->mode == POINT_PASSIVE_MODE) {
         if (is_space_or_line_break(current_symbol)) {
-            watcher->start_index++;
+            watcher->start++;
         } else {
             watcher->mode = POINT_ACTIVE_MODE;
         }
@@ -85,13 +85,13 @@ const aio_spider_message is_found_break_instruction(const_string source_code, po
 void handle_break_scope(const_string source_code, aio_spider *spider) {
     const aio_break_materials *materials = spider->get.break_materials;
     point_watcher *watcher = materials->watcher;
-    const char current_symbol = source_code[watcher->end_index];
+    const char current_symbol = source_code[watcher->end];
 #ifdef AIO_BREAK_SPIDER_DEBUG
     log_info_char(AIO_BREAK_SPIDER_TAG, "CURRENT SYMBOL", current_symbol);
 #endif
     if (is_space_or_line_break(current_symbol) || is_closing_brace(current_symbol)) {
-        const int start_index = watcher->start_index;
-        const int end_index = watcher->end_index;
+        const int start_index = watcher->start;
+        const int end_index = watcher->end;
         const int hold_positions = end_index - start_index;
         if (hold_positions == 3) {
             const_boolean is_break_word = source_code[start_index] == 'b'
@@ -99,7 +99,7 @@ void handle_break_scope(const_string source_code, aio_spider *spider) {
                                           && source_code[start_index + 2] == 'k';
             if (is_break_word) {
                 //Shift main_watcher:
-                watcher->start_index = end_index;
+                watcher->start = end_index;
                 watcher->mode = POINT_PASSIVE_MODE;
                 //Set message:
                 spider->message = AIO_SPIDER_IS_READY_FOR_WEAVING;
@@ -116,8 +116,8 @@ void weave_break_instruction_for(aio_instruction_holder *instruction_holder, con
 #ifdef AIO_BREAK_SPIDER_DEBUG
     log_info(AIO_BREAK_SPIDER_TAG, "Start weaving...");
 #endif
-    const int start_index = spider->get.break_materials->watcher->start_index;
-    ripper_watcher->start_index = start_index;
+    const int start_index = spider->get.break_materials->watcher->start;
+    ripper_watcher->start = start_index;
     ripper_watcher->pointer = start_index;
     //Weave break instruction:
     aio_instruction *break_instruction = new_aio_break_instruction(instruction_holder);

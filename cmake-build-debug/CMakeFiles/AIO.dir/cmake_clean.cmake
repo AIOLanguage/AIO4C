@@ -55,6 +55,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/AIO.dir/sources/lib/utils/string_utils/trim.c.obj"
   "CMakeFiles/AIO.dir/sources/lib/utils/memory_utils/memory_utils.c.obj"
   "CMakeFiles/AIO.dir/sources/lib/utils/log_utils/log_utils.c.obj"
+  "CMakeFiles/AIO.dir/sources/lib/utils/string_hook/string_hook.c.obj"
   "AIO.pdb"
   "AIO.exe"
   "AIO.exe.manifest"

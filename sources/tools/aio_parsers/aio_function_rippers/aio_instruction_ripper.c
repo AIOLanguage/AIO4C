@@ -80,8 +80,8 @@ void dig_aio_instructions_for(aio_instruction_holder *current_holder, const_stri
         //리퍼 당직자 만들다 (Create ripper watcher):
         point_watcher *ripper_watcher = new_point_watcher();
         ripper_watcher->pointer = start_index + 1;
-        ripper_watcher->start_index = start_index + 1;
-        ripper_watcher->end_index = end_index;
+        ripper_watcher->start = start_index + 1;
+        ripper_watcher->end = end_index;
         //검색 지침을 위해 거미 무리를 만들다 (Create spider swarm for searching instructions):
         aio_spider_nest *spider_nest = breed_aio_function_spider_nest(ripper_watcher);
         //지침을 제본후에 함수 블록 나머지 확인하셔야하다 (Need to check function body rest after weaving of instruction):

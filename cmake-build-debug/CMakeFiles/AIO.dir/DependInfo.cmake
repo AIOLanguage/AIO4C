@@ -38,6 +38,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/log_utils/log_utils.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lib/utils/log_utils/log_utils.c.obj"
   "C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/memory_utils/memory_utils.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lib/utils/memory_utils/memory_utils.c.obj"
   "C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/operation_utils/operation_utils.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lib/utils/operation_utils/operation_utils.c.obj"
+  "C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/string_hook/string_hook.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lib/utils/string_hook/string_hook.c.obj"
   "C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/string_utils/prefix_suffix.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lib/utils/string_utils/prefix_suffix.c.obj"
   "C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/string_utils/split.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lib/utils/string_utils/split.c.obj"
   "C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/string_utils/string_builder.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lib/utils/string_utils/string_builder.c.obj"

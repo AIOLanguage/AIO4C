@@ -19,7 +19,7 @@ const enum aio_spider_message is_found_procedure_instruction(const_string source
 
 void handle_procedure_name_scope(const_string source_code, struct aio_spider *spider);
 
-void handle_procedure_arg_scope(const_string source_code, aio_spider *spider);
+void handle_procedure_arg_scope(const_string source_code, struct aio_spider *spider);
 
 void weave_procedure_instruction_for(aio_instruction_holder *holder, const_string source_code,
                                      point_watcher *ripper_watcher, struct aio_spider *spider);

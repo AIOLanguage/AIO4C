@@ -6,6 +6,10 @@
 #include "../../../../../../headers/lang/aio_core/aio_core.h"
 #include "../../../../../../headers/lib/utils/error_utils/error_utils.h"
 #include "../../../../../../headers/lib/utils/memory_utils/memory_utils.h"
+#include "../../../../../../headers/tools/aio_parsers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_default_loop_header_spider.h"
+#include "../../../../../../headers/tools/aio_parsers/aio_spiders/aio_spider.h"
+#include "../../../../../../headers/tools/aio_parsers/aio_spiders/aio_loop_spider/aio_loop_spider.h"
+
 
 #define AIO_DEFAULT_LOOP_HEADER_SPIDER_DEBUG
 
@@ -14,9 +18,6 @@
 #ifdef AIO_DEFAULT_LOOP_HEADER_SPIDER_DEBUG
 
 #include "../../../../../../headers/lib/utils/log_utils/log_utils.h"
-#include "../../../../../../headers/tools/aio_parsers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_default_loop_header_spider.h"
-#include "../../../../../../headers/tools/aio_parsers/aio_spiders/aio_spider.h"
-#include "../../../../../../headers/tools/aio_parsers/aio_spiders/aio_loop_spider/aio_loop_spider.h"
 
 #endif
 
@@ -31,8 +32,8 @@ void refresh_default_loop_header_materials(aio_default_loop_header_materials *ma
     materials->declaration_type = AIO_DEFAULT_LOOP_HEADER_VARIABLE_UNDEFINED;
     materials->step_type = AIO_DEFAULT_LOOP_HEADER_STEP_VARIABLE;
     //Refresh main watcher:
-    materials->main_watcher->start_index = parent_watcher->pointer;
-    materials->main_watcher->end_index = parent_watcher->pointer;
+    materials->main_watcher->start = parent_watcher->pointer;
+    materials->main_watcher->end = parent_watcher->pointer;
     materials->main_watcher->mode = POINT_PASSIVE_MODE;
     reset_point_watcher(materials->value_watcher);
     reset_point_watcher(materials->condition_watcher);
@@ -111,8 +112,8 @@ struct aio_spider *new_aio_default_loop_header_spider(point_watcher *parent_watc
     loop_header_materials->step_type = AIO_DEFAULT_LOOP_HEADER_STEP_VARIABLE;
     //Init watchers:
     loop_header_materials->main_watcher = new_point_watcher();
-    loop_header_materials->main_watcher->start_index = parent_watcher->pointer;
-    loop_header_materials->main_watcher->end_index = parent_watcher->pointer;
+    loop_header_materials->main_watcher->start = parent_watcher->pointer;
+    loop_header_materials->main_watcher->end = parent_watcher->pointer;
     loop_header_materials->condition_watcher = new_point_watcher();
     loop_header_materials->value_watcher = new_point_watcher();
     loop_header_materials->pointer_data_list = new_string_list();
@@ -135,14 +136,14 @@ const aio_spider_message is_found_default_loop_header_instruction(const_string s
     //Extract spider fields:
     const aio_default_loop_header_materials *materials = spider->get.loop_materials->from.default_loop_header;
     point_watcher *main_watcher = materials->main_watcher;
-    main_watcher->end_index = parent_watcher->pointer;
+    main_watcher->end = parent_watcher->pointer;
     //Define current symbol:
-    const char current_symbol = source_code[main_watcher->end_index];
+    const char current_symbol = source_code[main_watcher->end];
     //Check symbol:
     const_boolean is_whitespace_cond = is_space_or_line_break(current_symbol);
     if (main_watcher->mode == POINT_PASSIVE_MODE) {
         if (is_whitespace_cond) {
-            main_watcher->start_index++;
+            main_watcher->start++;
         } else {
             main_watcher->mode = POINT_ACTIVE_MODE;
         }
@@ -177,7 +178,7 @@ void handle_default_loop_header_declaration_scope(const_string string_web, aio_s
     aio_default_loop_header_materials *materials = spider->get.loop_materials->from.default_loop_header;
     point_watcher *main_watcher = materials->main_watcher;
     //Check string web:
-    const char current_symbol = string_web[main_watcher->end_index];
+    const char current_symbol = string_web[main_watcher->end];
     //Check current symbol:
     const_boolean is_whitespace_cond = is_space_or_line_break(current_symbol);
     const_boolean is_equal_sign_cond = is_equal_sign(current_symbol);
@@ -269,7 +270,7 @@ void refresh_default_loop_header_declaration_scope(aio_spider *spider, string ch
     log_info_string(AIO_DEFAULT_LOOP_HEADER_SPIDER_TAG, ">>>", chunk);
 #endif
     //Shift main_watcher:
-    watcher->start_index = watcher->end_index + 1;
+    watcher->start = watcher->end + 1;
     watcher->mode = POINT_PASSIVE_MODE;
     //Set message:
     spider->message = message;
@@ -278,7 +279,7 @@ void refresh_default_loop_header_declaration_scope(aio_spider *spider, string ch
 void handle_default_loop_header_equal_sign_scope(const_string source_code, aio_spider *spider) {
     aio_default_loop_header_materials *materials = spider->get.loop_materials->from.default_loop_header;
     point_watcher *main_watcher = materials->main_watcher;
-    const char current_symbol = source_code[main_watcher->end_index];
+    const char current_symbol = source_code[main_watcher->end];
     const_boolean is_whitespace_cond = is_space_or_line_break(current_symbol);
     const_boolean is_equal_sign_cond = is_equal_sign(current_symbol);
     if (is_whitespace_cond) {
@@ -288,7 +289,7 @@ void handle_default_loop_header_equal_sign_scope(const_string source_code, aio_s
         //Set value scope:
         materials->scope_type = AIO_DEFAULT_LOOP_HEADER_VALUE_SCOPE;
         //Shift start index from end index:
-        main_watcher->start_index = main_watcher->end_index + 1;
+        main_watcher->start = main_watcher->end + 1;
         main_watcher->mode = POINT_PASSIVE_MODE;
         //Set message:
         spider->message = AIO_SPIDER_FOUND_MATERIALS;
@@ -308,7 +309,7 @@ void handle_default_loop_header_value_scope(const_string source_code, aio_spider
     aio_default_loop_header_materials *materials = spider->get.loop_materials->from.default_loop_header;
     point_watcher *main_watcher = materials->main_watcher;
     point_watcher *value_watcher = materials->value_watcher;
-    const int current_position = main_watcher->end_index;
+    const int current_position = main_watcher->end;
     const char current_symbol = source_code[current_position];
     //Check current symbol:
     const_boolean is_whitespace_cond = is_space_or_line_break(current_symbol);
@@ -320,15 +321,15 @@ void handle_default_loop_header_value_scope(const_string source_code, aio_spider
         return;
     }
     if (is_letter_or_number_cond && value_watcher->mode == POINT_ACTIVE_MODE && value_watcher->pointer > 0) {
-        value_watcher->start_index = main_watcher->start_index;
-        value_watcher->end_index = main_watcher->end_index - value_watcher->pointer;
+        value_watcher->start = main_watcher->start;
+        value_watcher->end = main_watcher->end - value_watcher->pointer;
         //값을 놓다 (Set value):
         string dirty_value = substring_by_point_watcher(source_code, value_watcher);
         string clean_value = squeeze_string(dirty_value);
         materials->init_value = clean_value;
         //위빙 준비 (Prepare for weaving):
         materials->scope_type = AIO_DEFAULT_LOOP_HEADER_CONDITION_SCOPE;
-        main_watcher->start_index = main_watcher->end_index;
+        main_watcher->start = main_watcher->end;
 #ifdef AIO_DEFAULT_LOOP_HEADER_SPIDER_DEBUG
         log_info_string(AIO_DEFAULT_LOOP_HEADER_SPIDER_TAG, "CAPTURED VALUE:", clean_value);
 #endif
@@ -352,7 +353,7 @@ void handle_default_loop_header_condition_scope(const_string source_code, point_
     const aio_default_loop_header_pointer_declaration_type declaration_type = materials->declaration_type;
     point_watcher *main_watcher = materials->main_watcher;
     //Check string web:
-    const int current_position = main_watcher->end_index;
+    const int current_position = main_watcher->end;
     const char current_symbol = source_code[current_position];
     //Check symbol:
     const_boolean is_whitespace_cond = is_space_or_line_break(current_symbol);
@@ -382,15 +383,15 @@ void handle_default_loop_header_condition_scope(const_string source_code, point_
             return;
         }
         if (is_letter_cond && condition_watcher->mode == POINT_ACTIVE_MODE && condition_watcher->pointer > 0) {
-            condition_watcher->start_index = main_watcher->start_index;
-            condition_watcher->end_index = main_watcher->end_index - condition_watcher->pointer;
+            condition_watcher->start = main_watcher->start;
+            condition_watcher->end = main_watcher->end - condition_watcher->pointer;
             //값을 놓다 (Set value):
             string dirty_loop_condition = substring_by_point_watcher(source_code, condition_watcher);
             string clean_loop_condition = squeeze_string(dirty_loop_condition);
             materials->loop_condition = clean_loop_condition;
             //위빙 준비 (Prepare for weaving):
             materials->scope_type = AIO_DEFAULT_LOOP_HEADER_STEP_SCOPE;
-            main_watcher->start_index = main_watcher->end_index;
+            main_watcher->start = main_watcher->end;
 #ifdef AIO_DEFAULT_LOOP_HEADER_SPIDER_DEBUG
             log_info_string(AIO_DEFAULT_LOOP_HEADER_SPIDER_TAG, "CAPTURED CONDITION+++:", clean_loop_condition);
 #endif
@@ -414,7 +415,7 @@ void handle_default_loop_header_step_scope(const_string source_code, point_watch
     aio_default_loop_header_materials *materials = spider->get.loop_materials->from.default_loop_header;
     point_watcher *main_watcher = materials->main_watcher;
     //Check string web:
-    const char current_symbol = source_code[main_watcher->end_index];
+    const char current_symbol = source_code[main_watcher->end];
 #ifdef AIO_DEFAULT_LOOP_HEADER_SPIDER_DEBUG
     log_info_char(AIO_DEFAULT_LOOP_HEADER_SPIDER_TAG, "CURRENT SYMBOL:", current_symbol);
 #endif
@@ -429,7 +430,7 @@ void handle_default_loop_header_step_scope(const_string source_code, point_watch
                 //Change declaration type:
                 materials->step_type = AIO_DEFAULT_LOOP_HEADER_STEP_EQUAL_SIGN_SCOPE;
                 //Shift main_watcher:
-                main_watcher->start_index = main_watcher->end_index;
+                main_watcher->start = main_watcher->end;
                 main_watcher->mode = POINT_PASSIVE_MODE;
                 //Set message:
                 spider->message = AIO_SPIDER_FOUND_MATERIALS;
@@ -448,7 +449,7 @@ void handle_default_loop_header_step_scope(const_string source_code, point_watch
                 //Set value scope:
                 materials->step_type = AIO_DEFAULT_LOOP_HEADER_STEP_VALUE_SCOPE;
                 //Shift start index from end index:
-                main_watcher->start_index = main_watcher->end_index;
+                main_watcher->start = main_watcher->end;
                 main_watcher->mode = POINT_PASSIVE_MODE;
                 //Set message:
                 spider->message = AIO_SPIDER_FOUND_MATERIALS;
@@ -462,9 +463,9 @@ void handle_default_loop_header_step_scope(const_string source_code, point_watch
         }
         if (materials->step_type == AIO_DEFAULT_LOOP_HEADER_STEP_VALUE_SCOPE) {
             //Get rest:
-            const int start_index = main_watcher->start_index;
+            const int start_index = main_watcher->start;
             //Don't hold closing parenthesis:
-            const int end_index = parent_watcher->end_index - 1;
+            const int end_index = parent_watcher->end - 1;
             string dirty_step_value = substring(source_code, start_index, end_index);
             string clean_step_value = squeeze_string(dirty_step_value);
             materials->step_value = clean_step_value;
@@ -501,7 +502,7 @@ const_boolean is_same_default_loop_pointer(const_string input_name, aio_default_
 
 void weave_default_loop_materials_for(struct aio_spider *dst_spider, struct aio_spider *src_spider,
                                       const_string _, point_watcher *header_watcher) {
-    header_watcher->pointer = header_watcher->end_index;
+    header_watcher->pointer = header_watcher->end;
     aio_main_loop_materials *dst_materials = dst_spider->get.loop_materials->from.main;
     aio_default_loop_header_materials *src_materials = src_spider->get.loop_materials->from.default_loop_header;
     string_list *src_pointer_list = src_materials->pointer_data_list;

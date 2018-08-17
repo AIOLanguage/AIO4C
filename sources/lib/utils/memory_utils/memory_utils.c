@@ -17,4 +17,5 @@ void *new_object_array(const size_t number_of_elements, const size_t size_of_obj
         perror("Can'n allocate memory for object array!");
         exit(1);
     }
+    return object_array;
 }

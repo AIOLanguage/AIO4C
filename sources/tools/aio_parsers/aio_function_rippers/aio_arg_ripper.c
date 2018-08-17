@@ -30,12 +30,12 @@ aio_variable_definition_map *dig_arguments(const_string source_code, int *pointe
         const char symbol = source_code[i];
         //독서를 시작하다 (Begin reading):
         if (is_opening_parenthesis(symbol) && watcher->mode == POINT_PASSIVE_MODE) {
-            watcher->start_index = i + 1;
+            watcher->start = i + 1;
             watcher->mode = POINT_ACTIVE_MODE;
         }
         //독서 중지 (Stop reading):
         if (is_closing_parenthesis(symbol)) {
-            watcher->end_index = i;
+            watcher->end = i;
             //괄호로 호 (After parenthesis):
             *pointer_reference = i + 1;
             break;
@@ -48,7 +48,7 @@ aio_variable_definition_map *dig_arguments(const_string source_code, int *pointe
         }
     }
     //함수 인수들 함유량 줄 얻는다 (Get function arguments content string):
-    const_string argument_content = substring(source_code, watcher->start_index, watcher->end_index);
+    const_string argument_content = substring(source_code, watcher->start, watcher->end);
     //------------------------------------------------------------------------------------------------------------------
     //찌꺼기 수집기 (Garbage collector):
     free_point_watcher(watcher);

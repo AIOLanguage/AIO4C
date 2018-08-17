@@ -1040,6 +1040,33 @@ sources/lib/utils/operation_utils/operation_utils.c.s:
 	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/operation_utils/operation_utils.c.s
 .PHONY : sources/lib/utils/operation_utils/operation_utils.c.s
 
+sources/lib/utils/string_hook/string_hook.obj: sources/lib/utils/string_hook/string_hook.c.obj
+
+.PHONY : sources/lib/utils/string_hook/string_hook.obj
+
+# target to build an object file
+sources/lib/utils/string_hook/string_hook.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/string_hook/string_hook.c.obj
+.PHONY : sources/lib/utils/string_hook/string_hook.c.obj
+
+sources/lib/utils/string_hook/string_hook.i: sources/lib/utils/string_hook/string_hook.c.i
+
+.PHONY : sources/lib/utils/string_hook/string_hook.i
+
+# target to preprocess a source file
+sources/lib/utils/string_hook/string_hook.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/string_hook/string_hook.c.i
+.PHONY : sources/lib/utils/string_hook/string_hook.c.i
+
+sources/lib/utils/string_hook/string_hook.s: sources/lib/utils/string_hook/string_hook.c.s
+
+.PHONY : sources/lib/utils/string_hook/string_hook.s
+
+# target to generate assembly for a file
+sources/lib/utils/string_hook/string_hook.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/string_hook/string_hook.c.s
+.PHONY : sources/lib/utils/string_hook/string_hook.c.s
+
 sources/lib/utils/string_utils/prefix_suffix.obj: sources/lib/utils/string_utils/prefix_suffix.c.obj
 
 .PHONY : sources/lib/utils/string_utils/prefix_suffix.obj
@@ -1745,6 +1772,9 @@ help:
 	@echo ... sources/lib/utils/operation_utils/operation_utils.obj
 	@echo ... sources/lib/utils/operation_utils/operation_utils.i
 	@echo ... sources/lib/utils/operation_utils/operation_utils.s
+	@echo ... sources/lib/utils/string_hook/string_hook.obj
+	@echo ... sources/lib/utils/string_hook/string_hook.i
+	@echo ... sources/lib/utils/string_hook/string_hook.s
 	@echo ... sources/lib/utils/string_utils/prefix_suffix.obj
 	@echo ... sources/lib/utils/string_utils/prefix_suffix.i
 	@echo ... sources/lib/utils/string_utils/prefix_suffix.s

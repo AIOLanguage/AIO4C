@@ -34,7 +34,7 @@ string_list *dig_output_types(const_string source_code, int *pointer_reference) 
         if (isalpha(symbol) && mode == OUTPUT_UNDEFINED) {
             //하나의 출력 유형 (Single output type):
             mode = SINGLE_OUTPUT_MODE;
-            watcher->start_index = i;
+            watcher->start = i;
             watcher->mode = POINT_ACTIVE_MODE;
 #ifdef AIO_OUTPUT_RIPPER_DEBUG
             log_info(AIO_OUTPUT_RIPPER_TAG, "Start single reading...");
@@ -44,7 +44,7 @@ string_list *dig_output_types(const_string source_code, int *pointer_reference) 
         if (is_opening_parenthesis(symbol) && mode == OUTPUT_UNDEFINED) {
             //많은 출력 유형들 (Many output types):
             mode = MULTI_OUTPUT_MODE;
-            watcher->start_index = i + 1;
+            watcher->start = i + 1;
             watcher->mode = POINT_ACTIVE_MODE;
 #ifdef AIO_OUTPUT_RIPPER_DEBUG
             log_info(AIO_OUTPUT_RIPPER_TAG, "Start multi reading...");
@@ -53,7 +53,7 @@ string_list *dig_output_types(const_string source_code, int *pointer_reference) 
         //하나의 또는 많은 출력 방법 독서 중지 (Stop single or multi output mode reading):
         if ((is_space_or_line_break_condition && mode == SINGLE_OUTPUT_MODE)
             || (is_closing_parenthesis(symbol) && mode == MULTI_OUTPUT_MODE)) {
-            watcher->end_index = i;
+            watcher->end = i;
             if (is_space_or_line_break_condition) {
                 *pointer_reference = i;
             } else {
@@ -70,7 +70,7 @@ string_list *dig_output_types(const_string source_code, int *pointer_reference) 
         }
     }
     //유형 함유량 줄 받다 (Get type content string):
-    string type_content = substring(source_code, watcher->start_index, watcher->end_index);
+    string type_content = substring(source_code, watcher->start, watcher->end);
     //------------------------------------------------------------------------------------------------------------------
     //찌꺼기 수집기 (Garbage collector):
     free_point_watcher(watcher);

@@ -35,7 +35,7 @@ void explore_bounds(const_string source_code, int *start_index, int *end_index,
         if (is_open_brace_cond) {
             //독서를 시작하다 (Begin reading):
             if (watcher->mode == POINT_PASSIVE_MODE) {
-                watcher->start_index = i;
+                watcher->start = i;
                 watcher->mode = POINT_ACTIVE_MODE;
                 is_found_start_index = TRUE;
             }
@@ -53,7 +53,7 @@ void explore_bounds(const_string source_code, int *start_index, int *end_index,
                 //독서 중지 (Stop reading):
                 const_boolean is_last_close_brace = watcher->pointer == 0;
                 if (is_last_close_brace) {
-                    watcher->end_index = i + 1;
+                    watcher->end = i + 1;
                     is_found_end_index = TRUE;
                     break;
                 }
@@ -67,15 +67,15 @@ void explore_bounds(const_string source_code, int *start_index, int *end_index,
         }
     }
     if (is_found_start_index && is_found_end_index) {
-        *start_index = watcher->start_index;
-        *end_index = watcher->end_index;
+        *start_index = watcher->start;
+        *end_index = watcher->end;
 #ifdef AIO_BLOCK_BODY_EXPLORER_DEBUG
         log_info_int(AIO_BLOCK_BODY_EXPLORER_TAG, "Start index:", *start_index);
         log_info_char(AIO_BLOCK_BODY_EXPLORER_TAG, "Start index:", source_code[*start_index]);
         log_info_int(AIO_BLOCK_BODY_EXPLORER_TAG, "End index:", *end_index);
         log_info_char(AIO_BLOCK_BODY_EXPLORER_TAG, "End index:", source_code[*end_index]);
         const_string function_body = substring_by_point_watcher(source_code, watcher);
-        log_info_string(AIO_BLOCK_BODY_EXPLORER_TAG, "Function body:", function_body);
+        log_info_string(AIO_BLOCK_BODY_EXPLORER_TAG, "Body:", function_body);
         free((void *) function_body);
 #endif
         //--------------------------------------------------------------------------------------------------------------
@@ -96,13 +96,13 @@ void explore_header_body(const_string source_code, int *start_index, int *end_in
 }
 
 const_boolean is_end_of_block_body(const_string function_body_string, point_watcher *watcher) {
-    while (watcher->pointer < watcher->end_index) {
+    while (watcher->pointer < watcher->end) {
         const char symbol = function_body_string[watcher->pointer];
         if (!is_space_or_line_break(symbol)) {
             watcher->mode = POINT_ACTIVE_MODE;
             return FALSE;
         } else {
-            watcher->start_index++;
+            watcher->start++;
             watcher->pointer++;
         }
     }

@@ -1,0 +1,10 @@
+Voi procedureTest(mu      Dou
+value)
+{
+    if
+    (value==               0){value=
+    value+
+1 procedureTest(
+    value
+    )}
+}

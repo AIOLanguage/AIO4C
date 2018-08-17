@@ -28,7 +28,7 @@ string dig_function_name(const_string source_code, int *pointer_reference) {
                                                                    || is_opening_parenthesis(symbol);
         //기호로 시작하다 (Starts with symbol):
         if (isalpha(symbol) && watcher->mode == POINT_PASSIVE_MODE) {
-            watcher->start_index = i;
+            watcher->start = i;
             watcher->mode = POINT_ACTIVE_MODE;
 #ifdef AIO_FUNCTION_NAME_RIPPER_DEBUG
             log_info(AIO_FUNCTION_NAME_RIPPER_TAG, "Start reading...");
@@ -36,7 +36,7 @@ string dig_function_name(const_string source_code, int *pointer_reference) {
         }
         //독서 중지 (Stop reading):
         if (is_space_or_line_break_or_open_parenthesis && watcher->mode == POINT_ACTIVE_MODE) {
-            watcher->end_index = i;
+            watcher->end = i;
             *pointer_reference = i;
             break;
         }
@@ -48,7 +48,7 @@ string dig_function_name(const_string source_code, int *pointer_reference) {
         }
     }
     //함수 이름 줄 받다 (Get function name string):
-    string function_name = substring(source_code, watcher->start_index, watcher->end_index);
+    string function_name = substring(source_code, watcher->start, watcher->end);
     //------------------------------------------------------------------------------------------------------------------
     //찌꺼기 수집기 (Garbage collector):
     free_point_watcher(watcher);

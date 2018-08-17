@@ -70,6 +70,7 @@ add_executable(${PROJECT_NAME}
         headers/lib/utils/string_utils/string_utils.h
         headers/lib/utils/memory_utils/memory_utils.h
         headers/lib/utils/log_utils/log_utils.h
+        headers/lib/utils/string_hook/string_hook.h
         #---------------------------------------------------------------------------------------------------------------
 
 
@@ -135,4 +136,4 @@ add_executable(${PROJECT_NAME}
         sources/lib/utils/log_utils/log_utils.c
         sources/lib/collections/lists/aio_instruction_list.c
         sources/lib/utils/error_utils/error_utils.c
-        )
+        sources/lib/utils/string_hook/string_hook.c)

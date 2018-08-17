@@ -36,14 +36,6 @@ void add_string_in_list(string_list *string_list, string source) {
     string_list->size++;
 }
 
-boolean is_string_list_empty(string_list *string_list) {
-    if (string_list->size == 0) {
-        return 0;
-    } else {
-        return -1;
-    }
-}
-
 void free_strings_in_list(string_list *list) {
     string_array strings = list->strings;
     for (int i = 0; i < list->size; ++i) {

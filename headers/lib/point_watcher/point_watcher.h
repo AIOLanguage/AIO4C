@@ -1,5 +1,5 @@
-#ifndef POINTER_H
-#define POINTER_H
+#ifndef POINT_WATCHER_H
+#define POINT_WATCHER_H
 
 #include "../utils/string_utils/string_utils.h"
 
@@ -9,10 +9,12 @@ enum point_mode {
 
 typedef struct point_watcher {
     int pointer;
-    int start_index;
-    int end_index;
+    int start;
+    int end;
     enum point_mode mode;
 } point_watcher;
+
+typedef const point_watcher const_point_watcher;
 
 point_watcher *new_point_watcher();
 
@@ -22,6 +24,6 @@ void reset_point_watcher(point_watcher *watcher);
 
 void free_point_watcher(point_watcher *watcher);
 
-string substring_by_point_watcher(const_string src, const point_watcher *watcher);
+string substring_by_point_watcher(const_string src, const_point_watcher *watcher);
 
-#endif //POINTER_H
+#endif //POINT_WATCHER_H

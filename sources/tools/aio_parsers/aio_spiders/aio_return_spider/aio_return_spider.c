@@ -27,8 +27,8 @@ void refresh_return_spider(aio_spider *spider, point_watcher *ripper_watcher) {
     //재료 리셋 (Reset materials):
     aio_return_materials *materials = spider->get.return_materials;
     point_watcher *main_watcher = materials->main_watcher;
-    main_watcher->start_index = ripper_watcher->pointer;
-    main_watcher->end_index = ripper_watcher->pointer;
+    main_watcher->start = ripper_watcher->pointer;
+    main_watcher->end = ripper_watcher->pointer;
     main_watcher->mode = POINT_PASSIVE_MODE;
     reset_point_watcher(materials->value_watcher);
     materials->scope_type = AIO_RETURN_MODIFIER_SCOPE;
@@ -70,8 +70,8 @@ struct aio_spider *new_aio_return_spider(point_watcher *ripper_watcher) {
     aio_return_materials *materials = new_object(sizeof(aio_return_materials));
     materials->scope_type = AIO_RETURN_MODIFIER_SCOPE;
     materials->main_watcher = new_point_watcher();
-    materials->main_watcher->start_index = ripper_watcher->start_index;
-    materials->main_watcher->end_index = ripper_watcher->pointer;
+    materials->main_watcher->start = ripper_watcher->start;
+    materials->main_watcher->end = ripper_watcher->pointer;
     materials->value_watcher = new_point_watcher();
     materials->value_list = new_string_list();
     //재료들을 놀다 (Set materials):
@@ -86,13 +86,13 @@ const enum aio_spider_message is_found_return_instruction(const_string source_co
     //재료들을 추출하다 (Extract materials):
     const aio_return_materials *materials = spider->get.return_materials;
     point_watcher *main_watcher = materials->main_watcher;
-    main_watcher->end_index = ripper_watcher->pointer;
+    main_watcher->end = ripper_watcher->pointer;
     //Define current symbol:
-    const char current_symbol = source_code[main_watcher->end_index];
+    const char current_symbol = source_code[main_watcher->end];
     //TODO: 코드 복제 (Code duplication)!
     if (main_watcher->mode == POINT_PASSIVE_MODE) {
         if (is_space_or_line_break(current_symbol)) {
-            main_watcher->start_index++;
+            main_watcher->start++;
         } else {
             main_watcher->mode = POINT_ACTIVE_MODE;
         }
@@ -111,12 +111,12 @@ const enum aio_spider_message is_found_return_instruction(const_string source_co
 void handle_return_modifier_scope(const_string source_code, struct aio_spider *spider) {
     aio_return_materials *materials = spider->get.return_materials;
     point_watcher *main_watcher = materials->main_watcher;
-    const int current_position = main_watcher->end_index;
+    const int current_position = main_watcher->end;
     const char current_symbol = source_code[current_position];
     //Check current symbol:
     const_boolean is_whitespace_cond = is_space_or_line_break(current_symbol);
     if (is_whitespace_cond) {
-        const int start_index = main_watcher->start_index;
+        const int start_index = main_watcher->start;
         const int hold_positions = current_position - start_index;
         if (hold_positions == 3) {
             const_boolean is_return_modifier =
@@ -125,7 +125,7 @@ void handle_return_modifier_scope(const_string source_code, struct aio_spider *s
                     && source_code[start_index + 2] == 't';
             if (is_return_modifier) {
                 //Shift main_watcher:
-                main_watcher->start_index = current_position;
+                main_watcher->start = current_position;
                 main_watcher->mode = POINT_PASSIVE_MODE;
                 //Set scope:
                 materials->scope_type = AIO_RETURN_VALUE_SCOPE;
@@ -146,7 +146,7 @@ void handle_return_value_scope(const_string source_code, struct aio_spider *spid
     point_watcher *main_watcher = materials->main_watcher;
     point_watcher *value_watcher = materials->value_watcher;
     //Define current symbol:
-    const int current_position = main_watcher->end_index;
+    const int current_position = main_watcher->end;
     const char current_symbol = source_code[current_position];
     //Check current symbol:
     const_boolean is_whitespace_cond = is_space_or_line_break(current_symbol);
@@ -160,8 +160,8 @@ void handle_return_value_scope(const_string source_code, struct aio_spider *spid
     }
     if (((is_letter_cond && value_watcher->pointer > 0) || is_close_brace_cond)
         && value_watcher->mode == POINT_ACTIVE_MODE) {
-        value_watcher->start_index = main_watcher->start_index;
-        value_watcher->end_index = main_watcher->end_index - value_watcher->pointer;
+        value_watcher->start = main_watcher->start;
+        value_watcher->end = main_watcher->end - value_watcher->pointer;
         //값을 놓다 (Set value):
         const_string dirty_chunk = substring_by_point_watcher(source_code, value_watcher);
         const_string dirty_squeezed_chunk = squeeze_string(dirty_chunk);
@@ -172,7 +172,7 @@ void handle_return_value_scope(const_string source_code, struct aio_spider *spid
         }
         //위빙 준비 (Prepare for weaving):
         materials->scope_type = AIO_RETURN_WEAVING_SCOPE;
-        main_watcher->start_index = main_watcher->end_index;
+        main_watcher->start = main_watcher->end;
         spider->message = AIO_SPIDER_IS_READY_FOR_WEAVING;
         //--------------------------------------------------------------------------------------------------------------
         //찌거기 수집기 (Garbage collector):
@@ -199,8 +199,8 @@ void weave_return_instruction_for(aio_instruction_holder *holder, const_string _
     const string_list *return_values = materials->value_list;
     const boolean is_ready_for_weaving = materials->scope_type == AIO_RETURN_WEAVING_SCOPE;
     if (is_ready_for_weaving) {
-        ripper_watcher->pointer = materials->value_watcher->end_index - 1;
-        ripper_watcher->start_index = materials->value_watcher->end_index - 1;
+        ripper_watcher->pointer = materials->value_watcher->end - 1;
+        ripper_watcher->start = materials->value_watcher->end - 1;
         //'Assign' 지침을  짜다 (Weave 'Return' instruction):
         aio_instruction *return_instruction = new_aio_return_instruction(holder, return_values);
         //명부에게 지침을 추가하다 (Add 'Return' instruction in holder's instructions):

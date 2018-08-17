@@ -35,8 +35,8 @@ void refresh_loop_spider(aio_spider *spider, point_watcher *ripper_watcher) {
     //Refresh main materials:
     aio_main_loop_materials *materials = spider->get.loop_materials->from.main;
     materials->scope_type = AIO_LOOP_MODIFIER_SCOPE;
-    materials->main_watcher->start_index = ripper_watcher->pointer;
-    materials->main_watcher->end_index = ripper_watcher->pointer;
+    materials->main_watcher->start = ripper_watcher->pointer;
+    materials->main_watcher->end = ripper_watcher->pointer;
     materials->main_watcher->mode = POINT_PASSIVE_MODE;
     reset_point_watcher(materials->header_watcher);
     reset_point_watcher(materials->body_watcher);
@@ -89,8 +89,8 @@ aio_spider *new_aio_loop_spider(point_watcher *ripper_watcher) {
     aio_main_loop_materials *main_loop_materials = new_object(sizeof(aio_main_loop_materials));
     main_loop_materials->scope_type = AIO_LOOP_MODIFIER_SCOPE;
     main_loop_materials->main_watcher = new_point_watcher();
-    main_loop_materials->main_watcher->start_index = ripper_watcher->start_index;
-    main_loop_materials->main_watcher->end_index = ripper_watcher->pointer;
+    main_loop_materials->main_watcher->start = ripper_watcher->start;
+    main_loop_materials->main_watcher->end = ripper_watcher->pointer;
     main_loop_materials->header_watcher = new_point_watcher();
     main_loop_materials->body_watcher = new_point_watcher();
     main_loop_materials->applied_header_material_type = AIO_LOOP_MATERIALS_UNDEFINED;
@@ -106,15 +106,15 @@ const aio_spider_message is_found_loop_instruction(const_string source_code, poi
     //재료들을 추출하다 (Extract materials):
     const aio_main_loop_materials *materials = spider->get.loop_materials->from.main;
     point_watcher *main_watcher = materials->main_watcher;
-    main_watcher->end_index = ripper_watcher->pointer;
-    const char current_symbol = source_code[main_watcher->end_index];
+    main_watcher->end = ripper_watcher->pointer;
+    const char current_symbol = source_code[main_watcher->end];
 #ifdef AIO_LOOP_SPIDER_DEBUG
     //log_info_char(AIO_LOOP_SPIDER_TAG, "Current symbol:", current_symbol);
 #endif
     //TODO: 코드 복제 (Code duplication)!
     if (main_watcher->mode == POINT_PASSIVE_MODE) {
         if (is_space_or_line_break(current_symbol)) {
-            main_watcher->start_index++;
+            main_watcher->start++;
         } else {
             main_watcher->mode = POINT_ACTIVE_MODE;
         }
@@ -136,14 +136,14 @@ const aio_spider_message is_found_loop_instruction(const_string source_code, poi
 void handle_loop_modifier_scope(const_string source_code, aio_spider *spider) {
     aio_main_loop_materials *materials = spider->get.loop_materials->from.main;
     point_watcher *main_watcher = materials->main_watcher;
-    const int current_position = main_watcher->end_index;
+    const int current_position = main_watcher->end;
     const char current_symbol = source_code[current_position];
     //Check current symbol:
     const_boolean is_opening_parenthesis_cond = is_opening_parenthesis(current_symbol);
     const_boolean is_whitespace_cond = is_space_or_line_break(current_symbol);
     if (is_whitespace_cond || is_opening_parenthesis_cond) {
-        const int start_index = main_watcher->start_index;
-        const int end_index = main_watcher->end_index;
+        const int start_index = main_watcher->start;
+        const int end_index = main_watcher->end;
         const int hold_positions = end_index - start_index;
         if (hold_positions == 3) {
             const_boolean is_loop_modifier =
@@ -152,7 +152,7 @@ void handle_loop_modifier_scope(const_string source_code, aio_spider *spider) {
                     && source_code[start_index + 2] == 'o';
             if (is_loop_modifier) {
                 //Shift main_watcher:
-                main_watcher->start_index = end_index;
+                main_watcher->start = end_index;
                 main_watcher->mode = POINT_PASSIVE_MODE;
                 //Set scope:
                 materials->scope_type = AIO_LOOP_HEADER_SCOPE;
@@ -171,7 +171,7 @@ void handle_loop_header_scope(const_string source_code, aio_spider *spider) {
     point_watcher *main_watcher = materials->main_watcher;
     point_watcher *header_watcher = materials->header_watcher;
     //Define last position:
-    const int current_position = main_watcher->end_index;
+    const int current_position = main_watcher->end;
     const char current_symbol = source_code[current_position];
     //Check symbol:
     const_boolean is_whitespace_cond = is_space_or_line_break(current_symbol);
@@ -182,7 +182,7 @@ void handle_loop_header_scope(const_string source_code, aio_spider *spider) {
         //Start of loop header:
         if (header_watcher->mode == POINT_PASSIVE_MODE) {
             //Start with opening parenthesis:
-            header_watcher->start_index = main_watcher->end_index;
+            header_watcher->start = main_watcher->end;
             header_watcher->mode = POINT_ACTIVE_MODE;
         }
         //Parenthesis inside loop header:
@@ -203,9 +203,9 @@ void handle_loop_header_scope(const_string source_code, aio_spider *spider) {
             //Parenthesis closes header:
             if (header_watcher->pointer == 0) {
                 //End of condition:
-                header_watcher->end_index = main_watcher->end_index + 1;
+                header_watcher->end = main_watcher->end + 1;
                 //Shift main main_watcher:
-                main_watcher->start_index = main_watcher->end_index + 1;
+                main_watcher->start = main_watcher->end + 1;
                 main_watcher->mode = POINT_PASSIVE_MODE;
                 //Set scope:
                 materials->scope_type = AIO_LOOP_BODY_SCOPE;
@@ -237,13 +237,13 @@ void dig_header_materials(const_string source_code, aio_spider *parent_spider) {
     aio_main_loop_materials *materials = parent_spider->get.loop_materials->from.main;
     point_watcher *header_watcher = materials->header_watcher;
     //Header main_watcher pointer is already useless. Thus we can use pointer again!
-    header_watcher->pointer = header_watcher->start_index + 1;
-    const_boolean is_not_empty_header = header_watcher->end_index - header_watcher->start_index > 0;
+    header_watcher->pointer = header_watcher->start + 1;
+    const_boolean is_not_empty_header = header_watcher->end - header_watcher->start > 0;
     if (is_not_empty_header) {
         //Create spider swarm for searching instructions:
         aio_spider_nest *child_spider_nest = (aio_spider_nest *) breed_aio_loop_header_spider_nest(header_watcher);
         //After weaving instruction need from check function body string rest:
-        while (header_watcher->pointer < header_watcher->end_index) {
+        while (header_watcher->pointer < header_watcher->end) {
             if (header_watcher->mode == POINT_PASSIVE_MODE) {
                 if (is_end_of_block_body(source_code, header_watcher)) {
                     break;
@@ -327,8 +327,8 @@ void handle_loop_body_scope(const_string source_code, aio_spider *spider) {
     aio_main_loop_materials *materials = spider->get.loop_materials->from.main;
     point_watcher *main_watcher = materials->main_watcher;
     point_watcher *body_watcher = materials->body_watcher;
-    body_watcher->start_index = main_watcher->start_index;
-    explore_block_body(source_code, &body_watcher->start_index, &body_watcher->end_index);
+    body_watcher->start = main_watcher->start;
+    explore_block_body(source_code, &body_watcher->start, &body_watcher->end);
 #ifdef AIO_LOOP_SPIDER_DEBUG
     const_string explored_body = substring_by_point_watcher(source_code, body_watcher);
     log_info_string(AIO_LOOP_SPIDER_TAG, "EXPLORED BODY:", explored_body);
@@ -351,16 +351,16 @@ void weave_loop_instruction_for(aio_instruction_holder *holder, const_string sou
     if (is_ready_for_weaving) {
         const point_watcher *body_watcher = main_loop_materials->body_watcher;
         //Shift ripper watcher:
-        ripper_watcher->pointer = body_watcher->end_index - 1;
-        ripper_watcher->start_index = body_watcher->end_index - 1;
+        ripper_watcher->pointer = body_watcher->end - 1;
+        ripper_watcher->start = body_watcher->end - 1;
         //Create init holder:
         aio_instruction_holder *init_holder = new_aio_local_instruction_holder(holder);
         aio_instruction_list *init_instruction_list = init_holder->instruction_list;
         aio_variable_definition_map *init_variable_definition_map = init_holder->variable_definition_map;
         //Create cycle holder:
         aio_instruction_holder *cycle_holder = dig_new_aio_instruction_holder(source_code, init_holder,
-                                                                              body_watcher->start_index,
-                                                                              body_watcher->end_index);
+                                                                              body_watcher->start,
+                                                                              body_watcher->end);
         aio_instruction_list *cycle_instruction_list = cycle_holder->instruction_list;
         //Define loop condition:
         string loop_condition = NULL;

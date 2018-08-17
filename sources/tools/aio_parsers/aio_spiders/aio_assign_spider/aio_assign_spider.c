@@ -31,8 +31,8 @@ void refresh_assign_spider(aio_spider *spider, point_watcher *ripper_watcher) {
     //재료 리셋 (Reset materials):
     aio_assign_materials *materials = spider->get.assign_materials;
     point_watcher *main_watcher = materials->main_watcher;
-    main_watcher->start_index = ripper_watcher->pointer;
-    main_watcher->end_index = ripper_watcher->pointer;
+    main_watcher->start = ripper_watcher->pointer;
+    main_watcher->end = ripper_watcher->pointer;
     main_watcher->mode = POINT_PASSIVE_MODE;
     reset_point_watcher(materials->value_watcher);
     materials->scope_type = AIO_ASSIGN_DECLARATION_SCOPE;
@@ -78,8 +78,8 @@ struct aio_spider *new_aio_assign_spider(point_watcher *ripper_watcher) {
     materials->scope_type = AIO_ASSIGN_DECLARATION_SCOPE;
     materials->declaration_type = AIO_ASSIGN_UNDEFINED_DECLARATION;
     materials->main_watcher = new_point_watcher();
-    materials->main_watcher->start_index = ripper_watcher->start_index;
-    materials->main_watcher->end_index = ripper_watcher->pointer;
+    materials->main_watcher->start = ripper_watcher->start;
+    materials->main_watcher->end = ripper_watcher->pointer;
     materials->value_watcher = new_point_watcher();
     materials->variable_data_list = new_string_list();
     //재료들을 놀다 (Set materials):
@@ -98,14 +98,14 @@ const aio_spider_message is_found_assign_instruction(const_string source_code, p
     //재료들을 추출하다 (Extract materials):
     const aio_assign_materials *materials = spider->get.assign_materials;
     point_watcher *main_watcher = materials->main_watcher;
-    main_watcher->end_index = ripper_watcher->pointer;
+    main_watcher->end = ripper_watcher->pointer;
     //스캐닝 준비 (Prepare for scanning):
-    const char current_symbol = source_code[main_watcher->end_index];
+    const char current_symbol = source_code[main_watcher->end];
     //간격을 건너 뛰다 (Skip whitespaces):
     //TODO:  코드 복제 (Code duplication)!
     if (main_watcher->mode == POINT_PASSIVE_MODE) {
         if (is_space_or_line_break(current_symbol)) {
-            main_watcher->start_index++;
+            main_watcher->start++;
         } else {
             main_watcher->mode = POINT_ACTIVE_MODE;
         }
@@ -135,7 +135,7 @@ void handle_assign_declaration_scope(const_string source_code, aio_spider *spide
     aio_assign_materials *materials = spider->get.assign_materials;
     point_watcher *main_watcher = materials->main_watcher;
     //'문자열 웹'을 확인하다 (Check 'string web'):
-    const char current_symbol = source_code[main_watcher->end_index];
+    const char current_symbol = source_code[main_watcher->end];
 #ifdef AIO_ASSIGN_SPIDER_DEBUG
     //log_info_char(AIO_ASSIGN_SPIDER_TAG, "Current symbol:", current_symbol);
 #endif
@@ -143,7 +143,7 @@ void handle_assign_declaration_scope(const_string source_code, aio_spider *spide
     const_boolean is_whitespace_cond = is_space_or_line_break(current_symbol);
     const_boolean is_equal_sign_cond = is_equal_sign(current_symbol);
     if (is_whitespace_cond || is_equal_sign_cond) {
-        string chunk = substring(source_code, main_watcher->start_index, main_watcher->end_index);
+        string chunk = substring(source_code, main_watcher->start, main_watcher->end);
 #ifdef AIO_ASSIGN_SPIDER_DEBUG
         log_info_string(AIO_ASSIGN_SPIDER_TAG, "CAPTURE CHUNK:", chunk);
 #endif
@@ -232,7 +232,7 @@ void refresh_assign_declaration_scope(aio_spider *spider, string chunk, aio_assi
     log_info_string(AIO_ASSIGN_SPIDER_TAG, "ADD>>>:", chunk);
 #endif
     //본관 당직자를 바꾼다 (Shift main watcher):
-    main_watcher->start_index = main_watcher->end_index + 1;
+    main_watcher->start = main_watcher->end + 1;
     main_watcher->mode = POINT_PASSIVE_MODE;
     //메시지를 놓다  (Put a message):
     spider->message = message;
@@ -241,7 +241,7 @@ void refresh_assign_declaration_scope(aio_spider *spider, string chunk, aio_assi
 void handle_assign_equal_sign_scope(const_string source_code, aio_spider *spider) {
     aio_assign_materials *materials = spider->get.assign_materials;
     point_watcher *main_watcher = materials->main_watcher;
-    const int current_position = main_watcher->end_index;
+    const int current_position = main_watcher->end;
     const char current_symbol = source_code[current_position];
     const_boolean is_equal_sign_cond = is_equal_sign(current_symbol);
     const_boolean is_whitespace = is_space_or_line_break(current_symbol);
@@ -250,7 +250,7 @@ void handle_assign_equal_sign_scope(const_string source_code, aio_spider *spider
     }
     if (is_equal_sign_cond) {
         materials->scope_type = AIO_ASSIGN_VALUE_SCOPE;
-        main_watcher->start_index = main_watcher->end_index + 1;
+        main_watcher->start = main_watcher->end + 1;
         main_watcher->mode = POINT_PASSIVE_MODE;
         spider->message = AIO_SPIDER_FOUND_MATERIALS;
     } else {
@@ -265,7 +265,7 @@ void handle_assign_value_scope(const_string source_code, aio_spider *spider) {
     aio_assign_materials *materials = spider->get.assign_materials;
     point_watcher *main_watcher = materials->main_watcher;
     point_watcher *value_watcher = materials->value_watcher;
-    const int current_position = main_watcher->end_index;
+    const int current_position = main_watcher->end;
     const char current_symbol = source_code[current_position];
     const_boolean is_whitespace_cond = is_space_or_line_break(current_symbol);
     const_boolean is_close_parenthesis_cond = is_closing_parenthesis(current_symbol);
@@ -278,8 +278,8 @@ void handle_assign_value_scope(const_string source_code, aio_spider *spider) {
     }
     if (((is_letter_cond && value_watcher->pointer > 0) || is_close_brace_cond)
         && value_watcher->mode == POINT_ACTIVE_MODE) {
-        value_watcher->start_index = main_watcher->start_index;
-        value_watcher->end_index = main_watcher->end_index - value_watcher->pointer;
+        value_watcher->start = main_watcher->start;
+        value_watcher->end = main_watcher->end - value_watcher->pointer;
         //값을 놓다 (Set value):
         string dirty_value = substring_by_point_watcher(source_code, value_watcher);
         string clean_value = squeeze_string(dirty_value);
@@ -289,7 +289,7 @@ void handle_assign_value_scope(const_string source_code, aio_spider *spider) {
 #endif
         //위빙 준비 (Prepare for weaving):
         materials->scope_type = AIO_ASSIGN_WEAVING_SCOPE;
-        main_watcher->start_index = main_watcher->end_index;
+        main_watcher->start = main_watcher->end;
         spider->message = AIO_SPIDER_IS_READY_FOR_WEAVING;
         //--------------------------------------------------------------------------------------------------------------
         //찌거기 수집기 (Garbage collector):
@@ -320,8 +320,8 @@ void weave_assign_instruction_for(aio_instruction_holder *holder, const_string _
     const aio_assign_variable_declaration_type declaration_type = materials->declaration_type;
     const_boolean is_ready_for_weaving = materials->scope_type == AIO_ASSIGN_WEAVING_SCOPE;
     if (is_ready_for_weaving) {
-        ripper_watcher->pointer = materials->value_watcher->end_index;
-        ripper_watcher->start_index = materials->value_watcher->end_index;
+        ripper_watcher->pointer = materials->value_watcher->end;
+        ripper_watcher->start = materials->value_watcher->end;
         //변수 정의를 짜다 (Weave variable definition):
         aio_variable_definition *new_definition = create_local_variable_definition_by_assign_spider(declaration_type,
                                                                                                     variable_data);
@@ -334,7 +334,7 @@ void weave_assign_instruction_for(aio_instruction_holder *holder, const_string _
             put_aio_variable_definition_in_map(map, definition);
         } else {
 #ifdef AIO_ASSIGN_SPIDER_DEBUG
-            log_info_string(AIO_ASSIGN_SPIDER_TAG, "<FOUNDED DEFINITION>:", definition->name);
+            log_info_string(AIO_ASSIGN_SPIDER_TAG, "<FOUND DEFINITION>:", definition->name);
             log_info_string(AIO_ASSIGN_SPIDER_TAG, "<TYPE>:", definition->type);
             log_info_boolean(AIO_ASSIGN_SPIDER_TAG, "<IS MUTABLE>:", definition->is_mutable_by_value);
 #endif

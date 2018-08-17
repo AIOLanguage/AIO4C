@@ -15,8 +15,8 @@ point_watcher *new_point_watcher_with_pointer(const int pointer_value){
 
 void reset_point_watcher(point_watcher *watcher){
     watcher->pointer = 0;
-    watcher->start_index = 0;
-    watcher->end_index = 0;
+    watcher->start = 0;
+    watcher->end = 0;
     watcher->mode = POINT_PASSIVE_MODE;
 }
 
@@ -24,6 +24,6 @@ void free_point_watcher(point_watcher *watcher) {
     free(watcher);
 }
 
-string substring_by_point_watcher(const_string src, const point_watcher *watcher){
-    return substring(src, watcher->start_index, watcher->end_index);
+string substring_by_point_watcher(const_string src, const_point_watcher *watcher){
+    return substring(src, watcher->start, watcher->end);
 }

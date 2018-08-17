@@ -86,12 +86,6 @@ typedef struct aio_if_task {
     aio_instruction_holder *false_holder;
 } aio_if_task;
 
-typedef struct aio_switch_task {
-    string switch_value;
-    string_list *case_values;
-    aio_instruction_holder **case_holders;
-} aio_switch_task;
-
 typedef struct aio_loop_task {
     string loop_condition;
     aio_instruction_holder *init_holder;
@@ -105,5 +99,11 @@ typedef struct aio_procedure_task {
 typedef struct aio_return_task {
     string_list *return_values;
 } aio_return_task;
+
+typedef struct aio_switch_task {
+    string switch_value;
+    string_list *case_values;
+    aio_instruction_holder **case_holders;
+} aio_switch_task;
 
 #endif //AIO_INSTRUCTIONS_H

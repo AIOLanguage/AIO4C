@@ -175,6 +175,9 @@
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/operation_utils/operation_utils.h">
 			<Option target="AIO"/>
 		</Unit>
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/string_hook/string_hook.h">
+			<Option target="AIO"/>
+		</Unit>
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/string_utils/string_builder.h">
 			<Option target="AIO"/>
 		</Unit>
@@ -323,6 +326,9 @@
 			<Option target="AIO"/>
 		</Unit>
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/operation_utils/operation_utils.c">
+			<Option target="AIO"/>
+		</Unit>
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/string_hook/string_hook.c">
 			<Option target="AIO"/>
 		</Unit>
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/string_utils/prefix_suffix.c">
