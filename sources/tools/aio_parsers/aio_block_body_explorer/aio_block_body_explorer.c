@@ -16,9 +16,9 @@
 #endif
 
 
-void explore_bounds(const_string source_code, int *start_index, int *end_index,
-                    boolean (*opening_bound_condition)(const char),
-                    boolean (*closing_bound_condition)(const char)) {
+void explore_context_bounds(const_string source_code, int *start_index, int *end_index,
+                            boolean (*opening_bound_condition)(const char),
+                            boolean (*closing_bound_condition)(const char)) {
     const size_t source_code_length = strlen(source_code);
     //Prepare to find bounds:
     point_watcher *watcher = new_point_watcher();
@@ -88,16 +88,16 @@ void explore_bounds(const_string source_code, int *start_index, int *end_index,
 
 
 void explore_block_body(const_string source_code, int *start_index, int *end_index) {
-    explore_bounds(source_code, start_index, end_index, is_opening_brace, is_closing_brace);
+    explore_context_bounds(source_code, start_index, end_index, is_opening_brace, is_closing_brace);
 }
 
 void explore_header_body(const_string source_code, int *start_index, int *end_index) {
-    explore_bounds(source_code, start_index, end_index, is_opening_parenthesis, is_closing_parenthesis);
+    explore_context_bounds(source_code, start_index, end_index, is_opening_parenthesis, is_closing_parenthesis);
 }
 
-const_boolean is_end_of_block_body(const_string function_body_string, point_watcher *watcher) {
+const_boolean is_end_of_context_body(const_string body_string, point_watcher *watcher) {
     while (watcher->pointer < watcher->end) {
-        const char symbol = function_body_string[watcher->pointer];
+        const char symbol = body_string[watcher->pointer];
         if (!is_space_or_line_break(symbol)) {
             watcher->mode = POINT_ACTIVE_MODE;
             return FALSE;

@@ -245,7 +245,7 @@ void dig_header_materials(const_string source_code, aio_spider *parent_spider) {
         //After weaving instruction need from check function body string rest:
         while (header_watcher->pointer < header_watcher->end) {
             if (header_watcher->mode == POINT_PASSIVE_MODE) {
-                if (is_end_of_block_body(source_code, header_watcher)) {
+                if (is_end_of_context_body(source_code, header_watcher)) {
                     break;
                 } else {
                     refresh_aio_spiders(child_spider_nest, header_watcher);

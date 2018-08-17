@@ -88,7 +88,7 @@ void dig_aio_instructions_for(aio_instruction_holder *current_holder, const_stri
         while (ripper_watcher->pointer < end_index) {
             //거미가 지침을 검색해야합니까 (Do spiders need to search for instructions)?
             if (ripper_watcher->mode == POINT_PASSIVE_MODE) {
-                if (is_end_of_block_body(source_code, ripper_watcher)) {
+                if (is_end_of_context_body(source_code, ripper_watcher)) {
                     break;
                 } else {
                     refresh_aio_spiders(spider_nest, ripper_watcher);

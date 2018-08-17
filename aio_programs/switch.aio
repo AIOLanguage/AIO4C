@@ -1,0 +1,22 @@
+Voi
+switchTest(Str
+
+      name)
+{
+mu Int age
+= 0
+whe(name){
+    'John'->{age=17}'Alex'
+    -> age = 10 : -> 'Undefined' 'Mike'  -> {
+
+
+                age = 19
+    }
+
+
+}
+out
+age
+
+
+}

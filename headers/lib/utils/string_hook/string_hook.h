@@ -40,7 +40,9 @@ string_hook *new_string_hook_by_point_watcher(const_string source_ref, const_poi
 
 string_hook *new_string_hook_by_other_hook(const_string_hook *other_hook);
 
-string substring_by_string_hook(const_string src, const_string_hook *hook);
+string substring_by_string_hook(const_string_hook *hook);
+
+void reset_string_hook_positions(string_hook *hook);
 
 void free_string_hook(string_hook *hook);
 

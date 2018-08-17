@@ -65,7 +65,7 @@ struct aio_spider *new_aio_loop_spider(point_watcher *ripper_watcher);
  *  Declare functions.
  */
 
-const_boolean is_end_of_block_body(const_string function_body_string, point_watcher *watcher);
+const_boolean is_end_of_context_body(const_string body_string, point_watcher *watcher);
 
 const enum aio_spider_message is_found_loop_instruction(const_string source_code, point_watcher *ripper_watcher,
                                                         struct aio_spider *spider);

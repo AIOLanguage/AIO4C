@@ -53,8 +53,8 @@ string_hook *new_string_hook_by_other_hook(const_string_hook *other_hook) {
     return hook;
 }
 
-string substring_by_string_hook(const_string src, const_string_hook *hook) {
-    return substring(src, hook->start, hook->end);
+string substring_by_string_hook(const_string_hook *hook) {
+    return substring(hook->source_ref, hook->start, hook->end);
 }
 
 void free_string_hook(string_hook *hook) {
@@ -95,6 +95,11 @@ void free_string_hooks_in_list(string_hook_list *list) {
             free((void *) old_hook);
         }
     }
+}
+
+void reset_string_hook_positions(string_hook *hook) {
+    hook->start = 0;
+    hook->end = 0;
 }
 
 void free_string_hook_list(string_hook_list *list) {

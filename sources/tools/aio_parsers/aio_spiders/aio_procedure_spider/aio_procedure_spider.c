@@ -35,7 +35,7 @@ void refresh_procedure_spider(aio_spider *spider, point_watcher *ripper_watcher)
  * Free spider.
  */
 
-void free_procedure_function(aio_spider *spider) {
+void free_procedure_spider(aio_spider *spider) {
     aio_procedure_materials *materials = spider->get.procedure_materials;
     point_watcher *watcher = materials->main_watcher;
     free_point_watcher(watcher);
@@ -49,7 +49,7 @@ struct aio_spider *new_aio_procedure_spider(point_watcher *ripper_watcher) {
     spider->refresh = refresh_procedure_spider;
     spider->is_found_instruction = is_found_procedure_instruction;
     spider->weave_instruction_for = weave_procedure_instruction_for;
-    spider->free = free_procedure_function;
+    spider->free = free_procedure_spider;
     //Create materials:
     aio_procedure_materials *materials = new_object(sizeof(aio_procedure_materials));
     materials->scope_type = AIO_PROCEDURE_NAME_SCOPE;
