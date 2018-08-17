@@ -13,9 +13,13 @@
 #define STRING_UTILS_TAG "STRING_UTILS"
 
 string new_string(const_string src) {
-    string new_string = calloc(strlen(src) + 1, sizeof(char));
-    strcpy(new_string, src);
-    return new_string;
+    if (src != NULL){
+        string new_string = calloc(strlen(src) + 1, sizeof(char));
+        strcpy(new_string, src);
+        return new_string;
+    } else {
+        return NULL;
+    }
 }
 
 //박수!

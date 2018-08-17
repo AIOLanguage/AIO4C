@@ -23,6 +23,7 @@
  */
 
 void refresh_break_spider(aio_spider *spider, point_watcher *ripper_watcher) {
+    spider->message = AIO_SPIDER_NOT_FOUND_MATERIALS;
     point_watcher *main_watcher = spider->get.break_materials->watcher;
     main_watcher->start = ripper_watcher->pointer;
     main_watcher->end = ripper_watcher->pointer;

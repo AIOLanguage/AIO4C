@@ -174,8 +174,8 @@ void handle_switch_header_scope(const_string source_code, struct aio_spider *spi
     free((void *) header);
 #endif
     //Shift main watcher:
-    main_watcher->start = end_index + 1;
-    main_watcher->end = end_index + 1;
+    main_watcher->start = end_index;
+    main_watcher->end = end_index;
     //Go to the next scope:
     materials->scope_type = AIO_SWITCH_BODY_SCOPE;
 }

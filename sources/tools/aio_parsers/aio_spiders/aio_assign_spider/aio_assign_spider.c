@@ -253,6 +253,9 @@ void handle_assign_equal_sign_scope(const_string source_code, aio_spider *spider
         main_watcher->start = main_watcher->end + 1;
         main_watcher->mode = POINT_PASSIVE_MODE;
         spider->message = AIO_SPIDER_FOUND_MATERIALS;
+#ifdef AIO_ASSIGN_SPIDER_DEBUG
+        log_info(AIO_ASSIGN_SPIDER_TAG, "Found equal sign!");
+#endif
     } else {
         if (spider->message == AIO_SPIDER_FOUND_MATERIALS) {
             throw_error_with_tag(AIO_ASSIGN_SPIDER_TAG, "Invalid variable definition!");
@@ -268,9 +271,10 @@ void handle_assign_value_scope(const_string source_code, aio_spider *spider) {
     const int current_position = main_watcher->end;
     const char current_symbol = source_code[current_position];
     const_boolean is_whitespace_cond = is_space_or_line_break(current_symbol);
-    const_boolean is_close_parenthesis_cond = is_closing_parenthesis(current_symbol);
     const_boolean is_letter_cond = isalpha(current_symbol);
-    const_boolean is_letter_or_number_or_close_parenthesis_cond = isalnum(current_symbol) || is_close_parenthesis_cond;
+    const_boolean is_valid_bound = isalnum(current_symbol)
+                                   || is_closing_parenthesis(current_symbol)
+                                   || is_single_quote(current_symbol);
     const_boolean is_close_brace_cond = is_closing_brace(current_symbol);
     if (is_whitespace_cond && value_watcher->mode == POINT_ACTIVE_MODE) {
         value_watcher->pointer++;
@@ -297,7 +301,7 @@ void handle_assign_value_scope(const_string source_code, aio_spider *spider) {
     } else {
         value_watcher->mode = POINT_PASSIVE_MODE;
         value_watcher->pointer = 0;
-        if (is_letter_or_number_or_close_parenthesis_cond) {
+        if (is_valid_bound) {
             value_watcher->mode = POINT_ACTIVE_MODE;
             return;
         }

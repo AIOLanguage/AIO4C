@@ -44,6 +44,10 @@ boolean is_colon(const char c) {
     return c == ':';
 }
 
-boolean is_comma(const char c){
+boolean is_comma(const char c) {
     return c == ',';
+}
+
+boolean is_single_quote(const char c) {
+    return c == '\'';
 }

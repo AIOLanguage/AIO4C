@@ -1,21 +1,16 @@
 //Test.aio
 
-Int sum(mu Int a, Int b)        {   mu Int j = 5
-     mu c = a + b  c = c + 5
+Int sum(mu Int a, Int b)        {
 
-      if(c > a){
-
-      if(c == 10){ c = c + 2}
-
-      }:{e = 1
-
-
-                   loo (Int a = e a < 10 + 28 + c a = a + 32 )
-              {
-
-           j = j - 1
-
+whe
+(c){
+'test'
+->{ brk loo(Dou x=3 x
+<            72 x=x-1){
+book = 'Java'}pi=
+3.14}
+}:{
+z=
+5
+}
               }
-
-      }
-      }

@@ -366,6 +366,11 @@ void weave_loop_instruction_for(aio_instruction_holder *holder, const_string sou
         string loop_condition = NULL;
         //Fill holders:
         const aio_loop_material_type header_material_type = main_loop_materials->applied_header_material_type;
+
+#ifdef AIO_LOOP_SPIDER_DEBUG
+        log_info(AIO_LOOP_SPIDER_TAG, "qd,vq;d,qe, LOOP HEADER MATERIALS...");
+#endif
+
         if (header_material_type == AIO_LOOP_MATERIALS_DEFAULT_HEADER) {
             //Extract applied materials:
             const aio_default_loop_header_materials *default_loop_header_materials
@@ -374,6 +379,7 @@ void weave_loop_instruction_for(aio_instruction_holder *holder, const_string sou
                     = default_loop_header_materials->declaration_type;
 #ifdef AIO_LOOP_SPIDER_DEBUG
             log_info(AIO_LOOP_SPIDER_TAG, "DEFAULT LOOP HEADER MATERIALS...");
+            log_info_string(AIO_LOOP_SPIDER_TAG, "CONDITION:", default_loop_header_materials->loop_condition);
 #endif
             loop_condition = new_string(default_loop_header_materials->loop_condition);
             const_string_array pointer_data = default_loop_header_materials->pointer_data_list->strings;
@@ -405,9 +411,6 @@ void weave_loop_instruction_for(aio_instruction_holder *holder, const_string sou
         if (header_material_type == AIO_LOOP_MATERIALS_TINY_HEADER) {
 
         }
-#ifdef AIO_LOOP_SPIDER_DEBUG
-        log_info(AIO_LOOP_SPIDER_TAG, "DEFAULT LOOP HEADER MATERIALS 2...");
-#endif
         //Create loop instruction:
         aio_instruction *loop_instruction = new_aio_loop_instruction(holder, loop_condition, init_holder, cycle_holder);
         aio_instruction_list *parent_instruction_list = holder->instruction_list;

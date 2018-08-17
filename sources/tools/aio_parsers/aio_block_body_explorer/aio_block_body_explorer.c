@@ -69,15 +69,6 @@ void explore_context_bounds(const_string source_code, int *start_index, int *end
     if (is_found_start_index && is_found_end_index) {
         *start_index = watcher->start;
         *end_index = watcher->end;
-#ifdef AIO_BLOCK_BODY_EXPLORER_DEBUG
-        log_info_int(AIO_BLOCK_BODY_EXPLORER_TAG, "Start index:", *start_index);
-        log_info_char(AIO_BLOCK_BODY_EXPLORER_TAG, "Start index:", source_code[*start_index]);
-        log_info_int(AIO_BLOCK_BODY_EXPLORER_TAG, "End index:", *end_index);
-        log_info_char(AIO_BLOCK_BODY_EXPLORER_TAG, "End index:", source_code[*end_index]);
-        const_string function_body = substring_by_point_watcher(source_code, watcher);
-        log_info_string(AIO_BLOCK_BODY_EXPLORER_TAG, "Body:", function_body);
-        free((void *) function_body);
-#endif
         //--------------------------------------------------------------------------------------------------------------
         //찌꺼기 수집기 (Garbage collector):
         free_point_watcher(watcher);

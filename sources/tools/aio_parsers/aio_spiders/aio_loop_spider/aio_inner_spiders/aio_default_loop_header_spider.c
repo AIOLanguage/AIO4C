@@ -365,8 +365,8 @@ void handle_default_loop_header_condition_scope(const_string source_code, point_
                                                  || declaration_type == AIO_DEFAULT_LOOP_HEADER_MUTABLE
                                                  || declaration_type == AIO_DEFAULT_LOOP_HEADER_REFERENCE;
     if (is_not_step_assign_in_header) {
-        const_string dirty_loop_condition = substring_by_point_watcher(source_code, parent_watcher);
-        string clean_loop_condition = squeeze_string(source_code);
+        const_string dirty_loop_condition = substring(source_code, main_watcher->start, parent_watcher->end - 1);
+        string clean_loop_condition = squeeze_string(dirty_loop_condition);
         materials->loop_condition = clean_loop_condition;
         materials->scope_type = AIO_DEFAULT_LOOP_HEADER_WEAVING_SCOPE;
         spider->message = AIO_SPIDER_IS_READY_FOR_WEAVING;
@@ -374,7 +374,8 @@ void handle_default_loop_header_condition_scope(const_string source_code, point_
         //찌꺼기 수집기 (Garbage collector):
         free((void *) dirty_loop_condition);
 #ifdef AIO_DEFAULT_LOOP_HEADER_SPIDER_DEBUG
-        log_info_string(AIO_DEFAULT_LOOP_HEADER_SPIDER_TAG, "CAPTURED CONDITION---:", clean_loop_condition);
+        log_info_string(AIO_DEFAULT_LOOP_HEADER_SPIDER_TAG, "CAPTURED CONDITION WITHOUT POINTER:",
+                        clean_loop_condition);
 #endif
     } else {
         point_watcher *condition_watcher = materials->condition_watcher;
@@ -393,7 +394,8 @@ void handle_default_loop_header_condition_scope(const_string source_code, point_
             materials->scope_type = AIO_DEFAULT_LOOP_HEADER_STEP_SCOPE;
             main_watcher->start = main_watcher->end;
 #ifdef AIO_DEFAULT_LOOP_HEADER_SPIDER_DEBUG
-            log_info_string(AIO_DEFAULT_LOOP_HEADER_SPIDER_TAG, "CAPTURED CONDITION+++:", clean_loop_condition);
+            log_info_string(AIO_DEFAULT_LOOP_HEADER_SPIDER_TAG, "CAPTURED CONDITION WITH POINTER:",
+                            clean_loop_condition);
 #endif
             //----------------------------------------------------------------------------------------------------------
             //찌거기 수집기 (Garbage collector):
@@ -454,30 +456,30 @@ void handle_default_loop_header_step_scope(const_string source_code, point_watch
                 //Set message:
                 spider->message = AIO_SPIDER_FOUND_MATERIALS;
 #ifdef AIO_DEFAULT_LOOP_HEADER_SPIDER_DEBUG
-                log_info(AIO_DEFAULT_LOOP_HEADER_SPIDER_TAG, "FOUND EQUAL SIGN IN STEP!!!");
+                log_info(AIO_DEFAULT_LOOP_HEADER_SPIDER_TAG, "FOUND EQUAL SIGN IN STEP!!!.........");
 #endif
                 return;
             } else {
                 throw_error_with_tag(AIO_DEFAULT_LOOP_HEADER_SPIDER_TAG, "Waiting equal sign in step scope!");
             }
         }
-        if (materials->step_type == AIO_DEFAULT_LOOP_HEADER_STEP_VALUE_SCOPE) {
-            //Get rest:
-            const int start_index = main_watcher->start;
-            //Don't hold closing parenthesis:
-            const int end_index = parent_watcher->end - 1;
-            string dirty_step_value = substring(source_code, start_index, end_index);
-            string clean_step_value = squeeze_string(dirty_step_value);
-            materials->step_value = clean_step_value;
-            materials->scope_type = AIO_DEFAULT_LOOP_HEADER_WEAVING_SCOPE;
-            spider->message = AIO_SPIDER_IS_READY_FOR_WEAVING;
-            //----------------------------------------------------------------------------------------------------------
-            //찌꺼기 수집기 (Garbage collector):
-            free(dirty_step_value);
+    }
+    if (materials->step_type == AIO_DEFAULT_LOOP_HEADER_STEP_VALUE_SCOPE) {
+        //Get rest:
+        const int start_index = main_watcher->start;
+        //Don't hold closing parenthesis:
+        const int end_index = parent_watcher->end - 1;
+        string dirty_step_value = substring(source_code, start_index, end_index);
+        string clean_step_value = squeeze_string(dirty_step_value);
+        materials->step_value = clean_step_value;
+        materials->scope_type = AIO_DEFAULT_LOOP_HEADER_WEAVING_SCOPE;
+        spider->message = AIO_SPIDER_IS_READY_FOR_WEAVING;
+        //----------------------------------------------------------------------------------------------------------
+        //찌꺼기 수집기 (Garbage collector):
+        free(dirty_step_value);
 #ifdef AIO_DEFAULT_LOOP_HEADER_SPIDER_DEBUG
-            log_info_string(AIO_DEFAULT_LOOP_HEADER_SPIDER_TAG, "CAPTURED STEP VALUE:", clean_step_value);
+        log_info_string(AIO_DEFAULT_LOOP_HEADER_SPIDER_TAG, "CAPTURED STEP VALUE:", clean_step_value);
 #endif
-        }
     }
 }
 
@@ -509,11 +511,11 @@ void weave_default_loop_materials_for(struct aio_spider *dst_spider, struct aio_
     aio_default_loop_header_materials *new_materials = new_object(sizeof(aio_default_loop_header_materials));
     new_materials->declaration_type = src_materials->declaration_type;
 #ifdef AIO_DEFAULT_LOOP_HEADER_SPIDER_DEBUG
-    log_info_string(AIO_DEFAULT_LOOP_HEADER_SPIDER_TAG, "START STTTEEEP VALUE", src_materials->step_value);
+    log_info_string(AIO_DEFAULT_LOOP_HEADER_SPIDER_TAG, "START STEP VALUE", src_materials->step_value);
 #endif
     new_materials->step_value = new_string(src_materials->step_value);
 #ifdef AIO_DEFAULT_LOOP_HEADER_SPIDER_DEBUG
-    log_info(AIO_DEFAULT_LOOP_HEADER_SPIDER_TAG, "START WEEEEEEEEEEEAVING!!!!");
+    log_info(AIO_DEFAULT_LOOP_HEADER_SPIDER_TAG, "START WEAVING!!!!");
 #endif
     new_materials->loop_condition = new_string(src_materials->loop_condition);
     new_materials->init_value = new_string(src_materials->init_value);
