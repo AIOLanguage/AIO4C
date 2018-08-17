@@ -86,9 +86,6 @@ void handle_break_scope(const_string source_code, aio_spider *spider) {
     const aio_break_materials *materials = spider->get.break_materials;
     point_watcher *watcher = materials->watcher;
     const char current_symbol = source_code[watcher->end];
-#ifdef AIO_BREAK_SPIDER_DEBUG
-    log_info_char(AIO_BREAK_SPIDER_TAG, "CURRENT SYMBOL", current_symbol);
-#endif
     if (is_space_or_line_break(current_symbol) || is_closing_brace(current_symbol)) {
         const int start_index = watcher->start;
         const int end_index = watcher->end;

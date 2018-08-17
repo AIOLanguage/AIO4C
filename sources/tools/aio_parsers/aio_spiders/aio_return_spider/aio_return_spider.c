@@ -166,7 +166,7 @@ void handle_return_value_scope(const_string source_code, struct aio_spider *spid
         const_string dirty_chunk = substring_by_point_watcher(source_code, value_watcher);
         const_string dirty_squeezed_chunk = squeeze_string(dirty_chunk);
         const_string_array clean_return_values = split_by_comma(dirty_squeezed_chunk);
-        const int number_of_return_values = number_of_strings(clean_return_values);
+        const int number_of_return_values = get_string_array_size(clean_return_values);
         for (int i = 0; i < number_of_return_values; ++i) {
             add_string_in_list(materials->value_list, new_string(clean_return_values[i]));
         }

@@ -72,7 +72,7 @@ string substring_by_offset(const_string string, int offset, int length);
 
 string substring(const_string string, int start, int end);
 
-int number_of_strings(const_string_array src);
+int get_string_array_size(const_string_array src);
 
 const_boolean matches_string(const_string word);
 

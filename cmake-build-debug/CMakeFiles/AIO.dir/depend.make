@@ -441,6 +441,7 @@ CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_function_rippers/aio_instructio
 CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_function_rippers/aio_instruction_ripper.c.obj: ../headers/lib/utils/error_utils/error_utils.h
 CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_function_rippers/aio_instruction_ripper.c.obj: ../headers/lib/utils/log_utils/log_utils.h
 CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_function_rippers/aio_instruction_ripper.c.obj: ../headers/lib/utils/memory_utils/memory_utils.h
+CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_function_rippers/aio_instruction_ripper.c.obj: ../headers/lib/utils/string_hook/string_hook.h
 CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_function_rippers/aio_instruction_ripper.c.obj: ../headers/lib/utils/string_utils/string_builder.h
 CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_function_rippers/aio_instruction_ripper.c.obj: ../headers/lib/utils/string_utils/string_utils.h
 CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_function_rippers/aio_instruction_ripper.c.obj: ../headers/tools/aio_parsers/aio_block_body_explorer/aio_block_body_explorer.h
@@ -507,6 +508,7 @@ CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_assign_spider/aio_a
 CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_assign_spider/aio_assign_spider.c.obj: ../headers/lib/utils/error_utils/error_utils.h
 CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_assign_spider/aio_assign_spider.c.obj: ../headers/lib/utils/log_utils/log_utils.h
 CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_assign_spider/aio_assign_spider.c.obj: ../headers/lib/utils/memory_utils/memory_utils.h
+CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_assign_spider/aio_assign_spider.c.obj: ../headers/lib/utils/string_hook/string_hook.h
 CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_assign_spider/aio_assign_spider.c.obj: ../headers/lib/utils/string_utils/string_builder.h
 CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_assign_spider/aio_assign_spider.c.obj: ../headers/lib/utils/string_utils/string_utils.h
 CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_assign_spider/aio_assign_spider.c.obj: ../headers/tools/aio_parsers/aio_spiders/aio_assign_spider/aio_assign_spider.h
@@ -535,6 +537,7 @@ CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_break_spider/aio_br
 CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_break_spider/aio_break_spider.c.obj: ../headers/lib/utils/error_utils/error_utils.h
 CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_break_spider/aio_break_spider.c.obj: ../headers/lib/utils/log_utils/log_utils.h
 CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_break_spider/aio_break_spider.c.obj: ../headers/lib/utils/memory_utils/memory_utils.h
+CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_break_spider/aio_break_spider.c.obj: ../headers/lib/utils/string_hook/string_hook.h
 CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_break_spider/aio_break_spider.c.obj: ../headers/lib/utils/string_utils/string_utils.h
 CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_break_spider/aio_break_spider.c.obj: ../headers/tools/aio_parsers/aio_spiders/aio_assign_spider/aio_assign_spider.h
 CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_break_spider/aio_break_spider.c.obj: ../headers/tools/aio_parsers/aio_spiders/aio_break_spider/aio_break_spider.h
@@ -564,6 +567,7 @@ CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_if_spider/aio_if_sp
 CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_if_spider/aio_if_spider.c.obj: ../headers/lib/utils/error_utils/error_utils.h
 CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_if_spider/aio_if_spider.c.obj: ../headers/lib/utils/log_utils/log_utils.h
 CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_if_spider/aio_if_spider.c.obj: ../headers/lib/utils/memory_utils/memory_utils.h
+CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_if_spider/aio_if_spider.c.obj: ../headers/lib/utils/string_hook/string_hook.h
 CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_if_spider/aio_if_spider.c.obj: ../headers/lib/utils/string_utils/string_builder.h
 CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_if_spider/aio_if_spider.c.obj: ../headers/lib/utils/string_utils/string_utils.h
 CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_if_spider/aio_if_spider.c.obj: ../headers/tools/aio_parsers/aio_spiders/aio_assign_spider/aio_assign_spider.h
@@ -604,6 +608,7 @@ CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_loop_spider/aio_inn
 CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_default_loop_header_spider.c.obj: ../headers/lib/utils/error_utils/error_utils.h
 CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_default_loop_header_spider.c.obj: ../headers/lib/utils/log_utils/log_utils.h
 CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_default_loop_header_spider.c.obj: ../headers/lib/utils/memory_utils/memory_utils.h
+CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_default_loop_header_spider.c.obj: ../headers/lib/utils/string_hook/string_hook.h
 CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_default_loop_header_spider.c.obj: ../headers/lib/utils/string_utils/string_utils.h
 CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_default_loop_header_spider.c.obj: ../headers/tools/aio_parsers/aio_spiders/aio_assign_spider/aio_assign_spider.h
 CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_loop_spider/aio_inner_spiders/aio_default_loop_header_spider.c.obj: ../headers/tools/aio_parsers/aio_spiders/aio_break_spider/aio_break_spider.h
@@ -642,6 +647,7 @@ CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_loop_spider/aio_loo
 CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_loop_spider/aio_loop_spider.c.obj: ../headers/lib/utils/error_utils/error_utils.h
 CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_loop_spider/aio_loop_spider.c.obj: ../headers/lib/utils/log_utils/log_utils.h
 CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_loop_spider/aio_loop_spider.c.obj: ../headers/lib/utils/memory_utils/memory_utils.h
+CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_loop_spider/aio_loop_spider.c.obj: ../headers/lib/utils/string_hook/string_hook.h
 CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_loop_spider/aio_loop_spider.c.obj: ../headers/lib/utils/string_utils/string_builder.h
 CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_loop_spider/aio_loop_spider.c.obj: ../headers/lib/utils/string_utils/string_utils.h
 CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_loop_spider/aio_loop_spider.c.obj: ../headers/tools/aio_parsers/aio_block_body_explorer/aio_block_body_explorer.h
@@ -672,6 +678,7 @@ CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_procedure_spider/ai
 CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_procedure_spider/aio_procedure_spider.c.obj: ../headers/lib/utils/char_utils/char_utils.h
 CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_procedure_spider/aio_procedure_spider.c.obj: ../headers/lib/utils/log_utils/log_utils.h
 CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_procedure_spider/aio_procedure_spider.c.obj: ../headers/lib/utils/memory_utils/memory_utils.h
+CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_procedure_spider/aio_procedure_spider.c.obj: ../headers/lib/utils/string_hook/string_hook.h
 CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_procedure_spider/aio_procedure_spider.c.obj: ../headers/lib/utils/string_utils/string_utils.h
 CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_procedure_spider/aio_procedure_spider.c.obj: ../headers/tools/aio_parsers/aio_block_body_explorer/aio_block_body_explorer.h
 CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_procedure_spider/aio_procedure_spider.c.obj: ../headers/tools/aio_parsers/aio_spiders/aio_assign_spider/aio_assign_spider.h
@@ -700,6 +707,7 @@ CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_return_spider/aio_r
 CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_return_spider/aio_return_spider.c.obj: ../headers/lib/utils/error_utils/error_utils.h
 CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_return_spider/aio_return_spider.c.obj: ../headers/lib/utils/log_utils/log_utils.h
 CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_return_spider/aio_return_spider.c.obj: ../headers/lib/utils/memory_utils/memory_utils.h
+CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_return_spider/aio_return_spider.c.obj: ../headers/lib/utils/string_hook/string_hook.h
 CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_return_spider/aio_return_spider.c.obj: ../headers/lib/utils/string_utils/string_utils.h
 CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_return_spider/aio_return_spider.c.obj: ../headers/tools/aio_parsers/aio_spiders/aio_assign_spider/aio_assign_spider.h
 CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_return_spider/aio_return_spider.c.obj: ../headers/tools/aio_parsers/aio_spiders/aio_break_spider/aio_break_spider.h
@@ -725,6 +733,7 @@ CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_spider_nest.c.obj: 
 CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_spider_nest.c.obj: ../headers/lib/utils/boolean_utils/boolean_utils.h
 CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_spider_nest.c.obj: ../headers/lib/utils/log_utils/log_utils.h
 CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_spider_nest.c.obj: ../headers/lib/utils/memory_utils/memory_utils.h
+CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_spider_nest.c.obj: ../headers/lib/utils/string_hook/string_hook.h
 CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_spider_nest.c.obj: ../headers/lib/utils/string_utils/string_utils.h
 CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_spider_nest.c.obj: ../headers/tools/aio_parsers/aio_spiders/aio_assign_spider/aio_assign_spider.h
 CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_spider_nest.c.obj: ../headers/tools/aio_parsers/aio_spiders/aio_break_spider/aio_break_spider.h
@@ -748,8 +757,13 @@ CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_switch_spider/aio_s
 CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_switch_spider/aio_switch_spider.c.obj: ../headers/lib/collections/maps/aio_variable_definition_map.h
 CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_switch_spider/aio_switch_spider.c.obj: ../headers/lib/point_watcher/point_watcher.h
 CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_switch_spider/aio_switch_spider.c.obj: ../headers/lib/utils/boolean_utils/boolean_utils.h
+CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_switch_spider/aio_switch_spider.c.obj: ../headers/lib/utils/char_utils/char_utils.h
+CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_switch_spider/aio_switch_spider.c.obj: ../headers/lib/utils/error_utils/error_utils.h
 CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_switch_spider/aio_switch_spider.c.obj: ../headers/lib/utils/log_utils/log_utils.h
+CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_switch_spider/aio_switch_spider.c.obj: ../headers/lib/utils/memory_utils/memory_utils.h
+CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_switch_spider/aio_switch_spider.c.obj: ../headers/lib/utils/string_hook/string_hook.h
 CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_switch_spider/aio_switch_spider.c.obj: ../headers/lib/utils/string_utils/string_utils.h
+CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_switch_spider/aio_switch_spider.c.obj: ../headers/tools/aio_parsers/aio_block_body_explorer/aio_block_body_explorer.h
 CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_switch_spider/aio_switch_spider.c.obj: ../headers/tools/aio_parsers/aio_spiders/aio_assign_spider/aio_assign_spider.h
 CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_switch_spider/aio_switch_spider.c.obj: ../headers/tools/aio_parsers/aio_spiders/aio_break_spider/aio_break_spider.h
 CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_switch_spider/aio_switch_spider.c.obj: ../headers/tools/aio_parsers/aio_spiders/aio_if_spider/aio_if_spider.h

@@ -16,7 +16,7 @@
 string get_code_without_comments(const_string file_content) {
     string_list *clean_line_list = new_string_list();
     string_array lines = split_by_string(file_content, "\n");
-    for (int i = 0; i < number_of_strings(lines); ++i) {
+    for (int i = 0; i < get_string_array_size(lines); ++i) {
         const_string line = lines[i];
         if (!starts_with_prefix(line, AIO_COMMENTS) && !is_empty_string(line)) {
             string_array dirty_line_with_comments = split_by_string(line, AIO_COMMENTS);

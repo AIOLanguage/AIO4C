@@ -442,6 +442,7 @@ CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_function_rippers/aio_instructio
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/error_utils/error_utils.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/log_utils/log_utils.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/memory_utils/memory_utils.h
+ C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/string_hook/string_hook.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/string_utils/string_builder.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/string_utils/string_utils.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_block_body_explorer/aio_block_body_explorer.h
@@ -508,6 +509,7 @@ CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_assign_spider/aio_a
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/error_utils/error_utils.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/log_utils/log_utils.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/memory_utils/memory_utils.h
+ C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/string_hook/string_hook.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/string_utils/string_builder.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/string_utils/string_utils.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_assign_spider/aio_assign_spider.h
@@ -536,6 +538,7 @@ CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_break_spider/aio_br
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/error_utils/error_utils.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/log_utils/log_utils.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/memory_utils/memory_utils.h
+ C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/string_hook/string_hook.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/string_utils/string_utils.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_assign_spider/aio_assign_spider.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_break_spider/aio_break_spider.h
@@ -565,6 +568,7 @@ CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_if_spider/aio_if_sp
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/error_utils/error_utils.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/log_utils/log_utils.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/memory_utils/memory_utils.h
+ C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/string_hook/string_hook.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/string_utils/string_builder.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/string_utils/string_utils.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_assign_spider/aio_assign_spider.h
@@ -605,6 +609,7 @@ CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_loop_spider/aio_inn
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/error_utils/error_utils.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/log_utils/log_utils.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/memory_utils/memory_utils.h
+ C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/string_hook/string_hook.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/string_utils/string_utils.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_assign_spider/aio_assign_spider.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_break_spider/aio_break_spider.h
@@ -643,6 +648,7 @@ CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_loop_spider/aio_loo
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/error_utils/error_utils.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/log_utils/log_utils.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/memory_utils/memory_utils.h
+ C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/string_hook/string_hook.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/string_utils/string_builder.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/string_utils/string_utils.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_block_body_explorer/aio_block_body_explorer.h
@@ -673,6 +679,7 @@ CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_procedure_spider/ai
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/char_utils/char_utils.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/log_utils/log_utils.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/memory_utils/memory_utils.h
+ C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/string_hook/string_hook.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/string_utils/string_utils.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_block_body_explorer/aio_block_body_explorer.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_assign_spider/aio_assign_spider.h
@@ -701,6 +708,7 @@ CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_return_spider/aio_r
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/error_utils/error_utils.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/log_utils/log_utils.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/memory_utils/memory_utils.h
+ C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/string_hook/string_hook.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/string_utils/string_utils.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_assign_spider/aio_assign_spider.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_break_spider/aio_break_spider.h
@@ -726,6 +734,7 @@ CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_spider_nest.c.obj
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/boolean_utils/boolean_utils.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/log_utils/log_utils.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/memory_utils/memory_utils.h
+ C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/string_hook/string_hook.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/string_utils/string_utils.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_assign_spider/aio_assign_spider.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_break_spider/aio_break_spider.h
@@ -749,8 +758,13 @@ CMakeFiles/AIO.dir/sources/tools/aio_parsers/aio_spiders/aio_switch_spider/aio_s
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/collections/maps/aio_variable_definition_map.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/point_watcher/point_watcher.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/boolean_utils/boolean_utils.h
+ C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/char_utils/char_utils.h
+ C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/error_utils/error_utils.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/log_utils/log_utils.h
+ C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/memory_utils/memory_utils.h
+ C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/string_hook/string_hook.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/string_utils/string_utils.h
+ C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_block_body_explorer/aio_block_body_explorer.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_assign_spider/aio_assign_spider.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_break_spider/aio_break_spider.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_parsers/aio_spiders/aio_if_spider/aio_if_spider.h

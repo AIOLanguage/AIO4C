@@ -93,7 +93,7 @@ string_list *dig_output_types(const_string source_code, int *pointer_reference) 
             break;
         case MULTI_OUTPUT_MODE: {
             const_string_array dirty_types = split_by_comma(type_content);
-            const int type_number = number_of_strings(dirty_types);
+            const int type_number = get_string_array_size(dirty_types);
             const_string_array clean_types = trim_all_with_line_break(dirty_types, type_number);
             for (int i = 0; i < type_number; ++i) {
                 string type = clean_types[i];

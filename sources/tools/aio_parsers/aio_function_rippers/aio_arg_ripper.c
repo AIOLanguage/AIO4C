@@ -59,27 +59,27 @@ aio_variable_definition_map *dig_arguments(const_string source_code, int *pointe
     if (!is_empty_string(argument_content)) {
         //함수 인수 함유량들 파다 (Dig arg contents):
         const_string_array dirty_arg_chunks = split_by_comma(argument_content);
-        const int number_of_args = number_of_strings(dirty_arg_chunks);
+        const int number_of_args = get_string_array_size(dirty_arg_chunks);
         const_string_array clean_arg_chunks = trim_all_with_line_break(dirty_arg_chunks,
-                                                                       number_of_strings(dirty_arg_chunks));
+                                                                       get_string_array_size(dirty_arg_chunks));
         //각 함수 인수 함유량 파다 (Dig each arg content):
         for (int j = 0; j < number_of_args; ++j) {
             const_string arg_chunk_1 = clean_arg_chunks[j];
             //Split by space:
             const_string_array dirty_arg_content_1 = split_by_space(arg_chunk_1);
-            const int dirty_arg_content_size_1 = number_of_strings(dirty_arg_content_1);
+            const int dirty_arg_content_size_1 = get_string_array_size(dirty_arg_content_1);
             const_string_array arg_content_1 = filter(dirty_arg_content_1, dirty_arg_content_size_1, is_empty_string);
-            const int arg_content_size_1 = number_of_strings(arg_content_1);
+            const int arg_content_size_1 = get_string_array_size(arg_content_1);
             //----------------------------------------------------------------------------------------------------------
             //Split by line break;
             string_list *arg_content_list = new_string_list();
             for (int k = 0; k < arg_content_size_1; ++k) {
                 const_string dirty_arg_chunk_2 = arg_content_1[k];
                 string_array dirty_arg_content_2 = split_by_line_break(dirty_arg_chunk_2);
-                const int dirty_arg_content_size_2 = number_of_strings(dirty_arg_content_2);
+                const int dirty_arg_content_size_2 = get_string_array_size(dirty_arg_content_2);
                 string_array arg_content_2 = filter(dirty_arg_content_2, dirty_arg_content_size_2,
                                                     is_empty_string);
-                const int arg_content_size_2 = number_of_strings(arg_content_2);
+                const int arg_content_size_2 = get_string_array_size(arg_content_2);
                 for (int i = 0; i < arg_content_size_2; ++i) {
                     add_string_in_list(arg_content_list, new_string(arg_content_2[i]));
                 }

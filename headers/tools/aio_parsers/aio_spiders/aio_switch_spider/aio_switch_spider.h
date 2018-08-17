@@ -8,23 +8,17 @@ typedef enum aio_switch_scope_type {
     AIO_SWITCH_MODIFIER_SCOPE, AIO_SWITCH_HEADER_SCOPE, AIO_SWITCH_BODY_SCOPE, AIO_SWITCH_WEAVING_SCOPE
 } aio_switch_scope_type;
 
-typedef enum aio_switch_case_scope_type {
-    AIO_SWITCH_CASE_VALUE_SCOPE, AIO_SWITCH_CASE_BODY_SCOPE
-} aio_switch_case_scope_type;
-
 typedef struct aio_switch_materials {
     //States:
     aio_switch_scope_type scope_type;
-    aio_switch_case_scope_type case_scope_type;
     boolean has_else_branch;
     //Watchers:
     point_watcher *main_watcher;
     point_watcher *header_watcher;
     point_watcher *switch_body_watcher;
-    point_watcher *inner_case_watcher;
     point_watcher *else_watcher;
     //String hooks:
-    string_hook_list *case_value_list;
+    string_hook_list *case_key_list;
     string_hook_list *case_body_list;
 } aio_switch_materials;
 
@@ -47,5 +41,7 @@ void handle_switch_case_body_scope(const_string source_code, struct aio_spider *
 
 void weave_switch_instruction_for(aio_instruction_holder *holder, const_string source_code,
                                   point_watcher *ripper_watcher, struct aio_spider *spider);
+
+string_list *extract_case_keys_from_hook(const_string_hook *case_keys_hook);
 
 #endif //AIO_SWITCH_SPIDER_H

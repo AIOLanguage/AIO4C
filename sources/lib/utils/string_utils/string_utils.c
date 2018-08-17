@@ -140,12 +140,12 @@ string substring(const_string string, int start, int end) {
     return dst;
 }
 
-int number_of_strings(const_string_array src) {
+int get_string_array_size(const_string_array src) {
     return _msize(src) / 4;
 }
 
 void free_strings(const_string_array *src_reference) {
-    for (int i = 0; i < number_of_strings(*src_reference); ++i) {
+    for (int i = 0; i < get_string_array_size(*src_reference); ++i) {
         free((void *) (*src_reference)[i]);
     }
     free(*src_reference);

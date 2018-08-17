@@ -68,8 +68,9 @@ aio_instruction *new_aio_procedure_instruction(aio_instruction_holder *holder, s
 
 aio_instruction *new_aio_return_instruction(aio_instruction_holder *holder, const string_list *return_value_list);
 
-aio_instruction *new_aio_switch_instruction(aio_instruction_holder *parent_holder, const_string source,
-                                            const_string destination);
+aio_instruction *new_aio_switch_instruction(aio_instruction_holder *holder, const_string switch_value,
+                                            string_list *case_keys, aio_instruction_holder **case_holders,
+                                            aio_instruction_holder *else_holder);
 
 /**
  * Implement tasks.
@@ -101,9 +102,11 @@ typedef struct aio_return_task {
 } aio_return_task;
 
 typedef struct aio_switch_task {
-    string switch_value;
-    string_list *case_values;
+    const_string switch_value;
+    string_list *case_keys;
     aio_instruction_holder **case_holders;
+    aio_instruction_holder *else_holder;
+    boolean is_not_equals_any_cases;
 } aio_switch_task;
 
 #endif //AIO_INSTRUCTIONS_H
