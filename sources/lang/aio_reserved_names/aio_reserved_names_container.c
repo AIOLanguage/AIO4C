@@ -20,24 +20,24 @@ char reserved_names[AIO_NUMBER_OF_RESERVED_NAMES][4] = {
         {AIO_SWITCH_MODIFIER},
 };
 
-const_boolean is_aio_mutable_modifier(const_string string) {
-    return strcmp(string, AIO_MUTABLE_MODIFIER) == 0;
+boolean is_aio_mutable_modifier(const_str_hook hook) {
+    return strcmp(hook, AIO_MUTABLE_MODIFIER) == 0;
 }
 
-const_boolean is_aio_if_modifier(const_string string) {
-    return strcmp(string, AIO_IF_MODIFIER) == 0;
+boolean is_aio_if_modifier(const_str_hook hook) {
+    return strcmp(hook, AIO_IF_MODIFIER) == 0;
 }
 
-const_boolean is_aio_loop_modifier(const_string string) {
-    return strcmp(string, AIO_LOOP_MODIFIER) == 0;
+boolean is_aio_loop_modifier(const_str_hook hook) {
+    return strcmp(hook, AIO_LOOP_MODIFIER) == 0;
 }
 
-boolean can_use_name(const_string name) {
+boolean can_use_name(const_str_hook hook) {
     for (int i = 0; i < AIO_NUMBER_OF_RESERVED_NAMES; i++) {
-        if (strcmp(name, reserved_names[i]) == 0) {
+        if (strcmp(hook, reserved_names[i]) == 0) {
             return false;
         }
     }
     //Check in aio type set:
-    return !contains_string_in_set(core->aio_type_set, name);
+    return !contains_string_in_set(core->aio_type_set, hook);
 }

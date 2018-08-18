@@ -14,8 +14,8 @@ typedef const _Bool const_boolean;
 
 typedef const char *const_string;
 
-const_boolean matches_boolean(const_string string);
+boolean matches_boolean(const_string string);
 
-const_boolean string_to_boolean(const_string string);
+boolean string_to_boolean(const_string string);
 
 #endif //BOOLEAN_UTILS_H

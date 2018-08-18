@@ -4,7 +4,7 @@
 #include "../../../../headers/lib/utils/error_utils/error_utils.h"
 
 //Passed JUnitTest!
-const_boolean matches_int(const_string word) {
+boolean matches_int(const_string word) {
     int start = 0;
     int length = strlen(word);
     if (length == 0) {

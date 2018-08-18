@@ -10,6 +10,6 @@ typedef const double *const_double_array;
 
 double string_to_double(const_string src);
 
-const_boolean matches_double(const_string word);
+boolean matches_double(const_string word);
 
 #endif //DOUBLE_UTILS_H

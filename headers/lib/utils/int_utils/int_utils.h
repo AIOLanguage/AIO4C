@@ -8,7 +8,7 @@ typedef int *int_array;
 
 typedef const int *const_int_array;
 
-const_boolean matches_int(const_string word);
+boolean matches_int(const_string word);
 
 int string_to_int(const_string word);
 

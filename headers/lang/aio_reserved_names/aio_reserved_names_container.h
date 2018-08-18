@@ -3,7 +3,7 @@
 
 #include "../../lib/utils/string_utils/string_utils.h"
 #include "../../lib/utils/boolean_utils/boolean_utils.h"
-#include "../../lib/collections/sets/string_set.h"
+#include "../../lib/utils/string_hook/str_hook.h"
 
 #define AIO_MUTABLE_MODIFIER "mu"
 
@@ -19,12 +19,12 @@
 
 #define AIO_BREAK_MODIFIER "brk"
 
-const_boolean is_aio_mutable_modifier(const_string string);
+boolean is_aio_mutable_modifier(const_str_hook hook);
 
-const_boolean is_aio_if_modifier(const_string string);
+boolean is_aio_if_modifier(const_str_hook hook);
 
-const_boolean is_aio_loop_modifier(const_string string);
+boolean is_aio_loop_modifier(const_str_hook hook);
 
-boolean can_use_name(const_string name);
+boolean can_use_name(const_str_hook hook);
 
 #endif //AIO_RESERVED_NAMES_CONTAINER_H

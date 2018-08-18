@@ -7,33 +7,65 @@
 #include "../../../../headers/lib/utils/double_utils/double_utils.h"
 #include "../../../../headers/lib/utils/int_utils/int_utils.h"
 #include "../../../../headers/lang/aio_function/aio_variable/aio_variable.h"
+#include "../../../../headers/lib/utils/memory_utils/memory_utils.h"
+#include "../../../../headers/lib/utils/string_hook/str_hook.h"
+#include "../../../../headers/lib/utils/string_hook/string_hook_utils/string_hook_utils.h"
+#include "../../../../headers/lib/utils/error_utils/error_utils.h"
 
-//Passed JUnitTest!
-char *remove_brackets_and_return_value(string value) {
-    unsigned length = strlen(value);
-    if (value[0] == '\'' && value[length - 1] == '\'') {
-        char *newValue = remove_prefix_suffix(value, "\'", "\'");
-        free(value);
-        return newValue;
-    } else {
-        printf("\nThis is not char or string_value!");
-        exit(1);
-    }
-}
+#define AIO_VARIABLE_TAG "AIO_VARIABLE"
 
-//Passed JUnitTest!
-aio_variable *new_aio_variable(const_string name, union aio_value *value, const_string type,
-                               const_boolean is_mutable_by_value) {
-    aio_variable *variable = calloc(1, sizeof(aio_variable));
-    variable->variable_definition = new_aio_variable_definition(name, type, is_mutable_by_value);
-    //Set aio_value:
-    variable->value = value;
-    return variable;
-}
-
-aio_variable *new_aio_variable_by_definition(aio_variable_definition *variable_definition, union aio_value *value) {
-    aio_variable *variable = calloc(1, sizeof(aio_variable));
+aio_variable *new_aio_variable_by_definition(const_aio_variable_definition *variable_definition, aio_value *value) {
+    aio_variable *variable = new_object(sizeof(aio_variable));
     variable->variable_definition = variable_definition;
     variable->value = value;
     return variable;
+}
+
+void free_aio_variable(aio_variable *variable) {
+
+}
+
+/**
+ * List
+ */
+
+aio_variable_list *new_aio_variable_list() {
+    aio_variable_list *variable_map = new_object(sizeof(aio_variable_list));
+    variable_map->capacity = 2;
+    variable_map->size = 0;
+    variable_map->variables = new_object_array(2, sizeof(aio_variable *));
+    return variable_map;
+}
+
+void update_memory_in_aio_variable_list(aio_variable_list *variable_map) {
+    if (variable_map->size + 1 == variable_map->capacity) {
+        variable_map->capacity = variable_map->capacity * 2;
+        variable_map->variables = realloc(variable_map->variables, variable_map->capacity * sizeof(aio_variable *));
+    }
+}
+
+void add_aio_variable_in_list(aio_variable_list *list, aio_variable *variable) {
+    const_str_hook *name = variable->variable_definition->name;
+    for (int i = 0; i < list->size; ++i) {
+        const_str_hook *current_name = list->variables[i]->variable_definition->name;
+        const_boolean are_equal_strings = are_equal_hooked_str(current_name, name);
+        if (are_equal_strings) {
+            throw_error_with_tag(AIO_VARIABLE_TAG, "Variable already exists!");
+        }
+    }
+    update_memory_in_aio_variable_list(list);
+    list->variables[list->size] = variable;
+    list->size++;
+}
+
+aio_variable *get_aio_variable_in_list_by_name(const_aio_variable_list *list, const_str_hook *name) {
+    const size_t list_size = list->size;
+    for (int i = 0; i < list_size; ++i) {
+        const_str_hook *current_name = list->variables[i]->variable_definition->name;
+        const_boolean are_equal_strings = are_equal_hooked_str(current_name, name);
+        if (are_equal_strings) {
+            return list->variables[i];
+        }
+    }
+    throw_error("cannot from aio aio_variable in map");
 }

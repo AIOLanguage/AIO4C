@@ -5,7 +5,7 @@
 #include <math.h>
 #include "../../../../headers/lib/utils/string_utils/string_utils.h"
 
-const_boolean matches_double(const_string word) {
+boolean matches_double(const_string word) {
     boolean result = FALSE;
     int was_dot = -1;
     int was_fraction = -1;

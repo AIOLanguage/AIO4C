@@ -2,17 +2,26 @@
 #include <stdio.h>
 #include <process.h>
 #include "../../../../headers/lib/utils/string_utils/string_utils.h"
+#include "../../../../headers/lib/utils/string_hook/str_hook.h"
 
 void log_info(const_string tag, const_string message) {
     printf("\n%s: %s\n", tag, message);
     free((void *) message);
 }
 
-void log_info_string(const_string tag, const_string message, const_string value){
+void log_info_string(const_string tag, const_string message, const_string value) {
     printf("\n%s: %s -%s-\n", tag, message, value);
     free((void *) message);
 }
 
+void log_info_string_hook(const_string tag, const_string message, const_str_hook *hook) {
+    printf("\n%s: %s -", tag, message);
+    for (int i = hook->start; i < hook->end; ++i) {
+        printf("%c", hook->source_ref[i]);
+    }
+    printf("-\n");
+    free((void *) message);
+}
 
 void log_info_char(const_string tag, const_string message, const char value) {
     printf("\n%s: %s -%c-\n", tag, message, value);
@@ -28,9 +37,9 @@ void log_info_int(const_string tag, const_string message, const int value) {
     free((void *) message);
 }
 
-void log_info_boolean(const_string tag, const_string message, const_boolean value){
+void log_info_boolean(const_string tag, const_string message, const_boolean value) {
     const_string boolean_string = NULL;
-    if (value){
+    if (value) {
         boolean_string = TRUE_STRING;
     } else {
         boolean_string = FALSE_STRING;

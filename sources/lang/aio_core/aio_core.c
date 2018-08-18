@@ -4,6 +4,8 @@
 #include "../../../headers/lang/aio_core/aio_core.h"
 #include "../../../headers/lang/aio_types/aio_type.h"
 #include "../../../headers/lib/utils/memory_utils/memory_utils.h"
+#include "../../../headers/lang/aio_context/aio_context.h"
+#include "../../../headers/lib/utils/collections/sets/string_set.h"
 
 aio_core *core;
 
@@ -25,19 +27,19 @@ void inflate_aio_core() {
         add_string_in_set(type_set, core_type);
     }
     core = new_object(sizeof(aio_core));
-    core->core_context_map = new_aio_context_map();
+    core->core_context_list = new_aio_context_list();
     core->aio_type_set = type_set;
 }
 
 void inflate_aio_context_and_put_in_core(const_string path) {
-    aio_context *context = new_aio_context(path);
-    //put_aio_context_in_map(core->core_context_map, context);
+    const_aio_context *context = new_aio_context(path);
+    add_aio_context_in_list(core->core_context_list, context);
 }
 
-boolean contains_aio_type_in_set(const_string string) {
+const_boolean contains_aio_type_in_set(const_string string) {
     return contains_string_in_set(core->aio_type_set, string);
 }
 
-void destroy_aio_core() {
+void free_aio_core() {
 
 }
