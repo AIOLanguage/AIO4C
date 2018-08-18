@@ -8,8 +8,7 @@
 #include "../../../../headers/lib/utils/string_utils/string_utils.h"
 #include "../../../../headers/lib/utils/char_utils/char_utils.h"
 
-//Passed JUnitTest!
-string abstract_border_trim(const_string src, const int has_left, const int has_right,
+static string abstract_border_trim(const_string src, const int has_left, const int has_right,
                             boolean (*trim_condition)(const char)) {
     char *dst;
     const size_t src_length = strlen(src);

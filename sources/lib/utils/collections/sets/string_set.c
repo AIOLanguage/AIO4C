@@ -2,15 +2,15 @@
 #include <mem.h>
 #include <stdio.h>
 #include <stdbool.h>
-#include "../../../../headers/lib/collections/sets/string_set.h"
 #include "../../../../../headers/lib/utils/error_utils/error_utils.h"
+#include "../../../../../headers/lib/utils/collections/sets/string_set.h"
+#include "../../../../../headers/lib/utils/memory_utils/memory_utils.h"
 
 string_set *new_string_set() {
-    string_set *set = calloc(1, sizeof(string_set));
+    string_set *set = new_object(sizeof(string_set));
     set->capacity = 2;
     set->size = 0;
-    //create char capacity that equals 2:
-    set->strings = calloc(2, sizeof(string));
+    set->strings = new_object_array(2, sizeof(string));
     return set;
 }
 
@@ -35,10 +35,10 @@ void add_string_in_set(string_set *set, string string) {
 boolean contains_string_in_set(string_set *set, const_string string) {
     for (int i = 0; i < set->size; ++i) {
         if (strcmp(set->strings[i], string) == 0) {
-            return true;
+            return TRUE;
         }
     }
-    return false;
+    return FALSE;
 }
 
 void delete_string_set(string_set *set) {

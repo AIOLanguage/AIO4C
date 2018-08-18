@@ -4,7 +4,7 @@
 #include <process.h>
 #include "../../../headers/lang/aio_annotation/aio_annotation.h"
 #include "../../../headers/lib/utils/memory_utils/memory_utils.h"
-#include "../../../headers/lib/utils/string_hook/string_hook_utils/string_hook_utils.h"
+#include "../../../headers/lib/utils/string_hook/string_hook_utils/str_hook_utils.h"
 #include "../../../headers/lib/utils/error_utils/error_utils.h"
 
 #define AIO_ANNOTATION_TAG "AIO_ANNOTATION"

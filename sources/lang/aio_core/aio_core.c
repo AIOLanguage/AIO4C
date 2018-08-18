@@ -6,6 +6,7 @@
 #include "../../../headers/lib/utils/memory_utils/memory_utils.h"
 #include "../../../headers/lang/aio_context/aio_context.h"
 #include "../../../headers/lib/utils/collections/sets/string_set.h"
+#include "../../../headers/lib/utils/string_hook/string_hook_utils/str_hook_utils.h"
 
 aio_core *core;
 
@@ -36,8 +37,12 @@ void inflate_aio_context_and_put_in_core(const_string path) {
     add_aio_context_in_list(core->core_context_list, context);
 }
 
-const_boolean contains_aio_type_in_set(const_string string) {
+boolean is_aio_type(const_string string) {
     return contains_string_in_set(core->aio_type_set, string);
+}
+
+boolean is_hooked_aio_type(const_str_hook *hook) {
+    return contains_string_in_set_by_hook(core->aio_type_set, hook);
 }
 
 void free_aio_core() {

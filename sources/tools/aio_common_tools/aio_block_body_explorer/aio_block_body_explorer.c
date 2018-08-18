@@ -1,9 +1,9 @@
 #include <malloc.h>
 #include <mem.h>
 #include "../../../../headers/lib/utils/string_utils/string_utils.h"
-#include "../../../../headers/lib/point_watcher/point_watcher.h"
 #include "../../../../headers/lib/utils/char_utils/char_utils.h"
 #include "../../../../headers/lib/utils/error_utils/error_utils.h"
+#include "../../../../headers/lib/utils/point_watcher/point_watcher.h"
 
 #define AIO_BLOCK_BODY_EXPLORER_DEBUG
 

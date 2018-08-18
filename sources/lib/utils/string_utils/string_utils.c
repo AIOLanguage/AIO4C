@@ -13,7 +13,7 @@
 #define STRING_UTILS_TAG "STRING_UTILS"
 
 string new_string(const_string src) {
-    if (src != NULL){
+    if (src != NULL) {
         string new_string = calloc(strlen(src) + 1, sizeof(char));
         strcpy(new_string, src);
         return new_string;
@@ -68,7 +68,10 @@ const_boolean is_not_empty_string(const_string string) {
 
 //Passed JUnitTest!
 const_boolean is_empty_string(const_string string) {
-    return strcmp(string, "") == 0;
+    const_string empty_string = "";
+    const_boolean result = strcmp(string, empty_string) == 0;
+    free((void *) empty_string);
+    return result;
 }
 
 //준비된!

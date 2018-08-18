@@ -4,7 +4,7 @@
 #include "../../../../headers/lang/aio_function/aio_function_definition/aio_function_definition.h"
 #include "../../../../headers/lib/utils/memory_utils/memory_utils.h"
 #include "../../../../headers/lib/utils/error_utils/error_utils.h"
-#include "../../../../headers/lib/utils/string_hook/string_hook_utils/string_hook_utils.h"
+#include "../../../../headers/lib/utils/string_hook/string_hook_utils/str_hook_utils.h"
 
 #define AIO_FUNCTION_DEFINITION_TAG "AIO_FUNCTION_DEFINITION"
 

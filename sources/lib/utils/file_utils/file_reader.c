@@ -2,7 +2,7 @@
 #include "../../../../headers/lib/utils/file_utils/file_reader.h"
 #include "../../../../headers/lib/utils/error_utils/error_utils.h"
 #include "../../../../headers/lang/aio_context/aio_context.h"
-#include "../../../../headers/lib/utils/string_hook/string_hook_utils/string_hook_utils.h"
+#include "../../../../headers/lib/utils/string_hook/string_hook_utils/str_hook_utils.h"
 #include <malloc.h>
 #include <mem.h>
 #include <stdio.h>

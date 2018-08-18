@@ -11,6 +11,8 @@ typedef struct string_list {
     string_array strings;
 } string_list;
 
+typedef const string_list const_string_list;
+
 string_list *new_string_list();
 
 void add_string_in_list(string_list *string_list, string source);

@@ -3,7 +3,7 @@
 
 #include "../../../lib/utils/string_utils/string_utils.h"
 #include "../../../lib/utils/boolean_utils/boolean_utils.h"
-#include "aio_variable_definition.h"
+#include "aio_variable_definition/aio_variable_definition.h"
 #include "../aio_value/aio_value.h"
 #include "../../../lib/utils/string_hook/str_hook.h"
 

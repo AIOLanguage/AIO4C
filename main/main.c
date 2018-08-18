@@ -13,6 +13,9 @@ void make_test() {
 }
 
 int main() {
+#ifdef AIO_PROJECT_MEMORY_MANAGER
+
+#endif
     make_test();
     return 0;
 }

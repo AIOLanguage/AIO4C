@@ -9,10 +9,10 @@
 #include "../../../../headers/lang/aio_function/aio_variable/aio_variable.h"
 #include "../../../../headers/lib/utils/memory_utils/memory_utils.h"
 #include "../../../../headers/lib/utils/string_hook/str_hook.h"
-#include "../../../../headers/lib/utils/string_hook/string_hook_utils/string_hook_utils.h"
+#include "../../../../headers/lib/utils/string_hook/string_hook_utils/str_hook_utils.h"
 #include "../../../../headers/lib/utils/error_utils/error_utils.h"
 
-#define AIO_VARIABLE_TAG "AIO_VARIABLE"
+#define AIO_VARIABLE_LIST_TAG "AIO_VARIABLE_LIST"
 
 aio_variable *new_aio_variable_by_definition(const_aio_variable_definition *variable_definition, aio_value *value) {
     aio_variable *variable = new_object(sizeof(aio_variable));
@@ -50,7 +50,7 @@ void add_aio_variable_in_list(aio_variable_list *list, aio_variable *variable) {
         const_str_hook *current_name = list->variables[i]->variable_definition->name;
         const_boolean are_equal_strings = are_equal_hooked_str(current_name, name);
         if (are_equal_strings) {
-            throw_error_with_tag(AIO_VARIABLE_TAG, "Variable already exists!");
+            throw_error_with_tag(AIO_VARIABLE_LIST_TAG, "Variable already exists!");
         }
     }
     update_memory_in_aio_variable_list(list);
@@ -67,5 +67,5 @@ aio_variable *get_aio_variable_in_list_by_name(const_aio_variable_list *list, co
             return list->variables[i];
         }
     }
-    throw_error("cannot from aio aio_variable in map");
+    return NULL;
 }

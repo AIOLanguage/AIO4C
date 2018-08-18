@@ -7,28 +7,71 @@
 #include <stddef.h>
 #include "../../../../headers/lib/utils/string_utils/string_utils.h"
 
-void move_empty_string_to_dst(const char *src, char ***dst);
+static void move_string_to_dst(const char *src, const size_t string_length, char ***dst) {
+    //allocate memory for string array:
+    *dst = calloc(1, sizeof(string));
+    if (*dst == NULL) {
+        perror("Cannot allocate memory for *dst in split by char!");
+        exit(1);
+    }
+    //allocate memory for only string:
+    **dst = calloc(string_length, sizeof(char) + 1);
+    if (**dst == NULL) {
+        perror("Cannot allocate memory for **dst in split by char!");
+        exit(1);
+    }
+    strcpy(**dst, src);
+}
 
-void move_string_to_dst(const char *src, size_t string_length, char ***dst);
+static void move_empty_string_to_dst(const char *src, char ***dst) {
+    move_string_to_dst(src, 1, dst);
+}
 
-void create_right_part(const char *src, const unsigned *indices, char ***dst, int pointers, size_t length);
+static void create_left_part(const char *src, const unsigned *indices, size_t delimiter_length, char ***dst) {
+    (*dst)[0] = calloc(indices[0] - delimiter_length + 2, sizeof(char));
+    if ((*dst)[0] == NULL) {
+        perror("cannot allocate memory for *dst[0] in split by char!");
+        exit(1);
+    }
+    for (int i = 0; i < indices[0] - delimiter_length; ++i) {
+        (*dst)[0][i] = src[i];
+    }
+}
 
-void create_left_part(const char *src, const unsigned *indices, size_t delimiter_length, char ***dst);
+static void create_right_part(const char *src, const unsigned *indices, char ***dst, int pointers, size_t length) {
+    (*dst)[pointers] = calloc(length - indices[pointers - 1] + 1, sizeof(char));
+    if ((*dst)[pointers] == NULL) {
+        perror("cannot allocate memory for *dst[last] in split by char!");
+        exit(1);
+    }
+    int k = 0;
+    for (int i = indices[pointers - 1]; i < length; ++i) {
+        (*dst)[pointers][k] = src[i];
+        k = k + 1;
+    }
+}
 
 string_array split_by_comma(const_string src) {
-    return split_by_string(src, ",");
+    const_string comma = ",";
+    string_array result = split_by_string(src, comma);
+    free((void *) comma);
+    return result;
 }
 
 string_array split_by_space(const_string src) {
-    return split_by_string(src, " ");
+    const_string space = " ";
+    string_array result = split_by_string(src, space);
+    free((void *) space);
+    return result;
 }
 
 string_array split_by_line_break(const_string src){
-    return split_by_string(src, "\n");
+    const_string line_break = "\n";
+    string_array result = split_by_string(src, line_break);
+    free((void *) line_break);
+    return result;
 }
 
-//끝난!
-//Passed JUnitTests!
 string_array split_by_string(const_string src, const_string delimiter) {
     char **dst;
     const size_t src_length = strlen(src);
@@ -107,48 +150,4 @@ string_array split_by_string(const_string src, const_string delimiter) {
         }
     }
     return dst;
-}
-
-void move_empty_string_to_dst(const char *src, char ***dst) {
-    move_string_to_dst(src, 1, dst);
-}
-
-void move_string_to_dst(const char *src, const size_t string_length, char ***dst) {
-    //allocate memory for string array:
-    *dst = calloc(1, sizeof(string));
-    if (*dst == NULL) {
-        perror("Cannot allocate memory for *dst in split by char!");
-        exit(1);
-    }
-    //allocate memory for only string:
-    **dst = calloc(string_length, sizeof(char) + 1);
-    if (**dst == NULL) {
-        perror("Cannot allocate memory for **dst in split by char!");
-        exit(1);
-    }
-    strcpy(**dst, src);
-}
-
-void create_left_part(const char *src, const unsigned *indices, size_t delimiter_length, char ***dst) {
-    (*dst)[0] = calloc(indices[0] - delimiter_length + 2, sizeof(char));
-    if ((*dst)[0] == NULL) {
-        perror("cannot allocate memory for *dst[0] in split by char!");
-        exit(1);
-    }
-    for (int i = 0; i < indices[0] - delimiter_length; ++i) {
-        (*dst)[0][i] = src[i];
-    }
-}
-
-void create_right_part(const char *src, const unsigned *indices, char ***dst, int pointers, size_t length) {
-    (*dst)[pointers] = calloc(length - indices[pointers - 1] + 1, sizeof(char));
-    if ((*dst)[pointers] == NULL) {
-        perror("cannot allocate memory for *dst[last] in split by char!");
-        exit(1);
-    }
-    int k = 0;
-    for (int i = indices[pointers - 1]; i < length; ++i) {
-        (*dst)[pointers][k] = src[i];
-        k = k + 1;
-    }
 }

@@ -1,3 +1,16 @@
+#include <malloc.h>
+#include "../../../../headers/tools/aio_common_tools/aio_spider_nest/aio_function_instruction_spider_nest.h"
+
+#define AIO_SPIDER_NEST_DEBUG
+
+#define AIO_SPIDER_NEST_TAG "AIO_SPIDER_NEST"
+
+#ifdef AIO_SPIDER_NEST_DEBUG
+
+#include "../../../../headers/lib/utils/log_utils/log_utils.h"
+
+#endif
+
 /**
  * Refresh each spider.
  * @param spider nest.
