@@ -1,9 +1,11 @@
 #include <ctype.h>
 #include <mem.h>
+#include <stdio.h>
 #include "../../../../../headers/lib/utils/memory_utils/memory_utils.h"
 #include "../../../../../headers/lib/utils/point_watcher/point_watcher.h"
 #include "../../../../../headers/lib/utils/collections/sets/string_set.h"
 #include "../../../../../headers/lib/utils/str_hook/str_hook.h"
+#include "../../../../../headers/lib/utils/log_utils/log_utils.h"
 
 str_hook *new_str_hook_with_start(const_string source_ref, const int start_index) {
     str_hook *hook = new_object(sizeof(str_hook));
@@ -147,6 +149,10 @@ boolean is_empty_hooked_str(const_str_hook *hook) {
     return hook->end - hook->start <= 0;
 }
 
+boolean is_not_empty_hooked_str(const_str_hook *hook) {
+    return hook->end - hook->start > 0;
+}
+
 str_hook_list *filter_str_hook_list(const_str_hook_list *list, boolean (*filter_condition)(const_str_hook *)) {
     const size_t src_list_size = list->size;
     const_str_hook_array src_hooks = list->hooks;
@@ -159,4 +165,28 @@ str_hook_list *filter_str_hook_list(const_str_hook_list *list, boolean (*filter_
         }
     }
     return new_hook_list;
+}
+
+void log_info_str_hook(const_string tag, const_string message, const_str_hook *hook) {
+    printf("\n%s: %s -", tag, message);
+    for (int i = hook->start; i < hook->end; ++i) {
+        printf("%c", hook->source_ref[i]);
+    }
+    printf("-\n");
+    free((void *) message);
+}
+
+void log_info_str_hook_list(const_string tag, const_string message, const_str_hook_list *list) {
+    const size_t size = list->size;
+    const_str_hook_array hooks = list->hooks;
+    for (int i = 0; i < size; ++i) {
+        const_str_hook *hook = hooks[i];
+        const_string src = hook->source_ref;
+        printf("\n%s: %s -", tag, message);
+        for (int j = hook->start; j < hook->end; ++j) {
+            printf("%c", src[j]);
+        }
+        printf("-\n");
+    }
+    free((void *) message);
 }

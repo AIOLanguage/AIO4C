@@ -78,13 +78,13 @@ const_str_hook_list *dig_output_types(const_string source_code, int *pointer_ref
     free_point_watcher(watcher);
     //------------------------------------------------------------------------------------------------------------------
 #ifdef AIO_OUTPUT_RIPPER_DEBUG
-    log_info_string_hook(AIO_OUTPUT_RIPPER_TAG, "Return type content:", type_content);
+    log_info_str_hook(AIO_OUTPUT_RIPPER_TAG, "Return type content:", type_content);
 #endif
     switch (mode) {
         case SINGLE_OUTPUT_MODE:
             if (is_aio_type_hooked(type_content)) {
 #ifdef AIO_OUTPUT_RIPPER_DEBUG
-                log_info_string_hook(AIO_OUTPUT_RIPPER_TAG, "<TYPE>", type_content);
+                log_info_str_hook(AIO_OUTPUT_RIPPER_TAG, "<TYPE>", type_content);
 #endif
                 add_str_hook_in_list(output_type_list, type_content);
                 return output_type_list;
@@ -99,7 +99,7 @@ const_str_hook_list *dig_output_types(const_string source_code, int *pointer_ref
             for (int i = 0; i < clean_types->size; ++i) {
                 const_str_hook *type = hooks[i];
 #ifdef AIO_OUTPUT_RIPPER_DEBUG
-                log_info_string_hook(AIO_OUTPUT_RIPPER_TAG, "<TYPE>", type);
+                log_info_str_hook(AIO_OUTPUT_RIPPER_TAG, "<TYPE>", type);
 #endif
                 if (is_aio_type_hooked(type)) {
                     add_str_hook_in_list(output_type_list, type);

@@ -14,15 +14,6 @@ void log_info_string(const_string tag, const_string message, const_string value)
     free((void *) message);
 }
 
-void log_info_string_hook(const_string tag, const_string message, const_str_hook *hook) {
-    printf("\n%s: %s -", tag, message);
-    for (int i = hook->start; i < hook->end; ++i) {
-        printf("%c", hook->source_ref[i]);
-    }
-    printf("-\n");
-    free((void *) message);
-}
-
 void log_info_char(const_string tag, const_string message, const char value) {
     printf("\n%s: %s -%c-\n", tag, message, value);
     free((void *) message);

@@ -55,7 +55,7 @@ const_str_hook *dig_function_name(const_string source_code, int *pointer_referen
     free_point_watcher(watcher);
     //------------------------------------------------------------------------------------------------------------------
 #ifdef AIO_FUNCTION_NAME_RIPPER_DEBUG
-    log_info_string_hook(AIO_FUNCTION_NAME_RIPPER_TAG, "Function name:", function_name);
+    log_info_str_hook(AIO_FUNCTION_NAME_RIPPER_TAG, "Function name:", function_name);
 #endif
     return function_name;
 }

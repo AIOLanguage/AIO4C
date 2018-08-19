@@ -851,6 +851,33 @@ sources/lib/utils/str_hook/str_hook.c.s:
 	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/str_hook/str_hook.c.s
 .PHONY : sources/lib/utils/str_hook/str_hook.c.s
 
+sources/lib/utils/str_hook/str_hook_utils/str_hook_iterator.obj: sources/lib/utils/str_hook/str_hook_utils/str_hook_iterator.c.obj
+
+.PHONY : sources/lib/utils/str_hook/str_hook_utils/str_hook_iterator.obj
+
+# target to build an object file
+sources/lib/utils/str_hook/str_hook_utils/str_hook_iterator.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/str_hook/str_hook_utils/str_hook_iterator.c.obj
+.PHONY : sources/lib/utils/str_hook/str_hook_utils/str_hook_iterator.c.obj
+
+sources/lib/utils/str_hook/str_hook_utils/str_hook_iterator.i: sources/lib/utils/str_hook/str_hook_utils/str_hook_iterator.c.i
+
+.PHONY : sources/lib/utils/str_hook/str_hook_utils/str_hook_iterator.i
+
+# target to preprocess a source file
+sources/lib/utils/str_hook/str_hook_utils/str_hook_iterator.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/str_hook/str_hook_utils/str_hook_iterator.c.i
+.PHONY : sources/lib/utils/str_hook/str_hook_utils/str_hook_iterator.c.i
+
+sources/lib/utils/str_hook/str_hook_utils/str_hook_iterator.s: sources/lib/utils/str_hook/str_hook_utils/str_hook_iterator.c.s
+
+.PHONY : sources/lib/utils/str_hook/str_hook_utils/str_hook_iterator.s
+
+# target to generate assembly for a file
+sources/lib/utils/str_hook/str_hook_utils/str_hook_iterator.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/str_hook/str_hook_utils/str_hook_iterator.c.s
+.PHONY : sources/lib/utils/str_hook/str_hook_utils/str_hook_iterator.c.s
+
 sources/lib/utils/str_hook/str_hook_utils/str_hook_split.obj: sources/lib/utils/str_hook/str_hook_utils/str_hook_split.c.obj
 
 .PHONY : sources/lib/utils/str_hook/str_hook_utils/str_hook_split.obj
@@ -1940,6 +1967,9 @@ help:
 	@echo ... sources/lib/utils/str_hook/str_hook.obj
 	@echo ... sources/lib/utils/str_hook/str_hook.i
 	@echo ... sources/lib/utils/str_hook/str_hook.s
+	@echo ... sources/lib/utils/str_hook/str_hook_utils/str_hook_iterator.obj
+	@echo ... sources/lib/utils/str_hook/str_hook_utils/str_hook_iterator.i
+	@echo ... sources/lib/utils/str_hook/str_hook_utils/str_hook_iterator.s
 	@echo ... sources/lib/utils/str_hook/str_hook_utils/str_hook_split.obj
 	@echo ... sources/lib/utils/str_hook/str_hook_utils/str_hook_split.i
 	@echo ... sources/lib/utils/str_hook/str_hook_utils/str_hook_split.s

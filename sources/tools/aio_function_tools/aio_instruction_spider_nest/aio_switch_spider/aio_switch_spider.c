@@ -272,7 +272,7 @@ void build_switch_cases(const_string source_code, aio_spider *spider) {
             body_watcher->end = body_watcher->pointer - 1;
             str_hook *key_hook = new_str_hook_by_point_watcher(source_code, body_watcher);
 #ifdef AIO_SWITCH_SPIDER_DEBUG
-            log_info_string_hook(AIO_SWITCH_SPIDER_TAG, "Captured case key:", key_hook);
+            log_info_str_hook(AIO_SWITCH_SPIDER_TAG, "Captured case key:", key_hook);
 #endif
             add_str_hook_in_list(case_key_list, key_hook);
             //Prepare to find case body:
@@ -282,7 +282,7 @@ void build_switch_cases(const_string source_code, aio_spider *spider) {
             //Put body bounds in list:
             str_hook *body_hook = new_str_hook_by_point_watcher(source_code, body_watcher);
 #ifdef AIO_SWITCH_SPIDER_DEBUG
-            log_info_string_hook(AIO_SWITCH_SPIDER_TAG, "Captured case body:", body_hook);
+            log_info_str_hook(AIO_SWITCH_SPIDER_TAG, "Captured case body:", body_hook);
 #endif
             add_str_hook_in_list(case_body_list, body_hook);
             body_watcher->start = body_watcher->end;

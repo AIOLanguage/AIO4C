@@ -43,9 +43,6 @@ add_executable(${PROJECT_NAME}
         headers/tools/aio_function_tools/aio_instruction_spider_nest/aio_break_spider/aio_break_spider.h
         headers/tools/aio_function_tools/aio_instruction_spider_nest/aio_if_spider/aio_if_spider.h
         headers/tools/aio_function_tools/aio_instruction_spider_nest/aio_loop_spider/aio_loop_spider.h
-        headers/tools/aio_function_tools/aio_instruction_spider_nest/aio_loop_spider/aio_inner_spiders/aio_default_loop_header_spider.h
-        headers/tools/aio_function_tools/aio_instruction_spider_nest/aio_loop_spider/aio_inner_spiders/aio_in_loop_header_spider.h
-        headers/tools/aio_function_tools/aio_instruction_spider_nest/aio_loop_spider/aio_inner_spiders/aio_tiny_loop_header_spider.h
         headers/tools/aio_function_tools/aio_instruction_spider_nest/aio_procedure_spider/aio_procedure_spider.h
         headers/tools/aio_function_tools/aio_instruction_spider_nest/aio_return_spider/aio_return_spider.h
         headers/tools/aio_function_tools/aio_instruction_spider_nest/aio_switch_spider/aio_switch_spider.h
@@ -149,7 +146,7 @@ add_executable(${PROJECT_NAME}
         sources/lib/utils/string_utils/string_utils.c
         sources/lib/utils/string_utils/trim.c
         #---------------------------------------------------------------------------------------------------------------
-        )
+        sources/lib/utils/str_hook/str_hook_utils/str_hook_iterator.c)
 
 
 #TODO: How make it???

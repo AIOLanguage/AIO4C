@@ -148,7 +148,7 @@ void handle_assign_declaration_scope(const_string source_code, aio_spider *spide
     if (is_whitespace_cond || is_equal_sign_cond) {
         const_str_hook *hook = new_str_hook_by_point_watcher(source_code, main_watcher);
 #ifdef AIO_ASSIGN_SPIDER_DEBUG
-        log_info_string_hook(AIO_ASSIGN_SPIDER_TAG, "CAPTURE CHUNK:", hook);
+        log_info_str_hook(AIO_ASSIGN_SPIDER_TAG, "CAPTURE CHUNK:", hook);
 #endif
         //조건들을 확인하다 (Check conditions):
         const_boolean is_mutable_modifier = is_aio_mutable_modifier_hooked(hook);
@@ -233,7 +233,7 @@ void refresh_assign_declaration_scope(aio_spider *spider, const_str_hook *hook,
     //명부에게 문자열을 놓다 (Put a string in list):
     add_str_hook_in_list(variable_data_list, hook);
 #ifdef AIO_ASSIGN_SPIDER_DEBUG
-    log_info_string_hook(AIO_ASSIGN_SPIDER_TAG, "ADD>>>:", hook);
+    log_info_str_hook(AIO_ASSIGN_SPIDER_TAG, "ADD>>>:", hook);
 #endif
     //본관 당직자를 바꾼다 (Shift main watcher):
     main_watcher->start = main_watcher->end + 1;
@@ -394,8 +394,8 @@ void weave_assign_instruction_for(void *holder, const_string _,
             add_aio_variable_definition_in_list(list, definition);
         } else {
 #ifdef AIO_ASSIGN_SPIDER_DEBUG
-            log_info_string_hook(AIO_ASSIGN_SPIDER_TAG, "<FOUND DEFINITION>:", definition->name);
-            log_info_string_hook(AIO_ASSIGN_SPIDER_TAG, "<TYPE>:", definition->type);
+            log_info_str_hook(AIO_ASSIGN_SPIDER_TAG, "<FOUND DEFINITION>:", definition->name);
+            log_info_str_hook(AIO_ASSIGN_SPIDER_TAG, "<TYPE>:", definition->type);
             log_info_boolean(AIO_ASSIGN_SPIDER_TAG, "<IS MUTABLE>:", definition->is_mutable_by_value);
 #endif
             if (declaration_type != AIO_ASSIGN_WILL_DEFINED) {
@@ -416,7 +416,7 @@ void weave_assign_instruction_for(void *holder, const_string _,
         //위빙이 완료되었습니다 (Weaving complete)!
 #ifdef AIO_ASSIGN_SPIDER_DEBUG
         log_info(AIO_ASSIGN_SPIDER_TAG, "WEAVED INSTRUCTION:");
-        log_info_string_hook(AIO_ASSIGN_SPIDER_TAG, "VARIABLE:", instruction->get.assign_task->variable_name);
+        log_info_str_hook(AIO_ASSIGN_SPIDER_TAG, "VARIABLE:", instruction->get.assign_task->variable_name);
         log_info_string(AIO_ASSIGN_SPIDER_TAG, "VALUE:", instruction->get.assign_task->value);
 #endif
     } else {

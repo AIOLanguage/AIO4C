@@ -63,6 +63,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/AIO.dir/sources/lib/utils/string_utils/string_builder.c.obj"
   "CMakeFiles/AIO.dir/sources/lib/utils/string_utils/string_utils.c.obj"
   "CMakeFiles/AIO.dir/sources/lib/utils/string_utils/trim.c.obj"
+  "CMakeFiles/AIO.dir/sources/lib/utils/str_hook/str_hook_utils/str_hook_iterator.c.obj"
   "AIO.pdb"
   "AIO.exe"
   "AIO.exe.manifest"

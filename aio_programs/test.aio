@@ -1,6 +1,7 @@
 //Test.aio
 
-Int sum(mu Int a, Int b)        {
+(Int, Str, Boo) makeTest(mu Int a,      Int b     ,Dou sigma,     Str tag,
+Boo isTest)        {
 
 whe
 (c){
@@ -13,4 +14,4 @@ book = 'Java'}pi=
 z=
 5
 }
-              }
+       t = 3       }

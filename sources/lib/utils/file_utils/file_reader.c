@@ -93,7 +93,7 @@ const_str_hook *extract_name_from_path(const_string path) {
                 const_str_hook *file_name = new_str_hook_by_offset(path, offset, length);
                 if (is_word_hooked(file_name)) {
 #ifdef FILE_READER_DEBUG
-                    log_info_string_hook(FILE_READER_TAG, "Context name:", file_name);
+                    log_info_str_hook(FILE_READER_TAG, "Context name:", file_name);
 #endif
                     return file_name;
                 } else {

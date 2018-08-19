@@ -37,6 +37,8 @@ boolean is_hooked_str_equals_str(const_str_hook *hook, const_string str);
 
 boolean is_empty_hooked_str(const_str_hook *hook);
 
+boolean is_not_empty_hooked_str(const_str_hook *hook);
+
 boolean contains_string_in_set_by_hook(string_set *set, const_str_hook *hook);
 
 str_hook_list *split_str_hook_by_string(const_str_hook *hook, const_string delimiter);
@@ -46,6 +48,10 @@ str_hook_list *split_str_hook_by_comma(const_str_hook *hook);
 str_hook_list *split_str_hook_by_space(const_str_hook *hook);
 
 str_hook_list *split_str_hook_by_line_break(const_str_hook *hook);
+
+str_hook_list *split_str_hook_by_whitespace(const_str_hook *hook);
+
+str_hook_list *split_str_hook_by_char_condition(const_str_hook *hook, boolean (*char_condition)(const char));
 
 str_hook *trim_str_hook_by_start(const_str_hook *hook);
 
@@ -64,5 +70,11 @@ str_hook_list *trim_str_hook_list(const_str_hook_list *list);
 str_hook_list *trim_str_hook_list_with_line_break(const_str_hook_list *list);
 
 str_hook_list *filter_str_hook_list(const_str_hook_list *list, boolean (*filter_condition)(const_str_hook *));
+
+void foreach_str_hook(const_str_hook_list *list, _inline void (*str_hook_action)(const_str_hook *hook));
+
+void log_info_str_hook(const_string tag, const_string message, const struct str_hook *hook);
+
+void log_info_str_hook_list(const_string tag, const_string message, const_str_hook_list *list);
 
 #endif //STRING_HOOK_UTILS_H

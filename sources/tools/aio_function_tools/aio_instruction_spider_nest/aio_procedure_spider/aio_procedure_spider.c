@@ -103,7 +103,7 @@ void handle_procedure_name_scope(const_string source_code, aio_spider *spider) {
     if (is_whitespace_cond || is_opening_parenthesis_cond) {
         const_str_hook *hook = new_str_hook_by_point_watcher(source_code, main_watcher);
 #ifdef AIO_PROCEDURE_SPIDER_DEBUG
-        log_info_string_hook(AIO_PROCEDURE_SPIDER_TAG, "CAPTURED NAME:", hook);
+        log_info_str_hook(AIO_PROCEDURE_SPIDER_TAG, "CAPTURED NAME:", hook);
 #endif
         const_boolean is_function_name = is_word_hooked(hook) && can_use_name(hook);
         if (is_function_name) {

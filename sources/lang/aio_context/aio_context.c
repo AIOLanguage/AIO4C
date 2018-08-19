@@ -12,6 +12,7 @@
 #define AIO_CONTEXT_TAG "AIO_CONTEXT"
 
 #include "../../../headers/lib/utils/log_utils/log_utils.h"
+#include "../../../headers/lib/utils/str_hook/str_hook_utils/str_hook_utils.h"
 
 #endif
 
@@ -23,7 +24,7 @@ const_aio_context *new_aio_context(const_string path) {
     //경로에서 이름을 넣다 (Put name from path):
     context->name = extract_name_from_path(path);
 #ifdef AIO_CONTEXT_DEBUG
-    log_info_string_hook(AIO_CONTEXT_TAG, "NAME:", context->name);
+    log_info_str_hook(AIO_CONTEXT_TAG, "NAME:", context->name);
 #endif
     //깨끗한 소스 코드로드 (Load clean source code):
     context->source_code = read_file_and_join_to_string_without_comments(path);

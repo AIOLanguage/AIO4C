@@ -52,7 +52,7 @@ void free_str_hooks_in_list(const_str_hook_list *list) {
         const_str_hook *old_hook = hooks[i];
         if (old_hook != NULL) {
             hooks[i] = NULL;
-            free((void *) old_hook);
+            free_const_str_hook(old_hook);
         }
     }
 }
@@ -63,6 +63,7 @@ void reset_str_hook_positions(str_hook *hook) {
 }
 
 void free_str_hook_list(const_str_hook_list *list) {
-    free(list->hooks);
+    const_str_hook_array hooks = list->hooks;
+    free(hooks);
     free((void *) list);
 }

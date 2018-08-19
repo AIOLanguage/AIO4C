@@ -105,11 +105,11 @@ static void refresh_default_loop_header_declaration_scope(aio_spider *spider, co
     //Change declaration type:
     materials->declaration_type = type;
 #ifdef AIO_DEFAULT_LOOP_HEADER_SPIDER_DEBUG
-    log_info_string_hook(AIO_DEFAULT_LOOP_HEADER_SPIDER_TAG, ">>>We-e-e-a-ved!!!>>>", hook);
+    log_info_str_hook(AIO_DEFAULT_LOOP_HEADER_SPIDER_TAG, ">>>We-e-e-a-ved!!!>>>", hook);
 #endif
     add_str_hook_in_list(variable_data_list, hook);
 #ifdef AIO_DEFAULT_LOOP_HEADER_SPIDER_DEBUG
-    log_info_string_hook(AIO_DEFAULT_LOOP_HEADER_SPIDER_TAG, ">>>", hook);
+    log_info_str_hook(AIO_DEFAULT_LOOP_HEADER_SPIDER_TAG, ">>>", hook);
 #endif
     //Shift main_watcher:
     watcher->start = watcher->end + 1;
@@ -130,7 +130,7 @@ static void handle_default_loop_header_declaration_scope(const_string string_web
     if (is_whitespace_cond || is_equal_sign_cond) {
         const_str_hook *hook = new_str_hook_by_point_watcher(string_web, main_watcher);
 #ifdef AIO_DEFAULT_LOOP_HEADER_SPIDER_DEBUG
-        log_info_string_hook(AIO_DEFAULT_LOOP_HEADER_SPIDER_TAG, "CAPTURED CHUNK", hook);
+        log_info_str_hook(AIO_DEFAULT_LOOP_HEADER_SPIDER_TAG, "CAPTURED CHUNK", hook);
 #endif
         //Check conditions:
         const_boolean is_mutable_modifier = is_aio_mutable_modifier_hooked(hook);
@@ -147,7 +147,7 @@ static void handle_default_loop_header_declaration_scope(const_string string_web
             //Maybe string is a type?
             if (is_type) {
 #ifdef AIO_DEFAULT_LOOP_HEADER_SPIDER_DEBUG
-                log_info_string_hook(AIO_DEFAULT_LOOP_HEADER_SPIDER_TAG, "FOUND TYPE!", hook);
+                log_info_str_hook(AIO_DEFAULT_LOOP_HEADER_SPIDER_TAG, "FOUND TYPE!", hook);
 #endif
                 refresh_default_loop_header_declaration_scope(spider, hook, AIO_DEFAULT_LOOP_HEADER_IMMUTABLE,
                                                               AIO_SPIDER_FOUND_MATERIALS);
@@ -378,7 +378,7 @@ static void handle_default_loop_header_step_scope(const_string source_code, poin
                 //Set message:
                 spider->message = AIO_SPIDER_FOUND_MATERIALS;
 #ifdef AIO_DEFAULT_LOOP_HEADER_SPIDER_DEBUG
-                log_info_string_hook(AIO_DEFAULT_LOOP_HEADER_SPIDER_TAG, "CAPTURED POINTER:", hook);
+                log_info_str_hook(AIO_DEFAULT_LOOP_HEADER_SPIDER_TAG, "CAPTURED POINTER:", hook);
 #endif
             } else {
                 throw_error_with_tag(AIO_DEFAULT_LOOP_HEADER_SPIDER_TAG, "Invalid variable name in loop header step !");
