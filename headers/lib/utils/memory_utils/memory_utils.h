@@ -3,7 +3,7 @@
 #ifndef MEMORY_UTILS_H
 #define MEMORY_UTILS_H
 
-#define AIO_PROJECT_MEMORY_MANAGER
+//#define AIO_PROJECT_MEMORY_MANAGER
 
 void *new_object(const size_t size_of_object);
 

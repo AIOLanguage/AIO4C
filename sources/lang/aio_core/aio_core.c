@@ -32,9 +32,10 @@ void inflate_aio_core() {
     core->aio_type_set = type_set;
 }
 
-void inflate_aio_context_and_put_in_core(const_string path) {
+const_aio_context * inflate_aio_context_and_put_in_core(const_string path) {
     const_aio_context *context = new_aio_context(path);
     add_aio_context_in_list(core->core_context_list, context);
+    return context;
 }
 
 boolean is_aio_type(const_string string) {

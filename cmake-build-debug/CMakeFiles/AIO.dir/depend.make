@@ -11,6 +11,7 @@ CMakeFiles/AIO.dir/main/main.c.obj: ../headers/lang/aio_function/aio_variable/ai
 CMakeFiles/AIO.dir/main/main.c.obj: ../headers/lang/aio_function/aio_variable/aio_variable.h
 CMakeFiles/AIO.dir/main/main.c.obj: ../headers/lib/utils/boolean_utils/boolean_utils.h
 CMakeFiles/AIO.dir/main/main.c.obj: ../headers/lib/utils/collections/sets/string_set.h
+CMakeFiles/AIO.dir/main/main.c.obj: ../headers/lib/utils/memory_utils/memory_utils.h
 CMakeFiles/AIO.dir/main/main.c.obj: ../headers/lib/utils/str_hook/str_hook.h
 CMakeFiles/AIO.dir/main/main.c.obj: ../headers/lib/utils/string_utils/string_builder.h
 CMakeFiles/AIO.dir/main/main.c.obj: ../headers/lib/utils/string_utils/string_utils.h
@@ -65,7 +66,9 @@ CMakeFiles/AIO.dir/sources/lang/aio_context/aio_context_builder.c.obj: ../header
 CMakeFiles/AIO.dir/sources/lang/aio_context/aio_context_builder.c.obj: ../headers/lib/utils/collections/sets/string_set.h
 CMakeFiles/AIO.dir/sources/lang/aio_context/aio_context_builder.c.obj: ../headers/lib/utils/error_utils/error_utils.h
 CMakeFiles/AIO.dir/sources/lang/aio_context/aio_context_builder.c.obj: ../headers/lib/utils/log_utils/log_utils.h
+CMakeFiles/AIO.dir/sources/lang/aio_context/aio_context_builder.c.obj: ../headers/lib/utils/point_watcher/point_watcher.h
 CMakeFiles/AIO.dir/sources/lang/aio_context/aio_context_builder.c.obj: ../headers/lib/utils/str_hook/str_hook.h
+CMakeFiles/AIO.dir/sources/lang/aio_context/aio_context_builder.c.obj: ../headers/lib/utils/str_hook/str_hook_utils/str_hook_utils.h
 CMakeFiles/AIO.dir/sources/lang/aio_context/aio_context_builder.c.obj: ../headers/lib/utils/string_utils/string_utils.h
 CMakeFiles/AIO.dir/sources/lang/aio_context/aio_context_builder.c.obj: ../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction.h
 CMakeFiles/AIO.dir/sources/lang/aio_context/aio_context_builder.c.obj: ../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction_holder.h

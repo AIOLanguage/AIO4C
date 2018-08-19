@@ -17,7 +17,7 @@ extern aio_core *core;
 
 void inflate_aio_core();
 
-void inflate_aio_context_and_put_in_core(const_string path);
+const_aio_context * inflate_aio_context_and_put_in_core(const_string path);
 
 boolean is_aio_type(const_string string);
 

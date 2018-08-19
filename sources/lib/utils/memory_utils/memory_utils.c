@@ -35,6 +35,9 @@ aio_project_memory_controller *project_memory_controller;
 
 void inflate_aio_project_controller() {
     project_memory_controller = calloc(1, sizeof(aio_project_memory_controller));
+}
+
+void free_aio_project_controller() {
 
 }
 

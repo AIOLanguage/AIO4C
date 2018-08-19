@@ -16,6 +16,12 @@
 
 #endif
 
+static const_aio_static_function_manager *new_aio_static_function_manager() {
+    aio_static_function_manager *method_manager = new_object(sizeof(aio_static_function_manager));
+    method_manager->definition_list = new_aio_function_definition_list();
+    return method_manager;
+}
+
 //경로 예 (Path example):
 //"../aio_programs/test.aio"
 const_aio_context *new_aio_context(const_string path) {
@@ -24,22 +30,16 @@ const_aio_context *new_aio_context(const_string path) {
     //경로에서 이름을 넣다 (Put name from path):
     context->name = extract_name_from_path(path);
 #ifdef AIO_CONTEXT_DEBUG
-    log_info_str_hook(AIO_CONTEXT_TAG, "NAME:", context->name);
+    log_info_str_hook(AIO_CONTEXT_TAG, "Context name:", context->name);
 #endif
     //깨끗한 소스 코드로드 (Load clean source code):
     context->source_code = read_file_and_join_to_string_without_comments(path);
 #ifdef AIO_CONTEXT_DEBUG
-    log_info_string(AIO_CONTEXT_TAG, "SOURCE CODE:\n", context->source_code);
+    log_info_string(AIO_CONTEXT_TAG, "Source code:", context->source_code);
 #endif
     //직능 해상력을 문맥에 모으다 (Collect function definitions in context):
     upbuild_aio_context(context);
     return context;
-}
-
-const_aio_static_function_manager *new_aio_static_function_manager() {
-    aio_static_function_manager *method_manager = new_object(sizeof(aio_static_function_manager));
-    method_manager->definition_list = new_aio_function_definition_list();
-    return method_manager;
 }
 
 void invoke_static_function_in_context(const_aio_context *context, const_str_hook *function_name, aio_bundle *bundle) {

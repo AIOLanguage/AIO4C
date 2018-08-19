@@ -38,25 +38,25 @@ aio_value *new_aio_value(const_string undefined_value) {
     throw_error("can not define type of aio aio_value");
 }
 
-aio_value *new_aio_value_as_int(const int int_acc) {
+aio_value *new_aio_int_value(const int int_acc) {
     aio_value *value = new_object(sizeof(aio_value *));
     value->int_acc = int_acc;
     return value;
 }
 
-aio_value *new_aio_value_as_double(const double double_acc) {
+aio_value *new_aio_double_value(const double double_acc) {
     aio_value *value = new_object(sizeof(aio_value *));
     value->double_acc = double_acc;
     return value;
 }
 
-aio_value *new_aio_value_as_string(string string_acc) {
+aio_value *new_aio_string_value(string string_acc) {
     aio_value *value = new_object(sizeof(aio_value *));
     value->string_acc = string_acc;
     return value;
 }
 
-aio_value *new_aio_value_as_boolean(const_boolean boolean_acc) {
+aio_value *new_aio_boolean_value(const_boolean boolean_acc) {
     aio_value *value = new_object(sizeof(aio_value *));
     value->boolean_acc = boolean_acc;
     return value;

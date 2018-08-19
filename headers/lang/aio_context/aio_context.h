@@ -36,8 +36,6 @@ typedef const aio_context const_aio_context;
 
 typedef const aio_context **const_aio_context_array;
 
-const_aio_static_function_manager *new_aio_static_function_manager();
-
 const_aio_context *new_aio_context(const_string path);
 
 void upbuild_aio_context(aio_context *context);

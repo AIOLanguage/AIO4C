@@ -17,13 +17,13 @@ typedef union aio_value {
 
 aio_value *new_aio_value(const_string undefined_value);
 
-aio_value *new_aio_value_as_int(const int int_acc);
+aio_value *new_aio_int_value(const int int_acc);
 
-aio_value *new_aio_value_as_double(const double double_acc);
+aio_value *new_aio_double_value(const double double_acc);
 
-aio_value *new_aio_value_as_string(string string_acc);
+aio_value *new_aio_string_value(string string_acc);
 
-aio_value *new_aio_value_as_boolean(const_boolean boolean_acc);
+aio_value *new_aio_boolean_value(const_boolean boolean_acc);
 
 void free_aio_value(aio_value *value);
 
