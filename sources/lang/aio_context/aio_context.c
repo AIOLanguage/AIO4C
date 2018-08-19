@@ -3,7 +3,6 @@
 #include "../../../headers/lang/aio_context/aio_context.h"
 #include "../../../headers/lang/aio_function/aio_function.h"
 #include "../../../headers/lib/utils/memory_utils/memory_utils.h"
-#include "../../../headers/lib/utils/string_hook/string_hook_utils/str_hook_utils.h"
 #include "../../../headers/lib/utils/error_utils/error_utils.h"
 
 #define AIO_CONTEXT_DEBUG
@@ -42,7 +41,7 @@ const_aio_static_function_manager *new_aio_static_function_manager() {
     return method_manager;
 }
 
-void invoke_static_function_in_context(const_aio_context *context, const_str_hook function_name, aio_bundle *bundle) {
+void invoke_static_function_in_context(const_aio_context *context, const_str_hook *function_name, aio_bundle *bundle) {
     const_aio_function_definition_list *definition_list = context->function_manager->definition_list;
     const_aio_function_definition *definition = get_aio_method_definition_in_list_by_name(definition_list,
                                                                                           function_name);

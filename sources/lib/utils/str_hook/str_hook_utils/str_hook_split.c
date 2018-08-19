@@ -42,7 +42,7 @@ str_hook_list *split_str_hook_by_line_break(const_str_hook *hook) {
 
 static str_hook_list *create_str_hook_list_without_split(const_str_hook *hook) {
     str_hook_list *list = new_str_hook_list();
-    const_str_hook *new_hook = new_str_hook_by_other_hook(hook);
+    const_str_hook *new_hook = new_str_hook_by_other(hook);
     add_str_hook_in_list(list, new_hook);
     return list;
 }

@@ -38,8 +38,8 @@ void free_const_str_hook(const_str_hook *hook);
  */
 
 typedef struct str_hook_list {
-    int capacity;
-    int size;
+    size_t capacity;
+    size_t size;
     const_str_hook_array hooks;
 } str_hook_list;
 
@@ -53,8 +53,8 @@ str_hook_list *new_str_hook_list();
 
 void add_str_hook_in_list(str_hook_list *list, const_str_hook *hook);
 
-void free_str_hooks_in_list(str_hook_list *list);
+void free_str_hooks_in_list(const_str_hook_list *list);
 
-void free_str_hook_list(str_hook_list *list);
+void free_str_hook_list(const_str_hook_list *list);
 
 #endif //STRING_HOOK_H

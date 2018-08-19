@@ -1,13 +1,12 @@
-#include "../../../../../headers/lib/utils/error_utils/error_utils.h"
-#include "../../../../../headers/lib/utils/collections/lists/string_list.h"
-#include "../../../../../headers/lib/utils/memory_utils/memory_utils.h"
 #include <string.h>
 #include <process.h>
 #include <stdio.h>
 #include <malloc.h>
 #include <ctype.h>
+#include "../../../../../headers/lib/utils/error_utils/error_utils.h"
+#include "../../../../../headers/lib/utils/collections/lists/string_list.h"
+#include "../../../../../headers/lib/utils/memory_utils/memory_utils.h"
 
-//Passed JUnitTest!
 string_list *new_string_list() {
     string_list *list = new_object(sizeof(string_list));
     list->capacity = 2;
@@ -16,8 +15,7 @@ string_list *new_string_list() {
     return list;
 }
 
-//Passed JUnitTest!
-void update_memory_in_string_list(string_list *string_list) {
+static void update_memory_in_string_list(string_list *string_list) {
     if (string_list->size == string_list->capacity) {
         string_list->capacity = string_list->capacity * 2;
         string_list->strings = realloc(string_list->strings, string_list->capacity * sizeof(string));
@@ -25,9 +23,7 @@ void update_memory_in_string_list(string_list *string_list) {
 }
 
 void add_string_in_list(string_list *string_list, string source) {
-    //Check from update capacity:
     update_memory_in_string_list(string_list);
-    //Set string:
     string_list->strings[string_list->size] = source;
     string_list->size++;
 }

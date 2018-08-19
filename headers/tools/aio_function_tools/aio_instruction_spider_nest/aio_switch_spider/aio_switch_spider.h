@@ -2,8 +2,8 @@
 #define AIO_SWITCH_SPIDER_H
 
 #include "../../../aio_common_tools/aio_spider_nest/aio_spider.h"
-#include "../../../../lib/utils/string_hook/str_hook.h"
 #include "../../../../lib/utils/collections/lists/string_list.h"
+#include "../../../../lib/utils/str_hook/str_hook.h"
 
 typedef enum aio_switch_scope_type {
     AIO_SWITCH_MODIFIER_SCOPE, AIO_SWITCH_HEADER_SCOPE, AIO_SWITCH_BODY_SCOPE, AIO_SWITCH_WEAVING_SCOPE

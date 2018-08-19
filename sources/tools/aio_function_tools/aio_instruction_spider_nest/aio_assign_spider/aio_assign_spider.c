@@ -3,15 +3,16 @@
 #include "../../../../../headers/lib/utils/boolean_utils/boolean_utils.h"
 #include "../../../../../headers/lib/utils/char_utils/char_utils.h"
 #include "../../../../../headers/lib/utils/error_utils/error_utils.h"
-#include "../../../../../headers/lib/point_watcher/point_watcher.h"
 #include "../../../../../headers/lang/aio_reserved_names/aio_reserved_names_container.h"
 #include "../../../../../headers/lang/aio_core/aio_core.h"
 #include "../../../../../headers/lib/utils/string_utils/string_builder.h"
 #include "../../../../../headers/lib/utils/memory_utils/memory_utils.h"
 #include "../../../../../headers/tools/aio_common_tools/aio_spider_nest/aio_spider.h"
-#include "../../../../../headers/tools/aio_function_tools/aio_function_body_spiders/aio_assign_spider/aio_assign_spider.h"
-#include "../../../../../headers/tools/aio_function_tools/aio_function_body_spiders/aio_function_body_spider_nest.h"
-
+#include "../../../../../headers/tools/aio_function_tools/aio_instruction_spider_nest/aio_assign_spider/aio_assign_spider.h"
+#include "../../../../../headers/lib/utils/str_hook/str_hook_utils/str_hook_utils.h"
+#include "../../../../../headers/lang/aio_function/aio_variable/aio_definition/aio_variable_definition.h"
+#include "../../../../../headers/tools/aio_function_tools/aio_instructions/aio_tasks/aio_assign_task.h"
+#include "../../../../../headers/lang/aio_type/aio_type.h"
 
 /**
  * 주 논리 (Business logic).
@@ -24,7 +25,6 @@
 #ifdef AIO_ASSIGN_SPIDER_DEBUG
 
 #include "../../../../../headers/lib/utils/log_utils/log_utils.h"
-#include "../../../../../headers/tools/aio_function_tools/aio_function_instructions/aio_assign_instruction/aio_assign_instruction.h"
 
 #endif
 
@@ -42,12 +42,12 @@ void refresh_assign_spider(aio_spider *spider, point_watcher *ripper_watcher) {
     materials->declaration_type = AIO_ASSIGN_UNDEFINED_DECLARATION;
     //------------------------------------------------------------------------------------------------------------------
     //찌꺼기 수집기 (Garbage collector):
-    string_list *data_list = materials->variable_data_list;
+    str_hook_list *data_list = materials->variable_data_list;
     free(materials->value);
-    free_strings_in_list(data_list);
-    free_string_list(data_list);
+    free_str_hooks_in_list(data_list);
+    free_str_hook_list(data_list);
     //------------------------------------------------------------------------------------------------------------------
-    materials->variable_data_list = new_string_list();
+    materials->variable_data_list = new_str_hook_list();
 }
 
 /**
@@ -58,8 +58,8 @@ void free_assign_spider(aio_spider *spider) {
     aio_assign_materials *materials = spider->materials;
     free_point_watcher(materials->main_watcher);
     free_point_watcher(materials->value_watcher);
-    free_strings_in_list(materials->variable_data_list);
-    free_string_list(materials->variable_data_list);
+    free_str_hooks_in_list(materials->variable_data_list);
+    free_str_hook_list(materials->variable_data_list);
     free(materials->value);
     free(materials);
     free(spider);
@@ -84,7 +84,7 @@ struct aio_spider *new_aio_assign_spider(point_watcher *ripper_watcher) {
     materials->main_watcher->start = ripper_watcher->start;
     materials->main_watcher->end = ripper_watcher->pointer;
     materials->value_watcher = new_point_watcher();
-    materials->variable_data_list = new_string_list();
+    materials->variable_data_list = new_str_hook_list();
     //재료들을 놀다 (Set materials):
     spider->materials = materials;
     //시작 메시지 초기화하다 (Init start message):
@@ -146,33 +146,33 @@ void handle_assign_declaration_scope(const_string source_code, aio_spider *spide
     const_boolean is_whitespace_cond = is_space_or_line_break(current_symbol);
     const_boolean is_equal_sign_cond = is_equal_sign(current_symbol);
     if (is_whitespace_cond || is_equal_sign_cond) {
-        string chunk = substring(source_code, main_watcher->start, main_watcher->end);
+        const_str_hook *hook = new_str_hook_by_point_watcher(source_code, main_watcher);
 #ifdef AIO_ASSIGN_SPIDER_DEBUG
-        log_info_string(AIO_ASSIGN_SPIDER_TAG, "CAPTURE CHUNK:", chunk);
+        log_info_string_hook(AIO_ASSIGN_SPIDER_TAG, "CAPTURE CHUNK:", hook);
 #endif
         //조건들을 확인하다 (Check conditions):
-        const_boolean is_mutable_modifier = is_aio_mutable_modifier(chunk);
-        const_boolean is_type = is_aio_type(chunk);
-        const_boolean is_variable_name = is_word(chunk) && can_use_name(chunk);
+        const_boolean is_mutable_modifier = is_aio_mutable_modifier_hooked(hook);
+        const_boolean is_type = is_aio_type_hooked(hook);
+        const_boolean is_variable_name = is_word_hooked(hook) && can_use_name(hook);
         if (materials->declaration_type == AIO_ASSIGN_UNDEFINED_DECLARATION) {
             //어쩌면 문자열이 'mu' 수정 자입니까
             //(Maybe string is the 'mu' modifier)?
             if (is_mutable_modifier) {
-                refresh_assign_declaration_scope(spider, chunk, AIO_ASSIGN_WAS_MUTABLE_MODIFIER,
+                refresh_assign_declaration_scope(spider, hook, AIO_ASSIGN_WAS_MUTABLE_MODIFIER,
                                                  AIO_SPIDER_FOUND_MATERIALS);
                 return;
             }
             //어쩌면 문자열이 유형입니까
             //(Maybe string is a type)?
             if (is_type) {
-                refresh_assign_declaration_scope(spider, chunk, AIO_ASSIGN_IMMUTABLE,
+                refresh_assign_declaration_scope(spider, hook, AIO_ASSIGN_IMMUTABLE,
                                                  AIO_SPIDER_NOT_FOUND_MATERIALS);
                 return;
             }
             //어쩌면 문자열이 변수 이름입니까
             //(Maybe string is a variable name)?
             if (is_variable_name) {
-                refresh_assign_declaration_scope(spider, chunk, AIO_ASSIGN_WILL_DEFINED,
+                refresh_assign_declaration_scope(spider, hook, AIO_ASSIGN_WILL_DEFINED,
                                                  AIO_SPIDER_NOT_FOUND_MATERIALS);
                 //범위를 바꾼다 (Change scope):
                 materials->scope_type = AIO_ASSIGN_EQUAL_SIGN_SCOPE;
@@ -180,7 +180,7 @@ void handle_assign_declaration_scope(const_string source_code, aio_spider *spide
                 //변수 이름이 아님 (Not a variable name):
                 //------------------------------------------------------------------------------------------------------
                 //찌꺼기 수집기 (Garbage collector):
-                free(chunk);
+                free_const_str_hook(hook);
                 return;
             }
         }
@@ -188,14 +188,14 @@ void handle_assign_declaration_scope(const_string source_code, aio_spider *spide
             //어쩌면 문자열이 유형입니까
             //(Maybe string is a type)?
             if (is_type) {
-                refresh_assign_declaration_scope(spider, chunk, AIO_ASSIGN_MUTABLE,
+                refresh_assign_declaration_scope(spider, hook, AIO_ASSIGN_MUTABLE,
                                                  AIO_SPIDER_FOUND_MATERIALS);
                 return;
             }
             //어쩌면 문자열이 변수 이름입니까
             //(Maybe string is a variable name)?
             if (is_variable_name) {
-                refresh_assign_declaration_scope(spider, chunk, AIO_ASSIGN_REFERENCE,
+                refresh_assign_declaration_scope(spider, hook, AIO_ASSIGN_REFERENCE,
                                                  AIO_SPIDER_FOUND_MATERIALS);
                 //범위를 바꾼다 (Change scope):
                 materials->scope_type = AIO_ASSIGN_EQUAL_SIGN_SCOPE;
@@ -203,14 +203,14 @@ void handle_assign_declaration_scope(const_string source_code, aio_spider *spide
                 //변수 이름이 아님 (Not a variable name):
                 //------------------------------------------------------------------------------------------------------
                 //찌꺼기 수집기 (Garbage collector):
-                free(chunk);
+                free_const_str_hook(hook);
                 return;
             }
         }
         if (materials->declaration_type == AIO_ASSIGN_MUTABLE || materials->declaration_type == AIO_ASSIGN_IMMUTABLE) {
             //변수 이름이어야합니다 (It must be a variable name):
             if (is_variable_name) {
-                refresh_assign_declaration_scope(spider, chunk, materials->declaration_type,
+                refresh_assign_declaration_scope(spider, hook, materials->declaration_type,
                                                  AIO_SPIDER_FOUND_MATERIALS);
                 //범위를 바꾼다 (Change scope):
                 materials->scope_type = AIO_ASSIGN_EQUAL_SIGN_SCOPE;
@@ -221,18 +221,19 @@ void handle_assign_declaration_scope(const_string source_code, aio_spider *spide
     }
 }
 
-void refresh_assign_declaration_scope(aio_spider *spider, string chunk, aio_assign_variable_declaration_type type,
+void refresh_assign_declaration_scope(aio_spider *spider, const_str_hook *hook,
+                                      aio_assign_variable_declaration_type type,
                                       aio_spider_message message) {
     //재료들을 추출하다 (Extract materials):
     aio_assign_materials *materials = spider->materials;
-    string_list *variable_data_list = materials->variable_data_list;
+    str_hook_list *variable_data_list = materials->variable_data_list;
     point_watcher *main_watcher = materials->main_watcher;
     //선언 유형을 바꾼다 (Change declaration type):
     materials->declaration_type = type;
     //명부에게 문자열을 놓다 (Put a string in list):
-    add_string_in_list(variable_data_list, chunk);
+    add_str_hook_in_list(variable_data_list, hook);
 #ifdef AIO_ASSIGN_SPIDER_DEBUG
-    log_info_string(AIO_ASSIGN_SPIDER_TAG, "ADD>>>:", chunk);
+    log_info_string_hook(AIO_ASSIGN_SPIDER_TAG, "ADD>>>:", hook);
 #endif
     //본관 당직자를 바꾼다 (Shift main watcher):
     main_watcher->start = main_watcher->end + 1;
@@ -315,6 +316,59 @@ void handle_assign_value_scope(const_string source_code, aio_spider *spider) {
  * 위빙이 (Weaving).
  */
 
+static const_str_hook * get_definition_name_by_materials(const aio_assign_materials *materials) {
+    const_str_hook_array variable_data = materials->variable_data_list->hooks;
+    const aio_assign_variable_declaration_type declaration_type = materials->declaration_type;
+    const_str_hook *variable_name = NULL;
+    switch (declaration_type) {
+        case AIO_ASSIGN_WILL_DEFINED:
+            variable_name = variable_data[0];
+            break;
+        case AIO_ASSIGN_REFERENCE:
+        case AIO_ASSIGN_IMMUTABLE:
+            variable_name = variable_data[1];
+            break;
+        case AIO_ASSIGN_MUTABLE:
+            variable_name = variable_data[2];
+            break;
+        default:
+            throw_error_with_tag(AIO_ASSIGN_SPIDER_TAG, "Undefined variable declaration mode for weaving!");
+    }
+    return variable_name;
+}
+
+
+static aio_variable_definition *create_local_variable_definition(
+        const aio_assign_variable_declaration_type declaration_type,
+        const_str_hook_array variable_materials) {
+    const_str_hook *variable_name = NULL;
+    str_hook *variable_type = NULL;
+    boolean is_mutable = FALSE;
+    switch (declaration_type) {
+        case AIO_ASSIGN_WILL_DEFINED:
+            variable_name = new_str_hook_by_other(variable_materials[0]);
+            variable_type = new_str_hook_by_string(AIO_WILL_DEFINED);
+            break;
+        case AIO_ASSIGN_REFERENCE:
+            variable_name = new_str_hook_by_other(variable_materials[1]);
+            variable_type = new_str_hook_by_string(VOID);
+            is_mutable = TRUE;
+            break;
+        case AIO_ASSIGN_IMMUTABLE:
+            variable_name = new_str_hook_by_other(variable_materials[1]);
+            variable_type = new_str_hook_by_other(variable_materials[0]);
+            break;
+        case AIO_ASSIGN_MUTABLE:
+            variable_name = new_str_hook_by_other(variable_materials[2]);
+            variable_type = new_str_hook_by_other(variable_materials[0]);
+            is_mutable = TRUE;
+            break;
+        default:
+            throw_error_with_tag(AIO_ASSIGN_SPIDER_TAG, "Undefined variable declaration mode for weaving!");
+    }
+    return new_aio_variable_definition(variable_name, variable_type, is_mutable);
+}
+
 void weave_assign_instruction_for(void *holder, const_string _,
                                   point_watcher *ripper_watcher, aio_spider *spider) {
 #ifdef AIO_ASSIGN_SPIDER_DEBUG
@@ -323,7 +377,7 @@ void weave_assign_instruction_for(void *holder, const_string _,
     aio_function_instruction_holder *instruction_holder = holder;
     //재료들을 추출하다 (Extract materials):
     const aio_assign_materials *materials = spider->materials;
-    const_string_array variable_data = materials->variable_data_list->strings;
+    const_str_hook_array variable_data = materials->variable_data_list->hooks;
     const_string value_string = materials->value;
     const aio_assign_variable_declaration_type declaration_type = materials->declaration_type;
     const_boolean is_ready_for_weaving = materials->scope_type == AIO_ASSIGN_WEAVING_SCOPE;
@@ -331,19 +385,17 @@ void weave_assign_instruction_for(void *holder, const_string _,
         ripper_watcher->pointer = materials->value_watcher->end;
         ripper_watcher->start = materials->value_watcher->end;
         //변수 정의를 짜다 (Weave variable definition):
-        aio_variable_definition *new_definition = create_local_variable_definition_by_assign_spider(declaration_type,
-                                                                                                    variable_data);
-        aio_variable_definition *definition = get_local_variable_definition_in_function_tree(new_definition->name,
-                                                                                             holder);
+        const_str_hook *definition_name = get_definition_name_by_materials(materials);
+        const_aio_variable_definition *definition = get_variable_definition_in_function_tree(definition_name, holder);
         if (definition == NULL) {
-            definition = new_definition;
-            //지도에게 지역 변수 정의를 놓다 (Put local definition in variable definition map):
-            aio_variable_definition_list *map = instruction_holder->variable_definition_list;
-            add_aio_variable_definition_in_list(map, definition);
+            definition = create_local_variable_definition(declaration_type, variable_data);;
+            //지도에게 지역 변수 정의를 놓다 (Put local definition in variable definition list):
+            aio_variable_definition_list *list = instruction_holder->variable_definition_list;
+            add_aio_variable_definition_in_list(list, definition);
         } else {
 #ifdef AIO_ASSIGN_SPIDER_DEBUG
-            log_info_string(AIO_ASSIGN_SPIDER_TAG, "<FOUND DEFINITION>:", definition->name);
-            log_info_string(AIO_ASSIGN_SPIDER_TAG, "<TYPE>:", definition->type);
+            log_info_string_hook(AIO_ASSIGN_SPIDER_TAG, "<FOUND DEFINITION>:", definition->name);
+            log_info_string_hook(AIO_ASSIGN_SPIDER_TAG, "<TYPE>:", definition->type);
             log_info_boolean(AIO_ASSIGN_SPIDER_TAG, "<IS MUTABLE>:", definition->is_mutable_by_value);
 #endif
             if (declaration_type != AIO_ASSIGN_WILL_DEFINED) {
@@ -351,62 +403,23 @@ void weave_assign_instruction_for(void *holder, const_string _,
             }
             if (!definition->is_mutable_by_value) {
                 throw_error_with_details(AIO_ASSIGN_SPIDER_TAG, "Immutable variable can not change value!",
-                                         definition->name);
+                                         substring_by_str_hook(definition->name));
             }
-            //----------------------------------------------------------------------------------------------------------
-            //찌거기 수집기 (Garbage collector):
-            free(new_definition->name);
-            free(new_definition->type);
-            free_aio_variable_definition(new_definition);
         }
         //'Assign' 지침을  짜다 (Weave 'Assign' instruction):
-        const_string assign_task_value = new_string(value_string);
-        const_string assign_task_variable_name = new_string(definition->name);
-        aio_instruction *assign_instruction = new_aio_assign_instruction(holder, assign_task_value,
-                                                                         assign_task_variable_name);
+        const_string task_value = new_string(value_string);
+        const_str_hook *task_variable_name = new_str_hook_by_other(definition->name);
+        aio_function_instruction *instruction = new_aio_assign_instruction(holder, task_value, task_variable_name);
         //명부에게 지침을 추가하다 (Add 'assign' instruction in holder's instructions):
         aio_function_instruction_list *instruction_list = instruction_holder->instruction_list;
-        add_aio_instruction_in_list(instruction_list, assign_instruction);
+        add_aio_instruction_in_list(instruction_list, instruction);
         //위빙이 완료되었습니다 (Weaving complete)!
 #ifdef AIO_ASSIGN_SPIDER_DEBUG
         log_info(AIO_ASSIGN_SPIDER_TAG, "WEAVED INSTRUCTION:");
-        log_info_string(AIO_ASSIGN_SPIDER_TAG, "VARIABLE:", assign_instruction->get.assign_task->variable_name);
-        log_info_string(AIO_ASSIGN_SPIDER_TAG, "VALUE:", assign_instruction->get.assign_task->value);
+        log_info_string_hook(AIO_ASSIGN_SPIDER_TAG, "VARIABLE:", instruction->get.assign_task->variable_name);
+        log_info_string(AIO_ASSIGN_SPIDER_TAG, "VALUE:", instruction->get.assign_task->value);
 #endif
     } else {
         throw_error_with_tag(AIO_ASSIGN_SPIDER_TAG, "Not ready for weaving!");
     }
-}
-
-aio_variable_definition *create_local_variable_definition_by_assign_spider(
-        const aio_assign_variable_declaration_type declaration_type,
-        const_string_array variable_materials) {
-    string variable_name = NULL;
-    string variable_type = NULL;
-    boolean is_mutable = FALSE;
-    switch (declaration_type) {
-        case AIO_ASSIGN_WILL_DEFINED:
-            variable_name = new_string(variable_materials[0]);
-            variable_type = AIO_WILL_DEFINED;
-            is_mutable = FALSE;
-            break;
-        case AIO_ASSIGN_REFERENCE:
-            variable_name = new_string(variable_materials[1]);
-            variable_type = VOID;
-            is_mutable = TRUE;
-            break;
-        case AIO_ASSIGN_IMMUTABLE:
-            variable_name = new_string(variable_materials[1]);
-            variable_type = new_string(variable_materials[0]);
-            is_mutable = FALSE;
-            break;
-        case AIO_ASSIGN_MUTABLE:
-            variable_name = new_string(variable_materials[2]);
-            variable_type = new_string(variable_materials[0]);
-            is_mutable = TRUE;
-            break;
-        default:
-            throw_error_with_tag(AIO_ASSIGN_SPIDER_TAG, "Undefined variable declaration mode for weaving!");
-    }
-    return new_aio_variable_definition(variable_name, variable_type, is_mutable);
 }

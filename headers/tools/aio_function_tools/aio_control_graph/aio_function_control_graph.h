@@ -3,7 +3,7 @@
 
 #include "../../../lang/aio_function/aio_bundle/aio_bundle.h"
 #include "../../../lang/aio_function/aio_variable/aio_variable.h"
-#include "../aio_function_instructions/aio_function_instruction.h"
+#include "../aio_instructions/aio_function_instruction.h"
 
 typedef struct aio_control_graph {
     struct aio_control_graph *parent;

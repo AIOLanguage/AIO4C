@@ -31,8 +31,10 @@ void *reallocate_object_array(void *object_array, const size_t new_number_of_ele
 
 #ifdef AIO_PROJECT_MEMORY_MANAGER
 
+aio_project_memory_controller *project_memory_controller;
+
 void inflate_aio_project_controller() {
-    project_memory_manager = calloc(1, sizeof(aio_project_memory_controller));
+    project_memory_controller = calloc(1, sizeof(aio_project_memory_controller));
 
 }
 

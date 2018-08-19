@@ -3,7 +3,7 @@
 
 #include "../aio_context/aio_context.h"
 #include "aio_variable/aio_variable.h"
-#include "../../tools/aio_function_tools/aio_function_control_graph/aio_function_control_graph.h"
+#include "../../tools/aio_function_tools/aio_control_graph/aio_function_control_graph.h"
 
 typedef struct aio_function {
     aio_bundle *bundle;

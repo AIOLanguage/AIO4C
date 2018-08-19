@@ -82,39 +82,38 @@ const_str_hook_list *dig_output_types(const_string source_code, int *pointer_ref
 #endif
     switch (mode) {
         case SINGLE_OUTPUT_MODE:
-            if (is_hooked_aio_type(type_content)) {
+            if (is_aio_type_hooked(type_content)) {
 #ifdef AIO_OUTPUT_RIPPER_DEBUG
                 log_info_string_hook(AIO_OUTPUT_RIPPER_TAG, "<TYPE>", type_content);
 #endif
                 add_str_hook_in_list(output_type_list, type_content);
                 return output_type_list;
             } else {
-                throw_error_with_tag(AIO_OUTPUT_RIPPER_TAG,
-                                     "AIO 핵심이 유형 지원하지 않습니다 (AIO core doesn't support type)!");
+                throw_error_with_tag(AIO_OUTPUT_RIPPER_TAG, "AIO core doesn't this support type!");
             }
             break;
         case MULTI_OUTPUT_MODE: {
             const_str_hook_list *dirty_types = split_str_hook_by_comma(type_content);
-            const_string_array clean_types = trim_all_with_line_break(dirty_types, dirty_types->size);
-            for (int i = 0; i < type_number; ++i) {
-                string type = clean_types[i];
+            const_str_hook_list *clean_types = trim_str_hook_list_with_line_break(dirty_types);
+            const_str_hook_array hooks = clean_types->hooks;
+            for (int i = 0; i < clean_types->size; ++i) {
+                const_str_hook *type = hooks[i];
 #ifdef AIO_OUTPUT_RIPPER_DEBUG
-                log_info_string(AIO_OUTPUT_RIPPER_TAG, "<TYPE>", type);
+                log_info_string_hook(AIO_OUTPUT_RIPPER_TAG, "<TYPE>", type);
 #endif
-                if (is_aio_type(type)) {
-                    add_string_in_list(output_type_list, type);
+                if (is_aio_type_hooked(type)) {
+                    add_str_hook_in_list(output_type_list, type);
                 } else {
-                    throw_error_with_tag(AIO_OUTPUT_RIPPER_TAG,
-                                         "AIO 핵심이 유형 지원하지 않습니다 (AIO core doesn't support type)!");
+                    throw_error_with_tag(AIO_OUTPUT_RIPPER_TAG, "AIO core doesn't support type!");
                 }
             }
             //----------------------------------------------------------------------------------------------------------
             //찌꺼기 수집기 (Garbage collector):
-            free(type_content);
-            free_strings(&dirty_types);
+            free_const_str_hook(type_content);
+            free_str_hooks_in_list(dirty_types);
             return output_type_list;
         }
         case OUTPUT_UNDEFINED:
-            throw_error_with_tag(AIO_OUTPUT_RIPPER_TAG, "출력 유형들을 찿을 수 없습니다! (Output types not found!)");
+            throw_error_with_tag(AIO_OUTPUT_RIPPER_TAG, "Output types are not found!");
     }
 }

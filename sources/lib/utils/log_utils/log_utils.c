@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <process.h>
 #include "../../../../headers/lib/utils/string_utils/string_utils.h"
-#include "../../../../headers/lib/utils/string_hook/str_hook.h"
+#include "../../../../headers/lib/utils/str_hook/str_hook.h"
 
 void log_info(const_string tag, const_string message) {
     printf("\n%s: %s\n", tag, message);

@@ -1,8 +1,8 @@
-#include "../../lib/utils/string_utils/string_utils.h"
-#include "../../lib/utils/string_hook/str_hook.h"
-
 #ifndef AIO_ANNOTATION_H
 #define AIO_ANNOTATION_H
+
+#include "../../lib/utils/string_utils/string_utils.h"
+#include "../../lib/utils/str_hook/str_hook.h"
 
 /**
  * Annotation.

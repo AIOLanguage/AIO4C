@@ -2,22 +2,23 @@
 #include <ctype.h>
 #include <stdio.h>
 #include "../../../../headers/lib/utils/string_utils/string_utils.h"
-#include "../../../../headers/lib/collections/lists/string_list.h"
-#include "../../../../headers/lib/point_watcher/point_watcher.h"
 #include "../../../../headers/lib/utils/char_utils/char_utils.h"
 #include "../../../../headers/lib/utils/error_utils/error_utils.h"
+#include "../../../../headers/lib/utils/str_hook/str_hook.h"
+#include "../../../../headers/lib/utils/point_watcher/point_watcher.h"
 
 #define AIO_FUNCTION_NAME_RIPPER_DEBUG
 
 #ifdef AIO_FUNCTION_NAME_RIPPER_DEBUG
 
 #include "../../../../headers/lib/utils/log_utils/log_utils.h"
+#include "../../../../headers/lib/utils/str_hook/str_hook_utils/str_hook_utils.h"
 
 #endif
 
 #define AIO_FUNCTION_NAME_RIPPER_TAG "AIO_FUNCTION_NAME_RIPPER"
 
-const_str_hook * dig_function_name(const_string source_code, int *pointer_reference) {
+const_str_hook *dig_function_name(const_string source_code, int *pointer_reference) {
     const size_t source_code_length = strlen(source_code);
     point_watcher *watcher = new_point_watcher();
     for (int i = *pointer_reference; i < source_code_length; ++i) {
@@ -48,13 +49,13 @@ const_str_hook * dig_function_name(const_string source_code, int *pointer_refere
         }
     }
     //함수 이름 줄 받다 (Get function name string):
-    string function_name = substring(source_code, watcher->start, watcher->end);
+    const_str_hook *function_name = new_str_hook_by_point_watcher(source_code, watcher);
     //------------------------------------------------------------------------------------------------------------------
     //찌꺼기 수집기 (Garbage collector):
     free_point_watcher(watcher);
     //------------------------------------------------------------------------------------------------------------------
 #ifdef AIO_FUNCTION_NAME_RIPPER_DEBUG
-    log_info_string(AIO_FUNCTION_NAME_RIPPER_TAG, "Function name:", function_name);
+    log_info_string_hook(AIO_FUNCTION_NAME_RIPPER_TAG, "Function name:", function_name);
 #endif
     return function_name;
 }

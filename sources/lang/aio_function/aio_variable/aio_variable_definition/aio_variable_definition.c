@@ -1,22 +1,19 @@
 #include <malloc.h>
 #include "../../../../../headers/lib/utils/boolean_utils/boolean_utils.h"
-#include "../../../../../headers/lang/aio_function/aio_variable/aio_variable_definition/aio_variable_definition.h"
 #include "../../../../../headers/lib/utils/memory_utils/memory_utils.h"
-#include "../../../../../headers/lib/utils/string_hook/str_hook.h"
-#include "../../../../../headers/lib/utils/string_hook/string_hook_utils/str_hook_utils.h"
 #include "../../../../../headers/lib/utils/error_utils/error_utils.h"
+#include "../../../../../headers/lang/aio_function/aio_variable/aio_definition/aio_variable_definition.h"
+#include "../../../../../headers/lib/utils/str_hook/str_hook.h"
+#include "../../../../../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction_holder.h"
 
 #define AIO_VARIABLE_DEFINITION_LIST_TAG "AIO_VARIABLE_DEFINITION_LIST"
 
-aio_variable_definition *new_aio_variable_definition(const_str_hook *name, string type,
+aio_variable_definition *new_aio_variable_definition(const_str_hook *name, str_hook *type,
                                                      const_boolean is_mutable_by_value) {
-    aio_variable_definition definition = {
-            .name = name,
-            .type = type,
-            .is_mutable_by_value = is_mutable_by_value
-    };
     aio_variable_definition *variable_definition = new_object(sizeof(aio_variable_definition));
-    variable_definition[0] = definition;
+    variable_definition->name = name;
+    variable_definition->type = type;
+    variable_definition->is_mutable_by_value = is_mutable_by_value;
     return variable_definition;
 }
 
@@ -31,7 +28,7 @@ const_aio_variable_definition *get_variable_definition_in_function_tree(const_st
     const_aio_variable_definition_list *list = holder->variable_definition_list;
     const_aio_variable_definition *definition = get_aio_variable_definition_in_map_by_name(list, variable_name);
     if (definition == NULL) {
-        aio_function_instruction_holder *parent_holder = holder->parent;
+        const_aio_function_instruction_holder *parent_holder = holder->parent;
         if (parent_holder != NULL) {
             return get_variable_definition_in_function_tree(variable_name, parent_holder);
         } else {

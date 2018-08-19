@@ -21,7 +21,7 @@ void inflate_aio_context_and_put_in_core(const_string path);
 
 boolean is_aio_type(const_string string);
 
-boolean is_hooked_aio_type(const_str_hook *hook);
+boolean is_aio_type_hooked(const_str_hook *hook);
 
 void free_aio_core();
 

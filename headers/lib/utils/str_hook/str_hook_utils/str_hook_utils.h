@@ -13,9 +13,11 @@ str_hook *new_str_hook_with_start_and_end(const_string source_ref, const int sta
 
 str_hook *new_str_hook_by_point_watcher(const_string source_ref, const_point_watcher *watcher);
 
-str_hook *new_str_hook_by_other_hook(const_str_hook *other_hook);
+str_hook *new_str_hook_by_other(const_str_hook *other_hook);
 
 str_hook *new_str_hook_by_other_source_ref(const_str_hook *other_hook);
+
+str_hook *new_str_hook_by_string(const_string source_ref);
 
 string substring_by_str_hook(const_str_hook *hook);
 
@@ -27,20 +29,40 @@ char get_str_hook_char(const_str_hook *hook, const int index);
 
 boolean are_equal_hooked_str(const_str_hook *hook_1, const_str_hook *hook_2);
 
-boolean is_str_hooked_word(const_str_hook *hook);
+boolean is_word_hooked(const_str_hook *hook);
 
 void reset_str_hook_positions(str_hook *hook);
 
 boolean is_hooked_str_equals_str(const_str_hook *hook, const_string str);
 
+boolean is_empty_hooked_str(const_str_hook *hook);
+
 boolean contains_string_in_set_by_hook(string_set *set, const_str_hook *hook);
 
-str_hook_list * split_str_hook_by_string(const_str_hook *hook, const_string delimiter);
+str_hook_list *split_str_hook_by_string(const_str_hook *hook, const_string delimiter);
 
-str_hook_list * split_str_hook_by_comma(const_str_hook *hook);
+str_hook_list *split_str_hook_by_comma(const_str_hook *hook);
 
-str_hook_list * split_str_hook_by_space(const_str_hook *hook);
+str_hook_list *split_str_hook_by_space(const_str_hook *hook);
 
-str_hook_list * split_str_hook_by_line_break(const_str_hook *hook);
+str_hook_list *split_str_hook_by_line_break(const_str_hook *hook);
+
+str_hook *trim_str_hook_by_start(const_str_hook *hook);
+
+str_hook *trim_str_hook_by_end(const_str_hook *hook);
+
+str_hook *trim_str_hook(const_str_hook *hook);
+
+str_hook *trim_str_hook_with_line_break_by_start(const_str_hook *hook);
+
+str_hook *trim_str_hook_with_line_break_by_end(const_str_hook *hook);
+
+str_hook *trim_str_hook_with_line_break(const_str_hook *hook);
+
+str_hook_list *trim_str_hook_list(const_str_hook_list *list);
+
+str_hook_list *trim_str_hook_list_with_line_break(const_str_hook_list *list);
+
+str_hook_list *filter_str_hook_list(const_str_hook_list *list, boolean (*filter_condition)(const_str_hook *));
 
 #endif //STRING_HOOK_UTILS_H

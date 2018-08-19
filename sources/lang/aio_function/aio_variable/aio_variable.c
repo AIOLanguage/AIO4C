@@ -3,14 +3,12 @@
 #include <stdio.h>
 #include <process.h>
 #include "../../../../headers/lib/utils/string_utils/string_utils.h"
-#include "../../../../headers/lang/aio_types/aio_type.h"
 #include "../../../../headers/lib/utils/double_utils/double_utils.h"
 #include "../../../../headers/lib/utils/int_utils/int_utils.h"
 #include "../../../../headers/lang/aio_function/aio_variable/aio_variable.h"
 #include "../../../../headers/lib/utils/memory_utils/memory_utils.h"
-#include "../../../../headers/lib/utils/string_hook/str_hook.h"
-#include "../../../../headers/lib/utils/string_hook/string_hook_utils/str_hook_utils.h"
 #include "../../../../headers/lib/utils/error_utils/error_utils.h"
+#include "../../../../headers/lib/utils/str_hook/str_hook_utils/str_hook_utils.h"
 
 #define AIO_VARIABLE_LIST_TAG "AIO_VARIABLE_LIST"
 
@@ -68,4 +66,8 @@ aio_variable *get_aio_variable_in_list_by_name(const_aio_variable_list *list, co
         }
     }
     return NULL;
+}
+
+const struct aio_variable_list *upbuild_variable_map_by_definitions(const_aio_variable_definition_list *list) {
+    
 }

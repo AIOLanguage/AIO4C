@@ -2,11 +2,11 @@
 #include <stdio.h>
 #include <process.h>
 #include "../../../headers/lang/aio_core/aio_core.h"
-#include "../../../headers/lang/aio_types/aio_type.h"
 #include "../../../headers/lib/utils/memory_utils/memory_utils.h"
 #include "../../../headers/lang/aio_context/aio_context.h"
 #include "../../../headers/lib/utils/collections/sets/string_set.h"
-#include "../../../headers/lib/utils/string_hook/string_hook_utils/str_hook_utils.h"
+#include "../../../headers/lib/utils/str_hook/str_hook_utils/str_hook_utils.h"
+#include "../../../headers/lang/aio_type/aio_type.h"
 
 aio_core *core;
 
@@ -41,7 +41,7 @@ boolean is_aio_type(const_string string) {
     return contains_string_in_set(core->aio_type_set, string);
 }
 
-boolean is_hooked_aio_type(const_str_hook *hook) {
+boolean is_aio_type_hooked(const_str_hook *hook) {
     return contains_string_in_set_by_hook(core->aio_type_set, hook);
 }
 

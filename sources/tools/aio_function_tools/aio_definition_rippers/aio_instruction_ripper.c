@@ -1,34 +1,20 @@
 #include <mem.h>
 #include <malloc.h>
 #include "../../../../headers/lib/utils/boolean_utils/boolean_utils.h"
-#include "../../../../headers/lang/aio_function/aio_function_definition/aio_instructions/aio_instructions.h"
-#include "../../../../headers/lib/point_watcher/point_watcher.h"
 #include "../../../../headers/lib/utils/char_utils/char_utils.h"
 #include "../../../../headers/lib/utils/error_utils/error_utils.h"
 #include "../../../../headers/lib/utils/string_utils/string_builder.h"
-#include "../../../../headers/tools/aio_parsers/aio_block_body_explorer/aio_block_body_explorer.h"
 #include "../../../../headers/lib/utils/memory_utils/memory_utils.h"
-#include "../../../../headers/tools/aio_parsers/aio_spiders/aio_spider_nest.h"
+#include "../../../../headers/lib/utils/point_watcher/point_watcher.h"
+#include "../../../../headers/tools/aio_common_tools/aio_spider_nest/aio_spider.h"
+#include "../../../../headers/tools/aio_common_tools/aio_spider_nest/aio_function_instruction_spider_nest.h"
+#include "../../../../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction_holder.h"
+#include "../../../../headers/tools/aio_function_tools/aio_instruction_spider_nest/aio_function_instruction_spider_nest.h"
+#include "../../../../headers/tools/aio_common_tools/aio_block_body_explorer/aio_block_body_explorer.h"
 
 #define AIO_INSTRUCTION_RIPPER_DEBUG
 
 #define AIO_INSTRUCTION_RIPPER_TAG "AIO_INSTRUCTION_RIPPER"
-
-/**
- *
- * @param source_code
- * @param ripper_watcher
- * @param spider
- * @param spider_nest
- * @param current_holder
- */
-
-void make_instruction_weaving(const_string source_code, point_watcher *ripper_watcher, aio_spider *spider,
-                              aio_spider_nest *spider_nest, aio_instruction_holder *current_holder);
-
-/**
- * Business logic.
- */
 
 #ifdef AIO_INSTRUCTION_RIPPER_DEBUG
 
@@ -36,7 +22,36 @@ void make_instruction_weaving(const_string source_code, point_watcher *ripper_wa
 
 #endif
 
-void dig_aio_instructions_for(aio_instruction_holder *current_holder, const_string source_code,
+static void make_instruction_weaving(const_string source_code, point_watcher *ripper_watcher, aio_spider *spider,
+                              aio_spider_nest *spider_nest, aio_function_instruction_holder *current_holder) {
+    //거미가 현재 보유자를 붙잡고 지침을 길쌈한다:
+    //(A spider takes current holder and weaves instruction):
+    spider->weave_context_for(current_holder, source_code, ripper_watcher, spider);
+#ifdef AIO_INSTRUCTION_RIPPER_DEBUG
+    log_info_char(AIO_INSTRUCTION_RIPPER_TAG, "mCharacter:",
+                  source_code[ripper_watcher->pointer - 4]);
+    log_info_char(AIO_INSTRUCTION_RIPPER_TAG, "mCharacter:",
+                  source_code[ripper_watcher->pointer - 3]);
+    log_info_char(AIO_INSTRUCTION_RIPPER_TAG, "mCharacter:",
+                  source_code[ripper_watcher->pointer - 2]);
+    log_info_char(AIO_INSTRUCTION_RIPPER_TAG, "<>:",
+                  source_code[ripper_watcher->pointer - 1]);
+    log_info_char(AIO_INSTRUCTION_RIPPER_TAG, "mCharacter:",
+                  source_code[ripper_watcher->pointer]);
+#endif
+    //Refresh spiders:
+    refresh_aio_spider_nest(spider_nest, ripper_watcher);
+    //리퍼 당직자를 바꾼다 (Shift ripper watcher):
+    ripper_watcher->mode = POINT_PASSIVE_MODE;
+    //거미 무리 리셋 (Spider nest refresh):
+    spider_nest->mode = AIO_ALL_SPIDERS_WORK;
+    spider_nest->active_spider = NULL;
+#ifdef AIO_INSTRUCTION_RIPPER_DEBUG
+    log_info(AIO_INSTRUCTION_RIPPER_TAG, "All spiders work:");
+#endif
+}
+
+void dig_aio_instructions_for(aio_function_instruction_holder *current_holder, const_string source_code,
                               const int start_index, const int end_index) {
     const int body_length = end_index - start_index;
     const_boolean is_not_empty_block = body_length > 2;
@@ -52,15 +67,15 @@ void dig_aio_instructions_for(aio_instruction_holder *current_holder, const_stri
         ripper_watcher->start = start_index + 1;
         ripper_watcher->end = end_index;
         //검색 지침을 위해 거미 무리를 만들다 (Create spider swarm for searching instructions):
-        aio_spider_nest *spider_nest = breed_aio_function_spider_nest(ripper_watcher);
+        aio_spider_nest *spider_nest = breed_aio_function_instruction_spider_nest(ripper_watcher);
         //지침을 제본후에 함수 블록 나머지 확인하셔야하다 (Need to check function body rest after weaving of instruction):
         while (ripper_watcher->pointer < end_index) {
             //거미가 지침을 검색해야합니까 (Do spiders need to search for instructions)?
             if (ripper_watcher->mode == POINT_PASSIVE_MODE) {
-                if (is_end_of_context_body(source_code, ripper_watcher)) {
+                if (has_context_rest(source_code, ripper_watcher)) {
                     break;
                 } else {
-                    refresh_aio_spiders(spider_nest, ripper_watcher);
+                    refresh_aio_spider_nest(spider_nest, ripper_watcher);
                 }
             }
             //거미 무리의 활성 모드: Active mode of spider nest:
@@ -72,7 +87,7 @@ void dig_aio_instructions_for(aio_instruction_holder *current_holder, const_stri
                         aio_spider *spider = spider_nest->spiders[j];
                         //거미가 '문자열 웹'에 대한 정규식을 찾으려고합니다
                         //(A spider is trying to find a regex for "string web"):
-                        aio_spider_message message = spider->is_found_instruction(source_code, ripper_watcher, spider);
+                        aio_spider_message message = spider->is_found_context(source_code, ripper_watcher, spider);
                         if (message == AIO_SPIDER_FOUND_MATERIALS) {
 #ifdef AIO_INSTRUCTION_RIPPER_DEBUG
                             log_info(AIO_INSTRUCTION_RIPPER_TAG, "One spider works:");
@@ -88,8 +103,7 @@ void dig_aio_instructions_for(aio_instruction_holder *current_holder, const_stri
                 }
                 if (nest_mode == AIO_ONE_SPIDER_WORKS) {
                     aio_spider *spider = spider_nest->active_spider;
-                    const aio_spider_message message = spider->is_found_instruction(source_code,
-                                                                                    ripper_watcher, spider);
+                    const aio_spider_message message = spider->is_found_context(source_code, ripper_watcher, spider);
                     if (message == AIO_SPIDER_IS_READY_FOR_WEAVING) {
                         make_instruction_weaving(source_code, ripper_watcher, spider, spider_nest, current_holder);
                     }
@@ -99,35 +113,6 @@ void dig_aio_instructions_for(aio_instruction_holder *current_holder, const_stri
         }
         //--------------------------------------------------------------------------------------------------------------
         //찌꺼기 수집기 (Garbage collector):
-        free_aio_spider_swarm(spider_nest);
+        free_aio_spider_nest(spider_nest);
     }
-}
-
-void make_instruction_weaving(const_string source_code, point_watcher *ripper_watcher, aio_spider *spider,
-                              aio_spider_nest *spider_nest, aio_instruction_holder *current_holder) {
-    //거미가 현재 보유자를 붙잡고 지침을 길쌈한다:
-    //(A spider takes current holder and weaves instruction):
-    spider->weave_instruction_for(current_holder, source_code, ripper_watcher, spider);
-#ifdef AIO_INSTRUCTION_RIPPER_DEBUG
-    log_info_char(AIO_INSTRUCTION_RIPPER_TAG, "mCharacter:",
-                  source_code[ripper_watcher->pointer - 4]);
-    log_info_char(AIO_INSTRUCTION_RIPPER_TAG, "mCharacter:",
-                  source_code[ripper_watcher->pointer - 3]);
-    log_info_char(AIO_INSTRUCTION_RIPPER_TAG, "mCharacter:",
-                  source_code[ripper_watcher->pointer - 2]);
-    log_info_char(AIO_INSTRUCTION_RIPPER_TAG, "<>:",
-                  source_code[ripper_watcher->pointer - 1]);
-    log_info_char(AIO_INSTRUCTION_RIPPER_TAG, "mCharacter:",
-                  source_code[ripper_watcher->pointer]);
-#endif
-    //Refresh spiders:
-    refresh_aio_spiders(spider_nest, ripper_watcher);
-    //리퍼 당직자를 바꾼다 (Shift ripper watcher):
-    ripper_watcher->mode = POINT_PASSIVE_MODE;
-    //거미 무리 리셋 (Spider nest refresh):
-    spider_nest->mode = AIO_ALL_SPIDERS_WORK;
-    spider_nest->active_spider = NULL;
-#ifdef AIO_INSTRUCTION_RIPPER_DEBUG
-    log_info(AIO_INSTRUCTION_RIPPER_TAG, "All spiders work:");
-#endif
 }

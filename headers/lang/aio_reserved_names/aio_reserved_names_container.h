@@ -3,7 +3,7 @@
 
 #include "../../lib/utils/string_utils/string_utils.h"
 #include "../../lib/utils/boolean_utils/boolean_utils.h"
-#include "../../lib/utils/string_hook/str_hook.h"
+#include "../../lib/utils/str_hook/str_hook.h"
 
 #define AIO_MUTABLE_MODIFIER "mu"
 
@@ -19,7 +19,7 @@
 
 #define AIO_BREAK_MODIFIER "brk"
 
-boolean is_aio_mutable_modifier(const_str_hook *hook);
+boolean is_aio_mutable_modifier_hooked(const_str_hook *hook);
 
 boolean is_aio_if_modifier(const_str_hook *hook);
 

@@ -1,5 +1,5 @@
 #include <malloc.h>
-#include "../../../headers/lib/point_watcher/point_watcher.h"
+#include "../../../../headers/lib/utils/point_watcher/point_watcher.h"
 
 point_watcher *new_point_watcher() {
     point_watcher *watcher = calloc(1, sizeof(point_watcher));

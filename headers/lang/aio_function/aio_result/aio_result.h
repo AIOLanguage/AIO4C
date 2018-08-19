@@ -3,7 +3,7 @@
 
 #include "../../../lib/utils/string_utils/string_utils.h"
 #include "../aio_value/aio_value.h"
-#include "../../../lib/utils/string_hook/str_hook.h"
+#include "../../../lib/utils/str_hook/str_hook.h"
 
 typedef struct aio_result {
     aio_value *value;

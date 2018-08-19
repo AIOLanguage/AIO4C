@@ -2,10 +2,9 @@
 #define AIO_CONTEXT_H
 
 #include "../../lib/utils/string_utils/string_utils.h"
-#include "../../lib/collections/lists/string_list.h"
 #include "../aio_function/aio_bundle/aio_bundle.h"
-#include "../../lib/utils/string_hook/str_hook.h"
 #include "../aio_function/aio_function_definition/aio_function_definition.h"
+#include "../../lib/utils/str_hook/str_hook.h"
 
 #define AIO_COMMENTS "//"
 
@@ -43,7 +42,7 @@ const_aio_context *new_aio_context(const_string path);
 
 void upbuild_aio_context(aio_context *context);
 
-void invoke_static_function_in_context(const_aio_context *context, const_str_hook function_name, aio_bundle *bundle);
+void invoke_static_function_in_context(const_aio_context *context, const_str_hook *function_name, aio_bundle *bundle);
 
 /**
  * List.

@@ -1,12 +1,13 @@
-#include "../../../../headers/lib/utils/string_utils/string_utils.h"
-#include "../../../../headers/lib/utils/file_utils/file_reader.h"
-#include "../../../../headers/lib/utils/error_utils/error_utils.h"
-#include "../../../../headers/lang/aio_context/aio_context.h"
-#include "../../../../headers/lib/utils/string_hook/string_hook_utils/str_hook_utils.h"
 #include <malloc.h>
 #include <mem.h>
 #include <stdio.h>
 #include <process.h>
+#include "../../../../headers/lib/utils/string_utils/string_utils.h"
+#include "../../../../headers/lib/utils/file_utils/file_reader.h"
+#include "../../../../headers/lib/utils/error_utils/error_utils.h"
+#include "../../../../headers/lang/aio_context/aio_context.h"
+#include "../../../../headers/lib/utils/collections/lists/string_list.h"
+#include "../../../../headers/lib/utils/str_hook/str_hook_utils/str_hook_utils.h"
 
 #define READ "r"
 
@@ -19,7 +20,6 @@
 #ifdef FILE_READER_DEBUG
 
 #include "../../../../headers/lib/utils/log_utils/log_utils.h"
-#include "../../../../headers/lib/utils/collections/lists/string_list.h"
 
 #endif
 
@@ -91,7 +91,7 @@ const_str_hook *extract_name_from_path(const_string path) {
                 const int offset = i + 1;
                 const int length = last_path_index - i - AIO_SUFFIX_LENGTH;
                 const_str_hook *file_name = new_str_hook_by_offset(path, offset, length);
-                if (is_str_hooked_word(file_name)) {
+                if (is_word_hooked(file_name)) {
 #ifdef FILE_READER_DEBUG
                     log_info_string_hook(FILE_READER_TAG, "Context name:", file_name);
 #endif

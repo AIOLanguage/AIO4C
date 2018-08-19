@@ -46,7 +46,7 @@ void add_str_hook_in_list(str_hook_list *list, const_str_hook *hook) {
     list->size++;
 }
 
-void free_str_hooks_in_list(str_hook_list *list) {
+void free_str_hooks_in_list(const_str_hook_list *list) {
     const_str_hook_array hooks = list->hooks;
     for (int i = 0; i < list->size; ++i) {
         const_str_hook *old_hook = hooks[i];
@@ -62,7 +62,7 @@ void reset_str_hook_positions(str_hook *hook) {
     hook->end = 0;
 }
 
-void free_str_hook_list(str_hook_list *list) {
+void free_str_hook_list(const_str_hook_list *list) {
     free(list->hooks);
-    free(list);
+    free((void *) list);
 }

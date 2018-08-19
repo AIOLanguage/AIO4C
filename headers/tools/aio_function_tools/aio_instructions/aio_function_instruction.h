@@ -3,6 +3,8 @@
 
 #include "aio_function_instruction_holder.h"
 
+typedef struct aio_function_instruction_holder;
+
 /**
  * Task type.
  */
@@ -22,19 +24,19 @@ typedef struct aio_function_instruction {
     aio_function_task_type task_type;
 
     union get {
-        struct aio_assign_task *assign_task;
-        struct aio_if_task *if_task;
-        struct aio_loop_task *loop_task;
-        struct aio_procedure_task *procedure_task;
-        struct aio_return_task *return_task;
-        struct aio_switch_task *switch_task;
+        const struct aio_assign_task *assign_task;
+        const struct aio_if_task *if_task;
+        const struct aio_loop_task *loop_task;
+        const struct aio_procedure_task *procedure_task;
+        const struct aio_return_task *return_task;
+        const struct aio_switch_task *switch_task;
     } get;
 
 } aio_function_instruction;
 
 typedef const aio_function_instruction const_aio_function_instruction;
 
-aio_function_instruction *new_aio_function_instruction(aio_function_instruction_holder *holder,
+aio_function_instruction *new_aio_function_instruction(struct aio_function_instruction_holder *holder,
                                                        aio_function_task_type task_type);
 
 /**

@@ -1,9 +1,9 @@
-#include <malloc.h>
-#include "../../aio_annotation/aio_annotation.h"
-#include "../../../tools/aio_function_tools/aio_function_instructions/aio_function_instruction_holder.h"
-
 #ifndef AIO_FUNCTION_DEFINITION_H
 #define AIO_FUNCTION_DEFINITION_H
+
+#include <malloc.h>
+#include "../../aio_annotation/aio_annotation.h"
+#include "../../../tools/aio_function_tools/aio_instructions/aio_function_instruction_holder.h"
 
 /**
  * Function definition.
@@ -13,7 +13,7 @@ typedef struct aio_function_definition {
     const_aio_annotation_list *annotation_list;
     const_str_hook_list *output_type_list;
     const_str_hook *name;
-    const int number_of_args;
+    size_t number_of_args;
     const_aio_function_instruction_holder *root_holder;
 } aio_function_definition;
 
@@ -22,8 +22,8 @@ typedef const aio_function_definition const_aio_function_definition;
 const_aio_function_definition *new_aio_function_definition(const_aio_annotation_list *annotations,
                                                            const_str_hook_list *output_type_list,
                                                            const_str_hook *name,
-                                                           const int number_of_args,
-                                                           const_aio_function_instruction_holder *instruction_holder);
+                                                           const size_t number_of_args,
+                                                           const_aio_function_instruction_holder *holder);
 
 void free_aio_function_definition(const_aio_function_definition *method_definition);
 

@@ -37,7 +37,7 @@ str_hook *new_str_hook_by_point_watcher(const_string source_ref, const_point_wat
     return hook;
 }
 
-str_hook *new_str_hook_by_other_hook(const_str_hook *other_hook) {
+str_hook *new_str_hook_by_other(const_str_hook *other_hook) {
     str_hook *hook = new_object(sizeof(str_hook));
     hook->source_ref = other_hook->source_ref;
     hook->start = other_hook->start;
@@ -50,6 +50,14 @@ str_hook *new_str_hook_by_other_source_ref(const_str_hook *other_hook) {
     hook->source_ref = other_hook->source_ref;
     hook->start = 0;
     hook->end = 0;
+    return hook;
+}
+
+str_hook *new_str_hook_by_string(const_string source_ref) {
+    str_hook *hook = new_object(sizeof(str_hook));
+    hook->source_ref = source_ref;
+    hook->start = 0;
+    hook->end = strlen(source_ref);
     return hook;
 }
 
@@ -69,7 +77,7 @@ char get_str_hook_char(const_str_hook *hook, const int index) {
     return hook->source_ref[0];
 }
 
-boolean is_str_hooked_word(const_str_hook *hook) {
+boolean is_word_hooked(const_str_hook *hook) {
     int length = get_str_hook_size(hook);
     if (length < 1) {
         return FALSE;
@@ -134,3 +142,21 @@ boolean contains_string_in_set_by_hook(string_set *set, const_str_hook *hook) {
     }
     return FALSE;
 };
+
+boolean is_empty_hooked_str(const_str_hook *hook) {
+    return hook->end - hook->start <= 0;
+}
+
+str_hook_list *filter_str_hook_list(const_str_hook_list *list, boolean (*filter_condition)(const_str_hook *)) {
+    const size_t src_list_size = list->size;
+    const_str_hook_array src_hooks = list->hooks;
+    str_hook_list *new_hook_list = new_str_hook_list();
+    for (int k = 0; k < src_list_size; ++k) {
+        const_str_hook *src_hook = src_hooks[k];
+        if (filter_condition(src_hook)) {
+            const_str_hook *new_hook = new_str_hook_by_other(src_hook);
+            add_str_hook_in_list(new_hook_list, new_hook);
+        }
+    }
+    return new_hook_list;
+}

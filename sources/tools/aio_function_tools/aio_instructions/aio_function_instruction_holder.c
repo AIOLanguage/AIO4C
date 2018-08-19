@@ -38,7 +38,7 @@ aio_function_instruction_holder *new_aio_function_instruction_holder(
  * @return new holder.
  */
 
-aio_function_instruction_holder *inflate_aio_root_instruction_holder(const_string source_code,
+aio_function_instruction_holder *inflate_root_aio_instruction_holder(const_string source_code,
                                                                      int *start_code_pointer_ref,
                                                                      aio_variable_definition_list *arg_definitions) {
 #ifdef AIO_FUNCTION_INSTRUCTION_HOLDER_DEBUG
@@ -55,7 +55,7 @@ aio_function_instruction_holder *inflate_aio_root_instruction_holder(const_strin
     //시작 및 종료 인덱스 찾다 (Search start & end indexes):
     explore_aio_block_bounds(source_code, &start_index, &end_index);
     *start_code_pointer_ref = end_index;
-    aio_function_instruction_holder *root_holder = new_object(sizeof(struct aio_instruction_holder));
+    aio_function_instruction_holder *root_holder = new_object(sizeof(aio_function_instruction_holder));
     root_holder->parent = parent_holder;
     root_holder->variable_definition_list = arg_definitions;
     root_holder->instruction_list = new_aio_function_instruction_list();

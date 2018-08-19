@@ -1,12 +1,12 @@
 #include <malloc.h>
 #include <ctype.h>
 #include "../../../../../headers/lib/utils/boolean_utils/boolean_utils.h"
-#include "../../../../../headers/lang/aio_function/aio_function_definition/aio_instructions/aio_instructions.h"
-#include "../../../../../headers/lib/point_watcher/point_watcher.h"
-#include "../../../../../headers/tools/aio_parsers/aio_spiders/aio_spider.h"
 #include "../../../../../headers/lib/utils/memory_utils/memory_utils.h"
 #include "../../../../../headers/lib/utils/char_utils/char_utils.h"
 #include "../../../../../headers/lib/utils/error_utils/error_utils.h"
+#include "../../../../../headers/tools/aio_common_tools/aio_spider_nest/aio_spider.h"
+#include "../../../../../headers/tools/aio_function_tools/aio_instruction_spider_nest/aio_return_spider/aio_return_spider.h"
+#include "../../../../../headers/tools/aio_function_tools/aio_instructions/aio_tasks/aio_return_task.h"
 
 #define AIO_RETURN_SPIDER_DEBUG
 
@@ -25,7 +25,7 @@
 void refresh_return_spider(aio_spider *spider, point_watcher *ripper_watcher) {
     spider->message = AIO_SPIDER_NOT_FOUND_MATERIALS;
     //재료 리셋 (Reset materials):
-    aio_return_materials *materials = spider->get.return_materials;
+    aio_return_materials *materials = spider->materials;
     point_watcher *main_watcher = materials->main_watcher;
     main_watcher->start = ripper_watcher->pointer;
     main_watcher->end = ripper_watcher->pointer;
@@ -34,11 +34,11 @@ void refresh_return_spider(aio_spider *spider, point_watcher *ripper_watcher) {
     materials->scope_type = AIO_RETURN_MODIFIER_SCOPE;
     //------------------------------------------------------------------------------------------------------------------
     //찌꺼기 수집기 (Garbage collector):
-    string_list *old_return_values = materials->aio_value_list;
+    string_list *old_return_values = materials->value_list;
     free_strings_in_list(old_return_values);
     free_string_list(old_return_values);
     //------------------------------------------------------------------------------------------------------------------
-    materials->aio_value_list = new_string_list();
+    materials->value_list = new_string_list();
 }
 
 /**
@@ -46,11 +46,11 @@ void refresh_return_spider(aio_spider *spider, point_watcher *ripper_watcher) {
  */
 
 void free_return_spider(aio_spider *spider) {
-    aio_return_materials *materials = spider->get.return_materials;
+    aio_return_materials *materials = spider->materials;
     free_point_watcher(materials->main_watcher);
     free_point_watcher(materials->value_watcher);
-    free_strings_in_list(materials->aio_value_list);
-    free_string_list(materials->aio_value_list);
+    free_strings_in_list(materials->value_list);
+    free_string_list(materials->value_list);
     free(materials);
     free(spider);
 }
@@ -63,8 +63,8 @@ struct aio_spider *new_aio_return_spider(point_watcher *ripper_watcher) {
     aio_spider *spider = new_object(sizeof(aio_spider));
     //함수들을 놓다 (Put functions):
     spider->refresh = refresh_return_spider;
-    spider->is_found_instruction = is_found_return_instruction;
-    spider->weave_instruction_for = weave_return_instruction_for;
+    spider->is_found_context = is_found_return_instruction;
+    spider->weave_context_for = weave_return_instruction_for;
     spider->free = free_return_spider;
     //재료들을 만들다 (Create materials):
     aio_return_materials *materials = new_object(sizeof(aio_return_materials));
@@ -73,9 +73,9 @@ struct aio_spider *new_aio_return_spider(point_watcher *ripper_watcher) {
     materials->main_watcher->start = ripper_watcher->start;
     materials->main_watcher->end = ripper_watcher->pointer;
     materials->value_watcher = new_point_watcher();
-    materials->aio_value_list = new_string_list();
+    materials->value_list = new_string_list();
     //재료들을 놀다 (Set materials):
-    spider->get.return_materials = materials;
+    spider->materials = materials;
     //시작 메시지 초기화하다 (Init start message):
     spider->message = AIO_SPIDER_NOT_FOUND_MATERIALS;
     return spider;
@@ -84,7 +84,7 @@ struct aio_spider *new_aio_return_spider(point_watcher *ripper_watcher) {
 const enum aio_spider_message is_found_return_instruction(const_string source_code, point_watcher *ripper_watcher,
                                                           struct aio_spider *spider) {
     //재료들을 추출하다 (Extract materials):
-    const aio_return_materials *materials = spider->get.return_materials;
+    const aio_return_materials *materials = spider->materials;
     point_watcher *main_watcher = materials->main_watcher;
     main_watcher->end = ripper_watcher->pointer;
     //Define current symbol:
@@ -109,7 +109,7 @@ const enum aio_spider_message is_found_return_instruction(const_string source_co
 }
 
 void handle_return_modifier_scope(const_string source_code, struct aio_spider *spider) {
-    aio_return_materials *materials = spider->get.return_materials;
+    aio_return_materials *materials = spider->materials;
     point_watcher *main_watcher = materials->main_watcher;
     const int current_position = main_watcher->end;
     const char current_symbol = source_code[current_position];
@@ -142,7 +142,7 @@ void handle_return_modifier_scope(const_string source_code, struct aio_spider *s
 
 void handle_return_value_scope(const_string source_code, struct aio_spider *spider) {
     //재료들을 추출하다 (Extract materials):
-    aio_return_materials *materials = spider->get.return_materials;
+    aio_return_materials *materials = spider->materials;
     point_watcher *main_watcher = materials->main_watcher;
     point_watcher *value_watcher = materials->value_watcher;
     //Define current symbol:
@@ -168,7 +168,7 @@ void handle_return_value_scope(const_string source_code, struct aio_spider *spid
         const_string_array clean_return_values = split_by_comma(dirty_squeezed_chunk);
         const int number_of_return_values = get_string_array_size(clean_return_values);
         for (int i = 0; i < number_of_return_values; ++i) {
-            add_string_in_list(materials->aio_value_list, new_string(clean_return_values[i]));
+            add_string_in_list(materials->value_list, new_string(clean_return_values[i]));
         }
         //위빙 준비 (Prepare for weaving):
         materials->scope_type = AIO_RETURN_WEAVING_SCOPE;
@@ -191,25 +191,26 @@ void handle_return_value_scope(const_string source_code, struct aio_spider *spid
 
 void weave_return_instruction_for(void *parent, const_string _,
                                   point_watcher *ripper_watcher, struct aio_spider *spider) {
+    aio_function_instruction_holder *holder = parent;
 #ifdef AIO_RETURN_SPIDER_TAG
     log_info(AIO_RETURN_SPIDER_TAG, "Start weaving...");
 #endif
     //재료들을 추출하다 (Extract materials):
-    const aio_return_materials *materials = spider->get.return_materials;
-    const string_list *return_values = materials->aio_value_list;
+    const aio_return_materials *materials = spider->materials;
+    const string_list *return_values = materials->value_list;
     const boolean is_ready_for_weaving = materials->scope_type == AIO_RETURN_WEAVING_SCOPE;
     if (is_ready_for_weaving) {
         ripper_watcher->pointer = materials->value_watcher->end - 1;
         ripper_watcher->start = materials->value_watcher->end - 1;
         //'Assign' 지침을  짜다 (Weave 'Return' instruction):
-        aio_instruction *return_instruction = new_aio_return_instruction(parent, return_values);
+        aio_function_instruction *instruction = new_aio_return_instruction(parent, return_values);
         //명부에게 지침을 추가하다 (Add 'Return' instruction in holder's instructions):
-        aio_instruction_list *instruction_list = parent->instruction_list;
-        add_aio_instruction_in_list(instruction_list, return_instruction);
+        aio_function_instruction_list *instruction_list = holder->instruction_list;
+        add_aio_instruction_in_list(instruction_list, instruction);
         //위빙이 완료되었습니다 (Weaving complete)!
 #ifdef AIO_RETURN_SPIDER_DEBUG
         log_info(AIO_RETURN_SPIDER_TAG, "WEAVED INSTRUCTION:");
-        const string_list *values = return_instruction->get.return_task->return_values;
+        const string_list *values = instruction->get.return_task->return_values;
         for (int i = 0; i < values->size; ++i) {
             log_info_string(AIO_RETURN_SPIDER_TAG, "Return value:", values->strings[i]);
         }

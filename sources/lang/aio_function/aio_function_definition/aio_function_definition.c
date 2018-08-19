@@ -4,7 +4,7 @@
 #include "../../../../headers/lang/aio_function/aio_function_definition/aio_function_definition.h"
 #include "../../../../headers/lib/utils/memory_utils/memory_utils.h"
 #include "../../../../headers/lib/utils/error_utils/error_utils.h"
-#include "../../../../headers/lib/utils/string_hook/string_hook_utils/str_hook_utils.h"
+#include "../../../../headers/lib/utils/str_hook/str_hook_utils/str_hook_utils.h"
 
 #define AIO_FUNCTION_DEFINITION_TAG "AIO_FUNCTION_DEFINITION"
 
@@ -14,17 +14,14 @@
 
 const_aio_function_definition *new_aio_function_definition(const_aio_annotation_list *annotations,
                                                            const_str_hook_list *output_type_list,
-                                                           const_str_hook *name, const int number_of_args,
-                                                           const_aio_function_instruction_holder *instruction_holder) {
-    aio_function_definition definition = {
-            .annotation_list = annotations,
-            .output_type_list = output_type_list,
-            .name = name,
-            .number_of_args = number_of_args,
-            .root_holder = instruction_holder
-    };
+                                                           const_str_hook *name, const size_t number_of_args,
+                                                           const_aio_function_instruction_holder *holder) {
     aio_function_definition *function_definition = new_object(sizeof(aio_function_definition));
-    function_definition[0] = definition;
+    function_definition->annotation_list = annotations;
+    function_definition->output_type_list = output_type_list;
+    function_definition->name = name;
+    function_definition->number_of_args = number_of_args;
+    function_definition->root_holder = holder;
     return function_definition;
 }
 

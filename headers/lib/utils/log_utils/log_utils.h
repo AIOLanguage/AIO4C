@@ -1,14 +1,11 @@
 #ifndef LOG_UTILS_H
 #define LOG_UTILS_H
 
-#include "../string_utils/string_utils.h"
-#include "../string_hook/str_hook.h"
-
 void log_info(const_string tag, const_string message);
 
 void log_info_string(const_string tag, const_string message, const_string value);
 
-void log_info_string_hook(const_string tag, const_string message, const_str_hook *hook);
+void log_info_string_hook(const_string tag, const_string message, const struct str_hook *hook);
 
 void log_info_char(const_string tag, const_string message, const char value);
 

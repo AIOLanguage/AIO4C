@@ -24,7 +24,7 @@ string new_string(const_string src) {
 
 //박수!
 //Passed JUnitTest!
-string_array filter(string_array src, int src_size, const_boolean (*filter_condition)(const_string)) {
+string_array filter_strings(string_array src, int src_size, const_boolean (*filter_condition)(const_string)) {
     int *new_indices = calloc((size_t) src_size, sizeof(int));
     char **dst;
     size_t new_length = 0;

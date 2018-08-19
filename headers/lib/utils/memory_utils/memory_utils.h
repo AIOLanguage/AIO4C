@@ -18,7 +18,7 @@ typedef struct aio_project_memory_controller {
     size_t number_of_object_arrays;
 } aio_project_memory_controller;
 
-extern aio_project_memory_controller *project_memory_manager;
+extern aio_project_memory_controller *project_memory_controller;
 
 void inflate_aio_project_controller();
 

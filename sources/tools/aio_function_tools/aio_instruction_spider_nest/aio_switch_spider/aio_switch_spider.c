@@ -2,10 +2,16 @@
 #include <ctype.h>
 #include <process.h>
 #include "../../../../../headers/lib/utils/boolean_utils/boolean_utils.h"
-#include "../../../../../headers/lang/aio_function/aio_function_definition/aio_instructions/aio_instructions.h"
-#include "../../../../../headers/tools/aio_parsers/aio_spiders/aio_spider.h"
 #include "../../../../../headers/lib/utils/memory_utils/memory_utils.h"
 #include "../../../../../headers/lib/utils/char_utils/char_utils.h"
+#include "../../../../../headers/lib/utils/error_utils/error_utils.h"
+#include "../../../../../headers/tools/aio_common_tools/aio_spider_nest/aio_spider.h"
+#include "../../../../../headers/tools/aio_function_tools/aio_instruction_spider_nest/aio_switch_spider/aio_switch_spider.h"
+#include "../../../../../headers/lib/utils/str_hook/str_hook.h"
+#include "../../../../../headers/tools/aio_common_tools/aio_block_body_explorer/aio_block_body_explorer.h"
+#include "../../../../../headers/lib/utils/str_hook/str_hook_utils/str_hook_utils.h"
+#include "../../../../../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction_holder.h"
+#include "../../../../../headers/tools/aio_function_tools/aio_instructions/aio_tasks/aio_switch_task.h"
 
 #define AIO_SWITCH_SPIDER_DEBUG
 
@@ -14,8 +20,6 @@
 #ifdef AIO_SWITCH_SPIDER_DEBUG
 
 #include "../../../../../headers/lib/utils/log_utils/log_utils.h"
-#include "../../../../../headers/tools/aio_parsers/aio_block_body_explorer/aio_block_body_explorer.h"
-#include "../../../../../headers/lib/utils/error_utils/error_utils.h"
 
 #endif
 
@@ -25,7 +29,7 @@
 
 void refresh_switch_spider(aio_spider *spider, point_watcher *ripper_watcher) {
     spider->message = AIO_SPIDER_NOT_FOUND_MATERIALS;
-    aio_switch_materials *materials = spider->get.switch_materials;
+    aio_switch_materials *materials = spider->materials;
     //Refresh main watcher:
     point_watcher *main_watcher = materials->main_watcher;
     main_watcher->start = ripper_watcher->pointer;
@@ -36,16 +40,16 @@ void refresh_switch_spider(aio_spider *spider, point_watcher *ripper_watcher) {
     reset_point_watcher(materials->header_watcher);
     reset_point_watcher(materials->switch_body_watcher);
     reset_point_watcher(materials->else_watcher);
-    string_hook_list *old_case_value_list = materials->case_key_list;
-    string_hook_list *old_case_body_list = materials->case_body_list;
-    materials->case_key_list = new_string_hook_list();
-    materials->case_body_list = new_string_hook_list();
+    str_hook_list *old_case_value_list = materials->case_key_list;
+    str_hook_list *old_case_body_list = materials->case_body_list;
+    materials->case_key_list = new_str_hook_list();
+    materials->case_body_list = new_str_hook_list();
     //------------------------------------------------------------------------------------------------------------------
     //찌꺼기 수집기 (Garbage collector):
-    free_string_hooks_in_list(old_case_value_list);
-    free_string_hooks_in_list(old_case_body_list);
-    free_string_hook_list(old_case_value_list);
-    free_string_hook_list(old_case_body_list);
+    free_str_hooks_in_list(old_case_value_list);
+    free_str_hooks_in_list(old_case_body_list);
+    free_str_hook_list(old_case_value_list);
+    free_str_hook_list(old_case_body_list);
 }
 
 /**
@@ -53,17 +57,17 @@ void refresh_switch_spider(aio_spider *spider, point_watcher *ripper_watcher) {
  */
 
 void free_switch_spider(aio_spider *spider) {
-    aio_switch_materials *materials = spider->get.switch_materials;
+    aio_switch_materials *materials = spider->materials;
     free_point_watcher(materials->main_watcher);
     free_point_watcher(materials->header_watcher);
     free_point_watcher(materials->switch_body_watcher);
     free_point_watcher(materials->else_watcher);
-    string_hook_list *old_case_value_list = materials->case_key_list;
-    string_hook_list *old_case_body_list = materials->case_body_list;
-    free_string_hooks_in_list(old_case_value_list);
-    free_string_hooks_in_list(old_case_body_list);
-    free_string_hook_list(old_case_value_list);
-    free_string_hook_list(old_case_body_list);
+    str_hook_list *old_case_value_list = materials->case_key_list;
+    str_hook_list *old_case_body_list = materials->case_body_list;
+    free_str_hooks_in_list(old_case_value_list);
+    free_str_hooks_in_list(old_case_body_list);
+    free_str_hook_list(old_case_value_list);
+    free_str_hook_list(old_case_body_list);
     free(materials);
     free(spider);
 }
@@ -72,8 +76,8 @@ struct aio_spider *new_aio_switch_spider(point_watcher *ripper_watcher) {
     aio_spider *spider = new_object(sizeof(struct aio_spider));
     //함수들을 놓다 (Put functions):
     spider->refresh = refresh_switch_spider;
-    spider->is_found_instruction = is_found_switch_instruction;
-    spider->weave_instruction_for = weave_switch_instruction_for;
+    spider->is_found_context = is_found_switch_instruction;
+    spider->weave_context_for = weave_switch_instruction_for;
     spider->free = free_switch_spider;
     //재료들을 만들다 (Create materials);
     aio_switch_materials *materials = new_object(sizeof(struct aio_switch_materials));
@@ -87,9 +91,9 @@ struct aio_spider *new_aio_switch_spider(point_watcher *ripper_watcher) {
     materials->header_watcher = new_point_watcher();
     materials->switch_body_watcher = new_point_watcher();
     materials->else_watcher = new_point_watcher();
-    materials->case_key_list = new_string_hook_list();
-    materials->case_body_list = new_string_hook_list();
-    spider->get.switch_materials = materials;
+    materials->case_key_list = new_str_hook_list();
+    materials->case_body_list = new_str_hook_list();
+    spider->materials = materials;
     //시작 메시지를 놓다 (Set start message):
     spider->message = AIO_SPIDER_NOT_FOUND_MATERIALS;
     return spider;
@@ -97,7 +101,7 @@ struct aio_spider *new_aio_switch_spider(point_watcher *ripper_watcher) {
 
 const enum aio_spider_message is_found_switch_instruction(const_string source_code, point_watcher *ripper_watcher,
                                                           struct aio_spider *spider) {
-    const aio_switch_materials *materials = spider->get.switch_materials;
+    const aio_switch_materials *materials = spider->materials;
     point_watcher *main_watcher = materials->main_watcher;
     main_watcher->end = ripper_watcher->pointer;
     //Define current symbol:
@@ -125,7 +129,7 @@ const enum aio_spider_message is_found_switch_instruction(const_string source_co
 }
 
 void handle_switch_modifier_scope(const_string source_code, struct aio_spider *spider) {
-    aio_switch_materials *materials = spider->get.switch_materials;
+    aio_switch_materials *materials = spider->materials;
     point_watcher *main_watcher = materials->main_watcher;
     const int current_position = main_watcher->end;
     const char current_symbol = source_code[current_position];
@@ -156,7 +160,7 @@ void handle_switch_modifier_scope(const_string source_code, struct aio_spider *s
 }
 
 void handle_switch_header_scope(const_string source_code, struct aio_spider *spider) {
-    aio_switch_materials *materials = spider->get.switch_materials;
+    aio_switch_materials *materials = spider->materials;
     point_watcher *main_watcher = materials->main_watcher;
     point_watcher *header_watcher = materials->header_watcher;
     int start_index = main_watcher->start;
@@ -164,7 +168,7 @@ void handle_switch_header_scope(const_string source_code, struct aio_spider *spi
 #ifdef AIO_SWITCH_SPIDER_DEBUG
     log_info(AIO_SWITCH_SPIDER_TAG, "Explore switch header...");
 #endif
-    explore_header_body(source_code, &start_index, &end_index);
+    explore_aio_header_bounds(source_code, &start_index, &end_index);
     //Set positions in header watcher:
     header_watcher->start = start_index + 1;
     header_watcher->end = end_index - 1;
@@ -181,7 +185,7 @@ void handle_switch_header_scope(const_string source_code, struct aio_spider *spi
 }
 
 void handle_switch_body_scope(const_string source_code, struct aio_spider *spider) {
-    aio_switch_materials *materials = spider->get.switch_materials;
+    aio_switch_materials *materials = spider->materials;
     point_watcher *main_watcher = materials->main_watcher;
     point_watcher *switch_body_watcher = materials->switch_body_watcher;
     int start_index = main_watcher->start;
@@ -189,7 +193,7 @@ void handle_switch_body_scope(const_string source_code, struct aio_spider *spide
 #ifdef AIO_SWITCH_SPIDER_DEBUG
     log_info(AIO_SWITCH_SPIDER_TAG, "Explore switch body");
 #endif
-    explore_block_body(source_code, &start_index, &end_index);
+    explore_aio_block_bounds(source_code, &start_index, &end_index);
     switch_body_watcher->start = start_index;
     switch_body_watcher->end = end_index;
 #ifdef AIO_SWITCH_SPIDER_DEBUG
@@ -208,7 +212,7 @@ void handle_switch_body_scope(const_string source_code, struct aio_spider *spide
         //Default branch is exist!
         start_index = end_index + 1;
         end_index = 0;
-        explore_block_body(source_code, &start_index, &end_index);
+        explore_aio_block_bounds(source_code, &start_index, &end_index);
         point_watcher *else_watcher = materials->else_watcher;
         else_watcher->start = start_index;
         else_watcher->end = end_index;
@@ -239,9 +243,9 @@ const_boolean is_pointer(const_string source_code, const int current_position) {
 }
 
 void build_switch_cases(const_string source_code, aio_spider *spider) {
-    aio_switch_materials *materials = spider->get.switch_materials;
-    string_hook_list *case_key_list = materials->case_key_list;
-    string_hook_list *case_body_list = materials->case_body_list;
+    aio_switch_materials *materials = spider->materials;
+    str_hook_list *case_key_list = materials->case_key_list;
+    str_hook_list *case_body_list = materials->case_body_list;
     //Get switch body watcher:
     point_watcher *body_watcher = materials->switch_body_watcher;
     //Without braces:
@@ -266,29 +270,25 @@ void build_switch_cases(const_string source_code, aio_spider *spider) {
             }
             //Put case value bounds in list & don't hold pointer::
             body_watcher->end = body_watcher->pointer - 1;
-            string_hook *key_hook = new_string_hook_by_point_watcher(source_code, body_watcher);
+            str_hook *key_hook = new_str_hook_by_point_watcher(source_code, body_watcher);
 #ifdef AIO_SWITCH_SPIDER_DEBUG
-            const_string case_string = substring_by_string_hook(key_hook);
-            log_info_string(AIO_SWITCH_SPIDER_TAG, "Captured case key:", case_string);
-            free((void *) case_string);
+            log_info_string_hook(AIO_SWITCH_SPIDER_TAG, "Captured case key:", key_hook);
 #endif
-            add_string_hook_in_list(case_key_list, key_hook);
+            add_str_hook_in_list(case_key_list, key_hook);
             //Prepare to find case body:
             body_watcher->start = ++body_watcher->pointer;
             //Take start & end indexes again:
-            explore_block_body(source_code, &body_watcher->start, &body_watcher->end);
+            explore_aio_block_bounds(source_code, &body_watcher->start, &body_watcher->end);
             //Put body bounds in list:
-            string_hook *body_hook = new_string_hook_by_point_watcher(source_code, body_watcher);
+            str_hook *body_hook = new_str_hook_by_point_watcher(source_code, body_watcher);
 #ifdef AIO_SWITCH_SPIDER_DEBUG
-            const_string body_string = substring_by_string_hook(body_hook);
-            log_info_string(AIO_SWITCH_SPIDER_TAG, "Captured case body:", body_string);
-            free((void *) body_string);
+            log_info_string_hook(AIO_SWITCH_SPIDER_TAG, "Captured case body:", body_hook);
 #endif
-            add_string_hook_in_list(case_body_list, body_hook);
+            add_str_hook_in_list(case_body_list, body_hook);
             body_watcher->start = body_watcher->end;
             body_watcher->pointer = body_watcher->end;
             body_watcher->end = end;
-            const_boolean is_last_case = is_end_of_context_body(source_code, body_watcher);
+            const_boolean is_last_case = has_context_rest(source_code, body_watcher);
             const_boolean is_found_cases_by_pairs = case_key_list->size == case_body_list->size;
             if (is_last_case && is_found_cases_by_pairs) {
                 //위빙 준비 (Prepare for weaving):
@@ -309,24 +309,25 @@ void build_switch_cases(const_string source_code, aio_spider *spider) {
 
 void weave_switch_instruction_for(void *parent, const_string source_code,
                                   point_watcher *ripper_watcher, struct aio_spider *spider) {
+    aio_function_instruction_holder *holder = parent;
 #ifdef AIO_SWITCH_SPIDER_DEBUG
     log_info(AIO_SWITCH_SPIDER_TAG, "Start weaving...");
 #endif
     //재료들을 추출하다 (Extract materials):
-    const aio_switch_materials *materials = spider->get.switch_materials;
-    const string_hook_list *case_key_hooks = materials->case_key_list;
-    const string_hook_list *case_body_hooks = materials->case_body_list;
+    const aio_switch_materials *materials = spider->materials;
+    const_str_hook_list *case_key_hooks = materials->case_key_list;
+    const_str_hook_list *case_body_hooks = materials->case_body_list;
     const_point_watcher *body_watcher = materials->switch_body_watcher;
     const_point_watcher *header_watcher = materials->header_watcher;
     //Create holders:
-    aio_instruction_holder *new_else_holder = NULL;
+    aio_function_instruction_holder *new_else_holder = NULL;
     //Create switch holders:
     const size_t number_of_case_hooks = (const size_t) case_key_hooks->size;
     //Put all cases in general array of lists:
     string_list **general_case_lists = new_object_array(number_of_case_hooks, sizeof(string_list *));
     unsigned int number_of_cases = 0;
     for (int i = 0; i < number_of_case_hooks; ++i) {
-        const_string_hook *case_keys_hook = case_key_hooks->hooks[i];
+        const_str_hook *case_keys_hook = case_key_hooks->hooks[i];
         //Hook mays contain several case keys:
         string_list *case_key_list = extract_case_keys_from_hook(case_keys_hook);
         number_of_cases += case_key_list->size;
@@ -336,22 +337,24 @@ void weave_switch_instruction_for(void *parent, const_string source_code,
     log_info_int(AIO_SWITCH_SPIDER_TAG, "NUMBER OF CASES:", number_of_cases);
 #endif
     //Init case holder array:
-    aio_instruction_holder **new_case_holders = new_object_array(number_of_cases, sizeof(aio_instruction_holder *));
+    aio_function_instruction_holder **new_case_holders
+            = new_object_array(number_of_cases, sizeof(aio_function_instruction_holder *));
     string_list *new_case_key_list = new_string_list();
     int index = 0;
     for (int k = 0; k < number_of_case_hooks; ++k) {
-        const_string_hook *body_hook = case_body_hooks->hooks[k];
+        const_str_hook *body_hook = case_body_hooks->hooks[k];
         const int start = body_hook->start;
         const int end = body_hook->end;
         string_list *case_key_list = general_case_lists[k];
         const int list_size = case_key_list->size;
         for (int i = 0; i < list_size; ++i) {
             //Put "list_size" times case holder in array:
-            aio_instruction_holder *new_holder = dig_new_aio_instruction_holder(source_code, parent, start, end);
+            aio_function_instruction_holder *new_holder
+                    = inflate_local_aio_instruction_holder(source_code, parent, start, end);
             new_case_holders[index++] = new_holder;
             add_string_in_list(new_case_key_list, case_key_list->strings[i]);
         }
-        //------------------------------------------------------------------------------------------------------------------
+        //--------------------------------------------------------------------------------------------------------------
         //찌꺼기 수집기 (Garbage collector):
         free_string_list(case_key_list);
     }
@@ -365,7 +368,8 @@ void weave_switch_instruction_for(void *parent, const_string source_code,
         const_point_watcher *else_watcher = materials->else_watcher;
         new_point = else_watcher->end - 1;
         //Create else holder:
-        new_else_holder = dig_new_aio_instruction_holder(source_code, parent, else_watcher->start, else_watcher->end);
+        new_else_holder
+                = inflate_local_aio_instruction_holder(source_code, parent, else_watcher->start, else_watcher->end);
     } else {
         new_point = body_watcher->end - 1;
     }
@@ -375,15 +379,15 @@ void weave_switch_instruction_for(void *parent, const_string source_code,
     ripper_watcher->pointer = new_point;
     ripper_watcher->start = new_point;
     //Create instruction:
-    aio_instruction *switch_instruction = new_aio_switch_instruction(parent, new_switch_value, new_case_key_list,
-                                                                     new_case_holders, new_else_holder);
+    aio_function_instruction *instruction = new_aio_switch_instruction(parent, new_switch_value, new_case_key_list,
+                                                                       new_case_holders, new_else_holder);
     //명부에게 지침을 추가하다 (Add 'Switch' instruction in holder's instructions):
-    aio_instruction_list *instruction_list = parent->instruction_list;
-    add_aio_instruction_in_list(instruction_list, switch_instruction);
+    aio_function_instruction_list *instruction_list = holder->instruction_list;
+    add_aio_instruction_in_list(instruction_list, instruction);
     //위빙이 완료되었습니다 (Weaving complete)!
 #ifdef AIO_SWITCH_SPIDER_DEBUG
     log_info(AIO_SWITCH_SPIDER_TAG, "WEAVED INSTRUCTION:");
-    aio_switch_task *task = switch_instruction->get.switch_task;
+    const aio_switch_task *task = instruction->get.switch_task;
     log_info_string(AIO_SWITCH_SPIDER_TAG, "<SWITCH VALUE>:", task->switch_value);
     string_list *case_keys = task->case_keys;
     for (int j = 0; j < case_keys->size; ++j) {
@@ -395,12 +399,12 @@ void weave_switch_instruction_for(void *parent, const_string source_code,
     free((void *) dirty_switch_value);
 }
 
-string_list *extract_case_keys_from_hook(const_string_hook *case_keys_hook) {
+string_list *extract_case_keys_from_hook(const_str_hook *case_keys_hook) {
     static const_string OPENING_PARENTHESIS = "(";
     static const_string CLOSING_PARENTHESIS = ")";
     string_list *case_key_list = new_string_list();
     //Extract string from hook:
-    const_string dirty_case_key_chunk = substring_by_string_hook(case_keys_hook);
+    const_string dirty_case_key_chunk = substring_by_str_hook(case_keys_hook);
     string case_key_chunk = squeeze_string(dirty_case_key_chunk);
     const_boolean is_many_cases = starts_with_prefix(case_key_chunk, OPENING_PARENTHESIS)
                                   || ends_with_suffix(case_key_chunk, CLOSING_PARENTHESIS);
