@@ -52,6 +52,7 @@ void inflate_new_aio_control_graph(const_aio_function_control_graph *parent,
     free_aio_control_graph(control_graph);
 }
 
+//FIXME: Make with echo:
 void perform_aio_instructions(const_aio_function_control_graph *control_graph) {
     const_aio_function_instruction_list *instruction_list = control_graph->instruction_list;
     const_aio_function_instruction_array instructions = instruction_list->instructions;
