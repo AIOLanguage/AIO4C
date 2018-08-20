@@ -17,4 +17,7 @@ aio_function_instruction *new_aio_loop_instruction(aio_function_instruction_hold
                                                    aio_function_instruction_holder *init_holder,
                                                    aio_function_instruction_holder *cycle_holder);
 
+void perform_aio_loop_instruction(const_aio_function_instruction *instruction,
+                                  const_aio_function_control_graph *control_graph);
+
 #endif //AIO_LOOP_INSTRUCTION_H

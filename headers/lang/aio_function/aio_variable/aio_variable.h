@@ -5,6 +5,7 @@
 #include "../../../lib/utils/boolean_utils/boolean_utils.h"
 #include "../aio_value/aio_value.h"
 #include "aio_definition/aio_variable_definition.h"
+#include "../../../tools/aio_function_tools/aio_instructions/aio_function_instruction_holder.h"
 
 typedef struct aio_variable_definition;
 
@@ -15,8 +16,15 @@ typedef struct aio_variable {
 
 typedef const aio_variable const_aio_variable;
 
+typedef aio_variable **aio_variable_array;
+
+typedef const aio_variable **const_aio_variable_array;
+
 aio_variable *new_aio_variable_by_definition(const struct aio_variable_definition *variable_definition,
                                              aio_value *value);
+
+aio_variable *get_variable_in_function_control_graph(const_str_hook *variable_name,
+                                                                      const_aio_function_control_graph *control_graph);
 
 void free_aio_variable(aio_variable *variable);
 
@@ -27,7 +35,7 @@ void free_aio_variable(aio_variable *variable);
 typedef struct aio_variable_list {
     size_t capacity;
     size_t size;
-    aio_variable **variables;
+    aio_variable_array variables;
 } aio_variable_list;
 
 typedef const aio_variable_list const_aio_variable_list;

@@ -11,4 +11,7 @@ typedef struct aio_procedure_task {
 
 aio_function_instruction * new_aio_procedure_instruction(aio_function_instruction_holder *holder, string expression);
 
+void perform_aio_procedure_instruction(const_aio_function_instruction *instruction,
+                                       const_aio_function_control_graph *control_graph);
+
 #endif //AIO_PROCEDURE_INSTRUCTION_H

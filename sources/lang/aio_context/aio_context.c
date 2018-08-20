@@ -37,7 +37,7 @@ const_aio_context *new_aio_context(const_string path) {
 #ifdef AIO_CONTEXT_DEBUG
     log_info_string(AIO_CONTEXT_TAG, "Source code:", context->source_code);
 #endif
-    //직능 해상력을 문맥에 모으다 (Collect function definitions in context):
+    //직능 해상력을 문맥에 모으다 (Collect function definitions in context_ref):
     upbuild_aio_context(context);
     return context;
 }
@@ -46,7 +46,7 @@ void invoke_static_function_in_context(const_aio_context *context, const_str_hoo
     const_aio_function_definition_list *definition_list = context->function_manager->definition_list;
     const_aio_function_definition *definition = get_aio_method_definition_in_list_by_name(definition_list,
                                                                                           function_name);
-    invoke_new_aio_function(context, definition, bundle);
+    invoke_aio_function(definition, bundle, context);
 }
 
 /**
@@ -74,7 +74,7 @@ void add_aio_context_in_list(aio_context_list *list, const_aio_context *context)
         const_str_hook *current_name = list->contexts[i]->name;
         const_boolean are_equal_strings = are_equal_hooked_str(current_name, context_name);
         if (are_equal_strings) {
-            throw_error_with_tag(AIO_CONTEXT_TAG, "This context name already exists!");
+            throw_error_with_tag(AIO_CONTEXT_TAG, "This context_ref name already exists!");
         }
     }
     update_memory_in_aio_context_list(list);

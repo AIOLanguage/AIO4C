@@ -7,58 +7,60 @@
 #include "../../../../headers/lang/aio_function/aio_value/aio_value.h"
 #include "../../../../headers/lib/utils/memory_utils/memory_utils.h"
 #include "../../../../headers/lang/aio_type/aio_type.h"
+#include "../../../../headers/lib/utils/str_hook/str_hook_utils/str_hook_utils.h"
 
-aio_value *new_aio_value(const_string undefined_value) {
-    aio_value *value = new_object(sizeof(aio_value *));
+#define AIO_VALUE_TAG "AIO_VALUE"
+
+aio_value *new_aio_value(string undefined_value) {
     if (matches_int(undefined_value)) {
         const int int_value = string_to_int(undefined_value);
-        value->int_acc = int_value;
-        return value;
+        free(undefined_value);
+        return new_aio_int_value(int_value);
     }
     if (matches_double(undefined_value)) {
         const double double_value = string_to_double(undefined_value);
-        value->double_acc = double_value;
-        return value;
+        free(undefined_value);
+        return new_aio_double_value(double_value);
     }
     if (matches_string(undefined_value)) {
         string string_value = remove_prefix_suffix(undefined_value, "\'", "\'");
-        value->string_acc = string_value;
-        return value;
+        free(undefined_value);
+        return new_aio_string_value(string_value);
     }
     if (matches_boolean(undefined_value)) {
         const_boolean boolean_value = string_to_boolean(undefined_value);
-        value->boolean_acc = boolean_value;
-        return value;
+        free(undefined_value);
+        return new_aio_boolean_value(boolean_value);
+    } else {
+        throw_error_with_tag(AIO_VALUE_TAG, "Classes are not yet developed in AIO");
     }
-    if (strcmp(undefined_value, VOID) == 0) {
-        value->string_acc = (string) undefined_value;
-        return value;
-    }
-    //Ok...
-    throw_error("can not define type of aio aio_value");
 }
 
 aio_value *new_aio_int_value(const int int_acc) {
     aio_value *value = new_object(sizeof(aio_value *));
-    value->int_acc = int_acc;
+    value->get.int_acc = int_acc;
+    value->type = new_str_hook_by_string(INTEGER);
     return value;
 }
 
 aio_value *new_aio_double_value(const double double_acc) {
     aio_value *value = new_object(sizeof(aio_value *));
-    value->double_acc = double_acc;
+    value->get.double_acc = double_acc;
+    value->type = new_str_hook_by_string(DOUBLE);
     return value;
 }
 
 aio_value *new_aio_string_value(string string_acc) {
     aio_value *value = new_object(sizeof(aio_value *));
-    value->string_acc = string_acc;
+    value->get.string_acc = string_acc;
+    value->type = new_str_hook_by_string(STRING);
     return value;
 }
 
 aio_value *new_aio_boolean_value(const_boolean boolean_acc) {
     aio_value *value = new_object(sizeof(aio_value *));
-    value->boolean_acc = boolean_acc;
+    value->get.boolean_acc = boolean_acc;
+    value->type = new_str_hook_by_string(BOOLEAN);
     return value;
 }
 

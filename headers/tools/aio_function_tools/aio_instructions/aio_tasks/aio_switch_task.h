@@ -20,4 +20,7 @@ aio_function_instruction * new_aio_switch_instruction(aio_function_instruction_h
                                                       aio_function_instruction_holder **case_holders,
                                                       aio_function_instruction_holder *else_holder);
 
+void perform_aio_switch_instruction(const_aio_function_instruction *instruction,
+                                    const_aio_function_control_graph *control_graph);
+
 #endif //AIO_SWITCH_INSTRUCTION_H

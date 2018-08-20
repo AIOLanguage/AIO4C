@@ -219,7 +219,7 @@ void handle_loop_header_scope(const_string source_code, aio_spider *spider) {
     }
     //Skip whitespaces before condition:
     if (!is_whitespace_cond && header_watcher->mode == POINT_PASSIVE_MODE) {
-        throw_error_with_tag(AIO_LOOP_SPIDER_TAG, "Invalid context after 'loo' modifier!");
+        throw_error_with_tag(AIO_LOOP_SPIDER_TAG, "Invalid context_ref after 'loo' modifier!");
     }
 }
 

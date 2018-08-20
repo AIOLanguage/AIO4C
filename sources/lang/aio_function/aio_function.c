@@ -7,7 +7,10 @@
 #include "../../../headers/lang/aio_function/aio_function.h"
 #include "../../../headers/lang/aio_function/aio_value/aio_value.h"
 
-void invoke_new_aio_function(const_aio_context *aio_context, const_aio_function_definition *function_definition,
-                             aio_bundle *bundle) {
-    
+aio_value_list *invoke_aio_function(const_aio_function_definition *definition, aio_bundle *bundle,
+                                    const_aio_context *context) {
+    aio_function_control_graph *parent_graph = NULL;
+    const_aio_function_instruction_holder *root_holder = definition->root_holder;
+    inflate_new_aio_root_control_graph(parent_graph, root_holder, bundle, context);
+    return bundle->output_values;
 }

@@ -2,20 +2,31 @@
 #define AIO_VALUE_H
 
 #include "../../../lib/utils/string_utils/string_utils.h"
+#include "../../../lib/utils/str_hook/str_hook.h"
 
 /**
  * Value.
  */
 
-typedef union aio_value {
-    int int_acc;
-    double double_acc;
-    string string_acc;
-    boolean boolean_acc;
-    void *reference;
+typedef struct aio_value {
+
+    str_hook *type;
+
+    union {
+        int int_acc;
+        double double_acc;
+        string string_acc;
+        boolean boolean_acc;
+        void *reference;
+    } get;
+
 } aio_value;
 
-aio_value *new_aio_value(const_string undefined_value);
+typedef aio_value **aio_value_array;
+
+typedef const aio_value **const_aio_value_array;
+
+aio_value *new_aio_value(string undefined_value);
 
 aio_value *new_aio_int_value(const int int_acc);
 
@@ -34,8 +45,10 @@ void free_aio_value(aio_value *value);
 typedef struct aio_value_list {
     size_t capacity;
     size_t size;
-    aio_value **values;
+    aio_value_array values;
 } aio_value_list;
+
+typedef const aio_value_list const_aio_value_list;
 
 aio_value_list *new_aio_value_list();
 

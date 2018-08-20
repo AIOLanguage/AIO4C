@@ -218,7 +218,7 @@ void handle_condition_scope(const_string string_web, aio_spider *spider) {
     }
     //조건전 공백들을 건너 뛰다 (Skip whitespaces before condition):
     if (!is_whitespace_cond && header_watcher->mode == POINT_PASSIVE_MODE) {
-        throw_error_with_tag(AIO_IF_SPIDER_TAG, "Invalid context after 'if' modifier!");
+        throw_error_with_tag(AIO_IF_SPIDER_TAG, "Invalid context_ref after 'if' modifier!");
     }
 }
 
@@ -274,7 +274,7 @@ void handle_true_body_scope(const_string source_code, aio_spider *spider) {
     //조건후에 공백들을 건너 뛰다 (Skip whitespaces after condition):
     if (!is_whitespace_cond) {
         if (true_watcher->mode == POINT_PASSIVE_MODE) {
-            throw_error_with_tag(AIO_IF_SPIDER_TAG, "Invalid context after 'if' condition!");
+            throw_error_with_tag(AIO_IF_SPIDER_TAG, "Invalid context_ref after 'if' condition!");
         }
         //'false' 수정 자 또는 다른 기호 기다리다 (Waiting for 'false' modifier or other symbol):
         if (true_watcher->mode == POINT_UNDEFINED_MODE) {
@@ -360,7 +360,7 @@ void handle_false_body_scope(const_string source_code, aio_spider *spider) {
     }
     //'false' 블록전 공백들을 건너 뛰다 (Skip whitespaces before false body):
     if (!is_whitespace_cond && false_watcher->mode == POINT_PASSIVE_MODE) {
-        throw_error_with_tag(AIO_IF_SPIDER_TAG, "Invalid context before false body!");
+        throw_error_with_tag(AIO_IF_SPIDER_TAG, "Invalid context_ref before false body!");
     }
 }
 

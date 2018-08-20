@@ -26,14 +26,14 @@ void upbuild_aio_context(aio_context *context) {
     const size_t source_code_length = strlen(source_code);
     const_boolean is_empty_context = is_empty_string(source_code);
     if (is_empty_context) {
-        throw_error_with_tag(AIO_CONTEXT_BUILDER_TAG, "AIO context is empty!");
+        throw_error_with_tag(AIO_CONTEXT_BUILDER_TAG, "AIO context_ref is empty!");
     }
     //함수들 찾기 준비하기 (Prepare to find functions):
     int pointer = 0;
     aio_function_definition_list *definition_list = context->function_manager->definition_list;
     while (pointer < source_code_length) {
 #ifdef AIO_CONTEXT_BUILDER_DEBUG
-        log_info(AIO_CONTEXT_BUILDER_TAG, "Find functions in AIO context...");
+        log_info(AIO_CONTEXT_BUILDER_TAG, "Find functions in AIO context_ref...");
 #endif
         const_aio_function_definition *function_definition = conjure_aio_function_definition(source_code, &pointer);
 #ifdef AIO_CONTEXT_BUILDER_TAG

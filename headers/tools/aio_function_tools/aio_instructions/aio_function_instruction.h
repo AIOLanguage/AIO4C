@@ -2,6 +2,7 @@
 #define AIO_FUNCTION_INSTRUCTION_H
 
 #include "aio_function_instruction_holder.h"
+#include "../aio_control_graph/aio_function_control_graph.h"
 
 typedef struct aio_function_instruction_holder;
 
@@ -34,18 +35,27 @@ typedef struct aio_function_instruction {
 
 } aio_function_instruction;
 
+typedef enum aio_function_instruction_echo {
+    AIO_MAKE_NEXT_INSTRUCTION, AIO_BREAK_INSTRUCTION, AIO_CONTINUE_INSTRUCTION, AIO_STOP_INSTRUCTION
+} aio_function_instruction_echo;
+
 typedef const aio_function_instruction const_aio_function_instruction;
+
+typedef const aio_function_instruction **const_aio_function_instruction_array;
 
 aio_function_instruction *new_aio_function_instruction(struct aio_function_instruction_holder *holder,
                                                        aio_function_task_type task_type);
+
+void perform_aio_instruction(const_aio_function_instruction *instruction,
+                             const_aio_function_control_graph *control_graph);
 
 /**
  * Instruction list.
  */
 
 typedef struct aio_function_instruction_list {
-    int capacity;
-    int size;
+    size_t capacity;
+    size_t size;
     const aio_function_instruction **instructions;
 } aio_function_instruction_list;
 
