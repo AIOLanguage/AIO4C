@@ -5,27 +5,27 @@
 #include <math.h>
 #include "../../../../headers/lib/utils/string_utils/string_utils.h"
 
-boolean matches_double(const_string word) {
+boolean matches_double(const_string src) {
     boolean result = FALSE;
     int was_dot = -1;
     int was_fraction = -1;
     int start = 0;
-    int length = strlen(word);
+    int length = strlen(src);
     if (length == 0) {
         printf("empty string as Dou!");
         exit(1);
     }
-    if (word[0] == '-') {
+    if (src[0] == '-') {
         if (length == 1) {
             printf("this is a minus as Dou!");
             exit(1);
         }
         start = 1;
     }
-    for (int i = start; i < strlen(word); ++i) {
-        int e = word[i] - '0';
+    for (int i = start; i < strlen(src); ++i) {
+        int e = src[i] - '0';
         if ((e < 0 || e > 9)) {
-            if (word[i] == '.' && was_dot == -1) {
+            if (src[i] == '.' && was_dot == -1) {
                 was_dot = 0;
             } else {
                 return -1;

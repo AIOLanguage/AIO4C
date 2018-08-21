@@ -133,7 +133,7 @@ static void handle_default_loop_header_declaration_scope(const_string string_web
         log_info_str_hook(AIO_DEFAULT_LOOP_HEADER_SPIDER_TAG, "CAPTURED CHUNK", hook);
 #endif
         //Check conditions:
-        const_boolean is_mutable_modifier = is_aio_mutable_modifier_hooked(hook);
+        const_boolean is_mutable_modifier = is_aio_mutable_modifier(hook);
         const_boolean is_type = is_aio_type_hooked(hook);
         const_boolean is_variable_name = is_word_hooked(hook) && can_use_name(hook);
         if (materials->declaration_type == AIO_DEFAULT_LOOP_HEADER_VARIABLE_UNDEFINED) {

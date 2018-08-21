@@ -13,7 +13,7 @@ aio_variable_definition *new_aio_variable_definition(const_str_hook *name, str_h
     aio_variable_definition *variable_definition = new_object(sizeof(aio_variable_definition));
     variable_definition->name = name;
     variable_definition->type = type;
-    variable_definition->is_mutable_by_value = is_mutable_by_value;
+    variable_definition->is_mutable = is_mutable_by_value;
     return variable_definition;
 }
 

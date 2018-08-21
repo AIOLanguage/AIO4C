@@ -147,7 +147,7 @@ add_executable(${PROJECT_NAME}
         sources/lib/utils/string_utils/trim.c
         #---------------------------------------------------------------------------------------------------------------
         sources/lib/utils/str_hook/str_hook_utils/str_hook_iterator.c
-        headers/tools/aio_function_tools/aio_expression_parser/aio_expression_parser.h)
+        headers/tools/aio_function_tools/aio_expression_parser/aio_expression_parser.h sources/lang/aio_type/aio_type.c)
 
 
 #TODO: How make it???

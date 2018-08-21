@@ -19,12 +19,12 @@
 
 #define AIO_BREAK_MODIFIER "brk"
 
-boolean is_aio_mutable_modifier_hooked(const_str_hook *hook);
+_Bool is_aio_mutable_modifier(const struct str_hook *hook);
 
-boolean is_aio_if_modifier(const_str_hook *hook);
+_Bool is_aio_if_modifier(const struct str_hook *hook);
 
-boolean is_aio_loop_modifier(const_str_hook *hook);
+_Bool is_aio_loop_modifier(const struct str_hook *hook);
 
-boolean can_use_name(const_str_hook *hook);
+_Bool can_use_name(const struct str_hook *hook);
 
 #endif //AIO_RESERVED_NAMES_CONTAINER_H

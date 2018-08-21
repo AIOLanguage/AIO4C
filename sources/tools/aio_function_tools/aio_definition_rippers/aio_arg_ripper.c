@@ -80,7 +80,7 @@ aio_variable_definition_list *dig_arguments(const_string source_code, int *point
                     break;
                 case MUTABLE_VS_TYPE_VS_NAME: {
                     const_str_hook *mutable_modifier = hooks[0];
-                    if (is_aio_mutable_modifier_hooked(mutable_modifier)) {
+                    if (is_aio_mutable_modifier(mutable_modifier)) {
                         arg_type = new_str_hook_by_other(hooks[1]);
                         arg_name = new_str_hook_by_other(hooks[2]);
                         is_mutable = TRUE;
@@ -106,7 +106,7 @@ aio_variable_definition_list *dig_arguments(const_string source_code, int *point
             const aio_variable_definition *definition = arg_definition_map->definitions[k];
             const_string type = substring_by_str_hook(definition->type);
             const_string name = substring_by_str_hook(definition->name);
-            printf("\n%s: -%s-, -%s-, -%d- \n", AIO_ARG_RIPPER_TAG, type, name, definition->is_mutable_by_value);
+            printf("\n%s: -%s-, -%s-, -%d- \n", AIO_ARG_RIPPER_TAG, type, name, definition->is_mutable);
             free((void *) type);
             free((void *) name);
         }

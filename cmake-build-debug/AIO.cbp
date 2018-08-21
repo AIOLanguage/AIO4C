@@ -283,6 +283,9 @@
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lang/aio_reserved_names/aio_reserved_names_container.c">
 			<Option target="AIO"/>
 		</Unit>
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lang/aio_type/aio_type.c">
+			<Option target="AIO"/>
+		</Unit>
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/boolean_utils/boolean_utils.c">
 			<Option target="AIO"/>
 		</Unit>

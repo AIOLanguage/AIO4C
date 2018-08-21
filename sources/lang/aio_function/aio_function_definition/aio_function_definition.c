@@ -25,7 +25,7 @@ const_aio_function_definition *new_aio_function_definition(const_aio_annotation_
     return function_definition;
 }
 
-void free_aio_function_definition(const_aio_function_definition *method_definition) {
+void free_aio_function_definition(const_aio_function_definition *function_definition) {
 
 }
 

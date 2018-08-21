@@ -13,4 +13,6 @@
 
 #define AIO_WILL_DEFINED "###"
 
+_Bool is_aio_type_hooked(const struct str_hook *hook);
+
 #endif //AIO_TYPE_H

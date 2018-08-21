@@ -151,7 +151,7 @@ void handle_assign_declaration_scope(const_string source_code, aio_spider *spide
         log_info_str_hook(AIO_ASSIGN_SPIDER_TAG, "CAPTURE CHUNK:", hook);
 #endif
         //조건들을 확인하다 (Check conditions):
-        const_boolean is_mutable_modifier = is_aio_mutable_modifier_hooked(hook);
+        const_boolean is_mutable_modifier = is_aio_mutable_modifier(hook);
         const_boolean is_type = is_aio_type_hooked(hook);
         const_boolean is_variable_name = is_word_hooked(hook) && can_use_name(hook);
         if (materials->declaration_type == AIO_ASSIGN_UNDEFINED_DECLARATION) {
@@ -396,12 +396,12 @@ void weave_assign_instruction_for(void *holder, const_string _,
 #ifdef AIO_ASSIGN_SPIDER_DEBUG
             log_info_str_hook(AIO_ASSIGN_SPIDER_TAG, "<FOUND DEFINITION>:", definition->name);
             log_info_str_hook(AIO_ASSIGN_SPIDER_TAG, "<TYPE>:", definition->type);
-            log_info_boolean(AIO_ASSIGN_SPIDER_TAG, "<IS MUTABLE>:", definition->is_mutable_by_value);
+            log_info_boolean(AIO_ASSIGN_SPIDER_TAG, "<IS MUTABLE>:", definition->is_mutable);
 #endif
             if (declaration_type != AIO_ASSIGN_WILL_DEFINED) {
                 throw_error_with_tag(AIO_ASSIGN_SPIDER_TAG, "Variable already was defined in function tree!");
             }
-            if (!definition->is_mutable_by_value) {
+            if (!definition->is_mutable) {
                 throw_error_with_details(AIO_ASSIGN_SPIDER_TAG, "Immutable variable can not change value!",
                                          substring_by_str_hook(definition->name));
             }

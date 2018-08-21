@@ -9,33 +9,37 @@
  */
 
 typedef struct aio_annotation {
-    const_str_hook *name;
+    const struct str_hook *name;
 } aio_annotation;
 
-typedef const aio_annotation const_aio_annotation;
+const struct aio_annotation *new_aio_annotation(const struct str_hook *name);
 
-typedef const aio_annotation **const_aio_annotation_array;
-
-const_aio_annotation *new_aio_annotation(const_str_hook *name);
-
-void free_aio_annotation(const_aio_annotation *annotation);
+void free_aio_annotation(const struct aio_annotation *annotation);
 
 /**
  * List.
  */
 
 typedef struct aio_annotation_list {
-    size_t capacity;
-    size_t size;
-    const_aio_annotation_array annotations;
+    unsigned int capacity;
+    unsigned int size;
+    const struct aio_annotation **annotations;
 } aio_annotation_list;
 
+struct aio_annotation_list *new_aio_annotation_list();
+
+void add_aio_annotation_in_list(struct aio_annotation_list *annotation_list, const struct aio_annotation *annotation);
+
+void free_annotation_list(struct aio_annotation_list *annotation_list);
+
+/**
+ * Typedef utils.
+ */
+
+typedef const aio_annotation const_aio_annotation;
+
+typedef const aio_annotation **const_aio_annotation_array;
+
 typedef const aio_annotation_list const_aio_annotation_list;
-
-aio_annotation_list *new_aio_annotation_list();
-
-void add_aio_annotation_in_list(aio_annotation_list *annotation_list, const_aio_annotation *annotation);
-
-void free_annotation_list(const_aio_annotation_list *annotation_list);
 
 #endif //AIO_ANNOTATION_H

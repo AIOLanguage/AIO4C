@@ -6,20 +6,20 @@
 #include "../../../lib/utils/str_hook/str_hook.h"
 
 typedef struct aio_result {
-    aio_value *value;
-    str_hook *rest;
+    struct aio_value *value;
+    struct str_hook *rest;
 } aio_result;
 
-aio_result *new_aio_result(aio_value *value, string rest);
+struct aio_result *new_aio_result(struct aio_value *value, struct str_hook *rest);
 
-aio_result *new_aio_int_result(const int int_acc, str_hook *rest);
+struct aio_result *new_aio_int_result(const int int_acc, struct str_hook *rest);
 
-aio_result *new_aio_dou_result(const double double_acc, str_hook *rest);
+struct aio_result *new_aio_dou_result(const double double_acc, struct str_hook *rest);
 
-aio_result *new_aio_str_result(string string_acc, str_hook *rest);
+struct aio_result *new_aio_str_result(char *string_acc, struct str_hook *rest);
 
-aio_result *new_aio_boo_result(const_boolean boolean_acc, str_hook *rest);
+struct aio_result *new_aio_boo_result(const _Bool boolean_acc, struct str_hook *rest);
 
-void free_aio_result(aio_result *result);
+void free_aio_result(struct aio_result *result);
 
 #endif //AIO_RESULT_H

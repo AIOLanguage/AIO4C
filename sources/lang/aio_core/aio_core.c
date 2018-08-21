@@ -8,8 +8,6 @@
 #include "../../../headers/lib/utils/str_hook/str_hook_utils/str_hook_utils.h"
 #include "../../../headers/lang/aio_type/aio_type.h"
 
-aio_core *core;
-
 #define AIO_CORE_DEBUG
 
 char core_types[NUMBER_OF_CORE_TYPES][4] = {
@@ -32,18 +30,10 @@ void inflate_aio_core() {
     core->aio_type_set = type_set;
 }
 
-const_aio_context * inflate_aio_context_and_put_in_core(const_string path) {
-    const_aio_context *context = new_aio_context(path);
+const_aio_context * inflate_aio_context_and_put_in_core(const_string context_path) {
+    const_aio_context *context = new_aio_context(context_path);
     add_aio_context_in_list(core->core_context_list, context);
     return context;
-}
-
-boolean is_aio_type(const_string string) {
-    return contains_string_in_set(core->aio_type_set, string);
-}
-
-boolean is_aio_type_hooked(const_str_hook *hook) {
-    return contains_string_in_set_by_hook(core->aio_type_set, hook);
 }
 
 void free_aio_core() {

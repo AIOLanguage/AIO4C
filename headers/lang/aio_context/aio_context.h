@@ -20,46 +20,57 @@ typedef struct aio_static_function_manager {
     struct aio_function_definition_list *definition_list;
 } aio_static_function_manager;
 
-typedef const aio_static_function_manager const_aio_static_function_manager;
-
 /**
  * Context.
  */
 
 typedef struct aio_context {
-    const_str_hook *name;
-    const_string source_code;
-    const_aio_static_function_manager *function_manager;
+    const struct str_hook *name;
+    const char *source_code;
+    const struct aio_static_function_manager *function_manager;
 } aio_context;
 
-typedef const aio_context const_aio_context;
+const struct aio_context *new_aio_context(const char *path);
 
-typedef const aio_context **const_aio_context_array;
+void upbuild_aio_context(const struct aio_context *context);
 
-const_aio_context *new_aio_context(const_string path);
+void invoke_static_function_in_context(
+        const struct aio_context *context,
+        const struct str_hook *function_name,
+        struct aio_bundle *bundle
+);
 
-void upbuild_aio_context(aio_context *context);
-
-void invoke_static_function_in_context(const_aio_context *context, const_str_hook *function_name, aio_bundle *bundle);
+void free_aio_context(const struct context *);
 
 /**
  * List.
  */
 
 typedef struct aio_context_list {
-    size_t capacity;
-    size_t size;
-    const_aio_context_array contexts;
+    unsigned int capacity;
+    unsigned int size;
+    const struct aio_context **contexts;
 } aio_context_list;
 
+struct aio_context_list *new_aio_context_list();
+
+void add_aio_context_in_list(struct aio_context_list *list, const struct aio_context *context);
+
+const struct aio_context *get_aio_context_in_list_by_name(const struct aio_context_list *list,
+                                                          const struct str_hook *context_name);
+
+void free_aio_context_list(struct aio_context_list *context_list);
+
+/**
+ * Typedef utils.
+ */
+
+typedef const aio_static_function_manager const_aio_static_function_manager;
+
+typedef const aio_context const_aio_context;
+
+typedef const aio_context **const_aio_context_array;
+
 typedef const aio_context_list const_aio_context_list;
-
-aio_context_list *new_aio_context_list();
-
-void add_aio_context_in_list(aio_context_list *list, const_aio_context *context);
-
-const_aio_context * get_aio_context_in_list_by_name(const_aio_context_list *list, const_str_hook *context_name);
-
-void free_aio_context_list(aio_context_list *context_map);
 
 #endif //AIO_CONTEXT_H

@@ -500,6 +500,33 @@ sources/lang/aio_reserved_names/aio_reserved_names_container.c.s:
 	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_reserved_names/aio_reserved_names_container.c.s
 .PHONY : sources/lang/aio_reserved_names/aio_reserved_names_container.c.s
 
+sources/lang/aio_type/aio_type.obj: sources/lang/aio_type/aio_type.c.obj
+
+.PHONY : sources/lang/aio_type/aio_type.obj
+
+# target to build an object file
+sources/lang/aio_type/aio_type.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_type/aio_type.c.obj
+.PHONY : sources/lang/aio_type/aio_type.c.obj
+
+sources/lang/aio_type/aio_type.i: sources/lang/aio_type/aio_type.c.i
+
+.PHONY : sources/lang/aio_type/aio_type.i
+
+# target to preprocess a source file
+sources/lang/aio_type/aio_type.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_type/aio_type.c.i
+.PHONY : sources/lang/aio_type/aio_type.c.i
+
+sources/lang/aio_type/aio_type.s: sources/lang/aio_type/aio_type.c.s
+
+.PHONY : sources/lang/aio_type/aio_type.s
+
+# target to generate assembly for a file
+sources/lang/aio_type/aio_type.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_type/aio_type.c.s
+.PHONY : sources/lang/aio_type/aio_type.c.s
+
 sources/lib/utils/boolean_utils/boolean_utils.obj: sources/lib/utils/boolean_utils/boolean_utils.c.obj
 
 .PHONY : sources/lib/utils/boolean_utils/boolean_utils.obj
@@ -1928,6 +1955,9 @@ help:
 	@echo ... sources/lang/aio_reserved_names/aio_reserved_names_container.obj
 	@echo ... sources/lang/aio_reserved_names/aio_reserved_names_container.i
 	@echo ... sources/lang/aio_reserved_names/aio_reserved_names_container.s
+	@echo ... sources/lang/aio_type/aio_type.obj
+	@echo ... sources/lang/aio_type/aio_type.i
+	@echo ... sources/lang/aio_type/aio_type.s
 	@echo ... sources/lib/utils/boolean_utils/boolean_utils.obj
 	@echo ... sources/lib/utils/boolean_utils/boolean_utils.i
 	@echo ... sources/lib/utils/boolean_utils/boolean_utils.s

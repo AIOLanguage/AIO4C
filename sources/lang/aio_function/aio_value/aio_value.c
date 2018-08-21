@@ -50,9 +50,9 @@ aio_value *new_aio_double_value(const double double_acc) {
     return value;
 }
 
-aio_value *new_aio_string_value(string string_acc) {
+aio_value *new_aio_string_value(const_string string_acc) {
     aio_value *value = new_object(sizeof(aio_value *));
-    value->get.string_acc = string_acc;
+    value->get.string_acc = new_string(string_acc);
     value->type = new_str_hook_by_string(STRING);
     return value;
 }

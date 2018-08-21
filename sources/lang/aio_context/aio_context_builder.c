@@ -21,7 +21,7 @@
 
 #endif
 
-void upbuild_aio_context(aio_context *context) {
+void upbuild_aio_context(const_aio_context *context) {
     const_string source_code = context->source_code;
     const size_t source_code_length = strlen(source_code);
     const_boolean is_empty_context = is_empty_string(source_code);

@@ -8,14 +8,16 @@
 #define TRUE_STRING "true"
 #define FALSE_STRING "false"
 
+_Bool matches_boolean(const char *string);
+
+_Bool string_to_boolean(const char *string);
+
+/**
+ * Typedef utils.
+ */
+
 typedef _Bool boolean;
 
 typedef const _Bool const_boolean;
-
-typedef const char *const_string;
-
-boolean matches_boolean(const_string string);
-
-boolean string_to_boolean(const_string string);
 
 #endif //BOOLEAN_UTILS_H

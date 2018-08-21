@@ -1,6 +1,5 @@
-#include <stdio.h>
+
 #include <stdlib.h>
-#include <mem.h>
 #include "../headers/lang/aio_core/aio_core.h"
 #include "../headers/lib/utils/str_hook/str_hook_utils/str_hook_utils.h"
 
@@ -8,7 +7,8 @@
 
 #ifdef AIO_DEVELOPMENT
 
-aio_bundle *create_test_bundle() {
+aio_bundle *create_test_bundle()
+{
     aio_value_list *input_value_list = new_aio_value_list();
     add_aio_value_in_list(input_value_list, new_aio_int_value(2));
     add_aio_value_in_list(input_value_list, new_aio_int_value(0));
@@ -18,7 +18,8 @@ aio_bundle *create_test_bundle() {
     return new_aio_bundle(input_value_list);
 }
 
-void make_test() {
+void make_test()
+{
 #ifdef AIO_PROJECT_MEMORY_MANAGER
     inflate_aio_project_controller();
 #endif
@@ -41,7 +42,8 @@ void make_test() {
 
 #endif
 
-int main() {
+int main()
+{
 #ifdef AIO_DEVELOPMENT
     make_test();
 #endif

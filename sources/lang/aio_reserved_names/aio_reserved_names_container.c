@@ -21,7 +21,7 @@ char reserved_names[AIO_NUMBER_OF_RESERVED_NAMES][4] = {
         {AIO_SWITCH_MODIFIER},
 };
 
-boolean is_aio_mutable_modifier_hooked(const_str_hook *hook) {
+boolean is_aio_mutable_modifier(const_str_hook *hook) {
     return is_hooked_str_equals_str(hook, AIO_MUTABLE_MODIFIER);
 }
 

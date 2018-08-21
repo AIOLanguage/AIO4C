@@ -8,21 +8,20 @@
 #define NUMBER_OF_CORE_TYPES 5
 
 typedef struct aio_core {
-    aio_context_list *core_context_list;
-    //유형 포함 (Keep types):
-    string_set *aio_type_set;
+    struct aio_context_list *core_context_list;
+    struct string_set *aio_type_set; //유형 포함 (Keep types):
 } aio_core;
-
-extern aio_core *core;
 
 void inflate_aio_core();
 
-const_aio_context * inflate_aio_context_and_put_in_core(const_string path);
-
-boolean is_aio_type(const_string string);
-
-boolean is_aio_type_hooked(const_str_hook *hook);
+const struct aio_context *inflate_aio_context_and_put_in_core(const char* context_path);
 
 void free_aio_core();
+
+/**
+ * Global core.
+ */
+
+extern struct aio_core *core;
 
 #endif //AIO_CORE_H
