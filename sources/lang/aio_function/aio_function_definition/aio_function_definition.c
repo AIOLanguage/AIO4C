@@ -64,8 +64,8 @@ void add_aio_function_definition_in_list(struct aio_function_definition_list *li
     list->size++;
 }
 
-const_aio_function_definition *get_aio_method_definition_in_list_by_name(const_aio_function_definition_list *list,
-                                                                         const_str_hook *name) {
+const_aio_function_definition *get_aio_function_definition_in_list_by_name(const_aio_function_definition_list *list,
+                                                                           const_str_hook *name) {
     for (int i = 0; i < list->size; ++i) {
         const_str_hook *current_name = list->definitions[i]->name;
         const_boolean are_equal_strings = are_equal_hooked_str(current_name, name);

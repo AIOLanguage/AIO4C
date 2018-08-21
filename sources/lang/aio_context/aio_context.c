@@ -44,8 +44,8 @@ const_aio_context *new_aio_context(const_string path) {
 
 void invoke_static_function_in_context(const_aio_context *context, const_str_hook *function_name, aio_bundle *bundle) {
     const_aio_function_definition_list *definition_list = context->function_manager->definition_list;
-    const_aio_function_definition *definition = get_aio_method_definition_in_list_by_name(definition_list,
-                                                                                          function_name);
+    const_aio_function_definition *definition = get_aio_function_definition_in_list_by_name(definition_list,
+                                                                                            function_name);
     invoke_aio_function(definition, bundle, context);
 }
 

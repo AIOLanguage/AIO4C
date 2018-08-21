@@ -28,9 +28,15 @@ struct aio_value *new_aio_int_value(const int int_acc);
 
 struct aio_value *new_aio_double_value(const double double_acc);
 
+struct aio_value *new_aio_double_value_by_ref(const double *double_acc);
+
 struct aio_value *new_aio_string_value(const char *string_acc);
 
 struct aio_value *new_aio_boolean_value(const _Bool boolean_acc);
+
+struct aio_value *new_aio_reference_value(void *reference);
+
+struct aio_value *new_aio_type_value(void *reference, const struct str_hook *type);
 
 void free_aio_value(struct aio_value *value);
 
@@ -57,6 +63,10 @@ void free_aio_value_list(struct aio_value_list *list);
  */
 
 _Bool are_equal_aio_values(struct aio_value *value_1, struct aio_value *value_2);
+
+/**
+ * Casts.
+ */
 
 struct aio_value *cast_to_int(struct aio_value *value);
 

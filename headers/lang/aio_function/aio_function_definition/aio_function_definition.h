@@ -44,7 +44,7 @@ void add_aio_function_definition_in_list(
         const struct aio_function_definition *definition
 );
 
-const struct aio_function_definition *get_aio_method_definition_in_list_by_name(
+const struct aio_function_definition *get_aio_function_definition_in_list_by_name(
         const struct aio_function_definition_list *list,
         const struct str_hook *name
 );

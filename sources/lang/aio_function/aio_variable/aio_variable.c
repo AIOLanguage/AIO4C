@@ -14,7 +14,7 @@
 
 aio_variable *new_aio_variable_by_definition(const_aio_variable_definition *variable_definition, aio_value *value) {
     aio_variable *variable = new_object(sizeof(aio_variable));
-    variable->variable_definition = variable_definition;
+    variable->definition = variable_definition;
     variable->value = value;
     return variable;
 }
@@ -43,9 +43,9 @@ void update_memory_in_aio_variable_list(aio_variable_list *variable_map) {
 }
 
 void add_aio_variable_in_list(aio_variable_list *list, aio_variable *variable) {
-    const_str_hook *name = variable->variable_definition->name;
+    const_str_hook *name = variable->definition->name;
     for (int i = 0; i < list->size; ++i) {
-        const_str_hook *current_name = list->variables[i]->variable_definition->name;
+        const_str_hook *current_name = list->variables[i]->definition->name;
         const_boolean are_equal_strings = are_equal_hooked_str(current_name, name);
         if (are_equal_strings) {
             throw_error_with_tag(AIO_VARIABLE_LIST_TAG, "Variable already exists!");
@@ -59,7 +59,7 @@ void add_aio_variable_in_list(aio_variable_list *list, aio_variable *variable) {
 aio_variable *get_aio_variable_in_list_by_name(const_aio_variable_list *list, const_str_hook *name) {
     const size_t list_size = list->size;
     for (int i = 0; i < list_size; ++i) {
-        const_str_hook *current_name = list->variables[i]->variable_definition->name;
+        const_str_hook *current_name = list->variables[i]->definition->name;
         const_boolean are_equal_strings = are_equal_hooked_str(current_name, name);
         if (are_equal_strings) {
             return list->variables[i];

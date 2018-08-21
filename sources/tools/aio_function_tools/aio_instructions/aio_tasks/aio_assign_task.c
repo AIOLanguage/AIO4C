@@ -23,8 +23,8 @@ void perform_aio_assign_instruction(const_aio_function_instruction *instruction,
     const aio_assign_task *task = instruction->get.assign_task;
     const_str_hook *variable_name = task->variable_name;
     //Not null!
-    aio_variable *variable = get_variable_in_function_control_graph(variable_name, control_graph);
-    const_aio_variable_definition *variable_definition = variable->variable_definition;
+    aio_variable *variable = get_aio_variable_in_function_control_graph(variable_name, control_graph);
+    const_aio_variable_definition *variable_definition = variable->definition;
     const_str_hook *variable_type = variable_definition->type;
     //Parse value:
     const_string value_string = task->value;

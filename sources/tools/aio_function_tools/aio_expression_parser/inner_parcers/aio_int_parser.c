@@ -152,7 +152,7 @@ static aio_result *make_function_or_variable(
             }
         } else {
             const_str_hook *variable_name = function_or_variable_name;
-            aio_variable *variable = get_variable_in_function_control_graph(variable_name, control_graph);
+            aio_variable *variable = get_aio_variable_in_function_control_graph(variable_name, control_graph);
             aio_value *value = cast_to_int(variable->value);
             str_hook *rest = new_str_hook(expression_str);
             rest->start = start_position + function_or_variable_str_length;
@@ -274,27 +274,13 @@ static aio_result *make_plus_or_minus(
 }
 
 
-static aio_result make_inequality()
-{
-
-}
-
-static aio_result *make_and_or(
-        const struct str_hook *expression_hook,
-        const struct aio_context *context,
-        const struct aio_function_control_graph *control_graph
-)
-{
-
-}
-
 struct aio_value *parse_int_value_string(
         const struct str_hook *expression_hook,
         const struct aio_context *context,
         const struct aio_function_control_graph *control_graph
 )
 {
-    aio_result *result = make_and_or(expression_hook, context, control_graph);
+    aio_result *result = make_plus_or_minus(expression_hook, context, control_graph);
     if (is_not_empty_hooked_str(result->rest)) {
         throw_error_with_tag(AIO_INT_PARSER_TAG, "Can not fully parse expression!");
     }

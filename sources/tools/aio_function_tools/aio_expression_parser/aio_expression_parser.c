@@ -63,7 +63,7 @@ static const_str_hook *define_type_by_first_element(
             watcher->mode = POINT_WATCHER_ACTIVE_MODE;
         }
         if (watcher->mode == POINT_WATCHER_ACTIVE_MODE) {
-            const_boolean is_end_of_element = is_whitespace_cond || is_sign(symbol);
+            const_boolean is_end_of_element = is_whitespace_cond || is_sign(symbol) || is_opening_parenthesis(symbol);
             if (is_end_of_element) {
                 first_element_hook = new_str_hook_by_point_watcher(expression_string, watcher);
                 break;
@@ -74,29 +74,46 @@ static const_str_hook *define_type_by_first_element(
     //Check element hook:
     if (first_element_hook != NULL) {
         //Maybe is variable name?
+        const_aio_variable *variable = get_aio_variable_in_function_control_graph(first_element_hook, control_graph);
+        if (variable != NULL) {
+            const_aio_variable_definition *definition = variable->definition;
+            return new_str_hook_by_other(definition->type);
+        }
         //Maybe is function?
+        const_aio_function_definition_list *function_definition_list = context->function_manager->definition_list;
+        const_aio_function_definition *function_definition = get_aio_function_definition_in_list_by_name(
+                function_definition_list, first_element_hook
+        );
+        if (function_definition != NULL) {
+            const_str_hook_list *output_type_list = function_definition->output_type_list;
+            const_boolean is_single_return = output_type_list->size == 1;
+            if (is_single_return) {
+                return new_str_hook_by_other(output_type_list->hooks[0]);
+            } else {
+                throw_error_with_tag(AIO_EXPRESSION_PARSER_TAG, "function must return single type!");
+            }
+        }
         //Maybe int value?
         if (is_int_hooked(first_element_hook)) {
-
+            return new_str_hook_by_string(INTEGER);
         }
         //Maybe double value?
         if (is_double_hooked(first_element_hook)) {
-
+            return new_str_hook_by_string(DOUBLE);
         }
         //Maybe string value?
         if (is_string_hooked(first_element_hook)) {
-
+            return new_str_hook_by_string(STRING);
         }
         //Maybe boolean value?
         if (is_boolean_hooked(first_element_hook)) {
-
+            return new_str_hook_by_string(BOOLEAN);
         } else {
-            throw_error_with_tag(AIO_EXPRESSION_PARSER_TAG, "Cannot define type of expression!");
+            throw_error_with_tag(AIO_EXPRESSION_PARSER_TAG, "Can not define type of expression!");
         }
     } else {
-        throw_error_with_tag(AIO_EXPRESSION_PARSER_TAG, "Cannot define first element in expression!");
+        throw_error_with_tag(AIO_EXPRESSION_PARSER_TAG, "Can not define first element in expression!");
     }
-    return first_element_hook;
 }
 
 static const_str_hook *define_type(

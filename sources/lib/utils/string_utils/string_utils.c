@@ -1,18 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <malloc.h>
 #include <ctype.h>
-#include <assert.h>
-#include <stddef.h>
 #include "../../../../headers/lib/utils/string_utils/string_utils.h"
-#include "../../../../headers/lib/utils/error_utils/error_utils.h"
 #include "../../../../headers/lib/utils/char_utils/char_utils.h"
-#include "../../../../headers/lib/utils/log_utils/log_utils.h"
+#include "../../../../headers/lang/aio_reserved_names/aio_reserved_names_container.h"
 
 #define STRING_UTILS_TAG "STRING_UTILS"
 
-string new_string(const_string src) {
+string new_string(const_string src)
+{
     if (src != NULL) {
         string new_string = calloc(strlen(src) + 1, sizeof(char));
         strcpy(new_string, src);
@@ -24,7 +21,8 @@ string new_string(const_string src) {
 
 //박수!
 //Passed JUnitTest!
-string_array filter_strings(string_array src, int src_size, const_boolean (*filter_condition)(const_string)) {
+string_array filter_strings(string_array src, int src_size, const_boolean (*filter_condition)(const_string))
+{
     int *new_indices = calloc((size_t) src_size, sizeof(int));
     char **dst;
     size_t new_length = 0;
@@ -55,7 +53,8 @@ string_array filter_strings(string_array src, int src_size, const_boolean (*filt
 }
 
 //Passed JUnitTest!
-const_boolean is_not_empty_string(const_string string) {
+const_boolean is_not_empty_string(const_string string)
+{
     if (string == NULL) {
         return FALSE;
     }
@@ -67,7 +66,8 @@ const_boolean is_not_empty_string(const_string string) {
 }
 
 //Passed JUnitTest!
-const_boolean is_empty_string(const_string string) {
+const_boolean is_empty_string(const_string string)
+{
     const_string empty_string = "";
     const_boolean result = strcmp(string, empty_string) == 0;
     free((void *) empty_string);
@@ -76,7 +76,8 @@ const_boolean is_empty_string(const_string string) {
 
 //준비된!
 //Passed JUnitTest!
-string join_to_string(string_array src_strings, const_string delimiter, const int src_size) {
+string join_to_string(string_array src_strings, const_string delimiter, const int src_size)
+{
     char *dst;
     int delimiter_length = strlen(delimiter);
     //Delimiters less than values by 1:
@@ -111,7 +112,8 @@ string join_to_string(string_array src_strings, const_string delimiter, const in
 }
 
 //Passed JUnitTest!
-const_boolean is_word(const_string line) {
+const_boolean is_word(const_string line)
+{
     int length = strlen(line);
     if (length < 1) {
         return FALSE;
@@ -129,7 +131,8 @@ const_boolean is_word(const_string line) {
 }
 
 //Passed JUnitTest!
-string substring_by_offset(const_string string, int offset, int length) {
+string substring_by_offset(const_string string, int offset, int length)
+{
     char *dst = calloc((size_t) (length + 1), sizeof(char));
     for (int i = 0; i < length; ++i) {
         dst[i] = string[offset + i];
@@ -137,7 +140,8 @@ string substring_by_offset(const_string string, int offset, int length) {
     return dst;
 }
 
-string substring(const_string string, int start, int end) {
+string substring(const_string string, int start, int end)
+{
     const size_t dst_size = (const size_t) (end - start + 1);
     char *dst = calloc(dst_size, sizeof(char));
     int position = 0;
@@ -147,18 +151,21 @@ string substring(const_string string, int start, int end) {
     return dst;
 }
 
-int get_string_array_size(const_string_array src) {
+int get_string_array_size(const_string_array src)
+{
     return _msize(src) / 4;
 }
 
-void free_strings(const_string_array *src_reference) {
+void free_strings(const_string_array *src_reference)
+{
     for (int i = 0; i < get_string_array_size(*src_reference); ++i) {
         free((void *) (*src_reference)[i]);
     }
     free(*src_reference);
 }
 
-string squeeze_string(const_string src) {
+string squeeze_string(const_string src)
+{
     const unsigned src_length = strlen(src);
     string dst = calloc(src_length + 1, sizeof(char));
     unsigned int new_length = 0;
@@ -176,7 +183,8 @@ string squeeze_string(const_string src) {
 }
 
 //Passed JUnitTest!
-const_boolean matches_string(const_string word) {
+const_boolean matches_string(const_string word)
+{
     boolean result = FALSE;
     int length = strlen(word);
     if (length > 1 && word[0] == '\'' && word[length - 1] == '\'') {
@@ -186,7 +194,8 @@ const_boolean matches_string(const_string word) {
 }
 
 //Passed JUnitTest!
-string int_to_string(int src) {
+string int_to_string(int src)
+{
     int division = src;
     unsigned int_size_in_string = 0;
     while (division != 0) {
@@ -229,7 +238,8 @@ string int_to_string(int src) {
     return dst;
 }
 
-string double_to_string(double src) {
+string double_to_string(double src)
+{
     int division = (int) src;
     unsigned int_size_in_string = 0;
     while (division != 0) {
@@ -300,6 +310,16 @@ string double_to_string(double src) {
     return dst;
 }
 
-const_boolean are_equal_strings(const_string first, const_string second) {
+const_boolean are_equal_strings(const_string first, const_string second)
+{
     return strcmp(first, second) == 0;
+}
+
+string boolean_to_string(const_boolean src)
+{
+    if (src) {
+        return new_string(AIO_TRUE);
+    } else {
+        return new_string(FALSE);
+    }
 }
