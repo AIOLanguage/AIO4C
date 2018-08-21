@@ -4,6 +4,7 @@
 #include "../../../../../headers/lib/utils/str_hook/str_hook_utils/str_hook_utils.h"
 #include "../../../../../headers/lang/aio_type/aio_type.h"
 #include "../../../../../headers/lang/aio_function/aio_value/aio_value.h"
+#include "../../../../../headers/tools/aio_function_tools/aio_expression_parser/aio_expression_parser.h"
 
 aio_function_instruction *new_aio_assign_instruction(
         aio_function_instruction_holder *holder, const_string value,
@@ -27,7 +28,7 @@ void perform_aio_assign_instruction(const_aio_function_instruction *instruction,
     const_str_hook *variable_type = variable_definition->type;
     //Parse value:
     const_string value_string = task->value;
-    aio_value *value = parse_value_string(value_string);
+    aio_value *value = parse_value_string(value_string, control_graph->context_ref);
     //Cast value:
     if (is_hooked_str_equals_str(variable_type, INTEGER)) {
         variable->value = cast_to_int(value);

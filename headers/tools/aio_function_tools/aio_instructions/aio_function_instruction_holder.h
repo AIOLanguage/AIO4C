@@ -6,7 +6,7 @@
 
 typedef struct aio_function_instruction_holder {
     const struct aio_function_instruction_holder *parent;
-    aio_variable_definition_list *variable_definition_list;
+    struct aio_variable_definition_list *variable_definition_list;
     struct aio_function_instruction_list *instruction_list;
 } aio_function_instruction_holder;
 

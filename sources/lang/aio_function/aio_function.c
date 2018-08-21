@@ -11,6 +11,6 @@ aio_value_list *invoke_aio_function(const_aio_function_definition *definition, a
                                     const_aio_context *context) {
     aio_function_control_graph *parent_graph = NULL;
     const_aio_function_instruction_holder *root_holder = definition->root_holder;
-    inflate_new_aio_root_control_graph(parent_graph, root_holder, bundle, context);
+    inflate_new_aio_root_function_control_graph(parent_graph, root_holder, bundle, context);
     return bundle->output_values;
 }

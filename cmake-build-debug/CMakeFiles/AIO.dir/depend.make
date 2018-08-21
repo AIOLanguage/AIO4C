@@ -11,10 +11,11 @@ CMakeFiles/AIO.dir/main/main.c.obj: ../headers/lang/aio_function/aio_variable/ai
 CMakeFiles/AIO.dir/main/main.c.obj: ../headers/lang/aio_function/aio_variable/aio_variable.h
 CMakeFiles/AIO.dir/main/main.c.obj: ../headers/lib/utils/boolean_utils/boolean_utils.h
 CMakeFiles/AIO.dir/main/main.c.obj: ../headers/lib/utils/collections/sets/string_set.h
-CMakeFiles/AIO.dir/main/main.c.obj: ../headers/lib/utils/memory_utils/memory_utils.h
+CMakeFiles/AIO.dir/main/main.c.obj: ../headers/lib/utils/point_watcher/point_watcher.h
 CMakeFiles/AIO.dir/main/main.c.obj: ../headers/lib/utils/str_hook/str_hook.h
-CMakeFiles/AIO.dir/main/main.c.obj: ../headers/lib/utils/string_utils/string_builder.h
+CMakeFiles/AIO.dir/main/main.c.obj: ../headers/lib/utils/str_hook/str_hook_utils/str_hook_utils.h
 CMakeFiles/AIO.dir/main/main.c.obj: ../headers/lib/utils/string_utils/string_utils.h
+CMakeFiles/AIO.dir/main/main.c.obj: ../headers/tools/aio_function_tools/aio_control_graph/aio_function_control_graph.h
 CMakeFiles/AIO.dir/main/main.c.obj: ../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction.h
 CMakeFiles/AIO.dir/main/main.c.obj: ../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction_holder.h
 CMakeFiles/AIO.dir/main/main.c.obj: ../main/main.c
@@ -70,6 +71,7 @@ CMakeFiles/AIO.dir/sources/lang/aio_context/aio_context_builder.c.obj: ../header
 CMakeFiles/AIO.dir/sources/lang/aio_context/aio_context_builder.c.obj: ../headers/lib/utils/str_hook/str_hook.h
 CMakeFiles/AIO.dir/sources/lang/aio_context/aio_context_builder.c.obj: ../headers/lib/utils/str_hook/str_hook_utils/str_hook_utils.h
 CMakeFiles/AIO.dir/sources/lang/aio_context/aio_context_builder.c.obj: ../headers/lib/utils/string_utils/string_utils.h
+CMakeFiles/AIO.dir/sources/lang/aio_context/aio_context_builder.c.obj: ../headers/tools/aio_function_tools/aio_control_graph/aio_function_control_graph.h
 CMakeFiles/AIO.dir/sources/lang/aio_context/aio_context_builder.c.obj: ../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction.h
 CMakeFiles/AIO.dir/sources/lang/aio_context/aio_context_builder.c.obj: ../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction_holder.h
 CMakeFiles/AIO.dir/sources/lang/aio_context/aio_context_builder.c.obj: ../sources/lang/aio_context/aio_context_builder.c
@@ -90,6 +92,7 @@ CMakeFiles/AIO.dir/sources/lang/aio_core/aio_core.c.obj: ../headers/lib/utils/po
 CMakeFiles/AIO.dir/sources/lang/aio_core/aio_core.c.obj: ../headers/lib/utils/str_hook/str_hook.h
 CMakeFiles/AIO.dir/sources/lang/aio_core/aio_core.c.obj: ../headers/lib/utils/str_hook/str_hook_utils/str_hook_utils.h
 CMakeFiles/AIO.dir/sources/lang/aio_core/aio_core.c.obj: ../headers/lib/utils/string_utils/string_utils.h
+CMakeFiles/AIO.dir/sources/lang/aio_core/aio_core.c.obj: ../headers/tools/aio_function_tools/aio_control_graph/aio_function_control_graph.h
 CMakeFiles/AIO.dir/sources/lang/aio_core/aio_core.c.obj: ../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction.h
 CMakeFiles/AIO.dir/sources/lang/aio_core/aio_core.c.obj: ../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction_holder.h
 CMakeFiles/AIO.dir/sources/lang/aio_core/aio_core.c.obj: ../sources/lang/aio_core/aio_core.c
@@ -98,6 +101,7 @@ CMakeFiles/AIO.dir/sources/lang/aio_function/aio_bundle/aio_bundle.c.obj: ../hea
 CMakeFiles/AIO.dir/sources/lang/aio_function/aio_bundle/aio_bundle.c.obj: ../headers/lang/aio_function/aio_value/aio_value.h
 CMakeFiles/AIO.dir/sources/lang/aio_function/aio_bundle/aio_bundle.c.obj: ../headers/lib/utils/boolean_utils/boolean_utils.h
 CMakeFiles/AIO.dir/sources/lang/aio_function/aio_bundle/aio_bundle.c.obj: ../headers/lib/utils/memory_utils/memory_utils.h
+CMakeFiles/AIO.dir/sources/lang/aio_function/aio_bundle/aio_bundle.c.obj: ../headers/lib/utils/str_hook/str_hook.h
 CMakeFiles/AIO.dir/sources/lang/aio_function/aio_bundle/aio_bundle.c.obj: ../headers/lib/utils/string_utils/string_utils.h
 CMakeFiles/AIO.dir/sources/lang/aio_function/aio_bundle/aio_bundle.c.obj: ../sources/lang/aio_function/aio_bundle/aio_bundle.c
 
@@ -110,6 +114,7 @@ CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function.c.obj: ../headers/lang
 CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function.c.obj: ../headers/lang/aio_function/aio_variable/aio_definition/aio_variable_definition.h
 CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function.c.obj: ../headers/lang/aio_function/aio_variable/aio_variable.h
 CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function.c.obj: ../headers/lib/utils/boolean_utils/boolean_utils.h
+CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function.c.obj: ../headers/lib/utils/memory_utils/memory_utils.h
 CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function.c.obj: ../headers/lib/utils/str_hook/str_hook.h
 CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function.c.obj: ../headers/lib/utils/string_utils/string_utils.h
 CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function.c.obj: ../headers/tools/aio_function_tools/aio_control_graph/aio_function_control_graph.h
@@ -118,6 +123,8 @@ CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function.c.obj: ../headers/tool
 CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function.c.obj: ../sources/lang/aio_function/aio_function.c
 
 CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_function_definition.c.obj: ../headers/lang/aio_annotation/aio_annotation.h
+CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_function_definition.c.obj: ../headers/lang/aio_context/aio_context.h
+CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_function_definition.c.obj: ../headers/lang/aio_function/aio_bundle/aio_bundle.h
 CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_function_definition.c.obj: ../headers/lang/aio_function/aio_function_definition/aio_function_definition.h
 CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_function_definition.c.obj: ../headers/lang/aio_function/aio_value/aio_value.h
 CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_function_definition.c.obj: ../headers/lang/aio_function/aio_variable/aio_definition/aio_variable_definition.h
@@ -130,11 +137,14 @@ CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_functio
 CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_function_definition.c.obj: ../headers/lib/utils/str_hook/str_hook.h
 CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_function_definition.c.obj: ../headers/lib/utils/str_hook/str_hook_utils/str_hook_utils.h
 CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_function_definition.c.obj: ../headers/lib/utils/string_utils/string_utils.h
+CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_function_definition.c.obj: ../headers/tools/aio_function_tools/aio_control_graph/aio_function_control_graph.h
 CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_function_definition.c.obj: ../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction.h
 CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_function_definition.c.obj: ../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction_holder.h
 CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_function_definition.c.obj: ../sources/lang/aio_function/aio_function_definition/aio_function_definition.c
 
 CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_function_definition_builder.c.obj: ../headers/lang/aio_annotation/aio_annotation.h
+CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_function_definition_builder.c.obj: ../headers/lang/aio_context/aio_context.h
+CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_function_definition_builder.c.obj: ../headers/lang/aio_function/aio_bundle/aio_bundle.h
 CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_function_definition_builder.c.obj: ../headers/lang/aio_function/aio_function_definition/aio_function_definition.h
 CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_function_definition_builder.c.obj: ../headers/lang/aio_function/aio_value/aio_value.h
 CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_function_definition_builder.c.obj: ../headers/lang/aio_function/aio_variable/aio_definition/aio_variable_definition.h
@@ -143,6 +153,7 @@ CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_functio
 CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_function_definition_builder.c.obj: ../headers/lib/utils/collections/lists/string_list.h
 CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_function_definition_builder.c.obj: ../headers/lib/utils/str_hook/str_hook.h
 CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_function_definition_builder.c.obj: ../headers/lib/utils/string_utils/string_utils.h
+CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_function_definition_builder.c.obj: ../headers/tools/aio_function_tools/aio_control_graph/aio_function_control_graph.h
 CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_function_definition_builder.c.obj: ../headers/tools/aio_function_tools/aio_definition_rippers/aio_function_definition_rippers.h
 CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_function_definition_builder.c.obj: ../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction.h
 CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_function_definition_builder.c.obj: ../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction_holder.h
@@ -159,13 +170,21 @@ CMakeFiles/AIO.dir/sources/lang/aio_function/aio_result/aio_result.c.obj: ../sou
 CMakeFiles/AIO.dir/sources/lang/aio_function/aio_value/aio_value.c.obj: ../headers/lang/aio_function/aio_value/aio_value.h
 CMakeFiles/AIO.dir/sources/lang/aio_function/aio_value/aio_value.c.obj: ../headers/lang/aio_type/aio_type.h
 CMakeFiles/AIO.dir/sources/lang/aio_function/aio_value/aio_value.c.obj: ../headers/lib/utils/boolean_utils/boolean_utils.h
+CMakeFiles/AIO.dir/sources/lang/aio_function/aio_value/aio_value.c.obj: ../headers/lib/utils/collections/sets/string_set.h
 CMakeFiles/AIO.dir/sources/lang/aio_function/aio_value/aio_value.c.obj: ../headers/lib/utils/double_utils/double_utils.h
 CMakeFiles/AIO.dir/sources/lang/aio_function/aio_value/aio_value.c.obj: ../headers/lib/utils/error_utils/error_utils.h
 CMakeFiles/AIO.dir/sources/lang/aio_function/aio_value/aio_value.c.obj: ../headers/lib/utils/int_utils/int_utils.h
 CMakeFiles/AIO.dir/sources/lang/aio_function/aio_value/aio_value.c.obj: ../headers/lib/utils/memory_utils/memory_utils.h
+CMakeFiles/AIO.dir/sources/lang/aio_function/aio_value/aio_value.c.obj: ../headers/lib/utils/point_watcher/point_watcher.h
+CMakeFiles/AIO.dir/sources/lang/aio_function/aio_value/aio_value.c.obj: ../headers/lib/utils/str_hook/str_hook.h
+CMakeFiles/AIO.dir/sources/lang/aio_function/aio_value/aio_value.c.obj: ../headers/lib/utils/str_hook/str_hook_utils/str_hook_utils.h
 CMakeFiles/AIO.dir/sources/lang/aio_function/aio_value/aio_value.c.obj: ../headers/lib/utils/string_utils/string_utils.h
 CMakeFiles/AIO.dir/sources/lang/aio_function/aio_value/aio_value.c.obj: ../sources/lang/aio_function/aio_value/aio_value.c
 
+CMakeFiles/AIO.dir/sources/lang/aio_function/aio_variable/aio_variable.c.obj: ../headers/lang/aio_annotation/aio_annotation.h
+CMakeFiles/AIO.dir/sources/lang/aio_function/aio_variable/aio_variable.c.obj: ../headers/lang/aio_context/aio_context.h
+CMakeFiles/AIO.dir/sources/lang/aio_function/aio_variable/aio_variable.c.obj: ../headers/lang/aio_function/aio_bundle/aio_bundle.h
+CMakeFiles/AIO.dir/sources/lang/aio_function/aio_variable/aio_variable.c.obj: ../headers/lang/aio_function/aio_function_definition/aio_function_definition.h
 CMakeFiles/AIO.dir/sources/lang/aio_function/aio_variable/aio_variable.c.obj: ../headers/lang/aio_function/aio_value/aio_value.h
 CMakeFiles/AIO.dir/sources/lang/aio_function/aio_variable/aio_variable.c.obj: ../headers/lang/aio_function/aio_variable/aio_definition/aio_variable_definition.h
 CMakeFiles/AIO.dir/sources/lang/aio_function/aio_variable/aio_variable.c.obj: ../headers/lang/aio_function/aio_variable/aio_variable.h
@@ -179,8 +198,15 @@ CMakeFiles/AIO.dir/sources/lang/aio_function/aio_variable/aio_variable.c.obj: ..
 CMakeFiles/AIO.dir/sources/lang/aio_function/aio_variable/aio_variable.c.obj: ../headers/lib/utils/str_hook/str_hook.h
 CMakeFiles/AIO.dir/sources/lang/aio_function/aio_variable/aio_variable.c.obj: ../headers/lib/utils/str_hook/str_hook_utils/str_hook_utils.h
 CMakeFiles/AIO.dir/sources/lang/aio_function/aio_variable/aio_variable.c.obj: ../headers/lib/utils/string_utils/string_utils.h
+CMakeFiles/AIO.dir/sources/lang/aio_function/aio_variable/aio_variable.c.obj: ../headers/tools/aio_function_tools/aio_control_graph/aio_function_control_graph.h
+CMakeFiles/AIO.dir/sources/lang/aio_function/aio_variable/aio_variable.c.obj: ../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction.h
+CMakeFiles/AIO.dir/sources/lang/aio_function/aio_variable/aio_variable.c.obj: ../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction_holder.h
 CMakeFiles/AIO.dir/sources/lang/aio_function/aio_variable/aio_variable.c.obj: ../sources/lang/aio_function/aio_variable/aio_variable.c
 
+CMakeFiles/AIO.dir/sources/lang/aio_function/aio_variable/aio_variable_definition/aio_variable_definition.c.obj: ../headers/lang/aio_annotation/aio_annotation.h
+CMakeFiles/AIO.dir/sources/lang/aio_function/aio_variable/aio_variable_definition/aio_variable_definition.c.obj: ../headers/lang/aio_context/aio_context.h
+CMakeFiles/AIO.dir/sources/lang/aio_function/aio_variable/aio_variable_definition/aio_variable_definition.c.obj: ../headers/lang/aio_function/aio_bundle/aio_bundle.h
+CMakeFiles/AIO.dir/sources/lang/aio_function/aio_variable/aio_variable_definition/aio_variable_definition.c.obj: ../headers/lang/aio_function/aio_function_definition/aio_function_definition.h
 CMakeFiles/AIO.dir/sources/lang/aio_function/aio_variable/aio_variable_definition/aio_variable_definition.c.obj: ../headers/lang/aio_function/aio_value/aio_value.h
 CMakeFiles/AIO.dir/sources/lang/aio_function/aio_variable/aio_variable_definition/aio_variable_definition.c.obj: ../headers/lang/aio_function/aio_variable/aio_definition/aio_variable_definition.h
 CMakeFiles/AIO.dir/sources/lang/aio_function/aio_variable/aio_variable_definition/aio_variable_definition.c.obj: ../headers/lang/aio_function/aio_variable/aio_variable.h
@@ -189,6 +215,7 @@ CMakeFiles/AIO.dir/sources/lang/aio_function/aio_variable/aio_variable_definitio
 CMakeFiles/AIO.dir/sources/lang/aio_function/aio_variable/aio_variable_definition/aio_variable_definition.c.obj: ../headers/lib/utils/memory_utils/memory_utils.h
 CMakeFiles/AIO.dir/sources/lang/aio_function/aio_variable/aio_variable_definition/aio_variable_definition.c.obj: ../headers/lib/utils/str_hook/str_hook.h
 CMakeFiles/AIO.dir/sources/lang/aio_function/aio_variable/aio_variable_definition/aio_variable_definition.c.obj: ../headers/lib/utils/string_utils/string_utils.h
+CMakeFiles/AIO.dir/sources/lang/aio_function/aio_variable/aio_variable_definition/aio_variable_definition.c.obj: ../headers/tools/aio_function_tools/aio_control_graph/aio_function_control_graph.h
 CMakeFiles/AIO.dir/sources/lang/aio_function/aio_variable/aio_variable_definition/aio_variable_definition.c.obj: ../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction.h
 CMakeFiles/AIO.dir/sources/lang/aio_function/aio_variable/aio_variable_definition/aio_variable_definition.c.obj: ../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction_holder.h
 CMakeFiles/AIO.dir/sources/lang/aio_function/aio_variable/aio_variable_definition/aio_variable_definition.c.obj: ../sources/lang/aio_function/aio_variable/aio_variable_definition/aio_variable_definition.c
@@ -208,6 +235,7 @@ CMakeFiles/AIO.dir/sources/lang/aio_reserved_names/aio_reserved_names_container.
 CMakeFiles/AIO.dir/sources/lang/aio_reserved_names/aio_reserved_names_container.c.obj: ../headers/lib/utils/str_hook/str_hook.h
 CMakeFiles/AIO.dir/sources/lang/aio_reserved_names/aio_reserved_names_container.c.obj: ../headers/lib/utils/str_hook/str_hook_utils/str_hook_utils.h
 CMakeFiles/AIO.dir/sources/lang/aio_reserved_names/aio_reserved_names_container.c.obj: ../headers/lib/utils/string_utils/string_utils.h
+CMakeFiles/AIO.dir/sources/lang/aio_reserved_names/aio_reserved_names_container.c.obj: ../headers/tools/aio_function_tools/aio_control_graph/aio_function_control_graph.h
 CMakeFiles/AIO.dir/sources/lang/aio_reserved_names/aio_reserved_names_container.c.obj: ../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction.h
 CMakeFiles/AIO.dir/sources/lang/aio_reserved_names/aio_reserved_names_container.c.obj: ../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction_holder.h
 CMakeFiles/AIO.dir/sources/lang/aio_reserved_names/aio_reserved_names_container.c.obj: ../sources/lang/aio_reserved_names/aio_reserved_names_container.c
@@ -260,6 +288,7 @@ CMakeFiles/AIO.dir/sources/lib/utils/file_utils/file_reader.c.obj: ../headers/li
 CMakeFiles/AIO.dir/sources/lib/utils/file_utils/file_reader.c.obj: ../headers/lib/utils/str_hook/str_hook.h
 CMakeFiles/AIO.dir/sources/lib/utils/file_utils/file_reader.c.obj: ../headers/lib/utils/str_hook/str_hook_utils/str_hook_utils.h
 CMakeFiles/AIO.dir/sources/lib/utils/file_utils/file_reader.c.obj: ../headers/lib/utils/string_utils/string_utils.h
+CMakeFiles/AIO.dir/sources/lib/utils/file_utils/file_reader.c.obj: ../headers/tools/aio_function_tools/aio_control_graph/aio_function_control_graph.h
 CMakeFiles/AIO.dir/sources/lib/utils/file_utils/file_reader.c.obj: ../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction.h
 CMakeFiles/AIO.dir/sources/lib/utils/file_utils/file_reader.c.obj: ../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction_holder.h
 CMakeFiles/AIO.dir/sources/lib/utils/file_utils/file_reader.c.obj: ../sources/lib/utils/file_utils/file_reader.c
@@ -370,7 +399,10 @@ CMakeFiles/AIO.dir/sources/tools/aio_common_tools/aio_spider_nest/aio_spider_nes
 CMakeFiles/AIO.dir/sources/tools/aio_common_tools/aio_spider_nest/aio_spider_nest.c.obj: ../headers/tools/aio_common_tools/aio_spider_nest/aio_spider.h
 CMakeFiles/AIO.dir/sources/tools/aio_common_tools/aio_spider_nest/aio_spider_nest.c.obj: ../sources/tools/aio_common_tools/aio_spider_nest/aio_spider_nest.c
 
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_control_graph/aio_function_control_graph.c.obj: ../headers/lang/aio_annotation/aio_annotation.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_control_graph/aio_function_control_graph.c.obj: ../headers/lang/aio_context/aio_context.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_control_graph/aio_function_control_graph.c.obj: ../headers/lang/aio_function/aio_bundle/aio_bundle.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_control_graph/aio_function_control_graph.c.obj: ../headers/lang/aio_function/aio_function_definition/aio_function_definition.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_control_graph/aio_function_control_graph.c.obj: ../headers/lang/aio_function/aio_value/aio_value.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_control_graph/aio_function_control_graph.c.obj: ../headers/lang/aio_function/aio_variable/aio_definition/aio_variable_definition.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_control_graph/aio_function_control_graph.c.obj: ../headers/lang/aio_function/aio_variable/aio_variable.h
@@ -389,6 +421,10 @@ CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_definition_rippers/aio_a
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_definition_rippers/aio_annotation_ripper.c.obj: ../headers/lib/utils/string_utils/string_utils.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_definition_rippers/aio_annotation_ripper.c.obj: ../sources/tools/aio_function_tools/aio_definition_rippers/aio_annotation_ripper.c
 
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_definition_rippers/aio_arg_ripper.c.obj: ../headers/lang/aio_annotation/aio_annotation.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_definition_rippers/aio_arg_ripper.c.obj: ../headers/lang/aio_context/aio_context.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_definition_rippers/aio_arg_ripper.c.obj: ../headers/lang/aio_function/aio_bundle/aio_bundle.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_definition_rippers/aio_arg_ripper.c.obj: ../headers/lang/aio_function/aio_function_definition/aio_function_definition.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_definition_rippers/aio_arg_ripper.c.obj: ../headers/lang/aio_function/aio_value/aio_value.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_definition_rippers/aio_arg_ripper.c.obj: ../headers/lang/aio_function/aio_variable/aio_definition/aio_variable_definition.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_definition_rippers/aio_arg_ripper.c.obj: ../headers/lang/aio_function/aio_variable/aio_variable.h
@@ -402,6 +438,9 @@ CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_definition_rippers/aio_a
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_definition_rippers/aio_arg_ripper.c.obj: ../headers/lib/utils/str_hook/str_hook.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_definition_rippers/aio_arg_ripper.c.obj: ../headers/lib/utils/str_hook/str_hook_utils/str_hook_utils.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_definition_rippers/aio_arg_ripper.c.obj: ../headers/lib/utils/string_utils/string_utils.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_definition_rippers/aio_arg_ripper.c.obj: ../headers/tools/aio_function_tools/aio_control_graph/aio_function_control_graph.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_definition_rippers/aio_arg_ripper.c.obj: ../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_definition_rippers/aio_arg_ripper.c.obj: ../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction_holder.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_definition_rippers/aio_arg_ripper.c.obj: ../sources/tools/aio_function_tools/aio_definition_rippers/aio_arg_ripper.c
 
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_definition_rippers/aio_function_name_ripper.c.obj: ../headers/lib/utils/boolean_utils/boolean_utils.h
@@ -415,6 +454,10 @@ CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_definition_rippers/aio_f
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_definition_rippers/aio_function_name_ripper.c.obj: ../headers/lib/utils/string_utils/string_utils.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_definition_rippers/aio_function_name_ripper.c.obj: ../sources/tools/aio_function_tools/aio_definition_rippers/aio_function_name_ripper.c
 
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_definition_rippers/aio_instruction_ripper.c.obj: ../headers/lang/aio_annotation/aio_annotation.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_definition_rippers/aio_instruction_ripper.c.obj: ../headers/lang/aio_context/aio_context.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_definition_rippers/aio_instruction_ripper.c.obj: ../headers/lang/aio_function/aio_bundle/aio_bundle.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_definition_rippers/aio_instruction_ripper.c.obj: ../headers/lang/aio_function/aio_function_definition/aio_function_definition.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_definition_rippers/aio_instruction_ripper.c.obj: ../headers/lang/aio_function/aio_value/aio_value.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_definition_rippers/aio_instruction_ripper.c.obj: ../headers/lang/aio_function/aio_variable/aio_definition/aio_variable_definition.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_definition_rippers/aio_instruction_ripper.c.obj: ../headers/lang/aio_function/aio_variable/aio_variable.h
@@ -430,6 +473,7 @@ CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_definition_rippers/aio_i
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_definition_rippers/aio_instruction_ripper.c.obj: ../headers/tools/aio_common_tools/aio_block_body_explorer/aio_block_body_explorer.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_definition_rippers/aio_instruction_ripper.c.obj: ../headers/tools/aio_common_tools/aio_spider_nest/aio_function_instruction_spider_nest.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_definition_rippers/aio_instruction_ripper.c.obj: ../headers/tools/aio_common_tools/aio_spider_nest/aio_spider.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_definition_rippers/aio_instruction_ripper.c.obj: ../headers/tools/aio_function_tools/aio_control_graph/aio_function_control_graph.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_definition_rippers/aio_instruction_ripper.c.obj: ../headers/tools/aio_function_tools/aio_instruction_spider_nest/aio_function_instruction_spider_nest.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_definition_rippers/aio_instruction_ripper.c.obj: ../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_definition_rippers/aio_instruction_ripper.c.obj: ../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction_holder.h
@@ -453,6 +497,7 @@ CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_definition_rippers/aio_o
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_definition_rippers/aio_output_ripper.c.obj: ../headers/lib/utils/str_hook/str_hook.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_definition_rippers/aio_output_ripper.c.obj: ../headers/lib/utils/str_hook/str_hook_utils/str_hook_utils.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_definition_rippers/aio_output_ripper.c.obj: ../headers/lib/utils/string_utils/string_utils.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_definition_rippers/aio_output_ripper.c.obj: ../headers/tools/aio_function_tools/aio_control_graph/aio_function_control_graph.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_definition_rippers/aio_output_ripper.c.obj: ../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_definition_rippers/aio_output_ripper.c.obj: ../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction_holder.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_definition_rippers/aio_output_ripper.c.obj: ../sources/tools/aio_function_tools/aio_definition_rippers/aio_output_ripper.c
@@ -480,12 +525,17 @@ CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_assign_spider/aio_assign_spider.c.obj: ../headers/lib/utils/string_utils/string_builder.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_assign_spider/aio_assign_spider.c.obj: ../headers/lib/utils/string_utils/string_utils.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_assign_spider/aio_assign_spider.c.obj: ../headers/tools/aio_common_tools/aio_spider_nest/aio_spider.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_assign_spider/aio_assign_spider.c.obj: ../headers/tools/aio_function_tools/aio_control_graph/aio_function_control_graph.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_assign_spider/aio_assign_spider.c.obj: ../headers/tools/aio_function_tools/aio_instruction_spider_nest/aio_assign_spider/aio_assign_spider.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_assign_spider/aio_assign_spider.c.obj: ../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_assign_spider/aio_assign_spider.c.obj: ../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction_holder.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_assign_spider/aio_assign_spider.c.obj: ../headers/tools/aio_function_tools/aio_instructions/aio_tasks/aio_assign_task.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_assign_spider/aio_assign_spider.c.obj: ../sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_assign_spider/aio_assign_spider.c
 
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_break_spider/aio_break_spider.c.obj: ../headers/lang/aio_annotation/aio_annotation.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_break_spider/aio_break_spider.c.obj: ../headers/lang/aio_context/aio_context.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_break_spider/aio_break_spider.c.obj: ../headers/lang/aio_function/aio_bundle/aio_bundle.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_break_spider/aio_break_spider.c.obj: ../headers/lang/aio_function/aio_function_definition/aio_function_definition.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_break_spider/aio_break_spider.c.obj: ../headers/lang/aio_function/aio_value/aio_value.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_break_spider/aio_break_spider.c.obj: ../headers/lang/aio_function/aio_variable/aio_definition/aio_variable_definition.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_break_spider/aio_break_spider.c.obj: ../headers/lang/aio_function/aio_variable/aio_variable.h
@@ -498,12 +548,17 @@ CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_break_spider/aio_break_spider.c.obj: ../headers/lib/utils/str_hook/str_hook.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_break_spider/aio_break_spider.c.obj: ../headers/lib/utils/string_utils/string_utils.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_break_spider/aio_break_spider.c.obj: ../headers/tools/aio_common_tools/aio_spider_nest/aio_spider.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_break_spider/aio_break_spider.c.obj: ../headers/tools/aio_function_tools/aio_control_graph/aio_function_control_graph.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_break_spider/aio_break_spider.c.obj: ../headers/tools/aio_function_tools/aio_instruction_spider_nest/aio_break_spider/aio_break_spider.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_break_spider/aio_break_spider.c.obj: ../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_break_spider/aio_break_spider.c.obj: ../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction_holder.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_break_spider/aio_break_spider.c.obj: ../headers/tools/aio_function_tools/aio_instructions/aio_tasks/aio_break_task.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_break_spider/aio_break_spider.c.obj: ../sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_break_spider/aio_break_spider.c
 
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_function_instruction_spider_nest.c.obj: ../headers/lang/aio_annotation/aio_annotation.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_function_instruction_spider_nest.c.obj: ../headers/lang/aio_context/aio_context.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_function_instruction_spider_nest.c.obj: ../headers/lang/aio_function/aio_bundle/aio_bundle.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_function_instruction_spider_nest.c.obj: ../headers/lang/aio_function/aio_function_definition/aio_function_definition.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_function_instruction_spider_nest.c.obj: ../headers/lang/aio_function/aio_value/aio_value.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_function_instruction_spider_nest.c.obj: ../headers/lang/aio_function/aio_variable/aio_definition/aio_variable_definition.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_function_instruction_spider_nest.c.obj: ../headers/lang/aio_function/aio_variable/aio_variable.h
@@ -516,6 +571,7 @@ CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_function_instruction_spider_nest.c.obj: ../headers/lib/utils/string_utils/string_utils.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_function_instruction_spider_nest.c.obj: ../headers/tools/aio_common_tools/aio_spider_nest/aio_function_instruction_spider_nest.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_function_instruction_spider_nest.c.obj: ../headers/tools/aio_common_tools/aio_spider_nest/aio_spider.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_function_instruction_spider_nest.c.obj: ../headers/tools/aio_function_tools/aio_control_graph/aio_function_control_graph.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_function_instruction_spider_nest.c.obj: ../headers/tools/aio_function_tools/aio_instruction_spider_nest/aio_assign_spider/aio_assign_spider.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_function_instruction_spider_nest.c.obj: ../headers/tools/aio_function_tools/aio_instruction_spider_nest/aio_break_spider/aio_break_spider.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_function_instruction_spider_nest.c.obj: ../headers/tools/aio_function_tools/aio_instruction_spider_nest/aio_if_spider/aio_if_spider.h
@@ -523,8 +579,14 @@ CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_function_instruction_spider_nest.c.obj: ../headers/tools/aio_function_tools/aio_instruction_spider_nest/aio_procedure_spider/aio_procedure_spider.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_function_instruction_spider_nest.c.obj: ../headers/tools/aio_function_tools/aio_instruction_spider_nest/aio_return_spider/aio_return_spider.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_function_instruction_spider_nest.c.obj: ../headers/tools/aio_function_tools/aio_instruction_spider_nest/aio_switch_spider/aio_switch_spider.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_function_instruction_spider_nest.c.obj: ../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_function_instruction_spider_nest.c.obj: ../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction_holder.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_function_instruction_spider_nest.c.obj: ../sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_function_instruction_spider_nest.c
 
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_if_spider/aio_if_spider.c.obj: ../headers/lang/aio_annotation/aio_annotation.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_if_spider/aio_if_spider.c.obj: ../headers/lang/aio_context/aio_context.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_if_spider/aio_if_spider.c.obj: ../headers/lang/aio_function/aio_bundle/aio_bundle.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_if_spider/aio_if_spider.c.obj: ../headers/lang/aio_function/aio_function_definition/aio_function_definition.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_if_spider/aio_if_spider.c.obj: ../headers/lang/aio_function/aio_value/aio_value.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_if_spider/aio_if_spider.c.obj: ../headers/lang/aio_function/aio_variable/aio_definition/aio_variable_definition.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_if_spider/aio_if_spider.c.obj: ../headers/lang/aio_function/aio_variable/aio_variable.h
@@ -539,6 +601,7 @@ CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_if_spider/aio_if_spider.c.obj: ../headers/lib/utils/string_utils/string_builder.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_if_spider/aio_if_spider.c.obj: ../headers/lib/utils/string_utils/string_utils.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_if_spider/aio_if_spider.c.obj: ../headers/tools/aio_common_tools/aio_spider_nest/aio_spider.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_if_spider/aio_if_spider.c.obj: ../headers/tools/aio_function_tools/aio_control_graph/aio_function_control_graph.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_if_spider/aio_if_spider.c.obj: ../headers/tools/aio_function_tools/aio_instruction_spider_nest/aio_if_spider/aio_if_spider.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_if_spider/aio_if_spider.c.obj: ../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_if_spider/aio_if_spider.c.obj: ../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction_holder.h
@@ -567,6 +630,7 @@ CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_loop_spider/aio_inner_spiders/aio_default_loop_header_spider.c.obj: ../headers/lib/utils/string_utils/string_utils.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_loop_spider/aio_inner_spiders/aio_default_loop_header_spider.c.obj: ../headers/tools/aio_common_tools/aio_spider_nest/aio_function_instruction_spider_nest.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_loop_spider/aio_inner_spiders/aio_default_loop_header_spider.c.obj: ../headers/tools/aio_common_tools/aio_spider_nest/aio_spider.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_loop_spider/aio_inner_spiders/aio_default_loop_header_spider.c.obj: ../headers/tools/aio_function_tools/aio_control_graph/aio_function_control_graph.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_loop_spider/aio_inner_spiders/aio_default_loop_header_spider.c.obj: ../headers/tools/aio_function_tools/aio_instruction_spider_nest/aio_loop_spider/aio_loop_spider.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_loop_spider/aio_inner_spiders/aio_default_loop_header_spider.c.obj: ../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_loop_spider/aio_inner_spiders/aio_default_loop_header_spider.c.obj: ../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction_holder.h
@@ -577,6 +641,8 @@ CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_loop_spider/aio_inner_spiders/aio_tiny_loop_header_spider.c.obj: ../sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_loop_spider/aio_inner_spiders/aio_tiny_loop_header_spider.c
 
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_loop_spider/aio_loop_spider.c.obj: ../headers/lang/aio_annotation/aio_annotation.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_loop_spider/aio_loop_spider.c.obj: ../headers/lang/aio_context/aio_context.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_loop_spider/aio_loop_spider.c.obj: ../headers/lang/aio_function/aio_bundle/aio_bundle.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_loop_spider/aio_loop_spider.c.obj: ../headers/lang/aio_function/aio_function_definition/aio_function_definition.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_loop_spider/aio_loop_spider.c.obj: ../headers/lang/aio_function/aio_value/aio_value.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_loop_spider/aio_loop_spider.c.obj: ../headers/lang/aio_function/aio_variable/aio_definition/aio_variable_definition.h
@@ -596,6 +662,7 @@ CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_loop_spider/aio_loop_spider.c.obj: ../headers/tools/aio_common_tools/aio_block_body_explorer/aio_block_body_explorer.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_loop_spider/aio_loop_spider.c.obj: ../headers/tools/aio_common_tools/aio_spider_nest/aio_function_instruction_spider_nest.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_loop_spider/aio_loop_spider.c.obj: ../headers/tools/aio_common_tools/aio_spider_nest/aio_spider.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_loop_spider/aio_loop_spider.c.obj: ../headers/tools/aio_function_tools/aio_control_graph/aio_function_control_graph.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_loop_spider/aio_loop_spider.c.obj: ../headers/tools/aio_function_tools/aio_instruction_spider_nest/aio_loop_spider/aio_loop_spider.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_loop_spider/aio_loop_spider.c.obj: ../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_loop_spider/aio_loop_spider.c.obj: ../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction_holder.h
@@ -603,6 +670,10 @@ CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_loop_spider/aio_loop_spider.c.obj: ../headers/tools/aio_function_tools/aio_instructions/aio_tasks/aio_loop_task.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_loop_spider/aio_loop_spider.c.obj: ../sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_loop_spider/aio_loop_spider.c
 
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_procedure_spider/aio_procedure_spider.c.obj: ../headers/lang/aio_annotation/aio_annotation.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_procedure_spider/aio_procedure_spider.c.obj: ../headers/lang/aio_context/aio_context.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_procedure_spider/aio_procedure_spider.c.obj: ../headers/lang/aio_function/aio_bundle/aio_bundle.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_procedure_spider/aio_procedure_spider.c.obj: ../headers/lang/aio_function/aio_function_definition/aio_function_definition.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_procedure_spider/aio_procedure_spider.c.obj: ../headers/lang/aio_function/aio_value/aio_value.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_procedure_spider/aio_procedure_spider.c.obj: ../headers/lang/aio_function/aio_variable/aio_definition/aio_variable_definition.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_procedure_spider/aio_procedure_spider.c.obj: ../headers/lang/aio_function/aio_variable/aio_variable.h
@@ -618,12 +689,17 @@ CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_procedure_spider/aio_procedure_spider.c.obj: ../headers/lib/utils/string_utils/string_utils.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_procedure_spider/aio_procedure_spider.c.obj: ../headers/tools/aio_common_tools/aio_block_body_explorer/aio_block_body_explorer.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_procedure_spider/aio_procedure_spider.c.obj: ../headers/tools/aio_common_tools/aio_spider_nest/aio_spider.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_procedure_spider/aio_procedure_spider.c.obj: ../headers/tools/aio_function_tools/aio_control_graph/aio_function_control_graph.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_procedure_spider/aio_procedure_spider.c.obj: ../headers/tools/aio_function_tools/aio_instruction_spider_nest/aio_procedure_spider/aio_procedure_spider.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_procedure_spider/aio_procedure_spider.c.obj: ../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_procedure_spider/aio_procedure_spider.c.obj: ../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction_holder.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_procedure_spider/aio_procedure_spider.c.obj: ../headers/tools/aio_function_tools/aio_instructions/aio_tasks/aio_procedure_task.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_procedure_spider/aio_procedure_spider.c.obj: ../sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_procedure_spider/aio_procedure_spider.c
 
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_return_spider/aio_return_spider.c.obj: ../headers/lang/aio_annotation/aio_annotation.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_return_spider/aio_return_spider.c.obj: ../headers/lang/aio_context/aio_context.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_return_spider/aio_return_spider.c.obj: ../headers/lang/aio_function/aio_bundle/aio_bundle.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_return_spider/aio_return_spider.c.obj: ../headers/lang/aio_function/aio_function_definition/aio_function_definition.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_return_spider/aio_return_spider.c.obj: ../headers/lang/aio_function/aio_value/aio_value.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_return_spider/aio_return_spider.c.obj: ../headers/lang/aio_function/aio_variable/aio_definition/aio_variable_definition.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_return_spider/aio_return_spider.c.obj: ../headers/lang/aio_function/aio_variable/aio_variable.h
@@ -637,12 +713,17 @@ CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_return_spider/aio_return_spider.c.obj: ../headers/lib/utils/str_hook/str_hook.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_return_spider/aio_return_spider.c.obj: ../headers/lib/utils/string_utils/string_utils.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_return_spider/aio_return_spider.c.obj: ../headers/tools/aio_common_tools/aio_spider_nest/aio_spider.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_return_spider/aio_return_spider.c.obj: ../headers/tools/aio_function_tools/aio_control_graph/aio_function_control_graph.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_return_spider/aio_return_spider.c.obj: ../headers/tools/aio_function_tools/aio_instruction_spider_nest/aio_return_spider/aio_return_spider.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_return_spider/aio_return_spider.c.obj: ../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_return_spider/aio_return_spider.c.obj: ../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction_holder.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_return_spider/aio_return_spider.c.obj: ../headers/tools/aio_function_tools/aio_instructions/aio_tasks/aio_return_task.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_return_spider/aio_return_spider.c.obj: ../sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_return_spider/aio_return_spider.c
 
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_switch_spider/aio_switch_spider.c.obj: ../headers/lang/aio_annotation/aio_annotation.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_switch_spider/aio_switch_spider.c.obj: ../headers/lang/aio_context/aio_context.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_switch_spider/aio_switch_spider.c.obj: ../headers/lang/aio_function/aio_bundle/aio_bundle.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_switch_spider/aio_switch_spider.c.obj: ../headers/lang/aio_function/aio_function_definition/aio_function_definition.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_switch_spider/aio_switch_spider.c.obj: ../headers/lang/aio_function/aio_value/aio_value.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_switch_spider/aio_switch_spider.c.obj: ../headers/lang/aio_function/aio_variable/aio_definition/aio_variable_definition.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_switch_spider/aio_switch_spider.c.obj: ../headers/lang/aio_function/aio_variable/aio_variable.h
@@ -659,24 +740,41 @@ CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_switch_spider/aio_switch_spider.c.obj: ../headers/lib/utils/string_utils/string_utils.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_switch_spider/aio_switch_spider.c.obj: ../headers/tools/aio_common_tools/aio_block_body_explorer/aio_block_body_explorer.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_switch_spider/aio_switch_spider.c.obj: ../headers/tools/aio_common_tools/aio_spider_nest/aio_spider.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_switch_spider/aio_switch_spider.c.obj: ../headers/tools/aio_function_tools/aio_control_graph/aio_function_control_graph.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_switch_spider/aio_switch_spider.c.obj: ../headers/tools/aio_function_tools/aio_instruction_spider_nest/aio_switch_spider/aio_switch_spider.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_switch_spider/aio_switch_spider.c.obj: ../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_switch_spider/aio_switch_spider.c.obj: ../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction_holder.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_switch_spider/aio_switch_spider.c.obj: ../headers/tools/aio_function_tools/aio_instructions/aio_tasks/aio_switch_task.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_switch_spider/aio_switch_spider.c.obj: ../sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_switch_spider/aio_switch_spider.c
 
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_function_instruction.c.obj: ../headers/lang/aio_annotation/aio_annotation.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_function_instruction.c.obj: ../headers/lang/aio_context/aio_context.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_function_instruction.c.obj: ../headers/lang/aio_function/aio_bundle/aio_bundle.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_function_instruction.c.obj: ../headers/lang/aio_function/aio_function_definition/aio_function_definition.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_function_instruction.c.obj: ../headers/lang/aio_function/aio_value/aio_value.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_function_instruction.c.obj: ../headers/lang/aio_function/aio_variable/aio_definition/aio_variable_definition.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_function_instruction.c.obj: ../headers/lang/aio_function/aio_variable/aio_variable.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_function_instruction.c.obj: ../headers/lib/utils/boolean_utils/boolean_utils.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_function_instruction.c.obj: ../headers/lib/utils/collections/lists/string_list.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_function_instruction.c.obj: ../headers/lib/utils/memory_utils/memory_utils.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_function_instruction.c.obj: ../headers/lib/utils/str_hook/str_hook.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_function_instruction.c.obj: ../headers/lib/utils/string_utils/string_utils.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_function_instruction.c.obj: ../headers/tools/aio_function_tools/aio_control_graph/aio_function_control_graph.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_function_instruction.c.obj: ../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_function_instruction.c.obj: ../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction_holder.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_function_instruction.c.obj: ../headers/tools/aio_function_tools/aio_instructions/aio_tasks/aio_assign_task.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_function_instruction.c.obj: ../headers/tools/aio_function_tools/aio_instructions/aio_tasks/aio_break_task.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_function_instruction.c.obj: ../headers/tools/aio_function_tools/aio_instructions/aio_tasks/aio_if_task.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_function_instruction.c.obj: ../headers/tools/aio_function_tools/aio_instructions/aio_tasks/aio_loop_task.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_function_instruction.c.obj: ../headers/tools/aio_function_tools/aio_instructions/aio_tasks/aio_procedure_task.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_function_instruction.c.obj: ../headers/tools/aio_function_tools/aio_instructions/aio_tasks/aio_return_task.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_function_instruction.c.obj: ../headers/tools/aio_function_tools/aio_instructions/aio_tasks/aio_switch_task.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_function_instruction.c.obj: ../sources/tools/aio_function_tools/aio_instructions/aio_function_instruction.c
 
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_function_instruction_holder.c.obj: ../headers/lang/aio_annotation/aio_annotation.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_function_instruction_holder.c.obj: ../headers/lang/aio_context/aio_context.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_function_instruction_holder.c.obj: ../headers/lang/aio_function/aio_bundle/aio_bundle.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_function_instruction_holder.c.obj: ../headers/lang/aio_function/aio_function_definition/aio_function_definition.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_function_instruction_holder.c.obj: ../headers/lang/aio_function/aio_value/aio_value.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_function_instruction_holder.c.obj: ../headers/lang/aio_function/aio_variable/aio_definition/aio_variable_definition.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_function_instruction_holder.c.obj: ../headers/lang/aio_function/aio_variable/aio_variable.h
@@ -688,23 +786,38 @@ CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_functio
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_function_instruction_holder.c.obj: ../headers/lib/utils/str_hook/str_hook.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_function_instruction_holder.c.obj: ../headers/lib/utils/string_utils/string_utils.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_function_instruction_holder.c.obj: ../headers/tools/aio_common_tools/aio_block_body_explorer/aio_block_body_explorer.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_function_instruction_holder.c.obj: ../headers/tools/aio_function_tools/aio_control_graph/aio_function_control_graph.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_function_instruction_holder.c.obj: ../headers/tools/aio_function_tools/aio_definition_rippers/aio_function_definition_rippers.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_function_instruction_holder.c.obj: ../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_function_instruction_holder.c.obj: ../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction_holder.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_function_instruction_holder.c.obj: ../sources/tools/aio_function_tools/aio_instructions/aio_function_instruction_holder.c
 
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_assign_task.c.obj: ../headers/lang/aio_annotation/aio_annotation.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_assign_task.c.obj: ../headers/lang/aio_context/aio_context.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_assign_task.c.obj: ../headers/lang/aio_function/aio_bundle/aio_bundle.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_assign_task.c.obj: ../headers/lang/aio_function/aio_function_definition/aio_function_definition.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_assign_task.c.obj: ../headers/lang/aio_function/aio_value/aio_value.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_assign_task.c.obj: ../headers/lang/aio_function/aio_variable/aio_definition/aio_variable_definition.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_assign_task.c.obj: ../headers/lang/aio_function/aio_variable/aio_variable.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_assign_task.c.obj: ../headers/lang/aio_type/aio_type.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_assign_task.c.obj: ../headers/lib/utils/boolean_utils/boolean_utils.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_assign_task.c.obj: ../headers/lib/utils/collections/sets/string_set.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_assign_task.c.obj: ../headers/lib/utils/memory_utils/memory_utils.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_assign_task.c.obj: ../headers/lib/utils/point_watcher/point_watcher.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_assign_task.c.obj: ../headers/lib/utils/str_hook/str_hook.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_assign_task.c.obj: ../headers/lib/utils/str_hook/str_hook_utils/str_hook_utils.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_assign_task.c.obj: ../headers/lib/utils/string_utils/string_utils.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_assign_task.c.obj: ../headers/tools/aio_function_tools/aio_control_graph/aio_function_control_graph.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_assign_task.c.obj: ../headers/tools/aio_function_tools/aio_expression_parser/aio_expression_parser.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_assign_task.c.obj: ../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_assign_task.c.obj: ../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction_holder.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_assign_task.c.obj: ../headers/tools/aio_function_tools/aio_instructions/aio_tasks/aio_assign_task.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_assign_task.c.obj: ../sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_assign_task.c
 
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_break_task.c.obj: ../headers/lang/aio_annotation/aio_annotation.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_break_task.c.obj: ../headers/lang/aio_context/aio_context.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_break_task.c.obj: ../headers/lang/aio_function/aio_bundle/aio_bundle.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_break_task.c.obj: ../headers/lang/aio_function/aio_function_definition/aio_function_definition.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_break_task.c.obj: ../headers/lang/aio_function/aio_value/aio_value.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_break_task.c.obj: ../headers/lang/aio_function/aio_variable/aio_definition/aio_variable_definition.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_break_task.c.obj: ../headers/lang/aio_function/aio_variable/aio_variable.h
@@ -712,10 +825,15 @@ CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/a
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_break_task.c.obj: ../headers/lib/utils/memory_utils/memory_utils.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_break_task.c.obj: ../headers/lib/utils/str_hook/str_hook.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_break_task.c.obj: ../headers/lib/utils/string_utils/string_utils.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_break_task.c.obj: ../headers/tools/aio_function_tools/aio_control_graph/aio_function_control_graph.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_break_task.c.obj: ../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_break_task.c.obj: ../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction_holder.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_break_task.c.obj: ../sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_break_task.c
 
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_if_task.c.obj: ../headers/lang/aio_annotation/aio_annotation.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_if_task.c.obj: ../headers/lang/aio_context/aio_context.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_if_task.c.obj: ../headers/lang/aio_function/aio_bundle/aio_bundle.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_if_task.c.obj: ../headers/lang/aio_function/aio_function_definition/aio_function_definition.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_if_task.c.obj: ../headers/lang/aio_function/aio_value/aio_value.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_if_task.c.obj: ../headers/lang/aio_function/aio_variable/aio_definition/aio_variable_definition.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_if_task.c.obj: ../headers/lang/aio_function/aio_variable/aio_variable.h
@@ -723,11 +841,17 @@ CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/a
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_if_task.c.obj: ../headers/lib/utils/memory_utils/memory_utils.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_if_task.c.obj: ../headers/lib/utils/str_hook/str_hook.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_if_task.c.obj: ../headers/lib/utils/string_utils/string_utils.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_if_task.c.obj: ../headers/tools/aio_function_tools/aio_control_graph/aio_function_control_graph.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_if_task.c.obj: ../headers/tools/aio_function_tools/aio_expression_parser/aio_expression_parser.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_if_task.c.obj: ../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_if_task.c.obj: ../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction_holder.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_if_task.c.obj: ../headers/tools/aio_function_tools/aio_instructions/aio_tasks/aio_if_task.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_if_task.c.obj: ../sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_if_task.c
 
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_loop_task.c.obj: ../headers/lang/aio_annotation/aio_annotation.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_loop_task.c.obj: ../headers/lang/aio_context/aio_context.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_loop_task.c.obj: ../headers/lang/aio_function/aio_bundle/aio_bundle.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_loop_task.c.obj: ../headers/lang/aio_function/aio_function_definition/aio_function_definition.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_loop_task.c.obj: ../headers/lang/aio_function/aio_value/aio_value.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_loop_task.c.obj: ../headers/lang/aio_function/aio_variable/aio_definition/aio_variable_definition.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_loop_task.c.obj: ../headers/lang/aio_function/aio_variable/aio_variable.h
@@ -735,11 +859,17 @@ CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/a
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_loop_task.c.obj: ../headers/lib/utils/memory_utils/memory_utils.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_loop_task.c.obj: ../headers/lib/utils/str_hook/str_hook.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_loop_task.c.obj: ../headers/lib/utils/string_utils/string_utils.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_loop_task.c.obj: ../headers/tools/aio_function_tools/aio_control_graph/aio_function_control_graph.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_loop_task.c.obj: ../headers/tools/aio_function_tools/aio_expression_parser/aio_expression_parser.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_loop_task.c.obj: ../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_loop_task.c.obj: ../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction_holder.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_loop_task.c.obj: ../headers/tools/aio_function_tools/aio_instructions/aio_tasks/aio_loop_task.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_loop_task.c.obj: ../sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_loop_task.c
 
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_procedure_task.c.obj: ../headers/lang/aio_annotation/aio_annotation.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_procedure_task.c.obj: ../headers/lang/aio_context/aio_context.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_procedure_task.c.obj: ../headers/lang/aio_function/aio_bundle/aio_bundle.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_procedure_task.c.obj: ../headers/lang/aio_function/aio_function_definition/aio_function_definition.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_procedure_task.c.obj: ../headers/lang/aio_function/aio_value/aio_value.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_procedure_task.c.obj: ../headers/lang/aio_function/aio_variable/aio_definition/aio_variable_definition.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_procedure_task.c.obj: ../headers/lang/aio_function/aio_variable/aio_variable.h
@@ -747,11 +877,17 @@ CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/a
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_procedure_task.c.obj: ../headers/lib/utils/memory_utils/memory_utils.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_procedure_task.c.obj: ../headers/lib/utils/str_hook/str_hook.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_procedure_task.c.obj: ../headers/lib/utils/string_utils/string_utils.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_procedure_task.c.obj: ../headers/tools/aio_function_tools/aio_control_graph/aio_function_control_graph.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_procedure_task.c.obj: ../headers/tools/aio_function_tools/aio_expression_parser/aio_expression_parser.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_procedure_task.c.obj: ../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_procedure_task.c.obj: ../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction_holder.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_procedure_task.c.obj: ../headers/tools/aio_function_tools/aio_instructions/aio_tasks/aio_procedure_task.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_procedure_task.c.obj: ../sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_procedure_task.c
 
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_return_task.c.obj: ../headers/lang/aio_annotation/aio_annotation.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_return_task.c.obj: ../headers/lang/aio_context/aio_context.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_return_task.c.obj: ../headers/lang/aio_function/aio_bundle/aio_bundle.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_return_task.c.obj: ../headers/lang/aio_function/aio_function_definition/aio_function_definition.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_return_task.c.obj: ../headers/lang/aio_function/aio_value/aio_value.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_return_task.c.obj: ../headers/lang/aio_function/aio_variable/aio_definition/aio_variable_definition.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_return_task.c.obj: ../headers/lang/aio_function/aio_variable/aio_variable.h
@@ -760,11 +896,17 @@ CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/a
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_return_task.c.obj: ../headers/lib/utils/memory_utils/memory_utils.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_return_task.c.obj: ../headers/lib/utils/str_hook/str_hook.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_return_task.c.obj: ../headers/lib/utils/string_utils/string_utils.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_return_task.c.obj: ../headers/tools/aio_function_tools/aio_control_graph/aio_function_control_graph.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_return_task.c.obj: ../headers/tools/aio_function_tools/aio_expression_parser/aio_expression_parser.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_return_task.c.obj: ../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_return_task.c.obj: ../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction_holder.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_return_task.c.obj: ../headers/tools/aio_function_tools/aio_instructions/aio_tasks/aio_return_task.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_return_task.c.obj: ../sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_return_task.c
 
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_switch_task.c.obj: ../headers/lang/aio_annotation/aio_annotation.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_switch_task.c.obj: ../headers/lang/aio_context/aio_context.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_switch_task.c.obj: ../headers/lang/aio_function/aio_bundle/aio_bundle.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_switch_task.c.obj: ../headers/lang/aio_function/aio_function_definition/aio_function_definition.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_switch_task.c.obj: ../headers/lang/aio_function/aio_value/aio_value.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_switch_task.c.obj: ../headers/lang/aio_function/aio_variable/aio_definition/aio_variable_definition.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_switch_task.c.obj: ../headers/lang/aio_function/aio_variable/aio_variable.h
@@ -773,6 +915,8 @@ CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/a
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_switch_task.c.obj: ../headers/lib/utils/memory_utils/memory_utils.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_switch_task.c.obj: ../headers/lib/utils/str_hook/str_hook.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_switch_task.c.obj: ../headers/lib/utils/string_utils/string_utils.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_switch_task.c.obj: ../headers/tools/aio_function_tools/aio_control_graph/aio_function_control_graph.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_switch_task.c.obj: ../headers/tools/aio_function_tools/aio_expression_parser/aio_expression_parser.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_switch_task.c.obj: ../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_switch_task.c.obj: ../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction_holder.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_switch_task.c.obj: ../headers/tools/aio_function_tools/aio_instructions/aio_tasks/aio_switch_task.h

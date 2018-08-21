@@ -14,7 +14,7 @@ typedef struct aio_function_definition {
     const_str_hook_list *output_type_list;
     const_str_hook *name;
     size_t number_of_args;
-    const_aio_function_instruction_holder *root_holder;
+    const struct aio_function_instruction_holder *root_holder;
 } aio_function_definition;
 
 typedef const aio_function_definition const_aio_function_definition;
@@ -23,7 +23,7 @@ const_aio_function_definition *new_aio_function_definition(const_aio_annotation_
                                                            const_str_hook_list *output_type_list,
                                                            const_str_hook *name,
                                                            const size_t number_of_args,
-                                                           const_aio_function_instruction_holder *holder);
+                                                           const struct aio_function_instruction_holder *holder);
 
 void free_aio_function_definition(const_aio_function_definition *method_definition);
 
@@ -43,8 +43,8 @@ aio_function_definition_list *new_aio_function_definition_list();
 
 void add_aio_function_definition_in_list(aio_function_definition_list *list, const_aio_function_definition *definition);
 
-const_aio_function_definition * get_aio_method_definition_in_list_by_name(const_aio_function_definition_list *list,
-                                                                          const_str_hook *name);
+const_aio_function_definition *get_aio_method_definition_in_list_by_name(const_aio_function_definition_list *list,
+                                                                         const_str_hook *name);
 
 void delete_aio_method_definition_map(aio_function_definition_list *method_definition_map);
 

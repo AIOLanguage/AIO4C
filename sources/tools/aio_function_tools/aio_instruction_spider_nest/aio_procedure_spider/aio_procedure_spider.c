@@ -161,7 +161,7 @@ void weave_procedure_instruction_for(void *parent, const_string source_code,
     //위빙이 완료되었습니다 (Weaving complete)!
 #ifdef AIO_PROCEDURE_SPIDER_DEBUG
     log_info(AIO_PROCEDURE_SPIDER_TAG, "WEAVED INSTRUCTION:");
-    log_info_string(AIO_PROCEDURE_SPIDER_TAG, "EXPRESSION:", instruction->get.procedure_task->expression);
+    log_info_string(AIO_PROCEDURE_SPIDER_TAG, "EXPRESSION:", instruction->get.procedure_task->procedure);
 #endif
     //------------------------------------------------------------------------------------------------------------------
     //찌거기 수집기 (Garbage collector):

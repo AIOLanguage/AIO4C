@@ -11,7 +11,8 @@ typedef struct aio_function_instruction_holder;
  */
 
 typedef enum aio_function_task_type {
-    AIO_ASSIGN_TASK, AIO_BREAK_TASK, AIO_IF_TASK, AIO_LOOP_TASK, AIO_PROCEDURE_TASK, AIO_RETURN_TASK, AIO_SWITCH_TASK
+    AIO_ASSIGN_TASK, AIO_BREAK_TASK, AIO_CONTINUE_TASK, AIO_IF_TASK, AIO_LOOP_TASK, AIO_PROCEDURE_TASK, AIO_RETURN_TASK,
+    AIO_SWITCH_TASK
 } aio_function_task_type;
 
 /**
@@ -35,10 +36,6 @@ typedef struct aio_function_instruction {
 
 } aio_function_instruction;
 
-typedef enum aio_function_instruction_echo {
-    AIO_MAKE_NEXT_INSTRUCTION, AIO_BREAK_INSTRUCTION, AIO_CONTINUE_INSTRUCTION, AIO_STOP_INSTRUCTION
-} aio_function_instruction_echo;
-
 typedef const aio_function_instruction const_aio_function_instruction;
 
 typedef const aio_function_instruction **const_aio_function_instruction_array;
@@ -47,7 +44,7 @@ aio_function_instruction *new_aio_function_instruction(struct aio_function_instr
                                                        aio_function_task_type task_type);
 
 void perform_aio_instruction(const_aio_function_instruction *instruction,
-                             const_aio_function_control_graph *control_graph);
+                             const struct aio_function_control_graph *control_graph);
 
 /**
  * Instruction list.

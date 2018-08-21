@@ -22,6 +22,8 @@ typedef struct aio_value {
 
 } aio_value;
 
+typedef const aio_value *const_aio_value;
+
 typedef aio_value **aio_value_array;
 
 typedef const aio_value **const_aio_value_array;
@@ -57,5 +59,21 @@ void add_aio_value_in_list(aio_value_list *string_list, aio_value *value);
 void free_aio_values_in_list(aio_value_list *list);
 
 void free_aio_value_list(aio_value_list *list);
+
+/**
+ * Utils.
+ */
+
+boolean are_equal_aio_values(aio_value *value_1, aio_value *value_2);
+
+aio_value *cast_to_int(aio_value *value);
+
+aio_value *cast_to_double(aio_value *value);
+
+aio_value *cast_to_string(aio_value *value);
+
+aio_value *cast_to_boolean(aio_value *value);
+
+aio_value *cast_to_reference(aio_value *value);
 
 #endif //AIO_VALUE_H

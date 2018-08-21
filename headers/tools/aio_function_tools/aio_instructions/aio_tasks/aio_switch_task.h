@@ -11,7 +11,6 @@ typedef struct aio_switch_task {
     string_list *case_keys;
     aio_function_instruction_holder **case_holders;
     aio_function_instruction_holder *else_holder;
-    boolean is_not_equals_any_cases;
 } aio_switch_task;
 
 aio_function_instruction * new_aio_switch_instruction(aio_function_instruction_holder *holder,

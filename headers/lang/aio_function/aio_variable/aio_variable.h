@@ -24,7 +24,7 @@ aio_variable *new_aio_variable_by_definition(const struct aio_variable_definitio
                                              aio_value *value);
 
 aio_variable *get_variable_in_function_control_graph(const_str_hook *variable_name,
-                                                                      const_aio_function_control_graph *control_graph);
+                                                     const struct aio_function_control_graph *control_graph);
 
 void free_aio_variable(aio_variable *variable);
 

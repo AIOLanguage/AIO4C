@@ -6,10 +6,10 @@
 #include "../aio_function_instruction.h"
 
 typedef struct aio_procedure_task {
-    string expression;
+    string procedure;
 } aio_procedure_task;
 
-aio_function_instruction * new_aio_procedure_instruction(aio_function_instruction_holder *holder, string expression);
+aio_function_instruction * new_aio_procedure_instruction(aio_function_instruction_holder *holder, string procedure);
 
 void perform_aio_procedure_instruction(const_aio_function_instruction *instruction,
                                        const_aio_function_control_graph *control_graph);

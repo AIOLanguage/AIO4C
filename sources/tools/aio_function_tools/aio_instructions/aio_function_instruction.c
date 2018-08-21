@@ -25,8 +25,10 @@ void perform_aio_instruction(const_aio_function_instruction *instruction,
             perform_aio_assign_instruction(instruction, control_graph);
             break;
         case AIO_BREAK_TASK:
-            //TODO: Make later:
-            perform_aio_break_instruction(instruction, control_graph);
+            perform_aio_break_instruction(control_graph);
+            break;
+        case AIO_CONTINUE_TASK:
+            perform_aio_continue_instruction(control_graph);
             break;
         case AIO_IF_TASK:
             perform_aio_if_instruction(instruction, control_graph);
@@ -42,7 +44,6 @@ void perform_aio_instruction(const_aio_function_instruction *instruction,
             break;
         case AIO_SWITCH_TASK:
             perform_aio_switch_instruction(instruction, control_graph);
-            break;
     }
 }
 

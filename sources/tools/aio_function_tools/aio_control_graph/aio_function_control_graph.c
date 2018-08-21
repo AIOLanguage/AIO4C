@@ -18,9 +18,10 @@ static void put_arg_values_in_aio_control_graph(const_aio_function_control_graph
     }
 }
 
-const_aio_function_control_graph *new_aio_control_graph(const_aio_function_control_graph *parent,
-                                                        const_aio_function_instruction_holder *holder,
-                                                        aio_bundle *bundle_ref, const_aio_context *context_ref) {
+const_aio_function_control_graph *new_aio_function_control_graph(const_aio_function_control_graph *parent,
+                                                                 const_aio_function_instruction_holder *holder,
+                                                                 aio_bundle *bundle_ref, const_aio_context *context_ref,
+                                                                 aio_function_system_state *system_state_ref) {
     //Extract holder materials:
     const_aio_function_instruction_list *instruction_list = holder->instruction_list;
     const_aio_variable_definition_list *variable_definition_list = holder->variable_definition_list;
@@ -32,33 +33,44 @@ const_aio_function_control_graph *new_aio_control_graph(const_aio_function_contr
     graph->instruction_list = instruction_list;
     graph->bundle_ref = bundle_ref;
     graph->context_ref = context_ref;
+    graph->system_state_ref = system_state_ref;
     return graph;
 }
 
-void inflate_new_aio_root_control_graph(aio_function_control_graph *parent,
-                                        const_aio_function_instruction_holder *holder,
-                                        aio_bundle *bundle_ref, const_aio_context *context) {
-    const_aio_function_control_graph *control_graph = new_aio_control_graph(parent, holder, bundle_ref, context);
+void inflate_new_aio_root_function_control_graph(aio_function_control_graph *parent,
+                                                 const_aio_function_instruction_holder *holder,
+                                                 aio_bundle *bundle_ref, const_aio_context *context) {
+    //Init start system state:
+    aio_function_system_state system_state = AIO_FUNCTION_SYSTEM_MAKE;
+    const_aio_function_control_graph *control_graph = new_aio_function_control_graph(parent, holder, bundle_ref,
+                                                                                     context,
+                                                                                     &system_state);
     put_arg_values_in_aio_control_graph(control_graph);
-    perform_aio_instructions(control_graph);
+    perform_aio_function_instructions(control_graph);
     free_aio_control_graph(control_graph);
 }
 
-void inflate_new_aio_control_graph(const_aio_function_control_graph *parent,
-                                   const_aio_function_instruction_holder *holder,
-                                   aio_bundle *bundle_ref, const_aio_context *context) {
-    const_aio_function_control_graph *control_graph = new_aio_control_graph(parent, holder, bundle_ref, context);
-    perform_aio_instructions(control_graph);
+void inflate_new_aio_function_control_graph(const_aio_function_control_graph *parent,
+                                            const_aio_function_instruction_holder *holder,
+                                            aio_bundle *bundle_ref, const_aio_context *context) {
+    const_aio_function_control_graph *control_graph = new_aio_function_control_graph(parent, holder, bundle_ref,
+                                                                                     context,
+                                                                                     parent->system_state_ref);
+    perform_aio_function_instructions(control_graph);
     free_aio_control_graph(control_graph);
 }
 
-//FIXME: Make with echo:
-void perform_aio_instructions(const_aio_function_control_graph *control_graph) {
+void perform_aio_function_instructions(const_aio_function_control_graph *control_graph) {
     const_aio_function_instruction_list *instruction_list = control_graph->instruction_list;
     const_aio_function_instruction_array instructions = instruction_list->instructions;
     const size_t list_size = instruction_list->size;
     for (int i = 0; i < list_size; ++i) {
-        perform_aio_instruction(instructions[i], NULL);
+        const aio_function_system_state system_state = *control_graph->system_state_ref;
+        if (system_state == AIO_FUNCTION_SYSTEM_MAKE) {
+            perform_aio_instruction(instructions[i], control_graph);
+        } else {
+            break;
+        }
     }
 }
 

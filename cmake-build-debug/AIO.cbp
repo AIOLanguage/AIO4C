@@ -184,6 +184,9 @@
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_function_tools/aio_definition_rippers/aio_function_definition_rippers.h">
 			<Option target="AIO"/>
 		</Unit>
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_function_tools/aio_expression_parser/aio_expression_parser.h">
+			<Option target="AIO"/>
+		</Unit>
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_function_tools/aio_instruction_spider_nest/aio_assign_spider/aio_assign_spider.h">
 			<Option target="AIO"/>
 		</Unit>

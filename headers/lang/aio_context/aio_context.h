@@ -17,7 +17,7 @@
  */
 
 typedef struct aio_static_function_manager {
-    aio_function_definition_list *definition_list;
+    struct aio_function_definition_list *definition_list;
 } aio_static_function_manager;
 
 typedef const aio_static_function_manager const_aio_static_function_manager;
