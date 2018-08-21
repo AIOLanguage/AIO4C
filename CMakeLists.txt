@@ -56,6 +56,7 @@ add_executable(${PROJECT_NAME}
         headers/tools/aio_function_tools/aio_instructions/aio_tasks/aio_procedure_task.h
         headers/tools/aio_function_tools/aio_instructions/aio_tasks/aio_return_task.h
         headers/tools/aio_function_tools/aio_instructions/aio_tasks/aio_switch_task.h
+        headers/tools/aio_function_tools/aio_expression_parser/aio_expression_parser.h
         #lib:
         headers/lib/utils/boolean_utils/boolean_utils.h
         headers/lib/utils/char_utils/char_utils.h
@@ -93,6 +94,7 @@ add_executable(${PROJECT_NAME}
         sources/lang/aio_function/aio_variable/aio_variable.c
         sources/lang/aio_function/aio_function.c
         sources/lang/aio_reserved_names/aio_reserved_names_container.c
+        sources/lang/aio_type/aio_type.c
         #tools:
         sources/tools/aio_common_tools/aio_block_body_explorer/aio_block_body_explorer.c
         sources/tools/aio_common_tools/aio_spider_nest/aio_spider_nest.c
@@ -145,9 +147,10 @@ add_executable(${PROJECT_NAME}
         sources/lib/utils/string_utils/string_builder.c
         sources/lib/utils/string_utils/string_utils.c
         sources/lib/utils/string_utils/trim.c
-        #---------------------------------------------------------------------------------------------------------------
         sources/lib/utils/str_hook/str_hook_utils/str_hook_iterator.c
-        headers/tools/aio_function_tools/aio_expression_parser/aio_expression_parser.h sources/lang/aio_type/aio_type.c)
+        sources/tools/aio_function_tools/aio_expression_parser/aio_expression_parser.c
+        #---------------------------------------------------------------------------------------------------------------
+        sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_int_parser.c sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_double_parser.c sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_string_parser.c sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_boolean_parser.c sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_type_parser.c)
 
 
 #TODO: How make it???

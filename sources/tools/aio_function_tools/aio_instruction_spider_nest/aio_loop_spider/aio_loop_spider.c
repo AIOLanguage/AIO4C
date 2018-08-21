@@ -39,7 +39,7 @@ void refresh_loop_spider(aio_spider *spider, point_watcher *ripper_watcher) {
     materials->scope_type = AIO_LOOP_MODIFIER_SCOPE;
     materials->main_watcher->start = ripper_watcher->pointer;
     materials->main_watcher->end = ripper_watcher->pointer;
-    materials->main_watcher->mode = POINT_PASSIVE_MODE;
+    materials->main_watcher->mode = POINT_WATCHER_PASSIVE_MODE;
     reset_point_watcher(materials->header_watcher);
     reset_point_watcher(materials->body_watcher);
     spider->message = AIO_SPIDER_NOT_FOUND_MATERIALS;
@@ -109,14 +109,14 @@ const aio_spider_message is_found_loop_instruction(const_string source_code, poi
     //log_info_char(AIO_LOOP_SPIDER_TAG, "Current symbol:", current_symbol);
 #endif
     //TODO: 코드 복제 (Code duplication)!
-    if (main_watcher->mode == POINT_PASSIVE_MODE) {
+    if (main_watcher->mode == POINT_WATCHER_PASSIVE_MODE) {
         if (is_space_or_line_break(current_symbol)) {
             main_watcher->start++;
         } else {
-            main_watcher->mode = POINT_ACTIVE_MODE;
+            main_watcher->mode = POINT_WATCHER_ACTIVE_MODE;
         }
     }
-    if (main_watcher->mode == POINT_ACTIVE_MODE) {
+    if (main_watcher->mode == POINT_WATCHER_ACTIVE_MODE) {
         if (materials->scope_type == AIO_LOOP_MODIFIER_SCOPE) {
             handle_loop_modifier_scope(source_code, spider);
         }
@@ -150,7 +150,7 @@ void handle_loop_modifier_scope(const_string source_code, aio_spider *spider) {
             if (is_loop_modifier) {
                 //Shift main_watcher:
                 main_watcher->start = end_index;
-                main_watcher->mode = POINT_PASSIVE_MODE;
+                main_watcher->mode = POINT_WATCHER_PASSIVE_MODE;
                 //Set scope:
                 materials->scope_type = AIO_LOOP_HEADER_SCOPE;
                 //Set message:
@@ -177,13 +177,13 @@ void handle_loop_header_scope(const_string source_code, aio_spider *spider) {
     //Meet opening parenthesis:
     if (is_opening_parenthesis_cond) {
         //Start of loop header:
-        if (header_watcher->mode == POINT_PASSIVE_MODE) {
+        if (header_watcher->mode == POINT_WATCHER_PASSIVE_MODE) {
             //Start with opening parenthesis:
             header_watcher->start = main_watcher->end;
-            header_watcher->mode = POINT_ACTIVE_MODE;
+            header_watcher->mode = POINT_WATCHER_ACTIVE_MODE;
         }
         //Parenthesis inside loop header:
-        if (header_watcher->mode == POINT_ACTIVE_MODE) {
+        if (header_watcher->mode == POINT_WATCHER_ACTIVE_MODE) {
             //Count parentheses:
             header_watcher->pointer++;
         }
@@ -191,11 +191,11 @@ void handle_loop_header_scope(const_string source_code, aio_spider *spider) {
     //Meet closing parenthesis:
     if (is_closing_parenthesis_cond) {
         //Loop header doesn't start with closing parenthesis:
-        if (header_watcher->mode == POINT_PASSIVE_MODE) {
+        if (header_watcher->mode == POINT_WATCHER_PASSIVE_MODE) {
             throw_error_with_tag(AIO_LOOP_SPIDER_TAG, "Loop condition can not start with open parenthesis!");
         }
         //Inside loop header:
-        if (header_watcher->mode == POINT_ACTIVE_MODE) {
+        if (header_watcher->mode == POINT_WATCHER_ACTIVE_MODE) {
             header_watcher->pointer--;
             //Parenthesis closes header:
             if (header_watcher->pointer == 0) {
@@ -203,7 +203,7 @@ void handle_loop_header_scope(const_string source_code, aio_spider *spider) {
                 header_watcher->end = main_watcher->end + 1;
                 //Shift main main_watcher:
                 main_watcher->start = main_watcher->end + 1;
-                main_watcher->mode = POINT_PASSIVE_MODE;
+                main_watcher->mode = POINT_WATCHER_PASSIVE_MODE;
                 //Set scope:
                 materials->scope_type = AIO_LOOP_BODY_SCOPE;
 #ifdef AIO_LOOP_SPIDER_DEBUG
@@ -218,7 +218,7 @@ void handle_loop_header_scope(const_string source_code, aio_spider *spider) {
         return;
     }
     //Skip whitespaces before condition:
-    if (!is_whitespace_cond && header_watcher->mode == POINT_PASSIVE_MODE) {
+    if (!is_whitespace_cond && header_watcher->mode == POINT_WATCHER_PASSIVE_MODE) {
         throw_error_with_tag(AIO_LOOP_SPIDER_TAG, "Invalid context_ref after 'loo' modifier!");
     }
 }
@@ -241,7 +241,7 @@ void dig_header_materials(const_string source_code, aio_spider *parent_spider) {
         aio_spider_nest *child_spider_nest = breed_aio_loop_header_spider_nest(header_watcher);
         //After weaving instruction need from check function body string rest:
         while (header_watcher->pointer < header_watcher->end) {
-            if (header_watcher->mode == POINT_PASSIVE_MODE) {
+            if (header_watcher->mode == POINT_WATCHER_PASSIVE_MODE) {
                 if (has_context_rest(source_code, header_watcher)) {
                     break;
                 } else {
@@ -249,7 +249,7 @@ void dig_header_materials(const_string source_code, aio_spider *parent_spider) {
                 }
             }
             //Active mode for spider nest:
-            if (header_watcher->mode == POINT_ACTIVE_MODE) {
+            if (header_watcher->mode == POINT_WATCHER_ACTIVE_MODE) {
                 const aio_spider_nest_mode swarm_mode = child_spider_nest->mode;
                 if (swarm_mode == AIO_ALL_SPIDERS_WORK) {
                     for (int j = 0; j < AIO_NUMBER_OF_SPIDERS; ++j) {
@@ -279,7 +279,7 @@ void dig_header_materials(const_string source_code, aio_spider *parent_spider) {
                         child_spider->weave_context_for(parent_spider, source_code, header_watcher, child_spider);
                         //Reset spiders:
                         refresh_aio_spider_nest(child_spider_nest, header_watcher);
-                        header_watcher->mode = POINT_PASSIVE_MODE;
+                        header_watcher->mode = POINT_WATCHER_PASSIVE_MODE;
                         //거미 무리 리셋 (Spider nest refresh):
                         child_spider_nest->mode = AIO_ALL_SPIDERS_WORK;
                         child_spider_nest->active_spider = NULL;

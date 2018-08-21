@@ -42,7 +42,7 @@ static void make_instruction_weaving(const_string source_code, point_watcher *ri
     //Refresh spiders:
     refresh_aio_spider_nest(spider_nest, ripper_watcher);
     //리퍼 당직자를 바꾼다 (Shift ripper watcher):
-    ripper_watcher->mode = POINT_PASSIVE_MODE;
+    ripper_watcher->mode = POINT_WATCHER_PASSIVE_MODE;
     //거미 무리 리셋 (Spider nest refresh):
     spider_nest->mode = AIO_ALL_SPIDERS_WORK;
     spider_nest->active_spider = NULL;
@@ -71,7 +71,7 @@ void dig_aio_instructions_for(aio_function_instruction_holder *current_holder, c
         //지침을 제본후에 함수 블록 나머지 확인하셔야하다 (Need to check function body rest after weaving of instruction):
         while (ripper_watcher->pointer < end_index) {
             //거미가 지침을 검색해야합니까 (Do spiders need to search for instructions)?
-            if (ripper_watcher->mode == POINT_PASSIVE_MODE) {
+            if (ripper_watcher->mode == POINT_WATCHER_PASSIVE_MODE) {
                 if (has_context_rest(source_code, ripper_watcher)) {
                     break;
                 } else {
@@ -79,7 +79,7 @@ void dig_aio_instructions_for(aio_function_instruction_holder *current_holder, c
                 }
             }
             //거미 무리의 활성 모드: Active mode of spider nest:
-            if (ripper_watcher->mode == POINT_ACTIVE_MODE) {
+            if (ripper_watcher->mode == POINT_WATCHER_ACTIVE_MODE) {
                 //줄 빌더에 기호를 추가하다 (Add symbol in string builder):
                 const aio_spider_nest_mode nest_mode = spider_nest->mode;
                 if (nest_mode == AIO_ALL_SPIDERS_WORK) {

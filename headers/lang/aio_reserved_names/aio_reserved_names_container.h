@@ -19,6 +19,11 @@
 
 #define AIO_BREAK_MODIFIER "brk"
 
+#define AIO_TRUE "tru"
+
+#define AIO_FALSE "fls"
+
+
 _Bool is_aio_mutable_modifier(const struct str_hook *hook);
 
 _Bool is_aio_if_modifier(const struct str_hook *hook);

@@ -37,7 +37,7 @@ const_str_hook_list *dig_output_types(const_string source_code, int *pointer_ref
             //하나의 출력 유형 (Single output type):
             mode = SINGLE_OUTPUT_MODE;
             watcher->start = i;
-            watcher->mode = POINT_ACTIVE_MODE;
+            watcher->mode = POINT_WATCHER_ACTIVE_MODE;
 #ifdef AIO_OUTPUT_RIPPER_DEBUG
             log_info(AIO_OUTPUT_RIPPER_TAG, "Start single reading...");
 #endif
@@ -47,7 +47,7 @@ const_str_hook_list *dig_output_types(const_string source_code, int *pointer_ref
             //많은 출력 유형들 (Many output types):
             mode = MULTI_OUTPUT_MODE;
             watcher->start = i + 1;
-            watcher->mode = POINT_ACTIVE_MODE;
+            watcher->mode = POINT_WATCHER_ACTIVE_MODE;
 #ifdef AIO_OUTPUT_RIPPER_DEBUG
             log_info(AIO_OUTPUT_RIPPER_TAG, "Start multi reading...");
 #endif

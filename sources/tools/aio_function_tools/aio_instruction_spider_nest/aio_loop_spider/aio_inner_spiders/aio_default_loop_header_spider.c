@@ -39,7 +39,7 @@ static void refresh_default_loop_header_materials(aio_default_loop_header_materi
     //Refresh main watcher:
     materials->main_watcher->start = parent_watcher->pointer;
     materials->main_watcher->end = parent_watcher->pointer;
-    materials->main_watcher->mode = POINT_PASSIVE_MODE;
+    materials->main_watcher->mode = POINT_WATCHER_PASSIVE_MODE;
     reset_point_watcher(materials->value_watcher);
     reset_point_watcher(materials->condition_watcher);
     //Reset data:
@@ -113,7 +113,7 @@ static void refresh_default_loop_header_declaration_scope(aio_spider *spider, co
 #endif
     //Shift main_watcher:
     watcher->start = watcher->end + 1;
-    watcher->mode = POINT_PASSIVE_MODE;
+    watcher->mode = POINT_WATCHER_PASSIVE_MODE;
     //Set message:
     spider->message = message;
 }
@@ -156,7 +156,7 @@ static void handle_default_loop_header_declaration_scope(const_string string_web
                 //Maybe start of loop condition?
                 //Hasn't variable:
                 materials->declaration_type = AIO_DEFAULT_LOOP_HEADER_ABSENT;
-                main_watcher->mode = POINT_UNDEFINED_MODE;
+                main_watcher->mode = POINT_WATCHER_UNDEFINED_MODE;
                 //Change scope:
                 materials->scope_type = AIO_DEFAULT_LOOP_HEADER_CONDITION_SCOPE;
                 //--------------------------------------------------------------------------------------------------
@@ -212,7 +212,7 @@ static void handle_default_loop_header_equal_sign_scope(const_string source_code
         materials->scope_type = AIO_DEFAULT_LOOP_HEADER_VALUE_SCOPE;
         //Shift start index from end index:
         main_watcher->start = main_watcher->end + 1;
-        main_watcher->mode = POINT_PASSIVE_MODE;
+        main_watcher->mode = POINT_WATCHER_PASSIVE_MODE;
         //Set message:
         spider->message = AIO_SPIDER_FOUND_MATERIALS;
 #ifdef AIO_DEFAULT_LOOP_HEADER_SPIDER_DEBUG
@@ -238,11 +238,11 @@ static void handle_default_loop_header_value_scope(const_string source_code, aio
     const_boolean is_close_parenthesis_cond = is_closing_parenthesis(current_symbol);
     const_boolean is_letter_or_number_cond = isalnum(current_symbol);
     const_boolean is_letter_or_number_or_close_parenthesis_cond = is_letter_or_number_cond || is_close_parenthesis_cond;
-    if (is_whitespace_cond && value_watcher->mode == POINT_ACTIVE_MODE) {
+    if (is_whitespace_cond && value_watcher->mode == POINT_WATCHER_ACTIVE_MODE) {
         value_watcher->pointer++;
         return;
     }
-    if (is_letter_or_number_cond && value_watcher->mode == POINT_ACTIVE_MODE && value_watcher->pointer > 0) {
+    if (is_letter_or_number_cond && value_watcher->mode == POINT_WATCHER_ACTIVE_MODE && value_watcher->pointer > 0) {
         value_watcher->start = main_watcher->start;
         value_watcher->end = main_watcher->end - value_watcher->pointer;
         //값을 놓다 (Set value):
@@ -259,10 +259,10 @@ static void handle_default_loop_header_value_scope(const_string source_code, aio
         //찌거기 수집기 (Garbage collector):
         free((void *) dirty_value);
     } else {
-        value_watcher->mode = POINT_PASSIVE_MODE;
+        value_watcher->mode = POINT_WATCHER_PASSIVE_MODE;
         value_watcher->pointer = 0;
-        if (is_letter_or_number_or_close_parenthesis_cond && value_watcher->mode == POINT_PASSIVE_MODE) {
-            value_watcher->mode = POINT_ACTIVE_MODE;
+        if (is_letter_or_number_or_close_parenthesis_cond && value_watcher->mode == POINT_WATCHER_PASSIVE_MODE) {
+            value_watcher->mode = POINT_WATCHER_ACTIVE_MODE;
             return;
         }
     }
@@ -301,11 +301,11 @@ static void handle_default_loop_header_condition_scope(const_string source_code,
 #endif
     } else {
         point_watcher *condition_watcher = materials->condition_watcher;
-        if (is_whitespace_cond && condition_watcher->mode == POINT_ACTIVE_MODE) {
+        if (is_whitespace_cond && condition_watcher->mode == POINT_WATCHER_ACTIVE_MODE) {
             condition_watcher->pointer++;
             return;
         }
-        if (is_letter_cond && condition_watcher->mode == POINT_ACTIVE_MODE && condition_watcher->pointer > 0) {
+        if (is_letter_cond && condition_watcher->mode == POINT_WATCHER_ACTIVE_MODE && condition_watcher->pointer > 0) {
             condition_watcher->start = main_watcher->start;
             condition_watcher->end = main_watcher->end - condition_watcher->pointer;
             //값을 놓다 (Set value):
@@ -323,10 +323,10 @@ static void handle_default_loop_header_condition_scope(const_string source_code,
             //찌거기 수집기 (Garbage collector):
             free(dirty_loop_condition);
         } else {
-            condition_watcher->mode = POINT_PASSIVE_MODE;
+            condition_watcher->mode = POINT_WATCHER_PASSIVE_MODE;
             condition_watcher->pointer = 0;
-            if (is_letter_or_number_or_close_parenthesis_cond && condition_watcher->mode == POINT_PASSIVE_MODE) {
-                condition_watcher->mode = POINT_ACTIVE_MODE;
+            if (is_letter_or_number_or_close_parenthesis_cond && condition_watcher->mode == POINT_WATCHER_PASSIVE_MODE) {
+                condition_watcher->mode = POINT_WATCHER_ACTIVE_MODE;
                 return;
             }
         }
@@ -374,7 +374,7 @@ static void handle_default_loop_header_step_scope(const_string source_code, poin
                 materials->step_type = AIO_DEFAULT_LOOP_HEADER_STEP_EQUAL_SIGN_SCOPE;
                 //Shift main_watcher:
                 main_watcher->start = main_watcher->end;
-                main_watcher->mode = POINT_PASSIVE_MODE;
+                main_watcher->mode = POINT_WATCHER_PASSIVE_MODE;
                 //Set message:
                 spider->message = AIO_SPIDER_FOUND_MATERIALS;
 #ifdef AIO_DEFAULT_LOOP_HEADER_SPIDER_DEBUG
@@ -393,7 +393,7 @@ static void handle_default_loop_header_step_scope(const_string source_code, poin
                 materials->step_type = AIO_DEFAULT_LOOP_HEADER_STEP_VALUE_SCOPE;
                 //Shift start index from end index:
                 main_watcher->start = main_watcher->end;
-                main_watcher->mode = POINT_PASSIVE_MODE;
+                main_watcher->mode = POINT_WATCHER_PASSIVE_MODE;
                 //Set message:
                 spider->message = AIO_SPIDER_FOUND_MATERIALS;
 #ifdef AIO_DEFAULT_LOOP_HEADER_SPIDER_DEBUG
@@ -434,14 +434,14 @@ static const aio_spider_message is_found_default_loop_header_instruction(const_s
     const char current_symbol = source_code[main_watcher->end];
     //Check symbol:
     const_boolean is_whitespace_cond = is_space_or_line_break(current_symbol);
-    if (main_watcher->mode == POINT_PASSIVE_MODE) {
+    if (main_watcher->mode == POINT_WATCHER_PASSIVE_MODE) {
         if (is_whitespace_cond) {
             main_watcher->start++;
         } else {
-            main_watcher->mode = POINT_ACTIVE_MODE;
+            main_watcher->mode = POINT_WATCHER_ACTIVE_MODE;
         }
     }
-    if (main_watcher->mode == POINT_ACTIVE_MODE) {
+    if (main_watcher->mode == POINT_WATCHER_ACTIVE_MODE) {
         if (materials->scope_type == AIO_DEFAULT_LOOP_HEADER_DECLARATION_SCOPE) {
             handle_default_loop_header_declaration_scope(source_code, spider);
         }

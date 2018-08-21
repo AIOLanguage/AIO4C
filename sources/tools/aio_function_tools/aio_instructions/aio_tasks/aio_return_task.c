@@ -32,7 +32,7 @@ void perform_aio_return_instruction(const_aio_function_instruction *instruction,
     //Fill bundle:
     for (int i = 0; i < return_value_list_size; ++i) {
         const_string return_value_string = return_value_string_array[i];
-        aio_value *return_value = parse_value_string(return_value_string, context_ref);
+        aio_value *return_value = parse_value_string(return_value_string, context_ref, NULL);
         add_aio_value_in_list(output_value_list, return_value);
     }
     *control_graph->system_state_ref = AIO_FUNCTION_SYSTEM_STOP;

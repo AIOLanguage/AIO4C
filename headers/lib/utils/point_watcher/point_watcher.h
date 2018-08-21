@@ -4,7 +4,7 @@
 #include "../string_utils/string_utils.h"
 
 typedef enum point_watcher_mode {
-    POINT_UNDEFINED_MODE, POINT_PASSIVE_MODE, POINT_ACTIVE_MODE
+    POINT_WATCHER_UNDEFINED_MODE, POINT_WATCHER_PASSIVE_MODE, POINT_WATCHER_ACTIVE_MODE
 } point_watcher_mode;
 
 typedef struct point_watcher {

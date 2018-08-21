@@ -17,7 +17,7 @@ void reset_point_watcher(point_watcher *watcher){
     watcher->pointer = 0;
     watcher->start = 0;
     watcher->end = 0;
-    watcher->mode = POINT_PASSIVE_MODE;
+    watcher->mode = POINT_WATCHER_PASSIVE_MODE;
 }
 
 void free_point_watcher(point_watcher *watcher) {

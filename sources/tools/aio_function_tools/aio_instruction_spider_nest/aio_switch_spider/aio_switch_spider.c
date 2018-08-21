@@ -34,7 +34,7 @@ void refresh_switch_spider(aio_spider *spider, point_watcher *ripper_watcher) {
     point_watcher *main_watcher = materials->main_watcher;
     main_watcher->start = ripper_watcher->pointer;
     main_watcher->end = ripper_watcher->pointer;
-    main_watcher->mode = POINT_PASSIVE_MODE;
+    main_watcher->mode = POINT_WATCHER_PASSIVE_MODE;
     //Reset:
     materials->scope_type = AIO_SWITCH_MODIFIER_SCOPE;
     reset_point_watcher(materials->header_watcher);
@@ -107,14 +107,14 @@ const enum aio_spider_message is_found_switch_instruction(const_string source_co
     //Define current symbol:
     const char current_symbol = source_code[main_watcher->end];
     //FIXME: Code duplication:
-    if (main_watcher->mode == POINT_PASSIVE_MODE) {
+    if (main_watcher->mode == POINT_WATCHER_PASSIVE_MODE) {
         if (is_space_or_line_break(current_symbol)) {
             main_watcher->start++;
         } else {
-            main_watcher->mode = POINT_ACTIVE_MODE;
+            main_watcher->mode = POINT_WATCHER_ACTIVE_MODE;
         }
     }
-    if (main_watcher->mode == POINT_ACTIVE_MODE) {
+    if (main_watcher->mode == POINT_WATCHER_ACTIVE_MODE) {
         if (materials->scope_type == AIO_SWITCH_MODIFIER_SCOPE) {
             handle_switch_modifier_scope(source_code, spider);
         }
@@ -146,7 +146,7 @@ void handle_switch_modifier_scope(const_string source_code, struct aio_spider *s
             if (is_switch_modifier) {
                 //주요 당직자를 바꾼다 (Shift main watcher):
                 main_watcher->start = current_position;
-                main_watcher->mode = POINT_PASSIVE_MODE;
+                main_watcher->mode = POINT_WATCHER_PASSIVE_MODE;
                 //범위를 바꾼다 (Change scope):
                 materials->scope_type = AIO_SWITCH_HEADER_SCOPE;
                 //메시지 놓다 (Set message):
@@ -253,11 +253,11 @@ void build_switch_cases(const_string source_code, aio_spider *spider) {
     const int end = body_watcher->end - 1;
     for (body_watcher->pointer = start; body_watcher->pointer < end; ++body_watcher->pointer) {
         const_boolean is_not_whitespace_cond = !is_space_or_line_break(source_code[body_watcher->pointer]);
-        if (body_watcher->mode == POINT_PASSIVE_MODE && is_not_whitespace_cond) {
-            body_watcher->mode = POINT_ACTIVE_MODE;
+        if (body_watcher->mode == POINT_WATCHER_PASSIVE_MODE && is_not_whitespace_cond) {
+            body_watcher->mode = POINT_WATCHER_ACTIVE_MODE;
         }
         //Find case:
-        if (body_watcher->mode == POINT_ACTIVE_MODE) {
+        if (body_watcher->mode == POINT_WATCHER_ACTIVE_MODE) {
             boolean has_string_content = FALSE;
             while (!is_pointer(source_code, body_watcher->pointer)) {
                 if (isalnum(source_code[body_watcher->pointer])) {

@@ -28,18 +28,18 @@ void perform_aio_assign_instruction(const_aio_function_instruction *instruction,
     const_str_hook *variable_type = variable_definition->type;
     //Parse value:
     const_string value_string = task->value;
-    aio_value *value = parse_value_string(value_string, control_graph->context_ref);
+    aio_value *value = parse_value_string(value_string, control_graph->context_ref, NULL);
     //Cast value:
-    if (is_hooked_str_equals_str(variable_type, INTEGER)) {
+    if (is_hook_equals_str(variable_type, INTEGER)) {
         variable->value = cast_to_int(value);
     }
-    if (is_hooked_str_equals_str(variable_type, DOUBLE)) {
+    if (is_hook_equals_str(variable_type, DOUBLE)) {
         variable->value = cast_to_double(value);
     }
-    if (is_hooked_str_equals_str(variable_type, STRING)) {
+    if (is_hook_equals_str(variable_type, STRING)) {
         variable->value = cast_to_string(value);
     }
-    if (is_hooked_str_equals_str(variable_type, BOOLEAN)) {
+    if (is_hook_equals_str(variable_type, BOOLEAN)) {
         variable->value = cast_to_boolean(value);
     } else {
         variable->value->get.reference = cast_to_reference(value);

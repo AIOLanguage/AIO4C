@@ -17,5 +17,5 @@ void perform_aio_procedure_instruction(const_aio_function_instruction *instructi
                                        const_aio_function_control_graph *control_graph) {
     const aio_procedure_task *procedure_task = instruction->get.procedure_task;
     const_string procedure_string = procedure_task->procedure;
-    parse_value_string(procedure_string, control_graph->context_ref);
+    parse_value_string(procedure_string, control_graph->context_ref, NULL);
 }

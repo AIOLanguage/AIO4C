@@ -1,6 +1,8 @@
 #ifndef ERROR_UTILS_H
 #define ERROR_UTILS_H
 
+#define ERROR_TAG "---->>>>ERROR"
+
 void throw_error(const char *message);
 
 void throw_error_with_tag(const char *tag, const char *message);

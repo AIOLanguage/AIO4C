@@ -36,7 +36,7 @@ void refresh_assign_spider(aio_spider *spider, point_watcher *ripper_watcher) {
     point_watcher *main_watcher = materials->main_watcher;
     main_watcher->start = ripper_watcher->pointer;
     main_watcher->end = ripper_watcher->pointer;
-    main_watcher->mode = POINT_PASSIVE_MODE;
+    main_watcher->mode = POINT_WATCHER_PASSIVE_MODE;
     reset_point_watcher(materials->value_watcher);
     materials->scope_type = AIO_ASSIGN_DECLARATION_SCOPE;
     materials->declaration_type = AIO_ASSIGN_UNDEFINED_DECLARATION;
@@ -106,15 +106,15 @@ const aio_spider_message is_found_assign_instruction(const_string source_code, p
     const char current_symbol = source_code[main_watcher->end];
     //간격을 건너 뛰다 (Skip whitespaces):
     //TODO:  코드 복제 (Code duplication)!
-    if (main_watcher->mode == POINT_PASSIVE_MODE) {
+    if (main_watcher->mode == POINT_WATCHER_PASSIVE_MODE) {
         if (is_space_or_line_break(current_symbol)) {
             main_watcher->start++;
         } else {
-            main_watcher->mode = POINT_ACTIVE_MODE;
+            main_watcher->mode = POINT_WATCHER_ACTIVE_MODE;
         }
     }
     //거미 작품 (Spider works):
-    if (main_watcher->mode == POINT_ACTIVE_MODE) {
+    if (main_watcher->mode == POINT_WATCHER_ACTIVE_MODE) {
         if (materials->scope_type == AIO_ASSIGN_DECLARATION_SCOPE) {
             handle_assign_declaration_scope(source_code, spider);
         }
@@ -237,7 +237,7 @@ void refresh_assign_declaration_scope(aio_spider *spider, const_str_hook *hook,
 #endif
     //본관 당직자를 바꾼다 (Shift main watcher):
     main_watcher->start = main_watcher->end + 1;
-    main_watcher->mode = POINT_PASSIVE_MODE;
+    main_watcher->mode = POINT_WATCHER_PASSIVE_MODE;
     //메시지를 놓다  (Put a message):
     spider->message = message;
 }
@@ -255,7 +255,7 @@ void handle_assign_equal_sign_scope(const_string source_code, aio_spider *spider
     if (is_equal_sign_cond) {
         materials->scope_type = AIO_ASSIGN_VALUE_SCOPE;
         main_watcher->start = main_watcher->end + 1;
-        main_watcher->mode = POINT_PASSIVE_MODE;
+        main_watcher->mode = POINT_WATCHER_PASSIVE_MODE;
         spider->message = AIO_SPIDER_FOUND_MATERIALS;
 #ifdef AIO_ASSIGN_SPIDER_DEBUG
         log_info(AIO_ASSIGN_SPIDER_TAG, "Found equal sign!");
@@ -280,12 +280,12 @@ void handle_assign_value_scope(const_string source_code, aio_spider *spider) {
                                    || is_closing_parenthesis(current_symbol)
                                    || is_single_quote(current_symbol);
     const_boolean is_close_brace_cond = is_closing_brace(current_symbol);
-    if (is_whitespace_cond && value_watcher->mode == POINT_ACTIVE_MODE) {
+    if (is_whitespace_cond && value_watcher->mode == POINT_WATCHER_ACTIVE_MODE) {
         value_watcher->pointer++;
         return;
     }
     if (((is_letter_cond && value_watcher->pointer > 0) || is_close_brace_cond)
-        && value_watcher->mode == POINT_ACTIVE_MODE) {
+        && value_watcher->mode == POINT_WATCHER_ACTIVE_MODE) {
         value_watcher->start = main_watcher->start;
         value_watcher->end = main_watcher->end - value_watcher->pointer;
         //값을 놓다 (Set value):
@@ -303,10 +303,10 @@ void handle_assign_value_scope(const_string source_code, aio_spider *spider) {
         //찌거기 수집기 (Garbage collector):
         free((void *) dirty_value);
     } else {
-        value_watcher->mode = POINT_PASSIVE_MODE;
+        value_watcher->mode = POINT_WATCHER_PASSIVE_MODE;
         value_watcher->pointer = 0;
         if (is_valid_bound) {
-            value_watcher->mode = POINT_ACTIVE_MODE;
+            value_watcher->mode = POINT_WATCHER_ACTIVE_MODE;
             return;
         }
     }

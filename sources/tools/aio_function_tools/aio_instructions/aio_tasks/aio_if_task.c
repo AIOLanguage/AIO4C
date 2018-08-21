@@ -21,7 +21,7 @@ void perform_aio_if_instruction(const_aio_function_instruction *instruction,
     const aio_if_task *task = instruction->get.if_task;
     const_string condition_string = task->if_condition;
     const_aio_function_instruction_holder *branch_holder = NULL;
-    aio_value *condition_value = parse_value_string(condition_string, control_graph->context_ref);
+    aio_value *condition_value = parse_value_string(condition_string, control_graph->context_ref, NULL);
     aio_value *boolean_condition_value = cast_to_boolean(condition_value);
     const_boolean is_true = boolean_condition_value->get.boolean_acc;
     if (is_true) {

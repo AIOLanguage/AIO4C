@@ -34,21 +34,21 @@ void explore_aio_context_bounds(const_string source_code, int *start_index, int 
         //Meet open brace:
         if (is_open_brace_cond) {
             //독서를 시작하다 (Begin reading):
-            if (watcher->mode == POINT_PASSIVE_MODE) {
+            if (watcher->mode == POINT_WATCHER_PASSIVE_MODE) {
                 watcher->start = i;
-                watcher->mode = POINT_ACTIVE_MODE;
+                watcher->mode = POINT_WATCHER_ACTIVE_MODE;
                 is_found_start_index = TRUE;
             }
-            if (watcher->mode == POINT_ACTIVE_MODE) {
+            if (watcher->mode == POINT_WATCHER_ACTIVE_MODE) {
                 watcher->pointer++;
             }
         }
         if (is_close_brace_cond) {
             //Body doesn't start with close brace:
-            if (watcher->mode == POINT_PASSIVE_MODE) {
+            if (watcher->mode == POINT_WATCHER_PASSIVE_MODE) {
                 throw_error_with_tag(AIO_BLOCK_BODY_EXPLORER_TAG, "Invalid start bound!");
             }
-            if (watcher->mode == POINT_ACTIVE_MODE) {
+            if (watcher->mode == POINT_WATCHER_ACTIVE_MODE) {
                 watcher->pointer--;
                 //독서 중지 (Stop reading):
                 const_boolean is_last_close_brace = watcher->pointer == 0;
@@ -60,7 +60,7 @@ void explore_aio_context_bounds(const_string source_code, int *start_index, int 
             }
         }
         //지켜보기 잔에 공백과 줄 바꿈 건너 뙤기 (Skip whitespace and line breaks before watching):
-        if (watcher->mode == POINT_PASSIVE_MODE) {
+        if (watcher->mode == POINT_WATCHER_PASSIVE_MODE) {
             if (is_not_whitespace_cond) {
                 throw_error_with_tag(AIO_BLOCK_BODY_EXPLORER_TAG, "Invalid content!");
             }
@@ -90,7 +90,7 @@ const_boolean has_context_rest(const_string body_string, point_watcher *watcher)
     while (watcher->pointer < watcher->end) {
         const char symbol = body_string[watcher->pointer];
         if (!is_space_or_line_break(symbol)) {
-            watcher->mode = POINT_ACTIVE_MODE;
+            watcher->mode = POINT_WATCHER_ACTIVE_MODE;
             return FALSE;
         } else {
             watcher->start++;

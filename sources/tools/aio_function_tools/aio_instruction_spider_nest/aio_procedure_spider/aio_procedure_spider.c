@@ -31,7 +31,7 @@ void refresh_procedure_spider(aio_spider *spider, point_watcher *ripper_watcher)
     point_watcher *main_watcher = materials->main_watcher;
     main_watcher->start = ripper_watcher->pointer;
     main_watcher->end = ripper_watcher->pointer;
-    main_watcher->mode = POINT_PASSIVE_MODE;
+    main_watcher->mode = POINT_WATCHER_PASSIVE_MODE;
 }
 
 /**
@@ -72,14 +72,14 @@ const enum aio_spider_message is_found_procedure_instruction(const_string source
     watcher->end = ripper_watcher->pointer;
     const char current_symbol = source_code[watcher->end];
     //FIXME: Code duplication!
-    if (watcher->mode == POINT_PASSIVE_MODE) {
+    if (watcher->mode == POINT_WATCHER_PASSIVE_MODE) {
         if (is_space_or_line_break(current_symbol)) {
             watcher->start++;
         } else {
-            watcher->mode = POINT_ACTIVE_MODE;
+            watcher->mode = POINT_WATCHER_ACTIVE_MODE;
         }
     }
-    if (watcher->mode == POINT_ACTIVE_MODE) {
+    if (watcher->mode == POINT_WATCHER_ACTIVE_MODE) {
         if (materials->scope_type == AIO_PROCEDURE_NAME_SCOPE) {
             handle_procedure_name_scope(source_code, spider);
         }
@@ -107,7 +107,7 @@ void handle_procedure_name_scope(const_string source_code, aio_spider *spider) {
 #endif
         const_boolean is_function_name = is_word_hooked(hook) && can_use_name(hook);
         if (is_function_name) {
-            main_watcher->mode = POINT_PASSIVE_MODE;
+            main_watcher->mode = POINT_WATCHER_PASSIVE_MODE;
             materials->scope_type = AIO_PROCEDURE_ARG_SCOPE;
         }
     }

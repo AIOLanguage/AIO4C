@@ -30,9 +30,9 @@ aio_variable_definition_list *dig_arguments(const_string source_code, int *point
     for (int i = *pointer_reference; i < source_code_length; ++i) {
         const char symbol = source_code[i];
         //독서를 시작하다 (Begin reading):
-        if (is_opening_parenthesis(symbol) && watcher->mode == POINT_PASSIVE_MODE) {
+        if (is_opening_parenthesis(symbol) && watcher->mode == POINT_WATCHER_PASSIVE_MODE) {
             watcher->start = i + 1;
-            watcher->mode = POINT_ACTIVE_MODE;
+            watcher->mode = POINT_WATCHER_ACTIVE_MODE;
         }
         //독서 중지 (Stop reading):
         if (is_closing_parenthesis(symbol)) {
@@ -42,7 +42,7 @@ aio_variable_definition_list *dig_arguments(const_string source_code, int *point
             break;
         }
         //지켜보기 잔에 공백과 줄 바꿈 건너 뙤기 (Skip whitespace and line breaks before watching):
-        if (watcher->mode == POINT_PASSIVE_MODE) {
+        if (watcher->mode == POINT_WATCHER_PASSIVE_MODE) {
             if (!is_space_or_line_break(symbol)) {
                 throw_error_with_tag(AIO_ARG_RIPPER_TAG, "Invalid function content!");
             }

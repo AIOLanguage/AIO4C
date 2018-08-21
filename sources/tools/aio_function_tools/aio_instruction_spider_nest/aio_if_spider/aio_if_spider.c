@@ -37,7 +37,7 @@ void refresh_if_spider(aio_spider *spider, point_watcher *ripper_watcher) {
     aio_if_materials *materials = spider->materials;
     materials->main_watcher->start = ripper_watcher->pointer;
     materials->main_watcher->end = ripper_watcher->pointer;
-    materials->main_watcher->mode = POINT_PASSIVE_MODE;
+    materials->main_watcher->mode = POINT_WATCHER_PASSIVE_MODE;
     reset_point_watcher(materials->header_watcher);
     reset_point_watcher(materials->true_watcher);
     reset_point_watcher(materials->false_watcher);
@@ -101,14 +101,14 @@ is_found_if_instruction(const_string source_code, point_watcher *ripper_watcher,
     //스캐닝 준비 (Prepare for scanning):
     const char current_symbol = source_code[main_watcher->end];
     //TODO: 코드 복제 (Code duplication)!
-    if (main_watcher->mode == POINT_PASSIVE_MODE) {
+    if (main_watcher->mode == POINT_WATCHER_PASSIVE_MODE) {
         if (is_space_or_line_break(current_symbol)) {
             main_watcher->start++;
         } else {
-            main_watcher->mode = POINT_ACTIVE_MODE;
+            main_watcher->mode = POINT_WATCHER_ACTIVE_MODE;
         }
     }
-    if (main_watcher->mode == POINT_ACTIVE_MODE) {
+    if (main_watcher->mode == POINT_WATCHER_ACTIVE_MODE) {
         if (materials->scope_type == AIO_IF_MODIFIER_SCOPE) {
             handle_if_modifier_scope(source_code, spider);
         }
@@ -145,7 +145,7 @@ void handle_if_modifier_scope(const_string source_code, aio_spider *spider) {
             if (is_if_modifier) {
                 //주요 당직자를 바꾼다 (Shift main watcher):
                 main_watcher->start = end_index;
-                main_watcher->mode = POINT_PASSIVE_MODE;
+                main_watcher->mode = POINT_WATCHER_PASSIVE_MODE;
                 //범위를 바꾼다 (Change scope):
                 materials->scope_type = AIO_IF_CONDITION_SCOPE;
                 //메시지 놓다 (Set message):
@@ -172,13 +172,13 @@ void handle_condition_scope(const_string string_web, aio_spider *spider) {
     //여는 괄호를 만나다 (Meet opening parenthesis):
     if (is_opening_parenthesis_cond) {
         //조건의 시작이 (Start of condition):
-        if (header_watcher->mode == POINT_PASSIVE_MODE) {
+        if (header_watcher->mode == POINT_WATCHER_PASSIVE_MODE) {
             //여는 괄호를 뛰어 넘다 (Jump over open parenthesis):
             header_watcher->start = main_watcher->end + 1;
-            header_watcher->mode = POINT_ACTIVE_MODE;
+            header_watcher->mode = POINT_WATCHER_ACTIVE_MODE;
         }
         //조건안의 여는 괄호 (Opening parenthesis inside condition):
-        if (header_watcher->mode == POINT_ACTIVE_MODE) {
+        if (header_watcher->mode == POINT_WATCHER_ACTIVE_MODE) {
             //괄호들을 계산하다 (Count parentheses):
             header_watcher->pointer++;
         }
@@ -187,11 +187,11 @@ void handle_condition_scope(const_string string_web, aio_spider *spider) {
     //닫는 괄호를 만나다 (Meet closing parenthesis):
     if (is_closing_parenthesis_cond) {
         //조건의 시작이 아님 (Not the beginning of a condition):
-        if (header_watcher->mode == POINT_PASSIVE_MODE) {
+        if (header_watcher->mode == POINT_WATCHER_PASSIVE_MODE) {
             throw_error_with_tag(AIO_IF_SPIDER_TAG, "Condition can not start with close parenthesis!");
         }
         //조건안의 닫는 괄호 (Closing parenthesis inside condition):
-        if (header_watcher->mode == POINT_ACTIVE_MODE) {
+        if (header_watcher->mode == POINT_WATCHER_ACTIVE_MODE) {
             header_watcher->pointer--;
             //조건의 닫는 괄호 (Closing parenthesis of condition):
             if (header_watcher->pointer == 0) {
@@ -199,7 +199,7 @@ void handle_condition_scope(const_string string_web, aio_spider *spider) {
                 header_watcher->end = current_position;
                 //주요 당직자를 바꾼다 (Shift main watcher):
                 main_watcher->start = main_watcher->end + 1;
-                main_watcher->mode = POINT_PASSIVE_MODE;
+                main_watcher->mode = POINT_WATCHER_PASSIVE_MODE;
                 //범위를 바꾼다 (Change scope):
                 materials->scope_type = AIO_IF_TRUE_BODY_SCOPE;
                 //조건을 추출하다 (Extract condition):
@@ -217,7 +217,7 @@ void handle_condition_scope(const_string string_web, aio_spider *spider) {
         return;
     }
     //조건전 공백들을 건너 뛰다 (Skip whitespaces before condition):
-    if (!is_whitespace_cond && header_watcher->mode == POINT_PASSIVE_MODE) {
+    if (!is_whitespace_cond && header_watcher->mode == POINT_WATCHER_PASSIVE_MODE) {
         throw_error_with_tag(AIO_IF_SPIDER_TAG, "Invalid context_ref after 'if' modifier!");
     }
 }
@@ -237,13 +237,13 @@ void handle_true_body_scope(const_string source_code, aio_spider *spider) {
     //여는 중괄호를 만나다 (Meet a opening brace):
     if (is_opening_brace_cond) {
         //'true' 블록의 시작이 (Start of 'true' body):
-        if (true_watcher->mode == POINT_PASSIVE_MODE) {
+        if (true_watcher->mode == POINT_WATCHER_PASSIVE_MODE) {
             //여는 중괄호를 보류하다 (Hold a opening brace):
             true_watcher->start = current_position;
-            true_watcher->mode = POINT_ACTIVE_MODE;
+            true_watcher->mode = POINT_WATCHER_ACTIVE_MODE;
         }
         //블록안에 여는 중괄호 (Opening brace inside body):
-        if (true_watcher->mode == POINT_ACTIVE_MODE) {
+        if (true_watcher->mode == POINT_WATCHER_ACTIVE_MODE) {
             //중괄호들을 계산하다 (Count braces):
             true_watcher->pointer++;
         }
@@ -251,17 +251,17 @@ void handle_true_body_scope(const_string source_code, aio_spider *spider) {
     //닫는 중괄호를 만나다 (Meet close brace):
     if (is_closing_brace_cond) {
         //블록의 시작이 아님 (Not the beginning of a condition):
-        if (true_watcher->mode == POINT_PASSIVE_MODE) {
+        if (true_watcher->mode == POINT_WATCHER_PASSIVE_MODE) {
             throw_error_with_tag(AIO_IF_SPIDER_TAG, "True body can not start with close brace!");
         }
         //블록안에 닫는 중괄호 (Closing brace inside block):
-        if (true_watcher->mode == POINT_ACTIVE_MODE) {
+        if (true_watcher->mode == POINT_WATCHER_ACTIVE_MODE) {
             true_watcher->pointer--;
             //블록의 닫는 중괄호 (Closing brace of block):
             if (true_watcher->pointer == 0) {
                 //닫는 중괄호를 보류하다 (Hold close brace):
                 true_watcher->end = main_watcher->end + 1;
-                true_watcher->mode = POINT_UNDEFINED_MODE;
+                true_watcher->mode = POINT_WATCHER_UNDEFINED_MODE;
 #ifdef AIO_IF_SPIDER_DEBUG
                 const_string true_body = substring_by_point_watcher(source_code, true_watcher);
                 log_info_string(AIO_IF_SPIDER_TAG, "True body:", true_body);
@@ -273,11 +273,11 @@ void handle_true_body_scope(const_string source_code, aio_spider *spider) {
     }
     //조건후에 공백들을 건너 뛰다 (Skip whitespaces after condition):
     if (!is_whitespace_cond) {
-        if (true_watcher->mode == POINT_PASSIVE_MODE) {
+        if (true_watcher->mode == POINT_WATCHER_PASSIVE_MODE) {
             throw_error_with_tag(AIO_IF_SPIDER_TAG, "Invalid context_ref after 'if' condition!");
         }
         //'false' 수정 자 또는 다른 기호 기다리다 (Waiting for 'false' modifier or other symbol):
-        if (true_watcher->mode == POINT_UNDEFINED_MODE) {
+        if (true_watcher->mode == POINT_WATCHER_UNDEFINED_MODE) {
             //콜론을 만나면 수정 자입니다 (If meet colon then this is 'false' modifier):
             if (is_colon_cond) {
                 //분기 유형을 놓다 (Set branch type):
@@ -300,7 +300,7 @@ void handle_true_body_scope(const_string source_code, aio_spider *spider) {
             }
             //주요 당직자를 바꾼다 (Shift main watcher):
             main_watcher->start = main_watcher->end + 1;
-            main_watcher->mode = POINT_PASSIVE_MODE;
+            main_watcher->mode = POINT_WATCHER_PASSIVE_MODE;
         }
     }
 }
@@ -319,13 +319,13 @@ void handle_false_body_scope(const_string source_code, aio_spider *spider) {
     //여는 중괄호를 만나다 (Meet opening brace):
     if (is_opening_brace_cond) {
         //'false' 블록의 시작이 (Start of 'false body):
-        if (false_watcher->mode == POINT_PASSIVE_MODE) {
+        if (false_watcher->mode == POINT_WATCHER_PASSIVE_MODE) {
             //여는 중괄호를 보류하다 (Hold opening brace):
             false_watcher->start = current_position;
-            false_watcher->mode = POINT_ACTIVE_MODE;
+            false_watcher->mode = POINT_WATCHER_ACTIVE_MODE;
         }
         //블록안에 여는 중괄호 (Opening brace in body):
-        if (false_watcher->mode == POINT_ACTIVE_MODE) {
+        if (false_watcher->mode == POINT_WATCHER_ACTIVE_MODE) {
             //중괄호를 계산하다 (Count braces):
             false_watcher->pointer++;
         }
@@ -333,11 +333,11 @@ void handle_false_body_scope(const_string source_code, aio_spider *spider) {
     //닫는 중괄호를 만나다 (Meet closing brace):
     if (is_closing_brace_cond) {
         //블록의 시작이 아님  (Not a start of body):
-        if (false_watcher->mode == POINT_PASSIVE_MODE) {
+        if (false_watcher->mode == POINT_WATCHER_PASSIVE_MODE) {
             throw_error_with_tag(AIO_IF_SPIDER_TAG, "False body can not start with close brace!");
         }
         //'false' 블록안에 딛는 중괄호 (Closing brace in 'false' body):
-        if (false_watcher->mode == POINT_ACTIVE_MODE) {
+        if (false_watcher->mode == POINT_WATCHER_ACTIVE_MODE) {
             false_watcher->pointer--;
             if (false_watcher->pointer == 0) {
                 //'false' 블록 끝 (End of 'false' body):
@@ -348,7 +348,7 @@ void handle_false_body_scope(const_string source_code, aio_spider *spider) {
                 spider->message = AIO_SPIDER_IS_READY_FOR_WEAVING;
                 //주요 당직자를 바꾼다 (Shift main watcher):
                 main_watcher->start = main_watcher->end + 1;
-                main_watcher->mode = POINT_PASSIVE_MODE;
+                main_watcher->mode = POINT_WATCHER_PASSIVE_MODE;
 #ifdef AIO_IF_SPIDER_DEBUG
                 const_string false_body = substring_by_point_watcher(source_code, false_watcher);
                 log_info_string(AIO_IF_SPIDER_TAG, "False body:", false_body);
@@ -359,7 +359,7 @@ void handle_false_body_scope(const_string source_code, aio_spider *spider) {
         }
     }
     //'false' 블록전 공백들을 건너 뛰다 (Skip whitespaces before false body):
-    if (!is_whitespace_cond && false_watcher->mode == POINT_PASSIVE_MODE) {
+    if (!is_whitespace_cond && false_watcher->mode == POINT_WATCHER_PASSIVE_MODE) {
         throw_error_with_tag(AIO_IF_SPIDER_TAG, "Invalid context_ref before false body!");
     }
 }

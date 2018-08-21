@@ -5,8 +5,6 @@
 
 #define TRUE 1
 #define FALSE 0
-#define TRUE_STRING "true"
-#define FALSE_STRING "false"
 
 _Bool matches_boolean(const char *string);
 

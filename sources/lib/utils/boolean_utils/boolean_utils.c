@@ -1,9 +1,9 @@
 #include <mem.h>
 #include "../../../../headers/lib/utils/boolean_utils/boolean_utils.h"
-#include "../../../../headers/lib/utils/string_utils/string_utils.h"
 #include "../../../../headers/lib/utils/error_utils/error_utils.h"
 
-boolean matches_boolean(const_string string) {
+boolean matches_boolean(const_string string)
+{
     if (strcmp(string, TRUE_STRING) == 0 || strcmp(string, FALSE_STRING) == 0) {
         return TRUE;
     } else {
@@ -11,7 +11,8 @@ boolean matches_boolean(const_string string) {
     }
 }
 
-boolean string_to_boolean(const_string string) {
+boolean string_to_boolean(const_string string)
+{
     if (strcmp(string, TRUE_STRING) == 0) {
         return TRUE;
     }

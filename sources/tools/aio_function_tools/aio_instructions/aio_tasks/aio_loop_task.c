@@ -18,7 +18,7 @@ aio_function_instruction *new_aio_loop_instruction(
 }
 
 static const_boolean is_condition_performs(const_string loop_condition_string, const_aio_context *context_ref) {
-    aio_value *condition_value = parse_value_string(loop_condition_string, context_ref);
+    aio_value *condition_value = parse_value_string(loop_condition_string, context_ref, NULL);
     aio_value *boolean_condition_value = cast_to_boolean(condition_value);
     const_boolean is_true = boolean_condition_value->get.boolean_acc;
     return is_true;

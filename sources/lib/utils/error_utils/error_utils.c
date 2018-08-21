@@ -2,8 +2,7 @@
 #include <stdio.h>
 #include <process.h>
 #include "../../../../headers/lib/utils/string_utils/string_utils.h"
-
-#define ERROR_TAG "---->>>>ERROR"
+#include "../../../../headers/lib/utils/error_utils/error_utils.h"
 
 void throw_error(const_string message) {
     perror(message);

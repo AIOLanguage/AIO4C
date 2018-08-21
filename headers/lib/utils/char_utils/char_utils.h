@@ -27,4 +27,19 @@ _Bool is_comma(const char c);
 
 _Bool is_single_quote(const char c);
 
+_Bool is_less_sign(const char c);
+
+_Bool is_more_sign(const char c);
+
+_Bool is_plus_sign(const char c);
+
+_Bool is_minus_sign(const char c);
+
+_Bool is_multiply_sign(const char c);
+
+_Bool is_division_sign(const char c);
+
+_Bool is_mod_sign(const char c);
+
+
 #endif //CHAR_UTILS_H

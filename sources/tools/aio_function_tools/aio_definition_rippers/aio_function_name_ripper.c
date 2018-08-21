@@ -28,21 +28,21 @@ const_str_hook *dig_function_name(const_string source_code, int *pointer_referen
         const_boolean is_space_or_line_break_or_open_parenthesis = is_space_or_line_break
                                                                    || is_opening_parenthesis(symbol);
         //기호로 시작하다 (Starts with symbol):
-        if (isalpha(symbol) && watcher->mode == POINT_PASSIVE_MODE) {
+        if (isalpha(symbol) && watcher->mode == POINT_WATCHER_PASSIVE_MODE) {
             watcher->start = i;
-            watcher->mode = POINT_ACTIVE_MODE;
+            watcher->mode = POINT_WATCHER_ACTIVE_MODE;
 #ifdef AIO_FUNCTION_NAME_RIPPER_DEBUG
             log_info(AIO_FUNCTION_NAME_RIPPER_TAG, "Start reading...");
 #endif
         }
         //독서 중지 (Stop reading):
-        if (is_space_or_line_break_or_open_parenthesis && watcher->mode == POINT_ACTIVE_MODE) {
+        if (is_space_or_line_break_or_open_parenthesis && watcher->mode == POINT_WATCHER_ACTIVE_MODE) {
             watcher->end = i;
             *pointer_reference = i;
             break;
         }
         //지켜보기 잔에 공백과 줄 바꿈 건너 뛰기 (Skip whitespace and line breaks before watching):
-        if (watcher->mode == POINT_PASSIVE_MODE) {
+        if (watcher->mode == POINT_WATCHER_PASSIVE_MODE) {
             if (!is_space_or_line_break) {
                 throw_error_with_tag(AIO_FUNCTION_NAME_RIPPER_TAG, "잘못된 함수 함유량 (Invalid function content)!");
             }

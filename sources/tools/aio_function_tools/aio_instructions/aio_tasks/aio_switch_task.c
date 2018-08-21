@@ -34,11 +34,11 @@ void perform_aio_switch_instruction(const_aio_function_instruction *instruction,
     //Prepare to switch:
     boolean was_successful_case = FALSE;
     //Parse switch value:
-    aio_value *switch_value = parse_value_string(switch_value_string, context_ref);
+    aio_value *switch_value = parse_value_string(switch_value_string, context_ref, NULL);
     //Parse each case value:
     for (int i = 0; i < number_of_cases; ++i) {
         const_string case_value_string = case_value_strings[i];
-        aio_value *case_value = parse_value_string(case_value_string, context_ref);
+        aio_value *case_value = parse_value_string(case_value_string, context_ref, NULL);
         if (are_equal_aio_values(switch_value, case_value)) {
             was_successful_case = TRUE;
             const_aio_function_instruction_holder *case_holder = case_holders[i];

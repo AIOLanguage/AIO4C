@@ -6,6 +6,22 @@ _Bool matches_int(const char *string);
 int string_to_int(const char *string);
 
 /**
+ * List.
+ */
+
+typedef struct int_list {
+    unsigned int capacity;
+    unsigned int size;
+    int *values;
+} int_list;
+
+struct int_list *new_int_list();
+
+void add_int_in_list(struct int_list *list, const int value);
+
+void free_int_list(struct int_list *list);
+
+/**
  * Typedef utils.
  */
 

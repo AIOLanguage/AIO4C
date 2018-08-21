@@ -379,6 +379,24 @@
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/tools/aio_function_tools/aio_definition_rippers/aio_output_ripper.c">
 			<Option target="AIO"/>
 		</Unit>
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/tools/aio_function_tools/aio_expression_parser/aio_expression_parser.c">
+			<Option target="AIO"/>
+		</Unit>
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_boolean_parser.c">
+			<Option target="AIO"/>
+		</Unit>
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_double_parser.c">
+			<Option target="AIO"/>
+		</Unit>
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_int_parser.c">
+			<Option target="AIO"/>
+		</Unit>
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_string_parser.c">
+			<Option target="AIO"/>
+		</Unit>
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_type_parser.c">
+			<Option target="AIO"/>
+		</Unit>
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_assign_spider/aio_assign_spider.c">
 			<Option target="AIO"/>
 		</Unit>

@@ -1364,6 +1364,168 @@ sources/tools/aio_function_tools/aio_definition_rippers/aio_output_ripper.c.s:
 	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_definition_rippers/aio_output_ripper.c.s
 .PHONY : sources/tools/aio_function_tools/aio_definition_rippers/aio_output_ripper.c.s
 
+sources/tools/aio_function_tools/aio_expression_parser/aio_expression_parser.obj: sources/tools/aio_function_tools/aio_expression_parser/aio_expression_parser.c.obj
+
+.PHONY : sources/tools/aio_function_tools/aio_expression_parser/aio_expression_parser.obj
+
+# target to build an object file
+sources/tools/aio_function_tools/aio_expression_parser/aio_expression_parser.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_expression_parser/aio_expression_parser.c.obj
+.PHONY : sources/tools/aio_function_tools/aio_expression_parser/aio_expression_parser.c.obj
+
+sources/tools/aio_function_tools/aio_expression_parser/aio_expression_parser.i: sources/tools/aio_function_tools/aio_expression_parser/aio_expression_parser.c.i
+
+.PHONY : sources/tools/aio_function_tools/aio_expression_parser/aio_expression_parser.i
+
+# target to preprocess a source file
+sources/tools/aio_function_tools/aio_expression_parser/aio_expression_parser.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_expression_parser/aio_expression_parser.c.i
+.PHONY : sources/tools/aio_function_tools/aio_expression_parser/aio_expression_parser.c.i
+
+sources/tools/aio_function_tools/aio_expression_parser/aio_expression_parser.s: sources/tools/aio_function_tools/aio_expression_parser/aio_expression_parser.c.s
+
+.PHONY : sources/tools/aio_function_tools/aio_expression_parser/aio_expression_parser.s
+
+# target to generate assembly for a file
+sources/tools/aio_function_tools/aio_expression_parser/aio_expression_parser.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_expression_parser/aio_expression_parser.c.s
+.PHONY : sources/tools/aio_function_tools/aio_expression_parser/aio_expression_parser.c.s
+
+sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_boolean_parser.obj: sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_boolean_parser.c.obj
+
+.PHONY : sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_boolean_parser.obj
+
+# target to build an object file
+sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_boolean_parser.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_boolean_parser.c.obj
+.PHONY : sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_boolean_parser.c.obj
+
+sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_boolean_parser.i: sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_boolean_parser.c.i
+
+.PHONY : sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_boolean_parser.i
+
+# target to preprocess a source file
+sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_boolean_parser.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_boolean_parser.c.i
+.PHONY : sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_boolean_parser.c.i
+
+sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_boolean_parser.s: sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_boolean_parser.c.s
+
+.PHONY : sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_boolean_parser.s
+
+# target to generate assembly for a file
+sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_boolean_parser.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_boolean_parser.c.s
+.PHONY : sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_boolean_parser.c.s
+
+sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_double_parser.obj: sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_double_parser.c.obj
+
+.PHONY : sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_double_parser.obj
+
+# target to build an object file
+sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_double_parser.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_double_parser.c.obj
+.PHONY : sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_double_parser.c.obj
+
+sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_double_parser.i: sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_double_parser.c.i
+
+.PHONY : sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_double_parser.i
+
+# target to preprocess a source file
+sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_double_parser.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_double_parser.c.i
+.PHONY : sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_double_parser.c.i
+
+sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_double_parser.s: sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_double_parser.c.s
+
+.PHONY : sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_double_parser.s
+
+# target to generate assembly for a file
+sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_double_parser.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_double_parser.c.s
+.PHONY : sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_double_parser.c.s
+
+sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_int_parser.obj: sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_int_parser.c.obj
+
+.PHONY : sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_int_parser.obj
+
+# target to build an object file
+sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_int_parser.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_int_parser.c.obj
+.PHONY : sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_int_parser.c.obj
+
+sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_int_parser.i: sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_int_parser.c.i
+
+.PHONY : sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_int_parser.i
+
+# target to preprocess a source file
+sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_int_parser.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_int_parser.c.i
+.PHONY : sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_int_parser.c.i
+
+sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_int_parser.s: sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_int_parser.c.s
+
+.PHONY : sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_int_parser.s
+
+# target to generate assembly for a file
+sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_int_parser.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_int_parser.c.s
+.PHONY : sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_int_parser.c.s
+
+sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_string_parser.obj: sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_string_parser.c.obj
+
+.PHONY : sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_string_parser.obj
+
+# target to build an object file
+sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_string_parser.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_string_parser.c.obj
+.PHONY : sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_string_parser.c.obj
+
+sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_string_parser.i: sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_string_parser.c.i
+
+.PHONY : sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_string_parser.i
+
+# target to preprocess a source file
+sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_string_parser.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_string_parser.c.i
+.PHONY : sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_string_parser.c.i
+
+sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_string_parser.s: sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_string_parser.c.s
+
+.PHONY : sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_string_parser.s
+
+# target to generate assembly for a file
+sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_string_parser.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_string_parser.c.s
+.PHONY : sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_string_parser.c.s
+
+sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_type_parser.obj: sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_type_parser.c.obj
+
+.PHONY : sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_type_parser.obj
+
+# target to build an object file
+sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_type_parser.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_type_parser.c.obj
+.PHONY : sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_type_parser.c.obj
+
+sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_type_parser.i: sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_type_parser.c.i
+
+.PHONY : sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_type_parser.i
+
+# target to preprocess a source file
+sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_type_parser.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_type_parser.c.i
+.PHONY : sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_type_parser.c.i
+
+sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_type_parser.s: sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_type_parser.c.s
+
+.PHONY : sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_type_parser.s
+
+# target to generate assembly for a file
+sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_type_parser.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_type_parser.c.s
+.PHONY : sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_type_parser.c.s
+
 sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_assign_spider/aio_assign_spider.obj: sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_assign_spider/aio_assign_spider.c.obj
 
 .PHONY : sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_assign_spider/aio_assign_spider.obj
@@ -2051,6 +2213,24 @@ help:
 	@echo ... sources/tools/aio_function_tools/aio_definition_rippers/aio_output_ripper.obj
 	@echo ... sources/tools/aio_function_tools/aio_definition_rippers/aio_output_ripper.i
 	@echo ... sources/tools/aio_function_tools/aio_definition_rippers/aio_output_ripper.s
+	@echo ... sources/tools/aio_function_tools/aio_expression_parser/aio_expression_parser.obj
+	@echo ... sources/tools/aio_function_tools/aio_expression_parser/aio_expression_parser.i
+	@echo ... sources/tools/aio_function_tools/aio_expression_parser/aio_expression_parser.s
+	@echo ... sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_boolean_parser.obj
+	@echo ... sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_boolean_parser.i
+	@echo ... sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_boolean_parser.s
+	@echo ... sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_double_parser.obj
+	@echo ... sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_double_parser.i
+	@echo ... sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_double_parser.s
+	@echo ... sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_int_parser.obj
+	@echo ... sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_int_parser.i
+	@echo ... sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_int_parser.s
+	@echo ... sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_string_parser.obj
+	@echo ... sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_string_parser.i
+	@echo ... sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_string_parser.s
+	@echo ... sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_type_parser.obj
+	@echo ... sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_type_parser.i
+	@echo ... sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_type_parser.s
 	@echo ... sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_assign_spider/aio_assign_spider.obj
 	@echo ... sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_assign_spider/aio_assign_spider.i
 	@echo ... sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_assign_spider/aio_assign_spider.s

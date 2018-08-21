@@ -9,7 +9,7 @@
 
 aio_core *core;
 
-#define AIO_NUMBER_OF_RESERVED_NAMES 7
+#define AIO_NUMBER_OF_RESERVED_NAMES 9
 
 char reserved_names[AIO_NUMBER_OF_RESERVED_NAMES][4] = {
         {AIO_BREAK_MODIFIER},
@@ -19,23 +19,25 @@ char reserved_names[AIO_NUMBER_OF_RESERVED_NAMES][4] = {
         {AIO_MUTABLE_MODIFIER},
         {AIO_RETURN_MODIFIER},
         {AIO_SWITCH_MODIFIER},
+        {AIO_TRUE},
+        {AIO_FALSE}
 };
 
 boolean is_aio_mutable_modifier(const_str_hook *hook) {
-    return is_hooked_str_equals_str(hook, AIO_MUTABLE_MODIFIER);
+    return is_hook_equals_str(hook, AIO_MUTABLE_MODIFIER);
 }
 
 boolean is_aio_if_modifier(const_str_hook *hook) {
-    return is_hooked_str_equals_str(hook, AIO_IF_MODIFIER);
+    return is_hook_equals_str(hook, AIO_IF_MODIFIER);
 }
 
 boolean is_aio_loop_modifier(const_str_hook *hook) {
-    return is_hooked_str_equals_str(hook, AIO_LOOP_MODIFIER);
+    return is_hook_equals_str(hook, AIO_LOOP_MODIFIER);
 }
 
 boolean can_use_name(const_str_hook *hook) {
     for (int i = 0; i < AIO_NUMBER_OF_RESERVED_NAMES; i++) {
-        if (is_hooked_str_equals_str(hook, reserved_names[i])) {
+        if (is_hook_equals_str(hook, reserved_names[i])) {
             return FALSE;
         }
     }

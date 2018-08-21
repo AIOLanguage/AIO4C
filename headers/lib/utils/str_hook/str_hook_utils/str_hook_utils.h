@@ -33,7 +33,7 @@ boolean is_word_hooked(const_str_hook *hook);
 
 void reset_str_hook_positions(str_hook *hook);
 
-boolean is_hooked_str_equals_str(const_str_hook *hook, const_string str);
+boolean is_hook_equals_str(const_str_hook *hook, const_string str);
 
 boolean is_empty_hooked_str(const_str_hook *hook);
 
@@ -76,5 +76,29 @@ void foreach_str_hook(const_str_hook_list *list, _inline void (*str_hook_action)
 void log_info_str_hook(const_string tag, const_string message, const struct str_hook *hook);
 
 void log_info_str_hook_list(const_string tag, const_string message, const_str_hook_list *list);
+
+void throw_error_with_hook(const_string tag, const_string message, const_str_hook *hook);
+
+/**
+ * Primitive type matchers.
+ */
+
+_Bool is_int_hooked(const struct str_hook *hook);
+
+_Bool is_double_hooked(const struct str_hook *hook);
+
+_Bool is_string_hooked(const struct str_hook *hook);
+
+_Bool is_boolean_hooked(const struct str_hook *hook);
+
+/**
+ * Sign utils.
+ */
+
+_Bool is_more_or_equal_sign_hooked(const struct str_hook *hook, const int current_index);
+
+_Bool is_less_or_equal_sign_hooked(const struct str_hook *hook, const int current_index);
+
+_Bool is_double_equal_sign_hooked(const struct str_hook *hook, const int current_index);
 
 #endif //STRING_HOOK_UTILS_H
