@@ -7,6 +7,7 @@
 #include "../../../../../headers/tools/aio_function_tools/aio_expression_parser/aio_expression_parser.h"
 #include "../../../../../headers/lang/aio_function/aio_bundle/aio_bundle.h"
 #include "../../../../../headers/lang/aio_context/aio_context.h"
+#include "../../../../../headers/lib/utils/int_utils/int_utils.h"
 
 #define AIO_INT_PARSER_DEBUG
 
@@ -39,15 +40,16 @@ static aio_result *make_int(const_str_hook *expression_hook)
     int value = 0;
     //Maybe int value?
     if (is_int_hooked(captured_element)) {
-
+        value = str_hook_to_int(captured_element);
     }
     //Maybe double value?
     if (is_double_hooked(captured_element)) {
-
+        value = (int) str_hook_to_double(captured_element);
     }
     //Maybe string value?
     if (is_string_hooked(captured_element)) {
-
+        const_str_hook *str_hook = lower_str_hook_quotes(captured_element);
+        value = str_hook_to_int(str_hook);
     }
     //Maybe boolean value?
     if (is_boolean_hooked(captured_element)) {
@@ -285,6 +287,5 @@ struct aio_value *parse_int_value_string(
         throw_error_with_tag(AIO_INT_PARSER_TAG, "Can not fully parse expression!");
     }
     aio_value *int_value = new_aio_int_value(result->value->get.int_acc);
-    free_aio_result(result);
     return int_value;
 }

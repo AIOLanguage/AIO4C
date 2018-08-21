@@ -8,6 +8,7 @@
 #include "../../../../../headers/lib/utils/str_hook/str_hook.h"
 #include "../../../../../headers/lib/utils/error_utils/error_utils.h"
 #include "../../../../../headers/lang/aio_reserved_names/aio_reserved_names_container.h"
+#include "../../../../../headers/lib/utils/char_utils/char_utils.h"
 
 #define STRING_HOOK_TAG "STRING_HOOK"
 
@@ -294,7 +295,6 @@ boolean is_double_hooked(const_str_hook *hook)
     return FALSE;
 }
 
-
 boolean is_string_hooked(const_str_hook *hook)
 {
     const int length = get_str_hook_size(hook);
@@ -316,4 +316,52 @@ void throw_error_with_hook(const_string tag, const_string message, const_str_hoo
     printf("-\n");
     free((void *) message);
     exit(1);
+}
+
+/**
+ * Casts.
+ */
+
+int str_hook_to_int(const_str_hook *hook)
+{
+    int result = 0;
+    const_string string = hook->source_ref;
+    for (int i = hook->start; i < hook->end; i++) {
+        result = result * 10 + (string[i] - '0');
+    }
+    return result;
+}
+
+double str_hook_to_double(const struct str_hook *hook)
+{
+    const static int DIGIT_SHIFT = 10;
+    const static char CHAR_SHIFT = '0';
+    const_string string = hook->source_ref;
+    int integer_part = 0;
+    int i = hook->start;
+    while (TRUE) {
+        if (is_dot(string[i])) {
+            break;
+        } else {
+            integer_part = integer_part * DIGIT_SHIFT + (string[i++] - CHAR_SHIFT);
+        }
+    }
+    double fraction_part = 0.0;
+    int fraction_counter = 1;
+    for (int j = i + 1; j < hook->end; ++j) {
+        fraction_part = fraction_part + (((double) (string[j] - CHAR_SHIFT)) / fraction_counter);
+        fraction_counter = fraction_counter * DIGIT_SHIFT;
+    }
+    return ((double) integer_part) + fraction_part;
+}
+
+string str_hook_to_string(const_str_hook *hook)
+{
+    const_string hooked_string = hook->source_ref;
+    return substring(hooked_string, hook->start + 1, hook->end - 1);
+}
+
+str_hook *lower_str_hook_quotes(const_str_hook *hook)
+{
+    return new_str_hook_with_start_and_end(hook->source_ref, hook->start + 1, hook->end - 1);
 }

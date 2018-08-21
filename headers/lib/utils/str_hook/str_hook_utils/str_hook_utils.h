@@ -101,4 +101,16 @@ _Bool is_less_or_equal_sign_hooked(const struct str_hook *hook, const int curren
 
 _Bool is_double_equal_sign_hooked(const struct str_hook *hook, const int current_index);
 
+/**
+ * Casts.
+ */
+
+int str_hook_to_int(const struct str_hook *hook);
+
+double str_hook_to_double(const struct str_hook *hook);
+
+char *str_hook_to_string(const struct str_hook *hook);
+
+str_hook *lower_str_hook_quotes(const_str_hook *hook);
+
 #endif //STRING_HOOK_UTILS_H
