@@ -7,6 +7,8 @@ void log_info_string(const char *tag, char *message, const char *value);
 
 void log_info_char(const char *tag, char *message, const char value);
 
+void log_info_double(const char *tag, char *message, const double value);
+
 void log_info_int(const char *tag, char *message, const int value);
 
 void log_info_boolean(const char *tag, char *message, const _Bool value);

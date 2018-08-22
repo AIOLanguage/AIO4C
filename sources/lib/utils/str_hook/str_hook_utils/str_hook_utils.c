@@ -213,7 +213,7 @@ void log_info_str_hook(const_string tag, const_string message, const_str_hook *h
         printf("%c", hook->source_ref[i]);
     }
     printf("-\n");
-    free((void *) message);
+    //free((void *) message);
 }
 
 void log_info_str_hook_list(const_string tag, const_string message, const_str_hook_list *list)
@@ -229,7 +229,7 @@ void log_info_str_hook_list(const_string tag, const_string message, const_str_ho
         }
         printf("-\n");
     }
-    free((void *) message);
+    //free((void *) message);
 }
 
 /**
@@ -314,7 +314,7 @@ void throw_error_with_hook(const_string tag, const_string message, const_str_hoo
         printf("%c", hook->source_ref[i]);
     }
     printf("-\n");
-    free((void *) message);
+    //free((void *) message);
     exit(1);
 }
 

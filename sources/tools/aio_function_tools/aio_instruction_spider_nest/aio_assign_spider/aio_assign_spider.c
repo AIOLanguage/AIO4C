@@ -386,7 +386,8 @@ void weave_assign_instruction_for(void *holder, const_string _,
         ripper_watcher->start = materials->value_watcher->end;
         //변수 정의를 짜다 (Weave variable definition):
         const_str_hook *definition_name = get_definition_name_by_materials(materials);
-        const_aio_variable_definition *definition = get_variable_definition_in_function_tree(definition_name, holder);
+        const_aio_variable_definition *definition = get_aio_variable_definition_in_function_tree(definition_name,
+                                                                                                 holder);
         if (definition == NULL) {
             definition = create_local_variable_definition(declaration_type, variable_data);;
             //지도에게 지역 변수 정의를 놓다 (Put local definition in variable definition list):

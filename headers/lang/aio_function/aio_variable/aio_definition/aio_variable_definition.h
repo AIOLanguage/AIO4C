@@ -27,7 +27,7 @@ struct aio_variable_definition *new_aio_variable_definition(
         const _Bool is_mutable_by_value
 );
 
-const struct aio_variable_definition *get_variable_definition_in_function_tree(
+const struct aio_variable_definition *get_aio_variable_definition_in_function_tree(
         const struct str_hook *variable_name,
         const struct aio_function_instruction_holder *holder
 );

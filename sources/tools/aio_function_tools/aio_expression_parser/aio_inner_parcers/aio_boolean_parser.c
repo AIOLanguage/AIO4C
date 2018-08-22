@@ -73,9 +73,9 @@ static aio_result *make_boolean(const_str_hook *expression_hook)
     return int_result;
 }
 
-static typedef enum sign {
+static enum sign{
     SIGN_UNDEFINED, SIGN_EQUALS, SIGN_MORE, SIGN_LESS, SIGN_MORE_OR_EQUALS, SIGN_LESS_OR_EQUALS
-} sign;
+};
 
 static aio_result *try_to_get_sign_condition(
         const_str_hook *expression_hook,
@@ -88,7 +88,7 @@ static aio_result *try_to_get_sign_condition(
     const int left_border = expression_hook->end;
     int i = start_position;
     point_watcher *sign_watcher = new_point_watcher();
-    sign sign = SIGN_UNDEFINED;
+    enum sign sign_type = SIGN_UNDEFINED;
     //Found condition:
     while (i < left_border) {
         const char symbol = expression_str[i];
@@ -98,13 +98,13 @@ static aio_result *try_to_get_sign_condition(
         const_boolean is_less = is_less_sign(symbol);
         if ((is_equal || is_less || is_more) && sign_watcher->pointer == 0) {
             if (is_equal) {
-                sign = SIGN_EQUALS;
+                sign_type = SIGN_EQUALS;
             }
             if (is_less) {
-                sign = SIGN_LESS;
+                sign_type = SIGN_LESS;
             }
             if (is_more) {
-                sign = SIGN_MORE;
+                sign_type = SIGN_MORE;
             }
             sign_watcher->mode = POINT_WATCHER_ACTIVE_MODE;
             break;
@@ -129,22 +129,22 @@ static aio_result *try_to_get_sign_condition(
     //Define sign:
     int start_right_expr_pos = i + 1;
     const_boolean is_next_equal_sign = is_equal_sign(expression_str[i + 1]);
-    if (sign == SIGN_EQUALS) {
+    if (sign_type == SIGN_EQUALS) {
         if (is_next_equal_sign) {
             start_right_expr_pos++;
         } else {
             throw_error_with_tag(AIO_BOOLEAN_PARSER_TAG, "Invalid equal sign in condition");
         }
     }
-    if (sign == SIGN_LESS) {
+    if (sign_type == SIGN_LESS) {
         if (is_next_equal_sign) {
-            sign = SIGN_LESS_OR_EQUALS;
+            sign_type = SIGN_LESS_OR_EQUALS;
             start_right_expr_pos++;
         }
     }
-    if (sign == SIGN_MORE) {
+    if (sign_type == SIGN_MORE) {
         if (is_next_equal_sign) {
-            sign = SIGN_MORE_OR_EQUALS;
+            sign_type = SIGN_MORE_OR_EQUALS;
             start_right_expr_pos++;
         }
     }
@@ -174,7 +174,7 @@ static aio_result *try_to_get_sign_condition(
     aio_value *right_value = parse_value_hook(right_expression, context, control_graph);
     //Compare values:
     boolean condition_value = FALSE;
-    switch (sign) {
+    switch (sign_type) {
         case SIGN_EQUALS:
             condition_value = are_equal_aio_values(left_value, right_value);
             break;

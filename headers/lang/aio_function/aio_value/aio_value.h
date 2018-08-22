@@ -22,7 +22,9 @@ typedef struct aio_value {
 
 } aio_value;
 
-struct aio_value *new_aio_value(char *undefined_value);
+struct aio_value *new_aio_value(str_hook* type);
+
+struct aio_value *new_aio_value_by_string(char *undefined_value);
 
 struct aio_value *new_aio_int_value(const int int_acc);
 
@@ -53,8 +55,6 @@ typedef struct aio_value_list {
 struct aio_value_list *new_aio_value_list();
 
 void add_aio_value_in_list(struct aio_value_list *string_list, struct aio_value *value);
-
-void free_aio_values_in_list(struct aio_value_list *list);
 
 void free_aio_value_list(struct aio_value_list *list);
 

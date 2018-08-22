@@ -12,7 +12,22 @@
 
 #define AIO_VALUE_TAG "AIO_VALUE"
 
-aio_value *new_aio_value(string undefined_value)
+#define AIO_VALUE_DEBUG
+
+#ifdef AIO_VALUE_DEBUG
+
+#include "../../../../headers/lib/utils/log_utils/log_utils.h"
+
+#endif
+
+aio_value *new_aio_value(str_hook *type)
+{
+    aio_value *value = new_object(sizeof(aio_value *));
+    value->type = type;
+    return value;
+}
+
+aio_value *new_aio_value_by_string(string undefined_value)
 {
     if (matches_int(undefined_value)) {
         const int int_value = string_to_int(undefined_value);
@@ -96,7 +111,16 @@ aio_value *new_aio_type_value(void *reference, const_str_hook *type)
 
 void free_aio_value(aio_value *value)
 {
-
+    str_hook *type = value->type;
+    const_boolean is_string_type = is_hook_equals_str(type, STRING);
+    if (is_string_type) {
+        string string_value = value->get.string_acc;
+        value->get.string_acc = NULL;
+        free(string_value);
+    }
+    value->get.reference = NULL;
+    free_const_str_hook(type);
+    free(value);
 }
 
 /**
@@ -127,21 +151,17 @@ void add_aio_value_in_list(aio_value_list *string_list, aio_value *value)
     string_list->size++;
 }
 
-void free_aio_values_in_list(aio_value_list *list)
+void free_aio_value_list(aio_value_list *list)
 {
     aio_value **values = list->values;
     for (int i = 0; i < list->size; ++i) {
         aio_value *value = values[i];
         if (value != NULL) {
             values[i] = NULL;
-            free(value);
+            free_aio_value(value);
         }
     }
-}
-
-void free_aio_value_list(aio_value_list *list)
-{
-    free(list->values);
+    free(values);
     free(list);
 }
 
@@ -309,11 +329,20 @@ boolean is_less_or_equals_aio_value_then_other(aio_value *value_1, aio_value *va
 aio_value *cast_to_int(aio_value *value)
 {
     const_str_hook *type = value->type;
+#ifdef AIO_VALUE_DEBUG
+    log_info_str_hook(AIO_VALUE_TAG, "Prepare to cast Int from:", type);
+#endif
     if (is_hook_equals_str(type, INTEGER)) {
         return new_aio_int_value(value->get.int_acc);
     }
     if (is_hook_equals_str(type, DOUBLE)) {
-        return new_aio_int_value((int) value->get.double_acc);
+        const double d = value->get.double_acc;
+        const int i = (int) d;
+#ifdef AIO_VALUE_DEBUG
+        log_info_double(AIO_VALUE_TAG, "Old value:", d);
+        log_info_int(AIO_VALUE_TAG, "New value:", i);
+#endif
+        return new_aio_int_value(i);
     }
     if (is_hook_equals_str(type, STRING)) {
         return new_aio_int_value(string_to_int(value->get.string_acc));
@@ -391,10 +420,10 @@ aio_value *cast_to_boolean(aio_value *value)
     }
     if (is_hook_equals_str(type, STRING)) {
         const_string string_value = value->get.string_acc;
-        if (strcmp(string_value, AIO_TRUE)) {
+        if (are_equal_strings(string_value, AIO_TRUE)) {
             return new_aio_boolean_value(TRUE);
         }
-        if (strcmp(string_value, AIO_FALSE)) {
+        if (are_equal_strings(string_value, AIO_FALSE)) {
             return new_aio_boolean_value(FALSE);
         } else {
             throw_error_with_tag(AIO_VALUE_TAG, "Can not cast string to boolean");

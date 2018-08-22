@@ -23,14 +23,14 @@ void free_aio_variable_definition(aio_variable_definition *definition) {
     free(definition);
 }
 
-const_aio_variable_definition *get_variable_definition_in_function_tree(const_str_hook *variable_name,
-                                                                        const_aio_function_instruction_holder *holder) {
+const_aio_variable_definition *get_aio_variable_definition_in_function_tree(const_str_hook *variable_name,
+                                                                            const_aio_function_instruction_holder *holder) {
     const_aio_variable_definition_list *list = holder->variable_definition_list;
     const_aio_variable_definition *definition = get_aio_variable_definition_in_map_by_name(list, variable_name);
     if (definition == NULL) {
         const_aio_function_instruction_holder *parent_holder = holder->parent;
         if (parent_holder != NULL) {
-            return get_variable_definition_in_function_tree(variable_name, parent_holder);
+            return get_aio_variable_definition_in_function_tree(variable_name, parent_holder);
         } else {
             return NULL;
         }

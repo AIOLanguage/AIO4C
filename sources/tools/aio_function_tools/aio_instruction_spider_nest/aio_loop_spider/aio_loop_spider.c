@@ -379,7 +379,8 @@ void weave_loop_instruction_for(void *parent, const_string source_code,
             const_string step_value = default_loop_header_materials->step_value;
             //Create pointer definition:
             const_str_hook *pointer_name = get_default_loop_pointer_name_by_materials(default_loop_header_materials);
-            const_aio_variable_definition *definition = get_variable_definition_in_function_tree(pointer_name, parent);
+            const_aio_variable_definition *definition = get_aio_variable_definition_in_function_tree(pointer_name,
+                                                                                                     parent);
             if (definition == NULL) {
                 definition = create_pointer_variable_definition_by_default_loop_header_spider(declaration_type,
                                                                                               pointer_data);

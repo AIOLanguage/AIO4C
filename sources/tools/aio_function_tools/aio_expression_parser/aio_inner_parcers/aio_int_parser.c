@@ -4,9 +4,9 @@
 #include "../../../../../headers/lib/utils/error_utils/error_utils.h"
 #include "../../../../../headers/lib/utils/str_hook/str_hook_utils/str_hook_utils.h"
 #include "../../../../../headers/lib/utils/char_utils/char_utils.h"
-#include "../../../../../headers/tools/aio_function_tools/aio_expression_parser/aio_expression_parser.h"
 #include "../../../../../headers/lang/aio_function/aio_bundle/aio_bundle.h"
 #include "../../../../../headers/lang/aio_context/aio_context.h"
+#include "../../../../../headers/tools/aio_function_tools/aio_expression_parser/aio_expression_parser.h"
 
 #define AIO_INT_PARSER_DEBUG
 
@@ -237,8 +237,7 @@ static aio_result *make_plus_or_minus(
     return new_aio_int_result(right_acc, new_str_hook_by_other(right_result->rest));
 }
 
-
-struct aio_value *parse_int_value_string(
+aio_value *parse_int_value_string(
         const_str_hook *expression_hook,
         const_aio_context *context,
         const_aio_function_control_graph *control_graph
@@ -248,6 +247,5 @@ struct aio_value *parse_int_value_string(
     if (is_not_empty_hooked_str(result->rest)) {
         throw_error_with_tag(AIO_INT_PARSER_TAG, "Can not fully parse expression!");
     }
-    aio_value *int_value = new_aio_int_value(result->value->get.int_acc);
-    return int_value;
+    return new_aio_int_value(result->value->get.int_acc);
 }
