@@ -110,3 +110,7 @@ boolean is_mod_sign(const char c)
 {
     return c == '%';
 }
+
+boolean is_tilde_sign(const char c){
+    return c == '~';
+}

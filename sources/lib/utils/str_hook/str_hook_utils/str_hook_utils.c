@@ -355,13 +355,17 @@ double str_hook_to_double(const struct str_hook *hook)
     return ((double) integer_part) + fraction_part;
 }
 
-string str_hook_to_string(const_str_hook *hook)
-{
-    const_string hooked_string = hook->source_ref;
-    return substring(hooked_string, hook->start + 1, hook->end - 1);
-}
-
 str_hook *lower_str_hook_quotes(const_str_hook *hook)
 {
     return new_str_hook_with_start_and_end(hook->source_ref, hook->start + 1, hook->end - 1);
+}
+
+boolean str_hook_to_boolean(const struct str_hook *hook)
+{
+    if (is_hook_equals_str(hook, AIO_TRUE)) {
+        return TRUE;
+    }
+    if (is_hook_equals_str(hook, AIO_FALSE)) {
+        return FALSE;
+    }
 }

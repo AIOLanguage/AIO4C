@@ -18,6 +18,16 @@ struct aio_value *parse_value_hook(
 );
 
 /**
+ * Expression assistant.
+ */
+
+void make_expression_chunks_and_count_next_point(
+        const_str_hook *expression_hook,
+        str_hook_list *expression_list,
+        int *next_point
+);
+
+/**
  * Inner parsers.
  */
 

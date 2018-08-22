@@ -147,7 +147,7 @@ void free_aio_value_list(aio_value_list *list)
 
 
 /**
- * Value utils.
+ * Comparing utils.
  */
 
 boolean are_equal_aio_values(aio_value *value_1, aio_value *value_2)
@@ -192,6 +192,115 @@ boolean are_equal_aio_values(aio_value *value_1, aio_value *value_2)
         }
     }
 }
+
+boolean is_more_aio_value_then_other(aio_value *value_1, aio_value *value_2)
+{
+    const_str_hook *type_1 = value_1->type;
+    if (is_hook_equals_str(type_1, INTEGER)) {
+        aio_value *new_value_2 = cast_to_int(value_2);
+        if (value_1->get.int_acc > new_value_2->get.int_acc) {
+            return TRUE;
+        } else {
+            return FALSE;
+        }
+    }
+    if (is_hook_equals_str(type_1, DOUBLE)) {
+        aio_value *new_value_2 = cast_to_double(value_2);
+        if (value_1->get.double_acc > new_value_2->get.double_acc) {
+            return TRUE;
+        } else {
+            return FALSE;
+        }
+    }
+    if (is_hook_equals_str(type_1, STRING)) {
+        aio_value *new_value_2 = cast_to_string(value_2);
+        return strcmp(value_1->get.string_acc, new_value_2->get.string_acc) > 0;
+    } else {
+        throw_error_with_hook(AIO_VALUE_TAG, "Cannot compare values by type:", type_1);
+    }
+}
+
+boolean is_more_or_equals_aio_value_then_other(aio_value *value_1, aio_value *value_2)
+{
+    const_str_hook *type_1 = value_1->type;
+    if (is_hook_equals_str(type_1, INTEGER)) {
+        aio_value *new_value_2 = cast_to_int(value_2);
+        if (value_1->get.int_acc >= new_value_2->get.int_acc) {
+            return TRUE;
+        } else {
+            return FALSE;
+        }
+    }
+    if (is_hook_equals_str(type_1, DOUBLE)) {
+        aio_value *new_value_2 = cast_to_double(value_2);
+        if (value_1->get.double_acc >= new_value_2->get.double_acc) {
+            return TRUE;
+        } else {
+            return FALSE;
+        }
+    }
+    if (is_hook_equals_str(type_1, STRING)) {
+        aio_value *new_value_2 = cast_to_string(value_2);
+        return strcmp(value_1->get.string_acc, new_value_2->get.string_acc) >= 0;
+    } else {
+        throw_error_with_hook(AIO_VALUE_TAG, "Cannot compare values by type:", type_1);
+    }
+}
+
+boolean is_less_aio_value_then_other(aio_value *value_1, aio_value *value_2)
+{
+    const_str_hook *type_1 = value_1->type;
+    if (is_hook_equals_str(type_1, INTEGER)) {
+        aio_value *new_value_2 = cast_to_int(value_2);
+        if (value_1->get.int_acc < new_value_2->get.int_acc) {
+            return TRUE;
+        } else {
+            return FALSE;
+        }
+    }
+    if (is_hook_equals_str(type_1, DOUBLE)) {
+        aio_value *new_value_2 = cast_to_double(value_2);
+        if (value_1->get.double_acc < new_value_2->get.double_acc) {
+            return TRUE;
+        } else {
+            return FALSE;
+        }
+    }
+    if (is_hook_equals_str(type_1, STRING)) {
+        aio_value *new_value_2 = cast_to_string(value_2);
+        return strcmp(value_1->get.string_acc, new_value_2->get.string_acc) < 0;
+    } else {
+        throw_error_with_hook(AIO_VALUE_TAG, "Cannot compare values by type:", type_1);
+    }
+}
+
+boolean is_less_or_equals_aio_value_then_other(aio_value *value_1, aio_value *value_2)
+{
+    const_str_hook *type_1 = value_1->type;
+    if (is_hook_equals_str(type_1, INTEGER)) {
+        aio_value *new_value_2 = cast_to_int(value_2);
+        if (value_1->get.int_acc <= new_value_2->get.int_acc) {
+            return TRUE;
+        } else {
+            return FALSE;
+        }
+    }
+    if (is_hook_equals_str(type_1, DOUBLE)) {
+        aio_value *new_value_2 = cast_to_double(value_2);
+        if (value_1->get.double_acc <= new_value_2->get.double_acc) {
+            return TRUE;
+        } else {
+            return FALSE;
+        }
+    }
+    if (is_hook_equals_str(type_1, STRING)) {
+        aio_value *new_value_2 = cast_to_string(value_2);
+        return strcmp(value_1->get.string_acc, new_value_2->get.string_acc) <= 0;
+    } else {
+        throw_error_with_hook(AIO_VALUE_TAG, "Cannot compare values by type:", type_1);
+    }
+}
+
 
 /**
  * Casts.

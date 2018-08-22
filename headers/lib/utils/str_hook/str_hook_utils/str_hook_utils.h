@@ -109,8 +109,8 @@ int str_hook_to_int(const struct str_hook *hook);
 
 double str_hook_to_double(const struct str_hook *hook);
 
-char *str_hook_to_string(const struct str_hook *hook);
+struct str_hook *lower_str_hook_quotes(const struct str_hook *hook);
 
-str_hook *lower_str_hook_quotes(const_str_hook *hook);
+_Bool str_hook_to_boolean(const struct str_hook* hook);
 
 #endif //STRING_HOOK_UTILS_H

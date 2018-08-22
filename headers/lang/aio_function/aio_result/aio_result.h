@@ -14,11 +14,11 @@ struct aio_result *new_aio_result(struct aio_value *value, struct str_hook *rest
 
 struct aio_result *new_aio_int_result(const int int_acc, struct str_hook *rest);
 
-struct aio_result *new_aio_dou_result(const double double_acc, struct str_hook *rest);
+struct aio_result *new_aio_double_result(const double double_acc, struct str_hook *rest);
 
-struct aio_result *new_aio_str_result(char *string_acc, struct str_hook *rest);
+struct aio_result *new_aio_string_result(char *string_acc, struct str_hook *rest);
 
-struct aio_result *new_aio_boo_result(const _Bool boolean_acc, struct str_hook *rest);
+struct aio_result *new_aio_boolean_result(const _Bool boolean_acc, struct str_hook *rest);
 
 void free_aio_result(struct aio_result *result);
 

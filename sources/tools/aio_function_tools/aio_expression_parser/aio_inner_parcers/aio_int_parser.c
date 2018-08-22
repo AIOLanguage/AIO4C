@@ -7,7 +7,6 @@
 #include "../../../../../headers/tools/aio_function_tools/aio_expression_parser/aio_expression_parser.h"
 #include "../../../../../headers/lang/aio_function/aio_bundle/aio_bundle.h"
 #include "../../../../../headers/lang/aio_context/aio_context.h"
-#include "../../../../../headers/lib/utils/int_utils/int_utils.h"
 
 #define AIO_INT_PARSER_DEBUG
 
@@ -49,11 +48,15 @@ static aio_result *make_int(const_str_hook *expression_hook)
     //Maybe string value?
     if (is_string_hooked(captured_element)) {
         const_str_hook *str_hook = lower_str_hook_quotes(captured_element);
-        value = str_hook_to_int(str_hook);
+        if (is_boolean_hooked(str_hook)) {
+            value = str_hook_to_boolean(str_hook);
+        } else {
+            value = str_hook_to_int(str_hook);
+        }
     }
     //Maybe boolean value?
     if (is_boolean_hooked(captured_element)) {
-
+        value = str_hook_to_boolean(captured_element);
     } else {
         throw_error_with_tag(AIO_INT_PARSER_TAG, "Cannot define type of expression!");
     }
@@ -62,47 +65,6 @@ static aio_result *make_int(const_str_hook *expression_hook)
     rest_part->end = expression_hook->end;
     aio_result *int_result = new_aio_int_result(value, rest_part);
     return int_result;
-}
-
-void make_expression_chunks_and_count_next_point(
-        const_str_hook *expression_hook,
-        str_hook_list *expression_list,
-        int *next_point
-)
-{
-    const_string expression_str = expression_hook->source_ref;
-    //Skip first opening parenthesis:
-    int parenthesis_up_downer = 1;
-    const int start_position = expression_hook->start + 1;
-    int last_pointer = start_position;
-    for (int j = expression_hook->start + 1; j < expression_hook->end; ++j) {
-        const char symbol = expression_str[j];
-        if (is_opening_parenthesis(symbol)) {
-            parenthesis_up_downer++;
-        }
-        if (is_closing_parenthesis(symbol)) {
-            parenthesis_up_downer--;
-            if (parenthesis_up_downer < 0) {
-                throw_error_with_tag(AIO_INT_PARSER_TAG, "Invalid parenthesis placement!");
-            }
-            if (parenthesis_up_downer == 0) {
-                str_hook *inner_expression = new_str_hook(expression_str);
-                inner_expression->start = last_pointer,
-                        inner_expression->end = j;
-                add_str_hook_in_list(expression_list, inner_expression);
-                *next_point = j + 1;
-                return;
-            }
-        }
-        if (is_comma(symbol) && parenthesis_up_downer == 1) {
-            str_hook *inner_expression = new_str_hook(expression_str);
-            inner_expression->start = last_pointer,
-                    inner_expression->end = j;
-            add_str_hook_in_list(expression_list, inner_expression);
-            last_pointer = j + 1;
-        }
-    }
-    throw_error_with_tag(AIO_INT_PARSER_TAG, "Incorrect parenthesis placement");
 }
 
 static aio_result *make_function_or_variable(
@@ -277,9 +239,9 @@ static aio_result *make_plus_or_minus(
 
 
 struct aio_value *parse_int_value_string(
-        const struct str_hook *expression_hook,
-        const struct aio_context *context,
-        const struct aio_function_control_graph *control_graph
+        const_str_hook *expression_hook,
+        const_aio_context *context,
+        const_aio_function_control_graph *control_graph
 )
 {
     aio_result *result = make_plus_or_minus(expression_hook, context, control_graph);

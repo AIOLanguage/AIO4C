@@ -59,10 +59,18 @@ void free_aio_values_in_list(struct aio_value_list *list);
 void free_aio_value_list(struct aio_value_list *list);
 
 /**
- * Value utils.
+ * Comparing utils.
  */
 
 _Bool are_equal_aio_values(struct aio_value *value_1, struct aio_value *value_2);
+
+_Bool is_more_aio_value_then_other(struct aio_value *value_1, struct aio_value *value_2);
+
+_Bool is_less_aio_value_then_other(struct aio_value *value_1, struct aio_value *value_2);
+
+_Bool is_more_or_equals_aio_value_then_other(struct aio_value *value_1, struct aio_value *value_2);
+
+_Bool is_less_or_equals_aio_value_then_other(struct aio_value *value_1, struct aio_value *value_2);
 
 /**
  * Casts.

@@ -26,7 +26,9 @@ static const_boolean is_explicitly_boolean_expression(const_str_hook *hooked_exp
         const_boolean is_boolean_symbol =
                 is_more_sign(symbol)
                 || is_less_sign(symbol)
-                || is_equal_sign(symbol);
+                || is_equal_sign(symbol)
+                || is_and_sign(symbol)
+                || is_or_sign(symbol);
         if (is_opening_parenthesis_cond) {
             parenthesis_scope_counter++;
         }

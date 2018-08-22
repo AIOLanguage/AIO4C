@@ -149,8 +149,14 @@ add_executable(${PROJECT_NAME}
         sources/lib/utils/string_utils/trim.c
         sources/lib/utils/str_hook/str_hook_utils/str_hook_iterator.c
         sources/tools/aio_function_tools/aio_expression_parser/aio_expression_parser.c
+        sources/tools/aio_function_tools/aio_expression_parser/aio_inner_parcers/aio_int_parser.c
+        sources/tools/aio_function_tools/aio_expression_parser/aio_inner_parcers/aio_double_parser.c
+        sources/tools/aio_function_tools/aio_expression_parser/aio_inner_parcers/aio_string_parser.c
+        sources/tools/aio_function_tools/aio_expression_parser/aio_inner_parcers/aio_boolean_parser.c
+        sources/tools/aio_function_tools/aio_expression_parser/aio_inner_parcers/aio_type_parser.c
+        sources/tools/aio_function_tools/aio_expression_parser/aio_expression_assistant.c
         #---------------------------------------------------------------------------------------------------------------
-        sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_int_parser.c sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_double_parser.c sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_string_parser.c sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_boolean_parser.c sources/tools/aio_function_tools/aio_expression_parser/inner_parcers/aio_type_parser.c)
+        )
 
 
 #TODO: How make it???

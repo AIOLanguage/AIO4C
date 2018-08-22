@@ -41,5 +41,10 @@ _Bool is_division_sign(const char c);
 
 _Bool is_mod_sign(const char c);
 
+_Bool is_tilde_sign(const char c);
+
+_Bool is_and_sign(const char c);
+
+_Bool is_or_sign(const char c);
 
 #endif //CHAR_UTILS_H
