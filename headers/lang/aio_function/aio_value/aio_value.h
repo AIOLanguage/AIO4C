@@ -89,6 +89,12 @@ struct aio_value *cast_to_reference(struct aio_value *value);
 struct aio_value *cast_to_type(struct aio_value *value, const struct str_hook *type);
 
 /**
+ * Log utils.
+ */
+
+void log_info_aio_value(const char* tag, char* message, const struct aio_value *value);
+
+/**
  * Typedef utils.
  */
 

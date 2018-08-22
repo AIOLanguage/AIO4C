@@ -11,7 +11,6 @@
 #ifdef AIO_CONTROL_GRAPH_DEBUG
 
 #include "../../../../headers/lib/utils/log_utils/log_utils.h"
-#include "../../../../headers/lang/aio_type/aio_type.h"
 
 #endif
 
@@ -47,7 +46,7 @@ static void put_arg_values_in_aio_control_graph(
             const_aio_variable_definition *argument_definition = argument->definition;
             str_hook *required_type = argument_definition->type;
 #ifdef AIO_CONTROL_GRAPH_DEBUG
-            log_info(AIO_CONTROL_GRAPH_TAG, "--------------------------------------");
+            log_info(AIO_CONTROL_GRAPH_TAG, ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
             log_info_str_hook(AIO_CONTROL_GRAPH_TAG, "Required type:", required_type);
             log_info_str_hook(AIO_CONTROL_GRAPH_TAG, "Input type:", input_type);
 #endif
@@ -56,28 +55,25 @@ static void put_arg_values_in_aio_control_graph(
                 log_info_str_hook(AIO_CONTROL_GRAPH_TAG, "Cast to type:", required_type);
 #endif
                 aio_value *casted_value = cast_to_type(input_value, required_type);
-#ifdef AIO_CONTROL_GRAPH_DEBUG
-                const_str_hook *type = casted_value->type;
-                if (is_hook_equals_str(type, INTEGER)) {
-                    log_info_int(AIO_CONTROL_GRAPH_TAG, "Casted value:", casted_value->get.int_acc);
-                }
-                if (is_hook_equals_str(type, DOUBLE)) {
-                    log_info_double(AIO_CONTROL_GRAPH_TAG, "Casted value:", casted_value->get.double_acc);
-                }
-                if (is_hook_equals_str(type, STRING)) {
-                    log_info_string(AIO_CONTROL_GRAPH_TAG, "Casted value:", casted_value->get.string_acc);
-                }
-                if (is_hook_equals_str(type, BOOLEAN)) {
-                    log_info_boolean(AIO_CONTROL_GRAPH_TAG, "Casted value:", casted_value->get.boolean_acc);
-                }
-#endif
                 argument->value = casted_value;
+            } else {
+                argument->value = input_value;
             }
         }
     } else {
         throw_error_with_tag(AIO_CONTROL_GRAPH_TAG, "Invalid number of args!");
     }
-    exit(1);
+#ifdef AIO_CONTROL_GRAPH_DEBUG
+    log_info(AIO_CONTROL_GRAPH_TAG, "Arguments are loaded:");
+    for (int j = 0; j < function_definition->number_of_args; ++j) {
+        aio_variable *argument = variables[j];
+        log_info(AIO_CONTROL_GRAPH_TAG, "--------------------------------------");
+        log_info_str_hook(AIO_CONTROL_GRAPH_TAG, "<Name>", argument->definition->name);
+        log_info_str_hook(AIO_CONTROL_GRAPH_TAG, "<Type>", argument->definition->type);
+        log_info_aio_value(AIO_CONTROL_GRAPH_TAG, "<Value>", argument->value);
+        log_info_boolean(AIO_CONTROL_GRAPH_TAG, "<Mutable>", argument->definition->is_mutable);
+    }
+#endif
 }
 
 const_aio_function_control_graph *new_aio_function_control_graph(const_aio_function_control_graph *parent,
@@ -131,11 +127,17 @@ void inflate_new_aio_function_control_graph(const_aio_function_control_graph *pa
 
 void perform_aio_function_instructions(const_aio_function_control_graph *control_graph)
 {
+#ifdef AIO_CONTROL_GRAPH_DEBUG
+    log_info(AIO_CONTROL_GRAPH_TAG, "Start to perform instructions...");
+#endif
     const_aio_function_instruction_list *instruction_list = control_graph->instruction_list;
     const_aio_function_instruction_array instructions = instruction_list->instructions;
     const size_t list_size = instruction_list->size;
     for (int i = 0; i < list_size; ++i) {
         const aio_function_system_state system_state = *control_graph->system_state_ref;
+#ifdef AIO_CONTROL_GRAPH_DEBUG
+        log_info_boolean(AIO_CONTROL_GRAPH_TAG, "Normal state:", system_state == AIO_FUNCTION_SYSTEM_MAKE);
+#endif
         if (system_state == AIO_FUNCTION_SYSTEM_MAKE) {
             perform_aio_instruction(instructions[i], control_graph);
         } else {

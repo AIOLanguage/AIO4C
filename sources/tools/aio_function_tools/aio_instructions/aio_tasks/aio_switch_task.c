@@ -4,10 +4,21 @@
 #include "../../../../../headers/tools/aio_function_tools/aio_instructions/aio_tasks/aio_switch_task.h"
 #include "../../../../../headers/tools/aio_function_tools/aio_expression_parser/aio_expression_parser.h"
 
+#define AIO_SWITCH_TASK_DEBUG
+
+#ifdef AIO_SWITCH_TASK_DEBUG
+
+#include "../../../../../headers/lib/utils/log_utils/log_utils.h"
+
+#endif
+
+#define AIO_SWITCH_TASK_TAG "AIO_SWITCH_TASK"
+
 aio_function_instruction *new_aio_switch_instruction(
         struct aio_function_instruction_holder *holder, const_string switch_value,
         string_list *case_keys, struct aio_function_instruction_holder **case_holders,
-        struct aio_function_instruction_holder *else_holder) {
+        struct aio_function_instruction_holder *else_holder)
+{
     aio_function_instruction *instruction = new_aio_function_instruction(holder, AIO_SWITCH_TASK);
     //Init task:
     aio_switch_task *task = new_object(sizeof(aio_switch_task));
@@ -20,7 +31,8 @@ aio_function_instruction *new_aio_switch_instruction(
 }
 
 void perform_aio_switch_instruction(const_aio_function_instruction *instruction,
-                                    const_aio_function_control_graph *control_graph) {
+                                    const_aio_function_control_graph *control_graph)
+{
     //Extract task:
     const aio_switch_task *task = instruction->get.switch_task;
     const_string switch_value_string = task->switch_value;
@@ -34,6 +46,9 @@ void perform_aio_switch_instruction(const_aio_function_instruction *instruction,
     //Prepare to switch:
     boolean was_successful_case = FALSE;
     //Parse switch value:
+#ifdef AIO_SWITCH_TASK_DEBUG
+    log_info(AIO_SWITCH_TASK_TAG, "Start to parse switch value...");
+#endif
     aio_value *switch_value = parse_value_string(switch_value_string, context_ref, NULL);
     //Parse each case value:
     for (int i = 0; i < number_of_cases; ++i) {

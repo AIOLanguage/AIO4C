@@ -8,6 +8,8 @@
 
 #define STRING_UTILS_TAG "STRING_UTILS"
 
+#define EMPTY_STRING ""
+
 string new_string(const_string src)
 {
     if (src != NULL) {
@@ -68,9 +70,7 @@ const_boolean is_not_empty_string(const_string string)
 //Passed JUnitTest!
 const_boolean is_empty_string(const_string string)
 {
-    const_string empty_string = "";
-    const_boolean result = strcmp(string, empty_string) == 0;
-    free((void *) empty_string);
+    const_boolean result = strcmp(string, EMPTY_STRING) == 0;
     return result;
 }
 
