@@ -86,6 +86,8 @@ struct aio_value *cast_to_boolean(struct aio_value *value);
 
 struct aio_value *cast_to_reference(struct aio_value *value);
 
+struct aio_value *cast_to_type(struct aio_value *value, const struct str_hook *type);
+
 /**
  * Typedef utils.
  */

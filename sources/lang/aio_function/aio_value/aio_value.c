@@ -425,3 +425,21 @@ aio_value *cast_to_reference(aio_value *value)
         return new_aio_string_value(value->get.reference);
     }
 }
+
+aio_value *cast_to_type(aio_value *value, const_str_hook *type)
+{
+    if (is_hook_equals_str(type, INTEGER)) {
+        return cast_to_int(value);
+    }
+    if (is_hook_equals_str(type, DOUBLE)) {
+        return cast_to_double(value);
+    }
+    if (is_hook_equals_str(type, STRING)) {
+        return cast_to_string(value);
+    }
+    if (is_hook_equals_str(type, BOOLEAN)) {
+        return cast_to_boolean(value);
+    } else {
+        return cast_to_reference(value);
+    }
+}

@@ -34,7 +34,7 @@ void inflate_new_aio_function_control_graph(const_aio_function_control_graph *pa
                                             const struct aio_context *context);
 
 void inflate_new_aio_root_function_control_graph(aio_function_control_graph *parent,
-                                                 const struct aio_function_instruction_holder *holder,
+                                                 aio_function_definition *function_definition,
                                                  aio_bundle *bundle_ref,
                                                  const struct aio_context *context);
 
