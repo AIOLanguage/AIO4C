@@ -14,26 +14,15 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77c54fc7-a37a-4eaf-a794-282c0598671e" name="Default" comment="파서 디버깅 (Parser debugging)">
+    <list default="true" id="77c54fc7-a37a-4eaf-a794-282c0598671e" name="Default" comment="파서 디버깅 (Parser debugging):&#10;-&gt; 'aio_variable_definition' 로그를 더했습니다 (Add 'aio_variable_definition' log);&#10;-&gt; 'aio_variable_init_type' 열거를 더했습니다 (Add 'aio_variable_init_type' enum);&#10;-&gt; 나무에서 'aio_variable'과 'aio_variable_definition' 검색을 고정켰습니다 (Fixed searching in tree of 'aio_variable' &amp; 'aio_variable_definition');&#10;-&gt; 부분적으로 파서들을 고정켰습니다 (Partially fixed parsers).">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/aio_programs/test.aio" beforeDir="false" afterPath="$PROJECT_DIR$/aio_programs/test.aio" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/C.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/C.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/depend.internal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/headers/lang/aio_function/aio_variable/aio_definition/aio_variable_definition.h" beforeDir="false" afterPath="$PROJECT_DIR$/headers/lang/aio_function/aio_variable/aio_definition/aio_variable_definition.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/headers/lang/aio_function/aio_variable/aio_variable.h" beforeDir="false" afterPath="$PROJECT_DIR$/headers/lang/aio_function/aio_variable/aio_variable.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main/main.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sources/lang/aio_function/aio_function_definition/aio_function_definition.c" beforeDir="false" afterPath="$PROJECT_DIR$/sources/lang/aio_function/aio_function_definition/aio_function_definition.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sources/lang/aio_function/aio_variable/aio_variable.c" beforeDir="false" afterPath="$PROJECT_DIR$/sources/lang/aio_function/aio_variable/aio_variable.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sources/lang/aio_function/aio_variable/aio_variable_definition/aio_variable_definition.c" beforeDir="false" afterPath="$PROJECT_DIR$/sources/lang/aio_function/aio_variable/aio_variable_definition/aio_variable_definition.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sources/lib/utils/str_hook/str_hook_utils/str_hook_utils.c" beforeDir="false" afterPath="$PROJECT_DIR$/sources/lib/utils/str_hook/str_hook_utils/str_hook_utils.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sources/tools/aio_function_tools/aio_control_graph/aio_function_control_graph.c" beforeDir="false" afterPath="$PROJECT_DIR$/sources/tools/aio_function_tools/aio_control_graph/aio_function_control_graph.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sources/tools/aio_function_tools/aio_expression_parser/aio_expression_parser.c" beforeDir="false" afterPath="$PROJECT_DIR$/sources/tools/aio_function_tools/aio_expression_parser/aio_expression_parser.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/headers/tools/aio_function_tools/aio_expression_parser/aio_expression_parser.h" beforeDir="false" afterPath="$PROJECT_DIR$/headers/tools/aio_function_tools/aio_expression_parser/aio_expression_parser.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sources/tools/aio_function_tools/aio_expression_parser/aio_expression_assistant.c" beforeDir="false" afterPath="$PROJECT_DIR$/sources/tools/aio_function_tools/aio_expression_parser/aio_expression_assistant.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sources/tools/aio_function_tools/aio_expression_parser/aio_inner_parcers/aio_boolean_parser.c" beforeDir="false" afterPath="$PROJECT_DIR$/sources/tools/aio_function_tools/aio_expression_parser/aio_inner_parcers/aio_boolean_parser.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sources/tools/aio_function_tools/aio_expression_parser/aio_inner_parcers/aio_double_parser.c" beforeDir="false" afterPath="$PROJECT_DIR$/sources/tools/aio_function_tools/aio_expression_parser/aio_inner_parcers/aio_double_parser.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sources/tools/aio_function_tools/aio_expression_parser/aio_inner_parcers/aio_int_parser.c" beforeDir="false" afterPath="$PROJECT_DIR$/sources/tools/aio_function_tools/aio_expression_parser/aio_inner_parcers/aio_int_parser.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sources/tools/aio_function_tools/aio_expression_parser/aio_inner_parcers/aio_string_parser.c" beforeDir="false" afterPath="$PROJECT_DIR$/sources/tools/aio_function_tools/aio_expression_parser/aio_inner_parcers/aio_string_parser.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_return_spider/aio_return_spider.c" beforeDir="false" afterPath="$PROJECT_DIR$/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_return_spider/aio_return_spider.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_assign_task.c" beforeDir="false" afterPath="$PROJECT_DIR$/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_assign_task.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_switch_task.c" beforeDir="false" afterPath="$PROJECT_DIR$/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_switch_task.c" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -73,11 +62,11 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="Build All (disassembly)" value="43" />
-          <entry key="aio" value="201" />
+          <entry key="aio" value="202" />
           <entry key="assign_and_if" value="4" />
-          <entry key="c" value="4525" />
+          <entry key="c" value="4654" />
           <entry key="cmake" value="1" />
-          <entry key="h" value="2299" />
+          <entry key="h" value="2340" />
           <entry key="txt" value="128" />
         </counts>
       </usages-collector>
@@ -86,28 +75,28 @@
           <entry key="CMakeCache.txt" value="1" />
           <entry key="CMakeLists.txt" value="128" />
           <entry key="Disassembly" value="43" />
-          <entry key="ObjectiveC" value="6824" />
-          <entry key="PLAIN_TEXT" value="205" />
+          <entry key="ObjectiveC" value="6994" />
+          <entry key="PLAIN_TEXT" value="206" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Build All (disassembly)" value="5" />
-          <entry key="aio" value="2776" />
+          <entry key="aio" value="2777" />
           <entry key="assign_and_if" value="101" />
-          <entry key="c" value="112325" />
-          <entry key="h" value="17732" />
+          <entry key="c" value="115525" />
+          <entry key="h" value="17976" />
           <entry key="m" value="1814" />
-          <entry key="txt" value="3426" />
+          <entry key="txt" value="3775" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CMakeLists.txt" value="1104" />
           <entry key="Disassembly" value="5" />
-          <entry key="Doxygen file" value="196" />
-          <entry key="ObjectiveC" value="131675" />
-          <entry key="PLAIN_TEXT" value="5199" />
+          <entry key="Doxygen file" value="200" />
+          <entry key="ObjectiveC" value="135115" />
+          <entry key="PLAIN_TEXT" value="5549" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages">
@@ -123,13 +112,10 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/sources/tools/aio_function_tools/aio_expression_parser/aio_inner_parcers/aio_int_parser.c">
+        <entry file="file://$PROJECT_DIR$/aio_programs/test.aio">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="651">
-              <caret line="250" column="1" lean-forward="true" selection-start-line="250" selection-start-column="1" selection-end-line="250" selection-end-column="1" />
-              <folding>
-                <element signature="e#0#18#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="119">
+              <caret line="7" column="23" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -138,7 +124,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>book</find>
       <find>STEP</find>
       <find>CONDITION</find>
       <find>CONDIT</find>
@@ -168,6 +153,7 @@
       <find>RETURN</find>
       <find>RETURN_S</find>
       <find>SWITCH_SPIDER</find>
+      <find>make_pa</find>
     </findStrings>
     <replaceStrings>
       <replace>function_definition</replace>
@@ -209,13 +195,9 @@
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/sources/tools/aio_function_tools/aio_expression_parser/aio_inner_parcers/aio_number_parsers/aio_number_assistant.c" />
         <option value="$PROJECT_DIR$/sources/tools/aio_function_tools/aio_expression_parser/aio_number_assistant.c" />
-        <option value="$PROJECT_DIR$/sources/tools/aio_function_tools/aio_expression_parser/aio_expression_assistant.c" />
-        <option value="$PROJECT_DIR$/sources/tools/aio_function_tools/aio_expression_parser/aio_inner_parcers/aio_double_parser.c" />
         <option value="$PROJECT_DIR$/sources/lang/aio_function/aio_result/aio_result.c" />
         <option value="$PROJECT_DIR$/headers/tools/aio_function_tools/aio_control_graph/aio_function_control_graph.h" />
         <option value="$PROJECT_DIR$/sources/lib/utils/boolean_utils/boolean_utils.c" />
-        <option value="$PROJECT_DIR$/sources/tools/aio_function_tools/aio_expression_parser/aio_inner_parcers/aio_boolean_parser.c" />
-        <option value="$PROJECT_DIR$/headers/tools/aio_function_tools/aio_expression_parser/aio_expression_parser.h" />
         <option value="$PROJECT_DIR$/sources/lib/utils/char_utils/char_utils.c" />
         <option value="$PROJECT_DIR$/headers/lib/utils/log_utils/log_utils.h" />
         <option value="$PROJECT_DIR$/headers/lang/aio_function/aio_bundle/aio_bundle.h" />
@@ -238,11 +220,15 @@
         <option value="$PROJECT_DIR$/headers/lib/utils/char_utils/char_utils.h" />
         <option value="$PROJECT_DIR$/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_return_spider/aio_return_spider.c" />
         <option value="$PROJECT_DIR$/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_switch_task.c" />
-        <option value="$PROJECT_DIR$/aio_programs/test.aio" />
         <option value="$PROJECT_DIR$/main/main.c" />
-        <option value="$PROJECT_DIR$/sources/tools/aio_function_tools/aio_expression_parser/aio_inner_parcers/aio_string_parser.c" />
         <option value="$PROJECT_DIR$/sources/tools/aio_function_tools/aio_expression_parser/aio_expression_parser.c" />
+        <option value="$PROJECT_DIR$/sources/tools/aio_function_tools/aio_expression_parser/aio_inner_parcers/aio_string_parser.c" />
+        <option value="$PROJECT_DIR$/sources/tools/aio_function_tools/aio_expression_parser/aio_inner_parcers/aio_double_parser.c" />
+        <option value="$PROJECT_DIR$/headers/tools/aio_function_tools/aio_expression_parser/aio_expression_parser.h" />
+        <option value="$PROJECT_DIR$/sources/tools/aio_function_tools/aio_expression_parser/aio_inner_parcers/aio_boolean_parser.c" />
+        <option value="$PROJECT_DIR$/sources/tools/aio_function_tools/aio_expression_parser/aio_expression_assistant.c" />
         <option value="$PROJECT_DIR$/sources/tools/aio_function_tools/aio_expression_parser/aio_inner_parcers/aio_int_parser.c" />
+        <option value="$PROJECT_DIR$/aio_programs/test.aio" />
       </list>
     </option>
   </component>
@@ -294,6 +280,36 @@
               <item name="AIO" type="462c0819:PsiDirectoryNode" />
               <item name="sources" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="AIO" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AIO" type="462c0819:PsiDirectoryNode" />
+              <item name="sources" type="462c0819:PsiDirectoryNode" />
+              <item name="tools" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AIO" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AIO" type="462c0819:PsiDirectoryNode" />
+              <item name="sources" type="462c0819:PsiDirectoryNode" />
+              <item name="tools" type="462c0819:PsiDirectoryNode" />
+              <item name="aio_function_tools" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AIO" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AIO" type="462c0819:PsiDirectoryNode" />
+              <item name="sources" type="462c0819:PsiDirectoryNode" />
+              <item name="tools" type="462c0819:PsiDirectoryNode" />
+              <item name="aio_function_tools" type="462c0819:PsiDirectoryNode" />
+              <item name="aio_expression_parser" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AIO" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AIO" type="462c0819:PsiDirectoryNode" />
+              <item name="sources" type="462c0819:PsiDirectoryNode" />
+              <item name="tools" type="462c0819:PsiDirectoryNode" />
+              <item name="aio_function_tools" type="462c0819:PsiDirectoryNode" />
+              <item name="aio_expression_parser" type="462c0819:PsiDirectoryNode" />
+              <item name="aio_inner_parcers" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -307,7 +323,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.C/C++" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -409,14 +425,7 @@
       <workItem from="1534775151941" duration="13182000" />
       <workItem from="1534838179558" duration="39796000" />
       <workItem from="1534932981982" duration="28764000" />
-      <workItem from="1535020880174" duration="10888000" />
-    </task>
-    <task id="LOCAL-00086" summary="-&gt; 개발중인 'loop' 거미 ('loop' spider in development!)&#10;#LOVE AIO &amp; C =)">
-      <created>1534015611286</created>
-      <option name="number" value="00086" />
-      <option name="presentableId" value="LOCAL-00086" />
-      <option name="project" value="LOCAL" />
-      <updated>1534015611286</updated>
+      <workItem from="1535020880174" duration="22019000" />
     </task>
     <task id="LOCAL-00087" summary="-&gt; 개발중인 'loop' 거미 ('loop' spider in development!)&#10;#LOVE AIO &amp; C =)">
       <created>1534019678995</created>
@@ -754,11 +763,18 @@
       <option name="project" value="LOCAL" />
       <updated>1534965024348</updated>
     </task>
-    <option name="localTasksCounter" value="135" />
+    <task id="LOCAL-00135" summary="파서 디버깅 (Parser debugging):&#10;-&gt; 'aio_variable_definition' 로그를 더했습니다 (Add 'aio_variable_definition' log);&#10;-&gt; 'aio_variable_init_type' 열거를 더했습니다 (Add 'aio_variable_init_type' enum);&#10;-&gt; 나무에서 'aio_variable'과 'aio_variable_definition' 검색을 고정켰습니다 (Fixed searching in tree of 'aio_variable' &amp; 'aio_variable_definition');&#10;-&gt; 부분적으로 파서들을 고정켰습니다 (Partially fixed parsers).">
+      <created>1535033004659</created>
+      <option name="number" value="00135" />
+      <option name="presentableId" value="LOCAL-00135" />
+      <option name="project" value="LOCAL" />
+      <updated>1535033004659</updated>
+    </task>
+    <option name="localTasksCounter" value="136" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="943644000" />
+    <option name="totallyTimeSpent" value="954775000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -773,12 +789,12 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49537036" weight="0.24348958" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49537036" visible="true" weight="0.24348958" />
       <window_info id="Structure" order="1" sideWeight="0.50198674" side_tool="true" weight="0.36002603" />
       <window_info id="Favorites" order="2" sideWeight="0.5046296" side_tool="true" weight="0.24348958" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.5437018" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.50385606" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.50385606" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.42673522" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -828,7 +844,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="-&gt; 세 번째로 거미들을 다시 만든다! 빌어먹을! (Remade spider for the third time!!! Damn it!)&#10;#LOVE AIO &amp; C =)" />
     <MESSAGE value="-&gt; AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA&#10;-&gt; 'Default loop header' 거미를 만들었다! (Made 'Default loop header' spider)&#10;#LOVE AIO &amp; C =)" />
     <MESSAGE value="-&gt; ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ&#10;-&gt; 'Loop' 거미를 만들었다! (Made 'Loop' spider)&#10;#LOVE AIO &amp; C =)" />
     <MESSAGE value="-&gt; 'Loop' 거미 디버깅! ('Loop' spider debugging)&#10;-&gt; 'If' 거미의 버그 수정 (Fixed bug in 'If' spider)&#10;#LOVE AIO &amp; C =)" />
@@ -853,7 +868,8 @@
     <MESSAGE value="표현 파서들을 만들었습니다. 하지만 그들을 테스트하지 않았습니다 (I made expression parsers but not tested their)" />
     <MESSAGE value="'Cast' 디버깅 ('Cast' debugging)" />
     <MESSAGE value="파서 디버깅 (Parser debugging)" />
-    <option name="LAST_COMMIT_MESSAGE" value="파서 디버깅 (Parser debugging)" />
+    <MESSAGE value="파서 디버깅 (Parser debugging):&#10;-&gt; 'aio_variable_definition' 로그를 더했습니다 (Add 'aio_variable_definition' log);&#10;-&gt; 'aio_variable_init_type' 열거를 더했습니다 (Add 'aio_variable_init_type' enum);&#10;-&gt; 나무에서 'aio_variable'과 'aio_variable_definition' 검색을 고정켰습니다 (Fixed searching in tree of 'aio_variable' &amp; 'aio_variable_definition');&#10;-&gt; 부분적으로 파서들을 고정켰습니다 (Partially fixed parsers)." />
+    <option name="LAST_COMMIT_MESSAGE" value="파서 디버깅 (Parser debugging):&#10;-&gt; 'aio_variable_definition' 로그를 더했습니다 (Add 'aio_variable_definition' log);&#10;-&gt; 'aio_variable_init_type' 열거를 더했습니다 (Add 'aio_variable_init_type' enum);&#10;-&gt; 나무에서 'aio_variable'과 'aio_variable_definition' 검색을 고정켰습니다 (Fixed searching in tree of 'aio_variable' &amp; 'aio_variable_definition');&#10;-&gt; 부분적으로 파서들을 고정켰습니다 (Partially fixed parsers)." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/sources/tools/aio_function_tools/aio_definition_rippers/aio_instruction_ripper.c">
@@ -903,28 +919,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sources/tools/aio_function_tools/aio_expression_parser/aio_inner_parcers/aio_type_parser.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/headers/lib/utils/str_hook/str_hook_utils/str_hook_utils.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="130">
           <caret line="75" column="5" selection-start-line="75" selection-start-column="5" selection-end-line="75" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sources/lib/utils/str_hook/str_hook_utils/str_hook_utils.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="447">
-          <caret line="221" column="1" lean-forward="true" selection-start-line="221" selection-start-column="1" selection-end-line="221" selection-end-column="1" />
-          <folding>
-            <element signature="e#643#708#0" expanded="true" />
-            <element signature="e#4290#4394#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -959,13 +957,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="430">
           <caret line="123" column="5" selection-start-line="123" selection-start-column="5" selection-end-line="123" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sources/lang/aio_function/aio_value/aio_value.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="79" column="11" selection-start-line="79" selection-start-column="11" selection-end-line="79" selection-end-column="11" />
         </state>
       </provider>
     </entry>
@@ -1030,13 +1021,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/aio_programs/test.aio">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="6" lean-forward="true" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sources/lib/utils/char_utils/char_utils.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="430">
@@ -1051,23 +1035,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sources/lang/aio_function/aio_result/aio_result.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="24" column="12" selection-start-line="24" selection-start-column="12" selection-end-line="24" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sources/tools/aio_function_tools/aio_expression_parser/aio_inner_parcers/aio_string_parser.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="167" column="105" lean-forward="true" selection-start-line="167" selection-start-column="105" selection-end-line="167" selection-end-column="105" />
-          <folding>
-            <element signature="e#692#757#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sources/tools/aio_function_tools/aio_expression_parser/aio_expression_parser.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="259">
@@ -1078,13 +1045,116 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sources/tools/aio_function_tools/aio_expression_parser/aio_inner_parcers/aio_int_parser.c">
+    <entry file="file://$PROJECT_DIR$/sources/lang/aio_function/aio_result/aio_result.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="651">
-          <caret line="250" column="1" lean-forward="true" selection-start-line="250" selection-start-column="1" selection-end-line="250" selection-end-column="1" />
+        <state relative-caret-position="357">
+          <caret line="24" column="12" selection-start-line="24" selection-start-column="12" selection-end-line="24" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sources/lib/utils/string_utils/trim.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret lean-forward="true" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sources/lang/aio_function/aio_value/aio_value.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="375" column="11" selection-start-line="375" selection-start-column="11" selection-end-line="375" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sources/lib/utils/str_hook/str_hook_utils/str_hook_utils.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="539">
+          <caret line="373" column="8" selection-start-line="373" selection-start-column="8" selection-end-line="373" selection-end-column="8" />
+          <folding>
+            <element signature="e#643#708#0" expanded="true" />
+            <element signature="e#4290#4394#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sources/tools/aio_function_tools/aio_expression_parser/aio_inner_parcers/aio_type_parser.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sources/tools/aio_function_tools/aio_expression_parser/aio_inner_parcers/aio_double_parser.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret lean-forward="true" />
+          <folding>
+            <element signature="e#1#85#0" expanded="true" />
+            <element signature="e#662#2269#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sources/tools/aio_function_tools/aio_expression_parser/aio_inner_parcers/aio_string_parser.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret lean-forward="true" />
+          <folding>
+            <element signature="e#1#64#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/headers/tools/aio_function_tools/aio_expression_parser/aio_expression_parser.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="583">
+          <caret line="37" selection-start-line="37" selection-end-line="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sources/tools/aio_function_tools/aio_expression_parser/aio_inner_parcers/aio_boolean_parser.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="56">
+          <caret line="245" column="100" selection-start-line="245" selection-start-column="100" selection-end-line="245" selection-end-column="100" />
+          <folding>
+            <element signature="e#1#76#0" expanded="true" />
+            <element signature="e#609#674#0" expanded="true" />
+            <element signature="e#3125#8190#0" />
+            <element signature="e#8449#10145#0" />
+            <element signature="e#10147#11792#0" />
+            <element signature="e#11794#13334#0" />
+            <element signature="e#13336#14091#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sources/tools/aio_function_tools/aio_expression_parser/aio_expression_assistant.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="61" selection-start-line="61" selection-end-line="61" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sources/tools/aio_function_tools/aio_expression_parser/aio_inner_parcers/aio_int_parser.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="76" lean-forward="true" selection-start-line="76" selection-end-line="76" />
+          <folding>
+            <element signature="e#1#72#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aio_programs/test.aio">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="23" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
         </state>
       </provider>
     </entry>

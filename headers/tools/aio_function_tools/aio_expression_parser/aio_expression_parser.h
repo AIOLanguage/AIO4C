@@ -21,10 +21,26 @@ struct aio_value *parse_value_hook(
  * Expression assistant.
  */
 
+struct aio_result *make_parentheses(
+        const struct str_hook *expression_hook,
+        const struct aio_context *context,
+        const struct aio_function_control_graph *control_graph,
+        struct aio_value *(*cast_function)(struct aio_value *),
+        struct aio_result *(*make_value_function)(const struct str_hook *)
+);
+
 void make_expression_chunks_and_count_next_point(
-        const_str_hook *expression_hook,
-        str_hook_list *expression_list,
+        const struct str_hook *expression_hook,
+        struct str_hook_list *expression_list,
         int *next_point
+);
+
+struct aio_result *make_function_or_variable(
+        const struct str_hook *expression_hook,
+        const struct aio_context *context,
+        const struct aio_function_control_graph *control_graph,
+        struct aio_value *(*cast_function)(struct aio_value *),
+        struct aio_result *(*make_value_function)(const struct str_hook *)
 );
 
 /**
