@@ -73,5 +73,5 @@ const_aio_function_definition *get_aio_function_definition_in_list_by_name(const
             return list->definitions[i];
         }
     }
-    throw_error_with_tag(AIO_FUNCTION_DEFINITION_TAG, "Can not get aio function definition in list!!!");
+    return NULL;
 }

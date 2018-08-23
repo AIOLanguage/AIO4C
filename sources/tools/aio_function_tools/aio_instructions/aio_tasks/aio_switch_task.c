@@ -9,6 +9,7 @@
 #ifdef AIO_SWITCH_TASK_DEBUG
 
 #include "../../../../../headers/lib/utils/log_utils/log_utils.h"
+#include "../../../../../headers/lib/utils/error_utils/error_utils.h"
 
 #endif
 
@@ -49,11 +50,19 @@ void perform_aio_switch_instruction(const_aio_function_instruction *instruction,
 #ifdef AIO_SWITCH_TASK_DEBUG
     log_info(AIO_SWITCH_TASK_TAG, "Start to parse switch value...");
 #endif
-    aio_value *switch_value = parse_value_string(switch_value_string, context_ref, NULL);
+    aio_value *switch_value = parse_value_string(switch_value_string, context_ref, control_graph);
+#ifdef AIO_SWITCH_TASK_DEBUG
+    log_info_aio_value(AIO_SWITCH_TASK_TAG, "SWITCH_VALUE", switch_value);
+    log_info_int(AIO_SWITCH_TASK_TAG, "Number of cases:", number_of_cases);
+#endif
     //Parse each case value:
     for (int i = 0; i < number_of_cases; ++i) {
         const_string case_value_string = case_value_strings[i];
-        aio_value *case_value = parse_value_string(case_value_string, context_ref, NULL);
+#ifdef AIO_SWITCH_TASK_DEBUG
+        log_info_string(AIO_SWITCH_TASK_TAG, "Case string:", case_value_string);
+#endif
+        aio_value *case_value = parse_value_string(case_value_string, context_ref, control_graph);
+        throw_error_with_tag(AIO_SWITCH_TASK_TAG, "STOP HERE!");
         if (are_equal_aio_values(switch_value, case_value)) {
             was_successful_case = TRUE;
             const_aio_function_instruction_holder *case_holder = case_holders[i];

@@ -65,6 +65,12 @@ void free_aio_variable_definition_list(struct aio_variable_definition_list *list
 const struct aio_variable_list *upbuild_variable_map_by_definitions(const struct aio_variable_definition_list *list);
 
 /**
+ * Log utils.
+ */
+
+void log_info_aio_variable_definition(const char *tag, const struct aio_variable_definition *definition);
+
+/**
  * Typedef utils.
  */
 

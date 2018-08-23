@@ -45,6 +45,7 @@ static void put_arg_values_in_aio_control_graph(
             aio_variable *argument = variables[i];
             const_aio_variable_definition *argument_definition = argument->definition;
             str_hook *required_type = argument_definition->type;
+            argument->init_type = AIO_VARIABLE_INITIALIZED;
 #ifdef AIO_CONTROL_GRAPH_DEBUG
             log_info(AIO_CONTROL_GRAPH_TAG, ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
             log_info_str_hook(AIO_CONTROL_GRAPH_TAG, "Required type:", required_type);
@@ -78,9 +79,17 @@ static void put_arg_values_in_aio_control_graph(
 
 const_aio_function_control_graph *new_aio_function_control_graph(const_aio_function_control_graph *parent,
                                                                  const_aio_function_instruction_holder *holder,
-                                                                 aio_bundle *bundle_ref, const_aio_context *context_ref,
+                                                                 aio_bundle *bundle_ref,
+                                                                 const_aio_context *context_ref,
                                                                  aio_function_system_state *system_state_ref)
 {
+#ifdef AIO_CONTROL_GRAPH_DEBUG
+    log_info(AIO_CONTROL_GRAPH_TAG, "Start to create control graph...");
+    log_info_boolean(AIO_CONTROL_GRAPH_TAG, "PARENT:", parent != NULL);
+    log_info_boolean(AIO_CONTROL_GRAPH_TAG, "HOLDER:", holder != NULL);
+    log_info_boolean(AIO_CONTROL_GRAPH_TAG, "BUNDLE:", bundle_ref != NULL);
+    log_info_boolean(AIO_CONTROL_GRAPH_TAG, "CONTEXT:", context_ref != NULL);
+#endif
     //Extract holder materials:
     const_aio_function_instruction_list *instruction_list = holder->instruction_list;
     const_aio_variable_definition_list *variable_definition_list = holder->variable_definition_list;
@@ -93,6 +102,9 @@ const_aio_function_control_graph *new_aio_function_control_graph(const_aio_funct
     graph->bundle_ref = bundle_ref;
     graph->context_ref = context_ref;
     graph->system_state_ref = system_state_ref;
+#ifdef AIO_CONTROL_GRAPH_DEBUG
+    log_info(AIO_CONTROL_GRAPH_TAG, "Control graph was created!");
+#endif
     return graph;
 }
 

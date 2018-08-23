@@ -75,7 +75,7 @@ static const_str_hook *define_type_by_first_element(
         if (watcher->mode == POINT_WATCHER_ACTIVE_MODE) {
             const_boolean is_end_of_element = is_whitespace_cond || is_sign(symbol) || is_opening_parenthesis(symbol);
             if (is_end_of_element) {
-                watcher->start = watcher->pointer;
+                watcher->end = watcher->pointer;
                 first_element_hook = new_str_hook_by_point_watcher(expression_string, watcher);
                 break;
             }
@@ -93,14 +93,24 @@ static const_str_hook *define_type_by_first_element(
     const_aio_variable *variable = get_aio_variable_in_function_control_graph(first_element_hook, control_graph);
     if (variable != NULL) {
         const_aio_variable_definition *definition = variable->definition;
+#ifdef AIO_EXPRESSION_PARSER_DEBUG
+        log_info_str_hook(AIO_EXPRESSION_PARSER_TAG, "Found variable:", definition->name);
+        log_info_str_hook(AIO_EXPRESSION_PARSER_TAG, "Type:", definition->type);
+#endif
         return new_str_hook_by_other(definition->type);
     }
+#ifdef AIO_EXPRESSION_PARSER_DEBUG
+    log_info(AIO_EXPRESSION_PARSER_TAG, "Didn't find variable!");
+#endif
     //Maybe is function?
     const_aio_function_definition_list *function_definition_list = context->function_manager->definition_list;
     const_aio_function_definition *function_definition = get_aio_function_definition_in_list_by_name(
             function_definition_list, first_element_hook
     );
     if (function_definition != NULL) {
+#ifdef AIO_EXPRESSION_PARSER_DEBUG
+        log_info(AIO_EXPRESSION_PARSER_TAG, "Found function!");
+#endif
         const_str_hook_list *output_type_list = function_definition->output_type_list;
         const_boolean is_single_return = output_type_list->size == 1;
         if (is_single_return) {
@@ -160,22 +170,40 @@ aio_value *parse_value_hook(
 )
 {
     const_str_hook *expression_type = define_type(expression_hook, context, control_graph);
+#ifdef AIO_EXPRESSION_PARSER_DEBUG
+    log_info_str_hook(AIO_EXPRESSION_PARSER_TAG, "Found expression type:", expression_type);
+#endif
     if (!is_aio_type_hooked(expression_type)) {
         throw_error_with_hook(AIO_EXPRESSION_PARSER_TAG, "AIO core doesn't support type:", expression_type);
     }
     //Maybe is boolean?
-    if (is_hook_equals_str(expression_hook, INTEGER)) {
+    if (is_hook_equals_str(expression_type, INTEGER)) {
+#ifdef AIO_EXPRESSION_PARSER_DEBUG
+        log_info(AIO_EXPRESSION_PARSER_TAG, "Parse int expression...");
+#endif
         return parse_int_value_string(expression_hook, context, control_graph);
     }
-    if (is_hook_equals_str(expression_hook, DOUBLE)) {
+    if (is_hook_equals_str(expression_type, DOUBLE)) {
+#ifdef AIO_EXPRESSION_PARSER_DEBUG
+        log_info(AIO_EXPRESSION_PARSER_TAG, "Parse double expression...");
+#endif
         return parse_double_value_string(expression_hook, context, control_graph);
     }
-    if (is_hook_equals_str(expression_hook, STRING)) {
+    if (is_hook_equals_str(expression_type, STRING)) {
+#ifdef AIO_EXPRESSION_PARSER_DEBUG
+        log_info(AIO_EXPRESSION_PARSER_TAG, "Parse string expression...");
+#endif
         return parse_string_value_string(expression_hook, context, control_graph);
     }
-    if (is_hook_equals_str(expression_hook, BOOLEAN)) {
+    if (is_hook_equals_str(expression_type, BOOLEAN)) {
+#ifdef AIO_EXPRESSION_PARSER_DEBUG
+        log_info(AIO_EXPRESSION_PARSER_TAG, "Parse boolean expression...");
+#endif
         return parse_boolean_value_string(expression_hook, context, control_graph);
     } else {
+#ifdef AIO_EXPRESSION_PARSER_DEBUG
+        log_info(AIO_EXPRESSION_PARSER_TAG, "Parse type expression...");
+#endif
         return parse_type_value_string(expression_hook, context, control_graph);
     }
 }

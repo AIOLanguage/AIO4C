@@ -152,7 +152,8 @@ void handle_return_value_scope(const_string source_code, struct aio_spider *spid
     const_boolean is_whitespace_cond = is_space_or_line_break(current_symbol);
     const_boolean is_close_parenthesis_cond = is_closing_parenthesis(current_symbol);
     const_boolean is_letter_cond = isalpha(current_symbol);
-    const_boolean is_letter_or_number_or_close_parenthesis_cond = isalnum(current_symbol) || is_close_parenthesis_cond;
+    const_boolean is_single_quote_cond = is_single_quote(current_symbol);
+    const_boolean is_end_of_expression = isalnum(current_symbol) || is_close_parenthesis_cond || is_single_quote_cond;
     const_boolean is_close_brace_cond = is_closing_brace(current_symbol);
     if (is_whitespace_cond && value_watcher->mode == POINT_WATCHER_ACTIVE_MODE) {
         value_watcher->pointer++;
@@ -182,7 +183,7 @@ void handle_return_value_scope(const_string source_code, struct aio_spider *spid
     } else {
         value_watcher->mode = POINT_WATCHER_PASSIVE_MODE;
         value_watcher->pointer = 0;
-        if (is_letter_or_number_or_close_parenthesis_cond) {
+        if (is_end_of_expression) {
             value_watcher->mode = POINT_WATCHER_ACTIVE_MODE;
             return;
         }

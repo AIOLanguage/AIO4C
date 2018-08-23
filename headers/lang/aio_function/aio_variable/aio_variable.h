@@ -17,9 +17,14 @@ typedef struct aio_variable_definition;
  * Variable.
  */
 
+typedef enum aio_variable_init_type {
+    AIO_VARIABLE_NOT_INITIALIZED, AIO_VARIABLE_INITIALIZED
+} aio_variable_init_type;
+
 typedef struct aio_variable {
     const struct aio_variable_definition *definition;
     struct aio_value *value;
+    enum aio_variable_init_type init_type;
 } aio_variable;
 
 struct aio_variable *new_aio_variable_by_definition(

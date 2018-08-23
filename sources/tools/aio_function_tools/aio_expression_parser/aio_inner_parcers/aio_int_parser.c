@@ -10,7 +10,7 @@
 
 #define AIO_INT_PARSER_DEBUG
 
-#define AIO_INT_PARSER_TAG "#define AIO_INT_PARSER"
+#define AIO_INT_PARSER_TAG "AIO_INT_PARSER"
 
 /**
  * Declare functions.

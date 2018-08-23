@@ -1,6 +1,5 @@
 
 #include <stdlib.h>
-#include <stdio.h>
 #include "../headers/lang/aio_core/aio_core.h"
 #include "../headers/lib/utils/str_hook/str_hook_utils/str_hook_utils.h"
 
@@ -16,7 +15,6 @@
 
 #include "../headers/lang/aio_type/aio_type.h"
 #include "../headers/lib/utils/log_utils/log_utils.h"
-#include "../headers/lang/aio_function/aio_value/aio_value.h"
 
 #endif
 
@@ -26,7 +24,7 @@ aio_bundle *create_test_bundle()
     add_aio_value_in_list(input_value_list, new_aio_int_value(2));
     add_aio_value_in_list(input_value_list, new_aio_double_value(1.25));
     add_aio_value_in_list(input_value_list, new_aio_int_value(7));
-    add_aio_value_in_list(input_value_list, new_aio_string_value("'AIO_DEVELOPMENT'"));
+    add_aio_value_in_list(input_value_list, new_aio_string_value("AIO_DEVELOPMENT"));
     add_aio_value_in_list(input_value_list, new_aio_string_value("tru"));
     return new_aio_bundle(input_value_list);
 }
@@ -76,9 +74,7 @@ void make_test()
     invoke_static_function_in_context(context, test_hook, bundle);
     //------------------------------------------------------------------------------------------------------------------
     //찌꺼기 수집기 (Garbage collector):
-    free((void *) aio_test_file_path);
     free_const_str_hook(test_hook);
-    free((void *) test_function_name);
     free_aio_bundle(bundle);
 #ifdef AIO_PROJECT_MEMORY_MANAGER
     free_aio_project_controller();

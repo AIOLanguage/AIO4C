@@ -10,6 +10,14 @@
 #include "../../../../../headers/lang/aio_reserved_names/aio_reserved_names_container.h"
 #include "../../../../../headers/lib/utils/char_utils/char_utils.h"
 
+//#define STRING_HOOK_DEBUG
+
+#ifdef STRING_HOOK_DEBUG
+
+#include "../../../../../headers/lib/utils/log_utils/log_utils.h"
+
+#endif
+
 #define STRING_HOOK_TAG "STRING_HOOK"
 
 /**
@@ -152,6 +160,10 @@ boolean are_equal_hooked_str(const_str_hook *hook_1, const_str_hook *hook_2)
 
 boolean is_hook_equals_str(const_str_hook *hook, const_string str)
 {
+#ifdef STRING_HOOK_DEBUG
+    log_info_str_hook(STRING_HOOK_TAG, "Hook:", hook);
+    log_info_string(STRING_HOOK_TAG, "String:", str);
+#endif
     const int hook_size = get_str_hook_size(hook);
     const int str_length = strlen(str);
     if (hook_size != str_length) {
@@ -213,7 +225,6 @@ void log_info_str_hook(const_string tag, const_string message, const_str_hook *h
         printf("%c", hook->source_ref[i]);
     }
     printf("-\n");
-    //free((void *) message);
 }
 
 void log_info_str_hook_list(const_string tag, const_string message, const_str_hook_list *list)
