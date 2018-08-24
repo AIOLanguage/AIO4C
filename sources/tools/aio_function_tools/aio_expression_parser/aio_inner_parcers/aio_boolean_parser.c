@@ -17,6 +17,30 @@
 
 #endif
 
+static void set_int_value(boolean *value, const_str_hook *captured_element)
+{
+    const int int_value = str_hook_to_int(captured_element);
+    if (int_value == 1) {
+        *value = TRUE;
+    }
+    if (int_value == 0) {
+        *value = FALSE;
+    }
+    throw_error_with_tag(AIO_BOOLEAN_PARSER_TAG, "Can not cast int to boolean!");
+}
+
+static void set_double_value(boolean *value, const_str_hook *captured_element)
+{
+    const double double_value = str_hook_to_double(captured_element);
+    if (double_value == 1.0) {
+        *value = TRUE;
+    }
+    if (double_value == 0.0) {
+        *value = FALSE;
+    }
+    throw_error_with_tag(AIO_BOOLEAN_PARSER_TAG, "Can not cast double to boolean!");
+}
+
 static aio_result *make_boolean(const_str_hook *expression_hook)
 {
 #ifdef AIO_BOOLEAN_PARSER_DEBUG
@@ -37,34 +61,27 @@ static aio_result *make_boolean(const_str_hook *expression_hook)
     boolean value = 0;
     //Maybe int value?
     if (is_int_hooked(captured_element)) {
-        const int int_value = str_hook_to_int(captured_element);
-        if (int_value == 1) {
-            value = TRUE;
-        }
-        if (int_value == 0) {
-            value = FALSE;
-        }
-        throw_error_with_tag(AIO_BOOLEAN_PARSER_TAG, "Can not cast int to boolean!");
+        set_int_value(&value, captured_element);
     } else
         //Maybe double value?
     if (is_double_hooked(captured_element)) {
-        const double double_value = str_hook_to_double(captured_element);
-        if (double_value == 1.0) {
-            value = TRUE;
-        }
-        if (double_value == 0.0) {
-            value = FALSE;
-        }
-        throw_error_with_tag(AIO_BOOLEAN_PARSER_TAG, "Can not cast double to boolean!");
+        set_double_value(&value, captured_element);
     } else
         //Maybe string value?
     if (is_string_hooked(captured_element)) {
-        const_str_hook *str_hook = lower_str_hook_quotes(captured_element);
-        if (is_boolean_hooked(str_hook)) {
-            value = str_hook_to_boolean(str_hook);
+        const_str_hook *naked_hook = lower_str_hook_quotes(captured_element);
+        if (is_boolean_hooked(naked_hook)) {
+            value = str_hook_to_boolean(naked_hook);
+        } else if (is_int_hooked(naked_hook)) {
+            set_int_value(&value, naked_hook);
+        } else if (is_double_hooked(naked_hook)) {
+            set_double_value(&value, naked_hook);
         } else {
             throw_error_with_tag(AIO_BOOLEAN_PARSER_TAG, "Can not cast string to boolean!");
         }
+        //--------------------------------------------------------------------------------------------------------------
+        //찌꺼기 수집기 (Garbage collector):
+        free_const_str_hook(naked_hook);
     } else
         //Maybe boolean value?
     if (is_boolean_hooked(captured_element)) {
@@ -78,6 +95,9 @@ static aio_result *make_boolean(const_str_hook *expression_hook)
 #ifdef AIO_BOOLEAN_PARSER_DEBUG
     log_info_str_hook(AIO_BOOLEAN_PARSER_TAG, "After boolean making rest:", rest_part);
 #endif
+    //------------------------------------------------------------------------------------------------------------------
+    //찌꺼기 수집기 (Garbage collector):
+    free_str_hook(captured_element);
     return new_aio_int_result(value, rest_part);
 }
 

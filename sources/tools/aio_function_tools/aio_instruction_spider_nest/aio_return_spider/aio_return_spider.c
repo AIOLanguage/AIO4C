@@ -35,10 +35,13 @@ void refresh_return_spider(aio_spider *spider, point_watcher *ripper_watcher) {
     //------------------------------------------------------------------------------------------------------------------
     //찌꺼기 수집기 (Garbage collector):
     string_list *old_return_values = materials->value_list;
+    materials->value_list = new_string_list();
     free_strings_in_list(old_return_values);
     free_string_list(old_return_values);
     //------------------------------------------------------------------------------------------------------------------
-    materials->value_list = new_string_list();
+#ifdef AIO_RETURN_SPIDER_DEBUG
+    log_info(AIO_RETURN_SPIDER_TAG, "Refresh is complete!");
+#endif
 }
 
 /**

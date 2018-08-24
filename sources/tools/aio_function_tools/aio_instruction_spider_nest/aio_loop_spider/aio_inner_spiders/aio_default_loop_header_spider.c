@@ -57,6 +57,9 @@ static void refresh_default_loop_header_materials(aio_default_loop_header_materi
     free(old_init_value);
     free(old_loop_condition);
     free(old_step_value);
+#ifdef AIO_DEFAULT_LOOP_HEADER_SPIDER_DEBUG
+    log_info(AIO_DEFAULT_LOOP_HEADER_SPIDER_TAG, "Refresh is complete!");
+#endif
 }
 
 static void refresh_default_loop_header_spider(aio_spider *spider, point_watcher *parent_watcher) {

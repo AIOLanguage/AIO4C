@@ -43,6 +43,10 @@ void refresh_loop_spider(aio_spider *spider, point_watcher *ripper_watcher) {
     reset_point_watcher(materials->header_watcher);
     reset_point_watcher(materials->body_watcher);
     spider->message = AIO_SPIDER_NOT_FOUND_MATERIALS;
+#ifdef AIO_LOOP_SPIDER_DEBUG
+    log_info(AIO_LOOP_SPIDER_TAG, "Refresh is complete!");
+    log_info(AIO_LOOP_SPIDER_TAG, "Refresh is complete!");
+#endif
 }
 
 /**

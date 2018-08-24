@@ -34,12 +34,6 @@ const struct aio_context *new_aio_context(const char *path);
 
 void upbuild_aio_context(const struct aio_context *context);
 
-void invoke_static_function_in_context(
-        const struct aio_context *context,
-        const struct str_hook *function_name,
-        struct aio_bundle *bundle
-);
-
 void free_aio_context(const struct context *);
 
 /**

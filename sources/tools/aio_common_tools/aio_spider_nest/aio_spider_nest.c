@@ -17,9 +17,21 @@
  */
 
 void refresh_aio_spider_nest(aio_spider_nest *nest, point_watcher *parent_watcher) {
+#ifdef AIO_SPIDER_NEST_DEBUG
+    log_info_int(AIO_SPIDER_NEST_TAG, "Number of spiders:", nest->number_of_spiders);
+#endif
     for (int i = 0; i < nest->number_of_spiders; ++i) {
+#ifdef AIO_SPIDER_NEST_DEBUG
+        log_info(AIO_SPIDER_NEST_TAG, "Get spider:");
+#endif
         aio_spider *spider = nest->spiders[i];
+#ifdef AIO_SPIDER_NEST_DEBUG
+        log_info_int(AIO_SPIDER_NEST_TAG, "START TO REFRESH", i);
+#endif
         spider->refresh(spider, parent_watcher);
+#ifdef AIO_SPIDER_NEST_DEBUG
+        log_info_int(AIO_SPIDER_NEST_TAG, "END TO REFRESH", i);
+#endif
     }
 }
 

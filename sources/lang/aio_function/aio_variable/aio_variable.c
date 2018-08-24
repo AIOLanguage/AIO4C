@@ -25,11 +25,14 @@ aio_variable *new_aio_variable_by_definition(const_aio_variable_definition *vari
     return variable;
 }
 
-aio_variable *get_aio_variable_in_function_control_graph(
+aio_variable *force_get_aio_variable_in_function_control_graph(
         const_str_hook *variable_name,
         const_aio_function_control_graph *control_graph
 )
 {
+#ifdef AIO_VARIABLE_DEBUG
+    log_info_str_hook(AIO_VARIABLE_TAG, "Try to get variable:", variable_name);
+#endif
     const_aio_variable_list *list = control_graph->variable_list;
 #ifdef AIO_VARIABLE_DEBUG
     log_info(AIO_VARIABLE_TAG, "----------------------------------");
@@ -41,17 +44,35 @@ aio_variable *get_aio_variable_in_function_control_graph(
     if (variable == NULL) {
         const_aio_function_control_graph *parent = control_graph->parent;
         if (parent != NULL) {
-            return get_aio_variable_in_function_control_graph(variable_name, parent);
+            log_info(AIO_VARIABLE_TAG, "Parent is not null!");
+            return force_get_aio_variable_in_function_control_graph(variable_name, parent);
         } else {
+            log_info(AIO_VARIABLE_TAG, "Parent is null!");
             return NULL;
         }
     } else {
+#ifdef AIO_VARIABLE_DEBUG
+        log_info_aio_variable_definition(AIO_VARIABLE_TAG, variable->definition);
+#endif
+        return variable;
+    }
+}
+
+aio_variable *get_aio_variable_in_function_control_graph(
+        const_str_hook *variable_name,
+        const_aio_function_control_graph *control_graph
+)
+{
+    aio_variable *variable = force_get_aio_variable_in_function_control_graph(variable_name, control_graph);
+    if (variable != NULL) {
         const_boolean is_not_reached_variable_in_graph = variable->init_type == AIO_VARIABLE_NOT_INITIALIZED;
         if (is_not_reached_variable_in_graph) {
             return NULL;
         } else {
             return variable;
         }
+    } else {
+        return NULL;
     }
 }
 
@@ -66,11 +87,11 @@ void free_aio_variable(aio_variable *variable)
 
 aio_variable_list *new_aio_variable_list()
 {
-    aio_variable_list *variable_map = new_object(sizeof(aio_variable_list));
-    variable_map->capacity = 2;
-    variable_map->size = 0;
-    variable_map->variables = new_object_array(2, sizeof(aio_variable *));
-    return variable_map;
+    aio_variable_list *list = new_object(sizeof(aio_variable_list));
+    list->capacity = 2;
+    list->size = 0;
+    list->variables = new_object_array(2, sizeof(aio_variable *));
+    return list;
 }
 
 void update_memory_in_aio_variable_list(aio_variable_list *variable_map)
@@ -121,13 +142,23 @@ const struct aio_variable_list *upbuild_variable_map_by_definitions(const_aio_va
 #ifdef AIO_VARIABLE_DEBUG
     for (int j = 0; j < definition_list_size; ++j) {
         log_info_aio_variable_definition(AIO_VARIABLE_TAG, definitions[j]);
+        log_info(AIO_VARIABLE_TAG, "...");
     }
 #endif
     //Prepare to building:
+#ifdef AIO_VARIABLE_DEBUG
+    log_info(AIO_VARIABLE_TAG, "Create variable list...");
+#endif
     aio_variable_list *variable_list = new_aio_variable_list();
     for (int i = 0; i < definition_list_size; ++i) {
         const_aio_variable_definition *definition = definitions[i];
+#ifdef AIO_VARIABLE_DEBUG
+        log_info(AIO_VARIABLE_TAG, "Create variable...");
+#endif
         aio_variable *new_variable = new_aio_variable_by_definition(definition, NULL);
+#ifdef AIO_VARIABLE_DEBUG
+        log_info(AIO_VARIABLE_TAG, "Add variable to list...");
+#endif
         add_aio_variable_in_list(variable_list, new_variable);
     }
 #ifdef AIO_VARIABLE_DEBUG

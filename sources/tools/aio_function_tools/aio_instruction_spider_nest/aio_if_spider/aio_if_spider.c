@@ -43,7 +43,12 @@ void refresh_if_spider(aio_spider *spider, point_watcher *ripper_watcher) {
     reset_point_watcher(materials->false_watcher);
     materials->scope_type = AIO_IF_MODIFIER_SCOPE;
     materials->branch_type = AIO_UNDEFINED_BRANCHES;
+    //------------------------------------------------------------------------------------------------------------------
+    //찌꺼기 수집기 (Garbage collector):
     free(materials->condition);
+#ifdef AIO_IF_SPIDER_DEBUG
+    log_info(AIO_IF_SPIDER_TAG, "Refresh is complete!");
+#endif
 }
 
 /**

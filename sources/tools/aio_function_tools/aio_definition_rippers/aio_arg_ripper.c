@@ -6,7 +6,6 @@
 #include "../../../../headers/lib/utils/char_utils/char_utils.h"
 #include "../../../../headers/lib/utils/point_watcher/point_watcher.h"
 #include "../../../../headers/lang/aio_function/aio_variable/aio_definition/aio_variable_definition.h"
-#include "../../../../headers/lib/utils/str_hook/str_hook.h"
 #include "../../../../headers/lib/utils/str_hook/str_hook_utils/str_hook_utils.h"
 
 #define TYPE_VS_NAME 2
@@ -19,11 +18,10 @@
 
 #ifdef AIO_ARG_RIPPER_DEBUG
 
-#include "../../../../headers/lib/utils/log_utils/log_utils.h"
-
 #endif
 
-aio_variable_definition_list *dig_arguments(const_string source_code, int *pointer_reference) {
+aio_variable_definition_list *dig_arguments(const_string source_code, int *pointer_reference)
+{
     aio_variable_definition_list *arg_definition_map = new_aio_variable_definition_list();
     const size_t source_code_length = strlen(source_code);
     point_watcher *watcher = new_point_watcher();
@@ -73,6 +71,9 @@ aio_variable_definition_list *dig_arguments(const_string source_code, int *point
             str_hook *arg_type = NULL;
             const_str_hook *arg_name = NULL;
             boolean is_mutable = FALSE;
+#ifdef AIO_ARG_RIPPER_DEBUG
+            log_info_str_hook_list(AIO_ARG_RIPPER_TAG, "CLEAN CONTENT ----->", clean_arg_content_list);
+#endif
             switch (clean_arg_content_list->size) {
                 case TYPE_VS_NAME:
                     arg_type = new_str_hook_by_other(hooks[0]);

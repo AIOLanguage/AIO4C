@@ -48,6 +48,9 @@ void refresh_assign_spider(aio_spider *spider, point_watcher *ripper_watcher) {
     free_str_hook_list(data_list);
     //------------------------------------------------------------------------------------------------------------------
     materials->variable_data_list = new_str_hook_list();
+#ifdef AIO_ASSIGN_SPIDER_DEBUG
+    log_info(AIO_ASSIGN_SPIDER_TAG, "Refresh is complete!");
+#endif
 }
 
 /**
@@ -347,7 +350,7 @@ static aio_variable_definition *create_local_variable_definition(
     switch (declaration_type) {
         case AIO_ASSIGN_WILL_DEFINED:
             variable_name = new_str_hook_by_other(variable_materials[0]);
-            variable_type = new_str_hook_by_string(AIO_WILL_DEFINED);
+            variable_type = new_str_hook_by_string(AIO_NOT_INIT_TYPE);
             break;
         case AIO_ASSIGN_REFERENCE:
             variable_name = new_str_hook_by_other(variable_materials[1]);

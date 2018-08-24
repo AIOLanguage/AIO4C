@@ -11,8 +11,10 @@
 
 #define VOID "Voi"
 
-#define AIO_WILL_DEFINED "###"
+#define AIO_NOT_INIT_TYPE "###"
 
 _Bool is_aio_type_hooked(const struct str_hook *hook);
+
+_Bool is_aio_type_initialized(const struct str_hook *hook);
 
 #endif //AIO_TYPE_H

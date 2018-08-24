@@ -50,6 +50,9 @@ void refresh_switch_spider(aio_spider *spider, point_watcher *ripper_watcher) {
     free_str_hooks_in_list(old_case_body_list);
     free_str_hook_list(old_case_value_list);
     free_str_hook_list(old_case_body_list);
+#ifdef AIO_SWITCH_SPIDER_DEBUG
+    log_info(AIO_SWITCH_SPIDER_TAG, "Refresh is complete!");
+#endif
 }
 
 /**

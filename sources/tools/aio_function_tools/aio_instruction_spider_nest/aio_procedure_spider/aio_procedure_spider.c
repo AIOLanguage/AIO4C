@@ -32,6 +32,9 @@ void refresh_procedure_spider(aio_spider *spider, point_watcher *ripper_watcher)
     main_watcher->start = ripper_watcher->pointer;
     main_watcher->end = ripper_watcher->pointer;
     main_watcher->mode = POINT_WATCHER_PASSIVE_MODE;
+#ifdef AIO_PROCEDURE_SPIDER_DEBUG
+    log_info(AIO_PROCEDURE_SPIDER_TAG, "Refresh is complete!");
+#endif
 }
 
 /**

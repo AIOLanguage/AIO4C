@@ -9,7 +9,6 @@
 #ifdef AIO_SWITCH_TASK_DEBUG
 
 #include "../../../../../headers/lib/utils/log_utils/log_utils.h"
-#include "../../../../../headers/lib/utils/error_utils/error_utils.h"
 
 #endif
 
@@ -62,7 +61,10 @@ void perform_aio_switch_instruction(const_aio_function_instruction *instruction,
         log_info_string(AIO_SWITCH_TASK_TAG, "Case string:", case_value_string);
 #endif
         aio_value *case_value = parse_value_string(case_value_string, context_ref, control_graph);
-        throw_error_with_tag(AIO_SWITCH_TASK_TAG, "STOP HERE!");
+#ifdef AIO_SWITCH_TASK_DEBUG
+        log_info_aio_value(AIO_SWITCH_TASK_TAG, "Case value:", case_value);
+        log_info_boolean(AIO_SWITCH_TASK_TAG, "Are equal values:", are_equal_aio_values(switch_value, case_value));
+#endif
         if (are_equal_aio_values(switch_value, case_value)) {
             was_successful_case = TRUE;
             const_aio_function_instruction_holder *case_holder = case_holders[i];
@@ -70,7 +72,12 @@ void perform_aio_switch_instruction(const_aio_function_instruction *instruction,
         }
     }
     if (!was_successful_case) {
+#ifdef AIO_SWITCH_TASK_DEBUG
+        log_info(AIO_SWITCH_TASK_TAG, "Perform else block...");
+#endif
         const_aio_function_instruction_holder *else_holder = task->else_holder;
         inflate_new_aio_function_control_graph(control_graph, else_holder, bundle_ref, context_ref);
     }
 }
+
+//throw_error_with_tag(AIO_SWITCH_TASK_TAG, "STOP HERE!");

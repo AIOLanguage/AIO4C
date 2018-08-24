@@ -40,14 +40,20 @@ static void make_instruction_weaving(const_string source_code, point_watcher *ri
                   source_code[ripper_watcher->pointer]);
 #endif
     //Refresh spiders:
+#ifdef AIO_INSTRUCTION_RIPPER_DEBUG
+    log_info(AIO_INSTRUCTION_RIPPER_TAG, "Start to refresh!");
+#endif
     refresh_aio_spider_nest(spider_nest, ripper_watcher);
+#ifdef AIO_INSTRUCTION_RIPPER_DEBUG
+    log_info(AIO_INSTRUCTION_RIPPER_TAG, "Refresh is complete!");
+#endif
     //리퍼 당직자를 바꾼다 (Shift ripper watcher):
     ripper_watcher->mode = POINT_WATCHER_PASSIVE_MODE;
     //거미 무리 리셋 (Spider nest refresh):
     spider_nest->mode = AIO_ALL_SPIDERS_WORK;
     spider_nest->active_spider = NULL;
 #ifdef AIO_INSTRUCTION_RIPPER_DEBUG
-    log_info(AIO_INSTRUCTION_RIPPER_TAG, "All spiders work:");
+    log_info(AIO_INSTRUCTION_RIPPER_TAG, "All spiders work!");
 #endif
 }
 

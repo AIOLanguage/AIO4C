@@ -82,4 +82,6 @@ string boolean_to_string(const_boolean src);
 
 void free_strings(const_string_array *src_reference);
 
+void free_string(char **src_ref);
+
 #endif //STRING_UTILS_H

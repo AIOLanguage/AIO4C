@@ -15,6 +15,7 @@
 #ifdef AIO_EXPRESSION_ASSISTANT_DEBUG
 
 #include "../../../../headers/lib/utils/log_utils/log_utils.h"
+#include "../../../../headers/lang/aio_function/aio_function.h"
 
 #endif
 
@@ -114,8 +115,11 @@ struct aio_result *make_function_or_variable(
                 add_aio_value_in_list(input_values, inner_value);
             }
             aio_bundle *bundle = new_aio_bundle(input_values);
-            invoke_static_function_in_context(context, function_or_variable_name, bundle);
-            aio_value_list *output_values = bundle->output_values;
+            aio_value_list *output_values = invoke_static_function_in_context(
+                    context,
+                    function_or_variable_name,
+                    bundle
+            );
             if (output_values->size == 1) {
                 aio_value *function_value = cast_function(output_values->values[0]);
                 str_hook *rest = new_str_hook(expression_str);

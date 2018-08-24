@@ -31,7 +31,9 @@ typedef struct aio_spider {
     const aio_spider_message (*is_found_context)(const_string source_code, point_watcher *parent_watcher,
                                                      struct aio_spider *spider);
 
-    void (*weave_context_for)(void *holder, const_string source_code, point_watcher *parent_watcher,
+    void (*weave_context_for)(void *holder,
+            const_string source_code,
+            point_watcher *parent_watcher,
             struct aio_spider *current_spider);
 
     /**

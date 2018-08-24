@@ -273,3 +273,12 @@ string boolean_to_string(const_boolean src)
         return new_string(FALSE);
     }
 }
+
+void free_string(string *src_ref)
+{
+    if (src_ref != NULL) {
+        string old_string = *src_ref;
+        *src_ref = NULL;
+        free(old_string);
+    }
+}

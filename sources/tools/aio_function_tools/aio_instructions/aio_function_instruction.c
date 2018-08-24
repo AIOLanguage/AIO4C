@@ -34,19 +34,19 @@ void perform_aio_instruction(const_aio_function_instruction *instruction,
     switch (task_type) {
         case AIO_ASSIGN_TASK:
 #ifdef AIO_FUNCTION_INSTRUCTION_DEBUG
-            log_info(AIO_FUNCTION_INSTRUCTION_TAG, "Perform instruction...");
+            log_info(AIO_FUNCTION_INSTRUCTION_TAG, "Perform assign instruction...");
 #endif
             perform_aio_assign_instruction(instruction, control_graph);
             break;
         case AIO_BREAK_TASK:
 #ifdef AIO_FUNCTION_INSTRUCTION_DEBUG
-            log_info(AIO_FUNCTION_INSTRUCTION_TAG, "Perform instruction...");
+            log_info(AIO_FUNCTION_INSTRUCTION_TAG, "Perform break instruction...");
 #endif
             perform_aio_break_instruction(control_graph);
             break;
         case AIO_CONTINUE_TASK:
 #ifdef AIO_FUNCTION_INSTRUCTION_DEBUG
-            log_info(AIO_FUNCTION_INSTRUCTION_TAG, "Perform assign instruction...");
+            log_info(AIO_FUNCTION_INSTRUCTION_TAG, "Perform continue instruction...");
 #endif
             perform_aio_continue_instruction(control_graph);
             break;
@@ -95,10 +95,10 @@ aio_function_instruction_list *new_aio_function_instruction_list()
     return list;
 }
 
-void update_memory_in_instruction_list(aio_function_instruction_list *list)
+static void update_memory_in_instruction_list(aio_function_instruction_list *list)
 {
-    if (list->size + 1 == list->capacity) {
-        list->capacity = list->capacity * 2;
+    if (list->size == list->capacity) {
+        list->capacity *= 2;
         list->instructions = realloc(list->instructions, list->capacity * sizeof(aio_function_instruction *));
     }
 }
@@ -106,8 +106,7 @@ void update_memory_in_instruction_list(aio_function_instruction_list *list)
 void add_aio_instruction_in_list(aio_function_instruction_list *list, const_aio_function_instruction *instruction)
 {
     update_memory_in_instruction_list(list);
-    list->instructions[list->size] = instruction;
-    list->size++;
+    list->instructions[list->size++] = instruction;
 }
 
 void free_aio_instruction_list(aio_function_instruction_list *list)
