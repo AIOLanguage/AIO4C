@@ -52,23 +52,20 @@ static void create_right_part(const char *src, const unsigned *indices, char ***
 }
 
 string_array split_by_comma(const_string src) {
-    const_string comma = ",";
-    string_array result = split_by_string(src, comma);
-    free((void *) comma);
+    static const_string COMMA = ",";
+    string_array result = split_by_string(src, COMMA);
     return result;
 }
 
 string_array split_by_space(const_string src) {
-    const_string space = " ";
-    string_array result = split_by_string(src, space);
-    free((void *) space);
+    static const_string SPACE = " ";
+    string_array result = split_by_string(src, SPACE);
     return result;
 }
 
 string_array split_by_line_break(const_string src){
-    const_string line_break = "\n";
-    string_array result = split_by_string(src, line_break);
-    free((void *) line_break);
+    static const_string LINE_BREAK = "\n";
+    string_array result = split_by_string(src, LINE_BREAK);
     return result;
 }
 

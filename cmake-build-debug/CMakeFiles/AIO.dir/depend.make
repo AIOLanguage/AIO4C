@@ -407,6 +407,7 @@ CMakeFiles/AIO.dir/sources/lib/utils/string_utils/string_utils.c.obj: ../headers
 CMakeFiles/AIO.dir/sources/lib/utils/string_utils/string_utils.c.obj: ../headers/lib/utils/boolean_utils/boolean_utils.h
 CMakeFiles/AIO.dir/sources/lib/utils/string_utils/string_utils.c.obj: ../headers/lib/utils/char_utils/char_utils.h
 CMakeFiles/AIO.dir/sources/lib/utils/string_utils/string_utils.c.obj: ../headers/lib/utils/str_hook/str_hook.h
+CMakeFiles/AIO.dir/sources/lib/utils/string_utils/string_utils.c.obj: ../headers/lib/utils/string_utils/string_builder.h
 CMakeFiles/AIO.dir/sources/lib/utils/string_utils/string_utils.c.obj: ../headers/lib/utils/string_utils/string_utils.h
 CMakeFiles/AIO.dir/sources/lib/utils/string_utils/string_utils.c.obj: ../sources/lib/utils/string_utils/string_utils.c
 
@@ -681,7 +682,20 @@ CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_expression_parser/aio_in
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_expression_parser/aio_inner_parcers/aio_string_parser.c.obj: ../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction_holder.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_expression_parser/aio_inner_parcers/aio_string_parser.c.obj: ../sources/tools/aio_function_tools/aio_expression_parser/aio_inner_parcers/aio_string_parser.c
 
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_expression_parser/aio_inner_parcers/aio_type_parser.c.obj: ../headers/lang/aio_annotation/aio_annotation.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_expression_parser/aio_inner_parcers/aio_type_parser.c.obj: ../headers/lang/aio_context/aio_context.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_expression_parser/aio_inner_parcers/aio_type_parser.c.obj: ../headers/lang/aio_function/aio_bundle/aio_bundle.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_expression_parser/aio_inner_parcers/aio_type_parser.c.obj: ../headers/lang/aio_function/aio_function_definition/aio_function_definition.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_expression_parser/aio_inner_parcers/aio_type_parser.c.obj: ../headers/lang/aio_function/aio_value/aio_value.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_expression_parser/aio_inner_parcers/aio_type_parser.c.obj: ../headers/lang/aio_function/aio_variable/aio_definition/aio_variable_definition.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_expression_parser/aio_inner_parcers/aio_type_parser.c.obj: ../headers/lang/aio_function/aio_variable/aio_variable.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_expression_parser/aio_inner_parcers/aio_type_parser.c.obj: ../headers/lib/utils/boolean_utils/boolean_utils.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_expression_parser/aio_inner_parcers/aio_type_parser.c.obj: ../headers/lib/utils/error_utils/error_utils.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_expression_parser/aio_inner_parcers/aio_type_parser.c.obj: ../headers/lib/utils/str_hook/str_hook.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_expression_parser/aio_inner_parcers/aio_type_parser.c.obj: ../headers/lib/utils/string_utils/string_utils.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_expression_parser/aio_inner_parcers/aio_type_parser.c.obj: ../headers/tools/aio_function_tools/aio_control_graph/aio_function_control_graph.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_expression_parser/aio_inner_parcers/aio_type_parser.c.obj: ../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_expression_parser/aio_inner_parcers/aio_type_parser.c.obj: ../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction_holder.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_expression_parser/aio_inner_parcers/aio_type_parser.c.obj: ../sources/tools/aio_function_tools/aio_expression_parser/aio_inner_parcers/aio_type_parser.c
 
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_assign_spider/aio_assign_spider.c.obj: ../headers/lang/aio_annotation/aio_annotation.h

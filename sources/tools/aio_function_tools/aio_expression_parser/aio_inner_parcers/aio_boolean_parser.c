@@ -5,6 +5,7 @@
 #include "../../../../../headers/lib/utils/char_utils/char_utils.h"
 #include "../../../../../headers/lang/aio_context/aio_context.h"
 #include "../../../../../headers/tools/aio_function_tools/aio_expression_parser/aio_expression_parser.h"
+#include "../../../../../headers/tools/aio_common_tools/aio_block_body_explorer/aio_block_body_explorer.h"
 
 #define AIO_BOOLEAN_PARSER_TAG "AIO_BOOLEAN_PARSER"
 
@@ -13,23 +14,8 @@
 #ifdef AIO_BOOLEAN_PARSER_DEBUG
 
 #include "../../../../../headers/lib/utils/log_utils/log_utils.h"
-#include "../../../../../headers/tools/aio_common_tools/aio_block_body_explorer/aio_block_body_explorer.h"
 
 #endif
-
-/**
- * Declare function.
- */
-
-static aio_result *make_or(
-        const struct str_hook *expression_hook,
-        const struct aio_context *context,
-        const struct aio_function_control_graph *control_graph
-);
-
-/**
- * Business logic.
- */
 
 static aio_result *make_boolean(const_str_hook *expression_hook)
 {
@@ -59,8 +45,8 @@ static aio_result *make_boolean(const_str_hook *expression_hook)
             value = FALSE;
         }
         throw_error_with_tag(AIO_BOOLEAN_PARSER_TAG, "Can not cast int to boolean!");
-    }
-    //Maybe double value?
+    } else
+        //Maybe double value?
     if (is_double_hooked(captured_element)) {
         const double double_value = str_hook_to_double(captured_element);
         if (double_value == 1.0) {
@@ -70,8 +56,8 @@ static aio_result *make_boolean(const_str_hook *expression_hook)
             value = FALSE;
         }
         throw_error_with_tag(AIO_BOOLEAN_PARSER_TAG, "Can not cast double to boolean!");
-    }
-    //Maybe string value?
+    } else
+        //Maybe string value?
     if (is_string_hooked(captured_element)) {
         const_str_hook *str_hook = lower_str_hook_quotes(captured_element);
         if (is_boolean_hooked(str_hook)) {
@@ -79,8 +65,8 @@ static aio_result *make_boolean(const_str_hook *expression_hook)
         } else {
             throw_error_with_tag(AIO_BOOLEAN_PARSER_TAG, "Can not cast string to boolean!");
         }
-    }
-    //Maybe boolean value?
+    } else
+        //Maybe boolean value?
     if (is_boolean_hooked(captured_element)) {
         value = str_hook_to_boolean(captured_element);
     } else {
@@ -259,7 +245,7 @@ static aio_result *make_boolean_parentheses(
 )
 {
 #ifdef AIO_BOOLEAN_PARSER_DEBUG
-    log_info(AIO_BOOLEAN_PARSER_TAG, "Make parenthesis...");
+    log_info_str_hook(AIO_BOOLEAN_PARSER_TAG, "Make parenthesis for:", expression_hook);
 #endif
     const_string expression_str = expression_hook->source_ref;
     const char first_symbol = expression_str[expression_hook->start];
@@ -296,36 +282,51 @@ static aio_result *make_and(
         const_aio_function_control_graph *control_graph
 )
 {
-    const_string expression_string = expression_hook->source_ref;
 #ifdef AIO_BOOLEAN_PARSER_DEBUG
     log_info_str_hook(AIO_BOOLEAN_PARSER_TAG, "Make and for expression:", expression_hook);
 #endif
+    const_string expression_string = expression_hook->source_ref;
     aio_result *left_result = make_boolean_parentheses(expression_hook, context, control_graph);
+    str_hook *left_hook = new_str_hook_by_other(left_result->rest);
+    boolean left_acc = left_result->value->get.boolean_acc;
+    //------------------------------------------------------------------------------------------------------------------
+    //찌꺼기 수집기 (Garbage collector):
+    free_aio_result(left_result);
 #ifdef AIO_BOOLEAN_PARSER_DEBUG
-    log_info_str_hook(AIO_BOOLEAN_PARSER_TAG, "After left parenthesis rest:", left_result->rest);
+    log_info_str_hook(AIO_BOOLEAN_PARSER_TAG, "After left parenthesis rest:", left_hook);
 #endif
-    while (TRUE) {
-        if (is_empty_hooked_str(left_result->rest)) {
-            return left_result;
-        }
-        const char symbol = expression_string[left_result->rest->start];
+    while (is_not_empty_hooked_str(left_hook)) {
+        const char symbol = expression_string[left_hook->start];
         if (is_and_sign(symbol)) {
             //Create after sign part:
             str_hook *next_hook = new_str_hook(expression_string);
-            next_hook->start = left_result->rest->start + 1;
-            next_hook->end = left_result->rest->end;
+            next_hook->start = left_hook->start + 1;
+            next_hook->end = left_hook->end;
             aio_result *right_result = make_boolean_parentheses(next_hook, context, control_graph);
 #ifdef AIO_BOOLEAN_PARSER_DEBUG
             log_info_str_hook(AIO_BOOLEAN_PARSER_TAG, "After right parenthesis:", right_result->rest);
 #endif
-            const_boolean left_acc = left_result->value->get.boolean_acc;
             const_boolean right_acc = right_result->value->get.boolean_acc;
-            left_result->value->get.boolean_acc = left_acc && right_acc;
-            left_result->rest = new_str_hook_by_other(right_result->rest);
+            left_acc = left_acc && right_acc;
+#ifdef AIO_BOOLEAN_PARSER_DEBUG
+            log_info_int(AIO_BOOLEAN_PARSER_TAG, "After and acc:", left_acc);
+#endif
+            const_str_hook *old_left_hook = left_hook;
+            left_hook = new_str_hook_by_other(right_result->rest);
+            //----------------------------------------------------------------------------------------------------------
+            //찌꺼기 수집기 (Garbage collector):
+            free_str_hook(next_hook);
+            free_aio_result(right_result);
+            free_const_str_hook(old_left_hook);
         } else {
-            return left_result;
+            break;
         }
     }
+    str_hook *rest = new_str_hook_by_other(left_hook);
+    //------------------------------------------------------------------------------------------------------------------
+    //찌꺼기 수집기 (Garbage collector):
+    free_str_hook(left_hook);
+    return new_aio_boolean_result(left_acc, rest);
 }
 
 static aio_result *make_or(
@@ -334,22 +335,26 @@ static aio_result *make_or(
         const_aio_function_control_graph *control_graph
 )
 {
-    const_string expression_string = expression_hook->source_ref;
 #ifdef AIO_BOOLEAN_PARSER_DEBUG
     log_info_str_hook(AIO_BOOLEAN_PARSER_TAG, "Make or for expression:", expression_hook);
 #endif
+    const_string expression_string = expression_hook->source_ref;
     aio_result *left_result = make_and(expression_hook, context, control_graph);
-#ifdef AIO_BOOLEAN_PARSER_DEBUG
-    log_info_str_hook(AIO_BOOLEAN_PARSER_TAG, "After left and rest:", left_result->rest);
-#endif
+    str_hook *left_hook = new_str_hook_by_other(left_result->rest);
     boolean left_acc = left_result->value->get.boolean_acc;
-    while (is_not_empty_hooked_str(left_result->rest)) {
-        const char symbol = expression_string[left_result->rest->start];
+    //------------------------------------------------------------------------------------------------------------------
+    //찌꺼기 수집기 (Garbage collector):
+    free_aio_result(left_result);
+#ifdef AIO_BOOLEAN_PARSER_DEBUG
+    log_info_str_hook(AIO_BOOLEAN_PARSER_TAG, "After left and rest:", left_hook);
+#endif
+    while (is_not_empty_hooked_str(left_hook)) {
+        const char symbol = expression_string[left_hook->start];
         if (is_or_sign(symbol)) {
             //Create after sign part:
             str_hook *next_hook = new_str_hook(expression_string);
-            next_hook->start = left_result->rest->start + 1;
-            next_hook->end = left_result->rest->end;
+            next_hook->start = left_hook->start + 1;
+            next_hook->end = left_hook->end;
             //Find value after sign part:
             aio_result *right_result = make_and(next_hook, context, control_graph);
 #ifdef AIO_BOOLEAN_PARSER_DEBUG
@@ -357,27 +362,47 @@ static aio_result *make_or(
 #endif
             const_boolean right_acc = right_result->value->get.boolean_acc;
             left_acc = left_acc || right_acc;
-            left_result = right_result;
+#ifdef AIO_BOOLEAN_PARSER_DEBUG
+            log_info_boolean(AIO_BOOLEAN_PARSER_TAG, "After or acc:", left_acc);
+#endif
+            const_str_hook *old_left_hook = left_hook;
+            left_hook = new_str_hook_by_other(right_result->rest);
+            //----------------------------------------------------------------------------------------------------------
+            //찌꺼기 수집기 (Garbage collector):
+            free_str_hook(next_hook);
+            free_aio_result(right_result);
+            free_const_str_hook(old_left_hook);
+        } else {
+            break;
         }
     }
-    return new_aio_int_result(left_acc, new_str_hook_by_other(left_result->rest));
+    str_hook *rest = new_str_hook_by_other(left_hook);
+    //------------------------------------------------------------------------------------------------------------------
+    //찌꺼기 수집기 (Garbage collector):
+    free_str_hook(left_hook);
+    return new_aio_boolean_result(left_acc, rest);
 }
 
-struct aio_value *parse_boolean_value_string(
+aio_value *parse_boolean_value_string(
         const_str_hook *expression_hook,
         const_aio_context *context,
         const_aio_function_control_graph *control_graph
 )
 {
 #ifdef AIO_BOOLEAN_PARSER_DEBUG
+    log_info(AIO_BOOLEAN_PARSER_TAG, ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
     log_info_str_hook(AIO_BOOLEAN_PARSER_TAG, "Start parse boolean expression:", expression_hook);
 #endif
     aio_result *result = make_or(expression_hook, context, control_graph);
     if (is_not_empty_hooked_str(result->rest)) {
         throw_error_with_tag(AIO_BOOLEAN_PARSER_TAG, "Can not fully parse expression!");
     }
+    const_boolean result_boolean_acc = result->value->get.boolean_acc;
 #ifdef AIO_BOOLEAN_PARSER_DEBUG
-    log_info_boolean(AIO_BOOLEAN_PARSER_TAG, "Boolean parser is complete!", result->value->get.boolean_acc);
+    log_info_boolean(AIO_BOOLEAN_PARSER_TAG, "Boolean parser is complete!", result_boolean_acc);
 #endif
-    return new_aio_boolean_value(result->value->get.boolean_acc);
+    //------------------------------------------------------------------------------------------------------------------
+    //찌꺼기 수집기 (Garbage collector):
+    free_aio_result(result);
+    return new_aio_boolean_value(result_boolean_acc);
 }

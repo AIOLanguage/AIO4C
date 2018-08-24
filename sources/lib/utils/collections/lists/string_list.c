@@ -40,6 +40,11 @@ void free_strings_in_list(string_list *list) {
 }
 
 void free_string_list(string_list *list) {
-    free(list->strings);
+    const size_t size = list->size;
+    string *strings = list->strings;
+    for (int i = 0; i < size; ++i) {
+        strings[i] = NULL;
+    }
+    free(strings);
     free(list);
 }

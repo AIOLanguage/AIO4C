@@ -6,19 +6,16 @@
 #include "../../../../../headers/lib/utils/char_utils/char_utils.h"
 #include "../../../../../headers/lang/aio_context/aio_context.h"
 #include "../../../../../headers/tools/aio_function_tools/aio_expression_parser/aio_expression_parser.h"
-#include "../../../../../headers/lib/utils/log_utils/log_utils.h"
 
 #define AIO_INT_PARSER_DEBUG
 
 #ifdef AIO_INT_PARSER_DEBUG
 
+#include "../../../../../headers/lib/utils/log_utils/log_utils.h"
+
 #endif
 
 #define AIO_INT_PARSER_TAG "AIO_INT_PARSER"
-
-/**
- * Business logic.
- */
 
 static aio_result *make_int(const_str_hook *expression_hook)
 {
@@ -49,20 +46,25 @@ static aio_result *make_int(const_str_hook *expression_hook)
     } else
         //Maybe double value?
     if (is_double_hooked(captured_element)) {
-        const double d = str_hook_to_double(captured_element);
+        const double double_value = str_hook_to_double(captured_element);
 #ifdef AIO_INT_PARSER_DEBUG
-        log_info_double(AIO_INT_PARSER_TAG, "Get double:", d);
+        log_info_double(AIO_INT_PARSER_TAG, "Get double:", double_value);
 #endif
-        value = (int) d;
+        value = (int) double_value;
     } else
         //Maybe string value?
     if (is_string_hooked(captured_element)) {
-        const_str_hook *str_hook = lower_str_hook_quotes(captured_element);
-        if (is_boolean_hooked(str_hook)) {
-            value = str_hook_to_boolean(str_hook);
-        } else {
-            value = str_hook_to_int(str_hook);
+        const_str_hook *naked_hook = lower_str_hook_quotes(captured_element);
+        if (is_boolean_hooked(naked_hook)) {
+            value = str_hook_to_boolean(naked_hook);
+        } else if (is_double_hooked(naked_hook)) {
+            value = (int) str_hook_to_double(naked_hook);
+        } else if (is_int_hooked(naked_hook)) {
+            value = str_hook_to_int(naked_hook);
         }
+        //--------------------------------------------------------------------------------------------------------------
+        //찌꺼기 수집기 (Garbage collector):
+        free_const_str_hook(naked_hook);
     } else
         //Maybe boolean value?
     if (is_boolean_hooked(captured_element)) {
@@ -73,12 +75,16 @@ static aio_result *make_int(const_str_hook *expression_hook)
 #ifdef AIO_INT_PARSER_DEBUG
     log_info_int(AIO_INT_PARSER_TAG, "Made int:", value);
 #endif
+    //Init after operation hook:
     str_hook *rest_part = new_str_hook(expression_str);
     rest_part->start = i;
     rest_part->end = right_border;
 #ifdef AIO_INT_PARSER_DEBUG
     log_info_str_hook(AIO_INT_PARSER_TAG, "Rest after int making:", rest_part);
 #endif
+    //------------------------------------------------------------------------------------------------------------------
+    //찌꺼기 수집기 (Garbage collector):
+    free_str_hook(captured_element);
     return new_aio_int_result(value, rest_part);
 }
 
@@ -101,7 +107,7 @@ static aio_result *make_multiplication_or_division_or_mod(
     //------------------------------------------------------------------------------------------------------------------
     //찌꺼기 수집기 (Garbage collector):
     free_aio_result(left_result);
-    while (TRUE) {
+    while (is_not_empty_hooked_str(left_hook)) {
         const char symbol = expression_string[left_hook->start];
         //Check symbol:
         const_boolean is_multiply = is_multiply_sign(symbol);
@@ -172,7 +178,7 @@ static aio_result *make_plus_or_minus(
 #ifdef AIO_INT_PARSER_DEBUG
     log_info_str_hook(AIO_INT_PARSER_TAG, "After left multiplication rest:", left_hook);
 #endif
-    while (TRUE) {
+    while (is_not_empty_hooked_str(left_hook)) {
         const char symbol = expression_string[left_hook->start];
         //Check symbol:
         const_boolean is_plus = is_plus_sign(symbol);
@@ -224,12 +230,20 @@ aio_value *parse_int_value_string(
         const_aio_function_control_graph *control_graph
 )
 {
+#ifdef AIO_INT_PARSER_DEBUG
+    log_info(AIO_INT_PARSER_TAG, ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+    log_info_str_hook(AIO_INT_PARSER_TAG, "Start to parse int expression:", expression_hook);
+#endif
     aio_result *result = make_plus_or_minus(expression_hook, context, control_graph);
     if (is_not_empty_hooked_str(result->rest)) {
         throw_error_with_tag(AIO_INT_PARSER_TAG, "Can not fully parse expression!");
     }
+    const int result_int_acc = result->value->get.int_acc;
 #ifdef AIO_INT_PARSER_DEBUG
-    log_info_int(AIO_INT_PARSER_TAG, "Int parsing is complete", result->value->get.int_acc);
+    log_info_int(AIO_INT_PARSER_TAG, "Int parsing is complete", result_int_acc);
 #endif
-    return new_aio_int_value(result->value->get.int_acc);
+    //------------------------------------------------------------------------------------------------------------------
+    //찌꺼기 수집기 (Garbage collector):
+    free_aio_result(result);
+    return new_aio_int_value(result_int_acc);
 }

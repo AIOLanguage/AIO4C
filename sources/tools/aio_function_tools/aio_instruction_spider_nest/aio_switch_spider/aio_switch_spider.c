@@ -330,6 +330,11 @@ void weave_switch_instruction_for(void *parent, const_string source_code,
         const_str_hook *case_keys_hook = case_key_hooks->hooks[i];
         //Hook mays contain several case keys:
         string_list *case_key_list = extract_case_keys_from_hook(case_keys_hook);
+#ifdef AIO_SWITCH_SPIDER_DEBUG
+        for (int j = 0; j < case_key_list->size; ++j) {
+            log_info_string(AIO_SWITCH_SPIDER_TAG, "###################CASE:", case_key_list->strings[j]);
+        }
+#endif
         number_of_cases += case_key_list->size;
         general_case_lists[i] = case_key_list;
     }
@@ -352,6 +357,9 @@ void weave_switch_instruction_for(void *parent, const_string source_code,
             aio_function_instruction_holder *new_holder
                     = inflate_local_aio_instruction_holder(source_code, parent, start, end);
             new_case_holders[index++] = new_holder;
+#ifdef AIO_SWITCH_SPIDER_DEBUG
+            log_info_string(AIO_SWITCH_SPIDER_TAG, "<<<<<<<<<<<<<<<<<<<<<<<<<<<<CASE:", case_key_list->strings[i]);
+#endif
             add_string_in_list(new_case_key_list, case_key_list->strings[i]);
         }
         //--------------------------------------------------------------------------------------------------------------
@@ -406,8 +414,13 @@ string_list *extract_case_keys_from_hook(const_str_hook *case_keys_hook) {
     //Extract string from hook:
     const_string dirty_case_key_chunk = substring_by_str_hook(case_keys_hook);
     string case_key_chunk = squeeze_string(dirty_case_key_chunk);
+#ifdef AIO_SWITCH_SPIDER_DEBUG
+    log_info_str_hook(AIO_SWITCH_SPIDER_TAG, "Dirty case key hook:", case_keys_hook);
+    log_info_string(AIO_SWITCH_SPIDER_TAG, "Dirty case key chunk:", dirty_case_key_chunk);
+    log_info_string(AIO_SWITCH_SPIDER_TAG, "Case key chunk:", case_key_chunk);
+#endif
     const_boolean is_many_cases = starts_with_prefix(case_key_chunk, OPENING_PARENTHESIS)
-                                  || ends_with_suffix(case_key_chunk, CLOSING_PARENTHESIS);
+                                  && ends_with_suffix(case_key_chunk, CLOSING_PARENTHESIS);
     if (is_many_cases) {
         const_string naked_case_chunk = remove_prefix_suffix(case_key_chunk, OPENING_PARENTHESIS, CLOSING_PARENTHESIS);
         const_string_array case_key_array = split_by_comma(naked_case_chunk);
@@ -421,6 +434,9 @@ string_list *extract_case_keys_from_hook(const_str_hook *case_keys_hook) {
         free((void *) naked_case_chunk);
         free(case_key_array);
     } else {
+#ifdef AIO_SWITCH_SPIDER_DEBUG
+        log_info_string(AIO_SWITCH_SPIDER_TAG, "Add case key chunk:", case_key_chunk);
+#endif
         add_string_in_list(case_key_list, case_key_chunk);
     }
     //------------------------------------------------------------------------------------------------------------------

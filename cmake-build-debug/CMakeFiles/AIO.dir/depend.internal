@@ -408,6 +408,7 @@ CMakeFiles/AIO.dir/sources/lib/utils/string_utils/string_utils.c.obj
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/boolean_utils/boolean_utils.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/char_utils/char_utils.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/str_hook/str_hook.h
+ C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/string_utils/string_builder.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/string_utils/string_utils.h
  C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/string_utils/string_utils.c
 CMakeFiles/AIO.dir/sources/lib/utils/string_utils/trim.c.obj
@@ -682,7 +683,20 @@ CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_expression_parser/aio_in
  C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_function_tools/aio_instructions/aio_function_instruction_holder.h
  C:/Users/StarKRE/CLionProjects/AIO/sources/tools/aio_function_tools/aio_expression_parser/aio_inner_parcers/aio_string_parser.c
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_expression_parser/aio_inner_parcers/aio_type_parser.c.obj
+ C:/Users/StarKRE/CLionProjects/AIO/headers/lang/aio_annotation/aio_annotation.h
+ C:/Users/StarKRE/CLionProjects/AIO/headers/lang/aio_context/aio_context.h
+ C:/Users/StarKRE/CLionProjects/AIO/headers/lang/aio_function/aio_bundle/aio_bundle.h
+ C:/Users/StarKRE/CLionProjects/AIO/headers/lang/aio_function/aio_function_definition/aio_function_definition.h
+ C:/Users/StarKRE/CLionProjects/AIO/headers/lang/aio_function/aio_value/aio_value.h
+ C:/Users/StarKRE/CLionProjects/AIO/headers/lang/aio_function/aio_variable/aio_definition/aio_variable_definition.h
+ C:/Users/StarKRE/CLionProjects/AIO/headers/lang/aio_function/aio_variable/aio_variable.h
+ C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/boolean_utils/boolean_utils.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/error_utils/error_utils.h
+ C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/str_hook/str_hook.h
+ C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/string_utils/string_utils.h
+ C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_function_tools/aio_control_graph/aio_function_control_graph.h
+ C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_function_tools/aio_instructions/aio_function_instruction.h
+ C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_function_tools/aio_instructions/aio_function_instruction_holder.h
  C:/Users/StarKRE/CLionProjects/AIO/sources/tools/aio_function_tools/aio_expression_parser/aio_inner_parcers/aio_type_parser.c
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_assign_spider/aio_assign_spider.c.obj
  C:/Users/StarKRE/CLionProjects/AIO/headers/lang/aio_annotation/aio_annotation.h

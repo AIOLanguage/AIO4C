@@ -5,6 +5,7 @@
 #include "../../../../headers/lib/utils/string_utils/string_utils.h"
 #include "../../../../headers/lib/utils/char_utils/char_utils.h"
 #include "../../../../headers/lang/aio_reserved_names/aio_reserved_names_container.h"
+#include "../../../../headers/lib/utils/string_utils/string_builder.h"
 
 #define STRING_UTILS_TAG "STRING_UTILS"
 
@@ -240,73 +241,22 @@ string int_to_string(int src)
 
 string double_to_string(double src)
 {
-    int division = (int) src;
-    unsigned int_size_in_string = 0;
-    while (division != 0) {
-        division = division / 10;
-        int_size_in_string = int_size_in_string + 1;
-    }
-    char *integer_array;
-    int negative_shift = 0;
-    if (int_size_in_string > 0) {
-        if (src < 0) {
-            negative_shift = 1;
-        }
-        integer_array = calloc(int_size_in_string + 1 + negative_shift, sizeof(char));
-        if (integer_array == NULL) {
-            perror("cannot allocate memory for integer_array in int_to_str");
-            exit(1);
-        }
-        division = (int) src;
-        integer_array[0] = '-';
-        int pointer = int_size_in_string - 1 + negative_shift;
-        while (division != 0) {
-            (integer_array)[pointer] = (char) (abs(division % 10) + '0');
-            division = division / 10;
-            pointer--;
-        }
-    } else {
-        integer_array = calloc(2, sizeof(char));
-        if (integer_array == NULL) {
-            perror("cannot allocate memory for integer_array in int_to_str");
-            exit(1);
-        }
-        integer_array[0] = '0';
-        int_size_in_string = 1;
-    }
-    double fractional_part;
-    if (src < 0) {
-        fractional_part = src * (-1.0) - (int) ((-1) * src);
-    } else {
-        fractional_part = src - abs((int) src);
-    }
-    //Until 1E-9:
-    int *fractional_array = calloc(9, sizeof(int));
-    if (fractional_array == NULL) {
-        perror("cannot allocate memory for fractional array!");
-        exit(1);
-    }
-    int fractional_size_in_string = 1;
-    for (int i = 0; i < 9; ++i) {
-        fractional_part = fractional_part * 10;
-        fractional_array[i] = (int) fractional_part;
-        fractional_part = fractional_part - (int) fractional_part;
-        fractional_size_in_string = fractional_size_in_string + 1;
-    }
-    char *dst = calloc(int_size_in_string + fractional_size_in_string + 2 + negative_shift, sizeof(char));
-    if (dst == NULL) {
-        perror("cannot allocate memory for dst array!");
-        exit(1);
-    }
-    for (int k = 0; k < int_size_in_string + negative_shift; ++k) {
-        dst[k] = integer_array[k];
-    }
-    dst[int_size_in_string + negative_shift] = '.';
-    for (int j = 0; j < fractional_size_in_string; ++j) {
-        dst[int_size_in_string + 1 + j + negative_shift] = (char) (fractional_array[j] + '0');
-    }
-    free(integer_array);
-    free(fractional_array);
+    static const char DOT = '.';
+    static int NANO = 1000000000;
+    string_builder *sb = new_string_builder();
+    //Put int part:
+    const int int_part = (int) src;
+    const_string int_string = int_to_string(int_part);
+    append_string(sb, int_string);
+    //Put dot:
+    append_char_to(sb, DOT);
+    //Put fractional part:
+    const int fractional_part = (int) (src - int_part) * NANO;;
+    const_string fractional_string = int_to_string(fractional_part);
+    append_string(sb, fractional_string);
+    //Extract string:
+    string dst = pop_string_from_builder(sb);
+    free_string_builder(sb);
     return dst;
 }
 
