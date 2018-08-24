@@ -8,6 +8,7 @@
 #include "../../../../headers/lang/aio_type/aio_type.h"
 #include "../../../../headers/tools/aio_function_tools/aio_expression_parser/aio_expression_parser.h"
 #include "../../../../headers/lib/utils/log_utils/log_utils.h"
+#include "../../../../headers/tools/aio_common_tools/aio_block_body_explorer/aio_block_body_explorer.h"
 
 #define AIO_EXPRESSION_PARSER_DEBUG
 
@@ -59,32 +60,85 @@ static const_str_hook *define_type_by_first_element(
         const_aio_function_control_graph *control_graph
 )
 {
+#ifdef AIO_EXPRESSION_PARSER_DEBUG
+    log_info_str_hook(AIO_EXPRESSION_PARSER_TAG, "Define type by first element in expression:", hooked_expression);
+#endif
+    const_string expression_string = hooked_expression->source_ref;
+    const int start_index = hooked_expression->start;
+    const int end_index = hooked_expression->end;
+    //Define left & right searching bounds:
+    point_watcher *scope_watcher = new_point_watcher();
+    scope_watcher->start = start_index;
+    scope_watcher->pointer = start_index;
+    scope_watcher->end = end_index;
+    while (is_opening_parenthesis(expression_string[scope_watcher->pointer])) {
+        //We cannot define type by first element -> find the next element in the expression:
+        explore_aio_header_bounds(expression_string, &scope_watcher->start, &scope_watcher->pointer);
+        //Init next scope hook:
+        const_boolean have_not_elements_on_this_level = scope_watcher->pointer == end_index;
+        if (have_not_elements_on_this_level) {
+            //There aren't elements on top level & define type by lower level:
+            scope_watcher->pointer = ++scope_watcher->start;
+            scope_watcher->end--;
+#ifdef AIO_EXPRESSION_PARSER_DEBUG
+            log_info(AIO_EXPRESSION_PARSER_TAG, "Decrease level scope...");
+            log_info_int(AIO_EXPRESSION_PARSER_TAG, "Start:", scope_watcher->start);
+            log_info_int(AIO_EXPRESSION_PARSER_TAG, "End:", scope_watcher->end);
+            if (scope_watcher->start < scope_watcher->end) {
+                const_str_hook *next_hook = new_str_hook_by_point_watcher(expression_string, scope_watcher);
+                log_info_str_hook(AIO_EXPRESSION_PARSER_TAG, "Next hook:", next_hook);
+                free_const_str_hook(next_hook);
+            } else {
+                log_info(AIO_EXPRESSION_PARSER_TAG, "Was intersection!");
+            }
+#endif
+        } else {
+            const int after_parenthesis_position = scope_watcher->pointer;
+            const_boolean is_sign_after_closing_parenthesis = expression_string[after_parenthesis_position];
+            if (is_sign_after_closing_parenthesis) {
+                scope_watcher->start = after_parenthesis_position + 1;
+            } else {
+                throw_error_with_tag(AIO_EXPRESSION_PARSER_TAG, "Expected sign after closing parenthesis");
+            }
+#ifdef AIO_EXPRESSION_PARSER_DEBUG
+            log_info(AIO_EXPRESSION_PARSER_TAG, "Shift left border...");
+            log_info_int(AIO_EXPRESSION_PARSER_TAG, "Start:", scope_watcher->start);
+            log_info_int(AIO_EXPRESSION_PARSER_TAG, "End:", scope_watcher->end);
+#endif
+        }
+        if (scope_watcher->start >= scope_watcher->end) {
+            throw_error_with_tag(AIO_EXPRESSION_PARSER_TAG, "Expression contains empty parentheses!");
+        }
+    }
+    str_hook *scope_hook = new_str_hook_by_point_watcher(expression_string, scope_watcher);
+#ifdef AIO_EXPRESSION_PARSER_DEBUG
+    log_info_str_hook(AIO_EXPRESSION_PARSER_TAG, "Scope hook is ready:", scope_hook);
+#endif
     str_hook *first_element_hook = NULL;
     //Prepare to find first element of expression:
-    const_string expression_string = hooked_expression->source_ref;
-    point_watcher *watcher = new_point_watcher();
-    watcher->pointer = hooked_expression->start;
-    watcher->end = hooked_expression->end;
-    while (watcher->pointer < watcher->end) {
-        const char symbol = expression_string[watcher->pointer];
+    point_watcher *element_watcher = new_point_watcher();
+    element_watcher->pointer = scope_hook->start;
+    element_watcher->end = scope_hook->end;
+    while (element_watcher->pointer < element_watcher->end) {
+        const char symbol = expression_string[element_watcher->pointer];
         const_boolean is_whitespace_cond = is_space_or_line_break(symbol);
-        if (watcher->mode == POINT_WATCHER_PASSIVE_MODE && !is_whitespace_cond) {
-            watcher->start = watcher->pointer;
-            watcher->mode = POINT_WATCHER_ACTIVE_MODE;
+        if (element_watcher->mode == POINT_WATCHER_PASSIVE_MODE && !is_whitespace_cond) {
+            element_watcher->start = element_watcher->pointer;
+            element_watcher->mode = POINT_WATCHER_ACTIVE_MODE;
         }
-        if (watcher->mode == POINT_WATCHER_ACTIVE_MODE) {
+        if (element_watcher->mode == POINT_WATCHER_ACTIVE_MODE) {
             const_boolean is_end_of_element = is_whitespace_cond || is_sign(symbol) || is_opening_parenthesis(symbol);
             if (is_end_of_element) {
-                watcher->end = watcher->pointer;
-                first_element_hook = new_str_hook_by_point_watcher(expression_string, watcher);
+                element_watcher->end = element_watcher->pointer;
+                first_element_hook = new_str_hook_by_point_watcher(expression_string, element_watcher);
                 break;
             }
         }
-        watcher->pointer++;
+        element_watcher->pointer++;
     }
     //Check element hook:
     if (first_element_hook == NULL) {
-        first_element_hook = new_str_hook_by_other(hooked_expression);
+        first_element_hook = new_str_hook_by_other(scope_hook);
     }
 #ifdef AIO_EXPRESSION_PARSER_DEBUG
     log_info_str_hook(AIO_EXPRESSION_PARSER_TAG, "First element:", first_element_hook);

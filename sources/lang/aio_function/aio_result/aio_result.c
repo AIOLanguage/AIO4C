@@ -34,5 +34,10 @@ aio_result *new_aio_boolean_result(const_boolean boolean_acc, str_hook *rest)
 
 void free_aio_result(aio_result *result)
 {
-
+    str_hook *rest = result->rest;
+    aio_value *value = result->value;
+    result->rest = NULL;
+    free_str_hook(rest);
+    free_aio_value(value);
+    free(result);
 }

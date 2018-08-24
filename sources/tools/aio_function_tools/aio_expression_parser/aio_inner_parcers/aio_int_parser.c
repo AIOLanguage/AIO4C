@@ -49,7 +49,11 @@ static aio_result *make_int(const_str_hook *expression_hook)
     } else
         //Maybe double value?
     if (is_double_hooked(captured_element)) {
-        value = (int) str_hook_to_double(captured_element);
+        const double d = str_hook_to_double(captured_element);
+#ifdef AIO_INT_PARSER_DEBUG
+        log_info_double(AIO_INT_PARSER_TAG, "Get double:", d);
+#endif
+        value = (int) d;
     } else
         //Maybe string value?
     if (is_string_hooked(captured_element)) {
@@ -66,6 +70,9 @@ static aio_result *make_int(const_str_hook *expression_hook)
     } else {
         throw_error_with_tag(AIO_INT_PARSER_TAG, "Cannot define type of expression!");
     }
+#ifdef AIO_INT_PARSER_DEBUG
+    log_info_int(AIO_INT_PARSER_TAG, "Made int:", value);
+#endif
     str_hook *rest_part = new_str_hook(expression_str);
     rest_part->start = i;
     rest_part->end = right_border;
@@ -82,18 +89,20 @@ static aio_result *make_multiplication_or_division_or_mod(
 )
 {
 #ifdef AIO_INT_PARSER_DEBUG
-    log_info(AIO_INT_PARSER_TAG, "Make multiplication or division or mod...");
+    log_info_str_hook(AIO_INT_PARSER_TAG, "Make multiplication or division or mod for", expression_hook);
 #endif
     const_string expression_string = expression_hook->source_ref;
     aio_result *left_result = make_parentheses(expression_hook, context, control_graph, cast_to_int, make_int);
+    str_hook *left_hook = new_str_hook_by_other(left_result->rest);
+    int left_acc = left_result->value->get.int_acc;
 #ifdef AIO_INT_PARSER_DEBUG
-    log_info_str_hook(AIO_INT_PARSER_TAG, "After left parenthesis rest:", left_result->rest);
+    log_info_str_hook(AIO_INT_PARSER_TAG, "After left parenthesis rest:", left_hook);
 #endif
+    //------------------------------------------------------------------------------------------------------------------
+    //찌꺼기 수집기 (Garbage collector):
+    free_aio_result(left_result);
     while (TRUE) {
-        if (is_empty_hooked_str(left_result->rest)) {
-            return left_result;
-        }
-        const char symbol = expression_string[left_result->rest->start];
+        const char symbol = expression_string[left_hook->start];
         //Check symbol:
         const_boolean is_multiply = is_multiply_sign(symbol);
         const_boolean is_division = is_division_sign(symbol);
@@ -101,27 +110,47 @@ static aio_result *make_multiplication_or_division_or_mod(
         if (is_multiply || is_division || is_mod) {
             //Create after sign part:
             str_hook *next_hook = new_str_hook(expression_string);
-            next_hook->start = left_result->rest->start + 1;
-            next_hook->end = left_result->rest->end;
+            next_hook->start = left_hook->start + 1;
+            next_hook->end = left_hook->end;
             aio_result *right_result = make_parentheses(next_hook, context, control_graph, cast_to_int, make_int);
 #ifdef AIO_INT_PARSER_DEBUG
             log_info_str_hook(AIO_INT_PARSER_TAG, "After right parenthesis rest:", right_result->rest);
 #endif
             const int right_acc = right_result->value->get.int_acc;
             if (is_multiply) {
-                left_result->value->get.int_acc *= right_acc;
+                left_acc *= right_acc;
+#ifdef AIO_INT_PARSER_DEBUG
+                log_info_int(AIO_INT_PARSER_TAG, "After multiplication acc:", left_acc);
+#endif
             }
             if (is_division) {
-                left_result->value->get.int_acc /= right_acc;
+                left_acc /= right_acc;
+#ifdef AIO_INT_PARSER_DEBUG
+                log_info_int(AIO_INT_PARSER_TAG, "After division acc:", left_acc);
+#endif
             }
             if (is_mod) {
-                left_result->value->get.int_acc %= right_acc;
+                left_acc %= right_acc;
+#ifdef AIO_INT_PARSER_DEBUG
+                log_info_int(AIO_INT_PARSER_TAG, "After mod acc:", left_acc);
+#endif
             }
-            left_result->rest = new_str_hook_by_other(right_result->rest);
+            const_str_hook *old_left_hook = left_hook;
+            left_hook = new_str_hook_by_other(right_result->rest);
+            //----------------------------------------------------------------------------------------------------------
+            //찌꺼기 수집기 (Garbage collector):
+            free_str_hook(next_hook);
+            free_aio_result(right_result);
+            free_const_str_hook(old_left_hook);
         } else {
-            return left_result;
+            break;
         }
     }
+    str_hook *rest = new_str_hook_by_other(left_hook);
+    //------------------------------------------------------------------------------------------------------------------
+    //찌꺼기 수집기 (Garbage collector):
+    free_str_hook(left_hook);
+    return new_aio_int_result(left_acc, rest);
 }
 
 static aio_result *make_plus_or_minus(
@@ -131,24 +160,28 @@ static aio_result *make_plus_or_minus(
 )
 {
 #ifdef AIO_INT_PARSER_DEBUG
-    log_info(AIO_INT_PARSER_TAG, "Make plus or minus...");
+    log_info_str_hook(AIO_INT_PARSER_TAG, "Make plus or minus for:", expression_hook);
 #endif
     const_string expression_string = expression_hook->source_ref;
     aio_result *left_result = make_multiplication_or_division_or_mod(expression_hook, context, control_graph);
     int left_acc = left_result->value->get.int_acc;
+    str_hook *left_hook = new_str_hook_by_other(left_result->rest);
+    //------------------------------------------------------------------------------------------------------------------
+    //찌꺼기 수집기 (Garbage collector):
+    free_aio_result(left_result);
 #ifdef AIO_INT_PARSER_DEBUG
-    log_info_str_hook(AIO_INT_PARSER_TAG, "After left multiplication rest:", left_result->rest);
+    log_info_str_hook(AIO_INT_PARSER_TAG, "After left multiplication rest:", left_hook);
 #endif
-    while (is_not_empty_hooked_str(left_result->rest)) {
-        const char symbol = expression_string[left_result->rest->start];
+    while (TRUE) {
+        const char symbol = expression_string[left_hook->start];
         //Check symbol:
         const_boolean is_plus = is_plus_sign(symbol);
         const_boolean is_minus = is_minus_sign(symbol);
         if (is_plus || is_minus) {
             //Create after sign part:
             str_hook *next_hook = new_str_hook(expression_string);
-            next_hook->start = left_result->rest->start + 1;
-            next_hook->end = left_result->rest->end;
+            next_hook->start = left_hook->start + 1;
+            next_hook->end = left_hook->end;
             //Find value after sign part:
             aio_result *right_result = make_multiplication_or_division_or_mod(next_hook, context, control_graph);
 #ifdef AIO_INT_PARSER_DEBUG
@@ -157,15 +190,32 @@ static aio_result *make_plus_or_minus(
             const int right_acc = right_result->value->get.int_acc;
             if (is_plus) {
                 left_acc += right_acc;
+#ifdef AIO_INT_PARSER_DEBUG
+                log_info_int(AIO_INT_PARSER_TAG, "After plus acc:", left_acc);
+#endif
             }
             if (is_minus) {
                 left_acc -= right_acc;
+#ifdef AIO_INT_PARSER_DEBUG
+                log_info_int(AIO_INT_PARSER_TAG, "After minus acc:", left_acc);
+#endif
             }
-            left_result = right_result;
+            const_str_hook *old_left_hook = left_hook;
+            left_hook = new_str_hook_by_other(right_result->rest);
+            //----------------------------------------------------------------------------------------------------------
+            //찌꺼기 수집기 (Garbage collector):
+            free_str_hook(next_hook);
+            free_aio_result(right_result);
+            free_const_str_hook(old_left_hook);
+        } else {
+            break;
         }
     }
-    const_str_hook *rest = left_result->rest;
-    return new_aio_int_result(left_acc, new_str_hook_by_other(rest));
+    str_hook *rest = new_str_hook_by_other(left_hook);
+    //------------------------------------------------------------------------------------------------------------------
+    //찌꺼기 수집기 (Garbage collector):
+    free_str_hook(left_hook);
+    return new_aio_int_result(left_acc, rest);
 }
 
 aio_value *parse_int_value_string(

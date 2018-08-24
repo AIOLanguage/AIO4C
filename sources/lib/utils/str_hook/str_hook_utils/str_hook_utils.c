@@ -10,7 +10,7 @@
 #include "../../../../../headers/lang/aio_reserved_names/aio_reserved_names_container.h"
 #include "../../../../../headers/lib/utils/char_utils/char_utils.h"
 
-//#define STRING_HOOK_DEBUG
+#define STRING_HOOK_DEBUG
 
 #ifdef STRING_HOOK_DEBUG
 
@@ -160,10 +160,10 @@ boolean are_equal_hooked_str(const_str_hook *hook_1, const_str_hook *hook_2)
 
 boolean is_hook_equals_str(const_str_hook *hook, const_string str)
 {
-#ifdef STRING_HOOK_DEBUG
-    log_info_str_hook(STRING_HOOK_TAG, "Hook:", hook);
-    log_info_string(STRING_HOOK_TAG, "String:", str);
-#endif
+//#ifdef STRING_HOOK_DEBUG
+//    log_info_str_hook(STRING_HOOK_TAG, "Hook:", hook);
+//    log_info_string(STRING_HOOK_TAG, "String:", str);
+//#endif
     const int hook_size = get_str_hook_size(hook);
     const int str_length = strlen(str);
     if (hook_size != str_length) {
@@ -345,24 +345,27 @@ int str_hook_to_int(const_str_hook *hook)
 
 double str_hook_to_double(const struct str_hook *hook)
 {
-    const static int DIGIT_SHIFT = 10;
     const static char CHAR_SHIFT = '0';
+    const static int DIGIT_SHIFT = 10;
     const_string string = hook->source_ref;
     int integer_part = 0;
     int i = hook->start;
-    while (TRUE) {
-        if (is_dot(string[i])) {
-            break;
-        } else {
-            integer_part = integer_part * DIGIT_SHIFT + (string[i++] - CHAR_SHIFT);
-        }
+    while (!is_dot(string[i])) {
+        integer_part = integer_part * DIGIT_SHIFT + (string[i++] - CHAR_SHIFT);
     }
+//#ifdef STRING_HOOK_DEBUG
+//    log_info_int(STRING_HOOK_TAG, "Int part:", integer_part);
+//#endif
     double fraction_part = 0.0;
-    int fraction_counter = 1;
+    double fraction_counter = DIGIT_SHIFT;
     for (int j = i + 1; j < hook->end; ++j) {
-        fraction_part = fraction_part + (((double) (string[j] - CHAR_SHIFT)) / fraction_counter);
-        fraction_counter = fraction_counter * DIGIT_SHIFT;
+        const double digit = ((double) (string[j] - CHAR_SHIFT) / fraction_counter);
+        fraction_part += digit;
+        fraction_counter *= DIGIT_SHIFT;
     }
+//#ifdef STRING_HOOK_DEBUG
+//    log_info_double(STRING_HOOK_TAG, "Fractional part:", fraction_part);
+//#endif
     return ((double) integer_part) + fraction_part;
 }
 

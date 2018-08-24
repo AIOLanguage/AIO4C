@@ -168,13 +168,22 @@ struct aio_result *make_parentheses(
 #endif
         //Get value into parenthesis:
         aio_value *in_parenthesis_value = parse_value_hook(in_parenthesis_hook, context, control_graph);
+#ifdef AIO_EXPRESSION_ASSISTANT_DEBUG
+        log_info_aio_value(AIO_EXPRESSION_ASSISTANT_TAG, "In parenthesis value:", in_parenthesis_value);
+#endif
         //Cast to string:
         aio_value *value = cast_function(in_parenthesis_value);
+#ifdef AIO_EXPRESSION_ASSISTANT_DEBUG
+        log_info_aio_value(AIO_EXPRESSION_ASSISTANT_TAG, "In parenthesis cast value:", value);
+#endif
         //Create next rest:
         str_hook *next_hook = new_str_hook(expression_str);
-        next_hook->start = end_parenthesis + 1;
+        next_hook->start = end_parenthesis;
         next_hook->end = expression_hook->end;
         //Create result:
+#ifdef AIO_EXPRESSION_ASSISTANT_DEBUG
+        log_info_str_hook(AIO_EXPRESSION_ASSISTANT_TAG, "After parenthesis rest:", next_hook);
+#endif
         aio_result *in_parenthesis_result = new_aio_result(value, next_hook);
         return in_parenthesis_result;
     }
