@@ -63,6 +63,9 @@ aio_variable *get_aio_variable_in_function_control_graph(
         const_aio_function_control_graph *control_graph
 )
 {
+#ifdef AIO_VARIABLE_DEBUG
+    log_info(AIO_VARIABLE_TAG, "Start to find variable in graph...");
+#endif
     aio_variable *variable = force_get_aio_variable_in_function_control_graph(variable_name, control_graph);
     if (variable != NULL) {
         const_boolean is_not_reached_variable_in_graph = variable->init_type == AIO_VARIABLE_NOT_INITIALIZED;

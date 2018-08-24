@@ -2,6 +2,9 @@
 #include <stdlib.h>
 #include "../headers/lang/aio_core/aio_core.h"
 #include "../headers/lib/utils/str_hook/str_hook_utils/str_hook_utils.h"
+#include "../headers/lang/aio_type/aio_type.h"
+#include "../headers/lang/aio_function/aio_function.h"
+
 
 #define AIO_DEVELOPMENT
 
@@ -13,7 +16,6 @@
 
 #ifdef AIO_DEVELOPMENT_DEBUG
 
-#include "../headers/lang/aio_type/aio_type.h"
 #include "../headers/lib/utils/log_utils/log_utils.h"
 
 #endif
@@ -71,6 +73,7 @@ void make_test()
         }
     }
 #endif
+//    exit(1);
     invoke_static_function_in_context(context, test_hook, bundle);
     //------------------------------------------------------------------------------------------------------------------
     //찌꺼기 수집기 (Garbage collector):

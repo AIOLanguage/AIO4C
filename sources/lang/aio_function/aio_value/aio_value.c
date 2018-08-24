@@ -420,10 +420,9 @@ aio_value *cast_to_boolean(aio_value *value)
     }
     if (is_hook_equals_str(type, STRING)) {
         const_string string_value = value->get.string_acc;
-        if (are_equal_strings(string_value, AIO_TRUE)) {
+        if (are_equal_strings(string_value, AIO_TRUE) || are_equal_strings(string_value, "1")) {
             return new_aio_boolean_value(TRUE);
-        }
-        if (are_equal_strings(string_value, AIO_FALSE)) {
+        } else if (are_equal_strings(string_value, AIO_FALSE) || are_equal_strings(string_value, "0")) {
             return new_aio_boolean_value(FALSE);
         } else {
             throw_error_with_tag(AIO_VALUE_TAG, "Can not cast string to boolean");
@@ -479,7 +478,7 @@ aio_value *cast_to_type(aio_value *value, const_str_hook *type)
 
 void log_info_aio_value(const_string tag, string message, const aio_value *value)
 {
-    if (value != NULL){
+    if (value != NULL) {
         const_str_hook *type = value->type;
         if (is_hook_equals_str(type, INTEGER)) {
             log_info_int(tag, message, value->get.int_acc);

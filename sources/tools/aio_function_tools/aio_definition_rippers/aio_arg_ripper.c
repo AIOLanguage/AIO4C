@@ -18,6 +18,8 @@
 
 #ifdef AIO_ARG_RIPPER_DEBUG
 
+#include "../../../../headers/lib/utils/log_utils/log_utils.h"
+
 #endif
 
 aio_variable_definition_list *dig_arguments(const_string source_code, int *pointer_reference)
@@ -68,30 +70,28 @@ aio_variable_definition_list *dig_arguments(const_string source_code, int *point
             const_str_hook_list *clean_arg_content_list = filter_str_hook_list(dirty_arg_content_list,
                                                                                is_not_empty_hooked_str);
             const_str_hook_array hooks = clean_arg_content_list->hooks;
+            const size_t clean_arg_content_list_size = clean_arg_content_list->size;
             str_hook *arg_type = NULL;
             const_str_hook *arg_name = NULL;
             boolean is_mutable = FALSE;
 #ifdef AIO_ARG_RIPPER_DEBUG
             log_info_str_hook_list(AIO_ARG_RIPPER_TAG, "CLEAN CONTENT ----->", clean_arg_content_list);
+            log_info_int(AIO_ARG_RIPPER_TAG, "Clean arg content list size:", clean_arg_content_list_size);
 #endif
-            switch (clean_arg_content_list->size) {
-                case TYPE_VS_NAME:
-                    arg_type = new_str_hook_by_other(hooks[0]);
-                    arg_name = new_str_hook_by_other(hooks[1]);
-                    break;
-                case MUTABLE_VS_TYPE_VS_NAME: {
-                    const_str_hook *mutable_modifier = hooks[0];
-                    if (is_aio_mutable_modifier(mutable_modifier)) {
-                        arg_type = new_str_hook_by_other(hooks[1]);
-                        arg_name = new_str_hook_by_other(hooks[2]);
-                        is_mutable = TRUE;
-                    } else {
-                        throw_error_with_tag(AIO_ARG_RIPPER_TAG, "Invalid 'mu' modifier!");
-                    }
+            if (clean_arg_content_list_size == TYPE_VS_NAME) {
+                arg_type = new_str_hook_by_other(hooks[0]);
+                arg_name = new_str_hook_by_other(hooks[1]);
+            } else if (clean_arg_content_list_size == MUTABLE_VS_TYPE_VS_NAME) {
+                const_str_hook *mutable_modifier = hooks[0];
+                if (is_aio_mutable_modifier(mutable_modifier)) {
+                    arg_type = new_str_hook_by_other(hooks[1]);
+                    arg_name = new_str_hook_by_other(hooks[2]);
+                    is_mutable = TRUE;
+                } else {
+                    throw_error_with_tag(AIO_ARG_RIPPER_TAG, "Invalid 'mu' modifier!");
                 }
-                    break;
-                default:
-                    throw_error_with_tag(AIO_ARG_RIPPER_TAG, "Can not define arg content!");
+            } else {
+                throw_error_with_tag(AIO_ARG_RIPPER_TAG, "Can not define arg content!");
             }
             aio_variable_definition *definition = new_aio_variable_definition(arg_name, arg_type, is_mutable);
             add_aio_variable_definition_in_list(arg_definition_map, definition);
