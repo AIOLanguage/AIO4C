@@ -14,48 +14,11 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77c54fc7-a37a-4eaf-a794-282c0598671e" name="Default" comment="버그 수정 (Fixing bugs):&#10;------------------------------------------------------------------------&#10;-&gt; 'double' 유틸리티 고정켰습니다 (Fixed 'double utils') &#10;------------------------------------------------------------------------">
-      <change afterPath="$PROJECT_DIR$/aioPrograms/tests/complexTests/variables/ImmutableVariables.aio" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aioPrograms/tests/spiderTests/assign/paradigm/ChangeImmutable.aio" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aioPrograms/tests/spiderTests/assign/paradigm/DuplicateDefinition.aio" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aioPrograms/tests/spiderTests/assign/paradigm/DuplicateMutableDefinition.aio" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aioPrograms/tests/spiderTests/assign/parsing/Test1.aio" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aioPrograms/tests/spiderTests/assign/parsing/Test2.aio" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aioPrograms/tests/spiderTests/assign/parsing/Test3.aio" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aioPrograms/tests/spiderTests/if/paradigm/DefineVariablesInScopes.aio" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aioPrograms/tests/spiderTests/if/parsing/Test1.aio" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aioPrograms/tests/spiderTests/if/parsing/Test2.aio" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aioPrograms/tests/spiderTests/loop/paradigm/LoopWithCondition.aio" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aioPrograms/tests/spiderTests/loop/paradigm/LoopWithMutableModifier.aio" afterDir="false" />
+    <list default="true" id="77c54fc7-a37a-4eaf-a794-282c0598671e" name="Default" comment="버그 수정 (Fixing bugs):&#10;------------------------------------------------------------------------&#10;-&gt; 'Assign' 과 'If' 거미들을 시험했습니다 (Tested 'Assign', 'If' Spiders);&#10;-&gt; 'aio_default_loop_header_spider' 을 고쳤습니다 &#10;(Fixed 'aio_default_loop_header_spider');&#10;-&gt; 테스트들을 추가했습니다 (Added tests).&#10;------------------------------------------------------------------------">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aioPrograms/tests/controlGraphTests/Trivial.aio" beforeDir="false" afterPath="$PROJECT_DIR$/aioPrograms/tests/complexTests/variables/Trivial.aio" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aioPrograms/tests/spiderTests/Assign.aio" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/aioPrograms/tests/spiderTests/AssignAndIf.aio" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/aioPrograms/tests/spiderTests/CommonTest.aio" beforeDir="false" afterPath="$PROJECT_DIR$/aioPrograms/tests/spiderTests/common/parsing/Test1.aio" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aioPrograms/tests/spiderTests/Loop.aio" beforeDir="false" afterPath="$PROJECT_DIR$/aioPrograms/tests/spiderTests/loop/parsing/Test1.aio" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aioPrograms/tests/spiderTests/Procedure.aio" beforeDir="false" afterPath="$PROJECT_DIR$/aioPrograms/tests/spiderTests/procedure/parsing/Test1.aio" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aioPrograms/tests/spiderTests/Return.aio" beforeDir="false" afterPath="$PROJECT_DIR$/aioPrograms/tests/spiderTests/return/parsing/Test1.aio" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aioPrograms/tests/spiderTests/Switch.aio" beforeDir="false" afterPath="$PROJECT_DIR$/aioPrograms/tests/spiderTests/switch/parsing/Test1.aio" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/C.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/C.includecache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/depend.internal" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/headers/lib/utils/string_utils/string_utils.h" beforeDir="false" afterPath="$PROJECT_DIR$/headers/lib/utils/string_utils/string_utils.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/headers/tools/aio_common_tools/aio_block_body_explorer/aio_block_body_explorer.h" beforeDir="false" afterPath="$PROJECT_DIR$/headers/tools/aio_common_tools/aio_block_body_explorer/aio_block_body_explorer.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/headers/tools/aio_function_tools/aio_instruction_spider_nest/aio_loop_spider/aio_loop_spider.h" beforeDir="false" afterPath="$PROJECT_DIR$/headers/tools/aio_function_tools/aio_instruction_spider_nest/aio_loop_spider/aio_loop_spider.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main/main.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sources/lang/aio_function/aio_value/aio_value.c" beforeDir="false" afterPath="$PROJECT_DIR$/sources/lang/aio_function/aio_value/aio_value.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sources/lang/aio_function/aio_variable/aio_variable.c" beforeDir="false" afterPath="$PROJECT_DIR$/sources/lang/aio_function/aio_variable/aio_variable.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sources/lib/utils/string_utils/string_utils.c" beforeDir="false" afterPath="$PROJECT_DIR$/sources/lib/utils/string_utils/string_utils.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sources/tools/aio_common_tools/aio_block_body_explorer/aio_block_body_explorer.c" beforeDir="false" afterPath="$PROJECT_DIR$/sources/tools/aio_common_tools/aio_block_body_explorer/aio_block_body_explorer.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sources/tools/aio_function_tools/aio_expression_parser/aio_inner_parcers/aio_double_parser.c" beforeDir="false" afterPath="$PROJECT_DIR$/sources/tools/aio_function_tools/aio_expression_parser/aio_inner_parcers/aio_double_parser.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_assign_spider/aio_assign_spider.c" beforeDir="false" afterPath="$PROJECT_DIR$/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_assign_spider/aio_assign_spider.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_break_spider/aio_break_spider.c" beforeDir="false" afterPath="$PROJECT_DIR$/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_break_spider/aio_break_spider.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_if_spider/aio_if_spider.c" beforeDir="false" afterPath="$PROJECT_DIR$/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_if_spider/aio_if_spider.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_loop_spider/aio_inner_spiders/aio_default_loop_header_spider.c" beforeDir="false" afterPath="$PROJECT_DIR$/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_loop_spider/aio_inner_spiders/aio_default_loop_header_spider.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_loop_spider/aio_loop_spider.c" beforeDir="false" afterPath="$PROJECT_DIR$/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_loop_spider/aio_loop_spider.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_procedure_spider/aio_procedure_spider.c" beforeDir="false" afterPath="$PROJECT_DIR$/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_procedure_spider/aio_procedure_spider.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_return_spider/aio_return_spider.c" beforeDir="false" afterPath="$PROJECT_DIR$/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_return_spider/aio_return_spider.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_switch_spider/aio_switch_spider.c" beforeDir="false" afterPath="$PROJECT_DIR$/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_switch_spider/aio_switch_spider.c" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -124,7 +87,7 @@
           <entry key="c" value="130616" />
           <entry key="h" value="18303" />
           <entry key="m" value="1814" />
-          <entry key="txt" value="4637" />
+          <entry key="txt" value="4824" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -133,7 +96,7 @@
           <entry key="Disassembly" value="5" />
           <entry key="Doxygen file" value="200" />
           <entry key="ObjectiveC" value="150533" />
-          <entry key="PLAIN_TEXT" value="8548" />
+          <entry key="PLAIN_TEXT" value="8735" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages">
@@ -537,14 +500,7 @@
       <workItem from="1535048614698" duration="680000" />
       <workItem from="1535105418034" duration="794000" />
       <workItem from="1535106691226" duration="32851000" />
-      <workItem from="1535194591255" duration="27222000" />
-    </task>
-    <task id="LOCAL-00095" summary="-&gt; 'If' 거미 디버깅 (Debugging of 'If' spider)&#10;#LOVE AIO &amp; C =)">
-      <created>1534248431727</created>
-      <option name="number" value="00095" />
-      <option name="presentableId" value="LOCAL-00095" />
-      <option name="project" value="LOCAL" />
-      <updated>1534248431728</updated>
+      <workItem from="1535194591255" duration="27666000" />
     </task>
     <task id="LOCAL-00096" summary="-&gt; 'If' 거미 디버깅 (Debugging of 'If' spider)&#10;#LOVE AIO &amp; C =)">
       <created>1534256186289</created>
@@ -882,11 +838,18 @@
       <option name="project" value="LOCAL" />
       <updated>1535205472731</updated>
     </task>
-    <option name="localTasksCounter" value="144" />
+    <task id="LOCAL-00144" summary="버그 수정 (Fixing bugs):&#10;------------------------------------------------------------------------&#10;-&gt; 'Assign' 과 'If' 거미들을 시험했습니다 (Tested 'Assign', 'If' Spiders);&#10;-&gt; 'aio_default_loop_header_spider' 을 고쳤습니다 &#10;(Fixed 'aio_default_loop_header_spider');&#10;-&gt; 테스트들을 추가했습니다 (Added tests).&#10;------------------------------------------------------------------------">
+      <created>1535226472787</created>
+      <option name="number" value="00144" />
+      <option name="presentableId" value="LOCAL-00144" />
+      <option name="project" value="LOCAL" />
+      <updated>1535226472787</updated>
+    </task>
+    <option name="localTasksCounter" value="145" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1017099000" />
+    <option name="totallyTimeSpent" value="1017543000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -956,7 +919,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="-&gt; 'Switch' 거미를 만들었습니다. 하지만 이것을 디버그하지 않았습니다 (Created 'Switch' spider but didn't debug this)&#10;#LOVE AIO &amp; C =)" />
     <MESSAGE value="-&gt; 'Switch' 거미의 위빙를 만들었습니다. 하지만 이것을 디버그하지 않았습니다 (Created 'Switch' spider weaving but didn't debug this)&#10;#LOVE AIO &amp; C =)" />
     <MESSAGE value="-&gt; 'Switch' 거미의 위빙를 만들었습니다 (Created 'Switch' spider weaving)&#10;#LOVE AIO &amp; C =)" />
     <MESSAGE value="-&gt; АХАХХААХХААХАХАХХАХАаХАХАХаХХААХАХАХХААХАХАХАХХААХ!!! ЕЕЕ!!! ЯУ!!!! Оохохохохохохохох!!! НАКОНЕЦ-ТО!!!&#10;#LOVE AIO &amp; C =)" />
@@ -981,7 +943,8 @@
     <MESSAGE value="버그 수정 (Fixing bugs):&#10;------------------------------------------------------------------------&#10;-&gt; 'free_aio_value' 함수를 고정켰습니다 (Fixed the 'free_aio_value' function).&#10;------------------------------------------------------------------------" />
     <MESSAGE value="버그 수정 (Fixing bugs):&#10;------------------------------------------------------------------------&#10;-&gt; 'invoke_aio_function' 함수를 고정켰습니다 &#10;(Fixed the 'invoke_aio_function' function).&#10;-&gt; 시험들을 더했습니다 (Added tests)&#10;------------------------------------------------------------------------" />
     <MESSAGE value="버그 수정 (Fixing bugs):&#10;------------------------------------------------------------------------&#10;-&gt; 'double' 유틸리티 고정켰습니다 (Fixed 'double utils') &#10;------------------------------------------------------------------------" />
-    <option name="LAST_COMMIT_MESSAGE" value="버그 수정 (Fixing bugs):&#10;------------------------------------------------------------------------&#10;-&gt; 'double' 유틸리티 고정켰습니다 (Fixed 'double utils') &#10;------------------------------------------------------------------------" />
+    <MESSAGE value="버그 수정 (Fixing bugs):&#10;------------------------------------------------------------------------&#10;-&gt; 'Assign' 과 'If' 거미들을 시험했습니다 (Tested 'Assign', 'If' Spiders);&#10;-&gt; 'aio_default_loop_header_spider' 을 고쳤습니다 &#10;(Fixed 'aio_default_loop_header_spider');&#10;-&gt; 테스트들을 추가했습니다 (Added tests).&#10;------------------------------------------------------------------------" />
+    <option name="LAST_COMMIT_MESSAGE" value="버그 수정 (Fixing bugs):&#10;------------------------------------------------------------------------&#10;-&gt; 'Assign' 과 'If' 거미들을 시험했습니다 (Tested 'Assign', 'If' Spiders);&#10;-&gt; 'aio_default_loop_header_spider' 을 고쳤습니다 &#10;(Fixed 'aio_default_loop_header_spider');&#10;-&gt; 테스트들을 추가했습니다 (Added tests).&#10;------------------------------------------------------------------------" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/aioPrograms/examples/DemoIf">

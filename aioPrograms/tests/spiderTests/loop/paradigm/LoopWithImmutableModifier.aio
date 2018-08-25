@@ -1,0 +1,7 @@
+//TODO: TEST ME
+Voi test (mu Dou wa) {
+    mu j = 3
+    loo (Int i = 5 i != wa j = i - 1) {
+        wa = wa + 1
+    }
+}
