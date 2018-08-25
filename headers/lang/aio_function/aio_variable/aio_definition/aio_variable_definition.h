@@ -41,7 +41,7 @@ void free_aio_variable_definition(struct aio_variable_definition *definition);
 typedef struct aio_variable_definition_list {
     unsigned int capacity;
     unsigned int size;
-    const struct aio_variable_definition **definitions;
+    struct aio_variable_definition **definitions;
 } aio_variable_definition_list;
 
 struct aio_variable_definition_list *new_aio_variable_definition_list();

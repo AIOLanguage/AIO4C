@@ -16,13 +16,25 @@
 
 #define AIO_VARIABLE_TAG "AIO_VARIABLE"
 
-aio_variable *new_aio_variable_by_definition(const_aio_variable_definition *variable_definition, aio_value *value)
+aio_variable *new_aio_variable_by_definition(aio_variable_definition *variable_definition, aio_value *value)
 {
     aio_variable *variable = new_object(sizeof(aio_variable));
     variable->definition = variable_definition;
     variable->value = value;
     variable->init_type = AIO_VARIABLE_NOT_INITIALIZED;
     return variable;
+}
+
+void free_aio_variable(aio_variable *variable)
+{
+#ifdef AIO_VARIABLE_DEBUG
+    log_info(AIO_VARIABLE_TAG, "Free value...");
+#endif
+    free_aio_value(variable->value);
+#ifdef AIO_VARIABLE_DEBUG
+    log_info(AIO_VARIABLE_TAG, "Free variable...");
+#endif
+    free(variable);
 }
 
 aio_variable *force_get_aio_variable_in_function_control_graph(
@@ -79,11 +91,6 @@ aio_variable *get_aio_variable_in_function_control_graph(
     }
 }
 
-void free_aio_variable(aio_variable *variable)
-{
-
-}
-
 /**
  * List
  */
@@ -133,6 +140,28 @@ aio_variable *get_aio_variable_in_list_by_name(const_aio_variable_list *list, co
     return NULL;
 }
 
+void free_aio_variable_list(const_aio_variable_list *list)
+{
+    const size_t list_size = list->size;
+    aio_variable_array variable_array = list->variables;
+    for (int i = 0; i < list_size; ++i) {
+        aio_variable *variable = variable_array[i];
+        if (variable != NULL) {
+#ifdef AIO_VARIABLE_DEBUG
+            log_info(AIO_VARIABLE_TAG, "Free");
+            log_info_aio_variable_definition(AIO_VARIABLE_TAG, variable->definition);
+#endif
+            variable_array[i] = NULL;
+            free_aio_variable(variable);
+        }
+    }
+#ifdef AIO_VARIABLE_DEBUG
+    log_info(AIO_VARIABLE_TAG, "Variables are cleared!");
+#endif
+    free(variable_array);
+    free((void *) list);
+}
+
 const struct aio_variable_list *upbuild_variable_map_by_definitions(const_aio_variable_definition_list *list)
 {
 #ifdef AIO_VARIABLE_DEBUG
@@ -141,7 +170,7 @@ const struct aio_variable_list *upbuild_variable_map_by_definitions(const_aio_va
 #endif
     //Extract definition list:
     const size_t definition_list_size = list->size;
-    const_aio_variable_definition **definitions = list->definitions;
+    aio_variable_definition **definitions = list->definitions;
 #ifdef AIO_VARIABLE_DEBUG
     for (int j = 0; j < definition_list_size; ++j) {
         log_info_aio_variable_definition(AIO_VARIABLE_TAG, definitions[j]);
@@ -154,7 +183,7 @@ const struct aio_variable_list *upbuild_variable_map_by_definitions(const_aio_va
 #endif
     aio_variable_list *variable_list = new_aio_variable_list();
     for (int i = 0; i < definition_list_size; ++i) {
-        const_aio_variable_definition *definition = definitions[i];
+        aio_variable_definition *definition = definitions[i];
 #ifdef AIO_VARIABLE_DEBUG
         log_info(AIO_VARIABLE_TAG, "Create variable...");
 #endif

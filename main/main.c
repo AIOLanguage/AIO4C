@@ -37,7 +37,7 @@ void make_test()
     inflate_aio_project_controller();
 #endif
 #ifdef AIO_DEVELOPMENT_DEBUG
-    log_info(AIO_DEVELOPMENT_TAG, "start to inflate AIO core...");
+    log_info(AIO_DEVELOPMENT_TAG, "Start to inflate AIO core...");
 #endif
     inflate_aio_core();
     const_string aio_test_file_path = "../aio_programs/test.aio";

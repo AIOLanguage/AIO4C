@@ -111,16 +111,27 @@ aio_value *new_aio_type_value(void *reference, const_str_hook *type)
 
 void free_aio_value(aio_value *value)
 {
-    str_hook *type = value->type;
-    const_boolean is_string_type = is_hook_equals_str(type, STRING);
-    if (is_string_type) {
-        string string_value = value->get.string_acc;
-        value->get.string_acc = NULL;
-        free(string_value);
+#ifdef AIO_VALUE_DEBUG
+    log_info_boolean(AIO_VALUE_TAG, "Free not null value:", value != NULL);
+#endif
+    if (value != NULL) {
+        str_hook *type = value->type;
+#ifdef AIO_VALUE_DEBUG
+        log_info_str_hook(AIO_VALUE_TAG, "Value type:", type);
+#endif
+        const_boolean is_string_type = is_hook_equals_str(type, STRING);
+        if (is_string_type) {
+            string string_value = value->get.string_acc;
+            value->get.string_acc = NULL;
+            free(string_value);
+        }
+        value->get.reference = NULL;
+        free_const_str_hook(type);
+        free(value);
+#ifdef AIO_VALUE_DEBUG
+        log_info(AIO_VALUE_TAG, "Value is deleted!");
+#endif
     }
-    value->get.reference = NULL;
-    free_const_str_hook(type);
-    free(value);
 }
 
 /**

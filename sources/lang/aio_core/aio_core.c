@@ -10,6 +10,8 @@
 
 #define AIO_CORE_DEBUG
 
+aio_core *core;
+
 char core_types[NUMBER_OF_CORE_TYPES][4] = {
         {INTEGER},
         {DOUBLE},
@@ -37,5 +39,5 @@ const_aio_context * inflate_aio_context_and_put_in_core(const_string context_pat
 }
 
 void free_aio_core() {
-
+    free(core);
 }

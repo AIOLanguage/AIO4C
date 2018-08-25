@@ -42,7 +42,7 @@ void perform_aio_loop_instruction(const_aio_function_instruction *instruction,
     const_string loop_condition_string = task->loop_condition;
     while (is_condition_performs(loop_condition_string, context_ref)) {
         inflate_new_aio_function_control_graph(control_graph, cycle_holder, bundle_ref, context_ref);
-        if (*system_state == AIO_FUNCTION_SYSTEM_BREAKING) {
+        if (*system_state == AIO_FUNCTION_SYSTEM_BREAK) {
             *system_state = AIO_FUNCTION_SYSTEM_MAKE;
             break;
         }

@@ -7,7 +7,7 @@
 #include "../../../lang/aio_context/aio_context.h"
 
 typedef enum aio_function_system_state {
-    AIO_FUNCTION_SYSTEM_MAKE, AIO_FUNCTION_SYSTEM_BREAKING, AIO_FUNCTION_SYSTEM_CONTINUE, AIO_FUNCTION_SYSTEM_STOP
+    AIO_FUNCTION_SYSTEM_MAKE, AIO_FUNCTION_SYSTEM_BREAK, AIO_FUNCTION_SYSTEM_CONTINUE, AIO_FUNCTION_SYSTEM_STOP
 } aio_function_system_state;
 
 

@@ -10,7 +10,7 @@ aio_function_instruction *new_aio_continue_instruction(aio_function_instruction_
 }
 
 void perform_aio_break_instruction(const_aio_function_control_graph *control_graph) {
-    *control_graph->system_state_ref = AIO_FUNCTION_SYSTEM_BREAKING;
+    *control_graph->system_state_ref = AIO_FUNCTION_SYSTEM_BREAK;
 }
 
 void perform_aio_continue_instruction(const_aio_function_control_graph *control_graph) {

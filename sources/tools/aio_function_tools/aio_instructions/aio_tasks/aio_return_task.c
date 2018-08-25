@@ -55,6 +55,5 @@ void perform_aio_return_instruction(const_aio_function_instruction *instruction,
 #endif
         add_aio_value_in_list(output_value_list, return_value);
     }
-    throw_error_with_tag(AIO_RETURN_TASK_TAG, "STOP HERE!");
     *control_graph->system_state_ref = AIO_FUNCTION_SYSTEM_STOP;
 }

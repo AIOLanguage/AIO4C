@@ -28,7 +28,7 @@ typedef struct aio_variable {
 } aio_variable;
 
 struct aio_variable *new_aio_variable_by_definition(
-        const struct aio_variable_definition *variable_definition,
+        struct aio_variable_definition *variable_definition,
         struct aio_value *value
 );
 
@@ -63,7 +63,7 @@ struct aio_variable *get_aio_variable_in_list_by_name(
         const struct str_hook *name
 );
 
-void free_aio_variable_list(struct aio_variable_list *list);
+void free_aio_variable_list(const struct aio_variable_list *list);
 
 /**
  * Typedef utils.

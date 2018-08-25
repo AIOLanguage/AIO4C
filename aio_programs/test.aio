@@ -10,7 +10,7 @@ whe
 <            72 x=x-1){
 book = 'Java'}pi=
 3.14}
-'AIO_DEVELOPMENT_AIO' -> {
+'AIO_DEVELOPMENT' -> {
 out 1, 2, 'tru'
 }
 }:{

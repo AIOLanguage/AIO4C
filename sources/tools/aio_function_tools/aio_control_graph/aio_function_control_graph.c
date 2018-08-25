@@ -147,12 +147,23 @@ void perform_aio_function_instructions(const_aio_function_control_graph *control
     const size_t list_size = instruction_list->size;
     for (int i = 0; i < list_size; ++i) {
         const aio_function_system_state system_state = *control_graph->system_state_ref;
-#ifdef AIO_CONTROL_GRAPH_DEBUG
-        log_info_boolean(AIO_CONTROL_GRAPH_TAG, "Normal state:", system_state == AIO_FUNCTION_SYSTEM_MAKE);
-#endif
         if (system_state == AIO_FUNCTION_SYSTEM_MAKE) {
+#ifdef AIO_CONTROL_GRAPH_DEBUG
+            log_info(AIO_CONTROL_GRAPH_TAG, "Normal state");
+#endif
             perform_aio_instruction(instructions[i], control_graph);
         } else {
+#ifdef AIO_CONTROL_GRAPH_DEBUG
+            if (system_state == AIO_FUNCTION_SYSTEM_BREAK) {
+                log_info(AIO_CONTROL_GRAPH_TAG, "Break state");
+            }
+            if (system_state == AIO_FUNCTION_SYSTEM_CONTINUE) {
+                log_info(AIO_CONTROL_GRAPH_TAG, "Continue state");
+            }
+            if (system_state == AIO_FUNCTION_SYSTEM_STOP) {
+                log_info(AIO_CONTROL_GRAPH_TAG, "Stop state");
+            }
+#endif
             break;
         }
     }
@@ -160,5 +171,9 @@ void perform_aio_function_instructions(const_aio_function_control_graph *control
 
 void free_aio_control_graph(const_aio_function_control_graph *graph)
 {
-
+#ifdef AIO_CONTROL_GRAPH_DEBUG
+    log_info(AIO_CONTROL_GRAPH_TAG, "Start to delete control graph");
+#endif
+    free_aio_variable_list(graph->variable_list);
+    free((void *) graph);
 }
