@@ -165,14 +165,24 @@ void free_strings(const_string_array *src_reference)
     free(*src_reference);
 }
 
-string squeeze_string(const_string src)
+string squeeze_string_for_expression(const_string src)
 {
     const unsigned src_length = strlen(src);
     string dst = calloc(src_length + 1, sizeof(char));
-    unsigned int new_length = 0;
+    size_t new_length = 0;
+    boolean in_quote_scope = FALSE;
     for (int i = 0; i < src_length; ++i) {
         const char symbol = src[i];
-        if (!is_space_or_line_break(symbol)) {
+        const_boolean is_not_whitespace = !is_space_or_line_break(symbol);
+        const_boolean is_quote = is_single_quote(symbol);
+        if (is_quote){
+            if (!in_quote_scope){
+                in_quote_scope = TRUE;
+            } else {
+                in_quote_scope = FALSE;
+            }
+        }
+        if (is_not_whitespace || in_quote_scope) {
             dst[new_length++] = symbol;
         }
     }
@@ -239,10 +249,12 @@ string int_to_string(int src)
     return dst;
 }
 
-string double_to_string(double src)
+string double_to_string(const double src)
 {
-    static const char DOT = '.';
-    static int NANO = 1000000000;
+    const static int LEFT_BORDER = 0;
+    const static const char DOT = '.';
+    const static int NANO = 9;
+    const static int SHIFT = 10;
     string_builder *sb = new_string_builder();
     //Put int part:
     const int int_part = (int) src;
@@ -251,13 +263,29 @@ string double_to_string(double src)
     //Put dot:
     append_char_to(sb, DOT);
     //Put fractional part:
-    const int fractional_part = (int) (src - int_part) * NANO;;
-    const_string fractional_string = int_to_string(fractional_part);
-    append_string(sb, fractional_string);
-    //Extract string:
-    string dst = pop_string_from_builder(sb);
+    double fractional_part = src - int_part;
+    for (int i = 0; i < NANO; ++i) {
+        fractional_part *= SHIFT;
+        const int digit = (int) fractional_part;
+        const char symbol = (const char) (digit + '0');
+        append_char_to(sb, symbol);
+        fractional_part -= digit;
+    }
+    //Extract string builder accumulator:
+    int right_border = sb->length - 1;
+    string sb_acc = sb->string_value;
+    //Shift empty cells:
+    while (right_border >= 0) {
+        const char symbol = sb_acc[right_border];
+        if (symbol != '0') {
+            break;
+        } else {
+            right_border--;
+        }
+    }
+    string result = substring(sb_acc, LEFT_BORDER, right_border + 1);
     free_string_builder(sb);
-    return dst;
+    return result;
 }
 
 const_boolean are_equal_strings(const_string first, const_string second)

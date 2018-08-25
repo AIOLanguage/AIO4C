@@ -32,9 +32,9 @@ void refresh_procedure_spider(aio_spider *spider, point_watcher *ripper_watcher)
     main_watcher->start = ripper_watcher->pointer;
     main_watcher->end = ripper_watcher->pointer;
     main_watcher->mode = POINT_WATCHER_PASSIVE_MODE;
-#ifdef AIO_PROCEDURE_SPIDER_DEBUG
-    log_info(AIO_PROCEDURE_SPIDER_TAG, "Refresh is complete!");
-#endif
+//#ifdef AIO_PROCEDURE_SPIDER_DEBUG
+//    log_info(AIO_PROCEDURE_SPIDER_TAG, "Refresh is complete!");
+//#endif
 }
 
 /**
@@ -153,7 +153,7 @@ void weave_procedure_instruction_for(void *parent, const_string source_code,
     ripper_watcher->pointer = new_point;
     ripper_watcher->start = new_point;
     string dirty_expression = substring_by_point_watcher(source_code, watcher);
-    string clean_expression = squeeze_string(dirty_expression);
+    string clean_expression = squeeze_string_for_expression(dirty_expression);
 #ifdef AIO_PROCEDURE_SPIDER_DEBUG
     log_info_string(AIO_PROCEDURE_SPIDER_TAG, "CAPTURED EXPRESSION:", clean_expression);
 #endif

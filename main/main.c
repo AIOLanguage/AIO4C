@@ -9,9 +9,9 @@
 
 #ifdef AIO_DEVELOPMENT
 
-#define AIO_TEST_PATH "../aioPrograms/tests/controlGraphTests/Trivial.aio"
+#define AIO_TEST_PATH "../aioPrograms/tests/spiderTests/loop/paradigm/LoopWithCondition.aio"
 
-#define AIO_TEST_FUNCTION "isPercent"
+#define AIO_TEST_FUNCTION "test"
 
 #define AIO_DEVELOPMENT_DEBUG
 
@@ -27,7 +27,10 @@ aio_bundle *create_test_bundle()
 {
     aio_value_list *input_value_list = new_aio_value_list();
     //Create test args:
-    add_aio_value_in_list(input_value_list, new_aio_string_value("2.3"));
+    add_aio_value_in_list(input_value_list, new_aio_string_value("1"));
+//    add_aio_value_in_list(input_value_list, new_aio_string_value("1"));
+//    add_aio_value_in_list(input_value_list, new_aio_string_value("1"));
+//    add_aio_value_in_list(input_value_list, new_aio_string_value("1"));
     //Crete bundle:
     return new_aio_bundle(input_value_list);
 }
@@ -72,7 +75,7 @@ void make_test()
         }
     }
 #endif
-//    exit(1);
+    exit(1);
     aio_value_list *result_list = invoke_static_function_in_context(context, test_hook, bundle);
     //==================================================================================================================
     //Print result:

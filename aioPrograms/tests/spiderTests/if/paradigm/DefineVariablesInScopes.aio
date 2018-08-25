@@ -1,0 +1,8 @@
+//성공적인 시험 (Successful test):
+Voi test(Boo isNegative) {
+    if (condition) {
+        Int a = -1
+    } : {
+        Int a = 1
+    }
+}

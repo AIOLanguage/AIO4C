@@ -50,9 +50,9 @@ void refresh_switch_spider(aio_spider *spider, point_watcher *ripper_watcher) {
     free_str_hooks_in_list(old_case_body_list);
     free_str_hook_list(old_case_value_list);
     free_str_hook_list(old_case_body_list);
-#ifdef AIO_SWITCH_SPIDER_DEBUG
-    log_info(AIO_SWITCH_SPIDER_TAG, "Refresh is complete!");
-#endif
+//#ifdef AIO_SWITCH_SPIDER_DEBUG
+//    log_info(AIO_SWITCH_SPIDER_TAG, "Refresh is complete!");
+//#endif
 }
 
 /**
@@ -385,7 +385,7 @@ void weave_switch_instruction_for(void *parent, const_string source_code,
         new_point = body_watcher->end - 1;
     }
     const_string dirty_switch_value = substring_by_point_watcher(source_code, header_watcher);
-    const_string new_switch_value = squeeze_string(dirty_switch_value);
+    const_string new_switch_value = squeeze_string_for_expression(dirty_switch_value);
     //Set new start point for ripper:
     ripper_watcher->pointer = new_point;
     ripper_watcher->start = new_point;
@@ -416,7 +416,7 @@ string_list *extract_case_keys_from_hook(const_str_hook *case_keys_hook) {
     string_list *case_key_list = new_string_list();
     //Extract string from hook:
     const_string dirty_case_key_chunk = substring_by_str_hook(case_keys_hook);
-    string case_key_chunk = squeeze_string(dirty_case_key_chunk);
+    string case_key_chunk = squeeze_string_for_expression(dirty_case_key_chunk);
 #ifdef AIO_SWITCH_SPIDER_DEBUG
     log_info_str_hook(AIO_SWITCH_SPIDER_TAG, "Dirty case key hook:", case_keys_hook);
     log_info_string(AIO_SWITCH_SPIDER_TAG, "Dirty case key chunk:", dirty_case_key_chunk);

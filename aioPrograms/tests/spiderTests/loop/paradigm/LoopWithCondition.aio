@@ -1,0 +1,9 @@
+//성공적인 시험 (Successful test):
+Voi test(Int times) {
+    mu Int i = 0
+    loo (i < times) {
+        Str greetings = 'Hello'
+        i = i + 1
+    }
+    mu Str greetings = 'Bye'
+}

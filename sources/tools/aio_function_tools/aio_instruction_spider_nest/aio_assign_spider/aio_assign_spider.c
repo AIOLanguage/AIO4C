@@ -5,12 +5,10 @@
 #include "../../../../../headers/lib/utils/error_utils/error_utils.h"
 #include "../../../../../headers/lang/aio_reserved_names/aio_reserved_names_container.h"
 #include "../../../../../headers/lang/aio_core/aio_core.h"
-#include "../../../../../headers/lib/utils/string_utils/string_builder.h"
 #include "../../../../../headers/lib/utils/memory_utils/memory_utils.h"
 #include "../../../../../headers/tools/aio_common_tools/aio_spider_nest/aio_spider.h"
 #include "../../../../../headers/tools/aio_function_tools/aio_instruction_spider_nest/aio_assign_spider/aio_assign_spider.h"
 #include "../../../../../headers/lib/utils/str_hook/str_hook_utils/str_hook_utils.h"
-#include "../../../../../headers/lang/aio_function/aio_variable/aio_definition/aio_variable_definition.h"
 #include "../../../../../headers/tools/aio_function_tools/aio_instructions/aio_tasks/aio_assign_task.h"
 #include "../../../../../headers/lang/aio_type/aio_type.h"
 
@@ -28,7 +26,8 @@
 
 #endif
 
-void refresh_assign_spider(aio_spider *spider, point_watcher *ripper_watcher) {
+void refresh_assign_spider(aio_spider *spider, point_watcher *ripper_watcher)
+{
     //거미의 조건 리셋 (Reset spider state):
     spider->message = AIO_SPIDER_NOT_FOUND_MATERIALS;
     //재료 리셋 (Reset materials):
@@ -48,16 +47,17 @@ void refresh_assign_spider(aio_spider *spider, point_watcher *ripper_watcher) {
     free_str_hook_list(data_list);
     //------------------------------------------------------------------------------------------------------------------
     materials->variable_data_list = new_str_hook_list();
-#ifdef AIO_ASSIGN_SPIDER_DEBUG
-    log_info(AIO_ASSIGN_SPIDER_TAG, "Refresh is complete!");
-#endif
+//#ifdef AIO_ASSIGN_SPIDER_DEBUG
+//    log_info(AIO_ASSIGN_SPIDER_TAG, "Refresh is complete!");
+//#endif
 }
 
 /**
  * 거미를 비우다 (Free spider).
  */
 
-void free_assign_spider(aio_spider *spider) {
+void free_assign_spider(aio_spider *spider)
+{
     aio_assign_materials *materials = spider->materials;
     free_point_watcher(materials->main_watcher);
     free_point_watcher(materials->value_watcher);
@@ -72,7 +72,8 @@ void free_assign_spider(aio_spider *spider) {
  * 건설자 (Constructor).
  */
 
-struct aio_spider *new_aio_assign_spider(point_watcher *ripper_watcher) {
+struct aio_spider *new_aio_assign_spider(point_watcher *ripper_watcher)
+{
     aio_spider *spider = new_object(sizeof(aio_spider));
     //함수들을 놓다 (Put functions):
     spider->refresh = refresh_assign_spider;
@@ -100,7 +101,8 @@ struct aio_spider *new_aio_assign_spider(point_watcher *ripper_watcher) {
  */
 
 const aio_spider_message is_found_assign_instruction(const_string source_code, point_watcher *ripper_watcher,
-                                                     aio_spider *spider) {
+                                                     aio_spider *spider)
+{
     //재료들을 추출하다 (Extract materials):
     const aio_assign_materials *materials = spider->materials;
     point_watcher *main_watcher = materials->main_watcher;
@@ -136,7 +138,8 @@ const aio_spider_message is_found_assign_instruction(const_string source_code, p
  * 핸들러 (Handlers).
  **/
 
-void handle_assign_declaration_scope(const_string source_code, aio_spider *spider) {
+void handle_assign_declaration_scope(const_string source_code, aio_spider *spider)
+{
     //재료들을 추출하다 (Extract materials):
     aio_assign_materials *materials = spider->materials;
     point_watcher *main_watcher = materials->main_watcher;
@@ -226,7 +229,8 @@ void handle_assign_declaration_scope(const_string source_code, aio_spider *spide
 
 void refresh_assign_declaration_scope(aio_spider *spider, const_str_hook *hook,
                                       aio_assign_variable_declaration_type type,
-                                      aio_spider_message message) {
+                                      aio_spider_message message)
+{
     //재료들을 추출하다 (Extract materials):
     aio_assign_materials *materials = spider->materials;
     str_hook_list *variable_data_list = materials->variable_data_list;
@@ -245,7 +249,8 @@ void refresh_assign_declaration_scope(aio_spider *spider, const_str_hook *hook,
     spider->message = message;
 }
 
-void handle_assign_equal_sign_scope(const_string source_code, aio_spider *spider) {
+void handle_assign_equal_sign_scope(const_string source_code, aio_spider *spider)
+{
     aio_assign_materials *materials = spider->materials;
     point_watcher *main_watcher = materials->main_watcher;
     const int current_position = main_watcher->end;
@@ -270,18 +275,21 @@ void handle_assign_equal_sign_scope(const_string source_code, aio_spider *spider
     }
 }
 
-void handle_assign_value_scope(const_string source_code, aio_spider *spider) {
+void handle_assign_value_scope(const_string source_code, aio_spider *spider)
+{
     //재료들을 추출하다 (Extract materials):
     aio_assign_materials *materials = spider->materials;
     point_watcher *main_watcher = materials->main_watcher;
     point_watcher *value_watcher = materials->value_watcher;
     const int current_position = main_watcher->end;
     const char current_symbol = source_code[current_position];
+    //Check symbol:
     const_boolean is_whitespace_cond = is_space_or_line_break(current_symbol);
     const_boolean is_letter_cond = isalpha(current_symbol);
+    const_boolean is_quote_cond = is_single_quote(current_symbol);
     const_boolean is_valid_bound = isalnum(current_symbol)
                                    || is_closing_parenthesis(current_symbol)
-                                   || is_single_quote(current_symbol);
+                                   || is_quote_cond;
     const_boolean is_close_brace_cond = is_closing_brace(current_symbol);
     if (is_whitespace_cond && value_watcher->mode == POINT_WATCHER_ACTIVE_MODE) {
         value_watcher->pointer++;
@@ -293,7 +301,7 @@ void handle_assign_value_scope(const_string source_code, aio_spider *spider) {
         value_watcher->end = main_watcher->end - value_watcher->pointer;
         //값을 놓다 (Set value):
         string dirty_value = substring_by_point_watcher(source_code, value_watcher);
-        string clean_value = squeeze_string(dirty_value);
+        string clean_value = squeeze_string_for_expression(dirty_value);
         materials->value = clean_value;
 #ifdef AIO_ASSIGN_SPIDER_DEBUG
         log_info_string(AIO_ASSIGN_SPIDER_TAG, "CAPTURED VALUE:", clean_value);
@@ -304,8 +312,18 @@ void handle_assign_value_scope(const_string source_code, aio_spider *spider) {
         spider->message = AIO_SPIDER_IS_READY_FOR_WEAVING;
         //--------------------------------------------------------------------------------------------------------------
         //찌거기 수집기 (Garbage collector):
-        free((void *) dirty_value);
-    } else {
+        free(dirty_value);
+        return;
+    }
+    if (is_quote_cond) {
+        if (value_watcher->mode != POINT_WATCHER_UNDEFINED_MODE) {
+            value_watcher->mode = POINT_WATCHER_UNDEFINED_MODE;
+            return;
+        } else {
+            value_watcher->mode = POINT_WATCHER_PASSIVE_MODE;
+        }
+    }
+    if (value_watcher->mode != POINT_WATCHER_UNDEFINED_MODE){
         value_watcher->mode = POINT_WATCHER_PASSIVE_MODE;
         value_watcher->pointer = 0;
         if (is_valid_bound) {
@@ -319,7 +337,8 @@ void handle_assign_value_scope(const_string source_code, aio_spider *spider) {
  * 위빙이 (Weaving).
  */
 
-static const_str_hook * get_definition_name_by_materials(const aio_assign_materials *materials) {
+static const_str_hook *get_definition_name_by_materials(const aio_assign_materials *materials)
+{
     const_str_hook_array variable_data = materials->variable_data_list->hooks;
     const aio_assign_variable_declaration_type declaration_type = materials->declaration_type;
     const_str_hook *variable_name = NULL;
@@ -343,7 +362,8 @@ static const_str_hook * get_definition_name_by_materials(const aio_assign_materi
 
 static aio_variable_definition *create_local_variable_definition(
         const aio_assign_variable_declaration_type declaration_type,
-        const_str_hook_array variable_materials) {
+        const_str_hook_array variable_materials)
+{
     const_str_hook *variable_name = NULL;
     str_hook *variable_type = NULL;
     boolean is_mutable = FALSE;
@@ -373,7 +393,8 @@ static aio_variable_definition *create_local_variable_definition(
 }
 
 void weave_assign_instruction_for(void *holder, const_string _,
-                                  point_watcher *ripper_watcher, aio_spider *spider) {
+                                  point_watcher *ripper_watcher, aio_spider *spider)
+{
 #ifdef AIO_ASSIGN_SPIDER_DEBUG
     log_info(AIO_ASSIGN_SPIDER_TAG, "Start weaving...");
 #endif

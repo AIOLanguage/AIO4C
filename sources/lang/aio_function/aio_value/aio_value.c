@@ -397,7 +397,10 @@ aio_value *cast_to_string(aio_value *value)
         return new_aio_string_value(int_to_string(value->get.int_acc));
     }
     if (is_hook_equals_str(type, DOUBLE)) {
-        return new_aio_string_value(double_to_string(value->get.double_acc));
+        log_info_double(AIO_VALUE_TAG, "INPUT DOUBLE:", value->get.double_acc);
+        string double_string = double_to_string(value->get.double_acc);
+        log_info_string(AIO_VALUE_TAG, "CASTED DOUBLE TO STRING:", double_string);
+        return new_aio_string_value(double_string);
     }
     if (is_hook_equals_str(type, STRING)) {
         return new_aio_string_value(value->get.string_acc);

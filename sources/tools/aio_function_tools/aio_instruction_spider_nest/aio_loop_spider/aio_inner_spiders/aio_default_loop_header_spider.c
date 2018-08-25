@@ -6,7 +6,6 @@
 #include "../../../../../../headers/lang/aio_core/aio_core.h"
 #include "../../../../../../headers/lib/utils/error_utils/error_utils.h"
 #include "../../../../../../headers/lib/utils/memory_utils/memory_utils.h"
-#include "../../../../../../headers/lang/aio_function/aio_variable/aio_definition/aio_variable_definition.h"
 #include "../../../../../../headers/lib/utils/str_hook/str_hook_utils/str_hook_utils.h"
 #include "../../../../../../headers/lang/aio_type/aio_type.h"
 #include "../../../../../../headers/tools/aio_common_tools/aio_spider_nest/aio_spider.h"
@@ -31,7 +30,8 @@
  */
 
 static void refresh_default_loop_header_materials(aio_default_loop_header_materials *materials,
-                                                  point_watcher *parent_watcher) {
+                                                  point_watcher *parent_watcher)
+{
     //Reset states:
     materials->scope_type = AIO_DEFAULT_LOOP_HEADER_DECLARATION_SCOPE;
     materials->declaration_type = AIO_DEFAULT_LOOP_HEADER_VARIABLE_UNDEFINED;
@@ -62,7 +62,8 @@ static void refresh_default_loop_header_materials(aio_default_loop_header_materi
 #endif
 }
 
-static void refresh_default_loop_header_spider(aio_spider *spider, point_watcher *parent_watcher) {
+static void refresh_default_loop_header_spider(aio_spider *spider, point_watcher *parent_watcher)
+{
     //Set message:
     aio_default_loop_header_materials *materials = spider->materials;
     refresh_default_loop_header_materials(materials, parent_watcher);
@@ -73,7 +74,8 @@ static void refresh_default_loop_header_spider(aio_spider *spider, point_watcher
  * Free spider.
  */
 
-static void free_default_loop_header_materials(aio_default_loop_header_materials *materials) {
+static void free_default_loop_header_materials(aio_default_loop_header_materials *materials)
+{
     //Free watchers:
     free_point_watcher(materials->main_watcher);
     free_point_watcher(materials->condition_watcher);
@@ -87,7 +89,8 @@ static void free_default_loop_header_materials(aio_default_loop_header_materials
     free(materials);
 }
 
-static void free_default_loop_header_spider(aio_spider *spider) {
+static void free_default_loop_header_spider(aio_spider *spider)
+{
     aio_default_loop_header_materials *materials = spider->materials;
     free_default_loop_header_materials(materials);
     //Free spider:
@@ -99,8 +102,9 @@ static void free_default_loop_header_spider(aio_spider *spider) {
  */
 
 static void refresh_default_loop_header_declaration_scope(aio_spider *spider, const_str_hook *hook,
-                                                   aio_default_loop_header_pointer_declaration_type type,
-                                                   aio_spider_message message) {
+                                                          aio_default_loop_header_pointer_declaration_type type,
+                                                          aio_spider_message message)
+{
     //Extract materials:
     aio_default_loop_header_materials *materials = spider->materials;
     str_hook_list *variable_data_list = materials->pointer_data_list;
@@ -121,7 +125,8 @@ static void refresh_default_loop_header_declaration_scope(aio_spider *spider, co
     spider->message = message;
 }
 
-static void handle_default_loop_header_declaration_scope(const_string string_web, aio_spider *spider) {
+static void handle_default_loop_header_declaration_scope(const_string string_web, aio_spider *spider)
+{
     //Extract materials:
     aio_default_loop_header_materials *materials = spider->materials;
     point_watcher *main_watcher = materials->main_watcher;
@@ -201,7 +206,8 @@ static void handle_default_loop_header_declaration_scope(const_string string_web
     }
 }
 
-static void handle_default_loop_header_equal_sign_scope(const_string source_code, aio_spider *spider) {
+static void handle_default_loop_header_equal_sign_scope(const_string source_code, aio_spider *spider)
+{
     aio_default_loop_header_materials *materials = spider->materials;
     point_watcher *main_watcher = materials->main_watcher;
     const char current_symbol = source_code[main_watcher->end];
@@ -229,7 +235,8 @@ static void handle_default_loop_header_equal_sign_scope(const_string source_code
     }
 }
 
-static void handle_default_loop_header_value_scope(const_string source_code, aio_spider *spider) {
+static void handle_default_loop_header_value_scope(const_string source_code, aio_spider *spider)
+{
     //재료들을 추출하다 (Extract materials):
     aio_default_loop_header_materials *materials = spider->materials;
     point_watcher *main_watcher = materials->main_watcher;
@@ -250,7 +257,7 @@ static void handle_default_loop_header_value_scope(const_string source_code, aio
         value_watcher->end = main_watcher->end - value_watcher->pointer;
         //값을 놓다 (Set value):
         string dirty_value = substring_by_point_watcher(source_code, value_watcher);
-        string clean_value = squeeze_string(dirty_value);
+        string clean_value = squeeze_string_for_expression(dirty_value);
         materials->init_value = clean_value;
         //위빙 준비 (Prepare for weaving):
         materials->scope_type = AIO_DEFAULT_LOOP_HEADER_CONDITION_SCOPE;
@@ -272,7 +279,8 @@ static void handle_default_loop_header_value_scope(const_string source_code, aio
 }
 
 static void handle_default_loop_header_condition_scope(const_string source_code, point_watcher *parent_watcher,
-                                                aio_spider *spider) {
+                                                       aio_spider *spider)
+{
     //Extract materials:
     aio_default_loop_header_materials *materials = spider->materials;
     const aio_default_loop_header_pointer_declaration_type declaration_type = materials->declaration_type;
@@ -291,7 +299,7 @@ static void handle_default_loop_header_condition_scope(const_string source_code,
                                                  || declaration_type == AIO_DEFAULT_LOOP_HEADER_REFERENCE;
     if (is_not_step_assign_in_header) {
         const_string dirty_loop_condition = substring(source_code, main_watcher->start, parent_watcher->end - 1);
-        string clean_loop_condition = squeeze_string(dirty_loop_condition);
+        string clean_loop_condition = squeeze_string_for_expression(dirty_loop_condition);
         materials->loop_condition = clean_loop_condition;
         materials->scope_type = AIO_DEFAULT_LOOP_HEADER_WEAVING_SCOPE;
         spider->message = AIO_SPIDER_IS_READY_FOR_WEAVING;
@@ -313,7 +321,7 @@ static void handle_default_loop_header_condition_scope(const_string source_code,
             condition_watcher->end = main_watcher->end - condition_watcher->pointer;
             //값을 놓다 (Set value):
             string dirty_loop_condition = substring_by_point_watcher(source_code, condition_watcher);
-            string clean_loop_condition = squeeze_string(dirty_loop_condition);
+            string clean_loop_condition = squeeze_string_for_expression(dirty_loop_condition);
             materials->loop_condition = clean_loop_condition;
             //위빙 준비 (Prepare for weaving):
             materials->scope_type = AIO_DEFAULT_LOOP_HEADER_STEP_SCOPE;
@@ -328,7 +336,8 @@ static void handle_default_loop_header_condition_scope(const_string source_code,
         } else {
             condition_watcher->mode = POINT_WATCHER_PASSIVE_MODE;
             condition_watcher->pointer = 0;
-            if (is_letter_or_number_or_close_parenthesis_cond && condition_watcher->mode == POINT_WATCHER_PASSIVE_MODE) {
+            if (is_letter_or_number_or_close_parenthesis_cond &&
+                condition_watcher->mode == POINT_WATCHER_PASSIVE_MODE) {
                 condition_watcher->mode = POINT_WATCHER_ACTIVE_MODE;
                 return;
             }
@@ -336,7 +345,8 @@ static void handle_default_loop_header_condition_scope(const_string source_code,
     }
 }
 
-const_str_hook *get_default_loop_pointer_name_by_materials(const aio_default_loop_header_materials *materials) {
+const_str_hook *get_default_loop_pointer_name_by_materials(const aio_default_loop_header_materials *materials)
+{
     const_str_hook_array pointer_data = materials->pointer_data_list->hooks;
     const aio_default_loop_header_pointer_declaration_type declaration_type = materials->declaration_type;
     const_str_hook *pointer_name = NULL;
@@ -350,13 +360,16 @@ const_str_hook *get_default_loop_pointer_name_by_materials(const aio_default_loo
     return pointer_name;
 }
 
-static const_boolean is_same_default_loop_pointer(const_str_hook *input_name, aio_default_loop_header_materials *materials) {
+static const_boolean
+is_same_default_loop_pointer(const_str_hook *input_name, aio_default_loop_header_materials *materials)
+{
     const_str_hook *pointer_name = get_default_loop_pointer_name_by_materials(materials);
     return are_equal_hooked_str(pointer_name, input_name);
 }
 
 static void handle_default_loop_header_step_scope(const_string source_code, point_watcher *parent_watcher,
-                                           aio_spider *spider) {
+                                                  aio_spider *spider)
+{
     //Extract materials:
     aio_default_loop_header_materials *materials = spider->materials;
     point_watcher *main_watcher = materials->main_watcher;
@@ -414,7 +427,7 @@ static void handle_default_loop_header_step_scope(const_string source_code, poin
         //Don't hold closing parenthesis:
         const int end_index = parent_watcher->end - 1;
         string dirty_step_value = substring(source_code, start_index, end_index);
-        string clean_step_value = squeeze_string(dirty_step_value);
+        string clean_step_value = squeeze_string_for_expression(dirty_step_value);
         materials->step_value = clean_step_value;
         materials->scope_type = AIO_DEFAULT_LOOP_HEADER_WEAVING_SCOPE;
         spider->message = AIO_SPIDER_IS_READY_FOR_WEAVING;
@@ -428,7 +441,9 @@ static void handle_default_loop_header_step_scope(const_string source_code, poin
 }
 
 static const aio_spider_message is_found_default_loop_header_instruction(const_string source_code,
-                                                                  point_watcher *parent_watcher, aio_spider *spider) {
+                                                                         point_watcher *parent_watcher,
+                                                                         aio_spider *spider)
+{
     //Extract spider fields:
     const aio_default_loop_header_materials *materials = spider->materials;
     point_watcher *main_watcher = materials->main_watcher;
@@ -457,11 +472,19 @@ static const aio_spider_message is_found_default_loop_header_instruction(const_s
         }
         if (materials->scope_type == AIO_DEFAULT_LOOP_HEADER_CONDITION_SCOPE) {
             handle_default_loop_header_condition_scope(source_code, parent_watcher, spider);
+#ifdef AIO_DEFAULT_LOOP_HEADER_SPIDER_DEBUG
+            log_info_boolean(AIO_DEFAULT_LOOP_HEADER_SPIDER_TAG, "IS RRREEADY:",
+                             spider->message == AIO_SPIDER_IS_READY_FOR_WEAVING);
+#endif
         }
         if (materials->scope_type == AIO_DEFAULT_LOOP_HEADER_STEP_SCOPE) {
             handle_default_loop_header_step_scope(source_code, parent_watcher, spider);
         }
     }
+#ifdef AIO_DEFAULT_LOOP_HEADER_SPIDER_DEBUG
+    log_info_boolean(AIO_DEFAULT_LOOP_HEADER_SPIDER_TAG, "IS EXACTLY RRREEADY:",
+                     spider->message == AIO_SPIDER_IS_READY_FOR_WEAVING);
+#endif
     return spider->message;
 }
 
@@ -470,7 +493,8 @@ static const aio_spider_message is_found_default_loop_header_instruction(const_s
  */
 
 static void weave_default_loop_materials_for(void *parent, const_string _, struct point_watcher *header_watcher,
-                                      struct aio_spider *spider) {
+                                             struct aio_spider *spider)
+{
     aio_spider *loop_spider = parent;
     header_watcher->pointer = header_watcher->end;
     aio_loop_materials *dst_materials = loop_spider->materials;
@@ -495,12 +519,15 @@ static void weave_default_loop_materials_for(void *parent, const_string _, struc
     dst_materials->get_applied_materials_from.default_loop_header = new_materials;
     dst_materials->applied_header_material_type = AIO_LOOP_MATERIALS_DEFAULT_HEADER;
 #ifdef AIO_DEFAULT_LOOP_HEADER_SPIDER_DEBUG
+    log_info_boolean(AIO_DEFAULT_LOOP_HEADER_SPIDER_TAG, "Materials is not null",
+                     dst_materials->get_applied_materials_from.default_loop_header != NULL);
     log_info(AIO_DEFAULT_LOOP_HEADER_SPIDER_TAG, "Weaving is complete!");
 #endif
 }
 
 aio_variable_definition *create_pointer_variable_definition_by_default_loop_header_spider(
-        const aio_default_loop_header_pointer_declaration_type declaration_type, const_str_hook_array pointer_data) {
+        const aio_default_loop_header_pointer_declaration_type declaration_type, const_str_hook_array pointer_data)
+{
     const_str_hook *pointer_name = NULL;
     str_hook *pointer_type = NULL;
     boolean is_mutable_pointer = FALSE;
@@ -525,7 +552,8 @@ aio_variable_definition *create_pointer_variable_definition_by_default_loop_head
  * Constructor.
  */
 
-struct aio_spider *new_aio_default_loop_header_spider(point_watcher *parent_watcher) {
+struct aio_spider *new_aio_default_loop_header_spider(point_watcher *parent_watcher)
+{
 #ifdef AIO_DEFAULT_LOOP_HEADER_SPIDER_DEBUG
     log_info(AIO_DEFAULT_LOOP_HEADER_SPIDER_TAG, "Start to create spider...");
 #endif

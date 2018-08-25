@@ -1,8 +1,0 @@
-Voi ifTest(Str string, mu Int a) {
-    b= 5  a=b+
-    1 mu c = a +b if(
-        a >b){  c = c -5}
-
-
-
-     }

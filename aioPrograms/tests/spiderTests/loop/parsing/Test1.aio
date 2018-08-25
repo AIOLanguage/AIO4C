@@ -1,4 +1,5 @@
-Dou loopTest(Int test){
+//성공적인 시험 (Successful test):
+Dou test(Int test){
 
 a = 4 + 28 loo
 (Int i = 5 + 7 * 28 - 42

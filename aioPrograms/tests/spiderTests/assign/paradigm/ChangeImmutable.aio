@@ -1,0 +1,5 @@
+//성공적인 시험 (Successful test):
+Voi changeImmutable() {
+    a = 1
+    a = 3
+}

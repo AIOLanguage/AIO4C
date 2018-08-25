@@ -46,9 +46,9 @@ void refresh_if_spider(aio_spider *spider, point_watcher *ripper_watcher) {
     //------------------------------------------------------------------------------------------------------------------
     //찌꺼기 수집기 (Garbage collector):
     free(materials->condition);
-#ifdef AIO_IF_SPIDER_DEBUG
-    log_info(AIO_IF_SPIDER_TAG, "Refresh is complete!");
-#endif
+//#ifdef AIO_IF_SPIDER_DEBUG
+//    log_info(AIO_IF_SPIDER_TAG, "Refresh is complete!");
+//#endif
 }
 
 /**
@@ -209,7 +209,7 @@ void handle_condition_scope(const_string string_web, aio_spider *spider) {
                 materials->scope_type = AIO_IF_TRUE_BODY_SCOPE;
                 //조건을 추출하다 (Extract condition):
                 const_string dirty_condition = substring_by_point_watcher(string_web, header_watcher);
-                string clean_condition = squeeze_string(dirty_condition);
+                string clean_condition = squeeze_string_for_expression(dirty_condition);
 #ifdef AIO_IF_SPIDER_DEBUG
                 log_info_string(AIO_IF_SPIDER_TAG, "Captured condition", clean_condition);
 #endif

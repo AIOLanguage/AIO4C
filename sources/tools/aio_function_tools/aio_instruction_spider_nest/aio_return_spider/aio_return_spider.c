@@ -39,9 +39,9 @@ void refresh_return_spider(aio_spider *spider, point_watcher *ripper_watcher) {
     free_strings_in_list(old_return_values);
     free_string_list(old_return_values);
     //------------------------------------------------------------------------------------------------------------------
-#ifdef AIO_RETURN_SPIDER_DEBUG
-    log_info(AIO_RETURN_SPIDER_TAG, "Refresh is complete!");
-#endif
+//#ifdef AIO_RETURN_SPIDER_DEBUG
+//    log_info(AIO_RETURN_SPIDER_TAG, "Refresh is complete!");
+//#endif
 }
 
 /**
@@ -168,7 +168,7 @@ void handle_return_value_scope(const_string source_code, struct aio_spider *spid
         value_watcher->end = main_watcher->end - value_watcher->pointer;
         //값을 놓다 (Set value):
         const_string dirty_chunk = substring_by_point_watcher(source_code, value_watcher);
-        const_string dirty_squeezed_chunk = squeeze_string(dirty_chunk);
+        const_string dirty_squeezed_chunk = squeeze_string_for_expression(dirty_chunk);
         const_string_array clean_return_values = split_by_comma(dirty_squeezed_chunk);
         const int number_of_return_values = get_string_array_size(clean_return_values);
         for (int i = 0; i < number_of_return_values; ++i) {

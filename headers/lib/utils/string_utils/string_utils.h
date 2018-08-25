@@ -20,7 +20,7 @@ string new_string(const_string src);
 
 string int_to_string(int src);
 
-string double_to_string(double src);
+char *double_to_string(const double src);
 
 string_array split_by_string(const_string src, const_string delimiter); //끝난!
 
@@ -36,7 +36,7 @@ string trim_end(const_string src);
 
 string trim(const_string src);
 
-string squeeze_string(const_string src);
+string squeeze_string_for_expression(const_string src);
 
 string_array trim_all(const_string_array strings, const int number_of_strings);
 

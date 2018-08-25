@@ -161,7 +161,7 @@ static aio_result *make_plus_or_minus(
     log_info_str_hook(AIO_DOUBLE_PARSER_TAG, "After left multiplication rest:", left_hook);
 #endif
     while (is_not_empty_hooked_str(left_hook)) {
-        const char symbol = expression_string[left_result->rest->start];
+        const char symbol = expression_string[left_hook->start];
         //Check symbol:
         const_boolean is_plus = is_plus_sign(symbol);
         const_boolean is_minus = is_minus_sign(symbol);

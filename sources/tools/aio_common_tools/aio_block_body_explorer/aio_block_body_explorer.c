@@ -1,3 +1,4 @@
+#include <uchar.h>
 #include <malloc.h>
 #include <mem.h>
 #include "../../../../headers/lib/utils/string_utils/string_utils.h"
@@ -11,14 +12,12 @@
 
 #ifdef AIO_BLOCK_BODY_EXPLORER_DEBUG
 
-#include "../../../../headers/lib/utils/log_utils/log_utils.h"
-
 #endif
-
 
 void explore_aio_context_bounds(const_string source_code, int *start_index, int *end_index,
                                 boolean (*opening_bound_condition)(const char),
-                                boolean (*closing_bound_condition)(const char)) {
+                                boolean (*closing_bound_condition)(const char))
+{
     const size_t source_code_length = strlen(source_code);
     //Prepare to find bounds:
     point_watcher *watcher = new_point_watcher();
@@ -78,15 +77,45 @@ void explore_aio_context_bounds(const_string source_code, int *start_index, int 
 }
 
 
-void explore_aio_block_bounds(const_string source_code, int *start_index, int *end_index) {
+void explore_aio_block_bounds(const_string source_code, int *start_index, int *end_index)
+{
     explore_aio_context_bounds(source_code, start_index, end_index, is_opening_brace, is_closing_brace);
 }
 
-void explore_aio_header_bounds(const_string source_code, int *start_index, int *end_index) {
+void explore_aio_header_bounds(const_string source_code, int *start_index, int *end_index)
+{
     explore_aio_context_bounds(source_code, start_index, end_index, is_opening_parenthesis, is_closing_parenthesis);
 }
 
-const_boolean has_context_rest(const_string body_string, point_watcher *watcher) {
+//TODO: Question about unicode ¯\_(ツ)_/¯:
+void explore_aio_block_quote_bounds(const_string source_code, int *start_index, int *end_index)
+{
+    point_watcher *quote_watcher = new_point_watcher();
+    quote_watcher->pointer = *start_index;
+    while (quote_watcher->mode != POINT_WATCHER_UNDEFINED_MODE) {
+        const char symbol = source_code[quote_watcher->pointer];
+        if (is_single_quote(symbol)) {
+            if (quote_watcher->mode == POINT_WATCHER_PASSIVE_MODE) {
+                quote_watcher->mode = POINT_WATCHER_ACTIVE_MODE;
+                quote_watcher->start = quote_watcher->pointer;
+            } else if (quote_watcher->mode == POINT_WATCHER_ACTIVE_MODE) {
+                quote_watcher->mode = POINT_WATCHER_UNDEFINED_MODE;
+                quote_watcher->end = quote_watcher->pointer;
+            }
+        }
+        if (quote_watcher->mode == POINT_WATCHER_ACTIVE_MODE) {
+            //Check forbidden chars:
+            if (is_line_break(symbol)){
+                throw_error_with_tag(AIO_BLOCK_BODY_EXPLORER_TAG, "Not allow make line break");
+            }
+            //Check unicode chars:
+            //TODO: ...
+        }
+    }
+}
+
+boolean has_context_rest(const_string body_string, point_watcher *watcher)
+{
     while (watcher->pointer < watcher->end) {
         const char symbol = body_string[watcher->pointer];
         if (!is_space_or_line_break(symbol)) {

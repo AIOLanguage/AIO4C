@@ -6,7 +6,7 @@
 #include "../../../../headers/lib/utils/error_utils/error_utils.h"
 #include "../../../../headers/lib/utils/str_hook/str_hook_utils/str_hook_utils.h"
 
-#define AIO_VARIABLE_DEBUG
+//#define AIO_VARIABLE_DEBUG
 
 #ifdef AIO_VARIABLE_DEBUG
 

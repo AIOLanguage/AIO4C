@@ -1,0 +1,5 @@
+//성공적인 시험 (Successful test):
+Voi duplicateMutableDefinition() {
+    mu Str string = 'Hello!'
+    mu Str string = 'Bye!'
+}

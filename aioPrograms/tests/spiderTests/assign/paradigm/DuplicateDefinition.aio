@@ -1,0 +1,6 @@
+//성공적인 시험 (Successful test):
+Voi duplicateDefinition() {
+b = 7.0
+    a = b
+    Int a = 0
+}
