@@ -1,7 +1,7 @@
 #include <malloc.h>
 #include "../../../../headers/tools/aio_common_tools/aio_spider_nest/aio_function_instruction_spider_nest.h"
 
-#define AIO_SPIDER_NEST_DEBUG
+//#define AIO_SPIDER_NEST_DEBUG
 
 #define AIO_SPIDER_NEST_TAG "AIO_SPIDER_NEST"
 

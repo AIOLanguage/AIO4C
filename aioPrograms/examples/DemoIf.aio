@@ -1,0 +1,9 @@
+Str getGender(Boo isMale){
+    mu gender = voi
+    if (isMale) {
+        gender = 'Male'
+    } : {
+        gender = 'Female'
+    }
+    out gender
+}

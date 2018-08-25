@@ -1,0 +1,7 @@
+Dou pow(Dou base, Int power) {
+    mu Dou result = 1.0
+    loo (Int i = 1 i <= power i = i + 1) {
+        result = result * base
+    }
+    out result
+}

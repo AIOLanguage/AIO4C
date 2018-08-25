@@ -8,6 +8,13 @@
 
 #define AIO_FUNCTION_TAG "AIO_FUNCTION"
 
+#ifdef AIO_FUNCTION_DEBUG
+
+#include "../../../headers/lib/utils/log_utils/log_utils.h"
+#include "../../../headers/lib/utils/str_hook/str_hook_utils/str_hook_utils.h"
+
+#endif
+
 static aio_value_list *extract_output_values(
         const_aio_function_definition *function_definition,
         aio_bundle *bundle
@@ -62,5 +69,12 @@ aio_value_list *invoke_static_function_in_context(
             definition_list,
             function_name
     );
-    return invoke_aio_function(definition, bundle, context);
+#ifdef AIO_FUNCTION_DEBUG
+    log_info_boolean(AIO_FUNCTION_TAG, "Definition exists:", definition != NULL);
+#endif
+    if (definition != NULL){
+        return invoke_aio_function(definition, bundle, context);
+    } else {
+        throw_error_with_hook(AIO_FUNCTION_TAG, "Function doesn't exist:", function_name);
+    }
 }

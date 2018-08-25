@@ -1,0 +1,15 @@
+//성공적인 시험 (Successful test):
+Int sum(Int a, Int b) {
+    c = a + b
+    out c
+}
+
+//성공적인 시험 (Successful test):
+Int minus(Int a, Int b) {
+    c = a - b
+    out c
+}
+
+Boo isDigit(Str symbol) {
+    out 0 > symbol & symbol < 10
+}
