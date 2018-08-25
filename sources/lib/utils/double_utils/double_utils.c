@@ -1,67 +1,73 @@
 #include <malloc.h>
 #include <mem.h>
-#include <stdio.h>
-#include <process.h>
-#include <math.h>
+#include <ctype.h>
 #include "../../../../headers/lib/utils/string_utils/string_utils.h"
+#include "../../../../headers/lib/utils/error_utils/error_utils.h"
+#include "../../../../headers/lib/utils/char_utils/char_utils.h"
 
-boolean matches_double(const_string src) {
-    boolean result = FALSE;
-    int was_dot = -1;
-    int was_fraction = -1;
+#define DOUBLE_UTILS_DEBUG
+
+#define DOUBLE_UTILS_TAG "DOUBLE_UTILS"
+
+#ifdef DOUBLE_UTILS_DEBUG
+
+#include "../../../../headers/lib/utils/log_utils/log_utils.h"
+
+#endif
+
+boolean matches_double(const_string src)
+{
+    boolean was_dot = FALSE;
+    boolean was_fraction = FALSE;
     int start = 0;
-    int length = strlen(src);
+    const size_t length = strlen(src);
     if (length == 0) {
-        printf("empty string as Dou!");
-        exit(1);
+        return FALSE;
     }
-    if (src[0] == '-') {
+    if (is_minus_sign(src[start])) {
         if (length == 1) {
-            printf("this is a minus as Dou!");
-            exit(1);
+            return FALSE;
         }
-        start = 1;
+        start++;
     }
-    for (int i = start; i < strlen(src); ++i) {
-        int e = src[i] - '0';
-        if ((e < 0 || e > 9)) {
-            if (src[i] == '.' && was_dot == -1) {
-                was_dot = 0;
+    if (!isdigit(src[start])) {
+        return FALSE;
+    } else {
+        start++;
+    }
+    for (int i = start; i < length; ++i) {
+        const char symbol = src[i];
+        const_boolean is_digit = isdigit(symbol);
+        if (!is_digit) {
+            if (src[i] == '.' && !was_dot) {
+                was_dot = TRUE;
             } else {
-                return -1;
+                return FALSE;
             }
         }
-        if (e >= 0 && e < 10 && was_dot == 0) {
-            was_fraction = 0;
+        if (is_digit && was_dot) {
+            was_fraction = TRUE;
         }
     }
-    if (was_dot == 0 && was_fraction == 0) {
-        result = TRUE;
-    }
-    return result;
+    return was_dot && was_fraction;
 }
 
-double string_to_double(const_string word) {
-    if (matches_double(word) != 0) {
-        perror("cannot convert string from double!");
-        exit(1);
-    }
-    const int shift = 10;
-    const char char_shift = '0';
+double string_to_double(const_string word)
+{
+    const static char CHAR_SHIFT = '0';
+    const static int DIGIT_SHIFT = 10;
+    const size_t length = strlen(word);
     int integer_part = 0;
     int i = 0;
-    while (1) {
-        if (word[i] == '.') {
-            break;
-        } else {
-            integer_part = integer_part * shift + (word[i++] - char_shift);
-        }
+    while (!is_dot(word[i])) {
+        integer_part = integer_part * DIGIT_SHIFT + (word[i++] - CHAR_SHIFT);
     }
     double fraction_part = 0.0;
-    int fraction_counter = 1;
-    for (int j = i + 1; j < strlen(word); ++j) {
-        fraction_part = fraction_part + (((double) (word[j] - char_shift)) / fraction_counter);
-        fraction_counter = fraction_counter * shift;
+    double fraction_counter = DIGIT_SHIFT;
+    for (int j = i + 1; j < length; ++j) {
+        const double digit = ((double) (word[j] - CHAR_SHIFT) / fraction_counter);
+        fraction_part += digit;
+        fraction_counter *= DIGIT_SHIFT;
     }
     return ((double) integer_part) + fraction_part;
 }

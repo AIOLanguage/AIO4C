@@ -9,14 +9,13 @@
 #include "../../../../headers/lang/aio_type/aio_type.h"
 #include "../../../../headers/lib/utils/str_hook/str_hook_utils/str_hook_utils.h"
 #include "../../../../headers/lang/aio_reserved_names/aio_reserved_names_container.h"
+#include "../../../../headers/lib/utils/log_utils/log_utils.h"
 
 #define AIO_VALUE_TAG "AIO_VALUE"
 
 //#define AIO_VALUE_DEBUG
 
 #ifdef AIO_VALUE_DEBUG
-
-#include "../../../../headers/lib/utils/log_utils/log_utils.h"
 
 #endif
 
@@ -375,7 +374,14 @@ aio_value *cast_to_double(aio_value *value)
         return new_aio_double_value(value->get.double_acc);
     }
     if (is_hook_equals_str(type, STRING)) {
-        return new_aio_double_value(string_to_double(value->get.string_acc));
+        const_string string = value->get.string_acc;
+        log_info_string(AIO_VALUE_TAG, "Cast string to double:", string);
+        log_info_boolean(AIO_VALUE_TAG, "Matches double:", matches_double(string));
+        if (matches_double(string)) {
+            return new_aio_double_value(string_to_double(string));
+        } else {
+            throw_error_with_details(AIO_VALUE_TAG, "String doesn't matches double!", string);
+        }
     }
     if (is_hook_equals_str(type, BOOLEAN)) {
         return new_aio_double_value(value->get.boolean_acc);

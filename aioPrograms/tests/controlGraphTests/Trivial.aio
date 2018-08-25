@@ -10,6 +10,7 @@ Int minus(Int a, Int b) {
     out c
 }
 
-Boo isDigit(Str symbol) {
-    out 0 > symbol & symbol < 10
+//성공적인 시험 (Successful test):
+Boo isPercent(Dou value) {
+    out 0.0 < value & value < 100.0
 }

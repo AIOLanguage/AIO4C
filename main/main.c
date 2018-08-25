@@ -11,7 +11,7 @@
 
 #define AIO_TEST_PATH "../aioPrograms/tests/controlGraphTests/Trivial.aio"
 
-#define AIO_TEST_FUNCTION "minus"
+#define AIO_TEST_FUNCTION "isPercent"
 
 #define AIO_DEVELOPMENT_DEBUG
 
@@ -27,8 +27,7 @@ aio_bundle *create_test_bundle()
 {
     aio_value_list *input_value_list = new_aio_value_list();
     //Create test args:
-    add_aio_value_in_list(input_value_list, new_aio_int_value(2));
-    add_aio_value_in_list(input_value_list, new_aio_double_value(1.25));
+    add_aio_value_in_list(input_value_list, new_aio_string_value("2.3"));
     //Crete bundle:
     return new_aio_bundle(input_value_list);
 }

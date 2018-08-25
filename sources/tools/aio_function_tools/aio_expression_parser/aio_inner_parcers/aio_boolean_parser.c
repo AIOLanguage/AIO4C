@@ -216,18 +216,33 @@ static aio_result *try_to_get_sign_condition(
     switch (sign_type) {
         case SIGN_EQUALS:
             condition_value = are_equal_aio_values(left_value, right_value);
+#ifdef AIO_BOOLEAN_PARSER_DEBUG
+            log_info_boolean(AIO_BOOLEAN_PARSER_TAG, "Are equals:", condition_value);
+#endif
             break;
         case SIGN_MORE:
             condition_value = is_more_aio_value_then_other(left_value, right_value);
+#ifdef AIO_BOOLEAN_PARSER_DEBUG
+            log_info_boolean(AIO_BOOLEAN_PARSER_TAG, "Left more than right:", condition_value);
+#endif
             break;
         case SIGN_LESS:
             condition_value = is_less_aio_value_then_other(left_value, right_value);
+#ifdef AIO_BOOLEAN_PARSER_DEBUG
+            log_info_boolean(AIO_BOOLEAN_PARSER_TAG, "Left less than right:", condition_value);
+#endif
             break;
         case SIGN_MORE_OR_EQUALS:
             condition_value = is_more_or_equals_aio_value_then_other(left_value, right_value);
+#ifdef AIO_BOOLEAN_PARSER_DEBUG
+            log_info_boolean(AIO_BOOLEAN_PARSER_TAG, "Left more or equals than right:", condition_value);
+#endif
             break;
         case SIGN_LESS_OR_EQUALS:
             condition_value = is_less_or_equals_aio_value_then_other(left_value, right_value);
+#ifdef AIO_BOOLEAN_PARSER_DEBUG
+            log_info_boolean(AIO_BOOLEAN_PARSER_TAG, "Left less or equals than right:", condition_value);
+#endif
             break;
         case SIGN_UNDEFINED:
             throw_error_with_tag(AIO_BOOLEAN_PARSER_TAG, "Invalid case!");
