@@ -1,1 +1,16 @@
-ss
+//성공적인 시험 (Successful test):
+Voi test (mu Dou wa) {
+    //Works because expected mutable pointer and condition:
+    loo (mu a = 'Hello' a != 'Bye') {
+        a = 'You don't stop me!'
+    }
+}
+
+//성공적인 시험 (Successful test):
+//Voi test (mu Dou wa) {
+//    mu j = 3
+//    //Takes condition: "i != wa j = i - 1" because spider sees 'mu' modifier and it knows that step is not exist:
+//    loo (mu Int i = 5 i != wa j = i - 1) {
+//        wa = wa + 1
+//    }
+//}

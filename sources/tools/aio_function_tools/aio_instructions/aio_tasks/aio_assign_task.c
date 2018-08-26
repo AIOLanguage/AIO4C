@@ -3,7 +3,6 @@
 #include "../../../../../headers/tools/aio_function_tools/aio_instructions/aio_tasks/aio_assign_task.h"
 #include "../../../../../headers/lib/utils/str_hook/str_hook_utils/str_hook_utils.h"
 #include "../../../../../headers/tools/aio_function_tools/aio_expression_parser/aio_expression_parser.h"
-#include "../../../../../headers/lib/utils/error_utils/error_utils.h"
 
 
 #define AIO_ASSIGN_TASK_TAG "AIO_ASSIGN_TASK"
@@ -20,7 +19,8 @@
 aio_function_instruction *new_aio_assign_instruction(
         aio_function_instruction_holder *holder,
         const_string value,
-        const_str_hook *variable_name)
+        const_str_hook *variable_name
+)
 {
     aio_function_instruction *instruction = new_aio_function_instruction(holder, AIO_ASSIGN_TASK);
     //Init task:

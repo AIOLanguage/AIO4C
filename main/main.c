@@ -9,7 +9,7 @@
 
 #ifdef AIO_DEVELOPMENT
 
-#define AIO_TEST_PATH "../aioPrograms/tests/spiderTests/loop/paradigm/LoopWithCondition.aio"
+#define AIO_TEST_PATH "../aioPrograms/tests/spiderTests/loop/paradigm/DefinePointerInScope.aio"
 
 #define AIO_TEST_FUNCTION "test"
 

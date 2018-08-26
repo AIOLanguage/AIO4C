@@ -1,5 +1,6 @@
 //성공적인 시험 (Successful test):
 Voi test(Boo isNegative) {
+    //Works because variables have defined in different scopes:
     if (condition) {
         Int a = -1
     } : {

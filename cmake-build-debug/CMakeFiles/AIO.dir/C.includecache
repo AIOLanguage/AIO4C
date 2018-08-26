@@ -68,6 +68,8 @@ C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/boolean_utils/boolean_utils
 ../../lib/utils/str_hook/str_hook.h
 C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/str_hook/str_hook.h
 
+C:/Users/StarKRE/CLionProjects/AIO/headers/lang/aio_type/aio_type.h
+
 C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/boolean_utils/boolean_utils.h
 ../string_utils/string_utils.h
 C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/string_utils/string_utils.h
@@ -134,6 +136,8 @@ C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_function_tools/aio_instruct
 ../../../lang/aio_context/aio_context.h
 C:/Users/StarKRE/CLionProjects/AIO/headers/lang/aio_context/aio_context.h
 
+C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_function_tools/aio_expression_parser/aio_expression_parser.h
+
 C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_function_tools/aio_instruction_spider_nest/aio_loop_spider/aio_loop_spider.h
 ../../../aio_common_tools/aio_spider_nest/aio_spider.h
 C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_common_tools/aio_spider_nest/aio_spider.h
@@ -197,4 +201,20 @@ C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/str_hook/str_hook_utils/str
 C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_function_tools/aio_instructions/aio_tasks/aio_loop_task.h
 ../../../../../headers/lib/utils/log_utils/log_utils.h
 C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/log_utils/log_utils.h
+
+C:/Users/StarKRE/CLionProjects/AIO/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_assign_task.c
+../../../../../headers/lib/utils/memory_utils/memory_utils.h
+C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/memory_utils/memory_utils.h
+../../../../../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction.h
+C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_function_tools/aio_instructions/aio_function_instruction.h
+../../../../../headers/tools/aio_function_tools/aio_instructions/aio_tasks/aio_assign_task.h
+C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_function_tools/aio_instructions/aio_tasks/aio_assign_task.h
+../../../../../headers/lib/utils/str_hook/str_hook_utils/str_hook_utils.h
+C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/str_hook/str_hook_utils/str_hook_utils.h
+../../../../../headers/tools/aio_function_tools/aio_expression_parser/aio_expression_parser.h
+C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_function_tools/aio_expression_parser/aio_expression_parser.h
+../../../../../headers/lib/utils/log_utils/log_utils.h
+C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/log_utils/log_utils.h
+../../../../../headers/lang/aio_type/aio_type.h
+C:/Users/StarKRE/CLionProjects/AIO/headers/lang/aio_type/aio_type.h
 

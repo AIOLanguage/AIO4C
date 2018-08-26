@@ -1,7 +1,26 @@
-//TODO: TEST ME
+//성공적인 시험 (Successful test):
 Voi test (mu Dou wa) {
     mu j = 3
-    loo (Int i = 5 i != wa j = i - 1) {
+    //Works because defined immutable pointer and this pointer is used in step:
+    loo (Int i = 5 i != wa i = i - 2) {
         wa = wa + 1
     }
 }
+
+//성공적인 시험 (Successful test):
+//Voi test (mu Dou wa) {
+//    mu j = 3
+//    //Crashes because spider waits step for immutable loop pointer "i"!
+//    loo (Int i = 5 i != wa) {
+//        wa = wa + 1
+//    }
+//}
+
+//성공적인 시험 (Successful test):
+//Voi test (mu Dou wa) {
+//    mu j = 3
+//    //Crashes because in step expects "i" instead "j"
+//    loo (Int i = 5 i != wa j = i - 1) {
+//        wa = wa + 1
+//    }
+//}

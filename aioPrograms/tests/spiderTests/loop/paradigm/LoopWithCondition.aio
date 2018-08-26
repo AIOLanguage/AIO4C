@@ -1,9 +1,18 @@
 //성공적인 시험 (Successful test):
 Voi test(Int times) {
     mu Int i = 0
+    //Works because this is only loop condition:
     loo (i < times) {
         Str greetings = 'Hello'
         i = i + 1
     }
     mu Str greetings = 'Bye'
+}
+
+//성공적인 시험 (Successful test):
+Voi test (mu Dou myPointer) {
+    //Here spider considers that "myPointer = 3.0 myPointer < 5.0" because he don't found type or 'mu' modifier:
+    loo (myPointer = 3.0 myPointer < 5.0) {
+        myPointer = myPointer + 1
+    }
 }

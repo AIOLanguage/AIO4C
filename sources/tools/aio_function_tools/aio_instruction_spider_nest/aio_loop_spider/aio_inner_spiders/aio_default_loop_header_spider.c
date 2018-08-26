@@ -247,7 +247,10 @@ static void handle_default_loop_header_value_scope(const_string source_code, aio
     const_boolean is_whitespace_cond = is_space_or_line_break(current_symbol);
     const_boolean is_close_parenthesis_cond = is_closing_parenthesis(current_symbol);
     const_boolean is_letter_or_number_cond = isalnum(current_symbol);
-    const_boolean is_letter_or_number_or_close_parenthesis_cond = is_letter_or_number_cond || is_close_parenthesis_cond;
+    const_boolean is_quote_cond = is_single_quote(current_symbol);
+    const_boolean is_valid_bound = is_letter_or_number_cond
+                                   || is_close_parenthesis_cond
+                                   || is_quote_cond;
     if (is_whitespace_cond && value_watcher->mode == POINT_WATCHER_ACTIVE_MODE) {
         value_watcher->pointer++;
         return;
@@ -267,19 +270,32 @@ static void handle_default_loop_header_value_scope(const_string source_code, aio
 #endif
         //--------------------------------------------------------------------------------------------------------------
         //찌거기 수집기 (Garbage collector):
-        free((void *) dirty_value);
-    } else {
+        free(dirty_value);
+        return;
+    }
+    if (is_quote_cond) {
+        if (value_watcher->mode != POINT_WATCHER_UNDEFINED_MODE) {
+            value_watcher->mode = POINT_WATCHER_UNDEFINED_MODE;
+            return;
+        } else {
+            value_watcher->mode = POINT_WATCHER_PASSIVE_MODE;
+        }
+    }
+    if (value_watcher->mode != POINT_WATCHER_UNDEFINED_MODE) {
         value_watcher->mode = POINT_WATCHER_PASSIVE_MODE;
         value_watcher->pointer = 0;
-        if (is_letter_or_number_or_close_parenthesis_cond && value_watcher->mode == POINT_WATCHER_PASSIVE_MODE) {
+        if (is_valid_bound) {
             value_watcher->mode = POINT_WATCHER_ACTIVE_MODE;
             return;
         }
     }
 }
 
-static void handle_default_loop_header_condition_scope(const_string source_code, point_watcher *parent_watcher,
-                                                       aio_spider *spider)
+static void handle_default_loop_header_condition_scope(
+        const_string source_code,
+        point_watcher *parent_watcher,
+        aio_spider *spider
+)
 {
     //Extract materials:
     aio_default_loop_header_materials *materials = spider->materials;
@@ -360,15 +376,20 @@ const_str_hook *get_default_loop_pointer_name_by_materials(const aio_default_loo
     return pointer_name;
 }
 
-static const_boolean
-is_same_default_loop_pointer(const_str_hook *input_name, aio_default_loop_header_materials *materials)
+static const_boolean is_same_default_loop_pointer(
+        const_str_hook *input_name,
+        aio_default_loop_header_materials *materials
+)
 {
     const_str_hook *pointer_name = get_default_loop_pointer_name_by_materials(materials);
     return are_equal_hooked_str(pointer_name, input_name);
 }
 
-static void handle_default_loop_header_step_scope(const_string source_code, point_watcher *parent_watcher,
-                                                  aio_spider *spider)
+static void handle_default_loop_header_step_scope(
+        const_string source_code,
+        point_watcher *parent_watcher,
+        aio_spider *spider
+)
 {
     //Extract materials:
     aio_default_loop_header_materials *materials = spider->materials;
@@ -397,7 +418,7 @@ static void handle_default_loop_header_step_scope(const_string source_code, poin
                 log_info_str_hook(AIO_DEFAULT_LOOP_HEADER_SPIDER_TAG, "CAPTURED POINTER:", hook);
 #endif
             } else {
-                throw_error_with_tag(AIO_DEFAULT_LOOP_HEADER_SPIDER_TAG, "Invalid variable name in loop header step !");
+                throw_error_with_tag(AIO_DEFAULT_LOOP_HEADER_SPIDER_TAG, "Invalid variable name in loop header step!");
             }
         }
         if (materials->step_type == AIO_DEFAULT_LOOP_HEADER_STEP_EQUAL_SIGN_SCOPE) {
@@ -472,19 +493,11 @@ static const aio_spider_message is_found_default_loop_header_instruction(const_s
         }
         if (materials->scope_type == AIO_DEFAULT_LOOP_HEADER_CONDITION_SCOPE) {
             handle_default_loop_header_condition_scope(source_code, parent_watcher, spider);
-#ifdef AIO_DEFAULT_LOOP_HEADER_SPIDER_DEBUG
-            log_info_boolean(AIO_DEFAULT_LOOP_HEADER_SPIDER_TAG, "IS RRREEADY:",
-                             spider->message == AIO_SPIDER_IS_READY_FOR_WEAVING);
-#endif
         }
         if (materials->scope_type == AIO_DEFAULT_LOOP_HEADER_STEP_SCOPE) {
             handle_default_loop_header_step_scope(source_code, parent_watcher, spider);
         }
     }
-#ifdef AIO_DEFAULT_LOOP_HEADER_SPIDER_DEBUG
-    log_info_boolean(AIO_DEFAULT_LOOP_HEADER_SPIDER_TAG, "IS EXACTLY RRREEADY:",
-                     spider->message == AIO_SPIDER_IS_READY_FOR_WEAVING);
-#endif
     return spider->message;
 }
 
@@ -492,8 +505,12 @@ static const aio_spider_message is_found_default_loop_header_instruction(const_s
  * Extra handlers:
  */
 
-static void weave_default_loop_materials_for(void *parent, const_string _, struct point_watcher *header_watcher,
-                                             struct aio_spider *spider)
+static void weave_default_loop_materials_for(
+        void *parent,
+        const_string _,
+        struct point_watcher *header_watcher,
+        struct aio_spider *spider
+)
 {
     aio_spider *loop_spider = parent;
     header_watcher->pointer = header_watcher->end;
@@ -526,7 +543,9 @@ static void weave_default_loop_materials_for(void *parent, const_string _, struc
 }
 
 aio_variable_definition *create_pointer_variable_definition_by_default_loop_header_spider(
-        const aio_default_loop_header_pointer_declaration_type declaration_type, const_str_hook_array pointer_data)
+        const aio_default_loop_header_pointer_declaration_type declaration_type,
+        const_str_hook_array pointer_data
+)
 {
     const_str_hook *pointer_name = NULL;
     str_hook *pointer_type = NULL;
@@ -584,3 +603,5 @@ struct aio_spider *new_aio_default_loop_header_spider(point_watcher *parent_watc
 #endif
     return spider;
 }
+
+

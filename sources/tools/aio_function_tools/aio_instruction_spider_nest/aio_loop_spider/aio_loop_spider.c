@@ -377,11 +377,8 @@ void weave_loop_instruction_for(void *parent, const_string source_code,
         aio_function_instruction_holder *init_holder = new_aio_function_instruction_holder(parent);
         aio_function_instruction_list *init_instruction_list = init_holder->instruction_list;
         aio_variable_definition_list *init_variable_definition_list = init_holder->variable_definition_list;
-        //Create cycle holder:
-        aio_function_instruction_holder *cycle_holder = inflate_local_aio_instruction_holder(source_code, init_holder,
-                                                                                             body_watcher->start,
-                                                                                             body_watcher->end);
-        aio_function_instruction_list *cycle_instruction_list = cycle_holder->instruction_list;
+        //Define cycle holder:
+        aio_function_instruction_holder *cycle_holder = NULL;
         //Define loop condition:
         string loop_condition = NULL;
         //Fill holders:
@@ -390,6 +387,10 @@ void weave_loop_instruction_for(void *parent, const_string source_code,
             //Extract applied materials:
             const aio_default_loop_header_materials *default_loop_header_materials
                     = main_loop_materials->get_applied_materials_from.default_loop_header;
+            if (!default_loop_header_materials) {
+                throw_error_with_tag(AIO_LOOP_SPIDER_TAG, "Default loop header spider can not weave materials!");
+                return;
+            }
             const aio_default_loop_header_pointer_declaration_type declaration_type
                     = default_loop_header_materials->declaration_type;
 #ifdef AIO_LOOP_SPIDER_DEBUG
@@ -401,12 +402,12 @@ void weave_loop_instruction_for(void *parent, const_string source_code,
             //Check pointer in header:
             const_str_hook_list *pointer_data_list = default_loop_header_materials->pointer_data_list;
             const_boolean has_pointer_in_header = pointer_data_list->size > 0;
+            const_str_hook *pointer_name = NULL;
             if (has_pointer_in_header) {
                 const_str_hook_array pointer_data_array = pointer_data_list->hooks;
                 const_string init_value = default_loop_header_materials->init_value;
-                const_string step_value = default_loop_header_materials->step_value;
                 //Create pointer definition:
-                const_str_hook *pointer_name = get_default_loop_pointer_name_by_materials(
+                pointer_name = get_default_loop_pointer_name_by_materials(
                         default_loop_header_materials
                 );
                 const_aio_variable_definition *definition = get_aio_variable_definition_in_function_tree(
@@ -423,23 +424,34 @@ void weave_loop_instruction_for(void *parent, const_string source_code,
                             init_value,
                             new_str_hook_by_other(pointer_name)
                     );
-                    aio_function_instruction *step_instruction = new_aio_assign_instruction(
-                            cycle_holder,
-                            step_value,
-                            new_str_hook_by_other(pointer_name)
-                    );
                     //Put definition in init map:
                     add_aio_variable_definition_in_list(init_variable_definition_list, definition);
                     //Put init instruction in init holder:
                     add_aio_instruction_in_list(init_instruction_list, init_instruction);
-                    //Put in the bottom step instruction in cycle holder:
-                    add_aio_instruction_in_list(cycle_instruction_list, step_instruction);
                 } else {
                     throw_error_with_tag(
                             AIO_LOOP_SPIDER_TAG,
                             "Invalid loop pointer name! Variable name already exists!"
                     );
                 }
+            }
+            //Create cycle holder:
+            cycle_holder = inflate_local_aio_instruction_holder(
+                    source_code,
+                    init_holder,
+                    body_watcher->start,
+                    body_watcher->end
+            );
+            aio_function_instruction_list *cycle_instruction_list = cycle_holder->instruction_list;
+            if (has_pointer_in_header) {
+                const_string step_value = default_loop_header_materials->step_value;
+                aio_function_instruction *step_instruction = new_aio_assign_instruction(
+                        cycle_holder,
+                        step_value,
+                        new_str_hook_by_other(pointer_name)
+                );
+                //Put in the bottom step instruction in cycle holder:
+                add_aio_instruction_in_list(cycle_instruction_list, step_instruction);
             }
         }
         if (header_material_type == AIO_LOOP_MATERIALS_IN_HEADER) {
@@ -449,8 +461,12 @@ void weave_loop_instruction_for(void *parent, const_string source_code,
 
         }
         //Create loop instruction:
-        aio_function_instruction *loop_instruction
-                = new_aio_loop_instruction(parent, loop_condition, init_holder, cycle_holder);
+        aio_function_instruction *loop_instruction = new_aio_loop_instruction(
+                parent,
+                loop_condition,
+                init_holder,
+                cycle_holder
+        );
         aio_function_instruction_list *parent_instruction_list = holder->instruction_list;
         //Weave 'Loop' instruction:
         add_aio_instruction_in_list(parent_instruction_list, loop_instruction);

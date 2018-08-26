@@ -1,5 +1,6 @@
 //성공적인 시험 (Successful test):
 Voi changeImmutable() {
     a = 1
+    //Crashes because "a" is immutable:
     a = 3
 }

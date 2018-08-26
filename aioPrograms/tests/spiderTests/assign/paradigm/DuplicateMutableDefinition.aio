@@ -1,5 +1,6 @@
 //성공적인 시험 (Successful test):
 Voi duplicateMutableDefinition() {
     mu Str string = 'Hello!'
+    //Crashes because "string" has already defined in scope!
     mu Str string = 'Bye!'
 }

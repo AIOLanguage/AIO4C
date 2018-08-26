@@ -2,5 +2,6 @@
 Voi duplicateDefinition() {
 b = 7.0
     a = b
+    //Crashes because "a" has already defined in scope!
     Int a = 0
 }

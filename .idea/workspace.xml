@@ -15,10 +15,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="77c54fc7-a37a-4eaf-a794-282c0598671e" name="Default" comment="버그 수정 (Fixing bugs):&#10;------------------------------------------------------------------------&#10;-&gt; 'Assign' 과 'If' 거미들을 시험했습니다 (Tested 'Assign', 'If' Spiders);&#10;-&gt; 'aio_default_loop_header_spider' 을 고쳤습니다 &#10;(Fixed 'aio_default_loop_header_spider');&#10;-&gt; 테스트들을 추가했습니다 (Added tests).&#10;------------------------------------------------------------------------">
+      <change afterPath="$PROJECT_DIR$/aioPrograms/tests/spiderTests/loop/paradigm/DefinePointerInScope.aio" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aioPrograms/examples/DemoLoop.aio" beforeDir="false" afterPath="$PROJECT_DIR$/aioPrograms/examples/loop/DemoLoop1.aio" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aioPrograms/tests/spiderTests/assign/paradigm/ChangeImmutable.aio" beforeDir="false" afterPath="$PROJECT_DIR$/aioPrograms/tests/spiderTests/assign/paradigm/ChangeImmutable.aio" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aioPrograms/tests/spiderTests/assign/paradigm/DuplicateDefinition.aio" beforeDir="false" afterPath="$PROJECT_DIR$/aioPrograms/tests/spiderTests/assign/paradigm/DuplicateDefinition.aio" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aioPrograms/tests/spiderTests/assign/paradigm/DuplicateMutableDefinition.aio" beforeDir="false" afterPath="$PROJECT_DIR$/aioPrograms/tests/spiderTests/assign/paradigm/DuplicateMutableDefinition.aio" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aioPrograms/tests/spiderTests/if/paradigm/DefineVariablesInScopes.aio" beforeDir="false" afterPath="$PROJECT_DIR$/aioPrograms/tests/spiderTests/if/paradigm/DefineVariablesInScopes.aio" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aioPrograms/tests/spiderTests/loop/paradigm/LoopWithCondition.aio" beforeDir="false" afterPath="$PROJECT_DIR$/aioPrograms/tests/spiderTests/loop/paradigm/LoopWithCondition.aio" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aioPrograms/tests/spiderTests/loop/paradigm/LoopWithImmutableModifier.aio" beforeDir="false" afterPath="$PROJECT_DIR$/aioPrograms/tests/spiderTests/loop/paradigm/LoopWithImmutableModifier.aio" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aioPrograms/tests/spiderTests/loop/paradigm/LoopWithMutableModifier.aio" beforeDir="false" afterPath="$PROJECT_DIR$/aioPrograms/tests/spiderTests/loop/paradigm/LoopWithMutableModifier.aio" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/C.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/C.includecache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/depend.internal" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/depend.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main/main.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_loop_spider/aio_inner_spiders/aio_default_loop_header_spider.c" beforeDir="false" afterPath="$PROJECT_DIR$/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_loop_spider/aio_inner_spiders/aio_default_loop_header_spider.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_loop_spider/aio_loop_spider.c" beforeDir="false" afterPath="$PROJECT_DIR$/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_loop_spider/aio_loop_spider.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_assign_task.c" beforeDir="false" afterPath="$PROJECT_DIR$/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_assign_task.c" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -60,13 +73,15 @@
         <counts>
           <entry key="AIO (disassembly)" value="28" />
           <entry key="Build All (disassembly)" value="43" />
+          <entry key="DefinePointerInScope" value="1" />
           <entry key="DemoIf" value="1" />
+          <entry key="DemoLoop2" value="1" />
           <entry key="ImmutableVariables" value="2" />
-          <entry key="aio" value="397" />
+          <entry key="aio" value="472" />
           <entry key="assign_and_if" value="4" />
-          <entry key="c" value="5226" />
+          <entry key="c" value="5268" />
           <entry key="cmake" value="1" />
-          <entry key="h" value="2427" />
+          <entry key="h" value="2429" />
           <entry key="txt" value="128" />
         </counts>
       </usages-collector>
@@ -75,17 +90,17 @@
           <entry key="CMakeCache.txt" value="1" />
           <entry key="CMakeLists.txt" value="128" />
           <entry key="Disassembly" value="71" />
-          <entry key="ObjectiveC" value="7653" />
-          <entry key="PLAIN_TEXT" value="404" />
+          <entry key="ObjectiveC" value="7697" />
+          <entry key="PLAIN_TEXT" value="481" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Build All (disassembly)" value="5" />
-          <entry key="aio" value="4914" />
+          <entry key="aio" value="6406" />
           <entry key="assign_and_if" value="101" />
-          <entry key="c" value="130616" />
-          <entry key="h" value="18303" />
+          <entry key="c" value="131013" />
+          <entry key="h" value="18308" />
           <entry key="m" value="1814" />
           <entry key="txt" value="4824" />
         </counts>
@@ -95,8 +110,8 @@
           <entry key="CMakeLists.txt" value="1104" />
           <entry key="Disassembly" value="5" />
           <entry key="Doxygen file" value="200" />
-          <entry key="ObjectiveC" value="150533" />
-          <entry key="PLAIN_TEXT" value="8735" />
+          <entry key="ObjectiveC" value="150935" />
+          <entry key="PLAIN_TEXT" value="10227" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages">
@@ -112,10 +127,10 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/aioPrograms/tests/spiderTests/loop/paradigm/LoopWithImmutableModifier.aio">
+        <entry file="file://$PROJECT_DIR$/aioPrograms/tests/spiderTests/loop/paradigm/DefinePointerInScope.aio">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="1" lean-forward="true" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+            <state relative-caret-position="85">
+              <caret line="5" column="1" lean-forward="true" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -124,10 +139,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>str_hook_to</find>
-      <find>Dir</find>
-      <find>SWITCH</find>
-      <find>&lt;&lt;&lt;&lt;&lt;&lt;</find>
       <find>Case key c</find>
       <find>&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;</find>
       <find>&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;</find>
@@ -154,6 +165,10 @@
       <find>log</find>
       <find>error</find>
       <find>CAPTURED CONDITION WITHOUT POINTER</find>
+      <find>!= NULL</find>
+      <find>Invalid variable name in loop header step !</find>
+      <find>Equal sign</find>
+      <find>Equal sign is f</find>
     </findStrings>
     <replaceStrings>
       <replace>function_definition</replace>
@@ -178,12 +193,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/sources/lang/aio_core/aio_core.c" />
-        <option value="$PROJECT_DIR$/headers/lang/aio_function/aio_variable/aio_definition/aio_variable_definition.h" />
-        <option value="$PROJECT_DIR$/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_return_task.c" />
-        <option value="$PROJECT_DIR$/headers/lang/aio_function/aio_variable/aio_variable.h" />
-        <option value="$PROJECT_DIR$/aio_programs/test.aio" />
-        <option value="$PROJECT_DIR$/sources/tools/aio_function_tools/aio_control_graph/aio_function_control_graph.c" />
         <option value="$PROJECT_DIR$/aioPrograms/controlGraphTest/starter.aio" />
         <option value="$PROJECT_DIR$/aioPrograms/examples/DemoIf.aio" />
         <option value="$PROJECT_DIR$/aioPrograms/examples/DemoLoop.aio" />
@@ -211,9 +220,7 @@
         <option value="$PROJECT_DIR$/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_procedure_spider/aio_procedure_spider.c" />
         <option value="$PROJECT_DIR$/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_return_spider/aio_return_spider.c" />
         <option value="$PROJECT_DIR$/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_switch_spider/aio_switch_spider.c" />
-        <option value="$PROJECT_DIR$/sources/lib/utils/string_utils/string_utils.c" />
         <option value="$PROJECT_DIR$/sources/tools/aio_common_tools/aio_block_body_explorer/aio_block_body_explorer.c" />
-        <option value="$PROJECT_DIR$/headers/tools/aio_function_tools/aio_instruction_spider_nest/aio_loop_spider/aio_loop_spider.h" />
         <option value="$PROJECT_DIR$/headers/tools/aio_common_tools/aio_block_body_explorer/aio_block_body_explorer.h" />
         <option value="$PROJECT_DIR$/aioPrograms/tests/spiderTests/assign/parsingTests/Test2.aio" />
         <option value="$PROJECT_DIR$/aioPrograms/tests/spiderTests/assign/parsingTests/Test3.aio" />
@@ -222,13 +229,21 @@
         <option value="$PROJECT_DIR$/aioPrograms/tests/spiderTests/if/parsingTests/Test2.aio" />
         <option value="$PROJECT_DIR$/aioPrograms/tests/complexTests/variables/ImmutableVariables.aio" />
         <option value="$PROJECT_DIR$/aioPrograms/tests/spiderTests/loop/parsing/Test1.aio" />
-        <option value="$PROJECT_DIR$/aioPrograms/tests/spiderTests/if/paradigm/DefineVariablesInScopes.aio" />
-        <option value="$PROJECT_DIR$/aioPrograms/tests/spiderTests/loop/paradigm/LoopWithMutableModifier.aio" />
-        <option value="$PROJECT_DIR$/main/main.c" />
+        <option value="$PROJECT_DIR$/headers/tools/aio_function_tools/aio_instruction_spider_nest/aio_loop_spider/aio_loop_spider.h" />
+        <option value="$PROJECT_DIR$/sources/lib/utils/string_utils/string_utils.c" />
         <option value="$PROJECT_DIR$/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_loop_spider/aio_inner_spiders/aio_default_loop_header_spider.c" />
-        <option value="$PROJECT_DIR$/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_loop_spider/aio_loop_spider.c" />
+        <option value="$PROJECT_DIR$/main/main.c" />
+        <option value="$PROJECT_DIR$/aioPrograms/tests/spiderTests/assign/paradigm/ChangeImmutable.aio" />
+        <option value="$PROJECT_DIR$/aioPrograms/tests/spiderTests/assign/paradigm/DuplicateDefinition.aio" />
+        <option value="$PROJECT_DIR$/aioPrograms/tests/spiderTests/assign/paradigm/DuplicateMutableDefinition.aio" />
+        <option value="$PROJECT_DIR$/aioPrograms/tests/spiderTests/if/paradigm/DefineVariablesInScopes.aio" />
         <option value="$PROJECT_DIR$/aioPrograms/tests/spiderTests/loop/paradigm/LoopWithCondition.aio" />
         <option value="$PROJECT_DIR$/aioPrograms/tests/spiderTests/loop/paradigm/LoopWithImmutableModifier.aio" />
+        <option value="$PROJECT_DIR$/aioPrograms/tests/spiderTests/loop/paradigm/LoopWithMutableModifier.aio" />
+        <option value="$PROJECT_DIR$/aioPrograms/examples/loop/DemoLoop2.aio" />
+        <option value="$PROJECT_DIR$/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_assign_task.c" />
+        <option value="$PROJECT_DIR$/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_loop_spider/aio_loop_spider.c" />
+        <option value="$PROJECT_DIR$/aioPrograms/tests/spiderTests/loop/paradigm/DefinePointerInScope.aio" />
       </list>
     </option>
   </component>
@@ -273,55 +288,7 @@
               <item name="AIO" type="b2602c69:ProjectViewProjectNode" />
               <item name="AIO" type="462c0819:PsiDirectoryNode" />
               <item name="aioPrograms" type="462c0819:PsiDirectoryNode" />
-              <item name="tests" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AIO" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AIO" type="462c0819:PsiDirectoryNode" />
-              <item name="aioPrograms" type="462c0819:PsiDirectoryNode" />
-              <item name="tests" type="462c0819:PsiDirectoryNode" />
-              <item name="complexTests" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AIO" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AIO" type="462c0819:PsiDirectoryNode" />
-              <item name="aioPrograms" type="462c0819:PsiDirectoryNode" />
-              <item name="tests" type="462c0819:PsiDirectoryNode" />
-              <item name="spiderTests" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AIO" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AIO" type="462c0819:PsiDirectoryNode" />
-              <item name="aioPrograms" type="462c0819:PsiDirectoryNode" />
-              <item name="tests" type="462c0819:PsiDirectoryNode" />
-              <item name="spiderTests" type="462c0819:PsiDirectoryNode" />
-              <item name="assign" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AIO" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AIO" type="462c0819:PsiDirectoryNode" />
-              <item name="aioPrograms" type="462c0819:PsiDirectoryNode" />
-              <item name="tests" type="462c0819:PsiDirectoryNode" />
-              <item name="spiderTests" type="462c0819:PsiDirectoryNode" />
-              <item name="loop" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AIO" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AIO" type="462c0819:PsiDirectoryNode" />
-              <item name="aioPrograms" type="462c0819:PsiDirectoryNode" />
-              <item name="tests" type="462c0819:PsiDirectoryNode" />
-              <item name="spiderTests" type="462c0819:PsiDirectoryNode" />
-              <item name="loop" type="462c0819:PsiDirectoryNode" />
-              <item name="paradigm" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AIO" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AIO" type="462c0819:PsiDirectoryNode" />
-              <item name="aioPrograms" type="462c0819:PsiDirectoryNode" />
-              <item name="tests" type="462c0819:PsiDirectoryNode" />
-              <item name="spiderTests" type="462c0819:PsiDirectoryNode" />
-              <item name="loop" type="462c0819:PsiDirectoryNode" />
-              <item name="parsing" type="462c0819:PsiDirectoryNode" />
+              <item name="examples" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="AIO" type="b2602c69:ProjectViewProjectNode" />
@@ -398,11 +365,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\StarKRE\CLionProjects\AIO\aioPrograms\examples\loop" />
       <recent name="C:\Users\StarKRE\CLionProjects\AIO\aioPrograms\tests\spiderTests\switch\parsing" />
       <recent name="C:\Users\StarKRE\CLionProjects\AIO\aioPrograms\tests\spiderTests\return\parsing" />
       <recent name="C:\Users\StarKRE\CLionProjects\AIO\aioPrograms\tests\spiderTests\procedure\parsing" />
       <recent name="C:\Users\StarKRE\CLionProjects\AIO\aioPrograms\tests\spiderTests\switch" />
-      <recent name="C:\Users\StarKRE\CLionProjects\AIO\aioPrograms\tests\spiderTests\return" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\StarKRE\CLionProjects\AIO\aioPrograms\tests\spiderTests\assign\parsingTests" />
@@ -500,14 +467,7 @@
       <workItem from="1535048614698" duration="680000" />
       <workItem from="1535105418034" duration="794000" />
       <workItem from="1535106691226" duration="32851000" />
-      <workItem from="1535194591255" duration="27666000" />
-    </task>
-    <task id="LOCAL-00096" summary="-&gt; 'If' 거미 디버깅 (Debugging of 'If' spider)&#10;#LOVE AIO &amp; C =)">
-      <created>1534256186289</created>
-      <option name="number" value="00096" />
-      <option name="presentableId" value="LOCAL-00096" />
-      <option name="project" value="LOCAL" />
-      <updated>1534256186289</updated>
+      <workItem from="1535194591255" duration="36590000" />
     </task>
     <task id="LOCAL-00097" summary="-&gt; 'If' 거미 완성되었습니다 ('If' spider is finished!)&#10;#LOVE AIO &amp; C =)">
       <created>1534263303952</created>
@@ -845,11 +805,18 @@
       <option name="project" value="LOCAL" />
       <updated>1535226472787</updated>
     </task>
-    <option name="localTasksCounter" value="145" />
+    <task id="LOCAL-00145" summary="버그 수정 (Fixing bugs):&#10;------------------------------------------------------------------------&#10;-&gt; 'Assign' 과 'If' 거미들을 시험했습니다 (Tested 'Assign', 'If' Spiders);&#10;-&gt; 'aio_default_loop_header_spider' 을 고쳤습니다 &#10;(Fixed 'aio_default_loop_header_spider');&#10;-&gt; 테스트들을 추가했습니다 (Added tests).&#10;------------------------------------------------------------------------">
+      <created>1535226511764</created>
+      <option name="number" value="00145" />
+      <option name="presentableId" value="LOCAL-00145" />
+      <option name="project" value="LOCAL" />
+      <updated>1535226511764</updated>
+    </task>
+    <option name="localTasksCounter" value="146" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1017543000" />
+    <option name="totallyTimeSpent" value="1026467000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -864,7 +831,7 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49537036" visible="true" weight="0.24348958" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49537036" visible="true" weight="0.24348958" />
       <window_info id="Structure" order="1" sideWeight="0.50198674" side_tool="true" weight="0.36002603" />
       <window_info id="Favorites" order="2" sideWeight="0.5046296" side_tool="true" weight="0.24348958" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -950,13 +917,6 @@
     <entry file="file://$PROJECT_DIR$/aioPrograms/examples/DemoIf">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/aioPrograms/tests/spiderTests/loop/paradigm/LoopWithMutableModifier.aio">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="2" lean-forward="true" selection-start-column="2" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/aioPrograms/tests/spiderTests/if/parsing/Test1.aio">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -967,44 +927,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/aioPrograms/tests/spiderTests/if/paradigm/DefineVariablesInScopes.aio">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="1" lean-forward="true" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main/main.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="11" column="91" selection-start-line="11" selection-start-column="91" selection-end-line="11" selection-end-column="91" />
-          <folding>
-            <element signature="e#1#20#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/headers/tools/aio_function_tools/aio_instruction_spider_nest/aio_loop_spider/aio_loop_spider.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="95" column="6" selection-start-line="95" selection-start-column="6" selection-end-line="95" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sources/tools/aio_function_tools/aio_definition_rippers/aio_instruction_ripper.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="87">
           <caret line="28" selection-start-line="28" selection-end-line="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_loop_spider/aio_inner_spiders/aio_default_loop_header_spider.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="352" column="34" selection-start-line="352" selection-start-column="34" selection-end-line="352" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1022,16 +948,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_loop_spider/aio_loop_spider.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="131">
-          <caret line="462" column="38" lean-forward="true" selection-start-line="462" selection-start-column="38" selection-end-line="462" selection-end-column="38" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/aioPrograms/tests/spiderTests/loop/parsing/Test1.aio">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -1039,17 +955,146 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/headers/tools/aio_function_tools/aio_instruction_spider_nest/aio_loop_spider/aio_loop_spider.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="75" column="33" lean-forward="true" selection-start-line="75" selection-start-column="33" selection-end-line="75" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sources/lib/utils/string_utils/string_utils.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="19" lean-forward="true" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_loop_spider/aio_inner_spiders/aio_default_loop_header_spider.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5">
+          <caret line="286" selection-start-line="286" selection-end-line="286" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/main.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5">
+          <caret line="11" column="89" lean-forward="true" selection-start-line="11" selection-start-column="89" selection-end-line="11" selection-end-column="89" />
+          <folding>
+            <element signature="e#1#20#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aioPrograms/tests/spiderTests/assign/paradigm/ChangeImmutable.aio">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="39" selection-start-line="3" selection-start-column="39" selection-end-line="3" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aioPrograms/tests/spiderTests/assign/paradigm/DuplicateDefinition.aio">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="30" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aioPrograms/tests/spiderTests/assign/paradigm/DuplicateMutableDefinition.aio">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="60" selection-start-line="3" selection-start-column="60" selection-end-line="3" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aioPrograms/tests/spiderTests/assign/parsing/Test1.aio">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aioPrograms/tests/spiderTests/assign/parsing/Test2.aio">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aioPrograms/tests/spiderTests/assign/parsing/Test3.aio">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aioPrograms/tests/spiderTests/if/paradigm/DefineVariablesInScopes.aio">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="1" lean-forward="true" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/aioPrograms/tests/spiderTests/loop/paradigm/LoopWithCondition.aio">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="28" selection-start-column="28" selection-end-column="28" />
+        <state relative-caret-position="289">
+          <caret line="17" column="1" lean-forward="true" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/aioPrograms/tests/spiderTests/loop/paradigm/LoopWithImmutableModifier.aio">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="6" lean-forward="true" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aioPrograms/tests/spiderTests/loop/paradigm/LoopWithMutableModifier.aio">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="40" lean-forward="true" selection-start-line="11" selection-start-column="40" selection-end-line="11" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aioPrograms/examples/loop/DemoLoop1.aio">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="1" lean-forward="true" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aioPrograms/examples/loop/DemoLoop2.aio">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_assign_spider/aio_assign_spider.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="431" column="13" selection-start-line="425" selection-start-column="12" selection-end-line="431" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#16#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_assign_task.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="19" column="1" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_loop_spider/aio_loop_spider.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="459" column="48" lean-forward="true" selection-start-line="459" selection-start-column="48" selection-end-line="459" selection-end-column="48" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aioPrograms/tests/spiderTests/loop/paradigm/DefinePointerInScope.aio">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="1" lean-forward="true" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
         </state>
       </provider>
     </entry>
