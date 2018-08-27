@@ -559,6 +559,7 @@ CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_expression_parser/aio_ex
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_expression_parser/aio_expression_assistant.c.obj: ../headers/lang/aio_function/aio_value/aio_value.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_expression_parser/aio_expression_assistant.c.obj: ../headers/lang/aio_function/aio_variable/aio_definition/aio_variable_definition.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_expression_parser/aio_expression_assistant.c.obj: ../headers/lang/aio_function/aio_variable/aio_variable.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_expression_parser/aio_expression_assistant.c.obj: ../headers/lang/aio_reserved_names/aio_reserved_names_container.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_expression_parser/aio_expression_assistant.c.obj: ../headers/lib/utils/boolean_utils/boolean_utils.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_expression_parser/aio_expression_assistant.c.obj: ../headers/lib/utils/char_utils/char_utils.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_expression_parser/aio_expression_assistant.c.obj: ../headers/lib/utils/collections/sets/string_set.h
@@ -1005,6 +1006,7 @@ CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/a
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_assign_task.c.obj: ../headers/lang/aio_function/aio_value/aio_value.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_assign_task.c.obj: ../headers/lang/aio_function/aio_variable/aio_definition/aio_variable_definition.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_assign_task.c.obj: ../headers/lang/aio_function/aio_variable/aio_variable.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_assign_task.c.obj: ../headers/lang/aio_reserved_names/aio_reserved_names_container.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_assign_task.c.obj: ../headers/lang/aio_type/aio_type.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_assign_task.c.obj: ../headers/lib/utils/boolean_utils/boolean_utils.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_assign_task.c.obj: ../headers/lib/utils/collections/sets/string_set.h
