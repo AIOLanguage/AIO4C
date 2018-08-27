@@ -175,153 +175,159 @@ void free_aio_value_list(aio_value_list *list)
     free(list);
 }
 
-
 /**
  * Comparing utils.
  */
 
 boolean are_equal_aio_values(aio_value *value_1, aio_value *value_2)
 {
+    if (!value_1) {
+        throw_error_with_tag(AIO_VALUE_TAG, "Left value is null!");
+    }
+    if (!value_2) {
+        throw_error_with_tag(AIO_VALUE_TAG, "Right value is null!");
+    }
     const_str_hook *type_1 = value_1->type;
     if (is_hook_equals_str(type_1, INTEGER)) {
         aio_value *new_value_2 = cast_to_int(value_2);
-        if (value_1->get.int_acc == new_value_2->get.int_acc) {
-            return TRUE;
-        } else {
-            return FALSE;
-        }
+        return value_1->get.int_acc == new_value_2->get.int_acc;
     }
     if (is_hook_equals_str(type_1, DOUBLE)) {
         aio_value *new_value_2 = cast_to_double(value_2);
-        if (value_1->get.double_acc == new_value_2->get.double_acc) {
-            return TRUE;
-        } else {
-            return FALSE;
-        }
+        return value_1->get.double_acc == new_value_2->get.double_acc;
     }
     if (is_hook_equals_str(type_1, STRING)) {
         aio_value *new_value_2 = cast_to_string(value_2);
-        if (are_equal_strings(value_1->get.string_acc, new_value_2->get.string_acc)) {
-            return TRUE;
-        } else {
-            return FALSE;
-        }
+        return are_equal_strings(value_1->get.string_acc, new_value_2->get.string_acc);
     }
     if (is_hook_equals_str(type_1, BOOLEAN)) {
         aio_value *new_value_2 = cast_to_boolean(value_2);
-        if (value_1->get.boolean_acc == new_value_2->get.boolean_acc) {
-            return TRUE;
-        } else {
-            return FALSE;
-        }
+        return value_1->get.boolean_acc == new_value_2->get.boolean_acc;
     } else {
-        if (value_1->get.reference == value_2->get.reference) {
-            return TRUE;
-        } else {
-            return FALSE;
-        }
+        return value_1->get.reference == value_2->get.reference;
+    }
+}
+
+boolean are_not_equal_aio_values(aio_value *value_1, aio_value *value_2)
+{
+    if (!value_1) {
+        throw_error_with_tag(AIO_VALUE_TAG, "Left value is null!");
+    }
+    if (!value_2) {
+        throw_error_with_tag(AIO_VALUE_TAG, "Right value is null!");
+    }
+    const_str_hook *type_1 = value_1->type;
+    if (is_hook_equals_str(type_1, INTEGER)) {
+        aio_value *new_value_2 = cast_to_int(value_2);
+        return value_1->get.int_acc != new_value_2->get.int_acc;
+    }
+    if (is_hook_equals_str(type_1, DOUBLE)) {
+        aio_value *new_value_2 = cast_to_double(value_2);
+        return value_1->get.double_acc != new_value_2->get.double_acc;
+    }
+    if (is_hook_equals_str(type_1, STRING)) {
+        aio_value *new_value_2 = cast_to_string(value_2);
+        return !are_equal_strings(value_1->get.string_acc, new_value_2->get.string_acc);
+    }
+    if (is_hook_equals_str(type_1, BOOLEAN)) {
+        aio_value *new_value_2 = cast_to_boolean(value_2);
+        return value_1->get.boolean_acc != new_value_2->get.boolean_acc;
+    } else {
+        return value_1->get.reference != value_2->get.reference;
     }
 }
 
 boolean is_more_aio_value_then_other(aio_value *value_1, aio_value *value_2)
 {
+    if (!value_1) {
+        throw_error_with_tag(AIO_VALUE_TAG, "Left value is null!");
+    }
+    if (!value_2) {
+        throw_error_with_tag(AIO_VALUE_TAG, "Right value is null!");
+    }
     const_str_hook *type_1 = value_1->type;
     if (is_hook_equals_str(type_1, INTEGER)) {
         aio_value *new_value_2 = cast_to_int(value_2);
-        if (value_1->get.int_acc > new_value_2->get.int_acc) {
-            return TRUE;
-        } else {
-            return FALSE;
-        }
+        return value_1->get.int_acc > new_value_2->get.int_acc;
     }
     if (is_hook_equals_str(type_1, DOUBLE)) {
         aio_value *new_value_2 = cast_to_double(value_2);
-        if (value_1->get.double_acc > new_value_2->get.double_acc) {
-            return TRUE;
-        } else {
-            return FALSE;
-        }
+        return value_1->get.double_acc > new_value_2->get.double_acc;
     }
     if (is_hook_equals_str(type_1, STRING)) {
         aio_value *new_value_2 = cast_to_string(value_2);
         return strcmp(value_1->get.string_acc, new_value_2->get.string_acc) > 0;
     } else {
-        throw_error_with_hook(AIO_VALUE_TAG, "Cannot compare values by type:", type_1);
+        throw_error_with_hook(AIO_VALUE_TAG, "Can not compare values by type:", type_1);
     }
 }
 
 boolean is_more_or_equals_aio_value_then_other(aio_value *value_1, aio_value *value_2)
 {
+    if (!value_1) {
+        throw_error_with_tag(AIO_VALUE_TAG, "Left value is null!");
+    }
+    if (!value_2) {
+        throw_error_with_tag(AIO_VALUE_TAG, "Right value is null!");
+    }
     const_str_hook *type_1 = value_1->type;
     if (is_hook_equals_str(type_1, INTEGER)) {
         aio_value *new_value_2 = cast_to_int(value_2);
-        if (value_1->get.int_acc >= new_value_2->get.int_acc) {
-            return TRUE;
-        } else {
-            return FALSE;
-        }
+        return value_1->get.int_acc >= new_value_2->get.int_acc;
     }
     if (is_hook_equals_str(type_1, DOUBLE)) {
         aio_value *new_value_2 = cast_to_double(value_2);
-        if (value_1->get.double_acc >= new_value_2->get.double_acc) {
-            return TRUE;
-        } else {
-            return FALSE;
-        }
+        return value_1->get.double_acc >= new_value_2->get.double_acc;
     }
     if (is_hook_equals_str(type_1, STRING)) {
         aio_value *new_value_2 = cast_to_string(value_2);
         return strcmp(value_1->get.string_acc, new_value_2->get.string_acc) >= 0;
     } else {
-        throw_error_with_hook(AIO_VALUE_TAG, "Cannot compare values by type:", type_1);
+        throw_error_with_hook(AIO_VALUE_TAG, "Can not compare values by type:", type_1);
     }
 }
 
 boolean is_less_aio_value_then_other(aio_value *value_1, aio_value *value_2)
 {
+    if (!value_1) {
+        throw_error_with_tag(AIO_VALUE_TAG, "Left value is null!");
+    }
+    if (!value_2) {
+        throw_error_with_tag(AIO_VALUE_TAG, "Right value is null!");
+    }
     const_str_hook *type_1 = value_1->type;
     if (is_hook_equals_str(type_1, INTEGER)) {
         aio_value *new_value_2 = cast_to_int(value_2);
-        if (value_1->get.int_acc < new_value_2->get.int_acc) {
-            return TRUE;
-        } else {
-            return FALSE;
-        }
+        return value_1->get.int_acc < new_value_2->get.int_acc;
     }
     if (is_hook_equals_str(type_1, DOUBLE)) {
         aio_value *new_value_2 = cast_to_double(value_2);
-        if (value_1->get.double_acc < new_value_2->get.double_acc) {
-            return TRUE;
-        } else {
-            return FALSE;
-        }
+        return value_1->get.double_acc < new_value_2->get.double_acc;
     }
     if (is_hook_equals_str(type_1, STRING)) {
         aio_value *new_value_2 = cast_to_string(value_2);
         return strcmp(value_1->get.string_acc, new_value_2->get.string_acc) < 0;
     } else {
-        throw_error_with_hook(AIO_VALUE_TAG, "Cannot compare values by type:", type_1);
+        throw_error_with_hook(AIO_VALUE_TAG, "Can not compare values by type:", type_1);
     }
 }
 
 boolean is_less_or_equals_aio_value_then_other(aio_value *value_1, aio_value *value_2)
 {
+    if (!value_1) {
+        throw_error_with_tag(AIO_VALUE_TAG, "Left value is null!");
+    }
+    if (!value_2) {
+        throw_error_with_tag(AIO_VALUE_TAG, "Right value is null!");
+    }
     const_str_hook *type_1 = value_1->type;
     if (is_hook_equals_str(type_1, INTEGER)) {
         aio_value *new_value_2 = cast_to_int(value_2);
-        if (value_1->get.int_acc <= new_value_2->get.int_acc) {
-            return TRUE;
-        } else {
-            return FALSE;
-        }
+        return value_1->get.int_acc <= new_value_2->get.int_acc;
     }
     if (is_hook_equals_str(type_1, DOUBLE)) {
         aio_value *new_value_2 = cast_to_double(value_2);
-        if (value_1->get.double_acc <= new_value_2->get.double_acc) {
-            return TRUE;
-        } else {
-            return FALSE;
-        }
+        return value_1->get.double_acc <= new_value_2->get.double_acc;
     }
     if (is_hook_equals_str(type_1, STRING)) {
         aio_value *new_value_2 = cast_to_string(value_2);
@@ -331,28 +337,21 @@ boolean is_less_or_equals_aio_value_then_other(aio_value *value_1, aio_value *va
     }
 }
 
-
 /**
  * Casts.
  */
 
 aio_value *cast_to_int(aio_value *value)
 {
+    if (!value) {
+        return NULL;
+    }
     const_str_hook *type = value->type;
-#ifdef AIO_VALUE_DEBUG
-    log_info_str_hook(AIO_VALUE_TAG, "Prepare to cast Int from:", type);
-#endif
     if (is_hook_equals_str(type, INTEGER)) {
         return new_aio_int_value(value->get.int_acc);
     }
     if (is_hook_equals_str(type, DOUBLE)) {
-        const double d = value->get.double_acc;
-        const int i = (int) d;
-#ifdef AIO_VALUE_DEBUG
-        log_info_double(AIO_VALUE_TAG, "Old value:", d);
-        log_info_int(AIO_VALUE_TAG, "New value:", i);
-#endif
-        return new_aio_int_value(i);
+        return new_aio_int_value((int) value->get.double_acc);
     }
     if (is_hook_equals_str(type, STRING)) {
         return new_aio_int_value(string_to_int(value->get.string_acc));
@@ -366,6 +365,9 @@ aio_value *cast_to_int(aio_value *value)
 
 aio_value *cast_to_double(aio_value *value)
 {
+    if (!value) {
+        return NULL;
+    }
     const_str_hook *type = value->type;
     if (is_hook_equals_str(type, INTEGER)) {
         return new_aio_double_value(value->get.int_acc);
@@ -375,8 +377,6 @@ aio_value *cast_to_double(aio_value *value)
     }
     if (is_hook_equals_str(type, STRING)) {
         const_string string = value->get.string_acc;
-        log_info_string(AIO_VALUE_TAG, "Cast string to double:", string);
-        log_info_boolean(AIO_VALUE_TAG, "Matches double:", matches_double(string));
         if (matches_double(string)) {
             return new_aio_double_value(string_to_double(string));
         } else {
@@ -392,6 +392,9 @@ aio_value *cast_to_double(aio_value *value)
 
 aio_value *cast_to_string(aio_value *value)
 {
+    if (!value) {
+        return NULL;
+    }
     const_str_hook *type = value->type;
     if (is_hook_equals_str(type, INTEGER)) {
         return new_aio_string_value(int_to_string(value->get.int_acc));
@@ -414,6 +417,9 @@ aio_value *cast_to_string(aio_value *value)
 
 aio_value *cast_to_boolean(aio_value *value)
 {
+    if (!value) {
+        return NULL;
+    }
     const_str_hook *type = value->type;
     if (is_hook_equals_str(type, INTEGER)) {
         const int int_value = value->get.int_acc;
@@ -436,13 +442,16 @@ aio_value *cast_to_boolean(aio_value *value)
         } else {
             throw_error_with_tag(AIO_VALUE_TAG, "Can not cast double to boolean");
         }
-        return new_aio_string_value(double_to_string(value->get.double_acc));
     }
     if (is_hook_equals_str(type, STRING)) {
         const_string string_value = value->get.string_acc;
-        if (are_equal_strings(string_value, AIO_TRUE) || are_equal_strings(string_value, "1")) {
+        if (are_equal_strings(string_value, AIO_TRUE_VALUE)
+            || are_equal_strings(string_value, "1")
+            || are_equal_strings(string_value, "1.0")) {
             return new_aio_boolean_value(TRUE);
-        } else if (are_equal_strings(string_value, AIO_FALSE) || are_equal_strings(string_value, "0")) {
+        } else if (are_equal_strings(string_value, AIO_FALSE_VALUE)
+                   || are_equal_strings(string_value, "0")
+                   || are_equal_strings(string_value, "0.0")) {
             return new_aio_boolean_value(FALSE);
         } else {
             throw_error_with_tag(AIO_VALUE_TAG, "Can not cast string to boolean");
@@ -455,40 +464,45 @@ aio_value *cast_to_boolean(aio_value *value)
     }
 }
 
-aio_value *cast_to_reference(aio_value *value)
+aio_value *cast_to_void(aio_value *value)
 {
+    if (!value) {
+        return NULL;
+    }
     const_str_hook *type = value->type;
     if (is_hook_equals_str(type, INTEGER)) {
-        return new_aio_reference_value(int_to_string(value->get.int_acc));
+        return new_aio_int_value(value->get.int_acc);
     }
     if (is_hook_equals_str(type, DOUBLE)) {
-        return new_aio_string_value(double_to_string(value->get.double_acc));
+        return new_aio_double_value(value->get.double_acc);
     }
     if (is_hook_equals_str(type, STRING)) {
         return new_aio_string_value(value->get.string_acc);
     }
     if (is_hook_equals_str(type, BOOLEAN)) {
-        return new_aio_string_value(boolean_to_string(value->get.boolean_acc));
+        return new_aio_boolean_value(value->get.boolean_acc);
     } else {
-        return new_aio_string_value(value->get.reference);
+        return new_aio_reference_value(value->get.reference);
     }
 }
 
 aio_value *cast_to_type(aio_value *value, const_str_hook *type)
 {
-    if (is_hook_equals_str(type, INTEGER)) {
+    if (!value) {
+        return NULL;
+    }
+    if (is_hook_equals_str(type, VOID)) {
+        return cast_to_void(value);
+    } else if (is_hook_equals_str(type, INTEGER)) {
         return cast_to_int(value);
-    }
-    if (is_hook_equals_str(type, DOUBLE)) {
+    } else if (is_hook_equals_str(type, DOUBLE)) {
         return cast_to_double(value);
-    }
-    if (is_hook_equals_str(type, STRING)) {
+    } else if (is_hook_equals_str(type, STRING)) {
         return cast_to_string(value);
-    }
-    if (is_hook_equals_str(type, BOOLEAN)) {
+    } else if (is_hook_equals_str(type, BOOLEAN)) {
         return cast_to_boolean(value);
     } else {
-        return cast_to_reference(value);
+        throw_error_with_hook(AIO_VALUE_TAG, "Sorry, AIO Core hasn't supported type:", type);
     }
 }
 
@@ -498,7 +512,7 @@ aio_value *cast_to_type(aio_value *value, const_str_hook *type)
 
 void log_info_aio_value(const_string tag, string message, const aio_value *value)
 {
-    if (value != NULL) {
+    if (value) {
         const_str_hook *type = value->type;
         if (is_hook_equals_str(type, INTEGER)) {
             log_info_int(tag, message, value->get.int_acc);

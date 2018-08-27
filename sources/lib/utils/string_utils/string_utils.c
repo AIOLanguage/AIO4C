@@ -296,7 +296,7 @@ const_boolean are_equal_strings(const_string first, const_string second)
 string boolean_to_string(const_boolean src)
 {
     if (src) {
-        return new_string(AIO_TRUE);
+        return new_string(AIO_TRUE_VALUE);
     } else {
         return new_string(FALSE);
     }

@@ -1,7 +1,15 @@
 //성공적인 시험 (Successful test):
-Str castTest() {
+Str castString() {
     a = 3.2
     b = a
     Int c = a + '1'
     out 'Percent:' ~ ((c) / 100.0)
+}
+
+//성공적인 시험 (Successful test):
+Boo castBoolean() {
+    Int a = 1.2
+    Boo isTest = '1.0'
+    isSuccessfulParsed = a & isTest & (((2 + '5') / 7) & 2 + 2 != 5) | ('fls' & 0)
+    out isSuccessfulParsed
 }

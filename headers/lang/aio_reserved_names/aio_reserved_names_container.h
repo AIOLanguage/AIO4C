@@ -19,16 +19,19 @@
 
 #define AIO_BREAK_MODIFIER "brk"
 
-#define AIO_TRUE "tru"
+#define AIO_TRUE_VALUE "tru"
 
-#define AIO_FALSE "fls"
+#define AIO_FALSE_VALUE "fls"
 
+#define AIO_NULL_VALUE "voi"
 
 _Bool is_aio_mutable_modifier(const struct str_hook *hook);
 
 _Bool is_aio_if_modifier(const struct str_hook *hook);
 
 _Bool is_aio_loop_modifier(const struct str_hook *hook);
+
+_Bool is_aio_null_value(const char *string_value);
 
 _Bool can_use_name(const struct str_hook *hook);
 

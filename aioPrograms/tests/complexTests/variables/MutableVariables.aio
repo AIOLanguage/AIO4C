@@ -1,0 +1,8 @@
+Boo changeMutable() {
+    b = 3.2
+    mu Int c = 5
+    c = c + b
+    mu isTest = tru
+    isTest = c
+    out isTest == 8
+}

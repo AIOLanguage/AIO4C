@@ -53,7 +53,8 @@ boolean is_sign(const char c)
             || c == '>'
             || c == '<'
             || c == '%'
-            || c == '^';
+            || c == '^'
+            || c == '!';
 }
 
 boolean is_dot(const char c)
@@ -124,4 +125,9 @@ boolean is_and_sign(const char c)
 boolean is_or_sign(const char c)
 {
     return c == '|';
+}
+
+boolean is_exclamation_point(const char c)
+{
+    return c == '!';
 }

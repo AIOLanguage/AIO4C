@@ -32,7 +32,8 @@ static const_boolean is_explicitly_boolean_expression(const_str_hook *hooked_exp
                 || is_less_sign(symbol)
                 || is_equal_sign(symbol)
                 || is_and_sign(symbol)
-                || is_or_sign(symbol);
+                || is_or_sign(symbol)
+                || is_exclamation_point(symbol);
         if (is_opening_parenthesis_cond) {
             parenthesis_scope_counter++;
         }
@@ -147,11 +148,20 @@ static const_str_hook *define_type_by_first_element(
     const_aio_variable *variable = get_aio_variable_in_function_control_graph(first_element_hook, control_graph);
     if (variable != NULL) {
         const_aio_variable_definition *definition = variable->definition;
+        str_hook *type = definition->type;
 #ifdef AIO_EXPRESSION_PARSER_DEBUG
         log_info_str_hook(AIO_EXPRESSION_PARSER_TAG, "Found variable:", definition->name);
         log_info_str_hook(AIO_EXPRESSION_PARSER_TAG, "Type:", definition->type);
 #endif
-        return new_str_hook_by_other(definition->type);
+        if (is_aio_void_type_hooked(type)) {
+            aio_value *value = variable->value;
+            if (value != NULL) {
+                type = value->type;
+            } else {
+                throw_error_with_hook(AIO_EXPRESSION_PARSER_TAG, "Variable is null:", variable->definition->name);
+            }
+        }
+        return new_str_hook_by_other(type);
     }
 #ifdef AIO_EXPRESSION_PARSER_DEBUG
     log_info(AIO_EXPRESSION_PARSER_TAG, "Didn't find variable!");

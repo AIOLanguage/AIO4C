@@ -9,9 +9,9 @@
 
 #ifdef AIO_DEVELOPMENT
 
-#define AIO_TEST_PATH "../aioPrograms/tests/spiderTests/switch/paradigm/DefineVariableInCaseScope.aio"
+#define AIO_TEST_PATH "../aioPrograms/tests/complexTests/variables/MutableVariables.aio"
 
-#define AIO_TEST_FUNCTION "test"
+#define AIO_TEST_FUNCTION "changeMutable"
 
 #define AIO_DEVELOPMENT_DEBUG
 
@@ -27,7 +27,7 @@ aio_bundle *create_test_bundle()
 {
     aio_value_list *input_value_list = new_aio_value_list();
     //Create test args:
-    add_aio_value_in_list(input_value_list, new_aio_string_value("1"));
+//    add_aio_value_in_list(input_value_list, new_aio_string_value("1"));
 //    add_aio_value_in_list(input_value_list, new_aio_string_value("1"));
 //    add_aio_value_in_list(input_value_list, new_aio_string_value("1"));
 //    add_aio_value_in_list(input_value_list, new_aio_string_value("1"));
@@ -75,7 +75,7 @@ void make_test()
         }
     }
 #endif
-    exit(1);
+//    exit(1);
     aio_value_list *result_list = invoke_static_function_in_context(context, test_hook, bundle);
     //==================================================================================================================
     //Print result:

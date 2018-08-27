@@ -13,6 +13,7 @@
 
 #include "../../../../../headers/lib/utils/log_utils/log_utils.h"
 #include "../../../../../headers/lang/aio_type/aio_type.h"
+#include "../../../../../headers/lang/aio_reserved_names/aio_reserved_names_container.h"
 
 #endif
 
@@ -55,13 +56,24 @@ void perform_aio_assign_instruction(const_aio_function_instruction *instruction,
 #ifdef AIO_ASSIGN_TASK_DEBUG
     log_info_string(AIO_ASSIGN_TASK_TAG, "Parse src:", value_string);
 #endif
-    aio_value *value = parse_value_string(value_string, control_graph->context_ref, control_graph);
+    aio_value *value = NULL;
+    if (!is_aio_null_value(value_string)) {
+        value = parse_value_string(value_string, control_graph->context_ref, control_graph);
+    }
 #ifdef AIO_ASSIGN_TASK_DEBUG
     log_info_aio_value(AIO_ASSIGN_TASK_TAG, "Parsed value:", value);
 #endif
     //Cast value:
     variable->init_type = AIO_VARIABLE_INITIALIZED;
-    if (is_aio_type_initialized(variable_type)) {
+    if (is_aio_void_type_hooked(variable_type)) {
+        variable->value = value;
+#ifdef AIO_ASSIGN_TASK_DEBUG
+        log_info(AIO_ASSIGN_TASK_TAG, "EASY VOID");
+#endif
+    } else if (is_aio_type_initialized(variable_type)) {
+#ifdef AIO_ASSIGN_TASK_DEBUG
+        log_info_str_hook(AIO_ASSIGN_TASK_TAG, "CAST TO:", variable_type);
+#endif
         variable->value = cast_to_type(value, variable_type);
         //--------------------------------------------------------------------------------------------------------------
         //찌꺼기 수집기 (Garbage collector):
@@ -76,4 +88,7 @@ void perform_aio_assign_instruction(const_aio_function_instruction *instruction,
         log_info_aio_value(AIO_ASSIGN_TASK_TAG, "Not initialized variable value:", variable->value);
 #endif
     }
+#ifdef AIO_ASSIGN_TASK_DEBUG
+    log_info_str_hook(AIO_ASSIGN_TASK_TAG, "TYYYYPE:", variable->definition->type);
+#endif
 }

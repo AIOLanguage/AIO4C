@@ -13,3 +13,8 @@ boolean is_aio_type_initialized(const_str_hook *hook)
 {
     return !is_hook_equals_str(hook, AIO_NOT_INIT_TYPE);
 }
+
+boolean is_aio_void_type_hooked(const_str_hook *hook)
+{
+    return is_hook_equals_str(hook, VOID);
+}

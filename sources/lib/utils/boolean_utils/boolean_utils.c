@@ -5,7 +5,7 @@
 
 boolean matches_boolean(const_string string)
 {
-    if (strcmp(string, AIO_TRUE) == 0 || strcmp(string, AIO_FALSE) == 0) {
+    if (strcmp(string, AIO_TRUE_VALUE) == 0 || strcmp(string, AIO_FALSE_VALUE) == 0) {
         return TRUE;
     } else {
         return FALSE;
@@ -14,10 +14,10 @@ boolean matches_boolean(const_string string)
 
 boolean string_to_boolean(const_string string)
 {
-    if (strcmp(string, AIO_TRUE) == 0) {
+    if (strcmp(string, AIO_TRUE_VALUE) == 0) {
         return TRUE;
     }
-    if (strcmp(string, AIO_TRUE) == 0) {
+    if (strcmp(string, AIO_TRUE_VALUE) == 0) {
         return FALSE;
     }
     throw_error("can not recognize boolean value!");

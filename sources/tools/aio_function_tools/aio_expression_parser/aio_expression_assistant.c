@@ -16,6 +16,7 @@
 
 #include "../../../../headers/lib/utils/log_utils/log_utils.h"
 #include "../../../../headers/lang/aio_function/aio_function.h"
+#include "../../../../headers/lang/aio_reserved_names/aio_reserved_names_container.h"
 
 #endif
 
@@ -42,8 +43,8 @@ void make_expression_chunks_and_count_next_point(
             }
             if (parenthesis_up_downer == 0) {
                 str_hook *inner_expression = new_str_hook(expression_str);
-                inner_expression->start = last_pointer,
-                        inner_expression->end = j;
+                inner_expression->start = last_pointer;
+                inner_expression->end = j;
                 add_str_hook_in_list(expression_list, inner_expression);
                 *next_point = j + 1;
                 return;
@@ -86,21 +87,23 @@ struct aio_result *make_function_or_variable(
             break;
         }
     }
-    const_str_hook *function_or_variable_name = new_str_hook_with_start_and_end(expression_str, start_position, i);
+    const_str_hook *function_or_variable_hook = new_str_hook_with_start_and_end(expression_str, start_position, i);
 #ifdef AIO_EXPRESSION_ASSISTANT_DEBUG
-    log_info_str_hook(AIO_EXPRESSION_ASSISTANT_TAG, "Captured element:", function_or_variable_name);
+    log_info_str_hook(AIO_EXPRESSION_ASSISTANT_TAG, "Captured element:", function_or_variable_hook);
 #endif
     if (i == right_border) {
         i--;
     }
-    if (is_not_empty_hooked_str(function_or_variable_name)) {
+    const_boolean is_variable_or_function_name = is_not_empty_hooked_str(function_or_variable_hook)
+                                                 && can_use_name(function_or_variable_hook);
+    if (is_variable_or_function_name) {
         if (i < right_border && is_opening_parenthesis(expression_str[i])) {
-            const_str_hook *function_name = function_or_variable_name;
+            const_str_hook *function_name = function_or_variable_hook;
 #ifdef AIO_EXPRESSION_ASSISTANT_DEBUG
             log_info_str_hook(AIO_EXPRESSION_ASSISTANT_TAG, "This is function:", function_name);
 #endif
             str_hook *in_function_parenthesis = new_str_hook(expression_str);
-            in_function_parenthesis->start = function_or_variable_name->end;
+            in_function_parenthesis->start = function_or_variable_hook->end;
             in_function_parenthesis->end = right_border;
             //Prepare to invoke function:
             str_hook_list *expression_hook_list = new_str_hook_list();
@@ -117,7 +120,7 @@ struct aio_result *make_function_or_variable(
             aio_bundle *bundle = new_aio_bundle(input_values);
             aio_value_list *output_values = invoke_static_function_in_context(
                     context,
-                    function_or_variable_name,
+                    function_or_variable_hook,
                     bundle
             );
             if (output_values->size == 1) {
@@ -130,7 +133,7 @@ struct aio_result *make_function_or_variable(
                 throw_error_with_tag(AIO_EXPRESSION_ASSISTANT_TAG, "Function must return single value!");
             }
         } else {
-            const_str_hook *variable_name = function_or_variable_name;
+            const_str_hook *variable_name = function_or_variable_hook;
 #ifdef AIO_EXPRESSION_ASSISTANT_DEBUG
             log_info_str_hook(AIO_EXPRESSION_ASSISTANT_TAG, "Is variable:", variable_name);
 #endif
@@ -145,12 +148,12 @@ struct aio_result *make_function_or_variable(
     return make_value_function(expression_hook);
 }
 
-struct aio_result *make_parentheses(
-        const struct str_hook *expression_hook,
-        const struct aio_context *context,
-        const struct aio_function_control_graph *control_graph,
-        struct aio_value *(*cast_function)(struct aio_value *),
-        struct aio_result *(*make_value_function)(const struct str_hook *)
+aio_result *make_parentheses(
+        const_str_hook *expression_hook,
+        const_aio_context *context,
+        const_aio_function_control_graph *control_graph,
+        aio_value *(*cast_function)(aio_value *),
+        aio_result *(*make_value_function)(const_str_hook *)
 )
 {
 #ifdef AIO_EXPRESSION_ASSISTANT_DEBUG

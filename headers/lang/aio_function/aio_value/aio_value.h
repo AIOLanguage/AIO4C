@@ -64,6 +64,8 @@ void free_aio_value_list(struct aio_value_list *list);
 
 _Bool are_equal_aio_values(struct aio_value *value_1, struct aio_value *value_2);
 
+_Bool are_not_equal_aio_values(aio_value *value_1, aio_value *value_2);
+
 _Bool is_more_aio_value_then_other(struct aio_value *value_1, struct aio_value *value_2);
 
 _Bool is_less_aio_value_then_other(struct aio_value *value_1, struct aio_value *value_2);
@@ -84,7 +86,7 @@ struct aio_value *cast_to_string(struct aio_value *value);
 
 struct aio_value *cast_to_boolean(struct aio_value *value);
 
-struct aio_value *cast_to_reference(struct aio_value *value);
+struct aio_value *cast_to_void(struct aio_value *value);
 
 struct aio_value *cast_to_type(struct aio_value *value, const struct str_hook *type);
 

@@ -32,9 +32,9 @@ void log_info_boolean(const_string tag, char *message, const _Bool value)
 {
     const_string boolean_string = NULL;
     if (value) {
-        boolean_string = AIO_TRUE;
+        boolean_string = AIO_TRUE_VALUE;
     } else {
-        boolean_string = AIO_FALSE;
+        boolean_string = AIO_FALSE_VALUE;
     }
     printf("\n%s: %s -%s-\n", tag, message, boolean_string);
 }

@@ -309,7 +309,7 @@ boolean is_string_hooked(const_str_hook *hook)
 
 boolean is_boolean_hooked(const_str_hook *hook)
 {
-    return is_hook_equals_str(hook, AIO_TRUE) || is_hook_equals_str(hook, AIO_FALSE);
+    return is_hook_equals_str(hook, AIO_TRUE_VALUE) || is_hook_equals_str(hook, AIO_FALSE_VALUE);
 }
 
 void throw_error_with_hook(const_string tag, const_string message, const_str_hook *hook)
@@ -370,10 +370,10 @@ str_hook *lower_str_hook_quotes(const_str_hook *hook)
 
 boolean str_hook_to_boolean(const struct str_hook *hook)
 {
-    if (is_hook_equals_str(hook, AIO_TRUE)) {
+    if (is_hook_equals_str(hook, AIO_TRUE_VALUE)) {
         return TRUE;
     }
-    if (is_hook_equals_str(hook, AIO_FALSE)) {
+    if (is_hook_equals_str(hook, AIO_FALSE_VALUE)) {
         return FALSE;
     }
 }

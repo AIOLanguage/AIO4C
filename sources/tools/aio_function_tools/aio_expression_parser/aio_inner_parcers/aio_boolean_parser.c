@@ -22,11 +22,11 @@ static void set_int_value(boolean *value, const_str_hook *captured_element)
     const int int_value = str_hook_to_int(captured_element);
     if (int_value == 1) {
         *value = TRUE;
-    }
-    if (int_value == 0) {
+    } else if (int_value == 0) {
         *value = FALSE;
+    } else {
+        throw_error_with_tag(AIO_BOOLEAN_PARSER_TAG, "Can not cast int to boolean!");
     }
-    throw_error_with_tag(AIO_BOOLEAN_PARSER_TAG, "Can not cast int to boolean!");
 }
 
 static void set_double_value(boolean *value, const_str_hook *captured_element)
@@ -34,11 +34,11 @@ static void set_double_value(boolean *value, const_str_hook *captured_element)
     const double double_value = str_hook_to_double(captured_element);
     if (double_value == 1.0) {
         *value = TRUE;
-    }
-    if (double_value == 0.0) {
+    } else if (double_value == 0.0) {
         *value = FALSE;
+    } else {
+        throw_error_with_tag(AIO_BOOLEAN_PARSER_TAG, "Can not cast double to boolean!");
     }
-    throw_error_with_tag(AIO_BOOLEAN_PARSER_TAG, "Can not cast double to boolean!");
 }
 
 static aio_result *make_boolean(const_str_hook *expression_hook)
@@ -102,7 +102,7 @@ static aio_result *make_boolean(const_str_hook *expression_hook)
 }
 
 static enum sign {
-    SIGN_UNDEFINED, SIGN_EQUALS, SIGN_MORE, SIGN_LESS, SIGN_MORE_OR_EQUALS, SIGN_LESS_OR_EQUALS
+    SIGN_UNDEFINED, SIGN_EQUALS, SIGN_NOT_EQUALS, SIGN_MORE, SIGN_LESS, SIGN_MORE_OR_EQUALS, SIGN_LESS_OR_EQUALS
 };
 
 static aio_result *try_to_get_sign_condition(
@@ -127,7 +127,8 @@ static aio_result *try_to_get_sign_condition(
         const_boolean is_equal = is_equal_sign((symbol));
         const_boolean is_more = is_more_sign(symbol);
         const_boolean is_less = is_less_sign(symbol);
-        if ((is_equal || is_less || is_more) && sign_watcher->pointer == 0) {
+        const_boolean is_not_equal = is_exclamation_point(symbol);
+        if ((is_equal || is_less || is_more || is_not_equal) && sign_watcher->pointer == 0) {
             if (is_equal) {
                 sign_type = SIGN_EQUALS;
             }
@@ -136,6 +137,9 @@ static aio_result *try_to_get_sign_condition(
             }
             if (is_more) {
                 sign_type = SIGN_MORE;
+            }
+            if (is_not_equal) {
+                sign_type = SIGN_NOT_EQUALS;
             }
             sign_watcher->mode = POINT_WATCHER_ACTIVE_MODE;
             break;
@@ -183,6 +187,13 @@ static aio_result *try_to_get_sign_condition(
             start_right_expr_pos++;
         }
     }
+    if (sign_type == SIGN_NOT_EQUALS) {
+        if (is_next_equal_sign) {
+            start_right_expr_pos++;
+        } else {
+            throw_error_with_tag(AIO_BOOLEAN_PARSER_TAG, "Invalid equal sign in condition");
+        }
+    }
     //Find right part:
     int end_right_expr_pos = start_right_expr_pos;
     while (end_right_expr_pos < right_border) {
@@ -218,6 +229,12 @@ static aio_result *try_to_get_sign_condition(
             condition_value = are_equal_aio_values(left_value, right_value);
 #ifdef AIO_BOOLEAN_PARSER_DEBUG
             log_info_boolean(AIO_BOOLEAN_PARSER_TAG, "Are equals:", condition_value);
+#endif
+            break;
+        case SIGN_NOT_EQUALS:
+            condition_value = are_not_equal_aio_values(left_value, right_value);
+#ifdef AIO_BOOLEAN_PARSER_DEBUG
+            log_info_boolean(AIO_BOOLEAN_PARSER_TAG, "Are not equals:", condition_value);
 #endif
             break;
         case SIGN_MORE:
@@ -302,7 +319,7 @@ static aio_result *make_boolean_parentheses(
         aio_value *value = cast_to_boolean(in_parenthesis_value);
         //Create next rest:
         str_hook *next_hook = new_str_hook(expression_str);
-        next_hook->start = end_parenthesis + 1;
+        next_hook->start = end_parenthesis;
         next_hook->end = expression_hook->end;
         //Create result:
         aio_result *in_parenthesis_result = new_aio_result(value, next_hook);
@@ -344,7 +361,7 @@ static aio_result *make_and(
             const_boolean right_acc = right_result->value->get.boolean_acc;
             left_acc = left_acc && right_acc;
 #ifdef AIO_BOOLEAN_PARSER_DEBUG
-            log_info_int(AIO_BOOLEAN_PARSER_TAG, "After and acc:", left_acc);
+            log_info_boolean(AIO_BOOLEAN_PARSER_TAG, "After and acc:", left_acc);
 #endif
             const_str_hook *old_left_hook = left_hook;
             left_hook = new_str_hook_by_other(right_result->rest);

@@ -383,7 +383,7 @@ static aio_variable_definition *create_local_variable_definition(
             break;
         case AIO_ASSIGN_MUTABLE:
             variable_name = new_str_hook_by_other(variable_materials[2]);
-            variable_type = new_str_hook_by_other(variable_materials[0]);
+            variable_type = new_str_hook_by_other(variable_materials[1]);
             is_mutable = TRUE;
             break;
         default:

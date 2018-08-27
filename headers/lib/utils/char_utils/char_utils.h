@@ -47,4 +47,6 @@ _Bool is_and_sign(const char c);
 
 _Bool is_or_sign(const char c);
 
+_Bool is_exclamation_point(const char c);
+
 #endif //CHAR_UTILS_H
