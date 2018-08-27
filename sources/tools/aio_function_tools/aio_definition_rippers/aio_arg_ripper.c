@@ -49,17 +49,20 @@ aio_variable_definition_list *dig_arguments(const_string source_code, int *point
         }
     }
     //함수 인수들 함유량 줄 얻는다 (Get function arguments content string):
-    const_str_hook *argument_content = new_str_hook_by_point_watcher(source_code, watcher);
+    const_str_hook *argument_content_chunk = new_str_hook_by_point_watcher(source_code, watcher);
     //------------------------------------------------------------------------------------------------------------------
     //찌꺼기 수집기 (Garbage collector):
     free_point_watcher(watcher);
     //------------------------------------------------------------------------------------------------------------------
 #ifdef AIO_ARG_RIPPER_DEBUG
-    log_info_str_hook(AIO_ARG_RIPPER_TAG, "Argument content:", argument_content);
+    log_info_str_hook(AIO_ARG_RIPPER_TAG, "Argument content:", argument_content_chunk);
 #endif
-    if (!is_empty_hooked_str(argument_content)) {
+    if (!is_empty_hooked_str(argument_content_chunk)) {
         //함수 인수 함유량들 파다 (Dig arg contents):
-        const_str_hook_list *dirty_arg_chunks = split_str_hook_by_comma(argument_content);
+        const_str_hook_list *dirty_arg_chunks = split_str_hook_by_comma(argument_content_chunk);
+#ifdef AIO_ARG_RIPPER_DEBUG
+        log_info_str_hook_list(AIO_ARG_RIPPER_TAG, "Dirty Arg chunks ----->", dirty_arg_chunks);
+#endif
         const_str_hook_list *clean_arg_chunks = trim_str_hook_list_with_line_break(dirty_arg_chunks);
         //각 함수 인수 함유량 파다 (Dig each arg content):
         const_str_hook_array clean_arg_chunk_array = clean_arg_chunks->hooks;
@@ -67,8 +70,10 @@ aio_variable_definition_list *dig_arguments(const_string source_code, int *point
             const_str_hook *arg_chunk = clean_arg_chunk_array[j];
             //Split by space or line break:
             const_str_hook_list *dirty_arg_content_list = split_str_hook_by_whitespace(arg_chunk);
-            const_str_hook_list *clean_arg_content_list = filter_str_hook_list(dirty_arg_content_list,
-                                                                               is_not_empty_hooked_str);
+            const_str_hook_list *clean_arg_content_list = filter_str_hook_list(
+                    dirty_arg_content_list,
+                    is_not_empty_hooked_str
+            );
             const_str_hook_array hooks = clean_arg_content_list->hooks;
             const size_t clean_arg_content_list_size = clean_arg_content_list->size;
             str_hook *arg_type = NULL;

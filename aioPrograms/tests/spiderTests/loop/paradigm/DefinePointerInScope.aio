@@ -1,3 +1,4 @@
+//성공적인 시험 (Successful test):
 Voi test(mu Dou f) {
     //Crashes because "d" has already defined as pointer:
     loo (Dou d = 5 d < 10 d = d + 3) {

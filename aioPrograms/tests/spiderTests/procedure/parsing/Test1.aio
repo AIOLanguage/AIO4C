@@ -1,10 +1,13 @@
-Voi procedureTest(mu      Dou
-value)
+//성공적인 시험 (Successful test):
+Voi test(       mu      Dou
+value
+
+)
 {
     if
     (value==               0){value=
     value+
-1 procedureTest(
+1 test(
     value
     )}
 }
