@@ -9,7 +9,7 @@
 
 #ifdef AIO_DEVELOPMENT
 
-#define AIO_TEST_PATH "../aioPrograms/tests/spiderTests/procedure/parsing/Test2.aio"
+#define AIO_TEST_PATH "../aioPrograms/tests/spiderTests/switch/paradigm/DefineVariableInCaseScope.aio"
 
 #define AIO_TEST_FUNCTION "test"
 

@@ -22,7 +22,8 @@
  * Refresh.
  */
 
-void refresh_return_spider(aio_spider *spider, point_watcher *ripper_watcher) {
+void refresh_return_spider(aio_spider *spider, point_watcher *ripper_watcher)
+{
     spider->message = AIO_SPIDER_NOT_FOUND_MATERIALS;
     //재료 리셋 (Reset materials):
     aio_return_materials *materials = spider->materials;
@@ -48,7 +49,8 @@ void refresh_return_spider(aio_spider *spider, point_watcher *ripper_watcher) {
  * 거미를 비우다 (Free spider).
  */
 
-void free_return_spider(aio_spider *spider) {
+void free_return_spider(aio_spider *spider)
+{
     aio_return_materials *materials = spider->materials;
     free_point_watcher(materials->main_watcher);
     free_point_watcher(materials->value_watcher);
@@ -62,7 +64,8 @@ void free_return_spider(aio_spider *spider) {
  * 건설자 (Constructor).
  */
 
-struct aio_spider *new_aio_return_spider(point_watcher *ripper_watcher) {
+struct aio_spider *new_aio_return_spider(point_watcher *ripper_watcher)
+{
     aio_spider *spider = new_object(sizeof(aio_spider));
     //함수들을 놓다 (Put functions):
     spider->refresh = refresh_return_spider;
@@ -85,7 +88,8 @@ struct aio_spider *new_aio_return_spider(point_watcher *ripper_watcher) {
 }
 
 const enum aio_spider_message is_found_return_instruction(const_string source_code, point_watcher *ripper_watcher,
-                                                          struct aio_spider *spider) {
+                                                          struct aio_spider *spider)
+{
     //재료들을 추출하다 (Extract materials):
     const aio_return_materials *materials = spider->materials;
     point_watcher *main_watcher = materials->main_watcher;
@@ -111,14 +115,15 @@ const enum aio_spider_message is_found_return_instruction(const_string source_co
     return spider->message;
 }
 
-void handle_return_modifier_scope(const_string source_code, struct aio_spider *spider) {
+void handle_return_modifier_scope(const_string source_code, struct aio_spider *spider)
+{
     aio_return_materials *materials = spider->materials;
     point_watcher *main_watcher = materials->main_watcher;
     const int current_position = main_watcher->end;
     const char current_symbol = source_code[current_position];
     //Check current symbol:
-    const_boolean is_whitespace_cond = is_space_or_line_break(current_symbol);
-    if (is_whitespace_cond) {
+    const_boolean is_end_of_modifier = !isalpha(current_symbol);
+    if (is_end_of_modifier) {
         const int start_index = main_watcher->start;
         const int hold_positions = current_position - start_index;
         if (hold_positions == 3) {
@@ -136,14 +141,14 @@ void handle_return_modifier_scope(const_string source_code, struct aio_spider *s
                 spider->message = AIO_SPIDER_FOUND_MATERIALS;
 #ifdef AIO_RETURN_SPIDER_DEBUG
                 log_info(AIO_RETURN_SPIDER_TAG, "Found return modifier!");
-
 #endif
             }
         }
     }
 }
 
-void handle_return_value_scope(const_string source_code, struct aio_spider *spider) {
+void handle_return_value_scope(const_string source_code, struct aio_spider *spider)
+{
     //재료들을 추출하다 (Extract materials):
     aio_return_materials *materials = spider->materials;
     point_watcher *main_watcher = materials->main_watcher;
@@ -153,22 +158,24 @@ void handle_return_value_scope(const_string source_code, struct aio_spider *spid
     const char current_symbol = source_code[current_position];
     //Check current symbol:
     const_boolean is_whitespace_cond = is_space_or_line_break(current_symbol);
-    const_boolean is_close_parenthesis_cond = is_closing_parenthesis(current_symbol);
+    const_boolean is_closing_parenthesis_cond = is_closing_parenthesis(current_symbol);
     const_boolean is_letter_cond = isalpha(current_symbol);
-    const_boolean is_single_quote_cond = is_single_quote(current_symbol);
-    const_boolean is_end_of_expression = isalnum(current_symbol) || is_close_parenthesis_cond || is_single_quote_cond;
-    const_boolean is_close_brace_cond = is_closing_brace(current_symbol);
+    const_boolean is_quote_cond = is_single_quote(current_symbol);
+    const_boolean is_closing_brace_cond = is_closing_brace(current_symbol);
+    const_boolean is_valid_bound = isalnum(current_symbol)
+                                   || is_closing_parenthesis_cond
+                                   || is_quote_cond;
     if (is_whitespace_cond && value_watcher->mode == POINT_WATCHER_ACTIVE_MODE) {
         value_watcher->pointer++;
         return;
     }
-    if (((is_letter_cond && value_watcher->pointer > 0) || is_close_brace_cond)
+    if (((is_letter_cond && value_watcher->pointer > 0) || is_closing_brace_cond)
         && value_watcher->mode == POINT_WATCHER_ACTIVE_MODE) {
         value_watcher->start = main_watcher->start;
         value_watcher->end = main_watcher->end - value_watcher->pointer;
         //값을 놓다 (Set value):
-        const_string dirty_chunk = substring_by_point_watcher(source_code, value_watcher);
-        const_string dirty_squeezed_chunk = squeeze_string_for_expression(dirty_chunk);
+        string dirty_chunk = substring_by_point_watcher(source_code, value_watcher);
+        string dirty_squeezed_chunk = squeeze_string_for_expression(dirty_chunk);
         const_string_array clean_return_values = split_by_comma(dirty_squeezed_chunk);
         const int number_of_return_values = get_string_array_size(clean_return_values);
         for (int i = 0; i < number_of_return_values; ++i) {
@@ -180,13 +187,23 @@ void handle_return_value_scope(const_string source_code, struct aio_spider *spid
         spider->message = AIO_SPIDER_IS_READY_FOR_WEAVING;
         //--------------------------------------------------------------------------------------------------------------
         //찌거기 수집기 (Garbage collector):
-        free((void *) dirty_chunk);
-        free((void *) dirty_squeezed_chunk);
+        free(dirty_chunk);
+        free(dirty_squeezed_chunk);
         free_strings(&clean_return_values);
-    } else {
+        return;
+    }
+    if (is_quote_cond) {
+        if (value_watcher->mode != POINT_WATCHER_UNDEFINED_MODE) {
+            value_watcher->mode = POINT_WATCHER_UNDEFINED_MODE;
+            return;
+        } else {
+            value_watcher->mode = POINT_WATCHER_PASSIVE_MODE;
+        }
+    }
+    if (value_watcher->mode != POINT_WATCHER_UNDEFINED_MODE) {
         value_watcher->mode = POINT_WATCHER_PASSIVE_MODE;
         value_watcher->pointer = 0;
-        if (is_end_of_expression) {
+        if (is_valid_bound) {
             value_watcher->mode = POINT_WATCHER_ACTIVE_MODE;
             return;
         }
@@ -194,7 +211,8 @@ void handle_return_value_scope(const_string source_code, struct aio_spider *spid
 }
 
 void weave_return_instruction_for(void *parent, const_string _,
-                                  point_watcher *ripper_watcher, struct aio_spider *spider) {
+                                  point_watcher *ripper_watcher, struct aio_spider *spider)
+{
     aio_function_instruction_holder *holder = parent;
 #ifdef AIO_RETURN_SPIDER_TAG
     log_info(AIO_RETURN_SPIDER_TAG, "Start weaving...");

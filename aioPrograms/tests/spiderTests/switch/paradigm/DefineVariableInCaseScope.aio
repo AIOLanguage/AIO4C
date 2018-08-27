@@ -1,0 +1,11 @@
+//성공적인 시험 (Successful test):
+Voi test(Boo isTest) {
+    whe (isTest) {
+        tru -> {
+            Str isTest = 'SwitchTest'
+        }
+        fls -> {
+            brk
+        }
+    }
+}

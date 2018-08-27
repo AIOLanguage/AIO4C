@@ -1,5 +1,6 @@
+//성공적인 시험 (Successful test):
 Voi
-switchTest(Str
+test(Str
 
       name)
 {
@@ -7,13 +8,15 @@ mu Int age
 = 0
 whe(name){
     'John'->{age=17}'Alex'
-    -> age = 10 : -> 'Undefined' 'Mike'  -> {
+    -> {age = 10}'Mike'  -> {
 
 
                 age = 19
     }
 
 
+} : {
+out'Undefined'
 }
 out
 age

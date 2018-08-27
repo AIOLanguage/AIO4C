@@ -388,7 +388,6 @@ CMakeFiles/AIO.dir/sources/lib/utils/str_hook/str_hook_utils/str_hook_utils.c.ob
 CMakeFiles/AIO.dir/sources/lib/utils/str_hook/str_hook_utils/str_hook_utils.c.obj: ../headers/lib/utils/char_utils/char_utils.h
 CMakeFiles/AIO.dir/sources/lib/utils/str_hook/str_hook_utils/str_hook_utils.c.obj: ../headers/lib/utils/collections/sets/string_set.h
 CMakeFiles/AIO.dir/sources/lib/utils/str_hook/str_hook_utils/str_hook_utils.c.obj: ../headers/lib/utils/error_utils/error_utils.h
-CMakeFiles/AIO.dir/sources/lib/utils/str_hook/str_hook_utils/str_hook_utils.c.obj: ../headers/lib/utils/log_utils/log_utils.h
 CMakeFiles/AIO.dir/sources/lib/utils/str_hook/str_hook_utils/str_hook_utils.c.obj: ../headers/lib/utils/memory_utils/memory_utils.h
 CMakeFiles/AIO.dir/sources/lib/utils/str_hook/str_hook_utils/str_hook_utils.c.obj: ../headers/lib/utils/point_watcher/point_watcher.h
 CMakeFiles/AIO.dir/sources/lib/utils/str_hook/str_hook_utils/str_hook_utils.c.obj: ../headers/lib/utils/str_hook/str_hook.h
@@ -477,6 +476,7 @@ CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_definition_rippers/aio_a
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_definition_rippers/aio_arg_ripper.c.obj: ../headers/lang/aio_function/aio_variable/aio_definition/aio_variable_definition.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_definition_rippers/aio_arg_ripper.c.obj: ../headers/lang/aio_function/aio_variable/aio_variable.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_definition_rippers/aio_arg_ripper.c.obj: ../headers/lang/aio_reserved_names/aio_reserved_names_container.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_definition_rippers/aio_arg_ripper.c.obj: ../headers/lang/aio_type/aio_type.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_definition_rippers/aio_arg_ripper.c.obj: ../headers/lib/utils/boolean_utils/boolean_utils.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_definition_rippers/aio_arg_ripper.c.obj: ../headers/lib/utils/char_utils/char_utils.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_definition_rippers/aio_arg_ripper.c.obj: ../headers/lib/utils/collections/sets/string_set.h

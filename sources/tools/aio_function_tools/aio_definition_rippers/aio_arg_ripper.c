@@ -8,7 +8,9 @@
 #include "../../../../headers/lang/aio_function/aio_variable/aio_definition/aio_variable_definition.h"
 #include "../../../../headers/lib/utils/str_hook/str_hook_utils/str_hook_utils.h"
 
-#define TYPE_VS_NAME 2
+#define ONLY_NAME 1
+
+#define TYPE_VS_NAME_OR_MU_VS_NAME 2
 
 #define MUTABLE_VS_TYPE_VS_NAME 3
 
@@ -19,6 +21,7 @@
 #ifdef AIO_ARG_RIPPER_DEBUG
 
 #include "../../../../headers/lib/utils/log_utils/log_utils.h"
+#include "../../../../headers/lang/aio_type/aio_type.h"
 
 #endif
 
@@ -49,14 +52,17 @@ aio_variable_definition_list *dig_arguments(const_string source_code, int *point
         }
     }
     //함수 인수들 함유량 줄 얻는다 (Get function arguments content string):
-    const_str_hook *argument_content_chunk = new_str_hook_by_point_watcher(source_code, watcher);
+    const_str_hook *dirty_argument_content_chunk = new_str_hook_by_point_watcher(source_code, watcher);
+    const_str_hook *argument_content_chunk = trim_str_hook_with_line_break(dirty_argument_content_chunk);
+#ifdef AIO_ARG_RIPPER_DEBUG
+    log_info_str_hook(AIO_ARG_RIPPER_TAG, "Dirty argument content:", dirty_argument_content_chunk);
+    log_info_str_hook(AIO_ARG_RIPPER_TAG, "Clean argument content:", argument_content_chunk);
+#endif
     //------------------------------------------------------------------------------------------------------------------
     //찌꺼기 수집기 (Garbage collector):
     free_point_watcher(watcher);
+    free_const_str_hook(dirty_argument_content_chunk);
     //------------------------------------------------------------------------------------------------------------------
-#ifdef AIO_ARG_RIPPER_DEBUG
-    log_info_str_hook(AIO_ARG_RIPPER_TAG, "Argument content:", argument_content_chunk);
-#endif
     if (!is_empty_hooked_str(argument_content_chunk)) {
         //함수 인수 함유량들 파다 (Dig arg contents):
         const_str_hook_list *dirty_arg_chunks = split_str_hook_by_comma(argument_content_chunk);
@@ -83,9 +89,20 @@ aio_variable_definition_list *dig_arguments(const_string source_code, int *point
             log_info_str_hook_list(AIO_ARG_RIPPER_TAG, "CLEAN CONTENT ----->", clean_arg_content_list);
             log_info_int(AIO_ARG_RIPPER_TAG, "Clean arg content list size:", clean_arg_content_list_size);
 #endif
-            if (clean_arg_content_list_size == TYPE_VS_NAME) {
-                arg_type = new_str_hook_by_other(hooks[0]);
-                arg_name = new_str_hook_by_other(hooks[1]);
+            if (clean_arg_content_list_size == ONLY_NAME) {
+                arg_type = new_str_hook_by_string(VOID);
+                arg_name = new_str_hook_by_other(hooks[0]);
+                is_mutable = FALSE;
+            } else if (clean_arg_content_list_size == TYPE_VS_NAME_OR_MU_VS_NAME) {
+                const_str_hook *modifier_or_type = hooks[0];
+                if (is_aio_mutable_modifier(modifier_or_type)) {
+                    arg_type = new_str_hook_by_string(VOID);
+                    arg_name = new_str_hook_by_other(hooks[1]);
+                    is_mutable = TRUE;
+                } else {
+                    arg_type = new_str_hook_by_other(hooks[0]);
+                    arg_name = new_str_hook_by_other(hooks[1]);
+                }
             } else if (clean_arg_content_list_size == MUTABLE_VS_TYPE_VS_NAME) {
                 const_str_hook *mutable_modifier = hooks[0];
                 if (is_aio_mutable_modifier(mutable_modifier)) {

@@ -1,0 +1,2 @@
+//성공적인 시험 (Successful test):
+(Str)test(mu logMode){mu message = 'found ' whe(name){('error', 'warning')->{message=message~'errors and warnings...'}'log'->{message=message~'info'}}:{message=message~'nothing'}out message}
