@@ -14,22 +14,11 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77c54fc7-a37a-4eaf-a794-282c0598671e" name="Default" comment="버그 수정 (Fixing bugs):&#10;------------------------------------------------------------------------&#10;-&gt; 'Return' 과 'Switch' 거미들을 시험했습니다 &#10;(Tested 'Return' &amp; 'Switch' spider);&#10;-&gt; () &#10;&#10;&#10;'str_hook_utils'에게서 'split' 함수를 고정시켰습니다 &#10;(Fixed 'split' function in 'str_hook_utils')&#10;------------------------------------------------------------------------">
-      <change afterPath="$PROJECT_DIR$/aioPrograms/tests/spiderTests/return/parsing/Test2.aio" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aioPrograms/tests/spiderTests/switch/paradigm/DefineVariableInCaseScope.aio" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aioPrograms/tests/spiderTests/switch/parsing/Test2.aio" afterDir="false" />
+    <list default="true" id="77c54fc7-a37a-4eaf-a794-282c0598671e" name="Default" comment="버그 수정 (Fixing bugs):&#10;------------------------------------------------------------------------&#10;-&gt; 'Return' 과 'Switch' 거미들을 시험했습니다 &#10;(Tested 'Return' &amp; 'Switch' spider);&#10;-&gt; 정의되지 않은 함수 인수 패러다임을 추가했습니다 (Add undefined function arg paradigm).&#10;------------------------------------------------------------------------">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aioPrograms/examples/DemoIf.aio" beforeDir="false" afterPath="$PROJECT_DIR$/aioPrograms/examples/if/DemoIf.aio" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aioPrograms/examples/DemoSwitch.aio" beforeDir="false" afterPath="$PROJECT_DIR$/aioPrograms/examples/switch/DemoSwitch.aio" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aioPrograms/tests/spiderTests/return/parsing/Test1.aio" beforeDir="false" afterPath="$PROJECT_DIR$/aioPrograms/tests/spiderTests/return/parsing/Test1.aio" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aioPrograms/tests/spiderTests/switch/parsing/Test1.aio" beforeDir="false" afterPath="$PROJECT_DIR$/aioPrograms/tests/spiderTests/switch/parsing/Test1.aio" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/C.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/C.includecache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/depend.internal" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main/main.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sources/lib/utils/str_hook/str_hook_utils/str_hook_utils.c" beforeDir="false" afterPath="$PROJECT_DIR$/sources/lib/utils/str_hook/str_hook_utils/str_hook_utils.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sources/tools/aio_function_tools/aio_definition_rippers/aio_arg_ripper.c" beforeDir="false" afterPath="$PROJECT_DIR$/sources/tools/aio_function_tools/aio_definition_rippers/aio_arg_ripper.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_return_spider/aio_return_spider.c" beforeDir="false" afterPath="$PROJECT_DIR$/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_return_spider/aio_return_spider.c" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -100,7 +89,7 @@
           <entry key="c" value="132158" />
           <entry key="h" value="18308" />
           <entry key="m" value="1814" />
-          <entry key="txt" value="5035" />
+          <entry key="txt" value="5156" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -109,7 +98,7 @@
           <entry key="Disassembly" value="5" />
           <entry key="Doxygen file" value="200" />
           <entry key="ObjectiveC" value="152080" />
-          <entry key="PLAIN_TEXT" value="11126" />
+          <entry key="PLAIN_TEXT" value="11247" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages">
@@ -463,14 +452,7 @@
       <workItem from="1535105418034" duration="794000" />
       <workItem from="1535106691226" duration="32851000" />
       <workItem from="1535194591255" duration="37294000" />
-      <workItem from="1535370255166" duration="10066000" />
-    </task>
-    <task id="LOCAL-00099" summary="-&gt; 세 번째로 거미들을 다시 만든다! 빌어먹을! (Remade spider for the third time!!! Damn it!)&#10;#LOVE AIO &amp; C =)">
-      <created>1534294619348</created>
-      <option name="number" value="00099" />
-      <option name="presentableId" value="LOCAL-00099" />
-      <option name="project" value="LOCAL" />
-      <updated>1534294619349</updated>
+      <workItem from="1535370255166" duration="10377000" />
     </task>
     <task id="LOCAL-00100" summary="-&gt; 세 번째로 거미들을 다시 만든다! 빌어먹을! (Remade spider for the third time!!! Damn it!)&#10;#LOVE AIO &amp; C =)">
       <created>1534300288575</created>
@@ -808,11 +790,18 @@
       <option name="project" value="LOCAL" />
       <updated>1535376195678</updated>
     </task>
-    <option name="localTasksCounter" value="148" />
+    <task id="LOCAL-00148" summary="버그 수정 (Fixing bugs):&#10;------------------------------------------------------------------------&#10;-&gt; 'Return' 과 'Switch' 거미들을 시험했습니다 &#10;(Tested 'Return' &amp; 'Switch' spider);&#10;-&gt; 정의되지 않은 함수 인수 패러다임을 추가했습니다 (Add undefined function arg paradigm).&#10;------------------------------------------------------------------------">
+      <created>1535380692084</created>
+      <option name="number" value="00148" />
+      <option name="presentableId" value="LOCAL-00148" />
+      <option name="project" value="LOCAL" />
+      <updated>1535380692084</updated>
+    </task>
+    <option name="localTasksCounter" value="149" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1037237000" />
+    <option name="totallyTimeSpent" value="1037548000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -825,6 +814,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49537036" visible="true" weight="0.23828125" />
       <window_info id="Structure" order="1" sideWeight="0.50198674" side_tool="true" weight="0.36002603" />
@@ -881,7 +871,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="-&gt; АХАХХААХХААХАХАХХАХАаХАХАХаХХААХАХАХХААХАХАХАХХААХ!!! ЕЕЕ!!! ЯУ!!!! Оохохохохохохохох!!! НАКОНЕЦ-ТО!!!&#10;#LOVE AIO &amp; C =)" />
     <MESSAGE value="개발중인 아키텍처 (Architecture under development`)" />
     <MESSAGE value="개발중인 아키텍처 (Architecture under development)" />
     <MESSAGE value="아키텍처 다시 만들었습니다 (Remade architecture)" />
@@ -906,7 +895,8 @@
     <MESSAGE value="버그 수정 (Fixing bugs):&#10;------------------------------------------------------------------------&#10;-&gt; 'Assign' 과 'If' 거미들을 시험했습니다 (Tested 'Assign', 'If' Spiders);&#10;-&gt; 'aio_default_loop_header_spider' 을 고쳤습니다 &#10;(Fixed 'aio_default_loop_header_spider');&#10;-&gt; 테스트들을 추가했습니다 (Added tests).&#10;------------------------------------------------------------------------" />
     <MESSAGE value="버그 수정 (Fixing bugs):&#10;------------------------------------------------------------------------&#10;-&gt; 'Loop' 거미를 시험했습니다 (Tested 'Loop' spider);&#10;------------------------------------------------------------------------" />
     <MESSAGE value="버그 수정 (Fixing bugs):&#10;------------------------------------------------------------------------&#10;-&gt; 'Procedure' 거미를 시험했습니다 (Tested 'Procedure' spider);&#10;-&gt; 'str_hook_utils'에게서 'split' 함수를 고정시켰습니다 &#10;(Fixed 'split' function in 'str_hook_utils')&#10;------------------------------------------------------------------------" />
-    <option name="LAST_COMMIT_MESSAGE" value="버그 수정 (Fixing bugs):&#10;------------------------------------------------------------------------&#10;-&gt; 'Procedure' 거미를 시험했습니다 (Tested 'Procedure' spider);&#10;-&gt; 'str_hook_utils'에게서 'split' 함수를 고정시켰습니다 &#10;(Fixed 'split' function in 'str_hook_utils')&#10;------------------------------------------------------------------------" />
+    <MESSAGE value="버그 수정 (Fixing bugs):&#10;------------------------------------------------------------------------&#10;-&gt; 'Return' 과 'Switch' 거미들을 시험했습니다 &#10;(Tested 'Return' &amp; 'Switch' spider);&#10;-&gt; 정의되지 않은 함수 인수 패러다임을 추가했습니다 (Add undefined function arg paradigm).&#10;------------------------------------------------------------------------" />
+    <option name="LAST_COMMIT_MESSAGE" value="버그 수정 (Fixing bugs):&#10;------------------------------------------------------------------------&#10;-&gt; 'Return' 과 'Switch' 거미들을 시험했습니다 &#10;(Tested 'Return' &amp; 'Switch' spider);&#10;-&gt; 정의되지 않은 함수 인수 패러다임을 추가했습니다 (Add undefined function arg paradigm).&#10;------------------------------------------------------------------------" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/aioPrograms/examples/DemoIf" />

@@ -1,0 +1,10 @@
+Voi test(mu Int f) {
+    loo {
+        leftBorder = 3
+        rightBorder = 10
+        mu Int pointer = leftBorder
+    } (pointer < rightBorder) {
+        //Make something...
+        pointer++
+    }
+}
