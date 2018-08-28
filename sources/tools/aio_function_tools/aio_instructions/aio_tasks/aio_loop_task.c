@@ -10,6 +10,8 @@
 
 #ifdef AIO_LOOP_TASK_DEBUG
 
+#include "../../../../../headers/lib/utils/log_utils/log_utils.h"
+
 #endif
 
 aio_function_instruction *new_aio_loop_instruction(
@@ -57,21 +59,40 @@ void perform_aio_loop_instruction(const_aio_function_instruction *instruction,
             context_ref,
             system_state
     );
+#ifdef AIO_LOOP_TASK_DEBUG
+    log_info(AIO_LOOP_TASK_TAG, "Perform init instructions...");
+#endif
     perform_aio_function_instructions(init_control_graph);
+#ifdef AIO_LOOP_TASK_DEBUG
+    log_info(AIO_LOOP_TASK_TAG, "Init is complete!");
+#endif
     //Make cycle:
     const_aio_function_instruction_holder *cycle_holder = task->cycle_holder;
     const_string loop_condition_string = task->loop_condition;
+#ifdef AIO_LOOP_TASK_DEBUG
+    log_info_string(AIO_LOOP_TASK_TAG, "Loop condition:", loop_condition_string);
+    log_info(AIO_LOOP_TASK_TAG, "Launch cycle...");
+#endif
     while (is_condition_performs(loop_condition_string, init_control_graph)) {
         inflate_new_aio_function_control_graph(control_graph, cycle_holder, bundle_ref, context_ref);
         if (*system_state == AIO_FUNCTION_SYSTEM_BREAK) {
+#ifdef AIO_LOOP_TASK_DEBUG
+            log_info(AIO_LOOP_TASK_TAG, "Was break!");
+#endif
             *system_state = AIO_FUNCTION_SYSTEM_MAKE;
             break;
         }
         if (*system_state == AIO_FUNCTION_SYSTEM_CONTINUE) {
+#ifdef AIO_LOOP_TASK_DEBUG
+            log_info(AIO_LOOP_TASK_TAG, "Was continue!");
+#endif
             *system_state = AIO_FUNCTION_SYSTEM_MAKE;
             continue;
         }
         if (*system_state == AIO_FUNCTION_SYSTEM_STOP) {
+#ifdef AIO_LOOP_TASK_TAG
+            log_info(AIO_LOOP_TASK_TAG, "Was stop!");
+#endif
             break;
         }
     }

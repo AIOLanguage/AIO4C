@@ -1,3 +1,4 @@
+//성공적인 테시트 (Successful test):
 Boo isBinary(mu Int number) {
     if (number == 1) {
         out tru
@@ -9,4 +10,14 @@ Boo isBinary(mu Int number) {
         }
     }
     out fls
+}
+
+//성공적인 테시트 (Successful test):
+Int revertNumber(mu Int number) {
+    mu Int result = 0
+    loo (number != 0) {
+        result = result * 10 + number % 10
+        number = number / 10
+    }
+    out result
 }

@@ -1086,6 +1086,7 @@ CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/a
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_loop_task.c.obj: ../headers/lang/aio_function/aio_variable/aio_definition/aio_variable_definition.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_loop_task.c.obj: ../headers/lang/aio_function/aio_variable/aio_variable.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_loop_task.c.obj: ../headers/lib/utils/boolean_utils/boolean_utils.h
+CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_loop_task.c.obj: ../headers/lib/utils/log_utils/log_utils.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_loop_task.c.obj: ../headers/lib/utils/memory_utils/memory_utils.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_loop_task.c.obj: ../headers/lib/utils/str_hook/str_hook.h
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_loop_task.c.obj: ../headers/lib/utils/string_utils/string_utils.h

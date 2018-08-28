@@ -9,9 +9,9 @@
 
 #ifdef AIO_DEVELOPMENT
 
-#define AIO_TEST_PATH "../aioPrograms/tests/complexTests/if/Trivial.aio"
+#define AIO_TEST_PATH "../aioPrograms/tests/complexTests/loop/Trivial.aio"
 
-#define AIO_TEST_FUNCTION "isGoodWinterForSquirrel"
+#define AIO_TEST_FUNCTION "revertNumber"
 
 #define AIO_DEVELOPMENT_DEBUG
 
@@ -27,9 +27,7 @@ aio_bundle *create_test_bundle()
 {
     aio_value_list *input_value_list = new_aio_value_list();
     //Create test args:
-    add_aio_value_in_list(input_value_list, new_aio_string_value("5.2"));
-    add_aio_value_in_list(input_value_list, new_aio_string_value("5"));
-    add_aio_value_in_list(input_value_list, new_aio_string_value("20"));
+    add_aio_value_in_list(input_value_list, new_aio_double_value(1057.0));
 //    add_aio_value_in_list(input_value_list, new_aio_string_value("1"));
     //Crete bundle:
     return new_aio_bundle(input_value_list);
