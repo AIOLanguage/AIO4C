@@ -1,6 +1,33 @@
-Voi test() {
-    null = voi
-    mu b = null
-    mu Int i = b
+//성공적인 시험 (Successful test):
+Boo isNull() {
+    nul = voi
+    mu b = nul //Set "Voi" type
+    mu Int result = 5.9
+    result = b //Set null
+    out result == voi
+}
 
+//성공적인 시험 (Successful test);
+Voi plusNull() {
+    nul = voi
+    Int a = 3 + nul + 3 //Crashes because expression is defined as Int expression
+    out a
+}
+
+//성공적인 시험 (Successful test):
+Voi returnNull() {
+    nul = voi
+    Int a = nul
+    out a
+}
+
+//성공적인 시험 (Successful test):
+Boo isNotNull() {
+    mu a = 3
+    b = a + 2
+    a = voi
+    d = a
+    a = 'Value: ' ~ (3.2 + b)
+    a = a != d
+    out a
 }

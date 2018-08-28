@@ -5,5 +5,5 @@ Boo changeMutable() {
     c = c + b
     mu isTest = tru
     isTest = c
-    out isTest == 8
+    out isTest == 8.2
 }

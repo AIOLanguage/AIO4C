@@ -4,7 +4,7 @@
 
 static str_hook *border_trim(const_str_hook *hook, const_boolean has_left, const_boolean has_right,
                              boolean (*trim_condition)(const char)) {
-    const_string src = hook->source_ref;
+    const_string src = hook->source_string;
     str_hook *new_hook = new_str_hook_by_other(hook);
     const int src_length = get_str_hook_size(hook);
     if (src_length == 0) {

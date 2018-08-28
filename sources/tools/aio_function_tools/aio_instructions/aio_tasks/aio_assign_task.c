@@ -57,7 +57,7 @@ void perform_aio_assign_instruction(const_aio_function_instruction *instruction,
     log_info_string(AIO_ASSIGN_TASK_TAG, "Parse src:", value_string);
 #endif
     aio_value *value = NULL;
-    if (!is_aio_null_value(value_string)) {
+    if (!is_aio_null_value_string(value_string)) {
         value = parse_value_string(value_string, control_graph->context_ref, control_graph);
     }
 #ifdef AIO_ASSIGN_TASK_DEBUG
@@ -82,7 +82,11 @@ void perform_aio_assign_instruction(const_aio_function_instruction *instruction,
         log_info_aio_value(AIO_ASSIGN_TASK_TAG, "Initialized variable value:", variable->value);
 #endif
     } else {
-        variable->definition->type = value->type;
+        if (value) {
+            variable->definition->type = new_str_hook_by_other(value->type);
+        } else {
+            variable->definition->type = new_str_hook_by_string(VOID);
+        }
         variable->value = value;
 #ifdef AIO_ASSIGN_TASK_DEBUG
         log_info_aio_value(AIO_ASSIGN_TASK_TAG, "Not initialized variable value:", variable->value);

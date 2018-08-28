@@ -26,7 +26,7 @@ void make_expression_chunks_and_count_next_point(
         int *next_point
 )
 {
-    const_string expression_str = expression_hook->source_ref;
+    const_string expression_str = expression_hook->source_string;
     //Skip first opening parenthesis:
     int parenthesis_up_downer = 1;
     const int start_position = expression_hook->start + 1;
@@ -61,18 +61,18 @@ void make_expression_chunks_and_count_next_point(
     throw_error_with_tag(AIO_EXPRESSION_ASSISTANT_TAG, "Incorrect parenthesis placement");
 }
 
-struct aio_result *make_function_or_variable(
-        const struct str_hook *expression_hook,
-        const struct aio_context *context,
-        const struct aio_function_control_graph *control_graph,
-        struct aio_value *(*cast_function)(struct aio_value *),
-        struct aio_result *(*make_value_function)(const struct str_hook *)
+aio_result *make_function_or_variable(
+        const_str_hook *expression_hook,
+        const_aio_context *context,
+        const_aio_function_control_graph *control_graph,
+        aio_value *(*cast_function)(aio_value *),
+        aio_result *(*make_value_function)(const_str_hook *)
 )
 {
 #ifdef AIO_EXPRESSION_ASSISTANT_DEBUG
     log_info_str_hook(AIO_EXPRESSION_ASSISTANT_TAG, "Make function or variable with expression:", expression_hook);
 #endif
-    const_string expression_str = expression_hook->source_ref;
+    const_string expression_str = expression_hook->source_string;
     const int start_position = expression_hook->start;
     const int right_border = expression_hook->end;
     int i = start_position;
@@ -159,7 +159,7 @@ aio_result *make_parentheses(
 #ifdef AIO_EXPRESSION_ASSISTANT_DEBUG
     log_info(AIO_EXPRESSION_ASSISTANT_TAG, "Make parenthesis...");
 #endif
-    const_string expression_str = expression_hook->source_ref;
+    const_string expression_str = expression_hook->source_string;
     const char first_symbol = expression_str[expression_hook->start];
     if (is_opening_parenthesis(first_symbol)) {
         //Prepare to explore parenthesis bounds:

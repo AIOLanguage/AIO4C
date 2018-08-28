@@ -46,7 +46,7 @@ static aio_result *make_boolean(const_str_hook *expression_hook)
 #ifdef AIO_BOOLEAN_PARSER_DEBUG
     log_info_str_hook(AIO_BOOLEAN_PARSER_TAG, "Make boolean for expression hook:", expression_hook);
 #endif
-    const_string expression_str = expression_hook->source_ref;
+    const_string expression_str = expression_hook->source_string;
     const int right_border = expression_hook->end;
     int i = expression_hook->start;
     while (!is_sign(expression_str[i]) && i < right_border) {
@@ -59,7 +59,10 @@ static aio_result *make_boolean(const_str_hook *expression_hook)
     log_info_str_hook(AIO_BOOLEAN_PARSER_TAG, "Captured element:", captured_element);
 #endif
     boolean value = 0;
-    //Maybe int value?
+    if (is_null_hooked(captured_element)) {
+        throw_error_with_hook(AIO_BOOLEAN_PARSER_TAG, "Found null in expression:", expression_hook);
+    } else
+        //Maybe int value?
     if (is_int_hooked(captured_element)) {
         set_int_value(&value, captured_element);
     } else
@@ -114,7 +117,7 @@ static aio_result *try_to_get_sign_condition(
 #ifdef AIO_BOOLEAN_PARSER_DEBUG
     log_info_str_hook(AIO_BOOLEAN_PARSER_TAG, "Try to get sign condition for expression hook:", expression_hook);
 #endif
-    const_string expression_str = expression_hook->source_ref;
+    const_string expression_str = expression_hook->source_string;
     const int start_position = expression_hook->start;
     const int right_border = expression_hook->end;
     int i = start_position;
@@ -299,7 +302,7 @@ static aio_result *make_boolean_parentheses(
 #ifdef AIO_BOOLEAN_PARSER_DEBUG
     log_info_str_hook(AIO_BOOLEAN_PARSER_TAG, "Make parenthesis for:", expression_hook);
 #endif
-    const_string expression_str = expression_hook->source_ref;
+    const_string expression_str = expression_hook->source_string;
     const char first_symbol = expression_str[expression_hook->start];
     if (is_opening_parenthesis(first_symbol)) {
         //Prepare to explore parenthesis bounds:
@@ -337,10 +340,14 @@ static aio_result *make_and(
 #ifdef AIO_BOOLEAN_PARSER_DEBUG
     log_info_str_hook(AIO_BOOLEAN_PARSER_TAG, "Make and for expression:", expression_hook);
 #endif
-    const_string expression_string = expression_hook->source_ref;
+    const_string expression_string = expression_hook->source_string;
     aio_result *left_result = make_boolean_parentheses(expression_hook, context, control_graph);
+    aio_value *left_value = left_result->value;
+    if (!left_value) {
+        throw_error_with_hook(AIO_BOOLEAN_PARSER_TAG, "Found null in expression:", expression_hook);
+    }
     str_hook *left_hook = new_str_hook_by_other(left_result->rest);
-    boolean left_acc = left_result->value->get.boolean_acc;
+    boolean left_acc = left_value->get.boolean_acc;
     //------------------------------------------------------------------------------------------------------------------
     //찌꺼기 수집기 (Garbage collector):
     free_aio_result(left_result);
@@ -355,10 +362,14 @@ static aio_result *make_and(
             next_hook->start = left_hook->start + 1;
             next_hook->end = left_hook->end;
             aio_result *right_result = make_boolean_parentheses(next_hook, context, control_graph);
+            aio_value *right_value = right_result->value;
+            if (!right_value) {
+                throw_error_with_hook(AIO_BOOLEAN_PARSER_TAG, "Found null in expression:", next_hook);
+            }
 #ifdef AIO_BOOLEAN_PARSER_DEBUG
             log_info_str_hook(AIO_BOOLEAN_PARSER_TAG, "After right parenthesis:", right_result->rest);
 #endif
-            const_boolean right_acc = right_result->value->get.boolean_acc;
+            const_boolean right_acc = right_value->get.boolean_acc;
             left_acc = left_acc && right_acc;
 #ifdef AIO_BOOLEAN_PARSER_DEBUG
             log_info_boolean(AIO_BOOLEAN_PARSER_TAG, "After and acc:", left_acc);
@@ -390,10 +401,14 @@ static aio_result *make_or(
 #ifdef AIO_BOOLEAN_PARSER_DEBUG
     log_info_str_hook(AIO_BOOLEAN_PARSER_TAG, "Make or for expression:", expression_hook);
 #endif
-    const_string expression_string = expression_hook->source_ref;
+    const_string expression_string = expression_hook->source_string;
     aio_result *left_result = make_and(expression_hook, context, control_graph);
+    aio_value *left_value = left_result->value;
+    if (!left_value) {
+        throw_error_with_hook(AIO_BOOLEAN_PARSER_TAG, "Found null in expression:", expression_hook);
+    }
     str_hook *left_hook = new_str_hook_by_other(left_result->rest);
-    boolean left_acc = left_result->value->get.boolean_acc;
+    boolean left_acc = left_value->get.boolean_acc;
     //------------------------------------------------------------------------------------------------------------------
     //찌꺼기 수집기 (Garbage collector):
     free_aio_result(left_result);
@@ -409,6 +424,10 @@ static aio_result *make_or(
             next_hook->end = left_hook->end;
             //Find value after sign part:
             aio_result *right_result = make_and(next_hook, context, control_graph);
+            aio_value *right_value = right_result->value;
+            if (!right_value) {
+                throw_error_with_hook(AIO_BOOLEAN_PARSER_TAG, "Found null in expression:", next_hook);
+            }
 #ifdef AIO_BOOLEAN_PARSER_DEBUG
             log_info_str_hook(AIO_BOOLEAN_PARSER_TAG, "After right and rest", right_result->rest);
 #endif

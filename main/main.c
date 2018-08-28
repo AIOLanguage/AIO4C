@@ -9,9 +9,9 @@
 
 #ifdef AIO_DEVELOPMENT
 
-#define AIO_TEST_PATH "../aioPrograms/tests/complexTests/variables/MutableVariables.aio"
+#define AIO_TEST_PATH "../aioPrograms/tests/complexTests/variables/NullVariables.aio"
 
-#define AIO_TEST_FUNCTION "changeMutable"
+#define AIO_TEST_FUNCTION "isNotNull"
 
 #define AIO_DEVELOPMENT_DEBUG
 

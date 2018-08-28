@@ -182,10 +182,15 @@ void free_aio_value_list(aio_value_list *list)
 boolean are_equal_aio_values(aio_value *value_1, aio_value *value_2)
 {
     if (!value_1) {
-        throw_error_with_tag(AIO_VALUE_TAG, "Left value is null!");
-    }
-    if (!value_2) {
-        throw_error_with_tag(AIO_VALUE_TAG, "Right value is null!");
+        if (!value_2) {
+            return TRUE;
+        } else {
+            return FALSE;
+        }
+    } else {
+        if (!value_2) {
+            return FALSE;
+        }
     }
     const_str_hook *type_1 = value_1->type;
     if (is_hook_equals_str(type_1, INTEGER)) {
@@ -211,10 +216,15 @@ boolean are_equal_aio_values(aio_value *value_1, aio_value *value_2)
 boolean are_not_equal_aio_values(aio_value *value_1, aio_value *value_2)
 {
     if (!value_1) {
-        throw_error_with_tag(AIO_VALUE_TAG, "Left value is null!");
-    }
-    if (!value_2) {
-        throw_error_with_tag(AIO_VALUE_TAG, "Right value is null!");
+        if (value_2) {
+            return TRUE;
+        } else {
+            return FALSE;
+        }
+    } else {
+        if (!value_2) {
+            return TRUE;
+        }
     }
     const_str_hook *type_1 = value_1->type;
     if (is_hook_equals_str(type_1, INTEGER)) {
@@ -265,10 +275,15 @@ boolean is_more_aio_value_then_other(aio_value *value_1, aio_value *value_2)
 boolean is_more_or_equals_aio_value_then_other(aio_value *value_1, aio_value *value_2)
 {
     if (!value_1) {
-        throw_error_with_tag(AIO_VALUE_TAG, "Left value is null!");
-    }
-    if (!value_2) {
-        throw_error_with_tag(AIO_VALUE_TAG, "Right value is null!");
+        if (!value_2) {
+            return TRUE;
+        } else {
+            return FALSE;
+        }
+    } else {
+        if (!value_2) {
+            return FALSE;
+        }
     }
     const_str_hook *type_1 = value_1->type;
     if (is_hook_equals_str(type_1, INTEGER)) {
@@ -315,10 +330,15 @@ boolean is_less_aio_value_then_other(aio_value *value_1, aio_value *value_2)
 boolean is_less_or_equals_aio_value_then_other(aio_value *value_1, aio_value *value_2)
 {
     if (!value_1) {
-        throw_error_with_tag(AIO_VALUE_TAG, "Left value is null!");
-    }
-    if (!value_2) {
-        throw_error_with_tag(AIO_VALUE_TAG, "Right value is null!");
+        if (!value_2) {
+            return TRUE;
+        } else {
+            return FALSE;
+        }
+    } else {
+        if (!value_2) {
+            return FALSE;
+        }
     }
     const_str_hook *type_1 = value_1->type;
     if (is_hook_equals_str(type_1, INTEGER)) {
@@ -466,6 +486,7 @@ aio_value *cast_to_boolean(aio_value *value)
 
 aio_value *cast_to_void(aio_value *value)
 {
+    log_info(AIO_VALUE_TAG, "CAST TO VOID");
     if (!value) {
         return NULL;
     }

@@ -77,7 +77,7 @@ void log_info_str_hook(const_string tag, const_string message, const struct str_
 
 void log_info_str_hook_list(const_string tag, const_string message, const_str_hook_list *list);
 
-void throw_error_with_hook(const_string tag, const_string message, const_str_hook *hook);
+void throw_error_with_hook(const_string tag, const_string message, const_str_hook *hook) __attribute__ ((noreturn));
 
 /**
  * Primitive type matchers.
@@ -90,6 +90,8 @@ _Bool is_double_hooked(const struct str_hook *hook);
 _Bool is_string_hooked(const struct str_hook *hook);
 
 _Bool is_boolean_hooked(const struct str_hook *hook);
+
+_Bool is_null_hooked(const struct str_hook *hook);
 
 /**
  * Sign utils.
@@ -111,6 +113,6 @@ double str_hook_to_double(const struct str_hook *hook);
 
 struct str_hook *lower_str_hook_quotes(const struct str_hook *hook);
 
-_Bool str_hook_to_boolean(const struct str_hook* hook);
+_Bool str_hook_to_boolean(const struct str_hook *hook);
 
 #endif //STRING_HOOK_UTILS_H

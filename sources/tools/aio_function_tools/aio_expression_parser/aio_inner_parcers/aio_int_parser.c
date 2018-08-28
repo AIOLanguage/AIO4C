@@ -22,7 +22,7 @@ static aio_result *make_int(const_str_hook *expression_hook)
 #ifdef AIO_INT_PARSER_DEBUG
     log_info_str_hook(AIO_INT_PARSER_TAG, "Make int for expression", expression_hook);
 #endif
-    const_string expression_str = expression_hook->source_ref;
+    const_string expression_str = expression_hook->source_string;
     const int right_border = expression_hook->end;
     int i = expression_hook->start;
     while (i < right_border) {
@@ -40,7 +40,10 @@ static aio_result *make_int(const_str_hook *expression_hook)
     log_info_str_hook(AIO_INT_PARSER_TAG, "Captured element:", captured_element);
 #endif
     int value = 0;
-    //Maybe int value?
+    if (is_null_hooked(captured_element)) {
+        throw_error_with_hook(AIO_INT_PARSER_TAG, "Found null in expression:", expression_hook);
+    } else
+        //Maybe int value?
     if (is_int_hooked(captured_element)) {
         value = str_hook_to_int(captured_element);
     } else
@@ -97,8 +100,12 @@ static aio_result *make_multiplication_or_division_or_mod(
 #ifdef AIO_INT_PARSER_DEBUG
     log_info_str_hook(AIO_INT_PARSER_TAG, "Make multiplication or division or mod for", expression_hook);
 #endif
-    const_string expression_string = expression_hook->source_ref;
+    const_string expression_string = expression_hook->source_string;
     aio_result *left_result = make_parentheses(expression_hook, context, control_graph, cast_to_int, make_int);
+    aio_value *left_value = left_result->value;
+    if (!left_value) {
+        throw_error_with_hook(AIO_INT_PARSER_TAG, "Found null in expression:", expression_hook);
+    }
     str_hook *left_hook = new_str_hook_by_other(left_result->rest);
     int left_acc = left_result->value->get.int_acc;
 #ifdef AIO_INT_PARSER_DEBUG
@@ -119,6 +126,10 @@ static aio_result *make_multiplication_or_division_or_mod(
             next_hook->start = left_hook->start + 1;
             next_hook->end = left_hook->end;
             aio_result *right_result = make_parentheses(next_hook, context, control_graph, cast_to_int, make_int);
+            aio_value *right_value = right_result->value;
+            if (!right_value) {
+                throw_error_with_hook(AIO_INT_PARSER_TAG, "Found null in expression:", next_hook);
+            }
 #ifdef AIO_INT_PARSER_DEBUG
             log_info_str_hook(AIO_INT_PARSER_TAG, "After right parenthesis rest:", right_result->rest);
 #endif
@@ -168,9 +179,13 @@ static aio_result *make_plus_or_minus(
 #ifdef AIO_INT_PARSER_DEBUG
     log_info_str_hook(AIO_INT_PARSER_TAG, "Make plus or minus for:", expression_hook);
 #endif
-    const_string expression_string = expression_hook->source_ref;
+    const_string expression_string = expression_hook->source_string;
     aio_result *left_result = make_multiplication_or_division_or_mod(expression_hook, context, control_graph);
-    int left_acc = left_result->value->get.int_acc;
+    aio_value *left_value = left_result->value;
+    if (!left_value) {
+        throw_error_with_hook(AIO_INT_PARSER_TAG, "Found null in expression:", expression_hook);
+    }
+    int left_acc = left_value->get.int_acc;
     str_hook *left_hook = new_str_hook_by_other(left_result->rest);
     //------------------------------------------------------------------------------------------------------------------
     //찌꺼기 수집기 (Garbage collector):
@@ -190,6 +205,10 @@ static aio_result *make_plus_or_minus(
             next_hook->end = left_hook->end;
             //Find value after sign part:
             aio_result *right_result = make_multiplication_or_division_or_mod(next_hook, context, control_graph);
+            aio_value *right_value = right_result->value;
+            if (!right_value) {
+                throw_error_with_hook(AIO_INT_PARSER_TAG, "Found null in expression:", next_hook);
+            }
 #ifdef AIO_INT_PARSER_DEBUG
             log_info_str_hook(AIO_INT_PARSER_TAG, "After right multiplication rest:", right_result->rest);
 #endif

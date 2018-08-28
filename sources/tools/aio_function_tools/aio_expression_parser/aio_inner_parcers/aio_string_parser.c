@@ -23,7 +23,7 @@ static aio_result *make_string(const_str_hook *expression_hook)
 #ifdef AIO_STRING_PARSER_DEBUG
     log_info_str_hook(AIO_STRING_PARSER_TAG, "Make string with expression:", expression_hook);
 #endif
-    const_string expression_str = expression_hook->source_ref;
+    const_string expression_str = expression_hook->source_string;
     int i = expression_hook->start;
     while (!is_tilde_sign(expression_str[i]) && i < expression_hook->end) {
         i++;
@@ -32,7 +32,10 @@ static aio_result *make_string(const_str_hook *expression_hook)
     captured_element->start = expression_hook->start;
     captured_element->end = i;
     str_hook *clean_string_value = NULL;
-    //Maybe int value?
+    if (is_null_hooked(captured_element)) {
+        throw_error_with_hook(AIO_STRING_PARSER_TAG, "Found null in expression:", expression_hook);
+    } else
+        //Maybe int value?
     if (is_int_hooked(captured_element) || is_double_hooked(captured_element) || is_boolean_hooked(captured_element)) {
         clean_string_value = new_str_hook_by_other(captured_element);
     } else
@@ -70,10 +73,14 @@ static aio_result *make_plus(
 #ifdef AIO_STRING_PARSER_DEBUG
     log_info_str_hook(AIO_STRING_PARSER_TAG, "Make plus with expression:", expression_hook);
 #endif
-    const_string expression_string = expression_hook->source_ref;
+    const_string expression_string = expression_hook->source_string;
     aio_result *left_result = make_parentheses(expression_hook, context, control_graph, cast_to_string, make_string);
+    aio_value *left_value = left_result->value;
+    if (!left_value) {
+        throw_error_with_hook(AIO_STRING_PARSER_TAG, "Found null in expression:", expression_hook);
+    }
     str_hook *left_hook = new_str_hook_by_other(left_result->rest);
-    const_string first_string_term = left_result->value->get.string_acc;
+    const_string first_string_term = left_value->get.string_acc;
     //Create string builder:
     string_builder *str_builder = new_string_builder();
     append_string(str_builder, first_string_term);
@@ -94,6 +101,10 @@ static aio_result *make_plus(
             next_hook->end = left_hook->end;
             //Find value after sign part:
             aio_result *right_result = make_parentheses(next_hook, context, control_graph, cast_to_string, make_string);
+            aio_value *right_value = right_result->value;
+            if (!right_value) {
+                throw_error_with_hook(AIO_STRING_PARSER_TAG, "Found null in expression:", next_hook);
+            }
             const_string right_acc = right_result->value->get.string_acc;
 #ifdef AIO_STRING_PARSER_DEBUG
             log_info_str_hook(AIO_STRING_PARSER_TAG, "AFTER LEFT REST:", right_result->rest);

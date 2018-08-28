@@ -31,7 +31,7 @@ _Bool is_aio_if_modifier(const struct str_hook *hook);
 
 _Bool is_aio_loop_modifier(const struct str_hook *hook);
 
-_Bool is_aio_null_value(const char *string_value);
+_Bool is_aio_null_value_string(const char *string_value);
 
 _Bool can_use_name(const struct str_hook *hook);
 

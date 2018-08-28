@@ -7,7 +7,7 @@
 
 str_hook *new_str_hook(const_string source_ref) {
     str_hook *hook = new_object(sizeof(str_hook));
-    hook->source_ref = source_ref;
+    hook->source_string = source_ref;
     hook->start = 0;
     hook->end = 0;
     return hook;

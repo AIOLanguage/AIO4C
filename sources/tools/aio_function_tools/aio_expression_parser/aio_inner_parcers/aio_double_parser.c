@@ -18,7 +18,7 @@
 
 static aio_result *make_double(const_str_hook *expression_hook)
 {
-    const_string expression_str = expression_hook->source_ref;
+    const_string expression_str = expression_hook->source_string;
     const int right_border = expression_hook->end;
     int i = expression_hook->start;
     while (!is_sign(expression_str[i]) && i < right_border) {
@@ -28,7 +28,10 @@ static aio_result *make_double(const_str_hook *expression_hook)
     captured_element->start = expression_hook->start;
     captured_element->end = i;
     double value = 0;
-    //Maybe int value?
+    if (is_null_hooked(captured_element)) {
+        throw_error_with_hook(AIO_DOUBLE_PARSER_TAG, "Found null in expression:", expression_hook);
+    } else
+        //Maybe int value?
     if (is_int_hooked(captured_element)) {
         value = str_hook_to_int(captured_element);
     } else
@@ -85,10 +88,14 @@ static aio_result *make_multiplication_or_division(
 #ifdef AIO_DOUBLE_PARSER_DEBUG
     log_info_str_hook(AIO_DOUBLE_PARSER_TAG, "Make multiplication or division", expression_hook);
 #endif
-    const_string expression_string = expression_hook->source_ref;
+    const_string expression_string = expression_hook->source_string;
     aio_result *left_result = make_parentheses(expression_hook, context, control_graph, cast_to_double, make_double);
+    aio_value *left_value = left_result->value;
+    if (!left_value) {
+        throw_error_with_hook(AIO_DOUBLE_PARSER_TAG, "Found null in expression:", expression_hook);
+    }
     str_hook *left_hook = new_str_hook_by_other(left_result->rest);
-    double left_acc = left_result->value->get.double_acc;
+    double left_acc = left_value->get.double_acc;
 #ifdef AIO_DOUBLE_PARSER_DEBUG
     log_info_str_hook(AIO_DOUBLE_PARSER_TAG, "After left parenthesis rest:", left_hook);
 #endif
@@ -106,10 +113,14 @@ static aio_result *make_multiplication_or_division(
             next_hook->start = left_hook->start + 1;
             next_hook->end = left_hook->end;
             aio_result *right_result = make_parentheses(next_hook, context, control_graph, cast_to_double, make_double);
+            aio_value *right_value = right_result->value;
+            if (!right_value) {
+                throw_error_with_hook(AIO_DOUBLE_PARSER_TAG, "Found null in expression:", next_hook);
+            }
 #ifdef AIO_DOUBLE_PARSER_DEBUG
             log_info_str_hook(AIO_DOUBLE_PARSER_TAG, "After right parenthesis rest:", right_result->rest);
 #endif
-            const double right_acc = right_result->value->get.double_acc;
+            const double right_acc = right_value->get.double_acc;
             if (is_multiply) {
                 left_acc *= right_acc;
 #ifdef AIO_DOUBLE_PARSER_DEBUG
@@ -150,10 +161,14 @@ static aio_result *make_plus_or_minus(
     log_info_str_hook(AIO_DOUBLE_PARSER_TAG, "Make plus or minus for:", expression_hook);
 #endif
 
-    const_string expression_string = expression_hook->source_ref;
+    const_string expression_string = expression_hook->source_string;
     aio_result *left_result = make_multiplication_or_division(expression_hook, context, control_graph);
+    aio_value *left_value = left_result->value;
+    if (!left_value) {
+        throw_error_with_hook(AIO_DOUBLE_PARSER_TAG, "Found null in expression:", expression_hook);
+    }
     str_hook *left_hook = new_str_hook_by_other(left_result->rest);
-    double left_acc = left_result->value->get.double_acc;
+    double left_acc = left_value->get.double_acc;
     //------------------------------------------------------------------------------------------------------------------
     //찌꺼기 수집기 (Garbage collector):
     free_aio_result(left_result);
@@ -172,10 +187,14 @@ static aio_result *make_plus_or_minus(
             next_hook->end = left_hook->end;
             //Find value after sign part:
             aio_result *right_result = make_multiplication_or_division(next_hook, context, control_graph);
+            aio_value *right_value = right_result->value;
+            if (!right_value) {
+                throw_error_with_hook(AIO_DOUBLE_PARSER_TAG, "Found null in expression", next_hook);
+            }
 #ifdef AIO_DOUBLE_PARSER_DEBUG
             log_info_str_hook(AIO_DOUBLE_PARSER_TAG, "After right multiplication rest:", right_result->rest);
 #endif
-            const double right_acc = right_result->value->get.double_acc;
+            const double right_acc = right_value->get.double_acc;
             if (is_plus) {
                 left_acc += right_acc;
 #ifdef AIO_DOUBLE_PARSER_DEBUG

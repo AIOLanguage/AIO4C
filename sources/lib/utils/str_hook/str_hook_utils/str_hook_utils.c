@@ -25,7 +25,7 @@
 str_hook *new_str_hook_with_start(const_string source_ref, const int start_index)
 {
     str_hook *hook = new_object(sizeof(str_hook));
-    hook->source_ref = source_ref;
+    hook->source_string = source_ref;
     hook->start = start_index;
     hook->end = 0;
     return hook;
@@ -34,7 +34,7 @@ str_hook *new_str_hook_with_start(const_string source_ref, const int start_index
 str_hook *new_str_hook_with_end(const_string source_ref, const int end_index)
 {
     str_hook *hook = new_object(sizeof(str_hook));
-    hook->source_ref = source_ref;
+    hook->source_string = source_ref;
     hook->start = 0;
     hook->end = end_index;
     return hook;
@@ -43,7 +43,7 @@ str_hook *new_str_hook_with_end(const_string source_ref, const int end_index)
 str_hook *new_str_hook_with_start_and_end(const_string source_ref, const int start_index, const int end_index)
 {
     str_hook *hook = new_object(sizeof(str_hook));
-    hook->source_ref = source_ref;
+    hook->source_string = source_ref;
     hook->start = start_index;
     hook->end = end_index;
     return hook;
@@ -52,7 +52,7 @@ str_hook *new_str_hook_with_start_and_end(const_string source_ref, const int sta
 str_hook *new_str_hook_by_point_watcher(const_string source_ref, const_point_watcher *watcher)
 {
     str_hook *hook = new_object(sizeof(str_hook));
-    hook->source_ref = source_ref;
+    hook->source_string = source_ref;
     hook->start = watcher->start;
     hook->end = watcher->end;
     return hook;
@@ -61,7 +61,7 @@ str_hook *new_str_hook_by_point_watcher(const_string source_ref, const_point_wat
 str_hook *new_str_hook_by_other(const_str_hook *other_hook)
 {
     str_hook *hook = new_object(sizeof(str_hook));
-    hook->source_ref = other_hook->source_ref;
+    hook->source_string = other_hook->source_string;
     hook->start = other_hook->start;
     hook->end = other_hook->end;
     return hook;
@@ -70,7 +70,7 @@ str_hook *new_str_hook_by_other(const_str_hook *other_hook)
 str_hook *new_str_hook_by_other_source_ref(const_str_hook *other_hook)
 {
     str_hook *hook = new_object(sizeof(str_hook));
-    hook->source_ref = other_hook->source_ref;
+    hook->source_string = other_hook->source_string;
     hook->start = 0;
     hook->end = 0;
     return hook;
@@ -79,7 +79,7 @@ str_hook *new_str_hook_by_other_source_ref(const_str_hook *other_hook)
 str_hook *new_str_hook_by_string(const_string source_ref)
 {
     str_hook *hook = new_object(sizeof(str_hook));
-    hook->source_ref = source_ref;
+    hook->source_string = source_ref;
     hook->start = 0;
     hook->end = strlen(source_ref);
     return hook;
@@ -88,7 +88,7 @@ str_hook *new_str_hook_by_string(const_string source_ref)
 str_hook *new_str_hook_by_offset(const_string source_ref, const int offset, const int length)
 {
     str_hook *hook = new_object(sizeof(str_hook));
-    hook->source_ref = source_ref;
+    hook->source_string = source_ref;
     hook->start = offset;
     hook->end = offset + length;
     return hook;
@@ -105,7 +105,7 @@ int get_str_hook_size(const_str_hook *hook)
 
 char get_str_hook_char(const_str_hook *hook, const int index)
 {
-    return hook->source_ref[0];
+    return hook->source_string[0];
 }
 
 /**
@@ -134,7 +134,7 @@ boolean is_word_hooked(const_str_hook *hook)
 
 string substring_by_str_hook(const_str_hook *hook)
 {
-    return substring(hook->source_ref, hook->start, hook->end);
+    return substring(hook->source_string, hook->start, hook->end);
 }
 
 boolean are_equal_hooked_str(const_str_hook *hook_1, const_str_hook *hook_2)
@@ -144,8 +144,8 @@ boolean are_equal_hooked_str(const_str_hook *hook_1, const_str_hook *hook_2)
     if (size_1 != size_2) {
         return FALSE;
     }
-    const_string str_1 = hook_1->source_ref;
-    const_string str_2 = hook_2->source_ref;
+    const_string str_1 = hook_1->source_string;
+    const_string str_2 = hook_2->source_string;
     const int start_1 = hook_1->start;
     const int start_2 = hook_2->start;
     for (int i = 0; i < size_1; ++i) {
@@ -163,7 +163,7 @@ boolean is_hook_equals_str(const_str_hook *hook, const_string str)
     if (hook_size != str_length) {
         return FALSE;
     }
-    const_string hooked_str = hook->source_ref;
+    const_string hooked_str = hook->source_string;
     const int start = hook->start;
     for (int i = 0; i < hook_size; ++i) {
         if (hooked_str[start + i] != str[i]) {
@@ -216,7 +216,7 @@ void log_info_str_hook(const_string tag, const_string message, const_str_hook *h
 {
     printf("\n%s: %s -", tag, message);
     for (int i = hook->start; i < hook->end; ++i) {
-        printf("%c", hook->source_ref[i]);
+        printf("%c", hook->source_string[i]);
     }
     printf("-\n");
 }
@@ -227,7 +227,7 @@ void log_info_str_hook_list(const_string tag, const_string message, const_str_ho
     const_str_hook_array hooks = list->hooks;
     for (int i = 0; i < size; ++i) {
         const_str_hook *hook = hooks[i];
-        const_string src = hook->source_ref;
+        const_string src = hook->source_string;
         printf("\n%s: %s -", tag, message);
         for (int j = hook->start; j < hook->end; ++j) {
             printf("%c", src[j]);
@@ -243,7 +243,7 @@ void log_info_str_hook_list(const_string tag, const_string message, const_str_ho
 
 boolean is_int_hooked(const_str_hook *hook)
 {
-    const_string string = hook->source_ref;
+    const_string string = hook->source_string;
     const int length = get_str_hook_size(hook);
     int start_position = hook->start;
     if (length <= 0) {
@@ -267,7 +267,7 @@ boolean is_int_hooked(const_str_hook *hook)
 
 boolean is_double_hooked(const_str_hook *hook)
 {
-    const_string string = hook->source_ref;
+    const_string string = hook->source_string;
     const int length = get_str_hook_size(hook);
     boolean was_dot = FALSE;
     boolean was_fraction = FALSE;
@@ -303,7 +303,7 @@ boolean is_double_hooked(const_str_hook *hook)
 boolean is_string_hooked(const_str_hook *hook)
 {
     const int length = get_str_hook_size(hook);
-    const_string hooked_string = hook->source_ref;
+    const_string hooked_string = hook->source_string;
     return length > 1 && hooked_string[hook->start] == '\'' && hooked_string[hook->end - 1] == '\'';
 }
 
@@ -312,14 +312,18 @@ boolean is_boolean_hooked(const_str_hook *hook)
     return is_hook_equals_str(hook, AIO_TRUE_VALUE) || is_hook_equals_str(hook, AIO_FALSE_VALUE);
 }
 
+boolean is_null_hooked(const_str_hook *hook)
+{
+    return is_hook_equals_str(hook, AIO_NULL_VALUE);
+}
+
 void throw_error_with_hook(const_string tag, const_string message, const_str_hook *hook)
 {
     printf("\n%s %s: %s -", ERROR_TAG, tag, message);
     for (int i = hook->start; i < hook->end; ++i) {
-        printf("%c", hook->source_ref[i]);
+        printf("%c", hook->source_string[i]);
     }
     printf("-\n");
-    //free((void *) message);
     exit(1);
 }
 
@@ -330,7 +334,7 @@ void throw_error_with_hook(const_string tag, const_string message, const_str_hoo
 int str_hook_to_int(const_str_hook *hook)
 {
     int result = 0;
-    const_string string = hook->source_ref;
+    const_string string = hook->source_string;
     for (int i = hook->start; i < hook->end; i++) {
         result = result * 10 + (string[i] - '0');
     }
@@ -341,15 +345,12 @@ double str_hook_to_double(const struct str_hook *hook)
 {
     const static char CHAR_SHIFT = '0';
     const static int DIGIT_SHIFT = 10;
-    const_string string = hook->source_ref;
+    const_string string = hook->source_string;
     int integer_part = 0;
     int i = hook->start;
     while (!is_dot(string[i])) {
         integer_part = integer_part * DIGIT_SHIFT + (string[i++] - CHAR_SHIFT);
     }
-//#ifdef STRING_HOOK_DEBUG
-//    log_info_int(STRING_HOOK_TAG, "Int part:", integer_part);
-//#endif
     double fraction_part = 0.0;
     double fraction_counter = DIGIT_SHIFT;
     for (int j = i + 1; j < hook->end; ++j) {
@@ -357,15 +358,12 @@ double str_hook_to_double(const struct str_hook *hook)
         fraction_part += digit;
         fraction_counter *= DIGIT_SHIFT;
     }
-//#ifdef STRING_HOOK_DEBUG
-//    log_info_double(STRING_HOOK_TAG, "Fractional part:", fraction_part);
-//#endif
     return ((double) integer_part) + fraction_part;
 }
 
 str_hook *lower_str_hook_quotes(const_str_hook *hook)
 {
-    return new_str_hook_with_start_and_end(hook->source_ref, hook->start + 1, hook->end - 1);
+    return new_str_hook_with_start_and_end(hook->source_string, hook->start + 1, hook->end - 1);
 }
 
 boolean str_hook_to_boolean(const struct str_hook *hook)

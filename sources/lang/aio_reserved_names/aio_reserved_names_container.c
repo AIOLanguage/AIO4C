@@ -48,7 +48,7 @@ boolean can_use_name(const_str_hook *hook)
     return is_valid_name;
 }
 
-boolean is_aio_null_value(const_string string_value)
+boolean is_aio_null_value_string(const_string string_value)
 {
     return are_equal_strings(string_value, AIO_NULL_VALUE);
 }

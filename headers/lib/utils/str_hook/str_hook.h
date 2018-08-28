@@ -8,7 +8,7 @@
  */
 
 typedef struct str_hook {
-    const_string source_ref;
+    const_string source_string;
     int start;
     int end;
 } str_hook;

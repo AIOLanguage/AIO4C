@@ -400,6 +400,9 @@
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/tools/aio_function_tools/aio_expression_parser/aio_inner_parcers/aio_type_parser.c">
 			<Option target="AIO"/>
 		</Unit>
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/tools/aio_function_tools/aio_expression_parser/aio_inner_parcers/aio_void_parser.c">
+			<Option target="AIO"/>
+		</Unit>
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_assign_spider/aio_assign_spider.c">
 			<Option target="AIO"/>
 		</Unit>

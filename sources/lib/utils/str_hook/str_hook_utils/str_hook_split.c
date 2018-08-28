@@ -56,7 +56,7 @@ static str_hook_list *create_str_hook_list_without_split(const_str_hook *hook)
 
 str_hook_list *split_str_hook_by_string(const_str_hook *hook, const_string delimiter)
 {
-    const_string src = hook->source_ref;
+    const_string src = hook->source_string;
     const size_t src_length = (size_t) get_str_hook_size(hook);
     const size_t delimiter_length = strlen(delimiter);
     //Is empty string:
@@ -112,7 +112,7 @@ str_hook_list *split_str_hook_by_string(const_str_hook *hook, const_string delim
 
 str_hook_list *split_str_hook_by_char_condition(const_str_hook *hook, boolean (*char_condition)(const char))
 {
-    const_string src = hook->source_ref;
+    const_string src = hook->source_string;
     const int start = hook->start;
     const int end = hook->end;
     str_hook_list *hooks = new_str_hook_list();

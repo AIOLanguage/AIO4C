@@ -16,7 +16,7 @@
 
 static const_boolean is_explicitly_boolean_expression(const_str_hook *hooked_expression)
 {
-    const_string expression_string = hooked_expression->source_ref;
+    const_string expression_string = hooked_expression->source_string;
     point_watcher *watcher = new_point_watcher();
     watcher->start = hooked_expression->start;
     watcher->pointer = hooked_expression->start;
@@ -64,7 +64,7 @@ static const_str_hook *define_type_by_first_element(
 #ifdef AIO_EXPRESSION_PARSER_DEBUG
     log_info_str_hook(AIO_EXPRESSION_PARSER_TAG, "Define type by first element in expression:", hooked_expression);
 #endif
-    const_string expression_string = hooked_expression->source_ref;
+    const_string expression_string = hooked_expression->source_string;
     const int start_index = hooked_expression->start;
     const int end_index = hooked_expression->end;
     //Define left & right searching bounds:
@@ -128,7 +128,8 @@ static const_str_hook *define_type_by_first_element(
             element_watcher->mode = POINT_WATCHER_ACTIVE_MODE;
         }
         if (element_watcher->mode == POINT_WATCHER_ACTIVE_MODE) {
-            const_boolean is_end_of_element = is_whitespace_cond || is_sign(symbol) || is_opening_parenthesis(symbol);
+            //const_boolean is_end_of_element = is_whitespace_cond || is_sign(symbol) || is_opening_parenthesis(symbol);
+            const_boolean is_end_of_element = is_sign(symbol) || is_opening_parenthesis(symbol);
             if (is_end_of_element) {
                 element_watcher->end = element_watcher->pointer;
                 first_element_hook = new_str_hook_by_point_watcher(expression_string, element_watcher);
@@ -138,7 +139,7 @@ static const_str_hook *define_type_by_first_element(
         element_watcher->pointer++;
     }
     //Check element hook:
-    if (first_element_hook == NULL) {
+    if (!first_element_hook) {
         first_element_hook = new_str_hook_by_other(scope_hook);
     }
 #ifdef AIO_EXPRESSION_PARSER_DEBUG
@@ -146,22 +147,25 @@ static const_str_hook *define_type_by_first_element(
 #endif
     //Maybe is variable name?
     const_aio_variable *variable = get_aio_variable_in_function_control_graph(first_element_hook, control_graph);
-    if (variable != NULL) {
+    if (variable) {
         const_aio_variable_definition *definition = variable->definition;
-        str_hook *type = definition->type;
 #ifdef AIO_EXPRESSION_PARSER_DEBUG
         log_info_str_hook(AIO_EXPRESSION_PARSER_TAG, "Found variable:", definition->name);
         log_info_str_hook(AIO_EXPRESSION_PARSER_TAG, "Type:", definition->type);
 #endif
-        if (is_aio_void_type_hooked(type)) {
-            aio_value *value = variable->value;
-            if (value != NULL) {
-                type = value->type;
+        if (!variable->value) {
+            return new_str_hook_by_string(VOID);
+        } else {
+            const_str_hook *required_type = definition->type;
+            const_boolean is_void_type = is_aio_void_type_hooked(required_type);
+            if (is_void_type) {
+                //Get value type:
+                const_str_hook *real_type = variable->value->type;
+                return new_str_hook_by_other(real_type);
             } else {
-                throw_error_with_hook(AIO_EXPRESSION_PARSER_TAG, "Variable is null:", variable->definition->name);
+                return new_str_hook_by_other(required_type);
             }
         }
-        return new_str_hook_by_other(type);
     }
 #ifdef AIO_EXPRESSION_PARSER_DEBUG
     log_info(AIO_EXPRESSION_PARSER_TAG, "Didn't find variable!");
@@ -171,7 +175,7 @@ static const_str_hook *define_type_by_first_element(
     const_aio_function_definition *function_definition = get_aio_function_definition_in_list_by_name(
             function_definition_list, first_element_hook
     );
-    if (function_definition != NULL) {
+    if (function_definition) {
 #ifdef AIO_EXPRESSION_PARSER_DEBUG
         log_info(AIO_EXPRESSION_PARSER_TAG, "Found function!");
 #endif
@@ -184,6 +188,9 @@ static const_str_hook *define_type_by_first_element(
         }
     }
     //Maybe int value?
+    if (is_null_hooked(first_element_hook)) {
+        return new_str_hook_by_string(VOID);
+    }
     if (is_int_hooked(first_element_hook)) {
         return new_str_hook_by_string(INTEGER);
     }
@@ -239,6 +246,12 @@ aio_value *parse_value_hook(
 #endif
     if (!is_aio_type_hooked(expression_type)) {
         throw_error_with_hook(AIO_EXPRESSION_PARSER_TAG, "AIO core doesn't support type:", expression_type);
+    }
+    if (is_hook_equals_str(expression_type, VOID)) {
+#ifdef AIO_EXPRESSION_PARSER_DEBUG
+        log_info(AIO_EXPRESSION_PARSER_TAG, "Parse void expression...");
+        return parse_void_value_string(expression_hook, context, control_graph);
+#endif
     }
     //Maybe is boolean?
     if (is_hook_equals_str(expression_type, INTEGER)) {
