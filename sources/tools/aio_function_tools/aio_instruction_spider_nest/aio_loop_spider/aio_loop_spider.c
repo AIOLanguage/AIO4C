@@ -389,7 +389,6 @@ void weave_loop_instruction_for(void *parent, const_string source_code,
                     = main_loop_materials->get_applied_materials_from.default_loop_header;
             if (!default_loop_header_materials) {
                 throw_error_with_tag(AIO_LOOP_SPIDER_TAG, "Default loop header spider can not weave materials!");
-                return;
             }
             const aio_default_loop_header_pointer_declaration_type declaration_type
                     = default_loop_header_materials->declaration_type;
@@ -426,6 +425,9 @@ void weave_loop_instruction_for(void *parent, const_string source_code,
                     );
                     //Put definition in init map:
                     add_aio_variable_definition_in_list(init_variable_definition_list, definition);
+#ifdef AIO_LOOP_SPIDER_DEBUG
+                    log_info_str_hook(AIO_LOOP_SPIDER_TAG, "ADDED POINTER DEFINITION IN LIST:", definition->name);
+#endif
                     //Put init instruction in init holder:
                     add_aio_instruction_in_list(init_instruction_list, init_instruction);
                 } else {
@@ -445,13 +447,19 @@ void weave_loop_instruction_for(void *parent, const_string source_code,
             aio_function_instruction_list *cycle_instruction_list = cycle_holder->instruction_list;
             if (has_pointer_in_header) {
                 const_string step_value = default_loop_header_materials->step_value;
-                aio_function_instruction *step_instruction = new_aio_assign_instruction(
-                        cycle_holder,
-                        step_value,
-                        new_str_hook_by_other(pointer_name)
-                );
-                //Put in the bottom step instruction in cycle holder:
-                add_aio_instruction_in_list(cycle_instruction_list, step_instruction);
+#ifdef AIO_LOOP_SPIDER_DEBUG
+                log_info_string(AIO_LOOP_SPIDER_TAG, "CHECK STEP:", step_value);
+#endif
+                //If has step value then add step instruction in the bottom of cycle instruction:
+                if (step_value){
+                    aio_function_instruction *step_instruction = new_aio_assign_instruction(
+                            cycle_holder,
+                            step_value,
+                            new_str_hook_by_other(pointer_name)
+                    );
+                    //Put in the bottom step instruction in cycle holder:
+                    add_aio_instruction_in_list(cycle_instruction_list, step_instruction);
+                }
             }
         }
         if (header_material_type == AIO_LOOP_MATERIALS_IN_HEADER) {

@@ -21,3 +21,58 @@ Int revertNumber(mu Int number) {
     }
     out result
 }
+
+//TODO: Test me!
+Boo isPalindrome(Int number) {
+    out number == revertNumber(number)
+}
+
+//성공적인 테스트 (Successful test):
+Str multiplyString(Str string, Int times) {
+    mu Str result = ''
+    loo (Int i = 0 i < times i = i + 1) {
+        result = result ~ string
+    }
+    out result
+}
+
+//성공적인 테시트 (Successful test):
+Dou pow(Dou base, Int times) {
+    if (times == 0) {
+        out 1
+    }
+    mu shift = 0
+    if (times > 0) {
+        shift = 1
+    } : {
+        shift = 0 - 1
+    }
+    mu Int counter = 0
+    loo (mu Dou result = 1 tru) {
+        result = result * base
+        counter = counter + shift
+        if (counter == times) {
+            out result
+        }
+    }
+}
+
+//성공적인 테시트 (Successful test):
+Dou positivePow1(Dou base, Int times) {
+    mu Dou result = 1
+    mu Int counter = 0
+    loo (counter < times) {
+        result = result * base
+        counter = counter + 1
+    }
+    out result
+}
+
+//성공적인 테시트 (Successful test):
+Dou positivePow2(Dou base, Int times) {
+    mu Dou result = 1
+    loo (Int i = 0 i < times i = i + 1) {
+        result = result * base
+    }
+    out result
+}

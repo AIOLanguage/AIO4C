@@ -93,6 +93,8 @@ void perform_aio_assign_instruction(const_aio_function_instruction *instruction,
 #endif
     }
 #ifdef AIO_ASSIGN_TASK_DEBUG
+    log_info_str_hook(AIO_ASSIGN_TASK_TAG, "NNNAME:", variable->definition->name);
     log_info_str_hook(AIO_ASSIGN_TASK_TAG, "TYYYYPE:", variable->definition->type);
+    log_info(AIO_ASSIGN_TASK_TAG, "*********************************************");
 #endif
 }

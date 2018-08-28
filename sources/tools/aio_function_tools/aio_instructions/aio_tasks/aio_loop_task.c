@@ -74,7 +74,7 @@ void perform_aio_loop_instruction(const_aio_function_instruction *instruction,
     log_info(AIO_LOOP_TASK_TAG, "Launch cycle...");
 #endif
     while (is_condition_performs(loop_condition_string, init_control_graph)) {
-        inflate_new_aio_function_control_graph(control_graph, cycle_holder, bundle_ref, context_ref);
+        inflate_new_aio_function_control_graph(init_control_graph, cycle_holder, bundle_ref, context_ref);
         if (*system_state == AIO_FUNCTION_SYSTEM_BREAK) {
 #ifdef AIO_LOOP_TASK_DEBUG
             log_info(AIO_LOOP_TASK_TAG, "Was break!");
