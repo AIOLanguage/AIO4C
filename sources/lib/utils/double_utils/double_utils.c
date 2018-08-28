@@ -2,7 +2,6 @@
 #include <mem.h>
 #include <ctype.h>
 #include "../../../../headers/lib/utils/string_utils/string_utils.h"
-#include "../../../../headers/lib/utils/error_utils/error_utils.h"
 #include "../../../../headers/lib/utils/char_utils/char_utils.h"
 
 #define DOUBLE_UTILS_DEBUG
@@ -10,8 +9,6 @@
 #define DOUBLE_UTILS_TAG "DOUBLE_UTILS"
 
 #ifdef DOUBLE_UTILS_DEBUG
-
-#include "../../../../headers/lib/utils/log_utils/log_utils.h"
 
 #endif
 
@@ -52,22 +49,30 @@ boolean matches_double(const_string src)
     return was_dot && was_fraction;
 }
 
-double string_to_double(const_string word)
+double string_to_double(const_string string)
 {
     const static char CHAR_SHIFT = '0';
     const static int DIGIT_SHIFT = 10;
-    const size_t length = strlen(word);
-    int integer_part = 0;
+    const size_t length = strlen(string);
     int i = 0;
-    while (!is_dot(word[i])) {
-        integer_part = integer_part * DIGIT_SHIFT + (word[i++] - CHAR_SHIFT);
+    const_boolean is_negative = is_minus_sign(string[i]);
+    if (is_negative) {
+        i++;
+    }
+    int integer_part = 0;
+    while (!is_dot(string[i])) {
+        integer_part = integer_part * DIGIT_SHIFT + (string[i++] - CHAR_SHIFT);
     }
     double fraction_part = 0.0;
     double fraction_counter = DIGIT_SHIFT;
     for (int j = i + 1; j < length; ++j) {
-        const double digit = ((double) (word[j] - CHAR_SHIFT) / fraction_counter);
+        const double digit = ((double) (string[j] - CHAR_SHIFT) / fraction_counter);
         fraction_part += digit;
         fraction_counter *= DIGIT_SHIFT;
     }
-    return ((double) integer_part) + fraction_part;
+    double result = ((double) integer_part) + fraction_part;
+    if (is_negative) {
+        result *= -1;
+    }
+    return result;
 }

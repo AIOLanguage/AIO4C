@@ -22,11 +22,13 @@ static const_boolean is_explicitly_boolean_expression(const_str_hook *hooked_exp
     watcher->pointer = hooked_expression->start;
     watcher->end = hooked_expression->end;
     int parenthesis_scope_counter = 0;
+    boolean in_quote_scope = FALSE;
     while (watcher->pointer < watcher->end) {
         const char symbol = expression_string[watcher->pointer];
         //Check symbol:
         const_boolean is_opening_parenthesis_cond = is_opening_parenthesis(symbol);
         const_boolean is_closing_parenthesis_cond = is_closing_parenthesis(symbol);
+        const_boolean is_quote = is_single_quote(symbol);
         const_boolean is_boolean_symbol =
                 is_more_sign(symbol)
                 || is_less_sign(symbol)
@@ -34,6 +36,13 @@ static const_boolean is_explicitly_boolean_expression(const_str_hook *hooked_exp
                 || is_and_sign(symbol)
                 || is_or_sign(symbol)
                 || is_exclamation_point(symbol);
+        if (is_quote) {
+            if (!in_quote_scope) {
+                in_quote_scope = TRUE;
+            } else {
+                in_quote_scope = FALSE;
+            }
+        }
         if (is_opening_parenthesis_cond) {
             parenthesis_scope_counter++;
         }
@@ -44,7 +53,7 @@ static const_boolean is_explicitly_boolean_expression(const_str_hook *hooked_exp
                 throw_error_with_tag(AIO_EXPRESSION_PARSER_TAG, "Expression can not start with closing parenthesis!");
             }
         }
-        if (is_boolean_symbol && parenthesis_scope_counter == 0) {
+        if (is_boolean_symbol && parenthesis_scope_counter == 0 && !in_quote_scope) {
 #ifdef AIO_EXPRESSION_PARSER_DEBUG
             log_info(AIO_EXPRESSION_PARSER_TAG, "Found boolean symbol -> is explicitly boolean expression!");
 #endif
@@ -95,7 +104,7 @@ static const_str_hook *define_type_by_first_element(
 #endif
         } else {
             const int after_parenthesis_position = scope_watcher->pointer;
-            const_boolean is_sign_after_closing_parenthesis = expression_string[after_parenthesis_position];
+            const_boolean is_sign_after_closing_parenthesis = is_sign(expression_string[after_parenthesis_position]);
             if (is_sign_after_closing_parenthesis) {
                 scope_watcher->start = after_parenthesis_position + 1;
             } else {
@@ -117,19 +126,27 @@ static const_str_hook *define_type_by_first_element(
 #endif
     str_hook *first_element_hook = NULL;
     //Prepare to find first element of expression:
+    boolean in_quote_scope = FALSE;
     point_watcher *element_watcher = new_point_watcher();
     element_watcher->pointer = scope_hook->start;
     element_watcher->end = scope_hook->end;
     while (element_watcher->pointer < element_watcher->end) {
         const char symbol = expression_string[element_watcher->pointer];
         const_boolean is_whitespace_cond = is_space_or_line_break(symbol);
+        const_boolean is_quote_cond = is_single_quote(symbol);
+        if (is_quote_cond) {
+            if (in_quote_scope) {
+                in_quote_scope = FALSE;
+            } else {
+                in_quote_scope = TRUE;
+            }
+        }
         if (element_watcher->mode == POINT_WATCHER_PASSIVE_MODE && !is_whitespace_cond) {
             element_watcher->start = element_watcher->pointer;
             element_watcher->mode = POINT_WATCHER_ACTIVE_MODE;
         }
         if (element_watcher->mode == POINT_WATCHER_ACTIVE_MODE) {
-            //const_boolean is_end_of_element = is_whitespace_cond || is_sign(symbol) || is_opening_parenthesis(symbol);
-            const_boolean is_end_of_element = is_sign(symbol) || is_opening_parenthesis(symbol);
+            const_boolean is_end_of_element = (is_sign(symbol) || is_opening_parenthesis(symbol)) && !in_quote_scope;
             if (is_end_of_element) {
                 element_watcher->end = element_watcher->pointer;
                 first_element_hook = new_str_hook_by_point_watcher(expression_string, element_watcher);
@@ -285,6 +302,7 @@ aio_value *parse_value_hook(
     }
 }
 
+//FIXME: PASS ONLY EXPRESSION AND CONTROL GRAPH:
 aio_value *parse_value_string(
         const_string expression_string,
         const_aio_context *context,

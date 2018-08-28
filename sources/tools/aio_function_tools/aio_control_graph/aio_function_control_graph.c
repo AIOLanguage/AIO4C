@@ -126,9 +126,11 @@ void inflate_new_aio_root_function_control_graph(const_aio_function_control_grap
     free_aio_control_graph(control_graph);
 }
 
-void inflate_new_aio_function_control_graph(const_aio_function_control_graph *parent,
-                                            const_aio_function_instruction_holder *holder,
-                                            aio_bundle *bundle_ref, const_aio_context *context)
+void inflate_new_aio_function_control_graph(
+        const_aio_function_control_graph *parent,
+        const_aio_function_instruction_holder *holder,
+        aio_bundle *bundle_ref, const_aio_context *context
+)
 {
     const_aio_function_control_graph *control_graph = new_aio_function_control_graph(parent, holder, bundle_ref,
                                                                                      context,

@@ -4,7 +4,7 @@
 #include "../string_utils/string_utils.h"
 #include "../boolean_utils/boolean_utils.h"
 
-double string_to_double(const char *src);
+double string_to_double(const char *string);
 
 _Bool matches_double(const char *src);
 

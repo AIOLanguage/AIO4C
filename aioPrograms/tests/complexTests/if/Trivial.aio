@@ -1,0 +1,42 @@
+//성공적인 시험 (Successful test):
+Dou abs(mu Dou value) {
+    if (value < 0) {
+        value = 0 - value //FIXME: Make in the future "-1 * value"
+    }
+    out value
+}
+
+//**
+//* Returns relationship sign of first with second
+//**
+
+//성공적인 테스트 (Successful test):
+Str getSign(Dou first, Dou second) {
+    mu Str result = voi
+    if (first > second) {
+        out '>'
+    }
+    if (first < second) {
+        out '<'
+    } : {
+        out '='
+    }
+}
+
+//**
+//* Орешки.
+//*
+//* Белочка собрала в лесу N шишек c орешками.
+//* Белочка очень привередливо выбирала шишки, и брала только те, в которых ровно M орешков.
+//* Также известно, что для пропитания зимой ей необходимо не менее K орешков.
+//* Определите, хватит ли на зиму орешков белочке?
+//**
+
+Str isGoodWinterForSquirrel(Int cones, Int nuts, Int requiredNuts) {
+    collectedNuts = cones * nuts
+    if (collectedNuts >= requiredNuts) {
+        out 'Squirrel is happy'
+    } : {
+        out 'Squirrel is unhappy'
+    }
+}

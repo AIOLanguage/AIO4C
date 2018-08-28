@@ -363,6 +363,7 @@ boolean is_less_or_equals_aio_value_then_other(aio_value *value_1, aio_value *va
 
 aio_value *cast_to_int(aio_value *value)
 {
+    log_info(AIO_VALUE_TAG, "CAST TO INT!");
     if (!value) {
         return NULL;
     }
@@ -371,7 +372,9 @@ aio_value *cast_to_int(aio_value *value)
         return new_aio_int_value(value->get.int_acc);
     }
     if (is_hook_equals_str(type, DOUBLE)) {
-        return new_aio_int_value((int) value->get.double_acc);
+        const double input_value = value->get.double_acc;
+        int result = (int) input_value;
+        return new_aio_int_value(result);
     }
     if (is_hook_equals_str(type, STRING)) {
         return new_aio_int_value(string_to_int(value->get.string_acc));
@@ -397,7 +400,11 @@ aio_value *cast_to_double(aio_value *value)
     }
     if (is_hook_equals_str(type, STRING)) {
         const_string string = value->get.string_acc;
-        if (matches_double(string)) {
+        log_info_string(AIO_VALUE_TAG, "STRING ACC:", string);
+        log_info_boolean(AIO_VALUE_TAG, "MATCHES DOUBLE:", matches_double(string));
+        if (matches_int(string)) {
+            return new_aio_double_value(string_to_int(string));
+        } else if (matches_double(string)) {
             return new_aio_double_value(string_to_double(string));
         } else {
             throw_error_with_details(AIO_VALUE_TAG, "String doesn't matches double!", string);

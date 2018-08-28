@@ -186,6 +186,9 @@ static aio_result *make_plus_or_minus(
         throw_error_with_hook(AIO_INT_PARSER_TAG, "Found null in expression:", expression_hook);
     }
     int left_acc = left_value->get.int_acc;
+#ifdef AIO_INT_PARSER_DEBUG
+    log_info_int(AIO_INT_PARSER_TAG, "FIRST LEFT ACC:", left_acc);
+#endif
     str_hook *left_hook = new_str_hook_by_other(left_result->rest);
     //------------------------------------------------------------------------------------------------------------------
     //찌꺼기 수집기 (Garbage collector):
@@ -213,6 +216,9 @@ static aio_result *make_plus_or_minus(
             log_info_str_hook(AIO_INT_PARSER_TAG, "After right multiplication rest:", right_result->rest);
 #endif
             const int right_acc = right_result->value->get.int_acc;
+#ifdef AIO_INT_PARSER_DEBUG
+            log_info_int(AIO_INT_PARSER_TAG, "RIGHT ACC:", right_acc);
+#endif
             if (is_plus) {
                 left_acc += right_acc;
 #ifdef AIO_INT_PARSER_DEBUG

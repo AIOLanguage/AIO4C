@@ -234,7 +234,6 @@ void log_info_str_hook_list(const_string tag, const_string message, const_str_ho
         }
         printf("-\n");
     }
-    //free((void *) message);
 }
 
 /**

@@ -1,0 +1,12 @@
+Boo isBinary(mu Int number) {
+    if (number == 1) {
+        out tru
+    }
+    loo (number % 2 == 0) {
+        number = number / 2
+        if (number == 1) {
+            out tru
+        }
+    }
+    out fls
+}

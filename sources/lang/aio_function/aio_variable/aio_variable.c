@@ -56,10 +56,8 @@ aio_variable *force_get_aio_variable_in_function_control_graph(
     if (variable == NULL) {
         const_aio_function_control_graph *parent = control_graph->parent;
         if (parent != NULL) {
-            log_info(AIO_VARIABLE_TAG, "Parent is not null!");
             return force_get_aio_variable_in_function_control_graph(variable_name, parent);
         } else {
-            log_info(AIO_VARIABLE_TAG, "Parent is null!");
             return NULL;
         }
     } else {

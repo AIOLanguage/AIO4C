@@ -1,40 +1,57 @@
 #include <malloc.h>
 #include <mem.h>
-#include "../../../../headers/lib/utils/error_utils/error_utils.h"
+#include <ctype.h>
 #include "../../../../headers/lib/utils/memory_utils/memory_utils.h"
 #include "../../../../headers/lib/utils/int_utils/int_utils.h"
+#include "../../../../headers/lib/utils/boolean_utils/boolean_utils.h"
 
-_Bool matches_int(const char *string)
+#define INT_UTILS_TAG "INT_UTILS"
+
+#define INT_UTILS_DEBUG
+
+#ifdef INT_UTILS_DEBUG
+
+#include "../../../../headers/lib/utils/char_utils/char_utils.h"
+
+#endif
+
+boolean matches_int(const_string string)
 {
+    const size_t length = strlen(string);
     int start = 0;
-    int length = strlen(string);
     if (length == 0) {
-        throw_error("empty string as Int!");
-
+        return FALSE;
     }
     if (string[0] == '-') {
         if (length == 1) {
-            throw_error("this is a minus as Int!");
+            return FALSE;
         }
         start = 1;
     }
-    for (int i = start; i < strlen(string); ++i) {
-        int e = string[i] - '0';
-        if (e < 0 || e > 9) {
-            return -1;
+    for (int i = start; i < length; ++i) {
+        const char symbol = string[i];
+        if (!isdigit(symbol)) {
+            return FALSE;
         }
     }
-    return 0;
+    return TRUE;
 }
 
-int string_to_int(const char *string)
+int string_to_int(const_string string)
 {
-    if (matches_int(string) != 0) {
-        throw_error("cannot convert string from int in string_to_int!");
+    const size_t length = strlen(string);
+    int start = 0;
+    const_boolean is_negative = is_minus_sign(string[0]);
+    if (is_negative) {
+        start++;
     }
     int result = 0;
-    for (int i = 0; i < strlen(string); i++) {
-        result = result * 10 + (string[i] - '0');
+    for (int i = start; i < length; i++) {
+        const int digit = string[i] - '0';
+        result = result * 10 + digit;
+    }
+    if (is_negative) {
+        result *= -1;
     }
     return result;
 }

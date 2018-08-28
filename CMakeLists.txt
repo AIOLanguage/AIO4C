@@ -8,8 +8,6 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -pedantic -Wall -Wextra")
 
 add_definitions(-DSOME_IMPORTANT_DEFINITION)
 
-add_definitions(-I headers-)
-
 add_executable(${PROJECT_NAME}
         #---------------------------------------------------------------------------------------------------------------
         #MAIN:
@@ -155,9 +153,12 @@ add_executable(${PROJECT_NAME}
         sources/tools/aio_function_tools/aio_expression_parser/aio_inner_parcers/aio_boolean_parser.c
         sources/tools/aio_function_tools/aio_expression_parser/aio_inner_parcers/aio_type_parser.c
         sources/tools/aio_function_tools/aio_expression_parser/aio_expression_assistant.c
+        sources/tools/aio_function_tools/aio_expression_parser/aio_inner_parcers/aio_void_parser.c
         #---------------------------------------------------------------------------------------------------------------
-        sources/tools/aio_function_tools/aio_expression_parser/aio_inner_parcers/aio_void_parser.c)
+        )
 
 
 #TODO: How make it???
 #-I C:/Users/StarKRE/CLionProjects/AIO/headers
+
+#add_definitions(-I headers-)
