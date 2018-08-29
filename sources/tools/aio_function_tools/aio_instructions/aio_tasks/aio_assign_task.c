@@ -3,7 +3,8 @@
 #include "../../../../../headers/tools/aio_function_tools/aio_instructions/aio_tasks/aio_assign_task.h"
 #include "../../../../../headers/lib/utils/str_hook/str_hook_utils/str_hook_utils.h"
 #include "../../../../../headers/tools/aio_function_tools/aio_expression_parser/aio_expression_parser.h"
-
+#include "../../../../../headers/lang/aio_type/aio_type.h"
+#include "../../../../../headers/lang/aio_reserved_names/aio_reserved_names_container.h"
 
 #define AIO_ASSIGN_TASK_TAG "AIO_ASSIGN_TASK"
 
@@ -12,8 +13,6 @@
 #ifdef AIO_ASSIGN_TASK_DEBUG
 
 #include "../../../../../headers/lib/utils/log_utils/log_utils.h"
-#include "../../../../../headers/lang/aio_type/aio_type.h"
-#include "../../../../../headers/lang/aio_reserved_names/aio_reserved_names_container.h"
 
 #endif
 
