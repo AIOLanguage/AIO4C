@@ -20,6 +20,10 @@
 
 #define AIO_VARIABLE_TAG "AIO_VARIABLE"
 
+ /**
+  * Business logic
+  */
+
 aio_variable *new_aio_variable_by_definition(aio_variable_definition *variable_definition, aio_value *value)
 {
     aio_variable *variable = new_object(sizeof(aio_variable));
