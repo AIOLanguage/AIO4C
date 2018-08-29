@@ -12,7 +12,6 @@ Dou abs(mu Dou value) {
 
 //성공적인 테스트 (Successful test):
 Str getSign(Dou first, Dou second) {
-    mu Str result = voi
     if (first > second) {
         out '>'
     }
@@ -32,6 +31,7 @@ Str getSign(Dou first, Dou second) {
 //* Определите, хватит ли на зиму орешков белочке?
 //**
 
+//성공적인 테스트 (Successful test):
 Str isGoodWinterForSquirrel(Int cones, Int nuts, Int requiredNuts) {
     collectedNuts = cones * nuts
     if (collectedNuts >= requiredNuts) {
@@ -39,4 +39,15 @@ Str isGoodWinterForSquirrel(Int cones, Int nuts, Int requiredNuts) {
     } : {
         out 'Squirrel is unhappy'
     }
+}
+
+//성공적인 테스트 (Successful test):
+Str getGender(Boo isMale){
+    mu gender = voi
+    if (isMale) {
+        gender = 'Male'
+    } : {
+        gender = 'Female'
+    }
+    out gender
 }

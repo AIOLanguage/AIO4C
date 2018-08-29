@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_switch_task.c" line="80" mnemonic="1" />
+    <bookmark url="file://$PROJECT_DIR$/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_switch_task.c" line="90" mnemonic="1" />
   </component>
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true" buildAllGenerated="true">
     <generated>
@@ -14,15 +14,23 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77c54fc7-a37a-4eaf-a794-282c0598671e" name="Default" comment="시험 (Testing)&#10;------------------------------------------------------------------------&#10;-&gt; 원시적 인 'loop' 테스트들을 추가했습니다 ('loop' tests added);&#10;-&gt; 'loop' 프로그램들을 테스트했습니다 (Test 'loop' programs).&#10;------------------------------------------------------------------------">
+    <list default="true" id="77c54fc7-a37a-4eaf-a794-282c0598671e" name="Default" comment="'loop' 시험 (Testing)&#10;------------------------------------------------------------------------&#10;-&gt; 원시적 인 'loop' 테스트들을 추가했습니다 ('loop' tests added);&#10;-&gt; 'loop' 프로그램들을 테스트했습니다 (Test 'loop' programs).&#10;------------------------------------------------------------------------">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aioPrograms/examples/if/DemoIf.aio" beforeDir="false" afterPath="$PROJECT_DIR$/aioPrograms/demo/if/DemoIf.aio" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aioPrograms/examples/loop/DemoLoop1.aio" beforeDir="false" afterPath="$PROJECT_DIR$/aioPrograms/demo/loop/DemoLoop1.aio" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aioPrograms/examples/loop/DemoLoop2.aio" beforeDir="false" afterPath="$PROJECT_DIR$/aioPrograms/demo/loop/DemoLoop2.aio" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aioPrograms/examples/switch/DemoSwitch.aio" beforeDir="false" afterPath="$PROJECT_DIR$/aioPrograms/demo/switch/DemoSwitch.aio" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aioPrograms/tests/complexTests/if/Trivial.aio" beforeDir="false" afterPath="$PROJECT_DIR$/aioPrograms/tests/complexTests/if/Trivial.aio" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/aioPrograms/tests/complexTests/loop/Trivial.aio" beforeDir="false" afterPath="$PROJECT_DIR$/aioPrograms/tests/complexTests/loop/Trivial.aio" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aioPrograms/tests/complexTests/switch/Trivial.aio" beforeDir="false" afterPath="$PROJECT_DIR$/aioPrograms/tests/complexTests/switch/Trivial.aio" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/flags.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO.dir/link.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/headers/tools/aio_function_tools/aio_control_graph/aio_function_control_graph.h" beforeDir="false" afterPath="$PROJECT_DIR$/headers/tools/aio_function_tools/aio_control_graph/aio_function_control_graph.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main/main.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sources/lang/aio_function/aio_variable/aio_variable.c" beforeDir="false" afterPath="$PROJECT_DIR$/sources/lang/aio_function/aio_variable/aio_variable.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_loop_spider/aio_loop_spider.c" beforeDir="false" afterPath="$PROJECT_DIR$/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_loop_spider/aio_loop_spider.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sources/tools/aio_function_tools/aio_instructions/aio_function_instruction_holder.c" beforeDir="false" afterPath="$PROJECT_DIR$/sources/tools/aio_function_tools/aio_instructions/aio_function_instruction_holder.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_assign_task.c" beforeDir="false" afterPath="$PROJECT_DIR$/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_assign_task.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_loop_task.c" beforeDir="false" afterPath="$PROJECT_DIR$/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_loop_task.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sources/tools/aio_function_tools/aio_control_graph/aio_function_control_graph.c" beforeDir="false" afterPath="$PROJECT_DIR$/sources/tools/aio_function_tools/aio_control_graph/aio_function_control_graph.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sources/tools/aio_function_tools/aio_expression_parser/aio_expression_assistant.c" beforeDir="false" afterPath="$PROJECT_DIR$/sources/tools/aio_function_tools/aio_expression_parser/aio_expression_assistant.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_switch_task.c" beforeDir="false" afterPath="$PROJECT_DIR$/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_switch_task.c" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -50,14 +58,14 @@
     <session id="-881002971">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="22" />
+          <entry key="project.closed" value="23" />
           <entry key="project.open.time.10" value="2" />
-          <entry key="project.open.time.4" value="4" />
+          <entry key="project.open.time.4" value="5" />
           <entry key="project.open.time.5" value="3" />
           <entry key="project.open.time.6" value="6" />
           <entry key="project.open.time.7" value="5" />
           <entry key="project.open.time.8" value="3" />
-          <entry key="project.opened" value="23" />
+          <entry key="project.opened" value="24" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -68,41 +76,41 @@
           <entry key="DemoIf" value="1" />
           <entry key="DemoLoop2" value="1" />
           <entry key="ImmutableVariables" value="2" />
-          <entry key="aio" value="653" />
+          <entry key="aio" value="690" />
           <entry key="assign_and_if" value="4" />
-          <entry key="c" value="5656" />
+          <entry key="c" value="5691" />
           <entry key="cmake" value="1" />
-          <entry key="h" value="2495" />
-          <entry key="txt" value="129" />
+          <entry key="h" value="2505" />
+          <entry key="txt" value="136" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CMakeCache.txt" value="1" />
-          <entry key="CMakeLists.txt" value="129" />
+          <entry key="CMakeLists.txt" value="136" />
           <entry key="Disassembly" value="72" />
-          <entry key="ObjectiveC" value="8151" />
-          <entry key="PLAIN_TEXT" value="662" />
+          <entry key="ObjectiveC" value="8196" />
+          <entry key="PLAIN_TEXT" value="699" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Build All (disassembly)" value="5" />
-          <entry key="aio" value="10883" />
+          <entry key="aio" value="11076" />
           <entry key="assign_and_if" value="101" />
-          <entry key="c" value="139610" />
-          <entry key="h" value="18509" />
+          <entry key="c" value="139778" />
+          <entry key="h" value="18539" />
           <entry key="m" value="1814" />
-          <entry key="txt" value="5911" />
+          <entry key="txt" value="5932" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CMakeLists.txt" value="1111" />
+          <entry key="CMakeLists.txt" value="1121" />
           <entry key="Disassembly" value="5" />
           <entry key="Doxygen file" value="201" />
-          <entry key="ObjectiveC" value="159732" />
-          <entry key="PLAIN_TEXT" value="15784" />
+          <entry key="ObjectiveC" value="159930" />
+          <entry key="PLAIN_TEXT" value="15988" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages">
@@ -118,10 +126,10 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/aioPrograms/tests/complexTests/loop/Trivial.aio">
+        <entry file="file://$PROJECT_DIR$/aioPrograms/tests/complexTests/switch/Trivial.aio">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-226">
-              <caret line="24" column="16" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
+            <state relative-caret-position="340">
+              <caret line="20" column="5" lean-forward="true" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -130,8 +138,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;</find>
-      <find>&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</find>
       <find>extract_case_keys_from_hook</find>
       <find>SWITCH_SPIDER</find>
       <find>SWITCH_TAS</find>
@@ -160,6 +166,8 @@
       <find>WEAVED INS</find>
       <find>CHECK</find>
       <find>ADDED POINTER DEFINITION IN LIST:</find>
+      <find>This</find>
+      <find>STOP!!!</find>
     </findStrings>
     <replaceStrings>
       <replace>function_definition</replace>
@@ -184,10 +192,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/sources/lib/utils/str_hook/str_hook_utils/str_hook_split.c" />
-        <option value="$PROJECT_DIR$/aioPrograms/tests/spiderTests/procedure/parsing/Test1.aio" />
-        <option value="$PROJECT_DIR$/aioPrograms/tests/spiderTests/procedure/parsing/Test2.aio" />
-        <option value="$PROJECT_DIR$/aioPrograms/tests/spiderTests/return/parsing/Test1.aio" />
         <option value="$PROJECT_DIR$/aioPrograms/tests/spiderTests/return/parsing/Test2.aio" />
         <option value="$PROJECT_DIR$/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_return_spider/aio_return_spider.c" />
         <option value="$PROJECT_DIR$/aioPrograms/tests/spiderTests/switch/parsing/Test1.aio" />
@@ -204,7 +208,6 @@
         <option value="$PROJECT_DIR$/headers/lang/aio_function/aio_value/aio_value.h" />
         <option value="$PROJECT_DIR$/sources/lib/utils/error_utils/error_utils.c" />
         <option value="$PROJECT_DIR$/headers/lib/utils/error_utils/error_utils.h" />
-        <option value="$PROJECT_DIR$/aioPrograms/tests/complexTests/variables/Trivial.aio" />
         <option value="$PROJECT_DIR$/headers/lang/aio_type/aio_type.h" />
         <option value="$PROJECT_DIR$/headers/tools/aio_function_tools/aio_expression_parser/aio_expression_parser.h" />
         <option value="$PROJECT_DIR$/sources/tools/aio_function_tools/aio_expression_parser/aio_inner_parcers/aio_type_parser.c" />
@@ -216,25 +219,30 @@
         <option value="$PROJECT_DIR$/sources/tools/aio_function_tools/aio_expression_parser/aio_inner_parcers/aio_double_parser.c" />
         <option value="$PROJECT_DIR$/sources/tools/aio_function_tools/aio_expression_parser/aio_inner_parcers/aio_string_parser.c" />
         <option value="$PROJECT_DIR$/aioPrograms/tests/complexTests/variables/NullVariables.aio" />
-        <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/sources/lib/utils/str_hook/str_hook_utils/str_hook_utils.c" />
         <option value="$PROJECT_DIR$/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_if_task.c" />
         <option value="$PROJECT_DIR$/sources/tools/aio_function_tools/aio_expression_parser/aio_inner_parcers/aio_int_parser.c" />
-        <option value="$PROJECT_DIR$/sources/tools/aio_function_tools/aio_expression_parser/aio_expression_assistant.c" />
         <option value="$PROJECT_DIR$/sources/lib/utils/int_utils/int_utils.c" />
         <option value="$PROJECT_DIR$/sources/tools/aio_function_tools/aio_expression_parser/aio_expression_parser.c" />
         <option value="$PROJECT_DIR$/sources/lang/aio_function/aio_value/aio_value.c" />
         <option value="$PROJECT_DIR$/sources/lib/utils/double_utils/double_utils.c" />
-        <option value="$PROJECT_DIR$/aioPrograms/tests/complexTests/if/Trivial.aio" />
-        <option value="$PROJECT_DIR$/aioPrograms/tests/complexTests/switch/Trivial.aio" />
         <option value="$PROJECT_DIR$/sources/lang/aio_function/aio_variable/aio_variable.c" />
         <option value="$PROJECT_DIR$/sources/tools/aio_function_tools/aio_instructions/aio_function_instruction_holder.c" />
-        <option value="$PROJECT_DIR$/sources/tools/aio_function_tools/aio_control_graph/aio_function_control_graph.c" />
         <option value="$PROJECT_DIR$/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_loop_task.c" />
         <option value="$PROJECT_DIR$/sources/tools/aio_function_tools/aio_instruction_spider_nest/aio_loop_spider/aio_loop_spider.c" />
         <option value="$PROJECT_DIR$/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_assign_task.c" />
-        <option value="$PROJECT_DIR$/main/main.c" />
+        <option value="$PROJECT_DIR$/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/headers/tools/aio_common_tools/aio_block_body_explorer/aio_block_body_explorer.h" />
+        <option value="$PROJECT_DIR$/sources/tools/aio_function_tools/aio_expression_parser/aio_expression_assistant.c" />
+        <option value="$PROJECT_DIR$/aioPrograms/tests/complexTests/variables/Trivial.aio" />
         <option value="$PROJECT_DIR$/aioPrograms/tests/complexTests/loop/Trivial.aio" />
+        <option value="$PROJECT_DIR$/aioPrograms/examples/switch/DemoSwitch.aio" />
+        <option value="$PROJECT_DIR$/aioPrograms/tests/complexTests/if/Trivial.aio" />
+        <option value="$PROJECT_DIR$/headers/tools/aio_function_tools/aio_control_graph/aio_function_control_graph.h" />
+        <option value="$PROJECT_DIR$/sources/tools/aio_function_tools/aio_control_graph/aio_function_control_graph.c" />
+        <option value="$PROJECT_DIR$/main/main.c" />
+        <option value="$PROJECT_DIR$/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_switch_task.c" />
+        <option value="$PROJECT_DIR$/aioPrograms/tests/complexTests/switch/Trivial.aio" />
       </list>
     </option>
   </component>
@@ -252,9 +260,9 @@
   </component>
   <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="952" />
-    <option name="width" value="977" />
-    <option name="height" value="1038" />
+    <option name="x" value="951" />
+    <option name="width" value="978" />
+    <option name="height" value="1039" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -262,6 +270,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -278,7 +287,7 @@
               <item name="AIO" type="b2602c69:ProjectViewProjectNode" />
               <item name="AIO" type="462c0819:PsiDirectoryNode" />
               <item name="aioPrograms" type="462c0819:PsiDirectoryNode" />
-              <item name="examples" type="462c0819:PsiDirectoryNode" />
+              <item name="demo" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="AIO" type="b2602c69:ProjectViewProjectNode" />
@@ -292,22 +301,6 @@
               <item name="aioPrograms" type="462c0819:PsiDirectoryNode" />
               <item name="tests" type="462c0819:PsiDirectoryNode" />
               <item name="complexTests" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AIO" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AIO" type="462c0819:PsiDirectoryNode" />
-              <item name="aioPrograms" type="462c0819:PsiDirectoryNode" />
-              <item name="tests" type="462c0819:PsiDirectoryNode" />
-              <item name="complexTests" type="462c0819:PsiDirectoryNode" />
-              <item name="loop" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AIO" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AIO" type="462c0819:PsiDirectoryNode" />
-              <item name="aioPrograms" type="462c0819:PsiDirectoryNode" />
-              <item name="tests" type="462c0819:PsiDirectoryNode" />
-              <item name="complexTests" type="462c0819:PsiDirectoryNode" />
-              <item name="switch" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="AIO" type="b2602c69:ProjectViewProjectNode" />
@@ -353,15 +346,6 @@
             <path>
               <item name="AIO" type="b2602c69:ProjectViewProjectNode" />
               <item name="AIO" type="462c0819:PsiDirectoryNode" />
-              <item name="headers" type="462c0819:PsiDirectoryNode" />
-              <item name="tools" type="462c0819:PsiDirectoryNode" />
-              <item name="aio_function_tools" type="462c0819:PsiDirectoryNode" />
-              <item name="aio_instruction_spider_nest" type="462c0819:PsiDirectoryNode" />
-              <item name="aio_loop_spider" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AIO" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AIO" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -393,11 +377,10 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="SearchEverywhereHistoryKey" value="\\]]]][[''&#9;null&#9;null" />
+    <property name="SearchEverywhereHistoryKey" value="TODO&#9;ACTION&#9;ActivateTODOToolWindow&#10;\\]]]][[''&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="full.screen.before.presentation.mode" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -511,14 +494,8 @@
       <workItem from="1535106691226" duration="32851000" />
       <workItem from="1535194591255" duration="37294000" />
       <workItem from="1535370255166" duration="24056000" />
-      <workItem from="1535443840356" duration="28281000" />
-    </task>
-    <task id="LOCAL-00106" summary="-&gt; 'Arg' 리퍼의 버그 수정 (Fixed bug in 'Agr' ripper)&#10;-&gt;  개발중인 'Return' 거미 ('Return' spider under development)&#10;#LOVE AIO &amp; C =)">
-      <created>1534424072169</created>
-      <option name="number" value="00106" />
-      <option name="presentableId" value="LOCAL-00106" />
-      <option name="project" value="LOCAL" />
-      <updated>1534424072169</updated>
+      <workItem from="1535443840356" duration="28809000" />
+      <workItem from="1535525674171" duration="2547000" />
     </task>
     <task id="LOCAL-00107" summary="-&gt; 'Return' 거미를 만들었다 (Made 'Return' spider)&#10;#LOVE AIO &amp; C =)">
       <created>1534429685191</created>
@@ -856,11 +833,18 @@
       <option name="project" value="LOCAL" />
       <updated>1535470523881</updated>
     </task>
-    <option name="localTasksCounter" value="155" />
+    <task id="LOCAL-00155" summary="'loop' 시험 (Testing)&#10;------------------------------------------------------------------------&#10;-&gt; 원시적 인 'loop' 테스트들을 추가했습니다 ('loop' tests added);&#10;-&gt; 'loop' 프로그램들을 테스트했습니다 (Test 'loop' programs).&#10;------------------------------------------------------------------------">
+      <created>1535475513009</created>
+      <option name="number" value="00155" />
+      <option name="presentableId" value="LOCAL-00155" />
+      <option name="project" value="LOCAL" />
+      <updated>1535475513009</updated>
+    </task>
+    <option name="localTasksCounter" value="156" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1079508000" />
+    <option name="totallyTimeSpent" value="1082583000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -873,18 +857,17 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49537036" weight="0.23828125" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49357328" visible="true" weight="0.18619792" />
       <window_info id="Structure" order="1" sideWeight="0.50198674" side_tool="true" weight="0.36002603" />
-      <window_info id="Favorites" order="2" sideWeight="0.5046296" side_tool="true" weight="0.24348958" />
+      <window_info id="Favorites" order="2" sideWeight="0.50642675" side_tool="true" weight="0.119140625" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.5437018" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.6696658" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.6336761" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.5848329" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4832905" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.3287037" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3277635" />
       <window_info anchor="bottom" id="Messages" order="7" weight="0.74935734" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32936978" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" weight="0.32936978" />
@@ -930,7 +913,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="버그들을 수정했습니다  (Fix architecture)" />
     <MESSAGE value="버그들을 수정했습니다  (Fixed bugs)" />
     <MESSAGE value="개발중인 제어 그래프 (Control graph under development)" />
     <MESSAGE value="'Lang' 머리글들을 다시 만들었습니다 (Refactored 'Lang' headers)" />
@@ -955,16 +937,10 @@
     <MESSAGE value="'null' 업그레이드 중 ('null' upgrading)&#10;------------------------------------------------------------------------&#10;-&gt; 'null' 버그 수정 (Fixed 'null' bugs);&#10;-&gt; 'null' 를 테스트했습니다 (Tested null);&#10;-&gt; 'null' 테스트들을 추가했습니다 (Added 'null' tests)." />
     <MESSAGE value="시험 (Testing)&#10;------------------------------------------------------------------------&#10;-&gt; 'int &amp; double utils' 수정 (Fixed 'int &amp; double utils');&#10;-&gt; 'if' 테스트들을 추가했습니다 ('if' tests added);&#10;-&gt; 'if' 프로그램들을 테스트했습니다 (Test 'if' programs).&#10;------------------------------------------------------------------------" />
     <MESSAGE value="시험 (Testing)&#10;------------------------------------------------------------------------&#10;-&gt; 원시적 인 'loop' 테스트들을 추가했습니다 ('loop' tests added);&#10;-&gt; 'loop' 프로그램들을 테스트했습니다 (Test 'loop' programs).&#10;------------------------------------------------------------------------" />
-    <option name="LAST_COMMIT_MESSAGE" value="시험 (Testing)&#10;------------------------------------------------------------------------&#10;-&gt; 원시적 인 'loop' 테스트들을 추가했습니다 ('loop' tests added);&#10;-&gt; 'loop' 프로그램들을 테스트했습니다 (Test 'loop' programs).&#10;------------------------------------------------------------------------" />
+    <MESSAGE value="'loop' 시험 (Testing)&#10;------------------------------------------------------------------------&#10;-&gt; 원시적 인 'loop' 테스트들을 추가했습니다 ('loop' tests added);&#10;-&gt; 'loop' 프로그램들을 테스트했습니다 (Test 'loop' programs).&#10;------------------------------------------------------------------------" />
+    <option name="LAST_COMMIT_MESSAGE" value="'loop' 시험 (Testing)&#10;------------------------------------------------------------------------&#10;-&gt; 원시적 인 'loop' 테스트들을 추가했습니다 ('loop' tests added);&#10;-&gt; 'loop' 프로그램들을 테스트했습니다 (Test 'loop' programs).&#10;------------------------------------------------------------------------" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/aioPrograms/tests/complexTests/switch/Trivial.aio">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sources/tools/aio_function_tools/aio_instructions/aio_function_instruction_holder.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-131">
@@ -1003,27 +979,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/headers/tools/aio_function_tools/aio_control_graph/aio_function_control_graph.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="641">
-          <caret line="42" column="5" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sources/tools/aio_function_tools/aio_control_graph/aio_function_control_graph.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="139" column="4" lean-forward="true" selection-start-line="139" selection-start-column="4" selection-end-line="139" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_loop_task.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="634">
           <caret line="98" column="4" selection-start-line="98" selection-start-column="4" selection-end-line="98" selection-end-column="4" />
-          <folding>
-            <element signature="e#0#71#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1038,26 +997,140 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-221">
           <caret line="429" column="6" lean-forward="true" selection-start-line="429" selection-start-column="6" selection-end-line="429" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sources/tools/aio_common_tools/aio_block_body_explorer/aio_block_body_explorer.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="174">
+          <caret line="89" column="2" selection-start-line="89" selection-start-column="2" selection-end-line="89" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/headers/lib/utils/log_utils/log_utils.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="2" selection-start-line="15" selection-start-column="2" selection-end-line="15" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sources/tools/aio_function_tools/aio_expression_parser/aio_expression_parser.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="304" column="2" selection-start-line="304" selection-start-column="2" selection-end-line="304" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/headers/tools/aio_common_tools/aio_block_body_explorer/aio_block_body_explorer.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="59" selection-start-line="4" selection-start-column="59" selection-end-line="4" selection-end-column="59" />
           <folding>
-            <element signature="e#0#19#0" expanded="true" />
+            <element signature="e#75#132#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="675">
+          <caret line="164" lean-forward="true" selection-start-line="164" selection-end-line="164" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sources/tools/aio_function_tools/aio_expression_parser/aio_expression_assistant.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="634">
+          <caret line="59" column="5" lean-forward="true" selection-start-line="59" selection-start-column="5" selection-end-line="59" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aioPrograms/tests/complexTests/variables/Trivial.aio">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="1" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aioPrograms/tests/complexTests/loop/Trivial.aio">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="32" column="33" lean-forward="true" selection-start-line="32" selection-start-column="33" selection-end-line="32" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aioPrograms/tests/complexTests/if/Trivial.aio">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="675">
+          <caret line="52" column="1" lean-forward="true" selection-start-line="52" selection-start-column="1" selection-end-line="52" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aioPrograms/demo/if/DemoIf.aio">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="5" lean-forward="true" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aioPrograms/demo/loop/DemoLoop1.aio">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="7" selection-start-column="7" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aioPrograms/demo/loop/DemoLoop2.aio">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aioPrograms/demo/switch/DemoSwitch.aio">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sources/tools/aio_function_tools/aio_control_graph/aio_function_control_graph.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="97" column="69" lean-forward="true" selection-start-line="97" selection-start-column="69" selection-end-line="97" selection-end-column="69" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main/main.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="56">
-          <caret line="30" column="63" selection-start-line="30" selection-start-column="63" selection-end-line="30" selection-end-column="63" />
+        <state relative-caret-position="901">
+          <caret line="53" column="44" lean-forward="true" selection-start-line="53" selection-start-column="44" selection-end-line="53" selection-end-column="44" />
           <folding>
             <element signature="e#1#20#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/aioPrograms/tests/complexTests/loop/Trivial.aio">
+    <entry file="file://$PROJECT_DIR$/headers/tools/aio_function_tools/aio_control_graph/aio_function_control_graph.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-226">
-          <caret line="24" column="16" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
+        <state relative-caret-position="102">
+          <caret line="9" column="5" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sources/tools/aio_function_tools/aio_instructions/aio_tasks/aio_switch_task.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="447">
+          <caret line="78" column="18" selection-start-line="78" selection-start-column="18" selection-end-line="78" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#102#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aioPrograms/tests/complexTests/switch/Trivial.aio">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="5" lean-forward="true" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
         </state>
       </provider>
     </entry>

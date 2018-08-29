@@ -108,8 +108,11 @@ aio_result *make_function_or_variable(
             //Prepare to invoke function:
             str_hook_list *expression_hook_list = new_str_hook_list();
             int next_expression_point = 0;
-            make_expression_chunks_and_count_next_point(in_function_parenthesis, expression_hook_list,
-                                                        &next_expression_point);
+            make_expression_chunks_and_count_next_point(
+                    in_function_parenthesis,
+                    expression_hook_list,
+                    &next_expression_point
+            );
             const size_t number_of_chunks = expression_hook_list->size;
             const_str_hook_array expression_hooks = expression_hook_list->hooks;
             aio_value_list *input_values = new_aio_value_list();

@@ -1,4 +1,4 @@
-//성공적인 테시트 (Successful test):
+  //성공적인 테시트 (Successful test):
 Boo isBinary(mu Int number) {
     if (number == 1) {
         out tru
@@ -22,7 +22,7 @@ Int revertNumber(mu Int number) {
     out result
 }
 
-//TODO: Test me!
+//성공적인 테스트 (Successful test):
 Boo isPalindrome(Int number) {
     out number == revertNumber(number)
 }

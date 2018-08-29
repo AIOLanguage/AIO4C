@@ -4,7 +4,7 @@ cmake_minimum_required(VERSION 3.10)
 
 set(CMAKE_C_STANDARD 11)
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -pedantic -Wall -Wextra")
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -std=c++11 -pedantic -Wall -Wextra -I headers")
 
 add_definitions(-DSOME_IMPORTANT_DEFINITION)
 

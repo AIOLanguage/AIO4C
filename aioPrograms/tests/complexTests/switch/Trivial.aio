@@ -1,3 +1,4 @@
+//성공적인 테스트 (Successful test):
 Str getSeason(Int monthNumber) {
     mu season = voi
     whe (monthNumber) {
@@ -7,4 +8,15 @@ Str getSeason(Int monthNumber) {
         (9, 10, 11) -> { season = 'Autumn' }
     }
     out season
+}
+
+//성공적인 테스트 (Successful test):
+Int getDaysInMonthIn2018(Str month) {
+    whe (month) {
+        'February' -> { out 28 }
+        ('April', 'June', 'September', 'November') -> { out 30 }
+        ('January', 'March', 'May', 'July', 'August', 'October', 'December') -> { out 31 }
+    } : {
+        out voi
+    }
 }

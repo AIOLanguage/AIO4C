@@ -77,11 +77,13 @@ static void put_arg_values_in_aio_control_graph(
 #endif
 }
 
-const_aio_function_control_graph *new_aio_function_control_graph(const_aio_function_control_graph *parent,
-                                                                 const_aio_function_instruction_holder *holder,
-                                                                 aio_bundle *bundle_ref,
-                                                                 const_aio_context *context_ref,
-                                                                 aio_function_system_state *system_state_ref)
+const_aio_function_control_graph *new_aio_function_control_graph(
+        const_aio_function_control_graph *parent,
+        const_aio_function_instruction_holder *holder,
+        aio_bundle *bundle_ref,
+        const_aio_context *context_ref,
+        aio_function_system_state *system_state_ref
+)
 {
 #ifdef AIO_CONTROL_GRAPH_DEBUG
     log_info(AIO_CONTROL_GRAPH_TAG, "Start to create control graph...");
@@ -108,10 +110,12 @@ const_aio_function_control_graph *new_aio_function_control_graph(const_aio_funct
     return graph;
 }
 
-void inflate_new_aio_root_function_control_graph(const_aio_function_control_graph *parent,
-                                                 const_aio_function_definition *function_definition,
-                                                 aio_bundle *bundle_ref,
-                                                 const_aio_context *context)
+void inflate_new_aio_root_function_control_graph(
+        const_aio_function_control_graph *parent,
+        const_aio_function_definition *function_definition,
+        aio_bundle *bundle_ref,
+        const_aio_context *context
+)
 {
     //Init start system state:
 #ifdef AIO_CONTROL_GRAPH_DEBUG
@@ -133,9 +137,13 @@ void inflate_new_aio_function_control_graph(
         const_aio_context *context
 )
 {
-    const_aio_function_control_graph *control_graph = new_aio_function_control_graph(parent, holder, bundle_ref,
-                                                                                     context,
-                                                                                     parent->system_state_ref);
+    const_aio_function_control_graph *control_graph = new_aio_function_control_graph(
+            parent,
+            holder,
+            bundle_ref,
+            context,
+            parent->system_state_ref
+    );
     perform_aio_function_instructions(control_graph);
     free_aio_control_graph(control_graph);
 }

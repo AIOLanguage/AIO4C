@@ -30,8 +30,10 @@ aio_function_instruction *new_aio_switch_instruction(
     return instruction;
 }
 
-void perform_aio_switch_instruction(const_aio_function_instruction *instruction,
-                                    const_aio_function_control_graph *control_graph)
+void perform_aio_switch_instruction(
+        const_aio_function_instruction *instruction,
+        const_aio_function_control_graph *control_graph
+)
 {
     //Extract task:
     const aio_switch_task *task = instruction->get.switch_task;
@@ -70,14 +72,20 @@ void perform_aio_switch_instruction(const_aio_function_instruction *instruction,
             const_aio_function_instruction_holder *case_holder = case_holders[i];
             inflate_new_aio_function_control_graph(control_graph, case_holder, bundle_ref, context_ref);
         }
+        if (*control_graph->system_state_ref != AIO_FUNCTION_SYSTEM_MAKE) {
+#ifdef AIO_SWITCH_TASK_DEBUG
+            log_info(AIO_SWITCH_TASK_TAG, "STOP!!!");
+#endif
+            break;
+        }
     }
     if (!was_successful_case) {
 #ifdef AIO_SWITCH_TASK_DEBUG
         log_info(AIO_SWITCH_TASK_TAG, "Perform else block...");
 #endif
         const_aio_function_instruction_holder *else_holder = task->else_holder;
-        inflate_new_aio_function_control_graph(control_graph, else_holder, bundle_ref, context_ref);
+        if (else_holder) {
+            inflate_new_aio_function_control_graph(control_graph, else_holder, bundle_ref, context_ref);
+        }
     }
 }
-
-//throw_error_with_tag(AIO_SWITCH_TASK_TAG, "STOP HERE!");
