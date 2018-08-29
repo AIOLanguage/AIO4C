@@ -10,7 +10,6 @@
 #include "../../../../../headers/lib/utils/string_utils/string_utils.h"
 #include "../../../../../headers/lib/utils/str_hook/str_hook.h"
 #include "../../../../../headers/tools/aio_function_tools/aio_control_graph/aio_function_control_graph.h"
-#include "../../../../../headers/lang/aio_function/aio_variable/aio_variable.h"
 #include "../../../../../headers/lang/aio_function/aio_value/aio_value.h"
 #include "../../../../../headers/lang/aio_function/aio_variable/aio_definition/aio_variable_definition.h"
 
@@ -21,6 +20,7 @@
 #ifdef AIO_ASSIGN_TASK_DEBUG
 
 #include "../../../../../headers/lib/utils/log_utils/log_utils.h"
+#include "../../../../../headers/lang/aio_function/aio_variable/aio_variable.h"
 
 #endif
 

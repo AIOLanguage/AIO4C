@@ -18,7 +18,8 @@
  * @param spider nest.
  */
 
-void refresh_aio_spider_nest(aio_spider_nest *nest, point_watcher *parent_watcher) {
+void refresh_aio_spider_nest(aio_spider_nest *nest, point_watcher *parent_watcher)
+{
 #ifdef AIO_SPIDER_NEST_DEBUG
     log_info_int(AIO_SPIDER_NEST_TAG, "Number of spiders:", nest->number_of_spiders);
 #endif
@@ -42,7 +43,8 @@ void refresh_aio_spider_nest(aio_spider_nest *nest, point_watcher *parent_watche
  * @param spider nest.
  */
 
-void free_aio_spider_nest(aio_spider_nest *nest) {
+void free_aio_spider_nest(aio_spider_nest *nest)
+{
     aio_spider **spiders = nest->spiders;
     for (int i = 0; i < nest->number_of_spiders; ++i) {
         aio_spider *spider = spiders[i];
