@@ -3,6 +3,13 @@
 #include "../../../../../headers/tools/aio_function_tools/aio_instructions/aio_tasks/aio_if_task.h"
 #include "../../../../../headers/tools/aio_function_tools/aio_expression_parser/aio_expression_parser.h"
 #include "../../../../../headers/lib/utils/log_utils/log_utils.h"
+#include "../../../../../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction_holder.h"
+#include "../../../../../headers/tools/aio_function_tools/aio_control_graph/aio_function_control_graph.h"
+#include "../../../../../headers/lang/aio_function/aio_value/aio_value.h"
+#include "../../../../../headers/lib/utils/boolean_utils/boolean_utils.h"
+#include "../../../../../headers/lib/utils/string_utils/string_utils.h"
+#include "../../../../../headers/lang/aio_context/aio_context.h"
+#include "../../../../../headers/lang/aio_function/aio_bundle/aio_bundle.h"
 
 #define AIO_IF_TASK_DEBUG
 

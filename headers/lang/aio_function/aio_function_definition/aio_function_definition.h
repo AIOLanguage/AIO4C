@@ -1,10 +1,6 @@
 #ifndef AIO_FUNCTION_DEFINITION_H
 #define AIO_FUNCTION_DEFINITION_H
 
-#include <malloc.h>
-#include "../../aio_annotation/aio_annotation.h"
-#include "../../../tools/aio_function_tools/aio_instructions/aio_function_instruction_holder.h"
-
 /**
  * Function definition.
  */
@@ -49,7 +45,7 @@ const struct aio_function_definition *get_aio_function_definition_in_list_by_nam
         const struct str_hook *name
 );
 
-void free_aio_function_definition_list(struct aio_function_definition_list *method_definition_map);
+void free_aio_function_definition_list(struct aio_function_definition_list *function_definition_list);
 
 /**
  * Typedef utils.

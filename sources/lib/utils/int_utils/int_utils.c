@@ -1,17 +1,17 @@
 #include <malloc.h>
-#include <mem.h>
+#include <fcntl.h>
 #include <ctype.h>
-#include "../../../../headers/lib/utils/memory_utils/memory_utils.h"
-#include "../../../../headers/lib/utils/int_utils/int_utils.h"
+#include "../../../../headers/lib/utils/char_utils/char_utils.h"
+#include "../../../../headers/lib/utils/string_utils/string_utils.h"
 #include "../../../../headers/lib/utils/boolean_utils/boolean_utils.h"
+#include "../../../../headers/lib/utils/int_utils/int_utils.h"
+#include "../../../../headers/lib/utils/memory_utils/memory_utils.h"
 
 #define INT_UTILS_TAG "INT_UTILS"
 
 #define INT_UTILS_DEBUG
 
 #ifdef INT_UTILS_DEBUG
-
-#include "../../../../headers/lib/utils/char_utils/char_utils.h"
 
 #endif
 
@@ -73,7 +73,7 @@ static void update_memory_in_int_list(int_list *list)
 {
     if (list->size == list->capacity) {
         list->capacity = list->capacity * 2;
-        list->values = realloc(list->values, list->capacity * sizeof(int));
+        list->values = reallocate_object_array(list->values, list->capacity, sizeof(int));
     }
 }
 

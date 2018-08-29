@@ -8,6 +8,7 @@
 #include "../../../../headers/lib/utils/point_watcher/point_watcher.h"
 #include "../../../../headers/lib/utils/str_hook/str_hook.h"
 #include "../../../../headers/lib/utils/str_hook/str_hook_utils/str_hook_utils.h"
+#include "../../../../headers/lib/utils/string_utils/string_utils.h"
 
 #define AIO_OUTPUT_RIPPER_DEBUG
 
@@ -16,6 +17,7 @@
 #ifdef AIO_OUTPUT_RIPPER_DEBUG
 
 #include "../../../../headers/lib/utils/log_utils/log_utils.h"
+#include "../../../../headers/lang/aio_type/aio_type.h"
 
 #endif
 
@@ -91,7 +93,6 @@ const_str_hook_list *dig_output_types(const_string source_code, int *pointer_ref
             } else {
                 throw_error_with_tag(AIO_OUTPUT_RIPPER_TAG, "AIO core doesn't this support type!");
             }
-            break;
         case MULTI_OUTPUT_MODE: {
             const_str_hook_list *dirty_types = split_str_hook_by_comma(type_content);
             const_str_hook_list *clean_types = trim_str_hook_list_with_line_break(dirty_types);
@@ -116,4 +117,5 @@ const_str_hook_list *dig_output_types(const_string source_code, int *pointer_ref
         case OUTPUT_UNDEFINED:
             throw_error_with_tag(AIO_OUTPUT_RIPPER_TAG, "Output types are not found!");
     }
+    throw_error_with_tag(AIO_OUTPUT_RIPPER_TAG, "Output types are not found!");
 }

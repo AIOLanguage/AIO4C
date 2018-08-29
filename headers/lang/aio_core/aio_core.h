@@ -1,10 +1,6 @@
 #ifndef AIO_CORE_H
 #define AIO_CORE_H
 
-#include "../../lib/utils/string_utils/string_utils.h"
-#include "../aio_context/aio_context.h"
-#include "../../lib/utils/collections/sets/string_set.h"
-
 #define NUMBER_OF_CORE_TYPES 5
 
 typedef struct aio_core {

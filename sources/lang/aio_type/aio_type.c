@@ -1,4 +1,6 @@
+#include "../../../headers/lib/utils/boolean_utils/boolean_utils.h"
 #include "../../../headers/lang/aio_core/aio_core.h"
+#include "../../../headers/lib/utils/str_hook/str_hook.h"
 #include "../../../headers/lib/utils/str_hook/str_hook_utils/str_hook_utils.h"
 #include "../../../headers/lang/aio_type/aio_type.h"
 

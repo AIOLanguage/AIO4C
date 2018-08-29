@@ -1,16 +1,6 @@
 #ifndef AIO_VARIABLE_DEFINITION_H
 #define AIO_VARIABLE_DEFINITION_H
 
-#include "../../../../lib/utils/string_utils/string_utils.h"
-#include "../aio_variable.h"
-#include "../../../../lib/utils/str_hook/str_hook.h"
-
-/**
- * Clumsy crutch...
- */
-
-typedef struct aio_function_instruction_holder;
-
 /**
  * Variable definition.
  */
@@ -48,7 +38,7 @@ struct aio_variable_definition_list *new_aio_variable_definition_list();
 
 void add_aio_variable_definition_in_list(
         struct aio_variable_definition_list *list,
-        const struct aio_variable_definition *definition
+        struct aio_variable_definition *definition
 );
 
 const struct aio_variable_definition *get_aio_variable_definition_in_map_by_name(
@@ -74,8 +64,8 @@ void log_info_aio_variable_definition(const char *tag, const struct aio_variable
  * Typedef utils.
  */
 
-typedef const aio_variable_definition const_aio_variable_definition;
+typedef const struct aio_variable_definition const_aio_variable_definition;
 
-typedef const aio_variable_definition_list const_aio_variable_definition_list;
+typedef const struct aio_variable_definition_list const_aio_variable_definition_list;
 
 #endif //AIO_VARIABLE_DEFINITION_H

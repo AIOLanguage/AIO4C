@@ -1,10 +1,14 @@
 #include <stddef.h>
-#include <stdio.h>
-#include <process.h>
 #include "../../../../headers/lang/aio_function/aio_function_definition/aio_function_definition.h"
+#include "../../../../headers/lang/aio_annotation/aio_annotation.h"
+#include "../../../../headers/lib/utils/str_hook/str_hook.h"
+#include "../../../../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction_holder.h"
 #include "../../../../headers/lib/utils/memory_utils/memory_utils.h"
-#include "../../../../headers/lib/utils/error_utils/error_utils.h"
+#include "../../../../headers/lib/utils/boolean_utils/boolean_utils.h"
 #include "../../../../headers/lib/utils/str_hook/str_hook_utils/str_hook_utils.h"
+#include "../../../../headers/lib/utils/error_utils/error_utils.h"
+
+#define AIO_FUNCTION_DEFINITION_DEBUG
 
 #define AIO_FUNCTION_DEFINITION_TAG "AIO_FUNCTION_DEFINITION"
 
@@ -12,10 +16,14 @@
  * Definition.
  */
 
-const_aio_function_definition *new_aio_function_definition(const_aio_annotation_list *annotations,
-                                                           const_str_hook_list *output_type_list,
-                                                           const_str_hook *name, const size_t number_of_args,
-                                                           const_aio_function_instruction_holder *holder) {
+const_aio_function_definition *new_aio_function_definition(
+        const_aio_annotation_list *annotations,
+        const_str_hook_list *output_type_list,
+        const_str_hook *name,
+        const size_t number_of_args,
+        const_aio_function_instruction_holder *holder
+)
+{
     aio_function_definition *function_definition = new_object(sizeof(aio_function_definition));
     function_definition->annotation_list = annotations;
     function_definition->output_type_list = output_type_list;
@@ -25,7 +33,8 @@ const_aio_function_definition *new_aio_function_definition(const_aio_annotation_
     return function_definition;
 }
 
-void free_aio_function_definition(const_aio_function_definition *function_definition) {
+void free_aio_function_definition(const_aio_function_definition *function_definition)
+{
 
 }
 
@@ -33,7 +42,8 @@ void free_aio_function_definition(const_aio_function_definition *function_defini
  * List.
  */
 
-aio_function_definition_list *new_aio_function_definition_list() {
+aio_function_definition_list *new_aio_function_definition_list()
+{
     aio_function_definition_list *list = new_object(sizeof(aio_function_definition_list));
     list->capacity = 2;
     list->size = 0;
@@ -41,15 +51,19 @@ aio_function_definition_list *new_aio_function_definition_list() {
     return list;
 }
 
-void update_memory_in_function_definition_list(aio_function_definition_list *list) {
+static void update_memory_in_function_definition_list(aio_function_definition_list *list)
+{
     if (list->size + 1 == list->capacity) {
         list->capacity = list->capacity * 2;
-        list->definitions = realloc(list->definitions, list->capacity * sizeof(aio_function_definition));
+        list->definitions = reallocate_object_array(list->definitions, list->capacity, sizeof(aio_function_definition));
     }
 }
 
-void add_aio_function_definition_in_list(struct aio_function_definition_list *list,
-                                         const_aio_function_definition *definition) {
+void add_aio_function_definition_in_list(
+        aio_function_definition_list *list,
+        const_aio_function_definition *definition
+)
+{
     const_str_hook *definition_name = definition->name;
     for (int i = 0; i < list->size; ++i) {
         const_str_hook *current_name = list->definitions[i]->name;
@@ -58,14 +72,17 @@ void add_aio_function_definition_in_list(struct aio_function_definition_list *li
             throw_error_with_tag(AIO_FUNCTION_DEFINITION_TAG, "definition with the same name already exists!");
         }
     }
-    //Check from update:
+    //Check capacity:
     update_memory_in_function_definition_list(list);
     list->definitions[list->size] = definition;
     list->size++;
 }
 
-const_aio_function_definition *get_aio_function_definition_in_list_by_name(const_aio_function_definition_list *list,
-                                                                           const_str_hook *name) {
+const_aio_function_definition *get_aio_function_definition_in_list_by_name(
+        const_aio_function_definition_list *list,
+        const_str_hook *name
+)
+{
     for (int i = 0; i < list->size; ++i) {
         const_str_hook *current_name = list->definitions[i]->name;
         const_boolean are_equal_strings = are_equal_hooked_str(current_name, name);
@@ -74,4 +91,9 @@ const_aio_function_definition *get_aio_function_definition_in_list_by_name(const
         }
     }
     return NULL;
+}
+
+void free_aio_function_definition_list(aio_function_definition_list *function_definition_list)
+{
+
 }

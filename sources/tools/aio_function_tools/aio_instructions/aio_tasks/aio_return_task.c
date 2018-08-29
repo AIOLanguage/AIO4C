@@ -1,20 +1,30 @@
+#include <fcntl.h>
 #include "../../../../../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction.h"
 #include "../../../../../headers/lib/utils/collections/lists/string_list.h"
 #include "../../../../../headers/tools/aio_function_tools/aio_instructions/aio_tasks/aio_return_task.h"
 #include "../../../../../headers/lib/utils/memory_utils/memory_utils.h"
 #include "../../../../../headers/tools/aio_function_tools/aio_expression_parser/aio_expression_parser.h"
-#include "../../../../../headers/lib/utils/log_utils/log_utils.h"
-#include "../../../../../headers/lib/utils/error_utils/error_utils.h"
+#include "../../../../../headers/lib/utils/string_utils/string_utils.h"
+#include "../../../../../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction_holder.h"
+#include "../../../../../headers/tools/aio_function_tools/aio_control_graph/aio_function_control_graph.h"
+#include "../../../../../headers/lang/aio_function/aio_bundle/aio_bundle.h"
+#include "../../../../../headers/lang/aio_function/aio_value/aio_value.h"
+#include "../../../../../headers/lang/aio_context/aio_context.h"
 
 #define AIO_RETURN_TASK_TAG "AIO_RETURN_TASK"
 
 #define AIO_RETURN_TASK_DEBUG
 
 #ifdef AIO_RETURN_TASK_DEBUG
+
+#include "../../../../../headers/lib/utils/log_utils/log_utils.h"
+
 #endif
 
 aio_function_instruction *new_aio_return_instruction(
-        aio_function_instruction_holder *holder, const_string_list *return_value_list)
+        aio_function_instruction_holder *holder,
+        const_string_list *return_value_list
+)
 {
     aio_function_instruction *instruction = new_aio_function_instruction(holder, AIO_RETURN_TASK);
     //Init task:
@@ -28,8 +38,10 @@ aio_function_instruction *new_aio_return_instruction(
     return instruction;
 }
 
-void perform_aio_return_instruction(const_aio_function_instruction *instruction,
-                                    const_aio_function_control_graph *control_graph)
+void perform_aio_return_instruction(
+        const_aio_function_instruction *instruction,
+        const_aio_function_control_graph *control_graph
+)
 {
     //Extract control graph:
     const_aio_context *context_ref = control_graph->context_ref;

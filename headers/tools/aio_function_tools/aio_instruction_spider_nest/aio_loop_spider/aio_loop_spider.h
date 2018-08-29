@@ -1,9 +1,6 @@
 #ifndef AIO_LOOP_SPIDER_H
 #define AIO_LOOP_SPIDER_H
 
-#include "../../../aio_common_tools/aio_spider_nest/aio_spider.h"
-#include "../../../aio_common_tools/aio_spider_nest/aio_function_instruction_spider_nest.h"
-
 /**
  * Default loop header spider.
  */
@@ -34,26 +31,30 @@ typedef enum aio_default_loop_header_step_scope {
 
 typedef struct aio_default_loop_header_materials {
     //States:
-    aio_default_loop_header_scope_type scope_type;
-    aio_default_loop_header_pointer_declaration_type declaration_type;
-    aio_default_loop_header_step_type step_type;
+    enum aio_default_loop_header_scope_type scope_type;
+    enum aio_default_loop_header_pointer_declaration_type declaration_type;
+    enum aio_default_loop_header_step_type step_type;
     //Watchers:
-    point_watcher *main_watcher;
-    point_watcher *value_watcher;
-    point_watcher *condition_watcher;
+    struct point_watcher *main_watcher;
+    struct point_watcher *value_watcher;
+    struct point_watcher *condition_watcher;
     //Data:
-    str_hook_list *pointer_data_list;
-    string init_value;
-    string loop_condition;
-    string step_value;
+    struct str_hook_list *pointer_data_list;
+    char *init_value;
+    char *loop_condition;
+    char *step_value;
 } aio_default_loop_header_materials;
 
-struct aio_spider *new_aio_default_loop_header_spider(point_watcher *parent_watcher);
+struct aio_spider *new_aio_default_loop_header_spider(struct point_watcher *parent_watcher);
 
-const_str_hook *get_default_loop_pointer_name_by_materials(const aio_default_loop_header_materials *materials);
+const struct str_hook *get_default_loop_pointer_name_by_materials(
+        const struct aio_default_loop_header_materials *materials
+);
 
 struct aio_variable_definition *create_pointer_variable_definition_by_default_loop_header_spider(
-        const aio_default_loop_header_pointer_declaration_type declaration_type, const_str_hook_array pointer_data);
+        const enum aio_default_loop_header_pointer_declaration_type declaration_type,
+        const struct str_hook **pointer_data
+);
 
 /**
  * In loop header spider.
@@ -78,46 +79,48 @@ typedef enum aio_loop_header_material_type {
 } aio_loop_header_material_type;
 
 typedef struct aio_loop_materials {
-
     //States:
-    aio_loop_scope_type scope_type;
-
+    enum aio_loop_scope_type scope_type;
     //Watchers:
-    point_watcher *main_watcher;
-    point_watcher *header_watcher;
-    point_watcher *body_watcher;
-
-    aio_loop_header_material_type applied_header_material_type;
-
+    struct point_watcher *main_watcher;
+    struct point_watcher *header_watcher;
+    struct point_watcher *body_watcher;
+    enum aio_loop_header_material_type applied_header_material_type;
     union {
         struct aio_default_loop_header_materials *default_loop_header;
         struct aio_in_loop_header_materials *in_loop_header;
         struct aio_tiny_loop_header_materials *tiny_loop_header;
-    } get_applied_materials_from;
+    } get;
 
 } aio_loop_materials;
 
-struct aio_spider *new_aio_loop_spider(point_watcher *ripper_watcher);
-
+struct aio_spider *new_aio_loop_spider(struct point_watcher *ripper_watcher);
 
 /**
  *  Declare functions.
  */
 
-const enum aio_spider_message is_found_loop_instruction(const_string source_code, point_watcher *ripper_watcher,
-                                                        struct aio_spider *spider);
+const enum aio_spider_message is_found_loop_instruction(
+        const char *source_code,
+        struct point_watcher *ripper_watcher,
+        struct aio_spider *spider
+);
 
-void handle_loop_modifier_scope(const_string source_code, struct aio_spider *spider);
+void handle_loop_modifier_scope(const char *source_code, struct aio_spider *spider);
 
-void handle_loop_header_scope(const_string source_code, struct aio_spider *spider);
+void handle_loop_header_scope(const char *source_code, struct aio_spider *spider);
 
-struct aio_spider_nest *breed_aio_loop_header_spider_nest(point_watcher *header_watcher);
+struct aio_spider_nest *breed_aio_loop_header_spider_nest(struct point_watcher *header_watcher);
 
-void handle_loop_body_scope(const_string source_code, struct aio_spider *spider);
+void handle_loop_body_scope(const char *source_code, struct aio_spider *spider);
 
-void dig_header_materials(const_string source_code, struct aio_spider *parent_spider);
+void dig_header_materials(const char *source_code, struct aio_spider *parent_spider);
 
-void weave_loop_instruction_for(void *parent, const_string source_code, point_watcher *ripper_watcher,
-        struct aio_spider *spider);
+void weave_loop_instruction_for(
+        void *parent,
+        const char *source_code,
+        struct point_watcher *ripper_watcher,
+        struct aio_spider *spider
+);
 
 #endif //AIO_LOOP_SPIDER_H

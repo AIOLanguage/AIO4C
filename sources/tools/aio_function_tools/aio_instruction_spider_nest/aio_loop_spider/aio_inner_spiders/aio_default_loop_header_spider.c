@@ -533,11 +533,11 @@ static void weave_default_loop_materials_for(
         add_str_hook_in_list(new_pointer_list, new_str_hook_by_other(src_pointer_list->hooks[i]));
     }
     new_materials->pointer_data_list = new_pointer_list;
-    dst_materials->get_applied_materials_from.default_loop_header = new_materials;
+    dst_materials->get.default_loop_header = new_materials;
     dst_materials->applied_header_material_type = AIO_LOOP_MATERIALS_DEFAULT_HEADER;
 #ifdef AIO_DEFAULT_LOOP_HEADER_SPIDER_DEBUG
     log_info_boolean(AIO_DEFAULT_LOOP_HEADER_SPIDER_TAG, "Materials is not null",
-                     dst_materials->get_applied_materials_from.default_loop_header != NULL);
+                     dst_materials->get.default_loop_header != NULL);
     log_info(AIO_DEFAULT_LOOP_HEADER_SPIDER_TAG, "Weaving is complete!");
 #endif
 }

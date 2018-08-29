@@ -1,10 +1,6 @@
 #ifndef AIO_RESULT_H
 #define AIO_RESULT_H
 
-#include "../../../lib/utils/string_utils/string_utils.h"
-#include "../aio_value/aio_value.h"
-#include "../../../lib/utils/str_hook/str_hook.h"
-
 typedef struct aio_result {
     struct aio_value *value;
     struct str_hook *rest;

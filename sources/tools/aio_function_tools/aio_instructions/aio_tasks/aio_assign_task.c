@@ -1,9 +1,18 @@
+#include <mem.h>
 #include "../../../../../headers/lib/utils/memory_utils/memory_utils.h"
 #include "../../../../../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction.h"
 #include "../../../../../headers/tools/aio_function_tools/aio_instructions/aio_tasks/aio_assign_task.h"
 #include "../../../../../headers/lib/utils/str_hook/str_hook_utils/str_hook_utils.h"
 #include "../../../../../headers/tools/aio_function_tools/aio_expression_parser/aio_expression_parser.h"
-
+#include "../../../../../headers/lang/aio_type/aio_type.h"
+#include "../../../../../headers/lang/aio_reserved_names/aio_reserved_names_container.h"
+#include "../../../../../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction_holder.h"
+#include "../../../../../headers/lib/utils/string_utils/string_utils.h"
+#include "../../../../../headers/lib/utils/str_hook/str_hook.h"
+#include "../../../../../headers/tools/aio_function_tools/aio_control_graph/aio_function_control_graph.h"
+#include "../../../../../headers/lang/aio_function/aio_variable/aio_variable.h"
+#include "../../../../../headers/lang/aio_function/aio_value/aio_value.h"
+#include "../../../../../headers/lang/aio_function/aio_variable/aio_definition/aio_variable_definition.h"
 
 #define AIO_ASSIGN_TASK_TAG "AIO_ASSIGN_TASK"
 
@@ -12,8 +21,6 @@
 #ifdef AIO_ASSIGN_TASK_DEBUG
 
 #include "../../../../../headers/lib/utils/log_utils/log_utils.h"
-#include "../../../../../headers/lang/aio_type/aio_type.h"
-#include "../../../../../headers/lang/aio_reserved_names/aio_reserved_names_container.h"
 
 #endif
 
@@ -32,8 +39,10 @@ aio_function_instruction *new_aio_assign_instruction(
     return instruction;
 }
 
-void perform_aio_assign_instruction(const_aio_function_instruction *instruction,
-                                    const_aio_function_control_graph *control_graph)
+void perform_aio_assign_instruction(
+        const_aio_function_instruction *instruction,
+        const_aio_function_control_graph *control_graph
+)
 {
     const aio_assign_task *task = instruction->get.assign_task;
     const_str_hook *variable_name = task->variable_name;

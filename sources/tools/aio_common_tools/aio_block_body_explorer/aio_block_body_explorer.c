@@ -1,10 +1,10 @@
 #include <uchar.h>
-#include <malloc.h>
 #include <mem.h>
 #include "../../../../headers/lib/utils/string_utils/string_utils.h"
 #include "../../../../headers/lib/utils/char_utils/char_utils.h"
 #include "../../../../headers/lib/utils/error_utils/error_utils.h"
 #include "../../../../headers/lib/utils/point_watcher/point_watcher.h"
+#include "../../../../headers/lib/utils/boolean_utils/boolean_utils.h"
 
 #define AIO_BLOCK_BODY_EXPLORER_DEBUG
 
@@ -14,9 +14,12 @@
 
 #endif
 
-void explore_aio_context_bounds(const_string source_code, int *start_index, int *end_index,
-                                boolean (*opening_bound_condition)(const char),
-                                boolean (*closing_bound_condition)(const char))
+void explore_aio_context_bounds(
+        const_string source_code,
+        int *start_index, int *end_index,
+        boolean (*opening_bound_condition)(const char),
+        boolean (*closing_bound_condition)(const char)
+)
 {
     const size_t source_code_length = strlen(source_code);
     //Prepare to find bounds:
@@ -105,7 +108,7 @@ void explore_aio_block_quote_bounds(const_string source_code, int *start_index, 
         }
         if (quote_watcher->mode == POINT_WATCHER_ACTIVE_MODE) {
             //Check forbidden chars:
-            if (is_line_break(symbol)){
+            if (is_line_break(symbol)) {
                 throw_error_with_tag(AIO_BLOCK_BODY_EXPLORER_TAG, "Not allow make line break");
             }
             //Check unicode chars:

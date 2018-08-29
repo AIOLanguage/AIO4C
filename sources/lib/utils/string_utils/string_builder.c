@@ -1,40 +1,47 @@
 #include <malloc.h>
 #include <mem.h>
 #include "../../../../headers/lib/utils/string_utils/string_builder.h"
+#include "../../../../headers/lib/utils/memory_utils/memory_utils.h"
+#include "../../../../headers/lib/utils/string_utils/string_utils.h"
 
 #define START_STRING_CAPACITY 2
 
-string_builder *new_string_builder() {
-    string_builder *builder = calloc(1, sizeof(string_builder));
+string_builder *new_string_builder()
+{
+    string_builder *builder = new_object(sizeof(string_builder));
     reset_string_builder(builder);
     return builder;
 }
 
-void reset_string_builder(string_builder *builder){
-    builder->string_value = calloc(START_STRING_CAPACITY, sizeof(char));
+void reset_string_builder(string_builder *builder)
+{
+    builder->string_value = new_object_array(START_STRING_CAPACITY, sizeof(char));
     builder->capacity = START_STRING_CAPACITY;
     builder->length = 0;
 }
 
-void update_string_builder_memory(string_builder *builder, const size_t other_length) {
+void update_string_builder_memory(string_builder *builder, const size_t other_length)
+{
     const size_t new_length = builder->length + other_length + 1;
     if (new_length >= builder->capacity) {
         while (new_length >= builder->capacity) {
             builder->capacity *= 2;
         }
-        string new_string = calloc(builder->capacity, sizeof(char));
+        string new_string = new_object_array(builder->capacity, sizeof(char));
         strcpy(new_string, builder->string_value);
         free(builder->string_value);
         builder->string_value = new_string;
     }
 }
 
-void append_char_to(string_builder *builder, const char c) {
+void append_char_to(string_builder *builder, const char c)
+{
     update_string_builder_memory(builder, 1);
     builder->string_value[builder->length++] = c;
 }
 
-void append_string(string_builder *builder, const_string string) {
+void append_string(string_builder *builder, const_string string)
+{
     const size_t other_string_length = strlen(string);
     const int start_position = builder->length;
     const size_t new_length = start_position + other_string_length;
@@ -46,14 +53,16 @@ void append_string(string_builder *builder, const_string string) {
     builder->length = new_length;
 }
 
-string pop_string_from_builder(string_builder *builder) {
+string pop_string_from_builder(string_builder *builder)
+{
     string new_str = new_string(builder->string_value);
     free(builder->string_value);
     reset_string_builder(builder);
     return new_str;
 }
 
-void free_string_builder(string_builder *builder) {
+void free_string_builder(string_builder *builder)
+{
     free(builder->string_value);
     free(builder);
 }

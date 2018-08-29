@@ -1,15 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <malloc.h>
-#include <ctype.h>
-#include <assert.h>
-#include <stddef.h>
 #include "../../../../headers/lib/utils/boolean_utils/boolean_utils.h"
+#include "../../../../headers/lib/utils/string_utils/string_utils.h"
 
-//끝난!
 int is_correct_src_prefix(const size_t src_length, const size_t prefix_length, const size_t suffix_length,
-                          const char *src, char **dst) {
+                          const char *src, char **dst)
+{
     if (src_length == 0) {
         *dst = calloc(2, sizeof(char));
         if (*dst == NULL) {
@@ -30,9 +27,8 @@ int is_correct_src_prefix(const size_t src_length, const size_t prefix_length, c
     return TRUE;
 }
 
-//끝난!
-//Passed JUnitTest!
-char *remove_prefix_suffix(const char *src, const char *prefix, const char *suffix) {
+char *remove_prefix_suffix(const char *src, const char *prefix, const char *suffix)
+{
     const size_t src_length = strlen(src);
     const size_t prefix_length = strlen(prefix);
     const size_t suffix_length = strlen(suffix);
@@ -66,21 +62,18 @@ char *remove_prefix_suffix(const char *src, const char *prefix, const char *suff
     return dst;
 }
 
-//끝난!
-//Passed JUnitTest!
-char *remove_prefix(const char *src, const char *prefix) {
+char *remove_prefix(const char *src, const char *prefix)
+{
     return remove_prefix_suffix(src, prefix, "");
 }
 
-//끝난!
-//Passed JUnitTest!
-char *remove_suffix(const char *src, const char *suffix) {
+char *remove_suffix(const char *src, const char *suffix)
+{
     return remove_prefix_suffix(src, "", suffix);
 }
 
-//끝난!
-//Passed JUnitTest!
-const_boolean starts_with_prefix(const_string src, const_string prefix) {
+const_boolean starts_with_prefix(const_string src, const_string prefix)
+{
     for (int i = 0; i < strlen(prefix); ++i) {
         if (src[i] != prefix[i]) {
             return FALSE;
@@ -89,9 +82,8 @@ const_boolean starts_with_prefix(const_string src, const_string prefix) {
     return TRUE;
 }
 
-//끝난!
-//Passed JUnitTest!
-const_boolean ends_with_suffix(const_string src, const_string suffix) {
+const_boolean ends_with_suffix(const_string src, const_string suffix)
+{
     const size_t src_length = strlen(src);
     const size_t suffix_length = strlen(suffix);
     for (int j = 0; j < suffix_length; ++j) {

@@ -1,3 +1,4 @@
+#include <malloc.h>
 #include "../../../../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction.h"
 #include "../../../../headers/lib/utils/memory_utils/memory_utils.h"
 #include "../../../../headers/tools/aio_function_tools/aio_instructions/aio_tasks/aio_assign_task.h"
@@ -7,6 +8,8 @@
 #include "../../../../headers/tools/aio_function_tools/aio_instructions/aio_tasks/aio_procedure_task.h"
 #include "../../../../headers/tools/aio_function_tools/aio_instructions/aio_tasks/aio_return_task.h"
 #include "../../../../headers/tools/aio_function_tools/aio_instructions/aio_tasks/aio_switch_task.h"
+#include "../../../../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction_holder.h"
+#include "../../../../headers/tools/aio_function_tools/aio_control_graph/aio_function_control_graph.h"
 
 #define AIO_FUNCTION_INSTRUCTION_DEBUG
 
@@ -18,8 +21,10 @@
 
 #define AIO_FUNCTION_INSTRUCTION_TAG "AIO_FUNCTION_INSTRUCTION"
 
-aio_function_instruction *new_aio_function_instruction(aio_function_instruction_holder *holder,
-                                                       aio_function_task_type task_type)
+aio_function_instruction *new_aio_function_instruction(
+        aio_function_instruction_holder *holder,
+        aio_function_task_type task_type
+)
 {
     aio_function_instruction *instruction = new_object(sizeof(aio_function_instruction));
     instruction->holder = holder;
@@ -27,8 +32,10 @@ aio_function_instruction *new_aio_function_instruction(aio_function_instruction_
     return instruction;
 }
 
-void perform_aio_instruction(const_aio_function_instruction *instruction,
-                             const_aio_function_control_graph *control_graph)
+void perform_aio_instruction(
+        const_aio_function_instruction *instruction,
+        const_aio_function_control_graph *control_graph
+)
 {
     aio_function_task_type task_type = instruction->task_type;
     switch (task_type) {
@@ -99,7 +106,11 @@ static void update_memory_in_instruction_list(aio_function_instruction_list *lis
 {
     if (list->size == list->capacity) {
         list->capacity *= 2;
-        list->instructions = realloc(list->instructions, list->capacity * sizeof(aio_function_instruction *));
+        list->instructions = reallocate_object_array(
+                list->instructions,
+                list->capacity,
+                sizeof(aio_function_instruction *)
+        );
     }
 }
 

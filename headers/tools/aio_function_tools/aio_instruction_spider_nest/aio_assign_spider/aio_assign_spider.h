@@ -1,11 +1,6 @@
 #ifndef AIO_ASSIGN_SPIDER_H
 #define AIO_ASSIGN_SPIDER_H
 
-#include "../../../aio_common_tools/aio_spider_nest/aio_spider.h"
-#include "../../../../lib/utils/collections/lists/string_list.h"
-#include "../../../../lib/utils/str_hook/str_hook.h"
-#include "../../../../lang/aio_function/aio_variable/aio_definition/aio_variable_definition.h"
-
 /**
  * Assign spider materials.
  */
@@ -21,32 +16,43 @@ typedef enum aio_assign_variable_declaration_type {
 
 typedef struct aio_assign_materials {
     //States:
-    aio_assign_scope_type scope_type;
-    aio_assign_variable_declaration_type declaration_type;
+    enum aio_assign_scope_type scope_type;
+    enum aio_assign_variable_declaration_type declaration_type;
     //Watchers:
-    point_watcher *main_watcher;
-    point_watcher *value_watcher;
+    struct point_watcher *main_watcher;
+    struct point_watcher *value_watcher;
     //Variable:
-    str_hook_list *variable_data_list;
+    struct str_hook_list *variable_data_list;
     //Value:
-    string value;
+    char *value;
 } aio_assign_materials;
 
-struct aio_spider *new_aio_assign_spider(point_watcher *ripper_watcher);
+struct aio_spider *new_aio_assign_spider(struct point_watcher *ripper_watcher);
 
-const enum aio_spider_message is_found_assign_instruction(const_string source_code, point_watcher *ripper_watcher,
-                                                          struct aio_spider *spider);
+const enum aio_spider_message is_found_assign_instruction(
+        const char *source_code,
+        struct point_watcher *ripper_watcher,
+        struct aio_spider *spider
+);
 
-void handle_assign_declaration_scope(const_string source_code, struct aio_spider *spider);
+void handle_assign_declaration_scope(const char *source_code, struct aio_spider *spider);
 
-void refresh_assign_declaration_scope(struct aio_spider *spider, const struct str_hook *hook,
-                                      aio_assign_variable_declaration_type type, enum aio_spider_message message);
+void refresh_assign_declaration_scope(
+        struct aio_spider *spider,
+        const struct str_hook *hook,
+        enum aio_assign_variable_declaration_type type,
+        enum aio_spider_message message
+);
 
-void handle_assign_equal_sign_scope(const_string source_code, struct aio_spider *spider);
+void handle_assign_equal_sign_scope(const char *source_code, struct aio_spider *spider);
 
-void handle_assign_value_scope(const_string source_code, struct aio_spider *spider);
+void handle_assign_value_scope(const char *source_code, struct aio_spider *spider);
 
-void weave_assign_instruction_for(void *holder, const_string _,
-                                  point_watcher *ripper_watcher, struct aio_spider *spider);
+void weave_assign_instruction_for(
+        void *holder,
+        const char *_,
+        struct point_watcher *ripper_watcher,
+        struct aio_spider *spider
+);
 
 #endif //AIO_ASSIGN_SPIDER_H

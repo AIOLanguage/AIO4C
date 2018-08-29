@@ -11,6 +11,7 @@
 #include "../../../../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction_holder.h"
 #include "../../../../headers/tools/aio_function_tools/aio_instruction_spider_nest/aio_function_instruction_spider_nest.h"
 #include "../../../../headers/tools/aio_common_tools/aio_block_body_explorer/aio_block_body_explorer.h"
+#include "../../../../headers/lib/utils/string_utils/string_utils.h"
 
 #define AIO_INSTRUCTION_RIPPER_DEBUG
 

@@ -1,9 +1,6 @@
 #ifndef AIO_VALUE_H
 #define AIO_VALUE_H
 
-#include "../../../lib/utils/string_utils/string_utils.h"
-#include "../../../lib/utils/str_hook/str_hook.h"
-
 /**
  * Value.
  */
@@ -22,7 +19,7 @@ typedef struct aio_value {
 
 } aio_value;
 
-struct aio_value *new_aio_value(str_hook* type);
+struct aio_value *new_aio_value(struct str_hook* type);
 
 struct aio_value *new_aio_value_by_string(char *undefined_value);
 
@@ -64,7 +61,7 @@ void free_aio_value_list(struct aio_value_list *list);
 
 _Bool are_equal_aio_values(struct aio_value *value_1, struct aio_value *value_2);
 
-_Bool are_not_equal_aio_values(aio_value *value_1, aio_value *value_2);
+_Bool are_not_equal_aio_values(struct aio_value *value_1, struct aio_value *value_2);
 
 _Bool is_more_aio_value_then_other(struct aio_value *value_1, struct aio_value *value_2);
 
@@ -100,12 +97,12 @@ void log_info_aio_value(const char* tag, char* message, const struct aio_value *
  * Typedef utils.
  */
 
-typedef const aio_value *const_aio_value;
+typedef const struct aio_value *const_aio_value;
 
-typedef aio_value **aio_value_array;
+typedef struct aio_value **aio_value_array;
 
-typedef const aio_value **const_aio_value_array;
+typedef const struct aio_value **const_aio_value_array;
 
-typedef const aio_value_list const_aio_value_list;
+typedef const struct aio_value_list const_aio_value_list;
 
 #endif //AIO_VALUE_H

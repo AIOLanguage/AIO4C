@@ -1,8 +1,6 @@
 #ifndef BOOLEAN_UTILS_H
 #define BOOLEAN_UTILS_H
 
-#include "../string_utils/string_utils.h"
-
 #define TRUE 1
 #define FALSE 0
 

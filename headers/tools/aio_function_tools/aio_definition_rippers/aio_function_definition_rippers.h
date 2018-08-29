@@ -1,19 +1,19 @@
 #ifndef AIO_FUNCTION_DEFINITION_SPIDER_H
 #define AIO_FUNCTION_DEFINITION_SPIDER_H
 
-#include "../../../lang/aio_annotation/aio_annotation.h"
-#include "../../../lib/utils/collections/lists/string_list.h"
-#include "../../../lang/aio_function/aio_variable/aio_definition/aio_variable_definition.h"
+const struct aio_annotation_list *dig_aio_annotations(const char *source_code, int *pointer_reference);
 
-const_aio_annotation_list * dig_aio_annotations(const_string source_code, int *pointer_reference);
+const struct str_hook_list *dig_output_types(const char *source_code, int *pointer_reference);
 
-const_str_hook_list * dig_output_types(const_string source_code, int *pointer_reference);
+const struct str_hook *dig_function_name(const char *source_code, int *pointer_reference);
 
-const_str_hook * dig_function_name(const_string source_code, int *pointer_reference);
+struct aio_variable_definition_list *dig_arguments(const char *source_code, int *pointer_reference);
 
-aio_variable_definition_list * dig_arguments(const_string source_code, int *pointer_reference);
-
-void dig_aio_instructions_for(aio_function_instruction_holder *current_holder, const_string source_code,
-                              const int start_index, const int end_index);
+void dig_aio_instructions_for(
+        struct aio_function_instruction_holder *current_holder,
+        const char *source_code,
+        const int start_index,
+        const int end_index
+);
 
 #endif //AIO_FUNCTION_DEFINITION_SPIDER_H

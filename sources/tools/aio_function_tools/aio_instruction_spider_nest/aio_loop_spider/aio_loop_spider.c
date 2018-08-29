@@ -1,10 +1,8 @@
 #include <malloc.h>
 #include <mem.h>
 #include "../../../../../headers/lib/utils/boolean_utils/boolean_utils.h"
-#include "../../../../../headers/lang/aio_reserved_names/aio_reserved_names_container.h"
 #include "../../../../../headers/lib/utils/error_utils/error_utils.h"
 #include "../../../../../headers/lib/utils/char_utils/char_utils.h"
-#include "../../../../../headers/lang/aio_function/aio_function_definition/aio_function_definition.h"
 #include "../../../../../headers/tools/aio_common_tools/aio_spider_nest/aio_spider.h"
 #include "../../../../../headers/tools/aio_function_tools/aio_instruction_spider_nest/aio_loop_spider/aio_loop_spider.h"
 #include "../../../../../headers/tools/aio_common_tools/aio_block_body_explorer/aio_block_body_explorer.h"
@@ -12,6 +10,13 @@
 #include "../../../../../headers/tools/aio_function_tools/aio_instructions/aio_tasks/aio_assign_task.h"
 #include "../../../../../headers/lib/utils/str_hook/str_hook_utils/str_hook_utils.h"
 #include "../../../../../headers/tools/aio_function_tools/aio_instructions/aio_tasks/aio_loop_task.h"
+#include "../../../../../headers/lib/utils/point_watcher/point_watcher.h"
+#include "../../../../../headers/lib/utils/string_utils/string_utils.h"
+#include "../../../../../headers/tools/aio_common_tools/aio_spider_nest/aio_function_instruction_spider_nest.h"
+#include "../../../../../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction_holder.h"
+#include "../../../../../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction.h"
+#include "../../../../../headers/lang/aio_function/aio_variable/aio_definition/aio_variable_definition.h"
+#include "../../../../../headers/lib/utils/str_hook/str_hook.h"
 
 #define AIO_NUMBER_OF_SPIDERS 1 //3
 
@@ -55,7 +60,7 @@ void free_loop_spider(aio_spider *spider)
     //Free applied header materials:
     const aio_loop_header_material_type header_material_type = materials->applied_header_material_type;
     if (header_material_type == AIO_LOOP_MATERIALS_DEFAULT_HEADER) {
-        aio_default_loop_header_materials *default_header_materials = materials->get_applied_materials_from
+        aio_default_loop_header_materials *default_header_materials = materials->get
                 .default_loop_header;
         free(default_header_materials);
     }
@@ -100,8 +105,11 @@ aio_spider *new_aio_loop_spider(point_watcher *ripper_watcher)
     return spider;
 }
 
-const aio_spider_message is_found_loop_instruction(const_string source_code, point_watcher *ripper_watcher,
-                                                   aio_spider *spider)
+const aio_spider_message is_found_loop_instruction(
+        const_string source_code,
+        point_watcher *ripper_watcher,
+        aio_spider *spider
+)
 {
     //재료들을 추출하다 (Extract materials):
     const aio_loop_materials *materials = spider->materials;
@@ -358,8 +366,12 @@ void handle_loop_body_scope(const_string source_code, aio_spider *spider)
     spider->message = AIO_SPIDER_IS_READY_FOR_WEAVING;
 }
 
-void weave_loop_instruction_for(void *parent, const_string source_code,
-                                point_watcher *ripper_watcher, struct aio_spider *spider)
+void weave_loop_instruction_for(
+        void *parent,
+        const_string source_code,
+        point_watcher *ripper_watcher,
+        aio_spider *spider
+)
 {
     aio_function_instruction_holder *holder = parent;
 #ifdef AIO_LOOP_SPIDER_DEBUG
@@ -386,7 +398,7 @@ void weave_loop_instruction_for(void *parent, const_string source_code,
         if (header_material_type == AIO_LOOP_MATERIALS_DEFAULT_HEADER) {
             //Extract applied materials:
             const aio_default_loop_header_materials *default_loop_header_materials
-                    = main_loop_materials->get_applied_materials_from.default_loop_header;
+                    = main_loop_materials->get.default_loop_header;
             if (!default_loop_header_materials) {
                 throw_error_with_tag(AIO_LOOP_SPIDER_TAG, "Default loop header spider can not weave materials!");
             }
@@ -451,7 +463,7 @@ void weave_loop_instruction_for(void *parent, const_string source_code,
                 log_info_string(AIO_LOOP_SPIDER_TAG, "CHECK STEP:", step_value);
 #endif
                 //If has step value then add step instruction in the bottom of cycle instruction:
-                if (step_value){
+                if (step_value) {
                     aio_function_instruction *step_instruction = new_aio_assign_instruction(
                             cycle_holder,
                             step_value,

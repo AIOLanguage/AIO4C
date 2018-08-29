@@ -1,8 +1,19 @@
-#include <process.h>
+#include <mem.h>
+#include <malloc.h>
 #include "../../../../headers/lib/utils/memory_utils/memory_utils.h"
 #include "../../../../headers/tools/aio_function_tools/aio_control_graph/aio_function_control_graph.h"
 #include "../../../../headers/lib/utils/error_utils/error_utils.h"
+#include "../../../../headers/lib/utils/str_hook/str_hook.h"
 #include "../../../../headers/lib/utils/str_hook/str_hook_utils/str_hook_utils.h"
+#include "../../../../headers/lang/aio_function/aio_variable/aio_variable.h"
+#include "../../../../headers/lang/aio_function/aio_value/aio_value.h"
+#include "../../../../headers/lang/aio_function/aio_function_definition/aio_function_definition.h"
+#include "../../../../headers/lang/aio_function/aio_bundle/aio_bundle.h"
+#include "../../../../headers/lib/utils/boolean_utils/boolean_utils.h"
+#include "../../../../headers/lang/aio_function/aio_variable/aio_definition/aio_variable_definition.h"
+#include "../../../../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction_holder.h"
+#include "../../../../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction.h"
+#include "../../../../headers/lang/aio_context/aio_context.h"
 
 #define AIO_CONTROL_GRAPH_DEBUG
 

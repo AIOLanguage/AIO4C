@@ -1,10 +1,14 @@
 #include <malloc.h>
 #include <mem.h>
-#include "../../../../headers/lib/utils/string_utils/string_utils.h"
 #include "../../../../headers/lang/aio_function/aio_variable/aio_variable.h"
+#include "../../../../headers/lang/aio_function/aio_variable/aio_definition/aio_variable_definition.h"
+#include "../../../../headers/lang/aio_function/aio_value/aio_value.h"
 #include "../../../../headers/lib/utils/memory_utils/memory_utils.h"
-#include "../../../../headers/lib/utils/error_utils/error_utils.h"
+#include "../../../../headers/lib/utils/str_hook/str_hook.h"
+#include "../../../../headers/tools/aio_function_tools/aio_control_graph/aio_function_control_graph.h"
 #include "../../../../headers/lib/utils/str_hook/str_hook_utils/str_hook_utils.h"
+#include "../../../../headers/lib/utils/boolean_utils/boolean_utils.h"
+#include "../../../../headers/lib/utils/error_utils/error_utils.h"
 
 #define AIO_VARIABLE_DEBUG
 
@@ -53,9 +57,9 @@ aio_variable *force_get_aio_variable_in_function_control_graph(
     }
 #endif
     aio_variable *variable = get_aio_variable_in_list_by_name(list, variable_name);
-    if (variable == NULL) {
+    if (!variable) {
         const_aio_function_control_graph *parent = control_graph->parent;
-        if (parent != NULL) {
+        if (parent) {
             return force_get_aio_variable_in_function_control_graph(variable_name, parent);
         } else {
             return NULL;
@@ -102,11 +106,15 @@ aio_variable_list *new_aio_variable_list()
     return list;
 }
 
-void update_memory_in_aio_variable_list(aio_variable_list *variable_map)
+static void update_memory_in_aio_variable_list(aio_variable_list *variable_map)
 {
     if (variable_map->size + 1 == variable_map->capacity) {
         variable_map->capacity = variable_map->capacity * 2;
-        variable_map->variables = realloc(variable_map->variables, variable_map->capacity * sizeof(aio_variable *));
+        variable_map->variables = reallocate_object_array(
+                variable_map->variables,
+                variable_map->capacity,
+                sizeof(aio_variable *)
+        );
     }
 }
 
@@ -144,7 +152,7 @@ void free_aio_variable_list(const_aio_variable_list *list)
     aio_variable_array variable_array = list->variables;
     for (int i = 0; i < list_size; ++i) {
         aio_variable *variable = variable_array[i];
-        if (variable != NULL) {
+        if (variable) {
 #ifdef AIO_VARIABLE_DEBUG
             log_info(AIO_VARIABLE_TAG, "Free");
             log_info_aio_variable_definition(AIO_VARIABLE_TAG, variable->definition);

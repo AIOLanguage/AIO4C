@@ -1,3 +1,4 @@
+#include <mem.h>
 #include <malloc.h>
 #include "../../../../headers/lib/utils/memory_utils/memory_utils.h"
 #include "../../../../headers/tools/aio_common_tools/aio_spider_nest/aio_function_instruction_spider_nest.h"
@@ -8,6 +9,8 @@
 #include "../../../../headers/tools/aio_function_tools/aio_instruction_spider_nest/aio_loop_spider/aio_loop_spider.h"
 #include "../../../../headers/tools/aio_function_tools/aio_instruction_spider_nest/aio_if_spider/aio_if_spider.h"
 #include "../../../../headers/tools/aio_function_tools/aio_instruction_spider_nest/aio_assign_spider/aio_assign_spider.h"
+#include "../../../../headers/tools/aio_common_tools/aio_spider_nest/aio_spider.h"
+#include "../../../../headers/lib/utils/point_watcher/point_watcher.h"
 
 #define AIO_NUMBER_OF_SPIDERS 7
 
@@ -27,7 +30,8 @@
  * @return array of spiders.
  */
 
-aio_spider_nest *breed_aio_function_instruction_spider_nest(point_watcher *ripper_watcher) {
+aio_spider_nest *breed_aio_function_instruction_spider_nest(point_watcher *ripper_watcher)
+{
 #ifdef AIO_SPIDER_NEST_DEBUG
     log_info_int(AIO_SPIDER_NEST_TAG, "Breed aio function spiders... Number of spiders:", AIO_NUMBER_OF_SPIDERS);
 #endif

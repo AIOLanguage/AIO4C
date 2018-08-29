@@ -9,6 +9,13 @@
 #include "../../../../headers/tools/aio_function_tools/aio_expression_parser/aio_expression_parser.h"
 #include "../../../../headers/lib/utils/log_utils/log_utils.h"
 #include "../../../../headers/tools/aio_common_tools/aio_block_body_explorer/aio_block_body_explorer.h"
+#include "../../../../headers/lib/utils/boolean_utils/boolean_utils.h"
+#include "../../../../headers/lib/utils/str_hook/str_hook.h"
+#include "../../../../headers/lib/utils/string_utils/string_utils.h"
+#include "../../../../headers/tools/aio_function_tools/aio_control_graph/aio_function_control_graph.h"
+#include "../../../../headers/lang/aio_function/aio_function_definition/aio_function_definition.h"
+#include "../../../../headers/lang/aio_function/aio_variable/aio_variable.h"
+#include "../../../../headers/lang/aio_function/aio_variable/aio_definition/aio_variable_definition.h"
 
 #define AIO_EXPRESSION_PARSER_DEBUG
 

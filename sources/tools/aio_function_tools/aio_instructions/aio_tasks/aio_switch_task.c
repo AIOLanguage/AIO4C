@@ -1,8 +1,16 @@
+#include <fcntl.h>
 #include "../../../../../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction.h"
 #include "../../../../../headers/lib/utils/collections/lists/string_list.h"
 #include "../../../../../headers/lib/utils/memory_utils/memory_utils.h"
 #include "../../../../../headers/tools/aio_function_tools/aio_instructions/aio_tasks/aio_switch_task.h"
 #include "../../../../../headers/tools/aio_function_tools/aio_expression_parser/aio_expression_parser.h"
+#include "../../../../../headers/lib/utils/string_utils/string_utils.h"
+#include "../../../../../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction_holder.h"
+#include "../../../../../headers/tools/aio_function_tools/aio_control_graph/aio_function_control_graph.h"
+#include "../../../../../headers/lang/aio_function/aio_value/aio_value.h"
+#include "../../../../../headers/lib/utils/boolean_utils/boolean_utils.h"
+#include "../../../../../headers/lang/aio_context/aio_context.h"
+#include "../../../../../headers/lang/aio_function/aio_bundle/aio_bundle.h"
 
 #define AIO_SWITCH_TASK_DEBUG
 
@@ -15,9 +23,12 @@
 #define AIO_SWITCH_TASK_TAG "AIO_SWITCH_TASK"
 
 aio_function_instruction *new_aio_switch_instruction(
-        struct aio_function_instruction_holder *holder, const_string switch_value,
-        string_list *case_keys, struct aio_function_instruction_holder **case_holders,
-        struct aio_function_instruction_holder *else_holder)
+        aio_function_instruction_holder *holder,
+        const_string switch_value,
+        string_list *case_keys,
+        aio_function_instruction_holder **case_holders,
+        aio_function_instruction_holder *else_holder
+)
 {
     aio_function_instruction *instruction = new_aio_function_instruction(holder, AIO_SWITCH_TASK);
     //Init task:

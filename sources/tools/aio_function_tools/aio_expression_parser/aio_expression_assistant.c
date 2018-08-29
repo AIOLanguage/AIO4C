@@ -7,6 +7,13 @@
 #include "../../../../headers/tools/aio_common_tools/aio_block_body_explorer/aio_block_body_explorer.h"
 #include "../../../../headers/tools/aio_function_tools/aio_expression_parser/aio_expression_parser.h"
 #include "../../../../headers/lib/utils/str_hook/str_hook_utils/str_hook_utils.h"
+#include "../../../../headers/lang/aio_function/aio_function.h"
+#include "../../../../headers/lang/aio_reserved_names/aio_reserved_names_container.h"
+#include "../../../../headers/lib/utils/string_utils/string_utils.h"
+#include "../../../../headers/tools/aio_function_tools/aio_control_graph/aio_function_control_graph.h"
+#include "../../../../headers/lang/aio_function/aio_value/aio_value.h"
+#include "../../../../headers/lang/aio_function/aio_bundle/aio_bundle.h"
+#include "../../../../headers/lang/aio_function/aio_variable/aio_variable.h"
 
 #define AIO_EXPRESSION_ASSISTANT_TAG "AIO_EXPRESSION_ASSISTANT"
 
@@ -15,8 +22,6 @@
 #ifdef AIO_EXPRESSION_ASSISTANT_DEBUG
 
 #include "../../../../headers/lib/utils/log_utils/log_utils.h"
-#include "../../../../headers/lang/aio_function/aio_function.h"
-#include "../../../../headers/lang/aio_reserved_names/aio_reserved_names_container.h"
 
 #endif
 

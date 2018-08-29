@@ -1,5 +1,4 @@
 #include <malloc.h>
-#include <ctype.h>
 #include "../../../../../headers/lib/utils/boolean_utils/boolean_utils.h"
 #include "../../../../../headers/lib/utils/memory_utils/memory_utils.h"
 #include "../../../../../headers/lib/utils/char_utils/char_utils.h"
@@ -10,6 +9,10 @@
 #include "../../../../../headers/tools/aio_common_tools/aio_block_body_explorer/aio_block_body_explorer.h"
 #include "../../../../../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction.h"
 #include "../../../../../headers/tools/aio_function_tools/aio_instructions/aio_tasks/aio_procedure_task.h"
+#include "../../../../../headers/lib/utils/point_watcher/point_watcher.h"
+#include "../../../../../headers/lib/utils/string_utils/string_utils.h"
+#include "../../../../../headers/lib/utils/str_hook/str_hook.h"
+#include "../../../../../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction_holder.h"
 
 #define AIO_PROCEDURE_SPIDER_DEBUG
 
@@ -25,23 +28,22 @@
  * Refresh.
  */
 
-void refresh_procedure_spider(aio_spider *spider, point_watcher *ripper_watcher) {
+void refresh_procedure_spider(aio_spider *spider, point_watcher *ripper_watcher)
+{
     aio_procedure_materials *materials = spider->materials;
     materials->scope_type = AIO_PROCEDURE_NAME_SCOPE;
     point_watcher *main_watcher = materials->main_watcher;
     main_watcher->start = ripper_watcher->pointer;
     main_watcher->end = ripper_watcher->pointer;
     main_watcher->mode = POINT_WATCHER_PASSIVE_MODE;
-//#ifdef AIO_PROCEDURE_SPIDER_DEBUG
-//    log_info(AIO_PROCEDURE_SPIDER_TAG, "Refresh is complete!");
-//#endif
 }
 
 /**
  * Free spider.
  */
 
-void free_procedure_spider(aio_spider *spider) {
+void free_procedure_spider(aio_spider *spider)
+{
     aio_procedure_materials *materials = spider->materials;
     point_watcher *watcher = materials->main_watcher;
     free_point_watcher(watcher);
@@ -49,7 +51,8 @@ void free_procedure_spider(aio_spider *spider) {
     free(spider);
 }
 
-struct aio_spider *new_aio_procedure_spider(point_watcher *ripper_watcher) {
+aio_spider *new_aio_procedure_spider(point_watcher *ripper_watcher)
+{
     aio_spider *spider = new_object(sizeof(aio_spider));
     //Bind main spider's functions:
     spider->refresh = refresh_procedure_spider;
@@ -68,8 +71,12 @@ struct aio_spider *new_aio_procedure_spider(point_watcher *ripper_watcher) {
     return spider;
 }
 
-const enum aio_spider_message is_found_procedure_instruction(const_string source_code, point_watcher *ripper_watcher,
-                                                             struct aio_spider *spider) {
+const aio_spider_message is_found_procedure_instruction(
+        const_string source_code,
+        point_watcher *ripper_watcher,
+        aio_spider *spider
+)
+{
     const aio_procedure_materials *materials = spider->materials;
     point_watcher *watcher = materials->main_watcher;
     watcher->end = ripper_watcher->pointer;
@@ -93,7 +100,8 @@ const enum aio_spider_message is_found_procedure_instruction(const_string source
     return spider->message;
 }
 
-void handle_procedure_name_scope(const_string source_code, aio_spider *spider) {
+void handle_procedure_name_scope(const_string source_code, aio_spider *spider)
+{
     //재료들을 추출하다 (Extract materials):
     aio_procedure_materials *materials = spider->materials;
     point_watcher *main_watcher = materials->main_watcher;
@@ -116,7 +124,8 @@ void handle_procedure_name_scope(const_string source_code, aio_spider *spider) {
     }
 }
 
-void handle_procedure_arg_scope(const_string source_code, aio_spider *spider) {
+void handle_procedure_arg_scope(const_string source_code, aio_spider *spider)
+{
     aio_procedure_materials *materials = spider->materials;
     point_watcher *main_watcher = materials->main_watcher;
     //Define current symbol:
@@ -139,8 +148,13 @@ void handle_procedure_arg_scope(const_string source_code, aio_spider *spider) {
     }
 }
 
-void weave_procedure_instruction_for(void *parent, const_string source_code,
-                                     point_watcher *ripper_watcher, struct aio_spider *spider) {
+void weave_procedure_instruction_for(
+        void *parent,
+        const_string source_code,
+        point_watcher *ripper_watcher,
+        aio_spider *spider
+)
+{
     aio_function_instruction_holder *holder = parent;
 #ifdef AIO_PROCEDURE_SPIDER_DEBUG
     log_info(AIO_PROCEDURE_SPIDER_TAG, "Start weaving...");

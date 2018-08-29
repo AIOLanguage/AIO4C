@@ -1,17 +1,20 @@
-#include <stdio.h>
-#include "../../../headers/lib/utils/file_utils/file_reader.h"
+#include <mem.h>
 #include "../../../headers/lang/aio_context/aio_context.h"
-#include "../../../headers/lang/aio_function/aio_function.h"
+#include "../../../headers/lib/utils/string_utils/string_utils.h"
+#include "../../../headers/lib/utils/memory_utils/memory_utils.h"
+#include "../../../headers/lang/aio_function/aio_function_definition/aio_function_definition.h"
+#include "../../../headers/lib/utils/file_utils/file_reader.h"
+#include "../../../headers/lib/utils/str_hook/str_hook_utils/str_hook_utils.h"
+#include "../../../headers/lib/utils/str_hook/str_hook.h"
 #include "../../../headers/lib/utils/error_utils/error_utils.h"
+
+#define AIO_CONTEXT_TAG "AIO_CONTEXT"
 
 #define AIO_CONTEXT_DEBUG
 
 #ifdef AIO_CONTEXT_DEBUG
 
-#define AIO_CONTEXT_TAG "AIO_CONTEXT"
-
 #include "../../../headers/lib/utils/log_utils/log_utils.h"
-#include "../../../headers/lib/utils/str_hook/str_hook_utils/str_hook_utils.h"
 
 #endif
 
@@ -56,11 +59,11 @@ aio_context_list *new_aio_context_list()
     return map;
 }
 
-void update_memory_in_aio_context_list(aio_context_list *map)
+static void update_memory_in_aio_context_list(aio_context_list *map)
 {
     if (map->size + 1 == map->capacity) {
         map->capacity = map->capacity * 2;
-        map->contexts = realloc(map->contexts, map->capacity * sizeof(aio_context *));
+        map->contexts = reallocate_object_array(map->contexts, map->capacity, sizeof(aio_context *));
     }
 }
 
@@ -90,4 +93,9 @@ const_aio_context *get_aio_context_in_list_by_name(const_aio_context_list *list,
         }
     }
     return NULL;
+}
+
+void free_aio_context_list(aio_context_list *context_list)
+{
+
 }

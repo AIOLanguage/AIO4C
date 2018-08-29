@@ -7,6 +7,11 @@
 #include "../../../../../headers/tools/aio_common_tools/aio_spider_nest/aio_spider.h"
 #include "../../../../../headers/tools/aio_function_tools/aio_instruction_spider_nest/aio_return_spider/aio_return_spider.h"
 #include "../../../../../headers/tools/aio_function_tools/aio_instructions/aio_tasks/aio_return_task.h"
+#include "../../../../../headers/lib/utils/point_watcher/point_watcher.h"
+#include "../../../../../headers/lib/utils/collections/lists/string_list.h"
+#include "../../../../../headers/lib/utils/string_utils/string_utils.h"
+#include "../../../../../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction_holder.h"
+#include "../../../../../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction.h"
 
 #define AIO_RETURN_SPIDER_DEBUG
 
@@ -40,9 +45,6 @@ void refresh_return_spider(aio_spider *spider, point_watcher *ripper_watcher)
     free_strings_in_list(old_return_values);
     free_string_list(old_return_values);
     //------------------------------------------------------------------------------------------------------------------
-//#ifdef AIO_RETURN_SPIDER_DEBUG
-//    log_info(AIO_RETURN_SPIDER_TAG, "Refresh is complete!");
-//#endif
 }
 
 /**
@@ -87,8 +89,11 @@ struct aio_spider *new_aio_return_spider(point_watcher *ripper_watcher)
     return spider;
 }
 
-const enum aio_spider_message is_found_return_instruction(const_string source_code, point_watcher *ripper_watcher,
-                                                          struct aio_spider *spider)
+const aio_spider_message is_found_return_instruction(
+        const_string source_code,
+        point_watcher *ripper_watcher,
+        aio_spider *spider
+)
 {
     //재료들을 추출하다 (Extract materials):
     const aio_return_materials *materials = spider->materials;
@@ -115,7 +120,7 @@ const enum aio_spider_message is_found_return_instruction(const_string source_co
     return spider->message;
 }
 
-void handle_return_modifier_scope(const_string source_code, struct aio_spider *spider)
+void handle_return_modifier_scope(const_string source_code, aio_spider *spider)
 {
     aio_return_materials *materials = spider->materials;
     point_watcher *main_watcher = materials->main_watcher;
@@ -147,7 +152,7 @@ void handle_return_modifier_scope(const_string source_code, struct aio_spider *s
     }
 }
 
-void handle_return_value_scope(const_string source_code, struct aio_spider *spider)
+void handle_return_value_scope(const_string source_code, aio_spider *spider)
 {
     //재료들을 추출하다 (Extract materials):
     aio_return_materials *materials = spider->materials;
@@ -189,7 +194,7 @@ void handle_return_value_scope(const_string source_code, struct aio_spider *spid
         //찌거기 수집기 (Garbage collector):
         free(dirty_chunk);
         free(dirty_squeezed_chunk);
-        free_strings(&clean_return_values);
+        free_strings(clean_return_values);
         return;
     }
     if (is_quote_cond) {
@@ -210,8 +215,11 @@ void handle_return_value_scope(const_string source_code, struct aio_spider *spid
     }
 }
 
-void weave_return_instruction_for(void *parent, const_string _,
-                                  point_watcher *ripper_watcher, struct aio_spider *spider)
+void weave_return_instruction_for(
+        void *parent, const_string _,
+        point_watcher *ripper_watcher,
+        aio_spider *spider
+)
 {
     aio_function_instruction_holder *holder = parent;
 #ifdef AIO_RETURN_SPIDER_TAG

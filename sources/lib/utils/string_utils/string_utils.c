@@ -6,6 +6,7 @@
 #include "../../../../headers/lib/utils/char_utils/char_utils.h"
 #include "../../../../headers/lang/aio_reserved_names/aio_reserved_names_container.h"
 #include "../../../../headers/lib/utils/string_utils/string_builder.h"
+#include "../../../../headers/lib/utils/boolean_utils/boolean_utils.h"
 
 #define STRING_UTILS_TAG "STRING_UTILS"
 
@@ -152,17 +153,9 @@ string substring(const_string string, int start, int end)
     return dst;
 }
 
-int get_string_array_size(const_string_array src)
+int get_string_array_size(char **src)
 {
     return _msize(src) / 4;
-}
-
-void free_strings(const_string_array *src_reference)
-{
-    for (int i = 0; i < get_string_array_size(*src_reference); ++i) {
-        free((void *) (*src_reference)[i]);
-    }
-    free(*src_reference);
 }
 
 string squeeze_string_for_expression(const_string src)
@@ -175,8 +168,8 @@ string squeeze_string_for_expression(const_string src)
         const char symbol = src[i];
         const_boolean is_not_whitespace = !is_space_or_line_break(symbol);
         const_boolean is_quote = is_single_quote(symbol);
-        if (is_quote){
-            if (!in_quote_scope){
+        if (is_quote) {
+            if (!in_quote_scope) {
                 in_quote_scope = TRUE;
             } else {
                 in_quote_scope = FALSE;
@@ -194,11 +187,11 @@ string squeeze_string_for_expression(const_string src)
 }
 
 //Passed JUnitTest!
-const_boolean matches_string(const_string word)
+const_boolean matches_string(const_string src)
 {
     boolean result = FALSE;
-    int length = strlen(word);
-    if (length > 1 && word[0] == '\'' && word[length - 1] == '\'') {
+    int length = strlen(src);
+    if (length > 1 && src[0] == '\'' && src[length - 1] == '\'') {
         result = TRUE;
     }
     return result;
@@ -302,11 +295,17 @@ string boolean_to_string(const_boolean src)
     }
 }
 
-void free_string(string *src_ref)
+void free_strings(char **src){
+    const int length = get_string_array_size(src);
+    for (int i = 0; i < length; ++i) {
+        free(src[i]);
+    }
+    free(src);
+}
+
+void free_string(string src)
 {
-    if (src_ref != NULL) {
-        string old_string = *src_ref;
-        *src_ref = NULL;
-        free(old_string);
+    if (src) {
+        free(src);
     }
 }

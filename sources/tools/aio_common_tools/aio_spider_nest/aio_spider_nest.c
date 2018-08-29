@@ -1,5 +1,7 @@
 #include <malloc.h>
 #include "../../../../headers/tools/aio_common_tools/aio_spider_nest/aio_function_instruction_spider_nest.h"
+#include "../../../../headers/lib/utils/point_watcher/point_watcher.h"
+#include "../../../../headers/tools/aio_common_tools/aio_spider_nest/aio_spider.h"
 
 //#define AIO_SPIDER_NEST_DEBUG
 

@@ -1,10 +1,3 @@
-
-#include <stdlib.h>
-#include "../headers/lang/aio_core/aio_core.h"
-#include "../headers/lib/utils/str_hook/str_hook_utils/str_hook_utils.h"
-#include "../headers/lang/aio_type/aio_type.h"
-#include "../headers/lang/aio_function/aio_function.h"
-
 #define AIO_DEVELOPMENT
 
 #ifdef AIO_DEVELOPMENT
@@ -19,7 +12,16 @@
 
 #ifdef AIO_DEVELOPMENT_DEBUG
 
+#include <fcntl.h>
 #include "../headers/lib/utils/log_utils/log_utils.h"
+#include "../headers/lang/aio_function/aio_bundle/aio_bundle.h"
+#include "../headers/lang/aio_function/aio_value/aio_value.h"
+#include "../headers/lang/aio_core/aio_core.h"
+#include "../headers/lang/aio_context/aio_context.h"
+#include "../headers/lib/utils/str_hook/str_hook_utils/str_hook_utils.h"
+#include "../headers/lib/utils/str_hook/str_hook.h"
+#include "../headers/lang/aio_type/aio_type.h"
+#include "../headers/lang/aio_function/aio_function.h"
 
 #endif
 

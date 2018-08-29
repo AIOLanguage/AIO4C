@@ -1,11 +1,6 @@
 #ifndef AIO_CONTEXT_H
 #define AIO_CONTEXT_H
 
-#include "../../lib/utils/string_utils/string_utils.h"
-#include "../aio_function/aio_bundle/aio_bundle.h"
-#include "../aio_function/aio_function_definition/aio_function_definition.h"
-#include "../../lib/utils/str_hook/str_hook.h"
-
 #define AIO_COMMENTS "//"
 
 #define AIO_SUFFIX ".aio"
@@ -34,7 +29,7 @@ const struct aio_context *new_aio_context(const char *path);
 
 void upbuild_aio_context(const struct aio_context *context);
 
-void free_aio_context(const struct context *);
+void free_aio_context(const struct aio_context *context);
 
 /**
  * List.
@@ -50,8 +45,10 @@ struct aio_context_list *new_aio_context_list();
 
 void add_aio_context_in_list(struct aio_context_list *list, const struct aio_context *context);
 
-const struct aio_context *get_aio_context_in_list_by_name(const struct aio_context_list *list,
-                                                          const struct str_hook *context_name);
+const struct aio_context *get_aio_context_in_list_by_name(
+        const struct aio_context_list *list,
+        const struct str_hook *context_name
+);
 
 void free_aio_context_list(struct aio_context_list *context_list);
 

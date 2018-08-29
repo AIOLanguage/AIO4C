@@ -2,11 +2,17 @@
 #include <mem.h>
 #include "../../../../../headers/lib/utils/str_hook/str_hook.h"
 #include "../../../../../headers/lib/utils/str_hook/str_hook_utils/str_hook_utils.h"
-#include "../../../../../headers/lib/utils/memory_utils/memory_utils.h"
 #include "../../../../../headers/lib/utils/char_utils/char_utils.h"
+#include "../../../../../headers/lib/utils/string_utils/string_utils.h"
+#include "../../../../../headers/lib/utils/memory_utils/memory_utils.h"
+#include "../../../../../headers/lib/utils/point_watcher/point_watcher.h"
 
-static void create_left_part(const_str_hook *hook, const int left_index, size_t delimiter_length,
-                             str_hook_list *list)
+static void create_left_part(
+        const_str_hook *hook,
+        const int left_index,
+        size_t delimiter_length,
+        str_hook_list *list
+)
 {
     str_hook *left_hook = new_str_hook_by_other_source_ref(hook);
     left_hook->start = hook->start;

@@ -1,14 +1,11 @@
 #include <mem.h>
-#include <malloc.h>
-#include <stdio.h>
-#include <process.h>
-#include <ctype.h>
-#include <stdbool.h>
+#include "../../../headers/lib/utils/str_hook/str_hook_utils/str_hook_utils.h"
+#include "../../../headers/lang/aio_context/aio_context.h"
 #include "../../../headers/lib/utils/string_utils/string_utils.h"
 #include "../../../headers/lib/utils/error_utils/error_utils.h"
-#include "../../../headers/lang/aio_core/aio_core.h"
+#include "../../../headers/lang/aio_function/aio_function_definition/aio_function_definition.h"
 #include "../../../headers/lang/aio_function/aio_function_definition/aio_function_definition_builder.h"
-
+#include "../../../headers/lang/aio_annotation/aio_annotation.h"
 
 #define AIO_CONTEXT_BUILDER_TAG "AIO_CONTEXT_BUILDER_TAG"
 
@@ -17,11 +14,11 @@
 #ifdef AIO_CONTEXT_BUILDER_DEBUG
 
 #include "../../../headers/lib/utils/log_utils/log_utils.h"
-#include "../../../headers/lib/utils/str_hook/str_hook_utils/str_hook_utils.h"
 
 #endif
 
-void upbuild_aio_context(const_aio_context *context) {
+void upbuild_aio_context(const_aio_context *context)
+{
     const_string source_code = context->source_code;
     const size_t source_code_length = strlen(source_code);
     const_boolean is_empty_context = is_empty_string(source_code);
@@ -48,4 +45,9 @@ void upbuild_aio_context(const_aio_context *context) {
 #endif
         add_aio_function_definition_in_list(definition_list, function_definition);
     }
+}
+
+void free_aio_context(const_aio_context *context)
+{
+
 }

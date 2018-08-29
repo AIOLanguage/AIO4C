@@ -1,9 +1,11 @@
+#include <mem.h>
 #include "../../../../../headers/lang/aio_function/aio_value/aio_value.h"
 #include "../../../../../headers/lang/aio_context/aio_context.h"
 #include "../../../../../headers/lib/utils/str_hook/str_hook_utils/str_hook_utils.h"
 #include "../../../../../headers/tools/aio_function_tools/aio_expression_parser/aio_expression_parser.h"
 #include "../../../../../headers/lang/aio_function/aio_result/aio_result.h"
-
+#include "../../../../../headers/lib/utils/str_hook/str_hook.h"
+#include "../../../../../headers/tools/aio_function_tools/aio_control_graph/aio_function_control_graph.h"
 
 #define AIO_VOID_PARSER_DEBUG
 
@@ -19,6 +21,7 @@ static aio_result *make_null(const_str_hook *expression_hook)
         str_hook *empty_rest_hook = new_str_hook(expression_hook->source_string);
         return new_aio_result(NULL, empty_rest_hook);
     }
+    throw_error_with_hook(AIO_VOID_PARSER_TAG, "Can not parse void expression!", expression_hook);
 }
 
 /**

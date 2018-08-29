@@ -1,23 +1,22 @@
 #ifndef AIO_LOOP_INSTRUCTION_H
 #define AIO_LOOP_INSTRUCTION_H
 
-#include "../../../../lib/utils/string_utils/string_utils.h"
-#include "../aio_function_instruction_holder.h"
-#include "../aio_function_instruction.h"
-
 typedef struct aio_loop_task {
-    string loop_condition;
-    aio_function_instruction_holder *init_holder;
-    aio_function_instruction_holder *cycle_holder;
+    char *loop_condition;
+    struct aio_function_instruction_holder *init_holder;
+    struct aio_function_instruction_holder *cycle_holder;
 } aio_loop_task;
 
+struct aio_function_instruction *new_aio_loop_instruction(
+        struct aio_function_instruction_holder *holder,
+        char *loop_condition,
+        struct aio_function_instruction_holder *init_holder,
+        struct aio_function_instruction_holder *cycle_holder
+);
 
-aio_function_instruction *new_aio_loop_instruction(aio_function_instruction_holder *holder,
-                                                   string loop_condition,
-                                                   aio_function_instruction_holder *init_holder,
-                                                   aio_function_instruction_holder *cycle_holder);
-
-void perform_aio_loop_instruction(const_aio_function_instruction *instruction,
-                                  const_aio_function_control_graph *control_graph);
+void perform_aio_loop_instruction(
+        const struct aio_function_instruction *instruction,
+        const struct aio_function_control_graph *control_graph
+);
 
 #endif //AIO_LOOP_INSTRUCTION_H

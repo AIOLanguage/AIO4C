@@ -1,6 +1,6 @@
-#include <malloc.h>
-#include <mem.h>
+#include <fcntl.h>
 #include <ctype.h>
+#include "../../../../headers/lib/utils/boolean_utils/boolean_utils.h"
 #include "../../../../headers/lib/utils/string_utils/string_utils.h"
 #include "../../../../headers/lib/utils/char_utils/char_utils.h"
 

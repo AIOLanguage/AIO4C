@@ -7,6 +7,10 @@
 #include "../../../../headers/lib/utils/point_watcher/point_watcher.h"
 #include "../../../../headers/lang/aio_function/aio_variable/aio_definition/aio_variable_definition.h"
 #include "../../../../headers/lib/utils/str_hook/str_hook_utils/str_hook_utils.h"
+#include "../../../../headers/lang/aio_type/aio_type.h"
+#include "../../../../headers/lib/utils/string_utils/string_utils.h"
+#include "../../../../headers/lib/utils/str_hook/str_hook.h"
+#include "../../../../headers/lib/utils/boolean_utils/boolean_utils.h"
 
 #define ONLY_NAME 1
 
@@ -21,7 +25,6 @@
 #ifdef AIO_ARG_RIPPER_DEBUG
 
 #include "../../../../headers/lib/utils/log_utils/log_utils.h"
-#include "../../../../headers/lang/aio_type/aio_type.h"
 
 #endif
 

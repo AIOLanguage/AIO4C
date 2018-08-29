@@ -1,9 +1,17 @@
-#include "../../../../../headers/lib/utils/str_hook/str_hook.h"
+
 #include "../../../../../headers/lib/utils/str_hook/str_hook_utils/str_hook_utils.h"
+#include "../../../../../headers/lib/utils/boolean_utils/boolean_utils.h"
+#include "../../../../../headers/lib/utils/string_utils/string_utils.h"
+#include "../../../../../headers/lib/utils/str_hook/str_hook.h"
 #include "../../../../../headers/lib/utils/char_utils/char_utils.h"
 
-static str_hook *border_trim(const_str_hook *hook, const_boolean has_left, const_boolean has_right,
-                             boolean (*trim_condition)(const char)) {
+static str_hook *border_trim(
+        const_str_hook *hook,
+        const_boolean has_left,
+        const_boolean has_right,
+        boolean (*trim_condition)(const char)
+)
+{
     const_string src = hook->source_string;
     str_hook *new_hook = new_str_hook_by_other(hook);
     const int src_length = get_str_hook_size(hook);
@@ -27,31 +35,38 @@ static str_hook *border_trim(const_str_hook *hook, const_boolean has_left, const
     return new_hook;
 }
 
-str_hook *trim_str_hook_by_start(const_str_hook *hook) {
+str_hook *trim_str_hook_by_start(const_str_hook *hook)
+{
     return border_trim(hook, TRUE, FALSE, is_space);
 }
 
-str_hook *trim_str_hook_by_end(const_str_hook *hook) {
+str_hook *trim_str_hook_by_end(const_str_hook *hook)
+{
     return border_trim(hook, FALSE, TRUE, is_space);
 }
 
-str_hook *trim_str_hook(const_str_hook *hook) {
+str_hook *trim_str_hook(const_str_hook *hook)
+{
     return border_trim(hook, TRUE, TRUE, is_space);
 }
 
-str_hook *trim_str_hook_with_line_break_by_start(const_str_hook *hook) {
+str_hook *trim_str_hook_with_line_break_by_start(const_str_hook *hook)
+{
     return border_trim(hook, TRUE, FALSE, is_space_or_line_break);
 }
 
-str_hook *trim_str_hook_with_line_break_by_end(const_str_hook *hook) {
+str_hook *trim_str_hook_with_line_break_by_end(const_str_hook *hook)
+{
     return border_trim(hook, FALSE, TRUE, is_space_or_line_break);
 }
 
-str_hook *trim_str_hook_with_line_break(const_str_hook *hook) {
+str_hook *trim_str_hook_with_line_break(const_str_hook *hook)
+{
     return border_trim(hook, TRUE, TRUE, is_space_or_line_break);
 }
 
-str_hook_list *trim_str_hook_list(const_str_hook_list *list) {
+str_hook_list *trim_str_hook_list(const_str_hook_list *list)
+{
     const_str_hook_array hooks = list->hooks;
     str_hook_list *new_list = new_str_hook_list();
     for (int i = 0; i < list->size; ++i) {
@@ -60,7 +75,8 @@ str_hook_list *trim_str_hook_list(const_str_hook_list *list) {
     return new_list;
 }
 
-str_hook_list *trim_str_hook_list_with_line_break(const_str_hook_list *list) {
+str_hook_list *trim_str_hook_list_with_line_break(const_str_hook_list *list)
+{
     const_str_hook_array hooks = list->hooks;
     str_hook_list *new_list = new_str_hook_list();
     for (int i = 0; i < list->size; ++i) {

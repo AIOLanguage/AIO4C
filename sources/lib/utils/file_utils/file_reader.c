@@ -1,13 +1,13 @@
 #include <malloc.h>
 #include <mem.h>
 #include <stdio.h>
-#include <process.h>
 #include "../../../../headers/lib/utils/string_utils/string_utils.h"
 #include "../../../../headers/lib/utils/file_utils/file_reader.h"
 #include "../../../../headers/lib/utils/error_utils/error_utils.h"
 #include "../../../../headers/lang/aio_context/aio_context.h"
 #include "../../../../headers/lib/utils/collections/lists/string_list.h"
 #include "../../../../headers/lib/utils/str_hook/str_hook_utils/str_hook_utils.h"
+#include "../../../../headers/lib/utils/str_hook/str_hook.h"
 
 #define READ "r"
 
@@ -23,21 +23,22 @@
 
 #endif
 
-const_string get_code_without_comments(const_string file_content) {
+const_string get_code_without_comments(const_string file_content)
+{
     string_list *clean_line_list = new_string_list();
     const_string_array lines = split_by_string(file_content, "\n");
     for (int i = 0; i < get_string_array_size(lines); ++i) {
         const_string line = lines[i];
         if (!starts_with_prefix(line, AIO_COMMENTS) && !is_empty_string(line)) {
             const_string_array dirty_line_with_comments = split_by_string(line, AIO_COMMENTS);
-            const_string dirty_line = new_string(dirty_line_with_comments[0]);
+            string dirty_line = new_string(dirty_line_with_comments[0]);
             string clean_line = trim(dirty_line);
             if (is_not_empty_string(clean_line)) {
                 add_string_in_list(clean_line_list, clean_line);
             }
             //----------------------------------------------------------------------------------------------------------
             //찌꺼기 수집기 (Garbage collector):
-            free((void *) dirty_line);
+            free(dirty_line);
             free(dirty_line_with_comments);
         }
     }
@@ -55,7 +56,8 @@ const_string get_code_without_comments(const_string file_content) {
     return clean_code;
 }
 
-const_string read_file_and_join_to_string_without_comments(const_string path) {
+const_string read_file_and_join_to_string_without_comments(const_string path)
+{
     int read_position = 0;
     size_t code_size = CHUNK;
     string file_content = calloc(code_size, sizeof(char));
@@ -81,7 +83,8 @@ const_string read_file_and_join_to_string_without_comments(const_string path) {
     return clean_code;
 }
 
-const_str_hook *extract_name_from_path(const_string path) {
+const_str_hook *extract_name_from_path(const_string path)
+{
     if (ends_with_suffix(path, AIO_SUFFIX)) {
         const int last_path_index = strlen(path) - 1;
         for (int i = last_path_index; i >= 0; --i) {
@@ -101,6 +104,7 @@ const_str_hook *extract_name_from_path(const_string path) {
                 }
             }
         }
+        throw_error_with_tag(FILE_READER_TAG, "Invalid .aio file name!");
     } else {
         throw_error_with_tag(FILE_READER_TAG, "The file doesn't have .aio type!");
     }

@@ -1,11 +1,13 @@
 #include <malloc.h>
 #include <mem.h>
-#include "../../../../headers/lib/utils/boolean_utils/boolean_utils.h"
+#include "../../../../headers/lang/aio_function/aio_value/aio_value.h"
+#include "../../../../headers/lib/utils/str_hook/str_hook.h"
+#include "../../../../headers/lib/utils/memory_utils/memory_utils.h"
+#include "../../../../headers/lib/utils/string_utils/string_utils.h"
 #include "../../../../headers/lib/utils/int_utils/int_utils.h"
 #include "../../../../headers/lib/utils/double_utils/double_utils.h"
+#include "../../../../headers/lib/utils/boolean_utils/boolean_utils.h"
 #include "../../../../headers/lib/utils/error_utils/error_utils.h"
-#include "../../../../headers/lang/aio_function/aio_value/aio_value.h"
-#include "../../../../headers/lib/utils/memory_utils/memory_utils.h"
 #include "../../../../headers/lang/aio_type/aio_type.h"
 #include "../../../../headers/lib/utils/str_hook/str_hook_utils/str_hook_utils.h"
 #include "../../../../headers/lang/aio_reserved_names/aio_reserved_names_container.h"
@@ -14,10 +16,6 @@
 #define AIO_VALUE_TAG "AIO_VALUE"
 
 //#define AIO_VALUE_DEBUG
-
-#ifdef AIO_VALUE_DEBUG
-
-#endif
 
 aio_value *new_aio_value(str_hook *type)
 {
@@ -363,7 +361,6 @@ boolean is_less_or_equals_aio_value_then_other(aio_value *value_1, aio_value *va
 
 aio_value *cast_to_int(aio_value *value)
 {
-    log_info(AIO_VALUE_TAG, "CAST TO INT!");
     if (!value) {
         return NULL;
     }
@@ -400,8 +397,6 @@ aio_value *cast_to_double(aio_value *value)
     }
     if (is_hook_equals_str(type, STRING)) {
         const_string string = value->get.string_acc;
-        log_info_string(AIO_VALUE_TAG, "STRING ACC:", string);
-        log_info_boolean(AIO_VALUE_TAG, "MATCHES DOUBLE:", matches_double(string));
         if (matches_int(string)) {
             return new_aio_double_value(string_to_int(string));
         } else if (matches_double(string)) {
@@ -427,9 +422,7 @@ aio_value *cast_to_string(aio_value *value)
         return new_aio_string_value(int_to_string(value->get.int_acc));
     }
     if (is_hook_equals_str(type, DOUBLE)) {
-        log_info_double(AIO_VALUE_TAG, "INPUT DOUBLE:", value->get.double_acc);
         string double_string = double_to_string(value->get.double_acc);
-        log_info_string(AIO_VALUE_TAG, "CASTED DOUBLE TO STRING:", double_string);
         return new_aio_string_value(double_string);
     }
     if (is_hook_equals_str(type, STRING)) {
@@ -493,7 +486,6 @@ aio_value *cast_to_boolean(aio_value *value)
 
 aio_value *cast_to_void(aio_value *value)
 {
-    log_info(AIO_VALUE_TAG, "CAST TO VOID");
     if (!value) {
         return NULL;
     }

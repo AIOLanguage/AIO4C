@@ -1,18 +1,6 @@
 #ifndef AIO_VARIABLE_H
 #define AIO_VARIABLE_H
 
-#include "../../../lib/utils/string_utils/string_utils.h"
-#include "../../../lib/utils/boolean_utils/boolean_utils.h"
-#include "../aio_value/aio_value.h"
-#include "aio_definition/aio_variable_definition.h"
-#include "../../../tools/aio_function_tools/aio_instructions/aio_function_instruction_holder.h"
-
-/**
- * Clumsy crutch...
- */
-
-typedef struct aio_variable_definition;
-
 /**
  * Variable.
  */
@@ -69,12 +57,12 @@ void free_aio_variable_list(const struct aio_variable_list *list);
  * Typedef utils.
  */
 
-typedef const aio_variable const_aio_variable;
+typedef const struct aio_variable const_aio_variable;
 
-typedef aio_variable **aio_variable_array;
+typedef struct aio_variable **aio_variable_array;
 
-typedef const aio_variable **const_aio_variable_array;
+typedef const struct aio_variable **const_aio_variable_array;
 
-typedef const aio_variable_list const_aio_variable_list;
+typedef const struct aio_variable_list const_aio_variable_list;
 
 #endif //AIO_VARIABLE_H

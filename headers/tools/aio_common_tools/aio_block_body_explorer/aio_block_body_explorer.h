@@ -1,12 +1,13 @@
 #ifndef AIO_FUNCTION_BODY_EXPLORER_H
 #define AIO_FUNCTION_BODY_EXPLORER_H
 
-#include "../../../lib/utils/string_utils/string_utils.h"
-#include "../../../lib/utils/point_watcher/point_watcher.h"
-
-void explore_aio_context_bounds(const char *source_code, int *start_index, int *end_index,
-                                _Bool (*opening_bound_condition)(const char),
-                                _Bool (*closing_bound_condition)(const char));
+void explore_aio_context_bounds(
+        const char *source_code,
+        int *start_index,
+        int *end_index,
+        _Bool (*opening_bound_condition)(const char),
+        _Bool (*closing_bound_condition)(const char)
+);
 
 void explore_aio_header_bounds(const char *source_code, int *start_index, int *end_index);
 

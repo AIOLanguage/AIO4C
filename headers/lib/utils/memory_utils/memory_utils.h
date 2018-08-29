@@ -1,15 +1,17 @@
-#include <malloc.h>
-
 #ifndef MEMORY_UTILS_H
 #define MEMORY_UTILS_H
 
 //#define AIO_PROJECT_MEMORY_MANAGER
 
-void *new_object(const size_t size_of_object);
+void *new_object(const unsigned size_of_object);
 
-void *new_object_array(const size_t number_of_elements, const size_t size_of_object);
+void *new_object_array(const unsigned number_of_elements, const unsigned size_of_object);
 
-void *reallocate_object_array(void *object_array, const size_t new_number_of_elements, const size_t size_of_object);
+void *reallocate_object_array(
+        void *object_array,
+        const unsigned new_number_of_elements,
+        const unsigned size_of_object
+);
 
 #ifdef AIO_PROJECT_MEMORY_MANAGER
 

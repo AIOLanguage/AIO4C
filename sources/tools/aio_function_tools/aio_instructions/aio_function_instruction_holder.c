@@ -1,10 +1,11 @@
-#include <malloc.h>
+#include <mem.h>
 #include "../../../../headers/lib/utils/memory_utils/memory_utils.h"
 #include "../../../../headers/lib/utils/string_utils/string_utils.h"
 #include "../../../../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction_holder.h"
 #include "../../../../headers/tools/aio_common_tools/aio_block_body_explorer/aio_block_body_explorer.h"
 #include "../../../../headers/tools/aio_function_tools/aio_definition_rippers/aio_function_definition_rippers.h"
-
+#include "../../../../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction.h"
+#include "../../../../headers/lang/aio_function/aio_variable/aio_definition/aio_variable_definition.h"
 
 #define AIO_FUNCTION_INSTRUCTION_HOLDER_DEBUG
 
@@ -75,10 +76,12 @@ aio_function_instruction_holder *inflate_root_aio_instruction_holder(
  * @return new holder.
  */
 
-aio_function_instruction_holder *inflate_local_aio_instruction_holder(const_string source_code,
-                                                                      const_aio_function_instruction_holder
-                                                                      *parent_holder,
-                                                                      const int start_index, const int end_index)
+aio_function_instruction_holder *inflate_local_aio_instruction_holder(
+        const_string source_code,
+        const_aio_function_instruction_holder *parent_holder,
+        const int start_index,
+        const int end_index
+)
 {
     aio_function_instruction_holder *holder = new_aio_function_instruction_holder(parent_holder);
     dig_aio_instructions_for(holder, source_code, start_index, end_index);

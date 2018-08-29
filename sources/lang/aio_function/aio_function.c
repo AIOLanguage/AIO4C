@@ -1,8 +1,12 @@
 #include <mem.h>
+#include "../../../headers/lib/utils/str_hook/str_hook_utils/str_hook_utils.h"
+#include "../../../headers/lang/aio_function/aio_function_definition/aio_function_definition.h"
+#include "../../../headers/lang/aio_function/aio_value/aio_value.h"
 #include "../../../headers/lang/aio_function/aio_bundle/aio_bundle.h"
+#include "../../../headers/lib/utils/str_hook/str_hook.h"
 #include "../../../headers/lang/aio_context/aio_context.h"
-#include "../../../headers/lang/aio_function/aio_function.h"
 #include "../../../headers/lib/utils/error_utils/error_utils.h"
+#include "../../../headers/tools/aio_function_tools/aio_control_graph/aio_function_control_graph.h"
 
 #define AIO_FUNCTION_DEBUG
 
@@ -11,7 +15,6 @@
 #ifdef AIO_FUNCTION_DEBUG
 
 #include "../../../headers/lib/utils/log_utils/log_utils.h"
-#include "../../../headers/lib/utils/str_hook/str_hook_utils/str_hook_utils.h"
 
 #endif
 
@@ -72,7 +75,7 @@ aio_value_list *invoke_static_function_in_context(
 #ifdef AIO_FUNCTION_DEBUG
     log_info_boolean(AIO_FUNCTION_TAG, "Definition exists:", definition != NULL);
 #endif
-    if (definition != NULL){
+    if (definition != NULL) {
         return invoke_aio_function(definition, bundle, context);
     } else {
         throw_error_with_hook(AIO_FUNCTION_TAG, "Function doesn't exist:", function_name);

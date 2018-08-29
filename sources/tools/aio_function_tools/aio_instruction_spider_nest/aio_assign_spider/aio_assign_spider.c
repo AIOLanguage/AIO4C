@@ -1,16 +1,22 @@
 #include <mem.h>
 #include <ctype.h>
+#include <malloc.h>
 #include "../../../../../headers/lib/utils/boolean_utils/boolean_utils.h"
 #include "../../../../../headers/lib/utils/char_utils/char_utils.h"
 #include "../../../../../headers/lib/utils/error_utils/error_utils.h"
 #include "../../../../../headers/lang/aio_reserved_names/aio_reserved_names_container.h"
-#include "../../../../../headers/lang/aio_core/aio_core.h"
 #include "../../../../../headers/lib/utils/memory_utils/memory_utils.h"
 #include "../../../../../headers/tools/aio_common_tools/aio_spider_nest/aio_spider.h"
 #include "../../../../../headers/tools/aio_function_tools/aio_instruction_spider_nest/aio_assign_spider/aio_assign_spider.h"
 #include "../../../../../headers/lib/utils/str_hook/str_hook_utils/str_hook_utils.h"
 #include "../../../../../headers/tools/aio_function_tools/aio_instructions/aio_tasks/aio_assign_task.h"
 #include "../../../../../headers/lang/aio_type/aio_type.h"
+#include "../../../../../headers/lib/utils/point_watcher/point_watcher.h"
+#include "../../../../../headers/lib/utils/str_hook/str_hook.h"
+#include "../../../../../headers/lib/utils/string_utils/string_utils.h"
+#include "../../../../../headers/lang/aio_function/aio_variable/aio_definition/aio_variable_definition.h"
+#include "../../../../../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction_holder.h"
+#include "../../../../../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction.h"
 
 /**
  * 주 논리 (Business logic).
@@ -72,7 +78,7 @@ void free_assign_spider(aio_spider *spider)
  * 건설자 (Constructor).
  */
 
-struct aio_spider *new_aio_assign_spider(point_watcher *ripper_watcher)
+aio_spider *new_aio_assign_spider(point_watcher *ripper_watcher)
 {
     aio_spider *spider = new_object(sizeof(aio_spider));
     //함수들을 놓다 (Put functions):
@@ -100,8 +106,11 @@ struct aio_spider *new_aio_assign_spider(point_watcher *ripper_watcher)
  * 수색 (Searching).
  */
 
-const aio_spider_message is_found_assign_instruction(const_string source_code, point_watcher *ripper_watcher,
-                                                     aio_spider *spider)
+const aio_spider_message is_found_assign_instruction(
+        const_string source_code,
+        point_watcher *ripper_watcher,
+        aio_spider *spider
+)
 {
     //재료들을 추출하다 (Extract materials):
     const aio_assign_materials *materials = spider->materials;
@@ -227,9 +236,12 @@ void handle_assign_declaration_scope(const_string source_code, aio_spider *spide
     }
 }
 
-void refresh_assign_declaration_scope(aio_spider *spider, const_str_hook *hook,
-                                      aio_assign_variable_declaration_type type,
-                                      aio_spider_message message)
+void refresh_assign_declaration_scope(
+        aio_spider *spider,
+        const_str_hook *hook,
+        aio_assign_variable_declaration_type type,
+        aio_spider_message message
+)
 {
     //재료들을 추출하다 (Extract materials):
     aio_assign_materials *materials = spider->materials;
@@ -323,7 +335,7 @@ void handle_assign_value_scope(const_string source_code, aio_spider *spider)
             value_watcher->mode = POINT_WATCHER_PASSIVE_MODE;
         }
     }
-    if (value_watcher->mode != POINT_WATCHER_UNDEFINED_MODE){
+    if (value_watcher->mode != POINT_WATCHER_UNDEFINED_MODE) {
         value_watcher->mode = POINT_WATCHER_PASSIVE_MODE;
         value_watcher->pointer = 0;
         if (is_valid_bound) {
@@ -392,8 +404,12 @@ static aio_variable_definition *create_local_variable_definition(
     return new_aio_variable_definition(variable_name, variable_type, is_mutable);
 }
 
-void weave_assign_instruction_for(void *holder, const_string _,
-                                  point_watcher *ripper_watcher, aio_spider *spider)
+void weave_assign_instruction_for(
+        void *holder,
+        const_string _,
+        point_watcher *ripper_watcher,
+        aio_spider *spider
+)
 {
 #ifdef AIO_ASSIGN_SPIDER_DEBUG
     log_info(AIO_ASSIGN_SPIDER_TAG, "Start weaving...");
@@ -412,7 +428,7 @@ void weave_assign_instruction_for(void *holder, const_string _,
         const_str_hook *definition_name = get_definition_name_by_materials(materials);
         const_aio_variable_definition *definition = get_aio_variable_definition_in_function_tree(definition_name,
                                                                                                  holder);
-        if (definition == NULL) {
+        if (!definition) {
             definition = create_local_variable_definition(declaration_type, variable_data);;
             //지도에게 지역 변수 정의를 놓다 (Put local definition in variable definition list):
             aio_variable_definition_list *list = instruction_holder->variable_definition_list;
@@ -427,8 +443,11 @@ void weave_assign_instruction_for(void *holder, const_string _,
                 throw_error_with_tag(AIO_ASSIGN_SPIDER_TAG, "Variable already was defined in function tree!");
             }
             if (!definition->is_mutable) {
-                throw_error_with_details(AIO_ASSIGN_SPIDER_TAG, "Immutable variable can not change value!",
-                                         substring_by_str_hook(definition->name));
+                throw_error_with_hook(
+                        AIO_ASSIGN_SPIDER_TAG,
+                        "Immutable variable can not change value!",
+                        definition->name
+                );
             }
         }
         //'Assign' 지침을  짜다 (Weave 'Assign' instruction):

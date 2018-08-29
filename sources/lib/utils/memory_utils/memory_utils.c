@@ -17,7 +17,7 @@ void *new_object_array(const size_t number_of_elements, const size_t size_of_obj
 {
     void *object_array = calloc(number_of_elements, size_of_object);
     if (object_array == NULL) {
-        perror("Can'n allocate memory for object array!");
+        perror("Can not allocate memory for object array!");
         exit(1);
     }
     return object_array;
@@ -27,8 +27,10 @@ void *reallocate_object_array(void *object_array, const size_t new_number_of_ele
 {
     object_array = realloc(object_array, new_number_of_elements * sizeof(size_of_object));
     if (object_array == NULL) {
-        perror("Cannot reallocate memory for object array!");
+        perror("Can not reallocate memory for object array!");
         exit(1);
+    } else {
+        return realloc(object_array, new_number_of_elements * size_of_object);
     }
 }
 

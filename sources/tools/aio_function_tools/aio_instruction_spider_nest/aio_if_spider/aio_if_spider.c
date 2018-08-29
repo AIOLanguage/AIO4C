@@ -1,16 +1,15 @@
 #include <malloc.h>
 #include <mem.h>
-#include <ctype.h>
 #include "../../../../../headers/lib/utils/string_utils/string_utils.h"
 #include "../../../../../headers/lib/utils/char_utils/char_utils.h"
 #include "../../../../../headers/lib/utils/error_utils/error_utils.h"
-#include "../../../../../headers/lib/utils/string_utils/string_builder.h"
-#include "../../../../../headers/lang/aio_reserved_names/aio_reserved_names_container.h"
 #include "../../../../../headers/lib/utils/memory_utils/memory_utils.h"
 #include "../../../../../headers/tools/aio_common_tools/aio_spider_nest/aio_spider.h"
 #include "../../../../../headers/tools/aio_function_tools/aio_instruction_spider_nest/aio_if_spider/aio_if_spider.h"
 #include "../../../../../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction_holder.h"
 #include "../../../../../headers/tools/aio_function_tools/aio_instructions/aio_tasks/aio_if_task.h"
+#include "../../../../../headers/lib/utils/point_watcher/point_watcher.h"
+#include "../../../../../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction.h"
 
 /**
  * 주 논리 (Business logic).
@@ -30,7 +29,8 @@
  * Refresh
  */
 
-void refresh_if_spider(aio_spider *spider, point_watcher *ripper_watcher) {
+void refresh_if_spider(aio_spider *spider, point_watcher *ripper_watcher)
+{
     //거미의 조건 리셋 (Reset spider state):
     spider->message = AIO_SPIDER_NOT_FOUND_MATERIALS;
     //재료 리셋 (Reset materials):
@@ -55,7 +55,8 @@ void refresh_if_spider(aio_spider *spider, point_watcher *ripper_watcher) {
  * 거미를 비우다 (Free spider).
  */
 
-void free_if_spider(aio_spider *spider) {
+void free_if_spider(aio_spider *spider)
+{
     aio_if_materials *materials = spider->materials;
     free_point_watcher(materials->main_watcher);
     free_point_watcher(materials->header_watcher);
@@ -70,7 +71,8 @@ void free_if_spider(aio_spider *spider) {
  * 건설자 (Constructor).
  */
 
-aio_spider *new_aio_if_spider(point_watcher *ripper_watcher) {
+aio_spider *new_aio_if_spider(point_watcher *ripper_watcher)
+{
     aio_spider *spider = new_object(sizeof(aio_spider));
     //함수들을 놓다 (Put functions):
     spider->refresh = refresh_if_spider;
@@ -97,8 +99,12 @@ aio_spider *new_aio_if_spider(point_watcher *ripper_watcher) {
  * 수색 (Searching).
  */
 
-const aio_spider_message
-is_found_if_instruction(const_string source_code, point_watcher *ripper_watcher, aio_spider *spider) {
+const aio_spider_message is_found_if_instruction(
+        const_string source_code,
+        point_watcher *ripper_watcher,
+        aio_spider *spider
+)
+{
     //재료들을 추출하다 (Extract materials):
     const aio_if_materials *materials = spider->materials;
     point_watcher *main_watcher = materials->main_watcher;
@@ -132,7 +138,8 @@ is_found_if_instruction(const_string source_code, point_watcher *ripper_watcher,
     return spider->message;
 }
 
-void handle_if_modifier_scope(const_string source_code, aio_spider *spider) {
+void handle_if_modifier_scope(const_string source_code, aio_spider *spider)
+{
     aio_if_materials *materials = spider->materials;
     point_watcher *main_watcher = materials->main_watcher;
     const int current_position = main_watcher->end;
@@ -163,13 +170,14 @@ void handle_if_modifier_scope(const_string source_code, aio_spider *spider) {
     }
 }
 
-void handle_condition_scope(const_string string_web, aio_spider *spider) {
+void handle_condition_scope(const_string source_code, aio_spider *spider)
+{
     aio_if_materials *materials = spider->materials;
     point_watcher *main_watcher = materials->main_watcher;
     point_watcher *header_watcher = materials->header_watcher;
     //현재 위치를 정의하다 (Define current position):
     const int current_position = main_watcher->end;
-    const char current_symbol = string_web[current_position];
+    const char current_symbol = source_code[current_position];
     //조건들을 확인하다 (Check conditions):
     const_boolean is_whitespace_cond = is_space_or_line_break(current_symbol);
     const_boolean is_opening_parenthesis_cond = is_opening_parenthesis(current_symbol);
@@ -208,7 +216,7 @@ void handle_condition_scope(const_string string_web, aio_spider *spider) {
                 //범위를 바꾼다 (Change scope):
                 materials->scope_type = AIO_IF_TRUE_BODY_SCOPE;
                 //조건을 추출하다 (Extract condition):
-                const_string dirty_condition = substring_by_point_watcher(string_web, header_watcher);
+                const_string dirty_condition = substring_by_point_watcher(source_code, header_watcher);
                 string clean_condition = squeeze_string_for_expression(dirty_condition);
 #ifdef AIO_IF_SPIDER_DEBUG
                 log_info_string(AIO_IF_SPIDER_TAG, "Captured condition", clean_condition);
@@ -227,7 +235,8 @@ void handle_condition_scope(const_string string_web, aio_spider *spider) {
     }
 }
 
-void handle_true_body_scope(const_string source_code, aio_spider *spider) {
+void handle_true_body_scope(const_string source_code, aio_spider *spider)
+{
     aio_if_materials *materials = spider->materials;
     point_watcher *main_watcher = materials->main_watcher;
     point_watcher *true_watcher = materials->true_watcher;
@@ -310,7 +319,8 @@ void handle_true_body_scope(const_string source_code, aio_spider *spider) {
     }
 }
 
-void handle_false_body_scope(const_string source_code, aio_spider *spider) {
+void handle_false_body_scope(const_string source_code, aio_spider *spider)
+{
     aio_if_materials *materials = spider->materials;
     point_watcher *main_watcher = materials->main_watcher;
     point_watcher *false_watcher = materials->false_watcher;
@@ -373,8 +383,13 @@ void handle_false_body_scope(const_string source_code, aio_spider *spider) {
  * Weaving.
  */
 
-void weave_if_instruction_for(void *parent, const_string source_code,
-                              point_watcher *ripper_watcher, struct aio_spider *spider) {
+void weave_if_instruction_for(
+        void *parent,
+        const_string source_code,
+        point_watcher *ripper_watcher,
+        aio_spider *spider
+)
+{
     aio_function_instruction_holder *holder = parent;
 #ifdef AIO_IF_SPIDER_DEBUG
     log_info(AIO_IF_SPIDER_TAG, "Start weaving...");

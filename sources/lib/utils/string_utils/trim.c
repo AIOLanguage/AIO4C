@@ -1,15 +1,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <malloc.h>
-#include <ctype.h>
-#include <assert.h>
-#include <stddef.h>
 #include "../../../../headers/lib/utils/string_utils/string_utils.h"
+#include "../../../../headers/lib/utils/boolean_utils/boolean_utils.h"
 #include "../../../../headers/lib/utils/char_utils/char_utils.h"
 
-static string abstract_border_trim(const_string src, const int has_left, const int has_right,
-                            boolean (*trim_condition)(const char)) {
+static string abstract_border_trim(
+        const_string src,
+        const int has_left,
+        const int has_right,
+        boolean (*trim_condition)(const char)
+)
+{
     char *dst;
     const size_t src_length = strlen(src);
     if (src_length == 0) {
@@ -51,27 +53,23 @@ static string abstract_border_trim(const_string src, const int has_left, const i
     return dst;
 }
 
-//끝난!
-//Passed JUnitTest!
-string trim_start(const_string src) {
+string trim_start(const_string src)
+{
     return abstract_border_trim(src, TRUE, FALSE, is_space);
 }
 
-//끝난!
-//Passed JUnitTest!
-string trim_end(const_string src) {
+string trim_end(const_string src)
+{
     return abstract_border_trim(src, FALSE, TRUE, is_space);
 }
 
-//끝난!
-//Passed JUnitTest!
-string trim(const_string src) {
+string trim(const_string src)
+{
     return abstract_border_trim(src, TRUE, TRUE, is_space);
 }
 
-//끝난!
-//PassedJUnit Test!
-string_array trim_all(const_string_array strings, const int number_of_strings) {
+string_array trim_all(string_array strings, const int number_of_strings)
+{
     char **dst;
     dst = calloc((size_t) number_of_strings, sizeof(string));
     for (int i = 0; i < number_of_strings; ++i) {
@@ -80,21 +78,24 @@ string_array trim_all(const_string_array strings, const int number_of_strings) {
     return dst;
 }
 
-string trim_start_with_line_break(const_string src) {
+string trim_start_with_line_break(const_string src)
+{
     return abstract_border_trim(src, TRUE, FALSE, is_space_or_line_break);
 }
 
-string trim_end_with_line_break(const_string src) {
+string trim_end_with_line_break(const_string src)
+{
     return abstract_border_trim(src, FALSE, TRUE, is_space_or_line_break);
 }
 
-string trim_with_line_break(const_string src) {
+string trim_with_line_break(const_string src)
+{
     return abstract_border_trim(src, TRUE, TRUE, is_space_or_line_break);
 }
 
-string_array trim_all_with_line_break(const_string_array strings, const int number_of_strings) {
-    char **dst;
-    dst = calloc((size_t) number_of_strings, sizeof(string));
+string_array trim_all_with_line_break(string_array strings, const int number_of_strings)
+{
+    char **dst = calloc((size_t) number_of_strings, sizeof(string));
     for (int i = 0; i < number_of_strings; ++i) {
         dst[i] = trim_with_line_break(strings[i]);
     }
