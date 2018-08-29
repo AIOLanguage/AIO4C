@@ -1,7 +1,7 @@
 //성공적인 시험 (Successful test):
 Dou abs(mu Dou value) {
     if (value < 0) {
-        value = 0 - value //FIXME: Make in the future "-1 * value"
+        value = 0 - value
     }
     out value
 }
