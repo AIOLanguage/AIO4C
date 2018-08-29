@@ -797,33 +797,6 @@ sources/lib/utils/memory_utils/memory_utils.c.s:
 	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/memory_utils/memory_utils.c.s
 .PHONY : sources/lib/utils/memory_utils/memory_utils.c.s
 
-sources/lib/utils/operation_utils/operation_utils.obj: sources/lib/utils/operation_utils/operation_utils.c.obj
-
-.PHONY : sources/lib/utils/operation_utils/operation_utils.obj
-
-# target to build an object file
-sources/lib/utils/operation_utils/operation_utils.c.obj:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/operation_utils/operation_utils.c.obj
-.PHONY : sources/lib/utils/operation_utils/operation_utils.c.obj
-
-sources/lib/utils/operation_utils/operation_utils.i: sources/lib/utils/operation_utils/operation_utils.c.i
-
-.PHONY : sources/lib/utils/operation_utils/operation_utils.i
-
-# target to preprocess a source file
-sources/lib/utils/operation_utils/operation_utils.c.i:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/operation_utils/operation_utils.c.i
-.PHONY : sources/lib/utils/operation_utils/operation_utils.c.i
-
-sources/lib/utils/operation_utils/operation_utils.s: sources/lib/utils/operation_utils/operation_utils.c.s
-
-.PHONY : sources/lib/utils/operation_utils/operation_utils.s
-
-# target to generate assembly for a file
-sources/lib/utils/operation_utils/operation_utils.c.s:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lib/utils/operation_utils/operation_utils.c.s
-.PHONY : sources/lib/utils/operation_utils/operation_utils.c.s
-
 sources/lib/utils/point_watcher/point_watcher.obj: sources/lib/utils/point_watcher/point_watcher.c.obj
 
 .PHONY : sources/lib/utils/point_watcher/point_watcher.obj
@@ -2204,9 +2177,6 @@ help:
 	@echo ... sources/lib/utils/memory_utils/memory_utils.obj
 	@echo ... sources/lib/utils/memory_utils/memory_utils.i
 	@echo ... sources/lib/utils/memory_utils/memory_utils.s
-	@echo ... sources/lib/utils/operation_utils/operation_utils.obj
-	@echo ... sources/lib/utils/operation_utils/operation_utils.i
-	@echo ... sources/lib/utils/operation_utils/operation_utils.s
 	@echo ... sources/lib/utils/point_watcher/point_watcher.obj
 	@echo ... sources/lib/utils/point_watcher/point_watcher.i
 	@echo ... sources/lib/utils/point_watcher/point_watcher.s

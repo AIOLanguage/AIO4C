@@ -148,9 +148,6 @@
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/memory_utils/memory_utils.h">
 			<Option target="AIO"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/operation_utils/operation_utils.h">
-			<Option target="AIO"/>
-		</Unit>
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/point_watcher/point_watcher.h">
 			<Option target="AIO"/>
 		</Unit>
@@ -314,9 +311,6 @@
 			<Option target="AIO"/>
 		</Unit>
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/memory_utils/memory_utils.c">
-			<Option target="AIO"/>
-		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/operation_utils/operation_utils.c">
 			<Option target="AIO"/>
 		</Unit>
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/point_watcher/point_watcher.c">

@@ -13,7 +13,7 @@
 #include "../../../../headers/lang/aio_function/aio_variable/aio_definition/aio_variable_definition.h"
 #include "../../../../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction_holder.h"
 #include "../../../../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction.h"
-#include "../../../../headers/lang/aio_context/aio_context.h"
+#include "lang/aio_context/aio_context.h"
 
 #define AIO_CONTROL_GRAPH_DEBUG
 

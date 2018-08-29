@@ -52,7 +52,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/AIO.dir/sources/lib/utils/int_utils/int_utils.c.obj"
   "CMakeFiles/AIO.dir/sources/lib/utils/log_utils/log_utils.c.obj"
   "CMakeFiles/AIO.dir/sources/lib/utils/memory_utils/memory_utils.c.obj"
-  "CMakeFiles/AIO.dir/sources/lib/utils/operation_utils/operation_utils.c.obj"
   "CMakeFiles/AIO.dir/sources/lib/utils/point_watcher/point_watcher.c.obj"
   "CMakeFiles/AIO.dir/sources/lib/utils/str_hook/str_hook.c.obj"
   "CMakeFiles/AIO.dir/sources/lib/utils/str_hook/str_hook_utils/str_hook_split.c.obj"

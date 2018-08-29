@@ -194,7 +194,6 @@ CMakeFiles/AIO.dir/sources/lib/utils/log_utils/log_utils.c.obj
 CMakeFiles/AIO.dir/sources/lib/utils/memory_utils/memory_utils.c.obj
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/memory_utils/memory_utils.h
  C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/memory_utils/memory_utils.c
-CMakeFiles/AIO.dir/sources/lib/utils/operation_utils/operation_utils.c.obj
 CMakeFiles/AIO.dir/sources/lib/utils/point_watcher/point_watcher.c.obj
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/memory_utils/memory_utils.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/point_watcher/point_watcher.h
@@ -277,7 +276,6 @@ CMakeFiles/AIO.dir/sources/tools/aio_common_tools/aio_spider_nest/aio_spider_nes
  C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_common_tools/aio_spider_nest/aio_spider.h
  C:/Users/StarKRE/CLionProjects/AIO/sources/tools/aio_common_tools/aio_spider_nest/aio_spider_nest.c
 CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_control_graph/aio_function_control_graph.c.obj
- C:/Users/StarKRE/CLionProjects/AIO/headers/lang/aio_context/aio_context.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lang/aio_function/aio_bundle/aio_bundle.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lang/aio_function/aio_function_definition/aio_function_definition.h
  C:/Users/StarKRE/CLionProjects/AIO/headers/lang/aio_function/aio_value/aio_value.h

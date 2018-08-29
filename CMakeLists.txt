@@ -4,7 +4,7 @@ cmake_minimum_required(VERSION 3.10)
 
 set(CMAKE_C_STANDARD 11)
 
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -std=c++11 -pedantic -Wall -Wextra -I headers")
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -std=c++11 -pedantic -Wall -Wextra -Iheaders")
 
 add_definitions(-DSOME_IMPORTANT_DEFINITION)
 
@@ -66,7 +66,6 @@ add_executable(${PROJECT_NAME}
         headers/lib/utils/int_utils/int_utils.h
         headers/lib/utils/log_utils/log_utils.h
         headers/lib/utils/memory_utils/memory_utils.h
-        headers/lib/utils/operation_utils/operation_utils.h
         headers/lib/utils/point_watcher/point_watcher.h
         headers/lib/utils/str_hook/str_hook.h
         headers/lib/utils/str_hook/str_hook_utils/str_hook_utils.h
@@ -133,7 +132,6 @@ add_executable(${PROJECT_NAME}
         sources/lib/utils/int_utils/int_utils.c
         sources/lib/utils/log_utils/log_utils.c
         sources/lib/utils/memory_utils/memory_utils.c
-        sources/lib/utils/operation_utils/operation_utils.c
         sources/lib/utils/point_watcher/point_watcher.c
         sources/lib/utils/str_hook/str_hook.c
         sources/lib/utils/str_hook/str_hook_utils/str_hook_split.c

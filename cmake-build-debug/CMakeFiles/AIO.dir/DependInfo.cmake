@@ -29,7 +29,6 @@ set(CMAKE_DEPENDS_CHECK_C
   "C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/int_utils/int_utils.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lib/utils/int_utils/int_utils.c.obj"
   "C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/log_utils/log_utils.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lib/utils/log_utils/log_utils.c.obj"
   "C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/memory_utils/memory_utils.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lib/utils/memory_utils/memory_utils.c.obj"
-  "C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/operation_utils/operation_utils.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lib/utils/operation_utils/operation_utils.c.obj"
   "C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/point_watcher/point_watcher.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lib/utils/point_watcher/point_watcher.c.obj"
   "C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/str_hook/str_hook.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lib/utils/str_hook/str_hook.c.obj"
   "C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/str_hook/str_hook_utils/str_hook_iterator.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/lib/utils/str_hook/str_hook_utils/str_hook_iterator.c.obj"
