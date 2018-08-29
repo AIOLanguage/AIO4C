@@ -3,7 +3,7 @@ Str castString() {
     a = 3.2
     b = a
     Int c = a + '1'
-    out 'Percent:' ~ ((c) / 100.0)
+    out 'Percent: ' ~ ((c) / 100.0)
 }
 
 //성공적인 시험 (Successful test):

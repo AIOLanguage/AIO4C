@@ -9,9 +9,9 @@
 
 #ifdef AIO_DEVELOPMENT
 
-#define AIO_TEST_PATH "../aioPrograms/tests/complexTests/switch/Trivial.aio"
+#define AIO_TEST_PATH "../aioPrograms/tests/complexTests/loop/Trivial.aio"
 
-#define AIO_TEST_FUNCTION "getDaysInMonthIn2018"
+#define AIO_TEST_FUNCTION "isPalindrome"
 
 #define AIO_DEVELOPMENT_DEBUG
 
@@ -27,8 +27,9 @@ aio_bundle *create_test_bundle()
 {
     aio_value_list *input_value_list = new_aio_value_list();
     //Create test args:
-    add_aio_value_in_list(input_value_list, new_aio_string_value("a"));
-//    add_aio_value_in_list(input_value_list, new_aio_int_value(4));
+    add_aio_value_in_list(input_value_list, new_aio_int_value(121));
+//    add_aio_value_in_list(input_value_list, new_aio_int_value(9));
+//    add_aio_value_in_list(input_value_list, new_aio_double_value(10.0));
     //Crete bundle:
     return new_aio_bundle(input_value_list);
 }
@@ -58,19 +59,7 @@ void make_test()
     const size_t list_size = input_list->size;
     for (int i = 0; i < list_size; ++i) {
         aio_value *input_value = input_value_array[i];
-        const_str_hook *type = input_value->type;
-        if (is_hook_equals_str(type, INTEGER)) {
-            log_info_int(AIO_DEVELOPMENT_TAG, "Value:", input_value->get.int_acc);
-        }
-        if (is_hook_equals_str(type, DOUBLE)) {
-            log_info_double(AIO_DEVELOPMENT_TAG, "Value:", input_value->get.double_acc);
-        }
-        if (is_hook_equals_str(type, STRING)) {
-            log_info_string(AIO_DEVELOPMENT_TAG, "Value:", input_value->get.string_acc);
-        }
-        if (is_hook_equals_str(type, BOOLEAN)) {
-            log_info_boolean(AIO_DEVELOPMENT_TAG, "Value:", input_value->get.boolean_acc);
-        }
+        log_info_aio_value(AIO_DEVELOPMENT_TAG, "Input value:", input_value);
     }
 #endif
 //    exit(1);

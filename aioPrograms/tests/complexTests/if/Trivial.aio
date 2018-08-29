@@ -33,6 +33,9 @@ Str getSign(Dou first, Dou second) {
 
 //성공적인 테스트 (Successful test):
 Str isGoodWinterForSquirrel(Int cones, Int nuts, Int requiredNuts) {
+    if (cones <= 0 | nuts <= 0 | requiredNuts <= 0) {
+        out 'Squirrel is mad'
+    }
     collectedNuts = cones * nuts
     if (collectedNuts >= requiredNuts) {
         out 'Squirrel is happy'
@@ -42,7 +45,7 @@ Str isGoodWinterForSquirrel(Int cones, Int nuts, Int requiredNuts) {
 }
 
 //성공적인 테스트 (Successful test):
-Str getGender(Boo isMale){
+Str getGender(Boo isMale) {
     mu gender = voi
     if (isMale) {
         gender = 'Male'

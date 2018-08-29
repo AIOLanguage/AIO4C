@@ -4,6 +4,6 @@ Int getDaysInMonthIn2018(Str month) {
         ('April', 'June', 'September', 'November') -> { out 30 }
         ('January', 'March', 'May', July, 'August', 'October', 'December') -> { out 31 }
     } : {
-        out -1
+        out voi
     }
 }
