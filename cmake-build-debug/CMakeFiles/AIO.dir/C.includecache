@@ -6,33 +6,39 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/StarKRE/CLionProjects/AIO/headers/lang/aio_reserved_names/aio_reserved_names_container.h
+../headers/lang/aio_context/aio_context.h
 
-C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/boolean_utils/boolean_utils.h
+../headers/lang/aio_core/aio_core.h
 
-C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/char_utils/char_utils.h
+../headers/lang/aio_function/aio_bundle/aio_bundle.h
 
-C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/string_utils/string_builder.h
+../headers/lang/aio_function/aio_function.h
 
-C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/string_utils/string_utils.h
+../headers/lang/aio_function/aio_value/aio_value.h
 
-C:/Users/StarKRE/CLionProjects/AIO/sources/lib/utils/string_utils/string_utils.c
-stdio.h
+../headers/lib/utils/log_utils/log_utils.h
+
+../headers/lib/utils/str_hook/str_hook.h
+
+../headers/lib/utils/str_hook/str_hook_utils/str_hook_utils.h
+
+C:/Users/StarKRE/CLionProjects/AIO/main/main.c
+fcntl.h
 -
-stdlib.h
+lang/aio_function/aio_bundle/aio_bundle.h
 -
-string.h
+lang/aio_function/aio_value/aio_value.h
 -
-ctype.h
+lang/aio_core/aio_core.h
 -
-../../../../headers/lib/utils/string_utils/string_utils.h
-C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/string_utils/string_utils.h
-../../../../headers/lib/utils/char_utils/char_utils.h
-C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/char_utils/char_utils.h
-../../../../headers/lang/aio_reserved_names/aio_reserved_names_container.h
-C:/Users/StarKRE/CLionProjects/AIO/headers/lang/aio_reserved_names/aio_reserved_names_container.h
-../../../../headers/lib/utils/string_utils/string_builder.h
-C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/string_utils/string_builder.h
-../../../../headers/lib/utils/boolean_utils/boolean_utils.h
-C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/boolean_utils/boolean_utils.h
+lib/utils/str_hook/str_hook_utils/str_hook_utils.h
+-
+lang/aio_function/aio_function.h
+-
+lib/utils/str_hook/str_hook.h
+-
+lang/aio_context/aio_context.h
+-
+lib/utils/log_utils/log_utils.h
+-
 
