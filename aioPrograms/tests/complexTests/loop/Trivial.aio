@@ -41,15 +41,18 @@ Dou pow(Dou base, Int times) {
     if (times == 0) {
         out 1
     }
-    mu shift = 0
+    mu shift = voi
+    mu divisor = voi
     if (times > 0) {
         shift = 1
+        divisor = base
     } : {
         shift = 0 - 1
+        divisor = 1.0 / base
     }
     mu Int counter = 0
     loo (mu Dou result = 1 tru) {
-        result = result * base
+        result = result * divisor
         counter = counter + shift
         if (counter == times) {
             out result

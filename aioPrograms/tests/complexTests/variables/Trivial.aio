@@ -14,3 +14,11 @@ Int minus(Int a, Int b) {
 Boo isPercent(Dou value) {
     out 0.0 < value & value < 100.0
 }
+
+Int sqr(Int a) {
+    out a * a
+}
+
+Int countSqrHypotenuse(Int a, Int b) {
+    out sum(sqr(a), sqr(b))
+}
