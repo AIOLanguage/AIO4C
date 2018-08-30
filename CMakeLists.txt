@@ -4,9 +4,11 @@ cmake_minimum_required(VERSION 3.10)
 
 set(CMAKE_C_STANDARD 11)
 
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -std=c++11 -pedantic -Wall -Wextra -Iheaders")
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -std=c++11 -pedantic -Wall -Wextra")
 
 add_definitions(-DSOME_IMPORTANT_DEFINITION)
+
+include_directories(headers)
 
 add_executable(${PROJECT_NAME}
         #---------------------------------------------------------------------------------------------------------------
@@ -153,7 +155,7 @@ add_executable(${PROJECT_NAME}
         sources/tools/aio_function_tools/aio_expression_parser/aio_expression_assistant.c
         sources/tools/aio_function_tools/aio_expression_parser/aio_inner_parcers/aio_void_parser.c
         #---------------------------------------------------------------------------------------------------------------
-        )
+        sources/tools/aio_function_tools/aio_control_graph/aio_function_control_graph_management.c headers/tools/aio_function_tools/aio_control_graph/aio_function_control_graph_management.h)
 
 
 #TODO: How make it???

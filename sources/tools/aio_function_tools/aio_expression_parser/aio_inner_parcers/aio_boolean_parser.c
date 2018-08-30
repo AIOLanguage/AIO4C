@@ -1,17 +1,16 @@
 #include <mem.h>
-#include "../../../../../headers/lang/aio_function/aio_result/aio_result.h"
-#include "../../../../../headers/lib/utils/str_hook/str_hook_utils/str_hook_utils.h"
-#include "../../../../../headers/lib/utils/error_utils/error_utils.h"
-#include "../../../../../headers/lib/utils/char_utils/char_utils.h"
-#include "../../../../../headers/lang/aio_context/aio_context.h"
-#include "../../../../../headers/lang/aio_function/aio_value/aio_value.h"
-#include "../../../../../headers/tools/aio_function_tools/aio_expression_parser/aio_expression_parser.h"
-#include "../../../../../headers/tools/aio_common_tools/aio_block_body_explorer/aio_block_body_explorer.h"
-#include "../../../../../headers/lib/utils/boolean_utils/boolean_utils.h"
-#include "../../../../../headers/lib/utils/str_hook/str_hook.h"
-#include "../../../../../headers/lib/utils/string_utils/string_utils.h"
-#include "../../../../../headers/lib/utils/point_watcher/point_watcher.h"
-#include "../../../../../headers/tools/aio_function_tools/aio_control_graph/aio_function_control_graph.h"
+#include <lib/utils/boolean_utils/boolean_utils.h>
+#include <lib/utils/str_hook/str_hook.h>
+#include <lib/utils/str_hook/str_hook_utils/str_hook_utils.h>
+#include <lib/utils/error_utils/error_utils.h>
+#include <lang/aio_function/aio_result/aio_result.h>
+#include <lib/utils/string_utils/string_utils.h>
+#include <lib/utils/char_utils/char_utils.h>
+#include <lib/utils/point_watcher/point_watcher.h>
+#include <lang/aio_function/aio_value/aio_value.h>
+#include <tools/aio_function_tools/aio_expression_parser/aio_expression_parser.h>
+#include <tools/aio_function_tools/aio_control_graph/aio_function_control_graph.h>
+#include <tools/aio_common_tools/aio_block_body_explorer/aio_block_body_explorer.h>
 
 #define AIO_BOOLEAN_PARSER_TAG "AIO_BOOLEAN_PARSER"
 
@@ -19,7 +18,7 @@
 
 #ifdef AIO_BOOLEAN_PARSER_DEBUG
 
-#include "../../../../../headers/lib/utils/log_utils/log_utils.h"
+#include <lib/utils/log_utils/log_utils.h>
 
 #endif
 
@@ -116,7 +115,6 @@ static enum sign {
 
 static aio_result *try_to_get_sign_condition(
         const_str_hook *expression_hook,
-        const_aio_context *context,
         const_aio_function_control_graph *control_graph
 )
 {
@@ -173,7 +171,7 @@ static aio_result *try_to_get_sign_condition(
 #ifdef AIO_BOOLEAN_PARSER_DEBUG
     log_info_str_hook(AIO_BOOLEAN_PARSER_TAG, "Captured left expression of condition:", left_expression);
 #endif
-    aio_value *left_value = parse_value_hook(left_expression, context, control_graph);
+    aio_value *left_value = parse_value_hook(left_expression, control_graph);
     //Uniquely define sign & start right expression position:
     int start_right_expr_pos = i + 1;
     const_boolean is_next_equal_sign = is_equal_sign(expression_str[i + 1]);
@@ -230,7 +228,7 @@ static aio_result *try_to_get_sign_condition(
 #ifdef AIO_BOOLEAN_PARSER_DEBUG
     log_info_str_hook(AIO_BOOLEAN_PARSER_TAG, "Captured right expression of condition:", right_expression);
 #endif
-    aio_value *right_value = parse_value_hook(right_expression, context, control_graph);
+    aio_value *right_value = parse_value_hook(right_expression, control_graph);
     //Compare values:
     boolean condition_value = FALSE;
     switch (sign_type) {
@@ -283,25 +281,23 @@ static aio_result *try_to_get_sign_condition(
 
 static aio_result *make_condition(
         const_str_hook *expression_hook,
-        const_aio_context *context,
         const_aio_function_control_graph *control_graph
 )
 {
 #ifdef AIO_BOOLEAN_PARSER_DEBUG
     log_info_str_hook(AIO_BOOLEAN_PARSER_TAG, "Make boolean condition for expression hook:", expression_hook);
 #endif
-    aio_result *sign_condition_result = try_to_get_sign_condition(expression_hook, context, control_graph);
+    aio_result *sign_condition_result = try_to_get_sign_condition(expression_hook, control_graph);
     if (sign_condition_result != NULL) {
         str_hook *rest = sign_condition_result->rest;
         const_boolean boolean_acc = sign_condition_result->value->get.boolean_acc;
         return new_aio_boolean_result(boolean_acc, rest);
     }
-    return make_function_or_variable(expression_hook, context, control_graph, cast_to_boolean, make_boolean);
+    return make_function_or_variable(expression_hook, control_graph, cast_to_boolean, make_boolean);
 }
 
 static aio_result *make_boolean_parentheses(
         const_str_hook *expression_hook,
-        const_aio_context *context,
         const_aio_function_control_graph *control_graph
 )
 {
@@ -323,7 +319,7 @@ static aio_result *make_boolean_parentheses(
         log_info_str_hook(AIO_BOOLEAN_PARSER_TAG, "In parenthesis expression hook:", in_parenthesis_hook);
 #endif
         //Get value into parenthesis:
-        aio_value *in_parenthesis_value = parse_value_hook(in_parenthesis_hook, context, control_graph);
+        aio_value *in_parenthesis_value = parse_value_hook(in_parenthesis_hook, control_graph);
         //Cast to string:
         aio_value *value = cast_to_boolean(in_parenthesis_value);
         //Create next rest:
@@ -334,12 +330,11 @@ static aio_result *make_boolean_parentheses(
         aio_result *in_parenthesis_result = new_aio_result(value, next_hook);
         return in_parenthesis_result;
     }
-    return make_condition(expression_hook, context, control_graph);
+    return make_condition(expression_hook, control_graph);
 }
 
 static aio_result *make_and(
         const_str_hook *expression_hook,
-        const_aio_context *context,
         const_aio_function_control_graph *control_graph
 )
 {
@@ -347,7 +342,7 @@ static aio_result *make_and(
     log_info_str_hook(AIO_BOOLEAN_PARSER_TAG, "Make and for expression:", expression_hook);
 #endif
     const_string expression_string = expression_hook->source_string;
-    aio_result *left_result = make_boolean_parentheses(expression_hook, context, control_graph);
+    aio_result *left_result = make_boolean_parentheses(expression_hook, control_graph);
     aio_value *left_value = left_result->value;
     if (!left_value) {
         throw_error_with_hook(AIO_BOOLEAN_PARSER_TAG, "Found null in expression:", expression_hook);
@@ -367,7 +362,7 @@ static aio_result *make_and(
             str_hook *next_hook = new_str_hook(expression_string);
             next_hook->start = left_hook->start + 1;
             next_hook->end = left_hook->end;
-            aio_result *right_result = make_boolean_parentheses(next_hook, context, control_graph);
+            aio_result *right_result = make_boolean_parentheses(next_hook, control_graph);
             aio_value *right_value = right_result->value;
             if (!right_value) {
                 throw_error_with_hook(AIO_BOOLEAN_PARSER_TAG, "Found null in expression:", next_hook);
@@ -400,7 +395,6 @@ static aio_result *make_and(
 
 static aio_result *make_or(
         const_str_hook *expression_hook,
-        const_aio_context *context,
         const_aio_function_control_graph *control_graph
 )
 {
@@ -408,7 +402,7 @@ static aio_result *make_or(
     log_info_str_hook(AIO_BOOLEAN_PARSER_TAG, "Make or for expression:", expression_hook);
 #endif
     const_string expression_string = expression_hook->source_string;
-    aio_result *left_result = make_and(expression_hook, context, control_graph);
+    aio_result *left_result = make_and(expression_hook, control_graph);
     aio_value *left_value = left_result->value;
     if (!left_value) {
         throw_error_with_hook(AIO_BOOLEAN_PARSER_TAG, "Found null in expression:", expression_hook);
@@ -429,7 +423,7 @@ static aio_result *make_or(
             next_hook->start = left_hook->start + 1;
             next_hook->end = left_hook->end;
             //Find value after sign part:
-            aio_result *right_result = make_and(next_hook, context, control_graph);
+            aio_result *right_result = make_and(next_hook, control_graph);
             aio_value *right_value = right_result->value;
             if (!right_value) {
                 throw_error_with_hook(AIO_BOOLEAN_PARSER_TAG, "Found null in expression:", next_hook);
@@ -462,7 +456,6 @@ static aio_result *make_or(
 
 aio_value *parse_boolean_value_string(
         const_str_hook *expression_hook,
-        const_aio_context *context,
         const_aio_function_control_graph *control_graph
 )
 {
@@ -470,7 +463,7 @@ aio_value *parse_boolean_value_string(
     log_info(AIO_BOOLEAN_PARSER_TAG, ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
     log_info_str_hook(AIO_BOOLEAN_PARSER_TAG, "Start parse boolean expression:", expression_hook);
 #endif
-    aio_result *result = make_or(expression_hook, context, control_graph);
+    aio_result *result = make_or(expression_hook, control_graph);
     if (is_not_empty_hooked_str(result->rest)) {
         throw_error_with_tag(AIO_BOOLEAN_PARSER_TAG, "Can not fully parse expression!");
     }

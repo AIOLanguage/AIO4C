@@ -1,17 +1,17 @@
 #include <mem.h>
-#include "../../../../../headers/lib/utils/memory_utils/memory_utils.h"
-#include "../../../../../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction.h"
-#include "../../../../../headers/tools/aio_function_tools/aio_instructions/aio_tasks/aio_assign_task.h"
-#include "../../../../../headers/lib/utils/str_hook/str_hook_utils/str_hook_utils.h"
-#include "../../../../../headers/tools/aio_function_tools/aio_expression_parser/aio_expression_parser.h"
-#include "../../../../../headers/lang/aio_type/aio_type.h"
-#include "../../../../../headers/lang/aio_reserved_names/aio_reserved_names_container.h"
-#include "../../../../../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction_holder.h"
-#include "../../../../../headers/lib/utils/string_utils/string_utils.h"
-#include "../../../../../headers/lib/utils/str_hook/str_hook.h"
-#include "../../../../../headers/tools/aio_function_tools/aio_control_graph/aio_function_control_graph.h"
-#include "../../../../../headers/lang/aio_function/aio_value/aio_value.h"
-#include "../../../../../headers/lang/aio_function/aio_variable/aio_definition/aio_variable_definition.h"
+#include <tools/aio_function_tools/aio_control_graph/aio_function_control_graph_management.h>
+#include <tools/aio_function_tools/aio_instructions/aio_function_instruction.h>
+#include <lib/utils/string_utils/string_utils.h>
+#include <tools/aio_function_tools/aio_instructions/aio_tasks/aio_assign_task.h>
+#include <lib/utils/memory_utils/memory_utils.h>
+#include <lib/utils/str_hook/str_hook_utils/str_hook_utils.h>
+#include <lang/aio_function/aio_variable/aio_definition/aio_variable_definition.h>
+#include <lang/aio_function/aio_value/aio_value.h>
+#include <tools/aio_function_tools/aio_expression_parser/aio_expression_parser.h>
+#include <lang/aio_reserved_names/aio_reserved_names_container.h>
+#include <lang/aio_type/aio_type.h>
+#include <lib/utils/str_hook/str_hook.h>
+#include <lang/aio_function/aio_variable/aio_variable.h>
 
 #define AIO_ASSIGN_TASK_TAG "AIO_ASSIGN_TASK"
 
@@ -19,8 +19,7 @@
 
 #ifdef AIO_ASSIGN_TASK_DEBUG
 
-#include "../../../../../headers/lib/utils/log_utils/log_utils.h"
-#include "../../../../../headers/lang/aio_function/aio_variable/aio_variable.h"
+#include <lib/utils/log_utils/log_utils.h>
 
 #endif
 
@@ -67,7 +66,7 @@ void perform_aio_assign_instruction(
 #endif
     aio_value *value = NULL;
     if (!is_aio_null_value_string(value_string)) {
-        value = parse_value_string(value_string, control_graph->context_ref, control_graph);
+        value = parse_value_string(value_string, control_graph);
     }
 #ifdef AIO_ASSIGN_TASK_DEBUG
     log_info_aio_value(AIO_ASSIGN_TASK_TAG, "Parsed value:", value);

@@ -1,23 +1,17 @@
 #include <fcntl.h>
-#include "../../../../../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction.h"
-#include "../../../../../headers/lib/utils/collections/lists/string_list.h"
-#include "../../../../../headers/tools/aio_function_tools/aio_instructions/aio_tasks/aio_return_task.h"
-#include "../../../../../headers/lib/utils/memory_utils/memory_utils.h"
-#include "../../../../../headers/tools/aio_function_tools/aio_expression_parser/aio_expression_parser.h"
-#include "../../../../../headers/lib/utils/string_utils/string_utils.h"
-#include "../../../../../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction_holder.h"
-#include "../../../../../headers/tools/aio_function_tools/aio_control_graph/aio_function_control_graph.h"
-#include "../../../../../headers/lang/aio_function/aio_bundle/aio_bundle.h"
-#include "../../../../../headers/lang/aio_function/aio_value/aio_value.h"
-#include "../../../../../headers/lang/aio_context/aio_context.h"
+#include <tools/aio_function_tools/aio_instructions/aio_function_instruction.h>
+#include <lib/utils/collections/lists/string_list.h>
+#include <tools/aio_function_tools/aio_instructions/aio_tasks/aio_return_task.h>
+#include <lib/utils/memory_utils/memory_utils.h>
+#include <lib/utils/string_utils/string_utils.h>
+#include <lang/aio_function/aio_value/aio_value.h>
+#include <tools/aio_function_tools/aio_expression_parser/aio_expression_parser.h>
 
 #define AIO_RETURN_TASK_TAG "AIO_RETURN_TASK"
 
 #define AIO_RETURN_TASK_DEBUG
 
 #ifdef AIO_RETURN_TASK_DEBUG
-
-#include "../../../../../headers/lib/utils/log_utils/log_utils.h"
 
 #endif
 
@@ -44,7 +38,6 @@ void perform_aio_return_instruction(
 )
 {
     //Extract control graph:
-    const_aio_context *context_ref = control_graph->context_ref;
     aio_bundle *bundle = control_graph->bundle_ref;
     aio_value_list *output_value_list = bundle->output_values;
     //Extract task:
@@ -53,18 +46,9 @@ void perform_aio_return_instruction(
     const_string_array return_value_string_array = return_value_string_list->strings;
     const size_t return_value_list_size = return_value_string_list->size;
     //Fill bundle:
-#ifdef AIO_RETURN_TASK_DEBUG
-    log_info_int(AIO_RETURN_TASK_TAG, "SIZE:", return_value_list_size);
-#endif
     for (int i = 0; i < return_value_list_size; ++i) {
         const_string return_value_string = return_value_string_array[i];
-#ifdef AIO_RETURN_TASK_DEBUG
-        log_info_string(AIO_RETURN_TASK_TAG, "Return expression string:", return_value_string);
-#endif
-        aio_value *return_value = parse_value_string(return_value_string, context_ref, control_graph);
-#ifdef AIO_RETURN_TASK_DEBUG
-        log_info_aio_value(AIO_RETURN_TASK_TAG, "Return value:", return_value);
-#endif
+        aio_value *return_value = parse_value_string(return_value_string, control_graph);
         add_aio_value_in_list(output_value_list, return_value);
     }
     *control_graph->system_state_ref = AIO_FUNCTION_SYSTEM_STOP;

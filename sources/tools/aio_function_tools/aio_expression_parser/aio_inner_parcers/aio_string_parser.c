@@ -1,21 +1,18 @@
 #include <mem.h>
-#include "../../../../../headers/lib/utils/str_hook/str_hook.h"
-#include "../../../../../headers/lang/aio_context/aio_context.h"
-#include "../../../../../headers/lang/aio_function/aio_result/aio_result.h"
-#include "../../../../../headers/lib/utils/str_hook/str_hook_utils/str_hook_utils.h"
-#include "../../../../../headers/lib/utils/error_utils/error_utils.h"
-#include "../../../../../headers/lib/utils/char_utils/char_utils.h"
-#include "../../../../../headers/lib/utils/string_utils/string_builder.h"
-#include "../../../../../headers/tools/aio_function_tools/aio_expression_parser/aio_expression_parser.h"
-#include "../../../../../headers/lib/utils/string_utils/string_utils.h"
-#include "../../../../../headers/tools/aio_function_tools/aio_control_graph/aio_function_control_graph.h"
-#include "../../../../../headers/lang/aio_function/aio_value/aio_value.h"
+#include <lang/aio_function/aio_result/aio_result.h>
+#include <lib/utils/str_hook/str_hook.h>
+#include <lib/utils/str_hook/str_hook_utils/str_hook_utils.h>
+#include <lib/utils/string_utils/string_utils.h>
+#include <lib/utils/char_utils/char_utils.h>
+#include <lib/utils/error_utils/error_utils.h>
+#include <tools/aio_function_tools/aio_control_graph/aio_function_control_graph.h>
+#include <tools/aio_function_tools/aio_expression_parser/aio_expression_parser.h>
+#include <lang/aio_function/aio_value/aio_value.h>
+#include <lib/utils/string_utils/string_builder.h>
 
 #define AIO_STRING_PARSER_DEBUG
 
 #ifdef AIO_STRING_PARSER_DEBUG
-
-#include "../../../../../headers/lib/utils/log_utils/log_utils.h"
 
 #endif
 
@@ -23,9 +20,6 @@
 
 static aio_result *make_string(const_str_hook *expression_hook)
 {
-#ifdef AIO_STRING_PARSER_DEBUG
-    log_info_str_hook(AIO_STRING_PARSER_TAG, "Make string with expression:", expression_hook);
-#endif
     const_string expression_str = expression_hook->source_string;
     int i = expression_hook->start;
     while (!is_tilde_sign(expression_str[i]) && i < expression_hook->end) {
@@ -37,13 +31,10 @@ static aio_result *make_string(const_str_hook *expression_hook)
     str_hook *clean_string_value = NULL;
     if (is_null_hooked(captured_element)) {
         throw_error_with_hook(AIO_STRING_PARSER_TAG, "Found null in expression:", expression_hook);
-    } else
-        //Maybe int value?
-    if (is_int_hooked(captured_element) || is_double_hooked(captured_element) || is_boolean_hooked(captured_element)) {
+    } else if (is_int_hooked(captured_element) || is_double_hooked(captured_element) ||
+               is_boolean_hooked(captured_element)) {
         clean_string_value = new_str_hook_by_other(captured_element);
-    } else
-        //Maybe string value?
-    if (is_string_hooked(captured_element)) {
+    } else if (is_string_hooked(captured_element)) {
         const_str_hook *naked_hook = lower_str_hook_quotes(captured_element);
         clean_string_value = new_str_hook_by_other(naked_hook);
         //--------------------------------------------------------------------------------------------------------------
@@ -53,13 +44,7 @@ static aio_result *make_string(const_str_hook *expression_hook)
         throw_error_with_tag(AIO_STRING_PARSER_TAG, "Cannot define type of expression!");
     }
     string value = substring_by_str_hook(clean_string_value);
-    str_hook *rest_part = new_str_hook(expression_str);
-    rest_part->start = i;
-    rest_part->end = expression_hook->end;
-#ifdef AIO_STRING_PARSER_DEBUG
-    log_info_string(AIO_STRING_PARSER_TAG, "Made string:", value);
-    log_info_str_hook(AIO_STRING_PARSER_TAG, "Rest:", rest_part);
-#endif
+    str_hook *rest_part = new_str_hook_with_start_and_end(expression_str, i, expression_hook->end);
     //------------------------------------------------------------------------------------------------------------------
     //찌꺼기 수집기 (Garbage collector):
     free_str_hook(captured_element);
@@ -69,15 +54,11 @@ static aio_result *make_string(const_str_hook *expression_hook)
 
 static aio_result *make_plus(
         const_str_hook *expression_hook,
-        const_aio_context *context,
         const_aio_function_control_graph *control_graph
 )
 {
-#ifdef AIO_STRING_PARSER_DEBUG
-    log_info_str_hook(AIO_STRING_PARSER_TAG, "Make plus with expression:", expression_hook);
-#endif
     const_string expression_string = expression_hook->source_string;
-    aio_result *left_result = make_parentheses(expression_hook, context, control_graph, cast_to_string, make_string);
+    aio_result *left_result = make_parentheses(expression_hook, control_graph, cast_to_string, make_string);
     aio_value *left_value = left_result->value;
     if (!left_value) {
         throw_error_with_hook(AIO_STRING_PARSER_TAG, "Found null in expression:", expression_hook);
@@ -90,9 +71,7 @@ static aio_result *make_plus(
     //------------------------------------------------------------------------------------------------------------------
     //찌꺼기 수집기 (Garbage collector):
     free_aio_result(left_result);
-#ifdef AIO_STRING_PARSER_DEBUG
-    log_info_str_hook(AIO_STRING_PARSER_TAG, "After plus rest:", left_hook);
-#endif
+    //------------------------------------------------------------------------------------------------------------------
     while (is_not_empty_hooked_str(left_hook)) {
         const char symbol = expression_string[left_hook->start];
         //Check symbol:
@@ -103,15 +82,12 @@ static aio_result *make_plus(
             next_hook->start = left_hook->start + 1;
             next_hook->end = left_hook->end;
             //Find value after sign part:
-            aio_result *right_result = make_parentheses(next_hook, context, control_graph, cast_to_string, make_string);
+            aio_result *right_result = make_parentheses(next_hook, control_graph, cast_to_string, make_string);
             aio_value *right_value = right_result->value;
             if (!right_value) {
                 throw_error_with_hook(AIO_STRING_PARSER_TAG, "Found null in expression:", next_hook);
             }
             const_string right_acc = right_result->value->get.string_acc;
-#ifdef AIO_STRING_PARSER_DEBUG
-            log_info_str_hook(AIO_STRING_PARSER_TAG, "AFTER LEFT REST:", right_result->rest);
-#endif
             //Put right term in string builder:
             append_string(str_builder, right_acc);
             const_str_hook *old_left_hook = left_hook;
@@ -121,6 +97,7 @@ static aio_result *make_plus(
             free_str_hook(next_hook);
             free_aio_result(right_result);
             free_const_str_hook(old_left_hook);
+            //----------------------------------------------------------------------------------------------------------
         } else {
             break;
         }
@@ -131,28 +108,21 @@ static aio_result *make_plus(
     //찌꺼기 수집기 (Garbage collector):
     free_str_hook(left_hook);
     free_string_builder(str_builder);
+    //------------------------------------------------------------------------------------------------------------------
     return new_aio_string_result(new_string, rest);
 }
 
 aio_value *parse_string_value_string(
         const_str_hook *expression_hook,
-        const_aio_context *context,
         const_aio_function_control_graph *control_graph
 )
 {
-#ifdef AIO_STRING_PARSER_DEBUG
-    log_info(AIO_STRING_PARSER_TAG, ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
-    log_info_str_hook(AIO_STRING_PARSER_TAG, "Start to parse string expression:", expression_hook);
-#endif
-    aio_result *result = make_plus(expression_hook, context, control_graph);
+    aio_result *result = make_plus(expression_hook, control_graph);
     if (is_not_empty_hooked_str(result->rest)) {
         throw_error_with_tag(AIO_STRING_PARSER_TAG, "Can not fully parse expression!");
     }
     const_string result_string_acc = result->value->get.string_acc;
     aio_value *string_value = new_aio_string_value(result_string_acc);
-#ifdef AIO_STRING_PARSER_DEBUG
-    log_info_string(AIO_STRING_PARSER_TAG, "String parsing complete", string_value->get.string_acc);
-#endif
     //------------------------------------------------------------------------------------------------------------------
     //찌꺼기 수집기 (Garbage collector):
     free_aio_result(result);

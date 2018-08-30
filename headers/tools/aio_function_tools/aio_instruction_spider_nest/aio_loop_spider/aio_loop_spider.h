@@ -23,7 +23,7 @@ typedef enum aio_default_loop_header_pointer_declaration_type {
     AIO_DEFAULT_LOOP_HEADER_ABSENT
 } aio_default_loop_header_pointer_declaration_type;
 
-typedef enum aio_default_loop_header_step_scope {
+typedef enum aio_default_loop_header_step_type {
     AIO_DEFAULT_LOOP_HEADER_STEP_VARIABLE,
     AIO_DEFAULT_LOOP_HEADER_STEP_EQUAL_SIGN_SCOPE,
     AIO_DEFAULT_LOOP_HEADER_STEP_VALUE_SCOPE

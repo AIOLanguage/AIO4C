@@ -1,6 +1,27 @@
 #ifndef STRING_UTILS_H
 #define STRING_UTILS_H
 
+
+/**
+ * Typedef utils.
+ */
+
+typedef _Bool boolean;
+
+typedef const _Bool const_boolean;
+
+typedef char *string;
+
+typedef const char *const_string;
+
+typedef char **string_array;
+
+typedef const string_array const_string_array;
+
+/**
+ * Declare functions.
+ */
+
 char *new_string(const char *src);
 
 char *int_to_string(int src);
@@ -43,7 +64,7 @@ _Bool starts_with_prefix(const char *src, const char *prefix);
 
 _Bool ends_with_suffix(const char *src, const char *suffix);
 
-char **filter_strings(char **src, int src_size, const _Bool (*filter_condition)(const char *));
+char **filter_strings(char **src, const int src_size, _Bool (*filter_condition)(const char *));
 
 _Bool is_not_empty_string(const char *string);
 
@@ -68,21 +89,5 @@ char *boolean_to_string(const _Bool src);
 void free_strings(char **src);
 
 void free_string(char *src);
-
-/**
- * Typedef utils.
- */
-
-typedef _Bool boolean;
-
-typedef const _Bool const_boolean;
-
-typedef char *string;
-
-typedef const char *const_string;
-
-typedef char **string_array;
-
-typedef const string_array const_string_array;
 
 #endif //STRING_UTILS_H

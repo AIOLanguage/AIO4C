@@ -1,27 +1,23 @@
 #include <ctype.h>
-#include "../../../../headers/lib/utils/str_hook/str_hook.h"
-#include "../../../../headers/lib/utils/char_utils/char_utils.h"
-#include "../../../../headers/lib/utils/error_utils/error_utils.h"
-#include "../../../../headers/lang/aio_context/aio_context.h"
-#include "../../../../headers/lang/aio_function/aio_result/aio_result.h"
-#include "../../../../headers/tools/aio_common_tools/aio_block_body_explorer/aio_block_body_explorer.h"
-#include "../../../../headers/tools/aio_function_tools/aio_expression_parser/aio_expression_parser.h"
-#include "../../../../headers/lib/utils/str_hook/str_hook_utils/str_hook_utils.h"
-#include "../../../../headers/lang/aio_function/aio_function.h"
-#include "../../../../headers/lang/aio_reserved_names/aio_reserved_names_container.h"
-#include "../../../../headers/lib/utils/string_utils/string_utils.h"
-#include "../../../../headers/tools/aio_function_tools/aio_control_graph/aio_function_control_graph.h"
-#include "../../../../headers/lang/aio_function/aio_value/aio_value.h"
-#include "../../../../headers/lang/aio_function/aio_bundle/aio_bundle.h"
-#include "../../../../headers/lang/aio_function/aio_variable/aio_variable.h"
+#include <lang/aio_function/aio_value/aio_value.h>
+#include <lang/aio_function/aio_variable/aio_variable.h>
+#include <lang/aio_function/aio_result/aio_result.h>
+#include <tools/aio_function_tools/aio_control_graph/aio_function_control_graph_management.h>
+#include <lib/utils/string_utils/string_utils.h>
+#include <tools/aio_function_tools/aio_control_graph/aio_function_control_graph.h>
+#include <lib/utils/str_hook/str_hook_utils/str_hook_utils.h>
+#include <lib/utils/char_utils/char_utils.h>
+#include <lib/utils/error_utils/error_utils.h>
+#include <lang/aio_reserved_names/aio_reserved_names_container.h>
+#include <lang/aio_function/aio_function.h>
+#include <tools/aio_function_tools/aio_expression_parser/aio_expression_parser.h>
+#include <tools/aio_common_tools/aio_block_body_explorer/aio_block_body_explorer.h>
 
 #define AIO_EXPRESSION_ASSISTANT_TAG "AIO_EXPRESSION_ASSISTANT"
 
 #define AIO_EXPRESSION_ASSISTANT_DEBUG
 
 #ifdef AIO_EXPRESSION_ASSISTANT_DEBUG
-
-#include "../../../../headers/lib/utils/log_utils/log_utils.h"
 
 #endif
 
@@ -43,9 +39,6 @@ void make_expression_chunks_and_count_next_point(
         }
         if (is_closing_parenthesis(symbol)) {
             parenthesis_up_downer--;
-            if (parenthesis_up_downer < 0) {
-                throw_error_with_tag(AIO_EXPRESSION_ASSISTANT_TAG, "Invalid parenthesis placement!");
-            }
             if (parenthesis_up_downer == 0) {
                 str_hook *inner_expression = new_str_hook(expression_str);
                 inner_expression->start = last_pointer;
@@ -54,11 +47,14 @@ void make_expression_chunks_and_count_next_point(
                 *next_point = j + 1;
                 return;
             }
+            if (parenthesis_up_downer < 0) {
+                throw_error_with_tag(AIO_EXPRESSION_ASSISTANT_TAG, "Invalid parenthesis placement!");
+            }
         }
         if (is_comma(symbol) && parenthesis_up_downer == 1) {
             str_hook *inner_expression = new_str_hook(expression_str);
-            inner_expression->start = last_pointer,
-                    inner_expression->end = j;
+            inner_expression->start = last_pointer;
+            inner_expression->end = j;
             add_str_hook_in_list(expression_list, inner_expression);
             last_pointer = j + 1;
         }
@@ -68,15 +64,11 @@ void make_expression_chunks_and_count_next_point(
 
 aio_result *make_function_or_variable(
         const_str_hook *expression_hook,
-        const_aio_context *context,
         const_aio_function_control_graph *control_graph,
         aio_value *(*cast_function)(aio_value *),
         aio_result *(*make_value_function)(const_str_hook *)
 )
 {
-#ifdef AIO_EXPRESSION_ASSISTANT_DEBUG
-    log_info_str_hook(AIO_EXPRESSION_ASSISTANT_TAG, "Make function or variable with expression:", expression_hook);
-#endif
     const_string expression_str = expression_hook->source_string;
     const int start_position = expression_hook->start;
     const int right_border = expression_hook->end;
@@ -93,20 +85,15 @@ aio_result *make_function_or_variable(
         }
     }
     const_str_hook *function_or_variable_hook = new_str_hook_with_start_and_end(expression_str, start_position, i);
-#ifdef AIO_EXPRESSION_ASSISTANT_DEBUG
-    log_info_str_hook(AIO_EXPRESSION_ASSISTANT_TAG, "Captured element:", function_or_variable_hook);
-#endif
     if (i == right_border) {
         i--;
     }
     const_boolean is_variable_or_function_name = is_not_empty_hooked_str(function_or_variable_hook)
                                                  && can_use_name(function_or_variable_hook);
     if (is_variable_or_function_name) {
-        if (i < right_border && is_opening_parenthesis(expression_str[i])) {
+        const_boolean is_function_found = is_opening_parenthesis(expression_str[i]);
+        if (is_function_found) {
             const_str_hook *function_name = function_or_variable_hook;
-#ifdef AIO_EXPRESSION_ASSISTANT_DEBUG
-            log_info_str_hook(AIO_EXPRESSION_ASSISTANT_TAG, "This is function:", function_name);
-#endif
             str_hook *in_function_parenthesis = new_str_hook(expression_str);
             in_function_parenthesis->start = function_or_variable_hook->end;
             in_function_parenthesis->end = right_border;
@@ -122,13 +109,13 @@ aio_result *make_function_or_variable(
             const_str_hook_array expression_hooks = expression_hook_list->hooks;
             aio_value_list *input_values = new_aio_value_list();
             for (int j = 0; j < number_of_chunks; ++j) {
-                aio_value *inner_value = parse_value_hook(expression_hooks[j], context, control_graph);
+                aio_value *inner_value = parse_value_hook(expression_hooks[j], control_graph);
                 add_aio_value_in_list(input_values, inner_value);
             }
             aio_bundle *bundle = new_aio_bundle(input_values);
             aio_value_list *output_values = invoke_static_function_in_context(
-                    context,
-                    function_or_variable_hook,
+                    control_graph->context_ref,
+                    function_name,
                     bundle
             );
             if (output_values->size == 1) {
@@ -143,14 +130,8 @@ aio_result *make_function_or_variable(
         } else {
             const_str_hook *variable_name = function_or_variable_hook;
             aio_variable *variable = get_aio_variable_in_function_control_graph(variable_name, control_graph);
-#ifdef AIO_EXPRESSION_ASSISTANT_DEBUG
-            log_info_str_hook(AIO_EXPRESSION_ASSISTANT_TAG, "Is variable:", variable_name);
-            log_info_aio_value(AIO_EXPRESSION_ASSISTANT_TAG, "VARIABLE VALUE:::", variable->value);
-#endif
             aio_value *value = cast_function(variable->value);
-            str_hook *rest = new_str_hook(expression_str);
-            rest->start = variable_name->end;
-            rest->end = expression_hook->end;
+            str_hook *rest = new_str_hook_with_start_and_end(expression_str, variable_name->end, expression_hook->end);
             return new_aio_result(value, rest);;
         }
     }
@@ -159,15 +140,11 @@ aio_result *make_function_or_variable(
 
 aio_result *make_parentheses(
         const_str_hook *expression_hook,
-        const_aio_context *context,
         const_aio_function_control_graph *control_graph,
         aio_value *(*cast_function)(aio_value *),
         aio_result *(*make_value_function)(const_str_hook *)
 )
 {
-#ifdef AIO_EXPRESSION_ASSISTANT_DEBUG
-    log_info(AIO_EXPRESSION_ASSISTANT_TAG, "Make parenthesis...");
-#endif
     const_string expression_str = expression_hook->source_string;
     const char first_symbol = expression_str[expression_hook->start];
     if (is_opening_parenthesis(first_symbol)) {
@@ -179,29 +156,17 @@ aio_result *make_parentheses(
         str_hook *in_parenthesis_hook = new_str_hook(expression_str);
         in_parenthesis_hook->start = start_parenthesis + 1;
         in_parenthesis_hook->end = end_parenthesis - 1;
-#ifdef AIO_EXPRESSION_ASSISTANT_TAG
-        log_info_str_hook(AIO_EXPRESSION_ASSISTANT_TAG, "In parenthesis expression hook:", in_parenthesis_hook);
-#endif
         //Get value into parenthesis:
-        aio_value *in_parenthesis_value = parse_value_hook(in_parenthesis_hook, context, control_graph);
-#ifdef AIO_EXPRESSION_ASSISTANT_DEBUG
-        log_info_aio_value(AIO_EXPRESSION_ASSISTANT_TAG, "In parenthesis value:", in_parenthesis_value);
-#endif
+        aio_value *in_parenthesis_value = parse_value_hook(in_parenthesis_hook, control_graph);
         //Cast to string:
         aio_value *value = cast_function(in_parenthesis_value);
-#ifdef AIO_EXPRESSION_ASSISTANT_DEBUG
-        log_info_aio_value(AIO_EXPRESSION_ASSISTANT_TAG, "In parenthesis cast value:", value);
-#endif
         //Create next rest:
         str_hook *next_hook = new_str_hook(expression_str);
         next_hook->start = end_parenthesis;
         next_hook->end = expression_hook->end;
         //Create result:
-#ifdef AIO_EXPRESSION_ASSISTANT_DEBUG
-        log_info_str_hook(AIO_EXPRESSION_ASSISTANT_TAG, "After parenthesis rest:", next_hook);
-#endif
         aio_result *in_parenthesis_result = new_aio_result(value, next_hook);
         return in_parenthesis_result;
     }
-    return make_function_or_variable(expression_hook, context, control_graph, cast_function, make_value_function);
+    return make_function_or_variable(expression_hook, control_graph, cast_function, make_value_function);
 }

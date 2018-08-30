@@ -1,28 +1,25 @@
 #include <malloc.h>
 #include <mem.h>
-#include "../../../../headers/lang/aio_function/aio_variable/aio_variable.h"
-#include "../../../../headers/lang/aio_function/aio_variable/aio_definition/aio_variable_definition.h"
-#include "../../../../headers/lang/aio_function/aio_value/aio_value.h"
-#include "../../../../headers/lib/utils/memory_utils/memory_utils.h"
-#include "../../../../headers/lib/utils/str_hook/str_hook.h"
-#include "../../../../headers/tools/aio_function_tools/aio_control_graph/aio_function_control_graph.h"
-#include "../../../../headers/lib/utils/str_hook/str_hook_utils/str_hook_utils.h"
-#include "../../../../headers/lib/utils/boolean_utils/boolean_utils.h"
-#include "../../../../headers/lib/utils/error_utils/error_utils.h"
+#include <lang/aio_function/aio_variable/aio_variable.h>
+#include <lang/aio_function/aio_variable/aio_definition/aio_variable_definition.h>
+#include <lang/aio_function/aio_value/aio_value.h>
+#include <lib/utils/memory_utils/memory_utils.h>
+#include <lib/utils/str_hook/str_hook.h>
+#include <lib/utils/boolean_utils/boolean_utils.h>
+#include <lib/utils/str_hook/str_hook_utils/str_hook_utils.h>
+#include <lib/utils/error_utils/error_utils.h>
 
 #define AIO_VARIABLE_DEBUG
 
 #ifdef AIO_VARIABLE_DEBUG
 
-#include "../../../../headers/lib/utils/log_utils/log_utils.h"
-
 #endif
 
 #define AIO_VARIABLE_TAG "AIO_VARIABLE"
 
- /**
-  * Business logic
-  */
+/**
+ * Business logic
+ */
 
 aio_variable *new_aio_variable_by_definition(aio_variable_definition *variable_definition, aio_value *value)
 {
@@ -35,66 +32,8 @@ aio_variable *new_aio_variable_by_definition(aio_variable_definition *variable_d
 
 void free_aio_variable(aio_variable *variable)
 {
-#ifdef AIO_VARIABLE_DEBUG
-    log_info(AIO_VARIABLE_TAG, "Free value...");
-#endif
     free_aio_value(variable->value);
-#ifdef AIO_VARIABLE_DEBUG
-    log_info(AIO_VARIABLE_TAG, "Free variable...");
-#endif
     free(variable);
-}
-
-aio_variable *force_get_aio_variable_in_function_control_graph(
-        const_str_hook *variable_name,
-        const_aio_function_control_graph *control_graph
-)
-{
-#ifdef AIO_VARIABLE_DEBUG
-    log_info_str_hook(AIO_VARIABLE_TAG, "Try to get variable:", variable_name);
-#endif
-    const_aio_variable_list *list = control_graph->variable_list;
-#ifdef AIO_VARIABLE_DEBUG
-    log_info(AIO_VARIABLE_TAG, "----------------------------------");
-    for (int i = 0; i < list->size; ++i) {
-        log_info_str_hook(AIO_VARIABLE_TAG, "<NAME:>", list->variables[i]->definition->name);
-    }
-#endif
-    aio_variable *variable = get_aio_variable_in_list_by_name(list, variable_name);
-    if (!variable) {
-        const_aio_function_control_graph *parent = control_graph->parent;
-        if (parent) {
-            return force_get_aio_variable_in_function_control_graph(variable_name, parent);
-        } else {
-            return NULL;
-        }
-    } else {
-#ifdef AIO_VARIABLE_DEBUG
-        log_info_aio_variable_definition(AIO_VARIABLE_TAG, variable->definition);
-#endif
-        return variable;
-    }
-}
-
-aio_variable *get_aio_variable_in_function_control_graph(
-        const_str_hook *variable_name,
-        const_aio_function_control_graph *control_graph
-)
-{
-#ifdef AIO_VARIABLE_DEBUG
-    log_info(AIO_VARIABLE_TAG, "Start to find variable in graph...");
-#endif
-    aio_variable *variable = force_get_aio_variable_in_function_control_graph(variable_name, control_graph);
-    if (variable != NULL) {
-        const_boolean is_not_reached_variable_in_graph = variable->init_type == AIO_VARIABLE_NOT_INITIALIZED;
-        if (is_not_reached_variable_in_graph) {
-            return NULL;
-        } else {
-            return variable;
-        }
-    } else {
-        return NULL;
-    }
 }
 
 /**
@@ -140,8 +79,9 @@ void add_aio_variable_in_list(aio_variable_list *list, aio_variable *variable)
 aio_variable *get_aio_variable_in_list_by_name(const_aio_variable_list *list, const_str_hook *name)
 {
     const size_t list_size = list->size;
+    aio_variable_array variables = list->variables;
     for (int i = 0; i < list_size; ++i) {
-        const_str_hook *current_name = list->variables[i]->definition->name;
+        const_str_hook *current_name = variables[i]->definition->name;
         const_boolean are_equal_strings = are_equal_hooked_str(current_name, name);
         if (are_equal_strings) {
             return list->variables[i];
@@ -157,54 +97,10 @@ void free_aio_variable_list(const_aio_variable_list *list)
     for (int i = 0; i < list_size; ++i) {
         aio_variable *variable = variable_array[i];
         if (variable) {
-#ifdef AIO_VARIABLE_DEBUG
-            log_info(AIO_VARIABLE_TAG, "Free");
-            log_info_aio_variable_definition(AIO_VARIABLE_TAG, variable->definition);
-#endif
             variable_array[i] = NULL;
             free_aio_variable(variable);
         }
     }
-#ifdef AIO_VARIABLE_DEBUG
-    log_info(AIO_VARIABLE_TAG, "Variables are cleared!");
-#endif
     free(variable_array);
     free((void *) list);
-}
-
-const struct aio_variable_list *upbuild_variable_map_by_definitions(const_aio_variable_definition_list *list)
-{
-#ifdef AIO_VARIABLE_DEBUG
-    log_info(AIO_VARIABLE_TAG, "Start to build variables...");
-    log_info_boolean(AIO_VARIABLE_TAG, "Definition list:", list != NULL);
-#endif
-    //Extract definition list:
-    const size_t definition_list_size = list->size;
-    aio_variable_definition **definitions = list->definitions;
-#ifdef AIO_VARIABLE_DEBUG
-    for (int j = 0; j < definition_list_size; ++j) {
-        log_info_aio_variable_definition(AIO_VARIABLE_TAG, definitions[j]);
-        log_info(AIO_VARIABLE_TAG, "...");
-    }
-#endif
-    //Prepare to building:
-#ifdef AIO_VARIABLE_DEBUG
-    log_info(AIO_VARIABLE_TAG, "Create variable list...");
-#endif
-    aio_variable_list *variable_list = new_aio_variable_list();
-    for (int i = 0; i < definition_list_size; ++i) {
-        aio_variable_definition *definition = definitions[i];
-#ifdef AIO_VARIABLE_DEBUG
-        log_info(AIO_VARIABLE_TAG, "Create variable...");
-#endif
-        aio_variable *new_variable = new_aio_variable_by_definition(definition, NULL);
-#ifdef AIO_VARIABLE_DEBUG
-        log_info(AIO_VARIABLE_TAG, "Add variable to list...");
-#endif
-        add_aio_variable_in_list(variable_list, new_variable);
-    }
-#ifdef AIO_VARIABLE_DEBUG
-    log_info(AIO_VARIABLE_TAG, "Variables are built!");
-#endif
-    return variable_list;
 }

@@ -49,12 +49,6 @@ const struct aio_variable_definition *get_aio_variable_definition_in_map_by_name
 void free_aio_variable_definition_list(struct aio_variable_definition_list *list);
 
 /**
- * Utils.
- */
-
-const struct aio_variable_list *upbuild_variable_map_by_definitions(const struct aio_variable_definition_list *list);
-
-/**
  * Log utils.
  */
 

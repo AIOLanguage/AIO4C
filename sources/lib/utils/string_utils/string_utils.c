@@ -2,11 +2,11 @@
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
-#include "../../../../headers/lib/utils/string_utils/string_utils.h"
-#include "../../../../headers/lib/utils/char_utils/char_utils.h"
-#include "../../../../headers/lang/aio_reserved_names/aio_reserved_names_container.h"
-#include "../../../../headers/lib/utils/string_utils/string_builder.h"
-#include "../../../../headers/lib/utils/boolean_utils/boolean_utils.h"
+#include <lib/utils/string_utils/string_utils.h>
+#include <lib/utils/boolean_utils/boolean_utils.h>
+#include <lib/utils/char_utils/char_utils.h>
+#include <lib/utils/string_utils/string_builder.h>
+#include <lang/aio_reserved_names/aio_reserved_names_container.h>
 
 #define STRING_UTILS_TAG "STRING_UTILS"
 
@@ -23,9 +23,7 @@ string new_string(const_string src)
     }
 }
 
-//박수!
-//Passed JUnitTest!
-string_array filter_strings(string_array src, int src_size, const_boolean (*filter_condition)(const_string))
+string_array filter_strings(string_array src, const int src_size, boolean (*filter_condition)(const_string))
 {
     int *new_indices = calloc((size_t) src_size, sizeof(int));
     char **dst;
@@ -57,7 +55,7 @@ string_array filter_strings(string_array src, int src_size, const_boolean (*filt
 }
 
 //Passed JUnitTest!
-const_boolean is_not_empty_string(const_string string)
+boolean is_not_empty_string(const_string string)
 {
     if (string == NULL) {
         return FALSE;
@@ -70,7 +68,7 @@ const_boolean is_not_empty_string(const_string string)
 }
 
 //Passed JUnitTest!
-const_boolean is_empty_string(const_string string)
+boolean is_empty_string(const_string string)
 {
     const_boolean result = strcmp(string, EMPTY_STRING) == 0;
     return result;
@@ -114,7 +112,7 @@ string join_to_string(string_array src_strings, const_string delimiter, const in
 }
 
 //Passed JUnitTest!
-const_boolean is_word(const_string line)
+boolean is_word(const_string line)
 {
     int length = strlen(line);
     if (length < 1) {
@@ -187,7 +185,7 @@ string squeeze_string_for_expression(const_string src)
 }
 
 //Passed JUnitTest!
-const_boolean matches_string(const_string src)
+boolean matches_string(const_string src)
 {
     boolean result = FALSE;
     int length = strlen(src);
@@ -281,7 +279,7 @@ string double_to_string(const double src)
     return result;
 }
 
-const_boolean are_equal_strings(const_string first, const_string second)
+boolean are_equal_strings(const_string first, const_string second)
 {
     return strcmp(first, second) == 0;
 }

@@ -1,14 +1,16 @@
-#include "../../../headers/lib/utils/boolean_utils/boolean_utils.h"
-#include "../../../headers/lang/aio_core/aio_core.h"
-#include "../../../headers/lib/utils/str_hook/str_hook.h"
-#include "../../../headers/lib/utils/str_hook/str_hook_utils/str_hook_utils.h"
-#include "../../../headers/lang/aio_type/aio_type.h"
+#include <lib/utils/collections/sets/string_set.h>
+#include <lib/utils/boolean_utils/boolean_utils.h>
+#include <lib/utils/str_hook/str_hook.h>
+#include <lang/aio_core/aio_core.h>
+#include <lib/utils/str_hook/str_hook_utils/str_hook_utils.h>
+#include <lang/aio_type/aio_type.h>
 
 aio_core *core;
 
 boolean is_aio_type_hooked(const_str_hook *hook)
 {
-    return contains_string_in_set_by_hook(core->aio_type_set, hook);
+    const_string_set *supported_type_set = core->aio_type_set;
+    return contains_string_in_set_by_hook(supported_type_set, hook);
 }
 
 boolean is_aio_type_initialized(const_str_hook *hook)
@@ -19,4 +21,24 @@ boolean is_aio_type_initialized(const_str_hook *hook)
 boolean is_aio_void_type_hooked(const_str_hook *hook)
 {
     return is_hook_equals_str(hook, VOID);
+}
+
+boolean is_aio_int_type_hooked(const_str_hook *hook)
+{
+    return is_hook_equals_str(hook, INTEGER);
+}
+
+boolean is_aio_double_type_hooked(const_str_hook *hook)
+{
+    return is_hook_equals_str(hook, DOUBLE);
+}
+
+boolean is_aio_string_type_hooked(const_str_hook *hook)
+{
+    return is_hook_equals_str(hook, STRING);
+}
+
+boolean is_aio_boolean_type_hooked(const_str_hook *hook)
+{
+    return is_hook_equals_str(hook, BOOLEAN);
 }

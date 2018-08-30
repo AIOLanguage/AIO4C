@@ -1,6 +1,12 @@
 #ifndef AIO_SWITCH_SPIDER_H
 #define AIO_SWITCH_SPIDER_H
 
+/**
+ * Linking.
+ */
+
+#include <lib/utils/str_hook/str_hook.h>
+
 typedef enum aio_switch_scope_type {
     AIO_SWITCH_MODIFIER_SCOPE, AIO_SWITCH_HEADER_SCOPE, AIO_SWITCH_BODY_SCOPE, AIO_SWITCH_WEAVING_SCOPE
 } aio_switch_scope_type;

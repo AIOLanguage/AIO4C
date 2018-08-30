@@ -1,15 +1,19 @@
 #include <malloc.h>
 #include <ctype.h>
 #include <mem.h>
-#include "../../../../../../headers/lib/utils/char_utils/char_utils.h"
-#include "../../../../../../headers/lang/aio_reserved_names/aio_reserved_names_container.h"
-#include "../../../../../../headers/lang/aio_core/aio_core.h"
-#include "../../../../../../headers/lib/utils/error_utils/error_utils.h"
-#include "../../../../../../headers/lib/utils/memory_utils/memory_utils.h"
-#include "../../../../../../headers/lib/utils/str_hook/str_hook_utils/str_hook_utils.h"
-#include "../../../../../../headers/lang/aio_type/aio_type.h"
-#include "../../../../../../headers/tools/aio_common_tools/aio_spider_nest/aio_spider.h"
-#include "../../../../../../headers/tools/aio_function_tools/aio_instruction_spider_nest/aio_loop_spider/aio_loop_spider.h"
+#include <lib/utils/point_watcher/point_watcher.h>
+#include <tools/aio_function_tools/aio_instruction_spider_nest/aio_loop_spider/aio_loop_spider.h>
+#include <lib/utils/str_hook/str_hook.h>
+#include <lib/utils/string_utils/string_utils.h>
+#include <tools/aio_common_tools/aio_spider_nest/aio_spider.h>
+#include <lib/utils/str_hook/str_hook_utils/str_hook_utils.h>
+#include <lib/utils/char_utils/char_utils.h>
+#include <lang/aio_reserved_names/aio_reserved_names_container.h>
+#include <lib/utils/error_utils/error_utils.h>
+#include <lang/aio_type/aio_type.h>
+#include <lib/utils/memory_utils/memory_utils.h>
+#include <lib/utils/boolean_utils/boolean_utils.h>
+#include <lang/aio_function/aio_variable/aio_definition/aio_variable_definition.h>
 
 /**
  * Business logic.
@@ -29,8 +33,10 @@
  * Refresh.
  */
 
-static void refresh_default_loop_header_materials(aio_default_loop_header_materials *materials,
-                                                  point_watcher *parent_watcher)
+static void refresh_default_loop_header_materials(
+        aio_default_loop_header_materials *materials,
+        point_watcher *parent_watcher
+)
 {
     //Reset states:
     materials->scope_type = AIO_DEFAULT_LOOP_HEADER_DECLARATION_SCOPE;

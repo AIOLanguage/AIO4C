@@ -1,14 +1,13 @@
-#include "../../../../../headers/lib/utils/log_utils/log_utils.h"
-#include "../../../../../headers/lib/utils/str_hook/str_hook.h"
-#include "../../../../../headers/lib/utils/string_utils/string_utils.h"
-#include "../../../../../headers/tools/aio_function_tools/aio_control_graph/aio_function_control_graph.h"
-#include "../../../../../headers/lang/aio_function/aio_value/aio_value.h"
-#include "../../../../../headers/lib/utils/str_hook/str_hook_utils/str_hook_utils.h"
-#include "../../../../../headers/lang/aio_function/aio_result/aio_result.h"
-#include "../../../../../headers/lib/utils/char_utils/char_utils.h"
-#include "../../../../../headers/lib/utils/error_utils/error_utils.h"
-#include "../../../../../headers/lang/aio_context/aio_context.h"
-#include "../../../../../headers/tools/aio_function_tools/aio_expression_parser/aio_expression_parser.h"
+#include <lang/aio_function/aio_result/aio_result.h>
+#include <lib/utils/str_hook/str_hook.h>
+#include <lib/utils/string_utils/string_utils.h>
+#include <lib/utils/char_utils/char_utils.h>
+#include <lib/utils/str_hook/str_hook_utils/str_hook_utils.h>
+#include <lib/utils/error_utils/error_utils.h>
+#include <lib/utils/log_utils/log_utils.h>
+#include <tools/aio_function_tools/aio_expression_parser/aio_expression_parser.h>
+#include <tools/aio_function_tools/aio_control_graph/aio_function_control_graph.h>
+#include <lang/aio_function/aio_value/aio_value.h>
 
 #define AIO_DOUBLE_PARSER_DEBUG
 
@@ -83,7 +82,6 @@ static aio_result *make_double(const_str_hook *expression_hook)
 
 static aio_result *make_multiplication_or_division(
         const_str_hook *expression_hook,
-        const_aio_context *context,
         const_aio_function_control_graph *control_graph
 )
 {
@@ -91,7 +89,7 @@ static aio_result *make_multiplication_or_division(
     log_info_str_hook(AIO_DOUBLE_PARSER_TAG, "Make multiplication or division", expression_hook);
 #endif
     const_string expression_string = expression_hook->source_string;
-    aio_result *left_result = make_parentheses(expression_hook, context, control_graph, cast_to_double, make_double);
+    aio_result *left_result = make_parentheses(expression_hook, control_graph, cast_to_double, make_double);
     aio_value *left_value = left_result->value;
     if (!left_value) {
         throw_error_with_hook(AIO_DOUBLE_PARSER_TAG, "Found null in expression:", expression_hook);
@@ -114,7 +112,7 @@ static aio_result *make_multiplication_or_division(
             str_hook *next_hook = new_str_hook(expression_string);
             next_hook->start = left_hook->start + 1;
             next_hook->end = left_hook->end;
-            aio_result *right_result = make_parentheses(next_hook, context, control_graph, cast_to_double, make_double);
+            aio_result *right_result = make_parentheses(next_hook, control_graph, cast_to_double, make_double);
             aio_value *right_value = right_result->value;
             if (!right_value) {
                 throw_error_with_hook(AIO_DOUBLE_PARSER_TAG, "Found null in expression:", next_hook);
@@ -155,7 +153,6 @@ static aio_result *make_multiplication_or_division(
 
 static aio_result *make_plus_or_minus(
         const_str_hook *expression_hook,
-        const_aio_context *context,
         const_aio_function_control_graph *control_graph
 )
 {
@@ -164,7 +161,7 @@ static aio_result *make_plus_or_minus(
 #endif
 
     const_string expression_string = expression_hook->source_string;
-    aio_result *left_result = make_multiplication_or_division(expression_hook, context, control_graph);
+    aio_result *left_result = make_multiplication_or_division(expression_hook, control_graph);
     aio_value *left_value = left_result->value;
     if (!left_value) {
         throw_error_with_hook(AIO_DOUBLE_PARSER_TAG, "Found null in expression:", expression_hook);
@@ -188,7 +185,7 @@ static aio_result *make_plus_or_minus(
             next_hook->start = left_hook->start + 1;
             next_hook->end = left_hook->end;
             //Find value after sign part:
-            aio_result *right_result = make_multiplication_or_division(next_hook, context, control_graph);
+            aio_result *right_result = make_multiplication_or_division(next_hook, control_graph);
             aio_value *right_value = right_result->value;
             if (!right_value) {
                 throw_error_with_hook(AIO_DOUBLE_PARSER_TAG, "Found null in expression", next_hook);
@@ -229,7 +226,6 @@ static aio_result *make_plus_or_minus(
 
 aio_value *parse_double_value_string(
         const_str_hook *expression_hook,
-        const_aio_context *context,
         const_aio_function_control_graph *control_graph
 )
 {
@@ -237,7 +233,7 @@ aio_value *parse_double_value_string(
     log_info(AIO_DOUBLE_PARSER_TAG, ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
     log_info_str_hook(AIO_DOUBLE_PARSER_TAG, "Start to parse double expression:", expression_hook);
 #endif
-    aio_result *result = make_plus_or_minus(expression_hook, context, control_graph);
+    aio_result *result = make_plus_or_minus(expression_hook, control_graph);
     if (is_not_empty_hooked_str(result->rest)) {
         throw_error_with_tag(AIO_DOUBLE_PARSER_TAG, "Can not fully parse expression!");
     }

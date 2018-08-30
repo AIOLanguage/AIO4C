@@ -44,6 +44,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "C:/Users/StarKRE/CLionProjects/AIO/sources/tools/aio_common_tools/aio_block_body_explorer/aio_block_body_explorer.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/tools/aio_common_tools/aio_block_body_explorer/aio_block_body_explorer.c.obj"
   "C:/Users/StarKRE/CLionProjects/AIO/sources/tools/aio_common_tools/aio_spider_nest/aio_spider_nest.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/tools/aio_common_tools/aio_spider_nest/aio_spider_nest.c.obj"
   "C:/Users/StarKRE/CLionProjects/AIO/sources/tools/aio_function_tools/aio_control_graph/aio_function_control_graph.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_control_graph/aio_function_control_graph.c.obj"
+  "C:/Users/StarKRE/CLionProjects/AIO/sources/tools/aio_function_tools/aio_control_graph/aio_function_control_graph_management.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_control_graph/aio_function_control_graph_management.c.obj"
   "C:/Users/StarKRE/CLionProjects/AIO/sources/tools/aio_function_tools/aio_definition_rippers/aio_annotation_ripper.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_definition_rippers/aio_annotation_ripper.c.obj"
   "C:/Users/StarKRE/CLionProjects/AIO/sources/tools/aio_function_tools/aio_definition_rippers/aio_arg_ripper.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_definition_rippers/aio_arg_ripper.c.obj"
   "C:/Users/StarKRE/CLionProjects/AIO/sources/tools/aio_function_tools/aio_definition_rippers/aio_function_name_ripper.c" "C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug/CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_definition_rippers/aio_function_name_ripper.c.obj"
@@ -87,6 +88,7 @@ set(CMAKE_TARGET_DEFINITIONS_C
 
 # The include file search paths:
 set(CMAKE_C_TARGET_INCLUDE_PATH
+  "../headers"
   )
 
 # Targets to which this target links.

@@ -1,6 +1,9 @@
 #ifndef AIO_VARIABLE_H
 #define AIO_VARIABLE_H
 
+#include <lang/aio_function/aio_variable/aio_variable.h>
+#include <lib/utils/str_hook/str_hook.h>
+
 /**
  * Variable.
  */
@@ -18,16 +21,6 @@ typedef struct aio_variable {
 struct aio_variable *new_aio_variable_by_definition(
         struct aio_variable_definition *variable_definition,
         struct aio_value *value
-);
-
-struct aio_variable *force_get_aio_variable_in_function_control_graph(
-        const struct str_hook *variable_name,
-        const struct aio_function_control_graph *control_graph
-);
-
-struct aio_variable *get_aio_variable_in_function_control_graph(
-        const struct str_hook *variable_name,
-        const struct aio_function_control_graph *control_graph
 );
 
 void free_aio_variable(struct aio_variable *variable);

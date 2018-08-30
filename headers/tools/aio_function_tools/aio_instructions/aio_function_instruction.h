@@ -2,6 +2,13 @@
 #define AIO_FUNCTION_INSTRUCTION_H
 
 /**
+ * Linking.
+ */
+
+#include <tools/aio_function_tools/aio_instructions/aio_function_instruction.h>
+#include <tools/aio_function_tools/aio_control_graph/aio_function_control_graph.h>
+
+/**
  * Task type.
  */
 

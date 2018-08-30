@@ -2,6 +2,13 @@
 #define AIO_ASSIGN_SPIDER_H
 
 /**
+ * Linking.
+ */
+
+#include <tools/aio_common_tools/aio_spider_nest/aio_spider.h>
+#include <lib/utils/str_hook/str_hook.h>
+
+/**
  * Assign spider materials.
  */
 

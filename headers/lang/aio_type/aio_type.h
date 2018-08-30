@@ -17,6 +17,14 @@ _Bool is_aio_type_hooked(const struct str_hook *hook);
 
 _Bool is_aio_void_type_hooked(const struct str_hook *hook);
 
+_Bool is_aio_int_type_hooked(const struct str_hook *hook);
+
+_Bool is_aio_double_type_hooked(const struct str_hook *hook);
+
+_Bool is_aio_string_type_hooked(const struct str_hook *hook);
+
+_Bool is_aio_boolean_type_hooked(const struct str_hook *hook);
+
 _Bool is_aio_type_initialized(const struct str_hook *hook);
 
 #endif //AIO_TYPE_H

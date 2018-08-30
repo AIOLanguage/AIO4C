@@ -2,19 +2,23 @@
 #define AIO_AIO_EXPRESSION_PARSER_H
 
 /**
+ * Linking.
+ */
+
+#include <tools/aio_function_tools/aio_control_graph/aio_function_control_graph.h>
+#include <lib/utils/str_hook/str_hook.h>
+
+/**
  * Root parsers.
  */
 
- //FIXME: UNUSED ARG CONTEXT:
 struct aio_value *parse_value_string(
         const char *expression_string,
-        const struct aio_context *context,
         const struct aio_function_control_graph *control_graph
 );
 
 struct aio_value *parse_value_hook(
         const struct str_hook *expression_hook,
-        const struct aio_context *context,
         const struct aio_function_control_graph *control_graph
 );
 
@@ -24,7 +28,6 @@ struct aio_value *parse_value_hook(
 
 struct aio_result *make_parentheses(
         const struct str_hook *expression_hook,
-        const struct aio_context *context,
         const struct aio_function_control_graph *control_graph,
         struct aio_value *(*cast_function)(struct aio_value *),
         struct aio_result *(*make_value_function)(const struct str_hook *)
@@ -38,7 +41,6 @@ void make_expression_chunks_and_count_next_point(
 
 struct aio_result *make_function_or_variable(
         const struct str_hook *expression_hook,
-        const struct aio_context *context,
         const struct aio_function_control_graph *control_graph,
         struct aio_value *(*cast_function)(struct aio_value *),
         struct aio_result *(*make_value_function)(const struct str_hook *)
@@ -50,37 +52,31 @@ struct aio_result *make_function_or_variable(
 
 struct aio_value *parse_int_value_string(
         const struct str_hook *expression_hook,
-        const struct aio_context *context,
         const struct aio_function_control_graph *control_graph
 );
 
 struct aio_value *parse_double_value_string(
         const struct str_hook *expression_hook,
-        const struct aio_context *context,
         const struct aio_function_control_graph *control_graph
 );
 
 struct aio_value *parse_string_value_string(
         const struct str_hook *expression_hook,
-        const struct aio_context *context,
         const struct aio_function_control_graph *control_graph
 );
 
 struct aio_value *parse_boolean_value_string(
         const struct str_hook *expression_hook,
-        const struct aio_context *context,
         const struct aio_function_control_graph *control_graph
 );
 
 struct aio_value *parse_type_value_string(
         const struct str_hook *expression_hook,
-        const struct aio_context *context,
         const struct aio_function_control_graph *control_graph
 );
 
 struct aio_value *parse_void_value_string(
         const struct str_hook *expression_hook,
-        const struct aio_context *context,
         const struct aio_function_control_graph *control_graph
 );
 

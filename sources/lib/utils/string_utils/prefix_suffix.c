@@ -72,7 +72,7 @@ char *remove_suffix(const char *src, const char *suffix)
     return remove_prefix_suffix(src, "", suffix);
 }
 
-const_boolean starts_with_prefix(const_string src, const_string prefix)
+boolean starts_with_prefix(const_string src, const_string prefix)
 {
     for (int i = 0; i < strlen(prefix); ++i) {
         if (src[i] != prefix[i]) {
@@ -82,7 +82,7 @@ const_boolean starts_with_prefix(const_string src, const_string prefix)
     return TRUE;
 }
 
-const_boolean ends_with_suffix(const_string src, const_string suffix)
+boolean ends_with_suffix(const_string src, const_string suffix)
 {
     const size_t src_length = strlen(src);
     const size_t suffix_length = strlen(suffix);

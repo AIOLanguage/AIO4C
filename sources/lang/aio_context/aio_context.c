@@ -1,12 +1,12 @@
 #include <mem.h>
-#include "../../../headers/lang/aio_context/aio_context.h"
-#include "../../../headers/lib/utils/string_utils/string_utils.h"
-#include "../../../headers/lib/utils/memory_utils/memory_utils.h"
-#include "../../../headers/lang/aio_function/aio_function_definition/aio_function_definition.h"
-#include "../../../headers/lib/utils/file_utils/file_reader.h"
-#include "../../../headers/lib/utils/str_hook/str_hook_utils/str_hook_utils.h"
-#include "../../../headers/lib/utils/str_hook/str_hook.h"
-#include "../../../headers/lib/utils/error_utils/error_utils.h"
+#include <lang/aio_context/aio_context.h>
+#include <lib/utils/memory_utils/memory_utils.h>
+#include <lang/aio_function/aio_function_definition/aio_function_definition.h>
+#include <lib/utils/string_utils/string_utils.h>
+#include <lib/utils/file_utils/file_reader.h>
+#include <lib/utils/str_hook/str_hook_utils/str_hook_utils.h>
+#include <lib/utils/str_hook/str_hook.h>
+#include <lib/utils/error_utils/error_utils.h>
 
 #define AIO_CONTEXT_TAG "AIO_CONTEXT"
 
@@ -14,7 +14,7 @@
 
 #ifdef AIO_CONTEXT_DEBUG
 
-#include "../../../headers/lib/utils/log_utils/log_utils.h"
+#include <lib/utils/log_utils/log_utils.h>
 
 #endif
 
@@ -61,7 +61,7 @@ aio_context_list *new_aio_context_list()
 
 static void update_memory_in_aio_context_list(aio_context_list *map)
 {
-    if (map->size + 1 == map->capacity) {
+    if (map->size == map->capacity) {
         map->capacity = map->capacity * 2;
         map->contexts = reallocate_object_array(map->contexts, map->capacity, sizeof(aio_context *));
     }

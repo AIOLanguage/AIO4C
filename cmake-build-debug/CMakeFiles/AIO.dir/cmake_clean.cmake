@@ -72,6 +72,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_expression_parser/aio_inner_parcers/aio_type_parser.c.obj"
   "CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_expression_parser/aio_expression_assistant.c.obj"
   "CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_expression_parser/aio_inner_parcers/aio_void_parser.c.obj"
+  "CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_control_graph/aio_function_control_graph_management.c.obj"
   "AIO.pdb"
   "AIO.exe"
   "AIO.exe.manifest"

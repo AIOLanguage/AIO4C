@@ -1202,6 +1202,33 @@ sources/tools/aio_function_tools/aio_control_graph/aio_function_control_graph.c.
 	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_control_graph/aio_function_control_graph.c.s
 .PHONY : sources/tools/aio_function_tools/aio_control_graph/aio_function_control_graph.c.s
 
+sources/tools/aio_function_tools/aio_control_graph/aio_function_control_graph_management.obj: sources/tools/aio_function_tools/aio_control_graph/aio_function_control_graph_management.c.obj
+
+.PHONY : sources/tools/aio_function_tools/aio_control_graph/aio_function_control_graph_management.obj
+
+# target to build an object file
+sources/tools/aio_function_tools/aio_control_graph/aio_function_control_graph_management.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_control_graph/aio_function_control_graph_management.c.obj
+.PHONY : sources/tools/aio_function_tools/aio_control_graph/aio_function_control_graph_management.c.obj
+
+sources/tools/aio_function_tools/aio_control_graph/aio_function_control_graph_management.i: sources/tools/aio_function_tools/aio_control_graph/aio_function_control_graph_management.c.i
+
+.PHONY : sources/tools/aio_function_tools/aio_control_graph/aio_function_control_graph_management.i
+
+# target to preprocess a source file
+sources/tools/aio_function_tools/aio_control_graph/aio_function_control_graph_management.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_control_graph/aio_function_control_graph_management.c.i
+.PHONY : sources/tools/aio_function_tools/aio_control_graph/aio_function_control_graph_management.c.i
+
+sources/tools/aio_function_tools/aio_control_graph/aio_function_control_graph_management.s: sources/tools/aio_function_tools/aio_control_graph/aio_function_control_graph_management.c.s
+
+.PHONY : sources/tools/aio_function_tools/aio_control_graph/aio_function_control_graph_management.s
+
+# target to generate assembly for a file
+sources/tools/aio_function_tools/aio_control_graph/aio_function_control_graph_management.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/aio_function_tools/aio_control_graph/aio_function_control_graph_management.c.s
+.PHONY : sources/tools/aio_function_tools/aio_control_graph/aio_function_control_graph_management.c.s
+
 sources/tools/aio_function_tools/aio_definition_rippers/aio_annotation_ripper.obj: sources/tools/aio_function_tools/aio_definition_rippers/aio_annotation_ripper.c.obj
 
 .PHONY : sources/tools/aio_function_tools/aio_definition_rippers/aio_annotation_ripper.obj
@@ -2222,6 +2249,9 @@ help:
 	@echo ... sources/tools/aio_function_tools/aio_control_graph/aio_function_control_graph.obj
 	@echo ... sources/tools/aio_function_tools/aio_control_graph/aio_function_control_graph.i
 	@echo ... sources/tools/aio_function_tools/aio_control_graph/aio_function_control_graph.s
+	@echo ... sources/tools/aio_function_tools/aio_control_graph/aio_function_control_graph_management.obj
+	@echo ... sources/tools/aio_function_tools/aio_control_graph/aio_function_control_graph_management.i
+	@echo ... sources/tools/aio_function_tools/aio_control_graph/aio_function_control_graph_management.s
 	@echo ... sources/tools/aio_function_tools/aio_definition_rippers/aio_annotation_ripper.obj
 	@echo ... sources/tools/aio_function_tools/aio_definition_rippers/aio_annotation_ripper.i
 	@echo ... sources/tools/aio_function_tools/aio_definition_rippers/aio_annotation_ripper.s

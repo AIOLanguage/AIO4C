@@ -1,6 +1,4 @@
-#include "../../../../../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction.h"
-#include "../../../../../headers/tools/aio_function_tools/aio_control_graph/aio_function_control_graph.h"
-#include "../../../../../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction_holder.h"
+#include <tools/aio_function_tools/aio_instructions/aio_function_instruction.h>
 
 aio_function_instruction *new_aio_break_instruction(aio_function_instruction_holder *holder)
 {

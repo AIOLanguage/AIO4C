@@ -35,6 +35,7 @@
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add option="-DSOME_IMPORTANT_DEFINITION"/>
+					<Add directory="C:/Users/StarKRE/CLionProjects/AIO/headers"/>
 					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include"/>
 					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include-fixed"/>
 					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../i686-w64-mingw32/include"/>
@@ -54,6 +55,7 @@
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add option="-DSOME_IMPORTANT_DEFINITION"/>
+					<Add directory="C:/Users/StarKRE/CLionProjects/AIO/headers"/>
 					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include"/>
 					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include-fixed"/>
 					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../i686-w64-mingw32/include"/>
@@ -176,6 +178,9 @@
 			<Option target="AIO"/>
 		</Unit>
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_function_tools/aio_control_graph/aio_function_control_graph.h">
+			<Option target="AIO"/>
+		</Unit>
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_function_tools/aio_control_graph/aio_function_control_graph_management.h">
 			<Option target="AIO"/>
 		</Unit>
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/tools/aio_function_tools/aio_definition_rippers/aio_function_definition_rippers.h">
@@ -356,6 +361,9 @@
 			<Option target="AIO"/>
 		</Unit>
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/tools/aio_function_tools/aio_control_graph/aio_function_control_graph.c">
+			<Option target="AIO"/>
+		</Unit>
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/tools/aio_function_tools/aio_control_graph/aio_function_control_graph_management.c">
 			<Option target="AIO"/>
 		</Unit>
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/sources/tools/aio_function_tools/aio_definition_rippers/aio_annotation_ripper.c">
