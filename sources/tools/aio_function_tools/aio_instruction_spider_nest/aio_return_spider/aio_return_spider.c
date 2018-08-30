@@ -1,17 +1,18 @@
-#include <malloc.h>
+#include <mem.h>
 #include <ctype.h>
-#include "../../../../../headers/lib/utils/boolean_utils/boolean_utils.h"
-#include "../../../../../headers/lib/utils/memory_utils/memory_utils.h"
-#include "../../../../../headers/lib/utils/char_utils/char_utils.h"
-#include "../../../../../headers/lib/utils/error_utils/error_utils.h"
-#include "../../../../../headers/tools/aio_common_tools/aio_spider_nest/aio_spider.h"
-#include "../../../../../headers/tools/aio_function_tools/aio_instruction_spider_nest/aio_return_spider/aio_return_spider.h"
-#include "../../../../../headers/tools/aio_function_tools/aio_instructions/aio_tasks/aio_return_task.h"
-#include "../../../../../headers/lib/utils/point_watcher/point_watcher.h"
-#include "../../../../../headers/lib/utils/collections/lists/string_list.h"
-#include "../../../../../headers/lib/utils/string_utils/string_utils.h"
-#include "../../../../../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction_holder.h"
-#include "../../../../../headers/tools/aio_function_tools/aio_instructions/aio_function_instruction.h"
+#include <malloc.h>
+#include <lib/utils/str_hook/str_hook.h>
+#include <lib/utils/str_hook/str_hook_utils/str_hook_utils.h>
+#include <tools/aio_common_tools/aio_spider_nest/aio_spider.h>
+#include <lib/utils/point_watcher/point_watcher.h>
+#include <tools/aio_function_tools/aio_instruction_spider_nest/aio_return_spider/aio_return_spider.h>
+#include <lib/utils/collections/lists/string_list.h>
+#include <lib/utils/memory_utils/memory_utils.h>
+#include <lib/utils/string_utils/string_utils.h>
+#include <lib/utils/char_utils/char_utils.h>
+#include <tools/aio_function_tools/aio_instructions/aio_function_instruction.h>
+#include <tools/aio_function_tools/aio_instructions/aio_tasks/aio_return_task.h>
+#include <lib/utils/error_utils/error_utils.h>
 
 #define AIO_RETURN_SPIDER_DEBUG
 
@@ -19,7 +20,7 @@
 
 #ifdef AIO_RETURN_SPIDER_DEBUG
 
-#include "../../../../../headers/lib/utils/log_utils/log_utils.h"
+#include <lib/utils/log_utils/log_utils.h>
 
 #endif
 
@@ -152,7 +153,48 @@ void handle_return_modifier_scope(const_string source_code, aio_spider *spider)
     }
 }
 
-void handle_return_value_scope(const_string source_code, aio_spider *spider)
+static str_hook_list *make_return_chunks(const_string chunk)
+{
+    str_hook_list *list = new_str_hook_list();
+    const size_t length = strlen(chunk);
+    point_watcher *main_watcher = new_point_watcher();
+    main_watcher->start = 0;
+    main_watcher->mode = POINT_WATCHER_ACTIVE_MODE;
+    for (int i = 0; i < length; ++i) {
+        const char symbol = chunk[i];
+        const_boolean is_opening_parenthesis_cond = is_opening_parenthesis(symbol);
+        const_boolean is_closing_parenthesis_cond = is_closing_parenthesis(symbol);
+        const_boolean is_quote_cond = is_single_quote(symbol);
+        const_boolean is_comma_cond = is_comma(symbol);
+        if (main_watcher->mode == POINT_WATCHER_ACTIVE_MODE) {
+            if (is_opening_parenthesis_cond) {
+                main_watcher->pointer++;
+            }
+            if (is_closing_parenthesis_cond) {
+                main_watcher->pointer--;
+            }
+            if (is_comma_cond && main_watcher->pointer == 0) {
+                main_watcher->end = i;
+                add_str_hook_in_list(list, new_str_hook_by_point_watcher(chunk, main_watcher));
+                main_watcher->start = i;
+            }
+        }
+        if (is_quote_cond) {
+            if (main_watcher->mode == POINT_WATCHER_ACTIVE_MODE) {
+                main_watcher->mode = POINT_WATCHER_PASSIVE_MODE;
+            } else {
+                main_watcher->mode = POINT_WATCHER_ACTIVE_MODE;
+            }
+        }
+    }
+    if (list->size == 0) {
+        add_str_hook_in_list(list, new_str_hook_by_string(chunk));
+    }
+    log_info_str_hook_list(AIO_RETURN_SPIDER_TAG, "CAPTURED RETURN CHUNKS:", list);
+    return list;
+}
+
+void handle_return_value_scope(const_string source_code, struct aio_spider *spider)
 {
     //재료들을 추출하다 (Extract materials):
     aio_return_materials *materials = spider->materials;
@@ -181,10 +223,10 @@ void handle_return_value_scope(const_string source_code, aio_spider *spider)
         //값을 놓다 (Set value):
         string dirty_chunk = substring_by_point_watcher(source_code, value_watcher);
         string dirty_squeezed_chunk = squeeze_string_for_expression(dirty_chunk);
-        const_string_array clean_return_values = split_by_comma(dirty_squeezed_chunk);
-        const int number_of_return_values = get_string_array_size(clean_return_values);
+        str_hook_list *clean_return_values = make_return_chunks(dirty_squeezed_chunk);
+        const int number_of_return_values = clean_return_values->size;
         for (int i = 0; i < number_of_return_values; ++i) {
-            add_string_in_list(materials->value_list, new_string(clean_return_values[i]));
+            add_string_in_list(materials->value_list, substring_by_str_hook(clean_return_values->hooks[i]));
         }
         //위빙 준비 (Prepare for weaving):
         materials->scope_type = AIO_RETURN_WEAVING_SCOPE;
@@ -194,7 +236,8 @@ void handle_return_value_scope(const_string source_code, aio_spider *spider)
         //찌거기 수집기 (Garbage collector):
         free(dirty_chunk);
         free(dirty_squeezed_chunk);
-        free_strings(clean_return_values);
+        free_str_hooks_in_list(clean_return_values);
+        free_str_hook_list(clean_return_values);
         return;
     }
     if (is_quote_cond) {
