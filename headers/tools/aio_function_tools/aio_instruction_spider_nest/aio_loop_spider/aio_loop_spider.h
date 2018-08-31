@@ -51,7 +51,7 @@ const struct str_hook *get_default_loop_pointer_name_by_materials(
         const struct aio_default_loop_header_materials *materials
 );
 
-struct aio_variable_definition *create_pointer_variable_definition_by_default_loop_header_spider(
+struct aio_filed_definition *create_pointer_variable_definition_by_default_loop_header_spider(
         const enum aio_default_loop_header_pointer_declaration_type declaration_type,
         const struct str_hook **pointer_data
 );

@@ -2,7 +2,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/AIO.dir/main/main.c.obj"
   "CMakeFiles/AIO.dir/sources/lang/aio_annotation/aio_annotation.c.obj"
   "CMakeFiles/AIO.dir/sources/lang/aio_context/aio_context.c.obj"
-  "CMakeFiles/AIO.dir/sources/lang/aio_context/aio_context_builder.c.obj"
   "CMakeFiles/AIO.dir/sources/lang/aio_core/aio_core.c.obj"
   "CMakeFiles/AIO.dir/sources/lang/aio_function/aio_bundle/aio_bundle.c.obj"
   "CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_function_definition.c.obj"

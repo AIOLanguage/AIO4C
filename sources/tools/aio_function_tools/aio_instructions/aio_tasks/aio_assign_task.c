@@ -49,7 +49,7 @@ void perform_aio_assign_instruction(
     log_info_str_hook(AIO_ASSIGN_TASK_TAG, "Destination:", variable_name);
 #endif
     //Not null!
-    aio_variable *variable = force_get_aio_variable_in_function_control_graph(variable_name, control_graph);
+    aio_filed *variable = force_get_aio_variable_in_function_control_graph(variable_name, control_graph);
 #ifdef AIO_ASSIGN_TASK_DEBUG
     log_info_boolean(AIO_ASSIGN_TASK_TAG, "Imported variable is not null", variable != NULL);
 #endif

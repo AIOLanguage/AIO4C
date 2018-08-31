@@ -9,7 +9,7 @@ const struct str_hook *dig_function_name(const char *source_code, int *pointer_r
 
 struct aio_variable_definition_list *dig_arguments(const char *source_code, int *pointer_reference);
 
-void dig_aio_instructions_for(
+void search_context_for(
         struct aio_function_instruction_holder *current_holder,
         const char *source_code,
         const int start_index,

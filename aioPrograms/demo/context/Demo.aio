@@ -1,0 +1,45 @@
+plg {
+    MyFragment,
+    MyManager,
+    MyLayout
+}
+
+glo mu acc
+
+glo fun sqr(Dou a) = a * a
+
+glo fun main(Str args[]) {
+    calc = Calculator(3, 4)
+    result = calc.sum()
+    println(result)
+}
+
+wra Math {
+
+    fld mu Dou firstTerm
+
+    fld mu Dou secondTerm
+
+    fun sum() Dou
+
+    fun minus() Dou
+
+    fun countSqrHypotenuse() Dou
+}
+
+cls Calculator(Dou firstTerm, Dou secondTerm) : Math {
+
+    init {
+        $firstTerm = firstTerm
+        $secondTerm = secondTerm
+    }
+
+    @Override
+    fun sum() = $firstTerm + $secondTerm
+
+    @Override
+    fun minus() = $firstTerm - $secondTerm
+
+    @Override
+    fun countSqrHypotenuse() = sqr($firstTerm) + sqr($secondTerm)
+}

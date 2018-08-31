@@ -84,10 +84,19 @@
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO_2/AIO/headers/lang/aio_annotation/aio_annotation.h">
 			<Option target="AIO"/>
 		</Unit>
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO_2/AIO/headers/lang/aio_class/aio_class.h">
+			<Option target="AIO"/>
+		</Unit>
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO_2/AIO/headers/lang/aio_context/aio_context.h">
 			<Option target="AIO"/>
 		</Unit>
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO_2/AIO/headers/lang/aio_core/aio_core.h">
+			<Option target="AIO"/>
+		</Unit>
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO_2/AIO/headers/lang/aio_field/aio_field.h">
+			<Option target="AIO"/>
+		</Unit>
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO_2/AIO/headers/lang/aio_field/definition/aio_field_definition.h">
 			<Option target="AIO"/>
 		</Unit>
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO_2/AIO/headers/lang/aio_function/aio_bundle/aio_bundle.h">
@@ -118,6 +127,9 @@
 			<Option target="AIO"/>
 		</Unit>
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO_2/AIO/headers/lang/aio_type/aio_type.h">
+			<Option target="AIO"/>
+		</Unit>
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO_2/AIO/headers/lang/aio_visibility_type/aio_visibility_type.h">
 			<Option target="AIO"/>
 		</Unit>
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO_2/AIO/headers/lib/utils/boolean_utils/boolean_utils.h">
@@ -250,9 +262,6 @@
 			<Option target="AIO"/>
 		</Unit>
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO_2/AIO/sources/lang/aio_context/aio_context.c">
-			<Option target="AIO"/>
-		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO_2/AIO/sources/lang/aio_context/aio_context_builder.c">
 			<Option target="AIO"/>
 		</Unit>
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO_2/AIO/sources/lang/aio_core/aio_core.c">

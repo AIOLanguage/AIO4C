@@ -1,6 +1,22 @@
 #ifndef AIO_RESERVED_NAMES_CONTAINER_H
 #define AIO_RESERVED_NAMES_CONTAINER_H
 
+#define AIO_GLOBAL_MODIFIER "glo"
+
+#define AIO_IMPORT_MODIFIER "plg"
+
+#define AIO_CLASS_MODIFIER "obj"
+
+#define AIO_INTERFACE_MODIFIER "wra"
+
+#define AIO_PROTECTED_MODIFIER "pro"
+
+#define AIO_PRIVATE_MODIFIER "pri"
+
+#define AIO_FUNCTION_MODIFIER "fun"
+
+#define AIO_FIELD_MODIFIER "fld"
+
 #define AIO_MUTABLE_MODIFIER "mu"
 
 #define AIO_IF_MODIFIER "if"

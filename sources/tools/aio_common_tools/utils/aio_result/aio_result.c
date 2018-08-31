@@ -1,10 +1,10 @@
 #include <mem.h>
 #include <malloc.h>
-#include "../../../../headers/lang/aio_function/aio_result/aio_result.h"
-#include "../../../../headers/lib/utils/str_hook/str_hook.h"
+#include "lang/aio_function/aio_result/aio_result.h"
+#include "lib/utils/str_hook/str_hook.h"
 #include "../../../../headers/lang/aio_function/aio_value/aio_value.h"
-#include "../../../../headers/lib/utils/memory_utils/memory_utils.h"
-#include "../../../../headers/lib/utils/string_utils/string_utils.h"
+#include "lib/utils/memory_utils/memory_utils.h"
+#include "lib/utils/string_utils/string_utils.h"
 
 aio_result *new_aio_result(aio_value *value, str_hook *rest)
 {

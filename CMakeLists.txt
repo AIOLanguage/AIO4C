@@ -23,16 +23,19 @@ add_executable(${PROJECT_NAME}
         headers/lang/aio_annotation/aio_annotation.h
         headers/lang/aio_context/aio_context.h
         headers/lang/aio_core/aio_core.h
+        headers/lang/aio_class/aio_class.h
         headers/lang/aio_function/aio_bundle/aio_bundle.h
         headers/lang/aio_function/aio_function_definition/aio_function_definition.h
-        headers/lang/aio_function/aio_function_definition/aio_function_definition_builder.h
-        headers/lang/aio_function/aio_result/aio_result.h
-        headers/lang/aio_function/aio_value/aio_value.h
-        headers/lang/aio_function/aio_variable/aio_variable.h
-        headers/lang/aio_function/aio_variable/aio_definition/aio_variable_definition.h
+        headers/tools/aio_common_tools/utils/aio_result/aio_result.h
+        headers/tools/aio_common_tools/utils/aio_value/aio_value.h
+        headers/lang/aio_variable/aio_variable.h
+        headers/lang/aio_variable/aio_definition/aio_variable_definition.h
         headers/lang/aio_function/aio_function.h
         headers/lang/aio_reserved_names/aio_reserved_names_container.h
         headers/lang/aio_type/aio_type.h
+        headers/lang/aio_field/aio_field.h
+        headers/lang/aio_field/definition/aio_field_definition.h
+        headers/lang/aio_visibility_type/aio_visibility_type.h
         #tools:
         headers/tools/aio_common_tools/aio_block_body_explorer/aio_block_body_explorer.h
         headers/tools/aio_common_tools/aio_spider_nest/aio_function_instruction_spider_nest.h
@@ -57,6 +60,7 @@ add_executable(${PROJECT_NAME}
         headers/tools/aio_function_tools/aio_instructions/aio_tasks/aio_return_task.h
         headers/tools/aio_function_tools/aio_instructions/aio_tasks/aio_switch_task.h
         headers/tools/aio_function_tools/aio_expression_parser/aio_expression_parser.h
+        headers/tools/aio_function_tools/aio_control_graph/aio_function_control_graph_management.h
         #lib:
         headers/lib/utils/boolean_utils/boolean_utils.h
         headers/lib/utils/char_utils/char_utils.h
@@ -82,15 +86,14 @@ add_executable(${PROJECT_NAME}
         #lang:
         sources/lang/aio_annotation/aio_annotation.c
         sources/lang/aio_context/aio_context.c
-        sources/lang/aio_context/aio_context_builder.c
         sources/lang/aio_core/aio_core.c
         sources/lang/aio_function/aio_bundle/aio_bundle.c
         sources/lang/aio_function/aio_function_definition/aio_function_definition.c
         sources/lang/aio_function/aio_function_definition/aio_function_definition_builder.c
-        sources/lang/aio_function/aio_result/aio_result.c
-        sources/lang/aio_function/aio_value/aio_value.c
-        sources/lang/aio_function/aio_variable/aio_variable_definition/aio_variable_definition.c
-        sources/lang/aio_function/aio_variable/aio_variable.c
+        sources/tools/aio_common_tools/utils/aio_result/aio_result.c
+        sources/tools/aio_common_tools/utils/aio_value/aio_value.c
+        sources/lang/aio_variable/aio_variable_definition/aio_filed_definition.c
+        sources/lang/aio_variable/aio_filed.c
         sources/lang/aio_function/aio_function.c
         sources/lang/aio_reserved_names/aio_reserved_names_container.c
         sources/lang/aio_type/aio_type.c
@@ -154,8 +157,9 @@ add_executable(${PROJECT_NAME}
         sources/tools/aio_function_tools/aio_expression_parser/aio_inner_parcers/aio_type_parser.c
         sources/tools/aio_function_tools/aio_expression_parser/aio_expression_assistant.c
         sources/tools/aio_function_tools/aio_expression_parser/aio_inner_parcers/aio_void_parser.c
+        sources/tools/aio_function_tools/aio_control_graph/aio_function_control_graph_management.c
         #---------------------------------------------------------------------------------------------------------------
-        sources/tools/aio_function_tools/aio_control_graph/aio_function_control_graph_management.c headers/tools/aio_function_tools/aio_control_graph/aio_function_control_graph_management.h)
+        )
 
 
 #TODO: How make it???

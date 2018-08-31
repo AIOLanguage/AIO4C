@@ -63,7 +63,7 @@ aio_function_instruction_holder *inflate_root_aio_instruction_holder(
     root_holder->parent = parent_holder;
     root_holder->variable_definition_list = arg_definitions;
     root_holder->instruction_list = new_aio_function_instruction_list();
-    dig_aio_instructions_for(root_holder, source_code, start_index, end_index);
+    search_context_for(root_holder, source_code, start_index, end_index);
     return root_holder;
 }
 
@@ -84,7 +84,7 @@ aio_function_instruction_holder *inflate_local_aio_instruction_holder(
 )
 {
     aio_function_instruction_holder *holder = new_aio_function_instruction_holder(parent_holder);
-    dig_aio_instructions_for(holder, source_code, start_index, end_index);
+    search_context_for(holder, source_code, start_index, end_index);
     return holder;
 }
 

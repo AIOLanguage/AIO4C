@@ -2,7 +2,6 @@
 #define AIO_FUNCTION_H
 
 struct aio_value_list *invoke_static_function_in_context(
-        const struct aio_context *context,
         const struct str_hook *function_name,
         struct aio_bundle *bundle
 );

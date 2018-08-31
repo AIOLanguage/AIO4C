@@ -58,8 +58,8 @@ static void make_instruction_weaving(const_string source_code, point_watcher *ri
 #endif
 }
 
-void dig_aio_instructions_for(aio_function_instruction_holder *current_holder, const_string source_code,
-                              const int start_index, const int end_index) {
+void search_context_for(aio_function_instruction_holder *current_holder, const_string source_code,
+                        const int start_index, const int end_index) {
     const int body_length = end_index - start_index;
     const_boolean is_not_empty_block = body_length > 2;
     const_boolean starts_with_open_brace = is_opening_brace(source_code[start_index]);

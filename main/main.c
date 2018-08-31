@@ -1,4 +1,3 @@
-#include <lang/aio_function/aio_value/aio_value.h>
 #include <lang/aio_function/aio_bundle/aio_bundle.h>
 #include <lib/utils/boolean_utils/boolean_utils.h>
 #include <fcntl.h>
@@ -35,7 +34,6 @@ static void print_result(const aio_value_list *result_list)
 {
     const size_t result_list_size = result_list->size;
     const aio_value_array result_array = result_list->values;
-    log_info(AIO_TAG, "=========================================");
     for (int j = 0; j < result_list_size; ++j) {
         const aio_value *result = result_array[j];
         log_info_aio_value(AIO_TAG, "<Result>:", result);
@@ -53,10 +51,9 @@ static void make_aio(const int argc, char *argv[])
     aio_bundle *input_bundle = make_bundle(argc, argv);
     //Init core:
     inflate_aio_core();
-    const_aio_context *context = inflate_aio_context_and_put_in_core(file_path);
     //Prepare to invoke function:
     str_hook *test_hook = new_str_hook_by_string(function_name);
-    aio_value_list *result_list = invoke_static_function_in_context(context, test_hook, input_bundle);
+    aio_value_list *result_list = invoke_static_function_in_context(test_hook, input_bundle);
     //Print result:
     print_result(result_list);
     //Close AIO:

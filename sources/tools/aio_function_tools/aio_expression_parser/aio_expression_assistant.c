@@ -129,7 +129,7 @@ aio_result *make_function_or_variable(
             }
         } else {
             const_str_hook *variable_name = function_or_variable_hook;
-            aio_variable *variable = get_aio_variable_in_function_control_graph(variable_name, control_graph);
+            aio_filed *variable = get_aio_variable_in_function_control_graph(variable_name, control_graph);
             aio_value *value = cast_function(variable->value);
             str_hook *rest = new_str_hook_with_start_and_end(expression_str, variable_name->end, expression_hook->end);
             return new_aio_result(value, rest);;

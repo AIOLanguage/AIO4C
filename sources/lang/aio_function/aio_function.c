@@ -52,8 +52,7 @@ static aio_value_list *extract_output_values(
 
 aio_value_list *invoke_aio_function(
         const_aio_function_definition *definition,
-        aio_bundle *bundle,
-        const_aio_context *context
+        aio_bundle *bundle
 )
 {
     aio_function_control_graph *parent_graph = NULL;
@@ -62,7 +61,6 @@ aio_value_list *invoke_aio_function(
 }
 
 aio_value_list *invoke_static_function_in_context(
-        const_aio_context *context,
         const_str_hook *function_name,
         aio_bundle *bundle
 )

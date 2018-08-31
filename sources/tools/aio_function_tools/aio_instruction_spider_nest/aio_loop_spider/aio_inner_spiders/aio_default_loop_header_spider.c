@@ -548,7 +548,7 @@ static void weave_default_loop_materials_for(
 #endif
 }
 
-aio_variable_definition *create_pointer_variable_definition_by_default_loop_header_spider(
+aio_filed_definition *create_pointer_variable_definition_by_default_loop_header_spider(
         const aio_default_loop_header_pointer_declaration_type declaration_type,
         const_str_hook_array pointer_data
 )

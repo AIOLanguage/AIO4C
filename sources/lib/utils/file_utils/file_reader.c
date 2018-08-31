@@ -56,7 +56,7 @@ const_string get_code_without_comments(const_string file_content)
     return clean_code;
 }
 
-const_string read_file_and_join_to_string_without_comments(const_string path)
+string read_file_and_join_to_string_without_comments(const_string path)
 {
     int read_position = 0;
     size_t code_size = CHUNK;
