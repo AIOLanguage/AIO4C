@@ -37,20 +37,17 @@ void free_strings_in_list(string_list *list)
     const_string_array strings = list->strings;
     for (int i = 0; i < list->size; ++i) {
         string old_string = strings[i];
-        if (old_string != NULL) {
-            strings[i] = NULL;
-            free(old_string);
-        }
+        list->strings[i] = NULL;
+        free_string(old_string);
     }
 }
 
 void free_string_list(string_list *list)
 {
     const size_t size = list->size;
-    string *strings = list->strings;
     for (int i = 0; i < size; ++i) {
-        strings[i] = NULL;
+        list->strings[i] = NULL;
     }
-    free(strings);
+    free(list->strings);
     free(list);
 }

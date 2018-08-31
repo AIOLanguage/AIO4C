@@ -28,22 +28,18 @@ aio_value *new_aio_value_by_string(string undefined_value)
 {
     if (matches_int(undefined_value)) {
         const int int_value = string_to_int(undefined_value);
-        free(undefined_value);
         return new_aio_int_value(int_value);
     }
     if (matches_double(undefined_value)) {
         const double double_value = string_to_double(undefined_value);
-        free(undefined_value);
         return new_aio_double_value(double_value);
     }
     if (matches_string(undefined_value)) {
         string string_value = remove_prefix_suffix(undefined_value, "\'", "\'");
-        free(undefined_value);
         return new_aio_string_value(string_value);
     }
     if (matches_boolean(undefined_value)) {
         const_boolean boolean_value = string_to_boolean(undefined_value);
-        free(undefined_value);
         return new_aio_boolean_value(boolean_value);
     } else {
         throw_error_with_tag(AIO_VALUE_TAG, "Classes are not yet developed in AIO");

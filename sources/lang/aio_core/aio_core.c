@@ -40,7 +40,14 @@ const_aio_context *inflate_aio_context_and_put_in_core(const_string context_path
     return context;
 }
 
-void free_aio_core()
+void deflate_aio_core()
 {
+    aio_context_list *context_list = core->core_context_list;
+    string_set *types = core->aio_type_set;
+    //----------------------------------------------------------------------------------------------------------------—
+    //찌꺼기 수집기 (Garbage collector):
+    free_aio_context_list(context_list);
+    free_strings_in_set(types);
+    free_string_set(types);
     free(core);
 }

@@ -12,7 +12,7 @@ void inflate_aio_core();
 
 const struct aio_context *inflate_aio_context_and_put_in_core(const char* context_path);
 
-void free_aio_core();
+void deflate_aio_core();
 
 /**
  * Global core.
