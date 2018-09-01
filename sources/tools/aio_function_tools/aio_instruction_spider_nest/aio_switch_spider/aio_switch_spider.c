@@ -91,7 +91,7 @@ aio_spider *new_aio_switch_spider(point_watcher *ripper_watcher)
     //Init states:
     materials->scope_type = AIO_SWITCH_MODIFIER_SCOPE;
     materials->has_else_branch = FALSE;
-    //Init tools:
+    //Init aio_tools:
     materials->main_watcher = new_point_watcher();
     materials->main_watcher->start = ripper_watcher->start;
     materials->main_watcher->end = ripper_watcher->pointer;

@@ -176,32 +176,59 @@ sources/lang/aio_annotation/aio_annotation.c.s:
 	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_annotation/aio_annotation.c.s
 .PHONY : sources/lang/aio_annotation/aio_annotation.c.s
 
-sources/lang/aio_context/aio_context.obj: sources/lang/aio_context/aio_context.c.obj
+sources/lang/aio_bundle/aio_bundle.obj: sources/lang/aio_bundle/aio_bundle.c.obj
 
-.PHONY : sources/lang/aio_context/aio_context.obj
+.PHONY : sources/lang/aio_bundle/aio_bundle.obj
 
 # target to build an object file
-sources/lang/aio_context/aio_context.c.obj:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_context/aio_context.c.obj
-.PHONY : sources/lang/aio_context/aio_context.c.obj
+sources/lang/aio_bundle/aio_bundle.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_bundle/aio_bundle.c.obj
+.PHONY : sources/lang/aio_bundle/aio_bundle.c.obj
 
-sources/lang/aio_context/aio_context.i: sources/lang/aio_context/aio_context.c.i
+sources/lang/aio_bundle/aio_bundle.i: sources/lang/aio_bundle/aio_bundle.c.i
 
-.PHONY : sources/lang/aio_context/aio_context.i
+.PHONY : sources/lang/aio_bundle/aio_bundle.i
 
 # target to preprocess a source file
-sources/lang/aio_context/aio_context.c.i:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_context/aio_context.c.i
-.PHONY : sources/lang/aio_context/aio_context.c.i
+sources/lang/aio_bundle/aio_bundle.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_bundle/aio_bundle.c.i
+.PHONY : sources/lang/aio_bundle/aio_bundle.c.i
 
-sources/lang/aio_context/aio_context.s: sources/lang/aio_context/aio_context.c.s
+sources/lang/aio_bundle/aio_bundle.s: sources/lang/aio_bundle/aio_bundle.c.s
 
-.PHONY : sources/lang/aio_context/aio_context.s
+.PHONY : sources/lang/aio_bundle/aio_bundle.s
 
 # target to generate assembly for a file
-sources/lang/aio_context/aio_context.c.s:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_context/aio_context.c.s
-.PHONY : sources/lang/aio_context/aio_context.c.s
+sources/lang/aio_bundle/aio_bundle.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_bundle/aio_bundle.c.s
+.PHONY : sources/lang/aio_bundle/aio_bundle.c.s
+
+sources/lang/aio_core/aio_context/aio_context.obj: sources/lang/aio_core/aio_context/aio_context.c.obj
+
+.PHONY : sources/lang/aio_core/aio_context/aio_context.obj
+
+# target to build an object file
+sources/lang/aio_core/aio_context/aio_context.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_core/aio_context/aio_context.c.obj
+.PHONY : sources/lang/aio_core/aio_context/aio_context.c.obj
+
+sources/lang/aio_core/aio_context/aio_context.i: sources/lang/aio_core/aio_context/aio_context.c.i
+
+.PHONY : sources/lang/aio_core/aio_context/aio_context.i
+
+# target to preprocess a source file
+sources/lang/aio_core/aio_context/aio_context.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_core/aio_context/aio_context.c.i
+.PHONY : sources/lang/aio_core/aio_context/aio_context.c.i
+
+sources/lang/aio_core/aio_context/aio_context.s: sources/lang/aio_core/aio_context/aio_context.c.s
+
+.PHONY : sources/lang/aio_core/aio_context/aio_context.s
+
+# target to generate assembly for a file
+sources/lang/aio_core/aio_context/aio_context.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_core/aio_context/aio_context.c.s
+.PHONY : sources/lang/aio_core/aio_context/aio_context.c.s
 
 sources/lang/aio_core/aio_core.obj: sources/lang/aio_core/aio_core.c.obj
 
@@ -229,33 +256,6 @@ sources/lang/aio_core/aio_core.s: sources/lang/aio_core/aio_core.c.s
 sources/lang/aio_core/aio_core.c.s:
 	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_core/aio_core.c.s
 .PHONY : sources/lang/aio_core/aio_core.c.s
-
-sources/lang/aio_function/aio_bundle/aio_bundle.obj: sources/lang/aio_function/aio_bundle/aio_bundle.c.obj
-
-.PHONY : sources/lang/aio_function/aio_bundle/aio_bundle.obj
-
-# target to build an object file
-sources/lang/aio_function/aio_bundle/aio_bundle.c.obj:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_bundle/aio_bundle.c.obj
-.PHONY : sources/lang/aio_function/aio_bundle/aio_bundle.c.obj
-
-sources/lang/aio_function/aio_bundle/aio_bundle.i: sources/lang/aio_function/aio_bundle/aio_bundle.c.i
-
-.PHONY : sources/lang/aio_function/aio_bundle/aio_bundle.i
-
-# target to preprocess a source file
-sources/lang/aio_function/aio_bundle/aio_bundle.c.i:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_bundle/aio_bundle.c.i
-.PHONY : sources/lang/aio_function/aio_bundle/aio_bundle.c.i
-
-sources/lang/aio_function/aio_bundle/aio_bundle.s: sources/lang/aio_function/aio_bundle/aio_bundle.c.s
-
-.PHONY : sources/lang/aio_function/aio_bundle/aio_bundle.s
-
-# target to generate assembly for a file
-sources/lang/aio_function/aio_bundle/aio_bundle.c.s:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_bundle/aio_bundle.c.s
-.PHONY : sources/lang/aio_function/aio_bundle/aio_bundle.c.s
 
 sources/lang/aio_function/aio_function.obj: sources/lang/aio_function/aio_function.c.obj
 
@@ -338,114 +338,6 @@ sources/lang/aio_function/aio_function_definition/aio_function_definition_builde
 	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_function_definition/aio_function_definition_builder.c.s
 .PHONY : sources/lang/aio_function/aio_function_definition/aio_function_definition_builder.c.s
 
-sources/lang/aio_function/aio_result/aio_result.obj: sources/lang/aio_function/aio_result/aio_result.c.obj
-
-.PHONY : sources/lang/aio_function/aio_result/aio_result.obj
-
-# target to build an object file
-sources/lang/aio_function/aio_result/aio_result.c.obj:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_result/aio_result.c.obj
-.PHONY : sources/lang/aio_function/aio_result/aio_result.c.obj
-
-sources/lang/aio_function/aio_result/aio_result.i: sources/lang/aio_function/aio_result/aio_result.c.i
-
-.PHONY : sources/lang/aio_function/aio_result/aio_result.i
-
-# target to preprocess a source file
-sources/lang/aio_function/aio_result/aio_result.c.i:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_result/aio_result.c.i
-.PHONY : sources/lang/aio_function/aio_result/aio_result.c.i
-
-sources/lang/aio_function/aio_result/aio_result.s: sources/lang/aio_function/aio_result/aio_result.c.s
-
-.PHONY : sources/lang/aio_function/aio_result/aio_result.s
-
-# target to generate assembly for a file
-sources/lang/aio_function/aio_result/aio_result.c.s:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_result/aio_result.c.s
-.PHONY : sources/lang/aio_function/aio_result/aio_result.c.s
-
-sources/lang/aio_function/aio_value/aio_value.obj: sources/lang/aio_function/aio_value/aio_value.c.obj
-
-.PHONY : sources/lang/aio_function/aio_value/aio_value.obj
-
-# target to build an object file
-sources/lang/aio_function/aio_value/aio_value.c.obj:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_value/aio_value.c.obj
-.PHONY : sources/lang/aio_function/aio_value/aio_value.c.obj
-
-sources/lang/aio_function/aio_value/aio_value.i: sources/lang/aio_function/aio_value/aio_value.c.i
-
-.PHONY : sources/lang/aio_function/aio_value/aio_value.i
-
-# target to preprocess a source file
-sources/lang/aio_function/aio_value/aio_value.c.i:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_value/aio_value.c.i
-.PHONY : sources/lang/aio_function/aio_value/aio_value.c.i
-
-sources/lang/aio_function/aio_value/aio_value.s: sources/lang/aio_function/aio_value/aio_value.c.s
-
-.PHONY : sources/lang/aio_function/aio_value/aio_value.s
-
-# target to generate assembly for a file
-sources/lang/aio_function/aio_value/aio_value.c.s:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_value/aio_value.c.s
-.PHONY : sources/lang/aio_function/aio_value/aio_value.c.s
-
-sources/lang/aio_function/aio_variable/aio_variable.obj: sources/lang/aio_function/aio_variable/aio_variable.c.obj
-
-.PHONY : sources/lang/aio_function/aio_variable/aio_variable.obj
-
-# target to build an object file
-sources/lang/aio_function/aio_variable/aio_variable.c.obj:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_variable/aio_variable.c.obj
-.PHONY : sources/lang/aio_function/aio_variable/aio_variable.c.obj
-
-sources/lang/aio_function/aio_variable/aio_variable.i: sources/lang/aio_function/aio_variable/aio_variable.c.i
-
-.PHONY : sources/lang/aio_function/aio_variable/aio_variable.i
-
-# target to preprocess a source file
-sources/lang/aio_function/aio_variable/aio_variable.c.i:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_variable/aio_variable.c.i
-.PHONY : sources/lang/aio_function/aio_variable/aio_variable.c.i
-
-sources/lang/aio_function/aio_variable/aio_variable.s: sources/lang/aio_function/aio_variable/aio_variable.c.s
-
-.PHONY : sources/lang/aio_function/aio_variable/aio_variable.s
-
-# target to generate assembly for a file
-sources/lang/aio_function/aio_variable/aio_variable.c.s:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_variable/aio_variable.c.s
-.PHONY : sources/lang/aio_function/aio_variable/aio_variable.c.s
-
-sources/lang/aio_function/aio_variable/aio_variable_definition/aio_variable_definition.obj: sources/lang/aio_function/aio_variable/aio_variable_definition/aio_variable_definition.c.obj
-
-.PHONY : sources/lang/aio_function/aio_variable/aio_variable_definition/aio_variable_definition.obj
-
-# target to build an object file
-sources/lang/aio_function/aio_variable/aio_variable_definition/aio_variable_definition.c.obj:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_variable/aio_variable_definition/aio_variable_definition.c.obj
-.PHONY : sources/lang/aio_function/aio_variable/aio_variable_definition/aio_variable_definition.c.obj
-
-sources/lang/aio_function/aio_variable/aio_variable_definition/aio_variable_definition.i: sources/lang/aio_function/aio_variable/aio_variable_definition/aio_variable_definition.c.i
-
-.PHONY : sources/lang/aio_function/aio_variable/aio_variable_definition/aio_variable_definition.i
-
-# target to preprocess a source file
-sources/lang/aio_function/aio_variable/aio_variable_definition/aio_variable_definition.c.i:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_variable/aio_variable_definition/aio_variable_definition.c.i
-.PHONY : sources/lang/aio_function/aio_variable/aio_variable_definition/aio_variable_definition.c.i
-
-sources/lang/aio_function/aio_variable/aio_variable_definition/aio_variable_definition.s: sources/lang/aio_function/aio_variable/aio_variable_definition/aio_variable_definition.c.s
-
-.PHONY : sources/lang/aio_function/aio_variable/aio_variable_definition/aio_variable_definition.s
-
-# target to generate assembly for a file
-sources/lang/aio_function/aio_variable/aio_variable_definition/aio_variable_definition.c.s:
-	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_function/aio_variable/aio_variable_definition/aio_variable_definition.c.s
-.PHONY : sources/lang/aio_function/aio_variable/aio_variable_definition/aio_variable_definition.c.s
-
 sources/lang/aio_reserved_names/aio_reserved_names_container.obj: sources/lang/aio_reserved_names/aio_reserved_names_container.c.obj
 
 .PHONY : sources/lang/aio_reserved_names/aio_reserved_names_container.obj
@@ -499,6 +391,60 @@ sources/lang/aio_type/aio_type.s: sources/lang/aio_type/aio_type.c.s
 sources/lang/aio_type/aio_type.c.s:
 	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_type/aio_type.c.s
 .PHONY : sources/lang/aio_type/aio_type.c.s
+
+sources/lang/aio_variable/aio_filed.obj: sources/lang/aio_variable/aio_filed.c.obj
+
+.PHONY : sources/lang/aio_variable/aio_filed.obj
+
+# target to build an object file
+sources/lang/aio_variable/aio_filed.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_variable/aio_filed.c.obj
+.PHONY : sources/lang/aio_variable/aio_filed.c.obj
+
+sources/lang/aio_variable/aio_filed.i: sources/lang/aio_variable/aio_filed.c.i
+
+.PHONY : sources/lang/aio_variable/aio_filed.i
+
+# target to preprocess a source file
+sources/lang/aio_variable/aio_filed.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_variable/aio_filed.c.i
+.PHONY : sources/lang/aio_variable/aio_filed.c.i
+
+sources/lang/aio_variable/aio_filed.s: sources/lang/aio_variable/aio_filed.c.s
+
+.PHONY : sources/lang/aio_variable/aio_filed.s
+
+# target to generate assembly for a file
+sources/lang/aio_variable/aio_filed.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_variable/aio_filed.c.s
+.PHONY : sources/lang/aio_variable/aio_filed.c.s
+
+sources/lang/aio_variable/aio_variable_definition/aio_filed_definition.obj: sources/lang/aio_variable/aio_variable_definition/aio_filed_definition.c.obj
+
+.PHONY : sources/lang/aio_variable/aio_variable_definition/aio_filed_definition.obj
+
+# target to build an object file
+sources/lang/aio_variable/aio_variable_definition/aio_filed_definition.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_variable/aio_variable_definition/aio_filed_definition.c.obj
+.PHONY : sources/lang/aio_variable/aio_variable_definition/aio_filed_definition.c.obj
+
+sources/lang/aio_variable/aio_variable_definition/aio_filed_definition.i: sources/lang/aio_variable/aio_variable_definition/aio_filed_definition.c.i
+
+.PHONY : sources/lang/aio_variable/aio_variable_definition/aio_filed_definition.i
+
+# target to preprocess a source file
+sources/lang/aio_variable/aio_variable_definition/aio_filed_definition.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_variable/aio_variable_definition/aio_filed_definition.c.i
+.PHONY : sources/lang/aio_variable/aio_variable_definition/aio_filed_definition.c.i
+
+sources/lang/aio_variable/aio_variable_definition/aio_filed_definition.s: sources/lang/aio_variable/aio_variable_definition/aio_filed_definition.c.s
+
+.PHONY : sources/lang/aio_variable/aio_variable_definition/aio_filed_definition.s
+
+# target to generate assembly for a file
+sources/lang/aio_variable/aio_variable_definition/aio_filed_definition.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/lang/aio_variable/aio_variable_definition/aio_filed_definition.c.s
+.PHONY : sources/lang/aio_variable/aio_variable_definition/aio_filed_definition.c.s
 
 sources/lib/utils/boolean_utils/boolean_utils.obj: sources/lib/utils/boolean_utils/boolean_utils.c.obj
 
@@ -1147,6 +1093,60 @@ sources/tools/aio_common_tools/aio_spider_nest/aio_spider_nest.s: sources/tools/
 sources/tools/aio_common_tools/aio_spider_nest/aio_spider_nest.c.s:
 	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/aio_common_tools/aio_spider_nest/aio_spider_nest.c.s
 .PHONY : sources/tools/aio_common_tools/aio_spider_nest/aio_spider_nest.c.s
+
+sources/tools/aio_common_tools/utils/aio_result/aio_result.obj: sources/tools/aio_common_tools/utils/aio_result/aio_result.c.obj
+
+.PHONY : sources/tools/aio_common_tools/utils/aio_result/aio_result.obj
+
+# target to build an object file
+sources/tools/aio_common_tools/utils/aio_result/aio_result.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/aio_common_tools/utils/aio_result/aio_result.c.obj
+.PHONY : sources/tools/aio_common_tools/utils/aio_result/aio_result.c.obj
+
+sources/tools/aio_common_tools/utils/aio_result/aio_result.i: sources/tools/aio_common_tools/utils/aio_result/aio_result.c.i
+
+.PHONY : sources/tools/aio_common_tools/utils/aio_result/aio_result.i
+
+# target to preprocess a source file
+sources/tools/aio_common_tools/utils/aio_result/aio_result.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/aio_common_tools/utils/aio_result/aio_result.c.i
+.PHONY : sources/tools/aio_common_tools/utils/aio_result/aio_result.c.i
+
+sources/tools/aio_common_tools/utils/aio_result/aio_result.s: sources/tools/aio_common_tools/utils/aio_result/aio_result.c.s
+
+.PHONY : sources/tools/aio_common_tools/utils/aio_result/aio_result.s
+
+# target to generate assembly for a file
+sources/tools/aio_common_tools/utils/aio_result/aio_result.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/aio_common_tools/utils/aio_result/aio_result.c.s
+.PHONY : sources/tools/aio_common_tools/utils/aio_result/aio_result.c.s
+
+sources/tools/aio_common_tools/utils/aio_value/aio_value.obj: sources/tools/aio_common_tools/utils/aio_value/aio_value.c.obj
+
+.PHONY : sources/tools/aio_common_tools/utils/aio_value/aio_value.obj
+
+# target to build an object file
+sources/tools/aio_common_tools/utils/aio_value/aio_value.c.obj:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/aio_common_tools/utils/aio_value/aio_value.c.obj
+.PHONY : sources/tools/aio_common_tools/utils/aio_value/aio_value.c.obj
+
+sources/tools/aio_common_tools/utils/aio_value/aio_value.i: sources/tools/aio_common_tools/utils/aio_value/aio_value.c.i
+
+.PHONY : sources/tools/aio_common_tools/utils/aio_value/aio_value.i
+
+# target to preprocess a source file
+sources/tools/aio_common_tools/utils/aio_value/aio_value.c.i:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/aio_common_tools/utils/aio_value/aio_value.c.i
+.PHONY : sources/tools/aio_common_tools/utils/aio_value/aio_value.c.i
+
+sources/tools/aio_common_tools/utils/aio_value/aio_value.s: sources/tools/aio_common_tools/utils/aio_value/aio_value.c.s
+
+.PHONY : sources/tools/aio_common_tools/utils/aio_value/aio_value.s
+
+# target to generate assembly for a file
+sources/tools/aio_common_tools/utils/aio_value/aio_value.c.s:
+	$(MAKE) -f CMakeFiles\AIO.dir\build.make CMakeFiles/AIO.dir/sources/tools/aio_common_tools/utils/aio_value/aio_value.c.s
+.PHONY : sources/tools/aio_common_tools/utils/aio_value/aio_value.c.s
 
 sources/tools/aio_function_tools/aio_control_graph/aio_function_control_graph.obj: sources/tools/aio_function_tools/aio_control_graph/aio_function_control_graph.c.obj
 
@@ -2108,15 +2108,15 @@ help:
 	@echo ... sources/lang/aio_annotation/aio_annotation.obj
 	@echo ... sources/lang/aio_annotation/aio_annotation.i
 	@echo ... sources/lang/aio_annotation/aio_annotation.s
-	@echo ... sources/lang/aio_context/aio_context.obj
-	@echo ... sources/lang/aio_context/aio_context.i
-	@echo ... sources/lang/aio_context/aio_context.s
+	@echo ... sources/lang/aio_bundle/aio_bundle.obj
+	@echo ... sources/lang/aio_bundle/aio_bundle.i
+	@echo ... sources/lang/aio_bundle/aio_bundle.s
+	@echo ... sources/lang/aio_core/aio_context/aio_context.obj
+	@echo ... sources/lang/aio_core/aio_context/aio_context.i
+	@echo ... sources/lang/aio_core/aio_context/aio_context.s
 	@echo ... sources/lang/aio_core/aio_core.obj
 	@echo ... sources/lang/aio_core/aio_core.i
 	@echo ... sources/lang/aio_core/aio_core.s
-	@echo ... sources/lang/aio_function/aio_bundle/aio_bundle.obj
-	@echo ... sources/lang/aio_function/aio_bundle/aio_bundle.i
-	@echo ... sources/lang/aio_function/aio_bundle/aio_bundle.s
 	@echo ... sources/lang/aio_function/aio_function.obj
 	@echo ... sources/lang/aio_function/aio_function.i
 	@echo ... sources/lang/aio_function/aio_function.s
@@ -2126,24 +2126,18 @@ help:
 	@echo ... sources/lang/aio_function/aio_function_definition/aio_function_definition_builder.obj
 	@echo ... sources/lang/aio_function/aio_function_definition/aio_function_definition_builder.i
 	@echo ... sources/lang/aio_function/aio_function_definition/aio_function_definition_builder.s
-	@echo ... sources/lang/aio_function/aio_result/aio_result.obj
-	@echo ... sources/lang/aio_function/aio_result/aio_result.i
-	@echo ... sources/lang/aio_function/aio_result/aio_result.s
-	@echo ... sources/lang/aio_function/aio_value/aio_value.obj
-	@echo ... sources/lang/aio_function/aio_value/aio_value.i
-	@echo ... sources/lang/aio_function/aio_value/aio_value.s
-	@echo ... sources/lang/aio_function/aio_variable/aio_variable.obj
-	@echo ... sources/lang/aio_function/aio_variable/aio_variable.i
-	@echo ... sources/lang/aio_function/aio_variable/aio_variable.s
-	@echo ... sources/lang/aio_function/aio_variable/aio_variable_definition/aio_variable_definition.obj
-	@echo ... sources/lang/aio_function/aio_variable/aio_variable_definition/aio_variable_definition.i
-	@echo ... sources/lang/aio_function/aio_variable/aio_variable_definition/aio_variable_definition.s
 	@echo ... sources/lang/aio_reserved_names/aio_reserved_names_container.obj
 	@echo ... sources/lang/aio_reserved_names/aio_reserved_names_container.i
 	@echo ... sources/lang/aio_reserved_names/aio_reserved_names_container.s
 	@echo ... sources/lang/aio_type/aio_type.obj
 	@echo ... sources/lang/aio_type/aio_type.i
 	@echo ... sources/lang/aio_type/aio_type.s
+	@echo ... sources/lang/aio_variable/aio_filed.obj
+	@echo ... sources/lang/aio_variable/aio_filed.i
+	@echo ... sources/lang/aio_variable/aio_filed.s
+	@echo ... sources/lang/aio_variable/aio_variable_definition/aio_filed_definition.obj
+	@echo ... sources/lang/aio_variable/aio_variable_definition/aio_filed_definition.i
+	@echo ... sources/lang/aio_variable/aio_variable_definition/aio_filed_definition.s
 	@echo ... sources/lib/utils/boolean_utils/boolean_utils.obj
 	@echo ... sources/lib/utils/boolean_utils/boolean_utils.i
 	@echo ... sources/lib/utils/boolean_utils/boolean_utils.s
@@ -2216,6 +2210,12 @@ help:
 	@echo ... sources/tools/aio_common_tools/aio_spider_nest/aio_spider_nest.obj
 	@echo ... sources/tools/aio_common_tools/aio_spider_nest/aio_spider_nest.i
 	@echo ... sources/tools/aio_common_tools/aio_spider_nest/aio_spider_nest.s
+	@echo ... sources/tools/aio_common_tools/utils/aio_result/aio_result.obj
+	@echo ... sources/tools/aio_common_tools/utils/aio_result/aio_result.i
+	@echo ... sources/tools/aio_common_tools/utils/aio_result/aio_result.s
+	@echo ... sources/tools/aio_common_tools/utils/aio_value/aio_value.obj
+	@echo ... sources/tools/aio_common_tools/utils/aio_value/aio_value.i
+	@echo ... sources/tools/aio_common_tools/utils/aio_value/aio_value.s
 	@echo ... sources/tools/aio_function_tools/aio_control_graph/aio_function_control_graph.obj
 	@echo ... sources/tools/aio_function_tools/aio_control_graph/aio_function_control_graph.i
 	@echo ... sources/tools/aio_function_tools/aio_control_graph/aio_function_control_graph.s

@@ -31,7 +31,7 @@ static const_aio_variable_list *upbuild_variable_map_by_definitions(const_aio_va
     aio_variable_list *variable_list = new_aio_variable_list();
     for (int i = 0; i < definition_list_size; ++i) {
         aio_variable_definition *definition = definitions[i];
-        aio_filed *new_variable = new_aio_variable_by_definition(definition, START_AIO_VALUE);
+        aio_field *new_variable = new_aio_variable_by_definition(definition, START_AIO_VALUE);
         add_aio_variable_in_list(variable_list, new_variable);
     }
     return variable_list;

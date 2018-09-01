@@ -21,22 +21,18 @@ add_executable(${PROJECT_NAME}
         headers
         #lang:
         headers/lang/aio_annotation/aio_annotation.h
-        headers/lang/aio_context/aio_context.h
-        headers/lang/aio_core/aio_core.h
+        headers/aio_core/aio_core.h
         headers/lang/aio_class/aio_class.h
-        headers/lang/aio_function/aio_bundle/aio_bundle.h
+        headers/tools/aio_common_tools/utils/aio_bundle/aio_bundle.h
         headers/lang/aio_function/aio_function_definition/aio_function_definition.h
         headers/tools/aio_common_tools/utils/aio_result/aio_result.h
         headers/tools/aio_common_tools/utils/aio_value/aio_value.h
-        headers/lang/aio_variable/aio_variable.h
-        headers/lang/aio_variable/aio_definition/aio_variable_definition.h
         headers/lang/aio_function/aio_function.h
-        headers/lang/aio_reserved_names/aio_reserved_names_container.h
+        headers/tools/aio_common_tools/aio_reserved_names/aio_reserved_names_container.h
         headers/lang/aio_type/aio_type.h
-        headers/lang/aio_field/aio_field.h
-        headers/lang/aio_field/definition/aio_field_definition.h
         headers/lang/aio_visibility_type/aio_visibility_type.h
-        #tools:
+        headers/aio_core/aio_context/aio_context.h
+        #aio_tools:
         headers/tools/aio_common_tools/aio_block_body_explorer/aio_block_body_explorer.h
         headers/tools/aio_common_tools/aio_spider_nest/aio_function_instruction_spider_nest.h
         headers/tools/aio_common_tools/aio_spider_nest/aio_spider.h
@@ -85,9 +81,9 @@ add_executable(${PROJECT_NAME}
         sources
         #lang:
         sources/lang/aio_annotation/aio_annotation.c
-        sources/lang/aio_context/aio_context.c
+        sources/lang/aio_core/aio_context/aio_context.c
         sources/lang/aio_core/aio_core.c
-        sources/lang/aio_function/aio_bundle/aio_bundle.c
+        sources/lang/aio_bundle/aio_bundle.c
         sources/lang/aio_function/aio_function_definition/aio_function_definition.c
         sources/lang/aio_function/aio_function_definition/aio_function_definition_builder.c
         sources/tools/aio_common_tools/utils/aio_result/aio_result.c
@@ -95,9 +91,9 @@ add_executable(${PROJECT_NAME}
         sources/lang/aio_variable/aio_variable_definition/aio_filed_definition.c
         sources/lang/aio_variable/aio_filed.c
         sources/lang/aio_function/aio_function.c
-        sources/lang/aio_reserved_names/aio_reserved_names_container.c
+        sources/lang/aio_reserved_names/aio_lexer.c
         sources/lang/aio_type/aio_type.c
-        #tools:
+        #aio_tools:
         sources/tools/aio_common_tools/aio_block_body_explorer/aio_block_body_explorer.c
         sources/tools/aio_common_tools/aio_spider_nest/aio_spider_nest.c
         sources/tools/aio_function_tools/aio_control_graph/aio_function_control_graph.c

@@ -42,7 +42,7 @@ aio_function_instruction_holder *new_aio_function_instruction_holder(
 aio_function_instruction_holder *inflate_root_aio_instruction_holder(
         const_string source_code,
         int *start_code_pointer_ref,
-        aio_variable_definition_list *arg_definitions
+        aio_field_definition_list *arg_definitions
 )
 {
 #ifdef AIO_FUNCTION_INSTRUCTION_HOLDER_DEBUG

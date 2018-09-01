@@ -1,23 +1,28 @@
+#include <fcntl.h>
 #include <lang/aio_function/aio_bundle/aio_bundle.h>
 #include <lib/utils/boolean_utils/boolean_utils.h>
-#include <fcntl.h>
-#include <lib/utils/log_utils/log_utils.h>
 #include <lib/utils/string_utils/string_utils.h>
 #include <lib/utils/str_hook/str_hook.h>
 #include <lang/aio_function/aio_function.h>
 #include <lib/utils/str_hook/str_hook_utils/str_hook_utils.h>
 #include <lib/utils/collections/lists/string_list.h>
 #include <lang/aio_core/aio_core.h>
-#include <lang/aio_context/aio_context.h>
+#include <tools/aio_common_tools/utils/aio_value/aio_value.h>
 
 #define AIO_TAG "AIO"
 
 #define AIO_DEVELOPMENT
 
-static aio_bundle *make_bundle(const int argc, char *argv[])
+static aio_bundle *create_bundle(const int argc, char **argv)
 {
+    //Define indexes:
+    static const unsigned FILE_PATH_INDEX = 1;
+    static const unsigned FUNCTION_NAME_INDEX = 2;
     //Define function args index:
     static const unsigned START_FUNCTION_ARG_INDEX = 3;
+    //Build bundle:
+    str_hook *file_path = new_str_hook_by_string(argv[FILE_PATH_INDEX]);
+    str_hook *function_name = new_str_hook_by_string(argv[FUNCTION_NAME_INDEX]);
     aio_value_list *arguments = new_aio_value_list();
     //Prepare input arguments:
     const_boolean has_function_arguments = argc > START_FUNCTION_ARG_INDEX;
@@ -27,7 +32,7 @@ static aio_bundle *make_bundle(const int argc, char *argv[])
             add_aio_value_in_list(arguments, argument);
         }
     }
-    return new_aio_bundle(arguments);
+    return new_aio_bundle(file_path, function_name, arguments);
 }
 
 static void print_result(const aio_value_list *result_list)
@@ -42,25 +47,14 @@ static void print_result(const aio_value_list *result_list)
 
 static void make_aio(const int argc, char *argv[])
 {
-    //Define indexes:
-    static const unsigned FILE_PATH_INDEX = 1;
-    static const unsigned FUNCTION_NAME_INDEX = 2;
     //Init args:
-    const_string file_path = argv[FILE_PATH_INDEX];
-    const_string function_name = argv[FUNCTION_NAME_INDEX];
-    aio_bundle *input_bundle = make_bundle(argc, argv);
-    //Init core:
-    inflate_aio_core();
-    //Prepare to invoke function:
-    str_hook *test_hook = new_str_hook_by_string(function_name);
-    aio_value_list *result_list = invoke_static_function_in_context(test_hook, input_bundle);
+    aio_bundle *input_bundle = create_bundle(argc, argv);
+    //Run AIO:
+    aio_value_list *result_list = inflate_aio_core(input_bundle);
     //Print result:
     print_result(result_list);
-    //Close AIO:
-    deflate_aio_core();
     //----------------------------------------------------------------------------------------------------------------—
     //찌꺼기 수집기 (Garbage collector):
-    free_str_hook(test_hook);
     free_aio_bundle(input_bundle);
     free_aio_value_list(result_list);
 }
