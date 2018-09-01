@@ -16,10 +16,4 @@ struct aio_bundle *new_aio_bundle(
 
 void free_aio_bundle(struct aio_bundle *bundle);
 
-/**
- * Typedef utils.
- */
-
-typedef const aio_bundle const_aio_bundle;
-
 #endif //AIO_BUNDLE_H

@@ -40,7 +40,7 @@ void free_aio_field(struct aio_filed *filed)
  * List
  */
 
-aio_variable_list *new_aio_variable_list()
+aio_variable_list *new_aio_field_list()
 {
     aio_variable_list *list = new_object(sizeof(aio_variable_list));
     list->capacity = 2;
@@ -61,9 +61,9 @@ static void update_memory_in_aio_variable_list(aio_variable_list *variable_map)
     }
 }
 
-void add_aio_variable_in_list(aio_variable_list *list, aio_variable *variable)
+void add_aio_field_in_list(struct aio_field_list *list, struct aio_field *field)
 {
-    const_str_hook *name = variable->definition->name;
+    const_str_hook *name = field->definition->name;
     for (int i = 0; i < list->size; ++i) {
         const_str_hook *current_name = list->variables[i]->definition->name;
         const_boolean are_equal_strings = are_equal_hooked_str(current_name, name);
@@ -72,11 +72,11 @@ void add_aio_variable_in_list(aio_variable_list *list, aio_variable *variable)
         }
     }
     update_memory_in_aio_variable_list(list);
-    list->variables[list->size] = variable;
+    list->variables[list->size] = field;
     list->size++;
 }
 
-aio_variable *get_aio_variable_in_list_by_name(const_aio_variable_list *list, const_str_hook *name)
+aio_variable *get_aio_field_in_list_by_name(const struct aio_field_list *list, const_str_hook *name)
 {
     const size_t list_size = list->size;
     aio_variable_array variables = list->variables;
@@ -90,7 +90,7 @@ aio_variable *get_aio_variable_in_list_by_name(const_aio_variable_list *list, co
     return NULL;
 }
 
-void free_aio_variable_list(const_aio_variable_list *list)
+void free_aio_field_list(const struct aio_field_list *list)
 {
     const size_t list_size = list->size;
     aio_variable_array variable_array = list->variables;

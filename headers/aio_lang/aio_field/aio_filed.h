@@ -1,8 +1,8 @@
-#ifndef AIO_VARIABLE_H
-#define AIO_VARIABLE_H
+#ifndef AIO_FIELD_H
+#define AIO_FIELD_H
 
 /**
- * Variable.
+ * Field.
  */
 
 typedef enum aio_field_init_type {
@@ -32,27 +32,15 @@ typedef struct aio_field_list {
     struct aio_field **fields;
 } aio_field_list;
 
-struct aio_field_list *new_aio_variable_list();
+struct aio_field_list *new_aio_field_list();
 
-void add_aio_variable_in_list(struct aio_field_list *list, struct aio_field *variable);
+void add_aio_field_in_list(struct aio_field_list *list, struct aio_field *field);
 
-struct aio_field *get_aio_variable_in_list_by_name(
-        const struct aio_field_list *list,
-        const struct str_hook *name
+struct aio_field *get_aio_field_in_list_by_name(
+        struct aio_field_list *list,
+        struct str_hook *name
 );
 
-void free_aio_variable_list(const struct aio_field_list *list);
+void free_aio_field_list(struct aio_field_list *list);
 
-/**
- * Typedef utils.
- */
-
-typedef const struct aio_field const_aio_variable;
-
-typedef struct aio_field **aio_variable_array;
-
-typedef const struct aio_field **const_aio_variable_array;
-
-typedef const struct aio_field_list const_aio_variable_list;
-
-#endif //AIO_VARIABLE_H
+#endif //AIO_FIELD_H

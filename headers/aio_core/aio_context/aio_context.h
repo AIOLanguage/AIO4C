@@ -17,6 +17,7 @@ typedef struct aio_context {
     enum aio_context_state context_state;
     struct int_list* break_points;
     struct string_builder *source_code_builder;
+    struct str_hook_list *source_code;
 } aio_context;
 
 void inflate_aio_context(struct aio_bundle *bundle);

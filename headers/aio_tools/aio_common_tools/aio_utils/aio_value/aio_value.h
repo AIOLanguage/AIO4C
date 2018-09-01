@@ -1,11 +1,17 @@
 #ifndef AIO_VALUE_H
 #define AIO_VALUE_H
 
+typedef enum aio_value_data_type {
+    AIO_VALUE_SINGLE_DATA, AIO_VALUE_ARRAY_DATA
+} aio_value_data_type;
+
 /**
  * Value.
  */
 
 typedef struct aio_value {
+
+    enum aio_value_data_type data_type;
 
     struct str_hook *type;
 
@@ -19,7 +25,7 @@ typedef struct aio_value {
 
 } aio_value;
 
-struct aio_value *new_aio_value(struct str_hook* type);
+struct aio_value *new_aio_value(struct str_hook *type);
 
 struct aio_value *new_aio_value_by_string(char *undefined_value);
 
@@ -91,18 +97,6 @@ struct aio_value *cast_to_type(struct aio_value *value, const struct str_hook *t
  * Log utils.
  */
 
-void log_info_aio_value(const char* tag, char* message, const struct aio_value *value);
-
-/**
- * Typedef utils.
- */
-
-typedef const struct aio_value *const_aio_value;
-
-typedef struct aio_value **aio_value_array;
-
-typedef const struct aio_value **const_aio_value_array;
-
-typedef const struct aio_value_list const_aio_value_list;
+void log_info_aio_value(const char *tag, char *message, const struct aio_value *value);
 
 #endif //AIO_VALUE_H

@@ -6,22 +6,22 @@
  */
 
 typedef struct aio_function_definition {
-    const struct aio_annotation_list *annotation_list;
-    const struct str_hook_list *output_type_list;
-    const struct str_hook *name;
+    struct aio_annotation_list *annotation_list;
+    struct str_hook_list *output_type_list;
+    struct str_hook *name;
     unsigned int number_of_args;
-    const struct aio_function_instruction_holder *root_holder;
+    struct aio_function_instruction_holder *root_holder;
 } aio_function_definition;
 
-const struct aio_function_definition *new_aio_function_definition(
-        const struct aio_annotation_list *annotations,
-        const struct str_hook_list *output_type_list,
-        const struct str_hook *name,
-        const unsigned int number_of_args,
-        const struct aio_function_instruction_holder *holder
+struct aio_function_definition *new_aio_function_definition(
+        struct aio_annotation_list *annotations,
+        struct str_hook_list *output_type_list,
+        struct str_hook *name,
+        unsigned int number_of_args,
+        struct aio_function_instruction_holder *holder
 );
 
-void free_aio_function_definition(const struct aio_function_definition *function_definition);
+void free_aio_function_definition(struct aio_function_definition *function_definition);
 
 /**
  * List.
@@ -30,29 +30,21 @@ void free_aio_function_definition(const struct aio_function_definition *function
 typedef struct aio_function_definition_list {
     unsigned int capacity;
     unsigned int size;
-    const struct aio_function_definition **definitions;
+    struct aio_function_definition **definitions;
 } aio_function_definition_list;
 
 struct aio_function_definition_list *new_aio_function_definition_list();
 
 void add_aio_function_definition_in_list(
         struct aio_function_definition_list *list,
-        const struct aio_function_definition *definition
+        struct aio_function_definition *definition
 );
 
-const struct aio_function_definition *get_aio_function_definition_in_list_by_name(
-        const struct aio_function_definition_list *list,
-        const struct str_hook *name
+struct aio_function_definition *get_aio_function_definition_in_list_by_name(
+        struct aio_function_definition_list *list,
+        struct str_hook *name
 );
 
 void free_aio_function_definition_list(struct aio_function_definition_list *function_definition_list);
-
-/**
- * Typedef utils.
- */
-
-typedef const aio_function_definition const_aio_function_definition;
-
-typedef const aio_function_definition_list const_aio_function_definition_list;
 
 #endif //AIO_FUNCTION_DEFINITION_H

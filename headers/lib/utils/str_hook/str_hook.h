@@ -6,7 +6,7 @@
  */
 
 typedef struct str_hook {
-    const char *source_string;
+    char *source_string;
     int start;
     int end;
 } str_hook;
@@ -15,11 +15,9 @@ typedef struct str_hook {
  * Functions.
  */
 
-struct str_hook *new_str_hook(const char *source_ref);
+struct str_hook *new_str_hook(char *source_ref);
 
 void free_str_hook(struct str_hook *hook);
-
-void free_const_str_hook(const struct str_hook *hook);
 
 /**
  * List.
@@ -28,7 +26,7 @@ void free_const_str_hook(const struct str_hook *hook);
 typedef struct str_hook_list {
     unsigned capacity;
     unsigned size;
-    const struct str_hook **hooks;
+    struct str_hook **hooks;
 } str_hook_list;
 
 /**
@@ -37,22 +35,33 @@ typedef struct str_hook_list {
 
 struct str_hook_list *new_str_hook_list();
 
-void add_str_hook_in_list(struct str_hook_list *list, const struct str_hook *hook);
+void add_str_hook_in_list(struct str_hook_list *list, struct str_hook *hook);
 
-void free_str_hooks_in_list(const struct str_hook_list *list);
+void free_str_hooks_in_list(struct str_hook_list *list);
 
-void free_str_hook_list(const struct str_hook_list *list);
+void free_str_hook_list(struct str_hook_list *list);
 
 /**
- * Typedef utils.
+ * String hook iterator.
  */
 
-typedef const struct str_hook const_str_hook;
+typedef struct str_hook_iterator {
+    struct str_hook_list *str_hook_list;
+    unsigned current_hook_index;
+    int position;
+} str_hook_iterator;
 
-typedef struct str_hook **str_hook_array;
+/**
+ * Functions.
+ */
 
-typedef const struct str_hook **const_str_hook_array;
+struct str_hook_iterator *new_str_hook_iterator(
+        struct str_hook_list *str_hook_list,
+        const unsigned current_hook_index
+);
 
-typedef const str_hook_list const_str_hook_list;
+_Bool next_in_str_hook_iterator(struct str_hook_iterator *iterator);
+
+void free_str_hook_iterator(struct str_hook_iterator *iterator);
 
 #endif //STRING_HOOK_H

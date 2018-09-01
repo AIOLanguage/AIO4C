@@ -19,7 +19,7 @@ typedef struct aio_spider_nest {
     enum aio_spider_nest_mode mode;
 } aio_spider_nest;
 
-void refresh_aio_spider_nest(struct aio_spider_nest *nest, struct point_watcher *parent_watcher);
+void refresh_aio_spider_nest(struct aio_spider_nest *nest, struct str_hook_iterator *parent_iterator);
 
 void free_aio_spider_nest(struct aio_spider_nest *nest);
 

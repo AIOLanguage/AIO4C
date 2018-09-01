@@ -1,6 +1,10 @@
 #ifndef AIO_TYPE_H
 #define AIO_TYPE_H
 
+/**
+ * Core types.
+ */
+
 #define INTEGER "Int"
 
 #define DOUBLE "Dou"
@@ -12,6 +16,10 @@
 #define VOID "Voi"
 
 #define AIO_NOT_INIT_TYPE "###"
+
+/**
+ * Define functions.
+ */
 
 _Bool is_aio_type_hooked(const struct str_hook *hook);
 

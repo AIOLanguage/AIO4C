@@ -6,12 +6,12 @@
  */
 
 typedef struct aio_annotation {
-    const struct str_hook *name;
+    struct str_hook *name;
 } aio_annotation;
 
-const struct aio_annotation *new_aio_annotation(const struct str_hook *name);
+struct aio_annotation *new_aio_annotation(struct str_hook *name);
 
-void free_aio_annotation(const struct aio_annotation *annotation);
+void free_aio_annotation(struct aio_annotation *annotation);
 
 /**
  * List.
@@ -20,12 +20,12 @@ void free_aio_annotation(const struct aio_annotation *annotation);
 typedef struct aio_annotation_list {
     unsigned int capacity;
     unsigned int size;
-    const struct aio_annotation **annotations;
+    struct aio_annotation **annotations;
 } aio_annotation_list;
 
 struct aio_annotation_list *new_aio_annotation_list();
 
-void add_aio_annotation_in_list(struct aio_annotation_list *annotation_list, const struct aio_annotation *annotation);
+void add_aio_annotation_in_list(struct aio_annotation_list *annotation_list, struct aio_annotation *annotation);
 
 void free_annotation_list(struct aio_annotation_list *annotation_list);
 

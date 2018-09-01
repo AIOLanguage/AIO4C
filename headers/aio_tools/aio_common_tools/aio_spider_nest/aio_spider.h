@@ -15,22 +15,23 @@ typedef struct aio_spider {
 
     void *materials;
 
-    void (*refresh)(struct aio_spider *current_spider, struct point_watcher *parent_watcher);
+    void (*refresh)(
+            struct str_hook_iterator *parent_iterator,
+            struct aio_spider *spider
+    );
 
-    const enum aio_spider_message (*is_found_context)(
-            const char *source_code,
-            struct point_watcher *parent_watcher,
+    enum aio_spider_message (*is_found_context)(
+            const char current_symbol,
             struct aio_spider *spider
     );
 
     void (*weave_context_for)(
-            void *holder,
-            const char *source_code,
-            struct point_watcher *parent_watcher,
-            struct aio_spider *current_spider
+            void *parent,
+            struct str_hook_iterator *parent_iterator,
+            struct aio_spider *spider
     );
 
-    void (*free)(struct aio_spider *current_spider);
+    void (*free)(struct aio_spider *spider);
 
 } aio_spider;
 
