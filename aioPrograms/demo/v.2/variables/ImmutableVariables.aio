@@ -1,0 +1,13 @@
+fun castString() : Str {
+    a_ = 3.2
+    b_ = a
+    c_ : Int = a + '1'
+    out 'Percent: ' ~ (c as Dou / 100)
+}
+
+fun castBoolean() : Boo {
+    a_ : Int = 1.2
+    isTest_ : Boo = '1.0'
+    isSuccessfulParsed_ = a & isTest & (((2 + '5') / 7) & 2 + 2 != 5) | ('fls' & 0)
+    out isSuccessfulParsed
+}

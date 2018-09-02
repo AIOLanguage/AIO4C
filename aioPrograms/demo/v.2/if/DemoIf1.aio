@@ -1,9 +1,0 @@
-fun getGender(isMale: Boo) : Str {
-    gender* = nul
-    if (isMale) {
-        gender = 'Male'
-    } : {
-        gender = 'Female'
-    }
-    out gender
-}

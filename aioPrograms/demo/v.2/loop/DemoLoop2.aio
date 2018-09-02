@@ -1,7 +1,7 @@
 fun testLoop() {
     loo {
-        leftBorder = 3
-        rightBorder = 10
+        leftBorder_ = 3
+        rightBorder_ = 10
         pointer* = leftBorder
     } (pointer < rightBorder) {
 

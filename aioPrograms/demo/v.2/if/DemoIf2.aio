@@ -1,8 +1,8 @@
-fun pullStatus(mManager : ProjectManager) : Str {
+fun pullStatus(mManager_ : ProjectManager) : Str {
     if {
-        config : AIOConfig = mManager.mConfig
-        tools : List<AIOTool> = mManager.mTools
-        isDevVersion = config.mProfiler.isDevelopment
+        config_ : AIOConfig = mManager.mConfig
+        tools_ : List<AIOTool> = mManager.mTools
+        isDevVersion_ = config.mProfiler.isDevelopment
     } (isDevVersion) {
         config.mTools = tools.mCompilerTools
     } : {

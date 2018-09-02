@@ -1,5 +1,5 @@
-fun getGender(isMale) : Str {
-    gender* = nul
+fun getGender(isMale_ : Boo) : Str {
+    gender* = nil
     if (isMale) {
         gender = 'Male'
     } : {

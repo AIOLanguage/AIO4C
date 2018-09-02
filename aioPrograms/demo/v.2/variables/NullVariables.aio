@@ -1,0 +1,29 @@
+fun isNull() : Boo {
+    nullReference_ = nil
+    b* = nullReference
+    result* : Int = 5.9
+    result = b
+    out result == nil
+}
+
+fun plusNull() : Voi {
+    mNull_ = nil
+    a* = 3 + nul + 3
+    out a
+}
+
+fun returnNull() : Voi {
+    nul_ = nil
+    a_ : Int = nul
+    out a
+}
+
+fun isNotNull() : Boo {
+    a* = 3
+    b_ = a + 2
+    a = nil
+    d_ = a
+    a = 'Value: ' ~ (3.2 + b)
+    a = a != d
+    out a
+}

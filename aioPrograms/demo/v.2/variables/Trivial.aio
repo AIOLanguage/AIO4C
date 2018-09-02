@@ -1,0 +1,17 @@
+fun sum(a_ : Int, b_ : Int) : Int {
+    c_ = a + b
+    out c
+}
+
+fun minus(a_ : Int, b_ : Int) : Int {
+    c_ = a - b
+    out c
+}
+
+fun sqr(a_ Int) : Int {
+    out a * a
+}
+
+fun isPercent(value_) = 0.0 < value & value < 100.0
+
+fun countSqrHypotenuse(a_ : Int, b_ : Int) : Int = sum(sqr(a), sqr(b))

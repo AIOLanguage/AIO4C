@@ -1,0 +1,8 @@
+fun changeMutable() : Boo {
+    b_ = 3.2
+    c* : Int = 5
+    isTest* = tru
+    c = c + b
+    isTest = c
+    out isTest == 8.2
+}

@@ -1,0 +1,56 @@
+plg {
+    MyFragment,
+    MyManager,
+    MyLayout
+}
+
+acc*
+
+fun sqr(a_ : Dou) = a * a
+
+fun main(Str args[]*) {
+    calc_ = Calculator(3, 4)
+    result_ = calc.sum()
+    println(result)
+}
+
+wra Math {
+
+    firstTerm* : Dou
+
+    secondTerm* : Dou
+
+    fun sum() : Dou
+
+    fun minus() : Dou
+
+    fun countSqrHypotenuse() : Dou
+}
+
+cls Calculator : Math {
+
+    name_ : Str
+
+    accumulator*
+
+    new () {
+        $name_ = 'Default'
+        $model : Str = '1021A' //New field.
+    }
+
+    new (firstTerm_ : Dou, secondTerm_ : Dou) {
+        $firstTerm = firstTerm
+        $secondTerm = secondTerm
+        //$name = nil by default
+        //$model = nil by default
+    }
+
+    @Override
+    fun sum() = $firstTerm + $secondTerm
+
+    @Override
+    fun minus() = $firstTerm - $secondTerm
+
+    @Override
+    fun countSqrHypotenuse() = sqr($firstTerm) + sqr($secondTerm)
+}
