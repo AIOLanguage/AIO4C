@@ -1,0 +1,13 @@
+fun pullStatus(mManager : ProjectManager) : Str {
+    if {
+        config : AIOConfig = mManager.mConfig
+        tools : List<AIOTool> = mManager.mTools
+        isDevVersion = config.mProfiler.isDevelopment
+    } (isDevVersion) {
+        config.mTools = tools.mCompilerTools
+    } : {
+        config.mTools = tools.mReleaseTools
+    }
+    mManager.rebuildProject()
+    out mManager.status
+}

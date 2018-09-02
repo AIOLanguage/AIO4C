@@ -14,7 +14,7 @@ static void create_left_part(
         str_hook_list *list
 )
 {
-    str_hook *left_hook = new_str_hook_by_other_source_ref(hook);
+    str_hook *left_hook = new_str_hook_by_other_hook_string(hook);
     left_hook->start = hook->start;
     left_hook->end = left_index - delimiter_length;
     add_str_hook_in_list(list, left_hook);
@@ -22,7 +22,7 @@ static void create_left_part(
 
 static void create_right_part(const_str_hook *hook, const int right_index, str_hook_list *list)
 {
-    str_hook *right_hook = new_str_hook_by_other_source_ref(hook);
+    str_hook *right_hook = new_str_hook_by_other_hook_string(hook);
     right_hook->start = right_index;
     right_hook->end = hook->end;
     add_str_hook_in_list(list, right_hook);

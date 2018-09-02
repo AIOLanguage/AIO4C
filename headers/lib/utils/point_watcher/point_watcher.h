@@ -22,10 +22,4 @@ void free_point_watcher(struct point_watcher *watcher);
 
 char *substring_by_point_watcher(const char *src, const struct point_watcher *watcher);
 
-/**
- * Typedef utils.
- */
-
-typedef const struct point_watcher const_point_watcher;
-
 #endif //POINT_WATCHER_H

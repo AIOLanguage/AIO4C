@@ -1,16 +1,4 @@
-"C:\Program Files\JetBrains\CLion 2018.2.1\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" C:\Users\StarKRE\CLionProjects\AIO_2\AIO
+"C:\Program Files\JetBrains\CLion 2018.2.1\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" C:\Users\StarKRE\CLionProjects\AIO
 -- Configuring done
-CMake Error at CMakeLists.txt:13 (add_executable):
-  Cannot find source file:
-
-    headers/tools/aio_common_tools/utils/aio_bundle/aio_bundle.h
-
-  Tried extensions .c .C .c++ .cc .cpp .cxx .cu .m .M .mm .h .hh .h++ .hm
-  .hpp .hxx .in .txx
-
-
-CMake Error at CMakeLists.txt:13 (add_executable):
-  No SOURCES given to target: AIO
-
-
--- Build files have been written to: C:/Users/StarKRE/CLionProjects/AIO_2/AIO/cmake-build-debug
+-- Generating done
+-- Build files have been written to: C:/Users/StarKRE/CLionProjects/AIO/cmake-build-debug

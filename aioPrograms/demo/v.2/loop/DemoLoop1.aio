@@ -1,0 +1,8 @@
+fun primitivePow(base, power) {
+    result* = 1.0
+    loo { i* = 1 } (i <= power) {
+        result *= base
+        i++
+    }
+    out result
+}

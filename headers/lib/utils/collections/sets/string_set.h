@@ -17,10 +17,4 @@ void free_strings_in_set(struct string_set *set);
 
 void free_string_set(struct string_set *set);
 
-/**
- * Typedef utils.
- */
-
-typedef const string_set const_string_set;
-
 #endif //STRING_SET_H

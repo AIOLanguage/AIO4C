@@ -73,14 +73,4 @@ void add_aio_instruction_in_list(
 
 void free_aio_instruction_list(struct aio_function_instruction_list *list);
 
-/**
- * Typedef utils.
- */
-
-typedef const aio_function_instruction const_aio_function_instruction;
-
-typedef const aio_function_instruction **const_aio_function_instruction_array;
-
-typedef const aio_function_instruction_list const_aio_function_instruction_list;
-
 #endif //AIO_FUNCTION_INSTRUCTION_H

@@ -1,4 +1,16 @@
 #include <malloc.h>
+#include <aio_core/aio_core.h>
+#include <aio_lang/aio_type/aio_type.h>
+#include <lib/utils/str_hook/str_hook.h>
+#include <lib/utils/str_hook/str_hook_utils/str_hook_utils.h>
+#include <aio_tools/aio_common_tools/aio_utils/aio_bundle/aio_bundle.h>
+#include <lib/utils/memory_utils/memory_utils.h>
+#include <aio_core/aio_context/aio_context.h>
+#include <aio_lang/aio_class/aio_class.h>
+#include <aio_lang/aio_function/aio_function_definition/aio_function_definition.h>
+#include <aio_lang/aio_field/aio_definition/aio_filed_definition.h>
+#include <aio_tools/aio_common_tools/aio_utils/aio_value/aio_value.h>
+#include <lib/utils/type_utils/type.utils.h>
 
 #define AIO_CORE_TAG
 
@@ -16,10 +28,10 @@ static char core_types[NUMBER_OF_CORE_TYPES][4] = {
 
 static str_hook_list *create_root_type_set()
 {
-    str_hook_list *types = new_str_hook_list();
+    var types = new_str_hook_list();
     //유형를 넣다 (Put core types):
     for (int i = 0; i < NUMBER_OF_CORE_TYPES; ++i) {
-        str_hook *core_type = new_str_hook_by_string(core_types[i]);
+        var core_type = new_str_hook_by_string(core_types[i]);
         add_str_hook_in_list(types, core_type);
     }
     return types;

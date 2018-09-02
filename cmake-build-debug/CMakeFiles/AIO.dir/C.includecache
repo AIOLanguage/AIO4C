@@ -6,43 +6,11 @@
 
 #IncludeRegexTransform: 
 
-../headers/lang/aio_class/aio_class.h
+../headers/lib/utils/type_utils/type.utils.h
 
-../headers/lang/aio_core/aio_core.h
-
-../headers/lang/aio_field/definition/aio_field_definition.h
-lang/aio_visibility_type/aio_visibility_type.h
+C:/Users/StarKRE/CLionProjects/AIO/main/main.c
+lib/utils/type_utils/type.utils.h
 -
-
-../headers/lang/aio_function/aio_function_definition/aio_function_definition.h
-
-../headers/lang/aio_type/aio_type.h
-
-../headers/lang/aio_visibility_type/aio_visibility_type.h
-
-../headers/lib/utils/collections/sets/string_set.h
-
-../headers/lib/utils/memory_utils/memory_utils.h
-
-../headers/lib/utils/string_utils/string_utils.h
-
-C:/Users/StarKRE/CLionProjects/AIO_2/AIO/sources/lang/aio_core/aio_core.c
-malloc.h
--
-lang/aio_core/aio_core.h
--
-lang/aio_type/aio_type.h
--
-lib/utils/collections/sets/string_set.h
--
-lib/utils/string_utils/string_utils.h
--
-lib/utils/memory_utils/memory_utils.h
--
-lang/aio_class/aio_class.h
--
-lang/aio_function/aio_function_definition/aio_function_definition.h
--
-lang/aio_field/definition/aio_field_definition.h
+stdlib.h
 -
 

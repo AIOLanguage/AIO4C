@@ -21,12 +21,4 @@ void add_int_in_list(struct int_list *list, const int value);
 
 void free_int_list(struct int_list *list);
 
-/**
- * Typedef utils.
- */
-
-typedef int *int_array;
-
-typedef const int *const_int_array;
-
 #endif //INT_UTILS_H

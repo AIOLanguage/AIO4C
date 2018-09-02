@@ -20,7 +20,7 @@ typedef struct aio_context {
     struct str_hook_list *source_code;
 } aio_context;
 
-void inflate_aio_context(struct aio_bundle *bundle);
+struct aio_value_list *inflate_aio_context(struct aio_bundle *bundle);
 
 /**
  * List.

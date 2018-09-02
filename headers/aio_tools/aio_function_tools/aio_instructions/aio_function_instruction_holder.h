@@ -26,10 +26,4 @@ struct aio_function_instruction_holder *inflate_local_aio_instruction_holder(
 
 void free_aio_function_instruction_holder(struct aio_function_instruction_holder *holder);
 
-/**
- * Typedef utils.
- */
-
-typedef const aio_function_instruction_holder const_aio_function_instruction_holder;
-
 #endif //AIO_INSTRUCTION_HOLDER_H

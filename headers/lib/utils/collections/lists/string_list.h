@@ -15,10 +15,4 @@ void free_strings_in_list(struct string_list *list);
 
 void free_string_list(struct string_list *list);
 
-/**
- * Typedef utils.
- */
-
-typedef const struct string_list const_string_list;
-
 #endif //STRING_LIST_H

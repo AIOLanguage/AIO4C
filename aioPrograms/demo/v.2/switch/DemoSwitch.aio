@@ -1,0 +1,9 @@
+fun getDaysInMonthIn2018(month : Str) {
+    whe (month) {
+        'February' -> { out 28 }
+        ('April', 'June', 'September', 'November') -> { out 30 }
+        ('January', 'March', 'May', July, 'August', 'October', 'December') -> { out 31 }
+    } : {
+        out nul
+    }
+}

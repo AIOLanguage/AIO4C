@@ -5,12 +5,6 @@
  * Linking.
  */
 
-#include <lang/aio_context/aio_context.h>
-#include <lang/aio_function/aio_bundle/aio_bundle.h>
-#include <lang/aio_function/aio_function_definition/aio_function_definition.h>
-#include <tools/aio_function_tools/aio_control_graph/aio_function_control_graph.h>
-#include <tools/aio_function_tools/aio_instructions/aio_function_instruction_holder.h>
-
 typedef enum aio_function_system_state {
     AIO_FUNCTION_SYSTEM_MAKE, AIO_FUNCTION_SYSTEM_BREAK, AIO_FUNCTION_SYSTEM_CONTINUE, AIO_FUNCTION_SYSTEM_STOP
 } aio_function_system_state;
@@ -49,11 +43,5 @@ void inflate_new_aio_root_function_control_graph(
 void perform_aio_function_instructions(const struct aio_function_control_graph *control_graph);
 
 void free_aio_control_graph(const struct aio_function_control_graph *graph);
-
-/**
- * Typedef utils.
- */
-
-typedef const aio_function_control_graph const_aio_function_control_graph;
 
 #endif //AIO_FUNCTION_CONTROL_GRAPH_H

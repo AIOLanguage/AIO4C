@@ -2,15 +2,16 @@
 #include <mem.h>
 #include <stdio.h>
 #include <process.h>
-#include "../../../../../headers/lib/utils/memory_utils/memory_utils.h"
-#include "../../../../../headers/lib/utils/point_watcher/point_watcher.h"
-#include "../../../../../headers/lib/utils/collections/sets/string_set.h"
-#include "../../../../../headers/lib/utils/str_hook/str_hook.h"
-#include "../../../../../headers/lib/utils/error_utils/error_utils.h"
-#include "../../../../../headers/lang/aio_reserved_names/aio_reserved_names_container.h"
-#include "../../../../../headers/lib/utils/char_utils/char_utils.h"
-#include "../../../../../headers/lib/utils/boolean_utils/boolean_utils.h"
-#include "../../../../../headers/lib/utils/string_utils/string_utils.h"
+#include <lib/utils/str_hook/str_hook.h>
+#include <lib/utils/string_utils/string_utils.h>
+#include <lib/utils/memory_utils/memory_utils.h>
+#include <lib/utils/point_watcher/point_watcher.h>
+#include <lib/utils/boolean_utils/boolean_utils.h>
+#include <lib/utils/collections/sets/string_set.h>
+#include <aio_tools/aio_common_tools/aio_lexer/aio_lexer.h>
+#include <lib/utils/char_utils/char_utils.h>
+#include <lib/utils/error_utils/error_utils.h>
+#include <lib/utils/type_utils/type.utils.h>
 
 #define STRING_HOOK_DEBUG
 
@@ -24,43 +25,43 @@
  * Extra constructors.
  */
 
-str_hook *new_str_hook_with_start(const_string source_ref, const int start_index)
+str_hook *new_str_hook_with_start(string source_string, const int start_index)
 {
     str_hook *hook = new_object(sizeof(str_hook));
-    hook->source_string = source_ref;
+    hook->source_string = source_string;
     hook->start = start_index;
     hook->end = 0;
     return hook;
 }
 
-str_hook *new_str_hook_with_end(const_string source_ref, const int end_index)
+str_hook *new_str_hook_with_end(string source_string, const int end_index)
 {
     str_hook *hook = new_object(sizeof(str_hook));
-    hook->source_string = source_ref;
+    hook->source_string = source_string;
     hook->start = 0;
     hook->end = end_index;
     return hook;
 }
 
-str_hook *new_str_hook_with_start_and_end(const_string source_ref, const int start_index, const int end_index)
+str_hook *new_str_hook_with_start_and_end(string source_string, const int start_index, const int end_index)
 {
     str_hook *hook = new_object(sizeof(str_hook));
-    hook->source_string = source_ref;
+    hook->source_string = source_string;
     hook->start = start_index;
     hook->end = end_index;
     return hook;
 }
 
-str_hook *new_str_hook_by_point_watcher(const_string source_ref, const_point_watcher *watcher)
+str_hook *new_str_hook_by_point_watcher(string source_string, const point_watcher *watcher)
 {
     str_hook *hook = new_object(sizeof(str_hook));
-    hook->source_string = source_ref;
+    hook->source_string = source_string;
     hook->start = watcher->start;
     hook->end = watcher->end;
     return hook;
 }
 
-str_hook *new_str_hook_by_other(const_str_hook *other_hook)
+str_hook *new_str_hook_by_other(const str_hook *other_hook)
 {
     str_hook *hook = new_object(sizeof(str_hook));
     hook->source_string = other_hook->source_string;
@@ -69,7 +70,7 @@ str_hook *new_str_hook_by_other(const_str_hook *other_hook)
     return hook;
 }
 
-str_hook *new_str_hook_by_other_source_ref(const_str_hook *other_hook)
+str_hook *new_str_hook_by_other_hook_string(const str_hook *other_hook)
 {
     str_hook *hook = new_object(sizeof(str_hook));
     hook->source_string = other_hook->source_string;
@@ -78,19 +79,19 @@ str_hook *new_str_hook_by_other_source_ref(const_str_hook *other_hook)
     return hook;
 }
 
-str_hook *new_str_hook_by_string(const_string source_ref)
+str_hook *new_str_hook_by_string(string source_string)
 {
     str_hook *hook = new_object(sizeof(str_hook));
-    hook->source_string = source_ref;
+    hook->source_string = source_string;
     hook->start = 0;
-    hook->end = strlen(source_ref);
+    hook->end = strlen(source_string);
     return hook;
 }
 
-str_hook *new_str_hook_by_offset(const_string source_ref, const int offset, const int length)
+str_hook *new_str_hook_by_offset(string source_string, const int offset, const int length)
 {
     str_hook *hook = new_object(sizeof(str_hook));
-    hook->source_string = source_ref;
+    hook->source_string = source_string;
     hook->start = offset;
     hook->end = offset + length;
     return hook;
@@ -100,12 +101,12 @@ str_hook *new_str_hook_by_offset(const_string source_ref, const int offset, cons
  * Getters.
  */
 
-int get_str_hook_size(const_str_hook *hook)
+int get_str_hook_size(const str_hook *hook)
 {
     return hook->end - hook->start;
 }
 
-char get_str_hook_char(const_str_hook *hook, const int index)
+char get_str_hook_char(const str_hook *hook, const int index)
 {
     return hook->source_string[0];
 }
@@ -114,7 +115,7 @@ char get_str_hook_char(const_str_hook *hook, const int index)
  * Common utils.
  */
 
-boolean is_word_hooked(const_str_hook *hook)
+boolean is_word_hooked(const str_hook *hook)
 {
     int length = get_str_hook_size(hook);
     if (length < 1) {
@@ -134,12 +135,12 @@ boolean is_word_hooked(const_str_hook *hook)
     return TRUE;
 }
 
-string substring_by_str_hook(const_str_hook *hook)
+string substring_by_str_hook(const str_hook *hook)
 {
     return substring(hook->source_string, hook->start, hook->end);
 }
 
-boolean are_equal_hooked_str(const_str_hook *hook_1, const_str_hook *hook_2)
+boolean are_equal_hooked_str(const str_hook *hook_1, const str_hook *hook_2)
 {
     const int size_1 = get_str_hook_size(hook_1);
     const int size_2 = get_str_hook_size(hook_2);
@@ -158,7 +159,7 @@ boolean are_equal_hooked_str(const_str_hook *hook_1, const_str_hook *hook_2)
     return TRUE;
 }
 
-boolean is_hook_equals_str(const_str_hook *hook, const_string str)
+boolean is_hook_equals_str(const str_hook *hook, const_string str)
 {
     const int hook_size = get_str_hook_size(hook);
     const int str_length = strlen(str);
@@ -175,7 +176,7 @@ boolean is_hook_equals_str(const_str_hook *hook, const_string str)
     return TRUE;
 }
 
-boolean contains_string_in_set_by_hook(const_string_set *set, const_str_hook *hook)
+boolean contains_string_in_set_by_hook(const string_set *set, const str_hook *hook)
 {
     for (int i = 0; i < set->size; ++i) {
         if (is_hook_equals_str(hook, set->strings[i])) {
@@ -185,25 +186,25 @@ boolean contains_string_in_set_by_hook(const_string_set *set, const_str_hook *ho
     return FALSE;
 }
 
-boolean is_empty_hooked_str(const_str_hook *hook)
+boolean is_empty_hooked_str(const str_hook *hook)
 {
     return hook->end - hook->start <= 0;
 }
 
-boolean is_not_empty_hooked_str(const_str_hook *hook)
+boolean is_not_empty_hooked_str(const str_hook *hook)
 {
     return hook->end - hook->start > 0;
 }
 
-str_hook_list *filter_str_hook_list(const_str_hook_list *list, boolean (*filter_condition)(const_str_hook *))
+str_hook_list *filter_str_hook_list(const str_hook_list *list, boolean (*filter_condition)(const str_hook *))
 {
-    const size_t src_list_size = list->size;
-    const_str_hook_array src_hooks = list->hooks;
-    str_hook_list *new_hook_list = new_str_hook_list();
+    val src_list_size = list->size;
+    val src_hooks = list->hooks;
+    var new_hook_list = new_str_hook_list();
     for (int k = 0; k < src_list_size; ++k) {
-        const_str_hook *src_hook = src_hooks[k];
+        val src_hook = src_hooks[k];
         if (filter_condition(src_hook)) {
-            const_str_hook *new_hook = new_str_hook_by_other(src_hook);
+            var *new_hook = new_str_hook_by_other(src_hook);
             add_str_hook_in_list(new_hook_list, new_hook);
         }
     }
@@ -214,7 +215,7 @@ str_hook_list *filter_str_hook_list(const_str_hook_list *list, boolean (*filter_
  * Log utils.
  */
 
-void log_info_str_hook(const_string tag, const_string message, const_str_hook *hook)
+void log_info_str_hook(const_string tag, const_string message, const str_hook *hook)
 {
     printf("\n%s: %s -", tag, message);
     for (int i = hook->start; i < hook->end; ++i) {
@@ -223,13 +224,13 @@ void log_info_str_hook(const_string tag, const_string message, const_str_hook *h
     printf("-\n");
 }
 
-void log_info_str_hook_list(const_string tag, const_string message, const_str_hook_list *list)
+void log_info_str_hook_list(const_string tag, const_string message, const str_hook_list *list)
 {
-    const size_t size = list->size;
-    const_str_hook_array hooks = list->hooks;
+    val size = list->size;
+    val hooks = list->hooks;
     for (int i = 0; i < size; ++i) {
-        const_str_hook *hook = hooks[i];
-        const_string src = hook->source_string;
+        val *hook = hooks[i];
+        val src = hook->source_string;
         printf("\n%s: %s -", tag, message);
         for (int j = hook->start; j < hook->end; ++j) {
             printf("%c", src[j]);
@@ -242,7 +243,7 @@ void log_info_str_hook_list(const_string tag, const_string message, const_str_ho
  * Primitive type matchers.
  */
 
-boolean is_int_hooked(const_str_hook *hook)
+boolean is_int_hooked(const str_hook *hook)
 {
     const_string string = hook->source_string;
     const int length = get_str_hook_size(hook);
@@ -266,7 +267,7 @@ boolean is_int_hooked(const_str_hook *hook)
 }
 
 
-boolean is_double_hooked(const_str_hook *hook)
+boolean is_double_hooked(const str_hook *hook)
 {
     const_string string = hook->source_string;
     const int length = get_str_hook_size(hook);
@@ -301,24 +302,24 @@ boolean is_double_hooked(const_str_hook *hook)
     return FALSE;
 }
 
-boolean is_string_hooked(const_str_hook *hook)
+boolean is_string_hooked(const str_hook *hook)
 {
     const int length = get_str_hook_size(hook);
     const_string hooked_string = hook->source_string;
     return length > 1 && hooked_string[hook->start] == '\'' && hooked_string[hook->end - 1] == '\'';
 }
 
-boolean is_boolean_hooked(const_str_hook *hook)
+boolean is_boolean_hooked(const str_hook *hook)
 {
     return is_hook_equals_str(hook, AIO_TRUE_VALUE) || is_hook_equals_str(hook, AIO_FALSE_VALUE);
 }
 
-boolean is_null_hooked(const_str_hook *hook)
+boolean is_null_hooked(const str_hook *hook)
 {
     return is_hook_equals_str(hook, AIO_NULL_VALUE);
 }
 
-void throw_error_with_hook(const_string tag, const_string message, const_str_hook *hook)
+void throw_error_with_hook(const_string tag, const_string message, const str_hook *hook)
 {
     printf("\n%s %s: %s -", ERROR_TAG, tag, message);
     for (int i = hook->start; i < hook->end; ++i) {
@@ -332,7 +333,7 @@ void throw_error_with_hook(const_string tag, const_string message, const_str_hoo
  * Casts.
  */
 
-int str_hook_to_int(const_str_hook *hook)
+int str_hook_to_int(const str_hook *hook)
 {
     int result = 0;
     const_string string = hook->source_string;
@@ -362,12 +363,12 @@ double str_hook_to_double(const struct str_hook *hook)
     return ((double) integer_part) + fraction_part;
 }
 
-str_hook *lower_str_hook_quotes(const_str_hook *hook)
+str_hook *lower_str_hook_quotes(const str_hook *hook)
 {
     return new_str_hook_with_start_and_end(hook->source_string, hook->start + 1, hook->end - 1);
 }
 
-boolean str_hook_to_boolean(const struct str_hook *hook)
+boolean str_hook_to_boolean(const str_hook *hook)
 {
     if (is_hook_equals_str(hook, AIO_TRUE_VALUE)) {
         return TRUE;
@@ -375,4 +376,5 @@ boolean str_hook_to_boolean(const struct str_hook *hook)
     if (is_hook_equals_str(hook, AIO_FALSE_VALUE)) {
         return FALSE;
     }
+    throw_error_with_hook(STRING_HOOK_TAG, "Can not cast to boolean!", hook);
 }

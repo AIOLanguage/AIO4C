@@ -1,13 +1,12 @@
 #include <fcntl.h>
-#include <lang/aio_function/aio_bundle/aio_bundle.h>
-#include <lib/utils/boolean_utils/boolean_utils.h>
-#include <lib/utils/string_utils/string_utils.h>
-#include <lib/utils/str_hook/str_hook.h>
-#include <lang/aio_function/aio_function.h>
+#include <aio_core/aio_core.h>
+#include <aio_tools/aio_common_tools/aio_utils/aio_bundle/aio_bundle.h>
+#include <lib/utils/type_utils/type.utils.h>
 #include <lib/utils/str_hook/str_hook_utils/str_hook_utils.h>
+#include <aio_tools/aio_common_tools/aio_utils/aio_value/aio_value.h>
+#include <lib/utils/boolean_utils/boolean_utils.h>
 #include <lib/utils/collections/lists/string_list.h>
-#include <lang/aio_core/aio_core.h>
-#include <tools/aio_common_tools/utils/aio_value/aio_value.h>
+#include <lib/utils/string_utils/string_utils.h>
 
 #define AIO_TAG "AIO"
 
@@ -16,19 +15,19 @@
 static aio_bundle *create_bundle(const int argc, char **argv)
 {
     //Define indexes:
-    static const unsigned FILE_PATH_INDEX = 1;
-    static const unsigned FUNCTION_NAME_INDEX = 2;
+    static val FILE_PATH_INDEX = 1;
+    static val FUNCTION_NAME_INDEX = 2;
     //Define function args index:
-    static const unsigned START_FUNCTION_ARG_INDEX = 3;
+    static val START_FUNCTION_ARG_INDEX = 3;
     //Build bundle:
-    str_hook *file_path = new_str_hook_by_string(argv[FILE_PATH_INDEX]);
-    str_hook *function_name = new_str_hook_by_string(argv[FUNCTION_NAME_INDEX]);
-    aio_value_list *arguments = new_aio_value_list();
+    var file_path = new_str_hook_by_string(argv[FILE_PATH_INDEX]);
+    var function_name = new_str_hook_by_string(argv[FUNCTION_NAME_INDEX]);
+    var arguments = new_aio_value_list();
     //Prepare input arguments:
-    const_boolean has_function_arguments = argc > START_FUNCTION_ARG_INDEX;
+    val has_function_arguments = argc > START_FUNCTION_ARG_INDEX;
     if (has_function_arguments) {
-        for (int i = START_FUNCTION_ARG_INDEX; i < argc; ++i) {
-            aio_value *argument = new_aio_value_by_string(argv[i]);
+        for (var i = START_FUNCTION_ARG_INDEX; i < argc; ++i) {
+            var *argument = new_aio_value_by_string(argv[i]);
             add_aio_value_in_list(arguments, argument);
         }
     }
@@ -37,10 +36,10 @@ static aio_bundle *create_bundle(const int argc, char **argv)
 
 static void print_result(const aio_value_list *result_list)
 {
-    const size_t result_list_size = result_list->size;
-    const aio_value_array result_array = result_list->values;
-    for (int j = 0; j < result_list_size; ++j) {
-        const aio_value *result = result_array[j];
+    val result_list_size = result_list->size;
+    var result_array = result_list->values;
+    for (var j = 0; j < result_list_size; ++j) {
+        val result = result_array[j];
         log_info_aio_value(AIO_TAG, "<Result>:", result);
     }
 }
@@ -48,9 +47,9 @@ static void print_result(const aio_value_list *result_list)
 static void make_aio(const int argc, char *argv[])
 {
     //Init args:
-    aio_bundle *input_bundle = create_bundle(argc, argv);
+    var *input_bundle = create_bundle(argc, argv);
     //Run AIO:
-    aio_value_list *result_list = inflate_aio_core(input_bundle);
+    var result_list = inflate_aio_core(input_bundle);
     //Print result:
     print_result(result_list);
     //----------------------------------------------------------------------------------------------------------------—
@@ -71,7 +70,7 @@ static void make_aio(const int argc, char *argv[])
 
 static string_list *create_test_arguments()
 {
-    string_list *args = new_string_list();
+    var args = new_string_list();
     add_string_in_list(args, "");
     add_string_in_list(args, "../aioPrograms/tests/complexTests/variables/Trivial.aio");
     add_string_in_list(args, "countSqrHypotenuse");
@@ -83,9 +82,9 @@ static string_list *create_test_arguments()
 static void make_test()
 {
     //Prepare test:
-    string_list *arg_list = create_test_arguments();
-    const size_t size = arg_list->size;
-    const_string_array args = arg_list->strings;
+    var arg_list = create_test_arguments();
+    val size = arg_list->size;
+    var args = arg_list->strings;
     //Make AIO:
     make_aio(size, args);
     //----------------------------------------------------------------------------------------------------------------—

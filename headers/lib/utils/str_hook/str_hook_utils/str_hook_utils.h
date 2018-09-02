@@ -1,23 +1,23 @@
 #ifndef STRING_HOOK_UTILS_H
 #define STRING_HOOK_UTILS_H
 
-struct str_hook *new_str_hook_with_start(const char *source_ref, const int start_index);
+struct str_hook *new_str_hook_with_start(char *source_string, const int start_index);
 
-struct str_hook *new_str_hook_with_end(const char *source_ref, const int end_index);
+struct str_hook *new_str_hook_with_end(char *source_string, const int end_index);
 
-struct str_hook *new_str_hook_with_start_and_end(const char *source_ref, const int start_index, const int end_index);
+struct str_hook *new_str_hook_with_start_and_end(char *source_string, const int start_index, const int end_index);
 
-struct str_hook *new_str_hook_by_point_watcher(const char *source_ref, const struct point_watcher *watcher);
+struct str_hook *new_str_hook_by_point_watcher(char *source_string, const struct point_watcher *watcher);
 
 struct str_hook *new_str_hook_by_other(const struct str_hook *other_hook);
 
-struct str_hook *new_str_hook_by_other_source_ref(const struct str_hook *other_hook);
+struct str_hook *new_str_hook_by_other_hook_string(const struct str_hook *other_hook);
 
-struct str_hook *new_str_hook_by_string(const char *source_ref);
+struct str_hook *new_str_hook_by_string(char *source_ref);
 
 char *substring_by_str_hook(const struct str_hook *hook);
 
-struct str_hook *new_str_hook_by_offset(const char *source_ref, const int offset, const int length);
+struct str_hook *new_str_hook_by_offset(char *source_string, const int offset, const int length);
 
 int get_str_hook_size(const struct str_hook *hook);
 
@@ -83,7 +83,7 @@ void throw_error_with_hook(
         const char *tag,
         const char *message,
         const struct str_hook *hook
-) __attribute__ ((noreturn));
+) __MINGW_ATTRIB_NORETURN;
 
 /**
  * Primitive type matchers.

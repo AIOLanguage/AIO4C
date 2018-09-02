@@ -1,0 +1,9 @@
+fun getGender(isMale) : Str {
+    gender* = nul
+    if (isMale) {
+        gender = 'Male'
+    } : {
+        gender = 'Female'
+    }
+    out gender
+}

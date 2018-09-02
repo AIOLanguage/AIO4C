@@ -1,0 +1,12 @@
+fun testLoop() {
+    loo {
+        leftBorder = 3
+        rightBorder = 10
+        pointer* = leftBorder
+    } (pointer < rightBorder) {
+
+        //Make something...
+
+        pointer++
+    }
+}
