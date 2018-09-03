@@ -11,37 +11,34 @@ typedef enum aio_function_system_state {
 
 
 typedef struct aio_function_control_graph {
-    const struct aio_function_control_graph *parent;
-    const struct aio_variable_list *variable_list;
-    const struct aio_function_instruction_list *instruction_list;
-    const struct aio_context *context_ref;
-    struct aio_bundle *bundle_ref;
+    struct aio_function_control_graph *parent;
+    struct aio_field_list *field_list;
+    struct aio_function_instruction_list *instruction_list;
+    struct aio_bundle *bundle;
     enum aio_function_system_state *system_state_ref;
 } aio_function_control_graph;
 
-const struct aio_function_control_graph *new_aio_function_control_graph(
-        const struct aio_function_control_graph *parent,
-        const struct aio_function_instruction_holder *holder,
-        struct aio_bundle *bundle_ref,
-        const struct aio_context *context_ref,
+struct aio_function_control_graph *new_aio_function_control_graph(
+        struct aio_function_control_graph *parent,
+        struct aio_function_instruction_holder *holder,
+        struct aio_bundle *bundle,
         enum aio_function_system_state *system_state_ref
 );
 
 void inflate_new_aio_function_control_graph(
-        const struct aio_function_control_graph *parent,
-        const struct aio_function_instruction_holder *holder,
-        struct aio_bundle *bundle_ref
+        struct aio_function_control_graph *parent,
+        struct aio_function_instruction_holder *holder,
+        struct aio_bundle *bundle
 );
 
 void inflate_new_aio_root_function_control_graph(
-        const struct aio_function_control_graph *parent,
-        const struct aio_function_definition *function_definition,
-        struct aio_bundle *bundle_ref,
-        const struct aio_context *context
+        struct aio_function_control_graph *parent,
+        struct aio_function_definition *function_definition,
+        struct aio_bundle *bundle
 );
 
-void perform_aio_function_instructions(const struct aio_function_control_graph *control_graph);
+void perform_aio_function_instructions(struct aio_function_control_graph *control_graph);
 
-void free_aio_control_graph(const struct aio_function_control_graph *graph);
+void free_aio_control_graph(struct aio_function_control_graph *graph);
 
 #endif //AIO_FUNCTION_CONTROL_GRAPH_H

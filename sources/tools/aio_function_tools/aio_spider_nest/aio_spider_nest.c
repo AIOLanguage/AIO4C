@@ -1,16 +1,5 @@
 #include <mem.h>
 #include <malloc.h>
-#include "../../../../headers/lib/utils/memory_utils/memory_utils.h"
-#include "../../../../headers/tools/aio_common_tools/aio_spider_nest/aio_function_instruction_spider_nest.h"
-#include "../../../../headers/tools/aio_function_tools/aio_instruction_spider_nest/aio_switch_spider/aio_switch_spider.h"
-#include "../../../../headers/tools/aio_function_tools/aio_instruction_spider_nest/aio_procedure_spider/aio_procedure_spider.h"
-#include "../../../../headers/tools/aio_function_tools/aio_instruction_spider_nest/aio_break_spider/aio_break_spider.h"
-#include "../../../../headers/tools/aio_function_tools/aio_instruction_spider_nest/aio_return_spider/aio_return_spider.h"
-#include "../../../../headers/tools/aio_function_tools/aio_instruction_spider_nest/aio_loop_spider/aio_loop_spider.h"
-#include "../../../../headers/tools/aio_function_tools/aio_instruction_spider_nest/aio_if_spider/aio_if_spider.h"
-#include "../../../../headers/tools/aio_function_tools/aio_instruction_spider_nest/aio_assign_spider/aio_assign_spider.h"
-#include "../../../../headers/tools/aio_common_tools/aio_spider_nest/aio_spider.h"
-#include "../../../../headers/lib/utils/point_watcher/point_watcher.h"
 
 #define AIO_NUMBER_OF_SPIDERS 7
 
@@ -19,8 +8,6 @@
 #ifdef AIO_SPIDER_NEST_DEBUG
 
 #define AIO_SPIDER_NEST_TAG "AIO_SPIDER_NEST"
-
-#include "../../../../headers/lib/utils/log_utils/log_utils.h"
 
 #endif
 

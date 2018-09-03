@@ -54,6 +54,6 @@ void free_aio_field_definition_list(struct aio_field_definition_list *list);
  * Log utils.
  */
 
-void log_info_aio_field_definition(const char *tag, struct aio_filed_definition *definition);
+void log_info_aio_field_definition(char *tag, struct aio_filed_definition *definition);
 
 #endif //AIO_FIELD_DEFINITION_H

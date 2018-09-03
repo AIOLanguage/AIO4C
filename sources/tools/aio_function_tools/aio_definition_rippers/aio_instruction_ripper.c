@@ -42,7 +42,7 @@ static void make_instruction_weaving(const_string source_code, point_watcher *ri
 #endif
     //Refresh spiders:
 #ifdef AIO_INSTRUCTION_RIPPER_DEBUG
-    log_info(AIO_INSTRUCTION_RIPPER_TAG, "Start to refresh!");
+    log_info(AIO_INSTRUCTION_RIPPER_TAG, "Start to reset!");
 #endif
     refresh_aio_spider_nest(spider_nest, ripper_watcher);
 #ifdef AIO_INSTRUCTION_RIPPER_DEBUG
@@ -50,7 +50,7 @@ static void make_instruction_weaving(const_string source_code, point_watcher *ri
 #endif
     //리퍼 당직자를 바꾼다 (Shift ripper watcher):
     ripper_watcher->mode = POINT_WATCHER_PASSIVE_MODE;
-    //거미 무리 리셋 (Spider nest refresh):
+    //거미 무리 리셋 (Spider nest reset):
     spider_nest->mode = AIO_ALL_SPIDERS_WORK;
     spider_nest->active_spider = NULL;
 #ifdef AIO_INSTRUCTION_RIPPER_DEBUG
@@ -58,7 +58,7 @@ static void make_instruction_weaving(const_string source_code, point_watcher *ri
 #endif
 }
 
-void search_context_for(aio_function_instruction_holder *current_holder, const_string source_code,
+void search_context_for(aio_function_instruction_holder *root_holder, const_string source_code,
                         const int start_index, const int end_index) {
     const int body_length = end_index - start_index;
     const_boolean is_not_empty_block = body_length > 2;
@@ -104,7 +104,7 @@ void search_context_for(aio_function_instruction_holder *current_holder, const_s
                             break;
                         }
                         if (message == AIO_SPIDER_IS_READY_FOR_WEAVING) {
-                            make_instruction_weaving(source_code, ripper_watcher, spider, spider_nest, current_holder);
+                            make_instruction_weaving(source_code, ripper_watcher, spider, spider_nest, root_holder);
                         }
                     }
                 }
@@ -112,7 +112,7 @@ void search_context_for(aio_function_instruction_holder *current_holder, const_s
                     aio_spider *spider = spider_nest->active_spider;
                     const aio_spider_message message = spider->is_found_context(source_code, ripper_watcher, spider);
                     if (message == AIO_SPIDER_IS_READY_FOR_WEAVING) {
-                        make_instruction_weaving(source_code, ripper_watcher, spider, spider_nest, current_holder);
+                        make_instruction_weaving(source_code, ripper_watcher, spider, spider_nest, root_holder);
                     }
                 }
             }

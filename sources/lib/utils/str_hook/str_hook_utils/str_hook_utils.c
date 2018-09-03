@@ -176,7 +176,7 @@ boolean is_hook_equals_str(const str_hook *hook, const_string str)
     return TRUE;
 }
 
-boolean contains_string_in_set_by_hook(const string_set *set, const str_hook *hook)
+boolean contains_string_in_set_by_hook(string_set *set, const str_hook *hook)
 {
     for (int i = 0; i < set->size; ++i) {
         if (is_hook_equals_str(hook, set->strings[i])) {

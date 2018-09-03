@@ -1,6 +1,7 @@
 
 #include <malloc.h>
 #include <lib/utils/boolean_utils/boolean_utils.h>
+#include <lib/utils/type_utils/type.utils.h>
 #include "../../../../headers/lib/utils/str_hook/str_hook.h"
 #include "../../../../headers/lib/utils/memory_utils/memory_utils.h"
 #include "../../../../headers/lib/utils/string_utils/string_utils.h"
@@ -80,12 +81,20 @@ void free_str_hook_list(str_hook_list *list)
  * String hook iterator.
  */
 
-str_hook_iterator *new_str_hook_iterator(
+
+str_hook_iterator *new_str_hook_iterator()
+{
+    str_hook_iterator *iterator = new_object(sizeof(str_hook_iterator));
+    iterator->position = 0;
+    return iterator;
+}
+
+str_hook_iterator *new_str_hook_iterator_by_list(
         str_hook_list *str_hook_list,
         const unsigned current_hook_index
 )
 {
-    const int start_position = str_hook_list->hooks[current_hook_index]->start;
+    val start_position = str_hook_list->hooks[current_hook_index]->start;
     //Create iterator:
     str_hook_iterator *iterator = new_object(sizeof(str_hook_iterator));
     iterator->str_hook_list = str_hook_list;
@@ -102,7 +111,7 @@ boolean next_in_str_hook_iterator(str_hook_iterator *iterator)
     //Get current hook:
     const unsigned current_hook_index = iterator->current_hook_index;
     str_hook *current_hook = hooks[current_hook_index];
-    //Check next index:
+    //Check next position:
     if (iterator->position < current_hook->end - 1) {
         iterator->position++;
         return TRUE;

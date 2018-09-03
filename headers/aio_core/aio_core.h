@@ -5,13 +5,9 @@
 
 typedef struct aio_core {
     //Main:
-    struct str_hook_list *aio_type_set;
+    struct str_hook_list *root_types;
     struct aio_context_list *context_list;
-    //Data:
-    struct aio_function_definition_list *global_function_definition_list;
-    struct aio_field_definition_list *global_field_definition_list;
-    struct aio_class_list *class_list;
-
+    struct aio_source_file_list *source_file_list;
 } aio_core;
 
 struct aio_value_list *inflate_aio_core(struct aio_bundle *input_bundle);

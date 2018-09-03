@@ -225,7 +225,7 @@ static void handle_default_loop_header_equal_sign_scope(const_string source_code
     if (is_equal_sign_cond) {
         //Set value scope:
         materials->scope_type = AIO_DEFAULT_LOOP_HEADER_VALUE_SCOPE;
-        //Shift start index from end index:
+        //Shift start position from end position:
         main_watcher->start = main_watcher->end + 1;
         main_watcher->mode = POINT_WATCHER_PASSIVE_MODE;
         //Set message:
@@ -434,7 +434,7 @@ static void handle_default_loop_header_step_scope(
             if (is_equal_sign_cond) {
                 //Set value scope:
                 materials->step_type = AIO_DEFAULT_LOOP_HEADER_STEP_VALUE_SCOPE;
-                //Shift start index from end index:
+                //Shift start position from end position:
                 main_watcher->start = main_watcher->end;
                 main_watcher->mode = POINT_WATCHER_PASSIVE_MODE;
                 //Set message:

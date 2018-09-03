@@ -1,14 +1,11 @@
 #include <mem.h>
 #include <malloc.h>
-#include <lang/aio_field/aio_definition/aio_filed_definition.h>
-#include "lib/utils/str_hook/str_hook.h"
-#include "lib/utils/boolean_utils/boolean_utils.h"
-#include "lib/utils/memory_utils/memory_utils.h"
-#include "tools/aio_function_tools/aio_instructions/aio_function_instruction_holder.h"
-#include "lib/utils/str_hook/str_hook_utils/str_hook_utils.h"
-#include "lib/utils/error_utils/error_utils.h"
-#include "lib/utils/string_utils/string_utils.h"
-#include "../../../../../headers/lang/aio_function/aio_variable/aio_definition/aio_variable_definition.h"
+#include <aio_lang/aio_field/aio_definition/aio_filed_definition.h>
+#include <lib/utils/str_hook/str_hook.h>
+#include <lib/utils/boolean_utils/boolean_utils.h>
+#include <lib/utils/memory_utils/memory_utils.h>
+#include <lib/utils/type_utils/type.utils.h>
+#include <aio_tools/aio_function_tools/aio_instructions/aio_function_instruction_holder.h>
 
 #define AIO_VARIABLE_DEFINITION_TAG "AIO_VARIABLE_DEFINITION"
 
@@ -20,35 +17,35 @@
 
 #endif
 
-aio_field_definition *new_aio_variable_definition(
-        const_str_hook *name,
+aio_field_definition *new_aio_field_definition(
+        str_hook *name,
         str_hook *type,
-        const_boolean is_mutable_by_value
+        boolean is_mutable_by_value
 )
 {
-    aio_field_definition *variable_definition = new_object(sizeof(aio_field_definition));
-    variable_definition->name = name;
-    variable_definition->type = type;
-    variable_definition->is_mutable = is_mutable_by_value;
-    return variable_definition;
+    aio_field_definition *definition = new_object(sizeof(aio_field_definition));
+    definition->name = name;
+    definition->type = type;
+    definition->is_mutable = is_mutable_by_value;
+    return definition;
 }
 
 void free_aio_field_definition(aio_field_definition *definition)
 {
-    free_const_str_hook(definition->name);
+    free_str_hook(definition->name);
     free(definition->type);
     free(definition);
 }
 
-const_aio_variable_definition *request_aio_field_definition(
-        const_str_hook *variable_name,
-        const_aio_function_instruction_holder *holder
+aio_field_definition *request_aio_field_definition(
+        const str_hook *variable_name,
+        const aio_function_instruction_holder *holder
 )
 {
-    const_aio_variable_definition_list *list = holder->variable_definition_list;
-    const_aio_variable_definition *definition = get_aio_variable_definition_in_map_by_name(list, variable_name);
+    var list = holder->variable_definition_list;
+    val definition = get_aio_variable_definition_in_map_by_name(list, variable_name);
     if (!definition) {
-        const_aio_function_instruction_holder *parent_holder = holder->parent;
+        val parent_holder = holder->parent;
         if (parent_holder) {
             return request_aio_field_definition(variable_name, parent_holder);
         } else {
@@ -102,9 +99,9 @@ void add_aio_field_definition_in_list(
     list->size++;
 }
 
-const_aio_variable_definition *get_aio_variable_definition_in_map_by_name(
-        const_aio_variable_definition_list *list,
-        const_str_hook *name
+aio_field_definition *get_aio_variable_definition_in_map_by_name(
+        const aio_field_definition_list *list,
+        const str_hook *name
 )
 {
     const size_t list_size = list->size;

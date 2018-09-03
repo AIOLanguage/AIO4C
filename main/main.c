@@ -1,12 +1,10 @@
-#include <fcntl.h>
+
 #include <aio_core/aio_core.h>
 #include <aio_tools/aio_common_tools/aio_utils/aio_bundle/aio_bundle.h>
 #include <lib/utils/type_utils/type.utils.h>
 #include <lib/utils/str_hook/str_hook_utils/str_hook_utils.h>
 #include <aio_tools/aio_common_tools/aio_utils/aio_value/aio_value.h>
-#include <lib/utils/boolean_utils/boolean_utils.h>
 #include <lib/utils/collections/lists/string_list.h>
-#include <lib/utils/string_utils/string_utils.h>
 
 #define AIO_TAG "AIO"
 
@@ -17,7 +15,7 @@ static aio_bundle *create_bundle(const int argc, char **argv)
     //Define indexes:
     static val FILE_PATH_INDEX = 1;
     static val FUNCTION_NAME_INDEX = 2;
-    //Define function args index:
+    //Define function args position:
     static val START_FUNCTION_ARG_INDEX = 3;
     //Build bundle:
     var file_path = new_str_hook_by_string(argv[FILE_PATH_INDEX]);
@@ -26,8 +24,8 @@ static aio_bundle *create_bundle(const int argc, char **argv)
     //Prepare input arguments:
     val has_function_arguments = argc > START_FUNCTION_ARG_INDEX;
     if (has_function_arguments) {
-        for (var i = START_FUNCTION_ARG_INDEX; i < argc; ++i) {
-            var *argument = new_aio_value_by_string(argv[i]);
+        for (int i = START_FUNCTION_ARG_INDEX; i < argc; ++i) {
+            var argument = new_aio_value_by_string(argv[i]);
             add_aio_value_in_list(arguments, argument);
         }
     }
@@ -38,7 +36,7 @@ static void print_result(const aio_value_list *result_list)
 {
     val result_list_size = result_list->size;
     var result_array = result_list->values;
-    for (var j = 0; j < result_list_size; ++j) {
+    for (int j = 0; j < result_list_size; ++j) {
         val result = result_array[j];
         log_info_aio_value(AIO_TAG, "<Result>:", result);
     }
@@ -47,7 +45,7 @@ static void print_result(const aio_value_list *result_list)
 static void make_aio(const int argc, char *argv[])
 {
     //Init args:
-    var *input_bundle = create_bundle(argc, argv);
+    var input_bundle = create_bundle(argc, argv);
     //Run AIO:
     var result_list = inflate_aio_core(input_bundle);
     //Print result:

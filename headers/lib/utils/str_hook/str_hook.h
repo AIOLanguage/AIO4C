@@ -55,7 +55,9 @@ typedef struct str_hook_iterator {
  * Functions.
  */
 
-struct str_hook_iterator *new_str_hook_iterator(
+struct str_hook_iterator *new_str_hook_iterator();
+
+struct str_hook_iterator *new_str_hook_iterator_by_list(
         struct str_hook_list *str_hook_list,
         const unsigned current_hook_index
 );

@@ -31,10 +31,4 @@ add_executable(${PROJECT_NAME}
         #tools:
         #lib:
         #---------------------------------------------------------------------------------------------------------------
-        headers/lib/utils/type_utils/type.utils.h)
-
-
-#TODO: How make it???
-#-I C:/Users/StarKRE/CLionProjects/AIO/headers
-
-#add_definitions(-I headers-)
+        )

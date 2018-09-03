@@ -35,7 +35,7 @@ _Bool is_empty_hooked_str(const struct str_hook *hook);
 
 _Bool is_not_empty_hooked_str(const struct str_hook *hook);
 
-_Bool contains_string_in_set_by_hook(const struct string_set *set, const struct str_hook *hook);
+_Bool contains_string_in_set_by_hook(struct string_set *set, const struct str_hook *hook);
 
 struct str_hook_list *split_str_hook_by_string(const struct str_hook *hook, const char *delimiter);
 

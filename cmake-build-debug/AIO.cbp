@@ -81,9 +81,6 @@
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers">
 			<Option target="AIO"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/headers/lib/utils/type_utils/type.utils.h">
-			<Option target="AIO"/>
-		</Unit>
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO/main/main.c">
 			<Option target="AIO"/>
 		</Unit>

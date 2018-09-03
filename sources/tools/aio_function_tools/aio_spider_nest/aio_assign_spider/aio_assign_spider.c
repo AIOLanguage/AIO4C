@@ -155,7 +155,7 @@ void handle_assign_declaration_scope(const_string source_code, aio_spider *spide
     //'문자열 웹'을 확인하다 (Check 'string web'):
     const char current_symbol = source_code[main_watcher->end];
 #ifdef AIO_ASSIGN_SPIDER_DEBUG
-    //log_info_char(AIO_ASSIGN_SPIDER_TAG, "Current symbol:", current_symbol);
+    //log_info_char(AIO_ASSIGN_SPIDER_TAG, "Current symbol:", symbol);
 #endif
     //단어 인 경우 (If was word):
     const_boolean is_whitespace_cond = is_space_or_line_break(current_symbol);

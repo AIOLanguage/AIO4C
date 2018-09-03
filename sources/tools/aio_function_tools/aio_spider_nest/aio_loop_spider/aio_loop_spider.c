@@ -117,7 +117,7 @@ const aio_spider_message is_found_loop_instruction(
     main_watcher->end = ripper_watcher->pointer;
     const char current_symbol = source_code[main_watcher->end];
 #ifdef AIO_LOOP_SPIDER_DEBUG
-    //log_info_char(AIO_LOOP_SPIDER_TAG, "Current symbol:", current_symbol);
+    //log_info_char(AIO_LOOP_SPIDER_TAG, "Current symbol:", symbol);
 #endif
     //TODO: 코드 복제 (Code duplication)!
     if (main_watcher->mode == POINT_WATCHER_PASSIVE_MODE) {
@@ -256,7 +256,7 @@ static void handle_weaving(
     //Reset spiders:
     refresh_aio_spider_nest(child_spider_nest, header_watcher);
     header_watcher->mode = POINT_WATCHER_PASSIVE_MODE;
-    //거미 무리 리셋 (Spider nest refresh):
+    //거미 무리 리셋 (Spider nest reset):
     child_spider_nest->mode = AIO_ALL_SPIDERS_WORK;
     child_spider_nest->active_spider = NULL;
 #ifdef AIO_LOOP_SPIDER_DEBUG

@@ -85,13 +85,13 @@ void inflate_new_aio_root_function_control_graph(
 void inflate_new_aio_function_control_graph(
         const_aio_function_control_graph *parent,
         const_aio_function_instruction_holder *holder,
-        aio_bundle *bundle_ref
+        aio_bundle *bundle
 )
 {
     const_aio_function_control_graph *control_graph = new_aio_function_control_graph(
             parent,
             holder,
-            bundle_ref,
+            bundle,
             parent->context_ref,
             parent->system_state_ref
     );
