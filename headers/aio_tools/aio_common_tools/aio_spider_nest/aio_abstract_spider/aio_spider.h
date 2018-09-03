@@ -15,10 +15,7 @@ typedef struct aio_spider {
 
     void *materials;
 
-    void (*reset)(
-            struct str_hook_iterator *parent_iterator,
-            struct aio_spider *spider
-    );
+    void (*reset)(struct aio_spider *spider);
 
     enum aio_spider_message (*is_found_context)(
             const char symbol,

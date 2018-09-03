@@ -36,7 +36,6 @@ void free_aio_spider_nest(aio_spider_nest *nest)
     aio_spider **spiders = nest->spiders;
     for (int i = 0; i < nest->number_of_spiders; ++i) {
         aio_spider *spider = spiders[i];
-        //Spider frees himself:
         spider->free(spider);
     }
     free(spiders);
@@ -52,7 +51,7 @@ static aio_value_list *handle_weaving(
 {
     var result = NULL;
     val spider_nest = context->spider_nest;
-    result = spider->weave_context_for(instruction_holder, spider, context,  bundle);
+    result = spider->weave_context_for(instruction_holder, spider, context, bundle);
     reset_aio_spider_nest(spider_nest);
     spider_nest->mode = AIO_ALL_SPIDERS_WORK;
     spider_nest->active_spider = NULL;

@@ -6,7 +6,6 @@
 #include <lib/utils/memory_utils/memory_utils.h>
 #include <aio_tools/aio_context_tools/aio_spider_nest/aio_import_spider/aio_import_spider.h>
 #include <aio_tools/aio_common_tools/aio_spider_nest/aio_common_spiders/aio_field_spider/aio_field_spider.h>
-#include <aio_tools/aio_context_tools/aio_spider_nest/aio_class_spider/aio_class_spider.h>
 #include <aio_tools/aio_common_tools/aio_spider_nest/aio_common_spiders/aio_function_spider/aio_function_spider.h>
 #include <aio_tools/aio_common_tools/aio_spider_nest/aio_abstract_spider/aio_spider.h>
 
