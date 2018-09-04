@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../lib/headers/utils/log_utils/log_utils.h
+
+../lib/headers/utils/string_list_cls/string_list_cls.h
+
+C:/Users/StarKRE/CLionProjects/AIO.v.2/main/main.cpp
+headers/utils/string_list_cls/string_list_cls.h
+-
+headers/utils/log_utils/log_utils.h
+-
+
