@@ -122,86 +122,59 @@ AIO_v_2/fast:
 	$(MAKE) -f CMakeFiles\AIO_v_2.dir\build.make CMakeFiles/AIO_v_2.dir/build
 .PHONY : AIO_v_2/fast
 
-lib/sources/utils/log_utils/log_utils.obj: lib/sources/utils/log_utils/log_utils.cpp.obj
+lib4aio/lib4aio_cpp_sources/utils/log_utils/log_utils.obj: lib4aio/lib4aio_cpp_sources/utils/log_utils/log_utils.cpp.obj
 
-.PHONY : lib/sources/utils/log_utils/log_utils.obj
-
-# target to build an object file
-lib/sources/utils/log_utils/log_utils.cpp.obj:
-	$(MAKE) -f CMakeFiles\AIO_v_2.dir\build.make CMakeFiles/AIO_v_2.dir/lib/sources/utils/log_utils/log_utils.cpp.obj
-.PHONY : lib/sources/utils/log_utils/log_utils.cpp.obj
-
-lib/sources/utils/log_utils/log_utils.i: lib/sources/utils/log_utils/log_utils.cpp.i
-
-.PHONY : lib/sources/utils/log_utils/log_utils.i
-
-# target to preprocess a source file
-lib/sources/utils/log_utils/log_utils.cpp.i:
-	$(MAKE) -f CMakeFiles\AIO_v_2.dir\build.make CMakeFiles/AIO_v_2.dir/lib/sources/utils/log_utils/log_utils.cpp.i
-.PHONY : lib/sources/utils/log_utils/log_utils.cpp.i
-
-lib/sources/utils/log_utils/log_utils.s: lib/sources/utils/log_utils/log_utils.cpp.s
-
-.PHONY : lib/sources/utils/log_utils/log_utils.s
-
-# target to generate assembly for a file
-lib/sources/utils/log_utils/log_utils.cpp.s:
-	$(MAKE) -f CMakeFiles\AIO_v_2.dir\build.make CMakeFiles/AIO_v_2.dir/lib/sources/utils/log_utils/log_utils.cpp.s
-.PHONY : lib/sources/utils/log_utils/log_utils.cpp.s
-
-lib/sources/utils/memory_utils/memory_utils.obj: lib/sources/utils/memory_utils/memory_utils.cpp.obj
-
-.PHONY : lib/sources/utils/memory_utils/memory_utils.obj
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/log_utils/log_utils.obj
 
 # target to build an object file
-lib/sources/utils/memory_utils/memory_utils.cpp.obj:
-	$(MAKE) -f CMakeFiles\AIO_v_2.dir\build.make CMakeFiles/AIO_v_2.dir/lib/sources/utils/memory_utils/memory_utils.cpp.obj
-.PHONY : lib/sources/utils/memory_utils/memory_utils.cpp.obj
+lib4aio/lib4aio_cpp_sources/utils/log_utils/log_utils.cpp.obj:
+	$(MAKE) -f CMakeFiles\AIO_v_2.dir\build.make CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/log_utils/log_utils.cpp.obj
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/log_utils/log_utils.cpp.obj
 
-lib/sources/utils/memory_utils/memory_utils.i: lib/sources/utils/memory_utils/memory_utils.cpp.i
+lib4aio/lib4aio_cpp_sources/utils/log_utils/log_utils.i: lib4aio/lib4aio_cpp_sources/utils/log_utils/log_utils.cpp.i
 
-.PHONY : lib/sources/utils/memory_utils/memory_utils.i
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/log_utils/log_utils.i
 
 # target to preprocess a source file
-lib/sources/utils/memory_utils/memory_utils.cpp.i:
-	$(MAKE) -f CMakeFiles\AIO_v_2.dir\build.make CMakeFiles/AIO_v_2.dir/lib/sources/utils/memory_utils/memory_utils.cpp.i
-.PHONY : lib/sources/utils/memory_utils/memory_utils.cpp.i
+lib4aio/lib4aio_cpp_sources/utils/log_utils/log_utils.cpp.i:
+	$(MAKE) -f CMakeFiles\AIO_v_2.dir\build.make CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/log_utils/log_utils.cpp.i
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/log_utils/log_utils.cpp.i
 
-lib/sources/utils/memory_utils/memory_utils.s: lib/sources/utils/memory_utils/memory_utils.cpp.s
+lib4aio/lib4aio_cpp_sources/utils/log_utils/log_utils.s: lib4aio/lib4aio_cpp_sources/utils/log_utils/log_utils.cpp.s
 
-.PHONY : lib/sources/utils/memory_utils/memory_utils.s
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/log_utils/log_utils.s
 
 # target to generate assembly for a file
-lib/sources/utils/memory_utils/memory_utils.cpp.s:
-	$(MAKE) -f CMakeFiles\AIO_v_2.dir\build.make CMakeFiles/AIO_v_2.dir/lib/sources/utils/memory_utils/memory_utils.cpp.s
-.PHONY : lib/sources/utils/memory_utils/memory_utils.cpp.s
+lib4aio/lib4aio_cpp_sources/utils/log_utils/log_utils.cpp.s:
+	$(MAKE) -f CMakeFiles\AIO_v_2.dir\build.make CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/log_utils/log_utils.cpp.s
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/log_utils/log_utils.cpp.s
 
-lib/sources/utils/string_list_cls/string_list_cls.obj: lib/sources/utils/string_list_cls/string_list_cls.cpp.obj
+lib4aio/lib4aio_cpp_sources/utils/memory_utils/memory_utils.obj: lib4aio/lib4aio_cpp_sources/utils/memory_utils/memory_utils.cpp.obj
 
-.PHONY : lib/sources/utils/string_list_cls/string_list_cls.obj
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/memory_utils/memory_utils.obj
 
 # target to build an object file
-lib/sources/utils/string_list_cls/string_list_cls.cpp.obj:
-	$(MAKE) -f CMakeFiles\AIO_v_2.dir\build.make CMakeFiles/AIO_v_2.dir/lib/sources/utils/string_list_cls/string_list_cls.cpp.obj
-.PHONY : lib/sources/utils/string_list_cls/string_list_cls.cpp.obj
+lib4aio/lib4aio_cpp_sources/utils/memory_utils/memory_utils.cpp.obj:
+	$(MAKE) -f CMakeFiles\AIO_v_2.dir\build.make CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/memory_utils/memory_utils.cpp.obj
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/memory_utils/memory_utils.cpp.obj
 
-lib/sources/utils/string_list_cls/string_list_cls.i: lib/sources/utils/string_list_cls/string_list_cls.cpp.i
+lib4aio/lib4aio_cpp_sources/utils/memory_utils/memory_utils.i: lib4aio/lib4aio_cpp_sources/utils/memory_utils/memory_utils.cpp.i
 
-.PHONY : lib/sources/utils/string_list_cls/string_list_cls.i
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/memory_utils/memory_utils.i
 
 # target to preprocess a source file
-lib/sources/utils/string_list_cls/string_list_cls.cpp.i:
-	$(MAKE) -f CMakeFiles\AIO_v_2.dir\build.make CMakeFiles/AIO_v_2.dir/lib/sources/utils/string_list_cls/string_list_cls.cpp.i
-.PHONY : lib/sources/utils/string_list_cls/string_list_cls.cpp.i
+lib4aio/lib4aio_cpp_sources/utils/memory_utils/memory_utils.cpp.i:
+	$(MAKE) -f CMakeFiles\AIO_v_2.dir\build.make CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/memory_utils/memory_utils.cpp.i
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/memory_utils/memory_utils.cpp.i
 
-lib/sources/utils/string_list_cls/string_list_cls.s: lib/sources/utils/string_list_cls/string_list_cls.cpp.s
+lib4aio/lib4aio_cpp_sources/utils/memory_utils/memory_utils.s: lib4aio/lib4aio_cpp_sources/utils/memory_utils/memory_utils.cpp.s
 
-.PHONY : lib/sources/utils/string_list_cls/string_list_cls.s
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/memory_utils/memory_utils.s
 
 # target to generate assembly for a file
-lib/sources/utils/string_list_cls/string_list_cls.cpp.s:
-	$(MAKE) -f CMakeFiles\AIO_v_2.dir\build.make CMakeFiles/AIO_v_2.dir/lib/sources/utils/string_list_cls/string_list_cls.cpp.s
-.PHONY : lib/sources/utils/string_list_cls/string_list_cls.cpp.s
+lib4aio/lib4aio_cpp_sources/utils/memory_utils/memory_utils.cpp.s:
+	$(MAKE) -f CMakeFiles\AIO_v_2.dir\build.make CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/memory_utils/memory_utils.cpp.s
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/memory_utils/memory_utils.cpp.s
 
 main/main.obj: main/main.cpp.obj
 
@@ -239,15 +212,12 @@ help:
 	@echo ... edit_cache
 	@echo ... AIO_v_2
 	@echo ... rebuild_cache
-	@echo ... lib/sources/utils/log_utils/log_utils.obj
-	@echo ... lib/sources/utils/log_utils/log_utils.i
-	@echo ... lib/sources/utils/log_utils/log_utils.s
-	@echo ... lib/sources/utils/memory_utils/memory_utils.obj
-	@echo ... lib/sources/utils/memory_utils/memory_utils.i
-	@echo ... lib/sources/utils/memory_utils/memory_utils.s
-	@echo ... lib/sources/utils/string_list_cls/string_list_cls.obj
-	@echo ... lib/sources/utils/string_list_cls/string_list_cls.i
-	@echo ... lib/sources/utils/string_list_cls/string_list_cls.s
+	@echo ... lib4aio/lib4aio_cpp_sources/utils/log_utils/log_utils.obj
+	@echo ... lib4aio/lib4aio_cpp_sources/utils/log_utils/log_utils.i
+	@echo ... lib4aio/lib4aio_cpp_sources/utils/log_utils/log_utils.s
+	@echo ... lib4aio/lib4aio_cpp_sources/utils/memory_utils/memory_utils.obj
+	@echo ... lib4aio/lib4aio_cpp_sources/utils/memory_utils/memory_utils.i
+	@echo ... lib4aio/lib4aio_cpp_sources/utils/memory_utils/memory_utils.s
 	@echo ... main/main.obj
 	@echo ... main/main.i
 	@echo ... main/main.s
