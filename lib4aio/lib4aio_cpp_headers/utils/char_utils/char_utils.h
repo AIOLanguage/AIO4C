@@ -1,8 +1,8 @@
 namespace lib4aio
 {
 
-#ifndef CHAR_UTILS_H
-#define CHAR_UTILS_H
+#ifndef LIB4AIO_CHAR_UTILS_H
+#define LIB4AIO_CHAR_UTILS_H
 
     bool is_space(const char src);
 
@@ -52,6 +52,6 @@ namespace lib4aio
 
     bool is_exclamation_point(const char c);
 
-#endif //CHAR_UTILS_H
+#endif //LIB4AIO_CHAR_UTILS_H
 
 }

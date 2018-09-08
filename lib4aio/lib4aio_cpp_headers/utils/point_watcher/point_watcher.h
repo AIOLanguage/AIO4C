@@ -1,8 +1,8 @@
 namespace lib4aio
 {
 
-#ifndef POINT_WATCHER_H
-#define POINT_WATCHER_H
+#ifndef LIB4AIO_POINT_WATCHER_H
+#define LIB4AIO_POINT_WATCHER_H
 
     class point_watcher
     {
@@ -20,18 +20,16 @@ namespace lib4aio
 
         unsigned end;
 
-        enum point_watcher_mode mode;
+        lib4aio::point_watcher::point_watcher_mode mode;
 
         point_watcher();
 
         void reset();
 
-        char *substring(const char *string);
-
         ~point_watcher();
 
     };
 
-#endif //POINT_WATCHER_H
+#endif //LIB4AIO_POINT_WATCHER_H
 
 }

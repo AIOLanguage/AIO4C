@@ -1,5 +1,7 @@
 #include <aio_utils/aio_bundle/aio_bundle.h>
 #include <lib4aio_cpp_headers/utils/log_utils/log_utils.h>
+#include <lib4aio_cpp_headers/utils/str_hook/str_hook/str_hook.h>
+#include <aio_utils/aio_value/aio_value.h>
 
 #define FILE_PATH_INDEX 1
 
@@ -11,11 +13,13 @@
 
 #define AIO_DEVELOPMENT
 
+using namespace lib4aio;
+
 static aio_bundle *create_bundle(const int argc, char **argv)
 {
     //Build bundle:
-    auto file_path = new_str_hook_by_string(argv[FILE_PATH_INDEX]);
-    auto function_name = new_str_hook_by_string(argv[FUNCTION_NAME_INDEX]);
+    auto file_path = new str_hook(argv[FILE_PATH_INDEX]);
+    auto function_name = new str_hook(argv[FUNCTION_NAME_INDEX]);
     auto arguments = new_aio_value_list();
     //Prepare input arguments:
     auto has_function_arguments = argc > START_FUNCTION_ARG_INDEX;
@@ -33,13 +37,13 @@ static void make_aio(const int argc, char *argv[])
     //인수들을 초기화하다:
     auto input_bundle = create_bundle(argc, argv);
     //Run AIO:
-//    auto result_list = inflate_aio_core(input_bundle);
+    //auto result_list = inflate_aio_core(input_bundle);
     //Print result:
-//    print_result(result_list);
-//    //----------------------------------------------------------------------------------------------------------------—
-//    //찌꺼기 수집기 (Garbage collector):
-//    free_aio_bundle(input_bundle);
-//    free_aio_value_list(result_list);
+    //print_result(result_list);
+    //----------------------------------------------------------------------------------------------------------------—
+    //찌꺼기 수집기 (Garbage collector):
+    free_aio_bundle(input_bundle);
+    //free_aio_value_list(result_list);
 }
 
 #ifdef AIO_DEVELOPMENT

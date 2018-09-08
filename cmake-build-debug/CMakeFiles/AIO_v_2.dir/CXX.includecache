@@ -6,11 +6,19 @@
 
 #IncludeRegexTransform: 
 
-../lib4aio/lib4aio_cpp_headers/utils/log_utils/log_utils.h
+../lib4aio/lib4aio_cpp_headers/utils/str_hook/str_hook/str_hook.h
 
-C:/Users/StarKRE/CLionProjects/AIO.v.2/lib4aio/lib4aio_cpp_sources/utils/log_utils/log_utils.cpp
-stdio.h
+../lib4aio/lib4aio_cpp_headers/utils/str_hook/str_hook_iterator/str_hook_iterator.h
+lib4aio_cpp_headers/utils/str_hook/str_hook_list/str_hook_list.h
 -
-lib4aio_cpp_headers/utils/log_utils/log_utils.h
+
+../lib4aio/lib4aio_cpp_headers/utils/str_hook/str_hook_list/str_hook_list.h
+lib4aio_cpp_headers/utils/str_hook/str_hook/str_hook.h
+-
+
+C:/Users/StarKRE/CLionProjects/AIO.v.2/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_iterator/str_hook_iterator.cpp
+lib4aio_cpp_headers/utils/str_hook/str_hook_list/str_hook_list.h
+-
+lib4aio_cpp_headers/utils/str_hook/str_hook_iterator/str_hook_iterator.h
 -
 

@@ -1,8 +1,8 @@
 namespace lib4aio
 {
 
-#ifndef MEMORY_UTILS_H
-#define MEMORY_UTILS_H
+#ifndef LIB4AIO_MEMORY_UTILS_H
+#define LIB4AIO_MEMORY_UTILS_H
 
     void *new_object(const unsigned size_of_object);
 
@@ -16,5 +16,5 @@ namespace lib4aio
 
     void free_object(void *object);
 
-#endif //MEMORY_UTILS_H
+#endif //LIB4AIO_MEMORY_UTILS_H
 }

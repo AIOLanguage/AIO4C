@@ -4,3 +4,8 @@ aio_bundle::aio_bundle()
 {
 
 }
+
+aio_bundle::~aio_bundle()
+{
+
+}

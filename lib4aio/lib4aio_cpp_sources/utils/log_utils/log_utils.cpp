@@ -8,7 +8,6 @@ namespace lib4aio
 
 #define FALSE "false"
 
-
     void log_info(const char *tag, const char *message)
     {
         printf("\n%s: %s\n", tag, message);
@@ -36,7 +35,7 @@ namespace lib4aio
 
     void log_info_boolean(const char *tag, const char *message, const bool value)
     {
-        const char *boolean_string = NULL;
+        const char *boolean_string = nullptr;
         if (value) {
             boolean_string = TRUE;
         } else {

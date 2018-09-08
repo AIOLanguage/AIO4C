@@ -122,6 +122,33 @@ AIO_v_2/fast:
 	$(MAKE) -f CMakeFiles\AIO_v_2.dir\build.make CMakeFiles/AIO_v_2.dir/build
 .PHONY : AIO_v_2/fast
 
+lib4aio/lib4aio_cpp_sources/utils/char_utils/char_utils.obj: lib4aio/lib4aio_cpp_sources/utils/char_utils/char_utils.cpp.obj
+
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/char_utils/char_utils.obj
+
+# target to build an object file
+lib4aio/lib4aio_cpp_sources/utils/char_utils/char_utils.cpp.obj:
+	$(MAKE) -f CMakeFiles\AIO_v_2.dir\build.make CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/char_utils/char_utils.cpp.obj
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/char_utils/char_utils.cpp.obj
+
+lib4aio/lib4aio_cpp_sources/utils/char_utils/char_utils.i: lib4aio/lib4aio_cpp_sources/utils/char_utils/char_utils.cpp.i
+
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/char_utils/char_utils.i
+
+# target to preprocess a source file
+lib4aio/lib4aio_cpp_sources/utils/char_utils/char_utils.cpp.i:
+	$(MAKE) -f CMakeFiles\AIO_v_2.dir\build.make CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/char_utils/char_utils.cpp.i
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/char_utils/char_utils.cpp.i
+
+lib4aio/lib4aio_cpp_sources/utils/char_utils/char_utils.s: lib4aio/lib4aio_cpp_sources/utils/char_utils/char_utils.cpp.s
+
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/char_utils/char_utils.s
+
+# target to generate assembly for a file
+lib4aio/lib4aio_cpp_sources/utils/char_utils/char_utils.cpp.s:
+	$(MAKE) -f CMakeFiles\AIO_v_2.dir\build.make CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/char_utils/char_utils.cpp.s
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/char_utils/char_utils.cpp.s
+
 lib4aio/lib4aio_cpp_sources/utils/log_utils/log_utils.obj: lib4aio/lib4aio_cpp_sources/utils/log_utils/log_utils.cpp.obj
 
 .PHONY : lib4aio/lib4aio_cpp_sources/utils/log_utils/log_utils.obj
@@ -176,6 +203,357 @@ lib4aio/lib4aio_cpp_sources/utils/memory_utils/memory_utils.cpp.s:
 	$(MAKE) -f CMakeFiles\AIO_v_2.dir\build.make CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/memory_utils/memory_utils.cpp.s
 .PHONY : lib4aio/lib4aio_cpp_sources/utils/memory_utils/memory_utils.cpp.s
 
+lib4aio/lib4aio_cpp_sources/utils/point_watcher/point_watcher.obj: lib4aio/lib4aio_cpp_sources/utils/point_watcher/point_watcher.cpp.obj
+
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/point_watcher/point_watcher.obj
+
+# target to build an object file
+lib4aio/lib4aio_cpp_sources/utils/point_watcher/point_watcher.cpp.obj:
+	$(MAKE) -f CMakeFiles\AIO_v_2.dir\build.make CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/point_watcher/point_watcher.cpp.obj
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/point_watcher/point_watcher.cpp.obj
+
+lib4aio/lib4aio_cpp_sources/utils/point_watcher/point_watcher.i: lib4aio/lib4aio_cpp_sources/utils/point_watcher/point_watcher.cpp.i
+
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/point_watcher/point_watcher.i
+
+# target to preprocess a source file
+lib4aio/lib4aio_cpp_sources/utils/point_watcher/point_watcher.cpp.i:
+	$(MAKE) -f CMakeFiles\AIO_v_2.dir\build.make CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/point_watcher/point_watcher.cpp.i
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/point_watcher/point_watcher.cpp.i
+
+lib4aio/lib4aio_cpp_sources/utils/point_watcher/point_watcher.s: lib4aio/lib4aio_cpp_sources/utils/point_watcher/point_watcher.cpp.s
+
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/point_watcher/point_watcher.s
+
+# target to generate assembly for a file
+lib4aio/lib4aio_cpp_sources/utils/point_watcher/point_watcher.cpp.s:
+	$(MAKE) -f CMakeFiles\AIO_v_2.dir\build.make CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/point_watcher/point_watcher.cpp.s
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/point_watcher/point_watcher.cpp.s
+
+lib4aio/lib4aio_cpp_sources/utils/point_watcher/str_hook_watcher/str_point_watcher.obj: lib4aio/lib4aio_cpp_sources/utils/point_watcher/str_hook_watcher/str_point_watcher.cpp.obj
+
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/point_watcher/str_hook_watcher/str_point_watcher.obj
+
+# target to build an object file
+lib4aio/lib4aio_cpp_sources/utils/point_watcher/str_hook_watcher/str_point_watcher.cpp.obj:
+	$(MAKE) -f CMakeFiles\AIO_v_2.dir\build.make CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/point_watcher/str_hook_watcher/str_point_watcher.cpp.obj
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/point_watcher/str_hook_watcher/str_point_watcher.cpp.obj
+
+lib4aio/lib4aio_cpp_sources/utils/point_watcher/str_hook_watcher/str_point_watcher.i: lib4aio/lib4aio_cpp_sources/utils/point_watcher/str_hook_watcher/str_point_watcher.cpp.i
+
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/point_watcher/str_hook_watcher/str_point_watcher.i
+
+# target to preprocess a source file
+lib4aio/lib4aio_cpp_sources/utils/point_watcher/str_hook_watcher/str_point_watcher.cpp.i:
+	$(MAKE) -f CMakeFiles\AIO_v_2.dir\build.make CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/point_watcher/str_hook_watcher/str_point_watcher.cpp.i
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/point_watcher/str_hook_watcher/str_point_watcher.cpp.i
+
+lib4aio/lib4aio_cpp_sources/utils/point_watcher/str_hook_watcher/str_point_watcher.s: lib4aio/lib4aio_cpp_sources/utils/point_watcher/str_hook_watcher/str_point_watcher.cpp.s
+
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/point_watcher/str_hook_watcher/str_point_watcher.s
+
+# target to generate assembly for a file
+lib4aio/lib4aio_cpp_sources/utils/point_watcher/str_hook_watcher/str_point_watcher.cpp.s:
+	$(MAKE) -f CMakeFiles\AIO_v_2.dir\build.make CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/point_watcher/str_hook_watcher/str_point_watcher.cpp.s
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/point_watcher/str_hook_watcher/str_point_watcher.cpp.s
+
+lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_cast.obj: lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_cast.cpp.obj
+
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_cast.obj
+
+# target to build an object file
+lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_cast.cpp.obj:
+	$(MAKE) -f CMakeFiles\AIO_v_2.dir\build.make CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_cast.cpp.obj
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_cast.cpp.obj
+
+lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_cast.i: lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_cast.cpp.i
+
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_cast.i
+
+# target to preprocess a source file
+lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_cast.cpp.i:
+	$(MAKE) -f CMakeFiles\AIO_v_2.dir\build.make CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_cast.cpp.i
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_cast.cpp.i
+
+lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_cast.s: lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_cast.cpp.s
+
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_cast.s
+
+# target to generate assembly for a file
+lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_cast.cpp.s:
+	$(MAKE) -f CMakeFiles\AIO_v_2.dir\build.make CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_cast.cpp.s
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_cast.cpp.s
+
+lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_error.obj: lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_error.cpp.obj
+
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_error.obj
+
+# target to build an object file
+lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_error.cpp.obj:
+	$(MAKE) -f CMakeFiles\AIO_v_2.dir\build.make CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_error.cpp.obj
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_error.cpp.obj
+
+lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_error.i: lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_error.cpp.i
+
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_error.i
+
+# target to preprocess a source file
+lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_error.cpp.i:
+	$(MAKE) -f CMakeFiles\AIO_v_2.dir\build.make CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_error.cpp.i
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_error.cpp.i
+
+lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_error.s: lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_error.cpp.s
+
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_error.s
+
+# target to generate assembly for a file
+lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_error.cpp.s:
+	$(MAKE) -f CMakeFiles\AIO_v_2.dir\build.make CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_error.cpp.s
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_error.cpp.s
+
+lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_log.obj: lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_log.cpp.obj
+
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_log.obj
+
+# target to build an object file
+lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_log.cpp.obj:
+	$(MAKE) -f CMakeFiles\AIO_v_2.dir\build.make CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_log.cpp.obj
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_log.cpp.obj
+
+lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_log.i: lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_log.cpp.i
+
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_log.i
+
+# target to preprocess a source file
+lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_log.cpp.i:
+	$(MAKE) -f CMakeFiles\AIO_v_2.dir\build.make CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_log.cpp.i
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_log.cpp.i
+
+lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_log.s: lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_log.cpp.s
+
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_log.s
+
+# target to generate assembly for a file
+lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_log.cpp.s:
+	$(MAKE) -f CMakeFiles\AIO_v_2.dir\build.make CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_log.cpp.s
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_log.cpp.s
+
+lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_matcher.obj: lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_matcher.cpp.obj
+
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_matcher.obj
+
+# target to build an object file
+lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_matcher.cpp.obj:
+	$(MAKE) -f CMakeFiles\AIO_v_2.dir\build.make CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_matcher.cpp.obj
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_matcher.cpp.obj
+
+lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_matcher.i: lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_matcher.cpp.i
+
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_matcher.i
+
+# target to preprocess a source file
+lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_matcher.cpp.i:
+	$(MAKE) -f CMakeFiles\AIO_v_2.dir\build.make CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_matcher.cpp.i
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_matcher.cpp.i
+
+lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_matcher.s: lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_matcher.cpp.s
+
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_matcher.s
+
+# target to generate assembly for a file
+lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_matcher.cpp.s:
+	$(MAKE) -f CMakeFiles\AIO_v_2.dir\build.make CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_matcher.cpp.s
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_matcher.cpp.s
+
+lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_split.obj: lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_split.cpp.obj
+
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_split.obj
+
+# target to build an object file
+lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_split.cpp.obj:
+	$(MAKE) -f CMakeFiles\AIO_v_2.dir\build.make CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_split.cpp.obj
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_split.cpp.obj
+
+lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_split.i: lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_split.cpp.i
+
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_split.i
+
+# target to preprocess a source file
+lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_split.cpp.i:
+	$(MAKE) -f CMakeFiles\AIO_v_2.dir\build.make CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_split.cpp.i
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_split.cpp.i
+
+lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_split.s: lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_split.cpp.s
+
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_split.s
+
+# target to generate assembly for a file
+lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_split.cpp.s:
+	$(MAKE) -f CMakeFiles\AIO_v_2.dir\build.make CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_split.cpp.s
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_split.cpp.s
+
+lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_trim.obj: lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_trim.cpp.obj
+
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_trim.obj
+
+# target to build an object file
+lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_trim.cpp.obj:
+	$(MAKE) -f CMakeFiles\AIO_v_2.dir\build.make CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_trim.cpp.obj
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_trim.cpp.obj
+
+lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_trim.i: lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_trim.cpp.i
+
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_trim.i
+
+# target to preprocess a source file
+lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_trim.cpp.i:
+	$(MAKE) -f CMakeFiles\AIO_v_2.dir\build.make CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_trim.cpp.i
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_trim.cpp.i
+
+lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_trim.s: lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_trim.cpp.s
+
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_trim.s
+
+# target to generate assembly for a file
+lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_trim.cpp.s:
+	$(MAKE) -f CMakeFiles\AIO_v_2.dir\build.make CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_trim.cpp.s
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_trim.cpp.s
+
+lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/str_hook.obj: lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/str_hook.cpp.obj
+
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/str_hook.obj
+
+# target to build an object file
+lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/str_hook.cpp.obj:
+	$(MAKE) -f CMakeFiles\AIO_v_2.dir\build.make CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/str_hook.cpp.obj
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/str_hook.cpp.obj
+
+lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/str_hook.i: lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/str_hook.cpp.i
+
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/str_hook.i
+
+# target to preprocess a source file
+lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/str_hook.cpp.i:
+	$(MAKE) -f CMakeFiles\AIO_v_2.dir\build.make CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/str_hook.cpp.i
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/str_hook.cpp.i
+
+lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/str_hook.s: lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/str_hook.cpp.s
+
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/str_hook.s
+
+# target to generate assembly for a file
+lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/str_hook.cpp.s:
+	$(MAKE) -f CMakeFiles\AIO_v_2.dir\build.make CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/str_hook.cpp.s
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/str_hook.cpp.s
+
+lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_iterator/str_hook_iterator.obj: lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_iterator/str_hook_iterator.cpp.obj
+
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_iterator/str_hook_iterator.obj
+
+# target to build an object file
+lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_iterator/str_hook_iterator.cpp.obj:
+	$(MAKE) -f CMakeFiles\AIO_v_2.dir\build.make CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_iterator/str_hook_iterator.cpp.obj
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_iterator/str_hook_iterator.cpp.obj
+
+lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_iterator/str_hook_iterator.i: lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_iterator/str_hook_iterator.cpp.i
+
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_iterator/str_hook_iterator.i
+
+# target to preprocess a source file
+lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_iterator/str_hook_iterator.cpp.i:
+	$(MAKE) -f CMakeFiles\AIO_v_2.dir\build.make CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_iterator/str_hook_iterator.cpp.i
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_iterator/str_hook_iterator.cpp.i
+
+lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_iterator/str_hook_iterator.s: lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_iterator/str_hook_iterator.cpp.s
+
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_iterator/str_hook_iterator.s
+
+# target to generate assembly for a file
+lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_iterator/str_hook_iterator.cpp.s:
+	$(MAKE) -f CMakeFiles\AIO_v_2.dir\build.make CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_iterator/str_hook_iterator.cpp.s
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_iterator/str_hook_iterator.cpp.s
+
+lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/advanced_functions/str_hook_list_log.obj: lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/advanced_functions/str_hook_list_log.cpp.obj
+
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/advanced_functions/str_hook_list_log.obj
+
+# target to build an object file
+lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/advanced_functions/str_hook_list_log.cpp.obj:
+	$(MAKE) -f CMakeFiles\AIO_v_2.dir\build.make CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/advanced_functions/str_hook_list_log.cpp.obj
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/advanced_functions/str_hook_list_log.cpp.obj
+
+lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/advanced_functions/str_hook_list_log.i: lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/advanced_functions/str_hook_list_log.cpp.i
+
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/advanced_functions/str_hook_list_log.i
+
+# target to preprocess a source file
+lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/advanced_functions/str_hook_list_log.cpp.i:
+	$(MAKE) -f CMakeFiles\AIO_v_2.dir\build.make CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/advanced_functions/str_hook_list_log.cpp.i
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/advanced_functions/str_hook_list_log.cpp.i
+
+lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/advanced_functions/str_hook_list_log.s: lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/advanced_functions/str_hook_list_log.cpp.s
+
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/advanced_functions/str_hook_list_log.s
+
+# target to generate assembly for a file
+lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/advanced_functions/str_hook_list_log.cpp.s:
+	$(MAKE) -f CMakeFiles\AIO_v_2.dir\build.make CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/advanced_functions/str_hook_list_log.cpp.s
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/advanced_functions/str_hook_list_log.cpp.s
+
+lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/advanced_functions/str_hook_trim.obj: lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/advanced_functions/str_hook_trim.cpp.obj
+
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/advanced_functions/str_hook_trim.obj
+
+# target to build an object file
+lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/advanced_functions/str_hook_trim.cpp.obj:
+	$(MAKE) -f CMakeFiles\AIO_v_2.dir\build.make CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/advanced_functions/str_hook_trim.cpp.obj
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/advanced_functions/str_hook_trim.cpp.obj
+
+lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/advanced_functions/str_hook_trim.i: lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/advanced_functions/str_hook_trim.cpp.i
+
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/advanced_functions/str_hook_trim.i
+
+# target to preprocess a source file
+lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/advanced_functions/str_hook_trim.cpp.i:
+	$(MAKE) -f CMakeFiles\AIO_v_2.dir\build.make CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/advanced_functions/str_hook_trim.cpp.i
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/advanced_functions/str_hook_trim.cpp.i
+
+lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/advanced_functions/str_hook_trim.s: lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/advanced_functions/str_hook_trim.cpp.s
+
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/advanced_functions/str_hook_trim.s
+
+# target to generate assembly for a file
+lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/advanced_functions/str_hook_trim.cpp.s:
+	$(MAKE) -f CMakeFiles\AIO_v_2.dir\build.make CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/advanced_functions/str_hook_trim.cpp.s
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/advanced_functions/str_hook_trim.cpp.s
+
+lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/str_hook_list.obj: lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/str_hook_list.cpp.obj
+
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/str_hook_list.obj
+
+# target to build an object file
+lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/str_hook_list.cpp.obj:
+	$(MAKE) -f CMakeFiles\AIO_v_2.dir\build.make CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/str_hook_list.cpp.obj
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/str_hook_list.cpp.obj
+
+lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/str_hook_list.i: lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/str_hook_list.cpp.i
+
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/str_hook_list.i
+
+# target to preprocess a source file
+lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/str_hook_list.cpp.i:
+	$(MAKE) -f CMakeFiles\AIO_v_2.dir\build.make CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/str_hook_list.cpp.i
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/str_hook_list.cpp.i
+
+lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/str_hook_list.s: lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/str_hook_list.cpp.s
+
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/str_hook_list.s
+
+# target to generate assembly for a file
+lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/str_hook_list.cpp.s:
+	$(MAKE) -f CMakeFiles\AIO_v_2.dir\build.make CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/str_hook_list.cpp.s
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/str_hook_list.cpp.s
+
 main/main.obj: main/main.cpp.obj
 
 .PHONY : main/main.obj
@@ -203,6 +581,60 @@ main/main.cpp.s:
 	$(MAKE) -f CMakeFiles\AIO_v_2.dir\build.make CMakeFiles/AIO_v_2.dir/main/main.cpp.s
 .PHONY : main/main.cpp.s
 
+sources/aio_lang/aio_lexer/aio_lexer.obj: sources/aio_lang/aio_lexer/aio_lexer.cpp.obj
+
+.PHONY : sources/aio_lang/aio_lexer/aio_lexer.obj
+
+# target to build an object file
+sources/aio_lang/aio_lexer/aio_lexer.cpp.obj:
+	$(MAKE) -f CMakeFiles\AIO_v_2.dir\build.make CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_lexer/aio_lexer.cpp.obj
+.PHONY : sources/aio_lang/aio_lexer/aio_lexer.cpp.obj
+
+sources/aio_lang/aio_lexer/aio_lexer.i: sources/aio_lang/aio_lexer/aio_lexer.cpp.i
+
+.PHONY : sources/aio_lang/aio_lexer/aio_lexer.i
+
+# target to preprocess a source file
+sources/aio_lang/aio_lexer/aio_lexer.cpp.i:
+	$(MAKE) -f CMakeFiles\AIO_v_2.dir\build.make CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_lexer/aio_lexer.cpp.i
+.PHONY : sources/aio_lang/aio_lexer/aio_lexer.cpp.i
+
+sources/aio_lang/aio_lexer/aio_lexer.s: sources/aio_lang/aio_lexer/aio_lexer.cpp.s
+
+.PHONY : sources/aio_lang/aio_lexer/aio_lexer.s
+
+# target to generate assembly for a file
+sources/aio_lang/aio_lexer/aio_lexer.cpp.s:
+	$(MAKE) -f CMakeFiles\AIO_v_2.dir\build.make CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_lexer/aio_lexer.cpp.s
+.PHONY : sources/aio_lang/aio_lexer/aio_lexer.cpp.s
+
+sources/aio_utils/aio_bundle/aio_bundle.obj: sources/aio_utils/aio_bundle/aio_bundle.cpp.obj
+
+.PHONY : sources/aio_utils/aio_bundle/aio_bundle.obj
+
+# target to build an object file
+sources/aio_utils/aio_bundle/aio_bundle.cpp.obj:
+	$(MAKE) -f CMakeFiles\AIO_v_2.dir\build.make CMakeFiles/AIO_v_2.dir/sources/aio_utils/aio_bundle/aio_bundle.cpp.obj
+.PHONY : sources/aio_utils/aio_bundle/aio_bundle.cpp.obj
+
+sources/aio_utils/aio_bundle/aio_bundle.i: sources/aio_utils/aio_bundle/aio_bundle.cpp.i
+
+.PHONY : sources/aio_utils/aio_bundle/aio_bundle.i
+
+# target to preprocess a source file
+sources/aio_utils/aio_bundle/aio_bundle.cpp.i:
+	$(MAKE) -f CMakeFiles\AIO_v_2.dir\build.make CMakeFiles/AIO_v_2.dir/sources/aio_utils/aio_bundle/aio_bundle.cpp.i
+.PHONY : sources/aio_utils/aio_bundle/aio_bundle.cpp.i
+
+sources/aio_utils/aio_bundle/aio_bundle.s: sources/aio_utils/aio_bundle/aio_bundle.cpp.s
+
+.PHONY : sources/aio_utils/aio_bundle/aio_bundle.s
+
+# target to generate assembly for a file
+sources/aio_utils/aio_bundle/aio_bundle.cpp.s:
+	$(MAKE) -f CMakeFiles\AIO_v_2.dir\build.make CMakeFiles/AIO_v_2.dir/sources/aio_utils/aio_bundle/aio_bundle.cpp.s
+.PHONY : sources/aio_utils/aio_bundle/aio_bundle.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -212,15 +644,63 @@ help:
 	@echo ... edit_cache
 	@echo ... AIO_v_2
 	@echo ... rebuild_cache
+	@echo ... lib4aio/lib4aio_cpp_sources/utils/char_utils/char_utils.obj
+	@echo ... lib4aio/lib4aio_cpp_sources/utils/char_utils/char_utils.i
+	@echo ... lib4aio/lib4aio_cpp_sources/utils/char_utils/char_utils.s
 	@echo ... lib4aio/lib4aio_cpp_sources/utils/log_utils/log_utils.obj
 	@echo ... lib4aio/lib4aio_cpp_sources/utils/log_utils/log_utils.i
 	@echo ... lib4aio/lib4aio_cpp_sources/utils/log_utils/log_utils.s
 	@echo ... lib4aio/lib4aio_cpp_sources/utils/memory_utils/memory_utils.obj
 	@echo ... lib4aio/lib4aio_cpp_sources/utils/memory_utils/memory_utils.i
 	@echo ... lib4aio/lib4aio_cpp_sources/utils/memory_utils/memory_utils.s
+	@echo ... lib4aio/lib4aio_cpp_sources/utils/point_watcher/point_watcher.obj
+	@echo ... lib4aio/lib4aio_cpp_sources/utils/point_watcher/point_watcher.i
+	@echo ... lib4aio/lib4aio_cpp_sources/utils/point_watcher/point_watcher.s
+	@echo ... lib4aio/lib4aio_cpp_sources/utils/point_watcher/str_hook_watcher/str_point_watcher.obj
+	@echo ... lib4aio/lib4aio_cpp_sources/utils/point_watcher/str_hook_watcher/str_point_watcher.i
+	@echo ... lib4aio/lib4aio_cpp_sources/utils/point_watcher/str_hook_watcher/str_point_watcher.s
+	@echo ... lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_cast.obj
+	@echo ... lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_cast.i
+	@echo ... lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_cast.s
+	@echo ... lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_error.obj
+	@echo ... lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_error.i
+	@echo ... lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_error.s
+	@echo ... lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_log.obj
+	@echo ... lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_log.i
+	@echo ... lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_log.s
+	@echo ... lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_matcher.obj
+	@echo ... lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_matcher.i
+	@echo ... lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_matcher.s
+	@echo ... lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_split.obj
+	@echo ... lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_split.i
+	@echo ... lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_split.s
+	@echo ... lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_trim.obj
+	@echo ... lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_trim.i
+	@echo ... lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_trim.s
+	@echo ... lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/str_hook.obj
+	@echo ... lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/str_hook.i
+	@echo ... lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/str_hook.s
+	@echo ... lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_iterator/str_hook_iterator.obj
+	@echo ... lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_iterator/str_hook_iterator.i
+	@echo ... lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_iterator/str_hook_iterator.s
+	@echo ... lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/advanced_functions/str_hook_list_log.obj
+	@echo ... lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/advanced_functions/str_hook_list_log.i
+	@echo ... lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/advanced_functions/str_hook_list_log.s
+	@echo ... lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/advanced_functions/str_hook_trim.obj
+	@echo ... lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/advanced_functions/str_hook_trim.i
+	@echo ... lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/advanced_functions/str_hook_trim.s
+	@echo ... lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/str_hook_list.obj
+	@echo ... lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/str_hook_list.i
+	@echo ... lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/str_hook_list.s
 	@echo ... main/main.obj
 	@echo ... main/main.i
 	@echo ... main/main.s
+	@echo ... sources/aio_lang/aio_lexer/aio_lexer.obj
+	@echo ... sources/aio_lang/aio_lexer/aio_lexer.i
+	@echo ... sources/aio_lang/aio_lexer/aio_lexer.s
+	@echo ... sources/aio_utils/aio_bundle/aio_bundle.obj
+	@echo ... sources/aio_utils/aio_bundle/aio_bundle.i
+	@echo ... sources/aio_utils/aio_bundle/aio_bundle.s
 .PHONY : help
 
 

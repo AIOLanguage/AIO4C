@@ -2,6 +2,10 @@
 #define AIO_BUNDLE_H
 
 #include <list>
+#include <lib4aio_cpp_headers/utils/str_hook/str_hook/str_hook.h>
+
+using namespace lib4aio;
+using namespace std;
 
 class aio_bundle
 {
@@ -9,24 +13,14 @@ class aio_bundle
 private:
 
 public:
-    class str_hook *path;
-    class str_hook *function_name;
-    std::list<class aio_value> *input_values;
+    str_hook *path;
+    str_hook *function_name;
+    list<class aio_value> *input_values;
     class aio_value_list *output_values;
 
     aio_bundle();
-};
 
-//typedef struct aio_bundle {
-//
-//} aio_bundle;
-//
-//struct aio_bundle *new_aio_bundle(
-//        struct str_hook *path,
-//        struct str_hook *function_name,
-//        struct aio_value_list *input_values
-//);
-//
-//void free_aio_bundle(struct aio_bundle *bundle);
+    ~aio_bundle();
+};
 
 #endif //AIO_BUNDLE_H

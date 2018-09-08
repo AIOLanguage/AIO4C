@@ -1,7 +1,9 @@
 #include <malloc.h>
 #include <mem.h>
 
-#include <lib4aio_cpp_headers/utils/str_hook/str_hook.h>
+#include <lib4aio_cpp_headers/utils/point_watcher/point_watcher.h>
+#include <lib4aio_cpp_headers/utils/str_hook/str_hook/str_hook.h>
+#include <lib4aio_cpp_headers/utils/str_hook/str_hook_list/str_hook_list.h>
 #include <lib4aio_cpp_headers/utils/memory_utils/memory_utils.h>
 #include <lib4aio_cpp_headers/utils/char_utils/char_utils.h>
 
@@ -41,27 +43,27 @@ namespace lib4aio
         return list;
     }
 
-    str_hook_list *str_hook::split_by_comma()
+    str_hook_list *str_hook::split_by_comma() const
     {
         return this->split_by_char_condition(is_comma);
     }
 
-    str_hook_list *str_hook::split_by_space()
+    str_hook_list *str_hook::split_by_space() const
     {
         return this->split_by_char_condition(is_space);
     }
 
-    str_hook_list *str_hook::split_by_line_break()
+    str_hook_list *str_hook::split_by_line_break() const
     {
         return this->split_by_char_condition(is_line_break);
     }
 
-    str_hook_list *str_hook::split_by_whitespace()
+    str_hook_list *str_hook::split_by_whitespace() const
     {
         return this->split_by_char_condition(is_space_or_line_break);
     }
 
-    str_hook_list *str_hook::split(const char *delimiter)
+    str_hook_list *str_hook::split(const char *delimiter) const
     {
         auto src = this->source_string;
         auto src_length = this->get_size();
@@ -126,7 +128,7 @@ namespace lib4aio
         return list;
     }
 
-    str_hook_list *str_hook::split_by_char_condition(bool (*char_condition)(const char))
+    str_hook_list *str_hook::split_by_char_condition(bool (*char_condition)(const char)) const
     {
         auto src = this->source_string;
         auto start = this->start;
