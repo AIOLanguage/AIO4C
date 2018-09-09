@@ -4,7 +4,7 @@
 #include <lib4aio_cpp_headers/utils/string_utils/match.h>
 #include <lib4aio_cpp_headers/utils/error_utils/error_utils.h>
 
-#define AIO_VALUE_CAST_TAG "AIO_VALUE_CAST"
+#define CAST_AIO_VALUE_TAG "CAST_AIO_VALUE"
 
 aio_value *cast_to_int(const aio_value *value)
 {
@@ -25,12 +25,12 @@ aio_value *cast_to_int(const aio_value *value)
         } else if (matches_boolean(string)) {
             return new_aio_int_value(string_to_boolean(string));
         } else {
-            throw_error_with_details(AIO_VALUE_CAST_TAG, "String doesn't matches int!", string);
+            throw_error_with_details(CAST_AIO_VALUE_TAG, "String doesn't matches int!", string);
         }
     } else if (type->equals_string(BOOLEAN)) {
         return new_aio_int_value(value->get.boolean_acc);
     } else {
-        throw_error_with_hook(AIO_VALUE_CAST_TAG, "Can not cast type to Int:", type);
+        throw_error_with_hook(CAST_AIO_VALUE_TAG, "Can not cast type to Int:", type);
     }
 }
 
@@ -53,12 +53,12 @@ aio_value *cast_to_double(const aio_value *value)
         } else if (matches_boolean(string)) {
             return new_aio_double_value(string_to_boolean(string));
         } else {
-            throw_error_with_details(AIO_VALUE_CAST_TAG, "String doesn't matches double!", string);
+            throw_error_with_details(CAST_AIO_VALUE_TAG, "String doesn't matches double!", string);
         }
     } else if (type->equals_string(BOOLEAN)) {
         return new_aio_double_value(value->get.boolean_acc);
     } else {
-        throw_error_with_hook(AIO_VALUE_CAST_TAG, "Can not cast type to Dou:", type);
+        throw_error_with_hook(CAST_AIO_VALUE_TAG, "Can not cast type to Dou:", type);
     }
 }
 
@@ -77,7 +77,7 @@ aio_value *cast_to_string(const aio_value *value)
     } else if (type->equals_string(BOOLEAN)) {
         return new_aio_string_value(boolean_to_string(value->get.boolean_acc));
     } else {
-        throw_error_with_hook(AIO_VALUE_CAST_TAG, "Can not cast type to Str:", type);
+        throw_error_with_hook(CAST_AIO_VALUE_TAG, "Can not cast type to Str:", type);
     }
 }
 
@@ -94,7 +94,7 @@ aio_value *cast_to_boolean(const aio_value *value)
         } else if (int_value == 0) {
             return new_aio_boolean_value(false);
         } else {
-            throw_error_with_tag(AIO_VALUE_CAST_TAG, "Can not cast Int to Boo");
+            throw_error_with_tag(CAST_AIO_VALUE_TAG, "Can not cast Int to Boo");
         }
     } else if (type->equals_string(DOUBLE)) {
         auto double_value = value->get.double_acc;
@@ -103,7 +103,7 @@ aio_value *cast_to_boolean(const aio_value *value)
         } else if (double_value >= 0.0 && double_value < 0.5) {
             return new_aio_boolean_value(false);
         } else {
-            throw_error_with_tag(AIO_VALUE_CAST_TAG, "Can not cast Dou to Boo");
+            throw_error_with_tag(CAST_AIO_VALUE_TAG, "Can not cast Dou to Boo");
         }
     } else if (type->equals_string(STRING)) {
         auto string_value = value->get.string_acc;
@@ -116,7 +116,7 @@ aio_value *cast_to_boolean(const aio_value *value)
             } else if (int_value == 1) {
                 return new_aio_boolean_value(true);
             } else {
-                throw_error_with_tag(AIO_VALUE_CAST_TAG, "Can not cast Str to boolean");
+                throw_error_with_tag(CAST_AIO_VALUE_TAG, "Can not cast Str to boolean");
             }
         } else if (matches_double(string_value)) {
             auto double_value = string_to_double(string_value);
@@ -125,17 +125,17 @@ aio_value *cast_to_boolean(const aio_value *value)
             } else if (double_value >= 0.0 && double_value < 0.5) {
                 return new_aio_boolean_value(false);
             } else {
-                throw_error_with_tag(AIO_VALUE_CAST_TAG, "Can not cast Str to Boo");
+                throw_error_with_tag(CAST_AIO_VALUE_TAG, "Can not cast Str to Boo");
             }
         } else if (matches_boolean(string_value)) {
             return new_aio_boolean_value(string_to_boolean(string_value));
         } else {
-            throw_error_with_tag(AIO_VALUE_CAST_TAG, "Can not cast Str to Boo");
+            throw_error_with_tag(CAST_AIO_VALUE_TAG, "Can not cast Str to Boo");
         }
     } else if (type->equals_string(BOOLEAN)) {
         return new_aio_boolean_value(value->get.boolean_acc);
     } else {
-        throw_error_with_hook(AIO_VALUE_CAST_TAG, "Can not cast type to Boo:", type);
+        throw_error_with_hook(CAST_AIO_VALUE_TAG, "Can not cast type to Boo:", type);
     }
 }
 
@@ -177,6 +177,6 @@ aio_value *cast_to_type(
     } else if (type->equals_string(BOOLEAN)) {
         return cast_to_boolean(value);
     } else {
-        throw_error_with_hook(AIO_VALUE_CAST_TAG, "Sorry, AIO Core hasn't supported type:", type);
+        throw_error_with_hook(CAST_AIO_VALUE_TAG, "Sorry, AIO Core hasn't supported type:", type);
     }
 }

@@ -68,16 +68,14 @@ aio_value *new_aio_value_by_string(const char *undefined_value)
     if (matches_int(undefined_value)) {
         auto int_value = string_to_int(undefined_value);
         return new_aio_int_value(int_value);
-    }
-    if (matches_double(undefined_value)) {
+    } else if (matches_double(undefined_value)) {
         auto double_value = string_to_double(undefined_value);
         return new_aio_double_value(double_value);
-    }
-    if (matches_string(undefined_value)) {
-        auto string_value = remove_prefix_suffix(undefined_value, "\'", "\'");
+    } else if (matches_string(undefined_value)) {
+        static auto SINGLE_QUOTE = "\'";
+        auto string_value = remove_prefix_suffix(undefined_value, SINGLE_QUOTE, SINGLE_QUOTE);
         return new_aio_string_value(string_value);
-    }
-    if (matches_boolean(undefined_value)) {
+    } else if (matches_boolean(undefined_value)) {
         auto boolean_value = string_to_boolean(undefined_value);
         return new_aio_boolean_value(boolean_value);
     } else {
