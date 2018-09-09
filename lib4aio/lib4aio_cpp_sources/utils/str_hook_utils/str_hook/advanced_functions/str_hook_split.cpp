@@ -2,8 +2,10 @@
 #include <mem.h>
 
 #include <lib4aio_cpp_headers/utils/point_watcher/point_watcher.h>
-#include <lib4aio_cpp_headers/utils/str_hook/str_hook/str_hook.h>
-#include <lib4aio_cpp_headers/utils/str_hook/str_hook_list/str_hook_list.h>
+#include <lib4aio_cpp_headers/utils/str_hook_utils/str_hook/str_hook.h>
+#include <lib4aio_cpp_headers/utils/str_hook_utils/str_hook_list/str_hook_list.h>
+#include <lib4aio_cpp_sources/utils/array_list_utils/array_list.cpp>
+#include <lib4aio_cpp_headers/utils/array_list_utils/array_list.h>
 #include <lib4aio_cpp_headers/utils/memory_utils/memory_utils.h>
 #include <lib4aio_cpp_headers/utils/char_utils/char_utils.h>
 
@@ -14,7 +16,7 @@ namespace lib4aio
             const str_hook *hook,
             const int left_index,
             unsigned delimiter_length,
-            str_hook_list *list
+            lib4aio::str_hook_list *list
     )
     {
         auto left_hook = new str_hook(hook);

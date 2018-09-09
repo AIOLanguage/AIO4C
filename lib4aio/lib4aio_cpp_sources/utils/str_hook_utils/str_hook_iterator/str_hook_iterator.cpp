@@ -1,5 +1,7 @@
-#include <lib4aio_cpp_headers/utils/str_hook/str_hook_list/str_hook_list.h>
-#include <lib4aio_cpp_headers/utils/str_hook/str_hook_iterator/str_hook_iterator.h>
+#include <lib4aio_cpp_headers/utils/str_hook_utils/str_hook/str_hook.h>
+#include <lib4aio_cpp_headers/utils/str_hook_utils/str_hook_list/str_hook_list.h>
+#include <lib4aio_cpp_headers/utils/str_hook_utils/str_hook_iterator/str_hook_iterator.h>
+#include <lib4aio_cpp_sources/utils/array_list_utils/array_list.cpp>
 
 namespace lib4aio
 {
@@ -14,7 +16,10 @@ namespace lib4aio
         this->hook_list = list;
     }
 
-    str_hook_iterator::str_hook_iterator(const str_hook_list *list, unsigned const current_hook_index)
+    str_hook_iterator::str_hook_iterator(
+            const str_hook_list *list,
+            unsigned const current_hook_index
+    )
     {
         this->hook_position = 0;
         this->hook_list = list;
@@ -50,6 +55,7 @@ namespace lib4aio
                 this->hook_position = next_hook->start;
                 return true;
             } else {
+                this->hook_position++;
                 return false;
             }
         }

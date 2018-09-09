@@ -1,7 +1,8 @@
+#include <aio_utils/aio_value/aio_value.h>
 #include <aio_utils/aio_bundle/aio_bundle.h>
 #include <lib4aio_cpp_headers/utils/log_utils/log_utils.h>
-#include <lib4aio_cpp_headers/utils/str_hook/str_hook/str_hook.h>
-#include <aio_utils/aio_value/aio_value.h>
+#include <lib4aio_cpp_headers/utils/str_hook_utils/str_hook/str_hook.h>
+#include <lib4aio_cpp_headers/utils/struct_list/struct_list.h>
 
 #define FILE_PATH_INDEX 1
 
@@ -18,18 +19,18 @@ using namespace lib4aio;
 static aio_bundle *create_bundle(const int argc, char **argv)
 {
     //Build bundle:
-    auto file_path = new str_hook(argv[FILE_PATH_INDEX]);
-    auto function_name = new str_hook(argv[FUNCTION_NAME_INDEX]);
-    auto arguments = new_aio_value_list();
+    auto file_path = new lib4aio::str_hook(argv[FILE_PATH_INDEX]);
+    auto function_name = new lib4aio::str_hook(argv[FUNCTION_NAME_INDEX]);
+    auto arguments = new_struct_list(sizeof(aio_value *));
     //Prepare input arguments:
     auto has_function_arguments = argc > START_FUNCTION_ARG_INDEX;
     if (has_function_arguments) {
         for (int i = START_FUNCTION_ARG_INDEX; i < argc; ++i) {
-            var argument = new_aio_value_by_string(argv[i]);
-            add_aio_value_in_list(arguments, argument);
+            auto argument = new_aio_value_by_string(argv[i]);
+            add_struct_in_list(arguments, argument);
         }
     }
-    return new_aio_bundle(file_path, function_name, arguments);
+    return new aio_bundle(file_path, function_name, arguments);
 }
 
 static void make_aio(const int argc, char *argv[])
@@ -42,7 +43,7 @@ static void make_aio(const int argc, char *argv[])
     //print_result(result_list);
     //----------------------------------------------------------------------------------------------------------------—
     //찌꺼기 수집기 (Garbage collector):
-    free_aio_bundle(input_bundle);
+    //free_aio_bundle(input_bundle);
     //free_aio_value_list(result_list);
 }
 

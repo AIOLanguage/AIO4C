@@ -7,7 +7,4 @@ namespace lib4aio
     {
         this->source_string = source_string;
     };
-
-    str_point_watcher::~str_point_watcher()
-    {}
 }

@@ -1,12 +1,12 @@
 #include <cstdio>
 #include <cstdlib>
-#include <lib4aio_cpp_headers/utils/str_hook/str_hook/str_hook.h>
+#include <lib4aio_cpp_headers/utils/str_hook_utils/str_hook/str_hook.h>
 
 #define ERROR_TAG "ERROR"
 
 namespace lib4aio
 {
-    void throw_error(const char *tag, const char *message, const str_hook *hook)
+    void throw_error_with_hook(const char *tag, const char *message, const str_hook *hook)
     {
         auto end = hook->end;
         auto source_string = hook->source_string;

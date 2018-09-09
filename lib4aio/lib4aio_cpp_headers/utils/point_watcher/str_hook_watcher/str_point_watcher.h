@@ -13,8 +13,6 @@ namespace lib4aio
         const char *source_string;
 
         str_point_watcher(const char *source_string);
-
-        ~str_point_watcher();
     };
 
 #endif //LIB4AIO_STR_POINT_WATCHER_H

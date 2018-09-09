@@ -1,13 +1,13 @@
 namespace lib4aio
 {
 
-#ifndef LIB4AIO_LIST_H
-#define LIB4AIO_LIST_H
+#ifndef LIB4AIO_ARRAY_LIST_H
+#define LIB4AIO_ARRAY_LIST_H
 
     template<class T>
     class array_list
     {
-    private:
+    protected:
 
         unsigned capacity;
 
@@ -31,11 +31,11 @@ namespace lib4aio
 
         array_list<T> *filter(bool (*filter_condition)(const T *element)) const;
 
-        void foreach(void (*action)(const T *element)) const;
+        void foreach(void (*action)(T *element)) const;
 
         void free_elements();
 
     };
 
-#endif //LIB4AIO_LIST_H
+#endif //LIB4AIO_ARRAY_LIST_H
 }

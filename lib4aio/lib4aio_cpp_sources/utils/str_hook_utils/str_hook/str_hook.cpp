@@ -1,8 +1,8 @@
 #include <cctype>
 #include <cstring>
-#include <lib4aio_cpp_headers/utils/str_hook/str_hook/str_hook.h>
 #include <lib4aio_cpp_headers/utils/point_watcher/point_watcher.h>
 #include <lib4aio_cpp_headers/utils/memory_utils/memory_utils.h>
+#include <lib4aio_cpp_headers/utils/str_hook_utils/str_hook/str_hook.h>
 
 namespace lib4aio
 {

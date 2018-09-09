@@ -89,11 +89,11 @@ namespace lib4aio
 
         bool matches_int() const;
 
-        bool matches_double() const ;
+        bool matches_double() const;
 
-        bool matches_string() const ;
+        bool matches_string() const;
 
-        bool matches_boolean() const ;
+        bool matches_boolean() const;
 
         /**
         * Casts.
@@ -108,9 +108,17 @@ namespace lib4aio
         bool to_boolean() const;
     };
 
-    void log_info(const char *tag, const char *message, const str_hook *hook);
+    void log_info_hook(
+            const char *tag,
+            const char *message,
+            const str_hook *hook
+    );
 
-    void throw_error(const char *tag, const char *message, const str_hook *hook) __attribute__ ((noreturn));
+    void throw_error_with_hook(
+            const char *tag,
+            const char *message,
+            const str_hook *hook
+    ) __attribute__ ((noreturn));
 
 #endif //LIB4AIO_STRING_HOOK_H
 

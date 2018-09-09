@@ -322,6 +322,90 @@ CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/str_hook_list.cpp.s"
 	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\StarKRE\CLionProjects\AIO.v.2\lib4aio\lib4aio_cpp_sources\utils\str_hook_utils\str_hook_list\str_hook_list.cpp -o CMakeFiles\AIO_v_2.dir\lib4aio\lib4aio_cpp_sources\utils\str_hook_utils\str_hook_list\str_hook_list.cpp.s
 
+CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/array_list_utils/array_list.cpp.obj: CMakeFiles/AIO_v_2.dir/flags.make
+CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/array_list_utils/array_list.cpp.obj: CMakeFiles/AIO_v_2.dir/includes_CXX.rsp
+CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/array_list_utils/array_list.cpp.obj: ../lib4aio/lib4aio_cpp_sources/utils/array_list_utils/array_list.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\StarKRE\CLionProjects\AIO.v.2\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/array_list_utils/array_list.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\AIO_v_2.dir\lib4aio\lib4aio_cpp_sources\utils\array_list_utils\array_list.cpp.obj -c C:\Users\StarKRE\CLionProjects\AIO.v.2\lib4aio\lib4aio_cpp_sources\utils\array_list_utils\array_list.cpp
+
+CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/array_list_utils/array_list.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/array_list_utils/array_list.cpp.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\StarKRE\CLionProjects\AIO.v.2\lib4aio\lib4aio_cpp_sources\utils\array_list_utils\array_list.cpp > CMakeFiles\AIO_v_2.dir\lib4aio\lib4aio_cpp_sources\utils\array_list_utils\array_list.cpp.i
+
+CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/array_list_utils/array_list.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/array_list_utils/array_list.cpp.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\StarKRE\CLionProjects\AIO.v.2\lib4aio\lib4aio_cpp_sources\utils\array_list_utils\array_list.cpp -o CMakeFiles\AIO_v_2.dir\lib4aio\lib4aio_cpp_sources\utils\array_list_utils\array_list.cpp.s
+
+CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/struct_list/struct_list.cpp.obj: CMakeFiles/AIO_v_2.dir/flags.make
+CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/struct_list/struct_list.cpp.obj: CMakeFiles/AIO_v_2.dir/includes_CXX.rsp
+CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/struct_list/struct_list.cpp.obj: ../lib4aio/lib4aio_cpp_sources/utils/struct_list/struct_list.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\StarKRE\CLionProjects\AIO.v.2\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/struct_list/struct_list.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\AIO_v_2.dir\lib4aio\lib4aio_cpp_sources\utils\struct_list\struct_list.cpp.obj -c C:\Users\StarKRE\CLionProjects\AIO.v.2\lib4aio\lib4aio_cpp_sources\utils\struct_list\struct_list.cpp
+
+CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/struct_list/struct_list.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/struct_list/struct_list.cpp.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\StarKRE\CLionProjects\AIO.v.2\lib4aio\lib4aio_cpp_sources\utils\struct_list\struct_list.cpp > CMakeFiles\AIO_v_2.dir\lib4aio\lib4aio_cpp_sources\utils\struct_list\struct_list.cpp.i
+
+CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/struct_list/struct_list.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/struct_list/struct_list.cpp.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\StarKRE\CLionProjects\AIO.v.2\lib4aio\lib4aio_cpp_sources\utils\struct_list\struct_list.cpp -o CMakeFiles\AIO_v_2.dir\lib4aio\lib4aio_cpp_sources\utils\struct_list\struct_list.cpp.s
+
+CMakeFiles/AIO_v_2.dir/sources/aio_utils/aio_value/aio_value.cpp.obj: CMakeFiles/AIO_v_2.dir/flags.make
+CMakeFiles/AIO_v_2.dir/sources/aio_utils/aio_value/aio_value.cpp.obj: CMakeFiles/AIO_v_2.dir/includes_CXX.rsp
+CMakeFiles/AIO_v_2.dir/sources/aio_utils/aio_value/aio_value.cpp.obj: ../sources/aio_utils/aio_value/aio_value.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\StarKRE\CLionProjects\AIO.v.2\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/AIO_v_2.dir/sources/aio_utils/aio_value/aio_value.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\AIO_v_2.dir\sources\aio_utils\aio_value\aio_value.cpp.obj -c C:\Users\StarKRE\CLionProjects\AIO.v.2\sources\aio_utils\aio_value\aio_value.cpp
+
+CMakeFiles/AIO_v_2.dir/sources/aio_utils/aio_value/aio_value.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AIO_v_2.dir/sources/aio_utils/aio_value/aio_value.cpp.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\StarKRE\CLionProjects\AIO.v.2\sources\aio_utils\aio_value\aio_value.cpp > CMakeFiles\AIO_v_2.dir\sources\aio_utils\aio_value\aio_value.cpp.i
+
+CMakeFiles/AIO_v_2.dir/sources/aio_utils/aio_value/aio_value.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AIO_v_2.dir/sources/aio_utils/aio_value/aio_value.cpp.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\StarKRE\CLionProjects\AIO.v.2\sources\aio_utils\aio_value\aio_value.cpp -o CMakeFiles\AIO_v_2.dir\sources\aio_utils\aio_value\aio_value.cpp.s
+
+CMakeFiles/AIO_v_2.dir/sources/aio_utils/aio_value/advanced_functions/compare_aio_value.cpp.obj: CMakeFiles/AIO_v_2.dir/flags.make
+CMakeFiles/AIO_v_2.dir/sources/aio_utils/aio_value/advanced_functions/compare_aio_value.cpp.obj: CMakeFiles/AIO_v_2.dir/includes_CXX.rsp
+CMakeFiles/AIO_v_2.dir/sources/aio_utils/aio_value/advanced_functions/compare_aio_value.cpp.obj: ../sources/aio_utils/aio_value/advanced_functions/compare_aio_value.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\StarKRE\CLionProjects\AIO.v.2\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/AIO_v_2.dir/sources/aio_utils/aio_value/advanced_functions/compare_aio_value.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\AIO_v_2.dir\sources\aio_utils\aio_value\advanced_functions\compare_aio_value.cpp.obj -c C:\Users\StarKRE\CLionProjects\AIO.v.2\sources\aio_utils\aio_value\advanced_functions\compare_aio_value.cpp
+
+CMakeFiles/AIO_v_2.dir/sources/aio_utils/aio_value/advanced_functions/compare_aio_value.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AIO_v_2.dir/sources/aio_utils/aio_value/advanced_functions/compare_aio_value.cpp.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\StarKRE\CLionProjects\AIO.v.2\sources\aio_utils\aio_value\advanced_functions\compare_aio_value.cpp > CMakeFiles\AIO_v_2.dir\sources\aio_utils\aio_value\advanced_functions\compare_aio_value.cpp.i
+
+CMakeFiles/AIO_v_2.dir/sources/aio_utils/aio_value/advanced_functions/compare_aio_value.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AIO_v_2.dir/sources/aio_utils/aio_value/advanced_functions/compare_aio_value.cpp.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\StarKRE\CLionProjects\AIO.v.2\sources\aio_utils\aio_value\advanced_functions\compare_aio_value.cpp -o CMakeFiles\AIO_v_2.dir\sources\aio_utils\aio_value\advanced_functions\compare_aio_value.cpp.s
+
+CMakeFiles/AIO_v_2.dir/sources/aio_utils/aio_value/advanced_functions/cast_aio_value.cpp.obj: CMakeFiles/AIO_v_2.dir/flags.make
+CMakeFiles/AIO_v_2.dir/sources/aio_utils/aio_value/advanced_functions/cast_aio_value.cpp.obj: CMakeFiles/AIO_v_2.dir/includes_CXX.rsp
+CMakeFiles/AIO_v_2.dir/sources/aio_utils/aio_value/advanced_functions/cast_aio_value.cpp.obj: ../sources/aio_utils/aio_value/advanced_functions/cast_aio_value.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\StarKRE\CLionProjects\AIO.v.2\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/AIO_v_2.dir/sources/aio_utils/aio_value/advanced_functions/cast_aio_value.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\AIO_v_2.dir\sources\aio_utils\aio_value\advanced_functions\cast_aio_value.cpp.obj -c C:\Users\StarKRE\CLionProjects\AIO.v.2\sources\aio_utils\aio_value\advanced_functions\cast_aio_value.cpp
+
+CMakeFiles/AIO_v_2.dir/sources/aio_utils/aio_value/advanced_functions/cast_aio_value.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AIO_v_2.dir/sources/aio_utils/aio_value/advanced_functions/cast_aio_value.cpp.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\StarKRE\CLionProjects\AIO.v.2\sources\aio_utils\aio_value\advanced_functions\cast_aio_value.cpp > CMakeFiles\AIO_v_2.dir\sources\aio_utils\aio_value\advanced_functions\cast_aio_value.cpp.i
+
+CMakeFiles/AIO_v_2.dir/sources/aio_utils/aio_value/advanced_functions/cast_aio_value.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AIO_v_2.dir/sources/aio_utils/aio_value/advanced_functions/cast_aio_value.cpp.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\StarKRE\CLionProjects\AIO.v.2\sources\aio_utils\aio_value\advanced_functions\cast_aio_value.cpp -o CMakeFiles\AIO_v_2.dir\sources\aio_utils\aio_value\advanced_functions\cast_aio_value.cpp.s
+
+CMakeFiles/AIO_v_2.dir/sources/aio_utils/aio_value/advanced_functions/log_aio_value.cpp.obj: CMakeFiles/AIO_v_2.dir/flags.make
+CMakeFiles/AIO_v_2.dir/sources/aio_utils/aio_value/advanced_functions/log_aio_value.cpp.obj: CMakeFiles/AIO_v_2.dir/includes_CXX.rsp
+CMakeFiles/AIO_v_2.dir/sources/aio_utils/aio_value/advanced_functions/log_aio_value.cpp.obj: ../sources/aio_utils/aio_value/advanced_functions/log_aio_value.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\StarKRE\CLionProjects\AIO.v.2\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/AIO_v_2.dir/sources/aio_utils/aio_value/advanced_functions/log_aio_value.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\AIO_v_2.dir\sources\aio_utils\aio_value\advanced_functions\log_aio_value.cpp.obj -c C:\Users\StarKRE\CLionProjects\AIO.v.2\sources\aio_utils\aio_value\advanced_functions\log_aio_value.cpp
+
+CMakeFiles/AIO_v_2.dir/sources/aio_utils/aio_value/advanced_functions/log_aio_value.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AIO_v_2.dir/sources/aio_utils/aio_value/advanced_functions/log_aio_value.cpp.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\StarKRE\CLionProjects\AIO.v.2\sources\aio_utils\aio_value\advanced_functions\log_aio_value.cpp > CMakeFiles\AIO_v_2.dir\sources\aio_utils\aio_value\advanced_functions\log_aio_value.cpp.i
+
+CMakeFiles/AIO_v_2.dir/sources/aio_utils/aio_value/advanced_functions/log_aio_value.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AIO_v_2.dir/sources/aio_utils/aio_value/advanced_functions/log_aio_value.cpp.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\StarKRE\CLionProjects\AIO.v.2\sources\aio_utils\aio_value\advanced_functions\log_aio_value.cpp -o CMakeFiles\AIO_v_2.dir\sources\aio_utils\aio_value\advanced_functions\log_aio_value.cpp.s
+
 # Object files for target AIO_v_2
 AIO_v_2_OBJECTS = \
 "CMakeFiles/AIO_v_2.dir/main/main.cpp.obj" \
@@ -342,7 +426,13 @@ AIO_v_2_OBJECTS = \
 "CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_iterator/str_hook_iterator.cpp.obj" \
 "CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/advanced_functions/str_hook_list_log.cpp.obj" \
 "CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/advanced_functions/str_hook_trim.cpp.obj" \
-"CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/str_hook_list.cpp.obj"
+"CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/str_hook_list.cpp.obj" \
+"CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/array_list_utils/array_list.cpp.obj" \
+"CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/struct_list/struct_list.cpp.obj" \
+"CMakeFiles/AIO_v_2.dir/sources/aio_utils/aio_value/aio_value.cpp.obj" \
+"CMakeFiles/AIO_v_2.dir/sources/aio_utils/aio_value/advanced_functions/compare_aio_value.cpp.obj" \
+"CMakeFiles/AIO_v_2.dir/sources/aio_utils/aio_value/advanced_functions/cast_aio_value.cpp.obj" \
+"CMakeFiles/AIO_v_2.dir/sources/aio_utils/aio_value/advanced_functions/log_aio_value.cpp.obj"
 
 # External object files for target AIO_v_2
 AIO_v_2_EXTERNAL_OBJECTS =
@@ -366,11 +456,17 @@ AIO_v_2.exe: CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_u
 AIO_v_2.exe: CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/advanced_functions/str_hook_list_log.cpp.obj
 AIO_v_2.exe: CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/advanced_functions/str_hook_trim.cpp.obj
 AIO_v_2.exe: CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/str_hook_list.cpp.obj
+AIO_v_2.exe: CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/array_list_utils/array_list.cpp.obj
+AIO_v_2.exe: CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/struct_list/struct_list.cpp.obj
+AIO_v_2.exe: CMakeFiles/AIO_v_2.dir/sources/aio_utils/aio_value/aio_value.cpp.obj
+AIO_v_2.exe: CMakeFiles/AIO_v_2.dir/sources/aio_utils/aio_value/advanced_functions/compare_aio_value.cpp.obj
+AIO_v_2.exe: CMakeFiles/AIO_v_2.dir/sources/aio_utils/aio_value/advanced_functions/cast_aio_value.cpp.obj
+AIO_v_2.exe: CMakeFiles/AIO_v_2.dir/sources/aio_utils/aio_value/advanced_functions/log_aio_value.cpp.obj
 AIO_v_2.exe: CMakeFiles/AIO_v_2.dir/build.make
 AIO_v_2.exe: CMakeFiles/AIO_v_2.dir/linklibs.rsp
 AIO_v_2.exe: CMakeFiles/AIO_v_2.dir/objects1.rsp
 AIO_v_2.exe: CMakeFiles/AIO_v_2.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\StarKRE\CLionProjects\AIO.v.2\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Linking CXX executable AIO_v_2.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\StarKRE\CLionProjects\AIO.v.2\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Linking CXX executable AIO_v_2.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\AIO_v_2.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

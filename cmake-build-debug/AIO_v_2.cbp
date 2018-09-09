@@ -90,19 +90,31 @@
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/headers/aio_lang/aio_lexer/aio_lexer.h">
 			<Option target="AIO_v_2"/>
 		</Unit>
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/headers/aio_lang/aio_types/aio_type.h">
+			<Option target="AIO_v_2"/>
+		</Unit>
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/headers/aio_utils/aio_bundle/aio_bundle.h">
+			<Option target="AIO_v_2"/>
+		</Unit>
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/headers/aio_utils/aio_value/advanced_functions/cast_aio_value.h">
+			<Option target="AIO_v_2"/>
+		</Unit>
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/headers/aio_utils/aio_value/advanced_functions/compare_aio_value.h">
+			<Option target="AIO_v_2"/>
+		</Unit>
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/headers/aio_utils/aio_value/advanced_functions/log_aio_value.h">
 			<Option target="AIO_v_2"/>
 		</Unit>
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/headers/aio_utils/aio_value/aio_value.h">
 			<Option target="AIO_v_2"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/headers/aio_utils/aio_value/aio_value_list.h">
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/lib4aio/lib4aio_cpp_headers/utils/array_list_utils/array_list.h">
 			<Option target="AIO_v_2"/>
 		</Unit>
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/lib4aio/lib4aio_cpp_headers/utils/char_utils/char_utils.h">
 			<Option target="AIO_v_2"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/lib4aio/lib4aio_cpp_headers/utils/list_utils/array_list.h">
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/lib4aio/lib4aio_cpp_headers/utils/error_utils/error_utils.h">
 			<Option target="AIO_v_2"/>
 		</Unit>
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/lib4aio/lib4aio_cpp_headers/utils/log_utils/log_utils.h">
@@ -117,13 +129,37 @@
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/lib4aio/lib4aio_cpp_headers/utils/point_watcher/str_hook_watcher/str_point_watcher.h">
 			<Option target="AIO_v_2"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/lib4aio/lib4aio_cpp_headers/utils/str_hook/str_hook/str_hook.h">
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/lib4aio/lib4aio_cpp_headers/utils/str_hook_utils/str_hook/str_hook.h">
 			<Option target="AIO_v_2"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/lib4aio/lib4aio_cpp_headers/utils/str_hook/str_hook_iterator/str_hook_iterator.h">
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/lib4aio/lib4aio_cpp_headers/utils/str_hook_utils/str_hook_iterator/str_hook_iterator.h">
 			<Option target="AIO_v_2"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/lib4aio/lib4aio_cpp_headers/utils/str_hook/str_hook_list/str_hook_list.h">
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/lib4aio/lib4aio_cpp_headers/utils/str_hook_utils/str_hook_list/str_hook_list.h">
+			<Option target="AIO_v_2"/>
+		</Unit>
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/lib4aio/lib4aio_cpp_headers/utils/string_utils/cast.h">
+			<Option target="AIO_v_2"/>
+		</Unit>
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/lib4aio/lib4aio_cpp_headers/utils/string_utils/common.h">
+			<Option target="AIO_v_2"/>
+		</Unit>
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/lib4aio/lib4aio_cpp_headers/utils/string_utils/match.h">
+			<Option target="AIO_v_2"/>
+		</Unit>
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/lib4aio/lib4aio_cpp_headers/utils/string_utils/split.h">
+			<Option target="AIO_v_2"/>
+		</Unit>
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/lib4aio/lib4aio_cpp_headers/utils/string_utils/suffix_prefix.h">
+			<Option target="AIO_v_2"/>
+		</Unit>
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/lib4aio/lib4aio_cpp_headers/utils/string_utils/trim.h">
+			<Option target="AIO_v_2"/>
+		</Unit>
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/lib4aio/lib4aio_cpp_headers/utils/struct_list/struct_list.h">
+			<Option target="AIO_v_2"/>
+		</Unit>
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/lib4aio/lib4aio_cpp_sources/utils/array_list_utils/array_list.cpp">
 			<Option target="AIO_v_2"/>
 		</Unit>
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/lib4aio/lib4aio_cpp_sources/utils/char_utils/char_utils.cpp">
@@ -174,6 +210,9 @@
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/str_hook_list.cpp">
 			<Option target="AIO_v_2"/>
 		</Unit>
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/lib4aio/lib4aio_cpp_sources/utils/struct_list/struct_list.cpp">
+			<Option target="AIO_v_2"/>
+		</Unit>
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/main/main.cpp">
 			<Option target="AIO_v_2"/>
 		</Unit>
@@ -184,6 +223,18 @@
 			<Option target="AIO_v_2"/>
 		</Unit>
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/sources/aio_utils/aio_bundle/aio_bundle.cpp">
+			<Option target="AIO_v_2"/>
+		</Unit>
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/sources/aio_utils/aio_value/advanced_functions/cast_aio_value.cpp">
+			<Option target="AIO_v_2"/>
+		</Unit>
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/sources/aio_utils/aio_value/advanced_functions/compare_aio_value.cpp">
+			<Option target="AIO_v_2"/>
+		</Unit>
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/sources/aio_utils/aio_value/advanced_functions/log_aio_value.cpp">
+			<Option target="AIO_v_2"/>
+		</Unit>
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/sources/aio_utils/aio_value/aio_value.cpp">
 			<Option target="AIO_v_2"/>
 		</Unit>
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/CMakeLists.txt">

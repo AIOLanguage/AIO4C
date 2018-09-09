@@ -1,7 +1,7 @@
-#include <cctype>
-#include <lib4aio_cpp_headers/utils/str_hook/str_hook/str_hook.h>
+#include <lib4aio_cpp_headers/utils/str_hook_utils/str_hook/str_hook.h>
 #include <lib4aio_cpp_headers/utils/char_utils/char_utils.h>
 #include <aio_lang/aio_lexer/aio_lexer.h>
+#include <ctype.h>
 
 namespace lib4aio
 {
@@ -13,11 +13,11 @@ namespace lib4aio
         auto length = this->get_size();
         auto start_position = this->start;
         if (length <= 0) {
-            throw_error(STRING_HOOK_TAG, "Empty string doesn't matches int!", this);
+            throw_error_with_hook(STRING_HOOK_TAG, "Empty string doesn't matches int!", this);
         }
         if (string[start_position] == '-') {
             if (length == 1) {
-                throw_error(STRING_HOOK_TAG, "Minus doesn't matches int!", this);
+                throw_error_with_hook(STRING_HOOK_TAG, "Minus doesn't matches int!", this);
             }
             start_position++;
         }
@@ -39,11 +39,11 @@ namespace lib4aio
             auto was_fraction = false;
             auto start_position = this->start;
             if (length <= 0) {
-                throw_error(STRING_HOOK_TAG, "Empty string doesn't matches double!", this);
+                throw_error_with_hook(STRING_HOOK_TAG, "Empty string doesn't matches double!", this);
             }
             if (is_minus_sign(string[start_position])) {
                 if (length == 1) {
-                    throw_error(STRING_HOOK_TAG, "Minus doesn't matches double!", this);
+                    throw_error_with_hook(STRING_HOOK_TAG, "Minus doesn't matches double!", this);
                 }
                 start_position++;
             }

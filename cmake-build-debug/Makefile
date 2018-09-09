@@ -122,6 +122,33 @@ AIO_v_2/fast:
 	$(MAKE) -f CMakeFiles\AIO_v_2.dir\build.make CMakeFiles/AIO_v_2.dir/build
 .PHONY : AIO_v_2/fast
 
+lib4aio/lib4aio_cpp_sources/utils/array_list_utils/array_list.obj: lib4aio/lib4aio_cpp_sources/utils/array_list_utils/array_list.cpp.obj
+
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/array_list_utils/array_list.obj
+
+# target to build an object file
+lib4aio/lib4aio_cpp_sources/utils/array_list_utils/array_list.cpp.obj:
+	$(MAKE) -f CMakeFiles\AIO_v_2.dir\build.make CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/array_list_utils/array_list.cpp.obj
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/array_list_utils/array_list.cpp.obj
+
+lib4aio/lib4aio_cpp_sources/utils/array_list_utils/array_list.i: lib4aio/lib4aio_cpp_sources/utils/array_list_utils/array_list.cpp.i
+
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/array_list_utils/array_list.i
+
+# target to preprocess a source file
+lib4aio/lib4aio_cpp_sources/utils/array_list_utils/array_list.cpp.i:
+	$(MAKE) -f CMakeFiles\AIO_v_2.dir\build.make CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/array_list_utils/array_list.cpp.i
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/array_list_utils/array_list.cpp.i
+
+lib4aio/lib4aio_cpp_sources/utils/array_list_utils/array_list.s: lib4aio/lib4aio_cpp_sources/utils/array_list_utils/array_list.cpp.s
+
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/array_list_utils/array_list.s
+
+# target to generate assembly for a file
+lib4aio/lib4aio_cpp_sources/utils/array_list_utils/array_list.cpp.s:
+	$(MAKE) -f CMakeFiles\AIO_v_2.dir\build.make CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/array_list_utils/array_list.cpp.s
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/array_list_utils/array_list.cpp.s
+
 lib4aio/lib4aio_cpp_sources/utils/char_utils/char_utils.obj: lib4aio/lib4aio_cpp_sources/utils/char_utils/char_utils.cpp.obj
 
 .PHONY : lib4aio/lib4aio_cpp_sources/utils/char_utils/char_utils.obj
@@ -554,6 +581,33 @@ lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/str_hook_list.cpp
 	$(MAKE) -f CMakeFiles\AIO_v_2.dir\build.make CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/str_hook_list.cpp.s
 .PHONY : lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/str_hook_list.cpp.s
 
+lib4aio/lib4aio_cpp_sources/utils/struct_list/struct_list.obj: lib4aio/lib4aio_cpp_sources/utils/struct_list/struct_list.cpp.obj
+
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/struct_list/struct_list.obj
+
+# target to build an object file
+lib4aio/lib4aio_cpp_sources/utils/struct_list/struct_list.cpp.obj:
+	$(MAKE) -f CMakeFiles\AIO_v_2.dir\build.make CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/struct_list/struct_list.cpp.obj
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/struct_list/struct_list.cpp.obj
+
+lib4aio/lib4aio_cpp_sources/utils/struct_list/struct_list.i: lib4aio/lib4aio_cpp_sources/utils/struct_list/struct_list.cpp.i
+
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/struct_list/struct_list.i
+
+# target to preprocess a source file
+lib4aio/lib4aio_cpp_sources/utils/struct_list/struct_list.cpp.i:
+	$(MAKE) -f CMakeFiles\AIO_v_2.dir\build.make CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/struct_list/struct_list.cpp.i
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/struct_list/struct_list.cpp.i
+
+lib4aio/lib4aio_cpp_sources/utils/struct_list/struct_list.s: lib4aio/lib4aio_cpp_sources/utils/struct_list/struct_list.cpp.s
+
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/struct_list/struct_list.s
+
+# target to generate assembly for a file
+lib4aio/lib4aio_cpp_sources/utils/struct_list/struct_list.cpp.s:
+	$(MAKE) -f CMakeFiles\AIO_v_2.dir\build.make CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/struct_list/struct_list.cpp.s
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/struct_list/struct_list.cpp.s
+
 main/main.obj: main/main.cpp.obj
 
 .PHONY : main/main.obj
@@ -635,6 +689,114 @@ sources/aio_utils/aio_bundle/aio_bundle.cpp.s:
 	$(MAKE) -f CMakeFiles\AIO_v_2.dir\build.make CMakeFiles/AIO_v_2.dir/sources/aio_utils/aio_bundle/aio_bundle.cpp.s
 .PHONY : sources/aio_utils/aio_bundle/aio_bundle.cpp.s
 
+sources/aio_utils/aio_value/advanced_functions/cast_aio_value.obj: sources/aio_utils/aio_value/advanced_functions/cast_aio_value.cpp.obj
+
+.PHONY : sources/aio_utils/aio_value/advanced_functions/cast_aio_value.obj
+
+# target to build an object file
+sources/aio_utils/aio_value/advanced_functions/cast_aio_value.cpp.obj:
+	$(MAKE) -f CMakeFiles\AIO_v_2.dir\build.make CMakeFiles/AIO_v_2.dir/sources/aio_utils/aio_value/advanced_functions/cast_aio_value.cpp.obj
+.PHONY : sources/aio_utils/aio_value/advanced_functions/cast_aio_value.cpp.obj
+
+sources/aio_utils/aio_value/advanced_functions/cast_aio_value.i: sources/aio_utils/aio_value/advanced_functions/cast_aio_value.cpp.i
+
+.PHONY : sources/aio_utils/aio_value/advanced_functions/cast_aio_value.i
+
+# target to preprocess a source file
+sources/aio_utils/aio_value/advanced_functions/cast_aio_value.cpp.i:
+	$(MAKE) -f CMakeFiles\AIO_v_2.dir\build.make CMakeFiles/AIO_v_2.dir/sources/aio_utils/aio_value/advanced_functions/cast_aio_value.cpp.i
+.PHONY : sources/aio_utils/aio_value/advanced_functions/cast_aio_value.cpp.i
+
+sources/aio_utils/aio_value/advanced_functions/cast_aio_value.s: sources/aio_utils/aio_value/advanced_functions/cast_aio_value.cpp.s
+
+.PHONY : sources/aio_utils/aio_value/advanced_functions/cast_aio_value.s
+
+# target to generate assembly for a file
+sources/aio_utils/aio_value/advanced_functions/cast_aio_value.cpp.s:
+	$(MAKE) -f CMakeFiles\AIO_v_2.dir\build.make CMakeFiles/AIO_v_2.dir/sources/aio_utils/aio_value/advanced_functions/cast_aio_value.cpp.s
+.PHONY : sources/aio_utils/aio_value/advanced_functions/cast_aio_value.cpp.s
+
+sources/aio_utils/aio_value/advanced_functions/compare_aio_value.obj: sources/aio_utils/aio_value/advanced_functions/compare_aio_value.cpp.obj
+
+.PHONY : sources/aio_utils/aio_value/advanced_functions/compare_aio_value.obj
+
+# target to build an object file
+sources/aio_utils/aio_value/advanced_functions/compare_aio_value.cpp.obj:
+	$(MAKE) -f CMakeFiles\AIO_v_2.dir\build.make CMakeFiles/AIO_v_2.dir/sources/aio_utils/aio_value/advanced_functions/compare_aio_value.cpp.obj
+.PHONY : sources/aio_utils/aio_value/advanced_functions/compare_aio_value.cpp.obj
+
+sources/aio_utils/aio_value/advanced_functions/compare_aio_value.i: sources/aio_utils/aio_value/advanced_functions/compare_aio_value.cpp.i
+
+.PHONY : sources/aio_utils/aio_value/advanced_functions/compare_aio_value.i
+
+# target to preprocess a source file
+sources/aio_utils/aio_value/advanced_functions/compare_aio_value.cpp.i:
+	$(MAKE) -f CMakeFiles\AIO_v_2.dir\build.make CMakeFiles/AIO_v_2.dir/sources/aio_utils/aio_value/advanced_functions/compare_aio_value.cpp.i
+.PHONY : sources/aio_utils/aio_value/advanced_functions/compare_aio_value.cpp.i
+
+sources/aio_utils/aio_value/advanced_functions/compare_aio_value.s: sources/aio_utils/aio_value/advanced_functions/compare_aio_value.cpp.s
+
+.PHONY : sources/aio_utils/aio_value/advanced_functions/compare_aio_value.s
+
+# target to generate assembly for a file
+sources/aio_utils/aio_value/advanced_functions/compare_aio_value.cpp.s:
+	$(MAKE) -f CMakeFiles\AIO_v_2.dir\build.make CMakeFiles/AIO_v_2.dir/sources/aio_utils/aio_value/advanced_functions/compare_aio_value.cpp.s
+.PHONY : sources/aio_utils/aio_value/advanced_functions/compare_aio_value.cpp.s
+
+sources/aio_utils/aio_value/advanced_functions/log_aio_value.obj: sources/aio_utils/aio_value/advanced_functions/log_aio_value.cpp.obj
+
+.PHONY : sources/aio_utils/aio_value/advanced_functions/log_aio_value.obj
+
+# target to build an object file
+sources/aio_utils/aio_value/advanced_functions/log_aio_value.cpp.obj:
+	$(MAKE) -f CMakeFiles\AIO_v_2.dir\build.make CMakeFiles/AIO_v_2.dir/sources/aio_utils/aio_value/advanced_functions/log_aio_value.cpp.obj
+.PHONY : sources/aio_utils/aio_value/advanced_functions/log_aio_value.cpp.obj
+
+sources/aio_utils/aio_value/advanced_functions/log_aio_value.i: sources/aio_utils/aio_value/advanced_functions/log_aio_value.cpp.i
+
+.PHONY : sources/aio_utils/aio_value/advanced_functions/log_aio_value.i
+
+# target to preprocess a source file
+sources/aio_utils/aio_value/advanced_functions/log_aio_value.cpp.i:
+	$(MAKE) -f CMakeFiles\AIO_v_2.dir\build.make CMakeFiles/AIO_v_2.dir/sources/aio_utils/aio_value/advanced_functions/log_aio_value.cpp.i
+.PHONY : sources/aio_utils/aio_value/advanced_functions/log_aio_value.cpp.i
+
+sources/aio_utils/aio_value/advanced_functions/log_aio_value.s: sources/aio_utils/aio_value/advanced_functions/log_aio_value.cpp.s
+
+.PHONY : sources/aio_utils/aio_value/advanced_functions/log_aio_value.s
+
+# target to generate assembly for a file
+sources/aio_utils/aio_value/advanced_functions/log_aio_value.cpp.s:
+	$(MAKE) -f CMakeFiles\AIO_v_2.dir\build.make CMakeFiles/AIO_v_2.dir/sources/aio_utils/aio_value/advanced_functions/log_aio_value.cpp.s
+.PHONY : sources/aio_utils/aio_value/advanced_functions/log_aio_value.cpp.s
+
+sources/aio_utils/aio_value/aio_value.obj: sources/aio_utils/aio_value/aio_value.cpp.obj
+
+.PHONY : sources/aio_utils/aio_value/aio_value.obj
+
+# target to build an object file
+sources/aio_utils/aio_value/aio_value.cpp.obj:
+	$(MAKE) -f CMakeFiles\AIO_v_2.dir\build.make CMakeFiles/AIO_v_2.dir/sources/aio_utils/aio_value/aio_value.cpp.obj
+.PHONY : sources/aio_utils/aio_value/aio_value.cpp.obj
+
+sources/aio_utils/aio_value/aio_value.i: sources/aio_utils/aio_value/aio_value.cpp.i
+
+.PHONY : sources/aio_utils/aio_value/aio_value.i
+
+# target to preprocess a source file
+sources/aio_utils/aio_value/aio_value.cpp.i:
+	$(MAKE) -f CMakeFiles\AIO_v_2.dir\build.make CMakeFiles/AIO_v_2.dir/sources/aio_utils/aio_value/aio_value.cpp.i
+.PHONY : sources/aio_utils/aio_value/aio_value.cpp.i
+
+sources/aio_utils/aio_value/aio_value.s: sources/aio_utils/aio_value/aio_value.cpp.s
+
+.PHONY : sources/aio_utils/aio_value/aio_value.s
+
+# target to generate assembly for a file
+sources/aio_utils/aio_value/aio_value.cpp.s:
+	$(MAKE) -f CMakeFiles\AIO_v_2.dir\build.make CMakeFiles/AIO_v_2.dir/sources/aio_utils/aio_value/aio_value.cpp.s
+.PHONY : sources/aio_utils/aio_value/aio_value.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -644,6 +806,9 @@ help:
 	@echo ... edit_cache
 	@echo ... AIO_v_2
 	@echo ... rebuild_cache
+	@echo ... lib4aio/lib4aio_cpp_sources/utils/array_list_utils/array_list.obj
+	@echo ... lib4aio/lib4aio_cpp_sources/utils/array_list_utils/array_list.i
+	@echo ... lib4aio/lib4aio_cpp_sources/utils/array_list_utils/array_list.s
 	@echo ... lib4aio/lib4aio_cpp_sources/utils/char_utils/char_utils.obj
 	@echo ... lib4aio/lib4aio_cpp_sources/utils/char_utils/char_utils.i
 	@echo ... lib4aio/lib4aio_cpp_sources/utils/char_utils/char_utils.s
@@ -692,6 +857,9 @@ help:
 	@echo ... lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/str_hook_list.obj
 	@echo ... lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/str_hook_list.i
 	@echo ... lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/str_hook_list.s
+	@echo ... lib4aio/lib4aio_cpp_sources/utils/struct_list/struct_list.obj
+	@echo ... lib4aio/lib4aio_cpp_sources/utils/struct_list/struct_list.i
+	@echo ... lib4aio/lib4aio_cpp_sources/utils/struct_list/struct_list.s
 	@echo ... main/main.obj
 	@echo ... main/main.i
 	@echo ... main/main.s
@@ -701,6 +869,18 @@ help:
 	@echo ... sources/aio_utils/aio_bundle/aio_bundle.obj
 	@echo ... sources/aio_utils/aio_bundle/aio_bundle.i
 	@echo ... sources/aio_utils/aio_bundle/aio_bundle.s
+	@echo ... sources/aio_utils/aio_value/advanced_functions/cast_aio_value.obj
+	@echo ... sources/aio_utils/aio_value/advanced_functions/cast_aio_value.i
+	@echo ... sources/aio_utils/aio_value/advanced_functions/cast_aio_value.s
+	@echo ... sources/aio_utils/aio_value/advanced_functions/compare_aio_value.obj
+	@echo ... sources/aio_utils/aio_value/advanced_functions/compare_aio_value.i
+	@echo ... sources/aio_utils/aio_value/advanced_functions/compare_aio_value.s
+	@echo ... sources/aio_utils/aio_value/advanced_functions/log_aio_value.obj
+	@echo ... sources/aio_utils/aio_value/advanced_functions/log_aio_value.i
+	@echo ... sources/aio_utils/aio_value/advanced_functions/log_aio_value.s
+	@echo ... sources/aio_utils/aio_value/aio_value.obj
+	@echo ... sources/aio_utils/aio_value/aio_value.i
+	@echo ... sources/aio_utils/aio_value/aio_value.s
 .PHONY : help
 
 

@@ -1,6 +1,6 @@
-#include <lib4aio_cpp_headers/utils/str_hook/str_hook/str_hook.h>
-#include <lib4aio_cpp_headers/utils/char_utils/char_utils.h>
 #include <aio_lang/aio_lexer/aio_lexer.h>
+#include <lib4aio_cpp_headers/utils/char_utils/char_utils.h>
+#include <lib4aio_cpp_headers/utils/str_hook_utils/str_hook/str_hook.h>
 
 #define CHAR_SHIFT '0'
 
@@ -53,6 +53,6 @@ namespace lib4aio
         if (is_aio_false_modifier(this)) {
             return false;
         }
-        throw_error(STRING_HOOK_TAG, "Can not cast to boolean!", this);
+        throw_error_with_hook(STRING_HOOK_TAG, "Can not cast to boolean!", this);
     }
 }

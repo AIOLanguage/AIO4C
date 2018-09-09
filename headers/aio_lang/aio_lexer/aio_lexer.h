@@ -1,7 +1,7 @@
 #ifndef AIO_LEXER_H
 #define AIO_LEXER_H
 
-#include <lib4aio_cpp_headers/utils/str_hook/str_hook/str_hook.h>
+#include <lib4aio_cpp_headers/utils/str_hook_utils/str_hook/str_hook.h>
 
 using namespace lib4aio;
 

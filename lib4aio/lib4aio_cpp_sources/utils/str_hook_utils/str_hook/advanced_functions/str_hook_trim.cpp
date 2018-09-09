@@ -1,4 +1,4 @@
-#include <lib4aio_cpp_headers/utils/str_hook/str_hook/str_hook.h>
+#include <lib4aio_cpp_headers/utils/str_hook_utils/str_hook/str_hook.h>
 #include <lib4aio_cpp_headers/utils/char_utils/char_utils.h>
 
 namespace lib4aio

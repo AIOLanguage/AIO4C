@@ -62,7 +62,7 @@ namespace lib4aio
     }
 
     template<class T>
-    void array_list<T>::foreach(void (*action)(const T *)) const
+    void array_list<T>::foreach(void (*action)(T *)) const
     {
         auto size = this->size;
         auto elements = this->elements;
