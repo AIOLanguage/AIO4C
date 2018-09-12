@@ -1,3 +1,7 @@
+#include <wchar.h>
+#include <clocale>
+#include <stdlib.h>
+#include <windows.h>
 #include <aio_utils/aio_value/aio_value.h>
 #include <aio_utils/aio_bundle/aio_bundle.h>
 #include <lib4aio_cpp_headers/utils/log_utils/log_utils.h>
@@ -14,18 +18,34 @@
 
 #define AIO_DEVELOPMENT
 
+#ifdef _WINDOWS_
+
+#define UTF_8 65001
+
+#endif
+
 using namespace lib4aio;
+
+static void make_config()
+{
+#ifdef _WINDOWS_
+    SetConsoleOutputCP(UTF_8);
+    SetConsoleCP(UTF_8);
+    log_info(AIO_TAG, "Windows 구성이 완료되었습니다.");
+#endif
+
+}
 
 static aio_bundle *create_bundle(const int argc, char **argv)
 {
-    //Build bundle:
-    auto file_path = new lib4aio::str_hook(argv[FILE_PATH_INDEX]);
-    auto function_name = new lib4aio::str_hook(argv[FUNCTION_NAME_INDEX]);
+    //묶음을 짓기:
+    auto file_path = new str_hook(argv[FILE_PATH_INDEX]);
+    auto function_name = new str_hook(argv[FUNCTION_NAME_INDEX]);
     auto arguments = new_struct_list(sizeof(aio_value *));
-    //Prepare input arguments:
+    //입력 인수들을 준비하기:
     auto has_function_arguments = argc > START_FUNCTION_ARG_INDEX;
     if (has_function_arguments) {
-        for (int i = START_FUNCTION_ARG_INDEX; i < argc; ++i) {
+        for (auto i = START_FUNCTION_ARG_INDEX; i < argc; ++i) {
             auto argument = new_aio_value_by_string(argv[i]);
             add_struct_in_list(arguments, argument);
         }
@@ -43,7 +63,7 @@ static void make_aio(const int argc, char *argv[])
     //print_result(result_list);
     //----------------------------------------------------------------------------------------------------------------—
     //찌꺼기 수집기 (Garbage collector):
-    //free_aio_bundle(input_bundle);
+    delete input_bundle;
     //free_aio_value_list(result_list);
 }
 
@@ -76,6 +96,7 @@ static void make_test()
 
 int main(int argc, char *argv[])
 {
+    make_config();
 #ifdef AIO_DEVELOPMENT
     make_test();
 #else
