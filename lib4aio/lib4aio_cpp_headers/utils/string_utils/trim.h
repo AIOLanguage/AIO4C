@@ -9,15 +9,9 @@ namespace lib4aio
 
     char *trim(const char *src);
 
-    char **trim_all(
-            const char **strings,
-            const unsigned number_of_strings
-    );
+    char **trim_all(const char **strings, const unsigned number_of_strings);
 
-    char **trim_all_with_line_break(
-            const char **strings,
-            const unsigned number_of_strings
-    );
+    char **trim_all_with_line_break(const char **strings, const unsigned number_of_strings);
 
     char *trim_start_with_line_break(const char *src);
 

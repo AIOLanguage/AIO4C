@@ -8,6 +8,9 @@ CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/array_list_utils/array_
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/char_utils/char_utils.cpp.obj: ../lib4aio/lib4aio_cpp_headers/utils/char_utils/char_utils.h
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/char_utils/char_utils.cpp.obj: ../lib4aio/lib4aio_cpp_sources/utils/char_utils/char_utils.cpp
 
+CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/error_utils/error_utils.cpp.obj: ../lib4aio/lib4aio_cpp_headers/utils/string_utils/common.h
+CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/error_utils/error_utils.cpp.obj: ../lib4aio/lib4aio_cpp_sources/utils/error_utils/error_utils.cpp
+
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/log_utils/log_utils.cpp.obj: ../lib4aio/lib4aio_cpp_headers/utils/log_utils/log_utils.h
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/log_utils/log_utils.cpp.obj: ../lib4aio/lib4aio_cpp_sources/utils/log_utils/log_utils.cpp
 
@@ -19,6 +22,11 @@ CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/point_watcher/point_wat
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/point_watcher/str_hook_watcher/str_point_watcher.cpp.obj: ../lib4aio/lib4aio_cpp_headers/utils/point_watcher/point_watcher.h
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/point_watcher/str_hook_watcher/str_point_watcher.cpp.obj: ../lib4aio/lib4aio_cpp_headers/utils/point_watcher/str_hook_watcher/str_point_watcher.h
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/point_watcher/str_hook_watcher/str_point_watcher.cpp.obj: ../lib4aio/lib4aio_cpp_sources/utils/point_watcher/str_hook_watcher/str_point_watcher.cpp
+
+CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_builder/str_builder.cpp.obj: ../lib4aio/lib4aio_cpp_headers/utils/memory_utils/memory_utils.h
+CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_builder/str_builder.cpp.obj: ../lib4aio/lib4aio_cpp_headers/utils/str_builder/str_builder.h
+CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_builder/str_builder.cpp.obj: ../lib4aio/lib4aio_cpp_headers/utils/string_utils/common.h
+CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_builder/str_builder.cpp.obj: ../lib4aio/lib4aio_cpp_sources/utils/str_builder/str_builder.cpp
 
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_cast.cpp.obj: ../headers/aio_lang/aio_lexer/aio_lexer.h
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_cast.cpp.obj: ../lib4aio/lib4aio_cpp_headers/utils/char_utils/char_utils.h
@@ -79,6 +87,30 @@ CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/str_hook_list.cpp.obj: ../lib4aio/lib4aio_cpp_sources/utils/array_list_utils/array_list.cpp
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/str_hook_list.cpp.obj: ../lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/str_hook_list.cpp
 
+CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/string_utils/common.cpp.obj: ../lib4aio/lib4aio_cpp_headers/utils/memory_utils/memory_utils.h
+CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/string_utils/common.cpp.obj: ../lib4aio/lib4aio_cpp_headers/utils/string_utils/common.h
+CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/string_utils/common.cpp.obj: ../lib4aio/lib4aio_cpp_sources/utils/string_utils/common.cpp
+
+CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/string_utils/match.cpp.obj: ../headers/aio_lang/aio_lexer/aio_lexer.h
+CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/string_utils/match.cpp.obj: ../lib4aio/lib4aio_cpp_headers/utils/char_utils/char_utils.h
+CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/string_utils/match.cpp.obj: ../lib4aio/lib4aio_cpp_headers/utils/str_hook_utils/str_hook/str_hook.h
+CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/string_utils/match.cpp.obj: ../lib4aio/lib4aio_cpp_headers/utils/string_utils/common.h
+CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/string_utils/match.cpp.obj: ../lib4aio/lib4aio_cpp_sources/utils/string_utils/match.cpp
+
+CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/string_utils/split.cpp.obj: ../lib4aio/lib4aio_cpp_headers/utils/memory_utils/memory_utils.h
+CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/string_utils/split.cpp.obj: ../lib4aio/lib4aio_cpp_headers/utils/string_utils/common.h
+CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/string_utils/split.cpp.obj: ../lib4aio/lib4aio_cpp_headers/utils/string_utils/split.h
+CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/string_utils/split.cpp.obj: ../lib4aio/lib4aio_cpp_sources/utils/string_utils/split.cpp
+
+CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/string_utils/suffix_prefix.cpp.obj: ../lib4aio/lib4aio_cpp_headers/utils/memory_utils/memory_utils.h
+CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/string_utils/suffix_prefix.cpp.obj: ../lib4aio/lib4aio_cpp_headers/utils/string_utils/common.h
+CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/string_utils/suffix_prefix.cpp.obj: ../lib4aio/lib4aio_cpp_sources/utils/string_utils/suffix_prefix.cpp
+
+CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/string_utils/trim.cpp.obj: ../lib4aio/lib4aio_cpp_headers/utils/char_utils/char_utils.h
+CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/string_utils/trim.cpp.obj: ../lib4aio/lib4aio_cpp_headers/utils/memory_utils/memory_utils.h
+CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/string_utils/trim.cpp.obj: ../lib4aio/lib4aio_cpp_headers/utils/string_utils/common.h
+CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/string_utils/trim.cpp.obj: ../lib4aio/lib4aio_cpp_sources/utils/string_utils/trim.cpp
+
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/struct_list/struct_list.cpp.obj: ../lib4aio/lib4aio_cpp_headers/utils/memory_utils/memory_utils.h
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/struct_list/struct_list.cpp.obj: ../lib4aio/lib4aio_cpp_headers/utils/struct_list/struct_list.h
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/struct_list/struct_list.cpp.obj: ../lib4aio/lib4aio_cpp_sources/utils/struct_list/struct_list.cpp
@@ -109,21 +141,32 @@ CMakeFiles/AIO_v_2.dir/sources/aio_utils/aio_value/advanced_functions/cast_aio_v
 CMakeFiles/AIO_v_2.dir/sources/aio_utils/aio_value/advanced_functions/cast_aio_value.cpp.obj: ../sources/aio_utils/aio_value/advanced_functions/cast_aio_value.cpp
 
 CMakeFiles/AIO_v_2.dir/sources/aio_utils/aio_value/advanced_functions/compare_aio_value.cpp.obj: ../headers/aio_lang/aio_types/aio_type.h
+CMakeFiles/AIO_v_2.dir/sources/aio_utils/aio_value/advanced_functions/compare_aio_value.cpp.obj: ../headers/aio_utils/aio_value/advanced_functions/cast_aio_value.h
 CMakeFiles/AIO_v_2.dir/sources/aio_utils/aio_value/advanced_functions/compare_aio_value.cpp.obj: ../headers/aio_utils/aio_value/aio_value.h
+CMakeFiles/AIO_v_2.dir/sources/aio_utils/aio_value/advanced_functions/compare_aio_value.cpp.obj: ../lib4aio/lib4aio_cpp_headers/utils/error_utils/error_utils.h
 CMakeFiles/AIO_v_2.dir/sources/aio_utils/aio_value/advanced_functions/compare_aio_value.cpp.obj: ../lib4aio/lib4aio_cpp_headers/utils/str_hook_utils/str_hook/str_hook.h
 CMakeFiles/AIO_v_2.dir/sources/aio_utils/aio_value/advanced_functions/compare_aio_value.cpp.obj: ../lib4aio/lib4aio_cpp_headers/utils/string_utils/common.h
 CMakeFiles/AIO_v_2.dir/sources/aio_utils/aio_value/advanced_functions/compare_aio_value.cpp.obj: ../sources/aio_utils/aio_value/advanced_functions/compare_aio_value.cpp
 
+CMakeFiles/AIO_v_2.dir/sources/aio_utils/aio_value/advanced_functions/log_aio_value.cpp.obj: ../headers/aio_lang/aio_types/aio_type.h
+CMakeFiles/AIO_v_2.dir/sources/aio_utils/aio_value/advanced_functions/log_aio_value.cpp.obj: ../headers/aio_utils/aio_value/aio_value.h
+CMakeFiles/AIO_v_2.dir/sources/aio_utils/aio_value/advanced_functions/log_aio_value.cpp.obj: ../lib4aio/lib4aio_cpp_headers/utils/log_utils/log_utils.h
+CMakeFiles/AIO_v_2.dir/sources/aio_utils/aio_value/advanced_functions/log_aio_value.cpp.obj: ../lib4aio/lib4aio_cpp_headers/utils/str_hook_utils/str_hook/str_hook.h
+CMakeFiles/AIO_v_2.dir/sources/aio_utils/aio_value/advanced_functions/log_aio_value.cpp.obj: ../lib4aio/lib4aio_cpp_headers/utils/string_utils/common.h
 CMakeFiles/AIO_v_2.dir/sources/aio_utils/aio_value/advanced_functions/log_aio_value.cpp.obj: ../sources/aio_utils/aio_value/advanced_functions/log_aio_value.cpp
 
+CMakeFiles/AIO_v_2.dir/sources/aio_utils/aio_value/aio_value.cpp.obj: ../headers/aio_lang/aio_lexer/aio_lexer.h
 CMakeFiles/AIO_v_2.dir/sources/aio_utils/aio_value/aio_value.cpp.obj: ../headers/aio_lang/aio_types/aio_type.h
 CMakeFiles/AIO_v_2.dir/sources/aio_utils/aio_value/aio_value.cpp.obj: ../headers/aio_utils/aio_value/aio_value.h
+CMakeFiles/AIO_v_2.dir/sources/aio_utils/aio_value/aio_value.cpp.obj: ../lib4aio/lib4aio_cpp_headers/utils/char_utils/char_utils.h
 CMakeFiles/AIO_v_2.dir/sources/aio_utils/aio_value/aio_value.cpp.obj: ../lib4aio/lib4aio_cpp_headers/utils/error_utils/error_utils.h
 CMakeFiles/AIO_v_2.dir/sources/aio_utils/aio_value/aio_value.cpp.obj: ../lib4aio/lib4aio_cpp_headers/utils/memory_utils/memory_utils.h
+CMakeFiles/AIO_v_2.dir/sources/aio_utils/aio_value/aio_value.cpp.obj: ../lib4aio/lib4aio_cpp_headers/utils/str_builder/str_builder.h
 CMakeFiles/AIO_v_2.dir/sources/aio_utils/aio_value/aio_value.cpp.obj: ../lib4aio/lib4aio_cpp_headers/utils/str_hook_utils/str_hook/str_hook.h
 CMakeFiles/AIO_v_2.dir/sources/aio_utils/aio_value/aio_value.cpp.obj: ../lib4aio/lib4aio_cpp_headers/utils/string_utils/cast.h
 CMakeFiles/AIO_v_2.dir/sources/aio_utils/aio_value/aio_value.cpp.obj: ../lib4aio/lib4aio_cpp_headers/utils/string_utils/common.h
 CMakeFiles/AIO_v_2.dir/sources/aio_utils/aio_value/aio_value.cpp.obj: ../lib4aio/lib4aio_cpp_headers/utils/string_utils/match.h
 CMakeFiles/AIO_v_2.dir/sources/aio_utils/aio_value/aio_value.cpp.obj: ../lib4aio/lib4aio_cpp_headers/utils/string_utils/suffix_prefix.h
+CMakeFiles/AIO_v_2.dir/sources/aio_utils/aio_value/aio_value.cpp.obj: ../lib4aio/lib4aio_cpp_sources/utils/string_utils/cast.cpp
 CMakeFiles/AIO_v_2.dir/sources/aio_utils/aio_value/aio_value.cpp.obj: ../sources/aio_utils/aio_value/aio_value.cpp
 

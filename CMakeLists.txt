@@ -7,8 +7,7 @@ set(CMAKE_CXX_STANDARD 17)
 include_directories(headers lib4aio)
 
 add_executable(AIO_v_2
-        #---------------------------------------------------------------------------------------------------------------
-        #MAIN:
+
         main/main.cpp
         #---------------------------------------------------------------------------------------------------------------
 
@@ -16,10 +15,14 @@ add_executable(AIO_v_2
         #HEADERS:
         headers
         #lang:
+        headers/aio_lang/aio_types/aio_type.h
         headers/aio_lang/aio_lexer/aio_lexer.h
         #aio_utils:
-        headers/aio_utils/aio_value/aio_value.h
         headers/aio_utils/aio_bundle/aio_bundle.h
+        headers/aio_utils/aio_value/aio_value.h
+        headers/aio_utils/aio_value/advanced_functions/log_aio_value.h
+        headers/aio_utils/aio_value/advanced_functions/cast_aio_value.h
+        headers/aio_utils/aio_value/advanced_functions/compare_aio_value.h
         #aio_tools:
         #lib4aio:
         lib4aio/lib4aio_cpp_headers/utils/char_utils/char_utils.h
@@ -32,6 +35,14 @@ add_executable(AIO_v_2
         lib4aio/lib4aio_cpp_headers/utils/point_watcher/str_hook_watcher/str_point_watcher.h
         lib4aio/lib4aio_cpp_headers/utils/str_hook_utils/str_hook_iterator/str_hook_iterator.h
         lib4aio/lib4aio_cpp_headers/utils/struct_list/struct_list.h
+        lib4aio/lib4aio_cpp_headers/utils/error_utils/error_utils.h
+        lib4aio/lib4aio_cpp_headers/utils/string_utils/match.h
+        lib4aio/lib4aio_cpp_headers/utils/string_utils/common.h
+        lib4aio/lib4aio_cpp_headers/utils/string_utils/cast.h
+        lib4aio/lib4aio_cpp_headers/utils/string_utils/split.h
+        lib4aio/lib4aio_cpp_headers/utils/string_utils/trim.h
+        lib4aio/lib4aio_cpp_headers/utils/string_utils/suffix_prefix.h
+        lib4aio/lib4aio_cpp_headers/utils/str_builder/str_builder.h
         #---------------------------------------------------------------------------------------------------------------
 
         #---------------------------------------------------------------------------------------------------------------
@@ -41,6 +52,10 @@ add_executable(AIO_v_2
         sources/aio_lang/aio_lexer/aio_lexer.cpp
         sources/aio_utils/aio_bundle/aio_bundle.cpp
         #aio_utils:
+        sources/aio_utils/aio_value/aio_value.cpp
+        sources/aio_utils/aio_value/advanced_functions/log_aio_value.cpp
+        sources/aio_utils/aio_value/advanced_functions/cast_aio_value.cpp
+        sources/aio_utils/aio_value/advanced_functions/compare_aio_value.cpp
         #aio_tools:
         #lib4aio:
         lib4aio/lib4aio_cpp_sources/utils/char_utils/char_utils.cpp
@@ -61,5 +76,11 @@ add_executable(AIO_v_2
         lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/str_hook_list.cpp
         lib4aio/lib4aio_cpp_sources/utils/array_list_utils/array_list.cpp
         lib4aio/lib4aio_cpp_sources/utils/struct_list/struct_list.cpp
+        lib4aio/lib4aio_cpp_sources/utils/string_utils/common.cpp
+        lib4aio/lib4aio_cpp_sources/utils/string_utils/match.cpp
+        lib4aio/lib4aio_cpp_sources/utils/string_utils/split.cpp
+        lib4aio/lib4aio_cpp_sources/utils/string_utils/suffix_prefix.cpp
+        lib4aio/lib4aio_cpp_sources/utils/string_utils/trim.cpp
+        lib4aio/lib4aio_cpp_sources/utils/str_builder/str_builder.cpp
         #---------------------------------------------------------------------------------------------------------------
-        sources/aio_utils/aio_value/aio_value.cpp sources/aio_utils/aio_value/advanced_functions/compare_aio_value.cpp sources/aio_utils/aio_value/advanced_functions/cast_aio_value.cpp sources/aio_utils/aio_value/advanced_functions/log_aio_value.cpp headers/aio_lang/aio_types/aio_type.h lib4aio/lib4aio_cpp_headers/utils/string_utils/match.h lib4aio/lib4aio_cpp_headers/utils/string_utils/common.h lib4aio/lib4aio_cpp_headers/utils/string_utils/cast.h lib4aio/lib4aio_cpp_headers/utils/string_utils/split.h lib4aio/lib4aio_cpp_headers/utils/string_utils/trim.h lib4aio/lib4aio_cpp_headers/utils/string_utils/suffix_prefix.h lib4aio/lib4aio_cpp_headers/utils/error_utils/error_utils.h headers/aio_utils/aio_value/advanced_functions/compare_aio_value.h headers/aio_utils/aio_value/advanced_functions/cast_aio_value.h headers/aio_utils/aio_value/advanced_functions/log_aio_value.h)
+        lib4aio/lib4aio_cpp_sources/utils/error_utils/error_utils.cpp)

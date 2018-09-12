@@ -22,11 +22,11 @@ namespace lib4aio
 
     bool is_empty_string(const char *string);
 
-    char *substring_by_offset(const char *string, int offset, int length);
+    char *substring_by_offset(const char *string, const unsigned offset, const unsigned length);
 
-    char *substring(const char *string, int start, int end);
+    char *substring(const char *string, const unsigned start, const unsigned end);
 
-    int get_string_array_size(const char **src);
+    unsigned get_string_array_size(const char *const *src);
 
     bool are_equal_strings(const char *first, const char *second);
 
@@ -34,9 +34,9 @@ namespace lib4aio
 
     void free_string(char *src);
 
-/**
- * Typedef utils.
- */
+    /**
+    * Typedef utils.
+    */
 
     typedef char *string;
 
