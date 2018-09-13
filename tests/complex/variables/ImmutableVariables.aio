@@ -1,0 +1,29 @@
+
+/**
+ * AIO
+ */
+
+fun castString() Str {
+    - a = 3.2
+    - b = a
+    ~ c Int = a + '1'
+    out 'Percent: ' + (c / 100.0)
+}
+
+/**
+ * Kotlin
+ */
+
+fun castString() : Str {
+    val a = 3.2
+    val b = a
+    val c Int = a + '1'
+    return 'Percent: ' + (c / 100.0)
+}
+
+fun castBoolean() Boolean {
+    - a Int = 1.2
+    - isTest Boolean = '1.0'
+    - isSuccessfulParsed Boolean = a && isTest && (((2 + '5') / 7) & 2 + 2 != 5) || ('false' && 0)
+    return isSuccessfulParsed
+}

@@ -82,7 +82,7 @@ static void make_test()
     //테스트를 준비하다:
     char *args[1024] = {
             const_cast<char *>(""),
-            const_cast<char *>("../aioPrograms/tests/complexTests/variables/Trivial.aio"),
+            const_cast<char *>("../aioPrograms/tests/complexTests/complex/Trivial.aio"),
             const_cast<char *>("countSqrHypotenuse"),
             const_cast<char *>("3"),
             const_cast<char *>("'4'")
