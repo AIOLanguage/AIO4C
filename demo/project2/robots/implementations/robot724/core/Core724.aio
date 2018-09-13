@@ -3,7 +3,7 @@ plg {
     java.util.logging.Logger
 }
 
-- log Logger pri = Logger.getLogger(Core724::class.name);
+- log Logger pri = Logger.getLogger(Core724::class.name)
 
 cls Core724 : Core {
 

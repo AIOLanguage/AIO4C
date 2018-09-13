@@ -1,12 +1,67 @@
-plg
+cls Person
 {
-    robots.abstractRobot.Robot
+    + firstName Str
+    - secondName Str
+    - age Int
+    - organization Str pri
+
+    new (
+        + firstName Str,
+        + secondName Str,
+        + age Int
+        )
+    {
+        $firstName = firstName
+        $secondName = secondName
+        $age = age
+    }
+
+    fun say(+ message Str)
+    {
+        println(message)
+    }
 }
 
-fun main(- args[] Str)
+
+fun main(+ args[] Str)
 {
-    - head = Head()
-    - core = Core724()
-    - robot Robot = Robot724(head, core)
-    robot.calc()
+    + person Person = Person('Ilya', 'Dolgushev', 19)
+    person.organization = 'Orego'
+    person.say('Ебить')
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//plg
+//{
+//    robots.abstractRobot.Robot
+//}
+
+//fun main(- args[] Str)
+//{
+//    - head = Head()
+//    - core = Core724()
+//    - robot Robot = Robot724(head, core)
+//    robot.calc()
+//}

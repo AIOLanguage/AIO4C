@@ -1,4 +1,5 @@
-cls Hand {
+cls Hand
+{
 
     - power Dou
 }

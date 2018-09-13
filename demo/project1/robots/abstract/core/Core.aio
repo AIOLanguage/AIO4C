@@ -1,4 +1,4 @@
-cls Core
+wrp Core
 {
     ~ batteryPower Int
 

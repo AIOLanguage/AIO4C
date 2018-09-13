@@ -7,14 +7,12 @@ plg {
     java.util.logging.Logger
 }
 
-- log pri = Logger.getLogger(FriendlyRobotAnnotationBeanPostProcessor.class.name)
-
 cls RobotVersionAnnotationBeanPostProcessor : BeanPostProcessor {
 
     @Override
     @Throws(BeansException)
-    postProcessBeforeInitialization(final Object bean, final String beanName) Object {
-        log.info("\n\n\nRobotVersionAnnotationBeanPostProcessor: BEFORE INIT: " + beanName)
+    postProcessBeforeInitialization(- bean Object, - beanName String) Object
+    {
         - clazz = bean.class
         - fields = clazz.declaredFields
         loo (field in fields) {
@@ -23,8 +21,6 @@ cls RobotVersionAnnotationBeanPostProcessor : BeanPostProcessor {
                 ReflectionUtils.makeAccessible(field)
                 - minVersion = robotVersionAnnotation.min
                 - currentVersion = ReflectionUtils.getField(field, bean) as Int
-                log.info("MIN VERSION: " + minVersion)
-                log.info("CURRENT VERSION: " + currentVersion)
                 if (minVersion > currentVersion) {
                     ReflectionUtils.setField(field, bean, minVersion)
                 }
@@ -35,8 +31,8 @@ cls RobotVersionAnnotationBeanPostProcessor : BeanPostProcessor {
 
     @Override
     @Throws(BeansException::class)
-    postProcessAfterInitialization(final Object bean, final String beanName) Object {
-        log.info("RobotVersionAnnotationBeanPostProcessor: AFTER INIT: " + beanName)
+    postProcessAfterInitialization(- bean Object, - beanName String) Object
+    {
         out bean
     }
 }

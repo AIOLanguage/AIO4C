@@ -1,9 +1,11 @@
-plg {
+plg
+{
     robots.abstract.head.Head
     robots.abstract.core.Core
 }
 
-cls {
+wrp
+{
 
     - head Head
     - core Core

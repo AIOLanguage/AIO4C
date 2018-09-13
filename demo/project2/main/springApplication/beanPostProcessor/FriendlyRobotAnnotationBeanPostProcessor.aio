@@ -5,26 +5,24 @@ plg {
     java.util.logging.Logger
 }
 
-- log pri = Logger.getLogger(FriendlyRobotAnnotationBeanPostProcessor::class.name)
-
-cls FriendlyRobotAnnotationBeanPostProcessor : BeanPostProcessor {
+cls FriendlyRobotAnnotationBeanPostProcessor : BeanPostProcessor
+{
 
     @Override
     @Throws(BeansException::class)
-    fun postProcessBeforeInitialization(- bean Object, - beanName String) Object {
+    fun postProcessBeforeInitialization(- bean Object,- beanName String) Object
+    {
         - friendlyRobotAnnotation = bean.class.getAnnotation(FriendlyRobot::class)
         if (friendlyRobotAnnotation) {
-            - message = "\n\n\n" + beanName + " IS A FRIENDLY ROBOT"
-            log.info(message.toUpperCase())
+            println('#beanName is a friendly robot')
         }
-        log.info("\n\n\nFriendlyRobotAnnotationBeanPostProcessor: BEFORE INIT: " + beanName)
         out bean
     }
 
     @Override
     @Throws(BeansException::class)
-    fun postProcessAfterInitialization(- bean Object, - beanName String) Object {
-        log.info("FriendlyRobotAnnotationBeanPostProcessor: AFTER INIT: " + beanName)
+    fun postProcessAfterInitialization(- bean Object, - beanName String) Object
+    {
         out bean
     }
 }

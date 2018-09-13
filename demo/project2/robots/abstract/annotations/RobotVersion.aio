@@ -7,15 +7,18 @@ plg {
 
 @Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)
-ann RobotVersion {
+ann RobotVersion
+{
 
     - min Int
 
-    new() {
+    new()
+    {
         $min = 0
     }
 
-    new(- min Int) {
+    new(- min Int)
+    {
         $min = min
     }
 }
