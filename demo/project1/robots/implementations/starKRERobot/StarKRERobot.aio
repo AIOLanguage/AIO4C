@@ -1,0 +1,25 @@
+plg
+{
+    robots.abstractRobot.Robot
+}
+
+cls StarKRERobot : Robot
+{
+    ~ version Int pri
+
+    @Override
+    fun calc()
+    {
+        println("I'm calculating...")
+    }
+
+    fun init()
+    {
+        println("Hello, I'm StarKRE with version: " + $version)
+    }
+
+    fun destroy()
+    {
+        println("No!!! I'l be BACK!!!!!")
+    }
+}

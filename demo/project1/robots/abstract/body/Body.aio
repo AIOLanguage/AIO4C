@@ -1,0 +1,9 @@
+cls Body
+{
+    - armor Dou
+
+    new (- armor Dou)
+    {
+        $armor = armor
+    }
+}

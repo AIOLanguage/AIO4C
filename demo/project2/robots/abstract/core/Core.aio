@@ -1,0 +1,8 @@
+wrp Core {
+
+    ~ batteryPower Int
+
+    fun install() *
+
+    fun activate() *
+}

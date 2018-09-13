@@ -87,16 +87,31 @@
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/headers">
 			<Option target="AIO_v_2"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/headers/aio_core/aio_context/aio_context.h">
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/headers/aio_core/aio_core.h">
 			<Option target="AIO_v_2"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/headers/aio_core/aio_core.h">
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/headers/aio_lang/aio_file/aio_class_definition/aio_class_definiiton.h">
+			<Option target="AIO_v_2"/>
+		</Unit>
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/headers/aio_lang/aio_file/aio_field/aio_field.h">
+			<Option target="AIO_v_2"/>
+		</Unit>
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/headers/aio_lang/aio_file/aio_field/definition/aio_field_definition.h">
+			<Option target="AIO_v_2"/>
+		</Unit>
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/headers/aio_lang/aio_file/aio_file.h">
+			<Option target="AIO_v_2"/>
+		</Unit>
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/headers/aio_lang/aio_file/aio_function/definition/aio_function_definition.h">
 			<Option target="AIO_v_2"/>
 		</Unit>
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/headers/aio_lang/aio_lexer/aio_lexer.h">
 			<Option target="AIO_v_2"/>
 		</Unit>
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/headers/aio_lang/aio_types/aio_type.h">
+			<Option target="AIO_v_2"/>
+		</Unit>
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/headers/aio_lang/aio_visibility_type/aio_visibility_type.h">
 			<Option target="AIO_v_2"/>
 		</Unit>
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/headers/aio_utils/aio_bundle/aio_bundle.h">

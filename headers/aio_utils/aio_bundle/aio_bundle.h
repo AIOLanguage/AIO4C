@@ -15,8 +15,6 @@ class aio_bundle
 
 private:
 
-    lib4aio::str_hook *file_path;
-
     lib4aio::str_hook *function_name;
 
 public:
@@ -26,12 +24,9 @@ public:
     struct struct_list *output_values;
 
     aio_bundle(
-            lib4aio::str_hook *file_path,
             lib4aio::str_hook *function_name,
             struct struct_list *input_values
     );
-
-    const lib4aio::str_hook *get_path() const;
 
     const lib4aio::str_hook *get_function_name() const;
 

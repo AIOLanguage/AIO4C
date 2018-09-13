@@ -1,0 +1,13 @@
+plg {
+    robots.abstract.head.Head
+    robots.abstract.core.Core
+}
+
+cls {
+
+    - head Head
+
+    - core Core
+
+    fun calc() *
+}

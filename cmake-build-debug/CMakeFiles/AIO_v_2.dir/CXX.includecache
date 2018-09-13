@@ -6,6 +6,18 @@
 
 #IncludeRegexTransform: 
 
+../headers/aio_core/aio_core.h
+aio_lang/aio_file/aio_file.h
+-
+lib4aio_cpp_headers/utils/str_hook_utils/str_hook_list/str_hook_list.h
+-
+
+../headers/aio_lang/aio_file/aio_file.h
+lib4aio_cpp_headers/utils/array_list_utils/array_list.h
+-
+lib4aio_cpp_headers/utils/str_hook_utils/str_hook/str_hook.h
+-
+
 ../headers/aio_utils/aio_bundle/aio_bundle.h
 lib4aio_cpp_headers/utils/struct_list/struct_list.h
 -
@@ -16,9 +28,17 @@ lib4aio_cpp_headers/utils/str_hook_utils/str_hook/str_hook.h
 lib4aio_cpp_headers/utils/str_hook_utils/str_hook/str_hook.h
 -
 
+../lib4aio/lib4aio_cpp_headers/utils/array_list_utils/array_list.h
+
 ../lib4aio/lib4aio_cpp_headers/utils/log_utils/log_utils.h
 
 ../lib4aio/lib4aio_cpp_headers/utils/str_hook_utils/str_hook/str_hook.h
+
+../lib4aio/lib4aio_cpp_headers/utils/str_hook_utils/str_hook_list/str_hook_list.h
+lib4aio_cpp_headers/utils/str_hook_utils/str_hook/str_hook.h
+-
+lib4aio_cpp_headers/utils/array_list_utils/array_list.h
+-
 
 ../lib4aio/lib4aio_cpp_headers/utils/struct_list/struct_list.h
 
@@ -40,5 +60,17 @@ lib4aio_cpp_headers/utils/log_utils/log_utils.h
 lib4aio_cpp_headers/utils/str_hook_utils/str_hook/str_hook.h
 -
 lib4aio_cpp_headers/utils/struct_list/struct_list.h
+-
+aio_core/aio_core.h
+-
+
+C:/Users/StarKRE/CLionProjects/AIO.v.2/sources/aio_utils/aio_bundle/aio_bundle.cpp
+stdlib.h
+-
+aio_utils/aio_value/aio_value.h
+-
+aio_utils/aio_bundle/aio_bundle.h
+-
+lib4aio_cpp_headers/utils/str_hook_utils/str_hook/str_hook.h
 -
 

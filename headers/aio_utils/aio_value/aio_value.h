@@ -9,16 +9,9 @@ using namespace lib4aio;
 #ifndef AIO_VALUE_H
 #define AIO_VALUE_H
 
-typedef enum aio_value_data_type
-{
-    AIO_VALUE_SINGLE_DATA, AIO_VALUE_ARRAY_DATA
-} aio_value_data_type;
 
 typedef struct aio_value
 {
-
-    enum aio_value_data_type data_type;
-
     const str_hook *type;
 
     union
@@ -29,6 +22,11 @@ typedef struct aio_value
         bool boolean_acc;
         void *reference;
     } get;
+
+    enum
+    {
+        AIO_VALUE_SINGLE_DATA, AIO_VALUE_ARRAY_DATA
+    } data_type;
 
 } aio_value;
 

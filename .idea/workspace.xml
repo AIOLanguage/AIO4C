@@ -12,9 +12,55 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="92aa3559-b190-4db0-9881-a1f19bf9613d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/tests/complex/variables/ImmutableVariables.aio" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/project1/build.aio_core" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/project1/main/main.aio" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/project1/robots/abstract/Robot.aio" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/project1/robots/abstract/body/Body.aio" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/project1/robots/abstract/core/Core.aio" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/project1/robots/abstract/hand/Hand.aio" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/project1/robots/abstract/head/Head.aio" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/project1/robots/abstract/leg/Leg.aio" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/project1/robots/implementations/robot724/Robot724.aio" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/project1/robots/implementations/robot724/core/Core724.aio" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/project1/robots/implementations/starKRERobot/StarKRERobot.aio" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/project2/build.aio_core" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/project2/main/main.aio" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/project2/main/springApplication/RobotApplication.aio" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/project2/main/springApplication/beanPostProcessor/FriendlyRobotAnnotationBeanPostProcessor.aio" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/project2/main/springApplication/beanPostProcessor/RobotVersionAnnotationBeanPostProcessor.aio" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/project2/robots/abstract/Robot.aio" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/project2/robots/abstract/annotations/FriendlyRobot.aio" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/project2/robots/abstract/annotations/RobotVersion.aio" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/project2/robots/abstract/body/Body.aio" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/project2/robots/abstract/core/Core.aio" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/project2/robots/abstract/hand/Hand.aio" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/project2/robots/abstract/head/Head.aio" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/project2/robots/abstract/leg/Leg.aio" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/project2/robots/implementations/robot724/Robot724.aio" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/project2/robots/implementations/robot724/core/Core724.aio" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/project2/robots/implementations/starKRERobot/StarKRERobot.aio" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/headers/aio_lang/aio_file/aio_class_definition/aio_class_definiiton.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/headers/aio_lang/aio_file/aio_field/aio_field.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/headers/aio_lang/aio_file/aio_field/definition/aio_field_definition.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/headers/aio_lang/aio_file/aio_file.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/headers/aio_lang/aio_file/aio_function/definition/aio_function_definition.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/headers/aio_lang/aio_visibility_type/aio_visibility_type.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/StarKRE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/StarKRE.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/AIO_v_2.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/AIO_v_2.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO_v_2.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO_v_2.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO_v_2.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO_v_2.dir/depend.internal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO_v_2.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO_v_2.dir/depend.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO_v_2.dir/main/main.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO_v_2.dir/sources/aio_utils/aio_bundle/aio_bundle.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO_v_2.dir/sources/aio_utils/aio_bundle/aio_bundle.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/headers/aio_core/aio_context/aio_context.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/headers/aio_core/aio_core.h" beforeDir="false" afterPath="$PROJECT_DIR$/headers/aio_core/aio_core.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/headers/aio_utils/aio_bundle/aio_bundle.h" beforeDir="false" afterPath="$PROJECT_DIR$/headers/aio_utils/aio_bundle/aio_bundle.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/headers/aio_utils/aio_value/aio_value.h" beforeDir="false" afterPath="$PROJECT_DIR$/headers/aio_utils/aio_value/aio_value.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib4aio/lib4aio_cpp_headers/utils/str_hook_utils/str_hook_list/str_hook_list.h" beforeDir="false" afterPath="$PROJECT_DIR$/lib4aio/lib4aio_cpp_headers/utils/str_hook_utils/str_hook_list/str_hook_list.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sources/aio_utils/aio_bundle/aio_bundle.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/sources/aio_utils/aio_bundle/aio_bundle.cpp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -39,41 +85,53 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="aio" value="1" />
+          <entry key="FriendlyRobot" value="1" />
+          <entry key="RobotApplication" value="1" />
+          <entry key="RobotVersion" value="1" />
+          <entry key="aio" value="231" />
+          <entry key="aio_core" value="7" />
+          <entry key="aiocore" value="3" />
           <entry key="c" value="70" />
-          <entry key="cpp" value="842" />
-          <entry key="h" value="765" />
+          <entry key="cpp" value="858" />
+          <entry key="h" value="821" />
           <entry key="list" value="1" />
           <entry key="md" value="1" />
           <entry key="string" value="1" />
-          <entry key="txt" value="39" />
+          <entry key="txt" value="40" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CMakeLists.txt" value="35" />
+          <entry key="CMakeLists.txt" value="36" />
           <entry key="Markdown" value="1" />
-          <entry key="ObjectiveC" value="1679" />
-          <entry key="PLAIN_TEXT" value="5" />
+          <entry key="ObjectiveC" value="1751" />
+          <entry key="PLAIN_TEXT" value="248" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="aio" value="191" />
+          <entry key="aio" value="1873" />
+          <entry key="aio_core" value="63" />
+          <entry key="aiocore" value="36" />
           <entry key="c" value="376" />
-          <entry key="cpp" value="10865" />
-          <entry key="h" value="5475" />
+          <entry key="cpp" value="11194" />
+          <entry key="h" value="6455" />
           <entry key="md" value="8" />
-          <entry key="txt" value="463" />
+          <entry key="txt" value="477" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CMakeLists.txt" value="167" />
-          <entry key="Doxygen file" value="65" />
+          <entry key="CMakeLists.txt" value="181" />
+          <entry key="Doxygen file" value="72" />
           <entry key="Markdown" value="8" />
-          <entry key="ObjectiveC" value="16651" />
-          <entry key="PLAIN_TEXT" value="487" />
+          <entry key="ObjectiveC" value="17953" />
+          <entry key="PLAIN_TEXT" value="2268" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.vcs.git.usages">
+        <counts>
+          <entry key="git.branch.checkout.local" value="3" />
         </counts>
       </usages-collector>
     </session>
@@ -81,10 +139,10 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/tests/complex/variables/ImmutableVariables.aio">
+        <entry file="file://$PROJECT_DIR$/headers/aio_lang/aio_file/aio_function/definition/aio_function_definition.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
+            <state relative-caret-position="153">
+              <caret line="9" column="19" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -115,42 +173,15 @@
       </list>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="aio4k.cpp" />
+      </map>
+    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/headers/aio_lang/aio_lexer/aio_lexer.h" />
-        <option value="$PROJECT_DIR$/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_cast.cpp" />
-        <option value="$PROJECT_DIR$/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_matcher.cpp" />
-        <option value="$PROJECT_DIR$/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_log.cpp" />
-        <option value="$PROJECT_DIR$/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_trim.cpp" />
-        <option value="$PROJECT_DIR$/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_error.cpp" />
-        <option value="$PROJECT_DIR$/lib4aio/lib4aio_cpp_headers/utils/str_hook_utils/str_hook_list/str_hook_list.h" />
-        <option value="$PROJECT_DIR$/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/advanced_functions/str_hook_trim.cpp" />
-        <option value="$PROJECT_DIR$/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/str_hook.cpp" />
-        <option value="$PROJECT_DIR$/lib4aio/lib4aio_cpp_sources/utils/array_list_utls/array_list.cpp" />
-        <option value="$PROJECT_DIR$/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/advanced_functions/str_hook_list_log.cpp" />
-        <option value="$PROJECT_DIR$/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_split.cpp" />
-        <option value="$PROJECT_DIR$/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_iterator/str_hook_iterator.cpp" />
-        <option value="$PROJECT_DIR$/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/str_hook_list.cpp" />
-        <option value="$PROJECT_DIR$/sources/aio_utils/aio_value/advanced_functions/aio_value_comparing.cpp" />
-        <option value="$PROJECT_DIR$/sources/aio_utils/aio_value/advanced_functions/aio_value_casting.cpp" />
-        <option value="$PROJECT_DIR$/headers/aio_lang/aio_types/aio_type.h" />
-        <option value="$PROJECT_DIR$/lib4aio/lib4aio_cpp_headers/utils/string_utils/casts.h" />
-        <option value="$PROJECT_DIR$/lib4aio/lib4aio_cpp_headers/utils/array_list_utils/array_list.h" />
-        <option value="$PROJECT_DIR$/lib4aio/lib4aio_cpp_headers/utils/string_utils/split.h" />
-        <option value="$PROJECT_DIR$/lib4aio/lib4aio_cpp_headers/utils/string_utils/suffix_prefix.h" />
-        <option value="$PROJECT_DIR$/lib4aio/lib4aio_cpp_headers/utils/string_utils/match.h" />
-        <option value="$PROJECT_DIR$/lib4aio/lib4aio_cpp_headers/utils/string_utils/cast.h" />
-        <option value="$PROJECT_DIR$/lib4aio/lib4aio_cpp_headers/utils/error_utils/error_utils.h" />
-        <option value="$PROJECT_DIR$/headers/aio_utils/aio_value/aio_value.h" />
-        <option value="$PROJECT_DIR$/headers/aio_utils/aio_value/advanced_functions/log_aio_value.h" />
-        <option value="$PROJECT_DIR$/headers/aio_utils/aio_value/advanced_functions/compare_aio_value.h" />
-        <option value="$PROJECT_DIR$/headers/aio_utils/aio_value/advanced_functions/cast_aio_value.h" />
-        <option value="$PROJECT_DIR$/lib4aio/lib4aio_cpp_headers/utils/str_hook_utils/str_hook/str_hook.h" />
-        <option value="$PROJECT_DIR$/sources/aio_utils/aio_value/advanced_functions/cast_aio_value.cpp" />
-        <option value="$PROJECT_DIR$/sources/aio_utils/aio_value/advanced_functions/compare_aio_value.cpp" />
-        <option value="$PROJECT_DIR$/sources/aio_utils/aio_value/advanced_functions/log_aio_value.cpp" />
         <option value="$PROJECT_DIR$/tests/test.txt" />
         <option value="$PROJECT_DIR$/main/a.c" />
         <option value="$PROJECT_DIR$/lib4aio/lib4aio_cpp_headers/utils/str_builder/str_builder.h" />
@@ -163,13 +194,45 @@
         <option value="$PROJECT_DIR$/lib4aio/lib4aio_cpp_headers/utils/string_utils/common.h" />
         <option value="$PROJECT_DIR$/lib4aio/lib4aio_cpp_sources/utils/string_utils/common.cpp" />
         <option value="$PROJECT_DIR$/lib4aio/lib4aio_cpp_sources/utils/string_utils/cast.cpp" />
-        <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/sources/aio_utils/aio_value/aio_value.cpp" />
         <option value="$PROJECT_DIR$/lib4aio/lib4aio_cpp_sources/utils/error_utils/error_utils.cpp" />
-        <option value="$PROJECT_DIR$/main/main.cpp" />
-        <option value="$PROJECT_DIR$/headers/aio_core/aio_core.h" />
         <option value="$PROJECT_DIR$/headers/aio_core/aio_context/aio_context.h" />
         <option value="$PROJECT_DIR$/tests/complex/variables/ImmutableVariables.aio" />
+        <option value="$PROJECT_DIR$/demo/projectDemo1/build.aiocore" />
+        <option value="$PROJECT_DIR$/demo/projectDemo1/robots/abstract/head/Head.aio" />
+        <option value="$PROJECT_DIR$/demo/projectDemo1/robots/abstract/leg/Leg.aio" />
+        <option value="$PROJECT_DIR$/demo/projectDemo1/robots/abstract/annotations/FriendlyRobot.aio" />
+        <option value="$PROJECT_DIR$/demo/projectDemo1/robots/abstract/annotations/RobotVersion.aio" />
+        <option value="$PROJECT_DIR$/demo/projectDemo1/main/springApplication/RobotApplication.aio" />
+        <option value="$PROJECT_DIR$/demo/projectDemo1/main/springApplication/beanPostProcessor/FriendlyRobotAnnotationBeanPostProcessor.aio" />
+        <option value="$PROJECT_DIR$/demo/projectDemo1/main/springApplication/beanPostProcessor/RobotVersionAnnotationBeanPostProcessor.aio" />
+        <option value="$PROJECT_DIR$/demo/projectDemo1/build.aio_core" />
+        <option value="$PROJECT_DIR$/demo/projectDemo2/robots/implementations/robot724/Robot724.aio" />
+        <option value="$PROJECT_DIR$/demo/projectDemo2/robots/abstract/core/Core.aio" />
+        <option value="$PROJECT_DIR$/demo/projectDemo2/robots/implementations/robot724/core/Core724.aio" />
+        <option value="$PROJECT_DIR$/demo/projectDemo1/robots/abstract/core/Core.aio" />
+        <option value="$PROJECT_DIR$/demo/projectDemo1/robots/abstract/hand/Hand.aio" />
+        <option value="$PROJECT_DIR$/demo/projectDemo1/robots/implementations/robot724/Robot724.aio" />
+        <option value="$PROJECT_DIR$/demo/projectDemo1/robots/abstract/body/Body.aio" />
+        <option value="$PROJECT_DIR$/demo/projectDemo1/robots/abstract/Robot.aio" />
+        <option value="$PROJECT_DIR$/demo/projectDemo1/robots/implementations/robot724/core/Core724.aio" />
+        <option value="$PROJECT_DIR$/demo/projectDemo1/robots/implementations/starKRERobot/StarKRERobot.aio" />
+        <option value="$PROJECT_DIR$/demo/projectDemo1/main/main.aio" />
+        <option value="$PROJECT_DIR$/sources/aio_utils/aio_bundle/aio_bundle.cpp" />
+        <option value="$PROJECT_DIR$/headers/aio_utils/aio_bundle/aio_bundle.h" />
+        <option value="$PROJECT_DIR$/headers/aio_lang/aio_source_file/aio_source_file.h" />
+        <option value="$PROJECT_DIR$/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/main/main.cpp" />
+        <option value="$PROJECT_DIR$/lib4aio/lib4aio_cpp_headers/utils/str_hook_utils/str_hook_list/str_hook_list.h" />
+        <option value="$PROJECT_DIR$/headers/aio_lang/aio_file/aio_file.h" />
+        <option value="$PROJECT_DIR$/headers/aio_lang/aio_file/aio_class_definition/aio_class_definiiton.h" />
+        <option value="$PROJECT_DIR$/headers/aio_lang/aio_file/aio_field_definition/aio_field_definition.h" />
+        <option value="$PROJECT_DIR$/headers/aio_lang/aio_visibility_type/aio_visibility_type.h" />
+        <option value="$PROJECT_DIR$/headers/aio_lang/aio_file/aio_field/definition/aio_field_definition.h" />
+        <option value="$PROJECT_DIR$/headers/aio_utils/aio_value/aio_value.h" />
+        <option value="$PROJECT_DIR$/headers/aio_lang/aio_file/aio_field/aio_field.h" />
+        <option value="$PROJECT_DIR$/headers/aio_core/aio_core.h" />
+        <option value="$PROJECT_DIR$/headers/aio_lang/aio_file/aio_function/definition/aio_function_definition.h" />
       </list>
     </option>
   </component>
@@ -276,20 +339,76 @@
             <path>
               <item name="AIO_v_2" type="b2602c69:ProjectViewProjectNode" />
               <item name="AIO.v.2" type="462c0819:PsiDirectoryNode" />
-              <item name="tests" type="462c0819:PsiDirectoryNode" />
+              <item name="headers" type="462c0819:PsiDirectoryNode" />
+              <item name="aio_lang" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="AIO_v_2" type="b2602c69:ProjectViewProjectNode" />
               <item name="AIO.v.2" type="462c0819:PsiDirectoryNode" />
-              <item name="tests" type="462c0819:PsiDirectoryNode" />
-              <item name="complex" type="462c0819:PsiDirectoryNode" />
+              <item name="headers" type="462c0819:PsiDirectoryNode" />
+              <item name="aio_lang" type="462c0819:PsiDirectoryNode" />
+              <item name="aio_file" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="AIO_v_2" type="b2602c69:ProjectViewProjectNode" />
               <item name="AIO.v.2" type="462c0819:PsiDirectoryNode" />
-              <item name="tests" type="462c0819:PsiDirectoryNode" />
-              <item name="complex" type="462c0819:PsiDirectoryNode" />
-              <item name="variables" type="462c0819:PsiDirectoryNode" />
+              <item name="headers" type="462c0819:PsiDirectoryNode" />
+              <item name="aio_lang" type="462c0819:PsiDirectoryNode" />
+              <item name="aio_file" type="462c0819:PsiDirectoryNode" />
+              <item name="aio_field" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AIO_v_2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AIO.v.2" type="462c0819:PsiDirectoryNode" />
+              <item name="headers" type="462c0819:PsiDirectoryNode" />
+              <item name="aio_lang" type="462c0819:PsiDirectoryNode" />
+              <item name="aio_file" type="462c0819:PsiDirectoryNode" />
+              <item name="aio_field" type="462c0819:PsiDirectoryNode" />
+              <item name="definition" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AIO_v_2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AIO.v.2" type="462c0819:PsiDirectoryNode" />
+              <item name="headers" type="462c0819:PsiDirectoryNode" />
+              <item name="aio_lang" type="462c0819:PsiDirectoryNode" />
+              <item name="aio_file" type="462c0819:PsiDirectoryNode" />
+              <item name="aio_function" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AIO_v_2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AIO.v.2" type="462c0819:PsiDirectoryNode" />
+              <item name="headers" type="462c0819:PsiDirectoryNode" />
+              <item name="aio_utils" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AIO_v_2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AIO.v.2" type="462c0819:PsiDirectoryNode" />
+              <item name="headers" type="462c0819:PsiDirectoryNode" />
+              <item name="aio_utils" type="462c0819:PsiDirectoryNode" />
+              <item name="aio_value" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AIO_v_2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AIO.v.2" type="462c0819:PsiDirectoryNode" />
+              <item name="lib4aio" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AIO_v_2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AIO.v.2" type="462c0819:PsiDirectoryNode" />
+              <item name="lib4aio" type="462c0819:PsiDirectoryNode" />
+              <item name="lib4aio_cpp_headers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AIO_v_2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AIO.v.2" type="462c0819:PsiDirectoryNode" />
+              <item name="lib4aio" type="462c0819:PsiDirectoryNode" />
+              <item name="lib4aio_cpp_headers" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AIO_v_2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AIO.v.2" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -306,19 +425,19 @@
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.C/C++" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\StarKRE\CLionProjects\AIO.v.2\lib4aio\lib4aio_cpp_sources\utils" />
-      <recent name="C:\Users\StarKRE\CLionProjects\AIO.v.2\lib4aio\lib4aio_cpp_headers\utils" />
-      <recent name="C:\Users\StarKRE\CLionProjects\AIO.v.2" />
-      <recent name="C:\Users\StarKRE\CLionProjects\AIO.v.2\lib\headers\utils" />
-      <recent name="C:\Users\StarKRE\CLionProjects\AIO.v.2\lib\sources\utils" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\StarKRE\CLionProjects\AIO.v.2\headers\aio_lang\aio_file\aio_field\definition" />
       <recent name="C:\Users\StarKRE\CLionProjects\AIO.v.2\lib4aio\lib4aio_cpp_headers\utils\point_watcher" />
       <recent name="C:\Users\StarKRE\CLionProjects\AIO.v.2\lib4aio\lib4aio_cpp_headers\utils\point_watcher\str_hook_watcher" />
       <recent name="C:\Users\StarKRE\CLionProjects\AIO.v.2\lib4aio\lib4aio_cpp_headers\utils\point_watcher\point_watcher" />
       <recent name="C:\Users\StarKRE\CLionProjects\AIO.v.2\lib4aio\lib4aio_cpp_headers\utils\str_hook\str_hook_list" />
-      <recent name="C:\Users\StarKRE\CLionProjects\AIO.v.2\lib4aio\lib4aio_cpp_headers\utils\str_hook\str_hook_iterator" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\StarKRE\CLionProjects\AIO.v.2\demo\projectDemo1" />
+      <recent name="C:\Users\StarKRE\CLionProjects\AIO.v.2\lib4aio\lib4aio_cpp_sources\utils" />
+      <recent name="C:\Users\StarKRE\CLionProjects\AIO.v.2\lib4aio\lib4aio_cpp_headers\utils" />
+      <recent name="C:\Users\StarKRE\CLionProjects\AIO.v.2" />
+      <recent name="C:\Users\StarKRE\CLionProjects\AIO.v.2\lib\headers\utils" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -368,7 +487,7 @@
       <workItem from="1536687634326" duration="1860000" />
       <workItem from="1536736131025" duration="2487000" />
       <workItem from="1536755840114" duration="14085000" />
-      <workItem from="1536850197939" duration="4388000" />
+      <workItem from="1536850197939" duration="15318000" />
     </task>
     <task id="LOCAL-00001" summary="AIO CPP 빌드:&#10;-&gt; 부분적으로 'point_watcher' 과 'str_hook' 다시 만들었습니다">
       <created>1536080376822</created>
@@ -412,17 +531,24 @@
       <option name="project" value="LOCAL" />
       <updated>1536780496736</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="AIO CPP 빌드:&#10;-&gt; 'UTF-8' 추가했습니다">
+      <created>1536854763905</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1536854763905</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="93246000" />
+    <option name="totallyTimeSpent" value="104176000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.22005208" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -462,107 +588,190 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/main/a.c" />
     <entry file="file://$PROJECT_DIR$/tests/test.txt" />
-    <entry file="file://C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/i686-w64-mingw32/include/stdio.h">
+    <entry file="file://$PROJECT_DIR$/demo/project1/robots/abstract/body/Body.aio">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="932" column="4" selection-start-line="932" selection-start-column="4" selection-end-line="932" selection-end-column="4" />
+        <state relative-caret-position="136">
+          <caret line="8" column="1" lean-forward="true" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/i686-w64-mingw32/include/wchar.h">
+    <entry file="file://$PROJECT_DIR$/demo/project1/robots/abstract/core/Core.aio">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="1420" column="17" selection-start-line="1420" selection-start-column="17" selection-end-line="1420" selection-end-column="17" />
+        <state relative-caret-position="119">
+          <caret line="7" column="1" lean-forward="true" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/i686-w64-mingw32/include/windows.h">
+    <entry file="file://$PROJECT_DIR$/demo/project1/robots/abstract/hand/Hand.aio">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        <state relative-caret-position="17">
+          <caret line="1" column="1" selection-start-line="1" selection-start-column="1" selection-end-line="1" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/i686-w64-mingw32/include/wincon.h">
+    <entry file="file://$PROJECT_DIR$/demo/project1/robots/abstract/head/Head.aio">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo/project1/robots/abstract/leg/Leg.aio">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo/project1/robots/abstract/Robot.aio">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="267" column="28" selection-start-line="267" selection-start-column="28" selection-end-line="267" selection-end-column="28" />
+        <state relative-caret-position="289">
+          <caret line="17" column="1" lean-forward="true" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib4aio/lib4aio_cpp_sources/utils/struct_list/struct_list.cpp">
+    <entry file="file://$PROJECT_DIR$/demo/project1/robots/implementations/robot724/core/Core724.aio">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="31" column="9" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="9" />
+        <state relative-caret-position="323">
+          <caret line="19" column="1" lean-forward="true" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo/project1/robots/implementations/robot724/Robot724.aio">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo/project1/robots/implementations/starKRERobot/StarKRERobot.aio">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="1" lean-forward="true" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo/project1/main/main.aio">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="1" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo/project1/build.aio_core">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="20" lean-forward="true" selection-start-column="20" selection-end-column="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sources/aio_utils/aio_bundle/aio_bundle.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="8" column="12" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/headers/aio_lang/aio_lexer/aio_lexer.h">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/headers/aio_lang/aio_types/aio_type.h">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main/main.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="68">
+          <caret line="7" column="21" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/headers/aio_utils/aio_bundle/aio_bundle.h">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib4aio/lib4aio_cpp_headers/utils/struct_list/struct_list.h">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib4aio/lib4aio_cpp_headers/utils/array_list_utils/array_list.h">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib4aio/lib4aio_cpp_headers/utils/str_builder/str_builder.h">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib4aio/lib4aio_cpp_headers/utils/str_hook_utils/str_hook_iterator/str_hook_iterator.h">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib4aio/lib4aio_cpp_headers/utils/str_hook_utils/str_hook_list/str_hook_list.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
-          <caret line="8" column="10" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
+          <caret line="7" column="62" lean-forward="true" selection-start-line="7" selection-start-column="62" selection-end-line="7" selection-end-column="62" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/headers/aio_core/aio_context/aio_context.h">
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="419">
+          <caret line="89" column="9" selection-start-line="89" selection-start-column="9" selection-end-line="89" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="101">
+          <caret line="67" column="6" lean-forward="true" selection-start-line="67" selection-start-column="6" selection-end-line="67" selection-end-column="6" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#1570#1591#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib4aio/lib4aio_cpp_headers/utils/str_hook_utils/str_hook_list/str_hook_list.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="31" column="1" lean-forward="true" selection-start-line="31" selection-start-column="1" selection-end-line="31" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/headers/aio_lang/aio_file/aio_file.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="29" column="35" selection-start-line="29" selection-start-column="35" selection-end-line="29" selection-end-column="35" />
+          <folding>
+            <element signature="e#53#119#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/headers/aio_lang/aio_file/aio_class_definition/aio_class_definiiton.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="18" selection-start-column="18" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/headers/aio_lang/aio_visibility_type/aio_visibility_type.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="30" lean-forward="true" selection-start-line="25" selection-start-column="30" selection-end-line="25" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/headers/aio_utils/aio_value/aio_value.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="651">
-          <caret line="63" column="22" lean-forward="true" selection-start-line="63" selection-start-column="22" selection-end-line="63" selection-end-column="22" />
+          <caret line="50" column="20" lean-forward="true" selection-start-line="50" selection-start-column="20" selection-end-line="50" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib4aio/lib4aio_cpp_headers/utils/array_list_utils/array_list.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="10" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib4aio/lib4aio_cpp_headers/utils/str_hook_utils/str_hook/str_hook.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="10" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/headers/aio_lang/aio_file/aio_field/definition/aio_field_definition.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
           <folding>
-            <element signature="e#45#89#0" expanded="true" />
+            <element signature="e#63#124#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/headers/aio_lang/aio_file/aio_field/aio_field.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="9" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/headers/aio_core/aio_core.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="16" lean-forward="true" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
+        <state relative-caret-position="255">
+          <caret line="15" column="1" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
+          <folding>
+            <element signature="e#39#78#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/complex/variables/ImmutableVariables.aio">
+    <entry file="file://$PROJECT_DIR$/headers/aio_lang/aio_file/aio_function/definition/aio_function_definition.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
+        <state relative-caret-position="153">
+          <caret line="9" column="19" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="19" />
         </state>
       </provider>
     </entry>

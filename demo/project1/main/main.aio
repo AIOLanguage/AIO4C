@@ -1,0 +1,12 @@
+plg
+{
+    robots.abstractRobot.Robot
+}
+
+fun main(- args[] Str)
+{
+    - head = Head()
+    - core = Core724()
+    - robot Robot = Robot724(head, core)
+    robot.calc()
+}

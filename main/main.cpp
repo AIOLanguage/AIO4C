@@ -7,12 +7,13 @@
 #include <lib4aio_cpp_headers/utils/log_utils/log_utils.h>
 #include <lib4aio_cpp_headers/utils/str_hook_utils/str_hook/str_hook.h>
 #include <lib4aio_cpp_headers/utils/struct_list/struct_list.h>
+#include <aio_core/aio_core.h>
 
 #define FILE_PATH_INDEX 1
 
-#define FUNCTION_NAME_INDEX 2
+#define START_FUNCTION_ARG_INDEX 2
 
-#define START_FUNCTION_ARG_INDEX 3
+#define ROOT_FUNCTION_NAME "main"
 
 #define AIO_TAG "AIO"
 
@@ -36,37 +37,6 @@ static void make_config()
 
 }
 
-static aio_bundle *create_bundle(const int argc, char **argv)
-{
-    //묶음을 짓기:
-    auto file_path = new str_hook(argv[FILE_PATH_INDEX]);
-    auto function_name = new str_hook(argv[FUNCTION_NAME_INDEX]);
-    auto arguments = new_struct_list(sizeof(aio_value *));
-    //입력 인수들을 준비하기:
-    auto has_function_arguments = argc > START_FUNCTION_ARG_INDEX;
-    if (has_function_arguments) {
-        for (auto i = START_FUNCTION_ARG_INDEX; i < argc; ++i) {
-            auto argument = new_aio_value_by_string(argv[i]);
-            add_struct_in_list(arguments, argument);
-        }
-    }
-    return new aio_bundle(file_path, function_name, arguments);
-}
-
-static void make_aio(const int argc, char *argv[])
-{
-    //인수들을 초기화하다:
-    auto input_bundle = create_bundle(argc, argv);
-    //Run AIO:
-    auto result_list = inflate_aio_core(input_bundle);
-    //Print result:
-//    print_result(result_list);
-    //----------------------------------------------------------------------------------------------------------------—
-    //찌꺼기 수집기 (Garbage collector):
-    delete input_bundle;
-    //free_aio_value_list(result_list);
-}
-
 #ifdef AIO_DEVELOPMENT
 
 #define AIO_DEVELOPMENT_DEBUG
@@ -79,17 +49,20 @@ static void make_aio(const int argc, char *argv[])
 
 static void make_test()
 {
-    //테스트를 준비하다:
+    //테스트를 준비하기:
     char *args[1024] = {
+            //.exe arg:
             const_cast<char *>(""),
-            const_cast<char *>("../aioPrograms/tests/complexTests/complex/Trivial.aio"),
-            const_cast<char *>("countSqrHypotenuse"),
-            const_cast<char *>("3"),
-            const_cast<char *>("'4'")
+            //"build.aio_core" 에게 경로:
+            const_cast<char *>("../demo/project1/build.aio_core"),
+            //프로그램 인수들:
+            const_cast<char *>("a"),
+            const_cast<char *>("b"),
+            const_cast<char *>("c")
     };
     auto size = 5;
-    //아이어 만들다:
-    make_aio(size, args);
+    //아이어 만들기:
+    inflate_aio_core(size, args);
 }
 
 #endif
@@ -100,7 +73,7 @@ int main(int argc, char *argv[])
 #ifdef AIO_DEVELOPMENT
     make_test();
 #else
-    make_aio(argc, argv);
+    inflate_aio_core(argc, argv);
 #endif
     return 0;
 }

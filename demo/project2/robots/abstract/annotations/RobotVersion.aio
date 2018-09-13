@@ -1,0 +1,21 @@
+plg {
+    java.lang.annotation.ElementType
+    java.lang.annotation.Retention
+    java.lang.annotation.RetentionPolicy
+    java.lang.annotation.Target
+}
+
+@Target(ElementType.FIELD)
+@Retention(RetentionPolicy.RUNTIME)
+ann RobotVersion {
+
+    - min Int
+
+    new() {
+        $min = 0
+    }
+
+    new(- min Int) {
+        $min = min
+    }
+}

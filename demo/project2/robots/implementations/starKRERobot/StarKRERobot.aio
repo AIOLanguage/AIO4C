@@ -1,0 +1,36 @@
+plg {
+    org.springframework.beans.factory.InitializingBean
+    robots.abstractRobot.Robot
+    robots.abstractRobot.annotations.FriendlyRobot
+    robots.abstractRobot.annotations.RobotVersion
+    robots.abstractRobot.core.Core
+    robots.abstractRobot.head.Head
+    java.util.logging.Logger
+}
+
+- log pri = Logger.getLogger(StarKRERobot::class.name)
+
+@FriendlyRobot
+cls StarKRERobot : Robot, InitializingBean {
+
+    @RobotVersion(min = 10)
+    ~ version Int pri
+
+    @Override
+    fun calc() {
+        log.info("I'm calculating...")
+    }
+
+    @Override
+    fun afterPropertiesSet() {
+        log.info("I'm ready to the battle!!!")
+    }
+
+    fun init() {
+        log.info("Hello, I'm StarKRE with version: " + $version)
+    }
+
+    fun destroy() {
+        log.info("No!!! I'l be BACK!!!!!")
+    }
+}

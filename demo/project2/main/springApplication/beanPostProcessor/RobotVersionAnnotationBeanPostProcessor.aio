@@ -1,0 +1,42 @@
+plg {
+    org.springframework.beans.BeansException
+    org.springframework.beans.factory.config.BeanPostProcessor
+    org.springframework.util.ReflectionUtils
+    robots.abstractRobot.annotations.RobotVersion
+    java.lang.reflect.Field
+    java.util.logging.Logger
+}
+
+- log pri = Logger.getLogger(FriendlyRobotAnnotationBeanPostProcessor.class.name)
+
+cls RobotVersionAnnotationBeanPostProcessor : BeanPostProcessor {
+
+    @Override
+    @Throws(BeansException)
+    postProcessBeforeInitialization(final Object bean, final String beanName) Object {
+        log.info("\n\n\nRobotVersionAnnotationBeanPostProcessor: BEFORE INIT: " + beanName)
+        - clazz = bean.class
+        - fields = clazz.declaredFields
+        loo (field in fields) {
+            - robotVersionAnnotation = field.getAnnotation(RobotVersion.class)
+            if (robotVersionAnnotation) {
+                ReflectionUtils.makeAccessible(field)
+                - minVersion = robotVersionAnnotation.min
+                - currentVersion = ReflectionUtils.getField(field, bean) as Int
+                log.info("MIN VERSION: " + minVersion)
+                log.info("CURRENT VERSION: " + currentVersion)
+                if (minVersion > currentVersion) {
+                    ReflectionUtils.setField(field, bean, minVersion)
+                }
+            }
+        }
+        out bean
+    }
+
+    @Override
+    @Throws(BeansException::class)
+    postProcessAfterInitialization(final Object bean, final String beanName) Object {
+        log.info("RobotVersionAnnotationBeanPostProcessor: AFTER INIT: " + beanName)
+        out bean
+    }
+}

@@ -22,5 +22,11 @@ namespace lib4aio
 
     void log_info(const char *const tag, const char *message, const str_hook_list *list);
 
+    /**
+     * Typedef utils.
+     */
+
+    typedef str_hook_list str_hook_chain;
+
 #endif //LIB4AIO_STR_HOOK_LIST_H
 }

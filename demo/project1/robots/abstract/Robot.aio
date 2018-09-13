@@ -1,0 +1,18 @@
+plg {
+    robots.abstract.head.Head
+    robots.abstract.core.Core
+}
+
+cls {
+
+    - head Head
+    - core Core
+
+    new (- head Head, - core Core)
+    {
+        $head = head
+        $core = core
+    }
+
+    fun calc() *
+}

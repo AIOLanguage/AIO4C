@@ -1,0 +1,20 @@
+plg
+{
+    robots.abstractRobot.core.Core
+}
+
+cls Core724 : Core
+{
+
+    @Override
+    fun install()
+    {
+        println("CORE-724 has installed!!!")
+    }
+
+    @Override
+    fun activate()
+    {
+        println("CORE-724 has activated!!!")
+    }
+}

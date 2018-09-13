@@ -1,0 +1,19 @@
+plg {
+    robots.abstractRobot.core.Core
+    java.util.logging.Logger
+}
+
+- log Logger pri = Logger.getLogger(Core724::class.name);
+
+cls Core724 : Core {
+
+    @Override
+    fun install() {
+        log.info("CORE-724 has installed!!!")
+    }
+
+    @Override
+    fun activate() {
+        log.info("CORE-724 has activated!!!")
+    }
+}
