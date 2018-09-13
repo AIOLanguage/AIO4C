@@ -1,4 +1,4 @@
-cls Body
+typ Body
 {
-    - armor Double
+    + armor Double
 }

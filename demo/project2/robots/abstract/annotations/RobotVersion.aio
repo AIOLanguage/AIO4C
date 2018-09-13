@@ -10,14 +10,14 @@ plg {
 ann RobotVersion
 {
 
-    - min Int
+    + min Int
 
     new()
     {
         $min = 0
     }
 
-    new(- min Int)
+    new(+ min Int)
     {
         $min = min
     }

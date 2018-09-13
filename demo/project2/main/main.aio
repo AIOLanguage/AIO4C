@@ -4,12 +4,12 @@ plg {
     java.util.logging.Logger
 }
 
-- log pri = Logger.getLogger(Main::class.name)
++ log Logger : private = Logger.getLogger(Main::class.name)
 
-fun main(- args[] Str)
+fun main(+ args[] Str)
 {
-    - robotApplication = RobotApplication()
-    - robot Robot = robotApplication.groovyApplicationContext.getBean('starKRERobot')
+    + robotApplication = RobotApplication()
+    + robot Robot = robotApplication.groovyApplicationContext.getBean('starKRERobot')
     log.info('\n\n')
     robot.calc()
 }

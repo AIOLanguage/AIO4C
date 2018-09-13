@@ -8,29 +8,33 @@ plg {
     java.util.logging.Logger
 }
 
-- log pri = Logger.getLogger(StarKRERobot::class.name)
++ log : private = Logger.getLogger(StarKRERobot::class.name)
 
 @FriendlyRobot
-cls StarKRERobot : Robot, InitializingBean {
+typ StarKRERobot -> Robot, InitializingBean {
 
-    @RobotVersion(min = 10)
-    ~ version Int pri
-
-    @Override
-    fun calc() {
-        log.info("I'm calculating...")
-    }
+    @RobotVersion(10)
+    - version Int
 
     @Override
-    fun afterPropertiesSet() {
-        log.info("I'm ready to the battle!!!")
+    fun calc()
+    {
+        log.info('I\'m calculating...')
     }
 
-    fun init() {
-        log.info("Hello, I'm StarKRE with version: " + $version)
+    @Override
+    fun afterPropertiesSet()
+    {
+        log.info('I'm ready to the battle!')
     }
 
-    fun destroy() {
-        log.info("No!!! I'l be BACK!!!!!")
+    fun init()
+    {
+        log.info('Hello, I\'m StarKRE with version: #version')
+    }
+
+    fun destroy()
+    {
+        log.info('No! I'l be back!')
     }
 }

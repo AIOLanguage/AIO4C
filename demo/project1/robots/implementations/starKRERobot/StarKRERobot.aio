@@ -1,25 +1,24 @@
-plg
-{
+plg {
     robots.abstractRobot.Robot
 }
 
-cls StarKRERobot : Robot
-{
-    ~ version Int pri
+typ StarKRERobot -> Robot {
+
+    - version Int : private
 
     @Override
     fun calc()
     {
-        println("I'm calculating...")
+        println('I'm calculating...')
     }
 
-    fun init()
+    fun init() : protected
     {
-        println("Hello, I'm StarKRE with version: " + $version)
+        println('Hello, I\'m StarKRE with version: #version')
     }
 
-    fun destroy()
+    fun destroy() : protected
     {
-        println("No!!! I'l be BACK!!!!!")
+        println('No! I\'l be back!')
     }
 }

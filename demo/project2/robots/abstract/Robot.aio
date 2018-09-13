@@ -1,15 +1,13 @@
-plg
-{
+plg {
     robots.abstract.head.Head
     robots.abstract.core.Core
 }
 
-cls
-{
+cls {
 
-    - head Head
+    + head Head
 
-    - core Core
+    + core Core
 
     fun calc() *
 }

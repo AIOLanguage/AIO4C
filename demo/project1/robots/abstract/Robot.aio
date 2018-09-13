@@ -1,20 +1,29 @@
-plg
-{
-    robots.abstract.head.Head
-    robots.abstract.core.Core
-}
+tmp {
 
-wrp
-{
+    + core Core
 
-    - head Head
-    - core Core
-
-    new (- head Head, - core Core)
+    new (+ core Core)
     {
-        $head = head
         $core = core
     }
 
     fun calc() *
+
+    tmp Core : inner {
+
+        - batteryPower Int
+
+        fun activate() * : protected
+
+        sco init : protected {
+
+            fun installProgram() *
+
+            fun installDrivers() *
+
+            fun allocateMemory() _ : private
+        }
+
+    }
+
 }

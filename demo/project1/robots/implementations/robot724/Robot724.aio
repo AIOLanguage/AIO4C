@@ -1,10 +1,9 @@
-plg
-{
+plg {
     robots.abstractRobot.Robot
 }
 
-cls Robot724 : Robot
-{
+typ Robot724 -> Robot : internal {
+
     @Override
     fun calc() _
 }

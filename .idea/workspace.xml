@@ -12,11 +12,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="92aa3559-b190-4db0-9881-a1f19bf9613d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/StarKRE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/StarKRE.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/demo/project1/main/main.aio" beforeDir="false" afterPath="$PROJECT_DIR$/demo/project1/main/main.aio" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/demo/project1/robots/abstract/Robot.aio" beforeDir="false" afterPath="$PROJECT_DIR$/demo/project1/robots/abstract/Robot.aio" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/project1/robots/abstract/core/Core.aio" beforeDir="false" afterPath="$PROJECT_DIR$/demo/project1/robots/abstract/core/Core.aio" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/project1/robots/abstract/body/Body.aio" beforeDir="false" afterPath="$PROJECT_DIR$/demo/project1/robots/abstract/body/Body.aio" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/project1/robots/abstract/core/Core.aio" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/project1/robots/abstract/hand/Hand.aio" beforeDir="false" afterPath="$PROJECT_DIR$/demo/project1/robots/abstract/hand/Hand.aio" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/project1/robots/abstract/head/Head.aio" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/project1/robots/abstract/leg/Leg.aio" beforeDir="false" afterPath="$PROJECT_DIR$/demo/project1/robots/abstract/leg/Leg.aio" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/project1/robots/implementations/robot724/Robot724.aio" beforeDir="false" afterPath="$PROJECT_DIR$/demo/project1/robots/implementations/robot724/Robot724.aio" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/project1/robots/implementations/robot724/core/Core724.aio" beforeDir="false" afterPath="$PROJECT_DIR$/demo/project1/robots/implementations/robot724/core/Core724.aio" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/project1/robots/implementations/starKRERobot/StarKRERobot.aio" beforeDir="false" afterPath="$PROJECT_DIR$/demo/project1/robots/implementations/starKRERobot/StarKRERobot.aio" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/demo/project2/main/main.aio" beforeDir="false" afterPath="$PROJECT_DIR$/demo/project2/main/main.aio" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/demo/project2/main/springApplication/RobotApplication.aio" beforeDir="false" afterPath="$PROJECT_DIR$/demo/project2/main/springApplication/RobotApplication.aio" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/demo/project2/main/springApplication/beanPostProcessor/FriendlyRobotAnnotationBeanPostProcessor.aio" beforeDir="false" afterPath="$PROJECT_DIR$/demo/project2/main/springApplication/beanPostProcessor/FriendlyRobotAnnotationBeanPostProcessor.aio" afterDir="false" />
@@ -26,7 +32,11 @@
       <change beforePath="$PROJECT_DIR$/demo/project2/robots/abstract/body/Body.aio" beforeDir="false" afterPath="$PROJECT_DIR$/demo/project2/robots/abstract/body/Body.aio" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/demo/project2/robots/abstract/core/Core.aio" beforeDir="false" afterPath="$PROJECT_DIR$/demo/project2/robots/abstract/core/Core.aio" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/demo/project2/robots/abstract/hand/Hand.aio" beforeDir="false" afterPath="$PROJECT_DIR$/demo/project2/robots/abstract/hand/Hand.aio" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/project2/robots/abstract/head/Head.aio" beforeDir="false" afterPath="$PROJECT_DIR$/demo/project2/robots/abstract/head/Head.aio" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/project2/robots/abstract/leg/Leg.aio" beforeDir="false" afterPath="$PROJECT_DIR$/demo/project2/robots/abstract/leg/Leg.aio" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/project2/robots/implementations/robot724/Robot724.aio" beforeDir="false" afterPath="$PROJECT_DIR$/demo/project2/robots/implementations/robot724/Robot724.aio" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/demo/project2/robots/implementations/robot724/core/Core724.aio" beforeDir="false" afterPath="$PROJECT_DIR$/demo/project2/robots/implementations/robot724/core/Core724.aio" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/project2/robots/implementations/starKRERobot/StarKRERobot.aio" beforeDir="false" afterPath="$PROJECT_DIR$/demo/project2/robots/implementations/starKRERobot/StarKRERobot.aio" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -40,13 +50,13 @@
     <session id="1622004753">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="9" />
+          <entry key="project.closed" value="10" />
           <entry key="project.open.time.0" value="4" />
-          <entry key="project.open.time.4" value="1" />
+          <entry key="project.open.time.4" value="2" />
           <entry key="project.open.time.5" value="2" />
           <entry key="project.open.time.6" value="1" />
           <entry key="project.open.time.7" value="2" />
-          <entry key="project.opened" value="10" />
+          <entry key="project.opened" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -54,8 +64,8 @@
           <entry key="FriendlyRobot" value="1" />
           <entry key="RobotApplication" value="1" />
           <entry key="RobotVersion" value="1" />
-          <entry key="aio" value="288" />
-          <entry key="aio_core" value="11" />
+          <entry key="aio" value="425" />
+          <entry key="aio_core" value="15" />
           <entry key="aiocore" value="3" />
           <entry key="c" value="70" />
           <entry key="cpp" value="858" />
@@ -71,12 +81,12 @@
           <entry key="CMakeLists.txt" value="36" />
           <entry key="Markdown" value="1" />
           <entry key="ObjectiveC" value="1751" />
-          <entry key="PLAIN_TEXT" value="309" />
+          <entry key="PLAIN_TEXT" value="450" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="aio" value="2608" />
+          <entry key="aio" value="3309" />
           <entry key="aio_core" value="63" />
           <entry key="aiocore" value="36" />
           <entry key="c" value="376" />
@@ -92,7 +102,7 @@
           <entry key="Doxygen file" value="72" />
           <entry key="Markdown" value="8" />
           <entry key="ObjectiveC" value="17953" />
-          <entry key="PLAIN_TEXT" value="3038" />
+          <entry key="PLAIN_TEXT" value="3739" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages">
@@ -105,10 +115,10 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/demo/project1/main/main.aio">
+        <entry file="file://$PROJECT_DIR$/demo/project2/robots/implementations/starKRERobot/StarKRERobot.aio">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="8" lean-forward="true" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
+            <state relative-caret-position="663">
+              <caret line="39" column="1" lean-forward="true" selection-start-line="39" selection-start-column="1" selection-end-line="39" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -148,17 +158,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/lib4aio/lib4aio_cpp_sources/utils/error_utils/error_utils.cpp" />
-        <option value="$PROJECT_DIR$/headers/aio_core/aio_context/aio_context.h" />
-        <option value="$PROJECT_DIR$/tests/complex/variables/ImmutableVariables.aio" />
-        <option value="$PROJECT_DIR$/demo/projectDemo1/build.aiocore" />
-        <option value="$PROJECT_DIR$/demo/projectDemo1/robots/abstract/head/Head.aio" />
-        <option value="$PROJECT_DIR$/demo/projectDemo1/robots/abstract/leg/Leg.aio" />
-        <option value="$PROJECT_DIR$/demo/projectDemo1/robots/abstract/annotations/FriendlyRobot.aio" />
-        <option value="$PROJECT_DIR$/demo/projectDemo1/robots/abstract/annotations/RobotVersion.aio" />
-        <option value="$PROJECT_DIR$/demo/projectDemo1/main/springApplication/RobotApplication.aio" />
-        <option value="$PROJECT_DIR$/demo/projectDemo1/main/springApplication/beanPostProcessor/FriendlyRobotAnnotationBeanPostProcessor.aio" />
-        <option value="$PROJECT_DIR$/demo/projectDemo1/main/springApplication/beanPostProcessor/RobotVersionAnnotationBeanPostProcessor.aio" />
         <option value="$PROJECT_DIR$/demo/projectDemo1/build.aio_core" />
         <option value="$PROJECT_DIR$/demo/projectDemo2/robots/implementations/robot724/Robot724.aio" />
         <option value="$PROJECT_DIR$/demo/projectDemo2/robots/abstract/core/Core.aio" />
@@ -186,19 +185,30 @@
         <option value="$PROJECT_DIR$/headers/aio_lang/aio_file/aio_field/aio_field.h" />
         <option value="$PROJECT_DIR$/headers/aio_core/aio_core.h" />
         <option value="$PROJECT_DIR$/headers/aio_lang/aio_file/aio_function/definition/aio_function_definition.h" />
-        <option value="$PROJECT_DIR$/demo/project2/main/springApplication/beanPostProcessor/RobotVersionAnnotationBeanPostProcessor.aio" />
-        <option value="$PROJECT_DIR$/demo/project2/main/springApplication/RobotApplication.aio" />
+        <option value="$PROJECT_DIR$/demo/project1/robots/abstract/head/Head.aio" />
+        <option value="$PROJECT_DIR$/demo/project1/robots/abstract/core/Core.aio" />
+        <option value="$PROJECT_DIR$/demo/project1/robots/abstract/leg/Leg.aio" />
+        <option value="$PROJECT_DIR$/demo/project1/robots/implementations/starKRERobot/StarKRERobot.aio" />
+        <option value="$PROJECT_DIR$/demo/project1/robots/implementations/robot724/core/Core724.aio" />
+        <option value="$PROJECT_DIR$/demo/project1/robots/abstract/body/Body.aio" />
+        <option value="$PROJECT_DIR$/demo/project1/robots/abstract/Robot.aio" />
+        <option value="$PROJECT_DIR$/demo/project1/robots/implementations/robot724/Robot724.aio" />
+        <option value="$PROJECT_DIR$/demo/project1/main/main.aio" />
+        <option value="$PROJECT_DIR$/demo/project1/robots/abstract/hand/Hand.aio" />
         <option value="$PROJECT_DIR$/demo/project2/main/main.aio" />
+        <option value="$PROJECT_DIR$/demo/project2/main/springApplication/RobotApplication.aio" />
         <option value="$PROJECT_DIR$/demo/project2/main/springApplication/beanPostProcessor/FriendlyRobotAnnotationBeanPostProcessor.aio" />
+        <option value="$PROJECT_DIR$/demo/project2/main/springApplication/beanPostProcessor/RobotVersionAnnotationBeanPostProcessor.aio" />
         <option value="$PROJECT_DIR$/demo/project2/robots/abstract/annotations/RobotVersion.aio" />
         <option value="$PROJECT_DIR$/demo/project2/robots/abstract/body/Body.aio" />
         <option value="$PROJECT_DIR$/demo/project2/robots/abstract/core/Core.aio" />
         <option value="$PROJECT_DIR$/demo/project2/robots/abstract/hand/Hand.aio" />
+        <option value="$PROJECT_DIR$/demo/project2/robots/abstract/head/Head.aio" />
+        <option value="$PROJECT_DIR$/demo/project2/robots/abstract/leg/Leg.aio" />
         <option value="$PROJECT_DIR$/demo/project2/robots/abstract/Robot.aio" />
         <option value="$PROJECT_DIR$/demo/project2/robots/implementations/robot724/core/Core724.aio" />
-        <option value="$PROJECT_DIR$/demo/project1/robots/abstract/Robot.aio" />
-        <option value="$PROJECT_DIR$/demo/project1/robots/abstract/core/Core.aio" />
-        <option value="$PROJECT_DIR$/demo/project1/main/main.aio" />
+        <option value="$PROJECT_DIR$/demo/project2/robots/implementations/robot724/Robot724.aio" />
+        <option value="$PROJECT_DIR$/demo/project2/robots/implementations/starKRERobot/StarKRERobot.aio" />
       </list>
     </option>
   </component>
@@ -209,10 +219,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
-  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
-    <option name="x" value="951" />
-    <option name="width" value="978" />
-    <option name="height" value="1039" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-8" />
+    <option name="width" value="977" />
+    <option name="height" value="1038" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -284,6 +294,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -300,14 +311,119 @@
               <item name="AIO_v_2" type="b2602c69:ProjectViewProjectNode" />
               <item name="AIO.v.2" type="462c0819:PsiDirectoryNode" />
               <item name="demo" type="462c0819:PsiDirectoryNode" />
-              <item name="project1" type="462c0819:PsiDirectoryNode" />
+              <item name="project2" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="AIO_v_2" type="b2602c69:ProjectViewProjectNode" />
               <item name="AIO.v.2" type="462c0819:PsiDirectoryNode" />
               <item name="demo" type="462c0819:PsiDirectoryNode" />
-              <item name="project1" type="462c0819:PsiDirectoryNode" />
+              <item name="project2" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AIO_v_2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AIO.v.2" type="462c0819:PsiDirectoryNode" />
+              <item name="demo" type="462c0819:PsiDirectoryNode" />
+              <item name="project2" type="462c0819:PsiDirectoryNode" />
+              <item name="robots" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AIO_v_2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AIO.v.2" type="462c0819:PsiDirectoryNode" />
+              <item name="demo" type="462c0819:PsiDirectoryNode" />
+              <item name="project2" type="462c0819:PsiDirectoryNode" />
+              <item name="robots" type="462c0819:PsiDirectoryNode" />
+              <item name="abstract" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AIO_v_2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AIO.v.2" type="462c0819:PsiDirectoryNode" />
+              <item name="demo" type="462c0819:PsiDirectoryNode" />
+              <item name="project2" type="462c0819:PsiDirectoryNode" />
+              <item name="robots" type="462c0819:PsiDirectoryNode" />
+              <item name="abstract" type="462c0819:PsiDirectoryNode" />
+              <item name="annotations" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AIO_v_2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AIO.v.2" type="462c0819:PsiDirectoryNode" />
+              <item name="demo" type="462c0819:PsiDirectoryNode" />
+              <item name="project2" type="462c0819:PsiDirectoryNode" />
+              <item name="robots" type="462c0819:PsiDirectoryNode" />
+              <item name="abstract" type="462c0819:PsiDirectoryNode" />
+              <item name="body" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AIO_v_2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AIO.v.2" type="462c0819:PsiDirectoryNode" />
+              <item name="demo" type="462c0819:PsiDirectoryNode" />
+              <item name="project2" type="462c0819:PsiDirectoryNode" />
+              <item name="robots" type="462c0819:PsiDirectoryNode" />
+              <item name="abstract" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AIO_v_2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AIO.v.2" type="462c0819:PsiDirectoryNode" />
+              <item name="demo" type="462c0819:PsiDirectoryNode" />
+              <item name="project2" type="462c0819:PsiDirectoryNode" />
+              <item name="robots" type="462c0819:PsiDirectoryNode" />
+              <item name="abstract" type="462c0819:PsiDirectoryNode" />
+              <item name="hand" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AIO_v_2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AIO.v.2" type="462c0819:PsiDirectoryNode" />
+              <item name="demo" type="462c0819:PsiDirectoryNode" />
+              <item name="project2" type="462c0819:PsiDirectoryNode" />
+              <item name="robots" type="462c0819:PsiDirectoryNode" />
+              <item name="abstract" type="462c0819:PsiDirectoryNode" />
+              <item name="head" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AIO_v_2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AIO.v.2" type="462c0819:PsiDirectoryNode" />
+              <item name="demo" type="462c0819:PsiDirectoryNode" />
+              <item name="project2" type="462c0819:PsiDirectoryNode" />
+              <item name="robots" type="462c0819:PsiDirectoryNode" />
+              <item name="abstract" type="462c0819:PsiDirectoryNode" />
+              <item name="leg" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AIO_v_2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AIO.v.2" type="462c0819:PsiDirectoryNode" />
+              <item name="demo" type="462c0819:PsiDirectoryNode" />
+              <item name="project2" type="462c0819:PsiDirectoryNode" />
+              <item name="robots" type="462c0819:PsiDirectoryNode" />
+              <item name="implementations" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AIO_v_2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AIO.v.2" type="462c0819:PsiDirectoryNode" />
+              <item name="demo" type="462c0819:PsiDirectoryNode" />
+              <item name="project2" type="462c0819:PsiDirectoryNode" />
+              <item name="robots" type="462c0819:PsiDirectoryNode" />
+              <item name="implementations" type="462c0819:PsiDirectoryNode" />
+              <item name="robot724" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AIO_v_2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AIO.v.2" type="462c0819:PsiDirectoryNode" />
+              <item name="demo" type="462c0819:PsiDirectoryNode" />
+              <item name="project2" type="462c0819:PsiDirectoryNode" />
+              <item name="robots" type="462c0819:PsiDirectoryNode" />
+              <item name="implementations" type="462c0819:PsiDirectoryNode" />
+              <item name="robot724" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AIO_v_2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AIO.v.2" type="462c0819:PsiDirectoryNode" />
+              <item name="demo" type="462c0819:PsiDirectoryNode" />
+              <item name="project2" type="462c0819:PsiDirectoryNode" />
+              <item name="robots" type="462c0819:PsiDirectoryNode" />
+              <item name="implementations" type="462c0819:PsiDirectoryNode" />
+              <item name="starKRERobot" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="AIO_v_2" type="b2602c69:ProjectViewProjectNode" />
@@ -332,23 +448,6 @@
               <item name="headers" type="462c0819:PsiDirectoryNode" />
               <item name="aio_lang" type="462c0819:PsiDirectoryNode" />
               <item name="aio_file" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AIO_v_2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AIO.v.2" type="462c0819:PsiDirectoryNode" />
-              <item name="headers" type="462c0819:PsiDirectoryNode" />
-              <item name="aio_lang" type="462c0819:PsiDirectoryNode" />
-              <item name="aio_file" type="462c0819:PsiDirectoryNode" />
-              <item name="aio_field" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AIO_v_2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AIO.v.2" type="462c0819:PsiDirectoryNode" />
-              <item name="headers" type="462c0819:PsiDirectoryNode" />
-              <item name="aio_lang" type="462c0819:PsiDirectoryNode" />
-              <item name="aio_file" type="462c0819:PsiDirectoryNode" />
-              <item name="aio_field" type="462c0819:PsiDirectoryNode" />
-              <item name="definition" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="AIO_v_2" type="b2602c69:ProjectViewProjectNode" />
@@ -398,7 +497,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -472,7 +570,8 @@
       <workItem from="1536687634326" duration="1860000" />
       <workItem from="1536736131025" duration="2487000" />
       <workItem from="1536755840114" duration="14085000" />
-      <workItem from="1536850197939" duration="18228000" />
+      <workItem from="1536850197939" duration="18258000" />
+      <workItem from="1536874586029" duration="3466000" />
     </task>
     <task id="LOCAL-00001" summary="AIO CPP 빌드:&#10;-&gt; 부분적으로 'point_watcher' 과 'str_hook' 다시 만들었습니다">
       <created>1536080376822</created>
@@ -530,17 +629,23 @@
       <option name="project" value="LOCAL" />
       <updated>1536866993432</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="AIO CPP 빌드:&#10;-&gt; AIO Demo 초안들을 추가했습니다">
+      <created>1536869159884</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1536869159884</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="107086000" />
+    <option name="totallyTimeSpent" value="110582000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1536" height="864" extended-state="6" />
-    <editor active="true" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.22005208" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22005208" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -581,20 +686,6 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/main/a.c" />
     <entry file="file://$PROJECT_DIR$/tests/test.txt" />
-    <entry file="file://$PROJECT_DIR$/demo/project1/robots/implementations/robot724/Robot724.aio">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo/project1/robots/implementations/starKRERobot/StarKRERobot.aio">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="1" lean-forward="true" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sources/aio_utils/aio_bundle/aio_bundle.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -620,10 +711,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="101">
           <caret line="67" column="6" lean-forward="true" selection-start-line="67" selection-start-column="6" selection-end-line="67" selection-end-column="6" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-            <element signature="e#1570#1591#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -638,9 +725,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
           <caret line="29" column="35" selection-start-line="29" selection-start-column="35" selection-end-line="29" selection-end-column="35" />
-          <folding>
-            <element signature="e#53#119#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -683,9 +767,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
-          <folding>
-            <element signature="e#63#124#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -700,9 +781,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="15" column="1" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
-          <folding>
-            <element signature="e#39#78#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -713,10 +791,86 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/demo/project1/robots/abstract/head/Head.aio">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo/project1/robots/abstract/core/Core.aio">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo/project1/build.aio_core">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="7" selection-start-column="7" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo/project1/robots/abstract/body/Body.aio">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo/project1/robots/abstract/leg/Leg.aio">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="3" selection-start-column="3" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo/project1/robots/abstract/Robot.aio">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="12" selection-start-line="23" selection-start-column="12" selection-end-line="23" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo/project1/robots/implementations/robot724/core/Core724.aio">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="1" lean-forward="true" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo/project1/robots/implementations/robot724/Robot724.aio">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="16" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo/project1/robots/implementations/starKRERobot/StarKRERobot.aio">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="1" lean-forward="true" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo/project1/robots/abstract/hand/Hand.aio">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="31" lean-forward="true" selection-start-line="2" selection-start-column="31" selection-end-line="2" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo/project1/main/main.aio">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret lean-forward="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo/project2/main/springApplication/RobotApplication.aio">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="1" lean-forward="true" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/demo/project2/main/springApplication/beanPostProcessor/FriendlyRobotAnnotationBeanPostProcessor.aio">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="27" column="1" lean-forward="true" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
+        <state relative-caret-position="187">
+          <caret line="11" column="47" lean-forward="true" selection-start-line="11" selection-start-column="47" selection-end-line="11" selection-end-column="47" />
         </state>
       </provider>
     </entry>
@@ -727,27 +881,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/demo/project2/main/springApplication/RobotApplication.aio">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="36" lean-forward="true" selection-start-line="6" selection-start-column="36" selection-end-line="6" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/demo/project2/main/main.aio">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="14" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo/project2/build.aio_core">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo/project2/robots/abstract/annotations/RobotVersion.aio">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="1" lean-forward="true" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
+        <state relative-caret-position="238">
+          <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -758,103 +895,76 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/demo/project2/robots/abstract/annotations/RobotVersion.aio">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="1" lean-forward="true" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/demo/project2/robots/abstract/body/Body.aio">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo/project2/robots/abstract/core/Core.aio">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo/project2/robots/abstract/hand/Hand.aio">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo/project2/robots/abstract/head/Head.aio">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="8" lean-forward="true" selection-start-column="8" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo/project2/robots/abstract/leg/Leg.aio">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo/project2/robots/abstract/Robot.aio">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo/project2/robots/implementations/robot724/core/Core724.aio">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="56" lean-forward="true" selection-start-line="5" selection-start-column="56" selection-end-line="5" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo/project1/build.aio_core">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="20" lean-forward="true" selection-start-column="20" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo/project1/robots/abstract/body/Body.aio">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="8" column="1" lean-forward="true" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo/project1/robots/abstract/core/Core.aio">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="3" selection-start-column="3" selection-end-column="3" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/demo/project1/robots/abstract/hand/Hand.aio">
+    <entry file="file://$PROJECT_DIR$/demo/project2/robots/abstract/core/Core.aio">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="33">
-          <caret line="1" column="1" selection-start-line="1" selection-start-column="1" selection-end-line="1" selection-end-column="1" />
+        <state relative-caret-position="85">
+          <caret line="5" column="5" lean-forward="true" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/demo/project1/robots/abstract/head/Head.aio">
+    <entry file="file://$PROJECT_DIR$/demo/project2/robots/abstract/hand/Hand.aio">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="5" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo/project2/robots/abstract/head/Head.aio">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="3" selection-start-column="3" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo/project2/robots/abstract/leg/Leg.aio">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="3" selection-start-column="3" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo/project2/robots/abstract/Robot.aio">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo/project2/robots/implementations/robot724/core/Core724.aio">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="1" lean-forward="true" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo/project2/build.aio_core">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/demo/project1/robots/abstract/leg/Leg.aio">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo/project1/robots/abstract/Robot.aio">
+    <entry file="file://$PROJECT_DIR$/demo/project2/robots/implementations/robot724/Robot724.aio">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="627">
-          <caret line="19" column="1" lean-forward="true" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
+        <state relative-caret-position="136">
+          <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/demo/project1/robots/implementations/robot724/core/Core724.aio">
+    <entry file="file://$PROJECT_DIR$/demo/project2/robots/implementations/starKRERobot/StarKRERobot.aio">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="627">
-          <caret line="19" column="1" lean-forward="true" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo/project1/main/main.aio">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="8" lean-forward="true" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
+        <state relative-caret-position="663">
+          <caret line="39" column="1" lean-forward="true" selection-start-line="39" selection-start-column="1" selection-end-line="39" selection-end-column="1" />
         </state>
       </provider>
     </entry>

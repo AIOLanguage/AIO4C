@@ -1,67 +1,29 @@
-cls Person
-{
+typ Person : internal : open {
+
     + firstName Str
     - secondName Str
     - age Int
-    - organization Str pri
+    - organization Str : private
 
     new (
         + firstName Str,
         + secondName Str,
         + age Int
-        )
-    {
+    ) {
         $firstName = firstName
         $secondName = secondName
         $age = age
     }
 
-    fun say(+ message Str)
+    fun say(+ message Str) : internal : open
     {
         println(message)
     }
 }
 
-
 fun main(+ args[] Str)
 {
     + person Person = Person('Ilya', 'Dolgushev', 19)
     person.organization = 'Orego'
-    person.say('Ебить')
+    person.say('Hello')
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//plg
-//{
-//    robots.abstractRobot.Robot
-//}
-
-//fun main(- args[] Str)
-//{
-//    - head = Head()
-//    - core = Core724()
-//    - robot Robot = Robot724(head, core)
-//    robot.calc()
-//}

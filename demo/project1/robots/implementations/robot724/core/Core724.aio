@@ -1,20 +1,25 @@
-plg
-{
+plg {
     robots.abstractRobot.core.Core
 }
 
-cls Core724 : Core
-{
-
-    @Override
-    fun install()
-    {
-        println("CORE-724 has installed!!!")
-    }
+typ Core724 -> Core {
 
     @Override
     fun activate()
     {
-        println("CORE-724 has activated!!!")
+        println('CORE-724 has activated!')
+    }
+
+    @Override
+    sco init {
+
+        @Override
+        fun installProgram()
+        {
+            println('CORE-724 has installed!')
+        }
+
+        @Override
+        fun installDrivers() _
     }
 }

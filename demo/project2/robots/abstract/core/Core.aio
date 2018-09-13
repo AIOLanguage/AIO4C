@@ -1,7 +1,7 @@
-wrp Core
+typ Core
 {
 
-    ~ batteryPower Int
+    - batteryPower Int
 
     fun install() *
 

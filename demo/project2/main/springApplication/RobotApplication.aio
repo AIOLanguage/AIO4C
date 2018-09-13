@@ -2,7 +2,6 @@ plg {
     org.springframework.context.support.GenericGroovyApplicationContext
 }
 
-cls RobotApplication
-{
-    - groovyApplicationContext pri = GenericGroovyApplicationContext('applicationContext/RobotContext.groovy')
+typ RobotApplication {
+    + groovyApplicationContext : private = GenericGroovyApplicationContext('applicationContext/RobotContext.groovy')
 }

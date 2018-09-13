@@ -2,7 +2,7 @@ plg {
     robots.abstractRobot.Robot
 }
 
-cls Robot724 : Robot {
+typ Robot724 -> Robot {
 
     @Override
     fun calc() _

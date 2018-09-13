@@ -1,5 +1,5 @@
-cls Hand
+typ Hand
 {
 
-    - power Dou
+    + power Dou
 }
