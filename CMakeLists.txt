@@ -83,4 +83,4 @@ add_executable(AIO_v_2
         lib4aio/lib4aio_cpp_sources/utils/string_utils/trim.cpp
         lib4aio/lib4aio_cpp_sources/utils/str_builder/str_builder.cpp
         #---------------------------------------------------------------------------------------------------------------
-        lib4aio/lib4aio_cpp_sources/utils/error_utils/error_utils.cpp)
+        lib4aio/lib4aio_cpp_sources/utils/error_utils/error_utils.cpp headers/aio_core/aio_core.h headers/aio_core/aio_context/aio_context.h)

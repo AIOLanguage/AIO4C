@@ -87,6 +87,12 @@
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/headers">
 			<Option target="AIO_v_2"/>
 		</Unit>
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/headers/aio_core/aio_context/aio_context.h">
+			<Option target="AIO_v_2"/>
+		</Unit>
+		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/headers/aio_core/aio_core.h">
+			<Option target="AIO_v_2"/>
+		</Unit>
 		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/headers/aio_lang/aio_lexer/aio_lexer.h">
 			<Option target="AIO_v_2"/>
 		</Unit>

@@ -6,13 +6,39 @@
 
 #IncludeRegexTransform: 
 
-../lib4aio/lib4aio_cpp_headers/utils/string_utils/common.h
+../headers/aio_utils/aio_bundle/aio_bundle.h
+lib4aio_cpp_headers/utils/struct_list/struct_list.h
+-
+lib4aio_cpp_headers/utils/str_hook_utils/str_hook/str_hook.h
+-
 
-C:/Users/StarKRE/CLionProjects/AIO.v.2/lib4aio/lib4aio_cpp_sources/utils/error_utils/error_utils.cpp
-stdio.h
+../headers/aio_utils/aio_value/aio_value.h
+lib4aio_cpp_headers/utils/str_hook_utils/str_hook/str_hook.h
+-
+
+../lib4aio/lib4aio_cpp_headers/utils/log_utils/log_utils.h
+
+../lib4aio/lib4aio_cpp_headers/utils/str_hook_utils/str_hook/str_hook.h
+
+../lib4aio/lib4aio_cpp_headers/utils/struct_list/struct_list.h
+
+C:/Users/StarKRE/CLionProjects/AIO.v.2/main/main.cpp
+wchar.h
+-
+clocale
 -
 stdlib.h
 -
-lib4aio_cpp_headers/utils/string_utils/common.h
+windows.h
+-
+aio_utils/aio_value/aio_value.h
+-
+aio_utils/aio_bundle/aio_bundle.h
+-
+lib4aio_cpp_headers/utils/log_utils/log_utils.h
+-
+lib4aio_cpp_headers/utils/str_hook_utils/str_hook/str_hook.h
+-
+lib4aio_cpp_headers/utils/struct_list/struct_list.h
 -
 

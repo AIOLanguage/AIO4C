@@ -58,9 +58,9 @@ static void make_aio(const int argc, char *argv[])
     //인수들을 초기화하다:
     auto input_bundle = create_bundle(argc, argv);
     //Run AIO:
-    //auto result_list = inflate_aio_core(input_bundle);
+    auto result_list = inflate_aio_core(input_bundle);
     //Print result:
-    //print_result(result_list);
+//    print_result(result_list);
     //----------------------------------------------------------------------------------------------------------------—
     //찌꺼기 수집기 (Garbage collector):
     delete input_bundle;
