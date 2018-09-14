@@ -1,0 +1,15 @@
+typ Cyborg -> Person, Robot {
+
+    @Override
+    fun calc()
+    {
+        println('Calc temperature...')
+        println('Calc distance...')
+    }
+
+    @Override
+    fun say(+ message Str)
+    {
+        println(':::: #message ::::')
+    }
+}

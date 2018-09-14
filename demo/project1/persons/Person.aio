@@ -1,0 +1,22 @@
+typ Person : internal : open {
+
+    + firstName Str
+    - secondName Str
+    - age Int
+    - organization Str : private
+
+    new (
+        + firstName Str,
+        + secondName Str,
+        + age Int
+    ) {
+        $firstName = firstName
+        $secondName = secondName
+        $age = age
+    }
+
+    fun say(+ message Str) : internal : open
+    {
+        println(message)
+    }
+}

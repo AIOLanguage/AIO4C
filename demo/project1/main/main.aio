@@ -1,29 +1,12 @@
-typ Person : internal : open {
-
-    + firstName Str
-    - secondName Str
-    - age Int
-    - organization Str : private
-
-    new (
-        + firstName Str,
-        + secondName Str,
-        + age Int
-    ) {
-        $firstName = firstName
-        $secondName = secondName
-        $age = age
-    }
-
-    fun say(+ message Str) : internal : open
-    {
-        println(message)
-    }
+plg {
+    persons.Person
+    cyborgs.Cyborg
+    robots.implementations.robot724.core.Core724
 }
 
 fun main(+ args[] Str)
 {
-    + person Person = Person('Ilya', 'Dolgushev', 19)
+    + cyborg Person = Cyborg(Person::{'Ilya', 'Dolgushev', 19}, Core724::{})
     person.organization = 'Orego'
     person.say('Hello')
 }
