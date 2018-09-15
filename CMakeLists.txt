@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.12)
+cmake_minimum_required(VERSION 3.10.3)
 
 project(AIO_v_2)
 
@@ -18,8 +18,8 @@ add_executable(AIO_v_2
         headers/aio_core/aio_core.h
         #lang:
         headers/aio_lang/aio_file/aio_file.h
-        headers/aio_lang/aio_types/aio_type.h
-        headers/aio_lang/aio_lexer/aio_lexer.h
+        headers/aio_lang/aio_type_utils/aio_type.h
+        headers/aio_lang/aio_lexer_utils/aio_lexer_utils.h
         #aio_utils:
         headers/aio_utils/aio_bundle/aio_bundle.h
         headers/aio_utils/aio_value/aio_value.h
@@ -52,7 +52,7 @@ add_executable(AIO_v_2
         #SOURCES:
         sources
         #lang:
-        sources/aio_lang/aio_lexer/aio_lexer.cpp
+        sources/aio_lang/aio_lexer_utils/aio_lexer_utils.cpp
         sources/aio_utils/aio_bundle/aio_bundle.cpp
         #aio_utils:
         sources/aio_utils/aio_value/aio_value.cpp
@@ -87,4 +87,4 @@ add_executable(AIO_v_2
         lib4aio/lib4aio_cpp_sources/utils/str_builder/str_builder.cpp
         lib4aio/lib4aio_cpp_sources/utils/error_utils/error_utils.cpp
         #---------------------------------------------------------------------------------------------------------------
-        headers/aio_lang/aio_file/aio_class_definition/aio_class_definiiton.h headers/aio_lang/aio_file/aio_field/definition/aio_field_definition.h headers/aio_lang/aio_file/aio_field/aio_field.h headers/aio_lang/aio_visibility_type/aio_visibility_type.h headers/aio_lang/aio_file/aio_function/definition/aio_function_definition.h)
+        headers/aio_lang/aio_file/aio_class_definition/aio_class_definiiton.h headers/aio_lang/aio_file/aio_field/definition/aio_field_definition.h headers/aio_lang/aio_file/aio_field/aio_field.h headers/aio_lang/aio_visibility_type/aio_visibility_type.h headers/aio_lang/aio_file/aio_function/definition/aio_function_definition.h headers/aio_lang/aio_namespaces/aio_namespace_definition.h headers/aio_lang/aio_namespaces/aio_scope/aio_scope_definition.h sources/aio_lang/aio_namespaces/aio_namespace.cpp)

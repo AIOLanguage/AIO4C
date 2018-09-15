@@ -1,4 +1,4 @@
-"C:\Program Files\JetBrains\CLion 2018.2.1\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" C:\Users\StarKRE\CLionProjects\AIO.v.2
+/home/ihb/Downloads/CLion-2018.2.3/clion-2018.2.3/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/ihb/aio/AIO_Backup
 -- Configuring done
 -- Generating done
--- Build files have been written to: C:/Users/StarKRE/CLionProjects/AIO.v.2/cmake-build-debug
+-- Build files have been written to: /home/ihb/aio/AIO_Backup/cmake-build-debug

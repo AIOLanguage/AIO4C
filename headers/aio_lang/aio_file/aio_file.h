@@ -1,6 +1,9 @@
 #ifndef AIO_SOURCE_FILE_H
 #define AIO_SOURCE_FILE_H
 
+#include <aio_lang/aio_file/aio_function/definition/aio_function_definition.h>
+#include <aio_lang/aio_file/aio_field/definition/aio_field_definition.h>
+#include <aio_lang/aio_file/aio_class_definition/aio_class_definiiton.h>
 #include <lib4aio_cpp_headers/utils/array_list_utils/array_list.h>
 #include <lib4aio_cpp_headers/utils/str_hook_utils/str_hook/str_hook.h>
 #include <lib4aio_cpp_headers/utils/str_hook_utils/str_hook_list/str_hook_list.h>
@@ -28,6 +31,7 @@ private:
     array_list<aio_field_definition> *global_field_definition_list;
 
     array_list<aio_class_definition> *class_list;
+    
 public:
 
 } aio_source_file;

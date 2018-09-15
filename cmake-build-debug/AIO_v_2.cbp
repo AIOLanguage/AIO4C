@@ -8,281 +8,294 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="C:/Users/StarKRE/CLionProjects/AIO.v.2/cmake-build-debug"/>
+				<Option working_dir="/home/ihb/aio/AIO_Backup/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/StarKRE/CLionProjects/AIO.v.2/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/StarKRE/CLionProjects/AIO.v.2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/StarKRE/CLionProjects/AIO.v.2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/StarKRE/CLionProjects/AIO.v.2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="edit_cache">
-				<Option working_dir="C:/Users/StarKRE/CLionProjects/AIO.v.2/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/StarKRE/CLionProjects/AIO.v.2/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/StarKRE/CLionProjects/AIO.v.2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/StarKRE/CLionProjects/AIO.v.2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/StarKRE/CLionProjects/AIO.v.2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="AIO_v_2">
-				<Option output="C:/Users/StarKRE/CLionProjects/AIO.v.2/cmake-build-debug/AIO_v_2.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/StarKRE/CLionProjects/AIO.v.2/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="C:/Users/StarKRE/CLionProjects/AIO.v.2/headers"/>
-					<Add directory="C:/Users/StarKRE/CLionProjects/AIO.v.2/lib4aio"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/i686-w64-mingw32"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/backward"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include-fixed"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../i686-w64-mingw32/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/StarKRE/CLionProjects/AIO.v.2/cmake-build-debug/Makefile&quot;  VERBOSE=1 AIO_v_2"/>
-					<CompileFile command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/StarKRE/CLionProjects/AIO.v.2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/StarKRE/CLionProjects/AIO.v.2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/StarKRE/CLionProjects/AIO.v.2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="AIO_v_2/fast">
-				<Option output="C:/Users/StarKRE/CLionProjects/AIO.v.2/cmake-build-debug/AIO_v_2.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/StarKRE/CLionProjects/AIO.v.2/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="C:/Users/StarKRE/CLionProjects/AIO.v.2/headers"/>
-					<Add directory="C:/Users/StarKRE/CLionProjects/AIO.v.2/lib4aio"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/i686-w64-mingw32"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/backward"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include-fixed"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../i686-w64-mingw32/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/StarKRE/CLionProjects/AIO.v.2/cmake-build-debug/Makefile&quot;  VERBOSE=1 AIO_v_2/fast"/>
-					<CompileFile command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/StarKRE/CLionProjects/AIO.v.2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/StarKRE/CLionProjects/AIO.v.2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/StarKRE/CLionProjects/AIO.v.2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/ihb/aio/AIO_Backup/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/ihb/aio/AIO_Backup/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/ihb/aio/AIO_Backup/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/ihb/aio/AIO_Backup/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="C:/Users/StarKRE/CLionProjects/AIO.v.2/cmake-build-debug"/>
+				<Option working_dir="/home/ihb/aio/AIO_Backup/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/StarKRE/CLionProjects/AIO.v.2/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/StarKRE/CLionProjects/AIO.v.2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/StarKRE/CLionProjects/AIO.v.2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~2/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/StarKRE/CLionProjects/AIO.v.2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/ihb/aio/AIO_Backup/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/ihb/aio/AIO_Backup/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/ihb/aio/AIO_Backup/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/ihb/aio/AIO_Backup/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/ihb/aio/AIO_Backup/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/ihb/aio/AIO_Backup/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/ihb/aio/AIO_Backup/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/ihb/aio/AIO_Backup/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/ihb/aio/AIO_Backup/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="AIO_v_2">
+				<Option output="/home/ihb/aio/AIO_Backup/cmake-build-debug/AIO_v_2" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/ihb/aio/AIO_Backup/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/ihb/aio/AIO_Backup/headers"/>
+					<Add directory="/home/ihb/aio/AIO_Backup/lib4aio"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/ihb/aio/AIO_Backup/cmake-build-debug/Makefile&quot;  VERBOSE=1 AIO_v_2"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/ihb/aio/AIO_Backup/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/ihb/aio/AIO_Backup/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/ihb/aio/AIO_Backup/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="AIO_v_2/fast">
+				<Option output="/home/ihb/aio/AIO_Backup/cmake-build-debug/AIO_v_2" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/ihb/aio/AIO_Backup/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/ihb/aio/AIO_Backup/headers"/>
+					<Add directory="/home/ihb/aio/AIO_Backup/lib4aio"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/ihb/aio/AIO_Backup/cmake-build-debug/Makefile&quot;  VERBOSE=1 AIO_v_2/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/ihb/aio/AIO_Backup/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/ihb/aio/AIO_Backup/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/ihb/aio/AIO_Backup/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/headers">
+		<Unit filename="/home/ihb/aio/AIO_Backup/headers">
 			<Option target="AIO_v_2"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/headers/aio_core/aio_core.h">
+		<Unit filename="/home/ihb/aio/AIO_Backup/headers/aio_core/aio_core.h">
 			<Option target="AIO_v_2"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/headers/aio_lang/aio_file/aio_class_definition/aio_class_definiiton.h">
+		<Unit filename="/home/ihb/aio/AIO_Backup/headers/aio_lang/aio_file/aio_class_definition/aio_class_definiiton.h">
 			<Option target="AIO_v_2"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/headers/aio_lang/aio_file/aio_field/aio_field.h">
+		<Unit filename="/home/ihb/aio/AIO_Backup/headers/aio_lang/aio_file/aio_field/aio_field.h">
 			<Option target="AIO_v_2"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/headers/aio_lang/aio_file/aio_field/definition/aio_field_definition.h">
+		<Unit filename="/home/ihb/aio/AIO_Backup/headers/aio_lang/aio_file/aio_field/definition/aio_field_definition.h">
 			<Option target="AIO_v_2"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/headers/aio_lang/aio_file/aio_file.h">
+		<Unit filename="/home/ihb/aio/AIO_Backup/headers/aio_lang/aio_file/aio_file.h">
 			<Option target="AIO_v_2"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/headers/aio_lang/aio_file/aio_function/definition/aio_function_definition.h">
+		<Unit filename="/home/ihb/aio/AIO_Backup/headers/aio_lang/aio_file/aio_function/definition/aio_function_definition.h">
 			<Option target="AIO_v_2"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/headers/aio_lang/aio_lexer/aio_lexer.h">
+		<Unit filename="/home/ihb/aio/AIO_Backup/headers/aio_lang/aio_lexer_utils/aio_lexer_utils.h">
 			<Option target="AIO_v_2"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/headers/aio_lang/aio_types/aio_type.h">
+		<Unit filename="/home/ihb/aio/AIO_Backup/headers/aio_lang/aio_namespaces/aio_namespace_definition.h">
 			<Option target="AIO_v_2"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/headers/aio_lang/aio_visibility_type/aio_visibility_type.h">
+		<Unit filename="/home/ihb/aio/AIO_Backup/headers/aio_lang/aio_namespaces/aio_scope/aio_scope_definition.h">
 			<Option target="AIO_v_2"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/headers/aio_utils/aio_bundle/aio_bundle.h">
+		<Unit filename="/home/ihb/aio/AIO_Backup/headers/aio_lang/aio_type_utils/aio_type.h">
 			<Option target="AIO_v_2"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/headers/aio_utils/aio_value/advanced_functions/cast_aio_value.h">
+		<Unit filename="/home/ihb/aio/AIO_Backup/headers/aio_lang/aio_visibility_type/aio_visibility_type.h">
 			<Option target="AIO_v_2"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/headers/aio_utils/aio_value/advanced_functions/compare_aio_value.h">
+		<Unit filename="/home/ihb/aio/AIO_Backup/headers/aio_utils/aio_bundle/aio_bundle.h">
 			<Option target="AIO_v_2"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/headers/aio_utils/aio_value/advanced_functions/log_aio_value.h">
+		<Unit filename="/home/ihb/aio/AIO_Backup/headers/aio_utils/aio_value/advanced_functions/cast_aio_value.h">
 			<Option target="AIO_v_2"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/headers/aio_utils/aio_value/aio_value.h">
+		<Unit filename="/home/ihb/aio/AIO_Backup/headers/aio_utils/aio_value/advanced_functions/compare_aio_value.h">
 			<Option target="AIO_v_2"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/lib4aio/lib4aio_cpp_headers/utils/array_list_utils/array_list.h">
+		<Unit filename="/home/ihb/aio/AIO_Backup/headers/aio_utils/aio_value/advanced_functions/log_aio_value.h">
 			<Option target="AIO_v_2"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/lib4aio/lib4aio_cpp_headers/utils/char_utils/char_utils.h">
+		<Unit filename="/home/ihb/aio/AIO_Backup/headers/aio_utils/aio_value/aio_value.h">
 			<Option target="AIO_v_2"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/lib4aio/lib4aio_cpp_headers/utils/error_utils/error_utils.h">
+		<Unit filename="/home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_headers/utils/array_list_utils/array_list.h">
 			<Option target="AIO_v_2"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/lib4aio/lib4aio_cpp_headers/utils/log_utils/log_utils.h">
+		<Unit filename="/home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_headers/utils/char_utils/char_utils.h">
 			<Option target="AIO_v_2"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/lib4aio/lib4aio_cpp_headers/utils/memory_utils/memory_utils.h">
+		<Unit filename="/home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_headers/utils/error_utils/error_utils.h">
 			<Option target="AIO_v_2"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/lib4aio/lib4aio_cpp_headers/utils/point_watcher/point_watcher.h">
+		<Unit filename="/home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_headers/utils/log_utils/log_utils.h">
 			<Option target="AIO_v_2"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/lib4aio/lib4aio_cpp_headers/utils/point_watcher/str_hook_watcher/str_point_watcher.h">
+		<Unit filename="/home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_headers/utils/memory_utils/memory_utils.h">
 			<Option target="AIO_v_2"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/lib4aio/lib4aio_cpp_headers/utils/str_builder/str_builder.h">
+		<Unit filename="/home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_headers/utils/point_watcher/point_watcher.h">
 			<Option target="AIO_v_2"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/lib4aio/lib4aio_cpp_headers/utils/str_hook_utils/str_hook/str_hook.h">
+		<Unit filename="/home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_headers/utils/point_watcher/str_hook_watcher/str_point_watcher.h">
 			<Option target="AIO_v_2"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/lib4aio/lib4aio_cpp_headers/utils/str_hook_utils/str_hook_iterator/str_hook_iterator.h">
+		<Unit filename="/home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_headers/utils/str_builder/str_builder.h">
 			<Option target="AIO_v_2"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/lib4aio/lib4aio_cpp_headers/utils/str_hook_utils/str_hook_list/str_hook_list.h">
+		<Unit filename="/home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_headers/utils/str_hook_utils/str_hook/str_hook.h">
 			<Option target="AIO_v_2"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/lib4aio/lib4aio_cpp_headers/utils/string_utils/cast.h">
+		<Unit filename="/home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_headers/utils/str_hook_utils/str_hook_iterator/str_hook_iterator.h">
 			<Option target="AIO_v_2"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/lib4aio/lib4aio_cpp_headers/utils/string_utils/common.h">
+		<Unit filename="/home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_headers/utils/str_hook_utils/str_hook_list/str_hook_list.h">
 			<Option target="AIO_v_2"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/lib4aio/lib4aio_cpp_headers/utils/string_utils/match.h">
+		<Unit filename="/home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_headers/utils/string_utils/cast.h">
 			<Option target="AIO_v_2"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/lib4aio/lib4aio_cpp_headers/utils/string_utils/split.h">
+		<Unit filename="/home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_headers/utils/string_utils/common.h">
 			<Option target="AIO_v_2"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/lib4aio/lib4aio_cpp_headers/utils/string_utils/suffix_prefix.h">
+		<Unit filename="/home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_headers/utils/string_utils/match.h">
 			<Option target="AIO_v_2"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/lib4aio/lib4aio_cpp_headers/utils/string_utils/trim.h">
+		<Unit filename="/home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_headers/utils/string_utils/split.h">
 			<Option target="AIO_v_2"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/lib4aio/lib4aio_cpp_headers/utils/struct_list/struct_list.h">
+		<Unit filename="/home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_headers/utils/string_utils/suffix_prefix.h">
 			<Option target="AIO_v_2"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/lib4aio/lib4aio_cpp_sources/utils/array_list_utils/array_list.cpp">
+		<Unit filename="/home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_headers/utils/string_utils/trim.h">
 			<Option target="AIO_v_2"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/lib4aio/lib4aio_cpp_sources/utils/char_utils/char_utils.cpp">
+		<Unit filename="/home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_headers/utils/struct_list/struct_list.h">
 			<Option target="AIO_v_2"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/lib4aio/lib4aio_cpp_sources/utils/error_utils/error_utils.cpp">
+		<Unit filename="/home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_sources/utils/array_list_utils/array_list.cpp">
 			<Option target="AIO_v_2"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/lib4aio/lib4aio_cpp_sources/utils/log_utils/log_utils.cpp">
+		<Unit filename="/home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_sources/utils/char_utils/char_utils.cpp">
 			<Option target="AIO_v_2"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/lib4aio/lib4aio_cpp_sources/utils/memory_utils/memory_utils.cpp">
+		<Unit filename="/home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_sources/utils/error_utils/error_utils.cpp">
 			<Option target="AIO_v_2"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/lib4aio/lib4aio_cpp_sources/utils/point_watcher/point_watcher.cpp">
+		<Unit filename="/home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_sources/utils/log_utils/log_utils.cpp">
 			<Option target="AIO_v_2"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/lib4aio/lib4aio_cpp_sources/utils/point_watcher/str_hook_watcher/str_point_watcher.cpp">
+		<Unit filename="/home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_sources/utils/memory_utils/memory_utils.cpp">
 			<Option target="AIO_v_2"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/lib4aio/lib4aio_cpp_sources/utils/str_builder/str_builder.cpp">
+		<Unit filename="/home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_sources/utils/point_watcher/point_watcher.cpp">
 			<Option target="AIO_v_2"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_cast.cpp">
+		<Unit filename="/home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_sources/utils/point_watcher/str_hook_watcher/str_point_watcher.cpp">
 			<Option target="AIO_v_2"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_error.cpp">
+		<Unit filename="/home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_sources/utils/str_builder/str_builder.cpp">
 			<Option target="AIO_v_2"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_log.cpp">
+		<Unit filename="/home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_cast.cpp">
 			<Option target="AIO_v_2"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_matcher.cpp">
+		<Unit filename="/home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_error.cpp">
 			<Option target="AIO_v_2"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_split.cpp">
+		<Unit filename="/home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_log.cpp">
 			<Option target="AIO_v_2"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_trim.cpp">
+		<Unit filename="/home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_matcher.cpp">
 			<Option target="AIO_v_2"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/str_hook.cpp">
+		<Unit filename="/home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_split.cpp">
 			<Option target="AIO_v_2"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_iterator/str_hook_iterator.cpp">
+		<Unit filename="/home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_trim.cpp">
 			<Option target="AIO_v_2"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/advanced_functions/str_hook_list_log.cpp">
+		<Unit filename="/home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/str_hook.cpp">
 			<Option target="AIO_v_2"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/advanced_functions/str_hook_trim.cpp">
+		<Unit filename="/home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_iterator/str_hook_iterator.cpp">
 			<Option target="AIO_v_2"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/str_hook_list.cpp">
+		<Unit filename="/home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/advanced_functions/str_hook_list_log.cpp">
 			<Option target="AIO_v_2"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/lib4aio/lib4aio_cpp_sources/utils/string_utils/common.cpp">
+		<Unit filename="/home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/advanced_functions/str_hook_trim.cpp">
 			<Option target="AIO_v_2"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/lib4aio/lib4aio_cpp_sources/utils/string_utils/match.cpp">
+		<Unit filename="/home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/str_hook_list.cpp">
 			<Option target="AIO_v_2"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/lib4aio/lib4aio_cpp_sources/utils/string_utils/split.cpp">
+		<Unit filename="/home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_sources/utils/string_utils/common.cpp">
 			<Option target="AIO_v_2"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/lib4aio/lib4aio_cpp_sources/utils/string_utils/suffix_prefix.cpp">
+		<Unit filename="/home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_sources/utils/string_utils/match.cpp">
 			<Option target="AIO_v_2"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/lib4aio/lib4aio_cpp_sources/utils/string_utils/trim.cpp">
+		<Unit filename="/home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_sources/utils/string_utils/split.cpp">
 			<Option target="AIO_v_2"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/lib4aio/lib4aio_cpp_sources/utils/struct_list/struct_list.cpp">
+		<Unit filename="/home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_sources/utils/string_utils/suffix_prefix.cpp">
 			<Option target="AIO_v_2"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/main/main.cpp">
+		<Unit filename="/home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_sources/utils/string_utils/trim.cpp">
 			<Option target="AIO_v_2"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/sources">
+		<Unit filename="/home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_sources/utils/struct_list/struct_list.cpp">
 			<Option target="AIO_v_2"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/sources/aio_lang/aio_lexer/aio_lexer.cpp">
+		<Unit filename="/home/ihb/aio/AIO_Backup/main/main.cpp">
 			<Option target="AIO_v_2"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/sources/aio_utils/aio_bundle/aio_bundle.cpp">
+		<Unit filename="/home/ihb/aio/AIO_Backup/sources">
 			<Option target="AIO_v_2"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/sources/aio_utils/aio_value/advanced_functions/cast_aio_value.cpp">
+		<Unit filename="/home/ihb/aio/AIO_Backup/sources/aio_lang/aio_lexer_utils/aio_lexer_utils.cpp">
 			<Option target="AIO_v_2"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/sources/aio_utils/aio_value/advanced_functions/compare_aio_value.cpp">
+		<Unit filename="/home/ihb/aio/AIO_Backup/sources/aio_lang/aio_namespaces/aio_namespace.cpp">
 			<Option target="AIO_v_2"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/sources/aio_utils/aio_value/advanced_functions/log_aio_value.cpp">
+		<Unit filename="/home/ihb/aio/AIO_Backup/sources/aio_utils/aio_bundle/aio_bundle.cpp">
 			<Option target="AIO_v_2"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/sources/aio_utils/aio_value/aio_value.cpp">
+		<Unit filename="/home/ihb/aio/AIO_Backup/sources/aio_utils/aio_value/advanced_functions/cast_aio_value.cpp">
 			<Option target="AIO_v_2"/>
 		</Unit>
-		<Unit filename="C:/Users/StarKRE/CLionProjects/AIO.v.2/CMakeLists.txt">
+		<Unit filename="/home/ihb/aio/AIO_Backup/sources/aio_utils/aio_value/advanced_functions/compare_aio_value.cpp">
+			<Option target="AIO_v_2"/>
+		</Unit>
+		<Unit filename="/home/ihb/aio/AIO_Backup/sources/aio_utils/aio_value/advanced_functions/log_aio_value.cpp">
+			<Option target="AIO_v_2"/>
+		</Unit>
+		<Unit filename="/home/ihb/aio/AIO_Backup/sources/aio_utils/aio_value/aio_value.cpp">
+			<Option target="AIO_v_2"/>
+		</Unit>
+		<Unit filename="/home/ihb/aio/AIO_Backup/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>
