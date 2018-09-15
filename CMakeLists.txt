@@ -19,7 +19,14 @@ add_executable(AIO_v_2
         #lang:
         headers/aio_lang/aio_file/aio_file.h
         headers/aio_lang/aio_type_utils/aio_type.h
+        headers/aio_lang/aio_file/aio_field/aio_field.h
         headers/aio_lang/aio_lexer_utils/aio_lexer_utils.h
+        headers/aio_lang/aio_visibility_type/aio_visibility_type.h
+        headers/aio_lang/aio_namespaces/aio_namespace_definition.h
+        headers/aio_lang/aio_namespaces/aio_scope/aio_scope_definition.h
+        headers/aio_lang/aio_file/aio_class_definition/aio_class_definiiton.h
+        headers/aio_lang/aio_file/aio_field/definition/aio_field_definition.h
+        headers/aio_lang/aio_file/aio_function/definition/aio_function_definition.h
         #aio_utils:
         headers/aio_utils/aio_bundle/aio_bundle.h
         headers/aio_utils/aio_value/aio_value.h
@@ -53,8 +60,10 @@ add_executable(AIO_v_2
         sources
         #lang:
         sources/aio_lang/aio_lexer_utils/aio_lexer_utils.cpp
-        sources/aio_utils/aio_bundle/aio_bundle.cpp
+        sources/aio_lang/aio_namespaces/aio_scope/aio_scope.cpp
+        sources/aio_lang/aio_namespaces/aio_namespace.cpp
         #aio_utils:
+        sources/aio_utils/aio_bundle/aio_bundle.cpp
         sources/aio_utils/aio_value/aio_value.cpp
         sources/aio_utils/aio_value/advanced_functions/log_aio_value.cpp
         sources/aio_utils/aio_value/advanced_functions/cast_aio_value.cpp
@@ -87,4 +96,4 @@ add_executable(AIO_v_2
         lib4aio/lib4aio_cpp_sources/utils/str_builder/str_builder.cpp
         lib4aio/lib4aio_cpp_sources/utils/error_utils/error_utils.cpp
         #---------------------------------------------------------------------------------------------------------------
-        headers/aio_lang/aio_file/aio_class_definition/aio_class_definiiton.h headers/aio_lang/aio_file/aio_field/definition/aio_field_definition.h headers/aio_lang/aio_file/aio_field/aio_field.h headers/aio_lang/aio_visibility_type/aio_visibility_type.h headers/aio_lang/aio_file/aio_function/definition/aio_function_definition.h headers/aio_lang/aio_namespaces/aio_namespace_definition.h headers/aio_lang/aio_namespaces/aio_scope/aio_scope_definition.h sources/aio_lang/aio_namespaces/aio_namespace.cpp)
+        )

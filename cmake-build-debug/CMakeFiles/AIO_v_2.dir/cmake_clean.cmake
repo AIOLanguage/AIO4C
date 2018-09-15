@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/AIO_v_2.dir/main/main.cpp.o"
   "CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_lexer_utils/aio_lexer_utils.cpp.o"
+  "CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_namespaces/aio_scope/aio_scope.cpp.o"
+  "CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_namespaces/aio_namespace.cpp.o"
   "CMakeFiles/AIO_v_2.dir/sources/aio_utils/aio_bundle/aio_bundle.cpp.o"
   "CMakeFiles/AIO_v_2.dir/sources/aio_utils/aio_value/aio_value.cpp.o"
   "CMakeFiles/AIO_v_2.dir/sources/aio_utils/aio_value/advanced_functions/log_aio_value.cpp.o"
@@ -31,7 +33,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/string_utils/trim.cpp.o"
   "CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_builder/str_builder.cpp.o"
   "CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/error_utils/error_utils.cpp.o"
-  "CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_namespaces/aio_namespace.cpp.o"
   "AIO_v_2.pdb"
   "AIO_v_2"
 )

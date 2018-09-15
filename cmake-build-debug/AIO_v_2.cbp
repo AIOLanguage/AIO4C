@@ -280,6 +280,9 @@
 		<Unit filename="/home/ihb/aio/AIO_Backup/sources/aio_lang/aio_namespaces/aio_namespace.cpp">
 			<Option target="AIO_v_2"/>
 		</Unit>
+		<Unit filename="/home/ihb/aio/AIO_Backup/sources/aio_lang/aio_namespaces/aio_scope/aio_scope.cpp">
+			<Option target="AIO_v_2"/>
+		</Unit>
 		<Unit filename="/home/ihb/aio/AIO_Backup/sources/aio_utils/aio_bundle/aio_bundle.cpp">
 			<Option target="AIO_v_2"/>
 		</Unit>

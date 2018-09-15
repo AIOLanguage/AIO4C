@@ -879,6 +879,33 @@ sources/aio_lang/aio_namespaces/aio_namespace.cpp.s:
 	$(MAKE) -f CMakeFiles/AIO_v_2.dir/build.make CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_namespaces/aio_namespace.cpp.s
 .PHONY : sources/aio_lang/aio_namespaces/aio_namespace.cpp.s
 
+sources/aio_lang/aio_namespaces/aio_scope/aio_scope.o: sources/aio_lang/aio_namespaces/aio_scope/aio_scope.cpp.o
+
+.PHONY : sources/aio_lang/aio_namespaces/aio_scope/aio_scope.o
+
+# target to build an object file
+sources/aio_lang/aio_namespaces/aio_scope/aio_scope.cpp.o:
+	$(MAKE) -f CMakeFiles/AIO_v_2.dir/build.make CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_namespaces/aio_scope/aio_scope.cpp.o
+.PHONY : sources/aio_lang/aio_namespaces/aio_scope/aio_scope.cpp.o
+
+sources/aio_lang/aio_namespaces/aio_scope/aio_scope.i: sources/aio_lang/aio_namespaces/aio_scope/aio_scope.cpp.i
+
+.PHONY : sources/aio_lang/aio_namespaces/aio_scope/aio_scope.i
+
+# target to preprocess a source file
+sources/aio_lang/aio_namespaces/aio_scope/aio_scope.cpp.i:
+	$(MAKE) -f CMakeFiles/AIO_v_2.dir/build.make CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_namespaces/aio_scope/aio_scope.cpp.i
+.PHONY : sources/aio_lang/aio_namespaces/aio_scope/aio_scope.cpp.i
+
+sources/aio_lang/aio_namespaces/aio_scope/aio_scope.s: sources/aio_lang/aio_namespaces/aio_scope/aio_scope.cpp.s
+
+.PHONY : sources/aio_lang/aio_namespaces/aio_scope/aio_scope.s
+
+# target to generate assembly for a file
+sources/aio_lang/aio_namespaces/aio_scope/aio_scope.cpp.s:
+	$(MAKE) -f CMakeFiles/AIO_v_2.dir/build.make CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_namespaces/aio_scope/aio_scope.cpp.s
+.PHONY : sources/aio_lang/aio_namespaces/aio_scope/aio_scope.cpp.s
+
 sources/aio_utils/aio_bundle/aio_bundle.o: sources/aio_utils/aio_bundle/aio_bundle.cpp.o
 
 .PHONY : sources/aio_utils/aio_bundle/aio_bundle.o
@@ -1107,6 +1134,9 @@ help:
 	@echo "... sources/aio_lang/aio_namespaces/aio_namespace.o"
 	@echo "... sources/aio_lang/aio_namespaces/aio_namespace.i"
 	@echo "... sources/aio_lang/aio_namespaces/aio_namespace.s"
+	@echo "... sources/aio_lang/aio_namespaces/aio_scope/aio_scope.o"
+	@echo "... sources/aio_lang/aio_namespaces/aio_scope/aio_scope.i"
+	@echo "... sources/aio_lang/aio_namespaces/aio_scope/aio_scope.s"
 	@echo "... sources/aio_utils/aio_bundle/aio_bundle.o"
 	@echo "... sources/aio_utils/aio_bundle/aio_bundle.i"
 	@echo "... sources/aio_utils/aio_bundle/aio_bundle.s"

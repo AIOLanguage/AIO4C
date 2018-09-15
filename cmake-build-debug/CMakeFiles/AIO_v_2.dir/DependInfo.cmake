@@ -32,6 +32,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/ihb/aio/AIO_Backup/main/main.cpp" "/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles/AIO_v_2.dir/main/main.cpp.o"
   "/home/ihb/aio/AIO_Backup/sources/aio_lang/aio_lexer_utils/aio_lexer_utils.cpp" "/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_lexer_utils/aio_lexer_utils.cpp.o"
   "/home/ihb/aio/AIO_Backup/sources/aio_lang/aio_namespaces/aio_namespace.cpp" "/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_namespaces/aio_namespace.cpp.o"
+  "/home/ihb/aio/AIO_Backup/sources/aio_lang/aio_namespaces/aio_scope/aio_scope.cpp" "/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_namespaces/aio_scope/aio_scope.cpp.o"
   "/home/ihb/aio/AIO_Backup/sources/aio_utils/aio_bundle/aio_bundle.cpp" "/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles/AIO_v_2.dir/sources/aio_utils/aio_bundle/aio_bundle.cpp.o"
   "/home/ihb/aio/AIO_Backup/sources/aio_utils/aio_value/advanced_functions/cast_aio_value.cpp" "/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles/AIO_v_2.dir/sources/aio_utils/aio_value/advanced_functions/cast_aio_value.cpp.o"
   "/home/ihb/aio/AIO_Backup/sources/aio_utils/aio_value/advanced_functions/compare_aio_value.cpp" "/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles/AIO_v_2.dir/sources/aio_utils/aio_value/advanced_functions/compare_aio_value.cpp.o"
