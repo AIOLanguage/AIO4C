@@ -7,4 +7,4 @@ plg {
 
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
-ann FriendlyRobot
+ann FriendlyRobot {}

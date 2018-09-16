@@ -1,4 +1,3 @@
-typ Body
-{
-    + armor Double
+typ Body {
+    + armor Dou = 10
 }

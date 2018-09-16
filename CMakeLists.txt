@@ -17,22 +17,22 @@ add_executable(AIO_v_2
         #core:
         headers/aio_core/aio_core.h
         #lang:
-        headers/aio_lang/aio_file/aio_file.h
-        headers/aio_lang/aio_type_utils/aio_type.h
-        headers/aio_lang/aio_file/aio_field/aio_field.h
-        headers/aio_lang/aio_lexer_utils/aio_lexer_utils.h
-        headers/aio_lang/aio_visibility_type/aio_visibility_type.h
-        headers/aio_lang/aio_namespaces/aio_namespace_definition.h
-        headers/aio_lang/aio_namespaces/aio_scope/aio_scope_definition.h
-        headers/aio_lang/aio_file/aio_class_definition/aio_class_definiiton.h
-        headers/aio_lang/aio_file/aio_field/definition/aio_field_definition.h
-        headers/aio_lang/aio_file/aio_function/definition/aio_function_definition.h
-        #aio_utils:
-        headers/aio_utils/aio_bundle/aio_bundle.h
-        headers/aio_utils/aio_value/aio_value.h
-        headers/aio_utils/aio_value/advanced_functions/log_aio_value.h
-        headers/aio_utils/aio_value/advanced_functions/cast_aio_value.h
-        headers/aio_utils/aio_value/advanced_functions/compare_aio_value.h
+        headers/aio_lang/aio_space/aio_file/aio_file.h
+        headers/aio_lang/aio_types/aio_types.h
+        headers/aio_runtime/aio_variable/aio_variable.h
+        headers/aio_lang/aio_modifiers/aio_modifiers.h
+        headers/aio_lang/aio_visibility/aio_visibility.h
+        headers/aio_lang/aio_space/aio_space.h
+        headers/aio_lang/aio_space/aio_scope/aio_scope.h
+        headers/aio_lang/aio_space/aio_initializable/aio_class/aio_class.h
+        headers/aio_lang/aio_field/aio_field.h
+        headers/aio_lang/aio_invokable/aio_function/aio_function.h
+        #aio_runtime:
+        headers/aio_runtime/aio_bundle/aio_bundle.h
+        headers/aio_runtime/aio_value/aio_value.h
+        headers/aio_runtime/aio_value/advanced_functions/log_aio_value.h
+        headers/aio_runtime/aio_value/advanced_functions/cast_aio_value.h
+        headers/aio_runtime/aio_value/advanced_functions/compare_aio_value.h
         #aio_tools:
         #lib4aio:
         lib4aio/lib4aio_cpp_headers/utils/char_utils/char_utils.h
@@ -59,15 +59,15 @@ add_executable(AIO_v_2
         #SOURCES:
         sources
         #lang:
-        sources/aio_lang/aio_lexer_utils/aio_lexer_utils.cpp
-        sources/aio_lang/aio_namespaces/aio_scope/aio_scope.cpp
-        sources/aio_lang/aio_namespaces/aio_namespace.cpp
-        #aio_utils:
-        sources/aio_utils/aio_bundle/aio_bundle.cpp
-        sources/aio_utils/aio_value/aio_value.cpp
-        sources/aio_utils/aio_value/advanced_functions/log_aio_value.cpp
-        sources/aio_utils/aio_value/advanced_functions/cast_aio_value.cpp
-        sources/aio_utils/aio_value/advanced_functions/compare_aio_value.cpp
+        sources/aio_lang/aio_modifiers/aio_modifiers.cpp
+        sources/aio_lang/aio_space/aio_scope/aio_scope.cpp
+        sources/aio_lang/aio_space/aio_space.cpp
+        #aio_runtime:
+        sources/aio_runtime/aio_bundle/aio_bundle.cpp
+        sources/aio_runtime/aio_value/aio_value.cpp
+        sources/aio_runtime/aio_value/advanced_functions/log_aio_value.cpp
+        sources/aio_runtime/aio_value/advanced_functions/cast_aio_value.cpp
+        sources/aio_runtime/aio_value/advanced_functions/compare_aio_value.cpp
         #aio_tools:
         #lib4aio:
         lib4aio/lib4aio_cpp_sources/utils/char_utils/char_utils.cpp
@@ -96,4 +96,4 @@ add_executable(AIO_v_2
         lib4aio/lib4aio_cpp_sources/utils/str_builder/str_builder.cpp
         lib4aio/lib4aio_cpp_sources/utils/error_utils/error_utils.cpp
         #---------------------------------------------------------------------------------------------------------------
-        )
+        headers/aio_lang/aio_space/aio_initializable/aio_enum/aio_enum.h sources/aio_lang/aio_space/aio_initializable/aio_enum/aio_enum.cpp headers/aio_lang/aio_space/aio_initializable/aio_initializable.h sources/aio_lang/aio_space/aio_initializable/aio_initializable.cpp headers/aio_lang/aio_invokable/aio_constructor/aio_constructor.h headers/aio_lang/aio_invokable/aio_invokable.h sources/aio_lang/aio_field/aio_field.cpp headers/aio_lang/aio_annotatable/aio_annotatable.h sources/aio_lang/aio_annotatable/aio_annotatable.cpp headers/aio_parsing/aio_invokable_circuit/aio_invokable_circuit.h sources/aio_lang/aio_invokable/aio_invokable.cpp sources/aio_lang/aio_invokable/function/aio_function.cpp headers/aio_parsing/aio_invokable_instruction/aio_invokable_instruction.h headers/aio_runtime/aio_invokable_track/aio_invokable_track.h)

@@ -3,11 +3,11 @@ plg {
     robots.abstract.core.Core
 }
 
-cls {
+typ {
 
     + head Head
 
     + core Core
 
-    fun calc() *
+    fun calc() : abstract
 }

@@ -7,8 +7,7 @@ plg {
 
 @Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)
-ann RobotVersion
-{
+ann RobotVersion {
 
     + min Int
 

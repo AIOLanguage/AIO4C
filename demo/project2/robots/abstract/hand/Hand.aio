@@ -1,5 +1,4 @@
-typ Hand
-{
+typ Hand {
 
-    + power Dou
+    + power Dou : abstract
 }

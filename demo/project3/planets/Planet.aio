@@ -1,0 +1,65 @@
+plg {
+    planets.SpaceType
+}
+
+enu Planet(
+
+        MERCURY(2440) {
+
+            @Override
+            description = ''
+
+        },
+        VENUS(6052) {
+
+            @Override
+            description = ''
+
+        },
+        EARTH(6371) {
+
+            @Override
+            description = ''
+
+        },
+        MARS(3390) {
+
+            @Override
+            description = ''
+
+        },
+        JUPITER(69911) {
+
+            @Override
+            description = ''
+
+        },
+        SATURN(58232) {
+
+            @Override
+            description = ''
+
+        },
+        URANUS(25362) {
+
+            @Override
+            description = ''
+
+        },
+        NEPTUNE(24622) {
+
+            @Override
+            description = ''
+
+        }
+) {
+
+    + radius Dou
+
+    + description Str : abstract
+
+    new(+ radius Dou)
+    {
+        $radius = radius
+    }
+}

@@ -5,7 +5,7 @@ plg {
 
 + log Logger : private = Logger.getLogger(Core724::class.name)
 
-typ Core724 : Core {
+typ Core724 -> Core {
 
     @Override
     fun install()

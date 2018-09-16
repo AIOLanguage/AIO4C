@@ -7,21 +7,21 @@ tmp {
         $core = core
     }
 
-    fun calc() *
+    fun calc() : abstract
 
     tmp Core : inner {
 
         - batteryPower Int
 
-        fun activate() * : protected
+        fun activate() : abstract : protected
 
         sco init : protected {
 
-            fun installProgram() *
+            fun installProgram() : abstract
 
-            fun installDrivers() *
+            fun installDrivers() : abstract
 
-            fun allocateMemory() _ : private
+            fun allocateMemory() : private {}
         }
 
     }

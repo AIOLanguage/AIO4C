@@ -10,7 +10,6 @@ typ Core724 -> Core {
         println('CORE-724 has activated!')
     }
 
-    @Override
     sco init {
 
         @Override
@@ -20,6 +19,6 @@ typ Core724 -> Core {
         }
 
         @Override
-        fun installDrivers() _
+        fun installDrivers() {}
     }
 }

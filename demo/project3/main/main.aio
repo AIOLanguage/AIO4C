@@ -1,0 +1,9 @@
+plg {
+    planets.Planet
+}
+
+fun main(+ args[] Str)
+{
+    println('#{MERCURY.radius}')
+    println('#{MERCURY.description}')
+}

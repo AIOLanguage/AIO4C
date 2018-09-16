@@ -9,6 +9,11 @@ plg {
 
 typ RobotVersionAnnotationBeanPostProcessor -> BeanPostProcessor {
 
+
+    /**
+     * Change version.
+     */
+
     @Override
     @Throws(BeansException)
     postProcessBeforeInitialization(+ bean Object, + beanName String) Object
