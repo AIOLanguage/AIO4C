@@ -7,14 +7,12 @@ plg {
 
 typ Core724 -> Core {
 
-    @Override
-    fun install()
+    fun install() : override
     {
         log.info('CORE-724 has installed!')
     }
 
-    @Override
-    fun activate()
+    fun activate() : override
     {
         log.info('CORE-724 has activated!')
     }

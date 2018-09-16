@@ -14,9 +14,7 @@ typ RobotVersionAnnotationBeanPostProcessor -> BeanPostProcessor {
      * Change version.
      */
 
-    @Override
-    @Throws(BeansException)
-    postProcessBeforeInitialization(+ bean Object, + beanName String) Object
+    fun postProcessBeforeInitialization(+ bean Object, + beanName String) Object : override : throws BeansException
     {
         + clazz = bean.class
         + fields = clazz.declaredFields
@@ -34,10 +32,6 @@ typ RobotVersionAnnotationBeanPostProcessor -> BeanPostProcessor {
         out bean
     }
 
-    @Override
-    @Throws(BeansException::class)
-    postProcessAfterInitialization(+ bean Object, + beanName String) Object
-    {
-        out bean
-    }
+    fun postProcessAfterInitialization(+ bean Object, + beanName String) Object : override : throws BeansException
+        = bean
 }

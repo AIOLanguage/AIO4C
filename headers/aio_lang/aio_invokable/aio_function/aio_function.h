@@ -19,7 +19,7 @@ private:
 
 public:
 
-    aio_function(
+    explicit aio_function(
             const unsigned arg_count,
             aio_invokable_circuit *root_circuit,
             str_hook *name,

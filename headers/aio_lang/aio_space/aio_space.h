@@ -49,7 +49,7 @@ public:
             array_list<aio_class> *annotations
     );
 
-    ~aio_space();
+    virtual ~aio_space();
 
     const aio_visibility get_visibility_type() const;
 

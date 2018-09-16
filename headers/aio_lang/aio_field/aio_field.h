@@ -8,21 +8,9 @@ using namespace lib4aio;
 
 class aio_field {
 
-private:
-
-    str_hook *name;
-
-    str_hook *type;
-
-    bool is_array;
-
-    bool is_mutable;
-
-    aio_visibility visibility_type;
-
 public:
 
-    aio_field(
+    explicit aio_field(
             str_hook *name,
             str_hook *type,
             const bool is_array,
@@ -41,6 +29,19 @@ public:
     const bool is_mutable_type() const;
 
     const aio_visibility get_visibility_type() const;
+
+private:
+
+    str_hook *name;
+
+    str_hook *type;
+
+    bool is_array;
+
+    bool is_mutable;
+
+    aio_visibility visibility_type;
+
 };
 
 #endif //AIO_FIELD_H

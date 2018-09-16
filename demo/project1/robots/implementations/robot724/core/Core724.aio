@@ -4,21 +4,18 @@ plg {
 
 typ Core724 -> Core {
 
-    @Override
-    fun activate()
+    fun activate() : override
     {
         println('CORE-724 has activated!')
     }
 
     sco init {
 
-        @Override
-        fun installProgram()
+        fun installProgram() : override
         {
             println('CORE-724 has installed!')
         }
 
-        @Override
-        fun installDrivers() {}
+        fun installDrivers() : override {}
     }
 }

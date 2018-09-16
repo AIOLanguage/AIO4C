@@ -6,8 +6,7 @@ typ StarKRERobot -> Robot {
 
     - version Int : private
 
-    @Override
-    fun calc()
+    fun calc() : override
     {
         println('I'm calculating...')
     }

@@ -2,7 +2,11 @@
 #define AIO_INVOKABLE_H
 
 #include <aio_lang/aio_annotatable/aio_annotatable.h>
-#include <aio_parsing/aio_circuit/aio_invokable_circuit.h>
+#include <aio_parsing/aio_invokable_circuit/aio_invokable_circuit.h>
+
+/**
+ * Overloading only by param count!!!
+ */
 
 class aio_invokable : aio_annotatable {
 
@@ -20,7 +24,7 @@ public:
             array_list<aio_class> *annotations
     );
 
-    ~aio_invokable();
+    virtual ~aio_invokable();
 
     const unsigned get_arg_count() const;
 

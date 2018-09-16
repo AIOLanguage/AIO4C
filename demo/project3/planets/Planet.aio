@@ -6,50 +6,42 @@ enu Planet(
 
         MERCURY(2440) {
 
-            @Override
-            description = ''
+            description : override = ''
 
         },
         VENUS(6052) {
 
-            @Override
-            description = ''
+            description : override = ''
 
         },
         EARTH(6371) {
 
-            @Override
-            description = ''
+            description : override = ''
 
         },
         MARS(3390) {
 
-            @Override
-            description = ''
+            description : override = ''
 
         },
         JUPITER(69911) {
 
-            @Override
-            description = ''
+            description : override = ''
 
         },
         SATURN(58232) {
 
-            @Override
-            description = ''
+            description : override = ''
 
         },
         URANUS(25362) {
 
-            @Override
-            description = ''
+            description : override = ''
 
         },
         NEPTUNE(24622) {
 
-            @Override
-            description = ''
+            description : override = ''
 
         }
 ) {

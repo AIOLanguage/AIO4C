@@ -7,9 +7,7 @@ plg {
 
 typ FriendlyRobotAnnotationBeanPostProcessor -> BeanPostProcessor {
 
-    @Override
-    @Throws(BeansException::class)
-    fun postProcessBeforeInitialization(+ bean Object, + beanName String) Object
+    fun postProcessBeforeInitialization(+ bean Object, + beanName String) Object : override : throws BeansException
     {
         + friendlyRobotAnnotation = bean.class.getAnnotation(FriendlyRobot::class)
         if (friendlyRobotAnnotation) {
@@ -18,10 +16,6 @@ typ FriendlyRobotAnnotationBeanPostProcessor -> BeanPostProcessor {
         out bean
     }
 
-    @Override
-    @Throws(BeansException::class)
-    fun postProcessAfterInitialization(+ bean Object, + beanName String) Object
-    {
-        out bean
-    }
+    fun postProcessAfterInitialization(+ bean Object, + beanName String) Object : override : throws BeansException
+        = bean
 }

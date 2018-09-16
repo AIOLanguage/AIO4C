@@ -10,20 +10,16 @@ plg {
 
 + log : private = Logger.getLogger(StarKRERobot::class.name)
 
-@FriendlyRobot
-typ StarKRERobot -> Robot, InitializingBean {
+typ StarKRERobot -> Robot, InitializingBean : @FriendlyRobot {
 
-    @RobotVersion(10)
-    - version Int
+    - version Int : @RobotVersion(10)
 
-    @Override
-    fun calc()
+    fun calc() : override
     {
         log.info('I\'m calculating...')
     }
 
-    @Override
-    fun afterPropertiesSet()
+    fun afterPropertiesSet() : override
     {
         log.info('I'm ready to the battle!')
     }

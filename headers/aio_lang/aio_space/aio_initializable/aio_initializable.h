@@ -26,7 +26,7 @@ public:
             array_list<aio_constructor> *constructor_definition_list
     );
 
-    ~aio_initializable();
+    virtual ~aio_initializable();
 };
 
 #endif //AIO_INITIALIZABLE_H

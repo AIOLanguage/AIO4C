@@ -11,9 +11,9 @@ private:
 
 public:
 
-    aio_annotatable(array_list<aio_class> *annotation_definition_list);
+    explicit aio_annotatable(array_list<aio_class> *annotation_definition_list);
 
-    ~aio_annotatable();
+    virtual ~aio_annotatable();
 
     const array_list<aio_class> *get_annotation_definition_list() const;
 

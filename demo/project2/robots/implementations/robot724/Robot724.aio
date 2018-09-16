@@ -4,6 +4,5 @@ plg {
 
 typ Robot724 -> Robot {
 
-    @Override
-    fun calc() {}
+    fun calc() : override {}
 }

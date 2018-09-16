@@ -1,14 +1,25 @@
 typ Cyborg -> Person, Robot {
 
-    @Override
-    fun calc()
+    + model Int
+
+    new(
+        + firstName Str
+        + secondName Str
+        + age Int
+        + core Core
+        + model Int
+    ) : Person(firstName, secondName, age), Robot(core)
+    {
+        $model = model
+    }
+
+    fun calc() : override
     {
         println('Calc temperature...')
         println('Calc distance...')
     }
 
-    @Override
-    fun say(+ message Str)
+    fun say(+ message Str) : override
     {
         println(':::: #message ::::')
     }
