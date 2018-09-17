@@ -636,6 +636,33 @@ lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/str_hook_list.cpp
 	$(MAKE) -f CMakeFiles/AIO_v_2.dir/build.make CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/str_hook_list.cpp.s
 .PHONY : lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/str_hook_list.cpp.s
 
+lib4aio/lib4aio_cpp_sources/utils/string_utils/cast.o: lib4aio/lib4aio_cpp_sources/utils/string_utils/cast.cpp.o
+
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/string_utils/cast.o
+
+# target to build an object file
+lib4aio/lib4aio_cpp_sources/utils/string_utils/cast.cpp.o:
+	$(MAKE) -f CMakeFiles/AIO_v_2.dir/build.make CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/string_utils/cast.cpp.o
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/string_utils/cast.cpp.o
+
+lib4aio/lib4aio_cpp_sources/utils/string_utils/cast.i: lib4aio/lib4aio_cpp_sources/utils/string_utils/cast.cpp.i
+
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/string_utils/cast.i
+
+# target to preprocess a source file
+lib4aio/lib4aio_cpp_sources/utils/string_utils/cast.cpp.i:
+	$(MAKE) -f CMakeFiles/AIO_v_2.dir/build.make CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/string_utils/cast.cpp.i
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/string_utils/cast.cpp.i
+
+lib4aio/lib4aio_cpp_sources/utils/string_utils/cast.s: lib4aio/lib4aio_cpp_sources/utils/string_utils/cast.cpp.s
+
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/string_utils/cast.s
+
+# target to generate assembly for a file
+lib4aio/lib4aio_cpp_sources/utils/string_utils/cast.cpp.s:
+	$(MAKE) -f CMakeFiles/AIO_v_2.dir/build.make CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/string_utils/cast.cpp.s
+.PHONY : lib4aio/lib4aio_cpp_sources/utils/string_utils/cast.cpp.s
+
 lib4aio/lib4aio_cpp_sources/utils/string_utils/common.o: lib4aio/lib4aio_cpp_sources/utils/string_utils/common.cpp.o
 
 .PHONY : lib4aio/lib4aio_cpp_sources/utils/string_utils/common.o
@@ -1068,32 +1095,32 @@ sources/aio_lang/aio_space/aio_file/aio_file.cpp.s:
 	$(MAKE) -f CMakeFiles/AIO_v_2.dir/build.make CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_file/aio_file.cpp.s
 .PHONY : sources/aio_lang/aio_space/aio_file/aio_file.cpp.s
 
-sources/aio_lang/aio_space/aio_initializable/aio_class.o: sources/aio_lang/aio_space/aio_initializable/aio_class.cpp.o
+sources/aio_lang/aio_space/aio_initializable/aio_class/aio_class.o: sources/aio_lang/aio_space/aio_initializable/aio_class/aio_class.cpp.o
 
-.PHONY : sources/aio_lang/aio_space/aio_initializable/aio_class.o
+.PHONY : sources/aio_lang/aio_space/aio_initializable/aio_class/aio_class.o
 
 # target to build an object file
-sources/aio_lang/aio_space/aio_initializable/aio_class.cpp.o:
-	$(MAKE) -f CMakeFiles/AIO_v_2.dir/build.make CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_initializable/aio_class.cpp.o
-.PHONY : sources/aio_lang/aio_space/aio_initializable/aio_class.cpp.o
+sources/aio_lang/aio_space/aio_initializable/aio_class/aio_class.cpp.o:
+	$(MAKE) -f CMakeFiles/AIO_v_2.dir/build.make CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_initializable/aio_class/aio_class.cpp.o
+.PHONY : sources/aio_lang/aio_space/aio_initializable/aio_class/aio_class.cpp.o
 
-sources/aio_lang/aio_space/aio_initializable/aio_class.i: sources/aio_lang/aio_space/aio_initializable/aio_class.cpp.i
+sources/aio_lang/aio_space/aio_initializable/aio_class/aio_class.i: sources/aio_lang/aio_space/aio_initializable/aio_class/aio_class.cpp.i
 
-.PHONY : sources/aio_lang/aio_space/aio_initializable/aio_class.i
+.PHONY : sources/aio_lang/aio_space/aio_initializable/aio_class/aio_class.i
 
 # target to preprocess a source file
-sources/aio_lang/aio_space/aio_initializable/aio_class.cpp.i:
-	$(MAKE) -f CMakeFiles/AIO_v_2.dir/build.make CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_initializable/aio_class.cpp.i
-.PHONY : sources/aio_lang/aio_space/aio_initializable/aio_class.cpp.i
+sources/aio_lang/aio_space/aio_initializable/aio_class/aio_class.cpp.i:
+	$(MAKE) -f CMakeFiles/AIO_v_2.dir/build.make CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_initializable/aio_class/aio_class.cpp.i
+.PHONY : sources/aio_lang/aio_space/aio_initializable/aio_class/aio_class.cpp.i
 
-sources/aio_lang/aio_space/aio_initializable/aio_class.s: sources/aio_lang/aio_space/aio_initializable/aio_class.cpp.s
+sources/aio_lang/aio_space/aio_initializable/aio_class/aio_class.s: sources/aio_lang/aio_space/aio_initializable/aio_class/aio_class.cpp.s
 
-.PHONY : sources/aio_lang/aio_space/aio_initializable/aio_class.s
+.PHONY : sources/aio_lang/aio_space/aio_initializable/aio_class/aio_class.s
 
 # target to generate assembly for a file
-sources/aio_lang/aio_space/aio_initializable/aio_class.cpp.s:
-	$(MAKE) -f CMakeFiles/AIO_v_2.dir/build.make CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_initializable/aio_class.cpp.s
-.PHONY : sources/aio_lang/aio_space/aio_initializable/aio_class.cpp.s
+sources/aio_lang/aio_space/aio_initializable/aio_class/aio_class.cpp.s:
+	$(MAKE) -f CMakeFiles/AIO_v_2.dir/build.make CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_initializable/aio_class/aio_class.cpp.s
+.PHONY : sources/aio_lang/aio_space/aio_initializable/aio_class/aio_class.cpp.s
 
 sources/aio_lang/aio_space/aio_initializable/aio_enum/aio_enum.o: sources/aio_lang/aio_space/aio_initializable/aio_enum/aio_enum.cpp.o
 
@@ -1404,6 +1431,9 @@ help:
 	@echo "... lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/str_hook_list.o"
 	@echo "... lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/str_hook_list.i"
 	@echo "... lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/str_hook_list.s"
+	@echo "... lib4aio/lib4aio_cpp_sources/utils/string_utils/cast.o"
+	@echo "... lib4aio/lib4aio_cpp_sources/utils/string_utils/cast.i"
+	@echo "... lib4aio/lib4aio_cpp_sources/utils/string_utils/cast.s"
 	@echo "... lib4aio/lib4aio_cpp_sources/utils/string_utils/common.o"
 	@echo "... lib4aio/lib4aio_cpp_sources/utils/string_utils/common.i"
 	@echo "... lib4aio/lib4aio_cpp_sources/utils/string_utils/common.s"
@@ -1452,9 +1482,9 @@ help:
 	@echo "... sources/aio_lang/aio_space/aio_file/aio_file.o"
 	@echo "... sources/aio_lang/aio_space/aio_file/aio_file.i"
 	@echo "... sources/aio_lang/aio_space/aio_file/aio_file.s"
-	@echo "... sources/aio_lang/aio_space/aio_initializable/aio_class.o"
-	@echo "... sources/aio_lang/aio_space/aio_initializable/aio_class.i"
-	@echo "... sources/aio_lang/aio_space/aio_initializable/aio_class.s"
+	@echo "... sources/aio_lang/aio_space/aio_initializable/aio_class/aio_class.o"
+	@echo "... sources/aio_lang/aio_space/aio_initializable/aio_class/aio_class.i"
+	@echo "... sources/aio_lang/aio_space/aio_initializable/aio_class/aio_class.s"
 	@echo "... sources/aio_lang/aio_space/aio_initializable/aio_enum/aio_enum.o"
 	@echo "... sources/aio_lang/aio_space/aio_initializable/aio_enum/aio_enum.i"
 	@echo "... sources/aio_lang/aio_space/aio_initializable/aio_enum/aio_enum.s"

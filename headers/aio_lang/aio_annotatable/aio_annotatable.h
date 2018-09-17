@@ -1,11 +1,16 @@
 #ifndef AIO_ANNOTATABLE_H
 #define AIO_ANNOTATABLE_H
 
-#include <lib4aio_cpp_headers/utils/array_list_utils/array_list.h>
+namespace lib4aio {
 
-using namespace lib4aio;
+    template<class T>
+    class array_list;
+
+}
 
 class aio_class;
+
+using namespace lib4aio;
 
 class aio_annotatable {
 

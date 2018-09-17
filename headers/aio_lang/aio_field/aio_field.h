@@ -1,8 +1,17 @@
 #ifndef AIO_FIELD_H
 #define AIO_FIELD_H
 
+/**
+ * 연결.
+ */
+
 #include <aio_lang/aio_visibility/aio_visibility.h>
-#include <lib4aio_cpp_headers/utils/str_hook_utils/str_hook/str_hook.h>
+
+namespace lib4aio {
+
+    class str_hook;
+
+}
 
 using namespace lib4aio;
 

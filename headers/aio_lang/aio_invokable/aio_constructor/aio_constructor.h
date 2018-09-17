@@ -18,8 +18,6 @@ class aio_constructor : aio_invokable, aio_inheritable<aio_constructor> {
             array_list<aio_class> *annotations,
             array_list<aio_constructor> *parents
     );
-
-    ~aio_constructor();
 };
 
 #endif //AIO_CONSTRUCTOR_H

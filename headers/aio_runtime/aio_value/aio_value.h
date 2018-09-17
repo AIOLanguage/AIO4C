@@ -1,14 +1,12 @@
-/**
- * Linking.
- */
-
-#include <lib4aio_cpp_headers/utils/str_hook_utils/str_hook/str_hook.h>
-
-using namespace lib4aio;
-
 #ifndef AIO_VALUE_H
 #define AIO_VALUE_H
 
+namespace lib4aio {
+
+    class str_hook;
+}
+
+using namespace lib4aio;
 
 typedef struct aio_value
 {

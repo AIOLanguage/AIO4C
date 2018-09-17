@@ -1,4 +1,10 @@
 #include <aio_core/aio_core.h>
+#include <aio_lang/aio_space/aio_file/aio_file.h>
+#include <lib4aio_cpp_headers/utils/str_hook_utils/str_hook/str_hook.h>
+#include <lib4aio_cpp_headers/utils/array_list_utils/array_list.h>
+#include <lib4aio_cpp_sources/utils/array_list_utils/array_list.cpp>
+
+using namespace lib4aio;
 
 void aio_core::inflate_aio_core(const int argc, char **argv)
 {
@@ -7,6 +13,7 @@ void aio_core::inflate_aio_core(const int argc, char **argv)
 
 aio_core *aio_core::get_instance()
 {
+    static aio_core *core;
     if (!core) {
         core = new aio_core();
     }

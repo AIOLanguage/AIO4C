@@ -5,9 +5,14 @@
  * 연결.
  */
 
- #include <lib4aio_cpp_headers/utils/str_hook_utils/str_hook_list/str_hook_list.h>
-
 #define NUMBER_OF_CORE_TYPES 5
+
+namespace lib4aio {
+
+    template <class T> class array_list;
+
+    class str_hook;
+}
 
 using namespace lib4aio;
 
@@ -34,8 +39,6 @@ private:
     /**
      * 글로벌 핵심.
      */
-
-    static aio_core *core;
 
     array_list<str_hook> *types;
 

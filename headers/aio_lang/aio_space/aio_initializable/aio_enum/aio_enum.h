@@ -6,8 +6,6 @@
  */
 
 #include <aio_lang/aio_space/aio_initializable/aio_initializable.h>
-#include <lib4aio_cpp_headers/utils/array_list_utils/array_list.h>
-#include <lib4aio_cpp_headers/utils/str_hook_utils/str_hook/str_hook.h>
 
 using namespace lib4aio;
 

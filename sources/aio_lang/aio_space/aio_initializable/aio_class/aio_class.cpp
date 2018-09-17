@@ -1,4 +1,5 @@
 #include <aio_lang/aio_space/aio_initializable/aio_class/aio_class.h>
+#include <aio_lang/aio_inheritable/aio_inheritable.cpp>
 
 aio_class::aio_class(
         aio_visibility visibility_type,

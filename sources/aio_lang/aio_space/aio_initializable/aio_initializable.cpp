@@ -5,6 +5,7 @@
 #include <aio_lang/aio_space/aio_initializable/aio_class/aio_class.h>
 #include <aio_lang/aio_space/aio_space.h>
 #include <aio_lang/aio_visibility/aio_visibility.h>
+#include <lib4aio_cpp_sources/utils/array_list_utils/array_list.cpp>
 
 aio_initializable::aio_initializable(
         aio_visibility visibility_type,

@@ -1,9 +1,17 @@
 #ifndef AIO_INVOKABLE_CIRCUIT_H
 #define AIO_INVOKABLE_CIRCUIT_H
 
-#include <aio_lang/aio_field/aio_field.h>
-#include <aio_runtime/aio_invokable_instruction/aio_invokable_instruction.h>
-#include <lib4aio_cpp_headers/utils/array_list_utils/array_list.h>
+namespace lib4aio {
+
+    template <class T> class array_list;
+
+}
+
+using namespace lib4aio;
+
+class aio_field;
+
+class aio_invokable_instruction;
 
 class aio_invokable_circuit {
     aio_invokable_circuit *parent;

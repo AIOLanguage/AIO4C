@@ -1,13 +1,12 @@
 #include <lib4aio_cpp_headers/utils/array_list_utils/array_list.h>
 #include <lib4aio_cpp_headers/utils/memory_utils/memory_utils.h>
 
-namespace lib4aio
-{
+namespace lib4aio {
 
 #define INIT_CAPACITY 2
 
     template<class T>
-    array_list<T>::array_list()
+    lib4aio::array_list<T>::array_list()
     {
         this->capacity = INIT_CAPACITY;
         this->size = 0;

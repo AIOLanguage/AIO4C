@@ -1,8 +1,8 @@
-namespace lib4aio
-{
-
 #ifndef LIB4AIO_STRING_UTILS_CAST_H
 #define LIB4AIO_STRING_UTILS_CAST_H
+
+namespace lib4aio
+{
 
     char *int_to_string(const int src);
 
@@ -16,6 +16,6 @@ namespace lib4aio
 
     bool string_to_boolean(const char *string);
 
-#endif //LIB4AIO_STRING_UTILS_CAST_H
-
 }
+
+#endif //LIB4AIO_STRING_UTILS_CAST_H

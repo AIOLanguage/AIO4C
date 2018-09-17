@@ -6,13 +6,16 @@
  */
 
 #include <aio_lang/aio_annotatable/aio_annotatable.h>
-#include <lib4aio_cpp_headers/utils/str_hook_utils/str_hook/str_hook.h>
+
+namespace lib4aio {
+
+    class str_hook;
+
+}
+
+using namespace lib4aio;
 
 class aio_invokable_circuit;
-
-/**
- * Overloading only by param count!!!
- */
 
 class aio_invokable : aio_annotatable {
 

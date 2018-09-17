@@ -1,8 +1,11 @@
 #include <aio_lang/aio_space/aio_file/aio_file.h>
+#include <lib4aio_cpp_headers/utils/str_hook_utils/str_hook_list/str_hook_list.h>
 
 #define AIO_FILE_PARENT nullptr
 
 #define AIO_FILE_ANNOTATION_LIST nullptr
+
+using namespace lib4aio;
 
 aio_file::aio_file(
         str_hook *path,

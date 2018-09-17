@@ -1,10 +1,12 @@
 #include <aio_lang/aio_types/aio_types.h>
-#include <aio_utils/aio_value/aio_value.h>
+#include <aio_runtime/aio_value/aio_value.h>
 #include <lib4aio_cpp_headers/utils/string_utils/cast.h>
 #include <lib4aio_cpp_headers/utils/string_utils/match.h>
 #include <lib4aio_cpp_headers/utils/error_utils/error_utils.h>
 
 #define CAST_AIO_VALUE_TAG "CAST_AIO_VALUE"
+
+using namespace lib4aio;
 
 aio_value *cast_to_int(const aio_value *value)
 {

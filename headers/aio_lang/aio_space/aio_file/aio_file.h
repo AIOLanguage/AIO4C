@@ -6,9 +6,13 @@
  */
 
 #include <aio_lang/aio_space/aio_space.h>
-#include <lib4aio_cpp_headers/utils/array_list_utils/array_list.h>
-#include <lib4aio_cpp_headers/utils/str_hook_utils/str_hook/str_hook.h>
-#include <lib4aio_cpp_headers/utils/str_hook_utils/str_hook_list/str_hook_list.h>
+
+namespace lib4aio {
+
+    class str_hook;
+
+    class str_hook_list;
+}
 
 using namespace lib4aio;
 
@@ -20,7 +24,7 @@ private:
 
     const char *source_file;
 
-    str_hook_chain *source_context;
+    str_hook_list *source_context;
 
     array_list<str_hook> *import_list;
 
@@ -29,7 +33,7 @@ public:
     explicit aio_file(
             str_hook *path,
             const char *source_file,
-            str_hook_chain *source_context,
+            str_hook_list *source_context,
             array_list<str_hook> *import_list,
             array_list<aio_class> *class_definition_list,
             array_list<aio_enum> *enum_definition_list,
@@ -44,7 +48,7 @@ public:
 
     const char *get_source_file() const;
 
-    const str_hook_chain *get_source_context() const;
+    const str_hook_list *get_source_context() const;
 
     const array_list<str_hook> *get_import_list() const;
 

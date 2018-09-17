@@ -7,11 +7,6 @@
 
 #include <aio_lang/aio_visibility/aio_visibility.h>
 #include <aio_lang/aio_annotatable/aio_annotatable.h>
-#include <lib4aio_cpp_headers/utils/array_list_utils/array_list.h>
-#include <lib4aio_cpp_headers/utils/str_hook_utils/str_hook/str_hook.h>
-#include <lib4aio_cpp_headers/utils/str_hook_utils/str_hook_list/str_hook_list.h>
-
-using namespace lib4aio;
 
 class aio_enum;
 

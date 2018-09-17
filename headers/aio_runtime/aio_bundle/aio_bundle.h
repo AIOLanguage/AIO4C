@@ -1,8 +1,12 @@
 #ifndef AIO_BUNDLE_H
 #define AIO_BUNDLE_H
 
-#include <lib4aio_cpp_headers/utils/struct_list/struct_list.h>
-#include <lib4aio_cpp_headers/utils/str_hook_utils/str_hook/str_hook.h>
+namespace lib4aio {
+
+    struct struct_list;
+
+    class str_hook;
+}
 
 using namespace lib4aio;
 

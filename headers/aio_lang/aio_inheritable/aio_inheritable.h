@@ -1,7 +1,10 @@
 #ifndef AIO_INHERITABLE_H
 #define AIO_INHERITABLE_H
 
-#include <lib4aio_cpp_headers/utils/array_list_utils/array_list.h>
+namespace lib4aio {
+
+    template <class T> class array_list;
+}
 
 using namespace lib4aio;
 

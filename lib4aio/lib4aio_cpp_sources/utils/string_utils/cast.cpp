@@ -1,14 +1,14 @@
-#include <stdlib.h>
-#include <string.h>
-#include <aio_lang/aio_lexer/aio_lexer.h>
-#include <lib4aio_cpp_headers/utils/char_utils/char_utils.h>
+#include <cstring>
+#include <cstdlib>
+#include <aio_lang/aio_modifiers/aio_modifiers.h>
 #include <lib4aio_cpp_headers/utils/string_utils/common.h>
 #include <lib4aio_cpp_headers/utils/memory_utils/memory_utils.h>
 #include <lib4aio_cpp_headers/utils/str_builder/str_builder.h>
+#include <lib4aio_cpp_headers/utils/char_utils/char_utils.h>
 #include <lib4aio_cpp_headers/utils/error_utils/error_utils.h>
 
-namespace lib4aio
-{
+namespace lib4aio {
+
     const static char CHAR_SHIFT = '0';
 
     const static int DIGIT_SHIFT = 10;

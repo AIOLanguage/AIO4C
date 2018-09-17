@@ -1,7 +1,11 @@
 #ifndef AIO_MODIFIERS_H
 #define AIO_MODIFIERS_H
 
-#include <lib4aio_cpp_headers/utils/str_hook_utils/str_hook/str_hook.h>
+namespace lib4aio {
+
+    class str_hook;
+
+}
 
 using namespace lib4aio;
 

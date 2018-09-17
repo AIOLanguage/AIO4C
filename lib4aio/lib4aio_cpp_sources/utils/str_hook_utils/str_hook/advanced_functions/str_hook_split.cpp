@@ -1,6 +1,5 @@
+#include <cstring>
 #include <malloc.h>
-#include <mem.h>
-
 #include <lib4aio_cpp_headers/utils/point_watcher/point_watcher.h>
 #include <lib4aio_cpp_headers/utils/str_hook_utils/str_hook/str_hook.h>
 #include <lib4aio_cpp_headers/utils/str_hook_utils/str_hook_list/str_hook_list.h>

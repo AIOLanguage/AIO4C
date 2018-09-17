@@ -23,6 +23,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/advanced_functions/str_hook_list_log.cpp" "/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/advanced_functions/str_hook_list_log.cpp.o"
   "/home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/advanced_functions/str_hook_trim.cpp" "/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/advanced_functions/str_hook_trim.cpp.o"
   "/home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/str_hook_list.cpp" "/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/str_hook_list.cpp.o"
+  "/home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_sources/utils/string_utils/cast.cpp" "/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/string_utils/cast.cpp.o"
   "/home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_sources/utils/string_utils/common.cpp" "/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/string_utils/common.cpp.o"
   "/home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_sources/utils/string_utils/match.cpp" "/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/string_utils/match.cpp.o"
   "/home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_sources/utils/string_utils/split.cpp" "/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/string_utils/split.cpp.o"
@@ -39,7 +40,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/ihb/aio/AIO_Backup/sources/aio_lang/aio_invokable/function/aio_function.cpp" "/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_invokable/function/aio_function.cpp.o"
   "/home/ihb/aio/AIO_Backup/sources/aio_lang/aio_modifiers/aio_modifiers.cpp" "/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_modifiers/aio_modifiers.cpp.o"
   "/home/ihb/aio/AIO_Backup/sources/aio_lang/aio_space/aio_file/aio_file.cpp" "/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_file/aio_file.cpp.o"
-  "/home/ihb/aio/AIO_Backup/sources/aio_lang/aio_space/aio_initializable/aio_class.cpp" "/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_initializable/aio_class.cpp.o"
+  "/home/ihb/aio/AIO_Backup/sources/aio_lang/aio_space/aio_initializable/aio_class/aio_class.cpp" "/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_initializable/aio_class/aio_class.cpp.o"
   "/home/ihb/aio/AIO_Backup/sources/aio_lang/aio_space/aio_initializable/aio_enum/aio_enum.cpp" "/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_initializable/aio_enum/aio_enum.cpp.o"
   "/home/ihb/aio/AIO_Backup/sources/aio_lang/aio_space/aio_initializable/aio_initializable.cpp" "/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_initializable/aio_initializable.cpp.o"
   "/home/ihb/aio/AIO_Backup/sources/aio_lang/aio_space/aio_scope/aio_scope.cpp" "/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_scope/aio_scope.cpp.o"
@@ -55,6 +56,7 @@ set(CMAKE_CXX_COMPILER_ID "GNU")
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../headers"
+  "../sources"
   "../lib4aio"
   )
 

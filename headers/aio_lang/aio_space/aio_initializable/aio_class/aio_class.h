@@ -7,7 +7,6 @@
 
 #include <aio_lang/aio_inheritable/aio_inheritable.h>
 #include <aio_lang/aio_space/aio_initializable/aio_initializable.h>
-#include <lib4aio_cpp_headers/utils/array_list_utils/array_list.h>
 
 using namespace lib4aio;
 

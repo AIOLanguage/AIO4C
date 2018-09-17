@@ -1,5 +1,8 @@
 #include <aio_runtime/aio_value/aio_value.h>
 #include <aio_runtime/aio_bundle/aio_bundle.h>
+#include <lib4aio_cpp_headers/utils/struct_list/struct_list.h>
+
+using namespace lib4aio;
 
 aio_bundle::aio_bundle(str_hook *function_name, struct_list *input_values)
 {

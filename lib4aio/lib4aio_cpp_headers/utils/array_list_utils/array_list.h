@@ -1,21 +1,10 @@
-namespace lib4aio
-{
-
 #ifndef LIB4AIO_ARRAY_LIST_H
 #define LIB4AIO_ARRAY_LIST_H
 
+namespace lib4aio {
+
     template<class T>
-    class array_list
-    {
-    protected:
-
-        unsigned capacity;
-
-        unsigned size;
-
-        T **elements;
-
-        void update_memory();
+    class array_list {
 
     public:
 
@@ -35,7 +24,18 @@ namespace lib4aio
 
         void free_elements();
 
+    protected:
+
+        unsigned capacity;
+
+        unsigned size;
+
+        T **elements;
+
+        void update_memory();
+
     };
 
-#endif //LIB4AIO_ARRAY_LIST_H
 }
+
+#endif //LIB4AIO_ARRAY_LIST_H

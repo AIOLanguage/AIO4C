@@ -129,7 +129,7 @@ namespace lib4aio
 
     unsigned get_string_array_size(const char *const *src)
     {
-        return _msize((void *) src) / 4;
+        return static_cast<unsigned int>(malloc_usable_size((void *) src) / 4);
     }
 
     bool are_equal_strings(const char *first, const char *second)
