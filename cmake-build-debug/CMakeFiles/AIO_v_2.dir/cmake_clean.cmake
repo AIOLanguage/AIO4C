@@ -43,6 +43,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_file/aio_file.cpp.o"
   "CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_initializable/aio_class.cpp.o"
   "CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_inheritable/aio_inheritable.cpp.o"
+  "CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_invokable/constructor/aio_constructor.cpp.o"
   "AIO_v_2.pdb"
   "AIO_v_2"
 )

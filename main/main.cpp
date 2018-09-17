@@ -2,8 +2,6 @@
 #include <clocale>
 #include <stdlib.h>
 //#include <windows.h>
-#include <aio_utils/aio_value/aio_value.h>
-#include <aio_utils/aio_bundle/aio_bundle.h>
 #include <lib4aio_cpp_headers/utils/log_utils/log_utils.h>
 #include <lib4aio_cpp_headers/utils/str_hook_utils/str_hook/str_hook.h>
 #include <lib4aio_cpp_headers/utils/struct_list/struct_list.h>
@@ -33,8 +31,9 @@ static void make_config()
     SetConsoleOutputCP(UTF_8);
     SetConsoleCP(UTF_8);
     log_info(AIO_TAG, "Windows 구성이 완료되었습니다.");
-#endif
+#else
 
+#endif
 }
 
 #ifdef AIO_DEVELOPMENT
@@ -51,7 +50,7 @@ static void make_test()
 {
     //테스트를 준비하기:
     char *args[1024] = {
-            //.exe arg:
+            //.exe 인수:
             const_cast<char *>(""),
             //"build.aio_core" 에게 경로:
             const_cast<char *>("../demo/project1/build.aio_core"),
@@ -62,7 +61,7 @@ static void make_test()
     };
     auto size = 5;
     //아이어 만들기:
-    inflate_aio_core(size, args);
+    aio_core::inflate_aio_core(size, args);
 }
 
 #endif
@@ -75,5 +74,27 @@ int main(int argc, char *argv[])
 #else
     inflate_aio_core(argc, argv);
 #endif
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     return 0;
 }

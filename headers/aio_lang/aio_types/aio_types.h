@@ -2,7 +2,7 @@
 #define AIO_TYPE_H
 
 /**
- * Declare class.
+ * 연결.
  */
 
 #include <lib4aio_cpp_headers/utils/str_hook_utils/str_hook/str_hook.h>
@@ -23,7 +23,7 @@ using namespace lib4aio;
 
 #define VOID "Voi"
 
-#define AIO_NOT_INIT_TYPE "###"
+#define AIO_NOT_INITIALIZED_TYPE "###"
 
 bool is_aio_type_hooked(const str_hook *hook);
 
@@ -37,6 +37,6 @@ bool is_aio_string_type_hooked(const str_hook *hook);
 
 bool is_aio_boolean_type_hooked(const str_hook *hook);
 
-bool is_aio_type_initialized(const str_hook *hook);
+bool is_aio_type_not_initialized(const str_hook *hook);
 
 #endif //AIO_TYPE_H

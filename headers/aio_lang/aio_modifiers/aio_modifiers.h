@@ -37,8 +37,6 @@ using namespace lib4aio;
 
 #define AIO_CLASS_MODIFIER "typ"
 
-#define AIO_INTERFACE_MODIFIER "tmp"
-
 /**
  * Function  modifier.
  */

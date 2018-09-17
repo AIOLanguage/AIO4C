@@ -2,7 +2,7 @@
 #define AIO_INVOKABLE_CIRCUIT_H
 
 #include <aio_lang/aio_field/aio_field.h>
-#include <aio_parsing/aio_invokable_instruction/aio_invokable_instruction.h>
+#include <aio_runtime/aio_invokable_instruction/aio_invokable_instruction.h>
 #include <lib4aio_cpp_headers/utils/array_list_utils/array_list.h>
 
 class aio_invokable_circuit {

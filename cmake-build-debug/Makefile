@@ -960,6 +960,33 @@ sources/aio_lang/aio_invokable/aio_invokable.cpp.s:
 	$(MAKE) -f CMakeFiles/AIO_v_2.dir/build.make CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_invokable/aio_invokable.cpp.s
 .PHONY : sources/aio_lang/aio_invokable/aio_invokable.cpp.s
 
+sources/aio_lang/aio_invokable/constructor/aio_constructor.o: sources/aio_lang/aio_invokable/constructor/aio_constructor.cpp.o
+
+.PHONY : sources/aio_lang/aio_invokable/constructor/aio_constructor.o
+
+# target to build an object file
+sources/aio_lang/aio_invokable/constructor/aio_constructor.cpp.o:
+	$(MAKE) -f CMakeFiles/AIO_v_2.dir/build.make CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_invokable/constructor/aio_constructor.cpp.o
+.PHONY : sources/aio_lang/aio_invokable/constructor/aio_constructor.cpp.o
+
+sources/aio_lang/aio_invokable/constructor/aio_constructor.i: sources/aio_lang/aio_invokable/constructor/aio_constructor.cpp.i
+
+.PHONY : sources/aio_lang/aio_invokable/constructor/aio_constructor.i
+
+# target to preprocess a source file
+sources/aio_lang/aio_invokable/constructor/aio_constructor.cpp.i:
+	$(MAKE) -f CMakeFiles/AIO_v_2.dir/build.make CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_invokable/constructor/aio_constructor.cpp.i
+.PHONY : sources/aio_lang/aio_invokable/constructor/aio_constructor.cpp.i
+
+sources/aio_lang/aio_invokable/constructor/aio_constructor.s: sources/aio_lang/aio_invokable/constructor/aio_constructor.cpp.s
+
+.PHONY : sources/aio_lang/aio_invokable/constructor/aio_constructor.s
+
+# target to generate assembly for a file
+sources/aio_lang/aio_invokable/constructor/aio_constructor.cpp.s:
+	$(MAKE) -f CMakeFiles/AIO_v_2.dir/build.make CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_invokable/constructor/aio_constructor.cpp.s
+.PHONY : sources/aio_lang/aio_invokable/constructor/aio_constructor.cpp.s
+
 sources/aio_lang/aio_invokable/function/aio_function.o: sources/aio_lang/aio_invokable/function/aio_function.cpp.o
 
 .PHONY : sources/aio_lang/aio_invokable/function/aio_function.o
@@ -1413,6 +1440,9 @@ help:
 	@echo "... sources/aio_lang/aio_invokable/aio_invokable.o"
 	@echo "... sources/aio_lang/aio_invokable/aio_invokable.i"
 	@echo "... sources/aio_lang/aio_invokable/aio_invokable.s"
+	@echo "... sources/aio_lang/aio_invokable/constructor/aio_constructor.o"
+	@echo "... sources/aio_lang/aio_invokable/constructor/aio_constructor.i"
+	@echo "... sources/aio_lang/aio_invokable/constructor/aio_constructor.s"
 	@echo "... sources/aio_lang/aio_invokable/function/aio_function.o"
 	@echo "... sources/aio_lang/aio_invokable/function/aio_function.i"
 	@echo "... sources/aio_lang/aio_invokable/function/aio_function.s"
