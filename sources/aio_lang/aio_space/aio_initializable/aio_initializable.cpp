@@ -14,15 +14,24 @@ aio_initializable::aio_initializable(
         array_list<aio_scope> *scope_definition_list,
         array_list<aio_function> *function_definition_list,
         array_list<aio_field> *field_definition_list,
+        array_list<aio_class> *annotation_list,
         array_list<aio_constructor> *constructor_definition_list
-) : aio_space(visibility_type,
-              parent_namespace,
-              class_definition_list,
-              enum_definition_list,
-              scope_definition_list,
-              function_definition_list,
-              field_definition_list
+) : aio_space(
+        visibility_type,
+        parent_namespace,
+        class_definition_list,
+        enum_definition_list,
+        scope_definition_list,
+        function_definition_list,
+        field_definition_list,
+        annotation_list
 )
 {
     this->constructor_definition_list = constructor_definition_list;
+}
+
+aio_initializable::~aio_initializable()
+{
+    this->constructor_definition_list->free_elements();
+    delete this->constructor_definition_list;
 }

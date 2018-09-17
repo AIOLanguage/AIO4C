@@ -1,4 +1,4 @@
-tmp Robot {
+typ Robot : abstract {
 
     + core Core
 
@@ -9,7 +9,7 @@ tmp Robot {
 
     fun calc() : abstract
 
-    tmp Core : inner {
+    typ Core : abstract : inner {
 
         - batteryPower Int
 

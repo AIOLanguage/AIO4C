@@ -577,6 +577,58 @@ CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_invokable/function/aio_function.cpp.
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_invokable/function/aio_function.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ihb/aio/AIO_Backup/sources/aio_lang/aio_invokable/function/aio_function.cpp -o CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_invokable/function/aio_function.cpp.s
 
+CMakeFiles/AIO_v_2.dir/sources/aio_core/aio_core.cpp.o: CMakeFiles/AIO_v_2.dir/flags.make
+CMakeFiles/AIO_v_2.dir/sources/aio_core/aio_core.cpp.o: ../sources/aio_core/aio_core.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building CXX object CMakeFiles/AIO_v_2.dir/sources/aio_core/aio_core.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AIO_v_2.dir/sources/aio_core/aio_core.cpp.o -c /home/ihb/aio/AIO_Backup/sources/aio_core/aio_core.cpp
+
+CMakeFiles/AIO_v_2.dir/sources/aio_core/aio_core.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AIO_v_2.dir/sources/aio_core/aio_core.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ihb/aio/AIO_Backup/sources/aio_core/aio_core.cpp > CMakeFiles/AIO_v_2.dir/sources/aio_core/aio_core.cpp.i
+
+CMakeFiles/AIO_v_2.dir/sources/aio_core/aio_core.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AIO_v_2.dir/sources/aio_core/aio_core.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ihb/aio/AIO_Backup/sources/aio_core/aio_core.cpp -o CMakeFiles/AIO_v_2.dir/sources/aio_core/aio_core.cpp.s
+
+CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_file/aio_file.cpp.o: CMakeFiles/AIO_v_2.dir/flags.make
+CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_file/aio_file.cpp.o: ../sources/aio_lang/aio_space/aio_file/aio_file.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building CXX object CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_file/aio_file.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_file/aio_file.cpp.o -c /home/ihb/aio/AIO_Backup/sources/aio_lang/aio_space/aio_file/aio_file.cpp
+
+CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_file/aio_file.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_file/aio_file.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ihb/aio/AIO_Backup/sources/aio_lang/aio_space/aio_file/aio_file.cpp > CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_file/aio_file.cpp.i
+
+CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_file/aio_file.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_file/aio_file.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ihb/aio/AIO_Backup/sources/aio_lang/aio_space/aio_file/aio_file.cpp -o CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_file/aio_file.cpp.s
+
+CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_initializable/aio_class.cpp.o: CMakeFiles/AIO_v_2.dir/flags.make
+CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_initializable/aio_class.cpp.o: ../sources/aio_lang/aio_space/aio_initializable/aio_class.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Building CXX object CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_initializable/aio_class.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_initializable/aio_class.cpp.o -c /home/ihb/aio/AIO_Backup/sources/aio_lang/aio_space/aio_initializable/aio_class.cpp
+
+CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_initializable/aio_class.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_initializable/aio_class.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ihb/aio/AIO_Backup/sources/aio_lang/aio_space/aio_initializable/aio_class.cpp > CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_initializable/aio_class.cpp.i
+
+CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_initializable/aio_class.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_initializable/aio_class.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ihb/aio/AIO_Backup/sources/aio_lang/aio_space/aio_initializable/aio_class.cpp -o CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_initializable/aio_class.cpp.s
+
+CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_inheritable/aio_inheritable.cpp.o: CMakeFiles/AIO_v_2.dir/flags.make
+CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_inheritable/aio_inheritable.cpp.o: ../sources/aio_lang/aio_inheritable/aio_inheritable.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Building CXX object CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_inheritable/aio_inheritable.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_inheritable/aio_inheritable.cpp.o -c /home/ihb/aio/AIO_Backup/sources/aio_lang/aio_inheritable/aio_inheritable.cpp
+
+CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_inheritable/aio_inheritable.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_inheritable/aio_inheritable.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ihb/aio/AIO_Backup/sources/aio_lang/aio_inheritable/aio_inheritable.cpp > CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_inheritable/aio_inheritable.cpp.i
+
+CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_inheritable/aio_inheritable.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_inheritable/aio_inheritable.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ihb/aio/AIO_Backup/sources/aio_lang/aio_inheritable/aio_inheritable.cpp -o CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_inheritable/aio_inheritable.cpp.s
+
 # Object files for target AIO_v_2
 AIO_v_2_OBJECTS = \
 "CMakeFiles/AIO_v_2.dir/main/main.cpp.o" \
@@ -618,7 +670,11 @@ AIO_v_2_OBJECTS = \
 "CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_field/aio_field.cpp.o" \
 "CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_annotatable/aio_annotatable.cpp.o" \
 "CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_invokable/aio_invokable.cpp.o" \
-"CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_invokable/function/aio_function.cpp.o"
+"CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_invokable/function/aio_function.cpp.o" \
+"CMakeFiles/AIO_v_2.dir/sources/aio_core/aio_core.cpp.o" \
+"CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_file/aio_file.cpp.o" \
+"CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_initializable/aio_class.cpp.o" \
+"CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_inheritable/aio_inheritable.cpp.o"
 
 # External object files for target AIO_v_2
 AIO_v_2_EXTERNAL_OBJECTS =
@@ -663,9 +719,13 @@ AIO_v_2: CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_field/aio_field.cpp.o
 AIO_v_2: CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_annotatable/aio_annotatable.cpp.o
 AIO_v_2: CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_invokable/aio_invokable.cpp.o
 AIO_v_2: CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_invokable/function/aio_function.cpp.o
+AIO_v_2: CMakeFiles/AIO_v_2.dir/sources/aio_core/aio_core.cpp.o
+AIO_v_2: CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_file/aio_file.cpp.o
+AIO_v_2: CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_initializable/aio_class.cpp.o
+AIO_v_2: CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_inheritable/aio_inheritable.cpp.o
 AIO_v_2: CMakeFiles/AIO_v_2.dir/build.make
 AIO_v_2: CMakeFiles/AIO_v_2.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Linking CXX executable AIO_v_2"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Linking CXX executable AIO_v_2"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/AIO_v_2.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

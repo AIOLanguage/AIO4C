@@ -100,6 +100,9 @@
 		<Unit filename="/home/ihb/aio/AIO_Backup/headers/aio_lang/aio_field/aio_field.h">
 			<Option target="AIO_v_2"/>
 		</Unit>
+		<Unit filename="/home/ihb/aio/AIO_Backup/headers/aio_lang/aio_inheritable/aio_inheritable.h">
+			<Option target="AIO_v_2"/>
+		</Unit>
 		<Unit filename="/home/ihb/aio/AIO_Backup/headers/aio_lang/aio_invokable/aio_constructor/aio_constructor.h">
 			<Option target="AIO_v_2"/>
 		</Unit>
@@ -298,10 +301,16 @@
 		<Unit filename="/home/ihb/aio/AIO_Backup/sources">
 			<Option target="AIO_v_2"/>
 		</Unit>
+		<Unit filename="/home/ihb/aio/AIO_Backup/sources/aio_core/aio_core.cpp">
+			<Option target="AIO_v_2"/>
+		</Unit>
 		<Unit filename="/home/ihb/aio/AIO_Backup/sources/aio_lang/aio_annotatable/aio_annotatable.cpp">
 			<Option target="AIO_v_2"/>
 		</Unit>
 		<Unit filename="/home/ihb/aio/AIO_Backup/sources/aio_lang/aio_field/aio_field.cpp">
+			<Option target="AIO_v_2"/>
+		</Unit>
+		<Unit filename="/home/ihb/aio/AIO_Backup/sources/aio_lang/aio_inheritable/aio_inheritable.cpp">
 			<Option target="AIO_v_2"/>
 		</Unit>
 		<Unit filename="/home/ihb/aio/AIO_Backup/sources/aio_lang/aio_invokable/aio_invokable.cpp">
@@ -311,6 +320,12 @@
 			<Option target="AIO_v_2"/>
 		</Unit>
 		<Unit filename="/home/ihb/aio/AIO_Backup/sources/aio_lang/aio_modifiers/aio_modifiers.cpp">
+			<Option target="AIO_v_2"/>
+		</Unit>
+		<Unit filename="/home/ihb/aio/AIO_Backup/sources/aio_lang/aio_space/aio_file/aio_file.cpp">
+			<Option target="AIO_v_2"/>
+		</Unit>
+		<Unit filename="/home/ihb/aio/AIO_Backup/sources/aio_lang/aio_space/aio_initializable/aio_class.cpp">
 			<Option target="AIO_v_2"/>
 		</Unit>
 		<Unit filename="/home/ihb/aio/AIO_Backup/sources/aio_lang/aio_space/aio_initializable/aio_enum/aio_enum.cpp">

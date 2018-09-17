@@ -825,6 +825,33 @@ main/main.cpp.s:
 	$(MAKE) -f CMakeFiles/AIO_v_2.dir/build.make CMakeFiles/AIO_v_2.dir/main/main.cpp.s
 .PHONY : main/main.cpp.s
 
+sources/aio_core/aio_core.o: sources/aio_core/aio_core.cpp.o
+
+.PHONY : sources/aio_core/aio_core.o
+
+# target to build an object file
+sources/aio_core/aio_core.cpp.o:
+	$(MAKE) -f CMakeFiles/AIO_v_2.dir/build.make CMakeFiles/AIO_v_2.dir/sources/aio_core/aio_core.cpp.o
+.PHONY : sources/aio_core/aio_core.cpp.o
+
+sources/aio_core/aio_core.i: sources/aio_core/aio_core.cpp.i
+
+.PHONY : sources/aio_core/aio_core.i
+
+# target to preprocess a source file
+sources/aio_core/aio_core.cpp.i:
+	$(MAKE) -f CMakeFiles/AIO_v_2.dir/build.make CMakeFiles/AIO_v_2.dir/sources/aio_core/aio_core.cpp.i
+.PHONY : sources/aio_core/aio_core.cpp.i
+
+sources/aio_core/aio_core.s: sources/aio_core/aio_core.cpp.s
+
+.PHONY : sources/aio_core/aio_core.s
+
+# target to generate assembly for a file
+sources/aio_core/aio_core.cpp.s:
+	$(MAKE) -f CMakeFiles/AIO_v_2.dir/build.make CMakeFiles/AIO_v_2.dir/sources/aio_core/aio_core.cpp.s
+.PHONY : sources/aio_core/aio_core.cpp.s
+
 sources/aio_lang/aio_annotatable/aio_annotatable.o: sources/aio_lang/aio_annotatable/aio_annotatable.cpp.o
 
 .PHONY : sources/aio_lang/aio_annotatable/aio_annotatable.o
@@ -878,6 +905,33 @@ sources/aio_lang/aio_field/aio_field.s: sources/aio_lang/aio_field/aio_field.cpp
 sources/aio_lang/aio_field/aio_field.cpp.s:
 	$(MAKE) -f CMakeFiles/AIO_v_2.dir/build.make CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_field/aio_field.cpp.s
 .PHONY : sources/aio_lang/aio_field/aio_field.cpp.s
+
+sources/aio_lang/aio_inheritable/aio_inheritable.o: sources/aio_lang/aio_inheritable/aio_inheritable.cpp.o
+
+.PHONY : sources/aio_lang/aio_inheritable/aio_inheritable.o
+
+# target to build an object file
+sources/aio_lang/aio_inheritable/aio_inheritable.cpp.o:
+	$(MAKE) -f CMakeFiles/AIO_v_2.dir/build.make CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_inheritable/aio_inheritable.cpp.o
+.PHONY : sources/aio_lang/aio_inheritable/aio_inheritable.cpp.o
+
+sources/aio_lang/aio_inheritable/aio_inheritable.i: sources/aio_lang/aio_inheritable/aio_inheritable.cpp.i
+
+.PHONY : sources/aio_lang/aio_inheritable/aio_inheritable.i
+
+# target to preprocess a source file
+sources/aio_lang/aio_inheritable/aio_inheritable.cpp.i:
+	$(MAKE) -f CMakeFiles/AIO_v_2.dir/build.make CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_inheritable/aio_inheritable.cpp.i
+.PHONY : sources/aio_lang/aio_inheritable/aio_inheritable.cpp.i
+
+sources/aio_lang/aio_inheritable/aio_inheritable.s: sources/aio_lang/aio_inheritable/aio_inheritable.cpp.s
+
+.PHONY : sources/aio_lang/aio_inheritable/aio_inheritable.s
+
+# target to generate assembly for a file
+sources/aio_lang/aio_inheritable/aio_inheritable.cpp.s:
+	$(MAKE) -f CMakeFiles/AIO_v_2.dir/build.make CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_inheritable/aio_inheritable.cpp.s
+.PHONY : sources/aio_lang/aio_inheritable/aio_inheritable.cpp.s
 
 sources/aio_lang/aio_invokable/aio_invokable.o: sources/aio_lang/aio_invokable/aio_invokable.cpp.o
 
@@ -959,6 +1013,60 @@ sources/aio_lang/aio_modifiers/aio_modifiers.s: sources/aio_lang/aio_modifiers/a
 sources/aio_lang/aio_modifiers/aio_modifiers.cpp.s:
 	$(MAKE) -f CMakeFiles/AIO_v_2.dir/build.make CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_modifiers/aio_modifiers.cpp.s
 .PHONY : sources/aio_lang/aio_modifiers/aio_modifiers.cpp.s
+
+sources/aio_lang/aio_space/aio_file/aio_file.o: sources/aio_lang/aio_space/aio_file/aio_file.cpp.o
+
+.PHONY : sources/aio_lang/aio_space/aio_file/aio_file.o
+
+# target to build an object file
+sources/aio_lang/aio_space/aio_file/aio_file.cpp.o:
+	$(MAKE) -f CMakeFiles/AIO_v_2.dir/build.make CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_file/aio_file.cpp.o
+.PHONY : sources/aio_lang/aio_space/aio_file/aio_file.cpp.o
+
+sources/aio_lang/aio_space/aio_file/aio_file.i: sources/aio_lang/aio_space/aio_file/aio_file.cpp.i
+
+.PHONY : sources/aio_lang/aio_space/aio_file/aio_file.i
+
+# target to preprocess a source file
+sources/aio_lang/aio_space/aio_file/aio_file.cpp.i:
+	$(MAKE) -f CMakeFiles/AIO_v_2.dir/build.make CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_file/aio_file.cpp.i
+.PHONY : sources/aio_lang/aio_space/aio_file/aio_file.cpp.i
+
+sources/aio_lang/aio_space/aio_file/aio_file.s: sources/aio_lang/aio_space/aio_file/aio_file.cpp.s
+
+.PHONY : sources/aio_lang/aio_space/aio_file/aio_file.s
+
+# target to generate assembly for a file
+sources/aio_lang/aio_space/aio_file/aio_file.cpp.s:
+	$(MAKE) -f CMakeFiles/AIO_v_2.dir/build.make CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_file/aio_file.cpp.s
+.PHONY : sources/aio_lang/aio_space/aio_file/aio_file.cpp.s
+
+sources/aio_lang/aio_space/aio_initializable/aio_class.o: sources/aio_lang/aio_space/aio_initializable/aio_class.cpp.o
+
+.PHONY : sources/aio_lang/aio_space/aio_initializable/aio_class.o
+
+# target to build an object file
+sources/aio_lang/aio_space/aio_initializable/aio_class.cpp.o:
+	$(MAKE) -f CMakeFiles/AIO_v_2.dir/build.make CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_initializable/aio_class.cpp.o
+.PHONY : sources/aio_lang/aio_space/aio_initializable/aio_class.cpp.o
+
+sources/aio_lang/aio_space/aio_initializable/aio_class.i: sources/aio_lang/aio_space/aio_initializable/aio_class.cpp.i
+
+.PHONY : sources/aio_lang/aio_space/aio_initializable/aio_class.i
+
+# target to preprocess a source file
+sources/aio_lang/aio_space/aio_initializable/aio_class.cpp.i:
+	$(MAKE) -f CMakeFiles/AIO_v_2.dir/build.make CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_initializable/aio_class.cpp.i
+.PHONY : sources/aio_lang/aio_space/aio_initializable/aio_class.cpp.i
+
+sources/aio_lang/aio_space/aio_initializable/aio_class.s: sources/aio_lang/aio_space/aio_initializable/aio_class.cpp.s
+
+.PHONY : sources/aio_lang/aio_space/aio_initializable/aio_class.s
+
+# target to generate assembly for a file
+sources/aio_lang/aio_space/aio_initializable/aio_class.cpp.s:
+	$(MAKE) -f CMakeFiles/AIO_v_2.dir/build.make CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_initializable/aio_class.cpp.s
+.PHONY : sources/aio_lang/aio_space/aio_initializable/aio_class.cpp.s
 
 sources/aio_lang/aio_space/aio_initializable/aio_enum/aio_enum.o: sources/aio_lang/aio_space/aio_initializable/aio_enum/aio_enum.cpp.o
 
@@ -1290,12 +1398,18 @@ help:
 	@echo "... main/main.o"
 	@echo "... main/main.i"
 	@echo "... main/main.s"
+	@echo "... sources/aio_core/aio_core.o"
+	@echo "... sources/aio_core/aio_core.i"
+	@echo "... sources/aio_core/aio_core.s"
 	@echo "... sources/aio_lang/aio_annotatable/aio_annotatable.o"
 	@echo "... sources/aio_lang/aio_annotatable/aio_annotatable.i"
 	@echo "... sources/aio_lang/aio_annotatable/aio_annotatable.s"
 	@echo "... sources/aio_lang/aio_field/aio_field.o"
 	@echo "... sources/aio_lang/aio_field/aio_field.i"
 	@echo "... sources/aio_lang/aio_field/aio_field.s"
+	@echo "... sources/aio_lang/aio_inheritable/aio_inheritable.o"
+	@echo "... sources/aio_lang/aio_inheritable/aio_inheritable.i"
+	@echo "... sources/aio_lang/aio_inheritable/aio_inheritable.s"
 	@echo "... sources/aio_lang/aio_invokable/aio_invokable.o"
 	@echo "... sources/aio_lang/aio_invokable/aio_invokable.i"
 	@echo "... sources/aio_lang/aio_invokable/aio_invokable.s"
@@ -1305,6 +1419,12 @@ help:
 	@echo "... sources/aio_lang/aio_modifiers/aio_modifiers.o"
 	@echo "... sources/aio_lang/aio_modifiers/aio_modifiers.i"
 	@echo "... sources/aio_lang/aio_modifiers/aio_modifiers.s"
+	@echo "... sources/aio_lang/aio_space/aio_file/aio_file.o"
+	@echo "... sources/aio_lang/aio_space/aio_file/aio_file.i"
+	@echo "... sources/aio_lang/aio_space/aio_file/aio_file.s"
+	@echo "... sources/aio_lang/aio_space/aio_initializable/aio_class.o"
+	@echo "... sources/aio_lang/aio_space/aio_initializable/aio_class.i"
+	@echo "... sources/aio_lang/aio_space/aio_initializable/aio_class.s"
 	@echo "... sources/aio_lang/aio_space/aio_initializable/aio_enum/aio_enum.o"
 	@echo "... sources/aio_lang/aio_space/aio_initializable/aio_enum/aio_enum.i"
 	@echo "... sources/aio_lang/aio_space/aio_initializable/aio_enum/aio_enum.s"

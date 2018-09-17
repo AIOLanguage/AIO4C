@@ -5,12 +5,11 @@
  * 연결.
  */
 
-#include <aio_lang/aio_field/aio_field.h>
 #include <aio_lang/aio_visibility/aio_visibility.h>
 #include <aio_lang/aio_annotatable/aio_annotatable.h>
-#include <aio_lang/aio_invokable/aio_function/aio_function.h>
-#include <aio_lang/aio_space/aio_initializable/aio_class/aio_class.h>
 #include <lib4aio_cpp_headers/utils/array_list_utils/array_list.h>
+#include <lib4aio_cpp_headers/utils/str_hook_utils/str_hook/str_hook.h>
+#include <lib4aio_cpp_headers/utils/str_hook_utils/str_hook_list/str_hook_list.h>
 
 using namespace lib4aio;
 
@@ -18,23 +17,11 @@ class aio_enum;
 
 class aio_scope;
 
-class aio_space : aio_annotatable {
+class aio_function;
 
-private:
+class aio_field;
 
-    aio_visibility visibility_type;
-
-    aio_space *parent_namespace;
-
-    array_list<aio_class> *class_definition_list;
-
-    array_list<aio_enum> *enum_definition_list;
-
-    array_list<aio_scope> *scope_definition_list;
-
-    array_list<aio_function> *function_definition_list;
-
-    array_list<aio_field> *field_definition_list;
+class aio_space : public aio_annotatable {
 
 public:
 
@@ -53,7 +40,7 @@ public:
 
     const aio_visibility get_visibility_type() const;
 
-    const aio_space *get_parent() const;
+    const aio_space *get_parent_namespace() const;
 
     const array_list<aio_class> *get_class_definition_list() const;
 
@@ -64,6 +51,23 @@ public:
     const array_list<aio_function> *get_function_definition_list() const;
 
     const array_list<aio_field> *get_field_definition_list() const;
+
+private:
+
+    aio_visibility visibility_type;
+
+    aio_space *parent_namespace;
+
+    array_list<aio_class> *class_definition_list;
+
+    array_list<aio_enum> *enum_definition_list;
+
+    array_list<aio_scope> *scope_definition_list;
+
+    array_list<aio_function> *function_definition_list;
+
+    array_list<aio_field> *field_definition_list;
+
 };
 
 #endif //AIO_SPACE_H

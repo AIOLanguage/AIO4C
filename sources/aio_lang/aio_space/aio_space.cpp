@@ -62,7 +62,7 @@ const array_list<aio_field> *aio_space::get_field_definition_list() const
     return this->field_definition_list;
 }
 
-const aio_space *aio_space::get_parent() const
+const aio_space *aio_space::get_parent_namespace() const
 {
     return this->parent_namespace;
 }

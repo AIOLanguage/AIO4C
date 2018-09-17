@@ -1,27 +1,41 @@
-#ifndef AIO_ENUM_DEFINITION_H
-#define AIO_ENUM_DEFINITION_H
+#ifndef AIO_ENUM_H
+#define AIO_ENUM_H
 
-#include <aio_lang/aio_namespaces/aio_space_definition.h>
-#include <aio_utils/aio_value/aio_value.h>
+/**
+ * 연결.
+ */
 
-class aio_enum : aio_space_definition {
+#include <aio_lang/aio_space/aio_initializable/aio_initializable.h>
+#include <lib4aio_cpp_headers/utils/array_list_utils/array_list.h>
+#include <lib4aio_cpp_headers/utils/str_hook_utils/str_hook/str_hook.h>
 
-    array_list<str_hook *> elements;
+using namespace lib4aio;
+
+class aio_enum : aio_initializable {
+
+public:
 
     explicit aio_enum(
-            aio_visibility_type visibility_type,
-            aio_space_definition *parent_namespace,
-            array_list<aio_class_definition> *class_definition_list,
+            aio_visibility visibility_type,
+            aio_space *parent,
+            array_list<aio_class> *class_definition_list,
             array_list<aio_enum> *enum_definition_list,
-            array_list<aio_scope_definition> *scope_definition_list,
-            array_list<aio_function_definition> *function_definition_list,
-            array_list<aio_field_definition> *field_definition_list,
-            array_list<str_hook *> elements
+            array_list<aio_scope> *scope_definition_list,
+            array_list<aio_function> *function_definition_list,
+            array_list<aio_field> *field_definition_list,
+            array_list<aio_class> *annotation_list,
+            array_list<aio_constructor> *constructor_definition_list,
+            array_list<aio_field> *elements
     );
 
     ~aio_enum();
 
-    const array_list<str_hook *> get_values() const;
+    const array_list<aio_field> *get_values() const;
+
+private:
+
+    array_list<aio_field> *elements;
+
 };
 
-#endif //AIO_ENUM_DEFINITION_H
+#endif //AIO_ENUM_H

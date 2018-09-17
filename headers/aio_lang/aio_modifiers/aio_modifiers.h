@@ -11,9 +11,19 @@ using namespace lib4aio;
 
 #define AIO_GLOBAL_MODIFIER "global"
 
+#define AIO_INTERNAL_MODIFIER "internal"
+
 #define AIO_PROTECTED_MODIFIER "protected"
 
 #define AIO_PRIVATE_MODIFIER "private"
+
+/**
+ * Attribute modifier.
+ */
+
+#define AIO_OPEN_MODIFIER "open"
+
+#define AIO_ABSTRACT_MODIFIER "abstract"
 
 /**
  * Import modifier.
@@ -35,6 +45,8 @@ using namespace lib4aio;
 
 #define AIO_FUNCTION_MODIFIER "fun"
 
+#define AIO_OVERRIDE_MODIFIER "override"
+
 #define AIO_IF_MODIFIER "if"
 
 #define AIO_IN_MODIFIER "in"
@@ -47,7 +59,7 @@ using namespace lib4aio;
 
 #define AIO_BREAK_MODIFIER "brk"
 
-#define AIO_CONTINUE_MODIFIER "cnt"
+#define AIO_CONTINUE_MODIFIER "nxt"
 
 bool is_aio_fun_modifier(str_hook *hook);
 
