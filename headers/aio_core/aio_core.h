@@ -33,9 +33,11 @@ public:
 
     const array_list<aio_file> *get_file_list() const;
 
+    void set_build_script_data(const char *build_script_data);
+
 private:
 
-    const char *build_data;
+    const char *build_script_data;
 
     array_list<str_hook> *types;
 

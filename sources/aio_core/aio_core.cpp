@@ -45,26 +45,27 @@ static aio_bundle *create_main_bundle(
         }
     }
     const str_hook *main_function_name = new str_hook(ROOT_FUNCTION_NAME);
-    aio_bundle * main_bundle = new aio_bundle(core, file_path, main_function_name, aio_args);
+    aio_bundle *main_bundle = new aio_bundle(core, file_path, main_function_name, aio_args);
     return main_bundle;
 }
 
 void aio_core::inflate(const int argc, char **argv)
 {
-    const bool has_not_program_args = argc <= 1;
-    if (has_not_program_args) {
-        throw_error_with_tag(AIO_CORE_TAG, "'build.aio_core'에 경로를 예상했습니다 (Expected path to build.aio_core).");
-    } else {
+    const bool has_program_args = argc > 1;
+    if (has_program_args) {
         aio_core *core = new aio_core();
 #ifdef AIO_CORE_DEBUG
         log_info(AIO_CORE_TAG, "아이어 핵심을 만들었습니다");
 #endif
-        const str_hook *program_entry_path = inflate_aio_context_for(core, argv[FILE_PATH_INDEX]);
+        const str_hook *program_entry_path = inflate_aio_context(core, argv[FILE_PATH_INDEX]);
         aio_bundle *main_bundle = create_main_bundle(argc, argv, core, program_entry_path);
         invoke_main_function(main_bundle);
         //--------------------------------------------------------------------------------------------------------------
         //찌꺼기 수집기:
         delete core;
+        //--------------------------------------------------------------------------------------------------------------
+    } else {
+        throw_error_with_tag(AIO_CORE_TAG, "'build.aio_core'에 경로를 예상했습니다 (Expected path to build.aio_core).");
     }
 }
 
@@ -80,7 +81,7 @@ aio_core::~aio_core()
     this->types->free_elements();
     delete this->file_list;
     delete this->types;
-    delete this->build_data;
+    delete this->build_script_data;
 }
 
 const array_list<str_hook> *aio_core::get_types() const
@@ -88,7 +89,17 @@ const array_list<str_hook> *aio_core::get_types() const
     return this->types;
 }
 
+
 const array_list<aio_file> *aio_core::get_file_list() const
 {
     return this->file_list;
+}
+
+void aio_core::set_build_script_data(const char *build_script_data)
+{
+    if (!this->build_script_data) {
+        this->build_script_data = build_script_data;
+    } else {
+        throw_error_with_tag(AIO_CORE_TAG, "'build script data' is already loaded");
+    }
 }

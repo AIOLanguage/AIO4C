@@ -13,11 +13,13 @@ namespace lib4aio
 
     struct struct_list *new_struct_list(const unsigned type);
 
-    void add_struct_in_list(struct struct_list *list, void *element);
+    void add_struct_in_list(struct_list *list, void *element);
 
-    void free_structs_in_list(struct struct_list *list, void (*free_element)(void *));
+    void foreach_in_struct_list(struct_list *list, void (*action)(void *));
 
-    void free_struct_list(struct struct_list *list);
+    void free_structs_in_list(struct_list *list, void (*free_element)(void *));
+
+    void free_struct_list(struct_list *list);
 
 #endif //LIB4AIO_STRUCT_LIST_H
 }

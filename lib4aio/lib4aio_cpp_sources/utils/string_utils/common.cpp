@@ -2,9 +2,9 @@
 #include <malloc.h>
 #include <lib4aio_cpp_headers/utils/string_utils/common.h>
 #include <lib4aio_cpp_headers/utils/memory_utils/memory_utils.h>
+#include <lib4aio_cpp_headers/utils/struct_list/struct_list.h>
 
-namespace lib4aio
-{
+namespace lib4aio {
     static auto EMPTY_STRING = "";
 
     char *new_string(const char *src)
@@ -55,39 +55,32 @@ namespace lib4aio
         return dst;
     }
 
-    char *join_to_string(
-            const char **src_strings,
-            const char *delimiter,
-            const unsigned src_size
-    )
+    char *join_to_string(const struct_list *string_list, const char *delimiter)
     {
-        char *dst;
-        auto delimiter_length = strlen(delimiter);
+        const unsigned string_count = string_list->size;
+        const unsigned delimiter_length = (const unsigned int) (strlen(delimiter));
         //Delimiters less than elements by 1:
-        auto current_string_length = 0 - delimiter_length;
-        for (auto i = 0; i < src_size; ++i) {
-            //Get increase length of general string:
-            current_string_length += strlen(src_strings[i]) + delimiter_length;
+        int current_string_length = -delimiter_length;
+        for (unsigned i = 0; i < string_count; ++i) {
+            //Get increased length of general string:
+            current_string_length += strlen((char *) string_list->elements[i]) + delimiter_length;
         }
-        if (current_string_length == 0) {
-            dst = static_cast<string>(new_object_array(2, sizeof(char)));
-            return dst;
+        if (current_string_length <= 0) {
+            return (char *) (new_object_array(2, sizeof(char)));
         }
-        dst = static_cast<string >(new_object_array(
-                current_string_length + 1,
-                sizeof(char))
-        );
-        auto position = 0;
-        for (auto j = 0; j < src_size; ++j) {
-            auto line_length = strlen(src_strings[j]);
-            for (auto i = 0; i < line_length; ++i) {
-                dst[position] = src_strings[j][i];
-                position = position + 1;
+        char *dst = (char *) (new_object_array((const unsigned int) (current_string_length + 1), sizeof(char)));
+        unsigned position = 0;
+        for (unsigned j = 0; j < string_count; ++j) {
+            const char *string = (char *) string_list->elements[j];
+            const unsigned line_length = (const unsigned int) strlen(string);
+            for (unsigned i = 0; i < line_length; ++i) {
+                dst[position++] = string[i];
             }
-            if (j != src_size - 1) {
-                for (auto i = 0; i < delimiter_length; ++i) {
-                    dst[position] = delimiter[i];
-                    position = position + 1;
+            const bool is_last_chunk = j == string_count - 1;
+            if (!is_last_chunk) {
+                //Add delimiter
+                for (unsigned i = 0; i < delimiter_length; ++i) {
+                    dst[position++] = delimiter[i];
                 }
             }
         }

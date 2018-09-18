@@ -1,6 +1,8 @@
 namespace lib4aio
 {
 
+    class struct_list;
+
 #ifndef LIB4AIO_STRING_UTILS_COMMON_H
 #define LIB4AIO_STRING_UTILS_COMMON_H
 
@@ -12,11 +14,7 @@ namespace lib4aio
             bool (*filter_condition)(const char *)
     );
 
-    char *join_to_string(
-            const char **src_strings,
-            const char *delimiter,
-            const unsigned src_size
-    );
+    char *join_to_string(const struct_list *src_strings, const char *delimiter);
 
     bool is_not_empty_string(const char *string);
 

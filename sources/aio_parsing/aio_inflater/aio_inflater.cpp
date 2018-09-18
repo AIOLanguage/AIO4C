@@ -4,7 +4,21 @@
 
 using namespace lib4aio;
 
-str_hook *inflate_aio_context_for(aio_core *core, const char *path)
+static void inflate_aio_file(aio_core *core, const str_hook *file_path)
 {
-    const char *build_data = read_file_and_join_to_string_without_comments(path);
+
+}
+
+static const str_hook *get_program_entry_by_script(const char *aio_build_data)
+{
+
+}
+
+const str_hook *inflate_aio_context(aio_core *core, const char *build_script_path)
+{
+    const char *build_script_data = get_source_code_by_file_path(build_script_path);
+    const str_hook *main_path = get_program_entry_by_script(build_script_data);
+    core->set_build_script_data(build_script_data);
+    inflate_aio_file(core, main_path);
+    return main_path;
 }
