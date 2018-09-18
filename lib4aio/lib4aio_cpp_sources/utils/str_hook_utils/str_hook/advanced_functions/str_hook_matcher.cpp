@@ -13,11 +13,11 @@ namespace lib4aio
         auto length = this->get_size();
         auto start_position = this->start;
         if (length <= 0) {
-            throw_error_with_hook(STRING_HOOK_TAG, "Empty string doesn't matches int!", this);
+            throw_error_with_str_hook(STRING_HOOK_TAG, "Empty string doesn't matches int!", this);
         }
         if (string[start_position] == '-') {
             if (length == 1) {
-                throw_error_with_hook(STRING_HOOK_TAG, "Minus doesn't matches int!", this);
+                throw_error_with_str_hook(STRING_HOOK_TAG, "Minus doesn't matches int!", this);
             }
             start_position++;
         }
@@ -39,11 +39,11 @@ namespace lib4aio
             auto was_fraction = false;
             auto start_position = this->start;
             if (length <= 0) {
-                throw_error_with_hook(STRING_HOOK_TAG, "Empty string doesn't matches double!", this);
+                throw_error_with_str_hook(STRING_HOOK_TAG, "Empty string doesn't matches double!", this);
             }
             if (is_minus_sign(string[start_position])) {
                 if (length == 1) {
-                    throw_error_with_hook(STRING_HOOK_TAG, "Minus doesn't matches double!", this);
+                    throw_error_with_str_hook(STRING_HOOK_TAG, "Minus doesn't matches double!", this);
                 }
                 start_position++;
             }

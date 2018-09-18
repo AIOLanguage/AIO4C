@@ -127,7 +127,7 @@ namespace lib4aio
         return dst;
     }
 
-    unsigned get_string_array_size(const char *const *src)
+    unsigned get_string_count(const char *const *src)
     {
         return static_cast<unsigned int>(malloc_usable_size((void *) src) / 4);
     }
@@ -139,7 +139,7 @@ namespace lib4aio
 
     void free_strings(char **src)
     {
-        auto length = get_string_array_size(src);
+        auto length = get_string_count(src);
         for (auto i = 0; i < length; ++i) {
             free(src[i]);
         }

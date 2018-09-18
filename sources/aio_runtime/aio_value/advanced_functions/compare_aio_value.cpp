@@ -145,7 +145,7 @@ bool is_more_aio_value_then_other(
         //--------------------------------------------------------------------------------------------------------------
         return is_more;
     } else {
-        throw_error_with_hook(COMPARE_AIO_VALUE_TAG, "Can not compare elements by type:", type_1);
+        throw_error_with_str_hook(COMPARE_AIO_VALUE_TAG, "Can not compare elements by type:", type_1);
     }
 }
 
@@ -187,7 +187,7 @@ bool is_more_or_equals_aio_value_then_other(
         //--------------------------------------------------------------------------------------------------------------
         return is_more_or_equals;
     } else {
-        throw_error_with_hook(COMPARE_AIO_VALUE_TAG, "Can not compare elements by type:", type_1);
+        throw_error_with_str_hook(COMPARE_AIO_VALUE_TAG, "Can not compare elements by type:", type_1);
     }
 }
 
@@ -228,7 +228,7 @@ bool is_less_aio_value_then_other(
         //--------------------------------------------------------------------------------------------------------------
         return is_less;
     } else {
-        throw_error_with_hook(COMPARE_AIO_VALUE_TAG, "Can not compare elements by type:", type_1);
+        throw_error_with_str_hook(COMPARE_AIO_VALUE_TAG, "Can not compare elements by type:", type_1);
     }
 }
 
@@ -270,6 +270,6 @@ bool is_less_or_equals_aio_value_then_other(
         //--------------------------------------------------------------------------------------------------------------
         return is_less_or_equals;
     } else {
-        throw_error_with_hook(COMPARE_AIO_VALUE_TAG, "Can not compare elements by type:", type_1);
+        throw_error_with_str_hook(COMPARE_AIO_VALUE_TAG, "Can not compare elements by type:", type_1);
     }
 }

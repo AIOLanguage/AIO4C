@@ -3,7 +3,7 @@
 
 namespace lib4aio
 {
-    void log_info_hook(const char *tag, const char *message, const str_hook *hook)
+    void log_info_str_hook(const char *tag, const char *message, const str_hook *hook)
     {
         auto end = hook->end;
         auto source_string = hook->source_string;

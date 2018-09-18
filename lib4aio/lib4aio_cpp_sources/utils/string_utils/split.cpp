@@ -2,136 +2,142 @@
 #include <lib4aio_cpp_headers/utils/string_utils/common.h>
 #include <lib4aio_cpp_headers/utils/memory_utils/memory_utils.h>
 #include <lib4aio_cpp_headers/utils/string_utils/split.h>
+#include <lib4aio_cpp_headers/utils/array_list_utils/array_list.h>
+#include <lib4aio_cpp_headers/utils/int_list_utils/int_list.h>
 
-namespace lib4aio
-{
-    static auto COMMA = ",";
+//#define LIB4AIO_STRING_UTILS_SPLIT_DEBUG
 
-    static auto SPACE = " ";
+#ifdef LIB4AIO_STRING_UTILS_SPLIT_DEBUG
 
-    static auto LINE_BREAK = "\n";
+#include <lib4aio_cpp_headers/utils/log_utils/log_utils.h>
 
-    static void move_string_to_dst(const char *src, const unsigned string_length, char ***dst)
+#endif
+
+#define LIB4AIO_STRING_UTILS_SPLIT_TAG "LIB4AIO_STRING_UTILS_SPLIT"
+
+namespace lib4aio {
+
+    static const char *COMMA = ",";
+
+    static const char *SPACE = " ";
+
+    static const char *LINE_BREAK = "\n";
+
+    static void create_left_part(
+            const char *src,
+            const int_list *indices,
+            unsigned delimiter_length,
+            struct_list *strings
+    )
     {
-        //Allocate memory for string array:
-        *dst = static_cast<char **>(new_object(sizeof(string)));
-        //Allocate memory for only string:
-        **dst = static_cast<string>(new_object_array(string_length, sizeof(char) + 1));
-        strcpy(**dst, src);
+        const unsigned first_point = (unsigned) (indices->values[0]);
+        char *left_string = substring(src, 0, first_point - delimiter_length);
+#ifdef LIB4AIO_STRING_UTILS_SPLIT_DEBUG
+        log_info_string(LIB4AIO_STRING_UTILS_SPLIT_TAG, "Left part:", left_string);
+#endif
+        add_struct_in_list(strings, left_string);
     }
 
-    static void move_empty_string_to_dst(const char *src, char ***dst)
+    static void create_right_part(
+            const char *src,
+            const int_list *indices,
+            struct_list *string_list,
+            unsigned src_length
+    )
     {
-        move_string_to_dst(src, 1, dst);
+        const unsigned last_point = (unsigned) (indices->values[indices->size - 1]);
+        char *right_string = substring(src, last_point, src_length);
+#ifdef LIB4AIO_STRING_UTILS_SPLIT_DEBUG
+        log_info_string(LIB4AIO_STRING_UTILS_SPLIT_TAG, "Right part:", right_string);
+#endif
+        add_struct_in_list(string_list, right_string);
     }
 
-    static void create_left_part(const char *src, const unsigned *indices, size_t delimiter_length, char ***dst)
+    struct_list *split_by_comma(const char *src)
     {
-        (*dst)[0] = static_cast<string>(new_object_array(
-                indices[0] - delimiter_length + 2,
-                sizeof(char))
-        );
-        for (auto i = 0; i < indices[0] - delimiter_length; ++i) {
-            (*dst)[0][i] = src[i];
+        return split_by_string(src, COMMA);
+    }
+
+    struct_list *split_by_space(const char *src)
+    {
+        return split_by_string(src, SPACE);
+    }
+
+    struct_list *split_by_line_break(const char *src)
+    {
+        return split_by_string(src, LINE_BREAK);
+    }
+
+    struct_list *split_by_string(const char *src, const char *delimiter)
+    {
+        if (!src) {
+            return nullptr;
         }
-    }
-
-    static void create_right_part(const char *src, const unsigned *indices, char ***dst, int pointers, size_t length)
-    {
-        (*dst)[pointers] = static_cast<string>(
-                new_object_array(length - indices[pointers - 1] + 1,
-                                 sizeof(char))
-        );
-        auto k = 0;
-        for (auto i = indices[pointers - 1]; i < length; ++i) {
-            (*dst)[pointers][k] = src[i];
-            k = k + 1;
-        }
-    }
-
-    char **split_by_comma(const_string src)
-    {
-        auto result = split_by_string(src, COMMA);
-        return result;
-    }
-
-    char **split_by_space(const_string src)
-    {
-        auto result = split_by_string(src, SPACE);
-        return result;
-    }
-
-    char **split_by_line_break(const_string src)
-    {
-        auto result = split_by_string(src, LINE_BREAK);
-        return result;
-    }
-
-    char **split_by_string(const_string src, const_string delimiter)
-    {
-        char **dst;
-        auto src_length = strlen(src);
+#ifdef LIB4AIO_STRING_UTILS_SPLIT_DEBUG
+        log_info_string(LIB4AIO_STRING_UTILS_SPLIT_TAG, "Input src:", src);
+#endif
+        struct_list *string_list = new_struct_list(sizeof(char *));
+        const unsigned src_length = static_cast<const unsigned int>(strlen(src));
         //Is empty string:
         if (src_length < 1 || are_equal_strings(delimiter, "")) {
-            move_empty_string_to_dst(src, &dst);
-            return dst;
+            add_struct_in_list(string_list, new_string(src));
+            return string_list;
         }
-        //Create split indices:
-        auto indices = static_cast<unsigned int *>(new_object_array(src_length, sizeof(int)));
-        auto delimiter_length = strlen(delimiter);
-        unsigned pointers = 0;
+        int_list *indices = new_int_list();
+        const unsigned delimiter_length = static_cast<const unsigned int>(strlen(delimiter));
         //Mark split points:
         for (unsigned i = 0; i < src_length; ++i) {
-            auto result = 0;
-            while (result == 0) {
-                for (auto j = 0; j < delimiter_length; ++j) {
+            bool matches = true;
+            while (matches) {
+                for (unsigned j = 0; j < delimiter_length; ++j) {
                     if (src[i + j] != delimiter[j]) {
-                        result = -1;
+                        matches = false;
                         break;
                     }
                 }
-                if (result == 0) {
+                if (matches) {
                     i += delimiter_length;
-                    indices[pointers] = i;
-                    pointers++;
+                    add_int_in_list(indices, i);
                 }
             }
         }
         //Cannot find points:
-        if (pointers == 0) {
-            move_string_to_dst(src, src_length, &dst);
-            return dst;
+        const unsigned split_point_count = indices->size;
+        if (split_point_count == 0) {
+            add_struct_in_list(string_list, new_string(src));
+            //----------------------------------------------------------------------------------------------------------
+            //찌꺼기 수집기:
+            free_int_list(indices);
+            //----------------------------------------------------------------------------------------------------------
+            return string_list;
         }
-        indices = static_cast<unsigned int *>(reallocate_object_array(
-                indices,
-                pointers,
-                sizeof(unsigned)
-        ));
-        //Parts more than pointers by 1:
-        auto parts = pointers + 1;
-        dst = static_cast<char **>(new_object_array(parts, sizeof(char *)));
+        //Parts more than split_point_count by 1:
         //Create left part:
-        create_left_part(src, indices, delimiter_length, &dst);
-        //Create right part:
-        create_right_part(src, indices, &dst, pointers, src_length);
+        create_left_part(src, indices, delimiter_length, string_list);
         //Create middle parts:
-        if (pointers > 1) {
+        if (split_point_count > 1) {
             //From second delimiter:
-            for (auto j = 0; j < pointers - 1; ++j) {
-                if (indices[j + 1] - indices[j] - delimiter_length > 0) {
-                    dst[j + 1] = static_cast<char *>(new_object_array(
-                            indices[j + 1] - indices[j] - delimiter_length + 1,
-                            sizeof(char))
-                    );
-                    for (auto i = 0; i < indices[j + 1] - indices[j] - delimiter_length; ++i) {
-                        dst[j + 1][i] = src[indices[j] + i];
-                    }
+            for (unsigned j = 0; j < split_point_count - 1; ++j) {
+                const unsigned start = (unsigned) indices->values[j];
+                const unsigned end = indices->values[j + 1] - delimiter_length;
+                char *string = nullptr;
+                if (end - start > 0) {
+                    string = substring(src, start, end);
                 } else {
-                    dst[j + 1] = static_cast<char *>(new_object_array(2, sizeof(char)));
-                    dst[j + 1] = const_cast<char *>("");
+                    string = new_string("");
                 }
+#ifdef LIB4AIO_STRING_UTILS_SPLIT_DEBUG
+                log_info_string(LIB4AIO_STRING_UTILS_SPLIT_TAG, "Chunk:", string);
+#endif
+                add_struct_in_list(string_list, string);
             }
         }
-        return dst;
+        //Create right part:
+        create_right_part(src, indices, string_list, src_length);
+        //--------------------------------------------------------------------------------------------------------------
+        //찌꺼기 수집기:
+        free_int_list(indices);
+        //--------------------------------------------------------------------------------------------------------------
+        return string_list;
     }
 };

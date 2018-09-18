@@ -14,6 +14,8 @@ class aio_bundle;
 
 using namespace lib4aio;
 
+void invoke_main_function(aio_bundle *bundle);
+
 struct_list *invoke_function(aio_bundle *bundle);
 
 #endif //AIO_INVOKER_H

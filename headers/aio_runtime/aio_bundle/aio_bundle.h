@@ -17,13 +17,15 @@ class aio_bundle {
 public:
 
     aio_bundle(
-            aio_core *core_ref,
-            str_hook *file_path,
-            str_hook *function_name,
+            const aio_core *core_ref,
+            const str_hook *file_path,
+            const str_hook *function_name,
             struct_list *input_values
     );
 
     const aio_core *const get_core_reference() const;
+
+    const str_hook *get_file_path();
 
     const str_hook *get_function_name() const;
 
@@ -35,11 +37,11 @@ public:
 
 private:
 
-    aio_core *core_ref;
+    const aio_core *core_ref;
 
-    str_hook *file_path;
+    const str_hook *file_path;
 
-    str_hook *function_name;
+    const str_hook *function_name;
 
     struct_list *input_values;
 

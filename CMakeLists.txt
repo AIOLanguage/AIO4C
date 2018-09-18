@@ -36,15 +36,16 @@ add_executable(AIO_v_2
         #parsing:
         headers/aio_parsing/aio_inflater/aio_inflater.h
         #runtime:
-        headers/aio_runtime/aio_bundle/aio_bundle.h
-        headers/aio_runtime/aio_invokable_circuit/aio_invokable_circuit.h
-        headers/aio_runtime/aio_invokable_instruction/aio_invokable_instruction.h
-        headers/aio_runtime/aio_invokable_track/aio_invokable_track.h
         headers/aio_runtime/aio_value/aio_value.h
-        headers/aio_runtime/aio_value/advanced_functions/cast_aio_value.h
-        headers/aio_runtime/aio_value/advanced_functions/compare_aio_value.h
-        headers/aio_runtime/aio_value/advanced_functions/log_aio_value.h
+        headers/aio_runtime/aio_bundle/aio_bundle.h
+        headers/aio_runtime/aio_invoker/aio_invoker.h
         headers/aio_runtime/aio_variable/aio_variable.h
+        headers/aio_runtime/aio_invokable_track/aio_invokable_track.h
+        headers/aio_runtime/aio_value/advanced_functions/log_aio_value.h
+        headers/aio_runtime/aio_value/advanced_functions/cast_aio_value.h
+        headers/aio_runtime/aio_invokable_circuit/aio_invokable_circuit.h
+        headers/aio_runtime/aio_value/advanced_functions/compare_aio_value.h
+        headers/aio_runtime/aio_invokable_instruction/aio_invokable_instruction.h
         #lib4aio:
         lib4aio/lib4aio_cpp_headers/utils/color_utils/color_utils.h
         lib4aio/lib4aio_cpp_headers/utils/array_list_utils/array_list.h
@@ -65,6 +66,8 @@ add_executable(AIO_v_2
         lib4aio/lib4aio_cpp_headers/utils/string_utils/suffix_prefix.h
         lib4aio/lib4aio_cpp_headers/utils/string_utils/trim.h
         lib4aio/lib4aio_cpp_headers/utils/struct_list/struct_list.h
+        lib4aio/lib4aio_cpp_headers/utils/file_utils/file_reader.h
+        lib4aio/lib4aio_cpp_headers/utils/int_list_utils/int_list.h
         #---------------------------------------------------------------------------------------------------------------
 
         #---------------------------------------------------------------------------------------------------------------
@@ -90,11 +93,12 @@ add_executable(AIO_v_2
         #parsing:
         sources/aio_parsing/aio_inflater/aio_inflater.cpp
         #runtime:
-        sources/aio_runtime/aio_bundle/aio_bundle.cpp
         sources/aio_runtime/aio_value/aio_value.cpp
+        sources/aio_runtime/aio_bundle/aio_bundle.cpp
+        sources/aio_runtime/aio_invoker/aio_invoker.cpp
+        sources/aio_runtime/aio_value/advanced_functions/log_aio_value.cpp
         sources/aio_runtime/aio_value/advanced_functions/cast_aio_value.cpp
         sources/aio_runtime/aio_value/advanced_functions/compare_aio_value.cpp
-        sources/aio_runtime/aio_value/advanced_functions/log_aio_value.cpp
         #lib4aio:
         lib4aio/lib4aio_cpp_sources/utils/array_list_utils/array_list.cpp
         lib4aio/lib4aio_cpp_sources/utils/char_utils/char_utils.cpp
@@ -122,5 +126,7 @@ add_executable(AIO_v_2
         lib4aio/lib4aio_cpp_sources/utils/string_utils/suffix_prefix.cpp
         lib4aio/lib4aio_cpp_sources/utils/string_utils/trim.cpp
         lib4aio/lib4aio_cpp_sources/utils/struct_list/struct_list.cpp
+        lib4aio/lib4aio_cpp_sources/utils/int_list_utils/int_list.cpp
+        lib4aio/lib4aio_cpp_sources/utils/file_utils/file_reader.cpp
         #---------------------------------------------------------------------------------------------------------------
-        headers/aio_runtime/aio_invoker/aio_invoker.h)
+        )

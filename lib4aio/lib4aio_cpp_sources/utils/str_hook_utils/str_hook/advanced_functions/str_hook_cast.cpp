@@ -53,6 +53,6 @@ namespace lib4aio
         if (is_aio_false_modifier(this)) {
             return false;
         }
-        throw_error_with_hook(STRING_HOOK_TAG, "Can not cast to boolean!", this);
+        throw_error_with_str_hook(STRING_HOOK_TAG, "Can not cast to boolean!", this);
     }
 }

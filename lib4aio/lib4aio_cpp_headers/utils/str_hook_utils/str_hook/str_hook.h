@@ -108,13 +108,13 @@ namespace lib4aio
         bool to_boolean() const;
     };
 
-    void log_info_hook(
+    void log_info_str_hook(
             const char *tag,
             const char *message,
             const str_hook *hook
     );
 
-    void throw_error_with_hook(
+    void throw_error_with_str_hook(
             const char *tag,
             const char *message,
             const str_hook *hook

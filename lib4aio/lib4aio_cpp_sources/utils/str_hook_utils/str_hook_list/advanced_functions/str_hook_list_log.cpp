@@ -9,7 +9,7 @@ namespace lib4aio
         auto size = list->get_size();
         for (int i = 0; i < size; ++i) {
             auto hook = list->get(i);
-            log_info_hook(tag, message, hook);
+            log_info_str_hook(tag, message, hook);
         }
     }
 }

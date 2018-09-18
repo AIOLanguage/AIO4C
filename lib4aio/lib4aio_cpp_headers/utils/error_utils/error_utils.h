@@ -1,5 +1,4 @@
-namespace lib4aio
-{
+namespace lib4aio {
 #ifndef LIB4AIO_ERROR_UTILS_H
 #define LIB4AIO_ERROR_UTILS_H
 
@@ -9,7 +8,8 @@ namespace lib4aio
 
     void throw_error_with_tag(
             const char *tag,
-            const char *message) __attribute__ ((noreturn));
+            const char *message
+    ) __attribute__ ((noreturn));
 
     void throw_error_with_details(
             const char *tag,

@@ -6,7 +6,7 @@
 
 namespace lib4aio
 {
-    void throw_error_with_hook(const char *tag, const char *message, const str_hook *hook)
+    void throw_error_with_str_hook(const char *tag, const char *message, const str_hook *hook)
     {
         auto end = hook->end;
         auto source_string = hook->source_string;

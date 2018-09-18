@@ -24,7 +24,7 @@ namespace lib4aio
             list->elements = static_cast<void **>(reallocate_object_array(
                     list->elements,
                     list->capacity,
-                    sizeof(list->type)
+                    list->type
             ));
         }
     }

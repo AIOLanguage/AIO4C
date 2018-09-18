@@ -26,7 +26,7 @@ namespace lib4aio
 
     char *substring(const char *string, const unsigned start, const unsigned end);
 
-    unsigned get_string_array_size(const char *const *src);
+    unsigned get_string_count(const char *const *src);
 
     bool are_equal_strings(const char *first, const char *second);
 

@@ -35,6 +35,8 @@ public:
 
 private:
 
+    const char *build_data;
+
     array_list<str_hook> *types;
 
     array_list<aio_file> *file_list;

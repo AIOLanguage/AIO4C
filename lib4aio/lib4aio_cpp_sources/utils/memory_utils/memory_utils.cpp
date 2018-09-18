@@ -1,4 +1,4 @@
-#include <malloc.h>
+#include <cstdio>
 #include <stdlib.h>
 
 namespace lib4aio
