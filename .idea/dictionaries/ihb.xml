@@ -2,6 +2,7 @@
   <dictionary name="ihb">
     <words>
       <w>annotatable</w>
+      <w>inflater</w>
       <w>initializable</w>
     </words>
   </dictionary>

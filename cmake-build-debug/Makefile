@@ -852,6 +852,33 @@ main/main.cpp.s:
 	$(MAKE) -f CMakeFiles/AIO_v_2.dir/build.make CMakeFiles/AIO_v_2.dir/main/main.cpp.s
 .PHONY : main/main.cpp.s
 
+sources/aio_core/aio_config.o: sources/aio_core/aio_config.cpp.o
+
+.PHONY : sources/aio_core/aio_config.o
+
+# target to build an object file
+sources/aio_core/aio_config.cpp.o:
+	$(MAKE) -f CMakeFiles/AIO_v_2.dir/build.make CMakeFiles/AIO_v_2.dir/sources/aio_core/aio_config.cpp.o
+.PHONY : sources/aio_core/aio_config.cpp.o
+
+sources/aio_core/aio_config.i: sources/aio_core/aio_config.cpp.i
+
+.PHONY : sources/aio_core/aio_config.i
+
+# target to preprocess a source file
+sources/aio_core/aio_config.cpp.i:
+	$(MAKE) -f CMakeFiles/AIO_v_2.dir/build.make CMakeFiles/AIO_v_2.dir/sources/aio_core/aio_config.cpp.i
+.PHONY : sources/aio_core/aio_config.cpp.i
+
+sources/aio_core/aio_config.s: sources/aio_core/aio_config.cpp.s
+
+.PHONY : sources/aio_core/aio_config.s
+
+# target to generate assembly for a file
+sources/aio_core/aio_config.cpp.s:
+	$(MAKE) -f CMakeFiles/AIO_v_2.dir/build.make CMakeFiles/AIO_v_2.dir/sources/aio_core/aio_config.cpp.s
+.PHONY : sources/aio_core/aio_config.cpp.s
+
 sources/aio_core/aio_core.o: sources/aio_core/aio_core.cpp.o
 
 .PHONY : sources/aio_core/aio_core.o
@@ -1230,6 +1257,33 @@ sources/aio_lang/aio_space/aio_space.cpp.s:
 	$(MAKE) -f CMakeFiles/AIO_v_2.dir/build.make CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_space.cpp.s
 .PHONY : sources/aio_lang/aio_space/aio_space.cpp.s
 
+sources/aio_parsing/aio_inflater/aio_inflater.o: sources/aio_parsing/aio_inflater/aio_inflater.cpp.o
+
+.PHONY : sources/aio_parsing/aio_inflater/aio_inflater.o
+
+# target to build an object file
+sources/aio_parsing/aio_inflater/aio_inflater.cpp.o:
+	$(MAKE) -f CMakeFiles/AIO_v_2.dir/build.make CMakeFiles/AIO_v_2.dir/sources/aio_parsing/aio_inflater/aio_inflater.cpp.o
+.PHONY : sources/aio_parsing/aio_inflater/aio_inflater.cpp.o
+
+sources/aio_parsing/aio_inflater/aio_inflater.i: sources/aio_parsing/aio_inflater/aio_inflater.cpp.i
+
+.PHONY : sources/aio_parsing/aio_inflater/aio_inflater.i
+
+# target to preprocess a source file
+sources/aio_parsing/aio_inflater/aio_inflater.cpp.i:
+	$(MAKE) -f CMakeFiles/AIO_v_2.dir/build.make CMakeFiles/AIO_v_2.dir/sources/aio_parsing/aio_inflater/aio_inflater.cpp.i
+.PHONY : sources/aio_parsing/aio_inflater/aio_inflater.cpp.i
+
+sources/aio_parsing/aio_inflater/aio_inflater.s: sources/aio_parsing/aio_inflater/aio_inflater.cpp.s
+
+.PHONY : sources/aio_parsing/aio_inflater/aio_inflater.s
+
+# target to generate assembly for a file
+sources/aio_parsing/aio_inflater/aio_inflater.cpp.s:
+	$(MAKE) -f CMakeFiles/AIO_v_2.dir/build.make CMakeFiles/AIO_v_2.dir/sources/aio_parsing/aio_inflater/aio_inflater.cpp.s
+.PHONY : sources/aio_parsing/aio_inflater/aio_inflater.cpp.s
+
 sources/aio_runtime/aio_bundle/aio_bundle.o: sources/aio_runtime/aio_bundle/aio_bundle.cpp.o
 
 .PHONY : sources/aio_runtime/aio_bundle/aio_bundle.o
@@ -1455,6 +1509,9 @@ help:
 	@echo "... main/main.o"
 	@echo "... main/main.i"
 	@echo "... main/main.s"
+	@echo "... sources/aio_core/aio_config.o"
+	@echo "... sources/aio_core/aio_config.i"
+	@echo "... sources/aio_core/aio_config.s"
 	@echo "... sources/aio_core/aio_core.o"
 	@echo "... sources/aio_core/aio_core.i"
 	@echo "... sources/aio_core/aio_core.s"
@@ -1497,6 +1554,9 @@ help:
 	@echo "... sources/aio_lang/aio_space/aio_space.o"
 	@echo "... sources/aio_lang/aio_space/aio_space.i"
 	@echo "... sources/aio_lang/aio_space/aio_space.s"
+	@echo "... sources/aio_parsing/aio_inflater/aio_inflater.o"
+	@echo "... sources/aio_parsing/aio_inflater/aio_inflater.i"
+	@echo "... sources/aio_parsing/aio_inflater/aio_inflater.s"
 	@echo "... sources/aio_runtime/aio_bundle/aio_bundle.o"
 	@echo "... sources/aio_runtime/aio_bundle/aio_bundle.i"
 	@echo "... sources/aio_runtime/aio_bundle/aio_bundle.s"

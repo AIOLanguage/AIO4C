@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/AIO_v_2.dir/main/main.cpp.o"
   "CMakeFiles/AIO_v_2.dir/sources/aio_core/aio_core.cpp.o"
+  "CMakeFiles/AIO_v_2.dir/sources/aio_core/aio_config.cpp.o"
   "CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_annotatable/aio_annotatable.cpp.o"
   "CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_field/aio_field.cpp.o"
   "CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_inheritable/aio_inheritable.cpp.o"
@@ -14,6 +15,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_initializable/aio_class/aio_class.cpp.o"
   "CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_initializable/aio_enum/aio_enum.cpp.o"
   "CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_scope/aio_scope.cpp.o"
+  "CMakeFiles/AIO_v_2.dir/sources/aio_parsing/aio_inflater/aio_inflater.cpp.o"
   "CMakeFiles/AIO_v_2.dir/sources/aio_runtime/aio_bundle/aio_bundle.cpp.o"
   "CMakeFiles/AIO_v_2.dir/sources/aio_runtime/aio_value/aio_value.cpp.o"
   "CMakeFiles/AIO_v_2.dir/sources/aio_runtime/aio_value/advanced_functions/cast_aio_value.cpp.o"

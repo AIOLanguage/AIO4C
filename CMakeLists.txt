@@ -16,6 +16,7 @@ add_executable(AIO_v_2
         headers
         #core:
         headers/aio_core/aio_core.h
+        headers/aio_core/aio_config.h
         #lang:
         headers/aio_lang/aio_annotatable/aio_annotatable.h
         headers/aio_lang/aio_field/aio_field.h
@@ -33,6 +34,7 @@ add_executable(AIO_v_2
         headers/aio_lang/aio_types/aio_types.h
         headers/aio_lang/aio_visibility/aio_visibility.h
         #parsing:
+        headers/aio_parsing/aio_inflater/aio_inflater.h
         #runtime:
         headers/aio_runtime/aio_bundle/aio_bundle.h
         headers/aio_runtime/aio_invokable_circuit/aio_invokable_circuit.h
@@ -44,6 +46,7 @@ add_executable(AIO_v_2
         headers/aio_runtime/aio_value/advanced_functions/log_aio_value.h
         headers/aio_runtime/aio_variable/aio_variable.h
         #lib4aio:
+        lib4aio/lib4aio_cpp_headers/utils/color_utils/color_utils.h
         lib4aio/lib4aio_cpp_headers/utils/array_list_utils/array_list.h
         lib4aio/lib4aio_cpp_headers/utils/char_utils/char_utils.h
         lib4aio/lib4aio_cpp_headers/utils/error_utils/error_utils.h
@@ -69,6 +72,7 @@ add_executable(AIO_v_2
         sources
         #core:
         sources/aio_core/aio_core.cpp
+        sources/aio_core/aio_config.cpp
         #lang:
         sources/aio_lang/aio_annotatable/aio_annotatable.cpp
         sources/aio_lang/aio_field/aio_field.cpp
@@ -84,6 +88,7 @@ add_executable(AIO_v_2
         sources/aio_lang/aio_space/aio_initializable/aio_enum/aio_enum.cpp
         sources/aio_lang/aio_space/aio_scope/aio_scope.cpp
         #parsing:
+        sources/aio_parsing/aio_inflater/aio_inflater.cpp
         #runtime:
         sources/aio_runtime/aio_bundle/aio_bundle.cpp
         sources/aio_runtime/aio_value/aio_value.cpp
@@ -118,4 +123,4 @@ add_executable(AIO_v_2
         lib4aio/lib4aio_cpp_sources/utils/string_utils/trim.cpp
         lib4aio/lib4aio_cpp_sources/utils/struct_list/struct_list.cpp
         #---------------------------------------------------------------------------------------------------------------
-        )
+        headers/aio_runtime/aio_invoker/aio_invoker.h)
