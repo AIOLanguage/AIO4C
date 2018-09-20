@@ -1,8 +1,8 @@
-namespace lib4aio
-{
-
 #ifndef LIB4AIO_LOG_UTILS_H
 #define LIB4AIO_LOG_UTILS_H
+
+namespace lib4aio
+{
 
     void log_info(const char *tag, const char *message);
 
@@ -16,5 +16,6 @@ namespace lib4aio
 
     void log_info_boolean(const char *tag, const char *message, const bool value);
 
-#endif //LIB4AIO_LOG_UTILS_H
 }
+
+#endif //LIB4AIO_LOG_UTILS_H

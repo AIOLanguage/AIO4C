@@ -2,8 +2,7 @@
 #include <lib4aio_cpp_headers/utils/memory_utils/memory_utils.h>
 #include <lib4aio_cpp_headers/utils/string_utils/common.h>
 
-namespace lib4aio
-{
+namespace lib4aio {
 
     static auto EMPTY_STRING = "";
 
@@ -16,7 +15,7 @@ namespace lib4aio
     )
     {
         if (src_length == 0) {
-            *dst = static_cast<string>(new_object_array(2, sizeof(char)));
+            *dst = (char *) new_object_array(2, sizeof(char));
             return false;
         }
         if (prefix_length + suffix_length > src_length || (prefix_length == 0 && suffix_length == 0)) {
@@ -29,9 +28,9 @@ namespace lib4aio
 
     char *remove_prefix_suffix(const char *src, const char *prefix, const char *suffix)
     {
-        auto src_length = strlen(src);
-        auto prefix_length = strlen(prefix);
-        auto suffix_length = strlen(suffix);
+        unsigned src_length = (unsigned) strlen(src);
+        unsigned prefix_length = (unsigned) strlen(prefix);
+        unsigned suffix_length = (unsigned) strlen(suffix);
         char *dst;
         if (!is_correct_src_prefix(src_length, prefix_length, suffix_length, src, &dst)) {
             return dst;
@@ -55,7 +54,7 @@ namespace lib4aio
             }
         }
         auto num_of_elements = src_length - left_part - right_part;
-        dst = static_cast<string>(new_object_array(num_of_elements + 1, sizeof(char)));
+        dst = (char *) new_object_array(num_of_elements + 1, sizeof(char));
         for (auto i = left_part; i < src_length - right_part; ++i) {
             dst[i - left_part] = src[i];
         }

@@ -4,8 +4,8 @@
 #include <lib4aio_cpp_headers/utils/log_utils/log_utils.h>
 
 void log_info_aio_value(
-        const_string tag,
-        const_string message,
+        const char *tag,
+        const char *message,
         const aio_value *value
 )
 {

@@ -27,16 +27,13 @@ namespace lib4aio {
             division = division / 10;
             int_size_in_string = int_size_in_string + 1;
         }
-        string integer_array;
+        char *integer_array;
         auto negative_shift = 0;
         if (int_size_in_string > 0) {
             if (src < 0) {
                 negative_shift = 1;
             }
-            integer_array = static_cast<string>(new_object_array(
-                    int_size_in_string + 1 + negative_shift,
-                    sizeof(char)
-            ));
+            integer_array = (char *) new_object_array(int_size_in_string + 1 + negative_shift, sizeof(char));
             division = src;
             integer_array[0] = '-';
             auto pointer = int_size_in_string - 1 + negative_shift;
@@ -46,15 +43,12 @@ namespace lib4aio {
                 pointer--;
             }
         } else {
-            integer_array = static_cast<string>(new_object_array(2, sizeof(char)));
+            integer_array = (char *) new_object_array(2, sizeof(char));
             integer_array[0] = '0';
             int_size_in_string = 1;
         }
-        string dst = static_cast<string>(new_object_array(
-                int_size_in_string + 1 + negative_shift,
-                sizeof(char)
-        ));
-        for (auto k = 0; k < int_size_in_string + negative_shift; ++k) {
+        char *dst = (char *) new_object_array(int_size_in_string + 1 + negative_shift, sizeof(char));
+        for (unsigned k = 0; k < int_size_in_string + negative_shift; ++k) {
             dst[k] = integer_array[k];
         }
         free(integer_array);

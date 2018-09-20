@@ -5,8 +5,7 @@
 #include <lib4aio_cpp_headers/utils/str_builder/str_builder.h>
 #include <lib4aio_cpp_headers/utils/memory_utils/memory_utils.h>
 
-namespace lib4aio
-{
+namespace lib4aio {
 
 #define INIT_CAPACITY 2
 
@@ -17,15 +16,12 @@ namespace lib4aio
 
     void str_builder::grow(const unsigned range)
     {
-        auto new_length = this->length + range + 1;
+        const unsigned new_length = this->length + range + 1;
         if (new_length >= this->capacity) {
             while (new_length >= this->capacity) {
                 this->capacity *= INIT_CAPACITY;
             }
-            auto new_string = static_cast<string>(new_object_array(
-                    this->capacity,
-                    sizeof(char))
-            );
+            char *new_string = (char *) new_object_array(this->capacity, sizeof(char));
             strcpy(new_string, this->string_value);
             free(this->string_value);
             this->string_value = new_string;
@@ -40,12 +36,12 @@ namespace lib4aio
 
     void str_builder::append(const char *string)
     {
-        auto other_string_length = strlen(string);
-        auto start_position = this->length;
-        auto new_length = start_position + other_string_length;
-        auto other_string_counter = 0;
+        unsigned other_string_length = (unsigned) strlen(string);
+        unsigned start_position = this->length;
+        unsigned new_length = start_position + other_string_length;
+        unsigned other_string_counter = 0;
         grow(other_string_length);
-        for (auto i = start_position; i < new_length; ++i) {
+        for (unsigned i = start_position; i < new_length; ++i) {
             this->string_value[i] = string[other_string_counter++];
         }
         this->length = new_length;
@@ -53,7 +49,7 @@ namespace lib4aio
 
     char *str_builder::pop()
     {
-        auto new_str = new_string(this->string_value);
+        char *new_str = new_string(this->string_value);
         free(this->string_value);
         this->reset();
         return new_str;
@@ -61,10 +57,7 @@ namespace lib4aio
 
     void str_builder::reset()
     {
-        this->string_value = static_cast<string>(new_object_array(
-                INIT_CAPACITY,
-                sizeof(char))
-        );
+        this->string_value = (char *) new_object_array(INIT_CAPACITY, sizeof(char));
         this->capacity = INIT_CAPACITY;
         this->length = 0;
     }

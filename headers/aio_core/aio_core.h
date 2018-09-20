@@ -5,6 +5,8 @@
  * 연결.
  */
 
+#include <lib4aio_cpp_headers/utils/str_builder/str_builder.h>
+
 #define NUMBER_OF_CORE_TYPES 5
 
 namespace lib4aio {
@@ -13,6 +15,8 @@ namespace lib4aio {
     class array_list;
 
     class str_hook;
+
+    class str_builder;
 }
 
 using namespace lib4aio;
@@ -33,11 +37,11 @@ public:
 
     const array_list<aio_file> *get_file_list() const;
 
-    void set_build_script_data(const char *build_script_data);
+    void set_script_builder(str_builder *script_builder);
 
 private:
 
-    const char *build_script_data;
+    str_builder *script_builder;
 
     array_list<str_hook> *types;
 

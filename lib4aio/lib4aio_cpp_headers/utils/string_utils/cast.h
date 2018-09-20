@@ -1,8 +1,7 @@
 #ifndef LIB4AIO_STRING_UTILS_CAST_H
 #define LIB4AIO_STRING_UTILS_CAST_H
 
-namespace lib4aio
-{
+namespace lib4aio {
 
     char *int_to_string(const int src);
 

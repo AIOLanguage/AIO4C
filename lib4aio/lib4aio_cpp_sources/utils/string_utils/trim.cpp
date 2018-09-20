@@ -3,10 +3,9 @@
 #include <lib4aio_cpp_headers/utils/memory_utils/memory_utils.h>
 #include <lib4aio_cpp_headers/utils/char_utils/char_utils.h>
 
-namespace lib4aio
-{
+namespace lib4aio {
 
-    static string abstract_border_trim(
+    static char *abstract_border_trim(
             const char *src,
             const bool has_left,
             const bool has_right,
@@ -16,7 +15,7 @@ namespace lib4aio
         char *dst;
         auto src_length = strlen(src);
         if (src_length == 0) {
-            dst = static_cast<string >(new_object_array(2, sizeof(char)));
+            dst = (char *) new_object_array(2, sizeof(char));
             return dst;
         }
         auto left_border = 0;
@@ -37,7 +36,7 @@ namespace lib4aio
         } else {
             number_of_elements = 2;
         }
-        dst = static_cast<string>(new_object_array(number_of_elements + 1, sizeof(char)));
+        dst = static_cast<char *>(new_object_array(number_of_elements + 1, sizeof(char)));
         for (auto i = left_border; i < src_length - right_border; ++i) {
             dst[i - left_border] = src[i];
         }
@@ -79,7 +78,7 @@ namespace lib4aio
     {
         auto dst = static_cast<char **>(new_object_array(
                 number_of_strings,
-                sizeof(string))
+                sizeof(char *))
         );
         for (int i = 0; i < number_of_strings; ++i) {
             dst[i] = trim(strings[i]);
@@ -91,7 +90,7 @@ namespace lib4aio
     {
         auto dst = static_cast<char **>(new_object_array(
                 number_of_strings,
-                sizeof(string))
+                sizeof(char *))
         );
         for (int i = 0; i < number_of_strings; ++i) {
             dst[i] = trim_with_line_break(strings[i]);

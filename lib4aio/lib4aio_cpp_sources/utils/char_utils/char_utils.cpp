@@ -1,7 +1,7 @@
+#include <lib4aio_cpp_headers/utils/char_utils/char_utils.h>
+
 namespace lib4aio
 {
-
-#include <lib4aio_cpp_headers/utils/char_utils/char_utils.h>
 
     bool is_space(const char c)
     {
@@ -133,5 +133,9 @@ namespace lib4aio
     bool is_exclamation_point(const char c)
     {
         return c == '!';
+    }
+
+    bool is_slash(const char c) {
+        return c == '/';
     }
 }

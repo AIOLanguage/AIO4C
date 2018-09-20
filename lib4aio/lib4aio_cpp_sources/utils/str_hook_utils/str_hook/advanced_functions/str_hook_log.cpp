@@ -6,7 +6,7 @@ namespace lib4aio
     void log_info_str_hook(const char *tag, const char *message, const str_hook *hook)
     {
         auto end = hook->end;
-        auto source_string = hook->source_string;
+        auto source_string = hook->get_string();
         printf("\n%s: %s -", tag, message);
         for (int i = hook->start; i < end; ++i) {
             printf("%c", source_string[i]);

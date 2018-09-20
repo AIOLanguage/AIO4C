@@ -6,8 +6,12 @@ set(CMAKE_CXX_STANDARD 17)
 
 include_directories(headers sources lib4aio)
 
-add_executable(AIO_v_2
-
+add_executable(
+        #---------------------------------------------------------------------------------------------------------------
+        #PROJECT NAME:
+        AIO_v_2
+        #---------------------------------------------------------------------------------------------------------------
+        #MAIN:
         main/main.cpp
         #---------------------------------------------------------------------------------------------------------------
 
@@ -35,6 +39,7 @@ add_executable(AIO_v_2
         headers/aio_lang/aio_visibility/aio_visibility.h
         #parsing:
         headers/aio_parsing/aio_inflater/aio_inflater.h
+        headers/aio_parsing/aio_orbits/aio_build_script/aio_build_script_orbit.h
         #runtime:
         headers/aio_runtime/aio_value/aio_value.h
         headers/aio_runtime/aio_bundle/aio_bundle.h
@@ -47,6 +52,8 @@ add_executable(AIO_v_2
         headers/aio_runtime/aio_value/advanced_functions/compare_aio_value.h
         headers/aio_runtime/aio_invokable_instruction/aio_invokable_instruction.h
         #lib4aio:
+        lib4aio/lib4aio_cpp_headers/aio_orbit/aio_orbit.h
+        lib4aio/lib4aio_cpp_headers/aio_orbit/aio_particle/aio_particle.h
         lib4aio/lib4aio_cpp_headers/utils/color_utils/color_utils.h
         lib4aio/lib4aio_cpp_headers/utils/array_list_utils/array_list.h
         lib4aio/lib4aio_cpp_headers/utils/char_utils/char_utils.h
@@ -54,7 +61,6 @@ add_executable(AIO_v_2
         lib4aio/lib4aio_cpp_headers/utils/log_utils/log_utils.h
         lib4aio/lib4aio_cpp_headers/utils/memory_utils/memory_utils.h
         lib4aio/lib4aio_cpp_headers/utils/point_watcher/point_watcher.h
-        lib4aio/lib4aio_cpp_headers/utils/point_watcher/str_hook_watcher/str_point_watcher.h
         lib4aio/lib4aio_cpp_headers/utils/str_builder/str_builder.h
         lib4aio/lib4aio_cpp_headers/utils/str_hook_utils/str_hook/str_hook.h
         lib4aio/lib4aio_cpp_headers/utils/str_hook_utils/str_hook_iterator/str_hook_iterator.h
@@ -92,6 +98,7 @@ add_executable(AIO_v_2
         sources/aio_lang/aio_space/aio_scope/aio_scope.cpp
         #parsing:
         sources/aio_parsing/aio_inflater/aio_inflater.cpp
+        sources/aio_parsing/aio_orbits/aio_build_script/aio_buil_script_orbit.cpp
         #runtime:
         sources/aio_runtime/aio_value/aio_value.cpp
         sources/aio_runtime/aio_bundle/aio_bundle.cpp
@@ -106,7 +113,6 @@ add_executable(AIO_v_2
         lib4aio/lib4aio_cpp_sources/utils/log_utils/log_utils.cpp
         lib4aio/lib4aio_cpp_sources/utils/memory_utils/memory_utils.cpp
         lib4aio/lib4aio_cpp_sources/utils/point_watcher/point_watcher.cpp
-        lib4aio/lib4aio_cpp_sources/utils/point_watcher/str_hook_watcher/str_point_watcher.cpp
         lib4aio/lib4aio_cpp_sources/utils/str_builder/str_builder.cpp
         lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/str_hook.cpp
         lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_cast.cpp
@@ -128,5 +134,7 @@ add_executable(AIO_v_2
         lib4aio/lib4aio_cpp_sources/utils/struct_list/struct_list.cpp
         lib4aio/lib4aio_cpp_sources/utils/int_list_utils/int_list.cpp
         lib4aio/lib4aio_cpp_sources/utils/file_utils/file_reader.cpp
+        lib4aio/lib4aio_cpp_sources/aio_orbit/aio_orbit.cpp
+        lib4aio/lib4aio_cpp_sources/aio_orbit/aio_particle/aio_particle.cpp
         #---------------------------------------------------------------------------------------------------------------
-        )
+)

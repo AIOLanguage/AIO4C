@@ -10,7 +10,7 @@ namespace lib4aio {
     char *new_string(const char *src)
     {
         if (src) {
-            string new_string = static_cast<string>(new_object_array(strlen(src) + 1, sizeof(char)));
+            char *new_string = (char *) new_object_array((unsigned) strlen(src) + 1, sizeof(char));
             strcpy(new_string, src);
             return new_string;
         } else {
@@ -45,10 +45,7 @@ namespace lib4aio {
         auto new_pointer = 0;
         for (auto j = 0; j < src_size; ++j) {
             if (are_valid_indices[j]) {
-                dst[new_pointer] = static_cast<string>(new_object_array(
-                        strlen(src[j]) + 1,
-                        sizeof(char))
-                );
+                dst[new_pointer] = (char *) new_object_array((unsigned) strlen(src[j]) + 1, sizeof(char));
                 strcpy(dst[new_pointer++], src[j]);
             }
         }

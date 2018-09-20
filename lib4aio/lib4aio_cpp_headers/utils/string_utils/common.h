@@ -1,10 +1,11 @@
+#ifndef LIB4AIO_STRING_UTILS_COMMON_H
+#define LIB4AIO_STRING_UTILS_COMMON_H
+
+
 namespace lib4aio
 {
 
     class struct_list;
-
-#ifndef LIB4AIO_STRING_UTILS_COMMON_H
-#define LIB4AIO_STRING_UTILS_COMMON_H
 
     char *new_string(const char *src);
 
@@ -32,13 +33,6 @@ namespace lib4aio
 
     void free_string(char *src);
 
-    /**
-    * Typedef utils.
-    */
-
-    typedef char *string;
-
-    typedef const char *const_string;
+}
 
 #endif //LIB4AIO_STRING_UTILS_COMMON_H
-}

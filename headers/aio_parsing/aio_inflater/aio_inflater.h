@@ -11,6 +11,6 @@ using namespace lib4aio;
 
 class aio_core;
 
-const str_hook *inflate_aio_context(aio_core *core, const char *build_script_path);
+str_hook *inflate_aio_context(aio_core *core, const char *build_script_path);
 
 #endif //AIO_INFLATER_H

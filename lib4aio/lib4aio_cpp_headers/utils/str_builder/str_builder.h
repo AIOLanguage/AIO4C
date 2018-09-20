@@ -1,20 +1,10 @@
-namespace lib4aio
-{
-
 #ifndef LIB4AIO_STR_BUILDER_H
 #define LIB4AIO_STR_BUILDER_H
 
-    class str_builder
-    {
-    private:
+namespace lib4aio {
 
-        char *string_value;
 
-        unsigned capacity;
-
-        unsigned length;
-
-        void grow(const unsigned range);
+    class str_builder {
 
     public:
 
@@ -33,8 +23,18 @@ namespace lib4aio
         unsigned size() const;
 
         ~str_builder();
+
+    private:
+
+        char *string_value;
+
+        unsigned capacity;
+
+        unsigned length;
+
+        void grow(const unsigned range);
     };
 
-#endif //LIB4AIO_STR_BUILDER_H
-
 }
+
+#endif //LIB4AIO_STR_BUILDER_H

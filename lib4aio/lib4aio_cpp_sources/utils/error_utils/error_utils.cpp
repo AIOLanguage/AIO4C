@@ -2,27 +2,25 @@
 #include <stdlib.h>
 #include <lib4aio_cpp_headers/utils/string_utils/common.h>
 
-#define ERROR_TAG "AIO_ERROR"
-
 namespace lib4aio {
 
-    void throw_error(const_string message)
+    void throw_error(const char *message)
     {
         perror(message);
         free((void *) message);
         exit(1);
     }
 
-    void throw_error_with_tag(const_string tag, const_string message)
+    void throw_error_with_tag(const char *tag, const char *message)
     {
-        printf("\n%s: %s: %s\n", ERROR_TAG, tag, message);
+        printf("\n%s: %s\n", tag, message);
         free((void *) message);
         exit(1);
     }
 
-    void throw_error_with_details(const_string tag, const_string message, const_string value)
+    void throw_error_with_details(const char *tag, const char *message, const char *value)
     {
-        printf("\n%s %s: %s %s\n", ERROR_TAG, tag, message, value);
+        printf("\n%s: %s %s\n", tag, message, value);
         free((void *) message);
         exit(1);
     }

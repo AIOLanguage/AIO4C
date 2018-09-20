@@ -1,8 +1,7 @@
-namespace lib4aio
-{
-
 #ifndef LIB4AIO_STRING_UTILS_SPLIT_H
 #define LIB4AIO_STRING_UTILS_SPLIT_H
+
+namespace lib4aio {
 
     bool matches_int(const char *string);
 
@@ -14,6 +13,6 @@ namespace lib4aio
 
     bool is_word(const char *line);
 
-#endif //LIB4AIO_STRING_UTILS_SPLIT_H
-
 }
+
+#endif //LIB4AIO_STRING_UTILS_SPLIT_H

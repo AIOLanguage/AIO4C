@@ -147,6 +147,9 @@
 		<Unit filename="/home/ihb/aio/AIO_Backup/headers/aio_parsing/aio_inflater/aio_inflater.h">
 			<Option target="AIO_v_2"/>
 		</Unit>
+		<Unit filename="/home/ihb/aio/AIO_Backup/headers/aio_parsing/aio_orbits/aio_build_script/aio_build_script_orbit.h">
+			<Option target="AIO_v_2"/>
+		</Unit>
 		<Unit filename="/home/ihb/aio/AIO_Backup/headers/aio_runtime/aio_bundle/aio_bundle.h">
 			<Option target="AIO_v_2"/>
 		</Unit>
@@ -177,6 +180,12 @@
 		<Unit filename="/home/ihb/aio/AIO_Backup/headers/aio_runtime/aio_variable/aio_variable.h">
 			<Option target="AIO_v_2"/>
 		</Unit>
+		<Unit filename="/home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_headers/aio_orbit/aio_orbit.h">
+			<Option target="AIO_v_2"/>
+		</Unit>
+		<Unit filename="/home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_headers/aio_orbit/aio_particle/aio_particle.h">
+			<Option target="AIO_v_2"/>
+		</Unit>
 		<Unit filename="/home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_headers/utils/array_list_utils/array_list.h">
 			<Option target="AIO_v_2"/>
 		</Unit>
@@ -202,9 +211,6 @@
 			<Option target="AIO_v_2"/>
 		</Unit>
 		<Unit filename="/home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_headers/utils/point_watcher/point_watcher.h">
-			<Option target="AIO_v_2"/>
-		</Unit>
-		<Unit filename="/home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_headers/utils/point_watcher/str_hook_watcher/str_point_watcher.h">
 			<Option target="AIO_v_2"/>
 		</Unit>
 		<Unit filename="/home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_headers/utils/str_builder/str_builder.h">
@@ -240,6 +246,12 @@
 		<Unit filename="/home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_headers/utils/struct_list/struct_list.h">
 			<Option target="AIO_v_2"/>
 		</Unit>
+		<Unit filename="/home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_sources/aio_orbit/aio_orbit.cpp">
+			<Option target="AIO_v_2"/>
+		</Unit>
+		<Unit filename="/home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_sources/aio_orbit/aio_particle/aio_particle.cpp">
+			<Option target="AIO_v_2"/>
+		</Unit>
 		<Unit filename="/home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_sources/utils/array_list_utils/array_list.cpp">
 			<Option target="AIO_v_2"/>
 		</Unit>
@@ -262,9 +274,6 @@
 			<Option target="AIO_v_2"/>
 		</Unit>
 		<Unit filename="/home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_sources/utils/point_watcher/point_watcher.cpp">
-			<Option target="AIO_v_2"/>
-		</Unit>
-		<Unit filename="/home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_sources/utils/point_watcher/str_hook_watcher/str_point_watcher.cpp">
 			<Option target="AIO_v_2"/>
 		</Unit>
 		<Unit filename="/home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_sources/utils/str_builder/str_builder.cpp">
@@ -376,6 +385,9 @@
 			<Option target="AIO_v_2"/>
 		</Unit>
 		<Unit filename="/home/ihb/aio/AIO_Backup/sources/aio_parsing/aio_inflater/aio_inflater.cpp">
+			<Option target="AIO_v_2"/>
+		</Unit>
+		<Unit filename="/home/ihb/aio/AIO_Backup/sources/aio_parsing/aio_orbits/aio_build_script/aio_buil_script_orbit.cpp">
 			<Option target="AIO_v_2"/>
 		</Unit>
 		<Unit filename="/home/ihb/aio/AIO_Backup/sources/aio_runtime/aio_bundle/aio_bundle.cpp">

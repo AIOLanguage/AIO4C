@@ -1,5 +1,5 @@
-#include <lib4aio_cpp_headers/utils/array_list_utils/array_list.h>
 #include <lib4aio_cpp_headers/utils/memory_utils/memory_utils.h>
+#include <lib4aio_cpp_headers/utils/array_list_utils/array_list.h>
 
 namespace lib4aio {
 

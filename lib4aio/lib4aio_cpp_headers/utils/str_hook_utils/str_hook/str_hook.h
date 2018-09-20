@@ -1,27 +1,19 @@
-namespace lib4aio
-{
+namespace lib4aio {
 
 #ifndef LIB4AIO_STRING_HOOK_H
 #define LIB4AIO_STRING_HOOK_H
-
-    /**
-     * Declare classes.
-     */
 
     class str_hook_list;
 
     class point_watcher;
 
-    class str_hook
-    {
+    class str_hook {
 
     public:
 
         unsigned start;
 
         unsigned end;
-
-        const char *source_string;
 
         /**
          * Constructors & destructor.
@@ -106,6 +98,11 @@ namespace lib4aio
         str_hook *lower_quotes() const;
 
         bool to_boolean() const;
+
+    private:
+
+        const char *source_string;
+
     };
 
     void log_info_str_hook(

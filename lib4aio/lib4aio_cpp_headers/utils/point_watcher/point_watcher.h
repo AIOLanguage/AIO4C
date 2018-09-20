@@ -1,7 +1,7 @@
-namespace lib4aio {
-
 #ifndef LIB4AIO_POINT_WATCHER_H
 #define LIB4AIO_POINT_WATCHER_H
+
+namespace lib4aio {
 
     class point_watcher {
 
@@ -27,6 +27,6 @@ namespace lib4aio {
 
     };
 
-#endif //LIB4AIO_POINT_WATCHER_H
-
 }
+
+#endif //LIB4AIO_POINT_WATCHER_H

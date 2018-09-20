@@ -4,6 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_sources/aio_orbit/aio_orbit.cpp" "/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/aio_orbit/aio_orbit.cpp.o"
+  "/home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_sources/aio_orbit/aio_particle/aio_particle.cpp" "/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/aio_orbit/aio_particle/aio_particle.cpp.o"
   "/home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_sources/utils/array_list_utils/array_list.cpp" "/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/array_list_utils/array_list.cpp.o"
   "/home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_sources/utils/char_utils/char_utils.cpp" "/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/char_utils/char_utils.cpp.o"
   "/home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_sources/utils/error_utils/error_utils.cpp" "/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/error_utils/error_utils.cpp.o"
@@ -12,7 +14,6 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_sources/utils/log_utils/log_utils.cpp" "/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/log_utils/log_utils.cpp.o"
   "/home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_sources/utils/memory_utils/memory_utils.cpp" "/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/memory_utils/memory_utils.cpp.o"
   "/home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_sources/utils/point_watcher/point_watcher.cpp" "/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/point_watcher/point_watcher.cpp.o"
-  "/home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_sources/utils/point_watcher/str_hook_watcher/str_point_watcher.cpp" "/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/point_watcher/str_hook_watcher/str_point_watcher.cpp.o"
   "/home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_sources/utils/str_builder/str_builder.cpp" "/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_builder/str_builder.cpp.o"
   "/home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_cast.cpp" "/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_cast.cpp.o"
   "/home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_error.cpp" "/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_error.cpp.o"
@@ -49,6 +50,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/ihb/aio/AIO_Backup/sources/aio_lang/aio_space/aio_scope/aio_scope.cpp" "/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_scope/aio_scope.cpp.o"
   "/home/ihb/aio/AIO_Backup/sources/aio_lang/aio_space/aio_space.cpp" "/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_space.cpp.o"
   "/home/ihb/aio/AIO_Backup/sources/aio_parsing/aio_inflater/aio_inflater.cpp" "/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles/AIO_v_2.dir/sources/aio_parsing/aio_inflater/aio_inflater.cpp.o"
+  "/home/ihb/aio/AIO_Backup/sources/aio_parsing/aio_orbits/aio_build_script/aio_buil_script_orbit.cpp" "/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles/AIO_v_2.dir/sources/aio_parsing/aio_orbits/aio_build_script/aio_buil_script_orbit.cpp.o"
   "/home/ihb/aio/AIO_Backup/sources/aio_runtime/aio_bundle/aio_bundle.cpp" "/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles/AIO_v_2.dir/sources/aio_runtime/aio_bundle/aio_bundle.cpp.o"
   "/home/ihb/aio/AIO_Backup/sources/aio_runtime/aio_invoker/aio_invoker.cpp" "/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles/AIO_v_2.dir/sources/aio_runtime/aio_invoker/aio_invoker.cpp.o"
   "/home/ihb/aio/AIO_Backup/sources/aio_runtime/aio_value/advanced_functions/cast_aio_value.cpp" "/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles/AIO_v_2.dir/sources/aio_runtime/aio_value/advanced_functions/cast_aio_value.cpp.o"

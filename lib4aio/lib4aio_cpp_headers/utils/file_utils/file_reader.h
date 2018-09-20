@@ -5,9 +5,11 @@ namespace lib4aio {
 
     class str_hook;
 
-    const str_hook *get_name_by_file_path(const char *path);
+    class str_builder;
 
-    const char *get_source_code_by_file_path(const char *path);
+    str_hook *get_name_by_file_path(const char *path, const char *file_format);
+
+    str_builder *read_file_by_str_builder(const char *path);
 }
 
 #endif //LIB4AIO_FILE_READER_H

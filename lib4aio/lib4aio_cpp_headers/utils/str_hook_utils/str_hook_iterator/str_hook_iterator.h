@@ -1,21 +1,11 @@
-#include <lib4aio_cpp_headers/utils/str_hook_utils/str_hook_list/str_hook_list.h>
-
-namespace lib4aio
-{
-
 #ifndef LIB4AIO_STR_HOOK_ITERATOR_H
 #define LIB4AIO_STR_HOOK_ITERATOR_H
 
-    class str_hook_iterator
-    {
+#include <lib4aio_cpp_headers/utils/str_hook_utils/str_hook_list/str_hook_list.h>
 
-    private:
+namespace lib4aio {
 
-        const str_hook_list *hook_list;
-
-        unsigned current_hook_index;
-
-        unsigned hook_position;
+    class str_hook_iterator {
 
     public:
 
@@ -35,8 +25,16 @@ namespace lib4aio
 
         ~str_hook_iterator();
 
-    };
 
+    private:
+
+        const str_hook_list *hook_list;
+
+        unsigned current_hook_index;
+
+        unsigned hook_position;
+
+    };
 }
 
 #endif //LIB4AIO_STR_HOOK_ITERATOR_H

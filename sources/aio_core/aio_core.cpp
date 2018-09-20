@@ -81,7 +81,7 @@ aio_core::~aio_core()
     this->types->free_elements();
     delete this->file_list;
     delete this->types;
-    delete this->build_script_data;
+    delete this->script_builder;
 }
 
 const array_list<str_hook> *aio_core::get_types() const
@@ -95,11 +95,7 @@ const array_list<aio_file> *aio_core::get_file_list() const
     return this->file_list;
 }
 
-void aio_core::set_build_script_data(const char *build_script_data)
+void aio_core::set_script_builder(str_builder *script_builder)
 {
-    if (!this->build_script_data) {
-        this->build_script_data = build_script_data;
-    } else {
-        throw_error_with_tag(AIO_CORE_TAG, "'build script data' is already loaded");
-    }
+    this->script_builder = script_builder;
 }

@@ -1,5 +1,5 @@
-#ifndef LIB4AIO_ARRAY_LIST_H
-#define LIB4AIO_ARRAY_LIST_H
+#ifndef LIB4AIO_CPP_ARRAY_LIST_H
+#define LIB4AIO_CPP_ARRAY_LIST_H
 
 namespace lib4aio {
 
@@ -38,4 +38,4 @@ namespace lib4aio {
 
 }
 
-#endif //LIB4AIO_ARRAY_LIST_H
+#endif //LIB4AIO_CPP_ARRAY_LIST_H

@@ -123,6 +123,60 @@ AIO_v_2/fast:
 	$(MAKE) -f CMakeFiles/AIO_v_2.dir/build.make CMakeFiles/AIO_v_2.dir/build
 .PHONY : AIO_v_2/fast
 
+lib4aio/lib4aio_cpp_sources/aio_orbit/aio_orbit.o: lib4aio/lib4aio_cpp_sources/aio_orbit/aio_orbit.cpp.o
+
+.PHONY : lib4aio/lib4aio_cpp_sources/aio_orbit/aio_orbit.o
+
+# target to build an object file
+lib4aio/lib4aio_cpp_sources/aio_orbit/aio_orbit.cpp.o:
+	$(MAKE) -f CMakeFiles/AIO_v_2.dir/build.make CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/aio_orbit/aio_orbit.cpp.o
+.PHONY : lib4aio/lib4aio_cpp_sources/aio_orbit/aio_orbit.cpp.o
+
+lib4aio/lib4aio_cpp_sources/aio_orbit/aio_orbit.i: lib4aio/lib4aio_cpp_sources/aio_orbit/aio_orbit.cpp.i
+
+.PHONY : lib4aio/lib4aio_cpp_sources/aio_orbit/aio_orbit.i
+
+# target to preprocess a source file
+lib4aio/lib4aio_cpp_sources/aio_orbit/aio_orbit.cpp.i:
+	$(MAKE) -f CMakeFiles/AIO_v_2.dir/build.make CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/aio_orbit/aio_orbit.cpp.i
+.PHONY : lib4aio/lib4aio_cpp_sources/aio_orbit/aio_orbit.cpp.i
+
+lib4aio/lib4aio_cpp_sources/aio_orbit/aio_orbit.s: lib4aio/lib4aio_cpp_sources/aio_orbit/aio_orbit.cpp.s
+
+.PHONY : lib4aio/lib4aio_cpp_sources/aio_orbit/aio_orbit.s
+
+# target to generate assembly for a file
+lib4aio/lib4aio_cpp_sources/aio_orbit/aio_orbit.cpp.s:
+	$(MAKE) -f CMakeFiles/AIO_v_2.dir/build.make CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/aio_orbit/aio_orbit.cpp.s
+.PHONY : lib4aio/lib4aio_cpp_sources/aio_orbit/aio_orbit.cpp.s
+
+lib4aio/lib4aio_cpp_sources/aio_orbit/aio_particle/aio_particle.o: lib4aio/lib4aio_cpp_sources/aio_orbit/aio_particle/aio_particle.cpp.o
+
+.PHONY : lib4aio/lib4aio_cpp_sources/aio_orbit/aio_particle/aio_particle.o
+
+# target to build an object file
+lib4aio/lib4aio_cpp_sources/aio_orbit/aio_particle/aio_particle.cpp.o:
+	$(MAKE) -f CMakeFiles/AIO_v_2.dir/build.make CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/aio_orbit/aio_particle/aio_particle.cpp.o
+.PHONY : lib4aio/lib4aio_cpp_sources/aio_orbit/aio_particle/aio_particle.cpp.o
+
+lib4aio/lib4aio_cpp_sources/aio_orbit/aio_particle/aio_particle.i: lib4aio/lib4aio_cpp_sources/aio_orbit/aio_particle/aio_particle.cpp.i
+
+.PHONY : lib4aio/lib4aio_cpp_sources/aio_orbit/aio_particle/aio_particle.i
+
+# target to preprocess a source file
+lib4aio/lib4aio_cpp_sources/aio_orbit/aio_particle/aio_particle.cpp.i:
+	$(MAKE) -f CMakeFiles/AIO_v_2.dir/build.make CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/aio_orbit/aio_particle/aio_particle.cpp.i
+.PHONY : lib4aio/lib4aio_cpp_sources/aio_orbit/aio_particle/aio_particle.cpp.i
+
+lib4aio/lib4aio_cpp_sources/aio_orbit/aio_particle/aio_particle.s: lib4aio/lib4aio_cpp_sources/aio_orbit/aio_particle/aio_particle.cpp.s
+
+.PHONY : lib4aio/lib4aio_cpp_sources/aio_orbit/aio_particle/aio_particle.s
+
+# target to generate assembly for a file
+lib4aio/lib4aio_cpp_sources/aio_orbit/aio_particle/aio_particle.cpp.s:
+	$(MAKE) -f CMakeFiles/AIO_v_2.dir/build.make CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/aio_orbit/aio_particle/aio_particle.cpp.s
+.PHONY : lib4aio/lib4aio_cpp_sources/aio_orbit/aio_particle/aio_particle.cpp.s
+
 lib4aio/lib4aio_cpp_sources/utils/array_list_utils/array_list.o: lib4aio/lib4aio_cpp_sources/utils/array_list_utils/array_list.cpp.o
 
 .PHONY : lib4aio/lib4aio_cpp_sources/utils/array_list_utils/array_list.o
@@ -338,33 +392,6 @@ lib4aio/lib4aio_cpp_sources/utils/point_watcher/point_watcher.s: lib4aio/lib4aio
 lib4aio/lib4aio_cpp_sources/utils/point_watcher/point_watcher.cpp.s:
 	$(MAKE) -f CMakeFiles/AIO_v_2.dir/build.make CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/point_watcher/point_watcher.cpp.s
 .PHONY : lib4aio/lib4aio_cpp_sources/utils/point_watcher/point_watcher.cpp.s
-
-lib4aio/lib4aio_cpp_sources/utils/point_watcher/str_hook_watcher/str_point_watcher.o: lib4aio/lib4aio_cpp_sources/utils/point_watcher/str_hook_watcher/str_point_watcher.cpp.o
-
-.PHONY : lib4aio/lib4aio_cpp_sources/utils/point_watcher/str_hook_watcher/str_point_watcher.o
-
-# target to build an object file
-lib4aio/lib4aio_cpp_sources/utils/point_watcher/str_hook_watcher/str_point_watcher.cpp.o:
-	$(MAKE) -f CMakeFiles/AIO_v_2.dir/build.make CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/point_watcher/str_hook_watcher/str_point_watcher.cpp.o
-.PHONY : lib4aio/lib4aio_cpp_sources/utils/point_watcher/str_hook_watcher/str_point_watcher.cpp.o
-
-lib4aio/lib4aio_cpp_sources/utils/point_watcher/str_hook_watcher/str_point_watcher.i: lib4aio/lib4aio_cpp_sources/utils/point_watcher/str_hook_watcher/str_point_watcher.cpp.i
-
-.PHONY : lib4aio/lib4aio_cpp_sources/utils/point_watcher/str_hook_watcher/str_point_watcher.i
-
-# target to preprocess a source file
-lib4aio/lib4aio_cpp_sources/utils/point_watcher/str_hook_watcher/str_point_watcher.cpp.i:
-	$(MAKE) -f CMakeFiles/AIO_v_2.dir/build.make CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/point_watcher/str_hook_watcher/str_point_watcher.cpp.i
-.PHONY : lib4aio/lib4aio_cpp_sources/utils/point_watcher/str_hook_watcher/str_point_watcher.cpp.i
-
-lib4aio/lib4aio_cpp_sources/utils/point_watcher/str_hook_watcher/str_point_watcher.s: lib4aio/lib4aio_cpp_sources/utils/point_watcher/str_hook_watcher/str_point_watcher.cpp.s
-
-.PHONY : lib4aio/lib4aio_cpp_sources/utils/point_watcher/str_hook_watcher/str_point_watcher.s
-
-# target to generate assembly for a file
-lib4aio/lib4aio_cpp_sources/utils/point_watcher/str_hook_watcher/str_point_watcher.cpp.s:
-	$(MAKE) -f CMakeFiles/AIO_v_2.dir/build.make CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/point_watcher/str_hook_watcher/str_point_watcher.cpp.s
-.PHONY : lib4aio/lib4aio_cpp_sources/utils/point_watcher/str_hook_watcher/str_point_watcher.cpp.s
 
 lib4aio/lib4aio_cpp_sources/utils/str_builder/str_builder.o: lib4aio/lib4aio_cpp_sources/utils/str_builder/str_builder.cpp.o
 
@@ -1338,6 +1365,33 @@ sources/aio_parsing/aio_inflater/aio_inflater.cpp.s:
 	$(MAKE) -f CMakeFiles/AIO_v_2.dir/build.make CMakeFiles/AIO_v_2.dir/sources/aio_parsing/aio_inflater/aio_inflater.cpp.s
 .PHONY : sources/aio_parsing/aio_inflater/aio_inflater.cpp.s
 
+sources/aio_parsing/aio_orbits/aio_build_script/aio_buil_script_orbit.o: sources/aio_parsing/aio_orbits/aio_build_script/aio_buil_script_orbit.cpp.o
+
+.PHONY : sources/aio_parsing/aio_orbits/aio_build_script/aio_buil_script_orbit.o
+
+# target to build an object file
+sources/aio_parsing/aio_orbits/aio_build_script/aio_buil_script_orbit.cpp.o:
+	$(MAKE) -f CMakeFiles/AIO_v_2.dir/build.make CMakeFiles/AIO_v_2.dir/sources/aio_parsing/aio_orbits/aio_build_script/aio_buil_script_orbit.cpp.o
+.PHONY : sources/aio_parsing/aio_orbits/aio_build_script/aio_buil_script_orbit.cpp.o
+
+sources/aio_parsing/aio_orbits/aio_build_script/aio_buil_script_orbit.i: sources/aio_parsing/aio_orbits/aio_build_script/aio_buil_script_orbit.cpp.i
+
+.PHONY : sources/aio_parsing/aio_orbits/aio_build_script/aio_buil_script_orbit.i
+
+# target to preprocess a source file
+sources/aio_parsing/aio_orbits/aio_build_script/aio_buil_script_orbit.cpp.i:
+	$(MAKE) -f CMakeFiles/AIO_v_2.dir/build.make CMakeFiles/AIO_v_2.dir/sources/aio_parsing/aio_orbits/aio_build_script/aio_buil_script_orbit.cpp.i
+.PHONY : sources/aio_parsing/aio_orbits/aio_build_script/aio_buil_script_orbit.cpp.i
+
+sources/aio_parsing/aio_orbits/aio_build_script/aio_buil_script_orbit.s: sources/aio_parsing/aio_orbits/aio_build_script/aio_buil_script_orbit.cpp.s
+
+.PHONY : sources/aio_parsing/aio_orbits/aio_build_script/aio_buil_script_orbit.s
+
+# target to generate assembly for a file
+sources/aio_parsing/aio_orbits/aio_build_script/aio_buil_script_orbit.cpp.s:
+	$(MAKE) -f CMakeFiles/AIO_v_2.dir/build.make CMakeFiles/AIO_v_2.dir/sources/aio_parsing/aio_orbits/aio_build_script/aio_buil_script_orbit.cpp.s
+.PHONY : sources/aio_parsing/aio_orbits/aio_build_script/aio_buil_script_orbit.cpp.s
+
 sources/aio_runtime/aio_bundle/aio_bundle.o: sources/aio_runtime/aio_bundle/aio_bundle.cpp.o
 
 .PHONY : sources/aio_runtime/aio_bundle/aio_bundle.o
@@ -1509,6 +1563,12 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... AIO_v_2"
+	@echo "... lib4aio/lib4aio_cpp_sources/aio_orbit/aio_orbit.o"
+	@echo "... lib4aio/lib4aio_cpp_sources/aio_orbit/aio_orbit.i"
+	@echo "... lib4aio/lib4aio_cpp_sources/aio_orbit/aio_orbit.s"
+	@echo "... lib4aio/lib4aio_cpp_sources/aio_orbit/aio_particle/aio_particle.o"
+	@echo "... lib4aio/lib4aio_cpp_sources/aio_orbit/aio_particle/aio_particle.i"
+	@echo "... lib4aio/lib4aio_cpp_sources/aio_orbit/aio_particle/aio_particle.s"
 	@echo "... lib4aio/lib4aio_cpp_sources/utils/array_list_utils/array_list.o"
 	@echo "... lib4aio/lib4aio_cpp_sources/utils/array_list_utils/array_list.i"
 	@echo "... lib4aio/lib4aio_cpp_sources/utils/array_list_utils/array_list.s"
@@ -1533,9 +1593,6 @@ help:
 	@echo "... lib4aio/lib4aio_cpp_sources/utils/point_watcher/point_watcher.o"
 	@echo "... lib4aio/lib4aio_cpp_sources/utils/point_watcher/point_watcher.i"
 	@echo "... lib4aio/lib4aio_cpp_sources/utils/point_watcher/point_watcher.s"
-	@echo "... lib4aio/lib4aio_cpp_sources/utils/point_watcher/str_hook_watcher/str_point_watcher.o"
-	@echo "... lib4aio/lib4aio_cpp_sources/utils/point_watcher/str_hook_watcher/str_point_watcher.i"
-	@echo "... lib4aio/lib4aio_cpp_sources/utils/point_watcher/str_hook_watcher/str_point_watcher.s"
 	@echo "... lib4aio/lib4aio_cpp_sources/utils/str_builder/str_builder.o"
 	@echo "... lib4aio/lib4aio_cpp_sources/utils/str_builder/str_builder.i"
 	@echo "... lib4aio/lib4aio_cpp_sources/utils/str_builder/str_builder.s"
@@ -1644,6 +1701,9 @@ help:
 	@echo "... sources/aio_parsing/aio_inflater/aio_inflater.o"
 	@echo "... sources/aio_parsing/aio_inflater/aio_inflater.i"
 	@echo "... sources/aio_parsing/aio_inflater/aio_inflater.s"
+	@echo "... sources/aio_parsing/aio_orbits/aio_build_script/aio_buil_script_orbit.o"
+	@echo "... sources/aio_parsing/aio_orbits/aio_build_script/aio_buil_script_orbit.i"
+	@echo "... sources/aio_parsing/aio_orbits/aio_build_script/aio_buil_script_orbit.s"
 	@echo "... sources/aio_runtime/aio_bundle/aio_bundle.o"
 	@echo "... sources/aio_runtime/aio_bundle/aio_bundle.i"
 	@echo "... sources/aio_runtime/aio_bundle/aio_bundle.s"
