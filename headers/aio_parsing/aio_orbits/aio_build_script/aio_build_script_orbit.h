@@ -5,9 +5,7 @@
 
 using namespace lib4aio;
 
-typedef struct aio_build_script_space {
-    str_hook *program_entry;
-} aio_build_script_space;
+class aio_build_script_space;
 
 class aio_build_script_orbit : public aio_orbit<aio_build_script_space> {
 

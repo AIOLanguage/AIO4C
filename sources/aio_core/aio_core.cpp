@@ -17,6 +17,7 @@
 #ifdef AIO_CORE_DEBUG
 
 #include <lib4aio_cpp_headers/utils/log_utils/log_utils.h>
+#include <aio_core/aio_build_script.h>
 
 #endif
 
@@ -77,11 +78,11 @@ aio_core::aio_core()
 
 aio_core::~aio_core()
 {
+    free_aio_build_script_materials(this->build_script_materials);
     this->file_list->free_elements();
     this->types->free_elements();
     delete this->file_list;
     delete this->types;
-    delete this->script_builder;
 }
 
 const array_list<str_hook> *aio_core::get_types() const
@@ -95,7 +96,7 @@ const array_list<aio_file> *aio_core::get_file_list() const
     return this->file_list;
 }
 
-void aio_core::set_script_builder(str_builder *script_builder)
+void aio_core::set_build_script_materials(aio_build_script_space *script_materials)
 {
-    this->script_builder = script_builder;
+    this->build_script_materials = script_materials;
 }

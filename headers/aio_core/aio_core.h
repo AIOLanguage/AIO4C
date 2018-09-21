@@ -1,12 +1,6 @@
 #ifndef AIO_CORE_H
 #define AIO_CORE_H
 
-/**
- * 연결.
- */
-
-#include <lib4aio_cpp_headers/utils/str_builder/str_builder.h>
-
 #define NUMBER_OF_CORE_TYPES 5
 
 namespace lib4aio {
@@ -15,13 +9,13 @@ namespace lib4aio {
     class array_list;
 
     class str_hook;
-
-    class str_builder;
 }
 
 using namespace lib4aio;
 
 class aio_file;
+
+class aio_build_script_space;
 
 /**
  * 글로벌 핵심.
@@ -37,11 +31,13 @@ public:
 
     const array_list<aio_file> *get_file_list() const;
 
-    void set_script_builder(str_builder *script_builder);
+    void put_aio_file(aio_file *file);
+
+    void set_build_script_materials(aio_build_script_space *script_materials);
 
 private:
 
-    str_builder *script_builder;
+    aio_build_script_space *build_script_materials;
 
     array_list<str_hook> *types;
 

@@ -137,4 +137,4 @@ add_executable(
         lib4aio/lib4aio_cpp_sources/aio_orbit/aio_orbit.cpp
         lib4aio/lib4aio_cpp_sources/aio_orbit/aio_particle/aio_particle.cpp
         #---------------------------------------------------------------------------------------------------------------
-)
+        sources/aio_parsing/aio_orbits/aio_build_script/aio_particles/aio_build_script_config_particle.cpp sources/aio_parsing/aio_orbits/aio_build_script/aio_particles/aio_build_script_domain_particle.cpp headers/aio_parsing/aio_orbits/aio_build_script/aio_particles/aio_build_script_config_particle.h headers/aio_parsing/aio_orbits/aio_build_script/aio_particles/aio_build_script_domain_particle.h headers/aio_core/aio_build_script.h sources/aio_core/aio_build_script.cpp)

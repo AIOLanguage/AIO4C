@@ -1,7 +1,9 @@
 #include <aio_core/aio_core.h>
+#include <aio_core/aio_build_script.h>
 #include <aio_parsing/aio_orbits/aio_build_script/aio_build_script_orbit.h>
 #include <lib4aio_cpp_sources/aio_orbit/aio_orbit.cpp>
 #include <lib4aio_cpp_headers/utils/file_utils/file_reader.h>
+#include <lib4aio_cpp_headers/utils/str_builder/str_builder.h>
 #include <lib4aio_cpp_headers/utils/error_utils/error_utils.h>
 #include <lib4aio_cpp_headers/utils/string_utils/suffix_prefix.h>
 #include <lib4aio_cpp_headers/utils/str_hook_utils/str_hook/str_hook.h>
@@ -29,7 +31,7 @@
 
 using namespace lib4aio;
 
-static void inflate_aio_file(aio_core *core, const str_hook *file_path)
+static aio_file *inflate_aio_file(const str_hook *file_path)
 {
 
 }
@@ -56,16 +58,21 @@ static aio_build_script_space *extract_build_script_materials(const str_builder 
 
 str_hook *inflate_aio_context(aio_core *core, const char *build_script_path)
 {
-    if (ends_with_suffix(build_script_path, AIO_BUILD_SCRIPT_FORMAT)) {
+    const bool is_aio_build_script_file = ends_with_suffix(build_script_path, AIO_BUILD_SCRIPT_FORMAT);
+    if (is_aio_build_script_file) {
         str_builder *file_string_builder = read_file_by_str_builder(build_script_path);
 #ifdef AIO_INFLATTER_DEBUG
         log_info_string(AIO_INFLATTER_INFO_TAG, "aio build script: \n", file_string_builder->get_string());
 #endif
         aio_build_script_space *build_script_materials = extract_build_script_materials(file_string_builder);
-        str_hook *main_path = build_script_materials->program_entry;
-        core->set_script_builder(file_string_builder);
-        inflate_aio_file(core, main_path);
-        return main_path;
+        const char *main_path_string = build_script_materials->main_path;
+        str_hook *main_path_holder = new str_hook(main_path_string);
+        aio_file *main_file = inflate_aio_file(main_path_holder);
+        //Add build script data in core:
+        core->set_build_script_materials(build_script_materials);
+        //Add source code of *aio file:
+        core->put_aio_file(main_file);
+        return main_path_holder;
     } else {
         throw_error_with_details(AIO_INFLATTER_ERROR_TAG, "파일이 '*.aio_core' 형식이 아닙니다", build_script_path);
     }
