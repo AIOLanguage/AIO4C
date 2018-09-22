@@ -1,6 +1,9 @@
 #ifndef AIO_BUILD_SCRIPT_H
 #define AIO_BUILD_SCRIPT_H
 
+
+#define AIO_BUILD_SCRIPT_MAIN_KEYWORD "main"
+
 typedef struct aio_build_script_space {
     const char *main_path;
 } aio_build_script_space;

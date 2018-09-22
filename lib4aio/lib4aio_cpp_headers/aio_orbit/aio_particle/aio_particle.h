@@ -43,11 +43,7 @@ namespace lib4aio {
 
         aio_particle_signal signal;
 
-        enum {
-            AIO_BEYOND_STRING, AIO_INSIDE_STRING
-        } string_mode;
-
-        const bool is_beyond_string() const;
+        bool is_inside_string;
     };
 }
 

@@ -6,18 +6,12 @@ namespace lib4aio {
     template<class S>
     aio_particle<S>::aio_particle()
     {
-        this->string_mode = AIO_BEYOND_STRING;
+        this->is_inside_string = false;
     }
 
     template<class S>
     aio_particle<S>::~aio_particle()
     {}
-
-    template<class S>
-    const bool aio_particle<S>::is_beyond_string() const
-    {
-        return this->string_mode == AIO_BEYOND_STRING;
-    }
 
     template<class S>
     void aio_particle<S>::set_scanning_string_holder(const str_hook *string_holder)

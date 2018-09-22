@@ -3,6 +3,11 @@
 
 #include <lib4aio_cpp_headers/aio_orbit/aio_particle/aio_particle.h>
 
+namespace lib4aio {
+
+    class point_watcher;
+}
+
 using namespace lib4aio;
 
 class aio_build_script_space;
@@ -23,13 +28,15 @@ public:
 
 private:
 
-    enum {
-        AIO_SCAN_ATTRIBUTE, AIO_SCAN_EQUAL_SIGN, AIO_SCAN_VALUE
-    } process_mode;
+    unsigned whitespace_counter;
 
     enum {
-        AIO_WAIT_TOKEN, AIO_READ_TOKEN
-    } scan_mode;
+        AIO_MONITOR_ATTRIBUTE, AIO_MONITOR_EQUAL_SIGN, AIO_MONITOR_VALUE
+    } monitor_mode;
+
+    enum {
+        AIO_TRIGGER_MODE_PASSIVE, AIO_TRIGGER_MODE_ACTIVE
+    } trigger_mode;
 
     struct {
         char *attribute;
