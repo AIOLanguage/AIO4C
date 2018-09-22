@@ -1,17 +1,15 @@
-typ Cyborg -> Person, Robot {
+import
+{
+    robots.abstract.Robot
+    persons.Person
+}
 
-    + model Int
+class Cyborg -> Person, Robot
+{
+    val model Int
 
-    new(
-        + firstName Str
-        + secondName Str
-        + age Int
-        + core Core
-        + model Int
-    ) : Person(firstName, secondName, age), Robot(core)
-    {
-        $model = model
-    }
+    Cyborg(firstName Str, secondName Str, age Int, core Core, model Int)
+        -> Person(firstName, secondName, age), Robot(core);
 
     fun calc() : override
     {
@@ -19,7 +17,7 @@ typ Cyborg -> Person, Robot {
         println('Calc distance...')
     }
 
-    fun say(+ message Str) : override
+    fun say(message Str) : override
     {
         println(':::: #message ::::')
     }

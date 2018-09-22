@@ -1,12 +1,13 @@
-plg {
-    robots.abstractRobot.core.Core
+import
+{
+    robots.abstract.core.Core
     java.util.logging.Logger
 }
 
-+ log Logger : private = Logger.getLogger(Core724::class.name)
+val log Logger : private = Logger.getLogger(Core724::class.name)
 
-typ Core724 -> Core {
-
+class Core724 -> Core
+{
     fun install() : override
     {
         log.info('CORE-724 has installed!')

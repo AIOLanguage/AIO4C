@@ -1,1 +1,1 @@
-enu SpaceType (STAR, PLANET, COMET, HOLE) {}
+enu SpaceType (STAR, PLANET, COMET, HOLE);

@@ -1,4 +1,4 @@
-typ Hand {
-
-    - power Dou : private = 100
+class Hand
+{
+    var power Dou : private = 100
 }

@@ -158,4 +158,14 @@ namespace lib4aio
         //--------------------------------------------------------------------------------------------------------------
         return hooks;
     }
+
+    char *str_hook::to_string() const
+    {
+        char *string = (char *) new_object_array(this->get_size() + 1, sizeof(char));
+        unsigned position = 0;
+        for (unsigned i = this->start; i < this->end; ++i) {
+            string[position++] = this->source_string[i];
+        }
+        return string;
+    }
 }

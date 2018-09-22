@@ -1,4 +1,4 @@
-typ Hand {
-
-    + power Dou : abstract
+class Hand
+{
+    val power Dou : abstract
 }

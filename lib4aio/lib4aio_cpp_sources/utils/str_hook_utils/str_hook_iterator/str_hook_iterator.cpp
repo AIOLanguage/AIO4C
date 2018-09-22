@@ -45,7 +45,7 @@ namespace lib4aio
         //Get current hook:
         auto current_hook_index = this->current_hook_index;
         auto current_hook = hook_list->get(current_hook_index);
-        //Check next position:
+        //Check next iterator_position:
         if (this->hook_position < current_hook->end - 1) {
             this->hook_position++;
             return true;

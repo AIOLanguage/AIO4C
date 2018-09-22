@@ -1,13 +1,14 @@
-plg {
+import
+{
     robots.abstract.head.Head
     robots.abstract.core.Core
 }
 
-typ {
+class Robot : abstract
+{
+    val head Head
 
-    + head Head
-
-    + core Core
+    val core Core
 
     fun calc() : abstract
 }

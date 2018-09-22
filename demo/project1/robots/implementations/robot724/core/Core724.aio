@@ -1,21 +1,22 @@
-plg {
+import
+{
     robots.abstractRobot.core.Core
 }
 
-typ Core724 -> Core {
-
+class Core724 -> Core
+{
     fun activate() : override
     {
         println('CORE-724 has activated!')
     }
 
-    sco init {
-
+    scope init
+    {
         fun installProgram() : override
         {
             println('CORE-724 has installed!')
         }
 
-        fun installDrivers() : override {}
+        fun installDrivers() : override;
     }
 }

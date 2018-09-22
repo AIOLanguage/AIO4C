@@ -127,15 +127,6 @@ namespace lib4aio {
         return strcmp(first, second) == 0;
     }
 
-    void free_strings(char **src)
-    {
-        auto length = get_string_count(src);
-        for (auto i = 0; i < length; ++i) {
-            free(src[i]);
-        }
-        free(src);
-    }
-
     void free_string(char *src)
     {
         if (src) {

@@ -10,10 +10,8 @@ aio_build_script_space *new_aio_build_script_materials()
     return build_script_space;
 }
 
-void free_aio_build_script_materials(aio_build_script_space *materials)
+void free_aio_build_script_materials(const aio_build_script_space *materials)
 {
     free(materials->main_path);
-    free(materials->project_path);
-    free(materials->result_path);
-    free(materials);
+    free((void *) materials);
 }

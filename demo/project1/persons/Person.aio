@@ -1,21 +1,16 @@
-typ Person : internal : open {
+class Person : internal : open
+{
+    val firstName Str
 
-    + firstName Str
-    - secondName Str
-    - age Int
-    - organization Str : private
+    var secondName Str
 
-    new (
-        + firstName Str,
-        + secondName Str,
-        + age Int
-    ) {
-        $firstName = firstName
-        $secondName = secondName
-        $age = age
-    }
+    var age Int
 
-    fun say(+ message Str) : internal : open
+    var organization Str : private
+
+    Person(firstName Str, secondName Str, age Int);
+
+    fun say(message Str) : internal : open
     {
         println(message)
     }

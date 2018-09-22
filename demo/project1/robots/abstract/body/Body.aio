@@ -1,9 +1,6 @@
-typ Body {
+class Body
+{
+    val armor Dou
 
-    + armor Dou
-
-    new (+ armor Dou)
-    {
-        $armor = armor
-    }
+    Body(armor Dou);
 }

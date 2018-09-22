@@ -1,4 +1,5 @@
-plg {
+import
+{
     org.springframework.beans.BeansException
     org.springframework.beans.factory.config.BeanPostProcessor
     org.springframework.util.ReflectionUtils
@@ -7,23 +8,18 @@ plg {
     java.util.logging.Logger
 }
 
-typ RobotVersionAnnotationBeanPostProcessor -> BeanPostProcessor {
-
-
-    /**
-     * Change version.
-     */
-
-    fun postProcessBeforeInitialization(+ bean Object, + beanName String) Object : override : throws BeansException
+class RobotVersionAnnotationBeanPostProcessor -> BeanPostProcessor
+{
+    fun postProcessBeforeInitialization(bean Object, beanName String) Object : override : throws BeansException
     {
-        + clazz = bean.class
-        + fields = clazz.declaredFields
+        val clazz = bean.class
+        val fields = clazz.declaredFields
         loo (field in fields) {
-            + robotVersionAnnotation = field.getAnnotation(RobotVersion::class)
+            val robotVersionAnnotation = field.getAnnotation(RobotVersion::class)
             if (robotVersionAnnotation) {
                 ReflectionUtils.makeAccessible(field)
-                + minVersion = robotVersionAnnotation.min
-                + currentVersion = ReflectionUtils.getField(field, bean) as Int
+                val minVersion = robotVersionAnnotation.min
+                val currentVersion Int = ReflectionUtils.getField(field, bean)
                 if (minVersion > currentVersion) {
                     ReflectionUtils.setField(field, bean, minVersion)
                 }
@@ -32,6 +28,5 @@ typ RobotVersionAnnotationBeanPostProcessor -> BeanPostProcessor {
         out bean
     }
 
-    fun postProcessAfterInitialization(+ bean Object, + beanName String) Object : override : throws BeansException
-        = bean
+    fun postProcessAfterInitialization(bean Object, beanName String) Object : override : throws BeansException = bean
 }

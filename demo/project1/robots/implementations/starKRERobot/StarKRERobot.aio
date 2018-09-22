@@ -1,10 +1,11 @@
-plg {
+import
+{
     robots.abstractRobot.Robot
 }
 
-typ StarKRERobot -> Robot {
-
-    - version Int : private
+class StarKRERobot -> Robot
+{
+    val version Int : private
 
     fun calc() : override
     {

@@ -1,21 +1,21 @@
-plg {
+import
+{
     org.springframework.beans.BeansException
     org.springframework.beans.factory.config.BeanPostProcessor
     robots.abstractRobot.annotations.FriendlyRobot
     java.util.logging.Logger
 }
 
-typ FriendlyRobotAnnotationBeanPostProcessor -> BeanPostProcessor {
-
-    fun postProcessBeforeInitialization(+ bean Object, + beanName String) Object : override : throws BeansException
+class FriendlyRobotAnnotationBeanPostProcessor -> BeanPostProcessor
+{
+    fun postProcessBeforeInitialization(bean Object, beanName String) Object : override : throws BeansException
     {
-        + friendlyRobotAnnotation = bean.class.getAnnotation(FriendlyRobot::class)
+        val friendlyRobotAnnotation = bean.class.getAnnotation(FriendlyRobot::class)
         if (friendlyRobotAnnotation) {
             println('#beanName is a friendly robot')
         }
         out bean
     }
 
-    fun postProcessAfterInitialization(+ bean Object, + beanName String) Object : override : throws BeansException
-        = bean
+    fun postProcessAfterInitialization(bean Object, beanName String) Object : override : throws BeansException = bean
 }

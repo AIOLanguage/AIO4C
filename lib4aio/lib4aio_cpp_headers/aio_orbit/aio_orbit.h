@@ -1,6 +1,8 @@
 #ifndef LIB4AIO_CPP_AIO_ORBIT_H
 #define LIB4AIO_CPP_AIO_ORBIT_H
 
+#include <lib4aio_cpp_headers/aio_abstract/aio_abstract.h>
+
 namespace lib4aio {
 
     class str_hook;
@@ -14,10 +16,6 @@ namespace lib4aio {
     template<class S>
     class aio_orbit {
 
-        typedef enum particle_mode {
-            AIO_ALL_PARTICLES_SCAN, AIO_ONE_PARTICLE_SCAN
-        } aio_particle_mode;
-
     public:
 
         aio_orbit();
@@ -28,11 +26,15 @@ namespace lib4aio {
 
     protected:
 
-        virtual S *new_space();
+        virtual S *new_space() = AIO_ABSTRACT;
 
-        virtual array_list<aio_particle<S>> *create_particle_list();
+        virtual array_list<aio_particle<S>> *create_particle_list() = AIO_ABSTRACT;
 
     private:
+
+        typedef enum particle_mode {
+            AIO_ALL_PARTICLES_SCAN, AIO_ONE_PARTICLE_SCAN
+        } aio_particle_mode;
 
         aio_particle_mode mode;
 
@@ -40,11 +42,12 @@ namespace lib4aio {
 
         aio_particle<S> *current_particle;
 
+        unsigned iterator_position;
+
         void reset_particles();
 
         void illuminate(S space);
 
-        unsigned position;
     };
 }
 

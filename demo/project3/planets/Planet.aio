@@ -1,8 +1,9 @@
-plg {
+import
+{
     planets.SpaceType
 }
 
-enu Planet(
+enu Planet : abstract (
 
         MERCURY(2440) {
 
@@ -46,11 +47,13 @@ enu Planet(
         }
 ) {
 
-    + radius Dou
+    val radius Dou
 
-    + description Str : abstract
+    val spaceType = PLANET
 
-    new(+ radius Dou)
+    val description Str : abstract
+
+    Planet(radius Dou)
     {
         $radius = radius
     }

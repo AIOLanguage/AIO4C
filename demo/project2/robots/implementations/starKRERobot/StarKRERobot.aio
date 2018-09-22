@@ -8,11 +8,11 @@ plg {
     java.util.logging.Logger
 }
 
-+ log : private = Logger.getLogger(StarKRERobot::class.name)
+val log : private = Logger.getLogger(StarKRERobot::class.name)
 
-typ StarKRERobot -> Robot, InitializingBean : @FriendlyRobot {
-
-    - version Int : @RobotVersion(10)
+class StarKRERobot -> Robot, InitializingBean : @FriendlyRobot
+{
+    var version Int : @RobotVersion(10)
 
     fun calc() : override
     {

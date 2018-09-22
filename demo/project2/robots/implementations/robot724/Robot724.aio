@@ -1,8 +1,9 @@
-plg {
+import
+{
     robots.abstractRobot.Robot
 }
 
-typ Robot724 -> Robot {
-
-    fun calc() : override {}
+class Robot724 -> Robot
+{
+    fun calc() : override;
 }

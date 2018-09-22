@@ -1,6 +1,6 @@
-typ Core {
-
-    - batteryPower Int
+class Core
+{
+    var batteryPower Int
 
     fun install() : abstract
 

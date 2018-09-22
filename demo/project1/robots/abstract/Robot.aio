@@ -1,29 +1,27 @@
-typ Robot : abstract {
+class Robot : abstract
+{
+    val core Core
 
-    + core Core
-
-    new (+ core Core)
-    {
-        $core = core
-    }
+    Robot(core Core);
 
     fun calc() : abstract
 
-    typ Core : abstract : inner {
+    class Core : abstract : inner
+    {
+        var batteryPower Int
 
-        - batteryPower Int
+        scope attack : public
+        {
+            fun fire() : abstract : protected
+        }
 
-        fun activate() : abstract : protected
-
-        sco init : protected {
-
+        scope init : protected
+        {
             fun installProgram() : abstract
 
             fun installDrivers() : abstract
 
-            fun allocateMemory() : private {}
+            fun connectToGPS() : private {}
         }
-
     }
-
 }

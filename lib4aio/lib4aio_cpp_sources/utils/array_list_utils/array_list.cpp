@@ -85,4 +85,45 @@ namespace lib4aio {
     {
         delete this->elements;
     }
+
+    template<typename T>
+    array_list_iterator<T> array_list<T>::begin()
+    {
+        return array_list_iterator<T>(0, this);
+    }
+
+    template<typename T>
+    array_list_iterator<T> array_list<T>::end()
+    {
+        return array_list_iterator<T>(0, this);
+    }
+
+    /**
+     * Array list iterator.
+     */
+
+    template<typename T>
+    array_list_iterator<T>::array_list_iterator(const unsigned position, const array_list<T> *parent)
+    {
+        this->position = position;
+        this->parent = parent;
+    }
+
+    template<typename T>
+    bool array_list_iterator<T>::operator!=(array_list_iterator rhs)
+    {
+        return this->position != rhs.position;
+    }
+
+    template<typename T>
+    T &array_list_iterator<T>::operator*()
+    {
+        return this->parent->get(this->position);
+    }
+
+    template<typename T>
+    void array_list_iterator<T>::operator++()
+    {
+        this->position++;
+    }
 }

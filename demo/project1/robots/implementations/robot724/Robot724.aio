@@ -1,8 +1,9 @@
-plg {
-    robots.abstractRobot.Robot
+import
+{
+    robots.abstract.Robot
 }
 
-typ Robot724 -> Robot : internal {
-
-    fun calc() : override {}
+class Robot724 -> Robot : internal
+{
+    fun calc() : override;
 }

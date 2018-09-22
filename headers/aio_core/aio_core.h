@@ -33,11 +33,11 @@ public:
 
     void put_aio_file(aio_file *file);
 
-    void set_build_script_materials(aio_build_script_space *script_materials);
+    void set_build_script_materials(const aio_build_script_space *script_materials);
 
 private:
 
-    aio_build_script_space *build_script_materials;
+    const aio_build_script_space *build_script_materials;
 
     array_list<str_hook> *types;
 

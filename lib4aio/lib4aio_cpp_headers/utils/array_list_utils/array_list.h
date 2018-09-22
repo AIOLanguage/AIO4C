@@ -3,7 +3,10 @@
 
 namespace lib4aio {
 
-    template<class T>
+    template <typename z>
+    struct array_list_iterator;
+
+    template<typename T>
     class array_list {
 
     public:
@@ -24,6 +27,10 @@ namespace lib4aio {
 
         void free_elements();
 
+        array_list_iterator<T> begin();
+
+        array_list_iterator<T> end();
+
     protected:
 
         unsigned capacity;
@@ -34,6 +41,26 @@ namespace lib4aio {
 
         void update_memory();
 
+    };
+
+    template <typename T>
+    class array_list_iterator {
+
+    public:
+
+        array_list_iterator(const unsigned position, const array_list<T> *parent);
+
+        bool operator!=(array_list_iterator rhs);
+
+        T &operator*();
+
+        void operator++();
+
+    private:
+
+        unsigned position;
+
+        array_list<T> *parent;
     };
 
 }

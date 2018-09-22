@@ -54,10 +54,7 @@ void aio_core::inflate(const int argc, char **argv)
 {
     const bool has_program_args = argc > 1;
     if (has_program_args) {
-        aio_core *core = new aio_core();
-#ifdef AIO_CORE_DEBUG
-        log_info(AIO_CORE_TAG, "아이어 핵심을 만들었습니다");
-#endif
+        aio_core *core = new aio_core(); //아이어 핵심을 만들었습니다:
         const str_hook *program_entry_path = inflate_aio_context(core, argv[FILE_PATH_INDEX]);
         aio_bundle *main_bundle = create_main_bundle(argc, argv, core, program_entry_path);
         invoke_main_function(main_bundle);
@@ -96,7 +93,12 @@ const array_list<aio_file> *aio_core::get_file_list() const
     return this->file_list;
 }
 
-void aio_core::set_build_script_materials(aio_build_script_space *script_materials)
+void aio_core::set_build_script_materials(const aio_build_script_space *script_materials)
 {
     this->build_script_materials = script_materials;
+}
+
+void aio_core::put_aio_file(aio_file *file)
+{
+    this->file_list->add(file);
 }

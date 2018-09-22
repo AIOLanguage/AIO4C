@@ -99,6 +99,8 @@ namespace lib4aio {
 
         bool to_boolean() const;
 
+        char *to_string() const;
+
     private:
 
         const char *source_string;

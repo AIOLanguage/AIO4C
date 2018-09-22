@@ -1,6 +1,1 @@
-AIO
-{
-    .root = default
-    .entry = main.main
-    .result = main.result
-}
+main = main.main

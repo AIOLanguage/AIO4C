@@ -1,4 +1,4 @@
-typ Body {
-
-    + armor Dou = 10
+class Body
+{
+    val armor Dou = 10
 }
