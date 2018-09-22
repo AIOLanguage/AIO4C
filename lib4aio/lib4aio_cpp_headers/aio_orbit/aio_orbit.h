@@ -1,8 +1,6 @@
 #ifndef LIB4AIO_CPP_AIO_ORBIT_H
 #define LIB4AIO_CPP_AIO_ORBIT_H
 
-#include <lib4aio_cpp_headers/aio_abstract/aio_abstract.h>
-
 namespace lib4aio {
 
     class str_hook;
@@ -26,9 +24,9 @@ namespace lib4aio {
 
     protected:
 
-        virtual S *new_space() = AIO_ABSTRACT;
+        virtual S *new_space();
 
-        virtual array_list<aio_particle<S>> *create_particle_list() = AIO_ABSTRACT;
+        virtual array_list<aio_particle<S>> *create_particle_list();
 
     private:
 
@@ -46,7 +44,7 @@ namespace lib4aio {
 
         void reset_particles();
 
-        void illuminate(S space);
+        void illuminate(S *space);
 
     };
 }

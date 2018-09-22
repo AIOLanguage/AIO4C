@@ -3,13 +3,15 @@
 
 namespace lib4aio {
 
-    template <typename z>
+    template<typename T>
     struct array_list_iterator;
 
     template<typename T>
     class array_list {
 
     public:
+
+        using iterator = array_list_iterator<T>;
 
         array_list();
 
@@ -27,9 +29,9 @@ namespace lib4aio {
 
         void free_elements();
 
-        array_list_iterator<T> begin();
+        iterator begin();
 
-        array_list_iterator<T> end();
+        iterator end();
 
     protected:
 
@@ -43,7 +45,7 @@ namespace lib4aio {
 
     };
 
-    template <typename T>
+    template<typename T>
     class array_list_iterator {
 
     public:

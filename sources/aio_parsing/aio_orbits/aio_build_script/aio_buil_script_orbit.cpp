@@ -3,6 +3,7 @@
 #include <aio_parsing/aio_orbits/aio_build_script/aio_particles/aio_build_script_attribute_particle.h>
 #include <lib4aio_cpp_headers/utils/memory_utils/memory_utils.h>
 #include <lib4aio_cpp_headers/utils/array_list_utils/array_list.h>
+#include <lib4aio_cpp_sources/utils/array_list_utils/array_list.cpp>
 
 using namespace lib4aio;
 

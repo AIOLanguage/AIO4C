@@ -1,8 +1,6 @@
 #ifndef LIB4AIO_CPP_AIO_PARTICLE_H
 #define LIB4AIO_CPP_AIO_PARTICLE_H
 
-#include <lib4aio_cpp_headers/aio_abstract/aio_abstract.h>
-
 namespace lib4aio {
 
     class str_hook;
@@ -25,11 +23,11 @@ namespace lib4aio {
 
         virtual ~aio_particle();
 
-        virtual const aio_particle_signal handle_symbol(const unsigned position) = AIO_ABSTRACT;
+        virtual const aio_particle_signal handle_symbol(const unsigned position);
 
-        virtual unsigned illuminate(S *space) = AIO_ABSTRACT;
+        virtual unsigned illuminate(S *space);
 
-        virtual void reset() = AIO_ABSTRACT;
+        virtual void reset();
 
     protected:
 

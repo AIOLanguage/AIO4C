@@ -1,6 +1,7 @@
 #include <aio_core/aio_core.h>
 #include <aio_core/aio_build_script.h>
 #include <aio_parsing/aio_orbits/aio_build_script/aio_build_script_orbit.h>
+#include <lib4aio_cpp_headers/aio_orbit/aio_orbit.h>
 #include <lib4aio_cpp_sources/aio_orbit/aio_orbit.cpp>
 #include <lib4aio_cpp_headers/utils/file_utils/file_reader.h>
 #include <lib4aio_cpp_headers/utils/str_builder/str_builder.h>

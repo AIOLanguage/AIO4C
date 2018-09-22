@@ -1,11 +1,13 @@
 #include <cctype>
+#include <aio_core/aio_build_script.h>
 #include <aio_parsing/aio_orbits/aio_build_script/aio_particles/aio_build_script_attribute_particle.h>
+#include <lib4aio_cpp_headers/aio_orbit/aio_particle/aio_particle.h>
+#include <lib4aio_cpp_sources/aio_orbit/aio_particle/aio_particle.cpp>
 #include <lib4aio_cpp_headers/utils/string_utils/common.h>
 #include <lib4aio_cpp_headers/utils/char_utils/char_utils.h>
 #include <lib4aio_cpp_headers/utils/error_utils/error_utils.h>
 #include <lib4aio_cpp_headers/utils/point_watcher/point_watcher.h>
 #include <lib4aio_cpp_headers/utils/str_hook_utils/str_hook/str_hook.h>
-#include <aio_core/aio_build_script.h>
 
 #define AIO_BUILD_SCRIPT_ATTRIBUTE_PARTICLE_DEBUG
 

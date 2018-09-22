@@ -20,7 +20,7 @@ public:
 
     ~aio_build_script_attribute_particle();
 
-    const aio_particle_signal handle_symbol(const unsigned position);
+    virtual const aio_particle_signal handle_symbol(const unsigned position);
 
     unsigned illuminate(aio_build_script_space *space);
 

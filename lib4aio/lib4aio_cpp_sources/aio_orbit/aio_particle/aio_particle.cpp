@@ -20,4 +20,20 @@ namespace lib4aio {
         this->left_border = string_holder->start;
         this->right_border = string_holder->end;
     }
+
+    template<class S>
+    const aio_particle_signal aio_particle<S>::handle_symbol(const unsigned position)
+    {
+        return AIO_PARTICLE_SIGNAL_DETECTED;
+    }
+
+    template<class S>
+    unsigned aio_particle<S>::illuminate(S *space)
+    {
+        return 0;
+    }
+
+    template<class S>
+    void aio_particle<S>::reset()
+    {}
 }

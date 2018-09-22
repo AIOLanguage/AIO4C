@@ -95,7 +95,7 @@ namespace lib4aio {
     template<typename T>
     array_list_iterator<T> array_list<T>::end()
     {
-        return array_list_iterator<T>(0, this);
+        return array_list_iterator<T>(this->size, this);
     }
 
     /**
@@ -118,7 +118,7 @@ namespace lib4aio {
     template<typename T>
     T &array_list_iterator<T>::operator*()
     {
-        return this->parent->get(this->position);
+        return *(this->parent->get(this->position));
     }
 
     template<typename T>

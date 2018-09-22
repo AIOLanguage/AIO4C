@@ -3,9 +3,11 @@
 #include <lib4aio_cpp_headers/utils/string_utils/common.h>
 #include <lib4aio_cpp_headers/utils/memory_utils/memory_utils.h>
 #include <lib4aio_cpp_headers/utils/struct_list/struct_list.h>
+#include <lib4aio_cpp_headers/utils/char_utils/char_utils.h>
 
 namespace lib4aio {
-    static auto EMPTY_STRING = "";
+
+    static const char *EMPTY_STRING = "";
 
     char *new_string(const char *src)
     {
@@ -97,29 +99,15 @@ namespace lib4aio {
         return are_equal_strings(string, EMPTY_STRING);
     }
 
-    char *substring_by_offset(const char *string, const unsigned offset, const unsigned length)
-    {
-        auto dst = static_cast<char *>(new_object_array(length + 1, sizeof(char)));
-        for (auto i = 0; i < length; ++i) {
-            dst[i] = string[offset + i];
-        }
-        return dst;
-    }
-
     char *substring(const char *string, const unsigned start, const unsigned end)
     {
-        auto dst_size = end - start + 1;
-        char *dst = static_cast<char *>(new_object_array(dst_size, sizeof(char)));
-        auto position = 0;
-        for (auto i = start; i < end; ++i) {
+        unsigned dst_size = end - start + 1;
+        char *dst = (char *) (new_object_array(dst_size, sizeof(char)));
+        unsigned position = 0;
+        for (unsigned i = start; i < end; ++i) {
             dst[position++] = string[i];
         }
         return dst;
-    }
-
-    unsigned get_string_count(const char *const *src)
-    {
-        return static_cast<unsigned int>(malloc_usable_size((void *) src) / 4);
     }
 
     bool are_equal_strings(const char *first, const char *second)
@@ -132,5 +120,31 @@ namespace lib4aio {
         if (src) {
             free(src);
         }
+    }
+
+    char *squeeze_string_for_expression(const char *src)
+    {
+        const unsigned src_length = (unsigned) strlen(src);
+        char *dst = (char *) new_object_array(src_length + 1, sizeof(char));
+        unsigned new_length = 0;
+        bool in_quote_scope = false;
+        for (unsigned i = 0; i < src_length; ++i) {
+            const char symbol = src[i];
+            const bool is_not_whitespace = !is_space_or_line_break(symbol);
+            const bool is_quote = is_single_quote(symbol);
+            if (is_quote) {
+                in_quote_scope = !in_quote_scope;
+            }
+            if (is_not_whitespace || in_quote_scope) {
+                dst[new_length++] = symbol;
+            }
+        }
+        char *old_string = dst;
+        dst = (char *) new_object_array(new_length, sizeof(char));
+        strcpy(dst, old_string);
+        //--------------------------------------------------------------------------------------------------------------
+        free(old_string);
+        //--------------------------------------------------------------------------------------------------------------
+        return dst;
     }
 }

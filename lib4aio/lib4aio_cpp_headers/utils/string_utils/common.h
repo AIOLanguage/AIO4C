@@ -21,17 +21,15 @@ namespace lib4aio
 
     bool is_empty_string(const char *string);
 
-    char *substring_by_offset(const char *string, const unsigned offset, const unsigned length);
-
     char *substring(const char *string, const unsigned start, const unsigned end);
-
-    unsigned get_string_count(const char *const *src);
 
     bool are_equal_strings(const char *first, const char *second);
 
     void free_strings(char **src);
 
     void free_string(char *src);
+
+    char *squeeze_string_for_expression(const char *src);
 
 }
 
