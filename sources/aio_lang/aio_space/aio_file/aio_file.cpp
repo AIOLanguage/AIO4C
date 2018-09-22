@@ -1,5 +1,6 @@
 #include <aio_lang/aio_space/aio_file/aio_file.h>
 #include <lib4aio_cpp_headers/utils/str_hook_utils/str_hook_list/str_hook_list.h>
+#include <lib4aio_cpp_headers/utils/pair/pair.h>
 
 #define AIO_FILE_PARENT nullptr
 
@@ -8,9 +9,8 @@
 using namespace lib4aio;
 
 aio_file::aio_file(
-        str_hook *path,
+        pair<str_hook, char> *path_entry,
         const char *source_file,
-        str_hook_chain *source_context,
         array_list<str_hook> *import_list,
         array_list<aio_class> *class_definition_list,
         array_list<aio_enum> *enum_definition_list,
@@ -28,24 +28,22 @@ aio_file::aio_file(
         AIO_FILE_ANNOTATION_LIST
 )
 {
-    this->path = path;
+    this->path_entry = path_entry;
     this->source_file = source_file;
-    this->source_context = source_context;
     this->import_list = import_list;
 }
 
 aio_file::~aio_file()
 {
     this->import_list->free_elements();
-    delete this->path;
+    delete this->path_entry;
     delete this->import_list;
-    delete this->source_context;
     delete this->source_file;
 }
 
-const str_hook *aio_file::get_path() const
+const pair<str_hook, char> * aio_file::get_path() const
 {
-    return this->path;
+    return this->path_entry;
 }
 
 const char *aio_file::get_source_file() const

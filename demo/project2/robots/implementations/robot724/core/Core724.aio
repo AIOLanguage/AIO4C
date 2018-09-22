@@ -1,20 +1,20 @@
 import
-{
-    robots.abstract.core.Core
-    java.util.logging.Logger
-}
+    {
+        robots.abstract.core.Core
+        java.util.logging.Logger
+    }
 
 val log Logger : private = Logger.getLogger(Core724::class.name)
 
 class Core724 -> Core
-{
-    fun install() : override
     {
-        log.info('CORE-724 has installed!')
-    }
+        fun install() : override
+            {
+                log.info('CORE-724 has installed!')
+            }
 
-    fun activate() : override
-    {
-        log.info('CORE-724 has activated!')
+        fun activate() : override
+            {
+                log.info('CORE-724 has activated!')
+            }
     }
-}

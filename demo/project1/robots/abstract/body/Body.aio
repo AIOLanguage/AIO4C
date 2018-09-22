@@ -1,6 +1,6 @@
 class Body
-{
-    val armor Dou
+    {
+        val armor Dou
 
-    Body(armor Dou);
-}
+        Body(armor Dou);
+    }

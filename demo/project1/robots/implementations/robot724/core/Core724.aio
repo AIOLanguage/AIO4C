@@ -1,22 +1,22 @@
 import
-{
-    robots.abstractRobot.core.Core
-}
+    {
+        robots.abstractRobot.core.Core
+    }
 
 class Core724 -> Core
-{
-    fun activate() : override
     {
-        println('CORE-724 has activated!')
-    }
+        fun activate() : override
+            {
+                println('CORE-724 has activated!')
+            }
 
-    scope init
-    {
-        fun installProgram() : override
-        {
-            println('CORE-724 has installed!')
-        }
+        scope init
+            {
+                fun installProgram() : override
+                    {
+                        println('CORE-724 has installed!')
+                    }
 
-        fun installDrivers() : override;
+                fun installDrivers() : override;
+            }
     }
-}

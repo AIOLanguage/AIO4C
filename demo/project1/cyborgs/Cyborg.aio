@@ -1,24 +1,24 @@
 import
-{
-    robots.abstract.Robot
-    persons.Person
-}
+    {
+        robots.abstract.Robot
+        persons.Person
+    }
 
 class Cyborg -> Person, Robot
-{
-    val model Int
-
-    Cyborg(firstName Str, secondName Str, age Int, core Core, model Int)
-        -> Person(firstName, secondName, age), Robot(core);
-
-    fun calc() : override
     {
-        println('Calc temperature...')
-        println('Calc distance...')
-    }
+        val model Int
 
-    fun say(message Str) : override
-    {
-        println(':::: #message ::::')
+        Cyborg(firstName Str, secondName Str, age Int, core Core, model Int)
+            -> Person(firstName, secondName, age), Robot(core);
+
+        fun calc() : override
+            {
+                println('Calc temperature...')
+                println('Calc distance...')
+            }
+
+        fun say(message Str) : override
+            {
+                println('message = #message')
+            }
     }
-}

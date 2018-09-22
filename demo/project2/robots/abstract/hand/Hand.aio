@@ -1,4 +1,4 @@
 class Hand
-{
-    val power Dou : abstract
-}
+    {
+        val power Dou : abstract
+    }

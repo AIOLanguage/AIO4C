@@ -1,13 +1,13 @@
 import
-{
-    cyborgs.Cyborg
-    robots.implementations.robot724.core.Core724
-}
+    {
+        cyborgs.Cyborg
+        robots.implementations.robot724.core.Core724
+    }
 
 val MAIN_MODEL = 724
 
 fun main(args[] Str)
-{
-    val cyborg = Cyborg('Ilya', 'Dolgushev', 19, Core724(), MAIN_MODEL)
-    cyborg.say('Hello')
-}
+    {
+        val cyborg = Cyborg('Ilya', 'Dolgushev', 19, Core724(), MAIN_MODEL)
+        cyborg.say('Hello')
+    }

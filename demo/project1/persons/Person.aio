@@ -1,17 +1,17 @@
 class Person : internal : open
-{
-    val firstName Str
-
-    var secondName Str
-
-    var age Int
-
-    var organization Str : private
-
-    Person(firstName Str, secondName Str, age Int);
-
-    fun say(message Str) : internal : open
     {
-        println(message)
+        val firstName Str
+
+        var secondName Str
+
+        var age Int
+
+        var organization Str : private
+
+        Person(firstName Str, secondName Str, age Int);
+
+        fun say(message Str) : internal : open
+            {
+                println(message)
+            }
     }
-}

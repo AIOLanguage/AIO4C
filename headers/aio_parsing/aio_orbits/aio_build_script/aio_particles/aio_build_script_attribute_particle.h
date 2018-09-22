@@ -22,7 +22,7 @@ public:
 
     virtual const aio_particle_signal handle_symbol(const unsigned position);
 
-    unsigned illuminate(aio_build_script_space *space);
+    virtual unsigned illuminate(aio_build_script_space *space);
 
     void reset();
 
@@ -35,7 +35,7 @@ private:
     } monitor_mode;
 
     enum {
-        AIO_TRIGGER_MODE_PASSIVE, AIO_TRIGGER_MODE_ACTIVE
+        AIO_TRIGGER_MODE_PASSIVE, AIO_TRIGGER_MODE_ACTIVE, AIO_TRIGGER_MODE_UNDEFINED
     } trigger_mode;
 
     struct {

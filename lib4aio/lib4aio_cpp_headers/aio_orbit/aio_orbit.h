@@ -24,19 +24,15 @@ namespace lib4aio {
 
     protected:
 
-        virtual S *new_space();
+        S *(*new_space_func)();
 
-        virtual array_list<aio_particle<S>> *create_particle_list();
+        array_list<aio_particle<S>> *particle_list;
 
     private:
 
-        typedef enum particle_mode {
+        enum {
             AIO_ALL_PARTICLES_SCAN, AIO_ONE_PARTICLE_SCAN
-        } aio_particle_mode;
-
-        aio_particle_mode mode;
-
-        array_list<aio_particle<S>> *particle_list;
+        } particle_mode;
 
         aio_particle<S> *current_particle;
 
@@ -45,7 +41,6 @@ namespace lib4aio {
         void reset_particles();
 
         void illuminate(S *space);
-
     };
 }
 

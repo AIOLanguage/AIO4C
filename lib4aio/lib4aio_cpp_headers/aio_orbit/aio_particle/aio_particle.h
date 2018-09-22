@@ -23,9 +23,9 @@ namespace lib4aio {
 
         virtual ~aio_particle();
 
-        virtual const aio_particle_signal handle_symbol(const unsigned position);
+        virtual const aio_particle_signal handle_symbol(const unsigned position) = 0;
 
-        virtual unsigned illuminate(S *space);
+        virtual unsigned illuminate(S *space) = 0;
 
         virtual void reset();
 

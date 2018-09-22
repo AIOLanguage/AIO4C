@@ -15,7 +15,6 @@ using namespace lib4aio;
 
 class aio_file;
 
-
 class aio_build_script_space;
 
 /**
@@ -32,7 +31,7 @@ public:
 
     const array_list<aio_file> *get_file_list() const;
 
-    void put_aio_file(aio_file *file);
+    void set_aio_file_list(array_list<aio_file> *files);
 
     void set_build_script_materials(const aio_build_script_space *script_materials);
 

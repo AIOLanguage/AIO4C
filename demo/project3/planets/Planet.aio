@@ -1,9 +1,10 @@
 import
-{
-    planets.SpaceType
-}
+    {
+        planets.SpaceType
+    }
 
-enu Planet : abstract (
+enu Planet : abstract
+    (
 
         MERCURY(2440) {
 
@@ -45,16 +46,16 @@ enu Planet : abstract (
             description : override = ''
 
         }
-) {
-
-    val radius Dou
-
-    val spaceType = PLANET
-
-    val description Str : abstract
-
-    Planet(radius Dou)
+    )
     {
-        $radius = radius
+        val radius Dou
+
+        val spaceType = PLANET
+
+        val description Str : abstract
+
+        Planet(radius Dou)
+            {
+                $radius = radius
+            }
     }
-}

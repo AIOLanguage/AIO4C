@@ -1,9 +1,10 @@
 import
-{
-    org.springframework.context.support.GenericGroovyApplicationContext
-}
+    {
+        org.springframework.context.support.GenericGroovyApplicationContext
+    }
 
 class RobotApplication
-{
-    val groovyApplicationContext : private = GenericGroovyApplicationContext('applicationContext/RobotContext.groovy')
-}
+    {
+        val groovyApplicationContext : private
+            = GenericGroovyApplicationContext('applicationContext/RobotContext.groovy')
+    }

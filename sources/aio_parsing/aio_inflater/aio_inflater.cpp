@@ -1,3 +1,4 @@
+#include <cstdlib>
 #include <aio_core/aio_core.h>
 #include <aio_core/aio_build_script.h>
 #include <aio_parsing/aio_orbits/aio_build_script/aio_build_script_orbit.h>
@@ -17,8 +18,10 @@
 
 #ifdef AIO_INFLATTER_DEBUG
 
-#include <cstdlib>
 #include <lib4aio_cpp_headers/utils/log_utils/log_utils.h>
+#include <lib4aio_cpp_headers/utils/pair/pair.h>
+#include <cstring>
+#include <lib4aio_cpp_headers/utils/char_utils/char_utils.h>
 
 #endif
 
@@ -32,15 +35,67 @@
 
 using namespace lib4aio;
 
-static aio_file *inflate_aio_file(const str_hook *file_path)
+static char *make_absolute_path(const str_hook *file_path_holder, const char *build_script_path)
 {
+    const char *source_file_path_string = file_path_holder->get_string();
+    str_builder *sb = new str_builder();
+    sb->append(build_script_path);
+    sb->append('/');
+    for (unsigned i = file_path_holder->start; i < file_path_holder->end; ++i) {
+        const char symbol = source_file_path_string[i];
+        if (is_dot(symbol)) {
+            sb->append('/');
+        } else {
+            sb->append(symbol);
+        }
+    }
+    char *absolute_path = sb->pop();
+    //------------------------------------------------------------------------------------------------------------------
+    //찌꺼기 수집기:
+    delete sb;
+    //------------------------------------------------------------------------------------------------------------------
+    return absolute_path;
+}
 
+static void inflate_aio_file(
+        str_hook *file_path_holder,
+        const char *build_script_path,
+        array_list<aio_file> *file_collection
+)
+{
+    const bool is_contains_file = file_collection->contains_by([&file_path_holder] {
+        it->file_entry->first.equals(file_path_holder);
+    });
+    if (!is_contains_file) {
+        char *absolute_path = make_absolute_path(file_path_holder, build_script_path);
+        const pair<str_hook, char> *relative_vs_absolute_path = new pair(file_path_holder, absolute_path);
+        const str_hook *absolute_path_holder = new str_hook(absolute_path);
+        //Create file orbit:
+        aio_orbit<aio_file_space> *file_orbit = new aio_file_orbit(file_collection);
+        aio_file *file = file_orbit->launch(absolute_path_holder);
+        //--------------------------------------------------------------------------------------------------------------
+        //찌꺼끼 수집기:
+        delete absolute_path_holder;
+        delete file_orbit;
+        //--------------------------------------------------------------------------------------------------------------
+        file_collection->add(file);
+    }
+}
+
+static array_list<aio_file> *inflate_aio_files(str_hook *file_path_holder, const char *build_script_path)
+{
+    array_list<aio_file> *file_collection = new array_list<aio_file>();
+    inflate_aio_file(file_path_holder, build_script_path, file_collection);
+    return file_collection;
 }
 
 static aio_build_script_space *extract_build_script_materials(const str_builder *script_string_builder)
 {
     const bool has_content = script_string_builder->size() > 0;
     if (has_content) {
+#ifdef AIO_INFLATTER_DEBUG
+        log_info(AIO_INFLATTER_INFO_TAG, "HAS CONTENT!");
+#endif
         const char *build_script_content = script_string_builder->get_string();
         const unsigned build_script_content_length = script_string_builder->size();
         const str_hook *build_script_holder = new str_hook(build_script_content, 0, build_script_content_length);
@@ -58,7 +113,7 @@ static aio_build_script_space *extract_build_script_materials(const str_builder 
     }
 }
 
-const str_hook *inflate_aio_context(aio_core *core, const char *build_script_path)
+const str_hook *inflate_aio_context_for(aio_core *core, const char *build_script_path)
 {
     const bool is_aio_build_script_file = ends_with_suffix(build_script_path, AIO_BUILD_SCRIPT_FORMAT);
     if (is_aio_build_script_file) {
@@ -68,12 +123,13 @@ const str_hook *inflate_aio_context(aio_core *core, const char *build_script_pat
 #endif
         const aio_build_script_space *build_script_materials = extract_build_script_materials(file_string_builder);
         const char *main_path_string = build_script_materials->main_path;
-        const str_hook *main_path_holder = new str_hook(main_path_string);
-        aio_file *main_file = inflate_aio_file(main_path_holder);
-        //Add build script data in core:
+        str_hook *main_path_holder = new str_hook(main_path_string);
+#ifdef AIO_INFLATTER_DEBUG
+        log_info_str_hook(AIO_INFLATTER_INFO_TAG, "EXTRACTED MAIN PATH:", main_path_holder);
+#endif
+        array_list<aio_file> *files = inflate_aio_files(main_path_holder, build_script_path);
         core->set_build_script_materials(build_script_materials);
-        //Add source code of *aio file:
-        core->put_aio_file(main_file);
+        core->set_aio_file_list(files);
         return main_path_holder;
     } else {
         throw_error_with_details(AIO_INFLATTER_ERROR_TAG, "파일이 '*.aio_core' 형식이 아닙니다", build_script_path);

@@ -35,7 +35,7 @@ namespace lib4aio
     {
         this->source_string = source_string;
         this->start = 0;
-        this->end = strlen(source_string);
+        this->end = (unsigned) strlen(source_string);
     }
 
     str_hook::~str_hook()
@@ -123,5 +123,20 @@ namespace lib4aio
     bool str_hook::is_not_empty() const
     {
         return this->get_size() > 0;
+    }
+
+    char *str_hook::to_string() const
+    {
+        char *string = (char *) new_object_array(this->get_size() + 1, sizeof(char));
+        unsigned position = 0;
+        for (unsigned i = this->start; i < this->end; ++i) {
+            string[position++] = this->source_string[i];
+        }
+        return string;
+    }
+
+    void str_hook::set_string(const char *string)
+    {
+        this->source_string = string;
     }
 }

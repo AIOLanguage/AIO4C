@@ -42,6 +42,21 @@ add_executable(
         headers/aio_parsing/aio_inflater/aio_inflater.h
         headers/aio_parsing/aio_orbits/aio_build_script/aio_build_script_orbit.h
         headers/aio_parsing/aio_orbits/aio_build_script/aio_particles/aio_build_script_attribute_particle.h
+        headers/aio_parsing/aio_particles/aio_annotation/aio_annotation_particle.h
+        headers/aio_parsing/aio_orbits/aio_constructor/aio_constructor_orbit.h
+        headers/aio_parsing/aio_orbits/aio_annotation/aio_annotation_orbit.h
+        headers/aio_parsing/aio_orbits/aio_file/aio_file_orbit.h
+        headers/aio_parsing/aio_orbits/aio_scope/aio_scope_orbit.h
+        headers/aio_parsing/aio_orbits/aio_file/aio_particles/aio_import_particle.h
+        headers/aio_parsing/aio_orbits/aio_class/aio_class_orbit.h
+        headers/aio_parsing/aio_orbits/aio_function/aio_function_orbit.h
+        headers/aio_parsing/aio_orbits/aio_field/aio_file_orbit.h
+        headers/aio_parsing/aio_particles/aio_class/aio_class_particle.h
+        headers/aio_parsing/aio_particles/aio_constructor/aio_constrcutor_particle.h
+        headers/aio_parsing/aio_particles/aio_field/aio_field_particle.h
+        headers/aio_parsing/aio_particles/aio_file/aio_file_particle.h
+        headers/aio_parsing/aio_particles/aio_function/aio_function_particle.h
+        headers/aio_parsing/aio_particles/aio_scope/aio_scope_particle.h
         #runtime:
         headers/aio_runtime/aio_value/aio_value.h
         headers/aio_runtime/aio_bundle/aio_bundle.h
@@ -76,6 +91,7 @@ add_executable(
         lib4aio/lib4aio_cpp_headers/utils/struct_list/struct_list.h
         lib4aio/lib4aio_cpp_headers/utils/file_utils/file_reader.h
         lib4aio/lib4aio_cpp_headers/utils/int_list_utils/int_list.h
+        lib4aio/lib4aio_cpp_headers/utils/pair/pair.h
         #---------------------------------------------------------------------------------------------------------------
 
         #---------------------------------------------------------------------------------------------------------------
@@ -103,6 +119,7 @@ add_executable(
         sources/aio_parsing/aio_inflater/aio_inflater.cpp
         sources/aio_parsing/aio_orbits/aio_build_script/aio_buil_script_orbit.cpp
         sources/aio_parsing/aio_orbits/aio_build_script/aio_particles/aio_build_script_attribute_particle.cpp
+        sources/aio_parsing/aio_orbits/aio_file/aio_file_orbit.cpp
         #runtime:
         sources/aio_runtime/aio_value/aio_value.cpp
         sources/aio_runtime/aio_bundle/aio_bundle.cpp
@@ -140,5 +157,6 @@ add_executable(
         lib4aio/lib4aio_cpp_sources/utils/int_list_utils/int_list.cpp
         lib4aio/lib4aio_cpp_sources/utils/file_utils/file_reader.cpp
         lib4aio/lib4aio_cpp_sources/aio_orbit/aio_particle/aio_particle.cpp
+        lib4aio/lib4aio_cpp_sources/utils/pair/pair.cpp
         #---------------------------------------------------------------------------------------------------------------
 )

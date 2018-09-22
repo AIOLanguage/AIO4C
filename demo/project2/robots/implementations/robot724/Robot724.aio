@@ -1,9 +1,9 @@
 import
-{
-    robots.abstractRobot.Robot
-}
+    {
+        robots.abstractRobot.Robot
+    }
 
 class Robot724 -> Robot
-{
-    fun calc() : override;
-}
+    {
+        fun calc() : override;
+    }

@@ -1,14 +1,14 @@
 import
-{
-    robots.abstract.head.Head
-    robots.abstract.core.Core
-}
+    {
+        robots.abstract.head.Head
+        robots.abstract.core.Core
+    }
 
 class Robot : abstract
-{
-    val head Head
+    {
+        val head Head
 
-    val core Core
+        val core Core
 
-    fun calc() : abstract
-}
+        fun calc() : abstract
+    }

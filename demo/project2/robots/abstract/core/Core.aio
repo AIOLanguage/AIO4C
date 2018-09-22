@@ -1,8 +1,8 @@
-class Core
-{
-    var batteryPower Int
+class Core : abstract
+    {
+        var batteryPower Int
 
-    fun install() : abstract
+        fun install() : abstract
 
-    fun activate() : abstract
-}
+        fun activate() : abstract
+    }

@@ -1,27 +1,27 @@
 class Robot : abstract
-{
-    val core Core
-
-    Robot(core Core);
-
-    fun calc() : abstract
-
-    class Core : abstract : inner
     {
-        var batteryPower Int
+        val core Core
 
-        scope attack : public
-        {
-            fun fire() : abstract : protected
-        }
+        Robot(core Core);
 
-        scope init : protected
-        {
-            fun installProgram() : abstract
+        fun calc() : abstract
 
-            fun installDrivers() : abstract
+        class Core : abstract : inner
+            {
+                var batteryPower Int
 
-            fun connectToGPS() : private {}
-        }
+                scope attack : public
+                    {
+                        fun fire() : abstract : protected
+                    }
+
+                scope init : protected
+                    {
+                        fun installProgram() : abstract
+
+                        fun installDrivers() : abstract
+
+                        fun connectToGPS() : private;
+                    }
+            }
     }
-}

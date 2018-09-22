@@ -7,33 +7,29 @@ namespace lib4aio {
     aio_particle<S>::aio_particle()
     {
         this->is_inside_string = false;
+        this->token_holder = new str_hook();
     }
 
     template<class S>
     aio_particle<S>::~aio_particle()
-    {}
+    {
+        delete this->token_holder;
+    }
 
     template<class S>
     void aio_particle<S>::set_scanning_string_holder(const str_hook *string_holder)
     {
-        this->string = string_holder->get_string();
+        const char *string = string_holder->get_string();
+        this->string = string;
+        this->token_holder->set_string(string);
         this->left_border = string_holder->start;
         this->right_border = string_holder->end;
     }
 
     template<class S>
-    const aio_particle_signal aio_particle<S>::handle_symbol(const unsigned position)
-    {
-        return AIO_PARTICLE_SIGNAL_DETECTED;
-    }
-
-    template<class S>
-    unsigned aio_particle<S>::illuminate(S *space)
-    {
-        return 0;
-    }
-
-    template<class S>
     void aio_particle<S>::reset()
-    {}
+    {
+        this->token_holder->start = 0;
+        this->token_holder->end = 0;
+    }
 }

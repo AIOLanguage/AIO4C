@@ -11,10 +11,7 @@ class aio_build_script_orbit : public aio_orbit<aio_build_script_space> {
 
 public:
 
-    aio_build_script_space *new_space();
-
-    array_list<aio_particle<aio_build_script_space>> *create_particle_list();
-
+    aio_build_script_orbit();
 };
 
 #endif //AIO_BUILD_SCRIPT_ORBIT_H

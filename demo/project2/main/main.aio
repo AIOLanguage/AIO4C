@@ -1,16 +1,16 @@
 import
-{
-    main.springApplication.RobotApplication
-    robots.abstractRobot.Robot
-    java.util.logging.Logger
-}
+    {
+        main.springApplication.RobotApplication
+        robots.abstractRobot.Robot
+        java.util.logging.Logger
+    }
 
 val log Logger : private = Logger.getLogger(Main::class.name)
 
 fun main(args[] Str)
-{
-    val robotApplication = RobotApplication()
-    val robot Robot = robotApplication.groovyApplicationContext.getBean('starKRERobot')
-    log.info('\n\n')
-    robot.calc()
-}
+    {
+        val robotApplication = RobotApplication()
+        val robot Robot = robotApplication.groovyApplicationContext.getBean('starKRERobot')
+        log.info('\n\n')
+        robot.calc()
+    }

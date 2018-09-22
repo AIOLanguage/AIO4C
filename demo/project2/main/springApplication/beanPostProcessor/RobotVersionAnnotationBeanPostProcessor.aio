@@ -1,32 +1,33 @@
 import
-{
-    org.springframework.beans.BeansException
-    org.springframework.beans.factory.config.BeanPostProcessor
-    org.springframework.util.ReflectionUtils
-    robots.abstractRobot.annotations.RobotVersion
-    java.lang.reflect.Field
-    java.util.logging.Logger
-}
-
-class RobotVersionAnnotationBeanPostProcessor -> BeanPostProcessor
-{
-    fun postProcessBeforeInitialization(bean Object, beanName String) Object : override : throws BeansException
     {
-        val clazz = bean.class
-        val fields = clazz.declaredFields
-        loo (field in fields) {
-            val robotVersionAnnotation = field.getAnnotation(RobotVersion::class)
-            if (robotVersionAnnotation) {
-                ReflectionUtils.makeAccessible(field)
-                val minVersion = robotVersionAnnotation.min
-                val currentVersion Int = ReflectionUtils.getField(field, bean)
-                if (minVersion > currentVersion) {
-                    ReflectionUtils.setField(field, bean, minVersion)
-                }
-            }
-        }
-        out bean
+        org.springframework.beans.BeansException
+        org.springframework.beans.factory.config.BeanPostProcessor
+        org.springframework.util.ReflectionUtils
+        robots.abstractRobot.annotations.RobotVersion
+        java.lang.reflect.Field
+        java.util.logging.Logger
     }
 
-    fun postProcessAfterInitialization(bean Object, beanName String) Object : override : throws BeansException = bean
-}
+class RobotVersionAnnotationBeanPostProcessor -> BeanPostProcessor
+    {
+        fun postProcessBeforeInitialization(bean Object, beanName String) Object : override : throws BeansException
+            {
+                val clazz = bean.class
+                val fields = clazz.declaredFields
+                loo (field in fields) {
+                    val robotVersionAnnotation = field.getAnnotation(RobotVersion::class)
+                    if (robotVersionAnnotation) {
+                        ReflectionUtils.makeAccessible(field)
+                        val minVersion Int = robotVersionAnnotation.min
+                        val currentVersion Int = ReflectionUtils.getField(field, bean)
+                        if (minVersion > currentVersion) {
+                            ReflectionUtils.setField(field, bean, minVersion)
+                        }
+                    }
+                }
+                out bean
+            }
+
+        fun postProcessAfterInitialization(bean Object, beanName String) Object : override : throws BeansException
+            = bean
+    }

@@ -19,6 +19,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/AIO_v_2.dir/sources/aio_parsing/aio_inflater/aio_inflater.cpp.o"
   "CMakeFiles/AIO_v_2.dir/sources/aio_parsing/aio_orbits/aio_build_script/aio_buil_script_orbit.cpp.o"
   "CMakeFiles/AIO_v_2.dir/sources/aio_parsing/aio_orbits/aio_build_script/aio_particles/aio_build_script_attribute_particle.cpp.o"
+  "CMakeFiles/AIO_v_2.dir/sources/aio_parsing/aio_orbits/aio_file/aio_file_orbit.cpp.o"
   "CMakeFiles/AIO_v_2.dir/sources/aio_runtime/aio_value/aio_value.cpp.o"
   "CMakeFiles/AIO_v_2.dir/sources/aio_runtime/aio_bundle/aio_bundle.cpp.o"
   "CMakeFiles/AIO_v_2.dir/sources/aio_runtime/aio_invoker/aio_invoker.cpp.o"
@@ -54,6 +55,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/int_list_utils/int_list.cpp.o"
   "CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/file_utils/file_reader.cpp.o"
   "CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/aio_orbit/aio_particle/aio_particle.cpp.o"
+  "CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/pair/pair.cpp.o"
   "AIO_v_2.pdb"
   "AIO_v_2"
 )

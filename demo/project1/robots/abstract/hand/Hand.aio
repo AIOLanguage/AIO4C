@@ -1,4 +1,4 @@
 class Hand
-{
-    var power Dou : private = 100
-}
+    {
+        var power Dou : private = 100
+    }

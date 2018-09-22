@@ -1,24 +1,24 @@
 import
-{
-    robots.abstractRobot.Robot
-}
+    {
+        robots.abstractRobot.Robot
+    }
 
 class StarKRERobot -> Robot
-{
-    val version Int : private
-
-    fun calc() : override
     {
-        println('I'm calculating...')
-    }
+        val version Int : private
 
-    fun init() : protected
-    {
-        println('Hello, I\'m StarKRE with version: #version')
-    }
+        fun calc() : override
+            {
+                println('I'm calculating...')
+            }
 
-    fun destroy() : protected
-    {
-        println('No! I\'l be back!')
+        fun init() : protected
+            {
+                println('Hello, I\'m StarKRE with version: #version')
+            }
+
+        fun destroy() : protected
+            {
+                println('No! I\'l be back!')
+            }
     }
-}

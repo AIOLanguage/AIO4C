@@ -54,8 +54,9 @@ void aio_core::inflate(const int argc, char **argv)
 {
     const bool has_program_args = argc > 1;
     if (has_program_args) {
-        aio_core *core = new aio_core(); //아이어 핵심을 만들었습니다:
-        const str_hook *program_entry_path = inflate_aio_context(core, argv[FILE_PATH_INDEX]);
+        //아이어 핵심을 만들다:
+        aio_core *core = new aio_core();
+        const str_hook *program_entry_path = inflate_aio_context_for(core, argv[FILE_PATH_INDEX]);
         aio_bundle *main_bundle = create_main_bundle(argc, argv, core, program_entry_path);
         invoke_main_function(main_bundle);
         //--------------------------------------------------------------------------------------------------------------
@@ -63,14 +64,19 @@ void aio_core::inflate(const int argc, char **argv)
         delete core;
         //--------------------------------------------------------------------------------------------------------------
     } else {
-        throw_error_with_tag(AIO_CORE_TAG, "'build.aio_core'에 경로를 예상했습니다 (Expected path to build.aio_core).");
+        throw_error_with_tag(AIO_CORE_TAG, "'build.aio_core'에 경로를 예상했습니다 (Expected path_entry to build.aio_core).");
     }
 }
 
+static array_list<str_hook> *crete_aio_root_type_list()
+{
+    return new array_list<str_hook>();
+}
+
+
 aio_core::aio_core()
 {
-    this->file_list = new array_list<aio_file>();
-    this->types = new array_list<str_hook>();
+    this->types = crete_aio_root_type_list();
 }
 
 aio_core::~aio_core()
@@ -98,7 +104,7 @@ void aio_core::set_build_script_materials(const aio_build_script_space *script_m
     this->build_script_materials = script_materials;
 }
 
-void aio_core::put_aio_file(aio_file *file)
+void aio_core::set_aio_file_list(array_list<aio_file> *files)
 {
-    this->file_list->add(file);
+    this->file_list = files;
 }
