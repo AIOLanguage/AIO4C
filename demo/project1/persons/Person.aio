@@ -1,5 +1,6 @@
 import
     {
+        java.lang.Object
         java.util.collections.List
         java.util.ArrayList
     }
@@ -34,7 +35,8 @@ class Person : open
                 $org::getInfo()
             }
 
-        fun equals(other Person) = $ == other
+        fun equals(o Object) : override
+            = o is Person && $firstName = o.firstName && $secondName = o.secondName && $age = o.age
 
         scope com
             {

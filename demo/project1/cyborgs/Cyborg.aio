@@ -4,12 +4,12 @@ import
         persons.Person
     }
 
-class Cyborg -> Person, Robot
+class Cyborg <- Person, Robot
     {
         val model Int
 
         Cyborg(firstName Str, secondName Str, age Int, core Core, model Int)
-            -> Person(firstName, secondName, age), Robot(core);
+            <- Person(firstName, secondName, age), Robot(core);
 
         fun calc() : override
             {
@@ -23,10 +23,10 @@ class Cyborg -> Person, Robot
             }
 
         /**
-         * Diamond inheritance
+         * Diamond inheritance.
          */
 
-        fun equals() <- Person : override
+        fun equals(o Object) <- Person : override
 
         scope attack
             {

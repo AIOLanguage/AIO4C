@@ -1,3 +1,8 @@
+import
+    {
+        java.lang.Object
+    }
+
 class Robot : abstract
     {
         val core Core
@@ -6,7 +11,7 @@ class Robot : abstract
 
         fun calc() : abstract
 
-        fun equals(other Person) = $core == other.core
+        fun equals(o Object) : override = o is Robot && $core == o.core
 
         class Core : abstract : inner
             {
