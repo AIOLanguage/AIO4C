@@ -4,15 +4,15 @@
 namespace lib4aio {
 
     template<typename K, typename V>
-    struct pair {
+    struct aio_pair {
 
         K *first;
 
         V *second;
 
-        pair(K *first, V *second);
+        aio_pair(K *first, V *second);
 
-        ~pair();
+        ~aio_pair();
     };
 }
 

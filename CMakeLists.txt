@@ -91,7 +91,7 @@ add_executable(
         lib4aio/lib4aio_cpp_headers/utils/struct_list/struct_list.h
         lib4aio/lib4aio_cpp_headers/utils/file_utils/file_reader.h
         lib4aio/lib4aio_cpp_headers/utils/int_list_utils/int_list.h
-        lib4aio/lib4aio_cpp_headers/utils/pair/pair.h
+        lib4aio/lib4aio_cpp_headers/utils/pair/aio_pair.h
         #---------------------------------------------------------------------------------------------------------------
 
         #---------------------------------------------------------------------------------------------------------------
@@ -157,6 +157,6 @@ add_executable(
         lib4aio/lib4aio_cpp_sources/utils/int_list_utils/int_list.cpp
         lib4aio/lib4aio_cpp_sources/utils/file_utils/file_reader.cpp
         lib4aio/lib4aio_cpp_sources/aio_orbit/aio_particle/aio_particle.cpp
-        lib4aio/lib4aio_cpp_sources/utils/pair/pair.cpp
+        lib4aio/lib4aio_cpp_sources/utils/pair/aio_pair.cpp
         #---------------------------------------------------------------------------------------------------------------
 )

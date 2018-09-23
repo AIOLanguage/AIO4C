@@ -1,35 +1,33 @@
 #include <lib4aio_cpp_headers/utils/memory_utils/memory_utils.h>
 #include <lib4aio_cpp_headers/utils/array_list_utils/array_list.h>
 
+#include <iostream>
+
 namespace lib4aio {
 
 #define INIT_CAPACITY 2
 
     template<class T>
-    lib4aio::array_list<T>::array_list()
+    array_list<T>::array_list()
     {
         this->capacity = INIT_CAPACITY;
         this->size = 0;
-        this->elements = static_cast<T **>(new_object_array(INIT_CAPACITY, sizeof(T)));
+        this->elements = (T **) calloc(INIT_CAPACITY, sizeof(T));
     }
 
     template<class T>
-    void array_list<T>::update_memory()
+    void array_list<T>::grow()
     {
         if (this->size == this->capacity) {
             this->capacity *= INIT_CAPACITY;
-            this->elements = static_cast<T **>(reallocate_object_array(
-                    this->elements,
-                    this->capacity,
-                    sizeof(T))
-            );
+            this->elements = (T **) (realloc(this->elements, this->capacity * sizeof(T)));
         }
     }
 
     template<class T>
     void array_list<T>::add(T *element)
     {
-        this->update_memory();
+        this->grow();
         this->elements[this->size++] = element;
     }
 
@@ -40,20 +38,14 @@ namespace lib4aio {
     }
 
     template<class T>
-    T *array_list<T>::get(const int position) const
-    {
-        return this->elements[position];
-    }
-
-    template<class T>
-    array_list<T> *array_list<T>::filter(bool (*filter_condition)(const T *)) const
+    array_list<T> *array_list<T>::filter(function<bool(const T *)> func) const
     {
         auto size = this->size;
         auto elements = this->elements;
         auto new_list = new array_list<T>();
         for (unsigned k = 0; k < size; ++k) {
             auto element = elements[k];
-            if (filter_condition(element)) {
+            if (func(element)) {
                 new_list->add(element);
             }
         }
@@ -61,12 +53,12 @@ namespace lib4aio {
     }
 
     template<class T>
-    void array_list<T>::foreach(void (*action)(T *)) const
+    void array_list<T>::foreach(function<void(const T *)> func) const
     {
         auto size = this->size;
         auto elements = this->elements;
         for (unsigned i = 0; i < size; ++i) {
-            action(elements[i]);
+            func(elements[i]);
         }
     }
 
@@ -83,47 +75,33 @@ namespace lib4aio {
     template<class T>
     array_list<T>::~array_list()
     {
+        std::cout << "delete" << endl;
         delete this->elements;
     }
 
+
+
     template<typename T>
-    array_list_iterator<T> array_list<T>::begin()
+    bool array_list<T>::contains_by(function<bool(const T *)> func)
     {
-        return array_list_iterator<T>(0, this);
+        for (unsigned i = 0; i < this->size; ++i) {
+            if (func(this->elements[i])) {
+                return true;
+            }
+        }
+        return false;
     }
 
     template<typename T>
-    array_list_iterator<T> array_list<T>::end()
+    T *&array_list<T>::operator[](unsigned index)
     {
-        return array_list_iterator<T>(this->size, this);
-    }
-
-    /**
-     * Array list iterator.
-     */
-
-    template<typename T>
-    array_list_iterator<T>::array_list_iterator(const unsigned position, const array_list<T> *parent)
-    {
-        this->position = position;
-        this->parent = parent;
+        std::cout << "[]" << endl;
+        return this->elements[index];
     }
 
     template<typename T>
-    bool array_list_iterator<T>::operator!=(array_list_iterator rhs)
+    const T *array_list<T>::get(unsigned index) const
     {
-        return this->position != rhs.position;
-    }
-
-    template<typename T>
-    T &array_list_iterator<T>::operator*()
-    {
-        return *(this->parent->get(this->position));
-    }
-
-    template<typename T>
-    void array_list_iterator<T>::operator++()
-    {
-        this->position++;
+        return this->elements[index];
     }
 }

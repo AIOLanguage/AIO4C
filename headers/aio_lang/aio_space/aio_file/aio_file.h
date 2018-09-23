@@ -14,7 +14,7 @@ namespace lib4aio {
     class str_hook_list;
 
     template<typename K, typename V>
-    struct pair;
+    struct aio_pair;
 }
 
 using namespace lib4aio;
@@ -23,7 +23,7 @@ class aio_file : aio_space {
 
 private:
 
-    pair<str_hook, char> *path_entry;
+    aio_pair<str_hook, char> *path_entry;
 
     const char *source_file;
 
@@ -32,7 +32,7 @@ private:
 public:
 
     explicit aio_file(
-            pair<str_hook, char> *path_entry,
+            aio_pair<str_hook, char> *path_entry,
             const char *source_file,
             array_list<str_hook> *import_list,
             array_list<aio_class> *class_definition_list,
@@ -44,11 +44,9 @@ public:
 
     ~aio_file();
 
-    const pair<str_hook, char> * get_path() const;
+    const aio_pair<str_hook, char> * get_path() const;
 
     const char *get_source_file() const;
-
-    const str_hook_list *get_source_context() const;
 
     const array_list<str_hook> *get_import_list() const;
 

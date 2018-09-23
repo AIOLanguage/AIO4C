@@ -19,9 +19,11 @@
 #ifdef AIO_INFLATTER_DEBUG
 
 #include <lib4aio_cpp_headers/utils/log_utils/log_utils.h>
-#include <lib4aio_cpp_headers/utils/pair/pair.h>
+#include <lib4aio_cpp_headers/utils/pair/aio_pair.h>
 #include <cstring>
 #include <lib4aio_cpp_headers/utils/char_utils/char_utils.h>
+#include <aio_parsing/aio_orbits/aio_file/aio_file_orbit.h>
+#include <aio_lang/aio_space/aio_file/aio_file.h>
 
 #endif
 
@@ -58,20 +60,28 @@ static char *make_absolute_path(const str_hook *file_path_holder, const char *bu
 }
 
 static void inflate_aio_file(
-        str_hook *file_path_holder,
+        str_hook *input_relative_file_path_holder,
         const char *build_script_path,
         array_list<aio_file> *file_collection
 )
 {
-    const bool is_contains_file = file_collection->contains_by([&file_path_holder] {
-        it->file_entry->first.equals(file_path_holder);
-    });
+    const bool is_contains_file = file_collection->contains_by(
+            [&input_relative_file_path_holder](const aio_file *file) -> bool {
+                const aio_pair<str_hook, char> *path_pair = file->get_path();
+                const str_hook *relative_path = path_pair->first;
+                const bool already_has_the_same_path = relative_path->equals_string(input_relative_file_path_holder);
+                return already_has_the_same_path;
+            }
+    );
     if (!is_contains_file) {
-        char *absolute_path = make_absolute_path(file_path_holder, build_script_path);
-        const pair<str_hook, char> *relative_vs_absolute_path = new pair(file_path_holder, absolute_path);
+        char *absolute_path = make_absolute_path(input_relative_file_path_holder, build_script_path);
+        const aio_pair<str_hook, char> *relative_vs_absolute_path = new aio_pair(
+                input_relative_file_path_holder,
+                absolute_path
+        );
         const str_hook *absolute_path_holder = new str_hook(absolute_path);
         //Create file orbit:
-        aio_orbit<aio_file_space> *file_orbit = new aio_file_orbit(file_collection);
+        aio_orbit<aio_file> *file_orbit = new aio_file_orbit(file_collection);
         aio_file *file = file_orbit->launch(absolute_path_holder);
         //--------------------------------------------------------------------------------------------------------------
         //찌꺼끼 수집기:
