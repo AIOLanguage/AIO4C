@@ -1,6 +1,7 @@
 import
     {
-        java.util.collections.list
+        java.util.collections.List
+        java.util.ArrayList
     }
 
 class Person : open
@@ -14,21 +15,30 @@ class Person : open
         Person(firstName Str, secondName Str, age Int, organizations Str...)
             {
                 $(firstName, secondName, age)
-                $org::organizations.foreach { $org::addOrganization(it) }
-                $org::sort()
+                $org::
+                    {
+                        $organizations.addAll(organizations)
+                        $organizations.sort()
+                    }
             }
 
         fun getInfo()
             {
-                println('
-                        Hello, my name is #{$name}.
-                        My second name is #{$secondName}.
-                        ')
+                println('Name: #{$name}\nSecond name: #{$secondName}\nFriends:')
+                $com::friends.foreach
+                    {
+                        if (it.isBest) {
+                            println(it.person.firstName)
+                        }
+                    }
+                $org::getInfo()
             }
 
         scope com
             {
-                val friends List<Person> = mutableListOf()
+                class Friend(person Person, isBest Boo) : inner : private
+
+                val friends List<Friend> = ArrayList<>()
 
                 fun sayAll(message Str) : internal : open
                     {
@@ -40,24 +50,31 @@ class Person : open
                         println("#{other.firstName}, #message")
                     }
 
-                fun addFriend(friend Person)
+                fun addFriend(person Person, isBest Boo)
                     {
+                        val friend = Friend(person, isBest)
                         $friends.add(friend)
                     }
             }
 
         scope org
             {
-                val organizations List<Str> : private = mutableListOf()
+                val organizations List<Str> : private = ArrayList<>()
 
-                fun add(organization Str)
+                fun getInfo()
                     {
-                        $organizations.add(organization)
+                        println('Organizations:')
+                        $organizations.foreach { println(it) }
                     }
 
-                fun sort() : private
+                fun writeToFile(fileName Str)
                     {
-                        $organizations.sort()
+                        val bufferedWriter = BufferedWriter(FileWriter(fileName))
+                        loo (organization in $organizations) {
+                            bufferedWriter.write(organization)
+                            bufferedWriter.write('\n')
+                        }
+                        writer.close()
                     }
             }
     }
