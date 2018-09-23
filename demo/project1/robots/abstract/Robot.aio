@@ -10,7 +10,7 @@ class Robot : abstract
             {
                 var batteryPower Int
 
-                scope attack : public
+                scope attack
                     {
                         fun fire() : abstract : protected
                     }

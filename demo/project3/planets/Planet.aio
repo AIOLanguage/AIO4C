@@ -3,7 +3,7 @@ import
         planets.SpaceType
     }
 
-enu Planet : abstract
+enum Planet
     (
 
         MERCURY(2440) {
@@ -49,9 +49,7 @@ enu Planet : abstract
     )
     {
         val radius Dou
-
         val spaceType = PLANET
-
         val description Str : abstract
 
         Planet(radius Dou)
