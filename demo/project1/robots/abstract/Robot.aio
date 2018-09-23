@@ -6,6 +6,8 @@ class Robot : abstract
 
         fun calc() : abstract
 
+        fun equals(other Person) = $core == other.core
+
         class Core : abstract : inner
             {
                 var batteryPower Int

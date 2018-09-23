@@ -22,6 +22,12 @@ class Cyborg -> Person, Robot
                 println('message = #message')
             }
 
+        /**
+         * Diamond inheritance
+         */
+
+        fun equals() <- Person : override
+
         scope attack
             {
                 fun fire() : override : protected

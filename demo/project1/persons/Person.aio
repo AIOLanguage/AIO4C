@@ -34,6 +34,8 @@ class Person : open
                 $org::getInfo()
             }
 
+        fun equals(other Person) = $ == other
+
         scope com
             {
                 class Friend(person Person, isBest Boo) : inner : private
