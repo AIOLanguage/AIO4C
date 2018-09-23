@@ -6,7 +6,7 @@ import
 
 val log Logger : private = Logger.getLogger(Core724::class.name)
 
-class Core724 -> Core
+class Core724 <- Core
     {
         fun install() : override
             {

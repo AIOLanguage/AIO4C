@@ -1,9 +1,9 @@
 import
     {
-        robots.abstractRobot.core.Core
+        robots.abstract.Robot
     }
 
-class Core724 -> Core
+class Core724 <- Robot.Core
     {
         fun activate() : override
             {

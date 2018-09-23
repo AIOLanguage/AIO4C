@@ -3,7 +3,7 @@ import
         robots.abstract.Robot
     }
 
-class Robot724 -> Robot : internal
+class Robot724 <- Robot : internal
     {
         fun calc() : override;
     }

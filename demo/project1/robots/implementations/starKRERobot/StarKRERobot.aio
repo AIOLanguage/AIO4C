@@ -3,7 +3,7 @@ import
         robots.abstractRobot.Robot
     }
 
-class StarKRERobot -> Robot
+class StarKRERobot <- Robot
     {
         val version Int : private
 

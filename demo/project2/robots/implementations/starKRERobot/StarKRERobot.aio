@@ -11,7 +11,7 @@ import
 
 val log : private = Logger.getLogger(StarKRERobot::class.name)
 
-class StarKRERobot -> Robot, InitializingBean : @FriendlyRobot
+class StarKRERobot <- Robot, InitializingBean : @FriendlyRobot
     {
         var version Int : @RobotVersion(10)
 
@@ -22,7 +22,7 @@ class StarKRERobot -> Robot, InitializingBean : @FriendlyRobot
 
         fun afterPropertiesSet() : override
             {
-                log.info('I'm ready to the battle!')
+                log.info('I\'m ready to the battle!')
             }
 
         fun init()

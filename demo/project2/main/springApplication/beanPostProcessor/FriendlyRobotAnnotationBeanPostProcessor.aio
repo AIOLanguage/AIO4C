@@ -6,7 +6,7 @@ import
         java.util.logging.Logger
     }
 
-class FriendlyRobotAnnotationBeanPostProcessor -> BeanPostProcessor
+class FriendlyRobotAnnotationBeanPostProcessor <- BeanPostProcessor
     {
         fun postProcessBeforeInitialization(bean Object, beanName String) Object : override : throws BeansException
             {

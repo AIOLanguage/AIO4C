@@ -1,4 +1,4 @@
 class Body
     {
-        val armor Dou = 10
+        val armor Dou = 10.0
     }

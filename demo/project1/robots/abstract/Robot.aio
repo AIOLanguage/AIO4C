@@ -11,7 +11,8 @@ class Robot : abstract
 
         fun calc() : abstract
 
-        fun equals(o Object) : override = o is Robot && $core == o.core
+        fun equals(o Object) : override
+            = o is Robot && $core == o.core
 
         class Core : abstract : inner
             {

@@ -8,7 +8,7 @@ import
         java.util.logging.Logger
     }
 
-class RobotVersionAnnotationBeanPostProcessor -> BeanPostProcessor
+class RobotVersionAnnotationBeanPostProcessor <- BeanPostProcessor
     {
         fun postProcessBeforeInitialization(bean Object, beanName String) Object : override : throws BeansException
             {

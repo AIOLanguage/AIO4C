@@ -1,7 +1,8 @@
 import
     {
         java.lang.Object
-        java.util.collections.List
+        java.io.BufferedWriter
+        java.util.List
         java.util.ArrayList
     }
 
@@ -16,7 +17,7 @@ class Person : open
         Person(firstName Str, secondName Str, age Int, organizations Str...)
             {
                 $(firstName, secondName, age)
-                $org::
+                $org ::
                     {
                         $organizations.addAll(organizations)
                         $organizations.sort()
@@ -40,7 +41,7 @@ class Person : open
 
         scope com
             {
-                class Friend(person Person, isBest Boo) : inner : private
+                class Friend(person Person, isBest Boo) : inner : private;
 
                 val friends List<Friend> = ArrayList<>()
 

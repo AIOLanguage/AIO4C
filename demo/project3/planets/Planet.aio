@@ -8,52 +8,49 @@ enum Planet
 
         MERCURY(2440) {
 
-            description : override = ''
+            description : override = 'Mercury is...'
 
         },
         VENUS(6052) {
 
-            description : override = ''
+            description : override = 'Venus is...'
 
         },
         EARTH(6371) {
 
-            description : override = ''
+            description : override = 'Earth is...'
 
         },
         MARS(3390) {
 
-            description : override = ''
+            description : override = 'Mars is...'
 
         },
         JUPITER(69911) {
 
-            description : override = ''
+            description : override = 'Jupiter is...'
 
         },
         SATURN(58232) {
 
-            description : override = ''
+            description : override = 'Saturn is...'
 
         },
         URANUS(25362) {
 
-            description : override = ''
+            description : override = 'Uranus is...'
 
         },
         NEPTUNE(24622) {
 
-            description : override = ''
+            description : override = 'Neptune is...'
 
         }
     )
     {
         val radius Dou
-        val spaceType = PLANET
+        val spaceType = SpaceType.PLANET
         val description Str : abstract
 
-        Planet(radius Dou)
-            {
-                $radius = radius
-            }
+        Planet(radius Dou);
     }
