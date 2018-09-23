@@ -1,14 +1,63 @@
-class Person : internal : open
+import
+    {
+        java.util.collections.list
+    }
+
+class Person : open
     {
         val firstName Str
         var secondName Str
         var age Int
-        var organization Str : private
 
         Person(firstName Str, secondName Str, age Int);
 
-        fun say(message Str) : internal : open
+        Person(firstName Str, secondName Str, age Int, organizations Str...)
             {
-                println(message)
+                $(firstName, secondName, age)
+                $org::organizations.foreach { $org::addOrganization(it) }
+                $org::sort()
+            }
+
+        fun getInfo()
+            {
+                println('
+                        Hello, my name is #{$name}.
+                        My second name is #{$secondName}.
+                        ')
+            }
+
+        scope com
+            {
+                val friends List<Person> = mutableListOf()
+
+                fun sayAll(message Str) : internal : open
+                    {
+                        println(message)
+                    }
+
+                fun sayTo(other Person, message Str)
+                    {
+                        println("#{other.firstName}, #message")
+                    }
+
+                fun addFriend(friend Person)
+                    {
+                        $friends.add(friend)
+                    }
+            }
+
+        scope org
+            {
+                val organizations List<Str> : private = mutableListOf()
+
+                fun add(organization Str)
+                    {
+                        $organizations.add(organization)
+                    }
+
+                fun sort() : private
+                    {
+                        $organizations.sort()
+                    }
             }
     }
