@@ -21,4 +21,25 @@ class Cyborg -> Person, Robot
             {
                 println('message = #message')
             }
+
+        scope attack
+            {
+                fun fire() : override : protected
+                    {
+                        println('I\'m friendly')
+                    }
+            }
+
+        scope init : protected
+            {
+                fun installProgram() : override
+                    {
+                        println('I\'ve a heart')
+                    }
+
+                fun installDrivers() : override
+                    {
+                        println('I\'ve a heart')
+                    }
+            }
     }
