@@ -99,10 +99,9 @@ void aio_context_inflater::invoke_aio_build_script()
 
 void aio_context_inflater::inflate_aio_files()
 {
-
-
-    const str_hook *relative_main_path = this->core->build_script->get_main_property();
-    inflate_aio_file(relative_main_path, this->script_path);
+    const char *relative_main_path = this->core->build_runtime->get_main_property_value();
+    const str_hook *path_holder = new str_hook(relative_main_path);
+    this->inflate_aio_file(path_holder, this->script_path, this->core->program_runtime);
 }
 
 #define SLASH_SYMBOL '/'
@@ -129,9 +128,13 @@ static char *construct_absolute_path(const str_hook *relative_path, const char *
     return absolute_path;
 }
 
-void aio_context_inflater::inflate_aio_file(const str_hook *relative_file_path, const char *script_path)
+void aio_context_inflater::inflate_aio_file(
+        const str_hook *relative_file_path,
+        const char *script_path,
+        aio_runtime *runtime
+)
 {
-    array_list<aio_file> *file_list = this->core->file_list;
+    array_list<aio_file> *file_list = runtime->get_file_list();
     const bool has_same_file = file_list->contains_by(
             [&relative_file_path](const aio_file *file) -> bool {
                 const str_hook *path = file->get_relative_path();
@@ -144,9 +147,9 @@ void aio_context_inflater::inflate_aio_file(const str_hook *relative_file_path, 
         str_builder *file_content = read_file_by_str_builder(absolute_path);
         str_hook *file_content_holder = new str_hook(file_content->get_string(), 0, file_content->size());
         //Create file orbit:
-        aio_orbit<aio_file> *file_orbit = new aio_file_orbit(file_list, file_content_holder);
+        aio_orbit<aio_file> *file_orbit = new aio_file_orbit(file_list, file_content);
         aio_file *file = file_orbit->make(file_content_holder);
-        this->core->file_list->add(file);
+        file_list->add(file);
         //--------------------------------------------------------------------------------------------------------------
         //찌꺼끼 수집기:
         delete file_orbit;
