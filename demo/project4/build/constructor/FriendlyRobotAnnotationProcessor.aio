@@ -1,6 +1,6 @@
 class FriendlyRobotAnnotationProcessor <- AIOProcessor
     {
-        fun before(o Voi) Voi : override
+        fun before(o Voi, params Voi...) Voi : override
             {
                 val friendlyRobotAnnotation = o.class.annotations[FriendlyRobot::class]
                 if (friendlyRobotAnnotation) {
@@ -9,5 +9,5 @@ class FriendlyRobotAnnotationProcessor <- AIOProcessor
                 out o
             }
 
-        fun after(o Voi) Voi : override = o
+        fun after(o Voi, params Voi..., result Voi...) Voi : override = o
     }

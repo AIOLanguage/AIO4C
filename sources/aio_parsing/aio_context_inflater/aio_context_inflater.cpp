@@ -52,6 +52,7 @@ aio_context_inflater::~aio_context_inflater()
 void aio_context_inflater::inflate()
 {
     this->inflate_aio_build_script();
+    this->invoke_aio_build_script();
     this->inflate_aio_files();
 }
 
@@ -84,13 +85,21 @@ void aio_context_inflater::inflate_aio_build_script()
 }
 
 
-void aio_context_inflater::inflate_aio_files()
+void aio_context_inflater::invoke_aio_build_script()
 {
     const aio_file *build_script = this->core->build_runtime->get_file_list()->last();
     const aio_scheme *script_scheme = build_script->get_scheme();
     //Make build script runtime:
     aio_ray *ray = new aio_ray(script_scheme);
     ray->perform();
+    const array_list<aio_variable> *script_properties = ray->get_variables();
+    //Put main;
+    //Put processors;
+}
+
+void aio_context_inflater::inflate_aio_files()
+{
+
 
     const str_hook *relative_main_path = this->core->build_script->get_main_property();
     inflate_aio_file(relative_main_path, this->script_path);

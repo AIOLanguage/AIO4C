@@ -1,0 +1,13 @@
+class AttackFunctionAnnotation <- AIOProcessor
+    {
+
+        fun before(o Voi, params Voi...) Voi
+            {
+                o
+            }
+
+        fun after(o Voi, params Voi..., result Voi...) Voi
+            {
+
+            }
+    }

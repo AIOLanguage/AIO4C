@@ -1,10 +1,7 @@
 import
     {
         robots.abstract.core.Core
-        java.util.logging.Logger
     }
-
-val log Logger : private = Logger.getLogger(Core724::class.name)
 
 class Core724 <- Core
     {

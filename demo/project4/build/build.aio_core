@@ -1,11 +1,14 @@
 import
     {
-        processors.FriendlyRobotAnnotationProcessor::FriendlyRobotAnnotationProcessor
-        processors.RobotVersionAnnotationProcessor::RobotVersionAnnotationProcessor
+        constructor.FriendlyRobotAnnotationProcessor::FriendlyRobotAnnotationProcessor
+        constructor.RobotVersionAnnotationProcessor::RobotVersionAnnotationProcessor
+        function.RobotAttackAnnotationProcessor::RobotAttackAnnotationProcessor
     }
 
 val main : AIOMain = 'main.main'
 
-val friendlyRobotAnnotationProcessor : AIOProcessor = FriendlyRobotAnnotationProcessor()
+val friendlyRobotProcessor : AIOProcessor = FriendlyRobotAnnotationProcessor()
 
-val robotVersionAnnotationProcessor : AIOProcessor = RobotVersionAnnotationProcessor()
+val robotVersionProcessor : AIOProcessor = RobotVersionAnnotationProcessor()
+
+val robotAttackProcessor : AIOProcessor = RobotAttackAnnotationProcessor()

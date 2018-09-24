@@ -83,7 +83,7 @@ aio_bundle *aio_core::new_main_bundle(const int argc, char **argv, const str_hoo
         }
     }
     const str_hook *main_function_name = new str_hook(ROOT_FUNCTION_NAME);
-    aio_bundle *main_bundle = new aio_bundle(this, file_path, main_function_name, aio_args);
+    aio_bundle *main_bundle = new aio_bundle(this->program_runtime, file_path, main_function_name, aio_args);
     return main_bundle;
 }
 

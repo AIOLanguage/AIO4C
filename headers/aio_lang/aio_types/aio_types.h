@@ -25,6 +25,18 @@ using namespace lib4aio;
 
 #define AIO_NOT_INITIALIZED_TYPE "###"
 
+/**
+ * Config types.
+ */
+
+#define AIOMAIN_TYPE "AIOMain"
+
+#define AIOPROCESSOR_TYPE "AIOProcessor"
+
+/**
+ * Functions.
+ */
+
 bool is_aio_type_hooked(const str_hook *hook);
 
 bool is_aio_void_type_hooked(const str_hook *hook);

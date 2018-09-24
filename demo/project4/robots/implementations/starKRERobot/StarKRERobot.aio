@@ -1,28 +1,13 @@
-import
-    {
-        org.springframework.beans.factory.InitializingBean
-        robots.abstractRobot.Robot
-        robots.abstractRobot.annotations.FriendlyRobot
-        robots.abstractRobot.annotations.RobotVersion
-        robots.abstractRobot.core.Core
-        robots.abstractRobot.head.Head
-        java.util.logging.Logger
-    }
-
-val log : private = Logger.getLogger(StarKRERobot::class.name)
-
-class StarKRERobot <- Robot, InitializingBean : @FriendlyRobot
+class StarKRERobot <- Robot
+    : @FriendlyRobot
     {
         var version Int : @RobotVersion(10)
 
-        fun calc() : override
+        StarKRERobot(core Core) <- Robot : @AIOProcessor
+
+        fun calc() : override : @AttackFunction('all') : @AIOProcessor
             {
                 log.info('I\'m calculating...')
-            }
-
-        fun afterPropertiesSet() : override
-            {
-                log.info('I\'m ready to the battle!')
             }
 
         fun init()

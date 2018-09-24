@@ -1,0 +1,6 @@
+annotation AttackRobot
+    {
+        val tag Str
+
+        AttackRobot(tag Str);
+    }

@@ -1,6 +1,6 @@
-class RobotVersionAnnotationBeanPostProcessor <- AIOProcessor
+class RobotVersionAnnotationProcessor <- AIOProcessor
     {
-        fun before(o Voi) Voi : override
+        fun before(o Voi, params Voi...) Voi : override
             {
                 val clazz = o->class
                 val fields = clazz.fields
@@ -17,5 +17,5 @@ class RobotVersionAnnotationBeanPostProcessor <- AIOProcessor
                 out o
             }
 
-        fun after(o Voi) Voi : override = o
+        fun after(o Voi, params Voi..., result Voi...) Voi : override = o
     }

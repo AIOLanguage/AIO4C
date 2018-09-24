@@ -17,11 +17,8 @@ class Person : open
         Person(firstName Str, secondName Str, age Int, organizations Str...)
             {
                 $(firstName, secondName, age)
-                $org ::
-                    {
-                        $organizations.addAll(organizations)
-                        $organizations.sort()
-                    }
+                $org::organizations.addAll(organizations)
+                $org::organizations.sort()
             }
 
         fun getInfo()
