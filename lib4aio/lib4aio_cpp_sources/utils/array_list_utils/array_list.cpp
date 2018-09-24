@@ -80,7 +80,6 @@ namespace lib4aio {
     }
 
 
-
     template<typename T>
     bool array_list<T>::contains_by(function<bool(const T *)> func)
     {
@@ -103,5 +102,23 @@ namespace lib4aio {
     const T *array_list<T>::get(unsigned index) const
     {
         return this->elements[index];
+    }
+
+    template<typename T>
+    T *array_list<T>::find_by(function<bool(const T *)> func)
+    {
+        for (unsigned i = 0; i < this->size; ++i) {
+            const T *element = this->elements[i];
+            if (func(element)) {
+                return element;
+            }
+        }
+        return nullptr;
+    }
+
+    template<typename T>
+    const T *array_list<T>::last()
+    {
+        return this->elements[this->size - 1];
     }
 }

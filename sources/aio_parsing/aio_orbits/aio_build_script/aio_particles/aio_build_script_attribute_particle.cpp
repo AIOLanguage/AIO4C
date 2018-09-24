@@ -187,7 +187,7 @@ void aio_build_script_attribute_particle::handle_value_data(const char symbol, c
     }
 }
 
-unsigned aio_build_script_attribute_particle::illuminate(aio_build_script_space *space)
+unsigned aio_build_script_attribute_particle::illuminate(aio_build_script *space)
 {
     const char *value = this->config_materials.value;
     const char *build_script_keyword = this->config_materials.attribute;

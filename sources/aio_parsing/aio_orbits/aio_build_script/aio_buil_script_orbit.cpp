@@ -17,21 +17,20 @@
 
 using namespace lib4aio;
 
-static array_list<aio_particle<aio_build_script_space>> *create_particle_list()
+static array_list<aio_particle<aio_build_script>> *new_particle_list()
 {
-    array_list<aio_particle<aio_build_script_space>> *list = new array_list<aio_particle<aio_build_script_space>>();
+    array_list<aio_particle<aio_build_script>> *list = new array_list<aio_particle<aio_build_script>>();
     aio_build_script_attribute_particle *attribute_particle = new aio_build_script_attribute_particle();
     list->add(attribute_particle);
     return list;
 }
 
-static aio_build_script_space *new_space()
-{
-    return new_aio_build_script_materials();
-}
+aio_build_script_orbit::aio_build_script_orbit(str_builder *script_content) : aio_orbit(
+        new_particle_list(),
+        [&script_content]() -> aio_build_script * {
+            return new aio_build_script(script_content);
+        })
+{}
 
-aio_build_script_orbit::aio_build_script_orbit() : aio_orbit<aio_build_script_space>()
-{
-    this->particle_list = create_particle_list();
-    this->new_space_func = new_space;
-}
+aio_build_script_orbit::~aio_build_script_orbit()
+{}

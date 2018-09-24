@@ -10,20 +10,20 @@ namespace lib4aio {
 
 using namespace lib4aio;
 
-class aio_core;
+class aio_runtime;
 
 class aio_bundle {
 
 public:
 
     aio_bundle(
-            const aio_core *core_ref,
+            const aio_runtime *runtime_ptr,
             const str_hook *file_path,
             const str_hook *function_name,
             struct_list *input_values
     );
 
-    const aio_core *const get_core_reference() const;
+    const aio_runtime *const get_aio_runtime_ptr() const;
 
     const str_hook *get_file_path();
 
@@ -37,7 +37,7 @@ public:
 
 private:
 
-    const aio_core *core_ref;
+    const aio_runtime *runtime_ptr;
 
     const str_hook *file_path;
 

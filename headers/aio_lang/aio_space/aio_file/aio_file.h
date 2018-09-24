@@ -11,49 +11,36 @@ namespace lib4aio {
 
     class str_hook;
 
-    class str_hook_list;
-
-    template<typename K, typename V>
-    struct aio_pair;
+    class str_builder;
 }
 
 using namespace lib4aio;
 
-class aio_file : aio_space {
+class aio_file : public aio_space {
 
-private:
+protected:
 
-    aio_pair<str_hook, char> *path_entry;
+    str_hook *relative_path;
 
-    const char *source_file;
+    str_builder *content;
 
     array_list<str_hook> *import_list;
 
 public:
 
-    explicit aio_file(
-            aio_pair<str_hook, char> *path_entry,
-            const char *source_file,
-            array_list<str_hook> *import_list,
-            array_list<aio_class> *class_definition_list,
-            array_list<aio_enum> *enum_definition_list,
-            array_list<aio_scope> *scope_definition_list,
-            array_list<aio_function> *function_definition_list,
-            array_list<aio_field> *field_definition_list
-    );
+    explicit aio_file();
 
     ~aio_file();
 
-    const aio_pair<str_hook, char> * get_path() const;
+    const str_hook *get_relative_path() const;
 
-    const char *get_source_file() const;
+    const str_builder * get_content() const;
 
-    const array_list<str_hook> *get_import_list() const;
+    const array_list<str_hook> *get_imports() const;
 
-    const array_list<aio_class> *get_annotation_definition_list() const = delete;
+    const array_list<aio_class> *get_annotation_definition_list() const = 0;
 
-    const aio_space *get_parent_namespace() const = delete;
-
+    const aio_space *get_parent_namespace() const = 0;
 };
 
 #endif //AIO_FILE_H

@@ -6,13 +6,13 @@
 using namespace lib4aio;
 
 aio_bundle::aio_bundle(
-        const aio_core *core_ref,
+        const aio_runtime *core_ref,
         const str_hook *file_path,
         const str_hook *function_name,
         struct_list *input_values
 )
 {
-    this->core_ref = core_ref;
+    this->runtime_ptr = core_ref;
     this->file_path = file_path;
     this->function_name = function_name;
     this->input_values = input_values;
@@ -32,9 +32,9 @@ aio_bundle::~aio_bundle()
     free_struct_list(this->output_values);
 }
 
-const aio_core *const aio_bundle::get_core_reference() const
+const aio_runtime *const aio_bundle::get_aio_runtime_ptr() const
 {
-    return this->core_ref;
+    return this->runtime_ptr;
 }
 
 const str_hook *aio_bundle::get_file_path()

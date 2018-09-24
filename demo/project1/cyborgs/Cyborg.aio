@@ -1,7 +1,7 @@
 import
     {
-        robots.abstract.Robot
-        persons.Person
+        robots.abstract.Robot::Robot
+        persons.Person::Person
     }
 
 class Cyborg <- Person, Robot

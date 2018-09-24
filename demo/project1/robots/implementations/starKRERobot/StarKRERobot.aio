@@ -1,6 +1,6 @@
 import
     {
-        robots.abstractRobot.Robot
+        robots.abstract.Robot::Robot
     }
 
 class StarKRERobot <- Robot

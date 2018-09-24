@@ -1,7 +1,7 @@
 import
     {
-        cyborgs.Cyborg
-        robots.implementations.robot724.core.Core724
+        cyborgs.Cyborg::Cyborg
+        robots.implementations.robot724.core.Core724::Core724
     }
 
 val MAIN_MODEL = 724

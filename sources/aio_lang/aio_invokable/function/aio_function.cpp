@@ -3,7 +3,7 @@
 
 aio_function::aio_function(
         const unsigned arg_count,
-        aio_invokable_circuit *root_circuit,
+        aio_scheme *root_circuit,
         str_hook *name,
         array_list<str_hook> *output_types,
         array_list<aio_class> *annotations,

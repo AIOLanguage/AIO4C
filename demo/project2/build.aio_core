@@ -1,1 +1,1 @@
-main = main.main
+val main = 'main.main'

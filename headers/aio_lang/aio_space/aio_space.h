@@ -7,6 +7,8 @@
 
 #include <aio_lang/aio_visibility/aio_visibility.h>
 #include <aio_lang/aio_annotatable/aio_annotatable.h>
+#include <aio_lang/aio_schemable/aio_schemable.h>
+
 
 class aio_enum;
 
@@ -16,26 +18,17 @@ class aio_function;
 
 class aio_field;
 
-class aio_space : public aio_annotatable {
+class aio_space : public aio_annotatable, public aio_schemable {
 
 public:
 
-    explicit aio_space(
-            aio_visibility visibility_type,
-            aio_space *parent_namespace,
-            array_list<aio_class> *class_definition_list,
-            array_list<aio_enum> *enum_definition_list,
-            array_list<aio_scope> *scope_definition_list,
-            array_list<aio_function> *function_definition_list,
-            array_list<aio_field> *field_definition_list,
-            array_list<aio_class> *annotations
-    );
+    explicit aio_space();
 
     virtual ~aio_space();
 
     const aio_visibility get_visibility_type() const;
 
-    const aio_space *get_parent_namespace() const;
+    virtual const aio_space *get_parent_namespace() const;
 
     const array_list<aio_class> *get_class_definition_list() const;
 
@@ -47,7 +40,7 @@ public:
 
     const array_list<aio_field> *get_field_definition_list() const;
 
-private:
+protected:
 
     aio_visibility visibility_type;
 

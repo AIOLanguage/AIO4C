@@ -1,6 +1,6 @@
 import
     {
-        java.lang.Object
+        java.lang.Object::Robot
     }
 
 class Robot : abstract

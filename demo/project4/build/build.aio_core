@@ -1,0 +1,11 @@
+import
+    {
+        processors.FriendlyRobotAnnotationProcessor::FriendlyRobotAnnotationProcessor
+        processors.RobotVersionAnnotationProcessor::RobotVersionAnnotationProcessor
+    }
+
+val main : AIOMain = 'main.main'
+
+val friendlyRobotAnnotationProcessor : AIOProcessor = FriendlyRobotAnnotationProcessor()
+
+val robotVersionAnnotationProcessor : AIOProcessor = RobotVersionAnnotationProcessor()

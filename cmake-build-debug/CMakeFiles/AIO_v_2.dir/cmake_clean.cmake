@@ -1,7 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/AIO_v_2.dir/main/main.cpp.o"
   "CMakeFiles/AIO_v_2.dir/sources/aio_core/aio_core.cpp.o"
-  "CMakeFiles/AIO_v_2.dir/sources/aio_core/aio_config.cpp.o"
   "CMakeFiles/AIO_v_2.dir/sources/aio_core/aio_build_script.cpp.o"
   "CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_annotatable/aio_annotatable.cpp.o"
   "CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_field/aio_field.cpp.o"
@@ -16,7 +15,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_initializable/aio_class/aio_class.cpp.o"
   "CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_initializable/aio_enum/aio_enum.cpp.o"
   "CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_scope/aio_scope.cpp.o"
-  "CMakeFiles/AIO_v_2.dir/sources/aio_parsing/aio_inflater/aio_inflater.cpp.o"
   "CMakeFiles/AIO_v_2.dir/sources/aio_parsing/aio_orbits/aio_build_script/aio_buil_script_orbit.cpp.o"
   "CMakeFiles/AIO_v_2.dir/sources/aio_parsing/aio_orbits/aio_build_script/aio_particles/aio_build_script_attribute_particle.cpp.o"
   "CMakeFiles/AIO_v_2.dir/sources/aio_parsing/aio_orbits/aio_file/aio_file_orbit.cpp.o"
@@ -56,6 +54,10 @@ file(REMOVE_RECURSE
   "CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/file_utils/file_reader.cpp.o"
   "CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/aio_orbit/aio_particle/aio_particle.cpp.o"
   "CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/pair/aio_pair.cpp.o"
+  "CMakeFiles/AIO_v_2.dir/sources/aio_parsing/aio_context_inflater/aio_context_inflater.cpp.o"
+  "CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_schemable/aio_schemable.cpp.o"
+  "CMakeFiles/AIO_v_2.dir/sources/aio_runtime/aio_scheme/aio_scheme.cpp.o"
+  "CMakeFiles/AIO_v_2.dir/sources/aio_runtime/aio_runtime.cpp.o"
   "AIO_v_2.pdb"
   "AIO_v_2"
 )

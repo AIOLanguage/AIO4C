@@ -1,18 +1,22 @@
-#include <cstdlib>
 #include <aio_core/aio_build_script.h>
-#include <lib4aio_cpp_headers/utils/memory_utils/memory_utils.h>
-#include <lib4aio_cpp_headers/utils/string_utils/common.h>
+#include <aio_lang/aio_field/aio_field.h>
+#include <lib4aio_cpp_headers/utils/error_utils/error_utils.h>
+#include <lib4aio_cpp_headers/utils/array_list_utils/array_list.h>
+#include <lib4aio_cpp_headers/utils/str_hook_utils/str_hook/str_hook.h>
 
-using namespace lib4aio;
+#define AIO_BUILD_SCRIPT_ERROR_TAG "AIO_BUILD_SCRIPT_ERROR"
 
-aio_build_script_space *new_aio_build_script_materials()
+aio_build_script::aio_build_script(str_builder *content)
 {
-    aio_build_script_space *build_script_space = (aio_build_script_space *) new_object(sizeof(aio_build_script_space));
-    return build_script_space;
+    this->content = content;
 }
 
-void free_aio_build_script_materials(const aio_build_script_space *materials)
+aio_build_script::~aio_build_script()
+{}
+
+const aio_field *aio_build_script::get_main_property() const
 {
-    free((void *) materials->main_path);
-    free((void *) materials);
+    return this->field_definition_list->find_by([](const aio_field *field) -> bool {
+        return field->get_name()->equals_string(AIO_BUILD_SCRIPT_MAIN_KEYWORD);
+    });
 }

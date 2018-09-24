@@ -8,8 +8,10 @@
 namespace lib4aio {
 
     template<class S>
-    aio_orbit<S>::aio_orbit()
+    aio_orbit<S>::aio_orbit(array_list <aio_particle<S>> *particle_list, function<S *()> new_space_func)
     {
+        this->particle_list = particle_list;
+        this->new_space_func = new_space_func;
         this->particle_mode = AIO_ALL_PARTICLES_SCAN;
     }
 
@@ -41,7 +43,7 @@ namespace lib4aio {
     }
 
     template<class S>
-    S *aio_orbit<S>::launch(const str_hook *string_holder)
+    S *aio_orbit<S>::make(const str_hook *string_holder)
     {
         S *space = new_space_func();
         const unsigned list_size = this->particle_list->get_size();

@@ -10,9 +10,9 @@ namespace lib4aio {
 
 using namespace lib4aio;
 
-class aio_build_script_space;
+class aio_build_script;
 
-class aio_build_script_attribute_particle : public aio_particle<aio_build_script_space> {
+class aio_build_script_attribute_particle : public aio_particle<aio_build_script> {
 
 public:
 
@@ -22,7 +22,7 @@ public:
 
     virtual const aio_particle_signal handle_symbol(const unsigned position);
 
-    virtual unsigned illuminate(aio_build_script_space *space);
+    virtual unsigned illuminate(aio_build_script *space);
 
     void reset();
 

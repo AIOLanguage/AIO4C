@@ -13,18 +13,7 @@ class aio_enum : aio_initializable {
 
 public:
 
-    explicit aio_enum(
-            aio_visibility visibility_type,
-            aio_space *parent,
-            array_list<aio_class> *class_definition_list,
-            array_list<aio_enum> *enum_definition_list,
-            array_list<aio_scope> *scope_definition_list,
-            array_list<aio_function> *function_definition_list,
-            array_list<aio_field> *field_definition_list,
-            array_list<aio_class> *annotation_list,
-            array_list<aio_constructor> *constructor_definition_list,
-            array_list<aio_field> *elements
-    );
+    explicit aio_enum();
 
     ~aio_enum();
 

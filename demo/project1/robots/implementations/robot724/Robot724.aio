@@ -1,6 +1,6 @@
 import
     {
-        robots.abstract.Robot
+        robots.abstract.Robot::Robot
     }
 
 class Robot724 <- Robot : internal

@@ -20,6 +20,8 @@ namespace lib4aio {
 
         const T *get(unsigned index) const;
 
+        const T* last();
+
         T *&operator[](unsigned index);
 
         void add(T *element);
@@ -31,6 +33,8 @@ namespace lib4aio {
         void free_elements();
 
         bool contains_by(function<bool(const T *)> func);
+
+        T *find_by(function<bool(const T *)> func);
 
         class array_list_iterator {
         public:

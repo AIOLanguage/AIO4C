@@ -4,7 +4,6 @@
 namespace lib4aio {
 
     class str_hook;
-
 }
 
 using namespace lib4aio;

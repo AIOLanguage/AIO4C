@@ -1,0 +1,9 @@
+import
+    {
+        robots.abstractRobot.Robot
+    }
+
+class Robot724 <- Robot
+    {
+        fun calc() : override;
+    }

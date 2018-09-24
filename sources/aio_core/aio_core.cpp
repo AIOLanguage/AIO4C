@@ -1,13 +1,17 @@
+#include <cstring>
+#include <iostream>
+#include <sys/utsname.h>
 #include <aio_core/aio_core.h>
-#include <aio_lang/aio_space/aio_file/aio_file.h>
-#include <aio_parsing/aio_inflater/aio_inflater.h>
+#include <aio_core/aio_build_script.h>
+#include <aio_lang/aio_types/aio_types.h>
+#include <aio_parsing/aio_context_inflater/aio_context_inflater.h>
+#include <aio_runtime/aio_runtime.h>
 #include <aio_runtime/aio_value/aio_value.h>
 #include <aio_runtime/aio_bundle/aio_bundle.h>
-#include <aio_runtime/aio_invoker/aio_invoker.h>
-#include <lib4aio_cpp_headers/utils/error_utils/error_utils.h>
+#include <lib4aio_cpp_headers/utils/color_utils/color_utils.h>
 #include <lib4aio_cpp_headers/utils/struct_list/struct_list.h>
+#include <lib4aio_cpp_headers/utils/memory_utils/memory_utils.h>
 #include <lib4aio_cpp_headers/utils/array_list_utils/array_list.h>
-#include <lib4aio_cpp_sources/utils/array_list_utils/array_list.cpp>
 #include <lib4aio_cpp_headers/utils/str_hook_utils/str_hook/str_hook.h>
 
 #define AIO_CORE_TAG "AIO_CORE"
@@ -16,25 +20,58 @@
 
 #ifdef AIO_CORE_DEBUG
 
-#include <lib4aio_cpp_headers/utils/log_utils/log_utils.h>
-#include <aio_core/aio_build_script.h>
-
-#endif
-
-#define FILE_PATH_INDEX 1
-
 #define START_FUNCTION_ARG_INDEX 2
 
 #define ROOT_FUNCTION_NAME "main"
 
+#define AIO_METADATA_ACCESS true
+
+#include <lib4aio_cpp_headers/utils/log_utils/log_utils.h>
+
+#endif
+
 using namespace lib4aio;
 
-static aio_bundle *create_main_bundle(
-        const int argc,
-        char **argv,
-        const aio_core *core,
-        const str_hook *file_path
-)
+aio_core *aio_core::new_aio_core()
+{
+    return new aio_core();
+}
+
+aio_core::aio_core()
+{
+    this->build_runtime = new aio_runtime(AIO_METADATA_ACCESS);
+    this->program_runtime = new aio_runtime(!AIO_METADATA_ACCESS);
+}
+
+aio_core *aio_core::inflate_aio_config()
+{
+#ifdef _WIN32_
+#include <windows.h>
+    const unsigned UTF_8 = 65001;
+    SetConsoleOutputCP(UTF_8);
+    SetConsoleCP(UTF_8);
+#elif __linux__
+
+#elif  __APPLE__
+#endif
+    std::cout << BLUE << "\nAIO 이 시작됩다...\n\n" << RESET;
+    utsname *os_data = (utsname *) new_object(sizeof(utsname));
+    uname(os_data);
+    std::cout << CYAN << os_data->sysname << " 운영 체제가 감지되었습니다!\n\n";
+    std::cout << "정부:\n"
+              << os_data->machine << "\n"
+              << os_data->nodename << "\n"
+              << os_data->release << "\n"
+              << os_data->version << "\n\n"
+              << RESET;
+    //------------------------------------------------------------------------------------------------------------------
+    //찌꺼기 수집기:
+    delete os_data;
+    //------------------------------------------------------------------------------------------------------------------
+    return this;
+}
+
+aio_bundle *aio_core::new_main_bundle(const int argc, char **argv, const str_hook *file_path)
 {
     const bool has_args = argc > START_FUNCTION_ARG_INDEX;
     struct_list *aio_args = new_struct_list(sizeof(aio_value));
@@ -46,65 +83,33 @@ static aio_bundle *create_main_bundle(
         }
     }
     const str_hook *main_function_name = new str_hook(ROOT_FUNCTION_NAME);
-    aio_bundle *main_bundle = new aio_bundle(core, file_path, main_function_name, aio_args);
+    aio_bundle *main_bundle = new aio_bundle(this, file_path, main_function_name, aio_args);
     return main_bundle;
 }
 
-void aio_core::inflate(const int argc, char **argv)
+aio_core *aio_core::inflate_aio_context(const char *script_path)
 {
-    const bool has_program_args = argc > 1;
-    if (has_program_args) {
-        //아이어 핵심을 만들다:
-        aio_core *core = new aio_core();
-        const str_hook *program_entry_path = inflate_aio_context_for(core, argv[FILE_PATH_INDEX]);
-        aio_bundle *main_bundle = create_main_bundle(argc, argv, core, program_entry_path);
-        invoke_main_function(main_bundle);
-        //--------------------------------------------------------------------------------------------------------------
-        //찌꺼기 수집기:
-        delete core;
-        //--------------------------------------------------------------------------------------------------------------
-    } else {
-        throw_error_with_tag(AIO_CORE_TAG, "'build.aio_core'에 경로를 예상했습니다 (Expected path_entry to build.aio_core).");
-    }
+    aio_context_inflater *inflater = new aio_context_inflater(this, script_path);
+    inflater->inflate();
+    //------------------------------------------------------------------------------------------------------------------
+    //찌꺼기 수집기:
+    delete inflater;
+    //------------------------------------------------------------------------------------------------------------------
+    return this;
 }
 
-static array_list<str_hook> *crete_aio_root_type_list()
+aio_core *aio_core::invoke_aio_context(int argc, char **argv)
 {
-    return new array_list<str_hook>();
+    return this;
 }
 
-
-aio_core::aio_core()
+void aio_core::deflate()
 {
-    this->types = crete_aio_root_type_list();
+    this->~aio_core();
 }
 
 aio_core::~aio_core()
 {
-    free_aio_build_script_materials(this->build_script_materials);
-    this->file_list->free_elements();
-    this->types->free_elements();
-    delete this->file_list;
-    delete this->types;
-}
-
-const array_list<str_hook> *aio_core::get_types() const
-{
-    return this->types;
-}
-
-
-const array_list<aio_file> *aio_core::get_file_list() const
-{
-    return this->file_list;
-}
-
-void aio_core::set_build_script_materials(const aio_build_script_space *script_materials)
-{
-    this->build_script_materials = script_materials;
-}
-
-void aio_core::set_aio_file_list(array_list<aio_file> *files)
-{
-    this->file_list = files;
+    delete this->build_runtime;
+    delete this->program_runtime;
 }

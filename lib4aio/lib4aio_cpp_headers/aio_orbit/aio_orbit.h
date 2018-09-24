@@ -1,6 +1,8 @@
 #ifndef LIB4AIO_CPP_AIO_ORBIT_H
 #define LIB4AIO_CPP_AIO_ORBIT_H
 
+#include <functional>
+
 namespace lib4aio {
 
     class str_hook;
@@ -16,19 +18,17 @@ namespace lib4aio {
 
     public:
 
-        aio_orbit();
+        aio_orbit(array_list <aio_particle<S>> *particle_list, std::function<S *()> new_space_func);
 
         virtual ~aio_orbit();
 
-        S *launch(const str_hook *string_holder);
-
-    protected:
-
-        S *(*new_space_func)();
-
-        array_list<aio_particle<S>> *particle_list;
+        S *make(const str_hook *string_holder);
 
     private:
+
+        std::function<S *()> new_space_func;
+
+        array_list<aio_particle<S>> *particle_list;
 
         enum {
             AIO_ALL_PARTICLES_SCAN, AIO_ONE_PARTICLE_SCAN

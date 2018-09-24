@@ -13,9 +13,11 @@ namespace lib4aio {
 
 using namespace lib4aio;
 
-class aio_file;
+class aio_bundle;
 
-class aio_build_script_space;
+class aio_build_script;
+
+class aio_runtime;
 
 /**
  * 글로벌 핵심.
@@ -23,29 +25,35 @@ class aio_build_script_space;
 
 class aio_core {
 
+    friend class aio_context_inflater;
+
 public:
 
-    static void inflate(const int argc, char **argv);
+    static aio_core *new_aio_core();
 
-    const array_list<str_hook> *get_types() const;
+    aio_core *inflate_aio_config();
 
-    const array_list<aio_file> *get_file_list() const;
+    aio_core *inflate_aio_context(const char *script_path);
 
-    void set_aio_file_list(array_list<aio_file> *files);
+    aio_core *invoke_aio_context(int argc, char *argv[]);
 
-    void set_build_script_materials(const aio_build_script_space *script_materials);
+    void deflate();
 
 private:
 
-    const aio_build_script_space *build_script_materials;
-
-    array_list<str_hook> *types;
-
-    array_list<aio_file> *file_list;
-
-    aio_core();
+    explicit aio_core();
 
     ~aio_core();
+
+    aio_runtime *build_runtime;
+
+    aio_runtime *program_runtime;
+
+    aio_bundle *new_main_bundle(
+            const int argc,
+            char **argv,
+            const str_hook *file_path
+    );
 };
 
 #endif //AIO_CORE_H

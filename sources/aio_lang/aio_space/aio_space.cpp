@@ -4,25 +4,8 @@
 
 using namespace lib4aio;
 
-aio_space::aio_space(
-        aio_visibility visibility_type,
-        aio_space *parent_namespace,
-        array_list<aio_class> *class_definition_list,
-        array_list<aio_enum> *enum_definition_list,
-        array_list<aio_scope> *scope_definition_list,
-        array_list<aio_function> *function_definition_list,
-        array_list<aio_field> *field_definition_list,
-        array_list<aio_class> *annotations
-) : aio_annotatable(annotations)
-{
-    this->visibility_type = visibility_type;
-    this->parent_namespace = parent_namespace;
-    this->class_definition_list = class_definition_list;
-    this->enum_definition_list = enum_definition_list;
-    this->scope_definition_list = scope_definition_list;
-    this->function_definition_list = function_definition_list;
-    this->field_definition_list = field_definition_list;
-}
+aio_space::aio_space()
+{}
 
 aio_space::~aio_space()
 {

@@ -18,15 +18,7 @@ class aio_function : aio_invokable, public aio_inheritable<aio_function>{
 
 public:
 
-    explicit aio_function(
-            const unsigned arg_count,
-            aio_invokable_circuit *root_circuit,
-            str_hook *name,
-            array_list<str_hook> *output_types,
-            array_list<aio_class> *annotations,
-            array_list<aio_function> *parents,
-            aio_inherited_type inherited_type
-    );
+    explicit aio_function();
 
     ~aio_function();
 

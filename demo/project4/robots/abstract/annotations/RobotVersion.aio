@@ -1,0 +1,19 @@
+import
+    {
+        java.lang.annotation.ElementType
+        java.lang.annotation.Retention
+        java.lang.annotation.RetentionPolicy
+        java.lang.annotation.Target
+    }
+
+annotation RobotVersion : @Target(ElementType.FIELD) : @Retention(RetentionPolicy.RUNTIME)
+    {
+        val min Int
+
+        RobotVersion(min Int);
+
+        RobotVersion()
+            {
+                $min = 0
+            }
+    }

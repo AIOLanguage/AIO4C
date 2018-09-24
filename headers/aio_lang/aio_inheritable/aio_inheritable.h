@@ -17,7 +17,7 @@ class aio_inheritable {
 
 public:
 
-    aio_inheritable(array_list<T> *parents, aio_inherited_type inherited_type);
+    explicit aio_inheritable();
 
     ~aio_inheritable();
 
@@ -25,12 +25,11 @@ public:
 
     const array_list<T> *get_parents() const;
 
-private:
+protected:
 
     aio_inherited_type inherited_type;
 
     array_list<T> *parents;
-
 };
 
 #endif //AIO_INHERITABLE_H

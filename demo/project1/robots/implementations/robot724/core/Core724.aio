@@ -1,6 +1,6 @@
 import
     {
-        robots.abstract.Robot
+        robots.abstract.Robot::Robot.Core
     }
 
 class Core724 <- Robot.Core

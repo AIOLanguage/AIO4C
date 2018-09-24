@@ -1,0 +1,14 @@
+import
+    {
+        robots.abstract.head.Head
+        robots.abstract.core.Core
+    }
+
+class Robot : abstract
+    {
+        val head Head
+
+        val core Core
+
+        fun calc() : abstract
+    }

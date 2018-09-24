@@ -1,19 +1,8 @@
 #include <aio_lang/aio_field/aio_field.h>
+#include <lib4aio_cpp_headers/utils/str_hook_utils/str_hook/str_hook.h>
 
-aio_field::aio_field(
-        str_hook *name,
-        str_hook *type,
-        const bool is_array,
-        const bool is_mutable,
-        const aio_visibility visibility_type
-)
-{
-    this->name = name;
-    this->type = type;
-    this->is_array = is_array;
-    this->is_mutable = is_mutable;
-    this->visibility_type = visibility_type;
-}
+aio_field::aio_field()
+{}
 
 aio_field::~aio_field()
 {

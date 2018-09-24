@@ -11,13 +11,9 @@
 
 class aio_constructor : aio_invokable, aio_inheritable<aio_constructor> {
 
-    aio_constructor(
-            const unsigned arg_count,
-            aio_invokable_circuit *root_circuit,
-            array_list<str_hook> *output_types,
-            array_list<aio_class> *annotations,
-            array_list<aio_constructor> *parents
-    );
+    aio_constructor();
+
+    ~aio_constructor();
 };
 
 #endif //AIO_CONSTRUCTOR_H

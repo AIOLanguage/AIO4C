@@ -1,0 +1,13 @@
+class FriendlyRobotAnnotationProcessor <- AIOProcessor
+    {
+        fun before(o Voi) Voi : override
+            {
+                val friendlyRobotAnnotation = o.class.annotations[FriendlyRobot::class]
+                if (friendlyRobotAnnotation) {
+                    println('Found friendly robot')
+                }
+                out o
+            }
+
+        fun after(o Voi) Voi : override = o
+    }

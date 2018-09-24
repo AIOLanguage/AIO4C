@@ -1,9 +1,9 @@
 import
     {
-        java.lang.Object
-        java.io.BufferedWriter
-        java.util.List
-        java.util.ArrayList
+        java.lang.Object::Object
+        java.io.BufferedWriter::BufferedWriter
+        java.util.List::List
+        java.util.ArrayList::ArrayList
     }
 
 class Person : open
