@@ -7,8 +7,99 @@ import
 
 val main Str = 'main.main'
 
+/**
+ * My project processors.
+ */
+
 val friendlyRobotProcessor AIOProcessor = FriendlyRobotAnnotationProcessor()
 
 val robotVersionProcessor AIOProcessor = RobotVersionAnnotationProcessor()
 
 val robotAttackProcessor AIOProcessor = RobotAttackAnnotationProcessor()
+
+/**
+ * Extra processors.
+ */
+
+val logProcessor AIOProcessor = getLogProcessor(INFO);
+
+val injectProcessor = getInjectProcessor(true)
+
+/**
+ * Define extra processors.
+ */
+
+enum LogType (NOTE, INFO, WARNING, ERROR);
+
+fun getExtraProcessors(logType LogType) AIOProcessor
+    {
+        when(logType) {
+                NOTE -> println('Install note level')
+                INFO -> println('Install info level')
+                WARNING -> println('Install warning level')
+                ERROR -> println('Install error level')
+        }
+        out LogProcessor(logType)
+    }
+
+annotation Log;
+
+class LogProcessor <- AIOProcessor
+    {
+        val type LogType
+
+        LogProcessor(type LogType)
+
+        fun before(clazz AIOClass) AIOClass : override
+            {
+                loo (i = 0 i < clazz.constructors.size i++) {
+                    val constructor = constructors[i]
+                    val logAnnotation = constructor.getAnnotation(Log::class);
+                    if (logAnnotation && type == NOTE) {
+                            clazz.constructors[i] = (params Voi...) -> {
+                                println('#tag: start...')
+                                constructor(params)
+                                println('#tag: finished')
+                            }
+                    }
+                }
+                out clazz
+            }
+
+        fun after(clazz AIOClass) AIOClass : override = clazz
+    }
+
+fun getInjectProcessor(flag Boo) AIOProcessor
+    {
+        if (flag) {
+            out InjectProcessor()
+        } : {
+            out nil
+        }
+    }
+
+annotation Inject;
+
+class InjectProcessor <- AIOProcessor
+    {
+        val valueMap = HashMap<AIOClazz, Voi>()
+
+        fun before(clazz AIOClazz) AIOClazz : override = clazz
+
+        fun after(clazz AIOClazz) AIOClazz : override
+            {
+                val fields = clazz.fields
+                loo (i = 0 i < fields.size i++) {
+                    val field = fields[i]
+                    val hasInject = field.getAnnotation(Inject::class)
+                    if (hasInject) {
+                        val injectValue = values[field.class]
+                        if (!injectValue) {
+                             values[field.class] = field.class.constructor()
+                        }
+                        fields[i] = values[field.class]
+                    }
+                }
+                out clazz
+            }
+    }

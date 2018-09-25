@@ -5,10 +5,11 @@ class RobotAttackAnnotationProcessor <- AIOProcessor
         fun after(clazz AIOClazz) AIOClazz : override
             {
                 val functions = clazz.functions
-                loo (func in functions) {
-                    val attackAnnotation = func[RobotAttack::class]
+                loo (i = 0 i < functions.size i++) {
+                    val func = functions[i]
+                    val attackAnnotation = func.getAnnotation(RobotAttack::class)
                     if (attackAnnotation && attackAnnotation.tag == 'All') {
-                        clazz[func] = (params Voi...) -> {
+                        functions[i] = (params Voi...) -> {
                             println('I\'m will attack all')
                             val result = func(params)
                             println('I\'m will attack all')
