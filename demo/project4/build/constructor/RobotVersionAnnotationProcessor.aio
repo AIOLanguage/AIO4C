@@ -1,21 +1,20 @@
 class RobotVersionAnnotationProcessor <- AIOProcessor
     {
-        fun before(o Voi, params Voi...) Voi : override
+        fun before(clazz AIOClass) AIOClass : override
             {
-                val clazz = o->class
                 val fields = clazz.fields
                 loo (field in fields) {
                     val robotVersionAnnotation = field[RobotVersion::class]
                     if (robotVersionAnnotation) {
                         val minVersion Int = robotVersionAnnotation.min
-                        val currentVersion Int = o->field
+                        val currentVersion Int = field
                         if (minVersion > currentVersion) {
-                            o->field = minVersion
+                            clazz[field] = minVersion
                         }
                     }
                 }
-                out o
+                out clazz
             }
 
-        fun after(o Voi, params Voi..., result Voi...) Voi : override = o
+        fun after(clazz AIOClass) AIOClass : override = clazz
     }

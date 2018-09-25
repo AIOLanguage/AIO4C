@@ -20,7 +20,6 @@ add_executable(
         headers
         #core:
         headers/aio_core/aio_core.h
-        headers/aio_core/aio_build_script.h
         #lang:
         headers/aio_lang/aio_annotatable/aio_annotatable.h
         headers/aio_lang/aio_field/aio_field.h
@@ -155,4 +154,4 @@ add_executable(
         lib4aio/lib4aio_cpp_sources/aio_orbit/aio_particle/aio_particle.cpp
         lib4aio/lib4aio_cpp_sources/utils/pair/aio_pair.cpp
         #---------------------------------------------------------------------------------------------------------------
-        headers/aio_parsing/aio_context_inflater/aio_context_inflater.h sources/aio_parsing/aio_context_inflater/aio_context_inflater.cpp headers/aio_runtime/aio_scheme/aio_scheme.h headers/aio_lang/aio_schemable/aio_schemable.h sources/aio_lang/aio_schemable/aio_schemable.cpp sources/aio_runtime/aio_scheme/aio_scheme.cpp headers/aio_runtime/aio_runtime.h sources/aio_runtime/aio_runtime.cpp)
+        headers/aio_parsing/aio_context_inflater/aio_context_inflater.h sources/aio_parsing/aio_context_inflater/aio_context_inflater.cpp headers/aio_runtime/aio_scheme/aio_scheme.h headers/aio_lang/aio_schemable/aio_schemable.h sources/aio_lang/aio_schemable/aio_schemable.cpp sources/aio_runtime/aio_scheme/aio_scheme.cpp headers/aio_runtime/aio_runtime.h sources/aio_runtime/aio_runtime.cpp headers/aio_runtime/aio_build_runtime.h headers/aio_runtime/aio_program_runtime.h sources/aio_runtime/aio_build_runtime.cpp sources/aio_runtime/aio_program_runtime.cpp lib4aio/lib4aio_cpp_headers/aio_path_util/aio_path_util.h lib4aio/lib4aio_cpp_sources/aio_path_util/aio_path_util.cpp)

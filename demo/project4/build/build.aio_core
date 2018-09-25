@@ -5,10 +5,10 @@ import
         function.RobotAttackAnnotationProcessor::RobotAttackAnnotationProcessor
     }
 
-val main : AIOMain = 'main.main'
+val main Str = 'main.main'
 
-val friendlyRobotProcessor : AIOProcessor = FriendlyRobotAnnotationProcessor()
+val friendlyRobotProcessor AIOProcessor = FriendlyRobotAnnotationProcessor()
 
-val robotVersionProcessor : AIOProcessor = RobotVersionAnnotationProcessor()
+val robotVersionProcessor AIOProcessor = RobotVersionAnnotationProcessor()
 
-val robotAttackProcessor : AIOProcessor = RobotAttackAnnotationProcessor()
+val robotAttackProcessor AIOProcessor = RobotAttackAnnotationProcessor()

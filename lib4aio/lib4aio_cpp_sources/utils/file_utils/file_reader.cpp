@@ -77,7 +77,7 @@ namespace lib4aio {
         } else {
             throw_error_with_tag(
                     FILE_READER_TAG,
-                    "파일 형식이 'aio' 가 아닙니다 (File type is not 'aio')!"
+                    "파일 형식이 'aio' 가 아닙니다 (File runtime_type is not 'aio')!"
             );
         }
     }

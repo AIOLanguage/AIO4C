@@ -19,6 +19,10 @@ class aio_build_script;
 
 class aio_runtime;
 
+class aio_build_runtime;
+
+class aio_program_runtime;
+
 /**
  * 글로벌 핵심.
  */
@@ -45,9 +49,9 @@ private:
 
     ~aio_core();
 
-    aio_runtime *build_runtime;
+    aio_build_runtime *build_runtime;
 
-    aio_runtime *program_runtime;
+    aio_program_runtime *program_runtime;
 
     aio_bundle *new_main_bundle(
             const int argc,

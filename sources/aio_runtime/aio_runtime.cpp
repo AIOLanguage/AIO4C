@@ -14,11 +14,17 @@ static array_list<str_hook> *new_aio_root_type_list()
     return root_type_list;
 }
 
+static
 
-aio_runtime::aio_runtime(const bool has_access)
+aio_runtime::aio_runtime(const aio_runtime_type type)
 {
+    this->runtime_type = type;
     this->file_list = new array_list<aio_file>();
     this->types = new_aio_root_type_list();
+    if (type == AIO_RUNTIME_TYPE_BUILD) {
+        this->types->add(new str_hook(AIOMAIN_TYPE));
+        this->types->add(new str_hook(AIOPROCESSOR_TYPE));
+    }
 }
 
 aio_runtime::~aio_runtime()
@@ -37,4 +43,9 @@ array_list<str_hook> *aio_runtime::get_types() const
 array_list<aio_file> *aio_runtime::get_file_list() const
 {
     return this->file_list;
+}
+
+const aio_runtime_type aio_runtime::get_runtime_type() const
+{
+    return this->runtime_type;
 }

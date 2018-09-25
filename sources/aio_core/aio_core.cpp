@@ -6,6 +6,8 @@
 #include <aio_lang/aio_types/aio_types.h>
 #include <aio_parsing/aio_context_inflater/aio_context_inflater.h>
 #include <aio_runtime/aio_runtime.h>
+#include <aio_runtime/aio_build_runtime.h>
+#include <aio_runtime/aio_program_runtime.h>
 #include <aio_runtime/aio_value/aio_value.h>
 #include <aio_runtime/aio_bundle/aio_bundle.h>
 #include <lib4aio_cpp_headers/utils/color_utils/color_utils.h>
@@ -24,8 +26,6 @@
 
 #define ROOT_FUNCTION_NAME "main"
 
-#define AIO_METADATA_ACCESS true
-
 #include <lib4aio_cpp_headers/utils/log_utils/log_utils.h>
 
 #endif
@@ -39,8 +39,8 @@ aio_core *aio_core::new_aio_core()
 
 aio_core::aio_core()
 {
-    this->build_runtime = new aio_runtime(AIO_METADATA_ACCESS);
-    this->program_runtime = new aio_runtime(!AIO_METADATA_ACCESS);
+    this->build_runtime = new aio_build_runtime();
+    this->program_runtime = new aio_program_runtime(this->build_runtime);
 }
 
 aio_core *aio_core::inflate_aio_config()

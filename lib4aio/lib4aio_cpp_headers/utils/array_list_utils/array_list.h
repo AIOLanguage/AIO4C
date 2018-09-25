@@ -34,7 +34,9 @@ namespace lib4aio {
 
         bool contains_by(function<bool(const T *)> func);
 
-        T *find_by(function<bool(const T *)> func);
+        const T *find_by(function<bool(const T *)> func) const;
+
+        array_list<T> *collect_by(function<bool(T *)> func);
 
         class array_list_iterator {
         public:

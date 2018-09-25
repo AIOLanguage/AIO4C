@@ -15,24 +15,31 @@ using namespace lib4aio;
 
 class aio_file;
 
+typedef enum aio_runtime_type {
+    AIO_RUNTIME_TYPE_BUILD, AIO_RUNTIME_TYPE_PROGRAM
+} aio_runtime_type;
+
 class aio_runtime {
 
 public:
 
-    aio_runtime(const bool has_access);
+    explicit aio_runtime(const aio_runtime_type type);
 
-    ~aio_runtime();
+    virtual ~aio_runtime();
 
     array_list<str_hook> *get_types() const;
 
     array_list<aio_file> *get_file_list() const;
 
+    const aio_runtime_type get_runtime_type() const ;
+
 private:
 
-    bool has_access;
+    aio_runtime_type runtime_type;
 
     array_list<str_hook> *types;
 
     array_list<aio_file> *file_list;
 };
+
 #endif //AIO_RUNTIME_H

@@ -1,13 +1,13 @@
 class FriendlyRobotAnnotationProcessor <- AIOProcessor
     {
-        fun before(o Voi, params Voi...) Voi : override
+        fun before(clazz AIOClass) AIOClass : override
             {
-                val friendlyRobotAnnotation = o.class.annotations[FriendlyRobot::class]
+                val friendlyRobotAnnotation = clazz.annotations[FriendlyRobot::class]
                 if (friendlyRobotAnnotation) {
                     println('Found friendly robot')
                 }
-                out o
+                out clazz
             }
 
-        fun after(o Voi, params Voi..., result Voi...) Voi : override = o
+        fun after(clazz AIOClass) AIOClass : override = clazz
     }

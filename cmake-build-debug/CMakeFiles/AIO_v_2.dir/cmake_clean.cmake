@@ -58,6 +58,9 @@ file(REMOVE_RECURSE
   "CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_schemable/aio_schemable.cpp.o"
   "CMakeFiles/AIO_v_2.dir/sources/aio_runtime/aio_scheme/aio_scheme.cpp.o"
   "CMakeFiles/AIO_v_2.dir/sources/aio_runtime/aio_runtime.cpp.o"
+  "CMakeFiles/AIO_v_2.dir/sources/aio_runtime/aio_build_runtime.cpp.o"
+  "CMakeFiles/AIO_v_2.dir/sources/aio_runtime/aio_program_runtime.cpp.o"
+  "CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/aio_path_util/aio_path_util.cpp.o"
   "AIO_v_2.pdb"
   "AIO_v_2"
 )

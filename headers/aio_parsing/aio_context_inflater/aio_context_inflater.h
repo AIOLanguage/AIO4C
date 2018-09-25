@@ -17,6 +17,8 @@ class aio_file;
 
 class aio_runtime;
 
+class aio_ray;
+
 class aio_context_inflater {
 
 public:
@@ -33,11 +35,15 @@ private:
 
     const char *script_path;
 
+    aio_ray *build_ray;
+
+    void inflate_aio_file(const char *root_path, aio_runtime *runtime);
+
     void inflate_aio_build_script();
 
     void invoke_aio_build_script();
 
-    void inflate_aio_files();
+    void inflate_aio_program();
 
     void inflate_aio_file(
             const str_hook *relative_file_path,

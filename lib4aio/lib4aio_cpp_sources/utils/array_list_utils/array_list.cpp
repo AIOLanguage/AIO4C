@@ -105,20 +105,40 @@ namespace lib4aio {
     }
 
     template<typename T>
-    T *array_list<T>::find_by(function<bool(const T *)> func)
+    const T *array_list<T>::find_by(function<bool(const T *)> func) const
     {
+        bool is_found = false;
+        T *unique_element = nullptr;
         for (unsigned i = 0; i < this->size; ++i) {
             const T *element = this->elements[i];
             if (func(element)) {
-                return element;
+                if (!is_found) {
+                    is_found = true;
+                    unique_element = element;
+                } else {
+                    unique_element = nullptr;
+                }
             }
         }
-        return nullptr;
+        return unique_element;
     }
 
     template<typename T>
     const T *array_list<T>::last()
     {
         return this->elements[this->size - 1];
+    }
+
+    template<typename T>
+    array_list<T> *array_list<T>::collect_by(function<bool(T *)> func)
+    {
+        array_list<T> *collected_list = new array_list<T>();
+        for (unsigned i = 0; i < this->size; ++i) {
+            T *element = this->elements[i];
+            if (func) {
+                collected_list->add(element);
+            }
+        }
+        return collected_list;
     }
 }

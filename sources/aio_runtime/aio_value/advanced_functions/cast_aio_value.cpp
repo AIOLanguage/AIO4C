@@ -32,7 +32,7 @@ aio_value *cast_to_int(const aio_value *value)
     } else if (type->equals_string(BOOLEAN)) {
         return new_aio_int_value(value->get.boolean_acc);
     } else {
-        throw_error_with_str_hook(CAST_AIO_VALUE_TAG, "Can not cast type to Int:", type);
+        throw_error_with_str_hook(CAST_AIO_VALUE_TAG, "Can not cast runtime_type to Int:", type);
     }
 }
 
@@ -60,7 +60,7 @@ aio_value *cast_to_double(const aio_value *value)
     } else if (type->equals_string(BOOLEAN)) {
         return new_aio_double_value(value->get.boolean_acc);
     } else {
-        throw_error_with_str_hook(CAST_AIO_VALUE_TAG, "Can not cast type to Dou:", type);
+        throw_error_with_str_hook(CAST_AIO_VALUE_TAG, "Can not cast runtime_type to Dou:", type);
     }
 }
 
@@ -79,7 +79,7 @@ aio_value *cast_to_string(const aio_value *value)
     } else if (type->equals_string(BOOLEAN)) {
         return new_aio_string_value(boolean_to_string(value->get.boolean_acc));
     } else {
-        throw_error_with_str_hook(CAST_AIO_VALUE_TAG, "Can not cast type to Str:", type);
+        throw_error_with_str_hook(CAST_AIO_VALUE_TAG, "Can not cast runtime_type to Str:", type);
     }
 }
 
@@ -137,7 +137,7 @@ aio_value *cast_to_boolean(const aio_value *value)
     } else if (type->equals_string(BOOLEAN)) {
         return new_aio_boolean_value(value->get.boolean_acc);
     } else {
-        throw_error_with_str_hook(CAST_AIO_VALUE_TAG, "Can not cast type to Boo:", type);
+        throw_error_with_str_hook(CAST_AIO_VALUE_TAG, "Can not cast runtime_type to Boo:", type);
     }
 }
 
@@ -179,6 +179,6 @@ aio_value *cast_to_type(
     } else if (type->equals_string(BOOLEAN)) {
         return cast_to_boolean(value);
     } else {
-        throw_error_with_str_hook(CAST_AIO_VALUE_TAG, "Sorry, AIO Core hasn't supported type:", type);
+        throw_error_with_str_hook(CAST_AIO_VALUE_TAG, "Sorry, AIO Core hasn't supported runtime_type:", type);
     }
 }
