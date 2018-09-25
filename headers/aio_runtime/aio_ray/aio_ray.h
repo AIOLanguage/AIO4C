@@ -17,7 +17,7 @@ class aio_ray {
 
 public:
 
-    static aio_ray *create(const aio_scheme *scheme);
+    static aio_ray *new_aio_ray(const aio_scheme *scheme);
 
     aio_ray *perform();
 

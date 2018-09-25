@@ -42,12 +42,12 @@ const str_hook *aio_bundle::get_file_path()
     return this->file_path;
 }
 
-const struct_list *aio_bundle::get_input_values() const
+struct_list *aio_bundle::get_input_values()
 {
     return this->input_values;
 }
 
-const struct_list *aio_bundle::get_output_values() const
+struct_list *aio_bundle::get_output_values()
 {
     return this->output_values;
 }

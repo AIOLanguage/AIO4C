@@ -33,7 +33,7 @@ class aio_core {
 
 public:
 
-    static aio_core *new_aio_core();
+    static aio_core *create();
 
     aio_core *inflate_aio_config();
 
@@ -41,13 +41,11 @@ public:
 
     aio_core *invoke_aio_context(int argc, char *argv[]);
 
-    void deflate();
+    void destroy();
 
 private:
 
     explicit aio_core();
-
-    ~aio_core();
 
     aio_build_runtime *build_runtime;
 

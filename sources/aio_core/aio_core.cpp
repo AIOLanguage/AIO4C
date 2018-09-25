@@ -26,20 +26,22 @@
 #define ROOT_FUNCTION_NAME "main"
 
 #include <lib4aio_cpp_headers/utils/log_utils/log_utils.h>
+#include <aio_runtime/aio_invoker/aio_invoker.h>
 
 #endif
 
 using namespace lib4aio;
 
-aio_core *aio_core::new_aio_core()
+aio_core *aio_core::create()
 {
     return new aio_core();
 }
 
 aio_core::aio_core()
 {
-    this->build_runtime = new aio_build_runtime();
-    this->program_runtime = new aio_program_runtime(this->build_runtime);
+    aio_build_runtime *build_runtime = new aio_build_runtime();
+    this->build_runtime = build_runtime;
+    this->program_runtime = new aio_program_runtime(build_runtime);
 }
 
 aio_core *aio_core::inflate_aio_config()
@@ -88,27 +90,39 @@ aio_bundle *aio_core::new_main_bundle(const int argc, char **argv, const str_hoo
 
 aio_core *aio_core::inflate_aio_context(const char *script_path)
 {
-    aio_context_inflater *inflater = new aio_context_inflater(this, script_path);
-    inflater->inflate();
-    //------------------------------------------------------------------------------------------------------------------
-    //찌꺼기 수집기:
-    delete inflater;
+    aio_context_inflater::create()
+            ->set_core(this)
+            ->set_script_path(script_path)
+            ->inflate()
+            ->destroy();
     //------------------------------------------------------------------------------------------------------------------
     return this;
 }
 
 aio_core *aio_core::invoke_aio_context(int argc, char **argv)
 {
+    const str_hook *main_path = new str_hook(this->program_runtime->get_entry_path());
+    aio_bundle *bundle = new_main_bundle(argc, argv, main_path);
+    invoke_main_function(bundle);
+    //------------------------------------------------------------------------------------------------------------------
+    struct_list *input_list = bundle->get_input_values();
+    struct_list *output_list = bundle->get_output_values();
+    free_structs_in_list(
+            input_list, [](void *it) {
+                free_aio_value((aio_value *) it);
+            });
+    free_structs_in_list(
+            output_list, [](void *it) {
+                free_aio_value((aio_value *) it);
+            });
+    delete bundle;
+    //------------------------------------------------------------------------------------------------------------------
     return this;
 }
 
-void aio_core::deflate()
-{
-    this->~aio_core();
-}
-
-aio_core::~aio_core()
+void aio_core::destroy()
 {
     delete this->build_runtime;
     delete this->program_runtime;
+    delete this;
 }

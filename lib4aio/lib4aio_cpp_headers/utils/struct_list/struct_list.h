@@ -1,3 +1,5 @@
+#include <functional>
+
 namespace lib4aio
 {
 #ifndef LIB4AIO_STRUCT_LIST_H
@@ -17,7 +19,7 @@ namespace lib4aio
 
     void foreach_in_struct_list(struct_list *list, void (*action)(void *));
 
-    void free_structs_in_list(struct_list *list, void (*free_element)(void *));
+    void free_structs_in_list(struct_list *list, std::function<void(void *)> func);
 
     void free_struct_list(struct_list *list);
 

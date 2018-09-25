@@ -23,11 +23,15 @@ class aio_context_inflater {
 
 public:
 
-    aio_context_inflater(aio_core *core, const char *script_path);
+    static aio_context_inflater *create();
 
-    void inflate();
+    aio_context_inflater *set_core(aio_core *core);
 
-    ~aio_context_inflater();
+    aio_context_inflater *set_script_path(const char *script_path);
+
+    aio_context_inflater *inflate();
+
+    void destroy();
 
 private:
 

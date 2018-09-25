@@ -35,13 +35,13 @@ namespace lib4aio
         list->elements[list->size++] = element;
     }
 
-    void free_structs_in_list(struct_list *list, void (*free_element)(void *))
+    void free_structs_in_list(struct_list *list, std::function<void(void *)> func)
     {
         void **elements = list->elements;
         for (unsigned i = 0; i < list->size; ++i) {
             void *old_string = elements[i];
             list->elements[i] = nullptr;
-            free_element(old_string);
+            func(old_string);
         }
     }
 

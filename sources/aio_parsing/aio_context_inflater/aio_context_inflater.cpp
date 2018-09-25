@@ -2,7 +2,6 @@
 #include <cstdlib>
 #include <aio_core/aio_core.h>
 #include <aio_parsing/aio_context_inflater/aio_context_inflater.h>
-#include <aio_parsing/aio_orbits/aio_build_script/aio_build_script_orbit.h>
 #include <aio_runtime/aio_runtime.h>
 #include <aio_runtime/aio_build_runtime.h>
 #include <lib4aio_cpp_headers/aio_orbit/aio_orbit.h>
@@ -24,6 +23,8 @@
 #include <lib4aio_cpp_headers/aio_path_util/aio_path_util.h>
 #include <aio_runtime/aio_value/advanced_functions/cast_aio_value.h>
 #include <aio_runtime/aio_value/aio_value.h>
+#include <lib4aio_cpp_headers/utils/string_utils/common.h>
+#include <aio_runtime/aio_program_runtime.h>
 
 
 #define AIO_INFLATTER_DEBUG
@@ -44,20 +45,33 @@
 
 using namespace lib4aio;
 
-aio_context_inflater::aio_context_inflater(aio_core *core, const char *script_path)
+
+aio_context_inflater *aio_context_inflater::create()
 {
-    this->core = core;
-    this->script_path = script_path;
+    return new aio_context_inflater();
 }
 
-aio_context_inflater::~aio_context_inflater()
-{}
+aio_context_inflater *aio_context_inflater::set_core(aio_core *core)
+{
+    this->core = core;
+    //------------------------------------------------------------------------------------------------------------------
+    return this;
+}
 
-void aio_context_inflater::inflate()
+aio_context_inflater *aio_context_inflater::set_script_path(const char *script_path)
+{
+    this->script_path = script_path;
+    //------------------------------------------------------------------------------------------------------------------
+    return this;
+}
+
+aio_context_inflater *aio_context_inflater::inflate()
 {
     this->inflate_aio_build_script();
     this->invoke_aio_build_script();
     this->inflate_aio_program();
+    //------------------------------------------------------------------------------------------------------------------
+    return this;
 }
 
 void aio_context_inflater::inflate_aio_build_script()
@@ -80,7 +94,7 @@ void aio_context_inflater::invoke_aio_build_script()
     //Get script instructions:
     const aio_scheme *script_scheme = build_script->get_scheme();
     //Make build script runtime by instructions:
-    this->build_ray = aio_ray::create(script_scheme)->perform();
+    this->build_ray = aio_ray::new_aio_ray(script_scheme)->perform();
     //Get global properties from script runtime and don't close build runtime:
     array_list<aio_variable> *script_properties = this->build_ray->get_variables();
     //Set main:
@@ -97,23 +111,20 @@ void aio_context_inflater::invoke_aio_build_script()
 
 void aio_context_inflater::inflate_aio_program()
 {
-    aio_runtime *program_runtime = reinterpret_cast<aio_runtime *>(this->core->program_runtime);
+    aio_program_runtime *program_runtime = this->core->program_runtime;
     //Get main property value from build script runtime:
     aio_build_runtime *build_runtime = this->core->build_runtime;
     aio_variable *main_property = build_runtime->get_main_property();
     aio_value *relative_main_path = cast_to_string(main_property->get_value());
     const char *string = relative_main_path->get.string_acc;
-    char *main_path = construct_absolute_path(string, this->script_path);
-    inflate_aio_file(main_path, program_runtime);
+    char *absolute_main_path = construct_absolute_path(string, this->script_path);
+    this->inflate_aio_file(absolute_main_path, program_runtime);
+    //Save main path in core:
+    program_runtime->set_entry_path(new_string(string));
     //------------------------------------------------------------------------------------------------------------------
     //찌꺼기 수집기:
-    free(main_path);
+    free(absolute_main_path);
     free_aio_value(relative_main_path);
-    //------------------------------------------------------------------------------------------------------------------
-    //Finish build script runtime;
-    aio_ray *ray= this->build_ray;
-    this->build_ray = nullptr;
-    ray->complete();
 }
 
 void aio_context_inflater::inflate_aio_file(
@@ -158,4 +169,9 @@ void aio_context_inflater::inflate_aio_file(const char *root_path, aio_runtime *
     } else {
         throw_error_with_tag(AIO_INFLATTER_ERROR_TAG, "파일 내용 비어있습니다");
     }
+}
+
+void aio_context_inflater::destroy()
+{
+    delete this;
 }

@@ -29,9 +29,9 @@ public:
 
     const str_hook *get_function_name() const;
 
-    const struct_list *get_input_values() const;
+    struct_list *get_input_values();
 
-    const struct_list *get_output_values() const;
+    struct_list *get_output_values();
 
     ~aio_bundle();
 
