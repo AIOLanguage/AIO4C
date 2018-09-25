@@ -1,14 +1,3 @@
-#include <cctype>
-#include <aio_core/aio_build_script.h>
-#include <aio_parsing/aio_orbits/aio_build_script/aio_particles/aio_build_script_attribute_particle.h>
-#include <lib4aio_cpp_headers/aio_orbit/aio_particle/aio_particle.h>
-#include <lib4aio_cpp_sources/aio_orbit/aio_particle/aio_particle.cpp>
-#include <lib4aio_cpp_headers/utils/string_utils/common.h>
-#include <lib4aio_cpp_headers/utils/char_utils/char_utils.h>
-#include <lib4aio_cpp_headers/utils/error_utils/error_utils.h>
-#include <lib4aio_cpp_headers/utils/point_watcher/point_watcher.h>
-#include <lib4aio_cpp_headers/utils/str_hook_utils/str_hook/str_hook.h>
-
 //#define AIO_BUILD_SCRIPT_ATTRIBUTE_PARTICLE_DEBUG
 
 #define AIO_BUILD_SCRIPT_ATTRIBUTE_PARTICLE_INFO_TAG "AIO_BUILD_SCRIPT_ATTRIBUTE_PARTICLE_INFO"
@@ -153,7 +142,7 @@ void aio_build_script_attribute_particle::handle_value_data(const char symbol, c
                     this->whitespace_counter++;
                 }
 #ifdef AIO_BUILD_SCRIPT_ATTRIBUTE_PARTICLE_DEBUG
-                log_info_int(AIO_BUILD_SCRIPT_ATTRIBUTE_PARTICLE_INFO_TAG, "COUNTER:", this->whitespace_counter);
+            log_info_int(AIO_BUILD_SCRIPT_ATTRIBUTE_PARTICLE_INFO_TAG, "COUNTER:", this->whitespace_counter);
                 log_info_boolean(AIO_BUILD_SCRIPT_ATTRIBUTE_PARTICLE_INFO_TAG, "IS BORDER:",
                                  position == this->right_border - 1);
 #endif

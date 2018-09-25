@@ -2,7 +2,6 @@
 #include <iostream>
 #include <sys/utsname.h>
 #include <aio_core/aio_core.h>
-#include <aio_core/aio_build_script.h>
 #include <aio_lang/aio_types/aio_types.h>
 #include <aio_parsing/aio_context_inflater/aio_context_inflater.h>
 #include <aio_runtime/aio_runtime.h>

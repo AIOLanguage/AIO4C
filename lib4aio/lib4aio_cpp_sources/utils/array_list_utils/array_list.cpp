@@ -65,8 +65,8 @@ namespace lib4aio {
     template<class T>
     void array_list<T>::free_elements()
     {
-        auto size = this->size;
-        auto elements = this->elements;
+        const unsigned size = this->size;
+        T **elements = this->elements;
         for (unsigned i = 0; i < size; ++i) {
             delete elements[i];
         }

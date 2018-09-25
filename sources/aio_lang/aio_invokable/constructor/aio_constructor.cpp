@@ -5,5 +5,5 @@ const aio_inherited_type CONSTRUCTOR_INHERITED_TYPE = AIO_OPEN;
 
 aio_constructor::aio_constructor()
 {
-    this->get_inherited_type() = CONSTRUCTOR_INHERITED_TYPE
+    this->inherited_type = CONSTRUCTOR_INHERITED_TYPE;
 }

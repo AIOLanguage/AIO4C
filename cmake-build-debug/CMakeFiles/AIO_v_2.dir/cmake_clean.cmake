@@ -1,7 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/AIO_v_2.dir/main/main.cpp.o"
   "CMakeFiles/AIO_v_2.dir/sources/aio_core/aio_core.cpp.o"
-  "CMakeFiles/AIO_v_2.dir/sources/aio_core/aio_build_script.cpp.o"
   "CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_annotatable/aio_annotatable.cpp.o"
   "CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_field/aio_field.cpp.o"
   "CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_inheritable/aio_inheritable.cpp.o"

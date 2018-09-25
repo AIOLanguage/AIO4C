@@ -16,6 +16,10 @@ using namespace lib4aio;
 
 struct aio_field {
 
+    explicit aio_field();
+
+    ~aio_field();
+
     str_hook *name;
 
     str_hook *type;

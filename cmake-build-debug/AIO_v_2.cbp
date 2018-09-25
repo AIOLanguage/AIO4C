@@ -150,9 +150,6 @@
 		<Unit filename="/home/ihb/aio/AIO_Backup/headers/aio_parsing/aio_orbits/aio_annotation/aio_annotation_orbit.h">
 			<Option target="AIO_v_2"/>
 		</Unit>
-		<Unit filename="/home/ihb/aio/AIO_Backup/headers/aio_parsing/aio_orbits/aio_build_script/aio_build_script_orbit.h">
-			<Option target="AIO_v_2"/>
-		</Unit>
 		<Unit filename="/home/ihb/aio/AIO_Backup/headers/aio_parsing/aio_orbits/aio_build_script/aio_particles/aio_build_script_attribute_particle.h">
 			<Option target="AIO_v_2"/>
 		</Unit>
@@ -406,9 +403,6 @@
 			<Option target="AIO_v_2"/>
 		</Unit>
 		<Unit filename="/home/ihb/aio/AIO_Backup/sources">
-			<Option target="AIO_v_2"/>
-		</Unit>
-		<Unit filename="/home/ihb/aio/AIO_Backup/sources/aio_core/aio_build_script.cpp">
 			<Option target="AIO_v_2"/>
 		</Unit>
 		<Unit filename="/home/ihb/aio/AIO_Backup/sources/aio_core/aio_core.cpp">

@@ -6,33 +6,69 @@
 
 #IncludeRegexTransform: 
 
-../headers/aio_lang/aio_annotatable/aio_annotatable.h
-
-../headers/aio_lang/aio_space/aio_file/aio_file.h
-aio_lang/aio_space/aio_space.h
+../headers/aio_parsing/aio_orbits/aio_build_script/aio_build_script_orbit.h
+lib4aio_cpp_headers/aio_orbit/aio_orbit.h
 -
 
-../headers/aio_lang/aio_space/aio_space.h
-aio_lang/aio_visibility/aio_visibility.h
--
-aio_lang/aio_annotatable/aio_annotatable.h
+../headers/aio_parsing/aio_orbits/aio_build_script/aio_particles/aio_build_script_attribute_particle.h
+lib4aio_cpp_headers/aio_orbit/aio_particle/aio_particle.h
 -
 
-../headers/aio_lang/aio_visibility/aio_visibility.h
+../lib4aio/lib4aio_cpp_headers/aio_orbit/aio_orbit.h
+functional
+-
+
+../lib4aio/lib4aio_cpp_headers/aio_orbit/aio_particle/aio_particle.h
 
 ../lib4aio/lib4aio_cpp_headers/utils/array_list_utils/array_list.h
+functional
+-
 
-../lib4aio/lib4aio_cpp_headers/utils/pair/pair.h
+../lib4aio/lib4aio_cpp_headers/utils/log_utils/log_utils.h
 
-../lib4aio/lib4aio_cpp_headers/utils/str_hook_utils/str_hook_list/str_hook_list.h
+../lib4aio/lib4aio_cpp_headers/utils/memory_utils/memory_utils.h
+
+../lib4aio/lib4aio_cpp_headers/utils/str_hook_utils/str_hook/str_hook.h
+
+../lib4aio/lib4aio_cpp_sources/aio_orbit/aio_orbit.cpp
+lib4aio_cpp_headers/aio_orbit/aio_orbit.h
+-
 lib4aio_cpp_headers/utils/array_list_utils/array_list.h
 -
+lib4aio_cpp_sources/utils/array_list_utils/array_list.cpp
+-
+lib4aio_cpp_headers/aio_orbit/aio_particle/aio_particle.h
+-
+lib4aio_cpp_sources/aio_orbit/aio_particle/aio_particle.cpp
+-
+lib4aio_cpp_headers/utils/str_hook_utils/str_hook/str_hook.h
+-
 
-/home/ihb/aio/AIO_Backup/sources/aio_lang/aio_space/aio_file/aio_file.cpp
-aio_lang/aio_space/aio_file/aio_file.h
+../lib4aio/lib4aio_cpp_sources/aio_orbit/aio_particle/aio_particle.cpp
+lib4aio_cpp_headers/aio_orbit/aio_particle/aio_particle.h
 -
-lib4aio_cpp_headers/utils/str_hook_utils/str_hook_list/str_hook_list.h
+lib4aio_cpp_headers/utils/str_hook_utils/str_hook/str_hook.h
 -
-lib4aio_cpp_headers/utils/pair/pair.h
+
+../lib4aio/lib4aio_cpp_sources/utils/array_list_utils/array_list.cpp
+lib4aio_cpp_headers/utils/memory_utils/memory_utils.h
+-
+lib4aio_cpp_headers/utils/array_list_utils/array_list.h
+-
+iostream
+-
+
+/home/ihb/aio/AIO_Backup/sources/aio_parsing/aio_orbits/aio_build_script/aio_buil_script_orbit.cpp
+aio_parsing/aio_orbits/aio_build_script/aio_build_script_orbit.h
+-
+aio_parsing/aio_orbits/aio_build_script/aio_particles/aio_build_script_attribute_particle.h
+-
+lib4aio_cpp_sources/aio_orbit/aio_orbit.cpp
+-
+lib4aio_cpp_headers/utils/memory_utils/memory_utils.h
+-
+lib4aio_cpp_headers/utils/array_list_utils/array_list.h
+-
+lib4aio_cpp_headers/utils/log_utils/log_utils.h
 -
 

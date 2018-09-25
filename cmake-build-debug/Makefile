@@ -987,33 +987,6 @@ main/main.cpp.s:
 	$(MAKE) -f CMakeFiles/AIO_v_2.dir/build.make CMakeFiles/AIO_v_2.dir/main/main.cpp.s
 .PHONY : main/main.cpp.s
 
-sources/aio_core/aio_build_script.o: sources/aio_core/aio_build_script.cpp.o
-
-.PHONY : sources/aio_core/aio_build_script.o
-
-# target to build an object file
-sources/aio_core/aio_build_script.cpp.o:
-	$(MAKE) -f CMakeFiles/AIO_v_2.dir/build.make CMakeFiles/AIO_v_2.dir/sources/aio_core/aio_build_script.cpp.o
-.PHONY : sources/aio_core/aio_build_script.cpp.o
-
-sources/aio_core/aio_build_script.i: sources/aio_core/aio_build_script.cpp.i
-
-.PHONY : sources/aio_core/aio_build_script.i
-
-# target to preprocess a source file
-sources/aio_core/aio_build_script.cpp.i:
-	$(MAKE) -f CMakeFiles/AIO_v_2.dir/build.make CMakeFiles/AIO_v_2.dir/sources/aio_core/aio_build_script.cpp.i
-.PHONY : sources/aio_core/aio_build_script.cpp.i
-
-sources/aio_core/aio_build_script.s: sources/aio_core/aio_build_script.cpp.s
-
-.PHONY : sources/aio_core/aio_build_script.s
-
-# target to generate assembly for a file
-sources/aio_core/aio_build_script.cpp.s:
-	$(MAKE) -f CMakeFiles/AIO_v_2.dir/build.make CMakeFiles/AIO_v_2.dir/sources/aio_core/aio_build_script.cpp.s
-.PHONY : sources/aio_core/aio_build_script.cpp.s
-
 sources/aio_core/aio_core.o: sources/aio_core/aio_core.cpp.o
 
 .PHONY : sources/aio_core/aio_core.o
@@ -1902,9 +1875,6 @@ help:
 	@echo "... main/main.o"
 	@echo "... main/main.i"
 	@echo "... main/main.s"
-	@echo "... sources/aio_core/aio_build_script.o"
-	@echo "... sources/aio_core/aio_build_script.i"
-	@echo "... sources/aio_core/aio_build_script.s"
 	@echo "... sources/aio_core/aio_core.o"
 	@echo "... sources/aio_core/aio_core.i"
 	@echo "... sources/aio_core/aio_core.s"

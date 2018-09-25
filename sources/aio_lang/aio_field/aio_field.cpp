@@ -11,29 +11,3 @@ aio_field::~aio_field()
     delete this->name;
     delete this->type;
 }
-
-const str_hook *aio_field::get_name() const
-{
-    return this->name;
-}
-
-const str_hook *aio_field::get_type() const
-{
-    return this->type;
-}
-
-const bool aio_field::is_array_type() const
-{
-
-    return this->is_array;
-}
-
-const bool aio_field::is_mutable_type() const
-{
-    return this->is_mutable;
-}
-
-const aio_visibility aio_field::get_visibility_type() const
-{
-    return this->visibility_type;
-}

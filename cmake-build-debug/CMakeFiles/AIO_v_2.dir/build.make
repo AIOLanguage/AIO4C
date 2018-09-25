@@ -83,22 +83,9 @@ CMakeFiles/AIO_v_2.dir/sources/aio_core/aio_core.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AIO_v_2.dir/sources/aio_core/aio_core.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ihb/aio/AIO_Backup/sources/aio_core/aio_core.cpp -o CMakeFiles/AIO_v_2.dir/sources/aio_core/aio_core.cpp.s
 
-CMakeFiles/AIO_v_2.dir/sources/aio_core/aio_build_script.cpp.o: CMakeFiles/AIO_v_2.dir/flags.make
-CMakeFiles/AIO_v_2.dir/sources/aio_core/aio_build_script.cpp.o: ../sources/aio_core/aio_build_script.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/AIO_v_2.dir/sources/aio_core/aio_build_script.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AIO_v_2.dir/sources/aio_core/aio_build_script.cpp.o -c /home/ihb/aio/AIO_Backup/sources/aio_core/aio_build_script.cpp
-
-CMakeFiles/AIO_v_2.dir/sources/aio_core/aio_build_script.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AIO_v_2.dir/sources/aio_core/aio_build_script.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ihb/aio/AIO_Backup/sources/aio_core/aio_build_script.cpp > CMakeFiles/AIO_v_2.dir/sources/aio_core/aio_build_script.cpp.i
-
-CMakeFiles/AIO_v_2.dir/sources/aio_core/aio_build_script.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AIO_v_2.dir/sources/aio_core/aio_build_script.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ihb/aio/AIO_Backup/sources/aio_core/aio_build_script.cpp -o CMakeFiles/AIO_v_2.dir/sources/aio_core/aio_build_script.cpp.s
-
 CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_annotatable/aio_annotatable.cpp.o: CMakeFiles/AIO_v_2.dir/flags.make
 CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_annotatable/aio_annotatable.cpp.o: ../sources/aio_lang/aio_annotatable/aio_annotatable.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_annotatable/aio_annotatable.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_annotatable/aio_annotatable.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_annotatable/aio_annotatable.cpp.o -c /home/ihb/aio/AIO_Backup/sources/aio_lang/aio_annotatable/aio_annotatable.cpp
 
 CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_annotatable/aio_annotatable.cpp.i: cmake_force
@@ -111,7 +98,7 @@ CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_annotatable/aio_annotatable.cpp.s: c
 
 CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_field/aio_field.cpp.o: CMakeFiles/AIO_v_2.dir/flags.make
 CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_field/aio_field.cpp.o: ../sources/aio_lang/aio_field/aio_field.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_field/aio_field.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_field/aio_field.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_field/aio_field.cpp.o -c /home/ihb/aio/AIO_Backup/sources/aio_lang/aio_field/aio_field.cpp
 
 CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_field/aio_field.cpp.i: cmake_force
@@ -124,7 +111,7 @@ CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_field/aio_field.cpp.s: cmake_force
 
 CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_inheritable/aio_inheritable.cpp.o: CMakeFiles/AIO_v_2.dir/flags.make
 CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_inheritable/aio_inheritable.cpp.o: ../sources/aio_lang/aio_inheritable/aio_inheritable.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_inheritable/aio_inheritable.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_inheritable/aio_inheritable.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_inheritable/aio_inheritable.cpp.o -c /home/ihb/aio/AIO_Backup/sources/aio_lang/aio_inheritable/aio_inheritable.cpp
 
 CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_inheritable/aio_inheritable.cpp.i: cmake_force
@@ -137,7 +124,7 @@ CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_inheritable/aio_inheritable.cpp.s: c
 
 CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_invokable/aio_invokable.cpp.o: CMakeFiles/AIO_v_2.dir/flags.make
 CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_invokable/aio_invokable.cpp.o: ../sources/aio_lang/aio_invokable/aio_invokable.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_invokable/aio_invokable.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_invokable/aio_invokable.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_invokable/aio_invokable.cpp.o -c /home/ihb/aio/AIO_Backup/sources/aio_lang/aio_invokable/aio_invokable.cpp
 
 CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_invokable/aio_invokable.cpp.i: cmake_force
@@ -150,7 +137,7 @@ CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_invokable/aio_invokable.cpp.s: cmake
 
 CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_invokable/constructor/aio_constructor.cpp.o: CMakeFiles/AIO_v_2.dir/flags.make
 CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_invokable/constructor/aio_constructor.cpp.o: ../sources/aio_lang/aio_invokable/constructor/aio_constructor.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_invokable/constructor/aio_constructor.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_invokable/constructor/aio_constructor.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_invokable/constructor/aio_constructor.cpp.o -c /home/ihb/aio/AIO_Backup/sources/aio_lang/aio_invokable/constructor/aio_constructor.cpp
 
 CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_invokable/constructor/aio_constructor.cpp.i: cmake_force
@@ -163,7 +150,7 @@ CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_invokable/constructor/aio_constructo
 
 CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_invokable/function/aio_function.cpp.o: CMakeFiles/AIO_v_2.dir/flags.make
 CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_invokable/function/aio_function.cpp.o: ../sources/aio_lang/aio_invokable/function/aio_function.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_invokable/function/aio_function.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_invokable/function/aio_function.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_invokable/function/aio_function.cpp.o -c /home/ihb/aio/AIO_Backup/sources/aio_lang/aio_invokable/function/aio_function.cpp
 
 CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_invokable/function/aio_function.cpp.i: cmake_force
@@ -176,7 +163,7 @@ CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_invokable/function/aio_function.cpp.
 
 CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_modifiers/aio_modifiers.cpp.o: CMakeFiles/AIO_v_2.dir/flags.make
 CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_modifiers/aio_modifiers.cpp.o: ../sources/aio_lang/aio_modifiers/aio_modifiers.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_modifiers/aio_modifiers.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_modifiers/aio_modifiers.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_modifiers/aio_modifiers.cpp.o -c /home/ihb/aio/AIO_Backup/sources/aio_lang/aio_modifiers/aio_modifiers.cpp
 
 CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_modifiers/aio_modifiers.cpp.i: cmake_force
@@ -189,7 +176,7 @@ CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_modifiers/aio_modifiers.cpp.s: cmake
 
 CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_space.cpp.o: CMakeFiles/AIO_v_2.dir/flags.make
 CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_space.cpp.o: ../sources/aio_lang/aio_space/aio_space.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_space.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_space.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_space.cpp.o -c /home/ihb/aio/AIO_Backup/sources/aio_lang/aio_space/aio_space.cpp
 
 CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_space.cpp.i: cmake_force
@@ -202,7 +189,7 @@ CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_space.cpp.s: cmake_force
 
 CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_file/aio_file.cpp.o: CMakeFiles/AIO_v_2.dir/flags.make
 CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_file/aio_file.cpp.o: ../sources/aio_lang/aio_space/aio_file/aio_file.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_file/aio_file.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_file/aio_file.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_file/aio_file.cpp.o -c /home/ihb/aio/AIO_Backup/sources/aio_lang/aio_space/aio_file/aio_file.cpp
 
 CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_file/aio_file.cpp.i: cmake_force
@@ -215,7 +202,7 @@ CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_file/aio_file.cpp.s: cmake
 
 CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_initializable/aio_initializable.cpp.o: CMakeFiles/AIO_v_2.dir/flags.make
 CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_initializable/aio_initializable.cpp.o: ../sources/aio_lang/aio_space/aio_initializable/aio_initializable.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_initializable/aio_initializable.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_initializable/aio_initializable.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_initializable/aio_initializable.cpp.o -c /home/ihb/aio/AIO_Backup/sources/aio_lang/aio_space/aio_initializable/aio_initializable.cpp
 
 CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_initializable/aio_initializable.cpp.i: cmake_force
@@ -228,7 +215,7 @@ CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_initializable/aio_initiali
 
 CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_initializable/aio_class/aio_class.cpp.o: CMakeFiles/AIO_v_2.dir/flags.make
 CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_initializable/aio_class/aio_class.cpp.o: ../sources/aio_lang/aio_space/aio_initializable/aio_class/aio_class.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_initializable/aio_class/aio_class.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_initializable/aio_class/aio_class.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_initializable/aio_class/aio_class.cpp.o -c /home/ihb/aio/AIO_Backup/sources/aio_lang/aio_space/aio_initializable/aio_class/aio_class.cpp
 
 CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_initializable/aio_class/aio_class.cpp.i: cmake_force
@@ -241,7 +228,7 @@ CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_initializable/aio_class/ai
 
 CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_initializable/aio_enum/aio_enum.cpp.o: CMakeFiles/AIO_v_2.dir/flags.make
 CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_initializable/aio_enum/aio_enum.cpp.o: ../sources/aio_lang/aio_space/aio_initializable/aio_enum/aio_enum.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_initializable/aio_enum/aio_enum.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_initializable/aio_enum/aio_enum.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_initializable/aio_enum/aio_enum.cpp.o -c /home/ihb/aio/AIO_Backup/sources/aio_lang/aio_space/aio_initializable/aio_enum/aio_enum.cpp
 
 CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_initializable/aio_enum/aio_enum.cpp.i: cmake_force
@@ -254,7 +241,7 @@ CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_initializable/aio_enum/aio
 
 CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_scope/aio_scope.cpp.o: CMakeFiles/AIO_v_2.dir/flags.make
 CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_scope/aio_scope.cpp.o: ../sources/aio_lang/aio_space/aio_scope/aio_scope.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_scope/aio_scope.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_scope/aio_scope.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_scope/aio_scope.cpp.o -c /home/ihb/aio/AIO_Backup/sources/aio_lang/aio_space/aio_scope/aio_scope.cpp
 
 CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_scope/aio_scope.cpp.i: cmake_force
@@ -267,7 +254,7 @@ CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_scope/aio_scope.cpp.s: cma
 
 CMakeFiles/AIO_v_2.dir/sources/aio_parsing/aio_orbits/aio_build_script/aio_buil_script_orbit.cpp.o: CMakeFiles/AIO_v_2.dir/flags.make
 CMakeFiles/AIO_v_2.dir/sources/aio_parsing/aio_orbits/aio_build_script/aio_buil_script_orbit.cpp.o: ../sources/aio_parsing/aio_orbits/aio_build_script/aio_buil_script_orbit.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/AIO_v_2.dir/sources/aio_parsing/aio_orbits/aio_build_script/aio_buil_script_orbit.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/AIO_v_2.dir/sources/aio_parsing/aio_orbits/aio_build_script/aio_buil_script_orbit.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AIO_v_2.dir/sources/aio_parsing/aio_orbits/aio_build_script/aio_buil_script_orbit.cpp.o -c /home/ihb/aio/AIO_Backup/sources/aio_parsing/aio_orbits/aio_build_script/aio_buil_script_orbit.cpp
 
 CMakeFiles/AIO_v_2.dir/sources/aio_parsing/aio_orbits/aio_build_script/aio_buil_script_orbit.cpp.i: cmake_force
@@ -280,7 +267,7 @@ CMakeFiles/AIO_v_2.dir/sources/aio_parsing/aio_orbits/aio_build_script/aio_buil_
 
 CMakeFiles/AIO_v_2.dir/sources/aio_parsing/aio_orbits/aio_build_script/aio_particles/aio_build_script_attribute_particle.cpp.o: CMakeFiles/AIO_v_2.dir/flags.make
 CMakeFiles/AIO_v_2.dir/sources/aio_parsing/aio_orbits/aio_build_script/aio_particles/aio_build_script_attribute_particle.cpp.o: ../sources/aio_parsing/aio_orbits/aio_build_script/aio_particles/aio_build_script_attribute_particle.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/AIO_v_2.dir/sources/aio_parsing/aio_orbits/aio_build_script/aio_particles/aio_build_script_attribute_particle.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/AIO_v_2.dir/sources/aio_parsing/aio_orbits/aio_build_script/aio_particles/aio_build_script_attribute_particle.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AIO_v_2.dir/sources/aio_parsing/aio_orbits/aio_build_script/aio_particles/aio_build_script_attribute_particle.cpp.o -c /home/ihb/aio/AIO_Backup/sources/aio_parsing/aio_orbits/aio_build_script/aio_particles/aio_build_script_attribute_particle.cpp
 
 CMakeFiles/AIO_v_2.dir/sources/aio_parsing/aio_orbits/aio_build_script/aio_particles/aio_build_script_attribute_particle.cpp.i: cmake_force
@@ -293,7 +280,7 @@ CMakeFiles/AIO_v_2.dir/sources/aio_parsing/aio_orbits/aio_build_script/aio_parti
 
 CMakeFiles/AIO_v_2.dir/sources/aio_parsing/aio_orbits/aio_file/aio_file_orbit.cpp.o: CMakeFiles/AIO_v_2.dir/flags.make
 CMakeFiles/AIO_v_2.dir/sources/aio_parsing/aio_orbits/aio_file/aio_file_orbit.cpp.o: ../sources/aio_parsing/aio_orbits/aio_file/aio_file_orbit.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/AIO_v_2.dir/sources/aio_parsing/aio_orbits/aio_file/aio_file_orbit.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/AIO_v_2.dir/sources/aio_parsing/aio_orbits/aio_file/aio_file_orbit.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AIO_v_2.dir/sources/aio_parsing/aio_orbits/aio_file/aio_file_orbit.cpp.o -c /home/ihb/aio/AIO_Backup/sources/aio_parsing/aio_orbits/aio_file/aio_file_orbit.cpp
 
 CMakeFiles/AIO_v_2.dir/sources/aio_parsing/aio_orbits/aio_file/aio_file_orbit.cpp.i: cmake_force
@@ -306,7 +293,7 @@ CMakeFiles/AIO_v_2.dir/sources/aio_parsing/aio_orbits/aio_file/aio_file_orbit.cp
 
 CMakeFiles/AIO_v_2.dir/sources/aio_runtime/aio_value/aio_value.cpp.o: CMakeFiles/AIO_v_2.dir/flags.make
 CMakeFiles/AIO_v_2.dir/sources/aio_runtime/aio_value/aio_value.cpp.o: ../sources/aio_runtime/aio_value/aio_value.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/AIO_v_2.dir/sources/aio_runtime/aio_value/aio_value.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/AIO_v_2.dir/sources/aio_runtime/aio_value/aio_value.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AIO_v_2.dir/sources/aio_runtime/aio_value/aio_value.cpp.o -c /home/ihb/aio/AIO_Backup/sources/aio_runtime/aio_value/aio_value.cpp
 
 CMakeFiles/AIO_v_2.dir/sources/aio_runtime/aio_value/aio_value.cpp.i: cmake_force
@@ -319,7 +306,7 @@ CMakeFiles/AIO_v_2.dir/sources/aio_runtime/aio_value/aio_value.cpp.s: cmake_forc
 
 CMakeFiles/AIO_v_2.dir/sources/aio_runtime/aio_bundle/aio_bundle.cpp.o: CMakeFiles/AIO_v_2.dir/flags.make
 CMakeFiles/AIO_v_2.dir/sources/aio_runtime/aio_bundle/aio_bundle.cpp.o: ../sources/aio_runtime/aio_bundle/aio_bundle.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/AIO_v_2.dir/sources/aio_runtime/aio_bundle/aio_bundle.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/AIO_v_2.dir/sources/aio_runtime/aio_bundle/aio_bundle.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AIO_v_2.dir/sources/aio_runtime/aio_bundle/aio_bundle.cpp.o -c /home/ihb/aio/AIO_Backup/sources/aio_runtime/aio_bundle/aio_bundle.cpp
 
 CMakeFiles/AIO_v_2.dir/sources/aio_runtime/aio_bundle/aio_bundle.cpp.i: cmake_force
@@ -332,7 +319,7 @@ CMakeFiles/AIO_v_2.dir/sources/aio_runtime/aio_bundle/aio_bundle.cpp.s: cmake_fo
 
 CMakeFiles/AIO_v_2.dir/sources/aio_runtime/aio_invoker/aio_invoker.cpp.o: CMakeFiles/AIO_v_2.dir/flags.make
 CMakeFiles/AIO_v_2.dir/sources/aio_runtime/aio_invoker/aio_invoker.cpp.o: ../sources/aio_runtime/aio_invoker/aio_invoker.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/AIO_v_2.dir/sources/aio_runtime/aio_invoker/aio_invoker.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/AIO_v_2.dir/sources/aio_runtime/aio_invoker/aio_invoker.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AIO_v_2.dir/sources/aio_runtime/aio_invoker/aio_invoker.cpp.o -c /home/ihb/aio/AIO_Backup/sources/aio_runtime/aio_invoker/aio_invoker.cpp
 
 CMakeFiles/AIO_v_2.dir/sources/aio_runtime/aio_invoker/aio_invoker.cpp.i: cmake_force
@@ -345,7 +332,7 @@ CMakeFiles/AIO_v_2.dir/sources/aio_runtime/aio_invoker/aio_invoker.cpp.s: cmake_
 
 CMakeFiles/AIO_v_2.dir/sources/aio_runtime/aio_value/advanced_functions/log_aio_value.cpp.o: CMakeFiles/AIO_v_2.dir/flags.make
 CMakeFiles/AIO_v_2.dir/sources/aio_runtime/aio_value/advanced_functions/log_aio_value.cpp.o: ../sources/aio_runtime/aio_value/advanced_functions/log_aio_value.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/AIO_v_2.dir/sources/aio_runtime/aio_value/advanced_functions/log_aio_value.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/AIO_v_2.dir/sources/aio_runtime/aio_value/advanced_functions/log_aio_value.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AIO_v_2.dir/sources/aio_runtime/aio_value/advanced_functions/log_aio_value.cpp.o -c /home/ihb/aio/AIO_Backup/sources/aio_runtime/aio_value/advanced_functions/log_aio_value.cpp
 
 CMakeFiles/AIO_v_2.dir/sources/aio_runtime/aio_value/advanced_functions/log_aio_value.cpp.i: cmake_force
@@ -358,7 +345,7 @@ CMakeFiles/AIO_v_2.dir/sources/aio_runtime/aio_value/advanced_functions/log_aio_
 
 CMakeFiles/AIO_v_2.dir/sources/aio_runtime/aio_value/advanced_functions/cast_aio_value.cpp.o: CMakeFiles/AIO_v_2.dir/flags.make
 CMakeFiles/AIO_v_2.dir/sources/aio_runtime/aio_value/advanced_functions/cast_aio_value.cpp.o: ../sources/aio_runtime/aio_value/advanced_functions/cast_aio_value.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/AIO_v_2.dir/sources/aio_runtime/aio_value/advanced_functions/cast_aio_value.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/AIO_v_2.dir/sources/aio_runtime/aio_value/advanced_functions/cast_aio_value.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AIO_v_2.dir/sources/aio_runtime/aio_value/advanced_functions/cast_aio_value.cpp.o -c /home/ihb/aio/AIO_Backup/sources/aio_runtime/aio_value/advanced_functions/cast_aio_value.cpp
 
 CMakeFiles/AIO_v_2.dir/sources/aio_runtime/aio_value/advanced_functions/cast_aio_value.cpp.i: cmake_force
@@ -371,7 +358,7 @@ CMakeFiles/AIO_v_2.dir/sources/aio_runtime/aio_value/advanced_functions/cast_aio
 
 CMakeFiles/AIO_v_2.dir/sources/aio_runtime/aio_value/advanced_functions/compare_aio_value.cpp.o: CMakeFiles/AIO_v_2.dir/flags.make
 CMakeFiles/AIO_v_2.dir/sources/aio_runtime/aio_value/advanced_functions/compare_aio_value.cpp.o: ../sources/aio_runtime/aio_value/advanced_functions/compare_aio_value.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/AIO_v_2.dir/sources/aio_runtime/aio_value/advanced_functions/compare_aio_value.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/AIO_v_2.dir/sources/aio_runtime/aio_value/advanced_functions/compare_aio_value.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AIO_v_2.dir/sources/aio_runtime/aio_value/advanced_functions/compare_aio_value.cpp.o -c /home/ihb/aio/AIO_Backup/sources/aio_runtime/aio_value/advanced_functions/compare_aio_value.cpp
 
 CMakeFiles/AIO_v_2.dir/sources/aio_runtime/aio_value/advanced_functions/compare_aio_value.cpp.i: cmake_force
@@ -384,7 +371,7 @@ CMakeFiles/AIO_v_2.dir/sources/aio_runtime/aio_value/advanced_functions/compare_
 
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/aio_orbit/aio_orbit.cpp.o: CMakeFiles/AIO_v_2.dir/flags.make
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/aio_orbit/aio_orbit.cpp.o: ../lib4aio/lib4aio_cpp_sources/aio_orbit/aio_orbit.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/aio_orbit/aio_orbit.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/aio_orbit/aio_orbit.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/aio_orbit/aio_orbit.cpp.o -c /home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_sources/aio_orbit/aio_orbit.cpp
 
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/aio_orbit/aio_orbit.cpp.i: cmake_force
@@ -397,7 +384,7 @@ CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/aio_orbit/aio_orbit.cpp.s: cm
 
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/array_list_utils/array_list.cpp.o: CMakeFiles/AIO_v_2.dir/flags.make
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/array_list_utils/array_list.cpp.o: ../lib4aio/lib4aio_cpp_sources/utils/array_list_utils/array_list.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/array_list_utils/array_list.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/array_list_utils/array_list.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/array_list_utils/array_list.cpp.o -c /home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_sources/utils/array_list_utils/array_list.cpp
 
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/array_list_utils/array_list.cpp.i: cmake_force
@@ -410,7 +397,7 @@ CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/array_list_utils/array_
 
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/char_utils/char_utils.cpp.o: CMakeFiles/AIO_v_2.dir/flags.make
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/char_utils/char_utils.cpp.o: ../lib4aio/lib4aio_cpp_sources/utils/char_utils/char_utils.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/char_utils/char_utils.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/char_utils/char_utils.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/char_utils/char_utils.cpp.o -c /home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_sources/utils/char_utils/char_utils.cpp
 
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/char_utils/char_utils.cpp.i: cmake_force
@@ -423,7 +410,7 @@ CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/char_utils/char_utils.c
 
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/error_utils/error_utils.cpp.o: CMakeFiles/AIO_v_2.dir/flags.make
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/error_utils/error_utils.cpp.o: ../lib4aio/lib4aio_cpp_sources/utils/error_utils/error_utils.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/error_utils/error_utils.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/error_utils/error_utils.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/error_utils/error_utils.cpp.o -c /home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_sources/utils/error_utils/error_utils.cpp
 
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/error_utils/error_utils.cpp.i: cmake_force
@@ -436,7 +423,7 @@ CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/error_utils/error_utils
 
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/log_utils/log_utils.cpp.o: CMakeFiles/AIO_v_2.dir/flags.make
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/log_utils/log_utils.cpp.o: ../lib4aio/lib4aio_cpp_sources/utils/log_utils/log_utils.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/log_utils/log_utils.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/log_utils/log_utils.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/log_utils/log_utils.cpp.o -c /home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_sources/utils/log_utils/log_utils.cpp
 
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/log_utils/log_utils.cpp.i: cmake_force
@@ -449,7 +436,7 @@ CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/log_utils/log_utils.cpp
 
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/memory_utils/memory_utils.cpp.o: CMakeFiles/AIO_v_2.dir/flags.make
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/memory_utils/memory_utils.cpp.o: ../lib4aio/lib4aio_cpp_sources/utils/memory_utils/memory_utils.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/memory_utils/memory_utils.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/memory_utils/memory_utils.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/memory_utils/memory_utils.cpp.o -c /home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_sources/utils/memory_utils/memory_utils.cpp
 
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/memory_utils/memory_utils.cpp.i: cmake_force
@@ -462,7 +449,7 @@ CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/memory_utils/memory_uti
 
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/point_watcher/point_watcher.cpp.o: CMakeFiles/AIO_v_2.dir/flags.make
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/point_watcher/point_watcher.cpp.o: ../lib4aio/lib4aio_cpp_sources/utils/point_watcher/point_watcher.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building CXX object CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/point_watcher/point_watcher.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/point_watcher/point_watcher.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/point_watcher/point_watcher.cpp.o -c /home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_sources/utils/point_watcher/point_watcher.cpp
 
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/point_watcher/point_watcher.cpp.i: cmake_force
@@ -475,7 +462,7 @@ CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/point_watcher/point_wat
 
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_builder/str_builder.cpp.o: CMakeFiles/AIO_v_2.dir/flags.make
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_builder/str_builder.cpp.o: ../lib4aio/lib4aio_cpp_sources/utils/str_builder/str_builder.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building CXX object CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_builder/str_builder.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building CXX object CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_builder/str_builder.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_builder/str_builder.cpp.o -c /home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_sources/utils/str_builder/str_builder.cpp
 
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_builder/str_builder.cpp.i: cmake_force
@@ -488,7 +475,7 @@ CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_builder/str_builder
 
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/str_hook.cpp.o: CMakeFiles/AIO_v_2.dir/flags.make
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/str_hook.cpp.o: ../lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/str_hook.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building CXX object CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/str_hook.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building CXX object CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/str_hook.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/str_hook.cpp.o -c /home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/str_hook.cpp
 
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/str_hook.cpp.i: cmake_force
@@ -501,7 +488,7 @@ CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook
 
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_cast.cpp.o: CMakeFiles/AIO_v_2.dir/flags.make
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_cast.cpp.o: ../lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_cast.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building CXX object CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_cast.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building CXX object CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_cast.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_cast.cpp.o -c /home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_cast.cpp
 
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_cast.cpp.i: cmake_force
@@ -514,7 +501,7 @@ CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook
 
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_error.cpp.o: CMakeFiles/AIO_v_2.dir/flags.make
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_error.cpp.o: ../lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_error.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building CXX object CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_error.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building CXX object CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_error.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_error.cpp.o -c /home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_error.cpp
 
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_error.cpp.i: cmake_force
@@ -527,7 +514,7 @@ CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook
 
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_log.cpp.o: CMakeFiles/AIO_v_2.dir/flags.make
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_log.cpp.o: ../lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_log.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building CXX object CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_log.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building CXX object CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_log.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_log.cpp.o -c /home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_log.cpp
 
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_log.cpp.i: cmake_force
@@ -540,7 +527,7 @@ CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook
 
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_matcher.cpp.o: CMakeFiles/AIO_v_2.dir/flags.make
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_matcher.cpp.o: ../lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_matcher.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building CXX object CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_matcher.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building CXX object CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_matcher.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_matcher.cpp.o -c /home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_matcher.cpp
 
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_matcher.cpp.i: cmake_force
@@ -553,7 +540,7 @@ CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook
 
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_split.cpp.o: CMakeFiles/AIO_v_2.dir/flags.make
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_split.cpp.o: ../lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_split.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building CXX object CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_split.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building CXX object CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_split.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_split.cpp.o -c /home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_split.cpp
 
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_split.cpp.i: cmake_force
@@ -566,7 +553,7 @@ CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook
 
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_trim.cpp.o: CMakeFiles/AIO_v_2.dir/flags.make
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_trim.cpp.o: ../lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_trim.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building CXX object CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_trim.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building CXX object CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_trim.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_trim.cpp.o -c /home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_trim.cpp
 
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_trim.cpp.i: cmake_force
@@ -579,7 +566,7 @@ CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook
 
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_iterator/str_hook_iterator.cpp.o: CMakeFiles/AIO_v_2.dir/flags.make
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_iterator/str_hook_iterator.cpp.o: ../lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_iterator/str_hook_iterator.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building CXX object CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_iterator/str_hook_iterator.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building CXX object CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_iterator/str_hook_iterator.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_iterator/str_hook_iterator.cpp.o -c /home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_iterator/str_hook_iterator.cpp
 
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_iterator/str_hook_iterator.cpp.i: cmake_force
@@ -592,7 +579,7 @@ CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook
 
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/advanced_functions/str_hook_list_log.cpp.o: CMakeFiles/AIO_v_2.dir/flags.make
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/advanced_functions/str_hook_list_log.cpp.o: ../lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/advanced_functions/str_hook_list_log.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building CXX object CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/advanced_functions/str_hook_list_log.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building CXX object CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/advanced_functions/str_hook_list_log.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/advanced_functions/str_hook_list_log.cpp.o -c /home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/advanced_functions/str_hook_list_log.cpp
 
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/advanced_functions/str_hook_list_log.cpp.i: cmake_force
@@ -605,7 +592,7 @@ CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook
 
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/advanced_functions/str_hook_trim.cpp.o: CMakeFiles/AIO_v_2.dir/flags.make
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/advanced_functions/str_hook_trim.cpp.o: ../lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/advanced_functions/str_hook_trim.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Building CXX object CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/advanced_functions/str_hook_trim.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building CXX object CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/advanced_functions/str_hook_trim.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/advanced_functions/str_hook_trim.cpp.o -c /home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/advanced_functions/str_hook_trim.cpp
 
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/advanced_functions/str_hook_trim.cpp.i: cmake_force
@@ -618,7 +605,7 @@ CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook
 
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/str_hook_list.cpp.o: CMakeFiles/AIO_v_2.dir/flags.make
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/str_hook_list.cpp.o: ../lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/str_hook_list.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Building CXX object CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/str_hook_list.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Building CXX object CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/str_hook_list.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/str_hook_list.cpp.o -c /home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/str_hook_list.cpp
 
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/str_hook_list.cpp.i: cmake_force
@@ -631,7 +618,7 @@ CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook
 
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/string_utils/cast.cpp.o: CMakeFiles/AIO_v_2.dir/flags.make
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/string_utils/cast.cpp.o: ../lib4aio/lib4aio_cpp_sources/utils/string_utils/cast.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Building CXX object CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/string_utils/cast.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Building CXX object CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/string_utils/cast.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/string_utils/cast.cpp.o -c /home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_sources/utils/string_utils/cast.cpp
 
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/string_utils/cast.cpp.i: cmake_force
@@ -644,7 +631,7 @@ CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/string_utils/cast.cpp.s
 
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/string_utils/common.cpp.o: CMakeFiles/AIO_v_2.dir/flags.make
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/string_utils/common.cpp.o: ../lib4aio/lib4aio_cpp_sources/utils/string_utils/common.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Building CXX object CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/string_utils/common.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Building CXX object CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/string_utils/common.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/string_utils/common.cpp.o -c /home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_sources/utils/string_utils/common.cpp
 
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/string_utils/common.cpp.i: cmake_force
@@ -657,7 +644,7 @@ CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/string_utils/common.cpp
 
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/string_utils/match.cpp.o: CMakeFiles/AIO_v_2.dir/flags.make
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/string_utils/match.cpp.o: ../lib4aio/lib4aio_cpp_sources/utils/string_utils/match.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Building CXX object CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/string_utils/match.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Building CXX object CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/string_utils/match.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/string_utils/match.cpp.o -c /home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_sources/utils/string_utils/match.cpp
 
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/string_utils/match.cpp.i: cmake_force
@@ -670,7 +657,7 @@ CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/string_utils/match.cpp.
 
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/string_utils/split.cpp.o: CMakeFiles/AIO_v_2.dir/flags.make
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/string_utils/split.cpp.o: ../lib4aio/lib4aio_cpp_sources/utils/string_utils/split.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Building CXX object CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/string_utils/split.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Building CXX object CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/string_utils/split.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/string_utils/split.cpp.o -c /home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_sources/utils/string_utils/split.cpp
 
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/string_utils/split.cpp.i: cmake_force
@@ -683,7 +670,7 @@ CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/string_utils/split.cpp.
 
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/string_utils/suffix_prefix.cpp.o: CMakeFiles/AIO_v_2.dir/flags.make
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/string_utils/suffix_prefix.cpp.o: ../lib4aio/lib4aio_cpp_sources/utils/string_utils/suffix_prefix.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Building CXX object CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/string_utils/suffix_prefix.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Building CXX object CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/string_utils/suffix_prefix.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/string_utils/suffix_prefix.cpp.o -c /home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_sources/utils/string_utils/suffix_prefix.cpp
 
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/string_utils/suffix_prefix.cpp.i: cmake_force
@@ -696,7 +683,7 @@ CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/string_utils/suffix_pre
 
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/string_utils/trim.cpp.o: CMakeFiles/AIO_v_2.dir/flags.make
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/string_utils/trim.cpp.o: ../lib4aio/lib4aio_cpp_sources/utils/string_utils/trim.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Building CXX object CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/string_utils/trim.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Building CXX object CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/string_utils/trim.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/string_utils/trim.cpp.o -c /home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_sources/utils/string_utils/trim.cpp
 
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/string_utils/trim.cpp.i: cmake_force
@@ -709,7 +696,7 @@ CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/string_utils/trim.cpp.s
 
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/struct_list/struct_list.cpp.o: CMakeFiles/AIO_v_2.dir/flags.make
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/struct_list/struct_list.cpp.o: ../lib4aio/lib4aio_cpp_sources/utils/struct_list/struct_list.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_51) "Building CXX object CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/struct_list/struct_list.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Building CXX object CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/struct_list/struct_list.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/struct_list/struct_list.cpp.o -c /home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_sources/utils/struct_list/struct_list.cpp
 
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/struct_list/struct_list.cpp.i: cmake_force
@@ -722,7 +709,7 @@ CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/struct_list/struct_list
 
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/int_list_utils/int_list.cpp.o: CMakeFiles/AIO_v_2.dir/flags.make
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/int_list_utils/int_list.cpp.o: ../lib4aio/lib4aio_cpp_sources/utils/int_list_utils/int_list.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_52) "Building CXX object CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/int_list_utils/int_list.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_51) "Building CXX object CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/int_list_utils/int_list.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/int_list_utils/int_list.cpp.o -c /home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_sources/utils/int_list_utils/int_list.cpp
 
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/int_list_utils/int_list.cpp.i: cmake_force
@@ -735,7 +722,7 @@ CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/int_list_utils/int_list
 
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/file_utils/file_reader.cpp.o: CMakeFiles/AIO_v_2.dir/flags.make
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/file_utils/file_reader.cpp.o: ../lib4aio/lib4aio_cpp_sources/utils/file_utils/file_reader.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_53) "Building CXX object CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/file_utils/file_reader.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_52) "Building CXX object CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/file_utils/file_reader.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/file_utils/file_reader.cpp.o -c /home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_sources/utils/file_utils/file_reader.cpp
 
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/file_utils/file_reader.cpp.i: cmake_force
@@ -748,7 +735,7 @@ CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/file_utils/file_reader.
 
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/aio_orbit/aio_particle/aio_particle.cpp.o: CMakeFiles/AIO_v_2.dir/flags.make
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/aio_orbit/aio_particle/aio_particle.cpp.o: ../lib4aio/lib4aio_cpp_sources/aio_orbit/aio_particle/aio_particle.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_54) "Building CXX object CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/aio_orbit/aio_particle/aio_particle.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_53) "Building CXX object CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/aio_orbit/aio_particle/aio_particle.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/aio_orbit/aio_particle/aio_particle.cpp.o -c /home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_sources/aio_orbit/aio_particle/aio_particle.cpp
 
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/aio_orbit/aio_particle/aio_particle.cpp.i: cmake_force
@@ -761,7 +748,7 @@ CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/aio_orbit/aio_particle/aio_pa
 
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/pair/aio_pair.cpp.o: CMakeFiles/AIO_v_2.dir/flags.make
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/pair/aio_pair.cpp.o: ../lib4aio/lib4aio_cpp_sources/utils/pair/aio_pair.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_55) "Building CXX object CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/pair/aio_pair.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_54) "Building CXX object CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/pair/aio_pair.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/pair/aio_pair.cpp.o -c /home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_sources/utils/pair/aio_pair.cpp
 
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/pair/aio_pair.cpp.i: cmake_force
@@ -774,7 +761,7 @@ CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/pair/aio_pair.cpp.s: cm
 
 CMakeFiles/AIO_v_2.dir/sources/aio_parsing/aio_context_inflater/aio_context_inflater.cpp.o: CMakeFiles/AIO_v_2.dir/flags.make
 CMakeFiles/AIO_v_2.dir/sources/aio_parsing/aio_context_inflater/aio_context_inflater.cpp.o: ../sources/aio_parsing/aio_context_inflater/aio_context_inflater.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_56) "Building CXX object CMakeFiles/AIO_v_2.dir/sources/aio_parsing/aio_context_inflater/aio_context_inflater.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_55) "Building CXX object CMakeFiles/AIO_v_2.dir/sources/aio_parsing/aio_context_inflater/aio_context_inflater.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AIO_v_2.dir/sources/aio_parsing/aio_context_inflater/aio_context_inflater.cpp.o -c /home/ihb/aio/AIO_Backup/sources/aio_parsing/aio_context_inflater/aio_context_inflater.cpp
 
 CMakeFiles/AIO_v_2.dir/sources/aio_parsing/aio_context_inflater/aio_context_inflater.cpp.i: cmake_force
@@ -787,7 +774,7 @@ CMakeFiles/AIO_v_2.dir/sources/aio_parsing/aio_context_inflater/aio_context_infl
 
 CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_schemable/aio_schemable.cpp.o: CMakeFiles/AIO_v_2.dir/flags.make
 CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_schemable/aio_schemable.cpp.o: ../sources/aio_lang/aio_schemable/aio_schemable.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_57) "Building CXX object CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_schemable/aio_schemable.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_56) "Building CXX object CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_schemable/aio_schemable.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_schemable/aio_schemable.cpp.o -c /home/ihb/aio/AIO_Backup/sources/aio_lang/aio_schemable/aio_schemable.cpp
 
 CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_schemable/aio_schemable.cpp.i: cmake_force
@@ -800,7 +787,7 @@ CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_schemable/aio_schemable.cpp.s: cmake
 
 CMakeFiles/AIO_v_2.dir/sources/aio_runtime/aio_scheme/aio_scheme.cpp.o: CMakeFiles/AIO_v_2.dir/flags.make
 CMakeFiles/AIO_v_2.dir/sources/aio_runtime/aio_scheme/aio_scheme.cpp.o: ../sources/aio_runtime/aio_scheme/aio_scheme.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_58) "Building CXX object CMakeFiles/AIO_v_2.dir/sources/aio_runtime/aio_scheme/aio_scheme.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_57) "Building CXX object CMakeFiles/AIO_v_2.dir/sources/aio_runtime/aio_scheme/aio_scheme.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AIO_v_2.dir/sources/aio_runtime/aio_scheme/aio_scheme.cpp.o -c /home/ihb/aio/AIO_Backup/sources/aio_runtime/aio_scheme/aio_scheme.cpp
 
 CMakeFiles/AIO_v_2.dir/sources/aio_runtime/aio_scheme/aio_scheme.cpp.i: cmake_force
@@ -813,7 +800,7 @@ CMakeFiles/AIO_v_2.dir/sources/aio_runtime/aio_scheme/aio_scheme.cpp.s: cmake_fo
 
 CMakeFiles/AIO_v_2.dir/sources/aio_runtime/aio_runtime.cpp.o: CMakeFiles/AIO_v_2.dir/flags.make
 CMakeFiles/AIO_v_2.dir/sources/aio_runtime/aio_runtime.cpp.o: ../sources/aio_runtime/aio_runtime.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_59) "Building CXX object CMakeFiles/AIO_v_2.dir/sources/aio_runtime/aio_runtime.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_58) "Building CXX object CMakeFiles/AIO_v_2.dir/sources/aio_runtime/aio_runtime.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AIO_v_2.dir/sources/aio_runtime/aio_runtime.cpp.o -c /home/ihb/aio/AIO_Backup/sources/aio_runtime/aio_runtime.cpp
 
 CMakeFiles/AIO_v_2.dir/sources/aio_runtime/aio_runtime.cpp.i: cmake_force
@@ -826,7 +813,7 @@ CMakeFiles/AIO_v_2.dir/sources/aio_runtime/aio_runtime.cpp.s: cmake_force
 
 CMakeFiles/AIO_v_2.dir/sources/aio_runtime/aio_build_runtime.cpp.o: CMakeFiles/AIO_v_2.dir/flags.make
 CMakeFiles/AIO_v_2.dir/sources/aio_runtime/aio_build_runtime.cpp.o: ../sources/aio_runtime/aio_build_runtime.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_60) "Building CXX object CMakeFiles/AIO_v_2.dir/sources/aio_runtime/aio_build_runtime.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_59) "Building CXX object CMakeFiles/AIO_v_2.dir/sources/aio_runtime/aio_build_runtime.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AIO_v_2.dir/sources/aio_runtime/aio_build_runtime.cpp.o -c /home/ihb/aio/AIO_Backup/sources/aio_runtime/aio_build_runtime.cpp
 
 CMakeFiles/AIO_v_2.dir/sources/aio_runtime/aio_build_runtime.cpp.i: cmake_force
@@ -839,7 +826,7 @@ CMakeFiles/AIO_v_2.dir/sources/aio_runtime/aio_build_runtime.cpp.s: cmake_force
 
 CMakeFiles/AIO_v_2.dir/sources/aio_runtime/aio_program_runtime.cpp.o: CMakeFiles/AIO_v_2.dir/flags.make
 CMakeFiles/AIO_v_2.dir/sources/aio_runtime/aio_program_runtime.cpp.o: ../sources/aio_runtime/aio_program_runtime.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_61) "Building CXX object CMakeFiles/AIO_v_2.dir/sources/aio_runtime/aio_program_runtime.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_60) "Building CXX object CMakeFiles/AIO_v_2.dir/sources/aio_runtime/aio_program_runtime.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AIO_v_2.dir/sources/aio_runtime/aio_program_runtime.cpp.o -c /home/ihb/aio/AIO_Backup/sources/aio_runtime/aio_program_runtime.cpp
 
 CMakeFiles/AIO_v_2.dir/sources/aio_runtime/aio_program_runtime.cpp.i: cmake_force
@@ -852,7 +839,7 @@ CMakeFiles/AIO_v_2.dir/sources/aio_runtime/aio_program_runtime.cpp.s: cmake_forc
 
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/aio_path_util/aio_path_util.cpp.o: CMakeFiles/AIO_v_2.dir/flags.make
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/aio_path_util/aio_path_util.cpp.o: ../lib4aio/lib4aio_cpp_sources/aio_path_util/aio_path_util.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_62) "Building CXX object CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/aio_path_util/aio_path_util.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_61) "Building CXX object CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/aio_path_util/aio_path_util.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/aio_path_util/aio_path_util.cpp.o -c /home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_sources/aio_path_util/aio_path_util.cpp
 
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/aio_path_util/aio_path_util.cpp.i: cmake_force
@@ -867,7 +854,6 @@ CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/aio_path_util/aio_path_util.c
 AIO_v_2_OBJECTS = \
 "CMakeFiles/AIO_v_2.dir/main/main.cpp.o" \
 "CMakeFiles/AIO_v_2.dir/sources/aio_core/aio_core.cpp.o" \
-"CMakeFiles/AIO_v_2.dir/sources/aio_core/aio_build_script.cpp.o" \
 "CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_annotatable/aio_annotatable.cpp.o" \
 "CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_field/aio_field.cpp.o" \
 "CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_inheritable/aio_inheritable.cpp.o" \
@@ -933,7 +919,6 @@ AIO_v_2_EXTERNAL_OBJECTS =
 
 AIO_v_2: CMakeFiles/AIO_v_2.dir/main/main.cpp.o
 AIO_v_2: CMakeFiles/AIO_v_2.dir/sources/aio_core/aio_core.cpp.o
-AIO_v_2: CMakeFiles/AIO_v_2.dir/sources/aio_core/aio_build_script.cpp.o
 AIO_v_2: CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_annotatable/aio_annotatable.cpp.o
 AIO_v_2: CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_field/aio_field.cpp.o
 AIO_v_2: CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_inheritable/aio_inheritable.cpp.o
@@ -995,7 +980,7 @@ AIO_v_2: CMakeFiles/AIO_v_2.dir/sources/aio_runtime/aio_program_runtime.cpp.o
 AIO_v_2: CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/aio_path_util/aio_path_util.cpp.o
 AIO_v_2: CMakeFiles/AIO_v_2.dir/build.make
 AIO_v_2: CMakeFiles/AIO_v_2.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_63) "Linking CXX executable AIO_v_2"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ihb/aio/AIO_Backup/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_62) "Linking CXX executable AIO_v_2"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/AIO_v_2.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
