@@ -21,7 +21,7 @@ val robotAttackProcessor AIOProcessor = RobotAttackAnnotationProcessor()
  * Extra processors.
  */
 
-val logProcessor AIOProcessor = getLogProcessor(INFO);
+val logProcessor = getLogProcessor(INFO);
 
 val injectProcessor = getInjectProcessor(true)
 
