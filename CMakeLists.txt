@@ -21,73 +21,78 @@ add_executable(
         #core:
         headers/aio_core/aio_core.h
         #lang:
-        headers/aio_lang/aio_annotatable/aio_annotatable.h
-        headers/aio_lang/aio_field/aio_field.h
-        headers/aio_lang/aio_inheritable/aio_inheritable.h
-        headers/aio_lang/aio_invokable/aio_invokable.h
-        headers/aio_lang/aio_invokable/aio_constructor/aio_constructor.h
-        headers/aio_lang/aio_invokable/aio_function/aio_function.h
-        headers/aio_lang/aio_modifiers/aio_modifiers.h
         headers/aio_lang/aio_space/aio_space.h
-        headers/aio_lang/aio_space/aio_file/aio_file.h
-        headers/aio_lang/aio_space/aio_initializable/aio_initializable.h
-        headers/aio_lang/aio_space/aio_initializable/aio_class/aio_class.h
-        headers/aio_lang/aio_space/aio_initializable/aio_enum/aio_enum.h
-        headers/aio_lang/aio_space/aio_scope/aio_scope.h
+        headers/aio_lang/aio_field/aio_field.h
         headers/aio_lang/aio_types/aio_types.h
+        headers/aio_lang/aio_modifiers/aio_modifiers.h
+        headers/aio_lang/aio_schemable/aio_schemable.h
+        headers/aio_lang/aio_invokable/aio_invokable.h
+        headers/aio_lang/aio_space/aio_file/aio_file.h
+        headers/aio_lang/aio_space/aio_scope/aio_scope.h
         headers/aio_lang/aio_visibility/aio_visibility.h
+        headers/aio_lang/aio_annotatable/aio_annotatable.h
+        headers/aio_lang/aio_inheritable/aio_inheritable.h
+        headers/aio_lang/aio_invokable/aio_function/aio_function.h
+        headers/aio_lang/aio_space/aio_initializable/aio_initializable.h
+        headers/aio_lang/aio_space/aio_initializable/aio_enum/aio_enum.h
+        headers/aio_lang/aio_invokable/aio_constructor/aio_constructor.h
+        headers/aio_lang/aio_space/aio_initializable/aio_class/aio_class.h
         #parsing:
-        headers/aio_parsing/aio_orbits/aio_build_script/aio_particles/aio_build_script_attribute_particle.h
-        headers/aio_parsing/aio_particles/aio_annotation/aio_annotation_particle.h
-        headers/aio_parsing/aio_orbits/aio_constructor/aio_constructor_orbit.h
-        headers/aio_parsing/aio_orbits/aio_annotation/aio_annotation_orbit.h
         headers/aio_parsing/aio_orbits/aio_file/aio_file_orbit.h
-        headers/aio_parsing/aio_orbits/aio_scope/aio_scope_orbit.h
-        headers/aio_parsing/aio_orbits/aio_file/aio_particles/aio_import_particle.h
-        headers/aio_parsing/aio_orbits/aio_class/aio_class_orbit.h
-        headers/aio_parsing/aio_orbits/aio_function/aio_function_orbit.h
         headers/aio_parsing/aio_orbits/aio_field/aio_file_orbit.h
-        headers/aio_parsing/aio_particles/aio_class/aio_class_particle.h
-        headers/aio_parsing/aio_particles/aio_constructor/aio_constrcutor_particle.h
-        headers/aio_parsing/aio_particles/aio_field/aio_field_particle.h
+        headers/aio_parsing/aio_orbits/aio_scope/aio_scope_orbit.h
+        headers/aio_parsing/aio_orbits/aio_class/aio_class_orbit.h
         headers/aio_parsing/aio_particles/aio_file/aio_file_particle.h
-        headers/aio_parsing/aio_particles/aio_function/aio_function_particle.h
+        headers/aio_parsing/aio_context_inflater/aio_context_inflater.h
         headers/aio_parsing/aio_particles/aio_scope/aio_scope_particle.h
+        headers/aio_parsing/aio_particles/aio_class/aio_class_particle.h
+        headers/aio_parsing/aio_particles/aio_field/aio_field_particle.h
+        headers/aio_parsing/aio_orbits/aio_function/aio_function_orbit.h
+        headers/aio_parsing/aio_orbits/aio_annotation/aio_annotation_orbit.h
+        headers/aio_parsing/aio_orbits/aio_constructor/aio_constructor_orbit.h
+        headers/aio_parsing/aio_particles/aio_function/aio_function_particle.h
+        headers/aio_parsing/aio_particles/aio_annotation/aio_annotation_particle.h
+        headers/aio_parsing/aio_orbits/aio_file/aio_particles/aio_import_particle.h
+        headers/aio_parsing/aio_particles/aio_constructor/aio_constrcutor_particle.h
         #runtime:
+        headers/aio_runtime/aio_runtime.h
+        headers/aio_runtime/aio_ray/aio_ray.h
+        headers/aio_runtime/aio_build_runtime.h
+        headers/aio_runtime/aio_program_runtime.h
         headers/aio_runtime/aio_value/aio_value.h
+        headers/aio_runtime/aio_scheme/aio_scheme.h
         headers/aio_runtime/aio_bundle/aio_bundle.h
         headers/aio_runtime/aio_invoker/aio_invoker.h
         headers/aio_runtime/aio_variable/aio_variable.h
-        headers/aio_runtime/aio_ray/aio_ray.h
+        headers/aio_runtime/aio_instruction/aio_instruction.h
         headers/aio_runtime/aio_value/advanced_functions/log_aio_value.h
         headers/aio_runtime/aio_value/advanced_functions/cast_aio_value.h
-        headers/aio_runtime/aio_scheme/aio_scheme.h
         headers/aio_runtime/aio_value/advanced_functions/compare_aio_value.h
-        headers/aio_runtime/aio_instruction/aio_instruction.h
         #lib4aio:
+        lib4aio/lib4aio_cpp_headers/utils/pair/aio_pair.h
         lib4aio/lib4aio_cpp_headers/aio_orbit/aio_orbit.h
-        lib4aio/lib4aio_cpp_headers/aio_orbit/aio_particle/aio_particle.h
-        lib4aio/lib4aio_cpp_headers/utils/color_utils/color_utils.h
-        lib4aio/lib4aio_cpp_headers/utils/array_list_utils/array_list.h
-        lib4aio/lib4aio_cpp_headers/utils/char_utils/char_utils.h
-        lib4aio/lib4aio_cpp_headers/utils/error_utils/error_utils.h
-        lib4aio/lib4aio_cpp_headers/utils/log_utils/log_utils.h
-        lib4aio/lib4aio_cpp_headers/utils/memory_utils/memory_utils.h
-        lib4aio/lib4aio_cpp_headers/utils/point_watcher/point_watcher.h
-        lib4aio/lib4aio_cpp_headers/utils/str_builder/str_builder.h
-        lib4aio/lib4aio_cpp_headers/utils/str_hook_utils/str_hook/str_hook.h
-        lib4aio/lib4aio_cpp_headers/utils/str_hook_utils/str_hook_iterator/str_hook_iterator.h
-        lib4aio/lib4aio_cpp_headers/utils/str_hook_utils/str_hook_list/str_hook_list.h
         lib4aio/lib4aio_cpp_headers/utils/string_utils/cast.h
-        lib4aio/lib4aio_cpp_headers/utils/string_utils/common.h
+        lib4aio/lib4aio_cpp_headers/utils/string_utils/trim.h
         lib4aio/lib4aio_cpp_headers/utils/string_utils/match.h
         lib4aio/lib4aio_cpp_headers/utils/string_utils/split.h
-        lib4aio/lib4aio_cpp_headers/utils/string_utils/suffix_prefix.h
-        lib4aio/lib4aio_cpp_headers/utils/string_utils/trim.h
-        lib4aio/lib4aio_cpp_headers/utils/struct_list/struct_list.h
+        lib4aio/lib4aio_cpp_headers/utils/string_utils/common.h
+        lib4aio/lib4aio_cpp_headers/utils/log_utils/log_utils.h
+        lib4aio/lib4aio_cpp_headers/aio_path_util/aio_path_util.h
+        lib4aio/lib4aio_cpp_headers/utils/char_utils/char_utils.h
         lib4aio/lib4aio_cpp_headers/utils/file_utils/file_reader.h
+        lib4aio/lib4aio_cpp_headers/utils/struct_list/struct_list.h
         lib4aio/lib4aio_cpp_headers/utils/int_list_utils/int_list.h
-        lib4aio/lib4aio_cpp_headers/utils/pair/aio_pair.h
+        lib4aio/lib4aio_cpp_headers/utils/color_utils/color_utils.h
+        lib4aio/lib4aio_cpp_headers/utils/error_utils/error_utils.h
+        lib4aio/lib4aio_cpp_headers/utils/str_builder/str_builder.h
+        lib4aio/lib4aio_cpp_headers/utils/memory_utils/memory_utils.h
+        lib4aio/lib4aio_cpp_headers/utils/string_utils/suffix_prefix.h
+        lib4aio/lib4aio_cpp_headers/utils/array_list_utils/array_list.h
+        lib4aio/lib4aio_cpp_headers/utils/point_watcher/point_watcher.h
+        lib4aio/lib4aio_cpp_headers/aio_orbit/aio_particle/aio_particle.h
+        lib4aio/lib4aio_cpp_headers/utils/str_hook_utils/str_hook/str_hook.h
+        lib4aio/lib4aio_cpp_headers/utils/str_hook_utils/str_hook_list/str_hook_list.h
+        lib4aio/lib4aio_cpp_headers/utils/str_hook_utils/str_hook_iterator/str_hook_iterator.h
         #---------------------------------------------------------------------------------------------------------------
 
         #---------------------------------------------------------------------------------------------------------------
@@ -96,60 +101,66 @@ add_executable(
         #core:
         sources/aio_core/aio_core.cpp
         #lang:
-        sources/aio_lang/aio_annotatable/aio_annotatable.cpp
-        sources/aio_lang/aio_field/aio_field.cpp
-        sources/aio_lang/aio_inheritable/aio_inheritable.cpp
-        sources/aio_lang/aio_invokable/aio_invokable.cpp
-        sources/aio_lang/aio_invokable/constructor/aio_constructor.cpp
-        sources/aio_lang/aio_invokable/function/aio_function.cpp
-        sources/aio_lang/aio_modifiers/aio_modifiers.cpp
         sources/aio_lang/aio_space/aio_space.cpp
+        sources/aio_lang/aio_field/aio_field.cpp
+        sources/aio_lang/aio_invokable/aio_invokable.cpp
+        sources/aio_lang/aio_modifiers/aio_modifiers.cpp
         sources/aio_lang/aio_space/aio_file/aio_file.cpp
-        sources/aio_lang/aio_space/aio_initializable/aio_initializable.cpp
-        sources/aio_lang/aio_space/aio_initializable/aio_class/aio_class.cpp
-        sources/aio_lang/aio_space/aio_initializable/aio_enum/aio_enum.cpp
+        sources/aio_lang/aio_schemable/aio_schemable.cpp
         sources/aio_lang/aio_space/aio_scope/aio_scope.cpp
+        sources/aio_lang/aio_inheritable/aio_inheritable.cpp
+        sources/aio_lang/aio_annotatable/aio_annotatable.cpp
+        sources/aio_lang/aio_invokable/function/aio_function.cpp
+        sources/aio_lang/aio_invokable/constructor/aio_constructor.cpp
+        sources/aio_lang/aio_space/aio_initializable/aio_initializable.cpp
+        sources/aio_lang/aio_space/aio_initializable/aio_enum/aio_enum.cpp
+        sources/aio_lang/aio_space/aio_initializable/aio_class/aio_class.cpp
         #parsing:
-        sources/aio_parsing/aio_orbits/aio_build_script/aio_buil_script_orbit.cpp
-        sources/aio_parsing/aio_orbits/aio_build_script/aio_particles/aio_build_script_attribute_particle.cpp
         sources/aio_parsing/aio_orbits/aio_file/aio_file_orbit.cpp
+        sources/aio_parsing/aio_context_inflater/aio_context_inflater.cpp
+        sources/aio_parsing/aio_particles/aio_field/aio_field_particle.cpp
         #runtime:
+        sources/aio_runtime/aio_runtime.cpp
+        sources/aio_runtime/aio_build_runtime.cpp
+        sources/aio_runtime/aio_program_runtime.cpp
         sources/aio_runtime/aio_value/aio_value.cpp
         sources/aio_runtime/aio_bundle/aio_bundle.cpp
+        sources/aio_runtime/aio_scheme/aio_scheme.cpp
         sources/aio_runtime/aio_invoker/aio_invoker.cpp
         sources/aio_runtime/aio_value/advanced_functions/log_aio_value.cpp
         sources/aio_runtime/aio_value/advanced_functions/cast_aio_value.cpp
         sources/aio_runtime/aio_value/advanced_functions/compare_aio_value.cpp
         #lib4aio:
+        lib4aio/lib4aio_cpp_sources/utils/pair/aio_pair.cpp
         lib4aio/lib4aio_cpp_sources/aio_orbit/aio_orbit.cpp
-        lib4aio/lib4aio_cpp_sources/utils/array_list_utils/array_list.cpp
-        lib4aio/lib4aio_cpp_sources/utils/char_utils/char_utils.cpp
-        lib4aio/lib4aio_cpp_sources/utils/error_utils/error_utils.cpp
-        lib4aio/lib4aio_cpp_sources/utils/log_utils/log_utils.cpp
-        lib4aio/lib4aio_cpp_sources/utils/memory_utils/memory_utils.cpp
-        lib4aio/lib4aio_cpp_sources/utils/point_watcher/point_watcher.cpp
-        lib4aio/lib4aio_cpp_sources/utils/str_builder/str_builder.cpp
-        lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/str_hook.cpp
-        lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_cast.cpp
-        lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_error.cpp
-        lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_log.cpp
-        lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_matcher.cpp
-        lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_split.cpp
-        lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_trim.cpp
-        lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_iterator/str_hook_iterator.cpp
-        lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/advanced_functions/str_hook_list_log.cpp
-        lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/advanced_functions/str_hook_trim.cpp
-        lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/str_hook_list.cpp
         lib4aio/lib4aio_cpp_sources/utils/string_utils/cast.cpp
-        lib4aio/lib4aio_cpp_sources/utils/string_utils/common.cpp
+        lib4aio/lib4aio_cpp_sources/utils/string_utils/trim.cpp
         lib4aio/lib4aio_cpp_sources/utils/string_utils/match.cpp
         lib4aio/lib4aio_cpp_sources/utils/string_utils/split.cpp
-        lib4aio/lib4aio_cpp_sources/utils/string_utils/suffix_prefix.cpp
-        lib4aio/lib4aio_cpp_sources/utils/string_utils/trim.cpp
-        lib4aio/lib4aio_cpp_sources/utils/struct_list/struct_list.cpp
-        lib4aio/lib4aio_cpp_sources/utils/int_list_utils/int_list.cpp
+        lib4aio/lib4aio_cpp_sources/utils/log_utils/log_utils.cpp
+        lib4aio/lib4aio_cpp_sources/utils/string_utils/common.cpp
+        lib4aio/lib4aio_cpp_sources/utils/char_utils/char_utils.cpp
+        lib4aio/lib4aio_cpp_sources/aio_path_util/aio_path_util.cpp
         lib4aio/lib4aio_cpp_sources/utils/file_utils/file_reader.cpp
+        lib4aio/lib4aio_cpp_sources/utils/str_builder/str_builder.cpp
+        lib4aio/lib4aio_cpp_sources/utils/struct_list/struct_list.cpp
+        lib4aio/lib4aio_cpp_sources/utils/error_utils/error_utils.cpp
+        lib4aio/lib4aio_cpp_sources/utils/int_list_utils/int_list.cpp
+        lib4aio/lib4aio_cpp_sources/utils/memory_utils/memory_utils.cpp
+        lib4aio/lib4aio_cpp_sources/utils/string_utils/suffix_prefix.cpp
+        lib4aio/lib4aio_cpp_sources/utils/point_watcher/point_watcher.cpp
+        lib4aio/lib4aio_cpp_sources/utils/array_list_utils/array_list.cpp
         lib4aio/lib4aio_cpp_sources/aio_orbit/aio_particle/aio_particle.cpp
-        lib4aio/lib4aio_cpp_sources/utils/pair/aio_pair.cpp
+        lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/str_hook.cpp
+        lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/str_hook_list.cpp
+        lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_iterator/str_hook_iterator.cpp
+        lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_log.cpp
+        lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_cast.cpp
+        lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_trim.cpp
+        lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_split.cpp
+        lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_error.cpp
+        lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_matcher.cpp
+        lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/advanced_functions/str_hook_trim.cpp
+        lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/advanced_functions/str_hook_list_log.cpp
         #---------------------------------------------------------------------------------------------------------------
-        headers/aio_parsing/aio_context_inflater/aio_context_inflater.h sources/aio_parsing/aio_context_inflater/aio_context_inflater.cpp headers/aio_runtime/aio_scheme/aio_scheme.h headers/aio_lang/aio_schemable/aio_schemable.h sources/aio_lang/aio_schemable/aio_schemable.cpp sources/aio_runtime/aio_scheme/aio_scheme.cpp headers/aio_runtime/aio_runtime.h sources/aio_runtime/aio_runtime.cpp headers/aio_runtime/aio_build_runtime.h headers/aio_runtime/aio_program_runtime.h sources/aio_runtime/aio_build_runtime.cpp sources/aio_runtime/aio_program_runtime.cpp lib4aio/lib4aio_cpp_headers/aio_path_util/aio_path_util.h lib4aio/lib4aio_cpp_sources/aio_path_util/aio_path_util.cpp sources/aio_parsing/aio_particles/aio_field/aio_field_particle.cpp)
+)

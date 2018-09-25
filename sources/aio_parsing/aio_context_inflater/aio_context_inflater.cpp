@@ -1,31 +1,36 @@
-#include <cstring>
+//native:
 #include <cstdlib>
+//core:
 #include <aio_core/aio_core.h>
+//lang:
+#include <aio_lang/aio_types/aio_types.h>
+#include <aio_lang/aio_field/aio_field.h>
+#include <aio_lang/aio_space/aio_file/aio_file.h>
+//parsing:
+#include <aio_runtime/aio_value/aio_value.h>
+#include <aio_parsing/aio_orbits/aio_file/aio_file_orbit.h>
 #include <aio_parsing/aio_context_inflater/aio_context_inflater.h>
-#include <aio_runtime/aio_runtime.h>
+//runtime:
+#include <aio_runtime/aio_ray/aio_ray.h>
 #include <aio_runtime/aio_build_runtime.h>
+#include <aio_runtime/aio_program_runtime.h>
+#include <aio_runtime/aio_scheme/aio_scheme.h>
+#include <aio_runtime/aio_variable/aio_variable.h>
+#include <aio_runtime/aio_value/advanced_functions/cast_aio_value.h>
+//lib4aio:
 #include <lib4aio_cpp_headers/aio_orbit/aio_orbit.h>
-#include <lib4aio_cpp_sources/aio_orbit/aio_orbit.cpp>
+#include <lib4aio_cpp_headers/utils/string_utils/common.h>
+#include <lib4aio_cpp_headers/aio_path_util/aio_path_util.h>
 #include <lib4aio_cpp_headers/utils/file_utils/file_reader.h>
 #include <lib4aio_cpp_headers/utils/str_builder/str_builder.h>
 #include <lib4aio_cpp_headers/utils/error_utils/error_utils.h>
 #include <lib4aio_cpp_headers/utils/string_utils/suffix_prefix.h>
+#include <lib4aio_cpp_headers/utils/array_list_utils/array_list.h>
 #include <lib4aio_cpp_headers/utils/str_hook_utils/str_hook/str_hook.h>
-#include <lib4aio_cpp_headers/utils/log_utils/log_utils.h>
-#include <lib4aio_cpp_headers/utils/pair/aio_pair.h>
-#include <lib4aio_cpp_headers/utils/char_utils/char_utils.h>
-#include <aio_parsing/aio_orbits/aio_file/aio_file_orbit.h>
-#include <aio_runtime/aio_variable/aio_variable.h>
-#include <aio_lang/aio_space/aio_file/aio_file.h>
-#include <aio_runtime/aio_ray/aio_ray.h>
-#include <aio_lang/aio_field/aio_field.h>
-#include <aio_lang/aio_types/aio_types.h>
-#include <lib4aio_cpp_headers/aio_path_util/aio_path_util.h>
-#include <aio_runtime/aio_value/advanced_functions/cast_aio_value.h>
-#include <aio_runtime/aio_value/aio_value.h>
-#include <lib4aio_cpp_headers/utils/string_utils/common.h>
-#include <aio_runtime/aio_program_runtime.h>
 
+/**
+ * 태그들.
+ */
 
 #define AIO_INFLATTER_DEBUG
 
@@ -44,7 +49,6 @@
 #define AIO_BUILD_SCRIPT_FORMAT ".aio_core"
 
 using namespace lib4aio;
-
 
 aio_context_inflater *aio_context_inflater::create()
 {
@@ -76,12 +80,13 @@ aio_context_inflater *aio_context_inflater::inflate()
 
 void aio_context_inflater::inflate_aio_build_script()
 {
-    const bool is_aio_build_script_file = ends_with_suffix(this->script_path, AIO_BUILD_SCRIPT_FORMAT);
+    const char *root_path = this->script_path;
+    const bool is_aio_build_script_file = ends_with_suffix(root_path, AIO_BUILD_SCRIPT_FORMAT);
     if (is_aio_build_script_file) {
-        aio_runtime *build_runtime = reinterpret_cast<aio_runtime *>(this->core->build_runtime);
-        inflate_aio_file(this->script_path, build_runtime);
+        aio_runtime *runtime = this->core->build_runtime;
+        this->inflate_aio_file(root_path, runtime);
     } else {
-        throw_error_with_details(AIO_INFLATTER_ERROR_TAG, "파일이 '*.aio_core' 형식이 아닙니다", this->script_path);
+        throw_error_with_details(AIO_INFLATTER_ERROR_TAG, "파일이 '*.aio_core' 형식이 아닙니다", root_path);
     }
 }
 
@@ -94,16 +99,19 @@ void aio_context_inflater::invoke_aio_build_script()
     //Get script instructions:
     const aio_scheme *script_scheme = build_script->get_scheme();
     //Make build script runtime by instructions:
-    this->build_ray = aio_ray::new_aio_ray(script_scheme)->perform();
+    aio_ray *build_ray = aio_ray::new_aio_ray(script_scheme)
+            ->perform();
     //Get global properties from script runtime and don't close build runtime:
-    array_list<aio_variable> *script_properties = this->build_ray->get_variables();
+    array_list<aio_variable> *script_properties = build_ray->get_variables();
+    //Set build ray:
+    build_runtime->build_ray_ptr = build_ray;
     //Set main:
-    build_runtime->main = script_properties->find_by(
-            [](const aio_variable *it) -> bool {
+    build_runtime->main_ptr = script_properties->find_by(
+            [](aio_variable *it) -> bool {
                 return it->get_definition()->type->equals_string(AIOMAIN_TYPE);
             });
     //Set processors;
-    build_runtime->processors = script_properties->collect_by(
+    build_runtime->processors_ptr = script_properties->collect_by(
             [](aio_variable *it) -> bool {
                 return it->get_definition()->type->equals_string(AIOPROCESSOR_TYPE);
             });
@@ -114,7 +122,7 @@ void aio_context_inflater::inflate_aio_program()
     aio_program_runtime *program_runtime = this->core->program_runtime;
     //Get main property value from build script runtime:
     aio_build_runtime *build_runtime = this->core->build_runtime;
-    aio_variable *main_property = build_runtime->get_main_property();
+    aio_variable *main_property = build_runtime->get_main_property_ptr();
     aio_value *relative_main_path = cast_to_string(main_property->get_value());
     const char *string = relative_main_path->get.string_acc;
     char *absolute_main_path = construct_absolute_path(string, this->script_path);

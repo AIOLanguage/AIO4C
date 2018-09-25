@@ -1,32 +1,45 @@
-#include <cstring>
+//native:
 #include <iostream>
 #include <sys/utsname.h>
+//core:
 #include <aio_core/aio_core.h>
-#include <aio_lang/aio_types/aio_types.h>
+//parsing:
 #include <aio_parsing/aio_context_inflater/aio_context_inflater.h>
-#include <aio_runtime/aio_runtime.h>
+//runtime:
+#include <aio_runtime/aio_ray/aio_ray.h>
 #include <aio_runtime/aio_build_runtime.h>
 #include <aio_runtime/aio_program_runtime.h>
 #include <aio_runtime/aio_value/aio_value.h>
 #include <aio_runtime/aio_bundle/aio_bundle.h>
+#include <aio_runtime/aio_invoker/aio_invoker.h>
+//lib4aio:
 #include <lib4aio_cpp_headers/utils/color_utils/color_utils.h>
 #include <lib4aio_cpp_headers/utils/struct_list/struct_list.h>
 #include <lib4aio_cpp_headers/utils/memory_utils/memory_utils.h>
-#include <lib4aio_cpp_headers/utils/array_list_utils/array_list.h>
 #include <lib4aio_cpp_headers/utils/str_hook_utils/str_hook/str_hook.h>
 
-#define AIO_CORE_TAG "AIO_CORE"
+/**
+ * 태그들.
+ */
+
+#define AIO_CORE_ERROR_TAG "AIO_CORE_ERROR"
+
+#define AIO_CORE_INFO_TAG "AIO_CORE_INFO"
 
 #define AIO_CORE_DEBUG
 
 #ifdef AIO_CORE_DEBUG
 
+/**
+ * 비즈니스 로직.
+ */
+
 #define START_FUNCTION_ARG_INDEX 2
 
 #define ROOT_FUNCTION_NAME "main"
 
+//lib4aio:
 #include <lib4aio_cpp_headers/utils/log_utils/log_utils.h>
-#include <aio_runtime/aio_invoker/aio_invoker.h>
 
 #endif
 
@@ -53,21 +66,30 @@ aio_core *aio_core::inflate_aio_config()
     SetConsoleCP(UTF_8);
 #elif __linux__
 
+    /**
+     * Make sth config.
+     */
+
 #elif  __APPLE__
+
+    /**
+     * Make sth config.
+     */
+
 #endif
     std::cout << BLUE << "\nAIO 이 시작됩다...\n\n" << RESET;
-    utsname *os_data = (utsname *) new_object(sizeof(utsname));
-    uname(os_data);
-    std::cout << CYAN << os_data->sysname << " 운영 체제가 감지되었습니다!\n\n";
+    utsname *sys_data = (utsname *) new_object(sizeof(utsname));
+    uname(sys_data);
+    std::cout << CYAN << sys_data->sysname << " 운영 체제가 감지되었습니다!\n\n";
     std::cout << "정부:\n"
-              << os_data->machine << "\n"
-              << os_data->nodename << "\n"
-              << os_data->release << "\n"
-              << os_data->version << "\n\n"
+              << sys_data->machine << "\n"
+              << sys_data->nodename << "\n"
+              << sys_data->release << "\n"
+              << sys_data->version << "\n\n"
               << RESET;
     //------------------------------------------------------------------------------------------------------------------
     //찌꺼기 수집기:
-    delete os_data;
+    delete sys_data;
     //------------------------------------------------------------------------------------------------------------------
     return this;
 }
@@ -105,16 +127,11 @@ aio_core *aio_core::invoke_aio_context(int argc, char **argv)
     aio_bundle *bundle = new_main_bundle(argc, argv, main_path);
     invoke_main_function(bundle);
     //------------------------------------------------------------------------------------------------------------------
+    //찌꺼기 수집기:
     struct_list *input_list = bundle->get_input_values();
     struct_list *output_list = bundle->get_output_values();
-    free_structs_in_list(
-            input_list, [](void *it) {
-                free_aio_value((aio_value *) it);
-            });
-    free_structs_in_list(
-            output_list, [](void *it) {
-                free_aio_value((aio_value *) it);
-            });
+    free_structs_in_list(input_list, [](void *it) { free_aio_value((aio_value *) it); });
+    free_structs_in_list(output_list, [](void *it) { free_aio_value((aio_value *) it); });
     delete bundle;
     //------------------------------------------------------------------------------------------------------------------
     return this;
@@ -122,6 +139,10 @@ aio_core *aio_core::invoke_aio_context(int argc, char **argv)
 
 void aio_core::destroy()
 {
+    //Close build runtime:
+    this->build_runtime->get_build_ray_ptr()->complete();
+    //------------------------------------------------------------------------------------------------------------------
+    //찌꺼기 수집기:
     delete this->build_runtime;
     delete this->program_runtime;
     delete this;

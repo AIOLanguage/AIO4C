@@ -1,7 +1,19 @@
+//core:
 #include <aio_core/aio_core.h>
+//lib4aio:
 #include <lib4aio_cpp_headers/utils/error_utils/error_utils.h>
 
+/**
+ * 태그들.
+ */
+
 #define AIO_ERROR_TAG "AIO_ERROR"
+
+#define AIO_INFO_TAG "AIO_INFO"
+
+/**
+ * 비즈니스 로직.
+ */
 
 #define BUILD_SCRIPT_PATH_INDEX 1
 

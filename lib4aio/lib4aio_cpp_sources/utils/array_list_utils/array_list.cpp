@@ -99,13 +99,13 @@ namespace lib4aio {
     }
 
     template<typename T>
-    const T *array_list<T>::get(unsigned index) const
+    T *array_list<T>::get(unsigned index) const
     {
         return this->elements[index];
     }
 
     template<typename T>
-    const T *array_list<T>::find_by(function<bool(const T *)> func) const
+    T *array_list<T>::find_by(function<bool(T *)> func) const
     {
         bool is_found = false;
         T *unique_element = nullptr;
@@ -124,7 +124,7 @@ namespace lib4aio {
     }
 
     template<typename T>
-    const T *array_list<T>::last()
+    T *array_list<T>::last()
     {
         return this->elements[this->size - 1];
     }

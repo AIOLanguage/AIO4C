@@ -39,8 +39,6 @@ private:
 
     const char *script_path;
 
-    aio_ray *build_ray;
-
     void inflate_aio_file(const char *root_path, aio_runtime *runtime);
 
     void inflate_aio_build_script();

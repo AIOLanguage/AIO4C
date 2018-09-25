@@ -1,16 +1,4 @@
 /home/ihb/Downloads/CLion-2018.2.3/clion-2018.2.3/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/ihb/aio/AIO_Backup
 -- Configuring done
-CMake Error at CMakeLists.txt:9 (add_executable):
-  Cannot find source file:
-
-    headers/aio_parsing/aio_orbits/aio_build_script/aio_particles/aio_build_script_attribute_particle.h
-
-  Tried extensions .c .C .c++ .cc .cpp .cxx .cu .m .M .mm .h .hh .h++ .hm
-  .hpp .hxx .in .txx
-
-
-CMake Error at CMakeLists.txt:9 (add_executable):
-  No SOURCES given to target: AIO_v_2
-
-
+-- Generating done
 -- Build files have been written to: /home/ihb/aio/AIO_Backup/cmake-build-debug

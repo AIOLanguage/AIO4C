@@ -5,7 +5,7 @@
 
 namespace lib4aio {
 
-    template<class T>
+    template<typename T>
     class array_list;
 
     class str_hook;
@@ -22,10 +22,6 @@ class aio_runtime;
 class aio_build_runtime;
 
 class aio_program_runtime;
-
-/**
- * 글로벌 핵심.
- */
 
 class aio_core {
 

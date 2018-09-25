@@ -18,9 +18,9 @@ namespace lib4aio {
 
         unsigned get_size() const;
 
-        const T *get(unsigned index) const;
+        T *get(unsigned index) const;
 
-        const T* last();
+        T* last();
 
         T *&operator[](unsigned index);
 
@@ -34,11 +34,12 @@ namespace lib4aio {
 
         bool contains_by(function<bool(const T *)> func);
 
-        const T *find_by(function<bool(const T *)> func) const;
+        T *find_by(function<bool(T *)> func) const;
 
         array_list<T> *collect_by(function<bool(T *)> func);
 
         class array_list_iterator {
+
         public:
 
             explicit array_list_iterator(T **ptr) : p_element(ptr)

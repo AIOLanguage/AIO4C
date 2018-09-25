@@ -6,12 +6,17 @@ aio_build_runtime::aio_build_runtime() : aio_runtime(AIO_RUNTIME_TYPE_BUILD)
 aio_build_runtime::~aio_build_runtime()
 {}
 
-aio_variable *aio_build_runtime::get_main_property() const
+aio_variable *aio_build_runtime::get_main_property_ptr() const
 {
-    return this->main;
+    return this->main_ptr;
 }
 
-array_list<aio_variable> *aio_build_runtime::get_processors() const
+array_list<aio_variable> *aio_build_runtime::get_processors_ptr() const
 {
-    return this->processors;
+    return this->processors_ptr;
+}
+
+aio_ray *aio_build_runtime::get_build_ray_ptr() const
+{
+    return this->build_ray_ptr;
 }

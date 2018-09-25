@@ -22,15 +22,19 @@ public:
 
     ~aio_build_runtime();
 
-    aio_variable *get_main_property() const;
+    aio_variable *get_main_property_ptr() const;
 
-    array_list<aio_variable> *get_processors() const;
+    array_list<aio_variable> *get_processors_ptr() const;
+
+    aio_ray *get_build_ray_ptr() const;
 
 private:
 
-    const aio_variable *main;
+    aio_ray *build_ray_ptr;
 
-    array_list<aio_variable> *processors;
+    aio_variable *main_ptr;
+
+    array_list<aio_variable> *processors_ptr;
 };
 
 #endif //AIO_BUILD_RUNTIME_H
