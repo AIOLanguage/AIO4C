@@ -9,12 +9,20 @@ namespace lib4aio {
 using namespace lib4aio;
 
 /**
- * Visibility modifiers.
+ * Property modifiers.
  */
 
-#define AIO_GLOBAL_MODIFIER "global"
+#define AIO_CONSTANT_MODIFIER "constant"
 
-#define AIO_INTERNAL_MODIFIER "internal"
+#define AIO_VARIABLE_MODIFIER "variable"
+
+bool is_aio_constant_modifier(const str_hook *token);
+
+bool is_aio_variable_modifier(const str_hook *token);
+
+/**
+ * Visibility modifiers.
+ */
 
 #define AIO_PROTECTED_MODIFIER "protected"
 
@@ -32,19 +40,19 @@ using namespace lib4aio;
  * Import modifier.
  */
 
-#define AIO_IMPORT_MODIFIER "plg"
+#define AIO_IMPORT_MODIFIER "addition"
 
 /**
  * Class modifiers.
  */
 
-#define AIO_CLASS_MODIFIER "typ"
+#define AIO_CLASS_MODIFIER "typename"
 
 /**
  * Function  modifier.
  */
 
-#define AIO_FUNCTION_MODIFIER "fun"
+#define AIO_FUNCTION_MODIFIER "function"
 
 #define AIO_OVERRIDE_MODIFIER "override"
 
@@ -52,15 +60,15 @@ using namespace lib4aio;
 
 #define AIO_IN_MODIFIER "in"
 
-#define AIO_LOOP_MODIFIER "loo"
+#define AIO_LOOP_MODIFIER "cycle"
 
 #define AIO_RETURN_MODIFIER "out"
 
-#define AIO_SWITCH_MODIFIER "whe"
+#define AIO_SWITCH_MODIFIER "when"
 
-#define AIO_BREAK_MODIFIER "brk"
+#define AIO_BREAK_MODIFIER "break"
 
-#define AIO_CONTINUE_MODIFIER "nxt"
+#define AIO_CONTINUE_MODIFIER "next"
 
 bool is_aio_fun_modifier(str_hook *hook);
 

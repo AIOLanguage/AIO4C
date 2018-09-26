@@ -26,7 +26,7 @@ struct aio_field {
 
     bool is_array;
 
-    bool is_mutable;
+    bool is_const;
 
     aio_visibility visibility_type;
 };

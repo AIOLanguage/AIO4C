@@ -8,9 +8,9 @@ addition
 
 typename Person : open
     {
-        constant firstName String
-        variable secondName String
-        variable age Int
+        constant firstName String;
+        variable secondName String;
+        variable age Int;
 
         instance Person(firstName String, secondName String, age Int);
 

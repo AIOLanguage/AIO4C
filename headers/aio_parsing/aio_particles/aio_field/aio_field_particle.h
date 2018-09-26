@@ -8,6 +8,8 @@ namespace lib4aio {
     class point_watcher;
 }
 
+class aio_field;
+
 using namespace lib4aio;
 
 template<typename T>
@@ -29,8 +31,10 @@ private:
 
     unsigned whitespace_counter;
 
+    aio_field *field;
+
     enum {
-        AIO_MONITOR_ATTRIBUTE, AIO_MONITOR_EQUAL_SIGN, AIO_MONITOR_VALUE
+        AIO_MONITOR_MODIFIER, AIO_MONITOR_NAME, AIO_MONITOR_TYPE, AIO_MONITOR_EQUAL_SIGN, AIO_MONITOR_VALUE
     } monitor_mode;
 
     enum {
@@ -42,7 +46,11 @@ private:
         char *value;
     } config_materials;
 
-    void handle_field_data(const char symbol, const unsigned position);
+    void handle_field_modifier(const char symbol, const unsigned position);
+
+    void handle_field_name(const char symbol, const unsigned position);
+
+    void handle_field_type(const char symbol, const unsigned position);
 
     void handle_equal_sign_data(const char symbol, const unsigned position);
 

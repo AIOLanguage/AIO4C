@@ -6,7 +6,7 @@ addition
 
 typename Cyborg <- Person, Robot
     {
-        constant model Int
+        constant model Int;
 
         instance Cyborg(firstName String, secondName String, age Int, core Core, model Int)
             <- Person(firstName, secondName, age), Robot(core);
