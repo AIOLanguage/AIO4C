@@ -1,6 +1,6 @@
-annotation AttackRobot
+markname AttackRobot
     {
-        val tag Str
+        constant tag Str
 
-        AttackRobot(tag Str);
+        instance AttackRobot(tag Str);
     }

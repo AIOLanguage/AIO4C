@@ -48,10 +48,8 @@ add_executable(
         headers/aio_parsing/aio_particles/aio_class/aio_class_particle.h
         headers/aio_parsing/aio_particles/aio_field/aio_field_particle.h
         headers/aio_parsing/aio_orbits/aio_function/aio_function_orbit.h
-        headers/aio_parsing/aio_orbits/aio_annotation/aio_annotation_orbit.h
         headers/aio_parsing/aio_orbits/aio_constructor/aio_constructor_orbit.h
         headers/aio_parsing/aio_particles/aio_function/aio_function_particle.h
-        headers/aio_parsing/aio_particles/aio_annotation/aio_annotation_particle.h
         headers/aio_parsing/aio_orbits/aio_file/aio_particles/aio_import_particle.h
         headers/aio_parsing/aio_particles/aio_constructor/aio_constrcutor_particle.h
         #runtime:
@@ -163,4 +161,4 @@ add_executable(
         lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/advanced_functions/str_hook_trim.cpp
         lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/advanced_functions/str_hook_list_log.cpp
         #---------------------------------------------------------------------------------------------------------------
-)
+        sources/aio_parsing/aio_particles/aio_class/aio_class_particle.cpp headers/aio_parsing/aio_particles/aio_import/aio_import_particle.h)

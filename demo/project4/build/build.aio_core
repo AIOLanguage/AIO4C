@@ -1,37 +1,37 @@
-import
+addition
     {
-        constructor.FriendlyRobotAnnotationProcessor::FriendlyRobotAnnotationProcessor
-        constructor.RobotVersionAnnotationProcessor::RobotVersionAnnotationProcessor
-        function.RobotAttackAnnotationProcessor::RobotAttackAnnotationProcessor
+        construct1or.FriendlyRobotAnnotationModule::FriendlyRobotAnnotationModule
+        constructor.RobotVersionAnnotationModule::RobotVersionAnnotationModule
+        function.RobotAttackAnnotationModule::RobotAttackAnnotationModule
     }
 
-val main Str = 'main.main'
+val main String = '$.main.main'
 
 /**
- * My project processors.
+ * My project modules.
  */
 
-val friendlyRobotProcessor AIOProcessor = FriendlyRobotAnnotationProcessor()
+constant friendlyRobotModule = FriendlyRobotAnnotationModule()
 
-val robotVersionProcessor AIOProcessor = RobotVersionAnnotationProcessor()
+constant robotVersionModule = RobotVersionAnnotationModule()
 
-val robotAttackProcessor AIOProcessor = RobotAttackAnnotationProcessor()
+constant robotAttackModule = RobotAttackAnnotationModule()
 
 /**
- * Extra processors.
+ * Extra modules.
  */
 
-val logProcessor = getLogProcessor(INFO);
+constant logModule = getLogModule(INFO);
 
-val injectProcessor = getInjectProcessor(true)
+constant injectModule = getInjectModule(true)
 
 /**
- * Define extra processors.
+ * Define extra modules.
  */
 
-enum LogType (NOTE, INFO, WARNING, ERROR);
+enumname LogType (NOTE, INFO, WARNING, ERROR);
 
-fun getExtraProcessors(logType LogType) AIOProcessor
+function getLogModule(logType LogType) AIOModule
     {
         when(logType) {
                 NOTE -> println('Install note level')
@@ -39,67 +39,74 @@ fun getExtraProcessors(logType LogType) AIOProcessor
                 WARNING -> println('Install warning level')
                 ERROR -> println('Install error level')
         }
-        out LogProcessor(logType)
+        out LogModule(logType)
     }
 
-annotation Log;
+markname Log;
 
-class LogProcessor <- AIOProcessor
+typename LogModule <- AIOModule
     {
-        val type LogType
+        constant type LogType
 
-        LogProcessor(type LogType)
+        instance LogModule(type LogType)
 
-        fun before(clazz AIOClass) AIOClass : override
+        function configure(clazz AIOClass) : override
             {
-                loo (i = 0 i < clazz.constructors.size i++) {
-                    val constructor = constructors[i]
-                    val logAnnotation = constructor.getAnnotation(Log::class);
-                    if (logAnnotation && type == NOTE) {
-                            clazz.constructors[i] = (params Voi...) -> {
-                                println('#tag: start...')
-                                constructor(params)
-                                println('#tag: finished')
+                cycle (i = 0 i < clazz.constructors.size i++) {
+                    constant constructor = constructors[i]
+                    constant logAnnotation = constructor.getAnnotation(Log::class)
+                    if (logAnnotation && $type == NOTE) {
+                            clazz.constructors[i] = (params Any...) -> {
+                                println('#{$tag}: start...')
+                                constant result = constructor(params)
+                                println('#{$tag}: finished')
+                                out result
                             }
                     }
                 }
-                out clazz
             }
-
-        fun after(clazz AIOClass) AIOClass : override = clazz
     }
 
-fun getInjectProcessor(flag Boo) AIOProcessor
+function getInjectModule(flag Boo) AIOModule
     {
         if (flag) {
             out InjectProcessor()
-        } : {
+        } else {
             out nil
         }
     }
 
-annotation Inject;
+markname Inject;
 
-class InjectProcessor <- AIOProcessor
+typename InjectException <- AIOException
     {
-        val valueMap = HashMap<AIOClazz, Voi>()
+        constant message String
 
-        fun before(clazz AIOClazz) AIOClazz : override = clazz
+        instance InjectException(message String);
+    }
 
-        fun after(clazz AIOClazz) AIOClazz : override
+typename InjectModule <- AIOModule
+    {
+        constant ioc = HashMap<AIOClazz, Any>()
+
+        function after(clazz AIOClazz) AIOClazz : override
             {
-                val fields = clazz.fields
-                loo (i = 0 i < fields.size i++) {
-                    val field = fields[i]
-                    val hasInject = field.getAnnotation(Inject::class)
+                constant fields = clazz.fields
+                cycle (i = 0 i < fields.size i++) {
+                    constant field = fields[i]
+                    constant hasInject = field.getAnnotation(Inject::class)
                     if (hasInject) {
-                        val injectValue = values[field.class]
+                        constant injectValue = $ioc[field.class]
                         if (!injectValue) {
-                             values[field.class] = field.class.constructor()
+                            constant constructors = clazz.constructors
+                            if (constructors.size = 1 && constructors[0].paramsCount = 0) {
+                                values[field.class] = field.class.constructor()
+                            } else {
+                                throw InjectException('Injected property class must have a default instance!')
+                            }
                         }
                         fields[i] = values[field.class]
                     }
                 }
-                out clazz
             }
     }

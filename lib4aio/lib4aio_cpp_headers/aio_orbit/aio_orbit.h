@@ -10,37 +10,37 @@ namespace lib4aio {
     template<class T>
     class array_list;
 
-    template<class S>
+    template<class T>
     class aio_particle;
 
-    template<class S>
+    template<class T>
     class aio_orbit {
 
     public:
 
-        aio_orbit(array_list <aio_particle<S>> *particle_list, std::function<S *()> new_space_func);
+        explicit aio_orbit(array_list <aio_particle<T>> *particle_list, std::function<T *()> new_container_func);
 
         virtual ~aio_orbit();
 
-        S *make(const str_hook *string_holder);
+        T *make(const str_hook *string_holder);
 
     private:
 
-        std::function<S *()> new_space_func;
+        std::function<T *()> new_space_func;
 
-        array_list<aio_particle<S>> *particle_list;
+        array_list<aio_particle<T>> *particle_list;
 
         enum {
             AIO_ALL_PARTICLES_SCAN, AIO_ONE_PARTICLE_SCAN
         } particle_mode;
 
-        aio_particle<S> *current_particle;
+        aio_particle<T> *active_particle;
 
         unsigned iterator_position;
 
         void reset_particles();
 
-        void illuminate(S *space);
+        void illuminate(T *space);
     };
 }
 

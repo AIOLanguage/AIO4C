@@ -1,13 +1,13 @@
-import
+addition
     {
         cyborgs.Cyborg::Cyborg
         robots.implementations.robot724.core.Core724::Core724
     }
 
-val MAIN_MODEL = 724
+constant MAIN_MODEL Int = 724
 
-fun main(args[] Str)
+function main(args String[])
     {
-        val cyborg = Cyborg('Ilya', 'Dolgushev', 19, Core724(), MAIN_MODEL)
+        constant cyborg = Cyborg('Ilya', 'Dolgushev', 19, Core724(), MAIN_MODEL)
         cyborg.say('Hello')
     }

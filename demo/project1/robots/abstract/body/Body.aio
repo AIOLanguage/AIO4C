@@ -1,6 +1,6 @@
-class Body
+typename Body
     {
-        val armor Dou
+        constant armor Double
 
-        Body(armor Dou);
+        instance Body(armor Double);
     }

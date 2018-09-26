@@ -14,8 +14,6 @@ static array_list<str_hook> *new_aio_root_type_list()
     return root_type_list;
 }
 
-static
-
 aio_runtime::aio_runtime(const aio_runtime_type type)
 {
     this->runtime_type = type;

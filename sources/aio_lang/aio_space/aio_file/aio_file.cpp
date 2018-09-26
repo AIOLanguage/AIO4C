@@ -34,3 +34,18 @@ const array_list<str_hook> *aio_file::get_imports() const
 {
     return this->import_list;
 }
+
+const array_list<aio_class> *aio_file::get_annotation_definition_list() const
+{
+    return nullptr;
+}
+
+const aio_space *aio_file::get_parent_namespace() const
+{
+    return nullptr;
+}
+
+void aio_file::set_content(str_builder *content)
+{
+    this->content = content;
+}

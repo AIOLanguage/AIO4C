@@ -1,0 +1,10 @@
+typename FriendlyRobotAnnotationModule <- AIOModule
+    {
+        function configure(clazz AIOClass) : override
+            {
+                constant friendlyRobotAnnotation = clazz.annotations.getAnnotation(FriendlyRobot::class)
+                if (friendlyRobotAnnotation) {
+                    println('Found friendly robot')
+                }
+            }
+    }

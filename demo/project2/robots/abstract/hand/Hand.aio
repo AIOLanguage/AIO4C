@@ -1,4 +1,4 @@
-class Hand
+typename Hand
     {
-        val power Dou : abstract
+        constant power Double : abstract
     }

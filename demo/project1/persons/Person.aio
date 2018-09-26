@@ -1,27 +1,27 @@
-import
+addition
     {
-        java.lang.Object::Object
-        java.io.BufferedWriter::BufferedWriter
         java.util.List::List
+        java.lang.Object::Object
         java.util.ArrayList::ArrayList
+        java.io.BufferedWriter::BufferedWriter
     }
 
-class Person : open
+typename Person : open
     {
-        val firstName Str
-        var secondName Str
-        var age Int
+        constant firstName String
+        variable secondName String
+        variable age Int
 
-        Person(firstName Str, secondName Str, age Int);
+        instance Person(firstName String, secondName String, age Int);
 
-        Person(firstName Str, secondName Str, age Int, organizations Str...)
+        instance Person(firstName String, secondName String, age Int, organizations String...)
             {
                 $(firstName, secondName, age)
                 $org::organizations.addAll(organizations)
                 $org::organizations.sort()
             }
 
-        fun getInfo()
+        function getInfo()
             {
                 println('Name: #{$name}\nSecond name: #{$secondName}\nFriends:')
                 $com::friends.foreach
@@ -33,46 +33,52 @@ class Person : open
                 $org::getInfo()
             }
 
-        fun equals(o Object) : override
-            = o is Person && $firstName = o.firstName && $secondName = o.secondName && $age = o.age
+        function equals(o Object) : override
+            = o is Person && $firstName == o.firstName && $secondName == o.secondName && $age == o.age
 
-        scope com
+        division com
             {
-                class Friend(person Person, isBest Boo) : inner : private;
+                typename Friend : inner : private
+                    {
+                        constant person Person
+                        variable isBest Boolean
 
-                val friends List<Friend> = ArrayList<>()
+                        instance Friend(person Person, isBest Boolean);
+                    }
 
-                fun sayAll(message Str) : internal : open
+                constant friends List<Friend> = ArrayList<>()
+
+                function sayAll(message String) : open
                     {
                         println(message)
                     }
 
-                fun sayTo(other Person, message Str)
+                function sayTo(other Person, message String)
                     {
                         println("#{other.firstName}, #message")
                     }
 
-                fun addFriend(person Person, isBest Boo)
+                function addFriend(person Person, isBest Boolean)
                     {
                         val friend = Friend(person, isBest)
                         $friends.add(friend)
                     }
             }
 
-        scope org
+        division org
             {
-                val organizations List<Str> : private = ArrayList<>()
+                constant organizations List<String> : private = ArrayList<>()
 
-                fun getInfo()
+                function getInfo()
                     {
                         println('Organizations:')
                         $organizations.foreach { println(it) }
                     }
 
-                fun writeToFile(fileName Str)
+                function writeToFile(fileName String)
                     {
-                        val bufferedWriter = BufferedWriter(FileWriter(fileName))
-                        loo (organization in $organizations) {
+                        constant bufferedWriter = BufferedWriter(FileWriter(fileName))
+                        cycle (organization in $organizations) {
                             bufferedWriter.write(organization)
                             bufferedWriter.write('\n')
                         }

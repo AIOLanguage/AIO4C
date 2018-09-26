@@ -1,9 +1,9 @@
-import
+addition
     {
         robots.abstractRobot.Robot
     }
 
-class Robot724 <- Robot
+typename Robot724 <- Robot
     {
-        fun calc() : override;
+        function calc() : override;
     }

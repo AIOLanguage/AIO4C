@@ -1,49 +1,45 @@
-import
+addition
     {
-        robots.abstract.Robot::Robot
         persons.Person::Person
+        robots.abstract.Robot::Robot
     }
 
-class Cyborg <- Person, Robot
+typename Cyborg <- Person, Robot
     {
-        val model Int
+        constant model Int
 
-        Cyborg(firstName Str, secondName Str, age Int, core Core, model Int)
+        instance Cyborg(firstName String, secondName String, age Int, core Core, model Int)
             <- Person(firstName, secondName, age), Robot(core);
 
-        fun calc() : override
+        function calc() : override
             {
                 println('Calc temperature...')
                 println('Calc distance...')
             }
 
-        fun say(message Str) : override
+        function say(message String) : override
             {
                 println('message = #message')
             }
 
-        /**
-         * Diamond inheritance.
-         */
+        function equals(o Object) Boolean <- Person;
 
-        fun equals(o Object) <- Person : override
-
-        scope attack
+        division attack
             {
-                fun fire() : override : protected
+                function fire() : override : protected
                     {
                         println('I\'m friendly')
                     }
             }
 
-        scope init : protected
+        division init : protected
             {
-                fun installProgram() : override
+                function installProgram() : override
                     {
                         println('I\'ve a heart')
                     }
 
-                fun installDrivers() : override
+                function installDrivers() : override
                     {
                         println('I\'ve a heart')
                     }

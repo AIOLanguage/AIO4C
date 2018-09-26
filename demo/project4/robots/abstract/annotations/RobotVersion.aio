@@ -1,10 +1,10 @@
-annotation RobotVersion
+markname RobotVersion
     {
-        val min Int
+        constant min Int
 
-        RobotVersion(min Int);
+        instance RobotVersion(min Int);
 
-        RobotVersion()
+        instance RobotVersion()
             {
                 $min = 0
             }

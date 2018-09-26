@@ -1,18 +1,18 @@
 import
     {
-        java.lang.annotation.ElementType
-        java.lang.annotation.Retention
-        java.lang.annotation.RetentionPolicy
-        java.lang.annotation.Target
+        java.lang.annotation.Target::Target
+        java.lang.annotation.Retention::Retention
+        java.lang.annotation.ElementType::ElementType
+        java.lang.annotation.RetentionPolicy::RetentionPolicy
     }
 
-annotation RobotVersion : @Target(ElementType.FIELD) : @Retention(RetentionPolicy.RUNTIME)
+markname RobotVersion : @Target(ElementType.FIELD) : @Retention(RetentionPolicy.RUNTIME)
     {
-        val min Int
+        constant min Int
 
-        RobotVersion(min Int);
+        instance RobotVersion(min Int);
 
-        RobotVersion()
+        instance RobotVersion()
             {
                 $min = 0
             }

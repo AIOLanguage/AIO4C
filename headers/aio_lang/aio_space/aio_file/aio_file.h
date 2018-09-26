@@ -36,11 +36,13 @@ public:
 
     const str_builder * get_content() const;
 
+    void set_content(str_builder *content);
+
     const array_list<str_hook> *get_imports() const;
 
-    const array_list<aio_class> *get_annotation_definition_list() const = 0;
+    const array_list<aio_class> *get_annotation_definition_list() const;
 
-    const aio_space *get_parent_namespace() const = 0;
+    const aio_space *get_parent_namespace() const;
 };
 
 #endif //AIO_FILE_H

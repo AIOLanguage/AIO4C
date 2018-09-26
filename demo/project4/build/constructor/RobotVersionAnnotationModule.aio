@@ -1,0 +1,17 @@
+typename RobotVersionAnnotationModule <- AIOModule
+    {
+        function configure (clazz AIOClass) : override
+            {
+                constant fields = clazz.fields
+                cycle (i = 0 i < fields.size i++) {
+                    constant robotVersionAnnotation = fields[i].getAnnotation(RobotVersion::class)
+                    if (robotVersionAnnotation) {
+                        constant minVersion Int = robotVersionAnnotation.min
+                        constant currentVersion Int = field
+                        if (minVersion > currentVersion) {
+                            fields[i] = minVersion
+                        }
+                    }
+                }
+            }
+    }

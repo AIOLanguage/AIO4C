@@ -1,4 +1,4 @@
-class Hand
+typename Hand
     {
-        var power Dou : private = 100
+        variable power Double : private = 100.0
     }

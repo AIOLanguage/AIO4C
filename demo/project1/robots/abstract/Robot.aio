@@ -1,35 +1,35 @@
-import
+addition
     {
-        java.lang.Object::Robot
+        java.lang.Object::Object
     }
 
-class Robot : abstract
+typename Robot : abstract
     {
-        val core Core
+        constant core Core
 
-        Robot(core Core);
+        instance Robot(core Core);
 
-        fun calc() : abstract
+        function calc() : abstract
 
-        fun equals(o Object) : override
+        function equals(o Object) : override
             = o is Robot && $core == o.core
 
-        class Core : abstract : inner
+        typename Core : abstract : inner
             {
-                var batteryPower Int
+                variable batteryPower Int
 
-                scope attack
+                division attack
                     {
-                        fun fire() : abstract : protected
+                        function fire() : abstract : protected
                     }
 
-                scope init : protected
+                division init : protected
                     {
-                        fun installProgram() : abstract
+                        function installProgram() : abstract
 
-                        fun installDrivers() : abstract
+                        function installDrivers() : abstract
 
-                        fun installGPS() : private;
+                        function installGPS() : private;
                     }
             }
     }

@@ -1,16 +1,16 @@
-import
+addition
     {
-        robots.abstract.core.Core
+        robots.abstract.core.Core::Core
     }
 
-class Core724 <- Core
+typename Core724 <- Core
     {
-        fun install() : override
+        function install() : override
             {
                 log.info('CORE-724 has installed!')
             }
 
-        fun activate() : override
+        function activate() : override
             {
                 log.info('CORE-724 has activated!')
             }

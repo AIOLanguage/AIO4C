@@ -1,8 +1,8 @@
-class Core : abstract
+typename Core : abstract
     {
-        var batteryPower Int
+        variable batteryPower Int
 
-        fun install() : abstract
+        function install() : abstract
 
-        fun activate() : abstract
+        function activate() : abstract
     }

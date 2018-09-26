@@ -4,9 +4,11 @@
       <w>aiomain</w>
       <w>aioprocessor</w>
       <w>annotatable</w>
+      <w>enumname</w>
       <w>inflater</w>
       <w>inflatter</w>
       <w>initializable</w>
+      <w>markname</w>
       <w>schemable</w>
     </words>
   </dictionary>

@@ -1,8 +1,6 @@
 #ifndef AIO_FIELD_PARTICLE_H
 #define AIO_FIELD_PARTICLE_H
 
-
-
 #include <lib4aio_cpp_headers/aio_orbit/aio_particle/aio_particle.h>
 
 namespace lib4aio {
@@ -12,19 +10,18 @@ namespace lib4aio {
 
 using namespace lib4aio;
 
-class aio_build_script;
-
-class aio_build_script_attribute_particle : public aio_particle<aio_build_script> {
+template<typename T>
+class aio_field_particle : public aio_particle<T> {
 
 public:
 
-    aio_build_script_attribute_particle();
+    explicit aio_field_particle();
 
-    ~aio_build_script_attribute_particle();
+    ~aio_field_particle();
 
-    virtual const aio_particle_signal handle_symbol(const unsigned position);
+    const aio_particle_signal handle_symbol(const unsigned position);
 
-    virtual unsigned illuminate(aio_build_script *space);
+    unsigned illuminate(T *container);
 
     void reset();
 
@@ -45,7 +42,7 @@ private:
         char *value;
     } config_materials;
 
-    void handle_attribute_data(const char symbol, const unsigned position);
+    void handle_field_data(const char symbol, const unsigned position);
 
     void handle_equal_sign_data(const char symbol, const unsigned position);
 

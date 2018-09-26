@@ -1,19 +1,19 @@
-import
+addition
     {
-        robots.abstract.core.Core
-        java.util.logging.Logger
+        robots.abstract.core.Core::Core
+        java.util.logging.Logger::Logger
     }
 
-val log Logger : private = Logger.getLogger(Core724::class.name)
+constant log Logger : private = Logger.getLogger(Core724::class.name)
 
-class Core724 <- Core
+typename Core724 <- Core
     {
-        fun install() : override
+        function install() : override
             {
                 log.info('CORE-724 has installed!')
             }
 
-        fun activate() : override
+        function activate() : override
             {
                 log.info('CORE-724 has activated!')
             }

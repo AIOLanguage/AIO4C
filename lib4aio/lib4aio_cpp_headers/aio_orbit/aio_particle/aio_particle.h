@@ -5,14 +5,14 @@ namespace lib4aio {
 
     class str_hook;
 
-    template<class S>
+    template<class T>
     class aio_orbit;
 
     typedef enum aio_particle_signal {
         AIO_PARTICLE_SIGNAL_UNDEFINED, AIO_PARTICLE_SIGNAL_DETECTED, AIO_PARTICLE_SIGNAL_IS_READY
     } aio_particle_signal;
 
-    template<class S>
+    template<class T>
     class aio_particle {
 
     public:
@@ -25,7 +25,7 @@ namespace lib4aio {
 
         virtual const aio_particle_signal handle_symbol(const unsigned position) = 0;
 
-        virtual unsigned illuminate(S *space) = 0;
+        virtual unsigned illuminate(T *container) = 0;
 
         virtual void reset();
 

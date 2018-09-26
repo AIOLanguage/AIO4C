@@ -1,23 +1,23 @@
-import
+addition
     {
         robots.abstract.Robot::Robot
     }
 
-class StarKRERobot <- Robot
+typename StarKRERobot <- Robot
     {
-        val version Int : private
+        constant version Int : private
 
-        fun calc() : override
+        function calc() : override
             {
                 println('I'm calculating...')
             }
 
-        fun init() : protected
+        function init() : protected
             {
                 println('Hello, I\'m StarKRE with version: #version')
             }
 
-        fun destroy() : protected
+        function destroy() : protected
             {
                 println('No! I\'l be back!')
             }

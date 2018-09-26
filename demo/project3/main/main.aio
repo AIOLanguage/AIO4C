@@ -1,9 +1,9 @@
-import
+addition
     {
-        planets.Planet
+        planets.Planet::Planet
     }
 
-fun main(args[] Str)
+function main(args String[])
     {
         println('#{MERCURY.radius}')
         println('#{MERCURY.description}')

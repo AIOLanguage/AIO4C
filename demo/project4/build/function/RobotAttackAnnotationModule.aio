@@ -1,0 +1,19 @@
+typename RobotAttackAnnotationModule <- AIOModule
+    {
+        function configure(clazz AIOClazz) : override
+            {
+                constant functions = clazz.functions
+                cycle (i = 0 i < functions.size i++) {
+                    constant func = functions[i]
+                    constant attackAnnotation = func.getAnnotation(RobotAttack::class)
+                    if (attackAnnotation && attackAnnotation.tag == 'all') {
+                        functions[i] = (params Any...) -> {
+                            println('I\'m will attack all')
+                            constant result = func(params)
+                            println('I\'m will attack all')
+                            out result
+                        }
+                    }
+                }
+            }
+    }

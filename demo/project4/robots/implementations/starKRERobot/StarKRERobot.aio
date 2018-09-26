@@ -1,18 +1,18 @@
-class StarKRERobot <- Robot: @AIOProcessor : @FriendlyRobot
+typename StarKRERobot <- Robot: @AIOProcessor : @FriendlyRobot
     {
-        var version Int : @RobotVersion(10)
+        variable version Int : @RobotVersion(10)
 
-        fun calc() : override : @AttackFunction('all')
+        function calc() : override : @AttackFunction('all')
             {
                 log.info('I\'m calculating...')
             }
 
-        fun init()
+        function init()
             {
                 log.info('Hello, I\'m StarKRE with version: #version')
             }
 
-        fun destroy()
+        function destroy()
             {
                 log.info('No! I\'l be back!')
             }

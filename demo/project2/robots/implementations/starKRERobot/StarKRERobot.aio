@@ -1,36 +1,36 @@
-import
+addition
     {
-        org.springframework.beans.factory.InitializingBean
-        robots.abstractRobot.Robot
-        robots.abstractRobot.annotations.FriendlyRobot
-        robots.abstractRobot.annotations.RobotVersion
-        robots.abstractRobot.core.Core
-        robots.abstractRobot.head.Head
-        java.util.logging.Logger
+        java.util.logging.Logger::Logger
+        robots.abstractRobot.Robot::Robot
+        robots.abstractRobot.core.Core::Core
+        robots.abstractRobot.head.Head::Head
+        robots.abstractRobot.annotations.RobotVersion::RobotVersion
+        robots.abstractRobot.annotations.FriendlyRobot::FriendlyRobot
+        org.springframework.beans.factory.InitializingBean::InitializingBean
     }
 
-val log : private = Logger.getLogger(StarKRERobot::class.name)
+constant log : private = Logger.getLogger(StarKRERobot::class.name)
 
-class StarKRERobot <- Robot, InitializingBean : @FriendlyRobot
+typename StarKRERobot <- Robot, InitializingBean : @FriendlyRobot
     {
-        var version Int : @RobotVersion(10)
+        variable version Int : @RobotVersion(10)
 
-        fun calc() : override
+        function calc() : override
             {
                 log.info('I\'m calculating...')
             }
 
-        fun afterPropertiesSet() : override
+        function afterPropertiesSet() : override
             {
                 log.info('I\'m ready to the battle!')
             }
 
-        fun init()
+        function init()
             {
                 log.info('Hello, I\'m StarKRE with version: #version')
             }
 
-        fun destroy()
+        function destroy()
             {
                 log.info('No! I\'l be back!')
             }

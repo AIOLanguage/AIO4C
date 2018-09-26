@@ -1,56 +1,48 @@
-import
+addition
     {
         planets.SpaceType
     }
 
-enum Planet
+enumname Planet
     (
 
         MERCURY(2440) {
 
-            description : override = 'Mercury is...'
-
+            constant description String : override = 'Mercury is...'
         },
         VENUS(6052) {
 
-            description : override = 'Venus is...'
-
+            constant description String : override = 'Venus is...'
         },
         EARTH(6371) {
 
-            description : override = 'Earth is...'
-
+            constant description String : override = 'Earth is...'
         },
         MARS(3390) {
 
-            description : override = 'Mars is...'
-
+            constant description String : override = 'Mars is...'
         },
         JUPITER(69911) {
 
-            description : override = 'Jupiter is...'
-
+            constant description String : override = 'Jupiter is...'
         },
         SATURN(58232) {
 
-            description : override = 'Saturn is...'
-
+            constant description String : override = 'Saturn is...'
         },
         URANUS(25362) {
 
-            description : override = 'Uranus is...'
-
+            constant description String : override = 'Uranus is...'
         },
         NEPTUNE(24622) {
 
-            description : override = 'Neptune is...'
-
+            constant description String : override = 'Neptune is...'
         }
     )
     {
-        val radius Dou
-        val spaceType = SpaceType.PLANET
-        val description Str : abstract
+        constant radius Double
+        constant spaceType = SpaceType.PLANET
+        constant description String : abstract
 
-        Planet(radius Dou);
+        instance Planet(radius Double);
     }

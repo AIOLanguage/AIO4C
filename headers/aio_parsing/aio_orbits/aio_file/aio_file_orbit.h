@@ -19,7 +19,7 @@ class aio_file_orbit : public aio_orbit<aio_file> {
 
 public:
 
-    aio_file_orbit(array_list<aio_file> *file_collection, str_builder *file_content);
+    explicit aio_file_orbit(array_list<aio_file> *file_collection, str_builder *file_content);
 
     ~aio_file_orbit();
 };

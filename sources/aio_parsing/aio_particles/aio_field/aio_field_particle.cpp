@@ -12,14 +12,14 @@
 
 using namespace lib4aio;
 
-aio_build_script_attribute_particle::aio_build_script_attribute_particle()
+aio_build_script_attribute_particle::aio_field_particle()
 {
     this->monitor_mode = AIO_MONITOR_ATTRIBUTE;
     this->trigger_mode = AIO_TRIGGER_MODE_PASSIVE;
     this->whitespace_counter = 0;
 }
 
-aio_build_script_attribute_particle::~aio_build_script_attribute_particle()
+aio_build_script_attribute_particle::~aio_field_particle()
 {
     this->reset();
 }

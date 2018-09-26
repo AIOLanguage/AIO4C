@@ -8,10 +8,10 @@
 namespace lib4aio {
 
     template<class S>
-    aio_orbit<S>::aio_orbit(array_list <aio_particle<S>> *particle_list, function<S *()> new_space_func)
+    aio_orbit<S>::aio_orbit(array_list <aio_particle<S>> *particle_list, function<S *()> new_container_func)
     {
         this->particle_list = particle_list;
-        this->new_space_func = new_space_func;
+        this->new_space_func = new_container_func;
         this->particle_mode = AIO_ALL_PARTICLES_SCAN;
     }
 
@@ -36,9 +36,9 @@ namespace lib4aio {
     template<class S>
     void aio_orbit<S>::illuminate(S *space)
     {
-        this->iterator_position = this->current_particle->illuminate(space);
+        this->iterator_position = this->active_particle->illuminate(space);
         this->particle_mode = AIO_ALL_PARTICLES_SCAN;
-        this->current_particle = nullptr;
+        this->active_particle = nullptr;
         this->reset_particles();
     }
 
@@ -59,7 +59,7 @@ namespace lib4aio {
                     aio_particle<S> *particle = particle_list->get(i);
                     const aio_particle_signal signal = particle->handle_symbol(this->iterator_position);
                     if (signal == AIO_PARTICLE_SIGNAL_DETECTED) {
-                        this->current_particle = particle;
+                        this->active_particle = particle;
                         this->particle_mode = AIO_ONE_PARTICLE_SCAN;
                         break;
                     }
@@ -68,10 +68,10 @@ namespace lib4aio {
                     }
                 }
             } else {
-                aio_particle<S> *particle = this->current_particle;
+                aio_particle<S> *particle = this->active_particle;
                 aio_particle_signal signal = particle->handle_symbol(this->iterator_position);
                 if (signal == AIO_PARTICLE_SIGNAL_IS_READY) {
-                    this->current_particle = particle;
+                    this->active_particle = particle;
                     this->illuminate(space);
                 }
             }

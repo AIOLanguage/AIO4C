@@ -1,8 +1,4 @@
-//
-// Created by ihb on 23.09.18.
-//
+#ifndef AIO_FUNCTION_ORBIT_H
+#define AIO_FUNCTION_ORBIT_H
 
-#ifndef AIO_V_2_AIO_FUNCTION_ORBIT_H
-#define AIO_V_2_AIO_FUNCTION_ORBIT_H
-
-#endif //AIO_V_2_AIO_FUNCTION_ORBIT_H
+#endif //AIO_FUNCTION_ORBIT_H

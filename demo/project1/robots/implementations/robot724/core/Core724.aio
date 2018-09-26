@@ -1,22 +1,23 @@
-import
+addition
     {
+        robots.abstract.Robot::Robot
         robots.abstract.Robot::Robot.Core
     }
 
-class Core724 <- Robot.Core
+typename Core724 <- Robot.Core
     {
-        fun activate() : override
+        function activate() : override
             {
                 println('CORE-724 has activated!')
             }
 
-        scope init
+        division init
             {
-                fun installProgram() : override
+                function installProgram() : override
                     {
                         println('CORE-724 has installed!')
                     }
 
-                fun installDrivers() : override;
+                function installDrivers() : override;
             }
     }

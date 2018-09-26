@@ -1,14 +1,14 @@
-import
+addition
     {
-        robots.abstract.head.Head
-        robots.abstract.core.Core
+        robots.abstract.head.Head::Head
+        robots.abstract.core.Core::Core
     }
 
-class Robot : abstract
+typename Robot : abstract
     {
-        val head Head
+        variable head Head
 
-        val core Core
+        variable core Core
 
-        fun calc() : abstract
+        function calc() : abstract
     }
