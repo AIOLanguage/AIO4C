@@ -12,12 +12,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="92aa3559-b190-4db0-9881-a1f19bf9613d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/demo/project4/main/main.aio" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/headers/aio_parsing/aio_particles/aio_import/aio_import_particle.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sources/aio_parsing/aio_particles/aio_class/aio_class_particle.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/ihb.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/ihb.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/AIO_v_2.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/AIO_v_2.cbp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO_v_2.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO_v_2.dir/DependInfo.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO_v_2.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AIO_v_2.dir/build.make" afterDir="false" />
@@ -27,69 +22,7 @@
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/project1/build.aio_core" beforeDir="false" afterPath="$PROJECT_DIR$/demo/project1/build.aio_core" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/project1/cyborgs/Cyborg.aio" beforeDir="false" afterPath="$PROJECT_DIR$/demo/project1/cyborgs/Cyborg.aio" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/project1/main/main.aio" beforeDir="false" afterPath="$PROJECT_DIR$/demo/project1/main/main.aio" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/project1/persons/Person.aio" beforeDir="false" afterPath="$PROJECT_DIR$/demo/project1/persons/Person.aio" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/project1/robots/abstract/Robot.aio" beforeDir="false" afterPath="$PROJECT_DIR$/demo/project1/robots/abstract/Robot.aio" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/project1/robots/abstract/body/Body.aio" beforeDir="false" afterPath="$PROJECT_DIR$/demo/project1/robots/abstract/body/Body.aio" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/project1/robots/abstract/hand/Hand.aio" beforeDir="false" afterPath="$PROJECT_DIR$/demo/project1/robots/abstract/hand/Hand.aio" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/project1/robots/abstract/leg/Leg.aio" beforeDir="false" afterPath="$PROJECT_DIR$/demo/project1/robots/abstract/leg/Leg.aio" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/project1/robots/implementations/robot724/Robot724.aio" beforeDir="false" afterPath="$PROJECT_DIR$/demo/project1/robots/implementations/robot724/Robot724.aio" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/project1/robots/implementations/robot724/core/Core724.aio" beforeDir="false" afterPath="$PROJECT_DIR$/demo/project1/robots/implementations/robot724/core/Core724.aio" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/project1/robots/implementations/starKRERobot/StarKRERobot.aio" beforeDir="false" afterPath="$PROJECT_DIR$/demo/project1/robots/implementations/starKRERobot/StarKRERobot.aio" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/project2/build.aio_core" beforeDir="false" afterPath="$PROJECT_DIR$/demo/project2/build.aio_core" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/project2/main/main.aio" beforeDir="false" afterPath="$PROJECT_DIR$/demo/project2/main/main.aio" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/project2/main/springApplication/RobotApplication.aio" beforeDir="false" afterPath="$PROJECT_DIR$/demo/project2/main/springApplication/RobotApplication.aio" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/project2/main/springApplication/beanPostProcessor/FriendlyRobotAnnotationBeanPostProcessor.aio" beforeDir="false" afterPath="$PROJECT_DIR$/demo/project2/main/springApplication/beanPostProcessor/FriendlyRobotAnnotationBeanPostProcessor.aio" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/project2/main/springApplication/beanPostProcessor/RobotVersionAnnotationBeanPostProcessor.aio" beforeDir="false" afterPath="$PROJECT_DIR$/demo/project2/main/springApplication/beanPostProcessor/RobotVersionAnnotationBeanPostProcessor.aio" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/project2/robots/abstract/Robot.aio" beforeDir="false" afterPath="$PROJECT_DIR$/demo/project2/robots/abstract/Robot.aio" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/project2/robots/abstract/annotations/FriendlyRobot.aio" beforeDir="false" afterPath="$PROJECT_DIR$/demo/project2/robots/abstract/annotations/FriendlyRobot.aio" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/project2/robots/abstract/annotations/RobotVersion.aio" beforeDir="false" afterPath="$PROJECT_DIR$/demo/project2/robots/abstract/annotations/RobotVersion.aio" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/project2/robots/abstract/body/Body.aio" beforeDir="false" afterPath="$PROJECT_DIR$/demo/project2/robots/abstract/body/Body.aio" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/project2/robots/abstract/core/Core.aio" beforeDir="false" afterPath="$PROJECT_DIR$/demo/project2/robots/abstract/core/Core.aio" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/project2/robots/abstract/hand/Hand.aio" beforeDir="false" afterPath="$PROJECT_DIR$/demo/project2/robots/abstract/hand/Hand.aio" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/project2/robots/abstract/head/Head.aio" beforeDir="false" afterPath="$PROJECT_DIR$/demo/project2/robots/abstract/head/Head.aio" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/project2/robots/abstract/leg/Leg.aio" beforeDir="false" afterPath="$PROJECT_DIR$/demo/project2/robots/abstract/leg/Leg.aio" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/project2/robots/implementations/robot724/Robot724.aio" beforeDir="false" afterPath="$PROJECT_DIR$/demo/project2/robots/implementations/robot724/Robot724.aio" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/project2/robots/implementations/robot724/core/Core724.aio" beforeDir="false" afterPath="$PROJECT_DIR$/demo/project2/robots/implementations/robot724/core/Core724.aio" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/project2/robots/implementations/starKRERobot/StarKRERobot.aio" beforeDir="false" afterPath="$PROJECT_DIR$/demo/project2/robots/implementations/starKRERobot/StarKRERobot.aio" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/project3/build.aio_core" beforeDir="false" afterPath="$PROJECT_DIR$/demo/project3/build.aio_core" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/project3/main/main.aio" beforeDir="false" afterPath="$PROJECT_DIR$/demo/project3/main/main.aio" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/project3/planets/Planet.aio" beforeDir="false" afterPath="$PROJECT_DIR$/demo/project3/planets/Planet.aio" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/project4/build/build.aio_core" beforeDir="false" afterPath="$PROJECT_DIR$/demo/project4/build/build.aio_core" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/project4/build/constructor/FriendlyRobotAnnotationProcessor.aio" beforeDir="false" afterPath="$PROJECT_DIR$/demo/project4/build/constructor/FriendlyRobotAnnotationModule.aio" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/project4/build/constructor/RobotVersionAnnotationProcessor.aio" beforeDir="false" afterPath="$PROJECT_DIR$/demo/project4/build/constructor/RobotVersionAnnotationModule.aio" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/project4/build/function/RobotAttackAnnotationProcessor.aio" beforeDir="false" afterPath="$PROJECT_DIR$/demo/project4/build/function/RobotAttackAnnotationModule.aio" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/project4/robots/abstract/Robot.aio" beforeDir="false" afterPath="$PROJECT_DIR$/demo/project4/robots/abstract/Robot.aio" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/project4/robots/abstract/annotations/AttackRobot.aio" beforeDir="false" afterPath="$PROJECT_DIR$/demo/project4/robots/abstract/annotations/AttackRobot.aio" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/project4/robots/abstract/annotations/FriendlyRobot.aio" beforeDir="false" afterPath="$PROJECT_DIR$/demo/project4/robots/abstract/annotations/FriendlyRobot.aio" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/project4/robots/abstract/annotations/RobotVersion.aio" beforeDir="false" afterPath="$PROJECT_DIR$/demo/project4/robots/abstract/annotations/RobotVersion.aio" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/project4/robots/implementations/robot724/Robot724.aio" beforeDir="false" afterPath="$PROJECT_DIR$/demo/project4/robots/implementations/robot724/Robot724.aio" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/project4/robots/implementations/robot724/core/Core724.aio" beforeDir="false" afterPath="$PROJECT_DIR$/demo/project4/robots/implementations/robot724/core/Core724.aio" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/demo/project4/robots/implementations/starKRERobot/StarKRERobot.aio" beforeDir="false" afterPath="$PROJECT_DIR$/demo/project4/robots/implementations/starKRERobot/StarKRERobot.aio" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/headers/aio_lang/aio_space/aio_file/aio_file.h" beforeDir="false" afterPath="$PROJECT_DIR$/headers/aio_lang/aio_space/aio_file/aio_file.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/headers/aio_parsing/aio_orbits/aio_annotation/aio_annotation_orbit.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/headers/aio_parsing/aio_orbits/aio_class/aio_class_orbit.h" beforeDir="false" afterPath="$PROJECT_DIR$/headers/aio_parsing/aio_orbits/aio_class/aio_class_orbit.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/headers/aio_parsing/aio_orbits/aio_constructor/aio_constructor_orbit.h" beforeDir="false" afterPath="$PROJECT_DIR$/headers/aio_parsing/aio_orbits/aio_constructor/aio_constructor_orbit.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/headers/aio_parsing/aio_orbits/aio_field/aio_file_orbit.h" beforeDir="false" afterPath="$PROJECT_DIR$/headers/aio_parsing/aio_orbits/aio_field/aio_file_orbit.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/headers/aio_parsing/aio_orbits/aio_file/aio_file_orbit.h" beforeDir="false" afterPath="$PROJECT_DIR$/headers/aio_parsing/aio_orbits/aio_file/aio_file_orbit.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/headers/aio_parsing/aio_orbits/aio_file/aio_particles/aio_import_particle.h" beforeDir="false" afterPath="$PROJECT_DIR$/headers/aio_parsing/aio_orbits/aio_file/aio_particles/aio_import_particle.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/headers/aio_parsing/aio_orbits/aio_function/aio_function_orbit.h" beforeDir="false" afterPath="$PROJECT_DIR$/headers/aio_parsing/aio_orbits/aio_function/aio_function_orbit.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/headers/aio_parsing/aio_particles/aio_annotation/aio_annotation_particle.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/headers/aio_parsing/aio_particles/aio_class/aio_class_particle.h" beforeDir="false" afterPath="$PROJECT_DIR$/headers/aio_parsing/aio_particles/aio_class/aio_class_particle.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/headers/aio_parsing/aio_particles/aio_constructor/aio_constrcutor_particle.h" beforeDir="false" afterPath="$PROJECT_DIR$/headers/aio_parsing/aio_particles/aio_constructor/aio_constrcutor_particle.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/headers/aio_parsing/aio_particles/aio_field/aio_field_particle.h" beforeDir="false" afterPath="$PROJECT_DIR$/headers/aio_parsing/aio_particles/aio_field/aio_field_particle.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/headers/aio_parsing/aio_particles/aio_file/aio_file_particle.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/headers/aio_parsing/aio_particles/aio_function/aio_function_particle.h" beforeDir="false" afterPath="$PROJECT_DIR$/headers/aio_parsing/aio_particles/aio_function/aio_function_particle.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/headers/aio_parsing/aio_particles/aio_scope/aio_scope_particle.h" beforeDir="false" afterPath="$PROJECT_DIR$/headers/aio_parsing/aio_particles/aio_scope/aio_scope_particle.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib4aio/lib4aio_cpp_headers/aio_orbit/aio_orbit.h" beforeDir="false" afterPath="$PROJECT_DIR$/lib4aio/lib4aio_cpp_headers/aio_orbit/aio_orbit.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib4aio/lib4aio_cpp_headers/aio_orbit/aio_particle/aio_particle.h" beforeDir="false" afterPath="$PROJECT_DIR$/lib4aio/lib4aio_cpp_headers/aio_orbit/aio_particle/aio_particle.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib4aio/lib4aio_cpp_sources/aio_orbit/aio_orbit.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/lib4aio/lib4aio_cpp_sources/aio_orbit/aio_orbit.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sources/aio_lang/aio_space/aio_file/aio_file.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/sources/aio_lang/aio_space/aio_file/aio_file.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sources/aio_parsing/aio_orbits/aio_file/aio_file_orbit.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/sources/aio_parsing/aio_orbits/aio_file/aio_file_orbit.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sources/aio_parsing/aio_particles/aio_field/aio_field_particle.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/sources/aio_parsing/aio_particles/aio_field/aio_field_particle.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sources/aio_runtime/aio_runtime.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/sources/aio_runtime/aio_runtime.cpp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -182,7 +115,7 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="AIO_v_2 (disassembly)" value="6" />
-          <entry key="aio" value="884" />
+          <entry key="aio" value="892" />
           <entry key="aio_core" value="112" />
           <entry key="aiop" value="1" />
           <entry key="cpp" value="2059" />
@@ -200,13 +133,13 @@
           <entry key="Image" value="1" />
           <entry key="Markdown" value="2" />
           <entry key="ObjectiveC" value="4517" />
-          <entry key="PLAIN_TEXT" value="999" />
+          <entry key="PLAIN_TEXT" value="1007" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="aio" value="9991" />
-          <entry key="aio_core" value="4060" />
+          <entry key="aio" value="9998" />
+          <entry key="aio_core" value="4114" />
           <entry key="cpp" value="30715" />
           <entry key="h" value="18059" />
           <entry key="md" value="7" />
@@ -220,7 +153,7 @@
           <entry key="Doxygen file" value="32" />
           <entry key="Markdown" value="7" />
           <entry key="ObjectiveC" value="48830" />
-          <entry key="PLAIN_TEXT" value="14783" />
+          <entry key="PLAIN_TEXT" value="14844" />
         </counts>
       </usages-collector>
     </session>
@@ -231,10 +164,10 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/demo/project4/build/build.aio_core">
+        <entry file="file://$PROJECT_DIR$/demo/project4/robots/implementations/starKRERobot/StarKRERobot.aio">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
-              <caret line="104" column="86" selection-start-line="104" selection-start-column="86" selection-end-line="104" selection-end-column="86" />
+            <state>
+              <caret column="36" selection-start-column="36" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -339,10 +272,10 @@
         <option value="$PROJECT_DIR$/demo/project4/robots/abstract/Robot.aio" />
         <option value="$PROJECT_DIR$/demo/project4/robots/implementations/robot724/core/Core724.aio" />
         <option value="$PROJECT_DIR$/demo/project4/robots/implementations/robot724/Robot724.aio" />
-        <option value="$PROJECT_DIR$/demo/project4/robots/implementations/starKRERobot/StarKRERobot.aio" />
         <option value="$PROJECT_DIR$/demo/project4/main/main.aio" />
         <option value="$PROJECT_DIR$/demo/project4/build/function/RobotAttackAnnotationModule.aio" />
         <option value="$PROJECT_DIR$/demo/project4/build/build.aio_core" />
+        <option value="$PROJECT_DIR$/demo/project4/robots/implementations/starKRERobot/StarKRERobot.aio" />
       </list>
     </option>
   </component>
@@ -462,6 +395,73 @@
               <item name="project4" type="462c0819:PsiDirectoryNode" />
               <item name="build" type="462c0819:PsiDirectoryNode" />
               <item name="function" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AIO_v_2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AIO_Backup" type="462c0819:PsiDirectoryNode" />
+              <item name="demo" type="462c0819:PsiDirectoryNode" />
+              <item name="project4" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AIO_v_2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AIO_Backup" type="462c0819:PsiDirectoryNode" />
+              <item name="demo" type="462c0819:PsiDirectoryNode" />
+              <item name="project4" type="462c0819:PsiDirectoryNode" />
+              <item name="robots" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AIO_v_2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AIO_Backup" type="462c0819:PsiDirectoryNode" />
+              <item name="demo" type="462c0819:PsiDirectoryNode" />
+              <item name="project4" type="462c0819:PsiDirectoryNode" />
+              <item name="robots" type="462c0819:PsiDirectoryNode" />
+              <item name="abstract" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AIO_v_2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AIO_Backup" type="462c0819:PsiDirectoryNode" />
+              <item name="demo" type="462c0819:PsiDirectoryNode" />
+              <item name="project4" type="462c0819:PsiDirectoryNode" />
+              <item name="robots" type="462c0819:PsiDirectoryNode" />
+              <item name="abstract" type="462c0819:PsiDirectoryNode" />
+              <item name="annotations" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AIO_v_2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AIO_Backup" type="462c0819:PsiDirectoryNode" />
+              <item name="demo" type="462c0819:PsiDirectoryNode" />
+              <item name="project4" type="462c0819:PsiDirectoryNode" />
+              <item name="robots" type="462c0819:PsiDirectoryNode" />
+              <item name="implementations" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AIO_v_2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AIO_Backup" type="462c0819:PsiDirectoryNode" />
+              <item name="demo" type="462c0819:PsiDirectoryNode" />
+              <item name="project4" type="462c0819:PsiDirectoryNode" />
+              <item name="robots" type="462c0819:PsiDirectoryNode" />
+              <item name="implementations" type="462c0819:PsiDirectoryNode" />
+              <item name="robot724" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AIO_v_2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AIO_Backup" type="462c0819:PsiDirectoryNode" />
+              <item name="demo" type="462c0819:PsiDirectoryNode" />
+              <item name="project4" type="462c0819:PsiDirectoryNode" />
+              <item name="robots" type="462c0819:PsiDirectoryNode" />
+              <item name="implementations" type="462c0819:PsiDirectoryNode" />
+              <item name="robot724" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AIO_v_2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AIO_Backup" type="462c0819:PsiDirectoryNode" />
+              <item name="demo" type="462c0819:PsiDirectoryNode" />
+              <item name="project4" type="462c0819:PsiDirectoryNode" />
+              <item name="robots" type="462c0819:PsiDirectoryNode" />
+              <item name="implementations" type="462c0819:PsiDirectoryNode" />
+              <item name="starKRERobot" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -583,7 +583,7 @@
       <workItem from="1537818311963" duration="98000" />
       <workItem from="1537868109690" duration="15000" />
       <workItem from="1537870096578" duration="26414000" />
-      <workItem from="1537973551889" duration="13489000" />
+      <workItem from="1537973551889" duration="13748000" />
     </task>
     <task id="LOCAL-00001" summary="AIO CPP 빌드:&#10;-&gt; 부분적으로 'point_watcher' 과 'str_hook' 다시 만들었습니다">
       <created>1536080376822</created>
@@ -886,11 +886,18 @@
       <option name="project" value="LOCAL" />
       <updated>1537891846608</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="'아이어' 프로그램의 전체 계획을 만들었습니다">
+      <created>1537988543561</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1537988543561</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="367273000" />
+    <option name="totallyTimeSpent" value="367532000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -905,7 +912,7 @@
     <frame x="0" y="25" width="1366" height="743" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49563953" weight="0.27891654" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49563953" visible="true" weight="0.27891654" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" sideWeight="0.50436044" side_tool="true" weight="0.27891654" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -1284,10 +1291,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/demo/project4/robots/abstract/annotations/RobotVersion.aio">
+    <entry file="file://$PROJECT_DIR$/demo/project4/build/function/RobotAttackAnnotationModule.aio">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret lean-forward="true" />
+        <state relative-caret-position="126">
+          <caret line="9" column="50" selection-start-line="9" selection-start-column="50" selection-end-line="9" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo/project4/build/build.aio_core">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo/project4/main/main.aio">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="14">
+          <caret line="1" column="5" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo/project4/robots/abstract/annotations/AttackRobot.aio">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="56">
+          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -1298,10 +1322,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/demo/project4/robots/abstract/annotations/AttackRobot.aio">
+    <entry file="file://$PROJECT_DIR$/demo/project4/robots/abstract/annotations/RobotVersion.aio">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="56">
-          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+        <state>
+          <caret lean-forward="true" />
         </state>
       </provider>
     </entry>
@@ -1328,29 +1352,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/demo/project4/robots/implementations/starKRERobot/StarKRERobot.aio">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="14" column="16" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo/project4/main/main.aio">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="14">
-          <caret line="1" column="5" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo/project4/build/function/RobotAttackAnnotationModule.aio">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="9" column="50" selection-start-line="9" selection-start-column="50" selection-end-line="9" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo/project4/build/build.aio_core">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="104" column="86" selection-start-line="104" selection-start-column="86" selection-end-line="104" selection-end-column="86" />
+        <state>
+          <caret column="36" selection-start-column="36" selection-end-column="36" />
         </state>
       </provider>
     </entry>

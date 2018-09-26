@@ -1,4 +1,4 @@
-typename StarKRERobot <- Robot: @AIOProcessor : @FriendlyRobot
+typename StarKRERobot <- Robot: @AIOObservable : @FriendlyRobot
     {
         variable version Int : @RobotVersion(10)
 
