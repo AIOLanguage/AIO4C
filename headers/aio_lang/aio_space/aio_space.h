@@ -26,22 +26,6 @@ public:
 
     virtual ~aio_space();
 
-    const aio_visibility get_visibility_type() const;
-
-    virtual const aio_space *get_parent_namespace() const;
-
-    const array_list<aio_class> *get_class_definition_list() const;
-
-    const array_list<aio_enum> *get_enum_definition_list() const;
-
-    const array_list<aio_scope> *get_scope_definition_list() const;
-
-    const array_list<aio_function> *get_function_definition_list() const;
-
-    array_list<aio_field> *get_field_definition_list() const;
-
-protected:
-
     aio_visibility visibility_type;
 
     aio_space *parent_namespace;
@@ -55,7 +39,6 @@ protected:
     array_list<aio_function> *function_definition_list;
 
     array_list<aio_field> *field_definition_list;
-
 };
 
 #endif //AIO_SPACE_H

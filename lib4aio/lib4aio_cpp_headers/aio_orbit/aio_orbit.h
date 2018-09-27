@@ -18,17 +18,19 @@ namespace lib4aio {
 
     public:
 
-        explicit aio_orbit(array_list <aio_particle<T>> *particle_list, std::function<T *()> new_container_func);
+        explicit aio_orbit();
 
         virtual ~aio_orbit();
 
         T *make(const str_hook *string_holder);
 
-    private:
-
-        std::function<T *()> new_space_func;
+    protected:
 
         array_list<aio_particle<T>> *particle_list;
+
+        T *container_ptr;
+
+    private:
 
         enum {
             AIO_ALL_PARTICLES_SCAN, AIO_ONE_PARTICLE_SCAN

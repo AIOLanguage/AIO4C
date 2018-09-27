@@ -9,8 +9,13 @@
 
 using namespace lib4aio;
 
-aio_file::aio_file()
-{}
+aio_file::aio_file(str_builder *file_content, const str_hook *relative_file_path)
+{
+    this->parent_namespace = AIO_FILE_PARENT;
+    this->annotation_definition_list = AIO_FILE_ANNOTATION_LIST;
+    this->relative_path = relative_file_path;
+    this->content = file_content;
+}
 
 aio_file::~aio_file()
 {
@@ -18,34 +23,4 @@ aio_file::~aio_file()
     delete this->relative_path;
     delete this->import_list;
     delete this->content;
-}
-
-const str_hook *aio_file::get_relative_path() const
-{
-    return this->relative_path;
-}
-
-const str_builder * aio_file::get_content() const
-{
-    return this->content;
-}
-
-const array_list<str_hook> *aio_file::get_imports() const
-{
-    return this->import_list;
-}
-
-const array_list<aio_class> *aio_file::get_annotation_definition_list() const
-{
-    return nullptr;
-}
-
-const aio_space *aio_file::get_parent_namespace() const
-{
-    return nullptr;
-}
-
-void aio_file::set_content(str_builder *content)
-{
-    this->content = content;
 }

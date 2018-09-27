@@ -9,6 +9,7 @@ namespace lib4aio {
     class str_hook;
 }
 
+template<typename T>
 class aio_ray;
 
 using namespace lib4aio;
@@ -31,7 +32,7 @@ public:
 
     array_list<aio_file> *get_file_list() const;
 
-    const aio_runtime_type get_runtime_type() const ;
+    const aio_runtime_type get_runtime_type() const;
 
 private:
 

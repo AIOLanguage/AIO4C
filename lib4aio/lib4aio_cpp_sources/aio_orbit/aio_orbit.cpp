@@ -7,34 +7,25 @@
 
 namespace lib4aio {
 
-    template<class S>
-    aio_orbit<S>::aio_orbit(array_list <aio_particle<S>> *particle_list, function<S *()> new_container_func)
+    template<class T>
+    aio_orbit<T>::aio_orbit()
     {
-        this->particle_list = particle_list;
-        this->new_space_func = new_container_func;
         this->particle_mode = AIO_ALL_PARTICLES_SCAN;
     }
 
-    template<class S>
-    aio_orbit<S>::~aio_orbit()
-    {
-        this->particle_list->free_elements();
-        delete this->particle_list;
-    }
-
-    template<class S>
-    void aio_orbit<S>::reset_particles()
+    template<class T>
+    void aio_orbit<T>::reset_particles()
     {
         const unsigned list_size = particle_list->get_size();
         //Provide parent to children:
         for (unsigned i = 0; i < list_size; ++i) {
-            aio_particle<S> *particle = particle_list->get(i);
+            aio_particle<T> *particle = particle_list->get(i);
             particle->reset();
         }
     }
 
-    template<class S>
-    void aio_orbit<S>::illuminate(S *space)
+    template<class T>
+    void aio_orbit<T>::illuminate(T *space)
     {
         this->iterator_position = this->active_particle->illuminate(space);
         this->particle_mode = AIO_ALL_PARTICLES_SCAN;
@@ -42,10 +33,9 @@ namespace lib4aio {
         this->reset_particles();
     }
 
-    template<class S>
-    S *aio_orbit<S>::make(const str_hook *string_holder)
+    template<class T>
+    T *aio_orbit<T>::make(const str_hook *string_holder)
     {
-        S *space = new_space_func();
         const unsigned list_size = this->particle_list->get_size();
         //문자열 소유자를 놓다:
         for (unsigned i = 0; i < list_size; ++i) {
@@ -56,7 +46,7 @@ namespace lib4aio {
         while (this->iterator_position < string_holder->end) {
             if (this->particle_mode == AIO_ALL_PARTICLES_SCAN) {
                 for (unsigned i = 0; i < list_size; ++i) {
-                    aio_particle<S> *particle = particle_list->get(i);
+                    aio_particle<T> *particle = particle_list->get(i);
                     const aio_particle_signal signal = particle->handle_symbol(this->iterator_position);
                     if (signal == AIO_PARTICLE_SIGNAL_DETECTED) {
                         this->active_particle = particle;
@@ -64,19 +54,25 @@ namespace lib4aio {
                         break;
                     }
                     if (signal == AIO_PARTICLE_SIGNAL_IS_READY) {
-                        this->illuminate(space);
+                        this->illuminate(this->container_ptr);
                     }
                 }
             } else {
-                aio_particle<S> *particle = this->active_particle;
+                aio_particle<T> *particle = this->active_particle;
                 aio_particle_signal signal = particle->handle_symbol(this->iterator_position);
                 if (signal == AIO_PARTICLE_SIGNAL_IS_READY) {
                     this->active_particle = particle;
-                    this->illuminate(space);
+                    this->illuminate(this->container_ptr);
                 }
             }
             this->iterator_position++;
         }
-        return space;
+    }
+
+    template<class T>
+    aio_orbit<T>::~aio_orbit()
+    {
+        this->particle_list->free_elements();
+        delete this->particle_list;
     }
 }

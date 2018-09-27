@@ -18,31 +18,17 @@ using namespace lib4aio;
 
 class aio_file : public aio_space {
 
-protected:
+public:
 
-    str_hook *relative_path;
+    explicit aio_file(str_builder *file_content, const str_hook *relative_file_path);
+
+    ~aio_file();
+
+    const str_hook *relative_path;
 
     str_builder *content;
 
     array_list<str_hook> *import_list;
-
-public:
-
-    explicit aio_file();
-
-    ~aio_file();
-
-    const str_hook *get_relative_path() const;
-
-    const str_builder * get_content() const;
-
-    void set_content(str_builder *content);
-
-    const array_list<str_hook> *get_imports() const;
-
-    const array_list<aio_class> *get_annotation_definition_list() const;
-
-    const aio_space *get_parent_namespace() const;
 };
 
 #endif //AIO_FILE_H

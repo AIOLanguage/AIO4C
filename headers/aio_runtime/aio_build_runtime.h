@@ -26,11 +26,11 @@ public:
 
     array_list<aio_variable> *get_processors_ptr() const;
 
-    aio_ray *get_build_ray_ptr() const;
+    aio_ray<aio_file> *get_build_ray_ptr() const;
 
 private:
 
-    aio_ray *build_ray_ptr;
+    aio_ray<aio_file> *build_ray_ptr;
 
     aio_variable *main_ptr;
 

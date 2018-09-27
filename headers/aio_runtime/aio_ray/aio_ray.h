@@ -7,39 +7,33 @@ namespace lib4aio {
     class array_list;
 }
 
-class aio_scheme;
-
 class aio_variable;
 
 using namespace lib4aio;
 
+
+typedef enum aio_ray_state {
+    AIO_RAY_NORMAL
+};
+
+template<typename T>
 class aio_ray {
 
 public:
 
-    static aio_ray *new_aio_ray(const aio_scheme *scheme);
+    aio_ray();
 
-    aio_ray *perform();
+    ~aio_ray();
 
-    void complete();
+    aio_ray *perform(const T *container);
 
     array_list<aio_variable> *get_variables() const;
 
 private:
 
-    typedef enum aio_ray_state {
-
-    };
-
-    const aio_scheme *scheme;
-
     array_list<aio_variable> *variable_list;
 
     aio_ray_state *state;
-
-    aio_ray(const aio_scheme *scheme);
-
-    ~aio_ray();
 };
 
 #endif //AIO_RAY_H
