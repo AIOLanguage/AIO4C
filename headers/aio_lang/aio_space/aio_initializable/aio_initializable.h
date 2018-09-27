@@ -8,6 +8,11 @@
 #include <aio_lang/aio_space/aio_space.h>
 #include <aio_lang/aio_visibility/aio_visibility.h>
 
+namespace lib4aio {
+
+    class str_hook;
+}
+
 class aio_constructor;
 
 class aio_initializable : public aio_space {
@@ -18,7 +23,7 @@ public:
 
     virtual ~aio_initializable();
 
-protected:
+    str_hook *name;
 
     array_list<aio_constructor> *constructor_definition_list;
 };

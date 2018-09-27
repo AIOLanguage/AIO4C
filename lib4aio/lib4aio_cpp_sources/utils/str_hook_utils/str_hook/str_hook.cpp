@@ -51,9 +51,14 @@ namespace lib4aio
         return this->string_ptr;
     }
 
-    char str_hook::get_char(const int index) const
+    char str_hook::get_absolute_char(const unsigned index) const
     {
         return this->string_ptr[index];
+    }
+
+    char str_hook::get_relative_char(const unsigned index) const
+    {
+        return this->string_ptr[this->start + index];
     }
 
     bool str_hook::equals_string(const str_hook *other) const
@@ -81,11 +86,11 @@ namespace lib4aio
         if (length < 1) {
             return false;
         }
-        auto first_symbol = this->get_char(this->start);
+        auto first_symbol = this->get_relative_char(this->start);
         if (isalpha(first_symbol)) {
             if (length > 1) {
                 for (int i = 1; i < length; ++i) {
-                    auto symbol = this->get_char(i);
+                    auto symbol = this->get_relative_char(i);
                     if (!isalnum(symbol)) {
                         return false;
                     }

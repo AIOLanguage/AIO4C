@@ -4,7 +4,11 @@
 class aio_field;
 
 typedef enum aio_visibility {
-    AIO_LOCAL, AIO_PRIVATE, AIO_PROTECTED, AIO_INTERNAL, AIO_PUBLIC
+    AIO_VISIBILITY_UNDEFINED,
+    AIO_VISIBILITY_LOCAL,
+    AIO_VISIBILITY_PRIVATE,
+    AIO_VISIBILITY_PROTECTED,
+    AIO_VISIBILITY_PUBLIC
 } aio_visibility;
 
 bool is_local_field(aio_field *field);

@@ -123,6 +123,33 @@ AIO_v_2/fast:
 	$(MAKE) -f CMakeFiles/AIO_v_2.dir/build.make CMakeFiles/AIO_v_2.dir/build
 .PHONY : AIO_v_2/fast
 
+lib4aio/lib4aio_cpp_sources/aio_explorer/aio_explorer.o: lib4aio/lib4aio_cpp_sources/aio_explorer/aio_explorer.cpp.o
+
+.PHONY : lib4aio/lib4aio_cpp_sources/aio_explorer/aio_explorer.o
+
+# target to build an object file
+lib4aio/lib4aio_cpp_sources/aio_explorer/aio_explorer.cpp.o:
+	$(MAKE) -f CMakeFiles/AIO_v_2.dir/build.make CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/aio_explorer/aio_explorer.cpp.o
+.PHONY : lib4aio/lib4aio_cpp_sources/aio_explorer/aio_explorer.cpp.o
+
+lib4aio/lib4aio_cpp_sources/aio_explorer/aio_explorer.i: lib4aio/lib4aio_cpp_sources/aio_explorer/aio_explorer.cpp.i
+
+.PHONY : lib4aio/lib4aio_cpp_sources/aio_explorer/aio_explorer.i
+
+# target to preprocess a source file
+lib4aio/lib4aio_cpp_sources/aio_explorer/aio_explorer.cpp.i:
+	$(MAKE) -f CMakeFiles/AIO_v_2.dir/build.make CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/aio_explorer/aio_explorer.cpp.i
+.PHONY : lib4aio/lib4aio_cpp_sources/aio_explorer/aio_explorer.cpp.i
+
+lib4aio/lib4aio_cpp_sources/aio_explorer/aio_explorer.s: lib4aio/lib4aio_cpp_sources/aio_explorer/aio_explorer.cpp.s
+
+.PHONY : lib4aio/lib4aio_cpp_sources/aio_explorer/aio_explorer.s
+
+# target to generate assembly for a file
+lib4aio/lib4aio_cpp_sources/aio_explorer/aio_explorer.cpp.s:
+	$(MAKE) -f CMakeFiles/AIO_v_2.dir/build.make CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/aio_explorer/aio_explorer.cpp.s
+.PHONY : lib4aio/lib4aio_cpp_sources/aio_explorer/aio_explorer.cpp.s
+
 lib4aio/lib4aio_cpp_sources/aio_orbit/aio_orbit.o: lib4aio/lib4aio_cpp_sources/aio_orbit/aio_orbit.cpp.o
 
 .PHONY : lib4aio/lib4aio_cpp_sources/aio_orbit/aio_orbit.o
@@ -1419,6 +1446,33 @@ sources/aio_parsing/aio_context_inflater/aio_context_inflater.cpp.s:
 	$(MAKE) -f CMakeFiles/AIO_v_2.dir/build.make CMakeFiles/AIO_v_2.dir/sources/aio_parsing/aio_context_inflater/aio_context_inflater.cpp.s
 .PHONY : sources/aio_parsing/aio_context_inflater/aio_context_inflater.cpp.s
 
+sources/aio_parsing/aio_orbits/aio_class/aio_class_orbit.o: sources/aio_parsing/aio_orbits/aio_class/aio_class_orbit.cpp.o
+
+.PHONY : sources/aio_parsing/aio_orbits/aio_class/aio_class_orbit.o
+
+# target to build an object file
+sources/aio_parsing/aio_orbits/aio_class/aio_class_orbit.cpp.o:
+	$(MAKE) -f CMakeFiles/AIO_v_2.dir/build.make CMakeFiles/AIO_v_2.dir/sources/aio_parsing/aio_orbits/aio_class/aio_class_orbit.cpp.o
+.PHONY : sources/aio_parsing/aio_orbits/aio_class/aio_class_orbit.cpp.o
+
+sources/aio_parsing/aio_orbits/aio_class/aio_class_orbit.i: sources/aio_parsing/aio_orbits/aio_class/aio_class_orbit.cpp.i
+
+.PHONY : sources/aio_parsing/aio_orbits/aio_class/aio_class_orbit.i
+
+# target to preprocess a source file
+sources/aio_parsing/aio_orbits/aio_class/aio_class_orbit.cpp.i:
+	$(MAKE) -f CMakeFiles/AIO_v_2.dir/build.make CMakeFiles/AIO_v_2.dir/sources/aio_parsing/aio_orbits/aio_class/aio_class_orbit.cpp.i
+.PHONY : sources/aio_parsing/aio_orbits/aio_class/aio_class_orbit.cpp.i
+
+sources/aio_parsing/aio_orbits/aio_class/aio_class_orbit.s: sources/aio_parsing/aio_orbits/aio_class/aio_class_orbit.cpp.s
+
+.PHONY : sources/aio_parsing/aio_orbits/aio_class/aio_class_orbit.s
+
+# target to generate assembly for a file
+sources/aio_parsing/aio_orbits/aio_class/aio_class_orbit.cpp.s:
+	$(MAKE) -f CMakeFiles/AIO_v_2.dir/build.make CMakeFiles/AIO_v_2.dir/sources/aio_parsing/aio_orbits/aio_class/aio_class_orbit.cpp.s
+.PHONY : sources/aio_parsing/aio_orbits/aio_class/aio_class_orbit.cpp.s
+
 sources/aio_parsing/aio_orbits/aio_file/aio_file_orbit.o: sources/aio_parsing/aio_orbits/aio_file/aio_file_orbit.cpp.o
 
 .PHONY : sources/aio_parsing/aio_orbits/aio_file/aio_file_orbit.o
@@ -1635,33 +1689,6 @@ sources/aio_runtime/aio_runtime.cpp.s:
 	$(MAKE) -f CMakeFiles/AIO_v_2.dir/build.make CMakeFiles/AIO_v_2.dir/sources/aio_runtime/aio_runtime.cpp.s
 .PHONY : sources/aio_runtime/aio_runtime.cpp.s
 
-sources/aio_runtime/aio_scheme/aio_scheme.o: sources/aio_runtime/aio_scheme/aio_scheme.cpp.o
-
-.PHONY : sources/aio_runtime/aio_scheme/aio_scheme.o
-
-# target to build an object file
-sources/aio_runtime/aio_scheme/aio_scheme.cpp.o:
-	$(MAKE) -f CMakeFiles/AIO_v_2.dir/build.make CMakeFiles/AIO_v_2.dir/sources/aio_runtime/aio_scheme/aio_scheme.cpp.o
-.PHONY : sources/aio_runtime/aio_scheme/aio_scheme.cpp.o
-
-sources/aio_runtime/aio_scheme/aio_scheme.i: sources/aio_runtime/aio_scheme/aio_scheme.cpp.i
-
-.PHONY : sources/aio_runtime/aio_scheme/aio_scheme.i
-
-# target to preprocess a source file
-sources/aio_runtime/aio_scheme/aio_scheme.cpp.i:
-	$(MAKE) -f CMakeFiles/AIO_v_2.dir/build.make CMakeFiles/AIO_v_2.dir/sources/aio_runtime/aio_scheme/aio_scheme.cpp.i
-.PHONY : sources/aio_runtime/aio_scheme/aio_scheme.cpp.i
-
-sources/aio_runtime/aio_scheme/aio_scheme.s: sources/aio_runtime/aio_scheme/aio_scheme.cpp.s
-
-.PHONY : sources/aio_runtime/aio_scheme/aio_scheme.s
-
-# target to generate assembly for a file
-sources/aio_runtime/aio_scheme/aio_scheme.cpp.s:
-	$(MAKE) -f CMakeFiles/AIO_v_2.dir/build.make CMakeFiles/AIO_v_2.dir/sources/aio_runtime/aio_scheme/aio_scheme.cpp.s
-.PHONY : sources/aio_runtime/aio_scheme/aio_scheme.cpp.s
-
 sources/aio_runtime/aio_task/aio_assign/aio_assign_task.o: sources/aio_runtime/aio_task/aio_assign/aio_assign_task.cpp.o
 
 .PHONY : sources/aio_runtime/aio_task/aio_assign/aio_assign_task.o
@@ -1688,6 +1715,33 @@ sources/aio_runtime/aio_task/aio_assign/aio_assign_task.s: sources/aio_runtime/a
 sources/aio_runtime/aio_task/aio_assign/aio_assign_task.cpp.s:
 	$(MAKE) -f CMakeFiles/AIO_v_2.dir/build.make CMakeFiles/AIO_v_2.dir/sources/aio_runtime/aio_task/aio_assign/aio_assign_task.cpp.s
 .PHONY : sources/aio_runtime/aio_task/aio_assign/aio_assign_task.cpp.s
+
+sources/aio_runtime/aio_task/aio_class/aio_class_task.o: sources/aio_runtime/aio_task/aio_class/aio_class_task.cpp.o
+
+.PHONY : sources/aio_runtime/aio_task/aio_class/aio_class_task.o
+
+# target to build an object file
+sources/aio_runtime/aio_task/aio_class/aio_class_task.cpp.o:
+	$(MAKE) -f CMakeFiles/AIO_v_2.dir/build.make CMakeFiles/AIO_v_2.dir/sources/aio_runtime/aio_task/aio_class/aio_class_task.cpp.o
+.PHONY : sources/aio_runtime/aio_task/aio_class/aio_class_task.cpp.o
+
+sources/aio_runtime/aio_task/aio_class/aio_class_task.i: sources/aio_runtime/aio_task/aio_class/aio_class_task.cpp.i
+
+.PHONY : sources/aio_runtime/aio_task/aio_class/aio_class_task.i
+
+# target to preprocess a source file
+sources/aio_runtime/aio_task/aio_class/aio_class_task.cpp.i:
+	$(MAKE) -f CMakeFiles/AIO_v_2.dir/build.make CMakeFiles/AIO_v_2.dir/sources/aio_runtime/aio_task/aio_class/aio_class_task.cpp.i
+.PHONY : sources/aio_runtime/aio_task/aio_class/aio_class_task.cpp.i
+
+sources/aio_runtime/aio_task/aio_class/aio_class_task.s: sources/aio_runtime/aio_task/aio_class/aio_class_task.cpp.s
+
+.PHONY : sources/aio_runtime/aio_task/aio_class/aio_class_task.s
+
+# target to generate assembly for a file
+sources/aio_runtime/aio_task/aio_class/aio_class_task.cpp.s:
+	$(MAKE) -f CMakeFiles/AIO_v_2.dir/build.make CMakeFiles/AIO_v_2.dir/sources/aio_runtime/aio_task/aio_class/aio_class_task.cpp.s
+.PHONY : sources/aio_runtime/aio_task/aio_class/aio_class_task.cpp.s
 
 sources/aio_runtime/aio_value/advanced_functions/cast_aio_value.o: sources/aio_runtime/aio_value/advanced_functions/cast_aio_value.cpp.o
 
@@ -1806,6 +1860,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... AIO_v_2"
+	@echo "... lib4aio/lib4aio_cpp_sources/aio_explorer/aio_explorer.o"
+	@echo "... lib4aio/lib4aio_cpp_sources/aio_explorer/aio_explorer.i"
+	@echo "... lib4aio/lib4aio_cpp_sources/aio_explorer/aio_explorer.s"
 	@echo "... lib4aio/lib4aio_cpp_sources/aio_orbit/aio_orbit.o"
 	@echo "... lib4aio/lib4aio_cpp_sources/aio_orbit/aio_orbit.i"
 	@echo "... lib4aio/lib4aio_cpp_sources/aio_orbit/aio_orbit.s"
@@ -1950,6 +2007,9 @@ help:
 	@echo "... sources/aio_parsing/aio_context_inflater/aio_context_inflater.o"
 	@echo "... sources/aio_parsing/aio_context_inflater/aio_context_inflater.i"
 	@echo "... sources/aio_parsing/aio_context_inflater/aio_context_inflater.s"
+	@echo "... sources/aio_parsing/aio_orbits/aio_class/aio_class_orbit.o"
+	@echo "... sources/aio_parsing/aio_orbits/aio_class/aio_class_orbit.i"
+	@echo "... sources/aio_parsing/aio_orbits/aio_class/aio_class_orbit.s"
 	@echo "... sources/aio_parsing/aio_orbits/aio_file/aio_file_orbit.o"
 	@echo "... sources/aio_parsing/aio_orbits/aio_file/aio_file_orbit.i"
 	@echo "... sources/aio_parsing/aio_orbits/aio_file/aio_file_orbit.s"
@@ -1974,12 +2034,12 @@ help:
 	@echo "... sources/aio_runtime/aio_runtime.o"
 	@echo "... sources/aio_runtime/aio_runtime.i"
 	@echo "... sources/aio_runtime/aio_runtime.s"
-	@echo "... sources/aio_runtime/aio_scheme/aio_scheme.o"
-	@echo "... sources/aio_runtime/aio_scheme/aio_scheme.i"
-	@echo "... sources/aio_runtime/aio_scheme/aio_scheme.s"
 	@echo "... sources/aio_runtime/aio_task/aio_assign/aio_assign_task.o"
 	@echo "... sources/aio_runtime/aio_task/aio_assign/aio_assign_task.i"
 	@echo "... sources/aio_runtime/aio_task/aio_assign/aio_assign_task.s"
+	@echo "... sources/aio_runtime/aio_task/aio_class/aio_class_task.o"
+	@echo "... sources/aio_runtime/aio_task/aio_class/aio_class_task.i"
+	@echo "... sources/aio_runtime/aio_task/aio_class/aio_class_task.s"
 	@echo "... sources/aio_runtime/aio_value/advanced_functions/cast_aio_value.o"
 	@echo "... sources/aio_runtime/aio_value/advanced_functions/cast_aio_value.i"
 	@echo "... sources/aio_runtime/aio_value/advanced_functions/cast_aio_value.s"

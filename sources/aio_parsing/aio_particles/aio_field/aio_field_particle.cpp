@@ -8,7 +8,6 @@
 //parsing:
 #include <aio_parsing/aio_particles/aio_field/aio_field_particle.h>
 //runtime:
-#include <aio_runtime/aio_scheme/aio_scheme.h>
 #include <aio_runtime/aio_task/aio_assign/aio_assign_task.h>
 //lib4aio:
 #include <lib4aio_cpp_headers/utils/string_utils/common.h>
@@ -22,13 +21,13 @@
  * 태그들.
  */
 
-#define AIO_BUILD_SCRIPT_ATTRIBUTE_PARTICLE_DEBUG
+#define AIO_FIELD_PARTICLE_DEBUG
 
 #define AIO_FIELD_PARTICLE_INFO_TAG "AIO_BUILD_SCRIPT_ATTRIBUTE_PARTICLE_INFO"
 
 #define AIO_FIELD_PARTICLE_ERROR_TAG "AIO_BUILD_SCRIPT_ATTRIBUTE_PARTICLE_ERROR"
 
-#ifdef AIO_BUILD_SCRIPT_ATTRIBUTE_PARTICLE_DEBUG
+#ifdef AIO_FIELD_PARTICLE_DEBUG
 
 #include <lib4aio_cpp_headers/utils/log_utils/log_utils.h>
 #include <aio_lang/aio_space/aio_space.h>
@@ -104,7 +103,7 @@ void aio_field_particle<T>::monitor_field_modifier(const char symbol, const unsi
         const bool is_constant_modifier = is_aio_constant_modifier(this->token_holder);
         const bool is_variable_modifier = is_aio_variable_modifier(this->token_holder);
         if (is_constant_modifier || is_variable_modifier) {
-#ifdef AIO_BUILD_SCRIPT_ATTRIBUTE_PARTICLE_DEBUG
+#ifdef AIO_FIELD_PARTICLE_DEBUG
             log_info_str_hook(AIO_FIELD_PARTICLE_INFO_TAG, "Found modifier:", this->token_holder);
 #endif
             //Create field:
@@ -156,7 +155,7 @@ void aio_field_particle<T>::monitor_field_name(const char symbol, const unsigned
         this->token_holder->end = position;
         const bool is_valid_name = this->token_holder->is_word() && is_successful_aio_name(this->token_holder);
         if (is_valid_name) {
-#ifdef AIO_BUILD_SCRIPT_ATTRIBUTE_PARTICLE_DEBUG
+#ifdef AIO_FIELD_PARTICLE_DEBUG
             log_info_str_hook(AIO_FIELD_PARTICLE_INFO_TAG, "Found name:", this->token_holder);
 #endif
             //Create field:
@@ -202,7 +201,7 @@ void aio_field_particle<T>::monitor_field_type(const char symbol, const unsigned
                     it->equals_string(this->token_holder);
                 });
         if (is_valid_type) {
-#ifdef AIO_BUILD_SCRIPT_ATTRIBUTE_PARTICLE_DEBUG
+#ifdef AIO_FIELD_PARTICLE_DEBUG
             log_info_str_hook(AIO_FIELD_PARTICLE_INFO_TAG, "Found type:", this->token_holder);
 #endif
             this->field->type = new str_hook(this->token_holder);
@@ -240,7 +239,7 @@ void aio_field_particle<T>::monitor_equal_sign(const char symbol, const unsigned
             this->trigger_mode = AIO_TRIGGER_MODE_UNDEFINED;
             this->monitor_mode = AIO_MONITOR_VALUE;
             this->signal = AIO_PARTICLE_SIGNAL_DETECTED;
-#ifdef AIO_BUILD_SCRIPT_ATTRIBUTE_PARTICLE_DEBUG
+#ifdef AIO_FIELD_PARTICLE_DEBUG
             log_info(AIO_FIELD_PARTICLE_INFO_TAG, "Detected equal sign");
 #endif
         } else {
@@ -252,7 +251,7 @@ void aio_field_particle<T>::monitor_equal_sign(const char symbol, const unsigned
 template<typename T>
 void aio_field_particle<T>::monitor_value(const char symbol, const unsigned position)
 {
-#ifdef AIO_BUILD_SCRIPT_ATTRIBUTE_PARTICLE_DEBUG
+#ifdef AIO_FIELD_PARTICLE_DEBUG
     log_info_char(AIO_FIELD_PARTICLE_INFO_TAG, "C:", symbol);
 #endif
 
@@ -265,7 +264,7 @@ void aio_field_particle<T>::monitor_value(const char symbol, const unsigned posi
                 if (!is_space_or_line_break(symbol)) {
                     this->trigger_mode = AIO_TRIGGER_MODE_PASSIVE;
                     this->token_holder->start = position;
-#ifdef AIO_BUILD_SCRIPT_ATTRIBUTE_PARTICLE_DEBUG
+#ifdef AIO_FIELD_PARTICLE_DEBUG
                     log_info(AIO_FIELD_PARTICLE_INFO_TAG, "SET START POSITION");
 #endif
                 }
@@ -274,7 +273,7 @@ void aio_field_particle<T>::monitor_value(const char symbol, const unsigned posi
                 this->whitespace_counter = 0;
                 if (isalnum(symbol) || is_closing_parenthesis(symbol) || is_single_quote(symbol)) {
                     this->trigger_mode = AIO_TRIGGER_MODE_ACTIVE;
-#ifdef AIO_BUILD_SCRIPT_ATTRIBUTE_PARTICLE_DEBUG
+#ifdef AIO_FIELD_PARTICLE_DEBUG
                     log_info(AIO_FIELD_PARTICLE_INFO_TAG, "DETECTED POSSIBLE BORDER");
 #endif
                 }
@@ -283,7 +282,7 @@ void aio_field_particle<T>::monitor_value(const char symbol, const unsigned posi
                 if (is_space_or_line_break(symbol)) {
                     this->whitespace_counter++;
                 }
-#ifdef AIO_BUILD_SCRIPT_ATTRIBUTE_PARTICLE_DEBUG
+#ifdef AIO_FIELD_PARTICLE_DEBUG
                 log_info_int(AIO_FIELD_PARTICLE_INFO_TAG, "COUNTER:", this->whitespace_counter);
                 log_info_boolean(AIO_FIELD_PARTICLE_INFO_TAG, "IS BORDER:",
                                  position == this->right_border - 1);
@@ -298,7 +297,7 @@ void aio_field_particle<T>::monitor_value(const char symbol, const unsigned posi
                     } else {
                         this->token_holder->end = position - this->whitespace_counter;
                     }
-#ifdef AIO_BUILD_SCRIPT_ATTRIBUTE_PARTICLE_DEBUG
+#ifdef AIO_FIELD_PARTICLE_DEBUG
                     log_info_str_hook(AIO_FIELD_PARTICLE_INFO_TAG, "Detected value:",
                                       this->token_holder);
 #endif
@@ -324,7 +323,7 @@ unsigned aio_field_particle<T>::illuminate(T *container)
     aio_space *space = dynamic_cast<aio_space *>(container);
     if (space) {
         //Set field:
-        space->get_field_definition_list()->add(this->field);
+        space->field_definition_list->add(this->field);
         this->field = nullptr;
         //Set assign task:
         space->get_instructions()->add(this->assign_task);

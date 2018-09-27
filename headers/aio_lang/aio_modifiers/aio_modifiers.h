@@ -48,6 +48,8 @@ bool is_aio_variable_modifier(const str_hook *token);
 
 #define AIO_CLASS_MODIFIER "typename"
 
+bool is_aio_class_modifier(const str_hook *token);
+
 /**
  * Function  modifier.
  */

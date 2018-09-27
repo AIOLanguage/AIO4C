@@ -41,7 +41,9 @@ namespace lib4aio {
 
         void set_string(const char *string);
 
-        char get_char(const int index) const;
+        char get_absolute_char(const unsigned index) const;
+
+        char get_relative_char(const unsigned index) const;
 
         bool is_word() const;
 

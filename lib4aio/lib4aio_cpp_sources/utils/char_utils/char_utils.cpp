@@ -1,7 +1,6 @@
 #include <lib4aio_cpp_headers/utils/char_utils/char_utils.h>
 
-namespace lib4aio
-{
+namespace lib4aio {
 
     bool is_space(const char c)
     {
@@ -68,6 +67,11 @@ namespace lib4aio
     bool is_colon(const char c)
     {
         return c == ':';
+    }
+
+    bool is_hyphen(const char c)
+    {
+        return c == '-';
     }
 
     bool is_semicolon(const char c)
@@ -140,7 +144,8 @@ namespace lib4aio
         return c == '!';
     }
 
-    bool is_slash(const char c) {
+    bool is_slash(const char c)
+    {
         return c == '/';
     }
 }

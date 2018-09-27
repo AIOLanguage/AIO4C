@@ -3,7 +3,10 @@
 
 template<class T>
 aio_inheritable<T>::aio_inheritable()
-{}
+{
+    this->parents = new array_list<T>();
+    this->parent_names = new array_list<str_hook>();
+}
 
 template<class T>
 aio_inheritable<T>::~aio_inheritable()

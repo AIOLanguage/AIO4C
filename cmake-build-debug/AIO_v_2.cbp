@@ -204,10 +204,10 @@
 		<Unit filename="/home/ihb/aio/AIO_Backup/headers/aio_runtime/aio_runtime.h">
 			<Option target="AIO_v_2"/>
 		</Unit>
-		<Unit filename="/home/ihb/aio/AIO_Backup/headers/aio_runtime/aio_scheme/aio_scheme.h">
+		<Unit filename="/home/ihb/aio/AIO_Backup/headers/aio_runtime/aio_task/aio_assign/aio_assign_task.h">
 			<Option target="AIO_v_2"/>
 		</Unit>
-		<Unit filename="/home/ihb/aio/AIO_Backup/headers/aio_runtime/aio_task/aio_assign/aio_assign_task.h">
+		<Unit filename="/home/ihb/aio/AIO_Backup/headers/aio_runtime/aio_task/aio_class/aio_class_task.h">
 			<Option target="AIO_v_2"/>
 		</Unit>
 		<Unit filename="/home/ihb/aio/AIO_Backup/headers/aio_runtime/aio_task/aio_task.h">
@@ -226,6 +226,9 @@
 			<Option target="AIO_v_2"/>
 		</Unit>
 		<Unit filename="/home/ihb/aio/AIO_Backup/headers/aio_runtime/aio_variable/aio_variable.h">
+			<Option target="AIO_v_2"/>
+		</Unit>
+		<Unit filename="/home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_headers/aio_explorer/aio_explorer.h">
 			<Option target="AIO_v_2"/>
 		</Unit>
 		<Unit filename="/home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_headers/aio_orbit/aio_orbit.h">
@@ -298,6 +301,9 @@
 			<Option target="AIO_v_2"/>
 		</Unit>
 		<Unit filename="/home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_headers/utils/struct_list/struct_list.h">
+			<Option target="AIO_v_2"/>
+		</Unit>
+		<Unit filename="/home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_sources/aio_explorer/aio_explorer.cpp">
 			<Option target="AIO_v_2"/>
 		</Unit>
 		<Unit filename="/home/ihb/aio/AIO_Backup/lib4aio/lib4aio_cpp_sources/aio_orbit/aio_orbit.cpp">
@@ -447,6 +453,9 @@
 		<Unit filename="/home/ihb/aio/AIO_Backup/sources/aio_parsing/aio_context_inflater/aio_context_inflater.cpp">
 			<Option target="AIO_v_2"/>
 		</Unit>
+		<Unit filename="/home/ihb/aio/AIO_Backup/sources/aio_parsing/aio_orbits/aio_class/aio_class_orbit.cpp">
+			<Option target="AIO_v_2"/>
+		</Unit>
 		<Unit filename="/home/ihb/aio/AIO_Backup/sources/aio_parsing/aio_orbits/aio_file/aio_file_orbit.cpp">
 			<Option target="AIO_v_2"/>
 		</Unit>
@@ -471,10 +480,10 @@
 		<Unit filename="/home/ihb/aio/AIO_Backup/sources/aio_runtime/aio_runtime.cpp">
 			<Option target="AIO_v_2"/>
 		</Unit>
-		<Unit filename="/home/ihb/aio/AIO_Backup/sources/aio_runtime/aio_scheme/aio_scheme.cpp">
+		<Unit filename="/home/ihb/aio/AIO_Backup/sources/aio_runtime/aio_task/aio_assign/aio_assign_task.cpp">
 			<Option target="AIO_v_2"/>
 		</Unit>
-		<Unit filename="/home/ihb/aio/AIO_Backup/sources/aio_runtime/aio_task/aio_assign/aio_assign_task.cpp">
+		<Unit filename="/home/ihb/aio/AIO_Backup/sources/aio_runtime/aio_task/aio_class/aio_class_task.cpp">
 			<Option target="AIO_v_2"/>
 		</Unit>
 		<Unit filename="/home/ihb/aio/AIO_Backup/sources/aio_runtime/aio_value/advanced_functions/cast_aio_value.cpp">

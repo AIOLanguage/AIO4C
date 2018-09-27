@@ -3,13 +3,19 @@
 
 namespace lib4aio {
 
-    template <class T> class array_list;
+    template<class T>
+    class array_list;
+
+    class str_hook;
 }
 
 using namespace lib4aio;
 
 typedef enum aio_inherited_type {
-    AIO_CLOSE, AIO_OPEN, AIO_ABSTRACT
+    AIO_INHERITED_TYPE_UNDEFINED,
+    AIO_INHERITED_TYPE_CLOSE,
+    AIO_INHERITED_TYPE_OPEN,
+    AIO_INHERITED_TYPE_ABSTRACT
 } aio_inherited_type;
 
 template<class T>
@@ -21,15 +27,11 @@ public:
 
     ~aio_inheritable();
 
-    const aio_inherited_type get_inherited_type() const;
-
-    const array_list<T> *get_parents() const;
-
-protected:
-
     aio_inherited_type inherited_type;
 
     array_list<T> *parents;
+
+    array_list<str_hook> *parent_names;
 };
 
 #endif //AIO_INHERITABLE_H

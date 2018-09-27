@@ -1,5 +1,5 @@
-#ifndef AIO_INSTRUCTION_H
-#define AIO_INSTRUCTION_H
+#ifndef AIO_TASK_H
+#define AIO_TASK_H
 
 template<typename T>
 class aio_ray;
@@ -15,4 +15,4 @@ public:
     virtual void perform(aio_ray<T> *ray) = 0;
 };
 
-#endif //AIO_INSTRUCTION_H
+#endif //AIO_TASK_H

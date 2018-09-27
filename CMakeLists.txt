@@ -57,7 +57,6 @@ add_executable(
         headers/aio_runtime/aio_build_runtime.h
         headers/aio_runtime/aio_program_runtime.h
         headers/aio_runtime/aio_value/aio_value.h
-        headers/aio_runtime/aio_scheme/aio_scheme.h
         headers/aio_runtime/aio_bundle/aio_bundle.h
         headers/aio_runtime/aio_invoker/aio_invoker.h
         headers/aio_runtime/aio_variable/aio_variable.h
@@ -122,7 +121,6 @@ add_executable(
         sources/aio_runtime/aio_program_runtime.cpp
         sources/aio_runtime/aio_value/aio_value.cpp
         sources/aio_runtime/aio_bundle/aio_bundle.cpp
-        sources/aio_runtime/aio_scheme/aio_scheme.cpp
         sources/aio_runtime/aio_invoker/aio_invoker.cpp
         sources/aio_runtime/aio_value/advanced_functions/log_aio_value.cpp
         sources/aio_runtime/aio_value/advanced_functions/cast_aio_value.cpp
@@ -160,4 +158,4 @@ add_executable(
         lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/advanced_functions/str_hook_trim.cpp
         lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/advanced_functions/str_hook_list_log.cpp
         #---------------------------------------------------------------------------------------------------------------
-        sources/aio_parsing/aio_particles/aio_class/aio_class_particle.cpp headers/aio_parsing/aio_particles/aio_import/aio_import_particle.h headers/aio_runtime/aio_task/aio_assign/aio_assign_task.h sources/aio_runtime/aio_task/aio_assign/aio_assign_task.cpp)
+        sources/aio_parsing/aio_particles/aio_class/aio_class_particle.cpp headers/aio_parsing/aio_particles/aio_import/aio_import_particle.h headers/aio_runtime/aio_task/aio_assign/aio_assign_task.h sources/aio_runtime/aio_task/aio_assign/aio_assign_task.cpp sources/aio_runtime/aio_task/aio_class/aio_class_task.cpp headers/aio_runtime/aio_task/aio_class/aio_class_task.h lib4aio/lib4aio_cpp_headers/aio_explorer/aio_explorer.h lib4aio/lib4aio_cpp_sources/aio_explorer/aio_explorer.cpp sources/aio_parsing/aio_orbits/aio_class/aio_class_orbit.cpp)
