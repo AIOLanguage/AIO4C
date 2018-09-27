@@ -1,12 +1,22 @@
-//lang
+//native:
+#include <cctype>
+#include <typeinfo>
+//lang:
 #include <aio_lang/aio_field/aio_field.h>
+#include <aio_lang/aio_types/aio_types.h>
 #include <aio_lang/aio_modifiers/aio_modifiers.h>
 //parsing:
 #include <aio_parsing/aio_particles/aio_field/aio_field_particle.h>
+//runtime:
+#include <aio_runtime/aio_scheme/aio_scheme.h>
+#include <aio_runtime/aio_task/aio_assign/aio_assign_task.h>
 //lib4aio:
-#include <lib4aio_cpp_headers/aio_orbit/aio_particle/aio_particle.h>
 #include <lib4aio_cpp_headers/utils/string_utils/common.h>
+#include <lib4aio_cpp_headers/utils/char_utils/char_utils.h>
 #include <lib4aio_cpp_headers/utils/error_utils/error_utils.h>
+#include <lib4aio_cpp_headers/utils/array_list_utils/array_list.h>
+#include <lib4aio_cpp_headers/aio_orbit/aio_particle/aio_particle.h>
+#include <lib4aio_cpp_headers/utils/str_hook_utils/str_hook/str_hook.h>
 
 /**
  * 태그들.
@@ -14,14 +24,14 @@
 
 #define AIO_BUILD_SCRIPT_ATTRIBUTE_PARTICLE_DEBUG
 
-#define AIO_BUILD_SCRIPT_ATTRIBUTE_PARTICLE_INFO_TAG "AIO_BUILD_SCRIPT_ATTRIBUTE_PARTICLE_INFO"
+#define AIO_FIELD_PARTICLE_INFO_TAG "AIO_BUILD_SCRIPT_ATTRIBUTE_PARTICLE_INFO"
 
-#define AIO_BUILD_SCRIPT_ATTRIBUTE_PARTICLE_ERROR_TAG "AIO_BUILD_SCRIPT_ATTRIBUTE_PARTICLE_ERROR"
+#define AIO_FIELD_PARTICLE_ERROR_TAG "AIO_BUILD_SCRIPT_ATTRIBUTE_PARTICLE_ERROR"
 
 #ifdef AIO_BUILD_SCRIPT_ATTRIBUTE_PARTICLE_DEBUG
 
 #include <lib4aio_cpp_headers/utils/log_utils/log_utils.h>
-#include <lib4aio_cpp_headers/utils/char_utils/char_utils.h>
+#include <aio_lang/aio_space/aio_space.h>
 
 #endif
 
@@ -32,8 +42,10 @@
 using namespace lib4aio;
 
 template<typename T>
-aio_field_particle<T>::aio_field_particle()
+aio_field_particle<T>::aio_field_particle(array_list<str_hook> *type_list_ptr, array_list<aio_field> *field_list_ptr)
 {
+    this->type_list_ptr = type_list_ptr;
+    this->field_list_ptr = field_list_ptr;
     this->monitor_mode = AIO_MONITOR_MODIFIER;
     this->trigger_mode = AIO_TRIGGER_MODE_PASSIVE;
     this->whitespace_counter = 0;
@@ -48,14 +60,8 @@ aio_field_particle<T>::~aio_field_particle()
 template<typename T>
 void aio_field_particle<T>::reset()
 {
-    char *old_attribute = this->config_materials.attribute;
-    char *old_value = this->config_materials.value;
-    this->config_materials.attribute = nullptr;
-    this->config_materials.value = nullptr;
-    //------------------------------------------------------------------------------------------------------------------
-    //찌꺼기 수집기:
-    free_string(old_attribute);
-    free_string(old_value);
+    delete this->assign_task;
+    delete this->field;
 }
 
 template<typename T>
@@ -64,26 +70,26 @@ const aio_particle_signal aio_field_particle<T>::handle_symbol(const unsigned po
     const char symbol = this->string[position];
     switch (this->monitor_mode) {
         case AIO_MONITOR_MODIFIER:
-            handle_field_modifier(symbol, position);
+            this->monitor_field_modifier(symbol, position);
             break;
         case AIO_MONITOR_NAME:
-            handle_field_name(symbol, position);
+            this->monitor_field_name(symbol, position);
             break;
         case AIO_MONITOR_TYPE:
-            handle_field_type(symbol, position);
+            this->monitor_field_type(symbol, position);
             break;
         case AIO_MONITOR_EQUAL_SIGN:
-            handle_equal_sign_data(symbol, position);
+            this->monitor_equal_sign(symbol, position);
             break;
         case AIO_MONITOR_VALUE:
-            handle_value_data(symbol, position);
+            this->monitor_value(symbol, position);
             break;
     }
     return this->signal;
 }
 
 template<typename T>
-void aio_field_particle<T>::handle_field_modifier(const char symbol, const unsigned position)
+void aio_field_particle<T>::monitor_field_modifier(const char symbol, const unsigned position)
 {
     //기호를 확인하다:
     const bool is_whitespace_cond = is_space_or_line_break(symbol);
@@ -99,21 +105,132 @@ void aio_field_particle<T>::handle_field_modifier(const char symbol, const unsig
         const bool is_variable_modifier = is_aio_variable_modifier(this->token_holder);
         if (is_constant_modifier || is_variable_modifier) {
 #ifdef AIO_BUILD_SCRIPT_ATTRIBUTE_PARTICLE_DEBUG
-            log_info_str_hook(AIO_BUILD_SCRIPT_ATTRIBUTE_PARTICLE_INFO_TAG, "Found modifier:", this->token_holder);
+            log_info_str_hook(AIO_FIELD_PARTICLE_INFO_TAG, "Found modifier:", this->token_holder);
 #endif
             //Create field:
             this->field = aio_field();
             this->field->is_const = is_constant_modifier;
+            //Create assign instruction:
+            this->assign_task = aio_assign_task();
             //Prepare to the next state:
             this->monitor_mode = AIO_MONITOR_NAME;
+            this->signal = AIO_PARTICLE_SIGNAL_DETECTED;
+            this->trigger_mode = AIO_TRIGGER_MODE_UNDEFINED;
+        } else {
+            //Else this is variable name:
+            const bool is_valid_name = this->token_holder->is_word() && is_successful_aio_name(this->token_holder);
+            if (is_valid_name) {
+                //Check field in list:
+                const bool has_field_in_scope = this->field_list_ptr->contains_by(
+                        [this](aio_field *it) -> bool {
+                            return it->name->equals_string(this->token_holder);
+                        });
+                if (has_field_in_scope) {
+                    this->assign_task = new aio_assign_task();
+                    this->assign_task->set_name(this->token_holder);
+                    //Prepare to the next state:
+                    this->monitor_mode = AIO_MONITOR_EQUAL_SIGN;
+                    this->signal = AIO_PARTICLE_SIGNAL_DETECTED;
+                    this->trigger_mode = AIO_TRIGGER_MODE_UNDEFINED;
+                    this->signal = AIO_PARTICLE_SIGNAL_DETECTED;
+                }
+            }
+        }
+    }
+}
+
+template<typename T>
+void aio_field_particle<T>::monitor_field_name(const char symbol, const unsigned position)
+{
+    //기호를 확인하다:
+    const bool is_whitespace_cond = is_space_or_line_break(symbol);
+    const bool is_equal_sign_cond = is_equal_sign(symbol);
+    const bool is_token_scan_started = !is_whitespace_cond && this->trigger_mode == AIO_TRIGGER_MODE_PASSIVE;
+    if (is_token_scan_started) {
+        this->trigger_mode = AIO_TRIGGER_MODE_ACTIVE;
+        this->token_holder->start = position;
+    }
+    const bool is_token_scan_finished = (is_whitespace_cond || is_equal_sign_cond)
+                                        && this->trigger_mode == AIO_TRIGGER_MODE_ACTIVE;
+    if (is_token_scan_finished) {
+        this->token_holder->end = position;
+        const bool is_valid_name = this->token_holder->is_word() && is_successful_aio_name(this->token_holder);
+        if (is_valid_name) {
+#ifdef AIO_BUILD_SCRIPT_ATTRIBUTE_PARTICLE_DEBUG
+            log_info_str_hook(AIO_FIELD_PARTICLE_INFO_TAG, "Found name:", this->token_holder);
+#endif
+            //Create field:
+            this->field->name = new str_hook(this->token_holder);
+            //Fill assign instruction command:
+            this->assign_task->set_name(new str_hook(this->token_holder));
+            if (is_equal_sign_cond) {
+                //Set auto type:
+                this->field->type = new str_hook(AUTO);
+                this->monitor_mode = AIO_MONITOR_VALUE;
+            } else {
+                this->monitor_mode = AIO_MONITOR_TYPE;
+            }
+            //Prepare to the next state:
             this->signal = AIO_PARTICLE_SIGNAL_DETECTED;
             this->trigger_mode = AIO_TRIGGER_MODE_UNDEFINED;
         }
     }
 }
 
+#define AIO_LIST_BRACKETS "[]"
+
+#define AIO_LIST_SEMANTICS_SIZE 2
+
 template<typename T>
-void aio_field_particle<T>::handle_equal_sign_data(const char symbol, const unsigned position)
+void aio_field_particle<T>::monitor_field_type(const char symbol, const unsigned position)
+{
+    //기호를 확인하다:
+    const bool is_whitespace_cond = is_space_or_line_break(symbol);
+    const bool is_equal_sign_cond = is_equal_sign(symbol);
+    const bool is_semicolon_cond = is_semicolon(symbol);
+    const bool is_token_scan_started = !is_whitespace_cond && this->trigger_mode == AIO_TRIGGER_MODE_PASSIVE;
+    if (is_token_scan_started) {
+        this->trigger_mode = AIO_TRIGGER_MODE_ACTIVE;
+        this->token_holder->start = position;
+    }
+    const bool is_token_scan_finished = (is_whitespace_cond || is_equal_sign_cond || is_semicolon_cond)
+                                        && this->trigger_mode == AIO_TRIGGER_MODE_ACTIVE;
+    if (is_token_scan_finished) {
+        this->token_holder->end = position;
+        const bool is_valid_type = this->type_list_ptr->contains_by(
+                [this](str_hook *it) -> bool {
+                    it->equals_string(this->token_holder);
+                });
+        if (is_valid_type) {
+#ifdef AIO_BUILD_SCRIPT_ATTRIBUTE_PARTICLE_DEBUG
+            log_info_str_hook(AIO_FIELD_PARTICLE_INFO_TAG, "Found type:", this->token_holder);
+#endif
+            this->field->type = new str_hook(this->token_holder);
+            if (this->token_holder->ends_with(AIO_LIST_BRACKETS)) {
+                this->field->is_list = true;
+                this->field->type->end -= AIO_LIST_SEMANTICS_SIZE;
+            } else {
+                this->field->is_list = false;
+            }
+            if (is_equal_sign_cond) {
+                this->monitor_mode = AIO_MONITOR_VALUE;
+            } else if (is_semicolon_cond) {
+                this->assign_task->set_value(new_string(AIO_NULL_VALUE));
+                this->signal = AIO_PARTICLE_SIGNAL_IS_READY;
+            } else {
+                this->monitor_mode = AIO_MONITOR_EQUAL_SIGN;
+            }
+            //Prepare to the next state:
+            this->signal = AIO_PARTICLE_SIGNAL_DETECTED;
+            this->trigger_mode = AIO_TRIGGER_MODE_UNDEFINED;
+        } else {
+            throw_error_with_str_hook(AIO_FIELD_PARTICLE_ERROR_TAG, "Cannot identify field type:", this->token_holder);
+        }
+    }
+}
+
+template<typename T>
+void aio_field_particle<T>::monitor_equal_sign(const char symbol, const unsigned position)
 {
     //기호를 확인하다:
     const bool is_whitespace_cond = is_space_or_line_break(symbol);
@@ -124,19 +241,19 @@ void aio_field_particle<T>::handle_equal_sign_data(const char symbol, const unsi
             this->monitor_mode = AIO_MONITOR_VALUE;
             this->signal = AIO_PARTICLE_SIGNAL_DETECTED;
 #ifdef AIO_BUILD_SCRIPT_ATTRIBUTE_PARTICLE_DEBUG
-            log_info(AIO_BUILD_SCRIPT_ATTRIBUTE_PARTICLE_INFO_TAG, "Detected equal sign");
+            log_info(AIO_FIELD_PARTICLE_INFO_TAG, "Detected equal sign");
 #endif
         } else {
-            throw_error_with_tag(AIO_BUILD_SCRIPT_ATTRIBUTE_PARTICLE_ERROR_TAG, "예상되는 'a' 기호");
+            throw_error_with_tag(AIO_FIELD_PARTICLE_ERROR_TAG, "예상되는 'a' 기호");
         }
     }
 }
 
 template<typename T>
-void aio_field_particle<T>::handle_value_data(const char symbol, const unsigned position)
+void aio_field_particle<T>::monitor_value(const char symbol, const unsigned position)
 {
 #ifdef AIO_BUILD_SCRIPT_ATTRIBUTE_PARTICLE_DEBUG
-    log_info_char(AIO_BUILD_SCRIPT_ATTRIBUTE_PARTICLE_INFO_TAG, "C:", symbol);
+    log_info_char(AIO_FIELD_PARTICLE_INFO_TAG, "C:", symbol);
 #endif
 
     if (is_single_quote(symbol)) {
@@ -149,7 +266,7 @@ void aio_field_particle<T>::handle_value_data(const char symbol, const unsigned 
                     this->trigger_mode = AIO_TRIGGER_MODE_PASSIVE;
                     this->token_holder->start = position;
 #ifdef AIO_BUILD_SCRIPT_ATTRIBUTE_PARTICLE_DEBUG
-                    log_info(AIO_BUILD_SCRIPT_ATTRIBUTE_PARTICLE_INFO_TAG, "SET START POSITION");
+                    log_info(AIO_FIELD_PARTICLE_INFO_TAG, "SET START POSITION");
 #endif
                 }
                 break;
@@ -158,7 +275,7 @@ void aio_field_particle<T>::handle_value_data(const char symbol, const unsigned 
                 if (isalnum(symbol) || is_closing_parenthesis(symbol) || is_single_quote(symbol)) {
                     this->trigger_mode = AIO_TRIGGER_MODE_ACTIVE;
 #ifdef AIO_BUILD_SCRIPT_ATTRIBUTE_PARTICLE_DEBUG
-                    log_info(AIO_BUILD_SCRIPT_ATTRIBUTE_PARTICLE_INFO_TAG, "DETECTED POSSIBLE BORDER");
+                    log_info(AIO_FIELD_PARTICLE_INFO_TAG, "DETECTED POSSIBLE BORDER");
 #endif
                 }
                 break;
@@ -167,8 +284,8 @@ void aio_field_particle<T>::handle_value_data(const char symbol, const unsigned 
                     this->whitespace_counter++;
                 }
 #ifdef AIO_BUILD_SCRIPT_ATTRIBUTE_PARTICLE_DEBUG
-                log_info_int(AIO_BUILD_SCRIPT_ATTRIBUTE_PARTICLE_INFO_TAG, "COUNTER:", this->whitespace_counter);
-                log_info_boolean(AIO_BUILD_SCRIPT_ATTRIBUTE_PARTICLE_INFO_TAG, "IS BORDER:",
+                log_info_int(AIO_FIELD_PARTICLE_INFO_TAG, "COUNTER:", this->whitespace_counter);
+                log_info_boolean(AIO_FIELD_PARTICLE_INFO_TAG, "IS BORDER:",
                                  position == this->right_border - 1);
 #endif
                 const bool is_end_of_holder = position == this->right_border - 1;
@@ -182,15 +299,15 @@ void aio_field_particle<T>::handle_value_data(const char symbol, const unsigned 
                         this->token_holder->end = position - this->whitespace_counter;
                     }
 #ifdef AIO_BUILD_SCRIPT_ATTRIBUTE_PARTICLE_DEBUG
-                    log_info_str_hook(AIO_BUILD_SCRIPT_ATTRIBUTE_PARTICLE_INFO_TAG, "Detected value:",
+                    log_info_str_hook(AIO_FIELD_PARTICLE_INFO_TAG, "Detected value:",
                                       this->token_holder);
 #endif
                     //값을 놓다:
                     char *dirty_value = this->token_holder->to_string();
                     char *clean_value = squeeze_string_for_expression(dirty_value);
-                    this->config_materials.value = clean_value;
+                    this->assign_task->set_value(clean_value);
                     //위빙 준비:
-                    this->token_holder->start = token_holder->end;
+                    this->token_holder->start = this->token_holder->end;
                     this->signal = AIO_PARTICLE_SIGNAL_IS_READY;
                     //----------------------------------------------------------------------------------------------------------
                     //찌거기 수집기:
@@ -201,36 +318,23 @@ void aio_field_particle<T>::handle_value_data(const char symbol, const unsigned 
     }
 }
 
-
 template<typename T>
 unsigned aio_field_particle<T>::illuminate(T *container)
 {
-    const char *value = this->config_materials.value;
-    const char *build_script_keyword = this->config_materials.attribute;
-    if (are_equal_strings(build_script_keyword, AIO_BUILD_SCRIPT_MAIN_KEYWORD)) {
-        space->main_path = value;
+    aio_space *space = dynamic_cast<aio_space *>(container);
+    if (space) {
+        //Set field:
+        space->get_field_definition_list()->add(this->field);
+        this->field = nullptr;
+        //Set assign task:
+        space->get_instructions()->add(this->assign_task);
+        this->assign_task = nullptr;
     } else {
         throw_error_with_details(
-                AIO_BUILD_SCRIPT_ATTRIBUTE_PARTICLE_ERROR_TAG,
-                "Such keyword is not supported!",
-                build_script_keyword
+                AIO_FIELD_PARTICLE_INFO_TAG,
+                "Required aio_space type instead:",
+                typeid(container).name()
         );
     }
-    this->config_materials.value = nullptr;
-#ifdef AIO_BUILD_SCRIPT_ATTRIBUTE_PARTICLE_DEBUG
-    log_info(AIO_BUILD_SCRIPT_ATTRIBUTE_PARTICLE_INFO_TAG, "ILLUMINATION IS COMPLETE");
-#endif
     return this->token_holder->end;
-}
-
-template<typename T>
-void aio_field_particle<T>::handle_field_name(const char symbol, const unsigned position)
-{
-
-}
-
-template<typename T>
-void aio_field_particle<T>::handle_field_type(const char symbol, const unsigned position)
-{
-
 }

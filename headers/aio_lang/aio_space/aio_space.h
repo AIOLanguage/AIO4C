@@ -38,7 +38,7 @@ public:
 
     const array_list<aio_function> *get_function_definition_list() const;
 
-    const array_list<aio_field> *get_field_definition_list() const;
+    array_list<aio_field> *get_field_definition_list() const;
 
 protected:
 

@@ -14,23 +14,26 @@
 
 using namespace lib4aio;
 
-static array_list<aio_particle<aio_file>> *new_file_particle_list(array_list<aio_file> *file_collection)
+static array_list<aio_particle<aio_file>> *new_file_particle_list(aio_runtime *runtime)
 {
     array_list<aio_particle<aio_file>> *particle_list = new array_list<aio_particle<aio_file>>();
     particle_list->add(new aio_class_particle<aio_file>());
-    particle_list->add(new aio_field_particle<aio_file>());
+    particle_list->add(new aio_field_particle<aio_file>(runtime->get_runtime_type()));
     particle_list->add(new aio_scope_particle<aio_file>());
     particle_list->add(new aio_function_particle<aio_file>());
-    particle_list->add(new aio_import_particle<aio_file>(file_collection));
+    particle_list->add(new aio_import_particle<aio_file>(runtime->get_file_list()));
     return particle_list;
 }
 
-aio_file_orbit::aio_file_orbit(array_list<aio_file> *file_collection, str_builder *file_content)
-        : aio_orbit(new_file_particle_list(file_collection),
+aio_file_orbit::aio_file_orbit(aio_runtime *runtime, str_builder *file_content)
+        : aio_orbit(new_file_particle_list(runtime),
                 [&file_content]() -> aio_file * {
                         aio_file *file = new aio_file();
                         file->set_content(file_content);
                         return file;
                     }
 )
+{}
+
+aio_file_orbit::~aio_file_orbit()
 {}

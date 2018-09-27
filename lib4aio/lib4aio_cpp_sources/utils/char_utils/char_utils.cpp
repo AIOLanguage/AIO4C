@@ -70,6 +70,11 @@ namespace lib4aio
         return c == ':';
     }
 
+    bool is_semicolon(const char c)
+    {
+        return c == ';';
+    }
+
     bool is_comma(const char c)
     {
         return c == ',';

@@ -12,28 +12,28 @@ namespace lib4aio
 
     str_hook::str_hook(const char *source_string, const unsigned start, const unsigned end)
     {
-        this->source_string = source_string;
+        this->string_ptr = source_string;
         this->start = start;
         this->end = end;
     }
 
     str_hook::str_hook(const char *source_string, const point_watcher *watcher)
     {
-        this->source_string = source_string;
+        this->string_ptr = source_string;
         this->start = watcher->start;
         this->end = watcher->end;
     }
 
     str_hook::str_hook(const str_hook *other)
     {
-        this->source_string = other->source_string;
+        this->string_ptr = other->string_ptr;
         this->start = other->start;
         this->end = other->end;
     }
 
     str_hook::str_hook(const char *source_string)
     {
-        this->source_string = source_string;
+        this->string_ptr = source_string;
         this->start = 0;
         this->end = (unsigned) strlen(source_string);
     }
@@ -48,12 +48,12 @@ namespace lib4aio
 
     const char *str_hook::get_string() const
     {
-        return this->source_string;
+        return this->string_ptr;
     }
 
     char str_hook::get_char(const int index) const
     {
-        return this->source_string[index];
+        return this->string_ptr[index];
     }
 
     bool str_hook::equals_string(const str_hook *other) const
@@ -63,8 +63,8 @@ namespace lib4aio
         if (size_1 != size_2) {
             return false;
         }
-        auto str_1 = this->source_string;
-        auto str_2 = other->source_string;
+        auto str_1 = this->string_ptr;
+        auto str_2 = other->string_ptr;
         auto start_1 = this->start;
         auto start_2 = other->start;
         for (int i = 0; i < size_1; ++i) {
@@ -105,7 +105,7 @@ namespace lib4aio
         if (hook_size != str_length) {
             return false;
         }
-        auto hooked_string = this->source_string;
+        auto hooked_string = this->string_ptr;
         auto start = this->start;
         for (int i = 0; i < hook_size; ++i) {
             if (hooked_string[start + i] != string[i]) {
@@ -130,13 +130,13 @@ namespace lib4aio
         char *string = (char *) new_object_array(this->get_size() + 1, sizeof(char));
         unsigned position = 0;
         for (unsigned i = this->start; i < this->end; ++i) {
-            string[position++] = this->source_string[i];
+            string[position++] = this->string_ptr[i];
         }
         return string;
     }
 
     void str_hook::set_string(const char *string)
     {
-        this->source_string = string;
+        this->string_ptr = string;
     }
 }

@@ -13,7 +13,7 @@ namespace lib4aio
     int str_hook::to_int() const
     {
         auto result = 0;
-        auto string = this->source_string;
+        auto string = this->string_ptr;
         auto end = this->end;
         for (int i = this->start; i < end; i++) {
             result = result * DIGIT_SHIFT + (string[i] - CHAR_SHIFT);
@@ -23,7 +23,7 @@ namespace lib4aio
 
     double str_hook::to_double() const
     {
-        auto string = this->source_string;
+        auto string = this->string_ptr;
         auto integer_part = 0;
         auto i = this->start;
         while (!is_dot(string[i])) {
@@ -42,7 +42,7 @@ namespace lib4aio
 
     str_hook *str_hook::lower_quotes() const
     {
-        return new str_hook(this->source_string, this->start + 1, this->end - 1);
+        return new str_hook(this->string_ptr, this->start + 1, this->end - 1);
     }
 
     bool str_hook::to_boolean() const

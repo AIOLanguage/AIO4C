@@ -24,9 +24,11 @@ struct aio_field {
 
     str_hook *type;
 
-    bool is_array;
+    bool is_list;
 
     bool is_const;
+
+    bool is_static;
 
     aio_visibility visibility_type;
 };

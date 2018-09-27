@@ -53,6 +53,8 @@ namespace lib4aio {
 
         bool is_not_empty() const;
 
+        bool ends_with(const char *string);
+
         str_hook_list *split(const char *const delimiter) const;
 
         str_hook_list *split_by_comma() const;
@@ -105,7 +107,7 @@ namespace lib4aio {
 
     private:
 
-        const char *source_string;
+        const char *string_ptr;
 
     };
 

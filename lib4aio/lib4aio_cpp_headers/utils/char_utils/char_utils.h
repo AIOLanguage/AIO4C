@@ -25,6 +25,8 @@ namespace lib4aio {
 
     bool is_colon(const char c);
 
+    bool is_semicolon(const char c);
+
     bool is_comma(const char c);
 
     bool is_single_quote(const char c);

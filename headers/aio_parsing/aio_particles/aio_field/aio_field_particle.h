@@ -1,14 +1,20 @@
 #ifndef AIO_FIELD_PARTICLE_H
 #define AIO_FIELD_PARTICLE_H
 
+//lib4aio:
 #include <lib4aio_cpp_headers/aio_orbit/aio_particle/aio_particle.h>
 
 namespace lib4aio {
+
+    template<typename T>
+    class array_list;
 
     class point_watcher;
 }
 
 class aio_field;
+
+class aio_assign_task;
 
 using namespace lib4aio;
 
@@ -17,7 +23,7 @@ class aio_field_particle : public aio_particle<T> {
 
 public:
 
-    explicit aio_field_particle();
+    explicit aio_field_particle(array_list<str_hook> *type_list_ptr, array_list<aio_field> *field_list_ptr);
 
     ~aio_field_particle();
 
@@ -33,6 +39,10 @@ private:
 
     aio_field *field;
 
+    array_list<str_hook> *type_list_ptr;
+
+    array_list<aio_field> *field_list_ptr;
+
     enum {
         AIO_MONITOR_MODIFIER, AIO_MONITOR_NAME, AIO_MONITOR_TYPE, AIO_MONITOR_EQUAL_SIGN, AIO_MONITOR_VALUE
     } monitor_mode;
@@ -41,20 +51,17 @@ private:
         AIO_TRIGGER_MODE_PASSIVE, AIO_TRIGGER_MODE_ACTIVE, AIO_TRIGGER_MODE_UNDEFINED
     } trigger_mode;
 
-    struct {
-        char *attribute;
-        char *value;
-    } config_materials;
+    aio_assign_task *assign_task;
 
-    void handle_field_modifier(const char symbol, const unsigned position);
+    void monitor_field_modifier(const char symbol, const unsigned position);
 
-    void handle_field_name(const char symbol, const unsigned position);
+    void monitor_field_name(const char symbol, const unsigned position);
 
-    void handle_field_type(const char symbol, const unsigned position);
+    void monitor_field_type(const char symbol, const unsigned position);
 
-    void handle_equal_sign_data(const char symbol, const unsigned position);
+    void monitor_equal_sign(const char symbol, const unsigned position);
 
-    void handle_value_data(const char symbol, const unsigned position);
+    void monitor_value(const char symbol, const unsigned position);
 };
 
 #endif //AIO_FIELD_PARTICLE_H

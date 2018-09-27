@@ -13,10 +13,10 @@ const aio_scheme *aio_scheme::get_parent() const
 
 const array_list<aio_field> *aio_scheme::get_field_definitions() const
 {
-    return this->field_definitions;
+    return this->field_definition_list_ptr;
 }
 
-const array_list<aio_instruction> *aio_scheme::get_instructions() const
+const array_list<aio_task> *aio_scheme::get_instructions() const
 {
     return this->instructions;
 }

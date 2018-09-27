@@ -15,15 +15,15 @@ using namespace lib4aio;
 
 #define INTEGER "Int"
 
-#define DOUBLE "Dou"
+#define DOUBLE "Double"
 
-#define STRING "Str"
+#define STRING "String"
 
-#define BOOLEAN "Boo"
+#define BOOLEAN "Boolean"
 
-#define VOID "Voi"
+#define VOID "Void"
 
-#define AIO_NOT_INITIALIZED_TYPE "###"
+#define AUTO "_"
 
 /**
  * Config types.

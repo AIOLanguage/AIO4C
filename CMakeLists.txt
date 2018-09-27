@@ -42,7 +42,6 @@ add_executable(
         headers/aio_parsing/aio_orbits/aio_field/aio_file_orbit.h
         headers/aio_parsing/aio_orbits/aio_scope/aio_scope_orbit.h
         headers/aio_parsing/aio_orbits/aio_class/aio_class_orbit.h
-        headers/aio_parsing/aio_particles/aio_file/aio_file_particle.h
         headers/aio_parsing/aio_context_inflater/aio_context_inflater.h
         headers/aio_parsing/aio_particles/aio_scope/aio_scope_particle.h
         headers/aio_parsing/aio_particles/aio_class/aio_class_particle.h
@@ -62,7 +61,7 @@ add_executable(
         headers/aio_runtime/aio_bundle/aio_bundle.h
         headers/aio_runtime/aio_invoker/aio_invoker.h
         headers/aio_runtime/aio_variable/aio_variable.h
-        headers/aio_runtime/aio_instruction/aio_instruction.h
+        headers/aio_runtime/aio_task/aio_task.h
         headers/aio_runtime/aio_value/advanced_functions/log_aio_value.h
         headers/aio_runtime/aio_value/advanced_functions/cast_aio_value.h
         headers/aio_runtime/aio_value/advanced_functions/compare_aio_value.h
@@ -161,4 +160,4 @@ add_executable(
         lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/advanced_functions/str_hook_trim.cpp
         lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/advanced_functions/str_hook_list_log.cpp
         #---------------------------------------------------------------------------------------------------------------
-        sources/aio_parsing/aio_particles/aio_class/aio_class_particle.cpp headers/aio_parsing/aio_particles/aio_import/aio_import_particle.h)
+        sources/aio_parsing/aio_particles/aio_class/aio_class_particle.cpp headers/aio_parsing/aio_particles/aio_import/aio_import_particle.h headers/aio_runtime/aio_task/aio_assign/aio_assign_task.h sources/aio_runtime/aio_task/aio_assign/aio_assign_task.cpp)

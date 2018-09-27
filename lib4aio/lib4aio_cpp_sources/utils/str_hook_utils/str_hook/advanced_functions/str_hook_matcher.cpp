@@ -9,7 +9,7 @@ namespace lib4aio
 
     bool str_hook::matches_int() const
     {
-        auto string = this->source_string;
+        auto string = this->string_ptr;
         auto length = this->get_size();
         auto start_position = this->start;
         if (length <= 0) {
@@ -33,7 +33,7 @@ namespace lib4aio
     bool str_hook::matches_double() const
     {
         {
-            auto string = this->source_string;
+            auto string = this->string_ptr;
             auto length = this->get_size();
             auto was_dot = false;
             auto was_fraction = false;
@@ -69,7 +69,7 @@ namespace lib4aio
     bool str_hook::matches_string() const
     {
         auto length = this->get_size();
-        auto hooked_string = this->source_string;
+        auto hooked_string = this->string_ptr;
         return length > 1
                && is_single_quote(hooked_string[this->start])
                && is_single_quote(hooked_string[this->end - 1]);

@@ -165,7 +165,7 @@ void aio_context_inflater::inflate_aio_file(const char *root_path, aio_runtime *
         const str_hook *holder = new str_hook(content_string, 0, content_length);
         //Create build file orbit:
         array_list<aio_file> *file_list = runtime->get_file_list();
-        aio_orbit<aio_file> *file_orbit = new aio_file_orbit(file_list, content);
+        aio_orbit<aio_file> *file_orbit = new aio_file_orbit(runtime, content);
         aio_file *file = file_orbit->make(holder);
         //Add file:
         file_list->add(file);

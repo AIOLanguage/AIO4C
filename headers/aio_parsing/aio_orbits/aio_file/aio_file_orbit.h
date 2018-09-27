@@ -2,6 +2,7 @@
 #define AIO_FILE_ORBIT_H
 
 #include <lib4aio_cpp_headers/aio_orbit/aio_orbit.h>
+#include <aio_runtime/aio_runtime.h>
 
 namespace lib4aio {
 
@@ -19,7 +20,7 @@ class aio_file_orbit : public aio_orbit<aio_file> {
 
 public:
 
-    explicit aio_file_orbit(array_list<aio_file> *file_collection, str_builder *file_content);
+    explicit aio_file_orbit(aio_runtime *runtime, str_builder *file_content);
 
     ~aio_file_orbit();
 };

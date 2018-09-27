@@ -106,6 +106,6 @@ bool is_aio_null_modifier(const str_hook *hook);
  * Declare functions.
  */
 
-bool can_use_name(const str_hook *hook);
+bool is_successful_aio_name(const str_hook *hook);
 
 #endif //AIO_MODIFIERS_H

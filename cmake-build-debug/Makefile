@@ -1662,6 +1662,33 @@ sources/aio_runtime/aio_scheme/aio_scheme.cpp.s:
 	$(MAKE) -f CMakeFiles/AIO_v_2.dir/build.make CMakeFiles/AIO_v_2.dir/sources/aio_runtime/aio_scheme/aio_scheme.cpp.s
 .PHONY : sources/aio_runtime/aio_scheme/aio_scheme.cpp.s
 
+sources/aio_runtime/aio_task/aio_assign/aio_assign_task.o: sources/aio_runtime/aio_task/aio_assign/aio_assign_task.cpp.o
+
+.PHONY : sources/aio_runtime/aio_task/aio_assign/aio_assign_task.o
+
+# target to build an object file
+sources/aio_runtime/aio_task/aio_assign/aio_assign_task.cpp.o:
+	$(MAKE) -f CMakeFiles/AIO_v_2.dir/build.make CMakeFiles/AIO_v_2.dir/sources/aio_runtime/aio_task/aio_assign/aio_assign_task.cpp.o
+.PHONY : sources/aio_runtime/aio_task/aio_assign/aio_assign_task.cpp.o
+
+sources/aio_runtime/aio_task/aio_assign/aio_assign_task.i: sources/aio_runtime/aio_task/aio_assign/aio_assign_task.cpp.i
+
+.PHONY : sources/aio_runtime/aio_task/aio_assign/aio_assign_task.i
+
+# target to preprocess a source file
+sources/aio_runtime/aio_task/aio_assign/aio_assign_task.cpp.i:
+	$(MAKE) -f CMakeFiles/AIO_v_2.dir/build.make CMakeFiles/AIO_v_2.dir/sources/aio_runtime/aio_task/aio_assign/aio_assign_task.cpp.i
+.PHONY : sources/aio_runtime/aio_task/aio_assign/aio_assign_task.cpp.i
+
+sources/aio_runtime/aio_task/aio_assign/aio_assign_task.s: sources/aio_runtime/aio_task/aio_assign/aio_assign_task.cpp.s
+
+.PHONY : sources/aio_runtime/aio_task/aio_assign/aio_assign_task.s
+
+# target to generate assembly for a file
+sources/aio_runtime/aio_task/aio_assign/aio_assign_task.cpp.s:
+	$(MAKE) -f CMakeFiles/AIO_v_2.dir/build.make CMakeFiles/AIO_v_2.dir/sources/aio_runtime/aio_task/aio_assign/aio_assign_task.cpp.s
+.PHONY : sources/aio_runtime/aio_task/aio_assign/aio_assign_task.cpp.s
+
 sources/aio_runtime/aio_value/advanced_functions/cast_aio_value.o: sources/aio_runtime/aio_value/advanced_functions/cast_aio_value.cpp.o
 
 .PHONY : sources/aio_runtime/aio_value/advanced_functions/cast_aio_value.o
@@ -1950,6 +1977,9 @@ help:
 	@echo "... sources/aio_runtime/aio_scheme/aio_scheme.o"
 	@echo "... sources/aio_runtime/aio_scheme/aio_scheme.i"
 	@echo "... sources/aio_runtime/aio_scheme/aio_scheme.s"
+	@echo "... sources/aio_runtime/aio_task/aio_assign/aio_assign_task.o"
+	@echo "... sources/aio_runtime/aio_task/aio_assign/aio_assign_task.i"
+	@echo "... sources/aio_runtime/aio_task/aio_assign/aio_assign_task.s"
 	@echo "... sources/aio_runtime/aio_value/advanced_functions/cast_aio_value.o"
 	@echo "... sources/aio_runtime/aio_value/advanced_functions/cast_aio_value.i"
 	@echo "... sources/aio_runtime/aio_value/advanced_functions/cast_aio_value.s"

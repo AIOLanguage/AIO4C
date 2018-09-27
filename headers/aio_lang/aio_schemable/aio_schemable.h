@@ -1,7 +1,15 @@
 #ifndef AIO_SCHEMABLE_H
 #define AIO_SCHEMABLE_H
 
-class aio_scheme;
+namespace lib4aio {
+
+    template<typename T>
+    class array_list;
+}
+
+using namespace lib4aio;
+
+class aio_task;
 
 class aio_schemable {
 
@@ -11,11 +19,7 @@ public:
 
     virtual ~aio_schemable();
 
-    aio_scheme *get_scheme() const;
-
-protected:
-
-    aio_scheme *scheme;
+    array_list<aio_task> *get_instructions();
 };
 
 #endif //AIO_SCHEMABLE_H

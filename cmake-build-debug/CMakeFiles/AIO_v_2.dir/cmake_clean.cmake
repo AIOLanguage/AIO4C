@@ -60,6 +60,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/advanced_functions/str_hook_trim.cpp.o"
   "CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/advanced_functions/str_hook_list_log.cpp.o"
   "CMakeFiles/AIO_v_2.dir/sources/aio_parsing/aio_particles/aio_class/aio_class_particle.cpp.o"
+  "CMakeFiles/AIO_v_2.dir/sources/aio_runtime/aio_task/aio_assign/aio_assign_task.cpp.o"
   "AIO_v_2.pdb"
   "AIO_v_2"
 )

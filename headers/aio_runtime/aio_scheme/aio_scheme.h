@@ -11,7 +11,7 @@ using namespace lib4aio;
 
 class aio_field;
 
-class aio_instruction;
+class aio_task;
 
 class aio_ray;
 
@@ -27,15 +27,12 @@ public:
 
     const array_list<aio_field> *get_field_definitions() const;
 
-    const array_list<aio_instruction> *get_instructions() const;
 
 private:
 
     aio_scheme *parent;
 
-    array_list<aio_field> *field_definitions;
-
-    array_list<aio_instruction> *instructions;
+    array_list<aio_task> *instructions;
 };
 
 #endif //AIO_SCHEME_H

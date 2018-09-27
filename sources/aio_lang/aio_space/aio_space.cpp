@@ -44,7 +44,7 @@ const array_list<aio_function> *aio_space::get_function_definition_list() const
     return this->function_definition_list;
 }
 
-const array_list<aio_field> *aio_space::get_field_definition_list() const
+array_list<aio_field> *aio_space::get_field_definition_list() const
 {
     return this->field_definition_list;
 }

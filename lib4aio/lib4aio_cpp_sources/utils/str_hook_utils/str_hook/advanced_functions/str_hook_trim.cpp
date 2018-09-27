@@ -1,8 +1,8 @@
 #include <lib4aio_cpp_headers/utils/str_hook_utils/str_hook/str_hook.h>
 #include <lib4aio_cpp_headers/utils/char_utils/char_utils.h>
+#include <cstring>
 
-namespace lib4aio
-{
+namespace lib4aio {
     static str_hook *border_trim(
             const str_hook *hook,
             const bool has_left,
@@ -61,5 +61,20 @@ namespace lib4aio
     str_hook *str_hook::trim_with_line_break() const
     {
         return border_trim(this, true, false, is_space_or_line_break);
+    }
+
+    bool str_hook::ends_with(const char *string)
+    {
+        const unsigned str_length = (unsigned) strlen(string);
+        if (str_length < this->get_size()) {
+            for (unsigned i = str_length - 1; i >= 0; ++i) {
+                if (string[i] != this->string_ptr[this->start + i]) {
+                    return false;
+                }
+            }
+            return true;
+        } else {
+            return false;
+        }
     }
 }

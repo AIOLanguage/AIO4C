@@ -66,7 +66,7 @@ namespace lib4aio
 
     str_hook_list *str_hook::split(const char *delimiter) const
     {
-        auto src = this->source_string;
+        auto src = this->string_ptr;
         auto src_length = this->get_size();
         auto delimiter_length = strlen(delimiter);
         //Is empty string:
@@ -116,7 +116,7 @@ namespace lib4aio
                     new_hook->start = start_position;
                     new_hook->end = start_position + hold_length;
                 }
-                new_hook->source_string = src;
+                new_hook->string_ptr = src;
                 list->add(new_hook);
             }
         }
@@ -131,7 +131,7 @@ namespace lib4aio
 
     str_hook_list *str_hook::split_by_char_condition(bool (*char_condition)(const char)) const
     {
-        auto src = this->source_string;
+        auto src = this->string_ptr;
         auto start = this->start;
         auto end = this->end;
         auto hooks = new str_hook_list();
