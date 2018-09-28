@@ -15,7 +15,7 @@ public:
 
     ~aio_scope();
 
-    const array_list<aio_class> *get_annotation_definition_list() const = 0;
+    str_hook *name;
 };
 
 #endif //AIO_SCOPE_H

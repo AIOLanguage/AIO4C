@@ -44,12 +44,12 @@ private:
     array_list<aio_field> *field_list_ptr;
 
     enum {
-        AIO_MONITOR_MODIFIER, AIO_MONITOR_NAME, AIO_MONITOR_TYPE, AIO_MONITOR_EQUAL_SIGN, AIO_MONITOR_VALUE
+        AIO_MONITOR_MODIFIER,
+        AIO_MONITOR_NAME,
+        AIO_MONITOR_TYPE,
+        AIO_MONITOR_EQUAL_SIGN,
+        AIO_MONITOR_VALUE
     } monitor_mode;
-
-    enum {
-        AIO_TRIGGER_MODE_PASSIVE, AIO_TRIGGER_MODE_ACTIVE, AIO_TRIGGER_MODE_UNDEFINED
-    } trigger_mode;
 
     aio_assign_task *assign_task;
 

@@ -63,6 +63,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/AIO_v_2.dir/sources/aio_runtime/aio_task/aio_class/aio_class_task.cpp.o"
   "CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/aio_explorer/aio_explorer.cpp.o"
   "CMakeFiles/AIO_v_2.dir/sources/aio_parsing/aio_orbits/aio_class/aio_class_orbit.cpp.o"
+  "CMakeFiles/AIO_v_2.dir/sources/aio_parsing/aio_orbits/aio_scope/aio_scope_orbit.cpp.o"
+  "CMakeFiles/AIO_v_2.dir/sources/aio_parsing/aio_particles/aio_scope/aio_scope_particle.cpp.o"
   "AIO_v_2.pdb"
   "AIO_v_2"
 )

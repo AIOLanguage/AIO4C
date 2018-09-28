@@ -20,10 +20,10 @@ using namespace lib4aio;
 static array_list<aio_particle<aio_file>> *new_file_particle_list(aio_runtime *runtime, aio_file *file)
 {
     array_list<aio_particle<aio_file>> *particle_list = new array_list<aio_particle<aio_file>>();
-    particle_list->add(new aio_class_particle<aio_file>(runtime));
+    particle_list->add(new aio_class_particle<aio_file>(runtime, file->class_definition_list));
     particle_list->add(new aio_field_particle<aio_file>(runtime->get_types(), file->field_definition_list));
-    particle_list->add(new aio_scope_particle<aio_file>());
-    particle_list->add(new aio_function_particle<aio_file>());
+    particle_list->add(new aio_scope_particle<aio_file>(runtime, file->scope_definition_list));
+    particle_list->add(new aio_function_particle<aio_file>(runtime, file->function_definition_list));
     particle_list->add(new aio_import_particle<aio_file>(runtime->get_file_list()));
     return particle_list;
 }

@@ -1500,6 +1500,33 @@ sources/aio_parsing/aio_orbits/aio_file/aio_file_orbit.cpp.s:
 	$(MAKE) -f CMakeFiles/AIO_v_2.dir/build.make CMakeFiles/AIO_v_2.dir/sources/aio_parsing/aio_orbits/aio_file/aio_file_orbit.cpp.s
 .PHONY : sources/aio_parsing/aio_orbits/aio_file/aio_file_orbit.cpp.s
 
+sources/aio_parsing/aio_orbits/aio_scope/aio_scope_orbit.o: sources/aio_parsing/aio_orbits/aio_scope/aio_scope_orbit.cpp.o
+
+.PHONY : sources/aio_parsing/aio_orbits/aio_scope/aio_scope_orbit.o
+
+# target to build an object file
+sources/aio_parsing/aio_orbits/aio_scope/aio_scope_orbit.cpp.o:
+	$(MAKE) -f CMakeFiles/AIO_v_2.dir/build.make CMakeFiles/AIO_v_2.dir/sources/aio_parsing/aio_orbits/aio_scope/aio_scope_orbit.cpp.o
+.PHONY : sources/aio_parsing/aio_orbits/aio_scope/aio_scope_orbit.cpp.o
+
+sources/aio_parsing/aio_orbits/aio_scope/aio_scope_orbit.i: sources/aio_parsing/aio_orbits/aio_scope/aio_scope_orbit.cpp.i
+
+.PHONY : sources/aio_parsing/aio_orbits/aio_scope/aio_scope_orbit.i
+
+# target to preprocess a source file
+sources/aio_parsing/aio_orbits/aio_scope/aio_scope_orbit.cpp.i:
+	$(MAKE) -f CMakeFiles/AIO_v_2.dir/build.make CMakeFiles/AIO_v_2.dir/sources/aio_parsing/aio_orbits/aio_scope/aio_scope_orbit.cpp.i
+.PHONY : sources/aio_parsing/aio_orbits/aio_scope/aio_scope_orbit.cpp.i
+
+sources/aio_parsing/aio_orbits/aio_scope/aio_scope_orbit.s: sources/aio_parsing/aio_orbits/aio_scope/aio_scope_orbit.cpp.s
+
+.PHONY : sources/aio_parsing/aio_orbits/aio_scope/aio_scope_orbit.s
+
+# target to generate assembly for a file
+sources/aio_parsing/aio_orbits/aio_scope/aio_scope_orbit.cpp.s:
+	$(MAKE) -f CMakeFiles/AIO_v_2.dir/build.make CMakeFiles/AIO_v_2.dir/sources/aio_parsing/aio_orbits/aio_scope/aio_scope_orbit.cpp.s
+.PHONY : sources/aio_parsing/aio_orbits/aio_scope/aio_scope_orbit.cpp.s
+
 sources/aio_parsing/aio_particles/aio_class/aio_class_particle.o: sources/aio_parsing/aio_particles/aio_class/aio_class_particle.cpp.o
 
 .PHONY : sources/aio_parsing/aio_particles/aio_class/aio_class_particle.o
@@ -1553,6 +1580,33 @@ sources/aio_parsing/aio_particles/aio_field/aio_field_particle.s: sources/aio_pa
 sources/aio_parsing/aio_particles/aio_field/aio_field_particle.cpp.s:
 	$(MAKE) -f CMakeFiles/AIO_v_2.dir/build.make CMakeFiles/AIO_v_2.dir/sources/aio_parsing/aio_particles/aio_field/aio_field_particle.cpp.s
 .PHONY : sources/aio_parsing/aio_particles/aio_field/aio_field_particle.cpp.s
+
+sources/aio_parsing/aio_particles/aio_scope/aio_scope_particle.o: sources/aio_parsing/aio_particles/aio_scope/aio_scope_particle.cpp.o
+
+.PHONY : sources/aio_parsing/aio_particles/aio_scope/aio_scope_particle.o
+
+# target to build an object file
+sources/aio_parsing/aio_particles/aio_scope/aio_scope_particle.cpp.o:
+	$(MAKE) -f CMakeFiles/AIO_v_2.dir/build.make CMakeFiles/AIO_v_2.dir/sources/aio_parsing/aio_particles/aio_scope/aio_scope_particle.cpp.o
+.PHONY : sources/aio_parsing/aio_particles/aio_scope/aio_scope_particle.cpp.o
+
+sources/aio_parsing/aio_particles/aio_scope/aio_scope_particle.i: sources/aio_parsing/aio_particles/aio_scope/aio_scope_particle.cpp.i
+
+.PHONY : sources/aio_parsing/aio_particles/aio_scope/aio_scope_particle.i
+
+# target to preprocess a source file
+sources/aio_parsing/aio_particles/aio_scope/aio_scope_particle.cpp.i:
+	$(MAKE) -f CMakeFiles/AIO_v_2.dir/build.make CMakeFiles/AIO_v_2.dir/sources/aio_parsing/aio_particles/aio_scope/aio_scope_particle.cpp.i
+.PHONY : sources/aio_parsing/aio_particles/aio_scope/aio_scope_particle.cpp.i
+
+sources/aio_parsing/aio_particles/aio_scope/aio_scope_particle.s: sources/aio_parsing/aio_particles/aio_scope/aio_scope_particle.cpp.s
+
+.PHONY : sources/aio_parsing/aio_particles/aio_scope/aio_scope_particle.s
+
+# target to generate assembly for a file
+sources/aio_parsing/aio_particles/aio_scope/aio_scope_particle.cpp.s:
+	$(MAKE) -f CMakeFiles/AIO_v_2.dir/build.make CMakeFiles/AIO_v_2.dir/sources/aio_parsing/aio_particles/aio_scope/aio_scope_particle.cpp.s
+.PHONY : sources/aio_parsing/aio_particles/aio_scope/aio_scope_particle.cpp.s
 
 sources/aio_runtime/aio_build_runtime.o: sources/aio_runtime/aio_build_runtime.cpp.o
 
@@ -2013,12 +2067,18 @@ help:
 	@echo "... sources/aio_parsing/aio_orbits/aio_file/aio_file_orbit.o"
 	@echo "... sources/aio_parsing/aio_orbits/aio_file/aio_file_orbit.i"
 	@echo "... sources/aio_parsing/aio_orbits/aio_file/aio_file_orbit.s"
+	@echo "... sources/aio_parsing/aio_orbits/aio_scope/aio_scope_orbit.o"
+	@echo "... sources/aio_parsing/aio_orbits/aio_scope/aio_scope_orbit.i"
+	@echo "... sources/aio_parsing/aio_orbits/aio_scope/aio_scope_orbit.s"
 	@echo "... sources/aio_parsing/aio_particles/aio_class/aio_class_particle.o"
 	@echo "... sources/aio_parsing/aio_particles/aio_class/aio_class_particle.i"
 	@echo "... sources/aio_parsing/aio_particles/aio_class/aio_class_particle.s"
 	@echo "... sources/aio_parsing/aio_particles/aio_field/aio_field_particle.o"
 	@echo "... sources/aio_parsing/aio_particles/aio_field/aio_field_particle.i"
 	@echo "... sources/aio_parsing/aio_particles/aio_field/aio_field_particle.s"
+	@echo "... sources/aio_parsing/aio_particles/aio_scope/aio_scope_particle.o"
+	@echo "... sources/aio_parsing/aio_particles/aio_scope/aio_scope_particle.i"
+	@echo "... sources/aio_parsing/aio_particles/aio_scope/aio_scope_particle.s"
 	@echo "... sources/aio_runtime/aio_build_runtime.o"
 	@echo "... sources/aio_runtime/aio_build_runtime.i"
 	@echo "... sources/aio_runtime/aio_build_runtime.s"

@@ -3,16 +3,17 @@
 #include <aio_lang/aio_modifiers/aio_modifiers.h>
 #include <aio_lang/aio_space/aio_initializable/aio_class/aio_class.h>
 //parsing:
+#include <aio_parsing/aio_orbits/aio_class/aio_class_orbit.h>
 #include <aio_parsing/aio_particles/aio_class/aio_class_particle.h>
 //runtime:
 #include <aio_runtime/aio_task/aio_class/aio_class_task.h>
 //lib4aio:
+#include <lib4aio_cpp_headers/aio_explorer/aio_explorer.h>
 #include <lib4aio_cpp_headers/utils/char_utils/char_utils.h>
 #include <lib4aio_cpp_headers/utils/error_utils/error_utils.h>
 #include <lib4aio_cpp_headers/utils/array_list_utils/array_list.h>
+#include <lib4aio_cpp_headers/aio_orbit/aio_particle/aio_particle.h>
 #include <lib4aio_cpp_headers/utils/str_hook_utils/str_hook/str_hook.h>
-#include <lib4aio_cpp_headers/aio_explorer/aio_explorer.h>
-#include <aio_parsing/aio_orbits/aio_class/aio_class_orbit.h>
 
 /**
  * Tags.
@@ -23,6 +24,20 @@
 #define AIO_CLASS_PARTICLE_ERROR_TAG "AIO_CLASS_PARTICLE_ERROR"
 
 #define AIO_CLASS_PARTICLE_DEBUG
+
+template<typename T>
+aio_class_particle<T>::aio_class_particle(
+        aio_runtime *runtime,
+        array_list<aio_class> *class_list_ptr
+)
+{
+    this->runtime_ptr = runtime;
+    this->class_list_ptr = class_list_ptr;
+}
+
+template<typename T>
+aio_class_particle<T>::~aio_class_particle()
+{}
 
 template<typename T>
 const aio_particle_signal aio_class_particle<T>::handle_symbol(const unsigned position)
@@ -55,18 +70,6 @@ const aio_particle_signal aio_class_particle<T>::handle_symbol(const unsigned po
 }
 
 template<typename T>
-aio_class_particle<T>::aio_class_particle(aio_runtime *runtime)
-{
-    this->runtime_ptr = runtime;
-}
-
-template<typename T>
-aio_class_particle<T>::~aio_class_particle()
-{
-
-}
-
-template<typename T>
 void aio_class_particle<T>::monitor_class_modifier(const char symbol, const unsigned position)
 {
     //기호를 확인하다:
@@ -85,11 +88,7 @@ void aio_class_particle<T>::monitor_class_modifier(const char symbol, const unsi
 #ifdef AIO_CLASS_PARTICLE_DEBUG
             log_info_str_hook(AIO_CLASS_PARTICLE_INFO_TAG, "Found modifier:", this->token_holder);
 #endif
-            //Create class:
-            aio_class *clazz = new aio_class();
-            this->clazz = clazz;
-            //Create assign instruction:
-            this->class_task = new aio_class_task(clazz);
+            this->clazz = new aio_class();
             //Prepare to the next state:
             this->monitor_mode = AIO_MONITOR_NAME;
             this->signal = AIO_PARTICLE_SIGNAL_DETECTED;
@@ -126,7 +125,7 @@ void aio_class_particle<T>::monitor_class_name(const char symbol, const unsigned
             log_info_str_hook(AIO_CLASS_PARTICLE_INFO_TAG, "Found name:", this->token_holder);
 #endif
             this->clazz->name = new str_hook(this->token_holder);
-            this->switch_particle_mode(symbol, position);
+            this->switch_monitor_mode(symbol, position);
             this->trigger_mode = AIO_TRIGGER_MODE_PASSIVE;
         }
     }
@@ -137,12 +136,12 @@ void aio_class_particle<T>::monitor_class_key(const char symbol, const unsigned 
 {
     const bool is_whitespace = is_space_or_line_break(symbol);
     if (!is_whitespace) {
-        this->switch_particle_mode(symbol, position);
+        this->switch_monitor_mode(symbol, position);
     }
 }
 
 template<typename T>
-void aio_class_particle<T>::switch_particle_mode(const char symbol, const unsigned position)
+void aio_class_particle<T>::switch_monitor_mode(const char symbol, const unsigned position)
 {
     const bool is_colon_cond = is_colon(symbol);
     const bool is_arrow_cond = is_less_sign(symbol);
@@ -200,7 +199,7 @@ void aio_class_particle<T>::monitor_class_parents(const char symbol, const unsig
             log_info_str_hook(AIO_CLASS_PARTICLE_INFO_TAG, "Found parent:", this->token_holder);
 #endif
             this->clazz->parent_names->add(new str_hook(this->token_holder));
-            this->switch_particle_mode(symbol, position);
+            this->switch_monitor_mode(symbol, position);
             this->trigger_mode = AIO_TRIGGER_MODE_PASSIVE;
         }
     }
@@ -259,7 +258,7 @@ void aio_class_particle<T>::monitor_class_attributes(const char symbol, const un
                     throw_error_with_tag(AIO_CLASS_PARTICLE_ERROR_TAG, "Inherited attribute already specified!");
                 }
             }
-            this->switch_particle_mode(symbol, position);
+            this->switch_monitor_mode(symbol, position);
         } else {
             //Maybe is annotation:
             const bool starts_as_annotation = this->token_holder->get_relative_char(0) == '@';
@@ -286,7 +285,7 @@ void aio_class_particle<T>::monitor_class_body(const char symbol, const unsigned
 {
     const str_hook *hook = new str_hook(this->string, this->left_border, this->right_border);
     str_hook class_body_holder = explore_hook_scope(position, OPENING_BRACE, CLOSING_BRACE, hook);
-    aio_orbit<aio_class> *class_orbit = new aio_class_orbit(this->clazz);
+    aio_orbit<aio_class> *class_orbit = new aio_class_orbit(this->clazz, this->runtime_ptr);
     //Fill the same class:
     this->clazz = class_orbit->make(hook);
     this->signal = AIO_PARTICLE_SIGNAL_IS_READY;
@@ -301,11 +300,8 @@ unsigned aio_class_particle<T>::illuminate(T *container)
     aio_space *space = dynamic_cast<aio_space *>(container);
     if (space) {
         //Set field:
-        space->class_definition_list->add(this->field);
-        this->field = nullptr;
-        //Set assign task:
-        space->get_instructions()->add(this->class_task);
-        this->class_task = nullptr;
+        space->class_definition_list->add(this->clazz);
+        this->clazz = nullptr;
     } else {
         throw_error_with_details(
                 AIO_CLASS_PARTICLE_ERROR_TAG,

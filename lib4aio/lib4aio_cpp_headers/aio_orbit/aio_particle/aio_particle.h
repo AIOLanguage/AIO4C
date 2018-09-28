@@ -8,9 +8,13 @@ namespace lib4aio {
     template<class T>
     class aio_orbit;
 
-    typedef enum aio_particle_signal {
+    enum aio_particle_signal {
         AIO_PARTICLE_SIGNAL_UNDEFINED, AIO_PARTICLE_SIGNAL_DETECTED, AIO_PARTICLE_SIGNAL_IS_READY
-    } aio_particle_signal;
+    };
+
+    enum aio_particle_trigger_mode {
+        AIO_TRIGGER_MODE_PASSIVE, AIO_TRIGGER_MODE_ACTIVE, AIO_TRIGGER_MODE_UNDEFINED
+    };
 
     template<class T>
     class aio_particle {
@@ -42,6 +46,8 @@ namespace lib4aio {
         aio_particle_signal signal;
 
         bool is_inside_string;
+
+        aio_particle_trigger_mode trigger_mode;
     };
 }
 

@@ -11,7 +11,7 @@ typename Core724 <- Robot.Core
                 println('CORE-724 has activated!')
             }
 
-        division init
+        typeinit init
             {
                 function installProgram() : override
                     {

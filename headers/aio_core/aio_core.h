@@ -15,8 +15,6 @@ using namespace lib4aio;
 
 class aio_bundle;
 
-class aio_build_script;
-
 class aio_runtime;
 
 class aio_build_runtime;

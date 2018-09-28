@@ -49,8 +49,7 @@ add_executable(
         headers/aio_parsing/aio_orbits/aio_function/aio_function_orbit.h
         headers/aio_parsing/aio_orbits/aio_constructor/aio_constructor_orbit.h
         headers/aio_parsing/aio_particles/aio_function/aio_function_particle.h
-        headers/aio_parsing/aio_orbits/aio_file/aio_particles/aio_import_particle.h
-        headers/aio_parsing/aio_particles/aio_constructor/aio_constrcutor_particle.h
+        headers/aio_parsing/aio_particles/aio_constructor/aio_constructor_particle.h
         #runtime:
         headers/aio_runtime/aio_runtime.h
         headers/aio_runtime/aio_ray/aio_ray.h
@@ -158,4 +157,4 @@ add_executable(
         lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/advanced_functions/str_hook_trim.cpp
         lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/advanced_functions/str_hook_list_log.cpp
         #---------------------------------------------------------------------------------------------------------------
-        sources/aio_parsing/aio_particles/aio_class/aio_class_particle.cpp headers/aio_parsing/aio_particles/aio_import/aio_import_particle.h headers/aio_runtime/aio_task/aio_assign/aio_assign_task.h sources/aio_runtime/aio_task/aio_assign/aio_assign_task.cpp sources/aio_runtime/aio_task/aio_class/aio_class_task.cpp headers/aio_runtime/aio_task/aio_class/aio_class_task.h lib4aio/lib4aio_cpp_headers/aio_explorer/aio_explorer.h lib4aio/lib4aio_cpp_sources/aio_explorer/aio_explorer.cpp sources/aio_parsing/aio_orbits/aio_class/aio_class_orbit.cpp)
+        sources/aio_parsing/aio_particles/aio_class/aio_class_particle.cpp headers/aio_parsing/aio_particles/aio_import/aio_import_particle.h headers/aio_runtime/aio_task/aio_assign/aio_assign_task.h sources/aio_runtime/aio_task/aio_assign/aio_assign_task.cpp sources/aio_runtime/aio_task/aio_class/aio_class_task.cpp headers/aio_runtime/aio_task/aio_class/aio_class_task.h lib4aio/lib4aio_cpp_headers/aio_explorer/aio_explorer.h lib4aio/lib4aio_cpp_sources/aio_explorer/aio_explorer.cpp sources/aio_parsing/aio_orbits/aio_class/aio_class_orbit.cpp sources/aio_parsing/aio_orbits/aio_scope/aio_scope_orbit.cpp sources/aio_parsing/aio_particles/aio_scope/aio_scope_particle.cpp)

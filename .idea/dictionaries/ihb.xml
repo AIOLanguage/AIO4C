@@ -4,13 +4,16 @@
       <w>aiomain</w>
       <w>aioprocessor</w>
       <w>annotatable</w>
+      <w>areaname</w>
       <w>enumname</w>
       <w>inflater</w>
       <w>inflatter</w>
       <w>initializable</w>
       <w>kostya</w>
       <w>markname</w>
+      <w>partname</w>
       <w>schemable</w>
+      <w>typeinit</w>
     </words>
   </dictionary>
 </component>

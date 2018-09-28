@@ -7,7 +7,7 @@ typename Robot : abstract
     {
         constant core Core
 
-        instance Robot(core Core);
+        typeinit Robot(core Core);
 
         function calc() : abstract
 
@@ -18,12 +18,12 @@ typename Robot : abstract
             {
                 variable batteryPower Int
 
-                division attack
+                partname attack
                     {
                         function fire() : abstract : protected
                     }
 
-                division init : protected
+                partname init : protected
                     {
                         function installProgram() : abstract
 

@@ -1,1 +1,1 @@
-constant list String[] = ('Igor', 'Anton', 'Ilya', 'Kostya')
+constant list = String[4]('Igor', 'Anton', 'Ilya', 'Kostya')

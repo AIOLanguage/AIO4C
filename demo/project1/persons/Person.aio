@@ -1,8 +1,6 @@
 addition
     {
-        java.util.List::List
-        java.lang.Object::Object
-        java.util.ArrayList::ArrayList
+        java.io.FileWriter::FileWriter
         java.io.BufferedWriter::BufferedWriter
     }
 
@@ -12,41 +10,41 @@ typename Person : open
         variable secondName String;
         variable age Int;
 
-        instance Person(firstName String, secondName String, age Int);
+        typeinit Person(firstName String, secondName String, age Int);
 
-        instance Person(firstName String, secondName String, age Int, organizations String...)
+        typeinit Person(firstName String, secondName String, age Int, organizations String...)
             {
                 $(firstName, secondName, age)
-                $org::organizations.addAll(organizations)
-                $org::organizations.sort()
+                $::org->organizations.addAll(organizations)
+                $::org->organizations.sort()
             }
 
         function getInfo()
             {
                 println('Name: #{$name}\nSecond name: #{$secondName}\nFriends:')
-                $com::friends.foreach
+                $::com->friends.foreach
                     {
                         if (it.isBest) {
                             println(it.person.firstName)
                         }
                     }
-                $org::getInfo()
+                $::org->getInfo()
             }
 
         function equals(o Object) : override
             = o is Person && $firstName == o.firstName && $secondName == o.secondName && $age == o.age
 
-        division com
+        partname com
             {
                 typename Friend : inner : private
                     {
                         constant person Person
                         variable isBest Boolean
 
-                        instance Friend(person Person, isBest Boolean);
+                        typeinit Friend(person Person, isBest Boolean);
                     }
 
-                constant friends List<Friend> = ArrayList<>()
+                constant friends = Friend[]()
 
                 function sayAll(message String) : open
                     {
@@ -61,27 +59,28 @@ typename Person : open
                 function addFriend(person Person, isBest Boolean)
                     {
                         val friend = Friend(person, isBest)
-                        $friends.add(friend)
+                        $friends += friend
                     }
             }
 
-        division org
+        partname org
             {
-                constant organizations List<String> : private = ArrayList<>()
+                constant organizations : private = String[]()
 
                 function getInfo()
                     {
                         println('Organizations:')
-                        $organizations.foreach { println(it) }
+                        $organizations -> cycle { println(it) }
                     }
 
                 function writeToFile(fileName String)
                     {
                         constant bufferedWriter = BufferedWriter(FileWriter(fileName))
-                        cycle (organization in $organizations) {
-                            bufferedWriter.write(organization)
-                            bufferedWriter.write('\n')
-                        }
+                        $organizations -> cycle
+                            {
+                                bufferedWriter.write(organization)
+                                bufferedWriter.write('\n')
+                            }
                         writer.close()
                     }
             }

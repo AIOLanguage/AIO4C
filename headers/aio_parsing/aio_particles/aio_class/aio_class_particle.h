@@ -27,7 +27,10 @@ class aio_class_particle : public aio_particle<T> {
 
 public:
 
-    explicit aio_class_particle(aio_runtime *runtime);
+    explicit aio_class_particle(
+            aio_runtime *runtime,
+            array_list<aio_class> *class_list_ptr
+    );
 
     ~aio_class_particle();
 
@@ -54,12 +57,6 @@ private:
         AIO_MONITOR_BODY
     } monitor_mode;
 
-    enum {
-        AIO_TRIGGER_MODE_PASSIVE, AIO_TRIGGER_MODE_ACTIVE, AIO_TRIGGER_MODE_UNDEFINED
-    } trigger_mode;
-
-    aio_class_task *class_task;
-
     void monitor_class_modifier(const char symbol, const unsigned position);
 
     void monitor_class_name(const char symbol, const unsigned position);
@@ -72,7 +69,7 @@ private:
 
     void monitor_class_body(const char symbol, const unsigned position);
 
-    void switch_particle_mode(const char symbol, const unsigned position);
+    void switch_monitor_mode(const char symbol, const unsigned position);
 };
 
 #endif //AIO_CLASS_PARTICLE_H
