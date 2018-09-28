@@ -2,13 +2,17 @@
 #include <cctype>
 #include <typeinfo>
 //lang:
+#include <aio_lang/aio_space/aio_space.h>
 #include <aio_lang/aio_field/aio_field.h>
 #include <aio_lang/aio_types/aio_types.h>
+#include <aio_lang/aio_schemable/aio_schemable.h>
 #include <aio_lang/aio_modifiers/aio_modifiers.h>
+#include <aio_lang/aio_schemable/aio_schemable.cpp>
 //parsing:
 #include <aio_parsing/aio_particles/aio_field/aio_field_particle.h>
 //runtime:
 #include <aio_runtime/aio_task/aio_assign/aio_assign_task.h>
+#include <aio_runtime/aio_task/aio_assign/aio_assign_task.cpp>
 //lib4aio:
 #include <lib4aio_cpp_headers/utils/string_utils/common.h>
 #include <lib4aio_cpp_headers/utils/char_utils/char_utils.h>
@@ -107,10 +111,10 @@ void aio_field_particle<T>::monitor_field_modifier(const char symbol, const unsi
             log_info_str_hook(AIO_FIELD_PARTICLE_INFO_TAG, "Found modifier:", this->token_holder);
 #endif
             //Create field:
-            this->field = aio_field();
+            this->field = new aio_field();
             this->field->is_const = is_constant_modifier;
             //Create assign instruction:
-            this->assign_task = aio_assign_task();
+            this->assign_task = new aio_assign_task<T>();
             //Prepare to the next state:
             this->monitor_mode = AIO_MONITOR_NAME;
             this->signal = AIO_PARTICLE_SIGNAL_DETECTED;
@@ -121,11 +125,11 @@ void aio_field_particle<T>::monitor_field_modifier(const char symbol, const unsi
             if (is_valid_name) {
                 //Check field in list:
                 const bool has_field_in_scope = this->field_list_ptr->contains_by(
-                        [this](aio_field *it) -> bool {
+                        [this](const aio_field *it) -> bool {
                             return it->name->equals_string(this->token_holder);
                         });
                 if (has_field_in_scope) {
-                    this->assign_task = new aio_assign_task();
+                    this->assign_task = new aio_assign_task<T>();
                     this->assign_task->set_name(this->token_holder);
                     //Prepare to the next state:
                     this->monitor_mode = AIO_MONITOR_EQUAL_SIGN;
@@ -197,7 +201,7 @@ void aio_field_particle<T>::monitor_field_type(const char symbol, const unsigned
     if (is_token_scan_finished) {
         this->token_holder->end = position;
         const bool is_valid_type = this->type_list_ptr->contains_by(
-                [this](str_hook *it) -> bool {
+                [this](const str_hook *it) -> bool {
                     it->equals_string(this->token_holder);
                 });
         if (is_valid_type) {
@@ -326,7 +330,7 @@ unsigned aio_field_particle<T>::illuminate(T *container)
         space->field_definition_list->add(this->field);
         this->field = nullptr;
         //Set assign task:
-        space->get_instructions()->add(this->assign_task);
+        space->get_instructions()->add((aio_task<aio_space> *) this->assign_task);
         this->assign_task = nullptr;
     } else {
         throw_error_with_details(

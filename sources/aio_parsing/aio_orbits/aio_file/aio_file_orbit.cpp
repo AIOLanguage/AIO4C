@@ -3,15 +3,22 @@
 //parsing:
 #include <aio_parsing/aio_orbits/aio_file/aio_file_orbit.h>
 #include <aio_parsing/aio_particles/aio_class/aio_class_particle.h>
+#include <aio_parsing/aio_particles/aio_class/aio_class_particle.cpp>
 #include <aio_parsing/aio_particles/aio_field/aio_field_particle.h>
+#include <aio_parsing/aio_particles/aio_field/aio_field_particle.cpp>
 #include <aio_parsing/aio_particles/aio_scope/aio_scope_particle.h>
+#include <aio_parsing/aio_particles/aio_scope/aio_scope_particle.cpp>
 #include <aio_parsing/aio_particles/aio_import/aio_import_particle.h>
+#include <aio_parsing/aio_particles/aio_import/aio_import_particle.cpp>
 #include <aio_parsing/aio_particles/aio_function/aio_function_particle.h>
+#include <aio_parsing/aio_particles/aio_function/aio_function_particle.cpp>
 //runtime:
 #include <aio_runtime/aio_runtime.h>
 //lib4aio:
 #include <lib4aio_cpp_headers/aio_orbit/aio_orbit.h>
+#include <lib4aio_cpp_sources/aio_orbit/aio_orbit.cpp>
 #include <lib4aio_cpp_headers/utils/array_list_utils/array_list.h>
+#include <lib4aio_cpp_sources/utils/array_list_utils/array_list.cpp>
 #include <lib4aio_cpp_headers/aio_orbit/aio_particle/aio_particle.h>
 #include <lib4aio_cpp_headers/utils/str_hook_utils/str_hook/str_hook.h>
 

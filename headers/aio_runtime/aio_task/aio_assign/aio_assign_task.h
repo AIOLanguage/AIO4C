@@ -14,7 +14,8 @@ namespace lib4aio {
 
 using namespace lib4aio;
 
-class aio_assign_task : public aio_task {
+template<typename T>
+class aio_assign_task : public aio_task<T> {
 
 public:
 
@@ -22,7 +23,7 @@ public:
 
     ~aio_assign_task();
 
-    void perform(aio_ray *ray);
+    void perform(aio_ray<T> *ray);
 
     void set_name(str_hook *name);
 

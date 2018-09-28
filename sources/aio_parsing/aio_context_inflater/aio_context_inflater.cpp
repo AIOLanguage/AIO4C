@@ -12,12 +12,14 @@
 #include <aio_parsing/aio_context_inflater/aio_context_inflater.h>
 //runtime:
 #include <aio_runtime/aio_ray/aio_ray.h>
+#include <aio_runtime/aio_ray/aio_ray.cpp>
 #include <aio_runtime/aio_build_runtime.h>
 #include <aio_runtime/aio_program_runtime.h>
 #include <aio_runtime/aio_variable/aio_variable.h>
 #include <aio_runtime/aio_value/advanced_functions/cast_aio_value.h>
 //lib4aio:
 #include <lib4aio_cpp_headers/aio_orbit/aio_orbit.h>
+#include <lib4aio_cpp_sources/aio_orbit/aio_orbit.cpp>
 #include <lib4aio_cpp_headers/utils/string_utils/common.h>
 #include <lib4aio_cpp_headers/aio_path_util/aio_path_util.h>
 #include <lib4aio_cpp_headers/utils/file_utils/file_reader.h>
@@ -25,6 +27,7 @@
 #include <lib4aio_cpp_headers/utils/error_utils/error_utils.h>
 #include <lib4aio_cpp_headers/utils/string_utils/suffix_prefix.h>
 #include <lib4aio_cpp_headers/utils/array_list_utils/array_list.h>
+#include <lib4aio_cpp_sources/utils/array_list_utils/array_list.cpp>
 #include <lib4aio_cpp_headers/utils/str_hook_utils/str_hook/str_hook.h>
 
 /**

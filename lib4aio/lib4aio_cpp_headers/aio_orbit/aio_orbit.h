@@ -7,7 +7,7 @@ namespace lib4aio {
 
     class str_hook;
 
-    template<class T>
+    template<typename T>
     class array_list;
 
     template<class T>

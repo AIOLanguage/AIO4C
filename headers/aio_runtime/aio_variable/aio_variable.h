@@ -12,7 +12,6 @@ struct aio_value;
 
 class aio_variable {
 
-
 public:
 
     explicit aio_variable();

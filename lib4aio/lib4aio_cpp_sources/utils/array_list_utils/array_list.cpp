@@ -110,7 +110,7 @@ namespace lib4aio {
         bool is_found = false;
         T *unique_element = nullptr;
         for (unsigned i = 0; i < this->size; ++i) {
-            const T *element = this->elements[i];
+            T *element = this->elements[i];
             if (func(element)) {
                 if (!is_found) {
                     is_found = true;

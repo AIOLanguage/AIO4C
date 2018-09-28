@@ -1,6 +1,11 @@
+//lang:
 #include <aio_lang/aio_types/aio_types.h>
+#include <aio_lang/aio_space/aio_file/aio_file.h>
+//runtime:
 #include <aio_runtime/aio_runtime.h>
+//lib4aio:
 #include <lib4aio_cpp_headers/utils/array_list_utils/array_list.h>
+#include <lib4aio_cpp_sources/utils/array_list_utils/array_list.cpp>
 #include <lib4aio_cpp_headers/utils/str_hook_utils/str_hook/str_hook.h>
 
 static array_list<str_hook> *new_aio_root_type_list()

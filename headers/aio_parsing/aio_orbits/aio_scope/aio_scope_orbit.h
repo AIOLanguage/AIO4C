@@ -11,6 +11,8 @@ class aio_runtime;
 
 class aio_scope_orbit : public aio_orbit<aio_scope> {
 
+public:
+
     explicit aio_scope_orbit(aio_scope *scope_ptr, aio_runtime *runtime_ptr);
 
     ~aio_scope_orbit();

@@ -13,15 +13,3 @@ aio_inheritable<T>::~aio_inheritable()
 {
     delete this->parents;
 }
-
-template<class T>
-const aio_inherited_type aio_inheritable<T>::get_inherited_type() const
-{
-    return this->inherited_type;
-}
-
-template<class T>
-const array_list<T> *aio_inheritable<T>::get_parents() const
-{
-    return this->parents;
-}

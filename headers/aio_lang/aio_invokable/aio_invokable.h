@@ -5,18 +5,18 @@
  * 연결.
  */
 
-#include <aio_lang/aio_annotatable/aio_annotatable.h>
+//lang:
 #include <aio_lang/aio_schemable/aio_schemable.h>
+#include <aio_lang/aio_annotatable/aio_annotatable.h>
 
 namespace lib4aio {
 
     class str_hook;
-
 }
 
 using namespace lib4aio;
 
-class aio_invokable : public aio_annotatable, public aio_schemable {
+class aio_invokable : public aio_annotatable, public aio_schemable<aio_invokable> {
 
 public:
 

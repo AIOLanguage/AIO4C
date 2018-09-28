@@ -4,7 +4,8 @@
 template<typename T>
 class aio_ray;
 
-template <typename T> class aio_task {
+template<typename T>
+class aio_task {
 
 public:
 

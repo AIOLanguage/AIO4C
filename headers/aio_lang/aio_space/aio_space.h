@@ -9,7 +9,6 @@
 #include <aio_lang/aio_annotatable/aio_annotatable.h>
 #include <aio_lang/aio_schemable/aio_schemable.h>
 
-
 class aio_enum;
 
 class aio_scope;
@@ -18,7 +17,7 @@ class aio_function;
 
 class aio_field;
 
-class aio_space : public aio_annotatable, public aio_schemable {
+class aio_space : public aio_annotatable, public aio_schemable<aio_space> {
 
 public:
 

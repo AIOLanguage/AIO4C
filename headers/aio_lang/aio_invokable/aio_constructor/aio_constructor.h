@@ -5,8 +5,10 @@
  * 연결.
  */
 
+//lang:
 #include <aio_lang/aio_invokable/aio_invokable.h>
 #include <aio_lang/aio_inheritable/aio_inheritable.h>
+//lib4aio:
 #include <lib4aio_cpp_headers/utils/str_hook_utils/str_hook/str_hook.h>
 
 class aio_constructor : aio_invokable, aio_inheritable<aio_constructor> {

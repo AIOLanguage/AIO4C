@@ -1,6 +1,9 @@
-#include <aio_runtime/aio_scheme/aio_scheme.h>
+//lang:
 #include <aio_lang/aio_invokable/aio_invokable.h>
+#include <aio_lang/aio_schemable/aio_schemable.cpp>
+//lib4aio:
 #include <lib4aio_cpp_headers/utils/array_list_utils/array_list.h>
+#include <lib4aio_cpp_sources/utils/array_list_utils/array_list.cpp>
 
 using namespace lib4aio;
 
@@ -11,7 +14,6 @@ aio_invokable::~aio_invokable()
 {
     this->output_types->free_elements();
     delete this->output_types;
-    delete this->scheme;
 }
 
 const unsigned aio_invokable::get_arg_count() const

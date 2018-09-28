@@ -22,7 +22,6 @@ public:
 private:
 
     array_list<aio_field> *elements;
-
 };
 
 #endif //AIO_ENUM_H

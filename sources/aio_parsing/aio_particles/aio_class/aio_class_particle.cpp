@@ -6,7 +6,6 @@
 #include <aio_parsing/aio_orbits/aio_class/aio_class_orbit.h>
 #include <aio_parsing/aio_particles/aio_class/aio_class_particle.h>
 //runtime:
-#include <aio_runtime/aio_task/aio_class/aio_class_task.h>
 //lib4aio:
 #include <lib4aio_cpp_headers/aio_explorer/aio_explorer.h>
 #include <lib4aio_cpp_headers/utils/char_utils/char_utils.h>
@@ -116,10 +115,11 @@ void aio_class_particle<T>::monitor_class_name(const char symbol, const unsigned
                                         && this->trigger_mode == AIO_TRIGGER_MODE_ACTIVE;
     if (is_token_scan_finished) {
         this->token_holder->end = position;
-        const bool is_valid_class_name = this->token_holder->is_word() && !this->class_list_ptr->contains_by(
-                [this](aio_class *it) -> bool {
-                    return it->name->equals_string(this->token_holder);
-                });
+        const bool is_valid_class_name = this->token_holder->is_word();
+//                && !this->class_list_ptr->contains_by(
+//                [this](aio_class *it) -> bool {
+//                    return it->name->equals_string(this->token_holder);
+//                });
         if (is_valid_class_name) {
 #ifdef AIO_CLASS_PARTICLE_DEBUG
             log_info_str_hook(AIO_CLASS_PARTICLE_INFO_TAG, "Found name:", this->token_holder);

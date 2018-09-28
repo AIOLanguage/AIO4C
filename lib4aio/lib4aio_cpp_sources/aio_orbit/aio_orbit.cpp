@@ -1,6 +1,5 @@
 #include <lib4aio_cpp_headers/aio_orbit/aio_orbit.h>
 #include <lib4aio_cpp_headers/utils/array_list_utils/array_list.h>
-#include <lib4aio_cpp_sources/utils/array_list_utils/array_list.cpp>
 #include <lib4aio_cpp_headers/aio_orbit/aio_particle/aio_particle.h>
 #include <lib4aio_cpp_sources/aio_orbit/aio_particle/aio_particle.cpp>
 #include <lib4aio_cpp_headers/utils/str_hook_utils/str_hook/str_hook.h>

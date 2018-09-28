@@ -27,7 +27,6 @@ public:
     const aio_particle_signal handle_symbol(const unsigned position);
 
     unsigned illuminate(T *space);
-
 };
 
 #endif //AIO_FUNCTION_PARTICLE_H

@@ -28,6 +28,10 @@ bool is_aio_variable_modifier(const str_hook *token);
 
 #define AIO_PRIVATE_MODIFIER "private"
 
+bool is_aio_protected_modifier(const str_hook *token);
+
+bool is_aio_private_modifier(const str_hook *token);
+
 /**
  * Attribute modifier.
  */
@@ -36,11 +40,17 @@ bool is_aio_variable_modifier(const str_hook *token);
 
 #define AIO_ABSTRACT_MODIFIER "abstract"
 
+bool is_aio_open_modifier(const str_hook *token);
+
+bool is_aio_abstract_modifier(const str_hook *token);
+
 /**
  * Import modifier.
  */
 
 #define AIO_IMPORT_MODIFIER "addition"
+
+bool is_aio_import_modifier(const str_hook *token);
 
 /**
  * Class modifier.
@@ -72,11 +82,15 @@ bool is_aio_scope_modifier(const str_hook *token);
 
 #define AIO_OVERRIDE_MODIFIER "override"
 
-bool is_aio_fun_modifier(str_hook *hook);
+bool is_aio_function_modifier(const str_hook *token);
+
+bool is_aio_override_modifier(const str_hook *token);
 
 /**
  * Constructor modifier.
  */
+
+bool is_aio_constructor_modifier(const str_hook *token);
 
 #define AIO_CONSTRUCTOR_MODIFIER "typeinit"
 
@@ -88,7 +102,7 @@ bool is_aio_fun_modifier(str_hook *hook);
 
 #define AIO_IN_MODIFIER "in"
 
-#define AIO_LOOP_MODIFIER "cycle"
+#define AIO_CYCLE_MODIFIER "cycle"
 
 #define AIO_RETURN_MODIFIER "out"
 
@@ -98,19 +112,19 @@ bool is_aio_fun_modifier(str_hook *hook);
 
 #define AIO_CONTINUE_MODIFIER "next"
 
-bool is_aio_if_modifier(str_hook *hook);
+bool is_aio_if_modifier(const str_hook *token);
 
-bool is_aio_in_modifier(str_hook *hook);
+bool is_aio_in_modifier(const str_hook *token);
 
-bool is_aio_loop_modifier(str_hook *hook);
+bool is_aio_cycle_modifier(const str_hook *token);
 
-bool is_aio_return_modifier(str_hook *hook);
+bool is_aio_return_modifier(const str_hook *token);
 
-bool is_aio_switch_modifier(str_hook *hook);
+bool is_aio_switch_modifier(const str_hook *token);
 
-bool is_aio_break_modifier(str_hook *hook);
+bool is_aio_break_modifier(const str_hook *token);
 
-bool is_aio_continue_modifier(str_hook *hook);
+bool is_aio_continue_modifier(const str_hook *token);
 
 /**
  * Value keywords.
@@ -132,6 +146,6 @@ bool is_aio_null_modifier(const str_hook *hook);
  * Check.
  */
 
-bool is_successful_aio_name(const str_hook *hook);
+bool is_successful_aio_name(const str_hook *token);
 
 #endif //AIO_MODIFIERS_H

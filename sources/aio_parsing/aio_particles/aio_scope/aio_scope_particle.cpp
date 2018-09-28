@@ -2,6 +2,7 @@
 #include <typeinfo>
 //lang:
 #include <aio_lang/aio_space/aio_space.h>
+#include <aio_lang/aio_modifiers/aio_modifiers.h>
 #include <aio_lang/aio_space/aio_scope/aio_scope.h>
 //parsing:
 #include <aio_parsing/aio_particles/aio_scope/aio_scope_particle.h>
@@ -100,10 +101,11 @@ void aio_scope_particle<T>::monitor_scope_name(const char symbol, const unsigned
                                         && this->trigger_mode == AIO_TRIGGER_MODE_ACTIVE;
     if (is_token_scan_finished) {
         this->token_holder->end = position;
-        const bool is_valid_scope_name = this->token_holder->is_word() && !this->scope->contains_by(
-                [this](aio_scope *it) -> bool {
-                    return it->name->equals_string(this->token_holder);
-                });
+        const bool is_valid_scope_name = this->token_holder->is_word();
+//                && !this->scope_list_ptr->contains_by(
+//                [this](aio_scope *it) -> bool {
+//                    return it->name->equals_string(this->token_holder);
+//                });
         if (is_valid_scope_name) {
 #ifdef AIO_SCOPE_PARTICLE_DEBUG
             log_info_str_hook(AIO_SCOPE_PARTICLE_INFO_TAG, "Found name:", this->token_holder);

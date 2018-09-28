@@ -7,6 +7,7 @@
 #include <aio_parsing/aio_context_inflater/aio_context_inflater.h>
 //runtime:
 #include <aio_runtime/aio_ray/aio_ray.h>
+#include <aio_runtime/aio_ray/aio_ray.cpp>
 #include <aio_runtime/aio_build_runtime.h>
 #include <aio_runtime/aio_program_runtime.h>
 #include <aio_runtime/aio_value/aio_value.h>

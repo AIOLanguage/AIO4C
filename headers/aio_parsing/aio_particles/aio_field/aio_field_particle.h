@@ -14,6 +14,7 @@ namespace lib4aio {
 
 class aio_field;
 
+template<typename T>
 class aio_assign_task;
 
 using namespace lib4aio;
@@ -51,7 +52,7 @@ private:
         AIO_MONITOR_VALUE
     } monitor_mode;
 
-    aio_assign_task *assign_task;
+    aio_assign_task<T> *assign_task;
 
     void monitor_field_modifier(const char symbol, const unsigned position);
 

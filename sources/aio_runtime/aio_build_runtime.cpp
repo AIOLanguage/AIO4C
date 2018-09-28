@@ -15,3 +15,8 @@ array_list<aio_variable> *aio_build_runtime::get_processors_ptr() const
 {
     return this->processors_ptr;
 }
+
+aio_ray<aio_file> *aio_build_runtime::get_build_ray_ptr() const
+{
+    return this->build_ray_ptr;
+}

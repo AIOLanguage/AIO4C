@@ -9,8 +9,10 @@ namespace lib4aio {
 
 using namespace lib4aio;
 
+template<typename T>
 class aio_task;
 
+template<typename T>
 class aio_schemable {
 
 public:
@@ -19,7 +21,11 @@ public:
 
     virtual ~aio_schemable();
 
-    array_list<aio_task> *get_instructions();
+    array_list<aio_task<T>> *get_instructions();
+
+private:
+
+    array_list<aio_task<T>> *instructions;
 };
 
 #endif //AIO_SCHEMABLE_H
