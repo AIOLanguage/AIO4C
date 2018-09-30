@@ -1,0 +1,50 @@
+/**
+ * AIO Build
+ *
+ * variable 'args' keeps input args:
+ *
+ * args String[]
+ *
+ */
+
+constant BUILD_PATH = 'com'
+
+constant EXE_PATH = '#{BUILD_PATH}.main'
+
+constant MAIN_FUNCTION 'main'
+
+constant mainResult = AIOExecutable(AIOCore(BUILD_PATH), EXE_PATH, MAIN_FUNCTION, args)
+
+/**
+ * Tests.
+ */
+
+markname Test;
+
+typename TestModule <- AIOModule
+    {
+        constant tests = AIOExecutable[]()
+
+        function configure(clazz AIOClazz) : override
+            {
+                if (clazz.getAnnotation<Test>()) {
+                    constant classPath = '#{$core.path}.#{clazz.path}'
+                    cycle {
+                        constant functions = clazz.functions
+                        constant size = functions.size
+                        variable i = 0
+                    } (i < size) {
+                        function = functions[i++]
+                        tests += AIOExecutable($core, classPath, function.name)
+                    }
+                }
+            }
+    }
+
+constant testModule = TestModule()
+
+constant TEST_PATH = 'tests'
+
+constant testBuild = AIOCore(TEST_PATH, testModule)
+
+constant tests AIOExecutable[] = testModule.tests

@@ -4,11 +4,13 @@
 #include <lib4aio_cpp_headers/utils/memory_utils/memory_utils.h>
 #include <lib4aio_cpp_headers/utils/str_hook_utils/str_hook/str_hook.h>
 
-namespace lib4aio
-{
+namespace lib4aio {
 
     str_hook::str_hook()
-    {}
+    {
+        this->start = 0;
+        this->end = 0;
+    }
 
     str_hook::str_hook(const char *source_string, const unsigned start, const unsigned end)
     {

@@ -42,13 +42,16 @@
 
 #ifdef AIO_INFLATTER_DEBUG
 
+//lib4aio:
+#include <lib4aio_cpp_headers/utils/log_utils/log_utils.h>
+
 #endif
 
 /**
  * 비즈니스 로직.
  */
 
-#define AIO_BUILD_SCRIPT_FORMAT ".aio_core"
+#define AIO_FORMAT ".aio"
 
 using namespace lib4aio;
 
@@ -82,14 +85,12 @@ aio_context_inflater *aio_context_inflater::inflate()
 
 void aio_context_inflater::inflate_aio_build_script()
 {
-    const char *root_path = this->script_path;
-    const bool is_aio_build_script_file = ends_with_suffix(root_path, AIO_BUILD_SCRIPT_FORMAT);
-    if (is_aio_build_script_file) {
-        aio_runtime *runtime = this->core->build_runtime;
-        this->inflate_aio_file(new str_hook(), root_path, runtime);
-    } else {
-        throw_error_with_details(AIO_INFLATTER_ERROR_TAG, "파일이 '*.aio_core' 형식이 아닙니다", root_path);
-    }
+    aio_runtime *runtime = this->core->build_runtime;
+    const str_hook *empty_relative_path = new str_hook();
+    this->inflate_aio_file(empty_relative_path, this->script_path, runtime);
+    //--------------------------------------------------------------------------------------------------------------
+    //찌꺼기 수집기:
+    delete empty_relative_path;
 }
 
 void aio_context_inflater::invoke_aio_build_script()
@@ -152,6 +153,10 @@ void aio_context_inflater::inflate_aio_file(
     if (!has_same_file) {
         char *absolute_path = construct_absolute_path(relative_file_path, script_path);
         str_builder *content = read_file_by_str_builder(absolute_path);
+#ifdef AIO_INFLATTER_DEBUG
+        log_info_string(AIO_INFLATTER_INFO_TAG, "File content:", content->get_string());
+        exit(8);
+#endif
         const unsigned content_length = content->size();
         const bool has_content = content_length > 0;
         if (has_content) {

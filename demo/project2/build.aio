@@ -1,0 +1,4 @@
+constant result = main(args)
+
+function main(args String[]) Int
+    { /* Do something... */ out 0 }

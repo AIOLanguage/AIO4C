@@ -1,0 +1,28 @@
+constant DEFAULT_FUNCTION_NAME = 'main'
+
+typename AIOExecutable : @AIONative
+    {
+        constant path String : private;
+        constant functionName String : private;
+        constant args Void : private;
+        constant core AIOCore : private;
+        constant result Void : @AIONative;
+
+        typeinit AIOExecutable(core AIOCore, path String, functionName String, args Void);
+
+        typeinit AIOExecutable(core AIOCore, path String, functionName String)
+            {
+               $args = nil
+            }
+
+        typeinit AIOExecutable(core AIOCore, path String, args Void[])
+            {
+                $functionName = DEFAULT_FUNCTION_NAME
+            }
+
+        typeinit AIOExecutable(core AIOCore, path String)
+            {
+               $functionName = DEFAULT_FUNCTION_NAME
+               $args = nil
+            }
+    }

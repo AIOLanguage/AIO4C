@@ -1,0 +1,11 @@
+typename AIOCore : @AIONative
+    {
+        constant path String : @AIONative;
+
+        constant modulesList AIOModule[] : @AIONative;
+
+        typeinit AIOCore(path String, modules AIOModule modules...)
+            {
+                modules -> cycle { $moduleList.add(it) }
+            }
+    }

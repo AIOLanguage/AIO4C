@@ -11,6 +11,15 @@
 
 #define AIO_INFO_TAG "AIO_INFO"
 
+#define AIO_DEBUG
+
+#ifdef AIO_DEBUG
+
+//lib4aio:
+#include <lib4aio_cpp_headers/utils/log_utils/log_utils.h>
+
+#endif
+
 /**
  * 비즈니스 로직.
  */

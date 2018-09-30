@@ -1,0 +1,10 @@
+/**
+ * AIOClass API
+ **/
+
+typename AIOClass : @AIONative
+    {
+        constant filePath String : @AIONative;
+
+        function <T> getAnnotation() T : @AIONative;
+    }

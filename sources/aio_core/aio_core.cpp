@@ -113,6 +113,9 @@ aio_bundle *aio_core::new_main_bundle(const int argc, char **argv, const str_hoo
 
 aio_core *aio_core::inflate_aio_context(const char *script_path)
 {
+#ifdef AIO_CORE_DEBUG
+    log_info_string(AIO_CORE_INFO_TAG, "Script path:", script_path);
+#endif
     aio_context_inflater::create()
             ->set_core(this)
             ->set_script_path(script_path)

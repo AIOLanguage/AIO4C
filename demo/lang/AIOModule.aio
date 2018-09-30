@@ -1,0 +1,6 @@
+typename AIOModule : abstract : @AIONative
+    {
+        constant core AIOCore : @AIONative;
+
+        function configure(clazz AIOClass) : abstract;
+    }
