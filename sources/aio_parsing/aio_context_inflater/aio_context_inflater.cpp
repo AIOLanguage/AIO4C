@@ -154,8 +154,7 @@ void aio_context_inflater::inflate_aio_file(
         char *absolute_path = construct_absolute_path(relative_file_path, script_path);
         str_builder *content = read_file_by_str_builder(absolute_path);
 #ifdef AIO_INFLATTER_DEBUG
-        log_info_string(AIO_INFLATTER_INFO_TAG, "File content:", content->get_string());
-        exit(8);
+        log_info_string(AIO_INFLATTER_INFO_TAG, "File content:\n\n\n", content->get_string());
 #endif
         const unsigned content_length = content->size();
         const bool has_content = content_length > 0;
@@ -165,6 +164,7 @@ void aio_context_inflater::inflate_aio_file(
             //Create build file orbit:
             aio_orbit<aio_file> *file_orbit = new aio_file_orbit(runtime, content, relative_file_path);
             aio_file *file = file_orbit->make(holder);
+            exit(9);
             //Add file:
             file_list->add(file);
             //----------------------------------------------------------------------------------------------------------

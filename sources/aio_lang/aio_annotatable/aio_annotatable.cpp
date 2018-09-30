@@ -8,17 +8,12 @@
 
 aio_annotatable::aio_annotatable()
 {
-    this->annotation_definition_list = new array_list<aio_class>();
+    this->marknames = new array_list<aio_class>();
     this->annotation_names = new array_list<str_hook>();
 }
 
 aio_annotatable::~aio_annotatable()
 {
-    this->annotation_definition_list->free_elements();
-    delete this->annotation_definition_list;
-}
-
-const array_list<aio_class> *aio_annotatable::get_annotation_definition_list() const
-{
-    return this->annotation_definition_list;
+    this->marknames->free_elements();
+    delete this->marknames;
 }

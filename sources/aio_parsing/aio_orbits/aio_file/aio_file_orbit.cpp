@@ -24,14 +24,34 @@
 
 using namespace lib4aio;
 
+#define AIO_FILE_ORBIT_INFO_TAG "AIO_FILE_ORBIT_INFO"
+
+#define AIO_FILE_ORBIT_DEBUG
+
+#ifdef AIO_FILE_ORBIT_DEBUG
+
+#endif
+
 static array_list<aio_particle<aio_file>> *new_file_particle_list(aio_runtime *runtime, aio_file *file)
 {
+    array_list<str_hook> *type_list = runtime->get_types();
+    //Create particles:
+//    aio_class_particle<aio_file> *typename_particle = new aio_class_particle<aio_file>(runtime, file->typenames);
+    aio_field_particle<aio_file> *field_particle = new aio_field_particle<aio_file>(type_list, file->fields, false);
+//    aio_scope_particle<aio_file> *scope_particle = new aio_scope_particle<aio_file>(runtime, file->pathnames);
+//    aio_function_particle<aio_file> *function_particle = new aio_function_particle<aio_file>(runtime, file->functions);
+//    aio_import_particle<aio_file> *import_particle = new aio_import_particle<aio_file>(runtime->get_file_list());
+    //Add particles:
     array_list<aio_particle<aio_file>> *particle_list = new array_list<aio_particle<aio_file>>();
-    particle_list->add(new aio_class_particle<aio_file>(runtime, file->class_definition_list));
-    particle_list->add(new aio_field_particle<aio_file>(runtime->get_types(), file->field_definition_list));
-    particle_list->add(new aio_scope_particle<aio_file>(runtime, file->scope_definition_list));
-    particle_list->add(new aio_function_particle<aio_file>(runtime, file->function_definition_list));
-    particle_list->add(new aio_import_particle<aio_file>(runtime->get_file_list()));
+    particle_list->add(field_particle);
+//    particle_list->add(scope_particle);
+//    particle_list->add(import_particle);
+//    particle_list->add(function_particle);
+//    particle_list->add(typename_particle);
+    //aio_filemode<>...
+#ifdef AIO_FILE_ORBIT_DEBUG
+    log_info_int(AIO_FILE_ORBIT_INFO_TAG, "Created file particles, count:", particle_list->get_size());
+#endif
     return particle_list;
 }
 

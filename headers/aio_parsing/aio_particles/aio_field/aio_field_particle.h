@@ -24,7 +24,11 @@ class aio_field_particle : public aio_particle<T> {
 
 public:
 
-    explicit aio_field_particle(array_list<str_hook> *type_list_ptr, array_list<aio_field> *field_list_ptr);
+    explicit aio_field_particle(
+            array_list<str_hook> *type_list_ptr,
+            array_list<aio_field> *field_list_ptr,
+            bool in_function_scope
+    );
 
     ~aio_field_particle();
 
@@ -35,6 +39,8 @@ public:
     void reset();
 
 private:
+
+    bool in_function_scope;
 
     unsigned whitespace_counter;
 

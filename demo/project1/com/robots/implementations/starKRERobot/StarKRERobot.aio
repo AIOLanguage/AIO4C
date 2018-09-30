@@ -3,6 +3,8 @@ addition
         robots.abstract.Robot::Robot
     }
 
+filemode : @AIOConfigurable
+
 typename StarKRERobot <- Robot
     {
         constant version Int : private

@@ -20,7 +20,7 @@ class aio_file : public aio_space {
 
 public:
 
-    explicit aio_file(str_builder *file_content, const str_hook *relative_file_path);
+    explicit aio_file(str_builder *content, const str_hook *relative_file_path);
 
     ~aio_file();
 
@@ -28,7 +28,7 @@ public:
 
     str_builder *content;
 
-    array_list<str_hook> *import_list;
+    array_list<str_hook> *additions;
 };
 
 #endif //AIO_FILE_H

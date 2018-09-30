@@ -27,17 +27,15 @@ public:
 
     aio_visibility visibility_type;
 
-    aio_space *parent_namespace;
+    aio_space *parent;
 
-    array_list<aio_class> *class_definition_list;
+    array_list<aio_class> *typenames;
 
     array_list<aio_enum> *enum_definition_list;
 
-    array_list<aio_scope> *scope_definition_list;
+    array_list<aio_scope> *pathnames;
 
-    array_list<aio_function> *function_definition_list;
-
-    array_list<aio_field> *field_definition_list;
+    array_list<aio_function> *functions;
 };
 
 #endif //AIO_SPACE_H

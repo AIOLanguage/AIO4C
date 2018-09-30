@@ -225,7 +225,7 @@ unsigned aio_scope_particle<T>::illuminate(T *container)
     aio_space *space = dynamic_cast<aio_space *>(container);
     if (space) {
         //Set field:
-        space->scope_definition_list->add(this->scope);
+        space->pathnames->add(this->scope);
         this->scope = nullptr;
     } else {
         throw_error_with_details(

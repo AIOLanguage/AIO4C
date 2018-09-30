@@ -20,10 +20,10 @@
 static array_list<aio_particle<aio_scope>> *new_scope_particle_list(aio_runtime *runtime_ptr, aio_scope *scope_ptr)
 {
     array_list<aio_particle<aio_scope>> *particle_list = new array_list<aio_particle<aio_scope>>();
-    particle_list->add(new aio_class_particle<aio_scope>(runtime_ptr, scope_ptr->class_definition_list));
-    particle_list->add(new aio_field_particle<aio_scope>(runtime_ptr->get_types(), scope_ptr->field_definition_list));
-    particle_list->add(new aio_scope_particle<aio_scope>(runtime_ptr, scope_ptr->scope_definition_list));
-    particle_list->add(new aio_function_particle<aio_scope>(runtime_ptr, scope_ptr->function_definition_list));
+    particle_list->add(new aio_class_particle<aio_scope>(runtime_ptr, scope_ptr->typenames));
+//    particle_list->add(new aio_field_particle<aio_scope>(runtime_ptr->get_types(), scope_ptr->fields));
+    particle_list->add(new aio_scope_particle<aio_scope>(runtime_ptr, scope_ptr->pathnames));
+    particle_list->add(new aio_function_particle<aio_scope>(runtime_ptr, scope_ptr->functions));
     return particle_list;
 }
 

@@ -300,7 +300,7 @@ unsigned aio_class_particle<T>::illuminate(T *container)
     aio_space *space = dynamic_cast<aio_space *>(container);
     if (space) {
         //Set field:
-        space->class_definition_list->add(this->clazz);
+        space->typenames->add(this->clazz);
         this->clazz = nullptr;
     } else {
         throw_error_with_details(

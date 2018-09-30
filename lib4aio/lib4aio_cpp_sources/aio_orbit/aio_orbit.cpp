@@ -4,6 +4,20 @@
 #include <lib4aio_cpp_sources/aio_orbit/aio_particle/aio_particle.cpp>
 #include <lib4aio_cpp_headers/utils/str_hook_utils/str_hook/str_hook.h>
 
+/**
+ * 태그들.
+ */
+
+#define LIB4AIO_CPP_ORBIT_INFO_TAG "AIO_FIELD_PARTICLE_INFO"
+
+#define LIB4AIO_CPP_ORBIT_DEBUG
+
+#ifdef LIB4AIO_CPP_ORBIT_DEBUG
+
+#include <lib4aio_cpp_headers/utils/log_utils/log_utils.h>
+
+#endif
+
 namespace lib4aio {
 
     template<class T>
@@ -35,6 +49,9 @@ namespace lib4aio {
     template<class T>
     T *aio_orbit<T>::make(const str_hook *string_holder)
     {
+#ifdef LIB4AIO_CPP_ORBIT_DEBUG
+        log_info(LIB4AIO_CPP_ORBIT_INFO_TAG, "Launch orbit...");
+#endif
         const unsigned list_size = this->particle_list->get_size();
         //문자열 소유자를 놓다:
         for (unsigned i = 0; i < list_size; ++i) {

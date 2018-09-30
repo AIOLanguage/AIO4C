@@ -21,9 +21,7 @@ public:
 
     virtual ~aio_annotatable();
 
-    virtual const array_list<aio_class> *get_annotation_definition_list() const;
-
-    array_list<aio_class> *annotation_definition_list;
+    array_list<aio_class> *marknames;
 
     array_list<str_hook> *annotation_names;
 };

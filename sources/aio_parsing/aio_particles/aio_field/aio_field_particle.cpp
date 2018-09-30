@@ -45,10 +45,15 @@
 using namespace lib4aio;
 
 template<typename T>
-aio_field_particle<T>::aio_field_particle(array_list<str_hook> *type_list_ptr, array_list<aio_field> *field_list_ptr)
+aio_field_particle<T>::aio_field_particle(
+        array_list<str_hook> *type_list_ptr,
+        array_list<aio_field> *field_list_ptr,
+        bool in_function_scope
+)
 {
     this->type_list_ptr = type_list_ptr;
     this->field_list_ptr = field_list_ptr;
+    this->in_function_scope = in_function_scope;
     this->monitor_mode = AIO_MONITOR_MODIFIER;
     this->trigger_mode = AIO_TRIGGER_MODE_PASSIVE;
     this->whitespace_counter = 0;
@@ -76,6 +81,9 @@ const aio_particle_signal aio_field_particle<T>::handle_symbol(const unsigned po
             this->monitor_field_modifier(symbol, position);
             break;
         case AIO_MONITOR_NAME:
+#ifdef AIO_FIELD_PARTICLE_DEBUG
+            log_info_char(AIO_FIELD_PARTICLE_INFO_TAG, "MONITOR NAME:", symbol);
+#endif
             this->monitor_field_name(symbol, position);
             break;
         case AIO_MONITOR_TYPE:
@@ -118,24 +126,25 @@ void aio_field_particle<T>::monitor_field_modifier(const char symbol, const unsi
             //Prepare to the next state:
             this->monitor_mode = AIO_MONITOR_NAME;
             this->signal = AIO_PARTICLE_SIGNAL_DETECTED;
-            this->trigger_mode = AIO_TRIGGER_MODE_UNDEFINED;
+            this->trigger_mode = AIO_TRIGGER_MODE_PASSIVE;
         } else {
             //Else this is variable name:
-            const bool is_valid_name = this->token_holder->is_word() && is_successful_aio_name(this->token_holder);
-            if (is_valid_name) {
-                //Check field in list:
-                const bool has_field_in_scope = this->field_list_ptr->contains_by(
-                        [this](const aio_field *it) -> bool {
-                            return it->name->equals_string(this->token_holder);
-                        });
-                if (has_field_in_scope) {
-                    this->assign_task = new aio_assign_task<T>();
-                    this->assign_task->set_name(this->token_holder);
-                    //Prepare to the next state:
-                    this->monitor_mode = AIO_MONITOR_EQUAL_SIGN;
-                    this->signal = AIO_PARTICLE_SIGNAL_DETECTED;
-                    this->trigger_mode = AIO_TRIGGER_MODE_UNDEFINED;
-                    this->signal = AIO_PARTICLE_SIGNAL_DETECTED;
+            if (this->in_function_scope){
+                const bool is_valid_name = this->token_holder->is_word() && is_successful_aio_name(this->token_holder);
+                if (is_valid_name) {
+                    //Check field in list:
+                    const bool has_field_in_scope = this->field_list_ptr->contains_by(
+                            [this](const aio_field *it) -> bool {
+                                return it->name->equals_string(this->token_holder);
+                            });
+                    if (has_field_in_scope) {
+                        this->assign_task = new aio_assign_task<T>();
+                        this->assign_task->set_name(this->token_holder);
+                        //Prepare to the next state:
+                        this->monitor_mode = AIO_MONITOR_EQUAL_SIGN;
+                        this->signal = AIO_PARTICLE_SIGNAL_DETECTED;
+                        this->trigger_mode = AIO_TRIGGER_MODE_PASSIVE;
+                    }
                 }
             }
         }
@@ -150,6 +159,9 @@ void aio_field_particle<T>::monitor_field_name(const char symbol, const unsigned
     const bool is_equal_sign_cond = is_equal_sign(symbol);
     const bool is_token_scan_started = !is_whitespace_cond && this->trigger_mode == AIO_TRIGGER_MODE_PASSIVE;
     if (is_token_scan_started) {
+#ifdef AIO_FIELD_PARTICLE_DEBUG
+        log_info(AIO_FIELD_PARTICLE_INFO_TAG, "SCAN NAME...");
+#endif
         this->trigger_mode = AIO_TRIGGER_MODE_ACTIVE;
         this->token_holder->start = position;
     }
@@ -157,10 +169,16 @@ void aio_field_particle<T>::monitor_field_name(const char symbol, const unsigned
                                         && this->trigger_mode == AIO_TRIGGER_MODE_ACTIVE;
     if (is_token_scan_finished) {
         this->token_holder->end = position;
+
+#ifdef AIO_FIELD_PARTICLE_DEBUG
+        log_info(AIO_FIELD_PARTICLE_INFO_TAG, "SCAN IS COMPLETE!!!");
+#endif
         const bool is_valid_name = this->token_holder->is_word() && is_successful_aio_name(this->token_holder);
         if (is_valid_name) {
 #ifdef AIO_FIELD_PARTICLE_DEBUG
             log_info_str_hook(AIO_FIELD_PARTICLE_INFO_TAG, "Found name:", this->token_holder);
+            exit(8);
+
 #endif
             //Create field:
             this->field->name = new str_hook(this->token_holder);
@@ -324,13 +342,13 @@ void aio_field_particle<T>::monitor_value(const char symbol, const unsigned posi
 template<typename T>
 unsigned aio_field_particle<T>::illuminate(T *container)
 {
-    aio_space *space = dynamic_cast<aio_space *>(container);
-    if (space) {
+    aio_schemable<T> *schemable = dynamic_cast<aio_schemable<T> *>(container);
+    if (schemable) {
         //Set field:
-        space->field_definition_list->add(this->field);
+        schemable->fields->add(this->field);
         this->field = nullptr;
         //Set assign task:
-        space->get_instructions()->add((aio_task<aio_space> *) this->assign_task);
+        schemable->instructions->add(this->assign_task);
         this->assign_task = nullptr;
     } else {
         throw_error_with_details(
