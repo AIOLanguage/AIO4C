@@ -153,7 +153,7 @@ bool is_aio_null_modifier(const str_hook *hook)
     return hook->equals_string(AIO_NULL_VALUE);
 }
 
-bool is_successful_aio_name(const str_hook *token)
+bool is_not_aio_modifier(const str_hook *token)
 {
     return !is_aio_variable_modifier(token)
            && !is_aio_abstract_modifier(token)
@@ -175,5 +175,5 @@ bool is_successful_aio_name(const str_hook *token)
            && !is_aio_return_modifier(token)
            && !is_aio_scope_modifier(token)
            && !is_aio_switch_modifier(token)
-           && is_aio_true_modifier(token);
+           && !is_aio_true_modifier(token);
 }

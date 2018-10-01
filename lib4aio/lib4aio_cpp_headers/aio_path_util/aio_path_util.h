@@ -1,5 +1,5 @@
-#ifndef LIB4AIO_AIO_PATH_H
-#define LIB4AIO_AIO_PATH_H
+#ifndef LIB4AIO_CPP_AIO_PATH_H
+#define LIB4AIO_CPP_AIO_PATH_H
 
 namespace lib4aio {
 
@@ -10,4 +10,4 @@ namespace lib4aio {
     char *construct_absolute_path(const char *relative_path, const char *script_path);
 }
 
-#endif //LIB4AIO_AIO_PATH_H
+#endif //LIB4AIO_CPP_AIO_PATH_H

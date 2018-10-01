@@ -8,6 +8,7 @@ CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/aio_explorer/aio_explorer.cpp
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/aio_orbit/aio_orbit.cpp.o: ../lib4aio/lib4aio_cpp_headers/aio_orbit/aio_orbit.h
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/aio_orbit/aio_orbit.cpp.o: ../lib4aio/lib4aio_cpp_headers/aio_orbit/aio_particle/aio_particle.h
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/aio_orbit/aio_orbit.cpp.o: ../lib4aio/lib4aio_cpp_headers/utils/array_list_utils/array_list.h
+CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/aio_orbit/aio_orbit.cpp.o: ../lib4aio/lib4aio_cpp_headers/utils/log_utils/log_utils.h
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/aio_orbit/aio_orbit.cpp.o: ../lib4aio/lib4aio_cpp_headers/utils/str_hook_utils/str_hook/str_hook.h
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/aio_orbit/aio_orbit.cpp.o: ../lib4aio/lib4aio_cpp_sources/aio_orbit/aio_particle/aio_particle.cpp
 CMakeFiles/AIO_v_2.dir/lib4aio/lib4aio_cpp_sources/aio_orbit/aio_orbit.cpp.o: ../lib4aio/lib4aio_cpp_sources/aio_orbit/aio_orbit.cpp
@@ -251,13 +252,22 @@ CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_schemable/aio_schemable.cpp.o: ../he
 CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_schemable/aio_schemable.cpp.o: ../sources/aio_lang/aio_schemable/aio_schemable.cpp
 
 CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_file/aio_file.cpp.o: ../headers/aio_lang/aio_annotatable/aio_annotatable.h
+CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_file/aio_file.cpp.o: ../headers/aio_lang/aio_field/aio_field.h
+CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_file/aio_file.cpp.o: ../headers/aio_lang/aio_inheritable/aio_inheritable.h
+CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_file/aio_file.cpp.o: ../headers/aio_lang/aio_invokable/aio_function/aio_function.h
+CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_file/aio_file.cpp.o: ../headers/aio_lang/aio_invokable/aio_invokable.h
 CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_file/aio_file.cpp.o: ../headers/aio_lang/aio_schemable/aio_schemable.h
 CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_file/aio_file.cpp.o: ../headers/aio_lang/aio_space/aio_file/aio_file.h
+CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_file/aio_file.cpp.o: ../headers/aio_lang/aio_space/aio_initializable/aio_class/aio_class.h
+CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_file/aio_file.cpp.o: ../headers/aio_lang/aio_space/aio_initializable/aio_initializable.h
+CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_file/aio_file.cpp.o: ../headers/aio_lang/aio_space/aio_scope/aio_scope.h
 CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_file/aio_file.cpp.o: ../headers/aio_lang/aio_space/aio_space.h
 CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_file/aio_file.cpp.o: ../headers/aio_lang/aio_visibility/aio_visibility.h
 CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_file/aio_file.cpp.o: ../lib4aio/lib4aio_cpp_headers/utils/array_list_utils/array_list.h
+CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_file/aio_file.cpp.o: ../lib4aio/lib4aio_cpp_headers/utils/memory_utils/memory_utils.h
 CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_file/aio_file.cpp.o: ../lib4aio/lib4aio_cpp_headers/utils/str_builder/str_builder.h
 CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_file/aio_file.cpp.o: ../lib4aio/lib4aio_cpp_headers/utils/str_hook_utils/str_hook/str_hook.h
+CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_file/aio_file.cpp.o: ../lib4aio/lib4aio_cpp_sources/utils/array_list_utils/array_list.cpp
 CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_file/aio_file.cpp.o: ../sources/aio_lang/aio_space/aio_file/aio_file.cpp
 
 CMakeFiles/AIO_v_2.dir/sources/aio_lang/aio_space/aio_initializable/aio_class/aio_class.cpp.o: ../headers/aio_lang/aio_annotatable/aio_annotatable.h

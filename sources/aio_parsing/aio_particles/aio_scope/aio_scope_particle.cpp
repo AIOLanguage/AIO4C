@@ -169,7 +169,7 @@ void aio_scope_particle<T>::monitor_scope_attributes(const char symbol, const un
             const bool starts_as_annotation = this->token_holder->get_relative_char(0) == '@';
             this->token_holder->start++;
             const bool is_valid_name = starts_as_annotation && this->token_holder->is_word()
-                                       && is_successful_aio_name(this->token_holder);
+                                       && is_not_aio_modifier(this->token_holder);
             if (is_valid_name) {
                 this->scope->annotation_names->add(new str_hook(this->token_holder));
             } else {

@@ -164,6 +164,9 @@ void aio_context_inflater::inflate_aio_file(
             //Create build file orbit:
             aio_orbit<aio_file> *file_orbit = new aio_file_orbit(runtime, content, relative_file_path);
             aio_file *file = file_orbit->make(holder);
+#ifdef AIO_INFLATTER_DEBUG
+            log_info(AIO_INFLATTER_INFO_TAG, "File inflating is complete");
+#endif
             exit(9);
             //Add file:
             file_list->add(file);

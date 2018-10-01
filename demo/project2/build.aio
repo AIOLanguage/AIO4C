@@ -1,4 +1,4 @@
-constant result = main(args)
+constant result Int = main(args)
 
 function main(args String[]) Int
     {
