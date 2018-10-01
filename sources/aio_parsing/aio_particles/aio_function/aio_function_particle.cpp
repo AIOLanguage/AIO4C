@@ -263,7 +263,8 @@ void aio_function_particle<T>::monitor_function_body(const char symbol, const un
     //------------------------------------------------------------------------------------------------------------------
     //찌꺼기 수집기:
     delete function_orbit;
-    delete
+    delete body_hook;
+    delete current_hook;
 }
 
 template<typename T>
