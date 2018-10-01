@@ -19,6 +19,7 @@
 //lib4aio:
 #include <lib4aio_cpp_headers/utils/log_utils/log_utils.h>
 #include <lib4aio_cpp_headers/aio_explorer/aio_explorer.h>
+#include <lib4aio_cpp_headers/aio_orbit/aio_orbit.h>
 
 #endif
 
@@ -146,9 +147,12 @@ void aio_function_particle<T>::monitor_function_args(const char symbol, const un
 {
     const str_hook *current_scope = new str_hook(this->string, this->left_border, this->right_border);
     //Find arg scope:
-    const str_hook *args_scope = explore_hook_scope(position, OPENING_PARENTHESIS, CLOSING_PARENTHESIS, current_scope);
+    const str_hook *arg_hook = explore_hook_scope(position, OPENING_PARENTHESIS, CLOSING_PARENTHESIS, current_scope);
+#ifdef AIO_FUNCTION_PARTICLE_DEBUG
+    log_info_str_hook(AIO_FUNCTION_PARTICLE_INFO_TAG, "Arg hook:", arg_hook);
+#endif
     //Get args:
-    str_hook_list *arg_vs_type_list = args_scope->split_by_comma();
+    str_hook_list *arg_vs_type_list = arg_hook->split_by_comma();
     const unsigned args_count = arg_vs_type_list->get_size();
     //Create args:
     for (unsigned i = 0; i < args_count; i++) {
@@ -192,14 +196,14 @@ void aio_function_particle<T>::monitor_function_args(const char symbol, const un
         }
     }
     //Set iterator position:
-    this->iterator = args_scope->end;
+    this->iterator = arg_hook->end;
     //Set arg count:
     this->function->arg_count = args_count;
     //------------------------------------------------------------------------------------------------------------------
     //찌꺼기 수집기:
     arg_vs_type_list->free_elements();
     delete arg_vs_type_list;
-    delete args_scope;
+    delete arg_hook;
     delete current_scope;
     //------------------------------------------------------------------------------------------------------------------
     this->monitor_mode = AIO_MONITOR_OUTPUT_TYPE;
@@ -208,13 +212,58 @@ void aio_function_particle<T>::monitor_function_args(const char symbol, const un
 template<typename T>
 void aio_function_particle<T>::monitor_function_output_type(const char symbol, const unsigned position)
 {
-
+    //기호를 확인하다:
+    const bool is_whitespace_cond = is_space_or_line_break(symbol);
+    const bool is_opening_brace_cond = is_opening_brace(symbol);
+    const bool is_token_scan_started = !is_whitespace_cond && this->trigger_mode == AIO_TRIGGER_MODE_PASSIVE;
+    if (is_token_scan_started) {
+#ifdef AIO_FUNCTION_PARTICLE_DEBUG
+        log_info(AIO_FUNCTION_PARTICLE_INFO_TAG, "SCAN TYPE...");
+#endif
+        this->trigger_mode = AIO_TRIGGER_MODE_ACTIVE;
+        this->token_holder->start = position;
+    }
+    const bool is_token_scan_finished = (is_whitespace_cond || is_opening_brace_cond)
+                                        && this->trigger_mode == AIO_TRIGGER_MODE_ACTIVE;
+    if (is_token_scan_finished) {
+        this->token_holder->end = position;
+        const bool is_valid_output_type = is_not_aio_modifier(this->token_holder) && this->token_holder->is_word();
+        if (is_valid_output_type) {
+#ifdef AIO_FUNCTION_PARTICLE_DEBUG
+            log_info_str_hook(AIO_FUNCTION_PARTICLE_INFO_TAG, "Found output type:", this->token_holder);
+#endif
+            //Create field:
+            this->function->name = new str_hook(this->token_holder);
+            this->monitor_mode = AIO_MONITOR_ARGS;
+            if (is_opening_brace_cond) {
+                this->monitor_function_body(symbol, position);
+            }
+            //Prepare to the next state:
+            this->signal = AIO_PARTICLE_SIGNAL_DETECTED;
+            this->trigger_mode = AIO_TRIGGER_MODE_PASSIVE;
+        }
+    }
 }
+
+#define OPENING_BRACE '{'
+
+#define CLOSING_BRACE '}'
 
 template<typename T>
 void aio_function_particle<T>::monitor_function_body(const char symbol, const unsigned position)
 {
-
+    const str_hook *current_hook = new str_hook(this->string, this->left_border, this->right_border);
+    const str_hook *body_hook = explore_hook_scope(position, OPENING_BRACE, CLOSING_BRACE, current_hook);
+#ifdef AIO_FUNCTION_PARTICLE_DEBUG
+    log_info_str_hook(AIO_FUNCTION_PARTICLE_INFO_TAG, "Body hook:", body_hook);
+#endif
+    aio_orbit<aio_function> function_orbit = new aio_function_orbit(this->function);
+    this->function = function_orbit.make(body_hook);
+    this->signal = AIO_PARTICLE_SIGNAL_IS_READY;
+    //------------------------------------------------------------------------------------------------------------------
+    //찌꺼기 수집기:
+    delete function_orbit;
+    delete
 }
 
 template<typename T>
