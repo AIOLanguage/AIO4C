@@ -193,7 +193,7 @@ void aio_class_particle<T>::monitor_class_parents(const char symbol, const unsig
     if (is_token_scan_finished) {
         this->token_holder->end = position;
         const bool is_valid_parent_class_name = this->token_holder->is_word()
-                                                && is_successful_aio_name(this->token_holder);
+                                                && is_not_aio_modifier(this->token_holder);
         if (is_valid_parent_class_name) {
 #ifdef AIO_CLASS_PARTICLE_DEBUG
             log_info_str_hook(AIO_CLASS_PARTICLE_INFO_TAG, "Found parent:", this->token_holder);
@@ -264,7 +264,7 @@ void aio_class_particle<T>::monitor_class_attributes(const char symbol, const un
             const bool starts_as_annotation = this->token_holder->get_relative_char(0) == '@';
             this->token_holder->start++;
             const bool is_valid_name = starts_as_annotation && this->token_holder->is_word()
-                                       && is_successful_aio_name(this->token_holder);
+                                       && is_not_aio_modifier(this->token_holder);
             if (is_valid_name) {
                 this->clazz->annotation_names->add(new str_hook(this->token_holder));
             } else {

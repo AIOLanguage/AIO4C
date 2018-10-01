@@ -6,6 +6,7 @@
       <w>annotatable</w>
       <w>areaname</w>
       <w>enumname</w>
+      <w>globality</w>
       <w>inflater</w>
       <w>inflatter</w>
       <w>initializable</w>

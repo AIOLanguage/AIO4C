@@ -146,6 +146,6 @@ bool is_aio_null_modifier(const str_hook *hook);
  * Check.
  */
 
-bool is_successful_aio_name(const str_hook *token);
+bool is_not_aio_modifier(const str_hook *token);
 
 #endif //AIO_MODIFIERS_H

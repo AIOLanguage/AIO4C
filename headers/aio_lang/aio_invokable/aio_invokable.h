@@ -24,15 +24,9 @@ public:
 
     virtual ~aio_invokable();
 
-    const unsigned get_arg_count() const;
-
-    const array_list<str_hook> *get_output_types() const;
-
-protected:
-
     unsigned arg_count;
 
-    array_list<str_hook> *output_types;
+    str_hook *output_type;
 };
 
 #endif //AIO_INVOKABLE_H

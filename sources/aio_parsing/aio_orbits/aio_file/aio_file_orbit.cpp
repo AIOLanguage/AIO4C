@@ -39,7 +39,7 @@ static array_list<aio_particle<aio_file>> *new_file_particle_list(aio_runtime *r
 //    aio_class_particle<aio_file> *typename_particle = new aio_class_particle<aio_file>(runtime, file->typenames);
     aio_field_particle<aio_file> *field_particle = new aio_field_particle<aio_file>(type_list, file->fields, false);
 //    aio_scope_particle<aio_file> *scope_particle = new aio_scope_particle<aio_file>(runtime, file->pathnames);
-//    aio_function_particle<aio_file> *function_particle = new aio_function_particle<aio_file>(runtime, file->functions);
+    aio_function_particle<aio_file> *function_particle = new aio_function_particle<aio_file>(runtime, file->functions);
 //    aio_import_particle<aio_file> *import_particle = new aio_import_particle<aio_file>(runtime->get_file_list());
     //Add particles:
     array_list<aio_particle<aio_file>> *particle_list = new array_list<aio_particle<aio_file>>();
