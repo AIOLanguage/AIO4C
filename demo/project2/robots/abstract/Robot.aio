@@ -1,0 +1,14 @@
+typelink
+    {
+        robots.abstract.head.Head
+        robots.abstract.core.Core
+    }
+
+typename Robot : abstract
+    {
+        constant head Head
+
+        constant core Core
+
+        function calc() : abstract
+    }

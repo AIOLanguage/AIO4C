@@ -1,0 +1,1 @@
+variable hello String = 'Hello, AIO!' constant bye String= 'Bye, AIO'

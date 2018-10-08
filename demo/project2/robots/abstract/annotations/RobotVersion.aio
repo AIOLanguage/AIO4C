@@ -1,0 +1,19 @@
+typelink
+    {
+        java.lang.annotation.Target::Target
+        java.lang.annotation.Retention::Retention
+        java.lang.annotation.ElementType::ElementType
+        java.lang.annotation.RetentionPolicy::RetentionPolicy
+    }
+
+markname @RobotVersion : @Target(ElementType.FIELD) : @Retention(RetentionPolicy.RUNTIME)
+    {
+        constant min Int
+
+        typeinit RobotVersion(min Int);
+
+        typeinit RobotVersion()
+            {
+                $min = 0
+            }
+    }

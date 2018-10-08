@@ -1,0 +1,10 @@
+typelink
+    {
+        org.springframework.context.support.GenericGroovyApplicationContext::GenericGroovyApplicationContext
+    }
+
+typename RobotApplication
+    {
+        constant groovyApplicationContext : private
+            = GenericGroovyApplicationContext('applicationContext/RobotContext.groovy')
+    }

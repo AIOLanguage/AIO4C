@@ -1,0 +1,21 @@
+typelink
+    {
+        modules.log.LogModule::LogModule
+        modules.log.LogModule::LogType
+        modules.inject.InjectModule::InjectModule
+    }
+
+function build(projectPath String, exePath String, funcName String)
+    {
+        constant main = AIOExecutable(AIOCore(projectPath, MainModule()), exePath, funcName)
+    }
+
+typename MainModule <- AIOModule
+    {
+        constant modules = AIOModule[2](LogModule(LogType.INFO), InjectModule())
+
+        function configure(file AIOFile) : override
+            {
+                $modules -> for { it.configure(file) }
+            }
+    }

@@ -1,0 +1,9 @@
+typelink
+    {
+        robots.abstractRobot.Robot
+    }
+
+typename Robot724 <- Robot
+    {
+        function calc() : override;
+    }

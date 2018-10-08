@@ -1,0 +1,8 @@
+typename Core : abstract
+    {
+        variable batteryPower Int
+
+        function install() : abstract
+
+        function activate() : abstract
+    }

@@ -1,0 +1,73 @@
+typelink
+    {
+        project1.tests.Test::Test
+    }
+
+function build()
+    {
+        <testing>.runTests()
+        <project>.runMain()
+    }
+
+fragment <project> : private
+    {
+        constant PROJECT_PATH = 'com'
+
+        constant EXE_PATH = '#{BUILD_PATH}.main'
+
+        constant MAIN_FUNCTION 'main'
+
+        function runMain()
+            {
+                constant projectCore = AIOCore(PROJECT_PATH)
+                constant main = AIOExecutable(projectCore, EXE_PATH, MAIN_FUNCTION)
+            }
+    }
+
+fragment <testing> : private
+    {
+        constant TEST_PATH = 'tests'
+
+        function runTests()
+            {
+                constant testModule = TestModule()
+
+                    //Compile core and fill test module:
+                    constant testCore = AIOCore(TEST_PATH, testModule)
+
+                    //Test module is ready:
+                    for (testFile in testModule.files) {
+                        constant filePath = testFile.path
+                        constant testNames = testFile.names
+                        for (testName in testNames) {
+                            constant test = AIOExecutable(testCore, filePath, testName)
+                        }
+                    }
+            }
+
+            typename TestModule <- AIOModule
+                {
+                    constant files = TestModule.TestFile[]()
+
+                    function configure(file AIOFile) : override
+                        {
+                            constant hasAnnotation = file.getMark<Test>()
+                            if (hasAnnotation) {
+                                constant testFile = TestFile(file.path)
+                                for (func in file.functions) {
+                                    testFile.names += func.name
+                                }
+                                $files += testFile
+                            }
+                        }
+
+                    typename TestFile
+                        {
+                            constant path String;
+
+                            constant names = String()[]
+
+                            typeinit TestFile(path String)
+                        }
+                }
+    }

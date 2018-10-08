@@ -1,0 +1,29 @@
+typename Robot : abstract
+    {
+        constant core Core
+
+        typeinit Robot(core Core);
+
+        function calc() : abstract
+
+        function equals(o Any) : override = o is Robot && $core == o.core
+
+        typename Core : abstract : inner
+            {
+                variable batteryPower Int
+
+                fragment <attack>
+                    {
+                        function fire() : abstract : protected
+                    }
+
+                fragment <init> : protected
+                    {
+                        function installProgram() : abstract
+
+                        function installDrivers() : abstract
+
+                        function installGPS() : private;
+                    }
+            }
+    }

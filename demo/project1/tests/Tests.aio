@@ -1,0 +1,19 @@
+typelink
+    {
+        Test::Test
+    }
+
+initlink : @Test
+    {
+        project1.build::<testing>.TestModule
+    }
+
+function test1()
+    {
+        println('1')
+    }
+
+function test2()
+    {
+        println('2')
+    }

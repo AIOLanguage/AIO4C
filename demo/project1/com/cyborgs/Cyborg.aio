@@ -1,0 +1,51 @@
+typelink
+    {
+        persons.Person::Person
+        robots.abstract.Robot::Robot
+    }
+
+typename Cyborg <- Person, Robot
+    {
+        constant model Int;
+
+        typeinit Cyborg(firstName String, secondName String, age Int, core Core, model Int)
+            <- Person(firstName, secondName, age), Robot(core)
+            {
+                $<initialization>.installProgram()
+                $<initialization>.installDrivers()
+            }
+
+        function calc() : override
+            {
+                println('Calc temperature...')
+                println('Calc distance...')
+            }
+
+        function say(message String) : override
+            {
+                println('message = #message')
+            }
+
+        function equals(a Any) Boolean <- Person;
+
+        fragment <battle>
+            {
+                function fire() : override : protected
+                    {
+                        println('I\'m friendly')
+                    }
+            }
+
+        fragment <initialization> : protected
+            {
+                function installProgram() : override
+                    {
+                        println('I\'ve a heart')
+                    }
+
+                function installDrivers() : override
+                    {
+                        println('I\'ve a heart')
+                    }
+            }
+    }

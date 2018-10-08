@@ -1,0 +1,4 @@
+typename AIOModule : abstract : @AIONative
+    {
+        function configure(file AIOFile) : abstract;
+    }

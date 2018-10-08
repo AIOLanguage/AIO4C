@@ -1,0 +1,26 @@
+typelink
+    {
+        robots.abstract.Robot::Robot
+    }
+
+filemode : @AIOConfigurable
+
+typename StarKRERobot <- Robot
+    {
+        constant version Int : private
+
+        function calc() : override
+            {
+                println('I\'m calculating...')
+            }
+
+        function init() : protected
+            {
+                println('Hello, I\'m StarKRE with version: #version')
+            }
+
+        function destroy() : protected
+            {
+                println('No! I\'l be back!')
+            }
+    }

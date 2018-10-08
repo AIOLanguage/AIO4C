@@ -1,0 +1,23 @@
+typelink
+    {
+        robots.abstract.Robot::Robot
+        robots.abstract.Robot::Robot.Core
+    }
+
+typename Core724 <- Robot.Core
+    {
+        function activate() : override
+            {
+                println('CORE-724 has activated!')
+            }
+
+        fragment <init>
+            {
+                function installProgram() : override
+                    {
+                        println('CORE-724 has installed!')
+                    }
+
+                function installDrivers() : override;
+            }
+    }

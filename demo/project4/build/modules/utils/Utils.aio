@@ -1,0 +1,7 @@
+function configureClasses(classes AIOClass[], configureClass (clazz AIOClass)) : private
+    {
+        for (clazz in classes) {
+            configureClass(clazz)
+            $configureClasses(clazz.classes)
+        }
+    }

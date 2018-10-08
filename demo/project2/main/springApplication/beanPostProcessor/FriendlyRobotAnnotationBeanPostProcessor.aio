@@ -1,0 +1,23 @@
+typelink
+    {
+        org.springframework.beans.BeansException::BeansException
+        org.springframework.beans.factory.config.BeanPostProcessor::BeanPostProcessor
+        robots.abstractRobot.annotations.FriendlyRobot::FriendlyRobot
+        java.util.logging.Logger::Logger
+        java.lang.Object::Object
+    }
+
+typename FriendlyRobotAnnotationBeanPostProcessor <- BeanPostProcessor
+    {
+        function postProcessBeforeInitialization(bean Object, beanName String) Object : override : throws BeansException
+            {
+                constant friendlyRobotAnnotation = bean.class.getAnnotation(FriendlyRobot::class)
+                if (friendlyRobotAnnotation) {
+                    println('#beanName is a friendly robot')
+                }
+                out bean
+            }
+
+        function postProcessAfterInitialization(bean Object, beanName String) Object : override : throws BeansException
+            = bean
+    }

@@ -1,0 +1,10 @@
+typelink
+    {
+        planets.Planet::Planet
+    }
+
+function main()
+    {
+        println('#{MERCURY.radius}')
+        println('#{MERCURY.description}')
+    }

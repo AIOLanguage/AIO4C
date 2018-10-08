@@ -1,0 +1,66 @@
+typelink
+    {
+        modules.utils.Utils::configureClasses
+    }
+
+markname @Inject;
+
+typename InjectException <- AIOException
+    {
+        constant message String
+
+        typeinit InjectException(message String);
+    }
+
+typename InjectModule <- AIOModule
+    {
+        constant ioc = Entry<AIOClazz, Any>[]()
+
+        function configure(file AIOFile) : override
+            {
+                configureClasses(file.classes, configureClass)
+            }
+
+        function configureClass(clazz AIOClass) : private
+            {
+                constant fields = clazz.fields
+                for (i = 0 i < fields.size i++) {
+                    constant field = fields[i]
+                    constant hasInject = field.getMark<Inject>()
+                    if (hasInject) {
+                        constant fieldClass = field.class
+                        variable injectValue = $findValue(fieldClass)
+                        if (!injectValue) {
+                            constant constructors = fieldClass.constructors
+                            constant isDefaultConstructor = constructors.size == 1 && constructors[0].paramsCount == 0
+                            if (isDefaultConstructor) {
+                                injectValue = fieldClass.constructors[0].fun()
+                                $ioc += Entry<AIOClass, Any>(fieldClass, injectValue)
+                            } else {
+                                throw InjectException('Injected property class must have a default constructor!')
+                            }
+                        }
+                        fields[i] = injectValue
+                    }
+                }
+            }
+
+        function findValue(clazz AIOClass) Any : private
+            {
+                for (entry in $ioc) {
+                    if (entry.key == clazz) {
+                        out entry.value
+                    }
+                }
+                out null
+            }
+
+        typename Entry<K, V> : private
+            {
+                constant key K;
+
+                constant value V;
+
+                typeinit Entry(key K, value V);
+            }
+    }

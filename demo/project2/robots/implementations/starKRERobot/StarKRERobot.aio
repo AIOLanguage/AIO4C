@@ -1,0 +1,37 @@
+typelink
+    {
+        java.util.logging.Logger::Logger
+        robots.abstractRobot.Robot::Robot
+        robots.abstractRobot.core.Core::Core
+        robots.abstractRobot.head.Head::Head
+        robots.abstractRobot.annotations.RobotVersion::RobotVersion
+        robots.abstractRobot.annotations.FriendlyRobot::FriendlyRobot
+        org.springframework.beans.factory.InitializingBean::InitializingBean
+    }
+
+constant log : private = Logger.getLogger(StarKRERobot::class.name)
+
+typename StarKRERobot <- Robot, InitializingBean : @FriendlyRobot
+    {
+        variable version Int : @RobotVersion(10)
+
+        function calc() : override
+            {
+                log.info('I\'m calculating...')
+            }
+
+        function afterPropertiesSet() : override
+            {
+                log.info('I\'m ready to the battle!')
+            }
+
+        function init()
+            {
+                log.info('Hello, I\'m StarKRE with version: #version')
+            }
+
+        function destroy()
+            {
+                log.info('No! I\'l be back!')
+            }
+    }

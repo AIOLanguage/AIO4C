@@ -1,0 +1,4 @@
+typename Hand
+    {
+        variable power Double : private = 100.0
+    }

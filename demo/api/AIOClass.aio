@@ -1,0 +1,10 @@
+/**
+ * AIOClass API
+ **/
+
+typename AIOClass : @AIONative
+    {
+        constant filePath String;
+
+        function <T> getMark() T;
+    }

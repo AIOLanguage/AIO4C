@@ -1,0 +1,6 @@
+typename Body
+    {
+        constant armor Double;
+
+        typeinit Body(armor Double);
+    }

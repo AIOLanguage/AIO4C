@@ -1,0 +1,6 @@
+typename AIOFunction : @AIONative
+    {
+        constant name String;
+
+        variable fun (args Any...) -> Any;
+    }

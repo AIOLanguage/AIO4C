@@ -1,0 +1,16 @@
+typelink
+    {
+        main.springApplication.RobotApplication::RobotApplication
+        robots.abstractRobot.Robot::Robot
+        java.util.logging.Logger::Logger
+    }
+
+constant log Logger : private = Logger.getLogger(Main::class.name)
+
+function main(args String[])
+    {
+        constant robotApplication = RobotApplication()
+        constant robot Robot = robotApplication.groovyApplicationContext.getBean('starKRERobot')
+        log.info('\n\n')
+        robot.calc()
+    }

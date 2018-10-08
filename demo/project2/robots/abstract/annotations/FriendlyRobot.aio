@@ -1,0 +1,9 @@
+typelink
+    {
+        java.lang.annotation.Target::Target
+        java.lang.annotation.Retention::Retention
+        java.lang.annotation.ElementType::ElementType
+        java.lang.annotation.RetentionPolicy::RetentionPolicy
+    }
+
+markname @FriendlyRobot : @Target(ElementType.TYPE) : @Retention(RetentionPolicy.RUNTIME);

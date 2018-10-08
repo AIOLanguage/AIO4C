@@ -1,0 +1,41 @@
+typelink
+    {
+        modules.utils.Utils::configureClasses
+    }
+
+enumname LogType (NOTE, INFO, WARNING, ERROR);
+
+markname @Log;
+
+typename LogModule <- AIOModule
+    {
+        constant type LogType
+
+        typeinit LogModule(type LogType)
+            {
+                when(logType) {
+                    NOTE -> println('Install note level')
+                    INFO -> println('Install info level')
+                    WARNING -> println('Install warning level')
+                    ERROR -> println('Install error level')
+                }
+            }
+
+        function configure(file AIOFile) :override
+            {
+                configureClasses(file.clazz, { clazz ->
+                    for (i = 0 i < clazz.constructors.size i++) {
+                        constant constructor = constructors[i]
+                        constant logAnnotation = constructor.getAnnotation(Log::class)
+                        if (logAnnotation && $type == NOTE) {
+                            clazz.constructors[i] = (params Any...) -> Any {
+                                println('#{$tag}: start...')
+                                constant result = constructor(params)
+                                println('#{$tag}: finished')
+                                out result
+                            }
+                        }
+                    }
+                })
+            }
+    }

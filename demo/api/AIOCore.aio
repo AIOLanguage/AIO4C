@@ -1,0 +1,8 @@
+typename AIOCore : @AIONative
+    {
+        constant path String;
+
+        constant moduleList AIOModule[];
+
+        typeinit AIOCore(path String, modules AIOModule modules...);
+     }

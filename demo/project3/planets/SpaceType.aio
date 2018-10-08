@@ -1,0 +1,1 @@
+enumname SpaceType (STAR, PLANET, COMET, HOLE);

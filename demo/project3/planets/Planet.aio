@@ -1,0 +1,50 @@
+typelink
+    {
+        planets.SpaceType
+    }
+
+enumname Planet
+    (
+
+        MERCURY(2440) {
+
+            constant description String : override = 'Mercury is...'
+        },
+        VENUS(6052) {
+
+            constant description String : override = 'Venus is...'
+        },
+        EARTH(6371) {
+
+            constant description String : override = 'Earth is...'
+        },
+        MARS(3390) {
+
+            constant description String : override = 'Mars is...'
+        },
+        JUPITER(69911) {
+
+            constant description String : override = 'Jupiter is...'
+        },
+        SATURN(58232) {
+
+            constant description String : override = 'Saturn is...'
+        },
+        URANUS(25362) {
+
+            constant description String : override = 'Uranus is...'
+        },
+        NEPTUNE(24622) {
+
+            constant description String : override = 'Neptune is...'
+        }
+    )
+    {
+        constant radius Double
+
+        constant spaceType = SpaceType.PLANET
+
+        constant description String : abstract
+
+        typeinit Planet(radius Double);
+    }

@@ -1,0 +1,89 @@
+typelink
+    {
+        java.io.FileWriter::FileWriter
+        java.io.BufferedWriter::BufferedWriter
+    }
+
+typename Person : open
+    {
+        constant firstName String;
+
+        variable secondName String;
+
+        variable age Int;
+
+        typeinit Person(firstName String, secondName String, age Int);
+
+        typeinit Person(firstName String, secondName String, age Int, organizations String...)
+            {
+                $<organization>.organizationList. += organizations
+            }
+
+        function getInfo()
+            {
+                println('Name: #{$name}')
+                println('Second name: #{$secondName}')
+                println('Friends:')
+                for (friend in $<community>.friends) {
+                    if (friend.isBest) {
+                        println(friend.person.firstName)
+                    }
+                }
+                $<organization>.getInfo()
+            }
+
+        function equals(o Any) : override
+            = o is Person && $firstName == o.firstName && $secondName == o.secondName && $age == o.age
+
+        fragment <community>
+            {
+                constant friends = Friend[]()
+
+                function sayAll(message String) : open
+                    {
+                        println(message)
+                    }
+
+                function sayTo(other Person, message String)
+                    {
+                        println("#{other.firstName}, #message")
+                    }
+
+                function addFriend(person Person, isBest Boolean)
+                    {
+                        val friend = Friend(person, isBest)
+                        $friends += friend
+                    }
+
+                typename Friend : private
+                    {
+                        constant person Person
+
+                        variable isBest Boolean
+
+                        typeinit Friend(person Person, isBest Boolean);
+                    }
+            }
+
+        fragment <organization>
+            {
+                constant organizationList : private = String[]()
+
+                function getInfo()
+                    {
+                        println('Organizations:')
+                        $organizationList -> for { println(it) }
+                    }
+
+                function writeToFile(fileName String)
+                    {
+                        constant bufferedWriter = BufferedWriter(FileWriter(fileName))
+                        $organizationList -> for
+                            { organization ->
+                                bufferedWriter.write(organization)
+                                bufferedWriter.write('\n')
+                            }
+                        writer.close()
+                    }
+            }
+    }
