@@ -1,0 +1,20 @@
+{
+  parserClass="com.aio.parser.AIOParser"
+
+  extends="com.intellij.extapi.psi.ASTWrapperPsiElement"
+
+  psiClassPrefix="AIO"
+  psiImplClassSuffix="Impl"
+  psiPackage="com.aio.psi"
+  psiImplPackage="com.aio.psi.impl"
+
+  elementTypeHolderClass="com.aio.psi.AIOTypes"
+  elementTypeClass="com.aio.psi.AIOElementType"
+  tokenTypeClass="com.aio.psi.AIOTokenType"
+}
+
+aioFile ::= item_*
+
+private item_ ::= (property|COMMENT|CRLF)
+
+property ::= (KEY? SEPARATOR VALUE?) | KEY
