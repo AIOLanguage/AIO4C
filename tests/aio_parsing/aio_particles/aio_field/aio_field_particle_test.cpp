@@ -52,10 +52,13 @@ TEST_F(aio_field_particle_test, sample_1)
     //Read sample:
     const str_builder *file_content = read_file_by_str_builder(TEST_PATH "trivial.txt");
     const str_hook *radius = new str_hook(file_content->get_string(), 0, file_content->size());
+
     //Print pretty file content:
     print_radius(radius);
+
     //Create template:
     aio_schemable *schemable = new aio_schemable();
+
     //Test field:
     aio_orbit<aio_schemable>::create()
             ->set_pivot(schemable)
@@ -63,6 +66,7 @@ TEST_F(aio_field_particle_test, sample_1)
             ->set_particle(new aio_field_particle())
             ->spin()
             ->finish();
+
     const aio_field *field = schemable->fields->last();
     ASSERT_TRUE(assert_field_equals_content(field, true, "x", AUTO));
     const aio_assign_task *task = (aio_assign_task *) schemable->instructions->last();
@@ -77,10 +81,13 @@ TEST_F(aio_field_particle_test, sample_2)
 {
     const str_builder *file_content = read_file_by_str_builder(TEST_PATH "two_fields.txt");
     const str_hook *radius = new str_hook(file_content->get_string(), 0, file_content->size());
+
     //Print pretty file content:
     print_radius(radius);
+
     //Create template:
     aio_schemable *schemable = new aio_schemable();
+
     //Test fields:
     aio_orbit<aio_schemable>::create()
             ->set_pivot(schemable)
@@ -88,6 +95,7 @@ TEST_F(aio_field_particle_test, sample_2)
             ->set_particle(new aio_field_particle())
             ->spin()
             ->finish();
+
     const array_list<aio_field> *fields = schemable->fields;
     ASSERT_EQ(fields->get_size(), 2);
     const aio_field *hello = fields->get(0);
@@ -100,6 +108,32 @@ TEST_F(aio_field_particle_test, sample_2)
     ASSERT_TRUE(assert_assign_task_equals_content(task_1, "hello", "'Hello, AIO!'"));
     const aio_assign_task *task_2 = (aio_assign_task *) instructions->get(1);
     ASSERT_TRUE(assert_assign_task_equals_content(task_2, "bye", "'Bye, AIO'"));
+
+    //------------------------------------------------------------------------------------------------------------------
+    //Free:
+    delete schemable;
+    delete file_content;
+}
+
+TEST_F(aio_field_particle_test, sample_3)
+{
+    const str_builder *file_content = read_file_by_str_builder(TEST_PATH "with_attribute.txt");
+    const str_hook *radius = new str_hook(file_content->get_string(), 0, file_content->size());
+
+    //Print pretty file content:
+    print_radius(radius);
+
+    //Create template:
+    aio_schemable *schemable = new aio_schemable();
+
+    //Test fields:
+    aio_orbit<aio_schemable>::create()
+            ->set_pivot(schemable)
+            ->set_radius(radius)
+            ->set_particle(new aio_field_particle())
+            ->spin()
+            ->finish();
+
     //------------------------------------------------------------------------------------------------------------------
     //Free:
     delete schemable;

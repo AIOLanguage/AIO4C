@@ -8,6 +8,7 @@ aio_field::aio_field()
 {
     this->name = nullptr;
     this->type = new str_hook(AUTO);
+    this->visibility_type = AIO_VISIBILITY_UNDEFINED;
 }
 
 aio_field::~aio_field()

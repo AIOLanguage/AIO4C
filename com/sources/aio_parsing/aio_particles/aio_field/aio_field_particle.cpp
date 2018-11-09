@@ -117,6 +117,10 @@ void aio_field_particle::monitor_modifier(const char symbol, const unsigned posi
             if (is_separator_cond) {
                 //Capture modifier:
                 this->token_holder->end = position;
+
+                //Go to name state:
+                this->go_to_name_state();
+
 #ifdef AIO_FIELD_PARTICLE_DEBUG
                 log_info_str_hook(AIO_FIELD_PARTICLE_INFO_TAG, "Modifier:", this->token_holder);
 #endif
@@ -133,14 +137,16 @@ void aio_field_particle::monitor_modifier(const char symbol, const unsigned posi
 #ifdef AIO_FIELD_PARTICLE_DEBUG
                     log_info_boolean(AIO_FIELD_PARTICLE_INFO_TAG, "Is constant", this->field->is_const);
 #endif
-                    //Go to name state:
-                    this->go_to_name_state();
+                } else {
+                    //Ok, try to reinterpret stream from name state:
+#ifdef AIO_FIELD_PARTICLE_DEBUG
+                    log_info(AIO_FIELD_PARTICLE_INFO_TAG, "TRY TO REINTERPRET STREAM");
+#endif
+                    for (unsigned i = this->token_holder->start; i <= this->token_holder->end; ++i) {
+                        this->handle_symbol(i);
+                    }
                 }
             }
-        }
-            break;
-        case AIO_TRIGGER_MODE_UNDEFINED: {
-            throw_error_with_tag(AIO_FIELD_PARTICLE_ERROR_TAG, "Invalid trigger state!");
         }
     }
 }
@@ -154,14 +160,16 @@ void aio_field_particle::go_to_name_state()
 
 void aio_field_particle::monitor_name(const char symbol, const unsigned position)
 {
+#ifdef AIO_FIELD_PARTICLE_DEBUG
+    log_info_char(AIO_FIELD_PARTICLE_INFO_TAG, "CHAR:::", symbol);
+    log_info_int(AIO_FIELD_PARTICLE_INFO_TAG, "POSITION", position);
+#endif
     switch (this->trigger_mode) {
         case AIO_TRIGGER_MODE_PASSIVE:
             if (!is_space_or_line_break(symbol)) {
                 if (isalpha(symbol)) {
                     this->trigger_mode = AIO_TRIGGER_MODE_ACTIVE;
                     this->token_holder->start = position;
-                } else {
-                    throw_error_with_tag(AIO_FIELD_PARTICLE_ERROR_TAG, "The field name must start with letter!");
                 }
             }
             break;
@@ -185,9 +193,6 @@ void aio_field_particle::monitor_name(const char symbol, const unsigned position
                 //Switch to [<type>:=]:
                 this->go_to_type_or_colon_or_equal_sign_state(symbol, position);
             }
-            break;
-        case AIO_TRIGGER_MODE_UNDEFINED:
-            throw_error_with_tag(AIO_FIELD_PARTICLE_ERROR_TAG, "Invalid trigger state!");
     }
 }
 
@@ -208,7 +213,7 @@ void aio_field_particle::monitor_type_or_colon_or_equal_sign(const char symbol, 
         case AIO_TRIGGER_MODE_PASSIVE:
             if (is_equal_sign(symbol)) {
                 //Capture '=':
-                this->go_to_value_state();
+                this->go_to_value_state(position);
             } else if (is_colon(symbol)) {
                 //Capture ':':
                 //Switch to 'private|protected':
@@ -245,17 +250,15 @@ void aio_field_particle::monitor_type_or_colon_or_equal_sign(const char symbol, 
                 //Switch to [:=;]:
                 this->go_to_colon_or_equal_sign_or_semicolon_state(symbol, position);
             }
-            break;
-        case AIO_TRIGGER_MODE_UNDEFINED:
-            throw_error_with_tag(AIO_FIELD_PARTICLE_ERROR_TAG, "Invalid trigger state!");
     }
 }
 
-void aio_field_particle::go_to_value_state()
+void aio_field_particle::go_to_value_state(const unsigned position)
 {
     this->monitor_mode = AIO_MONITOR_VALUE;
-    this->trigger_mode = AIO_TRIGGER_MODE_UNDEFINED;
+    this->trigger_mode = AIO_TRIGGER_MODE_PASSIVE;
     this->signal = AIO_PARTICLE_SIGNAL_DETECTED;
+    this->token_holder->start = position + 1;
 }
 
 void aio_field_particle::go_to_attribute_state()
@@ -307,9 +310,6 @@ void aio_field_particle::monitor_attribute(const char symbol, const unsigned pos
                     throw_error_with_tag(AIO_FIELD_PARTICLE_ERROR_TAG, "Expected attribute 'protected' or 'private'");
                 }
             }
-            break;
-        case AIO_TRIGGER_MODE_UNDEFINED:
-            throw_error_with_tag(AIO_FIELD_PARTICLE_ERROR_TAG, "Invalid trigger state!");
     }
 }
 
@@ -317,7 +317,7 @@ void aio_field_particle::monitor_colon_or_equal_sign_or_semicolon(const char sym
 {
     if (is_equal_sign(symbol)) {
         //Capture '=':
-        this->go_to_value_state();
+        this->go_to_value_state(position);
     } else if (is_colon(symbol)) {
         //Capture ':':
         this->go_to_attribute_state();
@@ -338,9 +338,12 @@ void aio_field_particle::set_null()
     this->signal = AIO_PARTICLE_SIGNAL_IS_READY;
 }
 
-
 void aio_field_particle::monitor_value(const char symbol, const unsigned position)
 {
+#ifdef AIO_FIELD_PARTICLE_DEBUG
+    log_info_char(AIO_FIELD_PARTICLE_INFO_TAG, "Char:", symbol);
+#endif
+
     const bool is_single_quote_cond = is_single_quote(symbol);
     if (is_single_quote_cond) {
         this->is_inside_string = !this->is_inside_string;
@@ -348,34 +351,38 @@ void aio_field_particle::monitor_value(const char symbol, const unsigned positio
     const bool in_expression_scope = !this->is_inside_string;
     const bool is_end_of_holder = position == this->radius_ptr->end - 1;
     const bool is_whitespace_cond = is_space_or_line_break(symbol);
-    switch (this->trigger_mode) {
-        case AIO_TRIGGER_MODE_UNDEFINED: {
-            if (!is_whitespace_cond) {
-                this->trigger_mode = AIO_TRIGGER_MODE_PASSIVE;
-                this->token_holder->start = position;
-                if (is_end_of_holder) {
-                    this->set_value(true, position);
+    const bool is_letter_or_number = isalnum(symbol);
+    if (is_end_of_holder) {
+        this->set_value(true, position);
+    }
+    if (in_expression_scope) {
+        switch (this->trigger_mode) {
+            case AIO_TRIGGER_MODE_PASSIVE:
+                if (is_letter_or_number || is_closing_parenthesis(symbol) || is_single_quote_cond) {
+                    this->trigger_mode = AIO_TRIGGER_MODE_ACTIVE;
+
+#ifdef AIO_FIELD_PARTICLE_DEBUG
+                    log_info(AIO_FIELD_PARTICLE_INFO_TAG, "SUPPOSE END");
+#endif
                 }
-            }
-        }
-            break;
-        case AIO_TRIGGER_MODE_PASSIVE: {
-            this->whitespace_counter = 0;
-            if ((isalnum(symbol) || is_closing_parenthesis(symbol) || is_single_quote_cond) && in_expression_scope) {
-                this->trigger_mode = AIO_TRIGGER_MODE_ACTIVE;
-            }
-            if (is_end_of_holder) {
-                this->set_value(true, position);
-            }
-        }
-            break;
-        case AIO_TRIGGER_MODE_ACTIVE: {
-            if (is_whitespace_cond) {
-                this->whitespace_counter++;
-            } else if ((((isalpha(symbol) && this->whitespace_counter > 0) || is_closing_brace(symbol))
-                        && in_expression_scope) || is_end_of_holder) {
-                this->set_value(is_end_of_holder, position);
-            }
+                break;
+            case AIO_TRIGGER_MODE_ACTIVE:
+                if (is_whitespace_cond) {
+                    this->whitespace_counter++;
+#ifdef AIO_FIELD_PARTICLE_DEBUG
+                    log_info(AIO_FIELD_PARTICLE_INFO_TAG, "COUNTER");
+#endif
+                } else if (is_sign(symbol)) {
+                    this->trigger_mode = AIO_TRIGGER_MODE_PASSIVE;
+#ifdef AIO_FIELD_PARTICLE_DEBUG
+                    log_info(AIO_FIELD_PARTICLE_INFO_TAG, "RESET");
+#endif
+                } else if ((is_letter_or_number && this->whitespace_counter > 0) || is_closing_brace(symbol)) {
+#ifdef AIO_FIELD_PARTICLE_DEBUG
+                    log_info(AIO_FIELD_PARTICLE_INFO_TAG, "SET VALUE");
+#endif
+                    this->set_value(false, position);
+                }
         }
     }
 }

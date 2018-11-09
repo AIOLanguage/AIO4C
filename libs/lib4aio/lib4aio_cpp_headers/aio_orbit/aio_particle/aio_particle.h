@@ -13,7 +13,7 @@ namespace lib4aio {
     };
 
     enum aio_particle_trigger_mode {
-        AIO_TRIGGER_MODE_PASSIVE, AIO_TRIGGER_MODE_ACTIVE, AIO_TRIGGER_MODE_UNDEFINED
+        AIO_TRIGGER_MODE_PASSIVE, AIO_TRIGGER_MODE_ACTIVE
     };
 
     template<typename T>

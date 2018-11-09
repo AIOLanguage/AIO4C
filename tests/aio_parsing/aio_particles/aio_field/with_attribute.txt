@@ -1,0 +1,4 @@
+constant
+a:protected= 7 variable b:private=3 b=
+
+5
