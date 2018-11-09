@@ -19,6 +19,8 @@
 #include <lib4aio_cpp_sources/utils/array_list_utils/array_list.cpp>
 #include <lib4aio_cpp_headers/utils/str_hook_utils/str_hook/str_hook.h>
 
+#define TEST_PATH "../tests/aio_parsing/aio_particles/aio_field/"
+
 #define AIO_FIELD_PARTICLE_TEST_INFO_TAG "AIO_FIELD_PARTICLE_TEST_INFO"
 
 using namespace lib4aio;
@@ -48,9 +50,7 @@ static void print_radius(const str_hook *radius)
 TEST_F(aio_field_particle_test, sample_1)
 {
     //Read sample:
-    const str_builder *file_content = read_file_by_str_builder(
-            "../tests/aio_parsing/aio_particles/aio_field/sample_1.txt"
-    );
+    const str_builder *file_content = read_file_by_str_builder(TEST_PATH "trivial.txt");
     const str_hook *radius = new str_hook(file_content->get_string(), 0, file_content->size());
     //Print pretty file content:
     print_radius(radius);
@@ -75,8 +75,7 @@ TEST_F(aio_field_particle_test, sample_1)
 
 TEST_F(aio_field_particle_test, sample_2)
 {
-    const str_builder *file_content = read_file_by_str_builder("../tests/aio_parsing/aio_particles/aio_field/sample_2"
-                                                               ".txt");
+    const str_builder *file_content = read_file_by_str_builder(TEST_PATH "two_fields.txt");
     const str_hook *radius = new str_hook(file_content->get_string(), 0, file_content->size());
     //Print pretty file content:
     print_radius(radius);
