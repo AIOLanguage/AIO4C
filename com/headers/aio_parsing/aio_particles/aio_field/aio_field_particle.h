@@ -43,8 +43,9 @@ private:
     enum {
         AIO_MONITOR_MODIFIER,
         AIO_MONITOR_NAME,
-        AIO_MONITOR_TYPE,
-        AIO_MONITOR_EQUAL_SIGN,
+        AIO_MONITOR_TYPE_OR_COLON_OR_EQUAL_SIGN,
+        AIO_MONITOR_ATTRIBUTE,
+        AIO_MONITOR_COLON_OR_EQUAL_SIGN_OR_SEMICOLON,
         AIO_MONITOR_VALUE
     } monitor_mode;
 
@@ -54,13 +55,27 @@ private:
 
     void monitor_name(const char symbol, const unsigned position);
 
-    void monitor_field_type(const char symbol, const unsigned position);
+    void monitor_type_or_colon_or_equal_sign(const char symbol, const unsigned position);
 
-    void monitor_equal_sign(const char symbol);
+    void monitor_attribute(const char symbol, const unsigned position);
 
     void monitor_value(const char symbol, const unsigned position);
 
-    void construct_value(const bool is_end_of_holder, const unsigned position);
+    void monitor_colon_or_equal_sign_or_semicolon(const char symbol, const unsigned position);
+
+    void go_to_name_state();
+
+    void go_to_type_or_colon_or_equal_sign_state(const char symbol, const unsigned position);
+
+    void go_to_value_state();
+
+    void go_to_attribute_state();
+
+    void go_to_colon_or_equal_sign_or_semicolon_state(const char symbol, const unsigned position);
+
+    void set_value(const bool is_end_of_holder, const unsigned position);
+
+    void set_null();
 };
 
 #endif //AIO_FIELD_PARTICLE_H

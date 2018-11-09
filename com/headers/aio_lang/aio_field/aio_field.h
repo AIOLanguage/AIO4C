@@ -25,7 +25,7 @@ struct aio_field {
 
     str_hook *type;
 
-    bool is_list;
+    bool is_array;
 
     bool is_const;
 

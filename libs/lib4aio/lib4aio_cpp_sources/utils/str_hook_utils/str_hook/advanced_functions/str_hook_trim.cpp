@@ -63,7 +63,7 @@ namespace lib4aio {
         return border_trim(this, true, false, is_space_or_line_break);
     }
 
-    bool str_hook::ends_with(const char *string)
+    bool str_hook::ends_with(const char *string) const
     {
         const unsigned str_length = (unsigned) strlen(string);
         if (str_length < this->get_size()) {

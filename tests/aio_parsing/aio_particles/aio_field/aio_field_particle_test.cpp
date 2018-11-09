@@ -48,7 +48,9 @@ static void print_radius(const str_hook *radius)
 TEST_F(aio_field_particle_test, sample_1)
 {
     //Read sample:
-    const str_builder *file_content = read_file_by_str_builder("../tests/aio_parsing/aio_particles/sample_1.txt");
+    const str_builder *file_content = read_file_by_str_builder(
+            "../tests/aio_parsing/aio_particles/aio_field/sample_1.txt"
+    );
     const str_hook *radius = new str_hook(file_content->get_string(), 0, file_content->size());
     //Print pretty file content:
     print_radius(radius);
@@ -73,7 +75,8 @@ TEST_F(aio_field_particle_test, sample_1)
 
 TEST_F(aio_field_particle_test, sample_2)
 {
-    const str_builder *file_content = read_file_by_str_builder("../tests/aio_parsing/aio_particles/sample_2.txt");
+    const str_builder *file_content = read_file_by_str_builder("../tests/aio_parsing/aio_particles/aio_field/sample_2"
+                                                               ".txt");
     const str_hook *radius = new str_hook(file_content->get_string(), 0, file_content->size());
     //Print pretty file content:
     print_radius(radius);

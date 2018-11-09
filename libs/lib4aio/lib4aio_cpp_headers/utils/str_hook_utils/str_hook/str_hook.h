@@ -55,7 +55,7 @@ namespace lib4aio {
 
         bool is_not_empty() const;
 
-        bool ends_with(const char *string);
+        bool ends_with(const char *string) const;
 
         str_hook_list *split(const char *const delimiter) const;
 

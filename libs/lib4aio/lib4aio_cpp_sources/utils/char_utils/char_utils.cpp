@@ -42,6 +42,16 @@ namespace lib4aio {
         return c == '=';
     }
 
+    bool is_opening_bracket(const char c)
+    {
+        return c == '[';
+    }
+
+    bool is_closing_bracket(const char c)
+    {
+        return c == ']';
+    }
+
     bool is_sign(const char c)
     {
         return

@@ -19,6 +19,10 @@ namespace lib4aio {
 
     bool is_equal_sign(const char c);
 
+    bool is_opening_bracket(const char c);
+
+    bool is_closing_bracket(const char c);
+
     bool is_sign(const char c);
 
     bool is_dot(const char c);

@@ -176,7 +176,7 @@ void aio_function_particle::monitor_function_args(const char symbol, const unsig
             if (is_list) {
                 type->end -= AIO_LIST_SEMANTIC_SIZE;
             }
-            arg->is_list = is_list;
+            arg->is_array = is_list;
             arg->type = type;
             //Put arg:
             this->function_ptr->fields->add(arg);
