@@ -27,29 +27,72 @@ public:
 
     unsigned illuminate(aio_space *space);
 
+    void reset();
+
 private:
 
     enum {
         AIO_MONITOR_MODIFIER,
         AIO_MONITOR_NAME,
         AIO_MONITOR_ARGS,
-        AIO_MONITOR_OUTPUT_TYPE,
-        AIO_MONITOR_BODY
+        AIO_MONITOR_TYPE_OR_COLON_OR_EQUAL_SIGN_OR_OPENING_BRACE,
+        AIO_MONITOR_ATTRIBUTE,
+        AIO_MONITOR_BODY,
+        AIO_MONITOR_VALUE,
+        AIO_MONITOR_COLON_OR_EQUAL_SIGN_OR_OPENING_BRACE
     } monitor_mode;
 
-    unsigned iterator;
+    unsigned counter_trigger;
 
-    aio_function *function_ptr;
+    aio_function *function;
 
-    void monitor_function_modifier(const char symbol, const unsigned position);
+    /**
+     * State functions.
+     */
 
-    void monitor_function_name(const char symbol, const unsigned position);
+    void monitor_modifier(const char symbol, const unsigned position);
 
-    void monitor_function_args(const char symbol, const unsigned position);
+    void monitor_name(const char symbol, const unsigned position);
 
-    void monitor_function_output_type(const char symbol, const unsigned position);
+    void monitor_args(const char symbol, const unsigned position);
 
-    void monitor_function_body(const char symbol, const unsigned position);
+    void monitor_type_or_colon_or_equal_sign_or_opening_brace(const char symbol, const unsigned position);
+
+    void monitor_attribute(const char symbol, const unsigned position);
+
+    void monitor_body(const char symbol, const unsigned position);
+
+    void monitor_value(const char symbol, const unsigned position);
+
+    void monitor_colon_or_equal_sign_or_opening_brace(const char symbol, const unsigned position);
+
+    /**
+     * Transition functions.
+     */
+
+    void go_to_name_state();
+
+    void go_to_args_state(const char symbol, const unsigned position);
+
+    void go_to_type_or_colon_or_equal_sign_or_opening_brace_state(const char symbol, const unsigned position);
+
+    void go_to_attribute_state();
+
+    void go_to_body_state(const char symbol, const unsigned position);
+
+    void go_to_value_state(const unsigned position);
+
+    void go_to_colon_or_equal_sign_or_opening_brace_state(const char symbol, const unsigned position);
+
+    /**
+     * Operation functions.
+     */
+
+    void set_args();
+
+    void set_single_return_instruction(const bool is_end_of_holder, const unsigned position);
+
+    void set_body();
 };
 
 #endif //AIO_FUNCTION_PARTICLE_H

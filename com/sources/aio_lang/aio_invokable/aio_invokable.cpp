@@ -7,7 +7,10 @@
 using namespace lib4aio;
 
 aio_invokable::aio_invokable()
-{}
+{
+    this->output_type = nullptr;
+    this.
+}
 
 aio_invokable::~aio_invokable()
 {

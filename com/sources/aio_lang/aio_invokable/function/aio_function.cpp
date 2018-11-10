@@ -5,7 +5,10 @@
 #include <lib4aio_cpp_headers/utils/str_hook_utils/str_hook/str_hook.h>
 
 aio_function::aio_function()
-{}
+{
+    this->name = nullptr;
+    this->visibility_type = AIO_VISIBILITY_UNDEFINED;
+}
 
 aio_function::~aio_function()
 {

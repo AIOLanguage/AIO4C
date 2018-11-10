@@ -52,18 +52,31 @@ namespace lib4aio {
         return new_list;
     }
 
+    template<typename T>
+    array_list<T> *array_list<T>::filter_itself(function<bool(const T *)> func)
+    {
+        for (unsigned i = 0; i < this->size; ++i) {
+            T *element = this->elements;
+            if (!func(element)) {
+                this->remove(element);
+            }
+        }
+        return this;
+    }
+
     template<class T>
-    void array_list<T>::foreach(function<void(T *)> func) const
+    array_list <T> * array_list<T>::foreach(function<void(T *)> func) const
     {
         auto size = this->size;
         auto elements = this->elements;
         for (unsigned i = 0; i < size; ++i) {
             func(elements[i]);
         }
+        return this;
     }
 
     template<class T>
-    void array_list<T>::free_elements()
+    array_list <T> * array_list<T>::free_elements()
     {
         const unsigned size = this->size;
         T **elements = this->elements;
@@ -75,6 +88,9 @@ namespace lib4aio {
     template<class T>
     array_list<T>::~array_list()
     {
+        for (unsigned i = 0; i < this->size; ++i) {
+            this->elements = nullptr;
+        }
         delete this->elements;
     }
 

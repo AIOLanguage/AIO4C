@@ -25,6 +25,8 @@ struct aio_invokable : public aio_annotatable, public aio_schemable {
     unsigned arg_count;
 
     str_hook *output_type;
+
+    bool is_array_output;
 };
 
 #endif //AIO_INVOKABLE_H

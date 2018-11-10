@@ -114,7 +114,7 @@ add_executable(
 
         #---------------------------------------------------------------------------------------------------------------
         #TESTS:
-        tests/aio_parsing/aio_particles/aio_field/aio_field_particle_test.cpp tests/aio_parsing/aio_particles/aio_function/aio_function_particle_test.cpp)
+        tests/aio_parsing/aio_particles/aio_field/aio_field_particle_test.cpp tests/aio_parsing/aio_particles/aio_function/aio_function_particle_test.cpp com/headers/aio_runtime/aio_task/aio_return/aio_return_task.h com/sources/aio_runtime/aio_task/aio_return/aio_return_task.cpp)
 
 #link google test:
 target_link_libraries(aio gtest gtest_main)

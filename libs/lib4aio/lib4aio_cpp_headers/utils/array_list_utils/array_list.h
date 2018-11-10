@@ -26,11 +26,13 @@ namespace lib4aio {
 
         void add(T *element);
 
-        array_list<T> *filter(function<bool(const T *)> feunc) const;
+        array_list<T> *filter(function<bool(const T *)> func) const;
 
-        void foreach(function<void(T *)> func) const;
+        array_list<T> *filter_itself(function<bool(const T *)> func);
 
-        void free_elements();
+        array_list<T> * foreach(function<void(T *)> func) const;
+
+        array_list<T> * free_elements();
 
         bool contains_by(function<bool(const T *)> func);
 
