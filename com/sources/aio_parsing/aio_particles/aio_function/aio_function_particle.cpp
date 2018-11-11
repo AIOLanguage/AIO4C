@@ -1,4 +1,5 @@
 //lang:
+#include <aio_lang/aio_types/aio_types.h>
 #include <aio_lang/aio_field/aio_field.h>
 #include <aio_lang/aio_space/aio_space.h>
 #include <aio_lang/aio_modifiers/aio_modifiers.h>
@@ -27,8 +28,6 @@
 
 //lib4aio:
 #include <lib4aio_cpp_headers/utils/log_utils/log_utils.h>
-#include <iostream>
-#include <aio_lang/aio_types/aio_types.h>
 
 #endif
 
@@ -374,7 +373,6 @@ void aio_function_particle::go_to_colon_or_equal_sign_or_opening_brace_state(con
 
 void aio_function_particle::monitor_attribute(const char symbol, const unsigned position)
 {
-
 #ifdef AIO_FUNCTION_PARTICLE_DEBUG
     log_info_char(AIO_FUNCTION_PARTICLE_INFO_TAG, "ACHAR", symbol);
 #endif

@@ -7,6 +7,8 @@ template<class T>
 aio_inheritable<T>::aio_inheritable()
 {
     this->parents = new array_list<T>(false);
+    this->children = new array_list<T>(true);
+    this->parent_names =  new array_list<str_hook>(true);
 }
 
 template<class T>

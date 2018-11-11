@@ -29,6 +29,8 @@ struct aio_inheritable {
 
     array_list<T> *parents;
 
+    array_list<str_hook> *parent_names;
+
     array_list<T> *children;
 };
 

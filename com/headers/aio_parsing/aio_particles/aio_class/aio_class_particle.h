@@ -32,34 +32,69 @@ public:
 
     unsigned illuminate(aio_space *space);
 
+    void reset();
+
 private:
 
-    unsigned inner_iterator;
+    unsigned counter_trigger;
 
-    aio_class *class_ptr;
+    aio_class *clazz;
 
     enum {
         AIO_MONITOR_MODIFIER,
         AIO_MONITOR_NAME,
-        AIO_MONITOR_KEY,
-        AIO_MONITOR_PARENTS,
-        AIO_MONITOR_ATTRIBUTES,
+        AIO_MONITOR_ARROW_OR_COLON_OR_OPENING_BRACE,
+        AIO_MONITOR_PARENT,
+        AIO_MONITOR_COMMA_OR_COLON_OR_OPENING_BRACE,
+        AIO_MONITOR_ATTRIBUTE,
+        AIO_MONITOR_COLON_OR_OPENING_BRACE,
         AIO_MONITOR_BODY
     } monitor_mode;
 
-    void monitor_class_modifier(const char symbol, const unsigned position);
+    /**
+     * State functions.
+     */
 
-    void monitor_class_name(const char symbol, const unsigned position);
+    void monitor_modifier(const char symbol, const unsigned position);
 
-    void monitor_class_key(const char symbol, const unsigned position);
+    void monitor_name(const char symbol, const unsigned position);
 
-    void monitor_class_parents(const char symbol, const unsigned position);
+    void monitor_arrow_or_colon_or_opening_brace(const char symbol, const unsigned position);
 
-    void monitor_class_attributes(const char symbol, const unsigned position);
+    void monitor_parent(const char symbol, const unsigned position);
 
-    void monitor_class_body(const char symbol, const unsigned position);
+    void monitor_comma_or_colon_or_opening_brace(const char symbol, const unsigned position);
 
-    void switch_monitor_mode(const char symbol, const unsigned position);
+    void monitor_attribute(const char symbol, const unsigned position);
+
+    void monitor_colon_or_opening_brace(const char symbol, const unsigned position);
+
+    void monitor_body(const char symbol, const unsigned position);
+
+    /**
+     * Transition functions.
+     */
+
+    void go_to_name_state();
+
+    void go_to_arrow_or_colon_or_opening_brace_state(const char symbol, const unsigned position);
+
+    void go_to_parent_state();
+
+    void go_to_comma_or_colon_or_opening_brace_state(const char symbol, const unsigned position);
+
+    void go_to_attribute_state();
+
+    void go_to_body_state(const char symbol, const unsigned position);
+
+    void go_to_colon_or_opening_brace_state(const char symbol, const unsigned position);
+
+    /**
+     * Operation functions.
+     */
+
+    void set_body();
 };
 
 #endif //AIO_CLASS_PARTICLE_H
+#pragma clang diagnostic pop
