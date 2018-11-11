@@ -50,6 +50,7 @@ aio_field_particle::aio_field_particle()
     this->monitor_mode = AIO_MONITOR_MODIFIER;
     this->trigger_mode = AIO_TRIGGER_MODE_PASSIVE;
     this->signal = AIO_PARTICLE_SIGNAL_UNDEFINED;
+    this->whitespace_counter = 0;
 }
 
 aio_field_particle::~aio_field_particle()
@@ -353,14 +354,19 @@ void aio_field_particle::monitor_value(const char symbol, const unsigned positio
     if (is_end_of_holder) {
         this->set_value(true, position);
     }
+    log_info_int(AIO_FIELD_PARTICLE_INFO_TAG, "COUNTER:", this->whitespace_counter);
     if (in_expression_scope) {
         switch (this->trigger_mode) {
             case AIO_TRIGGER_MODE_PASSIVE:
                 if (is_letter_or_number || is_closing_parenthesis(symbol) || is_single_quote_cond) {
                     this->trigger_mode = AIO_TRIGGER_MODE_ACTIVE;
+                    this->whitespace_counter = 0;
 
 #ifdef AIO_FIELD_PARTICLE_DEBUG
                     log_info(AIO_FIELD_PARTICLE_INFO_TAG, "SUPPOSE END");
+                    log_info_int(AIO_FIELD_PARTICLE_INFO_TAG, "TOKEN END:", this->token_holder->end);
+                    log_info_int(AIO_FIELD_PARTICLE_INFO_TAG, "POS:", position);
+
 #endif
                 }
                 break;
@@ -372,12 +378,16 @@ void aio_field_particle::monitor_value(const char symbol, const unsigned positio
 #endif
                 } else if (is_sign(symbol)) {
                     this->trigger_mode = AIO_TRIGGER_MODE_PASSIVE;
+                    this->whitespace_counter = 0;
 #ifdef AIO_FIELD_PARTICLE_DEBUG
                     log_info(AIO_FIELD_PARTICLE_INFO_TAG, "RESET");
 #endif
                 } else if ((is_letter_or_number && this->whitespace_counter > 0) || is_closing_brace(symbol)) {
 #ifdef AIO_FIELD_PARTICLE_DEBUG
                     log_info(AIO_FIELD_PARTICLE_INFO_TAG, "SET VALUE");
+                    log_info_int(AIO_FIELD_PARTICLE_INFO_TAG, "TOKEN END:", this->token_holder->end);
+                    log_info_int(AIO_FIELD_PARTICLE_INFO_TAG, "POS:", position);
+
 #endif
                     this->set_value(false, position);
                 }
@@ -392,6 +402,11 @@ void aio_field_particle::set_value(const bool is_end_of_holder, const unsigned p
     } else {
         this->token_holder->end = position - this->whitespace_counter;
     }
+#ifdef AIO_FIELD_PARTICLE_DEBUG
+    log_info_int(AIO_FIELD_PARTICLE_INFO_TAG, "TOKEN END>>>:", this->token_holder->end);
+    log_info_int(AIO_FIELD_PARTICLE_INFO_TAG, "POS:", position);
+
+#endif
     char *dirty_value = this->token_holder->to_string();
     char *clean_value = squeeze_string_for_expression(dirty_value);
 #ifdef AIO_FIELD_PARTICLE_DEBUG

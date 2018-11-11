@@ -67,6 +67,7 @@ unsigned aio_function_particle::illuminate(aio_space *space)
 #ifdef AIO_FUNCTION_PARTICLE_DEBUG
     log_info(AIO_FUNCTION_PARTICLE_INFO_TAG, "COMPLETE!");
 #endif
+    this->token_holder->start = this->token_holder->end;
     return this->token_holder->end;
 }
 
@@ -192,7 +193,9 @@ void aio_function_particle::monitor_args(const char symbol, const unsigned posit
                 this->counter_trigger--;
                 if (this->counter_trigger == 0) {
                     this->token_holder->end = position;
-                    this->set_args();
+                    if (!this->token_holder->is_thin()) {
+                        this->set_args();
+                    }
                     this->go_to_type_or_colon_or_equal_sign_or_opening_brace_state();
                 }
             }
@@ -311,10 +314,19 @@ void aio_function_particle::monitor_type_or_colon_or_equal_sign_or_opening_brace
                 this->token_holder->end = position;
                 //Get type:
                 str_hook *type = new str_hook(this->token_holder);
+#ifdef AIO_FUNCTION_PARTICLE_DEBUG
+                log_info_str_hook(AIO_FUNCTION_PARTICLE_INFO_TAG, "TYPO:", type);
+#endif
                 //Check type:
                 const bool is_array = type->ends_with(ARRAY_BRACKETS);
                 if (is_array) {
                     type->end -= ARRAY_BRACKET_SIZE;
+
+
+#ifdef AIO_FUNCTION_PARTICLE_DEBUG
+                    log_info_str_hook(AIO_FUNCTION_PARTICLE_INFO_TAG, "NEW TYPO:", type);
+#endif
+
                     if (!type->is_word()) {
                         throw_error_with_tag(
                                 AIO_FUNCTION_PARTICLE_ERROR_TAG, "The output type must contain only letters & numbers!"
@@ -346,7 +358,7 @@ void aio_function_particle::go_to_attribute_state()
 
 void aio_function_particle::go_to_body_state(const char symbol, const unsigned position)
 {
-    this->monitor_mode = AIO_MONITOR_ARGS;
+    this->monitor_mode = AIO_MONITOR_BODY;
     this->trigger_mode = AIO_TRIGGER_MODE_PASSIVE;
     //Prepare counter:
     this->counter_trigger = 0;
@@ -362,6 +374,10 @@ void aio_function_particle::go_to_colon_or_equal_sign_or_opening_brace_state(con
 
 void aio_function_particle::monitor_attribute(const char symbol, const unsigned position)
 {
+
+#ifdef AIO_FUNCTION_PARTICLE_DEBUG
+    log_info_char(AIO_FUNCTION_PARTICLE_INFO_TAG, "ACHAR", symbol);
+#endif
     switch (this->trigger_mode) {
         case AIO_TRIGGER_MODE_PASSIVE:
             if (!is_space_or_line_break(symbol)) {
@@ -388,7 +404,12 @@ void aio_function_particle::monitor_attribute(const char symbol, const unsigned 
                             this->function->visibility_type = AIO_VISIBILITY_PROTECTED;
                         }
                         //Switch to [:=;]:
-                        this->monitor_colon_or_equal_sign_or_opening_brace(symbol, position);
+
+#ifdef AIO_FUNCTION_PARTICLE_DEBUG
+                        log_info(AIO_FUNCTION_PARTICLE_INFO_TAG, "FOUND ATTRIBUTE!!!");
+#endif
+
+                        this->go_to_colon_or_equal_sign_or_opening_brace_state(symbol, position);
                     } else {
                         throw_error_with_tag(
                                 AIO_FUNCTION_PARTICLE_ERROR_TAG, "Function visibility is already defined!"
@@ -412,7 +433,11 @@ void aio_function_particle::monitor_colon_or_equal_sign_or_opening_brace(const c
         //Capture ':':
         this->go_to_attribute_state();
     } else if (is_opening_brace(symbol)) {
-        //Capture ';':
+
+#ifdef AIO_FUNCTION_PARTICLE_DEBUG
+        log_info(AIO_FUNCTION_PARTICLE_INFO_TAG, "{{{{{{{{{{{{");
+#endif
+        //Capture '{':
         this->go_to_body_state(symbol, position);
     } else if (!is_space_or_line_break(symbol)) {
         throw_error_with_tag(AIO_FUNCTION_PARTICLE_ERROR_TAG, "Expected [=:{]");
@@ -456,6 +481,7 @@ void aio_function_particle::monitor_value(const char symbol, const unsigned posi
 #endif
                 } else if (is_sign(symbol)) {
                     this->trigger_mode = AIO_TRIGGER_MODE_PASSIVE;
+                    this->counter_trigger = 0;
 #ifdef AIO_FUNCTION_PARTICLE_DEBUG
                     log_info(AIO_FUNCTION_PARTICLE_INFO_TAG, "RESET");
 #endif
@@ -529,4 +555,8 @@ void aio_function_particle::set_body()
 //            ->spin()
             ->finish();
     this->signal = AIO_PARTICLE_SIGNAL_IS_READY;
+
+#ifdef AIO_FUNCTION_PARTICLE_DEBUG
+    log_info(AIO_FUNCTION_PARTICLE_INFO_TAG, "BODY IS COMPLETE!");
+#endif
 }

@@ -1,5 +1,8 @@
+//native
 #include <cctype>
 #include <cstring>
+//lib4aio:
+#include <lib4aio_cpp_headers/utils/char_utils/char_utils.h>
 #include <lib4aio_cpp_headers/utils/memory_utils/memory_utils.h>
 #include <lib4aio_cpp_headers/utils/point_watcher/point_watcher.h>
 #include <lib4aio_cpp_headers/utils/str_hook_utils/str_hook/str_hook.h>
@@ -117,6 +120,16 @@ namespace lib4aio {
         auto start = this->start;
         for (int i = 0; i < hook_size; ++i) {
             if (hooked_string[start + i] != string[i]) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    bool str_hook::is_thin() const
+    {
+        for (unsigned i = this->start; i < this->end; ++i) {
+            if (!is_space_or_line_break(this->string_ptr[i])) {
                 return false;
             }
         }

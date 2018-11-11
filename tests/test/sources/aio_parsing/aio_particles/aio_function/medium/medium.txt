@@ -1,0 +1,4 @@
+function ten() Double[] : protected
+    {
+        /* any body */
+    }

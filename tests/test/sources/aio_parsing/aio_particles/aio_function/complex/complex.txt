@@ -1,0 +1,6 @@
+function sum(a Int,
+b Int)=a
+ +b function
+  ten()Double[]:protected{
+                                           /* any body */
+                                       }

@@ -47,7 +47,7 @@ int main(int argc, char *argv[])
 {
 #ifdef AIO_TEST
     InitGoogleTest(&argc, argv);
-    RUN_ALL_TESTS();
+    return RUN_ALL_TESTS();
     log_info(AIO_INFO_TAG, CYAN "TESTING IS COMPLETE!" RESET);
 #else
     const bool has_program_args = argc > 1;

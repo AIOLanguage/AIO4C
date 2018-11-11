@@ -1,0 +1,8 @@
+#ifndef AIO_FUNCTION_PARTICLE_TRIVIAL_TEST_H
+#define AIO_FUNCTION_PARTICLE_TRIVIAL_TEST_H
+
+class aio_function;
+
+aio_function *create_function_for_aio_function_trivial_test();
+
+#endif //AIO_FUNCTION_PARTICLE_TRIVIAL_TEST_H

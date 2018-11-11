@@ -11,6 +11,8 @@ add_subdirectory(tests)
 
 include_directories(com/headers com/sources)
 
+include_directories(tests)
+
 #lib4aio:
 add_subdirectory(libs/lib4aio)
 

@@ -13,7 +13,7 @@ public:
 
     virtual void perform(aio_ray *ray) = 0;
 
-    virtual bool equals(aio_task *task) const = 0;
+    virtual bool equals(const aio_task *task) const = 0;
 };
 
 #endif //AIO_TASK_H

@@ -24,7 +24,7 @@ public:
 
     void perform(aio_ray *ray);
 
-    bool equals(aio_task *task) const;
+    bool equals(const aio_task *task) const;
 
     void set_name(str_hook *name);
 

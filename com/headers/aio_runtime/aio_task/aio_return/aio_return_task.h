@@ -13,7 +13,7 @@ public:
 
     void perform(aio_ray *ray);
 
-    bool equals(aio_task *task) const;
+    bool equals(const aio_task *task) const;
 
     char *get_value();
 

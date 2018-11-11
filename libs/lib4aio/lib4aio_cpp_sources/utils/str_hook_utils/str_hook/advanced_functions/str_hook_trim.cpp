@@ -1,6 +1,7 @@
 #include <lib4aio_cpp_headers/utils/str_hook_utils/str_hook/str_hook.h>
 #include <lib4aio_cpp_headers/utils/char_utils/char_utils.h>
 #include <cstring>
+#include <cstdio>
 
 namespace lib4aio {
     static str_hook *border_trim(
@@ -65,10 +66,17 @@ namespace lib4aio {
 
     bool str_hook::ends_with(const char *string) const
     {
+        log_info_str_hook("A", "B", this);
+        printf("STR: %s\n", string);
         const unsigned str_length = (unsigned) strlen(string);
         if (str_length < this->get_size()) {
-            for (unsigned i = str_length - 1; i >= 0; ++i) {
-                if (string[i] != this->string_ptr[this->start + i]) {
+            unsigned counter = 0;
+            for (unsigned j = this->end - str_length; j < this->end; ++j) {
+
+                printf("HC: %c\n", this->string_ptr[j]);
+                printf("SC: %c\n", string[counter]);
+
+                if (this->string_ptr[j] != string[counter++]) {
                     return false;
                 }
             }

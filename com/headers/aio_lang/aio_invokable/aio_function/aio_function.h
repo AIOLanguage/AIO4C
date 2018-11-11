@@ -19,6 +19,8 @@ struct aio_function : public aio_invokable, public aio_inheritable<aio_function>
     str_hook *name;
 
     aio_visibility visibility_type;
+
+    bool equals(const aio_function *other) const;
 };
 
 #endif //AIO_FUNCTION_H
