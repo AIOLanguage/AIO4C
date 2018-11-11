@@ -6,10 +6,11 @@
 using namespace lib4aio;
 
 aio_enum::aio_enum()
-{}
+{
+    this->elements =  new array_list<aio_field>(true);
+}
 
 aio_enum::~aio_enum()
 {
-    this->elements->free_elements();
     delete this->elements;
 }

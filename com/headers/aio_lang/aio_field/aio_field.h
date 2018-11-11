@@ -7,6 +7,7 @@
 
 //lang:
 #include <aio_lang/aio_visibility/aio_visibility.h>
+#include <ostream>
 
 namespace lib4aio {
 
@@ -14,6 +15,8 @@ namespace lib4aio {
 }
 
 using namespace lib4aio;
+
+using namespace std;
 
 struct aio_field {
 
@@ -33,5 +36,7 @@ struct aio_field {
 
     aio_visibility visibility_type;
 };
+
+void log_aio_field(const aio_field * field);
 
 #endif //AIO_FIELD_H

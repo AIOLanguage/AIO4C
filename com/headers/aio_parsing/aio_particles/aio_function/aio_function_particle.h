@@ -74,7 +74,7 @@ private:
 
     void go_to_args_state(const char symbol, const unsigned position);
 
-    void go_to_type_or_colon_or_equal_sign_or_opening_brace_state(const char symbol, const unsigned position);
+    void go_to_type_or_colon_or_equal_sign_or_opening_brace_state();
 
     void go_to_attribute_state();
 

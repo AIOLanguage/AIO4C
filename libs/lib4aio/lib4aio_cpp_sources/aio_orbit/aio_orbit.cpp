@@ -24,7 +24,7 @@ namespace lib4aio {
     aio_orbit<T>::aio_orbit()
     {
         this->particle_mode = AIO_ALL_PARTICLES_SCAN;
-        this->particle_list = new array_list<aio_particle<T>>();
+        this->particle_list = new array_list<aio_particle<T>>(true);
         //Set to zero:
         this->radius = nullptr;
     }
@@ -123,7 +123,6 @@ namespace lib4aio {
     template<typename T>
     aio_orbit<T>::~aio_orbit()
     {
-        this->particle_list->free_elements();
         delete this->particle_list;
         delete this->radius;
     }

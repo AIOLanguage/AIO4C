@@ -23,7 +23,6 @@ struct aio_file : public aio_space {
 
     ~aio_file();
 
-    //abstract.robot.Robot
     const char *absolute_path;
 
     str_builder *content;

@@ -27,7 +27,7 @@
 
 #define AIO_FIELD_PARTICLE_DEBUG
 
-#define AIO_FIELD_PARTICLE_ERROR_TAG "AIO_FIELD_PARTICLE_ERROR_TAG"
+#define AIO_FIELD_PARTICLE_ERROR_TAG "AIO_FIELD_PARTICLE_ERROR"
 
 #ifdef AIO_FIELD_PARTICLE_DEBUG
 
@@ -106,14 +106,13 @@ void aio_field_particle::monitor_modifier(const char symbol, const unsigned posi
 {
     const bool is_separator_cond = is_space_or_line_break(symbol);
     switch (this->trigger_mode) {
-        case AIO_TRIGGER_MODE_PASSIVE: {
+        case AIO_TRIGGER_MODE_PASSIVE:
             if (!is_separator_cond) {
                 this->trigger_mode = AIO_TRIGGER_MODE_ACTIVE;
                 this->token_holder->start = position;
             }
-        }
             break;
-        case AIO_TRIGGER_MODE_ACTIVE: {
+        case AIO_TRIGGER_MODE_ACTIVE:
             if (is_separator_cond) {
                 //Capture modifier:
                 this->token_holder->end = position;
@@ -147,7 +146,6 @@ void aio_field_particle::monitor_modifier(const char symbol, const unsigned posi
                     }
                 }
             }
-        }
     }
 }
 
@@ -409,6 +407,10 @@ void aio_field_particle::set_value(const bool is_end_of_holder, const unsigned p
 
 unsigned aio_field_particle::illuminate(aio_schemable *schemable)
 {
+    //Prepare:
+    if (!this->field->type) {
+        this->field->type = new str_hook(AUTO);
+    }
     //TODO: Make put for schemable:
     schemable->fields->add(this->field);
     schemable->instructions->add(this->task);

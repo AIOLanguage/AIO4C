@@ -12,10 +12,12 @@
 #include <lib4aio_cpp_headers/utils/string_utils/common.h>
 #include <lib4aio_cpp_headers/utils/char_utils/char_utils.h>
 #include <lib4aio_cpp_headers/utils/error_utils/error_utils.h>
+#include <lib4aio_cpp_headers/utils/array_list_utils/array_list.h>
+#include <lib4aio_cpp_sources/utils/array_list_utils/array_list.cpp>
 #include <lib4aio_cpp_headers/utils/str_hook_utils/str_hook/str_hook.h>
 #include <lib4aio_cpp_headers/utils/str_hook_utils/str_hook_list/str_hook_list.h>
 
-#define AIO_FUNCTION_PARTICLE_ERROR_TAG "AIO_FUNCTION_PARTICLE_ERROR_TAG"
+#define AIO_FUNCTION_PARTICLE_ERROR_TAG "AIO_FUNCTION_PARTICLE_TAG"
 
 #define AIO_FUNCTION_PARTICLE_DEBUG
 
@@ -25,6 +27,8 @@
 
 //lib4aio:
 #include <lib4aio_cpp_headers/utils/log_utils/log_utils.h>
+#include <iostream>
+#include <aio_lang/aio_types/aio_types.h>
 
 #endif
 
@@ -54,15 +58,17 @@ void aio_function_particle::reset()
 
 unsigned aio_function_particle::illuminate(aio_space *space)
 {
+    if (!this->function->output_type) {
+        this->function->output_type = new str_hook(AUTO);
+    }
     //TODO: Make put for schemable:
     space->functions->add(this->function);
     this->function = new aio_function();
+#ifdef AIO_FUNCTION_PARTICLE_DEBUG
+    log_info(AIO_FUNCTION_PARTICLE_INFO_TAG, "COMPLETE!");
+#endif
     return this->token_holder->end;
 }
-
-/**
- * Clean code:
- */
 
 const aio_particle_signal aio_function_particle::handle_symbol(const unsigned position)
 {
@@ -99,18 +105,16 @@ void aio_function_particle::monitor_modifier(const char symbol, const unsigned p
 {
     const bool is_separator_cond = is_space_or_line_break(symbol);
     switch (this->trigger_mode) {
-        case AIO_TRIGGER_MODE_PASSIVE: {
+        case AIO_TRIGGER_MODE_PASSIVE:
             if (!is_separator_cond) {
                 this->trigger_mode = AIO_TRIGGER_MODE_ACTIVE;
                 this->token_holder->start = position;
             }
-        }
             break;
         case AIO_TRIGGER_MODE_ACTIVE: {
             if (is_separator_cond) {
                 //Capture modifier:
                 this->token_holder->end = position;
-
 #ifdef AIO_FUNCTION_PARTICLE_DEBUG
                 log_info_str_hook(AIO_FUNCTION_PARTICLE_INFO_TAG, "Modifier:", this->token_holder);
 #endif
@@ -138,6 +142,8 @@ void aio_function_particle::monitor_name(const char symbol, const unsigned posit
                 if (isalpha(symbol)) {
                     this->trigger_mode = AIO_TRIGGER_MODE_ACTIVE;
                     this->token_holder->start = position;
+                } else {
+                    throw_error_with_tag(AIO_FUNCTION_PARTICLE_ERROR_TAG, "The function name must start with letter!");
                 }
             }
             break;
@@ -187,7 +193,7 @@ void aio_function_particle::monitor_args(const char symbol, const unsigned posit
                 if (this->counter_trigger == 0) {
                     this->token_holder->end = position;
                     this->set_args();
-                    this->go_to_type_or_colon_or_equal_sign_or_opening_brace_state(symbol, position);
+                    this->go_to_type_or_colon_or_equal_sign_or_opening_brace_state();
                 }
             }
             break;
@@ -212,57 +218,61 @@ void aio_function_particle::set_args()
 {
     this->token_holder
             ->split_by_comma()
-            ->foreach([this](str_hook *chunk) {
-                array_list<str_hook> *arg_content = chunk
+            ->foreach([this](str_hook *arg_and_type) {
+#ifdef AIO_FUNCTION_PARTICLE_DEBUG
+                log_info_str_hook(AIO_FUNCTION_PARTICLE_INFO_TAG, "CHUNK:", arg_and_type);
+#endif
+                array_list<str_hook> *arg_or_type = arg_and_type
                         ->split_by_whitespace()
-                        ->filter_itself([](const str_hook *token) -> bool {
+                        ->filter([](const str_hook *token) -> bool {
                             return token->is_not_empty();
+                        })->foreach([](const str_hook *token) {
+                            log_info_str_hook(AIO_FUNCTION_PARTICLE_INFO_TAG, "TOKEN:", token);
                         });
-                if (arg_content->get_size() == ARG_PART_COUNT) {
+                if (arg_or_type->get_size() == ARG_PART_COUNT) {
                     //Create arg by AIO standard:
                     aio_field *arg = new aio_field();
                     arg->is_const = ARG_STABILITY;
                     arg->visibility_type = AIO_VISIBILITY_LOCAL;
                     arg->is_static = IS_GLOBAL_ARG;
                     //Check name:
-                    str_hook *name = arg_content->get(ARG_NAME_INDEX);
+                    str_hook *name = arg_or_type->get(ARG_NAME_INDEX);
                     if (name->is_word()) {
-                        arg->name = name;
+                        arg->name = new str_hook(name);
                     } else {
                         throw_error_with_tag(AIO_FUNCTION_PARTICLE_ERROR_TAG, "Incorrect arg name!");
                     }
                     //Check type:
-                    str_hook *type = arg_content->get(ARG_TYPE_INDEX);
+                    str_hook *type = arg_or_type->get(ARG_TYPE_INDEX);
                     bool is_array = false;
                     if (type->ends_with(ARRAY_BRACKETS)) {
                         type->end -= ARRAY_BRACKET_SIZE;
                         is_array = true;
                     }
                     if (type->is_word()) {
-                        arg->type = type;
+                        arg->type = new str_hook(type);
                         arg->is_array = is_array;
                     } else {
                         throw_error_with_tag(AIO_FUNCTION_PARTICLE_ERROR_TAG, "Incorrect arg type!");
                     }
                     //Put arg:
+#ifdef AIO_FUNCTION_PARTICLE_DEBUG
+                    log_aio_field(arg);
+#endif
                     this->function->fields->add(arg);
+                    this->function->arg_count++;
                 } else {
                     throw_error_with_tag(AIO_FUNCTION_PARTICLE_ERROR_TAG, "Expected 'name' 'type'");
                 }
-                delete arg_content;
+                delete arg_or_type;
             })
-            ->free_elements()
             ->~array_list();
 }
 
-void aio_function_particle::go_to_type_or_colon_or_equal_sign_or_opening_brace_state(
-        const char symbol,
-        const unsigned position
-)
+void aio_function_particle::go_to_type_or_colon_or_equal_sign_or_opening_brace_state()
 {
     this->monitor_mode = AIO_MONITOR_TYPE_OR_COLON_OR_EQUAL_SIGN_OR_OPENING_BRACE;
     this->trigger_mode = AIO_TRIGGER_MODE_PASSIVE;
-    this->monitor_type_or_colon_or_equal_sign_or_opening_brace(symbol, position);
 }
 
 void aio_function_particle::monitor_type_or_colon_or_equal_sign_or_opening_brace(
@@ -270,6 +280,9 @@ void aio_function_particle::monitor_type_or_colon_or_equal_sign_or_opening_brace
         const unsigned position
 )
 {
+#ifdef AIO_FUNCTION_PARTICLE_DEBUG
+    log_info_char(AIO_FUNCTION_PARTICLE_INFO_TAG, "TCHAR", symbol);
+#endif
     switch (this->trigger_mode) {
         case AIO_TRIGGER_MODE_PASSIVE:
             if (is_equal_sign(symbol)) {
@@ -426,6 +439,7 @@ void aio_function_particle::monitor_value(const char symbol, const unsigned posi
     if (in_expression_scope) {
         switch (this->trigger_mode) {
             case AIO_TRIGGER_MODE_PASSIVE:
+                //Any end symbol of expression:
                 if (is_letter_or_number || is_closing_parenthesis(symbol) || is_single_quote_cond) {
                     this->trigger_mode = AIO_TRIGGER_MODE_ACTIVE;
 
@@ -479,7 +493,6 @@ void aio_function_particle::set_single_return_instruction(const bool is_end_of_h
 
 void aio_function_particle::monitor_body(const char symbol, const unsigned position)
 {
-
     const bool is_opening_brace_cond = is_opening_brace(symbol);
     switch (this->trigger_mode) {
         case AIO_TRIGGER_MODE_PASSIVE:
@@ -511,7 +524,7 @@ void aio_function_particle::set_body()
     //Launch particles:
     aio_orbit<aio_schemable>::create()
             ->set_pivot(this->function)
-            ->set_radius(this->token_holder)
+            ->set_radius(new str_hook(this->token_holder))
 //            ->set_particle()
 //            ->spin()
             ->finish();

@@ -9,14 +9,12 @@
 
 aio_schemable::aio_schemable()
 {
-    this->instructions = new array_list<aio_task>();
-    this->fields = new array_list<aio_field>();
+    this->instructions = new array_list<aio_task>(true);
+    this->fields = new array_list<aio_field>(true);
 }
 
 aio_schemable::~aio_schemable()
 {
-    this->instructions->free_elements();
-    this->fields->free_elements();
     delete this->instructions;
     delete this->fields;
 }

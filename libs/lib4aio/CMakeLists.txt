@@ -8,7 +8,6 @@ add_library(
         lib4aio
         #---------------------------------------------------------------------------------------------------------------
         #HEADERS:
-        lib4aio_cpp_headers/utils/pair/aio_pair.h
         lib4aio_cpp_headers/aio_orbit/aio_orbit.h
         lib4aio_cpp_headers/utils/string_utils/cast.h
         lib4aio_cpp_headers/utils/string_utils/trim.h
@@ -36,7 +35,6 @@ add_library(
         lib4aio_cpp_headers/utils/str_hook_utils/str_hook_iterator/str_hook_iterator.h
         #---------------------------------------------------------------------------------------------------------------
         #SOURCES:
-        lib4aio_cpp_sources/utils/pair/aio_pair.cpp
         lib4aio_cpp_sources/aio_orbit/aio_orbit.cpp
         lib4aio_cpp_sources/utils/string_utils/cast.cpp
         lib4aio_cpp_sources/utils/string_utils/trim.cpp

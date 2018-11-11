@@ -10,8 +10,6 @@
 #include <lib4aio_cpp_sources/utils/array_list_utils/array_list.cpp>
 #include <lib4aio_cpp_headers/utils/str_hook_utils/str_hook/str_hook.h>
 
-#define AIO_FILE_PARENT nullptr
-
 using namespace lib4aio;
 
 aio_file::aio_file(str_builder *content, const char *absolute_file_path)
@@ -19,12 +17,11 @@ aio_file::aio_file(str_builder *content, const char *absolute_file_path)
     this->visibility_type = AIO_VISIBILITY_PUBLIC;
     this->content = content;
     this->absolute_path = absolute_file_path;
-    this->additions = new array_list<str_hook>();
+    this->additions = new array_list<str_hook>(true);
 }
 
 aio_file::~aio_file()
 {
-    this->additions->free_elements();
     delete this->absolute_path;
     delete this->additions;
     delete this->content;

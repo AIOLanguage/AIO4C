@@ -7,11 +7,10 @@
 
 aio_annotatable::aio_annotatable()
 {
-    this->marknames = new array_list<aio_class>();
+    this->marknames = new array_list<aio_class>(true);
  }
 
 aio_annotatable::~aio_annotatable()
 {
-    this->marknames->free_elements();
     delete this->marknames;
 }

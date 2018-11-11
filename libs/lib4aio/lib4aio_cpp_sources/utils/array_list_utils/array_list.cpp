@@ -8,8 +8,9 @@ namespace lib4aio {
 #define INIT_CAPACITY 2
 
     template<class T>
-    array_list<T>::array_list()
+    array_list<T>::array_list(bool holder_mode)
     {
+        this->holder_mode = holder_mode;
         this->capacity = INIT_CAPACITY;
         this->size = 0;
         this->elements = (T **) calloc(INIT_CAPACITY, sizeof(T));
@@ -31,32 +32,11 @@ namespace lib4aio {
         this->elements[this->size++] = element;
     }
 
-    template<class T>
-    unsigned array_list<T>::get_size() const
-    {
-        return this->size;
-    }
-
-    template<class T>
-    array_list<T> *array_list<T>::filter(function<bool(const T *)> func) const
-    {
-        auto size = this->size;
-        auto elements = this->elements;
-        auto new_list = new array_list<T>();
-        for (unsigned k = 0; k < size; ++k) {
-            auto element = elements[k];
-            if (func(element)) {
-                new_list->add(element);
-            }
-        }
-        return new_list;
-    }
-
     template<typename T>
-    array_list<T> *array_list<T>::filter_itself(function<bool(const T *)> func)
+    inline array_list<T> *array_list<T>::filter(function<bool(const T *)> func)
     {
         for (unsigned i = 0; i < this->size; ++i) {
-            T *element = this->elements;
+            T *element = this->elements[i];
             if (!func(element)) {
                 this->remove(element);
             }
@@ -65,7 +45,7 @@ namespace lib4aio {
     }
 
     template<class T>
-    array_list <T> * array_list<T>::foreach(function<void(T *)> func) const
+    inline array_list<T> *array_list<T>::foreach(function<void(T *)> func)
     {
         auto size = this->size;
         auto elements = this->elements;
@@ -75,28 +55,8 @@ namespace lib4aio {
         return this;
     }
 
-    template<class T>
-    array_list <T> * array_list<T>::free_elements()
-    {
-        const unsigned size = this->size;
-        T **elements = this->elements;
-        for (unsigned i = 0; i < size; ++i) {
-            delete elements[i];
-        }
-    }
-
-    template<class T>
-    array_list<T>::~array_list()
-    {
-        for (unsigned i = 0; i < this->size; ++i) {
-            this->elements = nullptr;
-        }
-        delete this->elements;
-    }
-
-
     template<typename T>
-    bool array_list<T>::contains_by(function<bool(const T *)> func)
+    inline bool array_list<T>::contains_by(function<bool(const T *)> func) const
     {
         for (unsigned i = 0; i < this->size; ++i) {
             if (func(this->elements[i])) {
@@ -107,20 +67,7 @@ namespace lib4aio {
     }
 
     template<typename T>
-    T *&array_list<T>::operator[](unsigned index)
-    {
-        std::cout << "[]" << endl;
-        return this->elements[index];
-    }
-
-    template<typename T>
-    T *array_list<T>::get(unsigned index) const
-    {
-        return this->elements[index];
-    }
-
-    template<typename T>
-    T *array_list<T>::find_by(function<bool(T *)> func) const
+    inline T *array_list<T>::find_by(function<bool(T *)> func) const
     {
         bool is_found = false;
         T *unique_element = nullptr;
@@ -139,21 +86,114 @@ namespace lib4aio {
     }
 
     template<typename T>
+    inline array_list<T> *array_list<T>::collect_by(function<bool(T *)> func)
+    {
+        array_list<T> *collected_list = new array_list<T>();
+        for (unsigned i = 0; i < this->size; ++i) {
+            T *element = this->elements[i];
+            if (func(element)) {
+                collected_list->add(element);
+            }
+        }
+        return collected_list;
+    }
+
+    template<typename T>
+    void array_list<T>::reduce()
+    {
+        if (this->size == this->capacity / 2) {
+            this->capacity /= INIT_CAPACITY;
+            this->elements = (T **) (realloc(this->elements, this->capacity * sizeof(T)));
+        }
+    }
+
+    template<typename T>
+    bool array_list<T>::remove(T *element)
+    {
+        for (unsigned i = 0; i < this->size; ++i) {
+            if (this->elements[i] == element) {
+                return this->remove(i);
+            }
+        }
+        return false;
+    }
+
+    template<typename T>
+    bool array_list<T>::remove(const unsigned position)
+    {
+        if (position <= this->size) {
+            T *element = this->elements[position];
+            this->elements[position] = nullptr;
+            if (this->holder_mode) {
+                this->shift_to_left(position);
+            } else {
+                bool has_references = false;
+                for (unsigned i = position + 1; i < this->size; ++i) {
+                    if (element == this->elements[i]) {
+                        this->shift_to_left(position);
+                        has_references = true;
+                        break;
+                    }
+                }
+                if (!has_references) {
+                    delete element;
+                }
+            }
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    template<typename T>
+    void array_list<T>::shift_to_left(const unsigned position)
+    {
+        this->size--;
+        for (unsigned i = position; i < this->size; ++i) {
+            this->elements[i] = this->elements[i + 1];
+        }
+    }
+
+    /**
+     * Boilerplate.
+     */
+
+    template<class T>
+    array_list<T>::~array_list()
+    {
+        for (unsigned i = 0; i < this->size; ++i) {
+            T *element = this->elements[i];
+            this->elements[i] = nullptr;
+            if (this->holder_mode) {
+                delete element;
+            }
+        }
+        delete this->elements;
+    }
+
+    template<class T>
+    unsigned array_list<T>::get_size() const
+    {
+        return this->size;
+    }
+
+    template<typename T>
     T *array_list<T>::last()
     {
         return this->elements[this->size - 1];
     }
 
+
     template<typename T>
-    array_list<T> *array_list<T>::collect_by(function<bool(T *)> func)
+    T *&array_list<T>::operator[](const unsigned index)
     {
-        array_list<T> *collected_list = new array_list<T>();
-        for (unsigned i = 0; i < this->size; ++i) {
-            T *element = this->elements[i];
-            if (func) {
-                collected_list->add(element);
-            }
-        }
-        return collected_list;
+        std::cout << "[]" << endl;
+        return this->elements[index];
+    }
+
+    template<typename T>
+    T *array_list<T>::get(const unsigned index) const
+    {
+        return this->elements[index];
     }
 }

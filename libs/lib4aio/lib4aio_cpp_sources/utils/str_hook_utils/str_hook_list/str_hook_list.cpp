@@ -6,6 +6,6 @@
 namespace lib4aio
 {
 
-    str_hook_list::str_hook_list() : array_list()
+    str_hook_list::str_hook_list() : array_list(true)
     {}
 }

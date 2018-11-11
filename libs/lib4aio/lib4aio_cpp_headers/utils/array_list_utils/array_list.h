@@ -12,33 +12,29 @@ namespace lib4aio {
 
     public:
 
-        array_list();
+        array_list(bool holder_mode);
 
         ~array_list();
 
         unsigned get_size() const;
 
-        T *get(unsigned index) const;
-
-        T* last();
-
-        T *&operator[](unsigned index);
+        T *get(const unsigned index) const;
 
         void add(T *element);
 
-        array_list<T> *filter(function<bool(const T *)> func) const;
+        bool remove(T *element);
 
-        array_list<T> *filter_itself(function<bool(const T *)> func);
+        bool remove(const unsigned position);
 
-        array_list<T> * foreach(function<void(T *)> func) const;
+        inline array_list<T> *filter(function<bool(const T *)> func);
 
-        array_list<T> * free_elements();
+        inline array_list<T> *foreach(function<void(T *)> func);
 
-        bool contains_by(function<bool(const T *)> func);
+        inline bool contains_by(function<bool(const T *)> func) const;
 
-        T *find_by(function<bool(T *)> func) const;
+        inline T *find_by(function<bool(T *)> func) const;
 
-        array_list<T> *collect_by(function<bool(T *)> func);
+        inline array_list<T> *collect_by(function<bool(T *)> func);
 
         class array_list_iterator {
 
@@ -83,6 +79,10 @@ namespace lib4aio {
         private:
             T **p_element;
         };
+
+        T *last();
+
+        T *&operator[](const unsigned index);
 
         array_list_iterator begin()
         {
@@ -149,6 +149,8 @@ namespace lib4aio {
 
     private:
 
+        bool holder_mode;
+
         unsigned capacity;
 
         unsigned size;
@@ -156,6 +158,10 @@ namespace lib4aio {
         T **elements;
 
         void grow();
+
+        void reduce();
+
+        void shift_to_left(const unsigned position);
     };
 }
 

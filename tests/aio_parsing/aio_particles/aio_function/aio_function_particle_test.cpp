@@ -5,6 +5,7 @@
 #include <aio_lang/aio_types/aio_types.h>
 #include <aio_lang/aio_space/aio_space.h>
 #include <aio_lang/aio_schemable/aio_schemable.h>
+#include <aio_lang/aio_invokable/aio_function/aio_function.h>
 //parsing:
 #include <aio_parsing/aio_particles/aio_field/aio_field_particle.h>
 //lib4aio:
@@ -16,7 +17,6 @@
 #include <lib4aio_cpp_headers/utils/color_utils/color_utils.h>
 #include <lib4aio_cpp_sources/utils/array_list_utils/array_list.cpp>
 #include <lib4aio_cpp_headers/utils/str_hook_utils/str_hook/str_hook.h>
-#include <aio_lang/aio_invokable/aio_function/aio_function.h>
 #include <aio_parsing/aio_particles/aio_function/aio_function_particle.h>
 
 #define TEST_PATH "../tests/aio_parsing/aio_particles/aio_function/"
@@ -48,10 +48,10 @@ TEST_F(aio_function_particle_test, sample_1)
 
     //Create template:
     aio_space *schemable = new aio_space();
-    aio_particle<aio_schemable> *function_particle = (aio_particle<aio_schemable> *) new aio_function_particle();
+    aio_function_particle *function_particle = new aio_function_particle();
 
     //Test field:
-    aio_orbit<aio_schemable>::create()
+    aio_orbit<aio_space>::create()
             ->set_pivot(schemable)
             ->set_radius(radius)
             ->set_particle(function_particle)

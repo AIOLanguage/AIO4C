@@ -6,7 +6,7 @@
 template<class T>
 aio_inheritable<T>::aio_inheritable()
 {
-    this->parents = new array_list<T>();
+    this->parents = new array_list<T>(false);
 }
 
 template<class T>
