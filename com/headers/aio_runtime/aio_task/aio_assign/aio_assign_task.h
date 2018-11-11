@@ -24,6 +24,8 @@ public:
 
     void perform(aio_ray *ray);
 
+    bool equals(aio_task *task) const;
+
     void set_name(str_hook *name);
 
     void set_value(char *value);

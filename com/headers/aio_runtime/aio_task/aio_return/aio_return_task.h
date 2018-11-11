@@ -13,9 +13,11 @@ public:
 
     void perform(aio_ray *ray);
 
+    bool equals(aio_task *task) const;
+
     char *get_value();
 
-    void set_value(char * value);
+    void set_value(char *value);
 
 private:
 

@@ -20,6 +20,26 @@ aio_field::~aio_field()
     delete this->type;
 }
 
+bool aio_field::equals(const aio_field *other) const
+{
+    if ((!this->name && other->name) || (this->name && !other->name)) {
+        return false;
+    }
+    if (!this->name->equals_string(other->name)) {
+        return false;
+    }
+    if ((!this->type && other->type) || (this->type && !other->type)) {
+        return false;
+    }
+    if (!this->type->equals_string(other->type)) {
+        return false;
+    }
+    return this->is_array == other->is_array
+           && this->is_const == other->is_const
+           && this->is_static == other->is_static
+           && this->visibility_type == other->visibility_type;
+}
+
 void log_aio_field(const aio_field *field)
 {
     log_info(AIO_FIELD_INFO, "------------------");

@@ -35,6 +35,8 @@ struct aio_field {
     bool is_static;
 
     aio_visibility visibility_type;
+
+    bool equals(const aio_field *other) const;
 };
 
 void log_aio_field(const aio_field * field);

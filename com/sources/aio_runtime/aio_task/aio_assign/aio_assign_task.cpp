@@ -1,3 +1,6 @@
+//native:
+#include <cstring>
+#include <typeinfo>
 //runtime:
 //#include <aio_runtime/aio_task/aio_task.cpp>
 #include <aio_runtime/aio_task/aio_assign/aio_assign_task.h>
@@ -37,4 +40,23 @@ const str_hook *aio_assign_task::get_name() const
 const char *aio_assign_task::get_value() const
 {
     return this->value;
+}
+
+bool aio_assign_task::equals(aio_task *task) const
+{
+    //Check type:
+    if (typeid(task) != typeid(aio_assign_task)) {
+        return false;
+    }
+    aio_assign_task *other = (aio_assign_task *) task;
+    if ((!this->name && other->name) || (this->name && !other->name)) {
+        return false;
+    }
+    if (!this->name->equals_string(other->name)) {
+        return false;
+    }
+    if ((!this->value && other->value) || (this->value && !other->value)) {
+        return false;
+    }
+    return strcmp(this->value, other->value) == 0;
 }
