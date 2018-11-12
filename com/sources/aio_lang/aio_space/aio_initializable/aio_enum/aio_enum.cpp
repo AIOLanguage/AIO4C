@@ -20,7 +20,7 @@ bool aio_enum::operator==(const aio_enum &rhs) const
 {
     return static_cast<const aio_initializable &>(*this)
            == static_cast<const aio_initializable &>(rhs)
-           && this->elements->equals(rhs.elements, aio_field::compare);
+           && this->elements->equals(rhs.elements, aio_field::compare_fields);
 }
 
 bool aio_enum::operator!=(const aio_enum &rhs) const
@@ -28,7 +28,7 @@ bool aio_enum::operator!=(const aio_enum &rhs) const
     return !(rhs == *this);
 }
 
-static bool compare_enums(const aio_enum *o1, const aio_enum *o2)
+bool aio_enum::compare_enums(const aio_enum *o1, const aio_enum *o2)
 {
     return *o1 == *o2;
 }

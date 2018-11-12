@@ -24,7 +24,7 @@ namespace lib4aio {
     }
 
     template<class S>
-    void aio_particle<S>::reset()
+    void aio_particle<S>::recycle()
     {
         this->token_holder->start = 0;
         this->token_holder->end = 0;

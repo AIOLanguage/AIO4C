@@ -17,9 +17,7 @@ public:
 
     void set_value(char *value);
 
-    bool operator==(const aio_return_task &rhs) const;
-
-    bool operator!=(const aio_return_task &rhs) const;
+    bool operator==(const aio_task *task) const;
 
 private:
 

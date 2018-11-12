@@ -171,7 +171,7 @@ namespace lib4aio {
         return !(rhs == *this);
     }
 
-    bool str_hook::compare(const str_hook *o1, const str_hook *o2)
+    bool str_hook::compare_hooks(const str_hook *o1, const str_hook *o2)
     {
         return *o1 == *o2;
     }

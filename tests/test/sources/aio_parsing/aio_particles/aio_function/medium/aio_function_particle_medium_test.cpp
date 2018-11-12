@@ -19,7 +19,7 @@ aio_function *create_function_for_aio_function_medium_test()
 
     //Put attributes:
     expected_function->output_type = new str_hook(DOUBLE);
-    expected_function->visibility_type = AIO_VISIBILITY_PROTECTED;
+    expected_function->visibility = aio_visible::AIO_VISIBILITY_PROTECTED;
     expected_function->is_array_output = true;
 
     //Ready:

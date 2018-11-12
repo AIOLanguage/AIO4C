@@ -15,7 +15,7 @@ aio_field *create_field_1_for_aio_two_fields_test()
     field->type = new str_hook(STRING);
     field->is_array = false;
     field->is_static = false;
-    field->visibility_type = AIO_VISIBILITY_UNDEFINED;
+    field->visibility = aio_visible::AIO_VISIBILITY_UNDEFINED;
     return field;
 }
 
@@ -27,7 +27,7 @@ aio_field *create_field_2_for_aio_two_fields_test()
     field->type = new str_hook(STRING);
     field->is_array = true;
     field->is_static = false;
-    field->visibility_type = AIO_VISIBILITY_PRIVATE;
+    field->visibility = aio_visible::AIO_VISIBILITY_PRIVATE;
     return field;
 }
 

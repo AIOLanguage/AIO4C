@@ -10,7 +10,7 @@ aio_class *create_class_for_aio_class_medium_test()
     clazz->name = new str_hook("IRobot");
     clazz->parent_names->add(new str_hook("IEngineer"));
     clazz->parent_names->add(new str_hook("ITeacher"));
-    clazz->inherited_type = AIO_INHERITED_TYPE_ABSTRACT;
-    clazz->visibility_type = AIO_VISIBILITY_PROTECTED;
+    clazz->inherited_type = aio_inheritable<aio_class>::AIO_INHERITED_TYPE_ABSTRACT;
+    clazz->visibility = aio_visible::AIO_VISIBILITY_PROTECTED;
     return clazz;
 }

@@ -13,4 +13,16 @@ namespace lib4aio
         }
         printf("-\n");
     }
+
+    std::ostream &operator<<(std::ostream &os, const str_hook *hook)
+    {
+        auto end = hook->end;
+        auto source_string = hook->get_string();
+        printf("-");
+        for (int i = hook->start; i < end; ++i) {
+            printf("%c", source_string[i]);
+        }
+        printf("-\n");
+        return os;
+    }
 }

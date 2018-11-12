@@ -141,18 +141,18 @@ void aio_scope_particle::monitor_scope_attributes(const char symbol, const unsig
 #ifdef AIO_SCOPE_PARTICLE_DEBUG
             log_info_str_hook(AIO_SCOPE_PARTICLE_INFO_TAG, "Found attribute:", this->token_holder);
 #endif
-            if (is_private_modifier_cond || is_protected_modifier_cond) {
-                if (this->scope_ptr->visibility_type == AIO_VISIBILITY_UNDEFINED) {
-                    if (is_private_modifier_cond) {
-                        this->scope_ptr->visibility_type = AIO_VISIBILITY_PRIVATE;
-                    }
-                    if (is_protected_modifier_cond) {
-                        this->scope_ptr->visibility_type = AIO_VISIBILITY_PROTECTED;
-                    }
-                } else {
-                    throw_error_with_tag(AIO_SCOPE_PARTICLE_ERROR_TAG, "Visibility attribute already specified!");
-                }
-            }
+//            if (is_private_modifier_cond || is_protected_modifier_cond) {
+//                if (this->scope_ptr->visibility_type == AIO_VISIBILITY_UNDEFINED) {
+//                    if (is_private_modifier_cond) {
+//                        this->scope_ptr->visibility_type = AIO_VISIBILITY_PRIVATE;
+//                    }
+//                    if (is_protected_modifier_cond) {
+//                        this->scope_ptr->visibility_type = AIO_VISIBILITY_PROTECTED;
+//                    }
+//                } else {
+//                    throw_error_with_tag(AIO_SCOPE_PARTICLE_ERROR_TAG, "Visibility attribute already specified!");
+//                }
+//            }
             this->switch_monitor_mode(symbol, position);
         } else {
             //Maybe is annotation:

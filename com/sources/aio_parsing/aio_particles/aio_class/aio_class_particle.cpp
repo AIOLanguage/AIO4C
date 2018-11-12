@@ -1,6 +1,7 @@
 //lang:
 #include <aio_lang/aio_space/aio_space.h>
 #include <aio_lang/aio_modifiers/aio_modifiers.h>
+#include <aio_lang/aio_inheritable/aio_inheritable.h>
 #include <aio_lang/aio_space/aio_initializable/aio_class/aio_class.h>
 //parsing:
 #include <aio_parsing/aio_particles/aio_class/aio_class_particle.h>
@@ -53,6 +54,9 @@ void aio_class_particle::reset()
 unsigned aio_class_particle::illuminate(aio_space *space)
 {
     //TODO: Make put for schemable:
+    if (this->clazz->inherited_type == aio_inheritable<aio_class>::AIO_INHERITED_TYPE_UNDEFINED) {
+        this->clazz->inherited_type = aio_inheritable<aio_class>::AIO_INHERITED_TYPE_CLOSE;
+    }
     space->typenames->add(this->clazz);
     this->clazz = new aio_class();
 #ifdef AIO_CLASS_PARTICLE_DEBUG
@@ -201,12 +205,12 @@ void aio_class_particle::monitor_attribute(const char symbol, const unsigned pos
                 const bool is_abstract = is_aio_abstract_modifier(this->token_holder);
                 const bool is_open = is_aio_open_modifier(this->token_holder);
                 if (is_private || is_protected) {
-                    if (this->clazz->visibility_type == AIO_VISIBILITY_UNDEFINED) {
+                    if (this->clazz->visibility == aio_visible::AIO_VISIBILITY_UNDEFINED) {
                         //Set attribute:
                         if (is_private) {
-                            this->clazz->visibility_type = AIO_VISIBILITY_PRIVATE;
+                            this->clazz->visibility = aio_visible::AIO_VISIBILITY_PRIVATE;
                         } else {
-                            this->clazz->visibility_type = AIO_VISIBILITY_PROTECTED;
+                            this->clazz->visibility = aio_visible::AIO_VISIBILITY_PROTECTED;
                         }
                         //Switch to [:{]:
                         this->go_to_colon_or_opening_brace_state(symbol, position);
@@ -216,12 +220,12 @@ void aio_class_particle::monitor_attribute(const char symbol, const unsigned pos
                         );
                     }
                 } else if (is_abstract || is_open) {
-                    if (this->clazz->inherited_type == AIO_INHERITED_TYPE_UNDEFINED) {
+                    if (this->clazz->inherited_type == aio_inheritable<aio_class>::AIO_INHERITED_TYPE_UNDEFINED) {
                         //Set attribute:
                         if (is_abstract) {
-                            this->clazz->inherited_type = AIO_INHERITED_TYPE_ABSTRACT;
+                            this->clazz->inherited_type = aio_inheritable<aio_class>::AIO_INHERITED_TYPE_ABSTRACT;
                         } else {
-                            this->clazz->inherited_type = AIO_INHERITED_TYPE_OPEN;
+                            this->clazz->inherited_type = aio_inheritable<aio_class>::AIO_INHERITED_TYPE_OPEN;
                         }
                         //Switch to [:{]:
                         this->go_to_colon_or_opening_brace_state(symbol, position);

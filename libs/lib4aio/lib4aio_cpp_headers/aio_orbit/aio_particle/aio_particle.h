@@ -31,7 +31,7 @@ namespace lib4aio {
 
         virtual unsigned illuminate(T *container) = 0;
 
-        virtual void reset();
+        virtual void recycle();
 
     protected:
 

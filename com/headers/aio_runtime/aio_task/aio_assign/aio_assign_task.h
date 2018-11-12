@@ -34,11 +34,7 @@ public:
 
     const char *get_value() const;
 
-    bool operator==(const aio_task &rhs) const;
-
-    bool operator==(const aio_assign_task &rhs) const;
-
-    bool operator!=(const aio_assign_task &rhs) const;
+    bool operator==(const aio_task *task) const;
 
 private:
 

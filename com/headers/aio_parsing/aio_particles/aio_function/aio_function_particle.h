@@ -27,7 +27,7 @@ public:
 
     unsigned illuminate(aio_space *space);
 
-    void reset();
+    void recycle();
 
 private:
 
@@ -93,6 +93,8 @@ private:
     void set_single_return_instruction(const bool is_end_of_holder, const unsigned position);
 
     void set_body();
+
+    void reset();
 };
 
 #endif //AIO_FUNCTION_PARTICLE_H

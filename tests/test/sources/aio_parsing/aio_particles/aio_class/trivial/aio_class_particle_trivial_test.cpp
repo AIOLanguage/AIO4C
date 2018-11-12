@@ -7,7 +7,7 @@ aio_class *create_class_for_aio_class_trivial_test()
 {
     aio_class *clazz = new aio_class();
     clazz->name = new str_hook("Cat");
-    clazz->visibility_type = AIO_VISIBILITY_UNDEFINED;
-    clazz->inherited_type = AIO_INHERITED_TYPE_CLOSE;
+    clazz->visibility = aio_visible::AIO_VISIBILITY_UNDEFINED;
+    clazz->inherited_type = aio_inheritable<aio_class>::AIO_INHERITED_TYPE_CLOSE;
     return clazz;
 }

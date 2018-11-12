@@ -38,24 +38,23 @@ bool aio_visible::operator==(const aio_visible &rhs) const
     return this->visibility == rhs.visibility;
 }
 
-#define LOG_INFO "AIO_VISIBLE"
-
-void aio_visible::log_aio_visibility() const
+std::ostream &operator<<(std::ostream &os, const aio_visible &visible)
 {
-    switch (this->visibility) {
-        case AIO_VISIBILITY_UNDEFINED:
-            log_info(LOG_INFO, "VISIBILITY: UNDEFINED");
+    switch (visible.visibility) {
+        case aio_visible::AIO_VISIBILITY_UNDEFINED:
+            printf("VISIBILITY: UNDEFINED\n");
             break;
-        case AIO_VISIBILITY_LOCAL:
-            log_info(LOG_INFO, "VISIBILITY: LOCAL");
+        case aio_visible::AIO_VISIBILITY_LOCAL:
+            printf("VISIBILITY: LOCAL\n");
             break;
-        case AIO_VISIBILITY_PRIVATE:
-            log_info(LOG_INFO, "VISIBILITY: PRIVATE");
+        case aio_visible::AIO_VISIBILITY_PRIVATE:
+            printf("VISIBILITY: PRIVATE\n");
             break;
-        case AIO_VISIBILITY_PROTECTED:
-            log_info(LOG_INFO, "VISIBILITY: PROTECTED");
+        case aio_visible::AIO_VISIBILITY_PROTECTED:
+            printf("VISIBILITY: PROTECTED\n");
             break;
-        case AIO_VISIBILITY_PUBLIC:
-            log_info(LOG_INFO, "VISIBILITY: PUBLIC");
+        case aio_visible::AIO_VISIBILITY_PUBLIC:
+            printf("VISIBILITY: PUBLIC\n");
     }
+    return os;
 }

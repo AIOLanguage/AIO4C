@@ -69,7 +69,7 @@ TEST_F(aio_function_particle_test, trivial)
     const aio_function *function = space->functions->last();
     //Expected function:
     const aio_function *expected_function = create_function_for_aio_function_trivial_test();
-    ASSERT_TRUE(expected_function->equals(function));
+    ASSERT_TRUE(*expected_function == *function);
 
     //------------------------------------------------------------------------------------------------------------------
     //Free:
@@ -108,7 +108,7 @@ TEST_F(aio_function_particle_test, medium)
     //Create expected function:
     aio_function *expected_function = create_function_for_aio_function_medium_test();
 
-    ASSERT_TRUE(expected_function->equals(function));
+    ASSERT_TRUE(*expected_function == *function);
     //------------------------------------------------------------------------------------------------------------------
     //Free:
     delete space;
@@ -145,8 +145,8 @@ TEST_F(aio_function_particle_test, complex)
     aio_function *expected_function_1 = create_function_for_aio_function_trivial_test();
     aio_function *expected_function_2 = create_function_for_aio_function_medium_test();
 
-    ASSERT_TRUE(expected_function_1->equals(functions->get(0)));
-    ASSERT_TRUE(expected_function_2->equals(functions->get(1)));
+    ASSERT_TRUE(*expected_function_1 == *functions->get(0));
+    ASSERT_TRUE(*expected_function_2 == *functions->get(1));
 
     //------------------------------------------------------------------------------------------------------------------
     //Free:

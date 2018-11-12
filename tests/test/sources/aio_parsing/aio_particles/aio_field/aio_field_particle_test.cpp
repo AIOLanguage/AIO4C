@@ -65,7 +65,7 @@ TEST_F(aio_field_particle_test, trivial)
     const aio_assign_task *actual_task = (aio_assign_task *) schemable->instructions->last();
     //Expected task:
     const aio_assign_task *expected_task = create_task_for_aio_field_trivial_test();
-    ASSERT_TRUE(*actual_task == *expected_task);
+    ASSERT_TRUE(*actual_task == expected_task);
 
     //------------------------------------------------------------------------------------------------------------------
     //Free:
@@ -116,13 +116,13 @@ TEST_F(aio_field_particle_test, two_fields)
     const aio_assign_task *actual_task_1 = (aio_assign_task *) instructions->get(0);
     //Expected task 1:
     aio_assign_task *expected_task_1 = create_task_1_for_aio_two_fields_test();
-    ASSERT_TRUE(*expected_task_1 == *actual_task_1);
+    ASSERT_TRUE(*expected_task_1 == actual_task_1);
 
     //Actual task 2:
     const aio_assign_task *actual_task_2 = (aio_assign_task *) instructions->get(1);
     //Expected task 2:
     const aio_assign_task *expected_task_2 = create_task_2_for_aio_two_fields_test();
-    ASSERT_TRUE(*expected_task_2 == *actual_task_2);
+    ASSERT_TRUE(*expected_task_2 == actual_task_2);
 
     //------------------------------------------------------------------------------------------------------------------
     //Free:

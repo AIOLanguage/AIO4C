@@ -6,6 +6,7 @@
  */
 
 #include <aio_lang/aio_space/aio_space.h>
+#include <ostream>
 
 namespace lib4aio {
 
@@ -19,6 +20,8 @@ struct aio_initializable : public aio_space {
     explicit aio_initializable();
 
     virtual ~aio_initializable();
+
+    friend std::ostream &operator<<(std::ostream &os, const aio_initializable &initializable);
 
     str_hook *name;
 

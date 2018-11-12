@@ -63,7 +63,7 @@ namespace lib4aio {
         //Provide parent to children:
         for (unsigned i = 0; i < list_size; ++i) {
             aio_particle<T> *particle = particle_list->get(i);
-            particle->reset();
+            particle->recycle();
         }
     }
 

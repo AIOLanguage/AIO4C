@@ -12,7 +12,7 @@ aio_field *create_field_for_aio_field_trivial_test()
 {
     aio_field *expected_field = new aio_field();
     expected_field->name = new str_hook("x");
-    expected_field->visibility_type = AIO_VISIBILITY_UNDEFINED;
+    expected_field->visibility = aio_visible::AIO_VISIBILITY_UNDEFINED;
     expected_field->is_static = false;
     expected_field->is_const = true;
     expected_field->is_array = false;

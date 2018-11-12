@@ -56,7 +56,7 @@ TEST_F(aio_class_particle_test, trivial)
     //Actual class:
     aio_class *expected_class = create_class_for_aio_class_trivial_test();
 
-    ASSERT_TRUE(expected_class->equals(actual_class));
+    ASSERT_EQ(*expected_class, *actual_class);
 
     //------------------------------------------------------------------------------------------------------------------
     //Free:

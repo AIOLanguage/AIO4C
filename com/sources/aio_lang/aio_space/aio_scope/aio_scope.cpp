@@ -17,7 +17,7 @@ bool aio_scope::operator!=(const aio_scope &rhs) const
     return !(rhs == *this);
 }
 
-static bool compare_scopes(const aio_scope *o1, const aio_scope *o2)
+bool aio_scope::compare_scopes(const aio_scope *o1, const aio_scope *o2)
 {
     return *o1 == *o2;
 }

@@ -32,7 +32,7 @@ public:
 
     unsigned illuminate(aio_schemable *container);
 
-    void reset();
+    void recycle();
 
 private:
 
@@ -51,6 +51,10 @@ private:
 
     aio_assign_task *task;
 
+    /**
+     * State functions.
+     */
+
     void monitor_modifier(const char symbol, const unsigned position);
 
     void monitor_name(const char symbol, const unsigned position);
@@ -63,6 +67,10 @@ private:
 
     void monitor_colon_or_equal_sign_or_semicolon(const char symbol, const unsigned position);
 
+    /**
+     * Transition functions.
+     */
+
     void go_to_name_state();
 
     void go_to_type_or_colon_or_equal_sign_state(const char symbol, const unsigned position);
@@ -73,9 +81,15 @@ private:
 
     void go_to_colon_or_equal_sign_or_semicolon_state(const char symbol, const unsigned position);
 
+    /**
+     * Option functions.
+     */
+
     void set_value(const bool is_end_of_holder, const unsigned position);
 
     void set_null();
+
+    void reset();
 };
 
 #endif //AIO_FIELD_PARTICLE_H

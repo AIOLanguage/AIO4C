@@ -1,3 +1,5 @@
+#include <ostream>
+
 namespace lib4aio {
 
 #ifndef LIB4AIO_STRING_HOOK_H
@@ -113,7 +115,9 @@ namespace lib4aio {
 
         bool operator!=(const str_hook &rhs) const;
 
-        static bool compare(const str_hook *o1, const str_hook *o2);
+        static bool compare_hooks(const str_hook *o1, const str_hook *o2);
+
+        friend std::ostream &operator<<(std::ostream &os, const str_hook *hook);
 
     private:
 

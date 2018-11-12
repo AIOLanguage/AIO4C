@@ -33,10 +33,7 @@
 
 aio_function_particle::aio_function_particle()
 {
-    this->function = new aio_function();
-    this->monitor_mode = AIO_MONITOR_MODIFIER;
-    this->trigger_mode = AIO_TRIGGER_MODE_PASSIVE;
-    this->signal = AIO_PARTICLE_SIGNAL_UNDEFINED;
+    this->reset();
 }
 
 aio_function_particle::~aio_function_particle()
@@ -44,15 +41,20 @@ aio_function_particle::~aio_function_particle()
     delete this->function;
 }
 
-void aio_function_particle::reset()
+void aio_function_particle::recycle()
 {
     aio_function *old_function = this->function;
+    delete old_function;
+    this->reset();
+}
+
+void aio_function_particle::reset()
+{
     this->function = new aio_function();
     this->counter_trigger = 0;
     this->monitor_mode = AIO_MONITOR_MODIFIER;
     this->trigger_mode = AIO_TRIGGER_MODE_PASSIVE;
     this->signal = AIO_PARTICLE_SIGNAL_UNDEFINED;
-    delete old_function;
 }
 
 unsigned aio_function_particle::illuminate(aio_space *space)
@@ -235,7 +237,7 @@ void aio_function_particle::set_args()
                     //Create arg by AIO standard:
                     aio_field *arg = new aio_field();
                     arg->is_const = ARG_STABILITY;
-                    arg->visibility_type = AIO_VISIBILITY_LOCAL;
+                    arg->visibility = aio_visible::AIO_VISIBILITY_LOCAL;
                     arg->is_static = IS_GLOBAL_ARG;
                     //Check name:
                     str_hook *name = arg_or_type->get(ARG_NAME_INDEX);
@@ -259,7 +261,7 @@ void aio_function_particle::set_args()
                     }
                     //Put arg:
 #ifdef AIO_FUNCTION_PARTICLE_DEBUG
-                    log_aio_field(arg);
+                    arg->log();
 #endif
                     this->function->fields->add(arg);
                     this->function->arg_count++;
@@ -394,12 +396,12 @@ void aio_function_particle::monitor_attribute(const char symbol, const unsigned 
                 const bool is_private = is_aio_private_modifier(this->token_holder);
                 const bool is_protected = is_aio_protected_modifier(this->token_holder);
                 if (is_private || is_protected) {
-                    if (this->function->visibility_type == AIO_VISIBILITY_UNDEFINED) {
+                    if (this->function->visibility == aio_visible::AIO_VISIBILITY_UNDEFINED) {
                         //Set attribute:
                         if (is_private) {
-                            this->function->visibility_type = AIO_VISIBILITY_PRIVATE;
+                            this->function->visibility = aio_visible::AIO_VISIBILITY_PRIVATE;
                         } else {
-                            this->function->visibility_type = AIO_VISIBILITY_PROTECTED;
+                            this->function->visibility = aio_visible::AIO_VISIBILITY_PROTECTED;
                         }
                         //Switch to [:=;]:
 

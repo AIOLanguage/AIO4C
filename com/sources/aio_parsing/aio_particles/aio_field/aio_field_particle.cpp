@@ -5,6 +5,7 @@
 #include <aio_lang/aio_space/aio_space.h>
 #include <aio_lang/aio_field/aio_field.h>
 #include <aio_lang/aio_types/aio_types.h>
+#include <aio_lang/aio_visible/aio_visible.h>
 #include <aio_lang/aio_schemable/aio_schemable.h>
 #include <aio_lang/aio_modifiers/aio_modifiers.h>
 //parsing:
@@ -45,12 +46,7 @@ using namespace lib4aio;
 
 aio_field_particle::aio_field_particle()
 {
-    this->field = new aio_field();
-    this->task = new aio_assign_task();
-    this->monitor_mode = AIO_MONITOR_MODIFIER;
-    this->trigger_mode = AIO_TRIGGER_MODE_PASSIVE;
-    this->signal = AIO_PARTICLE_SIGNAL_UNDEFINED;
-    this->whitespace_counter = 0;
+    this->reset();
 }
 
 aio_field_particle::~aio_field_particle()
@@ -59,18 +55,25 @@ aio_field_particle::~aio_field_particle()
     delete this->field;
 }
 
-void aio_field_particle::reset()
+void aio_field_particle::recycle()
 {
     aio_assign_task *old_task = this->task;
     aio_field *old_field = this->field;
-    this->task = new aio_assign_task();
+    delete old_task;
+    delete old_field;
+    this->reset();
+}
+
+void aio_field_particle::reset()
+{
     this->field = new aio_field();
-    this->whitespace_counter = 0;
+    this->field->is_static = false;
+    this->field->is_array = false;
+    this->task = new aio_assign_task();
     this->monitor_mode = AIO_MONITOR_MODIFIER;
     this->trigger_mode = AIO_TRIGGER_MODE_PASSIVE;
     this->signal = AIO_PARTICLE_SIGNAL_UNDEFINED;
-    delete old_task;
-    delete old_field;
+    this->whitespace_counter = 0;
 }
 
 /**
@@ -159,10 +162,6 @@ void aio_field_particle::go_to_name_state()
 
 void aio_field_particle::monitor_name(const char symbol, const unsigned position)
 {
-#ifdef AIO_FIELD_PARTICLE_DEBUG
-    log_info_char(AIO_FIELD_PARTICLE_INFO_TAG, "CHAR:::", symbol);
-    log_info_int(AIO_FIELD_PARTICLE_INFO_TAG, "POSITION", position);
-#endif
     switch (this->trigger_mode) {
         case AIO_TRIGGER_MODE_PASSIVE:
             if (!is_space_or_line_break(symbol)) {
@@ -183,12 +182,6 @@ void aio_field_particle::monitor_name(const char symbol, const unsigned position
                 this->field->name = new str_hook(this->token_holder);
                 //Set name for task:
                 this->task->set_name(new str_hook(this->token_holder));
-#ifdef AIO_FIELD_PARTICLE_DEBUG
-                log_info_str_hook(AIO_FIELD_PARTICLE_INFO_TAG, "Field name:", this->field->name);
-                log_info_str_hook(AIO_FIELD_PARTICLE_INFO_TAG, "Task destination", this->task->get_name());
-#endif
-
-
                 //Switch to [<type>:=]:
                 this->go_to_type_or_colon_or_equal_sign_state(symbol, position);
             }
@@ -293,12 +286,12 @@ void aio_field_particle::monitor_attribute(const char symbol, const unsigned pos
                 const bool is_private = is_aio_private_modifier(this->token_holder);
                 const bool is_protected = is_aio_protected_modifier(this->token_holder);
                 if (is_private || is_protected) {
-                    if (this->field->visibility_type == AIO_VISIBILITY_UNDEFINED) {
+                    if (this->field->visibility == aio_visible::AIO_VISIBILITY_UNDEFINED) {
                         //Set attribute:
                         if (is_private) {
-                            this->field->visibility_type = AIO_VISIBILITY_PRIVATE;
+                            this->field->visibility = aio_visible::AIO_VISIBILITY_PRIVATE;
                         } else {
-                            this->field->visibility_type = AIO_VISIBILITY_PROTECTED;
+                            this->field->visibility = aio_visible::AIO_VISIBILITY_PROTECTED;
                         }
                         //Switch to [:=;]:
                         this->go_to_colon_or_equal_sign_or_semicolon_state(symbol, position);
@@ -339,10 +332,6 @@ void aio_field_particle::set_null()
 
 void aio_field_particle::monitor_value(const char symbol, const unsigned position)
 {
-#ifdef AIO_FIELD_PARTICLE_DEBUG
-    log_info_char(AIO_FIELD_PARTICLE_INFO_TAG, "Char:", symbol);
-#endif
-
     const bool is_single_quote_cond = is_single_quote(symbol);
     if (is_single_quote_cond) {
         this->is_inside_string = !this->is_inside_string;
@@ -354,7 +343,6 @@ void aio_field_particle::monitor_value(const char symbol, const unsigned positio
     if (is_end_of_holder) {
         this->set_value(true, position);
     }
-    log_info_int(AIO_FIELD_PARTICLE_INFO_TAG, "COUNTER:", this->whitespace_counter);
     if (in_expression_scope) {
         switch (this->trigger_mode) {
             case AIO_TRIGGER_MODE_PASSIVE:
@@ -362,33 +350,15 @@ void aio_field_particle::monitor_value(const char symbol, const unsigned positio
                     this->trigger_mode = AIO_TRIGGER_MODE_ACTIVE;
                     this->whitespace_counter = 0;
 
-#ifdef AIO_FIELD_PARTICLE_DEBUG
-                    log_info(AIO_FIELD_PARTICLE_INFO_TAG, "SUPPOSE END");
-                    log_info_int(AIO_FIELD_PARTICLE_INFO_TAG, "TOKEN END:", this->token_holder->end);
-                    log_info_int(AIO_FIELD_PARTICLE_INFO_TAG, "POS:", position);
-
-#endif
                 }
                 break;
             case AIO_TRIGGER_MODE_ACTIVE:
                 if (is_whitespace_cond) {
                     this->whitespace_counter++;
-#ifdef AIO_FIELD_PARTICLE_DEBUG
-                    log_info(AIO_FIELD_PARTICLE_INFO_TAG, "COUNTER");
-#endif
                 } else if (is_sign(symbol)) {
                     this->trigger_mode = AIO_TRIGGER_MODE_PASSIVE;
                     this->whitespace_counter = 0;
-#ifdef AIO_FIELD_PARTICLE_DEBUG
-                    log_info(AIO_FIELD_PARTICLE_INFO_TAG, "RESET");
-#endif
                 } else if ((is_letter_or_number && this->whitespace_counter > 0) || is_closing_brace(symbol)) {
-#ifdef AIO_FIELD_PARTICLE_DEBUG
-                    log_info(AIO_FIELD_PARTICLE_INFO_TAG, "SET VALUE");
-                    log_info_int(AIO_FIELD_PARTICLE_INFO_TAG, "TOKEN END:", this->token_holder->end);
-                    log_info_int(AIO_FIELD_PARTICLE_INFO_TAG, "POS:", position);
-
-#endif
                     this->set_value(false, position);
                 }
         }
@@ -402,11 +372,6 @@ void aio_field_particle::set_value(const bool is_end_of_holder, const unsigned p
     } else {
         this->token_holder->end = position - this->whitespace_counter;
     }
-#ifdef AIO_FIELD_PARTICLE_DEBUG
-    log_info_int(AIO_FIELD_PARTICLE_INFO_TAG, "TOKEN END>>>:", this->token_holder->end);
-    log_info_int(AIO_FIELD_PARTICLE_INFO_TAG, "POS:", position);
-
-#endif
     char *dirty_value = this->token_holder->to_string();
     char *clean_value = squeeze_string_for_expression(dirty_value);
 #ifdef AIO_FIELD_PARTICLE_DEBUG
@@ -416,17 +381,16 @@ void aio_field_particle::set_value(const bool is_end_of_holder, const unsigned p
     this->token_holder->start = this->token_holder->end;
     this->signal = AIO_PARTICLE_SIGNAL_IS_READY;
     //------------------------------------------------------------------------------------------------------------------
-    //찌거기 수집기:
     free_string(dirty_value);
 }
 
 unsigned aio_field_particle::illuminate(aio_schemable *schemable)
 {
+    //TODO: Make put for schemable:
     //Prepare:
     if (!this->field->type) {
         this->field->type = new str_hook(AUTO);
     }
-    //TODO: Make put for schemable:
     schemable->fields->add(this->field);
     schemable->instructions->add(this->task);
     this->field = new aio_field();

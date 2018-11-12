@@ -14,3 +14,10 @@ aio_initializable::~aio_initializable()
 {
     delete this->constructors;
 }
+
+ostream &operator<<(ostream &os, const aio_initializable &initializable)
+{
+    os << static_cast<const aio_space &>(initializable) << " name: " << initializable.name << " constructors: "
+       << initializable.constructors;
+    return os;
+}

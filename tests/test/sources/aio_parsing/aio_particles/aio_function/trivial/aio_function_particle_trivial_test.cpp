@@ -16,7 +16,7 @@ aio_function *create_function_for_aio_function_trivial_test()
     aio_field *arg1 = new aio_field();
     arg1->name = new str_hook("a");
     arg1->type = new str_hook(INTEGER);
-    arg1->visibility_type = AIO_VISIBILITY_LOCAL;
+    arg1->visibility = aio_visible::AIO_VISIBILITY_LOCAL;
     arg1->is_static = false;
     arg1->is_const = true;
     arg1->is_array = false;
@@ -24,7 +24,7 @@ aio_function *create_function_for_aio_function_trivial_test()
     aio_field *arg2 = new aio_field();
     arg2->name = new str_hook("b");
     arg2->type = new str_hook(INTEGER);
-    arg2->visibility_type = AIO_VISIBILITY_LOCAL;
+    arg2->visibility = aio_visible::AIO_VISIBILITY_LOCAL;
     arg2->is_static = false;
     arg2->is_const = true;
     arg2->is_array = false;
@@ -45,7 +45,7 @@ aio_function *create_function_for_aio_function_trivial_test()
     expected_function->fields = args;
     expected_function->arg_count = 2;
     expected_function->output_type = new str_hook(AUTO);
-    expected_function->visibility_type = AIO_VISIBILITY_UNDEFINED;
+    expected_function->visibility = aio_visible::AIO_VISIBILITY_UNDEFINED;
     expected_function->is_array_output = false;
     expected_function->instructions = tasks;
     return expected_function;

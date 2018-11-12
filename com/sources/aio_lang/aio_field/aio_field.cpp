@@ -48,7 +48,7 @@ bool aio_field::operator!=(const aio_field &rhs) const
     return !(rhs == *this);
 }
 
-void aio_field::log_aio_field() const
+void aio_field::log() const
 {
     log_info(AIO_FIELD_INFO, "------------------");
     log_info_str_hook(AIO_FIELD_INFO, "NAME:", this->name);
@@ -58,6 +58,14 @@ void aio_field::log_aio_field() const
     log_info_boolean(AIO_FIELD_INFO, "IS_STATIC", this->is_static);
 }
 
-bool aio_field::compare(const aio_field *o1, const aio_field *o2){
+bool aio_field::compare_fields(const aio_field *o1, const aio_field *o2)
+{
     return *o1 == *o2;
+}
+
+std::ostream &operator<<(std::ostream &os, const aio_field &field)
+{
+    os << static_cast<const aio_visible &>(field) << " name: " << field.name << " type: " << field.type << " is_array: "
+       << field.is_array << " is_const: " << field.is_const << " is_static: " << field.is_static;
+    return os;
 }

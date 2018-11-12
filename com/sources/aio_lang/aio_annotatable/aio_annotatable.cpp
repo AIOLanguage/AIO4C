@@ -25,7 +25,7 @@ aio_annotatable::~aio_annotatable()
 bool aio_annotatable::operator==(const aio_annotatable &rhs) const
 {
     return this->annotations->equals(rhs.annotations, aio_class::compare_classes)
-    && this->annotation_names->equals(rhs.annotation_names, str_hook::compare);
+           && this->annotation_names->equals(rhs.annotation_names, str_hook::compare_hooks);
 }
 
 bool aio_annotatable::operator!=(const aio_annotatable &rhs) const

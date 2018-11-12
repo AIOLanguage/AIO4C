@@ -36,10 +36,10 @@ bool aio_function::operator!=(const aio_function &rhs) const
     return !(rhs == *this);
 }
 
-bool compare_functions(const aio_function *o1, const aio_function *o2) {
+bool aio_function::compare(const aio_function *o1, const aio_function *o2) const{
     return *o1 == *o2;
 }
 
-bool aio_function::compare(const aio_function *o1, const aio_function *o2){
+bool aio_function::compare_functions(const aio_function *o1, const aio_function *o2) {
     return *o1 == *o2;
 }

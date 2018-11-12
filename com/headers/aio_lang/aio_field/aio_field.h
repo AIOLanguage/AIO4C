@@ -7,6 +7,7 @@
 
 //lang:
 #include <aio_lang/aio_visible/aio_visible.h>
+#include <ostream>
 
 namespace lib4aio {
 
@@ -27,6 +28,10 @@ struct aio_field : public aio_visible {
 
     bool is_static;
 
+    /**
+     * Boilerplate.
+     */
+
     explicit aio_field();
 
     ~aio_field();
@@ -35,9 +40,11 @@ struct aio_field : public aio_visible {
 
     bool operator!=(const aio_field &rhs) const;
 
-    void log_aio_field() const;
+    void log() const;
 
-    static bool compare(const aio_field *o1, const aio_field *o2);
+    static bool compare_fields(const aio_field *o1, const aio_field *o2);
+
+    friend std::ostream &operator<<(std::ostream &os, const aio_field &field);
 };
 
 #endif //AIO_FIELD_H

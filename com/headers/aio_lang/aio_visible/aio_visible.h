@@ -1,6 +1,8 @@
 #ifndef AIO_VISIBLE_H
 #define AIO_VISIBLE_H
 
+#include <ostream>
+
 class aio_visible {
 
 public:
@@ -27,9 +29,9 @@ public:
 
     virtual ~aio_visible();
 
-    void log_aio_visibility() const ;
-
     bool operator==(const aio_visible &rhs) const;
+
+    friend std::ostream &operator<<(std::ostream &os, const aio_visible &visible);
 };
 
 #endif //AIO_VISIBLE_H

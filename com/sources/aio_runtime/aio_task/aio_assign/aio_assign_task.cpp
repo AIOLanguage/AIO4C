@@ -47,29 +47,22 @@ const char *aio_assign_task::get_value() const
  * Boilerplate.
  */
 
-bool aio_assign_task::operator==(const aio_assign_task &rhs) const
+bool aio_assign_task::operator==(const aio_task *task) const
 {
-    const aio_assign_task *other = &rhs;
-    if ((!this->name && other->name) || (this->name && !other->name)) {
+
+    const aio_assign_task *other = dynamic_cast<const aio_assign_task *>(task);
+    if (other) {
+        if ((!this->name && other->name) || (this->name && !other->name)) {
+            return false;
+        }
+        if (!this->name->equals_string(other->name)) {
+            return false;
+        }
+        if ((!this->value && other->value) || (this->value && !other->value)) {
+            return false;
+        }
+        return strcmp(this->value, other->value) == 0;
+    } else {
         return false;
     }
-    if (!this->name->equals_string(other->name)) {
-        return false;
-    }
-    if ((!this->value && other->value) || (this->value && !other->value)) {
-        return false;
-    }
-    return strcmp(this->value, other->value) == 0;
-}
-
-bool aio_assign_task::operator!=(const aio_assign_task &rhs) const
-{
-    return !(rhs == *this);
-}
-
-bool aio_assign_task::operator==(const aio_task &rhs) const
-{
-    const aio_assign_task t = (aio_assign_task) rhs
-    return *this == ;
-
 }

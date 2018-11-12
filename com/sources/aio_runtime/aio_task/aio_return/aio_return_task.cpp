@@ -24,26 +24,18 @@ void aio_return_task::set_value(char *value)
     this->value = value;
 }
 
-bool aio_return_task::operator==(const aio_return_task &rhs) const
+bool aio_return_task::operator==(const aio_task *task) const
 {
-    return static_cast<const aio_task &>(*this) == static_cast<const aio_task &>(rhs) &&
-           value == rhs.value;
-}
-
-bool aio_return_task::operator!=(const aio_return_task &rhs) const
-{
-    return !(rhs == *this);
-}
-
-bool aio_return_task::equals(const aio_task *task) const
-{
-    printf("DDD: \n");
-    aio_return_task *other = (aio_return_task *) task;
-    if ((!this->value && other->value) || (this->value && !other->value)) {
+    const aio_return_task *other = dynamic_cast<const aio_return_task *>(task);
+    if (other) {
+        if ((!this->value && other->value) || (this->value && !other->value)) {
+            return false;
+        }
+        printf("EEEE: \n");
+        printf("MY: %s\n", this->value);
+        printf("OTHER: %s\n", other->value);
+        return strcmp(this->value, other->value) == 0;
+    } else {
         return false;
     }
-    printf("EEEE: \n");
-    printf("MY: %s\n", this->value);
-    printf("OTHER: %s\n", other->value);
-    return strcmp(this->value, other->value) == 0;
 }

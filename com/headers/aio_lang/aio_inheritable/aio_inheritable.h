@@ -35,9 +35,7 @@ struct aio_inheritable {
         AIO_INHERITED_TYPE_ABSTRACT
     } inherited_type;
 
-protected:
-
-    virtual bool compare(const T *o1, const T *o2) = 0;
+    virtual bool compare(const T *o1, const T *o2) const = 0;
 };
 
 #endif //AIO_INHERITABLE_H

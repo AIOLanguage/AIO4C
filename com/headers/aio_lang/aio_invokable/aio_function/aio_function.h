@@ -11,21 +11,19 @@
 
 struct aio_function : public aio_invokable, public aio_inheritable<aio_function> {
 
+    str_hook *name;
+
     explicit aio_function();
 
     ~aio_function();
-
-    str_hook *name;
-
-    bool equals(const aio_function *other) const;
 
     bool operator==(const aio_function &rhs) const;
 
     bool operator!=(const aio_function &rhs) const;
 
-    static bool compare_functions(const aio_function *o1, const aio_function *o2);
+    bool compare(const aio_function *o1, const aio_function *o2) const;
 
-    bool compare(const aio_function *o1, const aio_function *o2);
+    static bool compare_functions(const aio_function *o1, const aio_function *o2);
 };
 
 #endif //AIO_FUNCTION_H
