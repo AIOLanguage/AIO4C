@@ -40,7 +40,7 @@ aio_class_particle::~aio_class_particle()
     delete this->clazz;
 }
 
-void aio_class_particle::reset()
+void aio_class_particle::recycle()
 {
     aio_class *old_clazz = this->clazz;
     this->clazz = new aio_class();
@@ -50,6 +50,12 @@ void aio_class_particle::reset()
     this->signal = AIO_PARTICLE_SIGNAL_UNDEFINED;
     delete old_clazz;
 }
+
+void aio_class_particle::start()
+{
+
+}
+
 
 unsigned aio_class_particle::illuminate(aio_space *space)
 {

@@ -32,7 +32,7 @@ public:
 
     unsigned illuminate(aio_space *space);
 
-    void reset();
+    void recycle();
 
 private:
 
@@ -94,7 +94,8 @@ private:
      */
 
     void set_body();
+
+    void start();
 };
 
 #endif //AIO_CLASS_PARTICLE_H
-#pragma clang diagnostic pop

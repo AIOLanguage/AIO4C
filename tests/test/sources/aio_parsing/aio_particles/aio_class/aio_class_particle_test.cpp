@@ -19,6 +19,7 @@
 //test:
 #include <test/sources/aio_parsing/aio_particles/util/aio_particle_test_common.h>
 #include <test/sources/aio_parsing/aio_particles/aio_class/trivial/aio_class_particle_trivial_test.h>
+#include <test/sources/aio_parsing/aio_particles/aio_class/medium/aio_class_particle_medium_test.h>
 
 #define TEST_PATH "../tests/test/sources/aio_parsing/aio_particles/aio_class/"
 
@@ -54,7 +55,7 @@ TEST_F(aio_class_particle_test, trivial)
     //Expected class:
     const aio_class *actual_class = space->typenames->last();
     //Actual class:
-    aio_class *expected_class = create_class_for_aio_class_trivial_test();
+    const aio_class *expected_class = create_class_for_aio_class_trivial_test();
 
     ASSERT_EQ(*expected_class, *actual_class);
 
@@ -62,4 +63,84 @@ TEST_F(aio_class_particle_test, trivial)
     //Free:
     delete space;
     delete file_content;
+    delete expected_class;
+}
+
+TEST_F(aio_class_particle_test, medium)
+{
+    //Read sample:
+    const str_builder *file_content = read_file_by_str_builder(TEST_PATH "medium/medium.txt");
+    const str_hook *radius = new str_hook(file_content->get_string(), 0, file_content->size());
+
+    //Print pretty file content:
+    print_radius(AIO_CLASS_PARTICLE_TEST_INFO_TAG,radius);
+
+    //Create template:
+    aio_space *space = new aio_space();
+
+    //Test field:
+    aio_orbit<aio_space>::create()
+            ->set_pivot(space)
+            ->set_radius(radius)
+            ->set_particle(new aio_class_particle())
+            ->spin()
+            ->finish();
+
+    //Expected class:
+    const aio_class *actual_class = space->typenames->last();
+    //Actual class:
+    const aio_class *expected_class = create_class_for_aio_class_medium_test();
+
+    ASSERT_EQ(*expected_class, *actual_class);
+
+    //------------------------------------------------------------------------------------------------------------------
+    //Free:
+    delete space;
+    delete file_content;
+    delete expected_class;
+}
+
+TEST_F(aio_class_particle_test, complex)
+{
+    //Read sample:
+    const str_builder *file_content = read_file_by_str_builder(TEST_PATH "complex/complex.txt");
+    const str_hook *radius = new str_hook(file_content->get_string(), 0, file_content->size());
+
+    //Print pretty file content:
+    print_radius(AIO_CLASS_PARTICLE_TEST_INFO_TAG,radius);
+
+    //Create template:
+    aio_space *space = new aio_space();
+
+    //Test field:
+    aio_orbit<aio_space>::create()
+            ->set_pivot(space)
+            ->set_radius(radius)
+            ->set_particle(new aio_class_particle())
+            ->spin()
+            ->finish();
+
+    const array_list<aio_class> * classes = space->typenames;
+    ASSERT_TRUE(classes->get_size() == 2);
+
+    //Expected class 1:
+    const aio_class *actual_class1 = space->typenames->get(0);
+    //Actual class 1:
+    const aio_class *expected_class1 = create_class_for_aio_class_medium_test();
+
+    ASSERT_EQ(*expected_class1, *actual_class1);
+
+    //Expected class 2:
+    const aio_class *actual_class2 = space->typenames->get(1);
+    //Actual class 2:
+    const aio_class *expected_class2 = create_class_for_aio_class_trivial_test();
+
+    ASSERT_EQ(*expected_class2, *actual_class2);
+
+    //------------------------------------------------------------------------------------------------------------------
+    //Free:
+    delete space;
+    delete file_content;
+    delete expected_class1;
+    delete expected_class2;
 }

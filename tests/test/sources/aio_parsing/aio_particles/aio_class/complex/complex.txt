@@ -1,0 +1,7 @@
+typename IRobot<-IEngineer
+,
+ITeacher:abstract:protected{
+        /* Any body */
+    }typename
+    Cat
+    {}
