@@ -6,8 +6,7 @@
  */
 
 //lang:
-#include <aio_lang/aio_visibility/aio_visibility.h>
-#include <ostream>
+#include <aio_lang/aio_visible/aio_visible.h>
 
 namespace lib4aio {
 
@@ -16,13 +15,7 @@ namespace lib4aio {
 
 using namespace lib4aio;
 
-using namespace std;
-
-struct aio_field {
-
-    explicit aio_field();
-
-    ~aio_field();
+struct aio_field : public aio_visible {
 
     str_hook *name;
 
@@ -34,11 +27,17 @@ struct aio_field {
 
     bool is_static;
 
-    aio_visibility visibility_type;
+    explicit aio_field();
 
-    bool equals(const aio_field *other) const;
+    ~aio_field();
+
+    bool operator==(const aio_field &rhs) const;
+
+    bool operator!=(const aio_field &rhs) const;
+
+    void log_aio_field() const;
+
+    static bool compare(const aio_field *o1, const aio_field *o2);
 };
-
-void log_aio_field(const aio_field * field);
 
 #endif //AIO_FIELD_H

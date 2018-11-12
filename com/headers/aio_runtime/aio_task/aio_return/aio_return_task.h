@@ -13,11 +13,13 @@ public:
 
     void perform(aio_ray *ray);
 
-    bool equals(const aio_task *task) const;
-
     char *get_value();
 
     void set_value(char *value);
+
+    bool operator==(const aio_return_task &rhs) const;
+
+    bool operator!=(const aio_return_task &rhs) const;
 
 private:
 

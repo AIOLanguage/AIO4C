@@ -27,3 +27,18 @@ aio_space::~aio_space()
     delete this->pathnames;
     delete this->functions;
 }
+
+bool aio_space::operator==(const aio_space &rhs) const
+{
+    return static_cast<const aio_annotatable &>(*this) == static_cast<const aio_annotatable &>(rhs)
+           && static_cast<const aio_schemable &>(*this) == static_cast<const aio_schemable &>(rhs)
+           && this->typenames->equals(rhs.typenames, aio_class::compare_classes)
+           && this->enumnames->equals(rhs.enumnames, aio_enum::compare_enums)
+           && this->pathnames->equals(rhs.pathnames, aio_scope::compare_scopes)
+           && this->functions->equals(rhs.functions, aio_function::compare_functions);
+}
+
+bool aio_space::operator!=(const aio_space &rhs) const
+{
+    return !(rhs == *this);
+}

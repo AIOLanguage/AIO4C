@@ -160,4 +160,19 @@ namespace lib4aio {
     {
         this->string_ptr = string;
     }
+
+    bool str_hook::operator==(const str_hook &rhs) const
+    {
+        return this->equals_string(&rhs);
+    }
+
+    bool str_hook::operator!=(const str_hook &rhs) const
+    {
+        return !(rhs == *this);
+    }
+
+    bool str_hook::compare(const str_hook *o1, const str_hook *o2)
+    {
+        return *o1 == *o2;
+    }
 }

@@ -8,7 +8,6 @@
 //lang:
 #include <aio_lang/aio_invokable/aio_invokable.h>
 #include <aio_lang/aio_inheritable/aio_inheritable.h>
-#include <aio_lang/aio_visibility/aio_visibility.h>
 
 struct aio_function : public aio_invokable, public aio_inheritable<aio_function> {
 
@@ -18,9 +17,15 @@ struct aio_function : public aio_invokable, public aio_inheritable<aio_function>
 
     str_hook *name;
 
-    aio_visibility visibility_type;
-
     bool equals(const aio_function *other) const;
+
+    bool operator==(const aio_function &rhs) const;
+
+    bool operator!=(const aio_function &rhs) const;
+
+    static bool compare_functions(const aio_function *o1, const aio_function *o2);
+
+    bool compare(const aio_function *o1, const aio_function *o2);
 };
 
 #endif //AIO_FUNCTION_H

@@ -65,9 +65,10 @@ TEST_F(aio_function_particle_test, trivial)
     //Check space:
     ASSERT_EQ(1, space->functions->get_size());
 
-    //Get function:
+    //Actual function:
     const aio_function *function = space->functions->last();
-    aio_function *expected_function = create_function_for_aio_function_trivial_test();
+    //Expected function:
+    const aio_function *expected_function = create_function_for_aio_function_trivial_test();
     ASSERT_TRUE(expected_function->equals(function));
 
     //------------------------------------------------------------------------------------------------------------------

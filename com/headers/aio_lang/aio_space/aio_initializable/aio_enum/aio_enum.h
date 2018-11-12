@@ -16,7 +16,13 @@ struct aio_enum : aio_initializable {
 
     ~aio_enum();
 
+    bool operator==(const aio_enum &rhs) const;
+
+    bool operator!=(const aio_enum &rhs) const;
+
     array_list<aio_field> *elements;
+
+    static bool compare_enums(const aio_enum *o1, const aio_enum *o2);
 };
 
 #endif //AIO_ENUM_H

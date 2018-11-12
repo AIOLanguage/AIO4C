@@ -22,6 +22,10 @@ struct aio_invokable : public aio_annotatable, public aio_schemable {
 
     virtual ~aio_invokable();
 
+    bool operator==(const aio_invokable &rhs) const;
+
+    bool operator!=(const aio_invokable &rhs) const;
+
     unsigned arg_count;
 
     str_hook *output_type;

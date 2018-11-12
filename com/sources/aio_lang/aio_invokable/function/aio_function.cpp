@@ -11,7 +11,6 @@
 aio_function::aio_function()
 {
     this->name = nullptr;
-    this->visibility_type = AIO_VISIBILITY_UNDEFINED;
 }
 
 aio_function::~aio_function()
@@ -23,74 +22,24 @@ aio_function::~aio_function()
  * Boilerplate.
  */
 
-#define DEBUG
-
-#define TAG "ASSERT FUNCTION"
-
-bool aio_function::equals(const aio_function *other) const
+bool aio_function::operator==(const aio_function &rhs) const
 {
-    //Check name:
-    if (!this->name->equals_string(other->name)) {
-        return false;
-    }
-#ifdef DEBUG
-    log_info(TAG, "NAME IS OK!");
-#endif
-    //Check arg count:
-    const array_list<aio_field> *other_fields = other->fields;
-    const unsigned other_field_size = other_fields->get_size();
-    if (this->arg_count != other->arg_count || this->fields->get_size() != other_field_size) {
-        return false;
-    }
-#ifdef DEBUG
-    log_info(TAG, "ARG COUNT IS OK!");
-#endif
-    //Check fields:
-    for (unsigned i = 0; i < this->fields->get_size(); ++i) {
-        if (!this->fields->get(i)->equals(other_fields->get(i))) {
-            return false;
-        }
-    }
-#ifdef DEBUG
-    log_info(TAG, "FIELDS ARE OK!");
-#endif
-    //Check output type:
-    if (!this->output_type->equals_string(other->output_type)) {
-        return false;
-    }
-#ifdef DEBUG
-    log_info(TAG, "OUTPUT TYPE IS OK!");
-#endif
-    //Check visibility:
-    if (this->visibility_type != other->visibility_type) {
-        return false;
-    }
-#ifdef DEBUG
-    log_info(TAG, "VISIBILITY IS OK!");
-#endif
-    //Check output amount:
-    if (this->is_array_output != other->is_array_output) {
-        return false;
-    }
-    //Check instructions:
-    const array_list<aio_task> *other_instructions = other->instructions;;
+    return static_cast<const aio_invokable &>(*this)
+           == static_cast<const aio_invokable &>(rhs)
+           && static_cast<const aio_inheritable<aio_function> &>(*this)
+              == static_cast<const aio_inheritable<aio_function> &>(rhs)
+           && *this->name == *rhs.name;
+}
 
-    if (this->instructions->get_size() != other_instructions->get_size()) {
-        return false;
-    }
-#ifdef DEBUG
-    log_info(TAG, "ARRAY IS OK!");
-    log_info_int(TAG, "MY:", this->instructions->get_size());
-    log_info_int(TAG, "OTHER:", other_instructions->get_size());
-#endif
-    for (unsigned j = 0; j < this->instructions->get_size(); ++j) {
-        printf("AAA: \n");
-        if (!this->instructions->get(j)->equals(other_instructions->get(j))) {
-            return false;
-        }
-    }
-#ifdef DEBUG
-    log_info(TAG, "TASKS ARE OK!");
-#endif
-    return true;
+bool aio_function::operator!=(const aio_function &rhs) const
+{
+    return !(rhs == *this);
+}
+
+bool compare_functions(const aio_function *o1, const aio_function *o2) {
+    return *o1 == *o2;
+}
+
+bool aio_function::compare(const aio_function *o1, const aio_function *o2){
+    return *o1 == *o2;
 }

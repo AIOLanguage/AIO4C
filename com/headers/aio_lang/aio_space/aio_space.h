@@ -7,7 +7,6 @@
 
 //lang:
 #include <aio_lang/aio_schemable/aio_schemable.h>
-#include <aio_lang/aio_visibility/aio_visibility.h>
 #include <aio_lang/aio_annotatable/aio_annotatable.h>
 
 struct aio_enum;
@@ -24,7 +23,9 @@ struct aio_space : public aio_annotatable, public aio_schemable {
 
     virtual ~aio_space();
 
-    aio_visibility visibility_type;
+    bool operator==(const aio_space &rhs) const;
+
+    bool operator!=(const aio_space &rhs) const;
 
     array_list<aio_class> *typenames;
 

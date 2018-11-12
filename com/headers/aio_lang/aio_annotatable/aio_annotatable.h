@@ -19,7 +19,13 @@ struct aio_annotatable {
 
     virtual ~aio_annotatable();
 
-    array_list<aio_class> *marknames;
+    bool operator==(const aio_annotatable &rhs) const;
+
+    bool operator!=(const aio_annotatable &rhs) const;
+
+    array_list<aio_class> *annotations;
+
+    array_list<str_hook> *annotation_names;
 };
 
 #endif //AIO_ANNOTATABLE_H

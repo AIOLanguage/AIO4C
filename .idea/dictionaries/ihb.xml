@@ -2,8 +2,12 @@
   <dictionary name="ihb">
     <words>
       <w>annotatable</w>
+      <w>enumnames</w>
       <w>initializable</w>
+      <w>marknames</w>
+      <w>pathnames</w>
       <w>schemable</w>
+      <w>typenames</w>
     </words>
   </dictionary>
 </component>

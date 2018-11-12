@@ -16,6 +16,14 @@ struct aio_class : public aio_initializable, public aio_inheritable<aio_class> {
     explicit aio_class();
 
     ~aio_class();
+
+    bool operator==(const aio_class &rhs) const;
+
+    bool operator!=(const aio_class &rhs) const;
+
+    static bool compare_classes(const aio_class *c1, const aio_class *c2);
+
+    bool compare(const aio_class *c1, const aio_class *c2);
 };
 
 #endif //AIO_CLASS_H

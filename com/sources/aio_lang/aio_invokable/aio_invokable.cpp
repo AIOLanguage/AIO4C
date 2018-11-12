@@ -19,3 +19,17 @@ aio_invokable::~aio_invokable()
 {
     delete this->output_type;
 }
+
+bool aio_invokable::operator==(const aio_invokable &rhs) const
+{
+    return static_cast<const aio_annotatable &>(*this) == static_cast<const aio_annotatable &>(rhs)
+           && static_cast<const aio_schemable &>(*this) == static_cast<const aio_schemable &>(rhs)
+           && this->arg_count == rhs.arg_count
+           && *this->output_type == *rhs.output_type
+           && this->is_array_output == rhs.is_array_output;
+}
+
+bool aio_invokable::operator!=(const aio_invokable &rhs) const
+{
+    return !(rhs == *this);
+}

@@ -3,7 +3,7 @@
 
 class aio_field;
 
-class aio_task;
+class aio_assign_task;
 
 aio_field *create_field_for_aio_field_trivial_test();
 

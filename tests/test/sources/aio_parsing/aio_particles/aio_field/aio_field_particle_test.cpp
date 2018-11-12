@@ -58,14 +58,14 @@ TEST_F(aio_field_particle_test, trivial)
     //Actual actual_field:
     const aio_field *actual_field = schemable->fields->last();
     //Expected actual_field:
-    aio_field *expected_field = create_field_for_aio_field_trivial_test();
-    ASSERT_TRUE(actual_field->equals(expected_field));
+    const aio_field *expected_field = create_field_for_aio_field_trivial_test();
+    ASSERT_EQ(*actual_field, *expected_field);
 
     //Actual task:
     const aio_assign_task *actual_task = (aio_assign_task *) schemable->instructions->last();
     //Expected task:
-    aio_assign_task *expected_task = create_task_for_aio_field_trivial_test();
-    ASSERT_TRUE(actual_task->equals(expected_task));
+    const aio_assign_task *expected_task = create_task_for_aio_field_trivial_test();
+    ASSERT_TRUE(*actual_task == *expected_task);
 
     //------------------------------------------------------------------------------------------------------------------
     //Free:
@@ -100,14 +100,14 @@ TEST_F(aio_field_particle_test, two_fields)
     //Actual field:
     const aio_field *actual_hello = fields->get(0);
     //Expected field:
-    aio_field *expected_hello = create_field_1_for_aio_two_fields_test();
-    ASSERT_TRUE(expected_hello->equals(actual_hello));
+    const aio_field *expected_hello = create_field_1_for_aio_two_fields_test();
+    ASSERT_TRUE(*expected_hello == *actual_hello);
 
     //Actual bye:
     const aio_field *actual_bye = fields->get(1);
     //Expected bye:
-    aio_field *expected_bye = create_field_2_for_aio_two_fields_test();
-    ASSERT_TRUE(expected_bye->equals(actual_bye));
+    const aio_field *expected_bye = create_field_2_for_aio_two_fields_test();
+    ASSERT_TRUE(*expected_bye == *actual_bye);
 
     const array_list<aio_task> *instructions = schemable->instructions;
     ASSERT_EQ(instructions->get_size(), 2);
@@ -116,13 +116,13 @@ TEST_F(aio_field_particle_test, two_fields)
     const aio_assign_task *actual_task_1 = (aio_assign_task *) instructions->get(0);
     //Expected task 1:
     aio_assign_task *expected_task_1 = create_task_1_for_aio_two_fields_test();
-    ASSERT_TRUE(expected_task_1->equals(actual_task_1));
+    ASSERT_TRUE(*expected_task_1 == *actual_task_1);
 
     //Actual task 2:
     const aio_assign_task *actual_task_2 = (aio_assign_task *) instructions->get(1);
     //Expected task 2:
-    aio_assign_task *expected_task_2 = create_task_2_for_aio_two_fields_test();
-    ASSERT_TRUE(expected_task_2->equals(actual_task_2));
+    const aio_assign_task *expected_task_2 = create_task_2_for_aio_two_fields_test();
+    ASSERT_TRUE(*expected_task_2 == *actual_task_2);
 
     //------------------------------------------------------------------------------------------------------------------
     //Free:

@@ -109,6 +109,12 @@ namespace lib4aio {
 
         char *to_string() const;
 
+        bool operator==(const str_hook &rhs) const;
+
+        bool operator!=(const str_hook &rhs) const;
+
+        static bool compare(const str_hook *o1, const str_hook *o2);
+
     private:
 
         const char *string_ptr;

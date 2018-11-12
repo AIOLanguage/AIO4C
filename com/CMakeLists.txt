@@ -10,12 +10,12 @@ set(
         com/headers/aio_lang/aio_space/aio_space.h
         com/headers/aio_lang/aio_field/aio_field.h
         com/headers/aio_lang/aio_types/aio_types.h
+        com/headers/aio_lang/aio_visible/aio_visible.h
         com/headers/aio_lang/aio_modifiers/aio_modifiers.h
         com/headers/aio_lang/aio_schemable/aio_schemable.h
         com/headers/aio_lang/aio_invokable/aio_invokable.h
         com/headers/aio_lang/aio_space/aio_file/aio_file.h
         com/headers/aio_lang/aio_space/aio_scope/aio_scope.h
-        com/headers/aio_lang/aio_visibility/aio_visibility.h
         com/headers/aio_lang/aio_annotatable/aio_annotatable.h
         com/headers/aio_lang/aio_inheritable/aio_inheritable.h
         com/headers/aio_lang/aio_invokable/aio_function/aio_function.h
@@ -57,6 +57,7 @@ set(
         #lang:
         com/sources/aio_lang/aio_space/aio_space.cpp
         com/sources/aio_lang/aio_field/aio_field.cpp
+        com/sources/aio_lang/aio_visible/aio_visible.cpp
         com/sources/aio_lang/aio_invokable/aio_invokable.cpp
         com/sources/aio_lang/aio_modifiers/aio_modifiers.cpp
         com/sources/aio_lang/aio_space/aio_file/aio_file.cpp

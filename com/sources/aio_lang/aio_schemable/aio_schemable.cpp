@@ -18,3 +18,15 @@ aio_schemable::~aio_schemable()
     delete this->instructions;
     delete this->fields;
 }
+
+bool aio_schemable::operator==(const aio_schemable &rhs) const
+{
+    return static_cast<const aio_visible &>(*this) == static_cast<const aio_visible &>(rhs)
+           && this->fields->equals(rhs.fields, aio_field::compare)
+           && this->instructions->equals(rhs.instructions, aio_task::compare);
+}
+
+bool aio_schemable::operator!=(const aio_schemable &rhs) const
+{
+    return !(rhs == *this);
+}

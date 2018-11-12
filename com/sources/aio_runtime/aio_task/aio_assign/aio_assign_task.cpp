@@ -47,16 +47,9 @@ const char *aio_assign_task::get_value() const
  * Boilerplate.
  */
 
-#define DEBUG
-
-#define TAG "AIO_ASSIGN_TASK"
-
-bool aio_assign_task::equals(const aio_task *task) const
+bool aio_assign_task::operator==(const aio_assign_task &rhs) const
 {
-#ifdef DEBUG
-    log_info(TAG, "START!");
-#endif
-    aio_assign_task *other = (aio_assign_task *) task;
+    const aio_assign_task *other = &rhs;
     if ((!this->name && other->name) || (this->name && !other->name)) {
         return false;
     }
@@ -67,4 +60,16 @@ bool aio_assign_task::equals(const aio_task *task) const
         return false;
     }
     return strcmp(this->value, other->value) == 0;
+}
+
+bool aio_assign_task::operator!=(const aio_assign_task &rhs) const
+{
+    return !(rhs == *this);
+}
+
+bool aio_assign_task::operator==(const aio_task &rhs) const
+{
+    const aio_assign_task t = (aio_assign_task) rhs
+    return *this == ;
+
 }

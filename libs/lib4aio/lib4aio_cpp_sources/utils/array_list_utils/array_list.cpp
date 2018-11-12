@@ -196,4 +196,23 @@ namespace lib4aio {
     {
         return this->elements[index];
     }
+
+    template<typename T>
+    inline bool array_list<T>::equals(const array_list<T> *other, function<bool(const T *, const T *)> compare)
+    {
+        if (this->holder_mode == other->holder_mode
+            && this->capacity == other->capacity
+            && this->size == other->size) {
+            for (unsigned i = 0; i < this->size; ++i) {
+                const T *element = this->elements[i];
+                const T *other_element = other->elements[i];
+                if (!compare(element, other_element)) {
+                    return false;
+                }
+            }
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

@@ -21,6 +21,15 @@ set(
         #MEDIUM:
         tests/test/sources/aio_parsing/aio_particles/aio_function/medium/aio_function_particle_medium_test.h
         tests/test/sources/aio_parsing/aio_particles/aio_function/medium/aio_function_particle_medium_test.cpp
+
+        #CLASS:
+        tests/test/sources/aio_parsing/aio_particles/aio_class/aio_class_particle_test.cpp
+        #TRIVIAL:
+        tests/test/sources/aio_parsing/aio_particles/aio_class/trivial/aio_class_particle_trivial_test.h
+        tests/test/sources/aio_parsing/aio_particles/aio_class/trivial/aio_class_particle_trivial_test.cpp
+        #MEDIUM:
+        tests/test/sources/aio_parsing/aio_particles/aio_class/medium/aio_class_particle_medium_test.h
+        tests/test/sources/aio_parsing/aio_particles/aio_class/medium/aio_class_particle_medium_test.cpp
 )
 
 set(

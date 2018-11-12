@@ -147,6 +147,8 @@ namespace lib4aio {
             return const_array_list_iterator(this->elements + this->size);
         }
 
+        inline bool equals(const array_list<T> *other, function<bool(const T *, const T *)> compare);
+
     private:
 
         bool holder_mode;

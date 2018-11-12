@@ -24,6 +24,17 @@ void aio_return_task::set_value(char *value)
     this->value = value;
 }
 
+bool aio_return_task::operator==(const aio_return_task &rhs) const
+{
+    return static_cast<const aio_task &>(*this) == static_cast<const aio_task &>(rhs) &&
+           value == rhs.value;
+}
+
+bool aio_return_task::operator!=(const aio_return_task &rhs) const
+{
+    return !(rhs == *this);
+}
+
 bool aio_return_task::equals(const aio_task *task) const
 {
     printf("DDD: \n");

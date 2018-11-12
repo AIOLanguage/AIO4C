@@ -11,7 +11,6 @@ aio_field::aio_field()
 {
     this->name = nullptr;
     this->type = nullptr;
-    this->visibility_type = AIO_VISIBILITY_UNDEFINED;
 }
 
 aio_field::~aio_field()
@@ -20,48 +19,45 @@ aio_field::~aio_field()
     delete this->type;
 }
 
-bool aio_field::equals(const aio_field *other) const
+bool aio_field::operator==(const aio_field &rhs) const
 {
-    if ((!this->name && other->name) || (this->name && !other->name)) {
+    if (static_cast<const aio_visible &>(*this) == static_cast<const aio_visible &>(rhs)) {
+        const aio_field *other = &rhs;
+        if ((!this->name && other->name) || (this->name && !other->name)) {
+            return false;
+        }
+        if (!this->name->equals_string(other->name)) {
+            return false;
+        }
+        if ((!this->type && other->type) || (this->type && !other->type)) {
+            return false;
+        }
+        if (!this->type->equals_string(other->type)) {
+            return false;
+        }
+        return this->is_array == other->is_array
+               && this->is_const == other->is_const
+               && this->is_static == other->is_static;
+    } else {
         return false;
     }
-    if (!this->name->equals_string(other->name)) {
-        return false;
-    }
-    if ((!this->type && other->type) || (this->type && !other->type)) {
-        return false;
-    }
-    if (!this->type->equals_string(other->type)) {
-        return false;
-    }
-    return this->is_array == other->is_array
-           && this->is_const == other->is_const
-           && this->is_static == other->is_static
-           && this->visibility_type == other->visibility_type;
 }
 
-void log_aio_field(const aio_field *field)
+bool aio_field::operator!=(const aio_field &rhs) const
+{
+    return !(rhs == *this);
+}
+
+void aio_field::log_aio_field() const
 {
     log_info(AIO_FIELD_INFO, "------------------");
-    log_info_str_hook(AIO_FIELD_INFO, "NAME:", field->name);
-    log_info_str_hook(AIO_FIELD_INFO, "TYPE", field->type);
-    log_info_boolean(AIO_FIELD_INFO, "IS ARRAY", field->is_array);
-    log_info_boolean(AIO_FIELD_INFO, "IS CONST", field->is_const);
-    log_info_boolean(AIO_FIELD_INFO, "IS_STATIC", field->is_static);
-    switch (field->visibility_type) {
-        case AIO_VISIBILITY_UNDEFINED:
-            log_info(AIO_FIELD_INFO, "VISIBILITY: UNDEFINED");
-            break;
-        case AIO_VISIBILITY_LOCAL:
-            log_info(AIO_FIELD_INFO, "VISIBILITY: LOCAL");
-            break;
-        case AIO_VISIBILITY_PRIVATE:
-            log_info(AIO_FIELD_INFO, "VISIBILITY: PRIVATE");
-            break;
-        case AIO_VISIBILITY_PROTECTED:
-            log_info(AIO_FIELD_INFO, "VISIBILITY: PROTECTED");
-            break;
-        case AIO_VISIBILITY_PUBLIC:
-            log_info(AIO_FIELD_INFO, "VISIBILITY: PUBLIC");
-    }
+    log_info_str_hook(AIO_FIELD_INFO, "NAME:", this->name);
+    log_info_str_hook(AIO_FIELD_INFO, "TYPE", this->type);
+    log_info_boolean(AIO_FIELD_INFO, "IS ARRAY", this->is_array);
+    log_info_boolean(AIO_FIELD_INFO, "IS CONST", this->is_const);
+    log_info_boolean(AIO_FIELD_INFO, "IS_STATIC", this->is_static);
+}
+
+bool aio_field::compare(const aio_field *o1, const aio_field *o2){
+    return *o1 == *o2;
 }

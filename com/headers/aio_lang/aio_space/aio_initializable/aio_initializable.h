@@ -6,7 +6,6 @@
  */
 
 #include <aio_lang/aio_space/aio_space.h>
-#include <aio_lang/aio_visibility/aio_visibility.h>
 
 namespace lib4aio {
 

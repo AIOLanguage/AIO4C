@@ -15,6 +15,12 @@ struct aio_scope : public aio_space {
     ~aio_scope();
 
     str_hook *name;
+
+    static bool compare_scopes(const aio_scope *o1, const aio_scope *o2);
+
+    bool operator==(const aio_scope &rhs) const;
+
+    bool operator!=(const aio_scope &rhs) const;
 };
 
 #endif //AIO_SCOPE_H

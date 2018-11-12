@@ -384,7 +384,7 @@ void aio_class_particle::set_body()
             ->finish();
     this->signal = AIO_PARTICLE_SIGNAL_IS_READY;
 
-#ifdef AIO_FUNCTION_PARTICLE_DEBUG
-    log_info(AIO_FUNCTION_PARTICLE_INFO_TAG, "BODY IS COMPLETE!");
+#ifdef AIO_CLASS_PARTICLE_DEBUG
+    log_info(AIO_CLASS_PARTICLE_INFO_TAG, "BODY IS COMPLETE!");
 #endif
 }

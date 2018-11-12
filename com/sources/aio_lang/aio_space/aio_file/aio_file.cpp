@@ -14,7 +14,7 @@ using namespace lib4aio;
 
 aio_file::aio_file(str_builder *content, const char *absolute_file_path)
 {
-    this->visibility_type = AIO_VISIBILITY_PUBLIC;
+    this->visibility = AIO_VISIBILITY_PUBLIC;
     this->content = content;
     this->absolute_path = absolute_file_path;
     this->additions = new array_list<str_hook>(true);
