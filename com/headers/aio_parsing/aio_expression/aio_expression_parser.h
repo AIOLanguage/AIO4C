@@ -58,14 +58,14 @@ private:
                 aio_result *(*make_value_function)(const str_hook *)
         );
 
-    private:
-
         static aio_result *make_function_or_variable(
                 const str_hook *expression_hook,
                 aio_ray *control_graph,
-                aio_value *(*cast_function)(aio_value *),
+                aio_value *(*cast_function)(const aio_value *),
                 aio_result *(*make_value_function)(const str_hook *)
         );
+
+    private:
 
         static void make_expression_chunks_and_count_next_point(
                 const str_hook *expression_hook,
@@ -122,6 +122,16 @@ private:
     public:
 
         static aio_value *parse(const str_hook *expression, aio_ray *ray);
+
+        static aio_result *make_or(const str_hook *expression, aio_ray *ray);
+
+        static aio_result *make_and(const str_hook *expression, aio_ray *ray);
+
+        static aio_result *make_boolean_parentheses(const str_hook *expression, aio_ray *ray);
+
+        static aio_result *make_condition(const str_hook *expression, aio_ray *ray);
+
+        static aio_result *make_boolean(const str_hook *expression_hook);
     };
 };
 

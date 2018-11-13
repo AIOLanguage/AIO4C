@@ -63,7 +63,7 @@ aio_result *aio_expression_parser::aio_assistant::make_parentheses(
 aio_result *aio_expression_parser::aio_assistant::make_function_or_variable(
         const str_hook *expression_hook,
         aio_ray *control_graph,
-        aio_value *(*cast_function)(aio_value *),
+        aio_value *(*cast_function)(const aio_value *),
         aio_result *(*make_value_function)(const str_hook *)
 )
 {

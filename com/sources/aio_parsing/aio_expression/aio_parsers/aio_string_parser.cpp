@@ -20,7 +20,7 @@
 
 #define AIO_STRING_PARSER_INFO_TAG "AIO_STRING_PARSER_INFO"
 
-aio_value *aio_expression_parser::parse(
+aio_value *aio_expression_parser::aio_string_parser::parse(
         const str_hook *expression_hook,
         aio_ray *control_graph
 )
@@ -29,11 +29,12 @@ aio_value *aio_expression_parser::parse(
     if (result->rest->is_not_empty()) {
         throw_error_with_tag(AIO_STRING_PARSER_INFO_TAG, "Can not fully parse expression!");
     }
-    const_string result_string_acc = result->value->get.string_acc;
+    const char *result_string_acc = result->value->get.string_acc;
     aio_value *string_value = new_aio_string_value(result_string_acc);
     //------------------------------------------------------------------------------------------------------------------
     //찌꺼기 수집기 (Garbage collector):
-    free_aio_result(result);
+    delete result;
+    //------------------------------------------------------------------------------------------------------------------
     return string_value;
 }
 
