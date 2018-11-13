@@ -4,13 +4,18 @@
 //parsing:
 #include <aio_parsing/aio_expression/aio_expression_parser.h>
 //lib4aio:
+#include <lib4aio_cpp_headers/utils/log_utils/log_utils.h>
 #include <lib4aio_cpp_headers/aio_explorer/aio_explorer.h>
 #include <lib4aio_cpp_headers/utils/char_utils/char_utils.h>
 #include <lib4aio_cpp_headers/utils/error_utils/error_utils.h>
 #include <lib4aio_cpp_headers/utils/point_watcher/point_watcher.h>
 #include <lib4aio_cpp_headers/utils/str_hook_utils/str_hook/str_hook.h>
 
-#define AIO_EXPRESSION_PARSER_ERROR_TAG "AIO_EXPRESSION_PARSER_ERROR"
+#define AIO_EXPRESSION_DEBUG
+
+#define AIO_EXPRESSION_ANALYSER_ERROR_TAG "AIO_EXPRESSION_ANALYSER_ERROR"
+
+#define AIO_EXPRESSION_ANALYSER_INFO_TAG "AIO_EXPRESSION_ANALYSER_INFO"
 
 static const bool is_explicitly_boolean_expression(const str_hook *hooked_expression)
 {
@@ -49,7 +54,7 @@ static const bool is_explicitly_boolean_expression(const str_hook *hooked_expres
                 parenthesis_scope_counter--;
             } else {
                 throw_error_with_tag(
-                        AIO_EXPRESSION_PARSER_ERROR_TAG,
+                        AIO_EXPRESSION_ANALYSER_ERROR_TAG,
                         "Expression can not start with closing parenthesis!"
                 );
             }
@@ -67,22 +72,31 @@ static const bool is_explicitly_boolean_expression(const str_hook *hooked_expres
     return result;
 }
 
-static const str_hook *define_type_by_first_element(
+static str_hook *define_type_by_first_element(
         const str_hook *hooked_expression,
         aio_ray *control_graph
 )
 {
     const char *expression_string = hooked_expression->get_string();
     str_hook *scope = new str_hook(hooked_expression);
-    unsigned pointer = hooked_expression->start;
-    while (is_opening_parenthesis(expression_string[pointer])) {
+#ifdef AIO_EXPRESSION_DEBUG
+    log_info_str_hook(AIO_EXPRESSION_ANALYSER_INFO_TAG, "HOOKED STRING:", scope);
+#endif
+    while (is_opening_parenthesis(scope->get_relative_char(0))) {
         //We cannot define type by first element -> find the next element in the expression:
-        str_hook *new_parenthesis_scope = aio_explorer::explore_hook_scope(
-                pointer,
+#ifdef AIO_EXPRESSION_DEBUG
+        log_info(AIO_EXPRESSION_ANALYSER_INFO_TAG, "START TO EXPLORE");
+#endif
+        str_hook *new_parenthesis_scope = aio_explorer::
+                explore_hook_scope(
+                scope->start,
                 '(',
                 ')',
                 scope
         );
+#ifdef AIO_EXPRESSION_DEBUG
+        log_info_str_hook(AIO_EXPRESSION_ANALYSER_INFO_TAG, "NEW SCOPE", new_parenthesis_scope);
+#endif
         str_hook *old_scope = scope;
         const unsigned end_index = old_scope->end;
         scope = new_parenthesis_scope;
@@ -93,21 +107,22 @@ static const str_hook *define_type_by_first_element(
         const bool have_not_elements_on_this_level = scope->end == end_index;
         if (have_not_elements_on_this_level) {
             //There aren't elements on top level & define type by lower level:
-            pointer = ++scope->start;
+            scope->start++;
             scope->end--;
         } else {
-            const unsigned after_parenthesis_position = pointer;
+            const unsigned after_parenthesis_position = scope->end + 1;
+            scope->end = hooked_expression->end;
             const bool is_sign_after_closing_parenthesis = is_sign(expression_string[after_parenthesis_position]);
             if (is_sign_after_closing_parenthesis) {
                 scope->start = after_parenthesis_position + 1;
             } else {
-                throw_error_with_tag(AIO_EXPRESSION_PARSER_ERROR_TAG, "Expected sign after closing parenthesis");
+                throw_error_with_tag(AIO_EXPRESSION_ANALYSER_ERROR_TAG, "Expected sign after closing parenthesis");
             }
         }
-        if (scope->start >= scope->end) {
-            throw_error_with_tag(AIO_EXPRESSION_PARSER_ERROR_TAG, "Expression contains empty parentheses!");
-        }
     }
+#ifdef AIO_EXPRESSION_DEBUG
+    log_info_str_hook(AIO_EXPRESSION_ANALYSER_INFO_TAG, "SCOPE:", scope);
+#endif
     str_hook *scope_hook = new str_hook(scope);
     //------------------------------------------------------------------------------------------------------------------
     //찌꺼기 수집기 (Garbage collector):
@@ -135,6 +150,9 @@ static const str_hook *define_type_by_first_element(
             if (is_end_of_element) {
                 element_watcher->end = element_watcher->pointer;
                 first_element_hook = new str_hook(expression_string, element_watcher);
+#ifdef AIO_EXPRESSION_DEBUG
+                log_info_str_hook(AIO_EXPRESSION_ANALYSER_INFO_TAG, "Capture 1st element:", first_element_hook);
+#endif
                 break;
             }
         }
@@ -193,23 +211,32 @@ static const str_hook *define_type_by_first_element(
     } else if (first_element_hook->matches_boolean()) {
         return new str_hook(BOOLEAN);
     } else {
-        throw_error_with_tag(AIO_EXPRESSION_PARSER_ERROR_TAG, "Can not define type of expression!");
+        throw_error_with_tag(AIO_EXPRESSION_ANALYSER_ERROR_TAG, "Can not define type of expression!");
     }
 }
 
-const str_hook *aio_expression_parser::aio_analyser::define_expression_type(
+str_hook *aio_expression_parser::aio_analyser::define_expression_type(
         const str_hook *expression_hook,
         aio_ray *control_graph
 )
 {
-    const str_hook *type = nullptr;
+#ifdef AIO_EXPRESSION_DEBUG
+    log_info_str_hook(AIO_EXPRESSION_ANALYSER_INFO_TAG, "INPUT", expression_hook);
+#endif
+    str_hook *type = nullptr;
     //Maybe is explicitly boolean expression?
     const bool is_boolean_expression = is_explicitly_boolean_expression(expression_hook);
+#ifdef AIO_EXPRESSION_DEBUG
+    log_info_boolean(AIO_EXPRESSION_ANALYSER_INFO_TAG, "IS BOOLEAN:", is_boolean_expression);
+#endif
     if (is_boolean_expression) {
         type = new str_hook(BOOLEAN);
     } else {
         //Define by first element:
         type = define_type_by_first_element(expression_hook, control_graph);
+#ifdef AIO_EXPRESSION_DEBUG
+        log_info_str_hook(AIO_EXPRESSION_ANALYSER_INFO_TAG, "TYPE:", type);
+#endif
     }
     return type;
 }

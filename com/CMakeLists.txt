@@ -25,6 +25,7 @@ set(
         com/headers/aio_lang/aio_space/aio_initializable/aio_class/aio_class.h
         #parsing:
         com/headers/aio_parsing/aio_core_builder/aio_core_builder.h
+        com/headers/aio_parsing/aio_expression/aio_expression_parser.h
         com/headers/aio_parsing/aio_particles/aio_scope/aio_scope_particle.h
         com/headers/aio_parsing/aio_particles/aio_class/aio_class_particle.h
         com/headers/aio_parsing/aio_particles/aio_field/aio_field_particle.h
@@ -35,6 +36,7 @@ set(
         com/headers/aio_runtime/aio_ray/aio_ray.h
         com/headers/aio_runtime/aio_task/aio_task.h
         com/headers/aio_runtime/aio_value/aio_value.h
+        com/headers/aio_runtime/aio_result/aio_result.h
         com/headers/aio_runtime/aio_bundle/aio_bundle.h
         com/headers/aio_runtime/aio_invoker/aio_invoker.h
         com/headers/aio_runtime/aio_variable/aio_variable.h
@@ -55,6 +57,7 @@ set(
         #core:
         com/sources/aio_core/aio_core.cpp
         #lang:
+        com/sources/aio_lang/aio_types/aio_types.cpp
         com/sources/aio_lang/aio_space/aio_space.cpp
         com/sources/aio_lang/aio_field/aio_field.cpp
         com/sources/aio_lang/aio_visible/aio_visible.cpp
@@ -71,17 +74,25 @@ set(
         com/sources/aio_lang/aio_space/aio_initializable/aio_enum/aio_enum.cpp
         com/sources/aio_lang/aio_space/aio_initializable/aio_class/aio_class.cpp
         #parsing:
+        com/sources/aio_parsing/aio_expression/aio_expression_parser.cpp
         com/sources/aio_parsing/aio_context_inflater/aio_core_builder.cpp
+        com/sources/aio_parsing/aio_expression/aio_parsers/aio_int_parser.cpp
         com/sources/aio_parsing/aio_particles/aio_field/aio_field_particle.cpp
         com/sources/aio_parsing/aio_particles/aio_class/aio_class_particle.cpp
         com/sources/aio_parsing/aio_particles/aio_scope/aio_scope_particle.cpp
+        com/sources/aio_parsing/aio_expression/aio_parsers/aio_string_parser.cpp
+        com/sources/aio_parsing/aio_expression/aio_parsers/aio_double_parser.cpp
         com/sources/aio_parsing/aio_particles/aio_import/aio_import_particle.cpp
         com/sources/aio_parsing/aio_particles/aio_function/aio_function_particle.cpp
+        com/sources/aio_parsing/aio_expression/aio_assistant/aio_expression_assistant.cpp
         com/sources/aio_parsing/aio_particles/aio_constructor/aio_constructor_particle.cpp
+        com/sources/aio_parsing/aio_expression/aio_parsers/aio_boolean_parser.cpp
+        com/sources/aio_parsing/aio_expression/aio_analyser/aio_analyser.cpp
         #runtime:
         com/sources/aio_runtime/aio_ray/aio_ray.cpp
         com/sources/aio_runtime/aio_task/aio_task.cpp
         com/sources/aio_runtime/aio_value/aio_value.cpp
+        com/sources/aio_runtime/aio_result/aio_result.cpp
         com/sources/aio_runtime/aio_bundle/aio_bundle.cpp
         com/sources/aio_runtime/aio_invoker/aio_invoker.cpp
         com/sources/aio_runtime/aio_variable/aio_variable.cpp

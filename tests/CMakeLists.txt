@@ -1,5 +1,9 @@
 set(
         aioparsing
+
+        #PARTICLE:
+        #---------------------------------------------------------------------------------------------------------------
+
         #COMMON:
         tests/test/sources/aio_parsing/aio_particles/util/aio_particle_test_common.h
         tests/test/sources/aio_parsing/aio_particles/util/aio_particle_test_common.cpp
@@ -30,6 +34,16 @@ set(
         #MEDIUM:
         tests/test/sources/aio_parsing/aio_particles/aio_class/medium/aio_class_particle_medium_test.h
         tests/test/sources/aio_parsing/aio_particles/aio_class/medium/aio_class_particle_medium_test.cpp
+        #---------------------------------------------------------------------------------------------------------------
+
+        #EXPRESSION:
+        #---------------------------------------------------------------------------------------------------------------
+
+        #ANALYSER:
+        tests/test/sources/aio_parsing/aio_expression/aio_analyser/aio_analyser_test.cpp
+
+        #PARSING:
+        #---------------------------------------------------------------------------------------------------------------
 )
 
 set(

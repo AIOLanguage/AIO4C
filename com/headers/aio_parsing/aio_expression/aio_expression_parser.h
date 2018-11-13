@@ -38,13 +38,11 @@ public:
 
     static aio_value *parse(const str_hook *expression, aio_ray *ray);
 
-private:
-
     class aio_analyser {
 
     public:
 
-        static const str_hook *define_expression_type(const str_hook *expression, aio_ray *ray);
+        static str_hook *define_expression_type(const str_hook *expression, aio_ray *ray);
     };
 
     class aio_assistant {
@@ -122,6 +120,8 @@ private:
     public:
 
         static aio_value *parse(const str_hook *expression, aio_ray *ray);
+
+    private:
 
         static aio_result *make_or(const str_hook *expression, aio_ray *ray);
 
