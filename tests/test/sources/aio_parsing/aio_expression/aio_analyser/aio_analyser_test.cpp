@@ -103,3 +103,27 @@ TEST_F(aio_analyser_test, hard_double)
     actual_type = aio_expression_parser::aio_analyser::define_expression_type(input_expression, nullptr);
     ASSERT_TRUE(actual_type->equals_string(expected_type));
 }
+
+TEST_F(aio_analyser_test, trivial_boolean)
+{
+    input_expression = new str_hook("true");
+    expected_type = new str_hook(BOOLEAN);
+    actual_type = aio_expression_parser::aio_analyser::define_expression_type(input_expression, nullptr);
+    ASSERT_TRUE(actual_type->equals_string(expected_type));
+}
+
+TEST_F(aio_analyser_test, medium_boolean)
+{
+    input_expression = new str_hook("75.0 >= 5");
+    expected_type = new str_hook(BOOLEAN);
+    actual_type = aio_expression_parser::aio_analyser::define_expression_type(input_expression, nullptr);
+    ASSERT_TRUE(actual_type->equals_string(expected_type));
+}
+
+TEST_F(aio_analyser_test, hard_boolean)
+{
+    input_expression = new str_hook("((75.0-10) > (20.0+5))*(8-'sss') & ('5'~'7'~(14*5))");
+    expected_type = new str_hook(BOOLEAN);
+    actual_type = aio_expression_parser::aio_analyser::define_expression_type(input_expression, nullptr);
+    ASSERT_TRUE(actual_type->equals_string(expected_type));
+}
