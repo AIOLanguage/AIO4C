@@ -5,7 +5,10 @@
  * 연결.
  */
 
-#include <lib4aio_cpp_headers/utils/str_hook_utils/str_hook/str_hook.h>
+namespace lib4aio {
+
+    class str_hook;
+}
 
 using namespace lib4aio;
 
@@ -24,14 +27,6 @@ using namespace lib4aio;
 #define ANY "Any"
 
 #define AUTO "_"
-
-/**
- * Config types.
- */
-
-#define AIOMAIN_TYPE "AIOMain"
-
-#define AIOPROCESSOR_TYPE "AIOProcessor"
 
 /**
  * Functions.

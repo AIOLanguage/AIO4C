@@ -25,7 +25,7 @@ struct aio_value {
     } data_type;
 };
 
-aio_value *new_aio_value(const class str_hook *type);
+aio_value *new_aio_value(const str_hook *type);
 
 aio_value *new_aio_value_by_string(const char *undefined_value);
 
@@ -39,8 +39,8 @@ aio_value *new_aio_boolean_value(const bool boolean_acc);
 
 aio_value *new_aio_void_value(void *value);
 
-aio_value *new_aio_type_value(void *reference, const class str_hook *type);
+aio_value *new_aio_type_value(void *reference, const str_hook *type);
 
-void free_aio_value(struct aio_value *value);
+void free_aio_value(aio_value *value);
 
 #endif //AIO_VALUE_H

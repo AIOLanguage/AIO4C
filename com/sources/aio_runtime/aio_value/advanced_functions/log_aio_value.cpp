@@ -2,6 +2,7 @@
 #include <aio_lang/aio_types/aio_types.h>
 #include <lib4aio_cpp_headers/utils/string_utils/common.h>
 #include <lib4aio_cpp_headers/utils/log_utils/log_utils.h>
+#include <lib4aio_cpp_headers/utils/str_hook_utils/str_hook/str_hook.h>
 
 void log_info_aio_value(
         const char *tag,

@@ -8,6 +8,7 @@
 #include <lib4aio_cpp_headers/utils/char_utils/char_utils.h>
 #include <lib4aio_cpp_headers/utils/error_utils/error_utils.h>
 #include <lib4aio_cpp_headers/utils/point_watcher/point_watcher.h>
+#include <lib4aio_cpp_headers/utils/str_hook_utils/str_hook/str_hook.h>
 
 #define AIO_EXPRESSION_PARSER_ERROR_TAG "AIO_EXPRESSION_PARSER_ERROR"
 

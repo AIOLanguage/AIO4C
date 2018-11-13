@@ -4,6 +4,7 @@
 #include <lib4aio_cpp_headers/utils/string_utils/common.h>
 #include <lib4aio_cpp_headers/utils/error_utils/error_utils.h>
 #include <aio_runtime/aio_value/advanced_functions/cast_aio_value.h>
+#include <lib4aio_cpp_headers/utils/str_hook_utils/str_hook/str_hook.h>
 
 #define COMPARE_AIO_VALUE_TAG "COMPARE_AIO_VALUE"
 

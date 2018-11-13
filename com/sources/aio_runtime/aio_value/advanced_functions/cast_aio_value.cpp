@@ -3,6 +3,7 @@
 #include <lib4aio_cpp_headers/utils/string_utils/cast.h>
 #include <lib4aio_cpp_headers/utils/string_utils/match.h>
 #include <lib4aio_cpp_headers/utils/error_utils/error_utils.h>
+#include <lib4aio_cpp_headers/utils/str_hook_utils/str_hook/str_hook.h>
 
 #define CAST_AIO_VALUE_TAG "CAST_AIO_VALUE"
 

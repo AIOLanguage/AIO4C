@@ -3,6 +3,7 @@
 #include <aio_lang/aio_invokable/aio_function/aio_function.h>
 //lib4aio:
 #include <lib4aio_cpp_headers/utils/array_list_utils/array_list.h>
+#include <lib4aio_cpp_headers/utils/str_hook_utils/str_hook/str_hook.h>
 
 aio_function *create_function_for_aio_function_medium_test()
 {
