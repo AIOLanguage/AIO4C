@@ -49,7 +49,7 @@ aio_result *aio_expression_parser::aio_int_parser::make_plus_or_minus(const str_
     //찌꺼기 수집기 (Garbage collector):
     delete left_result;
     //------------------------------------------------------------------------------------------------------------------
-    while (left_hook->is_not_empty()) {
+    while (true) {
         const char symbol = expression_string[left_hook->start];
         //Check symbol:
         const bool is_plus = is_plus_sign(symbol);
@@ -114,7 +114,7 @@ aio_result *aio_expression_parser::aio_int_parser::make_multiplication_or_divisi
     //찌꺼기 수집기 (Garbage collector):
     delete left_result;
     //------------------------------------------------------------------------------------------------------------------
-    while (left_hook->is_not_empty()) {
+    while (true) {
         const char symbol = expression_string[left_hook->start];
         //Check symbol:
         const bool is_multiply = is_multiply_sign(symbol);

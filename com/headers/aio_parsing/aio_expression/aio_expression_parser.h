@@ -99,6 +99,9 @@ private:
 
         static aio_result *make_plus_or_minus(const str_hook *expression, aio_ray *ray);
 
+        static aio_result *make_multiplication_or_division(const str_hook *expression, aio_ray *ray);
+
+        static aio_result *make_double(const str_hook *expression);
     };
 
     class aio_string_parser {
@@ -106,6 +109,12 @@ private:
     public:
 
         static aio_value *parse(const str_hook *expression, aio_ray *ray);
+
+    private:
+
+        static aio_result *make_plus(const str_hook *expression, aio_ray *ray);
+
+        static aio_result *make_string(const str_hook *expression);
     };
 
     class aio_boolean_parser {
