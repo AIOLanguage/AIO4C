@@ -4,6 +4,8 @@
 namespace lib4aio {
 
     class str_hook;
+
+    class str_hook_list;
 }
 
 using namespace lib4aio;
@@ -45,6 +47,33 @@ private:
         static const str_hook *define_expression_type(const str_hook *expression, aio_ray *ray);
     };
 
+    class aio_assistant {
+
+    public:
+
+        static aio_result *make_parentheses(
+                const str_hook *expression_hook,
+                aio_ray *control_graph,
+                aio_value *(*cast_function)(const aio_value *),
+                aio_result *(*make_value_function)(const str_hook *)
+        );
+
+    private:
+
+        static aio_result *make_function_or_variable(
+                const str_hook *expression_hook,
+                aio_ray *control_graph,
+                aio_value *(*cast_function)(aio_value *),
+                aio_result *(*make_value_function)(const str_hook *)
+        );
+
+        static void make_expression_chunks_and_count_next_point(
+                const str_hook *expression_hook,
+                str_hook_list *expression_list,
+                unsigned *next_point
+        );
+    };
+
     class aio_int_parser {
 
     public:
@@ -65,6 +94,11 @@ private:
     public:
 
         static aio_value *parse(const str_hook *expression, aio_ray *ray);
+
+    private:
+
+        static aio_result *make_plus_or_minus(const str_hook *expression, aio_ray *ray);
+
     };
 
     class aio_string_parser {

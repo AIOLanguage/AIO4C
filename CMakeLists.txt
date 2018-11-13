@@ -38,7 +38,7 @@ add_executable(
         ${aioheaders}
         ${aiosources}
         ${aiotest}
-        com/headers/aio_parsing/aio_expression/aio_expression_parser.h com/sources/aio_parsing/aio_expression/aio_expression_parser.cpp com/sources/aio_parsing/aio_expression/aio_parsers/aio_int_parser.cpp com/headers/aio_runtime/aio_result/aio_result.h com/sources/aio_parsing/aio_expression/util/aio_type_matcher.cpp)
+        com/headers/aio_parsing/aio_expression/aio_expression_parser.h com/sources/aio_parsing/aio_expression/aio_expression_parser.cpp com/sources/aio_parsing/aio_expression/aio_parsers/aio_int_parser.cpp com/headers/aio_runtime/aio_result/aio_result.h com/sources/aio_parsing/aio_expression/aio_assistant/aio_expression_assistant.cpp com/sources/aio_parsing/aio_expression/aio_parsers/aio_double_parser.cpp)
 
 #link google test:
 target_link_libraries(aio gtest gtest_main)

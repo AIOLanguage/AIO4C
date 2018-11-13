@@ -34,3 +34,8 @@ void aio_ray::set_ray_state(aio_ray_state ray_state)
 {
     *this->state = ray_state;
 }
+
+bool aio_ray::is_available_name(const str_hook *name)
+{
+    return true;
+}

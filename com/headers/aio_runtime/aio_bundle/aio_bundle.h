@@ -14,6 +14,8 @@ using namespace lib4aio;
 
 struct aio_bundle {
 
+    explicit aio_bundle();
+
     explicit aio_bundle(aio_core *core_ptr, str_hook *file_path, str_hook *function_name, struct_list *input_values);
 
     ~aio_bundle();

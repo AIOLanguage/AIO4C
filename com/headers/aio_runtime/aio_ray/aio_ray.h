@@ -5,6 +5,8 @@ namespace lib4aio {
 
     template<typename T>
     class array_list;
+
+    class str_hook;
 }
 
 struct aio_variable;
@@ -37,6 +39,9 @@ public:
     const aio_ray_state get_state() const;
 
     void set_ray_state(aio_ray_state ray_state);
+
+    //TODO: Make non static while will be aio core:
+    static bool is_available_name(const str_hook *name);
 
 private:
 

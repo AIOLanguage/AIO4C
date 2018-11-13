@@ -16,12 +16,12 @@
 
 #endif
 
-#define AIO_INT_PARSER_TAG "AIO_INT_PARSER"
+#define AIO_INT_PARSER_INFO_TAG "AIO_INT_PARSER"
 
 static aio_result *make_int(const_str_hook *expression_hook)
 {
 #ifdef AIO_INT_PARSER_DEBUG
-    log_info_str_hook(AIO_INT_PARSER_TAG, "Make int for expression", expression_hook);
+    log_info_str_hook(AIO_INT_PARSER_INFO_TAG, "Make int for expression", expression_hook);
 #endif
     const_string expression_str = expression_hook->source_string;
     const int right_border = expression_hook->end;
@@ -38,11 +38,11 @@ static aio_result *make_int(const_str_hook *expression_hook)
     captured_element->start = expression_hook->start;
     captured_element->end = i;
 #ifdef AIO_INT_PARSER_DEBUG
-    log_info_str_hook(AIO_INT_PARSER_TAG, "Captured element:", captured_element);
+    log_info_str_hook(AIO_INT_PARSER_INFO_TAG, "Captured element:", captured_element);
 #endif
     int value = 0;
     if (is_null_hooked(captured_element)) {
-        throw_error_with_hook(AIO_INT_PARSER_TAG, "Found null in expression:", expression_hook);
+        throw_error_with_hook(AIO_INT_PARSER_INFO_TAG, "Found null in expression:", expression_hook);
     } else
         //Maybe int value?
     if (is_int_hooked(captured_element)) {
@@ -52,7 +52,7 @@ static aio_result *make_int(const_str_hook *expression_hook)
     if (is_double_hooked(captured_element)) {
         const double double_value = str_hook_to_double(captured_element);
 #ifdef AIO_INT_PARSER_DEBUG
-        log_info_double(AIO_INT_PARSER_TAG, "Get double:", double_value);
+        log_info_double(AIO_INT_PARSER_INFO_TAG, "Get double:", double_value);
 #endif
         value = (int) double_value;
     } else
@@ -74,17 +74,17 @@ static aio_result *make_int(const_str_hook *expression_hook)
     if (is_boolean_hooked(captured_element)) {
         value = str_hook_to_boolean(captured_element);
     } else {
-        throw_error_with_tag(AIO_INT_PARSER_TAG, "Cannot define type of expression!");
+        throw_error_with_tag(AIO_INT_PARSER_INFO_TAG, "Cannot define type of expression!");
     }
 #ifdef AIO_INT_PARSER_DEBUG
-    log_info_int(AIO_INT_PARSER_TAG, "Made int:", value);
+    log_info_int(AIO_INT_PARSER_INFO_TAG, "Made int:", value);
 #endif
     //Init after operation hook:
     str_hook *rest_part = new_str_hook(expression_str);
     rest_part->start = i;
     rest_part->end = right_border;
 #ifdef AIO_INT_PARSER_DEBUG
-    log_info_str_hook(AIO_INT_PARSER_TAG, "Rest after int making:", rest_part);
+    log_info_str_hook(AIO_INT_PARSER_INFO_TAG, "Rest after int making:", rest_part);
 #endif
     //------------------------------------------------------------------------------------------------------------------
     //찌꺼기 수집기 (Garbage collector):

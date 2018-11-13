@@ -1,5 +1,6 @@
-#include <lib4aio_cpp_headers/utils/str_hook_utils/str_hook/str_hook.h>
+#include <lib4aio_cpp_headers/aio_explorer/aio_explorer.h>
 #include <lib4aio_cpp_headers/utils/char_utils/char_utils.h>
+#include <lib4aio_cpp_headers/utils/str_hook_utils/str_hook/str_hook.h>
 
 namespace lib4aio {
 
@@ -7,7 +8,7 @@ namespace lib4aio {
 
 #define AIO_EXPLORER_ERROR_TAG "AIO_EXPLORER_ERROR"
 
-    str_hook *explore_hook_scope(
+    str_hook *aio_explorer::explore_hook_scope(
             const unsigned start,
             const char left_border,
             const char right_border,

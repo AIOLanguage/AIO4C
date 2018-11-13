@@ -67,4 +67,4 @@ add_library(
         lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/advanced_functions/str_hook_trim.cpp
         lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/advanced_functions/str_hook_list_log.cpp
         #---------------------------------------------------------------------------------------------------------------
-        ../../com/headers/aio_parsing/aio_expression/util/aio_type_matcher.h)
+)
