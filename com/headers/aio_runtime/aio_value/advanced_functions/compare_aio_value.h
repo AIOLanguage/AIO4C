@@ -1,9 +1,11 @@
 #ifndef LIB4AIO_COMPARE_AIO_VALUE_H
 #define LIB4AIO_COMPARE_AIO_VALUE_H
 
+struct aio_value;
+
 bool are_equal_aio_values(
-        const struct aio_value *value_1,
-        const struct aio_value *value_2
+        const aio_value *value_1,
+        const aio_value *value_2
 );
 
 bool are_not_equal_aio_values(

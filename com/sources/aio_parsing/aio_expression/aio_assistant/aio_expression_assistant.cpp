@@ -39,15 +39,13 @@ aio_result *aio_expression_parser::aio_assistant::make_parentheses(
 #ifdef AIO_EXPRESSION_ASSISTANT_DEBUG
         log_info_str_hook(AIO_EXPRESSION_ASSISTANT_INFO_TAG, "IN PARENTHESIS HOOK:", in_parenthesis_hook);
 #endif
-//        in_parenthesis_hook->start = start_parenthesis + 1;
-//        in_parenthesis_hook->end = end_parenthesis - 1;
         //Get value into parenthesis:
         aio_value *in_parenthesis_value = aio_expression_parser::parse(in_parenthesis_hook, control_graph);
         //Cast to string:
         aio_value *value = cast_function(in_parenthesis_value);
         //Create next rest:
         str_hook *next_hook = new str_hook(expression_str);
-        next_hook->start = in_parenthesis_hook->end;
+        next_hook->start = in_parenthesis_hook->end + 1;
         next_hook->end = expression_hook->end;
         //Create result:
         aio_result *in_parenthesis_result = new aio_result(value, next_hook);

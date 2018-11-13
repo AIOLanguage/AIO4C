@@ -88,7 +88,7 @@ static str_hook *define_type_by_first_element(
         log_info(AIO_EXPRESSION_ANALYSER_INFO_TAG, "START TO EXPLORE");
 #endif
         str_hook *new_parenthesis_scope = aio_explorer::
-                explore_hook_scope(
+        explore_hook_scope(
                 scope->start,
                 '(',
                 ')',
@@ -234,9 +234,9 @@ str_hook *aio_expression_parser::aio_analyser::define_expression_type(
     } else {
         //Define by first element:
         type = define_type_by_first_element(expression_hook, control_graph);
-#ifdef AIO_EXPRESSION_DEBUG
-        log_info_str_hook(AIO_EXPRESSION_ANALYSER_INFO_TAG, "TYPE:", type);
-#endif
     }
+#ifdef AIO_EXPRESSION_DEBUG
+    log_info_str_hook(AIO_EXPRESSION_ANALYSER_INFO_TAG, "<TYPE>:", type);
+#endif
     return type;
 }

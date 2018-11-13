@@ -25,9 +25,10 @@ aio_value *aio_expression_parser::aio_int_parser::parse(const str_hook *expressi
 {
     const aio_result *result = make_plus_or_minus(expression, ray);
     if (result->rest->is_not_empty()) {
-        throw_error_with_tag(AIO_INT_PARSER_INFO_TAG, "Can not fully parse expression!");
+        throw_error_with_str_hook(AIO_INT_PARSER_INFO_TAG, "Can not fully parse expression!", result->rest);
     }
     const int result_int_acc = result->value->get.int_acc;
+    printf("INT VALUE: %d\n", result_int_acc);
     //------------------------------------------------------------------------------------------------------------------
     //찌꺼기 수집기 (Garbage collector):
     delete result;

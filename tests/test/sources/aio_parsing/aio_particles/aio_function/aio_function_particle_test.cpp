@@ -40,7 +40,6 @@ using testing::Eq;
 class aio_function_particle_test : public testing::Test {
 };
 
-
 TEST_F(aio_function_particle_test, trivial)
 {
     //Read sample:

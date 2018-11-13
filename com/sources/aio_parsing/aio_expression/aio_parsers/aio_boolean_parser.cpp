@@ -13,6 +13,7 @@
 #include <lib4aio_cpp_headers/utils/point_watcher/point_watcher.h>
 #include <lib4aio_cpp_headers/utils/str_hook_utils/str_hook/str_hook.h>
 #include <aio_runtime/aio_value/advanced_functions/compare_aio_value.h>
+#include <lib4aio_cpp_headers/utils/log_utils/log_utils.h>
 
 #define AIO_BOOLEAN_PARSER_INFO_TAG "AIO_BOOLEAN_PARSER_INFO"
 
@@ -154,22 +155,26 @@ aio_result *aio_expression_parser::aio_boolean_parser::make_boolean_parentheses(
         const unsigned start_parenthesis = expression_hook->start;
         //Create inner expression hook:
         str_hook *in_parenthesis_hook = aio_explorer::explore_hook_scope(start_parenthesis, '(', ')', expression_hook);
+        const char next_symbol_after_parenthesis = expression_str[in_parenthesis_hook->end + 1];
+        if (is_and_sign(next_symbol_after_parenthesis)|| is_or_sign(next_symbol_after_parenthesis)) {
 #ifdef AIO_BOOLEAN_PARSER_DEBUG
-        log_info_str_hook(AIO_BOOLEAN_PARSER_INFO_TAG, "IN PARENTHESIS HOOK:", in_parenthesis_hook);
+            log_info_str_hook(AIO_BOOLEAN_PARSER_INFO_TAG, "IN PARENTHESIS HOOK:", in_parenthesis_hook);
 #endif
-//        in_parenthesis_hook->start = start_parenthesis + 1;
-//        in_parenthesis_hook->end = end_parenthesis - 1;
-        //Get value into parenthesis:
-        aio_value *in_parenthesis_value = aio_expression_parser::parse(in_parenthesis_hook, control_graph);
-        //Cast to string:
-        aio_value *value = cast_to_boolean(in_parenthesis_value);
-        //Create next rest:
-        str_hook *next_hook = new str_hook(expression_str);
-        next_hook->start = in_parenthesis_hook->end;
-        next_hook->end = expression_hook->end;
-        //Create result:
-        aio_result *in_parenthesis_result = new aio_result(value, next_hook);
-        return in_parenthesis_result;
+            //Get value into parenthesis:
+            aio_value *in_parenthesis_value = aio_expression_parser::parse(in_parenthesis_hook, control_graph);
+            //Cast to string:
+            aio_value *value = cast_to_boolean(in_parenthesis_value);
+            //Create next rest:
+            str_hook *next_hook = new str_hook(expression_str);
+            next_hook->start = in_parenthesis_hook->end;
+            next_hook->end = expression_hook->end;
+            //Create result:
+            aio_result *in_parenthesis_result = new aio_result(value, next_hook);
+            return in_parenthesis_result;
+        }
+        //--------------------------------------------------------------------------------------------------------------
+        delete in_parenthesis_hook;
+        //--------------------------------------------------------------------------------------------------------------
     }
     return aio_boolean_parser::make_condition(expression_hook, control_graph);
 }
@@ -230,6 +235,9 @@ static aio_result *try_to_get_sign_condition(
     }
     //Parse left expression:
     const str_hook *left_expression = new str_hook(expression_str, start_position, i);
+#ifdef AIO_BOOLEAN_PARSER_DEBUG
+    log_info_str_hook(AIO_BOOLEAN_PARSER_INFO_TAG, "LEFTTTTT", left_expression);
+#endif
     aio_value *left_value = aio_expression_parser::parse(left_expression, control_graph);
     //Uniquely define sign & start right expression position:
     unsigned start_right_expr_pos = i + 1;
@@ -288,6 +296,9 @@ static aio_result *try_to_get_sign_condition(
             end_right_expr_pos
     );
     aio_value *right_value = aio_expression_parser::parse(right_expression, control_graph);
+#ifdef AIO_BOOLEAN_PARSER_DEBUG
+    log_info_str_hook(AIO_BOOLEAN_PARSER_INFO_TAG, "RIGHTTTT", right_expression);
+#endif
     //Compare values:
     bool condition_value = false;
     switch (sign_type) {
@@ -322,6 +333,9 @@ aio_result *aio_expression_parser::aio_boolean_parser::make_condition(
         aio_ray *control_graph
 )
 {
+#ifdef AIO_BOOLEAN_PARSER_DEBUG
+    log_info(AIO_BOOLEAN_PARSER_INFO_TAG, "MAKE CONDITION!!!");
+#endif
     aio_result *sign_condition_result = try_to_get_sign_condition(expression_hook, control_graph);
     if (sign_condition_result) {
         str_hook *rest = sign_condition_result->rest;

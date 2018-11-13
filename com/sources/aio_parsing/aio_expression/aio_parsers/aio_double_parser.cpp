@@ -27,11 +27,17 @@ aio_value *aio_expression_parser::aio_double_parser::parse(
         aio_ray *control_graph
 )
 {
+#ifdef AIO_DOUBLE_PARSER_DEBUG
+    log_info(AIO_DOUBLE_PARSER_INFO_TAG, "DOUBLE PARSE!");
+#endif
     const aio_result *result = aio_double_parser::make_plus_or_minus(expression_hook, control_graph);
     if (result->rest->is_not_empty()) {
         throw_error_with_tag(AIO_DOUBLE_PARSER_INFO_TAG, "Can not fully parse expression!");
     }
     const double result_double_acc = result->value->get.double_acc;
+#ifdef AIO_DOUBLE_PARSER_DEBUG
+    log_info_double(AIO_DOUBLE_PARSER_INFO_TAG, "DOUBLE PARSE RESULT:", result_double_acc);
+#endif
     //------------------------------------------------------------------------------------------------------------------
     //찌꺼기 수집기 (Garbage collector):
     delete result;

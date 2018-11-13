@@ -31,6 +31,7 @@ aio_value *aio_expression_parser::aio_string_parser::parse(
     }
     const char *result_string_acc = result->value->get.string_acc;
     aio_value *string_value = new_aio_string_value(result_string_acc);
+    printf("STRING VALUE: %s\n", result_string_acc);
     //------------------------------------------------------------------------------------------------------------------
     //찌꺼기 수집기 (Garbage collector):
     delete result;

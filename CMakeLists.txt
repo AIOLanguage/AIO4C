@@ -38,7 +38,7 @@ add_executable(
         ${aioheaders}
         ${aiosources}
         ${aiotest}
-)
+        tests/test/sources/aio_parsing/aio_expression/aio_parser/aio_parser_test.cpp)
 
 #link google test:
 target_link_libraries(aio gtest gtest_main)

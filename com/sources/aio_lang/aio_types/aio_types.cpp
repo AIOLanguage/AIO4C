@@ -3,7 +3,12 @@
 
 bool is_aio_type_hooked(const str_hook *hook)
 {
-    return is_aio_any_type_hooked(hook);
+    //TODO: Make types as set:
+    return is_aio_any_type_hooked(hook)
+           || is_aio_int_type_hooked(hook)
+           || is_aio_double_type_hooked(hook)
+           || is_aio_string_type_hooked(hook)
+           || is_aio_boolean_type_hooked(hook);
 }
 
 bool is_aio_any_type_hooked(const lib4aio::str_hook *hook)
