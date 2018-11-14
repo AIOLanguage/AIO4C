@@ -30,9 +30,10 @@ bool are_equal_aio_values(
         //--------------------------------------------------------------------------------------------------------------
         return are_equal;
     } else if (type_1->equals_string(DOUBLE)) {
-
+        printf("%lf::1:::\n", value_1->get.double_acc);
         auto new_value_2 = cast_to_double(value_2);
-        auto are_equal = value_1->get.double_acc == new_value_2->get.double_acc;
+        printf("%lf::2:::\n", new_value_2->get.double_acc);
+        const bool are_equal = value_1->get.double_acc == new_value_2->get.double_acc;
         //--------------------------------------------------------------------------------------------------------------
         //찌꺼기 수집:
         free_aio_value(new_value_2);

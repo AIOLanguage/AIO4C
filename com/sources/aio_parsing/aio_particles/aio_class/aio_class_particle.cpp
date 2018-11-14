@@ -29,10 +29,7 @@
 
 aio_class_particle::aio_class_particle()
 {
-    this->clazz = new aio_class();
-    this->monitor_mode = AIO_MONITOR_MODIFIER;
-    this->trigger_mode = AIO_TRIGGER_MODE_PASSIVE;
-    this->signal = AIO_PARTICLE_SIGNAL_UNDEFINED;
+    this->start();
 }
 
 aio_class_particle::~aio_class_particle()
@@ -43,17 +40,17 @@ aio_class_particle::~aio_class_particle()
 void aio_class_particle::recycle()
 {
     aio_class *old_clazz = this->clazz;
-    this->clazz = new aio_class();
-    this->counter_trigger = 0;
-    this->monitor_mode = AIO_MONITOR_MODIFIER;
-    this->trigger_mode = AIO_TRIGGER_MODE_PASSIVE;
-    this->signal = AIO_PARTICLE_SIGNAL_UNDEFINED;
+    this->start();
     delete old_clazz;
 }
 
 void aio_class_particle::start()
 {
-
+    this->clazz = new aio_class();
+    this->counter_trigger = 0;
+    this->monitor_mode = AIO_MONITOR_MODIFIER;
+    this->trigger_mode = AIO_TRIGGER_MODE_PASSIVE;
+    this->signal = AIO_PARTICLE_SIGNAL_UNDEFINED;
 }
 
 
@@ -148,7 +145,7 @@ void aio_class_particle::monitor_name(const char symbol, const unsigned position
                 //Capture name:
                 this->token_holder->end = position;
 #ifdef AIO_CLASS_PARTICLE_DEBUG
-                log_info_str_hook(AIO_CLASS_PARTICLE_ERROR_TAG, "Token name:", this->token_holder);
+                log_info_str_hook(AIO_CLASS_PARTICLE_INFO_TAG, "Token name:", this->token_holder);
 #endif
                 //Set name for field:
                 this->clazz->name = new str_hook(this->token_holder);

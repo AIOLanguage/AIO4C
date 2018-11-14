@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.10.3)
+cmake_minimum_required(VERSION 3.9.6)
 
 project(aio)
 
@@ -38,7 +38,7 @@ add_executable(
         ${aioheaders}
         ${aiosources}
         ${aiotest}
-        tests/test/sources/aio_parsing/aio_expression/aio_parser/aio_parser_test.cpp)
+        tests/test/sources/aio_parsing/aio_expression/aio_parser/aio_parser_test.cpp com/sources/aio_parsing/aio_context_inflater/os/windows/win_core_builder.cpp com/sources/aio_parsing/aio_context_inflater/os/linux/linux_core_builder.cpp com/sources/aio_parsing/aio_context_inflater/os/apple/apple_core_builder.cpp)
 
 #link google test:
 target_link_libraries(aio gtest gtest_main)

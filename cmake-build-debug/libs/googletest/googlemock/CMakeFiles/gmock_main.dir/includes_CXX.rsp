@@ -1,0 +1,1 @@
+-ID:/edu/AIO/com/headers -ID:/edu/AIO/com/sources -ID:/edu/AIO/tests -ID:/edu/AIO/libs/lib4aio -isystem D:/edu/AIO/libs/googletest/googlemock/include -isystem D:/edu/AIO/libs/googletest/googlemock -isystem D:/edu/AIO/libs/googletest/googletest/include -isystem D:/edu/AIO/libs/googletest/googletest 

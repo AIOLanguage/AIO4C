@@ -14,111 +14,78 @@
 
 static str_hook *input_expression = nullptr;
 
-static aio_value *expected_value = nullptr;
-
 static aio_value *actual_value = nullptr;
 
 class aio_parser_test : public testing::Test {
 
 protected:
 
-    static void TearDownTestCase()
-    {
+    static void TearDownTestCase() {
         str_hook *old_input_expression = input_expression;
-        aio_value *old_expected_value = expected_value;
         aio_value *old_actual_value = actual_value;
         input_expression = nullptr;
-        expected_value = nullptr;
         actual_value = nullptr;
         delete old_input_expression;
-        delete old_expected_value;
         delete old_actual_value;
     }
 };
 
-TEST_F(aio_parser_test, trivial_int)
-{
+TEST_F(aio_parser_test, trivial_int) {
     input_expression = new str_hook("20+5");
-    expected_value = new_aio_int_value(25);
     actual_value = aio_expression_parser::parse(input_expression, nullptr);
-    ASSERT_TRUE(are_equal_aio_values(actual_value, expected_value));
+    ASSERT_TRUE(25 == actual_value->get.int_acc);
 }
 
-TEST_F(aio_parser_test, medium_int)
-{
+TEST_F(aio_parser_test, medium_int) {
     input_expression = new str_hook("20+5.0");
-    expected_value = new_aio_int_value(25);
     actual_value = aio_expression_parser::parse(input_expression, nullptr);
-    ASSERT_TRUE(are_equal_aio_values(actual_value, expected_value));
+    ASSERT_TRUE(25 == actual_value->get.int_acc);
 }
 
-TEST_F(aio_parser_test, hard_int)
-{
+TEST_F(aio_parser_test, hard_int) {
     input_expression = new str_hook("(20+5.0-'2'+true)%10");
-    expected_value = new_aio_int_value(4);
     actual_value = aio_expression_parser::parse(input_expression, nullptr);
-    printf("VALUE: %d\n", actual_value->get.int_acc);
-    ASSERT_TRUE(are_equal_aio_values(actual_value, expected_value));
+    ASSERT_TRUE(4 == actual_value->get.int_acc);
 }
 
-TEST_F(aio_parser_test, trivial_double)
-{
+TEST_F(aio_parser_test, trivial_double) {
     input_expression = new str_hook("20.0-'5'+2");
-    expected_value = new_aio_double_value(17.0);
     actual_value = aio_expression_parser::parse(input_expression, nullptr);
-    printf("VALUE: %lf\n", actual_value->get.double_acc);
-    ASSERT_TRUE(are_equal_aio_values(actual_value, expected_value));
+    ASSERT_TRUE(17.0 == actual_value->get.double_acc);
 }
 
-TEST_F(aio_parser_test, medium_double)
-{
+TEST_F(aio_parser_test, medium_double) {
     input_expression = new str_hook("(17.0-'2'+true)/2.0");
-    expected_value = new_aio_double_value(8.0);
     actual_value = aio_expression_parser::parse(input_expression, nullptr);
-    ASSERT_TRUE(are_equal_aio_values(actual_value, expected_value));
+    ASSERT_TRUE(8.0 == actual_value->get.double_acc);
 }
 
-TEST_F(aio_parser_test, hard_double)
-{
+TEST_F(aio_parser_test, hard_double) {
     input_expression = new str_hook("((17-'2'+true)~'0')/2.0");
-    expected_value = new_aio_double_value(80.0);
     actual_value = aio_expression_parser::parse(input_expression, nullptr);
-    printf("VALUE: %lf\n", actual_value->get.double_acc);
-    ASSERT_TRUE(are_equal_aio_values(actual_value, expected_value));
+    ASSERT_TRUE(80.0 == actual_value->get.double_acc);
 }
 
-TEST_F(aio_parser_test, trivial_string)
-{
+TEST_F(aio_parser_test, trivial_string) {
     input_expression = new str_hook("'0.'~5");
-    expected_value = new_aio_string_value("0.5");
     actual_value = aio_expression_parser::parse(input_expression, nullptr);
-    printf("VALUE: %s\n", actual_value->get.string_acc);
-    ASSERT_TRUE(are_equal_aio_values(actual_value, expected_value));
+    ASSERT_TRUE(strcmp("0.5", actual_value->get.string_acc) == 0);
 }
 
-TEST_F(aio_parser_test, trivial_boolean)
-{
+TEST_F(aio_parser_test, trivial_boolean) {
     input_expression = new str_hook("'0'<5");
-    expected_value = new_aio_boolean_value(true);
     actual_value = aio_expression_parser::parse(input_expression, nullptr);
-    printf("VALUE: %d\n", actual_value->get.boolean_acc);
-    ASSERT_TRUE(are_equal_aio_values(actual_value, expected_value));
+    ASSERT_TRUE(actual_value->get.boolean_acc);
 }
 
-TEST_F(aio_parser_test, medium_boolean)
-{
+TEST_F(aio_parser_test, medium_boolean) {
     input_expression = new str_hook("'0'<5&5<8.0");
-    expected_value = new_aio_boolean_value(true);
     actual_value = aio_expression_parser::parse(input_expression, nullptr);
-    printf("VALUE: %d\n", actual_value->get.boolean_acc);
-    ASSERT_TRUE(are_equal_aio_values(actual_value, expected_value));
+    ASSERT_TRUE(actual_value->get.boolean_acc);
 }
 
-TEST_F(aio_parser_test, hard_boolean)
-{
+TEST_F(aio_parser_test, hard_boolean) {
     input_expression = new str_hook("((17-'2'+true)~'0')/2.0==160.0-'80'");
-    expected_value = new_aio_boolean_value(true);
     actual_value = aio_expression_parser::parse(input_expression, nullptr);
-    printf("VALUE: %d\n", actual_value->get.boolean_acc);
-    ASSERT_TRUE(are_equal_aio_values(actual_value, expected_value));
+    ASSERT_TRUE(actual_value->get.boolean_acc);
 }

@@ -42,6 +42,18 @@ private:
     void grub_aio_file(const char *path);
 
     void construct_aio_files();
+
+#ifdef _WIN32
+    class win_builder {
+
+        static void grub_aio_files();
+    };
+#elif __linux__
+    class linux_builder {
+
+        static void grub_aio_files();
+    };
+#endif
 };
 
 #endif //AIO_CONTEXT_INFLATER_H

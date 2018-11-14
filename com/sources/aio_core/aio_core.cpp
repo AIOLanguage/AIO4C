@@ -1,6 +1,5 @@
 //native:
 #include <iostream>
-#include <sys/utsname.h>
 //core:
 #include <aio_core/aio_core.h>
 //parsing:
@@ -40,38 +39,30 @@
 //lib4aio:
 #include <lib4aio_cpp_headers/utils/log_utils/log_utils.h>
 
+
+#endif
+
+#ifdef _WIN32
+
+#include <windows.h>
+
 #endif
 
 using namespace lib4aio;
 
-aio_core *aio_core::create()
-{
+aio_core *aio_core::create() {
     return new aio_core();
 }
 
-aio_core::aio_core()
-{}
+aio_core::aio_core() {}
 
-aio_core *aio_core::configure()
-{
-#ifdef _WIN32_
-#include <windows.h>
+aio_core *aio_core::configure() {
+#ifdef _WIN32
     const unsigned UTF_8 = 65001;
     SetConsoleOutputCP(UTF_8);
     SetConsoleCP(UTF_8);
 #elif __linux__
-
-    /**
-     * Make sth config.
-     */
-
-#elif  __APPLE__
-
-    /**
-     * Make sth config.
-     */
-
-#endif
+#include <sys/utsname.h>
     std::cout << BLUE << "\nAIO 이 시작됩다...\n\n" << RESET;
     utsname *sys_data = (utsname *) new_object(sizeof(utsname));
     uname(sys_data);
@@ -85,12 +76,19 @@ aio_core *aio_core::configure()
     //------------------------------------------------------------------------------------------------------------------
     //찌꺼기 수집기:
     delete sys_data;
+#elif  __APPLE__
+
+    /**
+     * Make sth config.
+     */
+
+#endif
+
     //------------------------------------------------------------------------------------------------------------------
     return this;
 }
 
-static aio_bundle *new_main_bundle(const int argc, char **argv, str_hook *file_path, aio_core *core_ptr)
-{
+static aio_bundle *new_main_bundle(const int argc, char **argv, str_hook *file_path, aio_core *core_ptr) {
     const bool has_args = argc > START_FUNCTION_ARG_INDEX;
     struct_list *aio_args = new_struct_list(sizeof(aio_value));
     if (has_args) {
@@ -104,8 +102,7 @@ static aio_bundle *new_main_bundle(const int argc, char **argv, str_hook *file_p
     return new aio_bundle(core_ptr, file_path, main_function_name, aio_args);
 }
 
-aio_core *aio_core::inflate(char *build_path)
-{
+aio_core *aio_core::inflate(char *build_path) {
     aio_core_builder::create()
             ->set_core(this)
             ->set_build_path(build_path)
@@ -115,25 +112,21 @@ aio_core *aio_core::inflate(char *build_path)
     return this;
 }
 
-void aio_core::finish()
-{
+void aio_core::finish() {
     //------------------------------------------------------------------------------------------------------------------
     //찌꺼기 수집기:
     delete this;
 }
 
-array_list<str_hook> *aio_core::get_types() const
-{
+array_list<str_hook> *aio_core::get_types() const {
     return this->types;
 }
 
-array_list<aio_file> *aio_core::get_files() const
-{
+array_list<aio_file> *aio_core::get_files() const {
     return this->files;
 }
 
-aio_core *aio_core::invoke(int argc, char *const *argv)
-{
+aio_core *aio_core::invoke(int argc, char *const *argv) {
     return this;
 }
 

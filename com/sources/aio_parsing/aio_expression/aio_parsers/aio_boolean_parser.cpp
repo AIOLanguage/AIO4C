@@ -239,6 +239,9 @@ static aio_result *try_to_get_sign_condition(
     log_info_str_hook(AIO_BOOLEAN_PARSER_INFO_TAG, "LEFTTTTT", left_expression);
 #endif
     aio_value *left_value = aio_expression_parser::parse(left_expression, control_graph);
+#ifdef AIO_BOOLEAN_PARSER_DEBUG
+    log_info_double(AIO_BOOLEAN_PARSER_INFO_TAG, "LEFTTTTT", left_value->get.double_acc);
+#endif
     //Uniquely define sign & start right expression position:
     unsigned start_right_expr_pos = i + 1;
     const bool is_next_equal_sign = is_equal_sign(expression_str[i + 1]);
@@ -295,14 +298,17 @@ static aio_result *try_to_get_sign_condition(
             start_right_expr_pos,
             end_right_expr_pos
     );
-    aio_value *right_value = aio_expression_parser::parse(right_expression, control_graph);
 #ifdef AIO_BOOLEAN_PARSER_DEBUG
     log_info_str_hook(AIO_BOOLEAN_PARSER_INFO_TAG, "RIGHTTTT", right_expression);
 #endif
+    aio_value *right_value = aio_expression_parser::parse(right_expression, control_graph);
     //Compare values:
     bool condition_value = false;
     switch (sign_type) {
         case SIGN_EQUALS:
+#ifdef AIO_BOOLEAN_PARSER_DEBUG
+            printf("AAAAAAAAA\n");
+#endif
             condition_value = are_equal_aio_values(left_value, right_value);
             break;
         case SIGN_NOT_EQUALS:
