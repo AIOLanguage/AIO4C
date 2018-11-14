@@ -28,8 +28,7 @@
 aio_value *aio_expression_parser::aio_boolean_parser::parse(
         const str_hook *expression_hook,
         aio_ray *control_graph
-)
-{
+) {
     const aio_result *result = aio_boolean_parser::make_or(expression_hook, control_graph);
     if (result->rest->is_not_empty()) {
         throw_error_with_tag(AIO_BOOLEAN_PARSER_INFO_TAG, "Can not fully parse expression!");
@@ -45,8 +44,7 @@ aio_value *aio_expression_parser::aio_boolean_parser::parse(
 aio_result *aio_expression_parser::aio_boolean_parser::make_or(
         const str_hook *expression_hook,
         aio_ray *control_graph
-)
-{
+) {
     const char *expression_string = expression_hook->get_string();
     const aio_result *left_result = aio_boolean_parser::make_and(expression_hook, control_graph);
     const aio_value *left_value = left_result->value;
@@ -96,8 +94,7 @@ aio_result *aio_expression_parser::aio_boolean_parser::make_or(
 aio_result *aio_expression_parser::aio_boolean_parser::make_and(
         const str_hook *expression_hook,
         aio_ray *control_graph
-)
-{
+) {
     const char *expression_string = expression_hook->get_string();
     aio_result *left_result = aio_boolean_parser::make_boolean_parentheses(expression_hook, control_graph);
     aio_value *left_value = left_result->value;
@@ -146,8 +143,7 @@ aio_result *aio_expression_parser::aio_boolean_parser::make_and(
 aio_result *aio_expression_parser::aio_boolean_parser::make_boolean_parentheses(
         const str_hook *expression_hook,
         aio_ray *control_graph
-)
-{
+) {
     const char *expression_str = expression_hook->get_string();
     const char first_symbol = expression_str[expression_hook->start];
     if (is_opening_parenthesis(first_symbol)) {
@@ -156,7 +152,7 @@ aio_result *aio_expression_parser::aio_boolean_parser::make_boolean_parentheses(
         //Create inner expression hook:
         str_hook *in_parenthesis_hook = aio_explorer::explore_hook_scope(start_parenthesis, '(', ')', expression_hook);
         const char next_symbol_after_parenthesis = expression_str[in_parenthesis_hook->end + 1];
-        if (is_and_sign(next_symbol_after_parenthesis)|| is_or_sign(next_symbol_after_parenthesis)) {
+        if (is_and_sign(next_symbol_after_parenthesis) || is_or_sign(next_symbol_after_parenthesis)) {
 #ifdef AIO_BOOLEAN_PARSER_DEBUG
             log_info_str_hook(AIO_BOOLEAN_PARSER_INFO_TAG, "IN PARENTHESIS HOOK:", in_parenthesis_hook);
 #endif
@@ -186,8 +182,7 @@ enum sign {
 static aio_result *try_to_get_sign_condition(
         const str_hook *expression_hook,
         aio_ray *control_graph
-)
-{
+) {
     const char *expression_str = expression_hook->get_string();
     const unsigned start_position = expression_hook->start;
     const unsigned right_border = expression_hook->end;
@@ -240,7 +235,7 @@ static aio_result *try_to_get_sign_condition(
 #endif
     aio_value *left_value = aio_expression_parser::parse(left_expression, control_graph);
 #ifdef AIO_BOOLEAN_PARSER_DEBUG
-    log_info_double(AIO_BOOLEAN_PARSER_INFO_TAG, "LEFTTTTT", left_value->get.double_acc);
+    log_info_double(AIO_BOOLEAN_PARSER_INFO_TAG, "LEFTTTTTsss", left_value->get.double_acc);
 #endif
     //Uniquely define sign & start right expression position:
     unsigned start_right_expr_pos = i + 1;
@@ -331,14 +326,20 @@ static aio_result *try_to_get_sign_condition(
     }
     //Create next rest:
     str_hook *next_rest = new str_hook(expression_str, end_right_expr_pos, right_border);
+
+    delete left_value;
+    delete left_expression;
+    delete right_value;
+    delete right_expression;
+    delete sign_watcher;
+
     return new aio_result(condition_value, next_rest);
 }
 
 aio_result *aio_expression_parser::aio_boolean_parser::make_condition(
         const str_hook *expression_hook,
         aio_ray *control_graph
-)
-{
+) {
 #ifdef AIO_BOOLEAN_PARSER_DEBUG
     log_info(AIO_BOOLEAN_PARSER_INFO_TAG, "MAKE CONDITION!!!");
 #endif
@@ -351,8 +352,7 @@ aio_result *aio_expression_parser::aio_boolean_parser::make_condition(
     return aio_assistant::make_function_or_variable(expression_hook, control_graph, cast_to_boolean, make_boolean);
 }
 
-static void set_int_value(bool *value, const str_hook *captured_element)
-{
+static void set_int_value(bool *value, const str_hook *captured_element) {
     const int int_value = captured_element->to_int();
     if (int_value == 1) {
         *value = true;
@@ -363,8 +363,7 @@ static void set_int_value(bool *value, const str_hook *captured_element)
     }
 }
 
-static void set_double_value(bool *value, const str_hook *captured_element)
-{
+static void set_double_value(bool *value, const str_hook *captured_element) {
     const double double_value = captured_element->to_double();
     if (double_value == 1.0) {
         *value = true;
@@ -375,8 +374,7 @@ static void set_double_value(bool *value, const str_hook *captured_element)
     }
 }
 
-aio_result *aio_expression_parser::aio_boolean_parser::make_boolean(const str_hook *expression_hook)
-{
+aio_result *aio_expression_parser::aio_boolean_parser::make_boolean(const str_hook *expression_hook) {
     const char *expression_str = expression_hook->get_string();
     const unsigned right_border = expression_hook->end;
     unsigned i = expression_hook->start;
