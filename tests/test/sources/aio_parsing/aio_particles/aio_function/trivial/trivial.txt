@@ -1,1 +1,1 @@
-function sum(a Int, b Int) = a + b
+function sum (a Int, b Int) = a + b

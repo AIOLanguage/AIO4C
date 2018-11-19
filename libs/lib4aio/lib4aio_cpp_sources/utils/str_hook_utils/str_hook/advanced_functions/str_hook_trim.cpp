@@ -66,16 +66,10 @@ namespace lib4aio {
 
     bool str_hook::ends_with(const char *string) const
     {
-        log_info_str_hook("A", "B", this);
-        printf("STR: %s\n", string);
         const unsigned str_length = (unsigned) strlen(string);
         if (str_length < this->get_size()) {
             unsigned counter = 0;
             for (unsigned j = this->end - str_length; j < this->end; ++j) {
-
-                printf("HC: %c\n", this->string_ptr[j]);
-                printf("SC: %c\n", string[counter]);
-
                 if (this->string_ptr[j] != string[counter++]) {
                     return false;
                 }

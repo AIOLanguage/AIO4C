@@ -21,6 +21,10 @@ struct aio_initializable : public aio_space {
 
     virtual ~aio_initializable();
 
+    bool operator==(const aio_initializable &rhs) const;
+
+    bool operator!=(const aio_initializable &rhs) const;
+
     friend std::ostream &operator<<(std::ostream &os, const aio_initializable &initializable);
 
     str_hook *name;

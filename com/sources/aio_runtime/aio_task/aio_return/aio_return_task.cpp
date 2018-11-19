@@ -31,9 +31,6 @@ bool aio_return_task::operator==(const aio_task *task) const
         if ((!this->value && other->value) || (this->value && !other->value)) {
             return false;
         }
-        printf("EEEE: \n");
-        printf("MY: %s\n", this->value);
-        printf("OTHER: %s\n", other->value);
         return strcmp(this->value, other->value) == 0;
     } else {
         return false;

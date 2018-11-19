@@ -18,11 +18,11 @@ namespace lib4aio
     {
         auto end = hook->end;
         auto source_string = hook->get_string();
-        printf("-");
+        os << " ";
         for (int i = hook->start; i < end; ++i) {
-            printf("%c", source_string[i]);
+            os << source_string[i];
         }
-        printf("-\n");
+        os << " ";
         return os;
     }
 }

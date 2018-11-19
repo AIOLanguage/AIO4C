@@ -134,7 +134,7 @@ bool is_aio_continue_modifier(const str_hook *token);
 
 #define AIO_FALSE_VALUE "false"
 
-#define AIO_NULL_VALUE "nil"
+#define AIO_NULL_VALUE "null"
 
 bool is_aio_true_modifier(const str_hook *hook);
 

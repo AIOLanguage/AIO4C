@@ -12,18 +12,12 @@ aio_class::~aio_class()
 
 bool aio_class::operator==(const aio_class &rhs) const
 {
-    printf("START\n");
     if (static_cast<const aio_initializable &>(*this)
         != static_cast<const aio_initializable &>(rhs)) {
         return false;
     }
-    printf("INIT IS OKAY\n");
-    if (static_cast<const aio_inheritable<aio_class> &>(*this)
-        != static_cast<const aio_inheritable<aio_class> &>(rhs)) {
-        return false;
-    }
-    printf("INHERIT IS OKAY\n");
-    return true;
+    return !(static_cast<const aio_inheritable<aio_class> &>(*this)
+             != static_cast<const aio_inheritable<aio_class> &>(rhs));
 }
 
 bool aio_class::operator!=(const aio_class &rhs) const

@@ -15,7 +15,6 @@
 #include <lib4aio_cpp_headers/utils/struct_list/struct_list.h>
 #include <lib4aio_cpp_headers/utils/memory_utils/memory_utils.h>
 #include <lib4aio_cpp_headers/utils/str_hook_utils/str_hook/str_hook.h>
-
 /**
  * 태그들.
  */
@@ -45,6 +44,8 @@
 #ifdef _WIN32
 
 #include <windows.h>
+#elif __linux__
+#include <sys/utsname.h>
 
 #endif
 
@@ -62,7 +63,7 @@ aio_core *aio_core::configure() {
     SetConsoleOutputCP(UTF_8);
     SetConsoleCP(UTF_8);
 #elif __linux__
-#include <sys/utsname.h>
+
     std::cout << BLUE << "\nAIO 이 시작됩다...\n\n" << RESET;
     utsname *sys_data = (utsname *) new_object(sizeof(utsname));
     uname(sys_data);

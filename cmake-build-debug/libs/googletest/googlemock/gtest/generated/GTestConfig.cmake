@@ -24,8 +24,8 @@ endmacro()
 
 ####################################################################################
 include(CMakeFindDependencyMacro)
-if ()
-  set(THREADS_PREFER_PTHREAD_FLAG )
+if (ON)
+  set(THREADS_PREFER_PTHREAD_FLAG ON)
   find_dependency(Threads)
 endif()
 

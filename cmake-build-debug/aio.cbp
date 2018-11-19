@@ -8,1007 +8,962 @@
 		<Option virtualFolders="CMake Files\;CMake Files\com\;CMake Files\tests\;CMake Files\libs\;CMake Files\libs\lib4aio\;CMake Files\libs\googletest\;CMake Files\libs\googletest\googlemock\;CMake Files\libs\googletest\googlemock\cmake\;CMake Files\libs\googletest\googletest\;CMake Files\libs\googletest\googletest\cmake\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="D:/edu/AIO/cmake-build-debug"/>
+				<Option working_dir="/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/edu/AIO/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/edu/AIO/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/edu/AIO/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/edu/AIO/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="install/local">
-				<Option working_dir="D:/edu/AIO/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/edu/AIO/cmake-build-debug/Makefile&quot;  VERBOSE=1 install/local"/>
-					<CompileFile command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/edu/AIO/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/edu/AIO/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/edu/AIO/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="install">
-				<Option working_dir="D:/edu/AIO/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/edu/AIO/cmake-build-debug/Makefile&quot;  VERBOSE=1 install"/>
-					<CompileFile command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/edu/AIO/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/edu/AIO/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/edu/AIO/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="edit_cache">
-				<Option working_dir="D:/edu/AIO/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/edu/AIO/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/edu/AIO/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/edu/AIO/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/edu/AIO/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="aio">
-				<Option output="D:/edu/AIO/cmake-build-debug/aio.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="D:/edu/AIO/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="D:/edu/AIO/com/headers"/>
-					<Add directory="D:/edu/AIO/com/sources"/>
-					<Add directory="D:/edu/AIO/tests"/>
-					<Add directory="D:/edu/AIO/libs/lib4aio"/>
-					<Add directory="D:/edu/AIO/libs/googletest/googletest/include"/>
-					<Add directory="D:/edu/AIO/libs/googletest/googlemock/include"/>
-					<Add directory="D:/edu/AIO/libs/googletest/googletest"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.2.0/include/c++"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.2.0/include/c++/i686-w64-mingw32"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.2.0/include/c++/backward"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.2.0/include"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.2.0/include-fixed"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.2.0/../../../../i686-w64-mingw32/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/edu/AIO/cmake-build-debug/Makefile&quot;  VERBOSE=1 aio"/>
-					<CompileFile command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/edu/AIO/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/edu/AIO/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/edu/AIO/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="aio/fast">
-				<Option output="D:/edu/AIO/cmake-build-debug/aio.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="D:/edu/AIO/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="D:/edu/AIO/com/headers"/>
-					<Add directory="D:/edu/AIO/com/sources"/>
-					<Add directory="D:/edu/AIO/tests"/>
-					<Add directory="D:/edu/AIO/libs/lib4aio"/>
-					<Add directory="D:/edu/AIO/libs/googletest/googletest/include"/>
-					<Add directory="D:/edu/AIO/libs/googletest/googlemock/include"/>
-					<Add directory="D:/edu/AIO/libs/googletest/googletest"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.2.0/include/c++"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.2.0/include/c++/i686-w64-mingw32"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.2.0/include/c++/backward"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.2.0/include"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.2.0/include-fixed"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.2.0/../../../../i686-w64-mingw32/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/edu/AIO/cmake-build-debug/Makefile&quot;  VERBOSE=1 aio/fast"/>
-					<CompileFile command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/edu/AIO/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/edu/AIO/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/edu/AIO/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="rebuild_cache">
-				<Option working_dir="D:/edu/AIO/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/edu/AIO/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/edu/AIO/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/edu/AIO/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/edu/AIO/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="list_install_components">
-				<Option working_dir="D:/edu/AIO/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/edu/AIO/cmake-build-debug/Makefile&quot;  VERBOSE=1 list_install_components"/>
-					<CompileFile command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/edu/AIO/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/edu/AIO/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/edu/AIO/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="install/strip">
-				<Option working_dir="D:/edu/AIO/cmake-build-debug"/>
+				<Option working_dir="/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/edu/AIO/cmake-build-debug/Makefile&quot;  VERBOSE=1 install/strip"/>
-					<CompileFile command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/edu/AIO/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/edu/AIO/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/edu/AIO/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/Makefile&quot;  VERBOSE=1 install/strip"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install/local">
+				<Option working_dir="/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/Makefile&quot;  VERBOSE=1 install/local"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install">
+				<Option working_dir="/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/Makefile&quot;  VERBOSE=1 install"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="aio">
+				<Option output="/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/aio" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/headers"/>
+					<Add directory="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/sources"/>
+					<Add directory="/home/ihb/IgorProjects/projects/aio/os/AIO4C/tests"/>
+					<Add directory="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/lib4aio"/>
+					<Add directory="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/googletest/googlemock/include"/>
+					<Add directory="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/googletest/googletest/include"/>
+					<Add directory="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/googletest/googletest"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/Makefile&quot;  VERBOSE=1 aio"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="aio/fast">
+				<Option output="/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/aio" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/headers"/>
+					<Add directory="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/sources"/>
+					<Add directory="/home/ihb/IgorProjects/projects/aio/os/AIO4C/tests"/>
+					<Add directory="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/lib4aio"/>
+					<Add directory="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/googletest/googlemock/include"/>
+					<Add directory="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/googletest/googletest/include"/>
+					<Add directory="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/googletest/googletest"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/Makefile&quot;  VERBOSE=1 aio/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="list_install_components">
+				<Option working_dir="/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/Makefile&quot;  VERBOSE=1 list_install_components"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="lib4aio">
-				<Option output="D:/edu/AIO/cmake-build-debug/libs/lib4aio/liblib4aio.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="D:/edu/AIO/cmake-build-debug/libs/lib4aio"/>
+				<Option output="/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/libs/lib4aio/liblib4aio.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/libs/lib4aio"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="D:/edu/AIO/com/headers"/>
-					<Add directory="D:/edu/AIO/com/sources"/>
-					<Add directory="D:/edu/AIO/tests"/>
-					<Add directory="D:/edu/AIO/libs/lib4aio/../lib4aio"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.2.0/include/c++"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.2.0/include/c++/i686-w64-mingw32"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.2.0/include/c++/backward"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.2.0/include"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.2.0/include-fixed"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.2.0/../../../../i686-w64-mingw32/include"/>
+					<Add directory="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/headers"/>
+					<Add directory="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/sources"/>
+					<Add directory="/home/ihb/IgorProjects/projects/aio/os/AIO4C/tests"/>
+					<Add directory="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/lib4aio/../lib4aio"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/edu/AIO/cmake-build-debug/libs/lib4aio/Makefile&quot;  VERBOSE=1 lib4aio"/>
-					<CompileFile command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/edu/AIO/cmake-build-debug/libs/lib4aio/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/edu/AIO/cmake-build-debug/libs/lib4aio/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/edu/AIO/cmake-build-debug/libs/lib4aio/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/libs/lib4aio/Makefile&quot;  VERBOSE=1 lib4aio"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/libs/lib4aio/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/libs/lib4aio/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/libs/lib4aio/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="lib4aio/fast">
-				<Option output="D:/edu/AIO/cmake-build-debug/libs/lib4aio/liblib4aio.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="D:/edu/AIO/cmake-build-debug/libs/lib4aio"/>
+				<Option output="/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/libs/lib4aio/liblib4aio.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/libs/lib4aio"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="D:/edu/AIO/com/headers"/>
-					<Add directory="D:/edu/AIO/com/sources"/>
-					<Add directory="D:/edu/AIO/tests"/>
-					<Add directory="D:/edu/AIO/libs/lib4aio/../lib4aio"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.2.0/include/c++"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.2.0/include/c++/i686-w64-mingw32"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.2.0/include/c++/backward"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.2.0/include"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.2.0/include-fixed"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.2.0/../../../../i686-w64-mingw32/include"/>
+					<Add directory="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/headers"/>
+					<Add directory="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/sources"/>
+					<Add directory="/home/ihb/IgorProjects/projects/aio/os/AIO4C/tests"/>
+					<Add directory="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/lib4aio/../lib4aio"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/edu/AIO/cmake-build-debug/libs/lib4aio/Makefile&quot;  VERBOSE=1 lib4aio/fast"/>
-					<CompileFile command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/edu/AIO/cmake-build-debug/libs/lib4aio/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/edu/AIO/cmake-build-debug/libs/lib4aio/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/edu/AIO/cmake-build-debug/libs/lib4aio/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/libs/lib4aio/Makefile&quot;  VERBOSE=1 lib4aio/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/libs/lib4aio/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/libs/lib4aio/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/libs/lib4aio/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="gmock_main">
-				<Option output="D:/edu/AIO/cmake-build-debug/lib/libgmock_maind.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="D:/edu/AIO/cmake-build-debug/libs/googletest/googlemock"/>
+				<Option output="/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/lib/libgmock_maind.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/libs/googletest/googlemock"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="D:/edu/AIO/com/headers"/>
-					<Add directory="D:/edu/AIO/com/sources"/>
-					<Add directory="D:/edu/AIO/tests"/>
-					<Add directory="D:/edu/AIO/libs/lib4aio"/>
-					<Add directory="D:/edu/AIO/libs/googletest/googlemock/include"/>
-					<Add directory="D:/edu/AIO/libs/googletest/googlemock"/>
-					<Add directory="D:/edu/AIO/libs/googletest/googletest/include"/>
-					<Add directory="D:/edu/AIO/libs/googletest/googletest"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.2.0/include/c++"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.2.0/include/c++/i686-w64-mingw32"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.2.0/include/c++/backward"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.2.0/include"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.2.0/include-fixed"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.2.0/../../../../i686-w64-mingw32/include"/>
+					<Add directory="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/headers"/>
+					<Add directory="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/sources"/>
+					<Add directory="/home/ihb/IgorProjects/projects/aio/os/AIO4C/tests"/>
+					<Add directory="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/lib4aio"/>
+					<Add directory="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/googletest/googlemock/include"/>
+					<Add directory="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/googletest/googlemock"/>
+					<Add directory="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/googletest/googletest/include"/>
+					<Add directory="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/googletest/googletest"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/edu/AIO/cmake-build-debug/libs/googletest/googlemock/Makefile&quot;  VERBOSE=1 gmock_main"/>
-					<CompileFile command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/edu/AIO/cmake-build-debug/libs/googletest/googlemock/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/edu/AIO/cmake-build-debug/libs/googletest/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/edu/AIO/cmake-build-debug/libs/googletest/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/libs/googletest/googlemock/Makefile&quot;  VERBOSE=1 gmock_main"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/libs/googletest/googlemock/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/libs/googletest/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/libs/googletest/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="gmock_main/fast">
-				<Option output="D:/edu/AIO/cmake-build-debug/lib/libgmock_maind.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="D:/edu/AIO/cmake-build-debug/libs/googletest/googlemock"/>
+				<Option output="/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/lib/libgmock_maind.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/libs/googletest/googlemock"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="D:/edu/AIO/com/headers"/>
-					<Add directory="D:/edu/AIO/com/sources"/>
-					<Add directory="D:/edu/AIO/tests"/>
-					<Add directory="D:/edu/AIO/libs/lib4aio"/>
-					<Add directory="D:/edu/AIO/libs/googletest/googlemock/include"/>
-					<Add directory="D:/edu/AIO/libs/googletest/googlemock"/>
-					<Add directory="D:/edu/AIO/libs/googletest/googletest/include"/>
-					<Add directory="D:/edu/AIO/libs/googletest/googletest"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.2.0/include/c++"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.2.0/include/c++/i686-w64-mingw32"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.2.0/include/c++/backward"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.2.0/include"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.2.0/include-fixed"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.2.0/../../../../i686-w64-mingw32/include"/>
+					<Add directory="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/headers"/>
+					<Add directory="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/sources"/>
+					<Add directory="/home/ihb/IgorProjects/projects/aio/os/AIO4C/tests"/>
+					<Add directory="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/lib4aio"/>
+					<Add directory="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/googletest/googlemock/include"/>
+					<Add directory="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/googletest/googlemock"/>
+					<Add directory="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/googletest/googletest/include"/>
+					<Add directory="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/googletest/googletest"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/edu/AIO/cmake-build-debug/libs/googletest/googlemock/Makefile&quot;  VERBOSE=1 gmock_main/fast"/>
-					<CompileFile command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/edu/AIO/cmake-build-debug/libs/googletest/googlemock/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/edu/AIO/cmake-build-debug/libs/googletest/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/edu/AIO/cmake-build-debug/libs/googletest/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/libs/googletest/googlemock/Makefile&quot;  VERBOSE=1 gmock_main/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/libs/googletest/googlemock/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/libs/googletest/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/libs/googletest/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="gmock">
-				<Option output="D:/edu/AIO/cmake-build-debug/lib/libgmockd.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="D:/edu/AIO/cmake-build-debug/libs/googletest/googlemock"/>
+				<Option output="/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/lib/libgmockd.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/libs/googletest/googlemock"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="D:/edu/AIO/com/headers"/>
-					<Add directory="D:/edu/AIO/com/sources"/>
-					<Add directory="D:/edu/AIO/tests"/>
-					<Add directory="D:/edu/AIO/libs/lib4aio"/>
-					<Add directory="D:/edu/AIO/libs/googletest/googlemock/include"/>
-					<Add directory="D:/edu/AIO/libs/googletest/googlemock"/>
-					<Add directory="D:/edu/AIO/libs/googletest/googletest/include"/>
-					<Add directory="D:/edu/AIO/libs/googletest/googletest"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.2.0/include/c++"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.2.0/include/c++/i686-w64-mingw32"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.2.0/include/c++/backward"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.2.0/include"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.2.0/include-fixed"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.2.0/../../../../i686-w64-mingw32/include"/>
+					<Add directory="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/headers"/>
+					<Add directory="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/sources"/>
+					<Add directory="/home/ihb/IgorProjects/projects/aio/os/AIO4C/tests"/>
+					<Add directory="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/lib4aio"/>
+					<Add directory="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/googletest/googlemock/include"/>
+					<Add directory="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/googletest/googlemock"/>
+					<Add directory="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/googletest/googletest/include"/>
+					<Add directory="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/googletest/googletest"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/edu/AIO/cmake-build-debug/libs/googletest/googlemock/Makefile&quot;  VERBOSE=1 gmock"/>
-					<CompileFile command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/edu/AIO/cmake-build-debug/libs/googletest/googlemock/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/edu/AIO/cmake-build-debug/libs/googletest/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/edu/AIO/cmake-build-debug/libs/googletest/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/libs/googletest/googlemock/Makefile&quot;  VERBOSE=1 gmock"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/libs/googletest/googlemock/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/libs/googletest/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/libs/googletest/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="gmock/fast">
-				<Option output="D:/edu/AIO/cmake-build-debug/lib/libgmockd.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="D:/edu/AIO/cmake-build-debug/libs/googletest/googlemock"/>
+				<Option output="/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/lib/libgmockd.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/libs/googletest/googlemock"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="D:/edu/AIO/com/headers"/>
-					<Add directory="D:/edu/AIO/com/sources"/>
-					<Add directory="D:/edu/AIO/tests"/>
-					<Add directory="D:/edu/AIO/libs/lib4aio"/>
-					<Add directory="D:/edu/AIO/libs/googletest/googlemock/include"/>
-					<Add directory="D:/edu/AIO/libs/googletest/googlemock"/>
-					<Add directory="D:/edu/AIO/libs/googletest/googletest/include"/>
-					<Add directory="D:/edu/AIO/libs/googletest/googletest"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.2.0/include/c++"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.2.0/include/c++/i686-w64-mingw32"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.2.0/include/c++/backward"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.2.0/include"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.2.0/include-fixed"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.2.0/../../../../i686-w64-mingw32/include"/>
+					<Add directory="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/headers"/>
+					<Add directory="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/sources"/>
+					<Add directory="/home/ihb/IgorProjects/projects/aio/os/AIO4C/tests"/>
+					<Add directory="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/lib4aio"/>
+					<Add directory="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/googletest/googlemock/include"/>
+					<Add directory="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/googletest/googlemock"/>
+					<Add directory="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/googletest/googletest/include"/>
+					<Add directory="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/googletest/googletest"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/edu/AIO/cmake-build-debug/libs/googletest/googlemock/Makefile&quot;  VERBOSE=1 gmock/fast"/>
-					<CompileFile command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/edu/AIO/cmake-build-debug/libs/googletest/googlemock/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/edu/AIO/cmake-build-debug/libs/googletest/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/edu/AIO/cmake-build-debug/libs/googletest/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="gtest">
-				<Option output="D:/edu/AIO/cmake-build-debug/lib/libgtestd.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="D:/edu/AIO/cmake-build-debug/libs/googletest/googlemock/gtest"/>
-				<Option object_output="./"/>
-				<Option type="2"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="D:/edu/AIO/com/headers"/>
-					<Add directory="D:/edu/AIO/com/sources"/>
-					<Add directory="D:/edu/AIO/tests"/>
-					<Add directory="D:/edu/AIO/libs/lib4aio"/>
-					<Add directory="D:/edu/AIO/libs/googletest/googletest/include"/>
-					<Add directory="D:/edu/AIO/libs/googletest/googletest"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.2.0/include/c++"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.2.0/include/c++/i686-w64-mingw32"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.2.0/include/c++/backward"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.2.0/include"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.2.0/include-fixed"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.2.0/../../../../i686-w64-mingw32/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/edu/AIO/cmake-build-debug/libs/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 gtest"/>
-					<CompileFile command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/edu/AIO/cmake-build-debug/libs/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/edu/AIO/cmake-build-debug/libs/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/edu/AIO/cmake-build-debug/libs/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="gtest/fast">
-				<Option output="D:/edu/AIO/cmake-build-debug/lib/libgtestd.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="D:/edu/AIO/cmake-build-debug/libs/googletest/googlemock/gtest"/>
-				<Option object_output="./"/>
-				<Option type="2"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="D:/edu/AIO/com/headers"/>
-					<Add directory="D:/edu/AIO/com/sources"/>
-					<Add directory="D:/edu/AIO/tests"/>
-					<Add directory="D:/edu/AIO/libs/lib4aio"/>
-					<Add directory="D:/edu/AIO/libs/googletest/googletest/include"/>
-					<Add directory="D:/edu/AIO/libs/googletest/googletest"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.2.0/include/c++"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.2.0/include/c++/i686-w64-mingw32"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.2.0/include/c++/backward"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.2.0/include"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.2.0/include-fixed"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.2.0/../../../../i686-w64-mingw32/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/edu/AIO/cmake-build-debug/libs/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 gtest/fast"/>
-					<CompileFile command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/edu/AIO/cmake-build-debug/libs/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/edu/AIO/cmake-build-debug/libs/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/edu/AIO/cmake-build-debug/libs/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/libs/googletest/googlemock/Makefile&quot;  VERBOSE=1 gmock/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/libs/googletest/googlemock/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/libs/googletest/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/libs/googletest/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="gtest_main">
-				<Option output="D:/edu/AIO/cmake-build-debug/lib/libgtest_maind.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="D:/edu/AIO/cmake-build-debug/libs/googletest/googlemock/gtest"/>
+				<Option output="/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/lib/libgtest_maind.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/libs/googletest/googlemock/gtest"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="D:/edu/AIO/com/headers"/>
-					<Add directory="D:/edu/AIO/com/sources"/>
-					<Add directory="D:/edu/AIO/tests"/>
-					<Add directory="D:/edu/AIO/libs/lib4aio"/>
-					<Add directory="D:/edu/AIO/libs/googletest/googletest/include"/>
-					<Add directory="D:/edu/AIO/libs/googletest/googletest"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.2.0/include/c++"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.2.0/include/c++/i686-w64-mingw32"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.2.0/include/c++/backward"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.2.0/include"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.2.0/include-fixed"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.2.0/../../../../i686-w64-mingw32/include"/>
+					<Add directory="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/headers"/>
+					<Add directory="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/sources"/>
+					<Add directory="/home/ihb/IgorProjects/projects/aio/os/AIO4C/tests"/>
+					<Add directory="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/lib4aio"/>
+					<Add directory="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/googletest/googletest/include"/>
+					<Add directory="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/googletest/googletest"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/edu/AIO/cmake-build-debug/libs/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 gtest_main"/>
-					<CompileFile command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/edu/AIO/cmake-build-debug/libs/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/edu/AIO/cmake-build-debug/libs/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/edu/AIO/cmake-build-debug/libs/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/libs/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 gtest_main"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/libs/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/libs/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/libs/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="gtest_main/fast">
-				<Option output="D:/edu/AIO/cmake-build-debug/lib/libgtest_maind.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="D:/edu/AIO/cmake-build-debug/libs/googletest/googlemock/gtest"/>
+				<Option output="/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/lib/libgtest_maind.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/libs/googletest/googlemock/gtest"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="D:/edu/AIO/com/headers"/>
-					<Add directory="D:/edu/AIO/com/sources"/>
-					<Add directory="D:/edu/AIO/tests"/>
-					<Add directory="D:/edu/AIO/libs/lib4aio"/>
-					<Add directory="D:/edu/AIO/libs/googletest/googletest/include"/>
-					<Add directory="D:/edu/AIO/libs/googletest/googletest"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.2.0/include/c++"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.2.0/include/c++/i686-w64-mingw32"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.2.0/include/c++/backward"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.2.0/include"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.2.0/include-fixed"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.2.0/../../../../i686-w64-mingw32/include"/>
+					<Add directory="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/headers"/>
+					<Add directory="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/sources"/>
+					<Add directory="/home/ihb/IgorProjects/projects/aio/os/AIO4C/tests"/>
+					<Add directory="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/lib4aio"/>
+					<Add directory="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/googletest/googletest/include"/>
+					<Add directory="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/googletest/googletest"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/edu/AIO/cmake-build-debug/libs/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 gtest_main/fast"/>
-					<CompileFile command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/edu/AIO/cmake-build-debug/libs/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/edu/AIO/cmake-build-debug/libs/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/edu/AIO/cmake-build-debug/libs/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/libs/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 gtest_main/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/libs/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/libs/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/libs/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="gtest">
+				<Option output="/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/lib/libgtestd.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/libs/googletest/googlemock/gtest"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/headers"/>
+					<Add directory="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/sources"/>
+					<Add directory="/home/ihb/IgorProjects/projects/aio/os/AIO4C/tests"/>
+					<Add directory="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/lib4aio"/>
+					<Add directory="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/googletest/googletest/include"/>
+					<Add directory="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/googletest/googletest"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/libs/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 gtest"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/libs/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/libs/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/libs/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="gtest/fast">
+				<Option output="/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/lib/libgtestd.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/libs/googletest/googlemock/gtest"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/headers"/>
+					<Add directory="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/sources"/>
+					<Add directory="/home/ihb/IgorProjects/projects/aio/os/AIO4C/tests"/>
+					<Add directory="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/lib4aio"/>
+					<Add directory="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/googletest/googletest/include"/>
+					<Add directory="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/googletest/googletest"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/libs/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 gtest/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/libs/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/libs/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/libs/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="D:/edu/AIO/com/headers">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/headers">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/com/headers/aio_core/aio_core.h">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/headers/aio_core/aio_core.h">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/com/headers/aio_lang/aio_annotatable/aio_annotatable.h">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/headers/aio_lang/aio_annotatable/aio_annotatable.h">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/com/headers/aio_lang/aio_field/aio_field.h">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/headers/aio_lang/aio_field/aio_field.h">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/com/headers/aio_lang/aio_inheritable/aio_inheritable.h">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/headers/aio_lang/aio_inheritable/aio_inheritable.h">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/com/headers/aio_lang/aio_invokable/aio_constructor/aio_constructor.h">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/headers/aio_lang/aio_invokable/aio_constructor/aio_constructor.h">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/com/headers/aio_lang/aio_invokable/aio_function/aio_function.h">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/headers/aio_lang/aio_invokable/aio_function/aio_function.h">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/com/headers/aio_lang/aio_invokable/aio_invokable.h">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/headers/aio_lang/aio_invokable/aio_invokable.h">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/com/headers/aio_lang/aio_modifiers/aio_modifiers.h">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/headers/aio_lang/aio_modifiers/aio_modifiers.h">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/com/headers/aio_lang/aio_schemable/aio_schemable.h">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/headers/aio_lang/aio_schemable/aio_schemable.h">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/com/headers/aio_lang/aio_space/aio_file/aio_file.h">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/headers/aio_lang/aio_space/aio_file/aio_file.h">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/com/headers/aio_lang/aio_space/aio_initializable/aio_class/aio_class.h">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/headers/aio_lang/aio_space/aio_initializable/aio_class/aio_class.h">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/com/headers/aio_lang/aio_space/aio_initializable/aio_enum/aio_enum.h">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/headers/aio_lang/aio_space/aio_initializable/aio_enum/aio_enum.h">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/com/headers/aio_lang/aio_space/aio_initializable/aio_initializable.h">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/headers/aio_lang/aio_space/aio_initializable/aio_initializable.h">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/com/headers/aio_lang/aio_space/aio_scope/aio_scope.h">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/headers/aio_lang/aio_space/aio_scope/aio_scope.h">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/com/headers/aio_lang/aio_space/aio_space.h">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/headers/aio_lang/aio_space/aio_space.h">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/com/headers/aio_lang/aio_types/aio_types.h">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/headers/aio_lang/aio_types/aio_types.h">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/com/headers/aio_lang/aio_visible/aio_visible.h">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/headers/aio_lang/aio_visible/aio_visible.h">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/com/headers/aio_parsing/aio_core_builder/aio_core_builder.h">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/headers/aio_parsing/aio_core_builder/aio_core_builder.h">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/com/headers/aio_parsing/aio_expression/aio_expression_parser.h">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/headers/aio_parsing/aio_expression/aio_expression_parser.h">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/com/headers/aio_parsing/aio_particles/aio_class/aio_class_particle.h">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/headers/aio_parsing/aio_particles/aio_class/aio_class_particle.h">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/com/headers/aio_parsing/aio_particles/aio_constructor/aio_constructor_particle.h">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/headers/aio_parsing/aio_particles/aio_constructor/aio_constructor_particle.h">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/com/headers/aio_parsing/aio_particles/aio_field/aio_field_particle.h">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/headers/aio_parsing/aio_particles/aio_field/aio_field_particle.h">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/com/headers/aio_parsing/aio_particles/aio_function/aio_function_particle.h">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/headers/aio_parsing/aio_particles/aio_function/aio_function_particle.h">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/com/headers/aio_parsing/aio_particles/aio_import/aio_import_particle.h">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/headers/aio_parsing/aio_particles/aio_import/aio_import_particle.h">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/com/headers/aio_parsing/aio_particles/aio_scope/aio_scope_particle.h">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/headers/aio_parsing/aio_particles/aio_scope/aio_scope_particle.h">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/com/headers/aio_runtime/aio_bundle/aio_bundle.h">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/headers/aio_runtime/aio_bundle/aio_bundle.h">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/com/headers/aio_runtime/aio_invoker/aio_invoker.h">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/headers/aio_runtime/aio_invoker/aio_invoker.h">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/com/headers/aio_runtime/aio_ray/aio_ray.h">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/headers/aio_runtime/aio_ray/aio_ray.h">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/com/headers/aio_runtime/aio_result/aio_result.h">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/headers/aio_runtime/aio_result/aio_result.h">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/com/headers/aio_runtime/aio_task/aio_assign/aio_assign_task.h">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/headers/aio_runtime/aio_task/aio_assign/aio_assign_task.h">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/com/headers/aio_runtime/aio_task/aio_return/aio_return_task.h">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/headers/aio_runtime/aio_task/aio_return/aio_return_task.h">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/com/headers/aio_runtime/aio_task/aio_task.h">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/headers/aio_runtime/aio_task/aio_task.h">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/com/headers/aio_runtime/aio_value/advanced_functions/cast_aio_value.h">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/headers/aio_runtime/aio_value/advanced_functions/cast_aio_value.h">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/com/headers/aio_runtime/aio_value/advanced_functions/compare_aio_value.h">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/headers/aio_runtime/aio_value/advanced_functions/compare_aio_value.h">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/com/headers/aio_runtime/aio_value/advanced_functions/log_aio_value.h">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/headers/aio_runtime/aio_value/advanced_functions/log_aio_value.h">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/com/headers/aio_runtime/aio_value/aio_value.h">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/headers/aio_runtime/aio_value/aio_value.h">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/com/headers/aio_runtime/aio_variable/aio_variable.h">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/headers/aio_runtime/aio_variable/aio_variable.h">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/com/sources">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/sources">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/com/sources/aio_core/aio_core.cpp">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/sources/aio_core/aio_core.cpp">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/com/sources/aio_lang/aio_annotatable/aio_annotatable.cpp">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/sources/aio_lang/aio_annotatable/aio_annotatable.cpp">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/com/sources/aio_lang/aio_field/aio_field.cpp">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/sources/aio_lang/aio_field/aio_field.cpp">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/com/sources/aio_lang/aio_inheritable/aio_inheritable.cpp">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/sources/aio_lang/aio_inheritable/aio_inheritable.cpp">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/com/sources/aio_lang/aio_invokable/aio_invokable.cpp">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/sources/aio_lang/aio_invokable/aio_invokable.cpp">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/com/sources/aio_lang/aio_invokable/constructor/aio_constructor.cpp">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/sources/aio_lang/aio_invokable/constructor/aio_constructor.cpp">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/com/sources/aio_lang/aio_invokable/function/aio_function.cpp">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/sources/aio_lang/aio_invokable/function/aio_function.cpp">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/com/sources/aio_lang/aio_modifiers/aio_modifiers.cpp">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/sources/aio_lang/aio_modifiers/aio_modifiers.cpp">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/com/sources/aio_lang/aio_schemable/aio_schemable.cpp">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/sources/aio_lang/aio_schemable/aio_schemable.cpp">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/com/sources/aio_lang/aio_space/aio_file/aio_file.cpp">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/sources/aio_lang/aio_space/aio_file/aio_file.cpp">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/com/sources/aio_lang/aio_space/aio_initializable/aio_class/aio_class.cpp">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/sources/aio_lang/aio_space/aio_initializable/aio_class/aio_class.cpp">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/com/sources/aio_lang/aio_space/aio_initializable/aio_enum/aio_enum.cpp">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/sources/aio_lang/aio_space/aio_initializable/aio_enum/aio_enum.cpp">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/com/sources/aio_lang/aio_space/aio_initializable/aio_initializable.cpp">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/sources/aio_lang/aio_space/aio_initializable/aio_initializable.cpp">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/com/sources/aio_lang/aio_space/aio_scope/aio_scope.cpp">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/sources/aio_lang/aio_space/aio_scope/aio_scope.cpp">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/com/sources/aio_lang/aio_space/aio_space.cpp">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/sources/aio_lang/aio_space/aio_space.cpp">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/com/sources/aio_lang/aio_types/aio_types.cpp">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/sources/aio_lang/aio_types/aio_types.cpp">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/com/sources/aio_lang/aio_visible/aio_visible.cpp">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/sources/aio_lang/aio_visible/aio_visible.cpp">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/com/sources/aio_parsing/aio_context_inflater/aio_core_builder.cpp">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/sources/aio_parsing/aio_context_inflater/aio_core_builder.cpp">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/com/sources/aio_parsing/aio_context_inflater/os/apple/apple_core_builder.cpp">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/sources/aio_parsing/aio_context_inflater/os/apple/apple_core_builder.cpp">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/com/sources/aio_parsing/aio_context_inflater/os/linux/linux_core_builder.cpp">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/sources/aio_parsing/aio_context_inflater/os/linux/linux_core_builder.cpp">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/com/sources/aio_parsing/aio_context_inflater/os/windows/win_core_builder.cpp">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/sources/aio_parsing/aio_context_inflater/os/windows/win_core_builder.cpp">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/com/sources/aio_parsing/aio_expression/aio_analyser/aio_analyser.cpp">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/sources/aio_parsing/aio_expression/aio_analyser/aio_analyser.cpp">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/com/sources/aio_parsing/aio_expression/aio_assistant/aio_expression_assistant.cpp">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/sources/aio_parsing/aio_expression/aio_assistant/aio_expression_assistant.cpp">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/com/sources/aio_parsing/aio_expression/aio_expression_parser.cpp">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/sources/aio_parsing/aio_expression/aio_expression_parser.cpp">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/com/sources/aio_parsing/aio_expression/aio_parsers/aio_boolean_parser.cpp">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/sources/aio_parsing/aio_expression/aio_parsers/aio_boolean_parser.cpp">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/com/sources/aio_parsing/aio_expression/aio_parsers/aio_double_parser.cpp">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/sources/aio_parsing/aio_expression/aio_parsers/aio_double_parser.cpp">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/com/sources/aio_parsing/aio_expression/aio_parsers/aio_int_parser.cpp">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/sources/aio_parsing/aio_expression/aio_parsers/aio_int_parser.cpp">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/com/sources/aio_parsing/aio_expression/aio_parsers/aio_string_parser.cpp">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/sources/aio_parsing/aio_expression/aio_parsers/aio_string_parser.cpp">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/com/sources/aio_parsing/aio_particles/aio_class/aio_class_particle.cpp">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/sources/aio_parsing/aio_particles/aio_class/aio_class_particle.cpp">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/com/sources/aio_parsing/aio_particles/aio_constructor/aio_constructor_particle.cpp">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/sources/aio_parsing/aio_particles/aio_constructor/aio_constructor_particle.cpp">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/com/sources/aio_parsing/aio_particles/aio_field/aio_field_particle.cpp">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/sources/aio_parsing/aio_particles/aio_field/aio_field_particle.cpp">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/com/sources/aio_parsing/aio_particles/aio_function/aio_function_particle.cpp">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/sources/aio_parsing/aio_particles/aio_function/aio_function_particle.cpp">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/com/sources/aio_parsing/aio_particles/aio_import/aio_import_particle.cpp">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/sources/aio_parsing/aio_particles/aio_import/aio_import_particle.cpp">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/com/sources/aio_parsing/aio_particles/aio_scope/aio_scope_particle.cpp">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/sources/aio_parsing/aio_particles/aio_scope/aio_scope_particle.cpp">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/com/sources/aio_runtime/aio_bundle/aio_bundle.cpp">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/sources/aio_runtime/aio_bundle/aio_bundle.cpp">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/com/sources/aio_runtime/aio_invoker/aio_invoker.cpp">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/sources/aio_runtime/aio_invoker/aio_invoker.cpp">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/com/sources/aio_runtime/aio_ray/aio_ray.cpp">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/sources/aio_runtime/aio_ray/aio_ray.cpp">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/com/sources/aio_runtime/aio_result/aio_result.cpp">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/sources/aio_runtime/aio_result/aio_result.cpp">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/com/sources/aio_runtime/aio_task/aio_assign/aio_assign_task.cpp">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/sources/aio_runtime/aio_task/aio_assign/aio_assign_task.cpp">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/com/sources/aio_runtime/aio_task/aio_return/aio_return_task.cpp">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/sources/aio_runtime/aio_task/aio_return/aio_return_task.cpp">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/com/sources/aio_runtime/aio_task/aio_task.cpp">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/sources/aio_runtime/aio_task/aio_task.cpp">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/com/sources/aio_runtime/aio_value/advanced_functions/cast_aio_value.cpp">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/sources/aio_runtime/aio_value/advanced_functions/cast_aio_value.cpp">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/com/sources/aio_runtime/aio_value/advanced_functions/compare_aio_value.cpp">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/sources/aio_runtime/aio_value/advanced_functions/compare_aio_value.cpp">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/com/sources/aio_runtime/aio_value/advanced_functions/log_aio_value.cpp">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/sources/aio_runtime/aio_value/advanced_functions/log_aio_value.cpp">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/com/sources/aio_runtime/aio_value/aio_value.cpp">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/sources/aio_runtime/aio_value/aio_value.cpp">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/com/sources/aio_runtime/aio_variable/aio_variable.cpp">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/sources/aio_runtime/aio_variable/aio_variable.cpp">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/libs/googletest/googlemock/src/gmock-all.cc">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/googletest/googlemock/src/gmock-all.cc">
 			<Option target="gmock"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/libs/googletest/googlemock/src/gmock_main.cc">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/googletest/googlemock/src/gmock_main.cc">
 			<Option target="gmock_main"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/libs/googletest/googletest/src/gtest-all.cc">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/googletest/googletest/src/gtest-all.cc">
 			<Option target="gtest"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/libs/googletest/googletest/src/gtest_main.cc">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/googletest/googletest/src/gtest_main.cc">
 			<Option target="gtest_main"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/libs/lib4aio/lib4aio_cpp_headers/aio_explorer/aio_explorer.h">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/lib4aio/lib4aio_cpp_headers/aio_explorer/aio_explorer.h">
 			<Option target="lib4aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/libs/lib4aio/lib4aio_cpp_headers/aio_orbit/aio_orbit.h">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/lib4aio/lib4aio_cpp_headers/aio_orbit/aio_orbit.h">
 			<Option target="lib4aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/libs/lib4aio/lib4aio_cpp_headers/aio_orbit/aio_particle/aio_particle.h">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/lib4aio/lib4aio_cpp_headers/aio_orbit/aio_particle/aio_particle.h">
 			<Option target="lib4aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/libs/lib4aio/lib4aio_cpp_headers/aio_path_util/aio_path_util.h">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/lib4aio/lib4aio_cpp_headers/aio_path_util/aio_path_util.h">
 			<Option target="lib4aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/libs/lib4aio/lib4aio_cpp_headers/aio_pattern_utils/aio_pattern_utils.h">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/lib4aio/lib4aio_cpp_headers/aio_pattern_utils/aio_pattern_utils.h">
 			<Option target="lib4aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/libs/lib4aio/lib4aio_cpp_headers/utils/array_list_utils/array_list.h">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/lib4aio/lib4aio_cpp_headers/utils/array_list_utils/array_list.h">
 			<Option target="lib4aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/libs/lib4aio/lib4aio_cpp_headers/utils/char_utils/char_utils.h">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/lib4aio/lib4aio_cpp_headers/utils/char_utils/char_utils.h">
 			<Option target="lib4aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/libs/lib4aio/lib4aio_cpp_headers/utils/color_utils/color_utils.h">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/lib4aio/lib4aio_cpp_headers/utils/color_utils/color_utils.h">
 			<Option target="lib4aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/libs/lib4aio/lib4aio_cpp_headers/utils/error_utils/error_utils.h">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/lib4aio/lib4aio_cpp_headers/utils/error_utils/error_utils.h">
 			<Option target="lib4aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/libs/lib4aio/lib4aio_cpp_headers/utils/file_utils/file_reader.h">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/lib4aio/lib4aio_cpp_headers/utils/file_utils/file_reader.h">
 			<Option target="lib4aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/libs/lib4aio/lib4aio_cpp_headers/utils/int_list_utils/int_list.h">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/lib4aio/lib4aio_cpp_headers/utils/int_list_utils/int_list.h">
 			<Option target="lib4aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/libs/lib4aio/lib4aio_cpp_headers/utils/log_utils/log_utils.h">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/lib4aio/lib4aio_cpp_headers/utils/log_utils/log_utils.h">
 			<Option target="lib4aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/libs/lib4aio/lib4aio_cpp_headers/utils/memory_utils/memory_utils.h">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/lib4aio/lib4aio_cpp_headers/utils/memory_utils/memory_utils.h">
 			<Option target="lib4aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/libs/lib4aio/lib4aio_cpp_headers/utils/point_watcher/point_watcher.h">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/lib4aio/lib4aio_cpp_headers/utils/point_watcher/point_watcher.h">
 			<Option target="lib4aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/libs/lib4aio/lib4aio_cpp_headers/utils/str_builder/str_builder.h">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/lib4aio/lib4aio_cpp_headers/utils/str_builder/str_builder.h">
 			<Option target="lib4aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/libs/lib4aio/lib4aio_cpp_headers/utils/str_hook_utils/str_hook/str_hook.h">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/lib4aio/lib4aio_cpp_headers/utils/str_hook_utils/str_hook/str_hook.h">
 			<Option target="lib4aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/libs/lib4aio/lib4aio_cpp_headers/utils/str_hook_utils/str_hook_iterator/str_hook_iterator.h">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/lib4aio/lib4aio_cpp_headers/utils/str_hook_utils/str_hook_iterator/str_hook_iterator.h">
 			<Option target="lib4aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/libs/lib4aio/lib4aio_cpp_headers/utils/str_hook_utils/str_hook_list/str_hook_list.h">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/lib4aio/lib4aio_cpp_headers/utils/str_hook_utils/str_hook_list/str_hook_list.h">
 			<Option target="lib4aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/libs/lib4aio/lib4aio_cpp_headers/utils/string_utils/cast.h">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/lib4aio/lib4aio_cpp_headers/utils/string_utils/cast.h">
 			<Option target="lib4aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/libs/lib4aio/lib4aio_cpp_headers/utils/string_utils/common.h">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/lib4aio/lib4aio_cpp_headers/utils/string_utils/common.h">
 			<Option target="lib4aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/libs/lib4aio/lib4aio_cpp_headers/utils/string_utils/match.h">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/lib4aio/lib4aio_cpp_headers/utils/string_utils/match.h">
 			<Option target="lib4aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/libs/lib4aio/lib4aio_cpp_headers/utils/string_utils/split.h">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/lib4aio/lib4aio_cpp_headers/utils/string_utils/split.h">
 			<Option target="lib4aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/libs/lib4aio/lib4aio_cpp_headers/utils/string_utils/suffix_prefix.h">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/lib4aio/lib4aio_cpp_headers/utils/string_utils/suffix_prefix.h">
 			<Option target="lib4aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/libs/lib4aio/lib4aio_cpp_headers/utils/string_utils/trim.h">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/lib4aio/lib4aio_cpp_headers/utils/string_utils/trim.h">
 			<Option target="lib4aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/libs/lib4aio/lib4aio_cpp_headers/utils/struct_list/struct_list.h">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/lib4aio/lib4aio_cpp_headers/utils/struct_list/struct_list.h">
 			<Option target="lib4aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/libs/lib4aio/lib4aio_cpp_sources/aio_explorer/aio_explorer.cpp">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/lib4aio/lib4aio_cpp_sources/aio_explorer/aio_explorer.cpp">
 			<Option target="lib4aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/libs/lib4aio/lib4aio_cpp_sources/aio_orbit/aio_orbit.cpp">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/lib4aio/lib4aio_cpp_sources/aio_orbit/aio_orbit.cpp">
 			<Option target="lib4aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/libs/lib4aio/lib4aio_cpp_sources/aio_orbit/aio_particle/aio_particle.cpp">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/lib4aio/lib4aio_cpp_sources/aio_orbit/aio_particle/aio_particle.cpp">
 			<Option target="lib4aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/libs/lib4aio/lib4aio_cpp_sources/aio_path_util/aio_path_util.cpp">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/lib4aio/lib4aio_cpp_sources/aio_path_util/aio_path_util.cpp">
 			<Option target="lib4aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/libs/lib4aio/lib4aio_cpp_sources/utils/array_list_utils/array_list.cpp">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/lib4aio/lib4aio_cpp_sources/utils/array_list_utils/array_list.cpp">
 			<Option target="lib4aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/libs/lib4aio/lib4aio_cpp_sources/utils/char_utils/char_utils.cpp">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/lib4aio/lib4aio_cpp_sources/utils/char_utils/char_utils.cpp">
 			<Option target="lib4aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/libs/lib4aio/lib4aio_cpp_sources/utils/error_utils/error_utils.cpp">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/lib4aio/lib4aio_cpp_sources/utils/error_utils/error_utils.cpp">
 			<Option target="lib4aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/libs/lib4aio/lib4aio_cpp_sources/utils/file_utils/file_reader.cpp">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/lib4aio/lib4aio_cpp_sources/utils/file_utils/file_reader.cpp">
 			<Option target="lib4aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/libs/lib4aio/lib4aio_cpp_sources/utils/int_list_utils/int_list.cpp">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/lib4aio/lib4aio_cpp_sources/utils/int_list_utils/int_list.cpp">
 			<Option target="lib4aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/libs/lib4aio/lib4aio_cpp_sources/utils/log_utils/log_utils.cpp">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/lib4aio/lib4aio_cpp_sources/utils/log_utils/log_utils.cpp">
 			<Option target="lib4aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/libs/lib4aio/lib4aio_cpp_sources/utils/memory_utils/memory_utils.cpp">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/lib4aio/lib4aio_cpp_sources/utils/memory_utils/memory_utils.cpp">
 			<Option target="lib4aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/libs/lib4aio/lib4aio_cpp_sources/utils/point_watcher/point_watcher.cpp">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/lib4aio/lib4aio_cpp_sources/utils/point_watcher/point_watcher.cpp">
 			<Option target="lib4aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/libs/lib4aio/lib4aio_cpp_sources/utils/str_builder/str_builder.cpp">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/lib4aio/lib4aio_cpp_sources/utils/str_builder/str_builder.cpp">
 			<Option target="lib4aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/libs/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_cast.cpp">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_cast.cpp">
 			<Option target="lib4aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/libs/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_error.cpp">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_error.cpp">
 			<Option target="lib4aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/libs/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_log.cpp">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_log.cpp">
 			<Option target="lib4aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/libs/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_matcher.cpp">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_matcher.cpp">
 			<Option target="lib4aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/libs/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_split.cpp">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_split.cpp">
 			<Option target="lib4aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/libs/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_trim.cpp">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_trim.cpp">
 			<Option target="lib4aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/libs/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/str_hook.cpp">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/str_hook.cpp">
 			<Option target="lib4aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/libs/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_iterator/str_hook_iterator.cpp">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_iterator/str_hook_iterator.cpp">
 			<Option target="lib4aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/libs/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/advanced_functions/str_hook_list_log.cpp">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/advanced_functions/str_hook_list_log.cpp">
 			<Option target="lib4aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/libs/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/advanced_functions/str_hook_trim.cpp">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/advanced_functions/str_hook_trim.cpp">
 			<Option target="lib4aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/libs/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/str_hook_list.cpp">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook_list/str_hook_list.cpp">
 			<Option target="lib4aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/libs/lib4aio/lib4aio_cpp_sources/utils/string_utils/cast.cpp">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/lib4aio/lib4aio_cpp_sources/utils/string_utils/cast.cpp">
 			<Option target="lib4aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/libs/lib4aio/lib4aio_cpp_sources/utils/string_utils/common.cpp">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/lib4aio/lib4aio_cpp_sources/utils/string_utils/common.cpp">
 			<Option target="lib4aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/libs/lib4aio/lib4aio_cpp_sources/utils/string_utils/match.cpp">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/lib4aio/lib4aio_cpp_sources/utils/string_utils/match.cpp">
 			<Option target="lib4aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/libs/lib4aio/lib4aio_cpp_sources/utils/string_utils/split.cpp">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/lib4aio/lib4aio_cpp_sources/utils/string_utils/split.cpp">
 			<Option target="lib4aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/libs/lib4aio/lib4aio_cpp_sources/utils/string_utils/suffix_prefix.cpp">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/lib4aio/lib4aio_cpp_sources/utils/string_utils/suffix_prefix.cpp">
 			<Option target="lib4aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/libs/lib4aio/lib4aio_cpp_sources/utils/string_utils/trim.cpp">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/lib4aio/lib4aio_cpp_sources/utils/string_utils/trim.cpp">
 			<Option target="lib4aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/libs/lib4aio/lib4aio_cpp_sources/utils/struct_list/struct_list.cpp">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/lib4aio/lib4aio_cpp_sources/utils/struct_list/struct_list.cpp">
 			<Option target="lib4aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/main/main.cpp">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/main/main.cpp">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/tests/test/sources/aio_parsing/aio_expression/aio_analyser/aio_analyser_test.cpp">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/tests/test/sources/aio_parsing/aio_expression/aio_analyser/aio_analyser_test.cpp">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/tests/test/sources/aio_parsing/aio_expression/aio_parser/aio_parser_test.cpp">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/tests/test/sources/aio_parsing/aio_expression/aio_parser/aio_parser_test.cpp">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/tests/test/sources/aio_parsing/aio_particles/aio_class/aio_class_particle_test.cpp">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/tests/test/sources/aio_parsing/aio_particles/aio_class/aio_class_particle_test.cpp">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/tests/test/sources/aio_parsing/aio_particles/aio_class/medium/aio_class_particle_medium_test.cpp">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/tests/test/sources/aio_parsing/aio_particles/aio_class/medium/aio_class_particle_medium_test.cpp">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/tests/test/sources/aio_parsing/aio_particles/aio_class/medium/aio_class_particle_medium_test.h">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/tests/test/sources/aio_parsing/aio_particles/aio_class/medium/aio_class_particle_medium_test.h">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/tests/test/sources/aio_parsing/aio_particles/aio_class/trivial/aio_class_particle_trivial_test.cpp">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/tests/test/sources/aio_parsing/aio_particles/aio_class/trivial/aio_class_particle_trivial_test.cpp">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/tests/test/sources/aio_parsing/aio_particles/aio_class/trivial/aio_class_particle_trivial_test.h">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/tests/test/sources/aio_parsing/aio_particles/aio_class/trivial/aio_class_particle_trivial_test.h">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/tests/test/sources/aio_parsing/aio_particles/aio_field/aio_field_particle_test.cpp">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/tests/test/sources/aio_parsing/aio_particles/aio_field/aio_field_particle_test.cpp">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/tests/test/sources/aio_parsing/aio_particles/aio_field/trivial/aio_field_particle_trivial_test.cpp">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/tests/test/sources/aio_parsing/aio_particles/aio_field/trivial/aio_field_particle_trivial_test.cpp">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/tests/test/sources/aio_parsing/aio_particles/aio_field/trivial/aio_field_particle_trivial_test.h">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/tests/test/sources/aio_parsing/aio_particles/aio_field/trivial/aio_field_particle_trivial_test.h">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/tests/test/sources/aio_parsing/aio_particles/aio_field/two_fields/aio_field_particle_two_fields_test.cpp">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/tests/test/sources/aio_parsing/aio_particles/aio_field/two_fields/aio_field_particle_two_fields_test.cpp">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/tests/test/sources/aio_parsing/aio_particles/aio_field/two_fields/aio_field_particle_two_fields_test.h">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/tests/test/sources/aio_parsing/aio_particles/aio_field/two_fields/aio_field_particle_two_fields_test.h">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/tests/test/sources/aio_parsing/aio_particles/aio_function/aio_function_particle_test.cpp">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/tests/test/sources/aio_parsing/aio_particles/aio_function/aio_function_particle_test.cpp">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/tests/test/sources/aio_parsing/aio_particles/aio_function/medium/aio_function_particle_medium_test.cpp">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/tests/test/sources/aio_parsing/aio_particles/aio_function/medium/aio_function_particle_medium_test.cpp">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/tests/test/sources/aio_parsing/aio_particles/aio_function/medium/aio_function_particle_medium_test.h">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/tests/test/sources/aio_parsing/aio_particles/aio_function/medium/aio_function_particle_medium_test.h">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/tests/test/sources/aio_parsing/aio_particles/aio_function/trivial/aio_function_particle_trivial_test.cpp">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/tests/test/sources/aio_parsing/aio_particles/aio_function/trivial/aio_function_particle_trivial_test.cpp">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/tests/test/sources/aio_parsing/aio_particles/aio_function/trivial/aio_function_particle_trivial_test.h">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/tests/test/sources/aio_parsing/aio_particles/aio_function/trivial/aio_function_particle_trivial_test.h">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/tests/test/sources/aio_parsing/aio_particles/util/aio_particle_test_common.cpp">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/tests/test/sources/aio_parsing/aio_particles/util/aio_particle_test_common.cpp">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/tests/test/sources/aio_parsing/aio_particles/util/aio_particle_test_common.h">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/tests/test/sources/aio_parsing/aio_particles/util/aio_particle_test_common.h">
 			<Option target="aio"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/CMakeLists.txt">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/com/CMakeLists.txt">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\com\"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/tests/CMakeLists.txt">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/tests/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\tests\"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/libs/lib4aio/CMakeLists.txt">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/lib4aio/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\libs\lib4aio\"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/libs/lib4aio/CMakeLists.txt">
-			<Option virtualFolder="CMake Files\libs\lib4aio\"/>
-		</Unit>
-		<Unit filename="D:/edu/AIO/libs/googletest/CMakeLists.txt">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/googletest/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\libs\googletest\"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/libs/googletest/CMakeLists.txt">
-			<Option virtualFolder="CMake Files\libs\googletest\"/>
-		</Unit>
-		<Unit filename="D:/edu/AIO/libs/googletest/googlemock/CMakeLists.txt">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/googletest/googlemock/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\libs\googletest\googlemock\"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/libs/googletest/googlemock/CMakeLists.txt">
-			<Option virtualFolder="CMake Files\libs\googletest\googlemock\"/>
-		</Unit>
-		<Unit filename="D:/edu/AIO/libs/googletest/googlemock/CMakeLists.txt">
-			<Option virtualFolder="CMake Files\libs\googletest\googlemock\"/>
-		</Unit>
-		<Unit filename="D:/edu/AIO/libs/googletest/googlemock/cmake/gmock.pc.in">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/googletest/googlemock/cmake/gmock.pc.in">
 			<Option virtualFolder="CMake Files\libs\googletest\googlemock\cmake\"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/libs/googletest/googlemock/cmake/gmock_main.pc.in">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/googletest/googlemock/cmake/gmock_main.pc.in">
 			<Option virtualFolder="CMake Files\libs\googletest\googlemock\cmake\"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/libs/googletest/googlemock/cmake/gmock.pc.in">
-			<Option virtualFolder="CMake Files\libs\googletest\googlemock\cmake\"/>
-		</Unit>
-		<Unit filename="D:/edu/AIO/libs/googletest/googlemock/cmake/gmock_main.pc.in">
-			<Option virtualFolder="CMake Files\libs\googletest\googlemock\cmake\"/>
-		</Unit>
-		<Unit filename="D:/edu/AIO/libs/googletest/googlemock/cmake/gmock.pc.in">
-			<Option virtualFolder="CMake Files\libs\googletest\googlemock\cmake\"/>
-		</Unit>
-		<Unit filename="D:/edu/AIO/libs/googletest/googlemock/cmake/gmock_main.pc.in">
-			<Option virtualFolder="CMake Files\libs\googletest\googlemock\cmake\"/>
-		</Unit>
-		<Unit filename="D:/edu/AIO/libs/googletest/googletest/CMakeLists.txt">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/googletest/googletest/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\libs\googletest\googletest\"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/libs/googletest/googletest/CMakeLists.txt">
-			<Option virtualFolder="CMake Files\libs\googletest\googletest\"/>
-		</Unit>
-		<Unit filename="D:/edu/AIO/libs/googletest/googletest/CMakeLists.txt">
-			<Option virtualFolder="CMake Files\libs\googletest\googletest\"/>
-		</Unit>
-		<Unit filename="D:/edu/AIO/libs/googletest/googletest/CMakeLists.txt">
-			<Option virtualFolder="CMake Files\libs\googletest\googletest\"/>
-		</Unit>
-		<Unit filename="D:/edu/AIO/libs/googletest/googletest/cmake/internal_utils.cmake">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/googletest/googletest/cmake/Config.cmake.in">
 			<Option virtualFolder="CMake Files\libs\googletest\googletest\cmake\"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/libs/googletest/googletest/cmake/Config.cmake.in">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/googletest/googletest/cmake/gtest.pc.in">
 			<Option virtualFolder="CMake Files\libs\googletest\googletest\cmake\"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/libs/googletest/googletest/cmake/gtest.pc.in">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/googletest/googletest/cmake/gtest_main.pc.in">
 			<Option virtualFolder="CMake Files\libs\googletest\googletest\cmake\"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/libs/googletest/googletest/cmake/gtest_main.pc.in">
-			<Option virtualFolder="CMake Files\libs\googletest\googletest\cmake\"/>
-		</Unit>
-		<Unit filename="D:/edu/AIO/libs/googletest/googletest/cmake/internal_utils.cmake">
-			<Option virtualFolder="CMake Files\libs\googletest\googletest\cmake\"/>
-		</Unit>
-		<Unit filename="D:/edu/AIO/libs/googletest/googletest/cmake/Config.cmake.in">
-			<Option virtualFolder="CMake Files\libs\googletest\googletest\cmake\"/>
-		</Unit>
-		<Unit filename="D:/edu/AIO/libs/googletest/googletest/cmake/gtest.pc.in">
-			<Option virtualFolder="CMake Files\libs\googletest\googletest\cmake\"/>
-		</Unit>
-		<Unit filename="D:/edu/AIO/libs/googletest/googletest/cmake/gtest_main.pc.in">
-			<Option virtualFolder="CMake Files\libs\googletest\googletest\cmake\"/>
-		</Unit>
-		<Unit filename="D:/edu/AIO/libs/googletest/googletest/cmake/internal_utils.cmake">
-			<Option virtualFolder="CMake Files\libs\googletest\googletest\cmake\"/>
-		</Unit>
-		<Unit filename="D:/edu/AIO/libs/googletest/googletest/cmake/Config.cmake.in">
-			<Option virtualFolder="CMake Files\libs\googletest\googletest\cmake\"/>
-		</Unit>
-		<Unit filename="D:/edu/AIO/libs/googletest/googletest/cmake/gtest.pc.in">
-			<Option virtualFolder="CMake Files\libs\googletest\googletest\cmake\"/>
-		</Unit>
-		<Unit filename="D:/edu/AIO/libs/googletest/googletest/cmake/gtest_main.pc.in">
-			<Option virtualFolder="CMake Files\libs\googletest\googletest\cmake\"/>
-		</Unit>
-		<Unit filename="D:/edu/AIO/libs/googletest/googletest/cmake/internal_utils.cmake">
-			<Option virtualFolder="CMake Files\libs\googletest\googletest\cmake\"/>
-		</Unit>
-		<Unit filename="D:/edu/AIO/libs/googletest/googletest/cmake/Config.cmake.in">
-			<Option virtualFolder="CMake Files\libs\googletest\googletest\cmake\"/>
-		</Unit>
-		<Unit filename="D:/edu/AIO/libs/googletest/googletest/cmake/gtest.pc.in">
-			<Option virtualFolder="CMake Files\libs\googletest\googletest\cmake\"/>
-		</Unit>
-		<Unit filename="D:/edu/AIO/libs/googletest/googletest/cmake/gtest_main.pc.in">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/googletest/googletest/cmake/internal_utils.cmake">
 			<Option virtualFolder="CMake Files\libs\googletest\googletest\cmake\"/>
 		</Unit>
 	</Project>

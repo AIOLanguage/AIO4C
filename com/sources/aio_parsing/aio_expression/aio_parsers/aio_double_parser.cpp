@@ -76,7 +76,7 @@ aio_result *aio_expression_parser::aio_double_parser::make_plus_or_minus(
             aio_result *right_result = aio_double_parser::make_multiplication_or_division(next_hook, control_graph);
             aio_value *right_value = right_result->value;
             if (!right_value) {
-                throw_error_with_str_hook(AIO_DOUBLE_PARSER_INFO_TAG, "Found null in expression", next_hook);
+                throw_error_with_str_hook(AIO_DOUBLE_PARSER_ERROR_TAG, "Found null in expression", next_hook);
             }
             const double right_acc = right_value->get.double_acc;
             if (is_plus) {
@@ -119,7 +119,7 @@ aio_result *aio_expression_parser::aio_double_parser::make_multiplication_or_div
     );
     aio_value *left_value = left_result->value;
     if (!left_value) {
-        throw_error_with_str_hook(AIO_DOUBLE_PARSER_INFO_TAG, "Found null in expression:", expression_hook);
+        throw_error_with_str_hook(AIO_DOUBLE_PARSER_ERROR_TAG, "Found null in expression:", expression_hook);
     }
     str_hook *left_hook = new str_hook(left_result->rest);
     double left_acc = left_value->get.double_acc;
@@ -145,7 +145,7 @@ aio_result *aio_expression_parser::aio_double_parser::make_multiplication_or_div
             );
             aio_value *right_value = right_result->value;
             if (!right_value) {
-                throw_error_with_str_hook(AIO_DOUBLE_PARSER_INFO_TAG, "Found null in expression:", next_hook);
+                throw_error_with_str_hook(AIO_DOUBLE_PARSER_ERROR_TAG, "Found null in expression:", next_hook);
             }
             const double right_acc = right_value->get.double_acc;
             if (is_multiply) {
@@ -187,7 +187,7 @@ aio_result *aio_expression_parser::aio_double_parser::make_double(const str_hook
     captured_element->end = i;
     double value = 0;
     if (is_aio_null_modifier(captured_element)) {
-        throw_error_with_str_hook(AIO_DOUBLE_PARSER_INFO_TAG, "Found null in expression:", expression_hook);
+        throw_error_with_str_hook(AIO_DOUBLE_PARSER_ERROR_TAG, "Found null in expression:", expression_hook);
     } else
         //Maybe int value?
     if (captured_element->matches_int()) {
@@ -207,7 +207,7 @@ aio_result *aio_expression_parser::aio_double_parser::make_double(const str_hook
         } else if (naked_hook->matches_double()) {
             value = naked_hook->to_double();
         } else {
-            throw_error_with_tag(AIO_DOUBLE_PARSER_INFO_TAG, "Can not cast string to double!");
+            throw_error_with_tag(AIO_DOUBLE_PARSER_ERROR_TAG, "Can not cast string to double!");
         }
         //--------------------------------------------------------------------------------------------------------------
         //찌꺼기 수집기 (Garbage collector):
@@ -218,7 +218,7 @@ aio_result *aio_expression_parser::aio_double_parser::make_double(const str_hook
     if (captured_element->matches_boolean()) {
         value = captured_element->to_boolean();
     } else {
-        throw_error_with_tag(AIO_DOUBLE_PARSER_INFO_TAG, "Cannot define type of expression!");
+        throw_error_with_tag(AIO_DOUBLE_PARSER_ERROR_TAG, "Cannot define type of expression!");
     }
     str_hook *rest_part = new str_hook(expression_str);
     rest_part->start = i;

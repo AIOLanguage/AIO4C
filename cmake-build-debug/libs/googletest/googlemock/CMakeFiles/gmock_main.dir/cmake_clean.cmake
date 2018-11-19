@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/gmock_main.dir/src/gmock_main.cc.obj"
+  "CMakeFiles/gmock_main.dir/src/gmock_main.cc.o"
   "../../../bin/libgmock_maind.pdb"
   "../../../lib/libgmock_maind.a"
 )

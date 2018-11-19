@@ -145,7 +145,10 @@ void aio_function_particle::monitor_name(const char symbol, const unsigned posit
                     this->trigger_mode = AIO_TRIGGER_MODE_ACTIVE;
                     this->token_holder->start = position;
                 } else {
-                    throw_error_with_tag(AIO_FUNCTION_PARTICLE_ERROR_TAG, "The function name must start with letter!");
+                    throw_error_with_tag(
+                            AIO_FUNCTION_PARTICLE_ERROR_TAG,
+                            "The function name must begin with a letter!"
+                    );
                 }
             }
             break;
@@ -154,7 +157,7 @@ void aio_function_particle::monitor_name(const char symbol, const unsigned posit
                 //Capture name:
                 this->token_holder->end = position;
 #ifdef AIO_FUNCTION_PARTICLE_DEBUG
-                log_info_str_hook(AIO_FUNCTION_PARTICLE_INFO_TAG, "Token name:", this->token_holder);
+                log_info_str_hook(AIO_FUNCTION_PARTICLE_INFO_TAG, "Name:", this->token_holder);
 #endif
                 //Set name for field:
                 this->function->name = new str_hook(this->token_holder);
@@ -284,9 +287,6 @@ void aio_function_particle::monitor_type_or_colon_or_equal_sign_or_opening_brace
         const unsigned position
 )
 {
-#ifdef AIO_FUNCTION_PARTICLE_DEBUG
-    log_info_char(AIO_FUNCTION_PARTICLE_INFO_TAG, "TCHAR", symbol);
-#endif
     switch (this->trigger_mode) {
         case AIO_TRIGGER_MODE_PASSIVE:
             if (is_equal_sign(symbol)) {
@@ -315,19 +315,10 @@ void aio_function_particle::monitor_type_or_colon_or_equal_sign_or_opening_brace
                 this->token_holder->end = position;
                 //Get type:
                 str_hook *type = new str_hook(this->token_holder);
-#ifdef AIO_FUNCTION_PARTICLE_DEBUG
-                log_info_str_hook(AIO_FUNCTION_PARTICLE_INFO_TAG, "TYPO:", type);
-#endif
                 //Check type:
                 const bool is_array = type->ends_with(ARRAY_BRACKETS);
                 if (is_array) {
                     type->end -= ARRAY_BRACKET_SIZE;
-
-
-#ifdef AIO_FUNCTION_PARTICLE_DEBUG
-                    log_info_str_hook(AIO_FUNCTION_PARTICLE_INFO_TAG, "NEW TYPO:", type);
-#endif
-
                     if (!type->is_word()) {
                         throw_error_with_tag(
                                 AIO_FUNCTION_PARTICLE_ERROR_TAG, "The output type must contain only letters & numbers!"
@@ -375,9 +366,6 @@ void aio_function_particle::go_to_colon_or_equal_sign_or_opening_brace_state(con
 
 void aio_function_particle::monitor_attribute(const char symbol, const unsigned position)
 {
-#ifdef AIO_FUNCTION_PARTICLE_DEBUG
-    log_info_char(AIO_FUNCTION_PARTICLE_INFO_TAG, "ACHAR", symbol);
-#endif
     switch (this->trigger_mode) {
         case AIO_TRIGGER_MODE_PASSIVE:
             if (!is_space_or_line_break(symbol)) {
@@ -404,11 +392,6 @@ void aio_function_particle::monitor_attribute(const char symbol, const unsigned 
                             this->function->visibility = aio_visible::AIO_VISIBILITY_PROTECTED;
                         }
                         //Switch to [:=;]:
-
-#ifdef AIO_FUNCTION_PARTICLE_DEBUG
-                        log_info(AIO_FUNCTION_PARTICLE_INFO_TAG, "FOUND ATTRIBUTE!!!");
-#endif
-
                         this->go_to_colon_or_equal_sign_or_opening_brace_state(symbol, position);
                     } else {
                         throw_error_with_tag(
@@ -433,10 +416,6 @@ void aio_function_particle::monitor_colon_or_equal_sign_or_opening_brace(const c
         //Capture ':':
         this->go_to_attribute_state();
     } else if (is_opening_brace(symbol)) {
-
-#ifdef AIO_FUNCTION_PARTICLE_DEBUG
-        log_info(AIO_FUNCTION_PARTICLE_INFO_TAG, "{{{{{{{{{{{{");
-#endif
         //Capture '{':
         this->go_to_body_state(symbol, position);
     } else if (!is_space_or_line_break(symbol)) {
@@ -446,10 +425,6 @@ void aio_function_particle::monitor_colon_or_equal_sign_or_opening_brace(const c
 
 void aio_function_particle::monitor_value(const char symbol, const unsigned position)
 {
-#ifdef AIO_FUNCTION_PARTICLE_DEBUG
-    log_info_char(AIO_FUNCTION_PARTICLE_INFO_TAG, "Char:", symbol);
-#endif
-
     const bool is_single_quote_cond = is_single_quote(symbol);
     if (is_single_quote_cond) {
         this->is_inside_string = !this->is_inside_string;
@@ -467,28 +442,15 @@ void aio_function_particle::monitor_value(const char symbol, const unsigned posi
                 //Any end symbol of expression:
                 if (is_letter_or_number || is_closing_parenthesis(symbol) || is_single_quote_cond) {
                     this->trigger_mode = AIO_TRIGGER_MODE_ACTIVE;
-
-#ifdef AIO_FUNCTION_PARTICLE_DEBUG
-                    log_info(AIO_FUNCTION_PARTICLE_INFO_TAG, "SUPPOSE END");
-#endif
                 }
                 break;
             case AIO_TRIGGER_MODE_ACTIVE:
                 if (is_whitespace_cond) {
                     this->counter_trigger++;
-#ifdef AIO_FUNCTION_PARTICLE_DEBUG
-                    log_info(AIO_FUNCTION_PARTICLE_INFO_TAG, "COUNTER");
-#endif
                 } else if (is_sign(symbol)) {
                     this->trigger_mode = AIO_TRIGGER_MODE_PASSIVE;
                     this->counter_trigger = 0;
-#ifdef AIO_FUNCTION_PARTICLE_DEBUG
-                    log_info(AIO_FUNCTION_PARTICLE_INFO_TAG, "RESET");
-#endif
                 } else if ((is_letter_or_number && this->counter_trigger > 0) || is_closing_brace(symbol)) {
-#ifdef AIO_FUNCTION_PARTICLE_DEBUG
-                    log_info(AIO_FUNCTION_PARTICLE_INFO_TAG, "SET VALUE");
-#endif
                     this->set_single_return_instruction(false, position);
                 }
         }

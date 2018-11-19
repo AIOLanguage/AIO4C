@@ -1,8 +1,8 @@
-# Install script for directory: D:/edu/AIO/libs/googletest
+# Install script for directory: /home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/googletest
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/aio")
+  set(CMAKE_INSTALL_PREFIX "/usr/local")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -27,9 +27,19 @@ if(NOT CMAKE_INSTALL_COMPONENT)
   endif()
 endif()
 
+# Install shared libraries without execute permission?
+if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
+  set(CMAKE_INSTALL_SO_NO_EXE "1")
+endif()
+
+# Is this installation the result of a crosscompile?
+if(NOT DEFINED CMAKE_CROSSCOMPILING)
+  set(CMAKE_CROSSCOMPILING "FALSE")
+endif()
+
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("D:/edu/AIO/cmake-build-debug/libs/googletest/googlemock/cmake_install.cmake")
+  include("/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/libs/googletest/googlemock/cmake_install.cmake")
 
 endif()
 

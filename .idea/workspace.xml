@@ -2,12 +2,12 @@
 <project version="4">
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true" buildAllGenerated="true">
     <generated>
-      <config projectName="aio" targetName="gmock" />
+      <config projectName="aio" targetName="gmock_main" />
       <config projectName="aio" targetName="gtest_main" />
       <config projectName="aio" targetName="lib4aio" />
-      <config projectName="aio" targetName="gmock_main" />
       <config projectName="aio" targetName="gtest" />
       <config projectName="aio" targetName="aio" />
+      <config projectName="aio" targetName="gmock" />
     </generated>
   </component>
   <component name="CMakeSettings" AUTO_RELOAD="true">
@@ -17,25 +17,195 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0eb0a822-221b-41f7-93d9-80e6392e6efb" name="Default Changelist" comment="Fix">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Test Results - All_in_aio_class_particle_test_cpp.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/aio.dir/objects.a" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/aio.dir/objects.a" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/aio.exe" afterPath="$PROJECT_DIR$/cmake-build-debug/aio.exe" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/lib/libgtest_maind.a" afterPath="$PROJECT_DIR$/cmake-build-debug/lib/libgtest_maind.a" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/lib/libgtestd.a" afterPath="$PROJECT_DIR$/cmake-build-debug/lib/libgtestd.a" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libs/lib4aio/liblib4aio.a" afterPath="$PROJECT_DIR$/cmake-build-debug/libs/lib4aio/liblib4aio.a" />
-      <change beforePath="$PROJECT_DIR$/com/sources/aio_parsing/aio_expression/aio_parsers/aio_boolean_parser.cpp" afterPath="$PROJECT_DIR$/com/sources/aio_parsing/aio_expression/aio_parsers/aio_boolean_parser.cpp" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.9.6/CMakeCCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.9.6/CMakeCXXCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.9.6/CMakeDetermineCompilerABI_C.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.9.6/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.9.6/CMakeRCCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.9.6/CMakeSystem.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.9.6/CompilerIdC/CMakeCCompilerId.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.9.6/CompilerIdC/a.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.9.6/CompilerIdCXX/CMakeCXXCompilerId.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.9.6/CompilerIdCXX/a.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/aio.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/aio.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/aio.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/aio.dir/DependInfo.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/aio.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/aio.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/aio.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/aio.dir/cmake_clean.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/aio.dir/com/sources/aio_core/aio_core.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/aio.dir/com/sources/aio_lang/aio_annotatable/aio_annotatable.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/aio.dir/com/sources/aio_lang/aio_field/aio_field.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/aio.dir/com/sources/aio_lang/aio_inheritable/aio_inheritable.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/aio.dir/com/sources/aio_lang/aio_invokable/aio_invokable.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/aio.dir/com/sources/aio_lang/aio_invokable/constructor/aio_constructor.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/aio.dir/com/sources/aio_lang/aio_invokable/function/aio_function.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/aio.dir/com/sources/aio_lang/aio_modifiers/aio_modifiers.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/aio.dir/com/sources/aio_lang/aio_schemable/aio_schemable.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/aio.dir/com/sources/aio_lang/aio_space/aio_file/aio_file.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/aio.dir/com/sources/aio_lang/aio_space/aio_initializable/aio_class/aio_class.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/aio.dir/com/sources/aio_lang/aio_space/aio_initializable/aio_enum/aio_enum.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/aio.dir/com/sources/aio_lang/aio_space/aio_initializable/aio_initializable.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/aio.dir/com/sources/aio_lang/aio_space/aio_scope/aio_scope.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/aio.dir/com/sources/aio_lang/aio_space/aio_space.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/aio.dir/com/sources/aio_lang/aio_types/aio_types.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/aio.dir/com/sources/aio_lang/aio_visible/aio_visible.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/aio.dir/com/sources/aio_parsing/aio_context_inflater/aio_core_builder.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/aio.dir/com/sources/aio_parsing/aio_context_inflater/os/apple/apple_core_builder.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/aio.dir/com/sources/aio_parsing/aio_context_inflater/os/linux/linux_core_builder.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/aio.dir/com/sources/aio_parsing/aio_context_inflater/os/windows/win_core_builder.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/aio.dir/com/sources/aio_parsing/aio_expression/aio_analyser/aio_analyser.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/aio.dir/com/sources/aio_parsing/aio_expression/aio_assistant/aio_expression_assistant.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/aio.dir/com/sources/aio_parsing/aio_expression/aio_expression_parser.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/aio.dir/com/sources/aio_parsing/aio_expression/aio_parsers/aio_boolean_parser.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/aio.dir/com/sources/aio_parsing/aio_expression/aio_parsers/aio_double_parser.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/aio.dir/com/sources/aio_parsing/aio_expression/aio_parsers/aio_int_parser.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/aio.dir/com/sources/aio_parsing/aio_expression/aio_parsers/aio_string_parser.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/aio.dir/com/sources/aio_parsing/aio_particles/aio_class/aio_class_particle.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/aio.dir/com/sources/aio_parsing/aio_particles/aio_constructor/aio_constructor_particle.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/aio.dir/com/sources/aio_parsing/aio_particles/aio_field/aio_field_particle.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/aio.dir/com/sources/aio_parsing/aio_particles/aio_function/aio_function_particle.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/aio.dir/com/sources/aio_parsing/aio_particles/aio_import/aio_import_particle.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/aio.dir/com/sources/aio_parsing/aio_particles/aio_scope/aio_scope_particle.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/aio.dir/com/sources/aio_runtime/aio_bundle/aio_bundle.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/aio.dir/com/sources/aio_runtime/aio_invoker/aio_invoker.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/aio.dir/com/sources/aio_runtime/aio_ray/aio_ray.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/aio.dir/com/sources/aio_runtime/aio_result/aio_result.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/aio.dir/com/sources/aio_runtime/aio_task/aio_assign/aio_assign_task.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/aio.dir/com/sources/aio_runtime/aio_task/aio_return/aio_return_task.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/aio.dir/com/sources/aio_runtime/aio_task/aio_task.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/aio.dir/com/sources/aio_runtime/aio_value/advanced_functions/cast_aio_value.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/aio.dir/com/sources/aio_runtime/aio_value/advanced_functions/compare_aio_value.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/aio.dir/com/sources/aio_runtime/aio_value/advanced_functions/log_aio_value.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/aio.dir/com/sources/aio_runtime/aio_value/aio_value.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/aio.dir/com/sources/aio_runtime/aio_variable/aio_variable.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/aio.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/aio.dir/depend.internal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/aio.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/aio.dir/depend.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/aio.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/aio.dir/flags.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/aio.dir/includes_CXX.rsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/aio.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/aio.dir/link.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/aio.dir/linklibs.rsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/aio.dir/main/main.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/aio.dir/objects.a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/aio.dir/objects1.rsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/aio.dir/tests/test/sources/aio_parsing/aio_expression/aio_analyser/aio_analyser_test.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/aio.dir/tests/test/sources/aio_parsing/aio_expression/aio_parser/aio_parser_test.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/aio.dir/tests/test/sources/aio_parsing/aio_particles/aio_class/aio_class_particle_test.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/aio.dir/tests/test/sources/aio_parsing/aio_particles/aio_class/medium/aio_class_particle_medium_test.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/aio.dir/tests/test/sources/aio_parsing/aio_particles/aio_class/trivial/aio_class_particle_trivial_test.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/aio.dir/tests/test/sources/aio_parsing/aio_particles/aio_field/aio_field_particle_test.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/aio.dir/tests/test/sources/aio_parsing/aio_particles/aio_field/trivial/aio_field_particle_trivial_test.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/aio.dir/tests/test/sources/aio_parsing/aio_particles/aio_field/two_fields/aio_field_particle_two_fields_test.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/aio.dir/tests/test/sources/aio_parsing/aio_particles/aio_function/aio_function_particle_test.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/aio.dir/tests/test/sources/aio_parsing/aio_particles/aio_function/medium/aio_function_particle_medium_test.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/aio.dir/tests/test/sources/aio_parsing/aio_particles/aio_function/trivial/aio_function_particle_trivial_test.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/aio.dir/tests/test/sources/aio_parsing/aio_particles/util/aio_particle_test_common.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-environment.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-environment.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/feature_tests.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/feature_tests.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/aio.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/aio.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/com/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/com/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/com/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/com/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/com/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/com/cmake_install.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/lib/libgtest_maind.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/lib/libgtest_maind.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/lib/libgtestd.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/lib/libgtestd.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libs/googletest/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libs/googletest/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libs/googletest/CTestTestfile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libs/googletest/CTestTestfile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libs/googletest/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libs/googletest/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libs/googletest/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libs/googletest/cmake_install.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libs/googletest/googlemock/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libs/googletest/googlemock/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libs/googletest/googlemock/CMakeFiles/gmock.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libs/googletest/googlemock/CMakeFiles/gmock.dir/DependInfo.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libs/googletest/googlemock/CMakeFiles/gmock.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libs/googletest/googlemock/CMakeFiles/gmock.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libs/googletest/googlemock/CMakeFiles/gmock.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libs/googletest/googlemock/CMakeFiles/gmock.dir/cmake_clean.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libs/googletest/googlemock/CMakeFiles/gmock.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libs/googletest/googlemock/CMakeFiles/gmock.dir/flags.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libs/googletest/googlemock/CMakeFiles/gmock.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libs/googletest/googlemock/CMakeFiles/gmock.dir/link.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libs/googletest/googlemock/CMakeFiles/gmock_main.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libs/googletest/googlemock/CMakeFiles/gmock_main.dir/DependInfo.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libs/googletest/googlemock/CMakeFiles/gmock_main.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libs/googletest/googlemock/CMakeFiles/gmock_main.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libs/googletest/googlemock/CMakeFiles/gmock_main.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libs/googletest/googlemock/CMakeFiles/gmock_main.dir/cmake_clean.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libs/googletest/googlemock/CMakeFiles/gmock_main.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libs/googletest/googlemock/CMakeFiles/gmock_main.dir/flags.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libs/googletest/googlemock/CMakeFiles/gmock_main.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libs/googletest/googlemock/CMakeFiles/gmock_main.dir/link.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libs/googletest/googlemock/CTestTestfile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libs/googletest/googlemock/CTestTestfile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libs/googletest/googlemock/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libs/googletest/googlemock/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libs/googletest/googlemock/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libs/googletest/googlemock/cmake_install.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libs/googletest/googlemock/gmock.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libs/googletest/googlemock/gmock.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libs/googletest/googlemock/gtest/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libs/googletest/googlemock/gtest/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libs/googletest/googlemock/gtest/CMakeFiles/Export/lib/cmake/GTest/GTestTargets-debug.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libs/googletest/googlemock/gtest/CMakeFiles/Export/lib/cmake/GTest/GTestTargets-debug.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libs/googletest/googlemock/gtest/CMakeFiles/gtest.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libs/googletest/googlemock/gtest/CMakeFiles/gtest.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libs/googletest/googlemock/gtest/CMakeFiles/gtest.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libs/googletest/googlemock/gtest/CMakeFiles/gtest.dir/DependInfo.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libs/googletest/googlemock/gtest/CMakeFiles/gtest.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libs/googletest/googlemock/gtest/CMakeFiles/gtest.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libs/googletest/googlemock/gtest/CMakeFiles/gtest.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libs/googletest/googlemock/gtest/CMakeFiles/gtest.dir/cmake_clean.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libs/googletest/googlemock/gtest/CMakeFiles/gtest.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libs/googletest/googlemock/gtest/CMakeFiles/gtest.dir/depend.internal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libs/googletest/googlemock/gtest/CMakeFiles/gtest.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libs/googletest/googlemock/gtest/CMakeFiles/gtest.dir/depend.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libs/googletest/googlemock/gtest/CMakeFiles/gtest.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libs/googletest/googlemock/gtest/CMakeFiles/gtest.dir/flags.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libs/googletest/googlemock/gtest/CMakeFiles/gtest.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libs/googletest/googlemock/gtest/CMakeFiles/gtest.dir/link.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libs/googletest/googlemock/gtest/CMakeFiles/gtest_main.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libs/googletest/googlemock/gtest/CMakeFiles/gtest_main.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libs/googletest/googlemock/gtest/CMakeFiles/gtest_main.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libs/googletest/googlemock/gtest/CMakeFiles/gtest_main.dir/DependInfo.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libs/googletest/googlemock/gtest/CMakeFiles/gtest_main.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libs/googletest/googlemock/gtest/CMakeFiles/gtest_main.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libs/googletest/googlemock/gtest/CMakeFiles/gtest_main.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libs/googletest/googlemock/gtest/CMakeFiles/gtest_main.dir/cmake_clean.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libs/googletest/googlemock/gtest/CMakeFiles/gtest_main.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libs/googletest/googlemock/gtest/CMakeFiles/gtest_main.dir/depend.internal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libs/googletest/googlemock/gtest/CMakeFiles/gtest_main.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libs/googletest/googlemock/gtest/CMakeFiles/gtest_main.dir/depend.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libs/googletest/googlemock/gtest/CMakeFiles/gtest_main.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libs/googletest/googlemock/gtest/CMakeFiles/gtest_main.dir/flags.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libs/googletest/googlemock/gtest/CMakeFiles/gtest_main.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libs/googletest/googlemock/gtest/CMakeFiles/gtest_main.dir/link.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libs/googletest/googlemock/gtest/CTestTestfile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libs/googletest/googlemock/gtest/CTestTestfile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libs/googletest/googlemock/gtest/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libs/googletest/googlemock/gtest/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libs/googletest/googlemock/gtest/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libs/googletest/googlemock/gtest/cmake_install.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libs/googletest/googlemock/gtest/generated/GTestConfig.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libs/googletest/googlemock/gtest/generated/GTestConfig.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libs/googletest/googlemock/gtest/generated/GTestConfigVersion.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libs/googletest/googlemock/gtest/generated/GTestConfigVersion.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libs/googletest/googlemock/gtest/generated/gmock.pc" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libs/googletest/googlemock/gtest/generated/gmock.pc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libs/googletest/googlemock/gtest/generated/gmock_main.pc" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libs/googletest/googlemock/gtest/generated/gmock_main.pc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libs/googletest/googlemock/gtest/generated/gtest.pc" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libs/googletest/googlemock/gtest/generated/gtest.pc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libs/googletest/googlemock/gtest/generated/gtest_main.pc" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libs/googletest/googlemock/gtest/generated/gtest_main.pc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libs/googletest/googlemock/gtest/gtest.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libs/googletest/googlemock/gtest/gtest.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libs/googletest/googletest-distribution.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libs/googletest/googletest-distribution.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libs/lib4aio/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libs/lib4aio/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libs/lib4aio/CMakeFiles/lib4aio.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libs/lib4aio/CMakeFiles/lib4aio.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libs/lib4aio/CMakeFiles/lib4aio.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libs/lib4aio/CMakeFiles/lib4aio.dir/DependInfo.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libs/lib4aio/CMakeFiles/lib4aio.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libs/lib4aio/CMakeFiles/lib4aio.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libs/lib4aio/CMakeFiles/lib4aio.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libs/lib4aio/CMakeFiles/lib4aio.dir/cmake_clean.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libs/lib4aio/CMakeFiles/lib4aio.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libs/lib4aio/CMakeFiles/lib4aio.dir/depend.internal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libs/lib4aio/CMakeFiles/lib4aio.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libs/lib4aio/CMakeFiles/lib4aio.dir/depend.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libs/lib4aio/CMakeFiles/lib4aio.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libs/lib4aio/CMakeFiles/lib4aio.dir/flags.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libs/lib4aio/CMakeFiles/lib4aio.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libs/lib4aio/CMakeFiles/lib4aio.dir/link.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libs/lib4aio/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libs/lib4aio/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libs/lib4aio/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libs/lib4aio/cmake_install.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libs/lib4aio/lib4aio.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libs/lib4aio/lib4aio.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libs/lib4aio/liblib4aio.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libs/lib4aio/liblib4aio.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/tests/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/tests/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/tests/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/tests/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/tests/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/tests/cmake_install.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com/headers/aio_lang/aio_modifiers/aio_modifiers.h" beforeDir="false" afterPath="$PROJECT_DIR$/com/headers/aio_lang/aio_modifiers/aio_modifiers.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com/headers/aio_lang/aio_space/aio_initializable/aio_initializable.h" beforeDir="false" afterPath="$PROJECT_DIR$/com/headers/aio_lang/aio_space/aio_initializable/aio_initializable.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com/sources/aio_core/aio_core.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/com/sources/aio_core/aio_core.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com/sources/aio_lang/aio_inheritable/aio_inheritable.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/com/sources/aio_lang/aio_inheritable/aio_inheritable.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com/sources/aio_lang/aio_space/aio_initializable/aio_class/aio_class.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/com/sources/aio_lang/aio_space/aio_initializable/aio_class/aio_class.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com/sources/aio_lang/aio_space/aio_initializable/aio_initializable.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/com/sources/aio_lang/aio_space/aio_initializable/aio_initializable.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com/sources/aio_parsing/aio_context_inflater/os/linux/linux_core_builder.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/com/sources/aio_parsing/aio_context_inflater/os/linux/linux_core_builder.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com/sources/aio_parsing/aio_expression/aio_parsers/aio_double_parser.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/com/sources/aio_parsing/aio_expression/aio_parsers/aio_double_parser.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com/sources/aio_parsing/aio_particles/aio_class/aio_class_particle.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/com/sources/aio_parsing/aio_particles/aio_class/aio_class_particle.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com/sources/aio_parsing/aio_particles/aio_field/aio_field_particle.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/com/sources/aio_parsing/aio_particles/aio_field/aio_field_particle.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com/sources/aio_parsing/aio_particles/aio_function/aio_function_particle.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/com/sources/aio_parsing/aio_particles/aio_function/aio_function_particle.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com/sources/aio_runtime/aio_task/aio_return/aio_return_task.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/com/sources/aio_runtime/aio_task/aio_return/aio_return_task.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/lib4aio/lib4aio_cpp_sources/aio_orbit/aio_orbit.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/libs/lib4aio/lib4aio_cpp_sources/aio_orbit/aio_orbit.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_log.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/libs/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_log.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_trim.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/libs/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_trim.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test/sources/aio_parsing/aio_particles/aio_function/trivial/trivial.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test/sources/aio_parsing/aio_particles/aio_function/trivial/trivial.txt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
-  <component name="ExportTestResults" outputFolder="$PROJECT_DIR$" userTempatePath="" />
+  <component name="ExportTestResults" outputFolder="$PROJECT_DIR$/.." userTempatePath="" />
   <component name="FUSProjectUsageTrigger">
     <session id="1057752837">
       <usages-collector id="statistics.lifecycle.project">
@@ -99,15 +269,57 @@
         </counts>
       </usages-collector>
     </session>
+    <session id="1436881049">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.0" value="1" />
+          <entry key="project.open.time.8" value="1" />
+          <entry key="project.open.time.9" value="1" />
+          <entry key="project.opened" value="3" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="cpp" value="87" />
+          <entry key="h" value="41" />
+          <entry key="txt" value="20" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="ObjectiveC" value="128" />
+          <entry key="PLAIN_TEXT" value="20" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="cpp" value="351" />
+          <entry key="dummy" value="4" />
+          <entry key="h" value="7" />
+          <entry key="txt" value="100" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="ObjectiveC" value="358" />
+          <entry key="PLAIN_TEXT" value="104" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.cidr.testingFrameworks.usages">
+        <counts>
+          <entry key="Google Test" value="68" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="aio_boolean_parser.cpp" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/com/sources/aio_parsing/aio_expression/aio_parsers/aio_boolean_parser.cpp">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/tests/test/sources/aio_parsing/aio_particles/aio_class/trivial/trivial.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="127">
-              <caret line="331" column="23" lean-forward="false" selection-start-line="331" selection-start-column="23" selection-end-line="331" selection-end-column="23" />
-              <folding />
+            <state>
+              <caret column="13" selection-start-column="13" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -143,6 +355,8 @@
       <find>STRING_HOOK_TAG</find>
       <find>&lt;TYPE&gt;</find>
       <find>error</find>
+      <find>EEE</find>
+      <find>null</find>
     </findStrings>
     <replaceStrings>
       <replace>AIO_FUNCTION_PARTICLE_DEBUG</replace>
@@ -165,24 +379,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/com/headers/aio_parsing/aio_expression/aio_analyser/aio_expression_analyser.h" />
-        <option value="$PROJECT_DIR$/com/sources/aio_parsing/aio_expression/aio_inner_parcers/aio_int_parser.c" />
-        <option value="$PROJECT_DIR$/libs/lib4aio/lib4aio_cpp_headers/utils/str_hook_utils/str_hook/str_hook.h" />
-        <option value="$PROJECT_DIR$/libs/lib4aio/lib4aio_cpp_headers/utils/str_hook_utils/str_hook/advanced/str_hook_capture.h" />
-        <option value="$PROJECT_DIR$/libs/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_capture.cpp" />
-        <option value="$PROJECT_DIR$/com/headers/aio_parsing/aio_expression/str_hook_capture.h" />
-        <option value="$PROJECT_DIR$/com/sources/aio_parsing/aio_expression/util/aio_type_matcher.cpp" />
-        <option value="$PROJECT_DIR$/libs/lib4aio/lib4aio_cpp_headers/aio_explorer/aio_explorer.h" />
-        <option value="$PROJECT_DIR$/com/headers/aio_runtime/aio_ray/aio_ray.h" />
-        <option value="$PROJECT_DIR$/com/sources/aio_runtime/aio_ray/aio_ray.cpp" />
-        <option value="$PROJECT_DIR$/com/headers/aio_runtime/aio_bundle/aio_bundle.h" />
-        <option value="$PROJECT_DIR$/com/sources/aio_parsing/aio_expression/aio_inner_parcers/aio_double_parser.c" />
-        <option value="$PROJECT_DIR$/com/sources/aio_parsing/aio_expression/aio_inner_parcers/aio_string_parser.c" />
-        <option value="$PROJECT_DIR$/com/sources/aio_parsing/aio_expression/aio_inner_parcers/aio_boolean_parser.c" />
-        <option value="$PROJECT_DIR$/com/sources/aio_parsing/aio_expression/aio_expression_assistant.c" />
-        <option value="$PROJECT_DIR$/com/sources/aio_parsing/aio_expression/aio_expression_parser.c" />
-        <option value="$PROJECT_DIR$/com/sources/aio_parsing/aio_expression/aio_expression_parser.cpp" />
-        <option value="$PROJECT_DIR$/com/headers/aio_lang/aio_types/aio_types.h" />
         <option value="$PROJECT_DIR$/com/headers/aio_runtime/aio_value/aio_value.h" />
         <option value="$PROJECT_DIR$/com/sources/aio_runtime/aio_value/aio_value.cpp" />
         <option value="$PROJECT_DIR$/com/sources/aio_runtime/aio_value/advanced_functions/log_aio_value.cpp" />
@@ -203,19 +399,37 @@
         <option value="$PROJECT_DIR$/com/sources/aio_parsing/aio_expression/aio_assistant/aio_expression_assistant.cpp" />
         <option value="$PROJECT_DIR$/com/sources/aio_parsing/aio_expression/aio_parsers/aio_int_parser.cpp" />
         <option value="$PROJECT_DIR$/com/sources/aio_parsing/aio_expression/aio_parsers/aio_string_parser.cpp" />
-        <option value="$PROJECT_DIR$/com/sources/aio_parsing/aio_expression/aio_parsers/aio_double_parser.cpp" />
         <option value="$PROJECT_DIR$/com/sources/aio_parsing/aio_expression/aio_analyser/aio_analyser.cpp" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
-        <option value="$PROJECT_DIR$/com/sources/aio_core/aio_core.cpp" />
         <option value="$PROJECT_DIR$/com/sources/aio_parsing/aio_context_inflater/os/windows/win_builder.cpp" />
         <option value="$PROJECT_DIR$/com/sources/aio_parsing/aio_context_inflater/aio_core_builder.cpp" />
         <option value="$PROJECT_DIR$/com/headers/aio_parsing/aio_core_builder/aio_core_builder.h" />
-        <option value="$PROJECT_DIR$/com/sources/aio_parsing/aio_context_inflater/os/linux/linux_core_builder.cpp" />
         <option value="$PROJECT_DIR$/com/sources/aio_parsing/aio_context_inflater/os/apple/apple_core_builder.cpp" />
-        <option value="$PROJECT_DIR$/tests/test/sources/aio_parsing/aio_expression/aio_parser/aio_parser_test.cpp" />
         <option value="$PROJECT_DIR$/com/sources/aio_runtime/aio_value/advanced_functions/compare_aio_value.cpp" />
-        <option value="$PROJECT_DIR$/com/sources/aio_parsing/aio_particles/aio_class/aio_class_particle.cpp" />
         <option value="$PROJECT_DIR$/com/sources/aio_parsing/aio_expression/aio_parsers/aio_boolean_parser.cpp" />
+        <option value="$PROJECT_DIR$/com/sources/aio_core/aio_core.cpp" />
+        <option value="$PROJECT_DIR$/com/sources/aio_parsing/aio_context_inflater/os/linux/linux_core_builder.cpp" />
+        <option value="$PROJECT_DIR$/tests/test/sources/aio_parsing/aio_particles/aio_field/aio_field_particle_test.cpp" />
+        <option value="$PROJECT_DIR$/com/headers/aio_lang/aio_field/aio_field.h" />
+        <option value="$PROJECT_DIR$/com/sources/aio_lang/aio_field/aio_field.cpp" />
+        <option value="$PROJECT_DIR$/libs/lib4aio/lib4aio_cpp_headers/utils/str_hook_utils/str_hook/str_hook.h" />
+        <option value="$PROJECT_DIR$/libs/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_log.cpp" />
+        <option value="$PROJECT_DIR$/com/sources/aio_parsing/aio_particles/aio_field/aio_field_particle.cpp" />
+        <option value="$PROJECT_DIR$/com/sources/aio_lang/aio_space/aio_initializable/aio_class/aio_class.cpp" />
+        <option value="$PROJECT_DIR$/com/headers/aio_lang/aio_space/aio_initializable/aio_initializable.h" />
+        <option value="$PROJECT_DIR$/com/sources/aio_lang/aio_inheritable/aio_inheritable.cpp" />
+        <option value="$PROJECT_DIR$/com/sources/aio_lang/aio_space/aio_initializable/aio_initializable.cpp" />
+        <option value="$PROJECT_DIR$/libs/lib4aio/lib4aio_cpp_sources/aio_orbit/aio_orbit.cpp" />
+        <option value="$PROJECT_DIR$/com/sources/aio_parsing/aio_particles/aio_class/aio_class_particle.cpp" />
+        <option value="$PROJECT_DIR$/libs/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_trim.cpp" />
+        <option value="$PROJECT_DIR$/com/sources/aio_runtime/aio_task/aio_return/aio_return_task.cpp" />
+        <option value="$PROJECT_DIR$/com/sources/aio_parsing/aio_particles/aio_function/aio_function_particle.cpp" />
+        <option value="$PROJECT_DIR$/com/headers/aio_lang/aio_modifiers/aio_modifiers.h" />
+        <option value="$PROJECT_DIR$/com/sources/aio_parsing/aio_expression/aio_parsers/aio_double_parser.cpp" />
+        <option value="$PROJECT_DIR$/tests/test/sources/aio_parsing/aio_particles/aio_field/trivial/trivial.txt" />
+        <option value="$PROJECT_DIR$/tests/test/sources/aio_parsing/aio_particles/aio_function/trivial/trivial.txt" />
+        <option value="$PROJECT_DIR$/tests/test/sources/aio_parsing/aio_expression/aio_parser/aio_parser_test.cpp" />
+        <option value="$PROJECT_DIR$/tests/test/sources/aio_parsing/aio_particles/aio_class/trivial/trivial.txt" />
       </list>
     </option>
   </component>
@@ -227,9 +441,10 @@
   </component>
   <component name="OCFindUsagesOptions" text="false" ivars="false" properties="true" derivedClasses="false" />
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="y" value="25" />
-    <option name="width" value="1366" />
-    <option name="height" value="743" />
+    <option name="x" value="149" />
+    <option name="y" value="165" />
+    <option name="width" value="958" />
+    <option name="height" value="555" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -255,61 +470,52 @@
     </entry>
   </component>
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
-      <flattenPackages />
-      <showMembers />
-      <showModules />
-      <showLibraryContents />
-      <hideEmptyPackages />
-      <abbreviatePackageNames />
-      <autoscrollToSource />
-      <autoscrollFromSource />
-      <sortByType />
-      <manualOrder />
+    <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="aio" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
-              <item name="AIO" type="462c0819:PsiDirectoryNode" />
+              <item name="aio" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AIO4C" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="aio" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
-              <item name="AIO" type="462c0819:PsiDirectoryNode" />
+              <item name="aio" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AIO4C" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="aio" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
-              <item name="AIO" type="462c0819:PsiDirectoryNode" />
+              <item name="aio" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AIO4C" type="462c0819:PsiDirectoryNode" />
               <item name="tests" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="aio" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
-              <item name="AIO" type="462c0819:PsiDirectoryNode" />
+              <item name="aio" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AIO4C" type="462c0819:PsiDirectoryNode" />
               <item name="tests" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="aio" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
-              <item name="AIO" type="462c0819:PsiDirectoryNode" />
+              <item name="aio" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AIO4C" type="462c0819:PsiDirectoryNode" />
               <item name="tests" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="sources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="aio" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
-              <item name="AIO" type="462c0819:PsiDirectoryNode" />
+              <item name="aio" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AIO4C" type="462c0819:PsiDirectoryNode" />
               <item name="tests" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="sources" type="462c0819:PsiDirectoryNode" />
               <item name="aio_parsing" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="aio" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
-              <item name="AIO" type="462c0819:PsiDirectoryNode" />
+              <item name="aio" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AIO4C" type="462c0819:PsiDirectoryNode" />
               <item name="tests" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="sources" type="462c0819:PsiDirectoryNode" />
@@ -317,8 +523,8 @@
               <item name="aio_expression" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="aio" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
-              <item name="AIO" type="462c0819:PsiDirectoryNode" />
+              <item name="aio" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AIO4C" type="462c0819:PsiDirectoryNode" />
               <item name="tests" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="sources" type="462c0819:PsiDirectoryNode" />
@@ -327,8 +533,8 @@
               <item name="aio_parser" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="aio" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
-              <item name="AIO" type="462c0819:PsiDirectoryNode" />
+              <item name="aio" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AIO4C" type="462c0819:PsiDirectoryNode" />
               <item name="tests" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="sources" type="462c0819:PsiDirectoryNode" />
@@ -336,8 +542,8 @@
               <item name="aio_particles" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="aio" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
-              <item name="AIO" type="462c0819:PsiDirectoryNode" />
+              <item name="aio" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AIO4C" type="462c0819:PsiDirectoryNode" />
               <item name="tests" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="sources" type="462c0819:PsiDirectoryNode" />
@@ -346,14 +552,15 @@
               <item name="aio_class" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="aio" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
-              <item name="AIO" type="462c0819:PsiDirectoryNode" />
+              <item name="aio" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AIO4C" type="462c0819:PsiDirectoryNode" />
               <item name="tests" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="sources" type="462c0819:PsiDirectoryNode" />
               <item name="aio_parsing" type="462c0819:PsiDirectoryNode" />
               <item name="aio_particles" type="462c0819:PsiDirectoryNode" />
-              <item name="aio_function" type="462c0819:PsiDirectoryNode" />
+              <item name="aio_class" type="462c0819:PsiDirectoryNode" />
+              <item name="trivial" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -364,8 +571,9 @@
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="term&#9;ACTION&#9;ActivateTerminalToolWindow&#10;termin&#9;ACTION&#9;ActivateTerminalToolWindow&#10;messa&#9;ACTION&#9;ActivateMessagesToolWindow&#10;deb&#9;ACTION&#9;EditorPopupMenuDebug&#10;mes&#9;ACTION&#9;ActivateMessagesToolWindow&#10;build&#9;RUN_CONFIGURATION&#9;Build All" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="full.screen.before.presentation.mode" value="false" />
     <property name="js.buildTools.gulp.gulp_package_dir" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../AIO_C/AIO" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../education/translatingSystems/lexExmpl" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="editing.templates" />
@@ -396,45 +604,66 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Google Test.All in aio_parser_test.cpp">
-    <configuration name="All in aio_class_particle_test.cpp" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" PASS_PARENT_ENVS_2="true" PROJECT_NAME="aio" TARGET_NAME="aio" RUN_TARGET_PROJECT_NAME="aio" RUN_TARGET_NAME="aio" TEST_PATTERN="aio_class_particle_test.*:aio_class_particle_test/*.*:*/aio_class_particle_test.*/*:*/aio_class_particle_test/*.*" TEST_MODE="PATTERN">
-      <envs />
-    </configuration>
-    <configuration name="All in aio_function_particle_test.cpp" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" PASS_PARENT_ENVS_2="true" PROJECT_NAME="aio" TARGET_NAME="aio" RUN_TARGET_PROJECT_NAME="aio" RUN_TARGET_NAME="aio" TEST_PATTERN="aio_function_particle_test.*:aio_function_particle_test/*.*:*/aio_function_particle_test.*/*:*/aio_function_particle_test/*.*" TEST_MODE="PATTERN">
-      <envs />
-    </configuration>
-    <configuration name="All in aio_parser_test.cpp" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" PASS_PARENT_ENVS_2="true" PROJECT_NAME="aio" TARGET_NAME="aio" RUN_TARGET_PROJECT_NAME="aio" RUN_TARGET_NAME="aio" TEST_PATTERN="aio_parser_test.*:aio_parser_test/*.*:*/aio_parser_test.*/*:*/aio_parser_test/*.*" TEST_MODE="PATTERN">
-      <envs />
-    </configuration>
-    <configuration default="true" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" PASS_PARENT_ENVS_2="true" PROJECT_NAME="aio" TARGET_NAME="aio" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="aio" RUN_TARGET_NAME="aio" TEST_MODE="SUITE_TEST">
-      <envs />
-      <method>
+  <component name="RunManager" selected="Google Test.All in main.cpp">
+    <configuration name="All in main.cpp" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" PASS_PARENT_ENVS_2="true" PROJECT_NAME="aio" TARGET_NAME="aio" RUN_TARGET_PROJECT_NAME="aio" RUN_TARGET_NAME="aio" TEST_PATTERN="" TEST_MODE="PATTERN">
+      <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="aio_parser_test" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" PASS_PARENT_ENVS_2="true" PROJECT_NAME="aio" TARGET_NAME="aio" RUN_TARGET_PROJECT_NAME="aio" RUN_TARGET_NAME="aio" TEST_CLASS="aio_parser_test" TEST_MODE="SUITE_TEST">
-      <envs />
+    <configuration default="true" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" PASS_PARENT_ENVS_2="true" PROJECT_NAME="aio" TARGET_NAME="aio" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="aio" RUN_TARGET_NAME="aio" TEST_MODE="SUITE_TEST">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
     </configuration>
-    <configuration name="aio_parser_test.hard_boolean" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" PASS_PARENT_ENVS_2="true" PROJECT_NAME="aio" TARGET_NAME="aio" RUN_TARGET_PROJECT_NAME="aio" RUN_TARGET_NAME="aio" TEST_CLASS="aio_parser_test" TEST_METHOD="hard_boolean" TEST_MODE="SUITE_TEST">
-      <envs />
+    <configuration name="aio_class_particle_test.trivial" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" PASS_PARENT_ENVS_2="true" PROJECT_NAME="aio" TARGET_NAME="aio" RUN_TARGET_PROJECT_NAME="aio" RUN_TARGET_NAME="aio" TEST_CLASS="aio_class_particle_test" TEST_METHOD="trivial" TEST_MODE="SUITE_TEST">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="aio_parser_test.medium_double" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" PASS_PARENT_ENVS_2="true" PROJECT_NAME="aio" TARGET_NAME="aio" RUN_TARGET_PROJECT_NAME="aio" RUN_TARGET_NAME="aio" TEST_CLASS="aio_parser_test" TEST_METHOD="medium_double" TEST_MODE="SUITE_TEST">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="aio_parser_test.trivial_double" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" PASS_PARENT_ENVS_2="true" PROJECT_NAME="aio" TARGET_NAME="aio" RUN_TARGET_PROJECT_NAME="aio" RUN_TARGET_NAME="aio" TEST_CLASS="aio_parser_test" TEST_METHOD="trivial_double" TEST_MODE="SUITE_TEST">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
     </configuration>
     <configuration name="Build All" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" EXPLICIT_BUILD_TARGET_NAME="all">
-      <envs />
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="aio" type="CMakeRunConfiguration" factoryName="Application" temporary="true" PASS_PARENT_ENVS_2="true" PROJECT_NAME="aio" TARGET_NAME="aio" RUN_TARGET_PROJECT_NAME="aio" RUN_TARGET_NAME="aio">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
     </configuration>
     <configuration name="gmock" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="aio" TARGET_NAME="gmock" CONFIG_NAME="Debug">
-      <envs />
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
     </configuration>
     <configuration name="gmock_main" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="aio" TARGET_NAME="gmock_main" CONFIG_NAME="Debug">
-      <envs />
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
     </configuration>
     <configuration name="gtest" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="aio" TARGET_NAME="gtest" CONFIG_NAME="Debug">
-      <envs />
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
     </configuration>
     <configuration name="gtest_main" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="aio" TARGET_NAME="gtest_main" CONFIG_NAME="Debug">
-      <envs />
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
     </configuration>
     <configuration name="lib4aio" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="aio" TARGET_NAME="lib4aio" CONFIG_NAME="Debug">
-      <envs />
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
       <node-interpreter>project</node-interpreter>
@@ -443,32 +672,30 @@
       <tasks />
       <arguments />
       <envs />
+      <method v="2" />
     </configuration>
-    <list size="11">
-      <item index="0" class="java.lang.String" itemvalue="Application.Build All" />
-      <item index="1" class="java.lang.String" itemvalue="Application.gmock" />
-      <item index="2" class="java.lang.String" itemvalue="Application.gmock_main" />
-      <item index="3" class="java.lang.String" itemvalue="Application.gtest" />
-      <item index="4" class="java.lang.String" itemvalue="Application.gtest_main" />
-      <item index="5" class="java.lang.String" itemvalue="Application.lib4aio" />
-      <item index="6" class="java.lang.String" itemvalue="Google Test.aio_parser_test" />
-      <item index="7" class="java.lang.String" itemvalue="Google Test.All in aio_class_particle_test.cpp" />
-      <item index="8" class="java.lang.String" itemvalue="Google Test.All in aio_function_particle_test.cpp" />
-      <item index="9" class="java.lang.String" itemvalue="Google Test.All in aio_parser_test.cpp" />
-      <item index="10" class="java.lang.String" itemvalue="Google Test.aio_parser_test.hard_boolean" />
+    <list>
+      <item itemvalue="Application.Build All" />
+      <item itemvalue="Application.gmock" />
+      <item itemvalue="Application.gmock_main" />
+      <item itemvalue="Application.gtest" />
+      <item itemvalue="Application.gtest_main" />
+      <item itemvalue="Application.lib4aio" />
+      <item itemvalue="Google Test.aio_parser_test.trivial_double" />
+      <item itemvalue="Google Test.aio_parser_test.medium_double" />
+      <item itemvalue="Application.aio" />
+      <item itemvalue="Google Test.aio_class_particle_test.trivial" />
+      <item itemvalue="Google Test.All in main.cpp" />
     </list>
     <recent_temporary>
-      <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Google Test.All in aio_parser_test.cpp" />
-        <item index="1" class="java.lang.String" itemvalue="Google Test.aio_parser_test.hard_boolean" />
-        <item index="2" class="java.lang.String" itemvalue="Google Test.All in aio_function_particle_test.cpp" />
-        <item index="3" class="java.lang.String" itemvalue="Google Test.All in aio_class_particle_test.cpp" />
-        <item index="4" class="java.lang.String" itemvalue="Google Test.aio_parser_test" />
+      <list>
+        <item itemvalue="Google Test.All in main.cpp" />
+        <item itemvalue="Google Test.aio_class_particle_test.trivial" />
+        <item itemvalue="Application.aio" />
+        <item itemvalue="Google Test.aio_parser_test.trivial_double" />
+        <item itemvalue="Google Test.aio_parser_test.medium_double" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="ShelveChangesManager" show_recycled="false">
-    <option name="remove_strategy" value="false" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -487,6 +714,9 @@
       <workItem from="1542081565541" duration="13156000" />
       <workItem from="1542113761389" duration="17819000" />
       <workItem from="1542194095085" duration="10410000" />
+      <workItem from="1542627008869" duration="305000" />
+      <workItem from="1542629607256" duration="1475000" />
+      <workItem from="1542644525059" duration="13028000" />
     </task>
     <task id="LOCAL-00001" summary="Field FSM 을 다시 만들었습니다">
       <created>1541784909171</created>
@@ -618,88 +848,88 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="All_in_aio_parser_test_cpp - 2018.11.14 at 22h 01m 45s.xml">
-      <configuration name="All in aio_parser_test.cpp" configurationId="CMakeGoogleTestRunConfigurationType" />
+    <history-entry file="aio_parser_test_trivial_double - 2018.11.19 at 22h 51m 13s.xml">
+      <configuration name="aio_parser_test.trivial_double" configurationId="CMakeGoogleTestRunConfigurationType" />
     </history-entry>
-    <history-entry file="All_in_aio_parser_test_cpp - 2018.11.14 at 22h 01m 54s.xml">
-      <configuration name="All in aio_parser_test.cpp" configurationId="CMakeGoogleTestRunConfigurationType" />
+    <history-entry file="aio_parser_test_trivial_double - 2018.11.19 at 23h 00m 42s.xml">
+      <configuration name="aio_parser_test.trivial_double" configurationId="CMakeGoogleTestRunConfigurationType" />
     </history-entry>
-    <history-entry file="aio_parser_test_hard_boolean - 2018.11.14 at 21h 57m 06s.xml">
-      <configuration name="aio_parser_test.hard_boolean" configurationId="CMakeGoogleTestRunConfigurationType" />
+    <history-entry file="aio_parser_test_trivial_double - 2018.11.19 at 23h 00m 59s.xml">
+      <configuration name="aio_parser_test.trivial_double" configurationId="CMakeGoogleTestRunConfigurationType" />
     </history-entry>
-    <history-entry file="aio_parser_test_hard_boolean - 2018.11.14 at 21h 57m 15s.xml">
-      <configuration name="aio_parser_test.hard_boolean" configurationId="CMakeGoogleTestRunConfigurationType" />
+    <history-entry file="aio_parser_test_trivial_double - 2018.11.19 at 23h 01m 43s.xml">
+      <configuration name="aio_parser_test.trivial_double" configurationId="CMakeGoogleTestRunConfigurationType" />
     </history-entry>
-    <history-entry file="aio_parser_test_hard_boolean - 2018.11.14 at 21h 57m 20s.xml">
-      <configuration name="aio_parser_test.hard_boolean" configurationId="CMakeGoogleTestRunConfigurationType" />
+    <history-entry file="aio_parser_test_trivial_double - 2018.11.19 at 23h 03m 35s.xml">
+      <configuration name="aio_parser_test.trivial_double" configurationId="CMakeGoogleTestRunConfigurationType" />
     </history-entry>
-    <history-entry file="aio_parser_test_hard_boolean - 2018.11.14 at 21h 57m 44s.xml">
-      <configuration name="aio_parser_test.hard_boolean" configurationId="CMakeGoogleTestRunConfigurationType" />
+    <history-entry file="aio_parser_test_trivial_double - 2018.11.19 at 23h 04m 24s.xml">
+      <configuration name="aio_parser_test.trivial_double" configurationId="CMakeGoogleTestRunConfigurationType" />
     </history-entry>
-    <history-entry file="aio_parser_test_hard_boolean - 2018.11.14 at 21h 57m 48s.xml">
-      <configuration name="aio_parser_test.hard_boolean" configurationId="CMakeGoogleTestRunConfigurationType" />
+    <history-entry file="aio_parser_test_trivial_double - 2018.11.19 at 23h 04m 36s.xml">
+      <configuration name="aio_parser_test.trivial_double" configurationId="CMakeGoogleTestRunConfigurationType" />
     </history-entry>
-    <history-entry file="aio_parser_test_hard_boolean - 2018.11.14 at 22h 00m 09s.xml">
-      <configuration name="aio_parser_test.hard_boolean" configurationId="CMakeGoogleTestRunConfigurationType" />
+    <history-entry file="aio_class_particle_test_trivial - 2018.11.19 at 23h 28m 34s.xml">
+      <configuration name="aio_class_particle_test.trivial" configurationId="CMakeGoogleTestRunConfigurationType" />
     </history-entry>
-    <history-entry file="aio_parser_test_hard_boolean - 2018.11.14 at 22h 00m 30s.xml">
-      <configuration name="aio_parser_test.hard_boolean" configurationId="CMakeGoogleTestRunConfigurationType" />
+    <history-entry file="aio_class_particle_test_trivial - 2018.11.19 at 23h 28m 51s.xml">
+      <configuration name="aio_class_particle_test.trivial" configurationId="CMakeGoogleTestRunConfigurationType" />
     </history-entry>
-    <history-entry file="aio_parser_test_hard_boolean - 2018.11.14 at 22h 00m 39s.xml">
-      <configuration name="aio_parser_test.hard_boolean" configurationId="CMakeGoogleTestRunConfigurationType" />
+    <history-entry file="All_in_main_cpp - 2018.11.19 at 23h 28m 57s.xml">
+      <configuration name="All in main.cpp" configurationId="CMakeGoogleTestRunConfigurationType" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="144556000" />
+    <option name="totallyTimeSpent" value="159364000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
+    <frame x="0" y="25" width="1366" height="743" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23938507" sideWeight="0.4985465" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6676301" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32947975" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.7413295" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24963397" sideWeight="0.50145346" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32947975" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6040462" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Database Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="LuaJ" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6438953" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4985465" visible="true" weight="0.20131771" />
+      <window_info id="Structure" order="1" sideWeight="0.50145346" side_tool="true" weight="0.24963397" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.6438953" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.67151165" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.6031977" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Messages" order="8" weight="0.6656977" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.32947975" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="11" />
+      <window_info anchor="bottom" id="CMake" order="12" weight="0.32947975" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="LuaJ" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
     </layout>
     <layout-to-restore>
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5857558" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32994187" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Database Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.93168604" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="LuaJ" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32994187" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5872093" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4985465" visible="true" weight="0.20131771" />
+      <window_info id="Structure" order="1" sideWeight="0.50145346" side_tool="true" weight="0.24963397" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.6438953" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.8567708" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.6040462" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Messages" order="8" weight="0.6666667" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.32947975" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="11" />
+      <window_info anchor="bottom" id="CMake" order="12" weight="0.32947975" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="LuaJ" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -727,7 +957,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="Tested Boolean aio_analyser" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
     <watches-manager>
       <configuration name="CMakeGoogleTestRunConfigurationType">
         <watch expression="schemable-&gt;functions-&gt;elements-&gt;*elements" />
@@ -744,274 +973,209 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/tests/test/sources/aio_parsing/aio_expression/aio_parser/aio_parser_test.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2091">
-          <caret line="123" column="1" lean-forward="true" selection-start-line="123" selection-start-column="1" selection-end-line="123" selection-end-column="1" />
-          <folding>
-            <element signature="e#199#243#0" expanded="false" />
-            <element signature="e#327#385#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/com/headers/aio_parsing/aio_expression/util/aio_type_matcher.h" />
-    <entry file="file://$PROJECT_DIR$/com/sources/aio_parsing/aio_expression/util/aio_type_matcher.cpp" />
-    <entry file="file://$PROJECT_DIR$/com/sources/aio_parsing/aio_expression/aio_inner_parcers/aio_boolean_parser.c" />
-    <entry file="file://$PROJECT_DIR$/com/sources/aio_parsing/aio_expression/aio_inner_parcers/aio_int_parser.c" />
     <entry file="file://$PROJECT_DIR$/com/sources/aio_parsing/aio_expression/aio_inner_parcers/aio_string_parser.c" />
     <entry file="file://$PROJECT_DIR$/com/sources/aio_parsing/aio_expression/aio_expression_parser.c" />
-    <entry file="file://$PROJECT_DIR$/com/sources/aio_runtime/aio_value/advanced_functions/cast_aio_value.cpp">
+    <entry file="file://C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/i686-w64-mingw32/include/windows.h" />
+    <entry file="file://C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/i686-w64-mingw32/include/excpt.h" />
+    <entry file="file://C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/i686-w64-mingw32/include/minwindef.h" />
+    <entry file="file://C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/i686-w64-mingw32/include/wincon.h" />
+    <entry file="file://$PROJECT_DIR$/libs/googletest/googletest/include/gtest/gtest.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="18" column="49" lean-forward="true" selection-start-line="18" selection-start-column="49" selection-end-line="18" selection-end-column="49" />
+        <state relative-caret-position="229">
+          <caret line="2021" column="9" selection-start-line="2021" selection-start-column="9" selection-end-line="2021" selection-end-column="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/com/sources/aio_runtime/aio_value/aio_value.cpp">
+    <entry file="file://$PROJECT_DIR$/com/headers/aio_lang/aio_inheritable/aio_inheritable.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="505">
-          <caret line="97" column="5" lean-forward="true" selection-start-line="97" selection-start-column="5" selection-end-line="97" selection-end-column="5" />
+        <state relative-caret-position="280">
+          <caret line="20" column="17" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/libs/lib4aio/lib4aio_cpp_sources/utils/char_utils/char_utils.cpp">
+    <entry file="file://$PROJECT_DIR$/com/sources/aio_lang/aio_inheritable/aio_inheritable.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="41" column="15" lean-forward="false" selection-start-line="41" selection-start-column="15" selection-end-line="41" selection-end-column="15" />
+        <state relative-caret-position="294">
+          <caret line="22" column="12" lean-forward="true" selection-start-line="22" selection-start-column="12" selection-end-line="22" selection-end-column="12" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/com/sources/aio_parsing/aio_expression/aio_parsers/aio_double_parser.cpp">
+    <entry file="file://$PROJECT_DIR$/tests/test/sources/aio_parsing/aio_particles/aio_class/trivial/aio_class_particle_trivial_test.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="37">
-          <caret line="30" column="55" lean-forward="false" selection-start-line="30" selection-start-column="55" selection-end-line="30" selection-end-column="55" />
+        <state relative-caret-position="70">
+          <caret line="5" column="11" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/com/sources/aio_parsing/aio_expression/aio_parsers/aio_string_parser.cpp">
+    <entry file="file://$PROJECT_DIR$/com/sources/aio_lang/aio_space/aio_initializable/aio_class/aio_class.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="67">
-          <caret line="33" column="52" lean-forward="false" selection-start-line="33" selection-start-column="52" selection-end-line="33" selection-end-column="52" />
+        <state relative-caret-position="32">
+          <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/com/sources/aio_parsing/aio_expression/aio_assistant/aio_expression_assistant.cpp">
+    <entry file="file://$PROJECT_DIR$/com/headers/aio_lang/aio_space/aio_initializable/aio_class/aio_class.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="109">
-          <caret line="40" column="6" lean-forward="false" selection-start-line="40" selection-start-column="6" selection-end-line="40" selection-end-column="6" />
+        <state relative-caret-position="10">
+          <caret line="14" column="36" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/com/headers/aio_parsing/aio_expression/aio_expression_parser.h" />
-    <entry file="file://$PROJECT_DIR$/com/sources/aio_parsing/aio_expression/aio_analyser/aio_analyser.cpp">
+    <entry file="file://$PROJECT_DIR$/com/headers/aio_lang/aio_space/aio_initializable/aio_initializable.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1956">
-          <caret line="60" column="9" lean-forward="false" selection-start-line="60" selection-start-column="9" selection-end-line="60" selection-end-column="9" />
+        <state relative-caret-position="364">
+          <caret line="27" column="34" selection-start-line="27" selection-start-column="34" selection-end-line="27" selection-end-column="34" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+    <entry file="file://$PROJECT_DIR$/com/sources/aio_lang/aio_space/aio_initializable/aio_initializable.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="36" lean-forward="false" selection-start-line="0" selection-start-column="36" selection-end-line="0" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/i686-w64-mingw32/include/windows.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="64" column="0" lean-forward="false" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/i686-w64-mingw32/include/excpt.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="13" column="7" lean-forward="false" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/i686-w64-mingw32/include/minwindef.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="18" column="7" lean-forward="false" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/i686-w64-mingw32/include/wincon.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="232" column="2" lean-forward="false" selection-start-line="232" selection-start-column="2" selection-end-line="232" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/com/headers/aio_core/aio_core.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="572">
-          <caret line="47" column="0" lean-forward="true" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/com/headers/aio_parsing/aio_core_builder/aio_core_builder.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="521">
-          <caret line="54" column="6" lean-forward="true" selection-start-line="54" selection-start-column="6" selection-end-line="54" selection-end-column="6" />
+        <state relative-caret-position="32">
+          <caret line="28" column="91" selection-start-line="28" selection-start-column="91" selection-end-line="28" selection-end-column="91" />
           <folding>
-            <element signature="e#735#802#0" expanded="false" />
+            <element signature="e#155#221#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/com/sources/aio_parsing/aio_context_inflater/os/linux/linux_core_builder.cpp">
+    <entry file="file://$PROJECT_DIR$/libs/lib4aio/lib4aio_cpp_sources/aio_orbit/aio_orbit.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="606">
-          <caret line="52" column="6" lean-forward="true" selection-start-line="52" selection-start-column="6" selection-end-line="52" selection-end-column="6" />
-          <folding>
-            <element signature="e#18#1711#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/com/sources/aio_parsing/aio_context_inflater/os/apple/apple_core_builder.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/com/sources/aio_parsing/aio_context_inflater/os/windows/win_core_builder.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/com/sources/aio_core/aio_core.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="58" column="33" lean-forward="true" selection-start-line="58" selection-start-column="33" selection-end-line="58" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/com/sources/aio_parsing/aio_context_inflater/aio_core_builder.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="79">
-          <caret line="119" column="0" lean-forward="false" selection-start-line="119" selection-start-column="0" selection-end-line="119" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/com/sources/aio_runtime/aio_value/advanced_functions/compare_aio_value.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="34" column="59" lean-forward="false" selection-start-line="34" selection-start-column="59" selection-end-line="34" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/com/sources/aio_parsing/aio_expression/aio_expression_parser.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="672">
-          <caret line="49" column="18" lean-forward="false" selection-start-line="49" selection-start-column="18" selection-end-line="49" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/test/sources/aio_parsing/aio_particles/aio_class/aio_class_particle_test.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="84" column="39" lean-forward="true" selection-start-line="84" selection-start-column="39" selection-end-line="84" selection-end-column="39" />
-          <folding />
+        <state relative-caret-position="84">
+          <caret line="10" column="36" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/com/sources/aio_parsing/aio_particles/aio_class/aio_class_particle.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="52" column="49" lean-forward="false" selection-start-line="52" selection-start-column="49" selection-end-line="52" selection-end-column="49" />
-          <folding />
+        <state relative-caret-position="70">
+          <caret line="256" column="57" lean-forward="true" selection-start-line="256" selection-start-column="57" selection-end-line="256" selection-end-column="57" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/com/sources/aio_parsing/aio_expression/aio_parsers/aio_int_parser.cpp">
+    <entry file="file://$PROJECT_DIR$/tests/test/sources/aio_parsing/aio_particles/aio_function/aio_function_particle_test.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="127" column="26" lean-forward="false" selection-start-line="127" selection-start-column="26" selection-end-line="127" selection-end-column="26" />
-          <folding />
+        <state relative-caret-position="185">
+          <caret line="53" column="66" selection-start-line="53" selection-start-column="66" selection-end-line="53" selection-end-column="66" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/com/sources/aio_parsing/aio_particles/aio_function/aio_function_particle.cpp">
+    <entry file="file://$PROJECT_DIR$/libs/lib4aio/lib4aio_cpp_sources/utils/str_hook_utils/str_hook/advanced_functions/str_hook_trim.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="66" column="18" lean-forward="false" selection-start-line="66" selection-start-column="18" selection-end-line="66" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/com/sources/aio_lang/aio_space/aio_space.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="17" column="40" lean-forward="false" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/com/headers/aio_lang/aio_invokable/aio_invokable.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="18" column="7" lean-forward="false" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/com/headers/aio_lang/aio_schemable/aio_schemable.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="18" lean-forward="true" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/com/headers/aio_lang/aio_space/aio_space.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="15" column="15" lean-forward="true" selection-start-line="15" selection-start-column="15" selection-end-line="15" selection-end-column="15" />
-          <folding />
+        <state relative-caret-position="32">
+          <caret line="72" selection-start-line="72" selection-end-line="72" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/com/headers/aio_lang/aio_invokable/aio_function/aio_function.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="11" column="7" lean-forward="false" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
-          <folding />
+        <state relative-caret-position="252">
+          <caret line="19" column="18" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/com/sources/aio_lang/aio_annotatable/aio_annotatable.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="24" column="30" selection-start-line="24" selection-start-column="30" selection-end-line="24" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/com/sources/aio_lang/aio_invokable/aio_invokable.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="24" column="55" lean-forward="true" selection-start-line="24" selection-start-column="55" selection-end-line="24" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/com/headers/aio_lang/aio_invokable/aio_invokable.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="18" column="7" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/com/sources/aio_lang/aio_invokable/function/aio_function.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="73">
+          <caret line="30" column="39" selection-start-line="30" selection-start-column="39" selection-end-line="30" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/com/sources/aio_runtime/aio_task/aio_return/aio_return_task.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="35" column="21" lean-forward="true" selection-start-line="35" selection-start-column="21" selection-end-line="35" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/com/sources/aio_parsing/aio_particles/aio_function/aio_function_particle.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="14">
+          <caret line="421" column="1" lean-forward="true" selection-start-line="421" selection-start-column="1" selection-end-line="421" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/com/headers/aio_lang/aio_modifiers/aio_modifiers.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="136" column="28" selection-start-line="136" selection-start-column="28" selection-end-line="136" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/lib4aio/lib4aio_cpp_sources/utils/error_utils/error_utils.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="20" column="12" lean-forward="true" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/com/sources/aio_parsing/aio_expression/aio_parsers/aio_double_parser.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="113">
+          <caret line="167" column="5" lean-forward="true" selection-start-line="167" selection-start-column="5" selection-end-line="167" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-178" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/test/sources/aio_parsing/aio_particles/aio_field/aio_field_particle_test.cpp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/test/sources/aio_parsing/aio_particles/aio_field/trivial/trivial.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="12" selection-start-column="12" selection-end-column="12" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/test/sources/aio_parsing/aio_expression/aio_parser/aio_parser_test.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="24" column="45" lean-forward="true" selection-start-line="24" selection-start-column="45" selection-end-line="24" selection-end-column="45" />
-          <folding />
+        <state relative-caret-position="96">
+          <caret line="51" column="48" selection-start-line="51" selection-start-column="48" selection-end-line="51" selection-end-column="48" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/com/sources/aio_parsing/aio_expression/aio_parsers/aio_boolean_parser.cpp">
+    <entry file="file://$PROJECT_DIR$/tests/test/sources/aio_parsing/aio_particles/aio_class/aio_class_particle_test.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
-          <caret line="331" column="23" lean-forward="false" selection-start-line="331" selection-start-column="23" selection-end-line="331" selection-end-column="23" />
-          <folding />
+        <state relative-caret-position="68">
+          <caret line="51" column="16" selection-start-line="51" selection-start-column="16" selection-end-line="51" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/test/sources/aio_parsing/aio_particles/aio_function/trivial/trivial.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="29" selection-start-column="29" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/test/sources/aio_parsing/aio_particles/aio_class/trivial/trivial.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="13" selection-start-column="13" selection-end-column="13" />
         </state>
       </provider>
     </entry>

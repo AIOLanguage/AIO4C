@@ -168,6 +168,8 @@ void aio_field_particle::monitor_name(const char symbol, const unsigned position
                 if (isalpha(symbol)) {
                     this->trigger_mode = AIO_TRIGGER_MODE_ACTIVE;
                     this->token_holder->start = position;
+                } else if (this->signal == AIO_PARTICLE_SIGNAL_DETECTED) {
+                    throw_error_with_tag(AIO_FIELD_PARTICLE_ERROR_TAG, "The field name must begin with a letter");
                 }
             }
             break;
@@ -216,7 +218,7 @@ void aio_field_particle::monitor_type_or_colon_or_equal_sign(const char symbol, 
                     this->trigger_mode = AIO_TRIGGER_MODE_ACTIVE;
                     this->token_holder->start = position;
                 } else {
-                    throw_error_with_tag(AIO_FIELD_PARTICLE_ERROR_TAG, "The field type must start with letter!");
+                    throw_error_with_tag(AIO_FIELD_PARTICLE_ERROR_TAG, "The field type begin with a letter!");
                 }
             }
             break;
@@ -299,7 +301,7 @@ void aio_field_particle::monitor_attribute(const char symbol, const unsigned pos
                         throw_error_with_tag(AIO_FIELD_PARTICLE_ERROR_TAG, "Field visibility is already defined!");
                     }
                 } else {
-                    throw_error_with_tag(AIO_FIELD_PARTICLE_ERROR_TAG, "Expected attribute 'protected' or 'private'");
+                    throw_error_with_tag(AIO_FIELD_PARTICLE_ERROR_TAG, "Expected 'protected' or 'private' attribute");
                 }
             }
     }

@@ -136,7 +136,7 @@ void aio_class_particle::monitor_name(const char symbol, const unsigned position
                     this->trigger_mode = AIO_TRIGGER_MODE_ACTIVE;
                     this->token_holder->start = position;
                 } else {
-                    throw_error_with_tag(AIO_CLASS_PARTICLE_ERROR_TAG, "The class name must start with letter!");
+                    throw_error_with_tag(AIO_CLASS_PARTICLE_ERROR_TAG, "The class name must begin with a letter!");
                 }
             }
             break;
@@ -240,7 +240,7 @@ void aio_class_particle::monitor_attribute(const char symbol, const unsigned pos
                 } else {
                     throw_error_with_tag(
                             AIO_CLASS_PARTICLE_ERROR_TAG,
-                            "Expected attribute 'protected', 'private', 'abstract', 'open'"
+                            "Expected 'protected', 'private', 'abstract', 'open' attributes"
                     );
                 }
             }
@@ -252,8 +252,12 @@ void aio_class_particle::monitor_parent(const char symbol, const unsigned positi
     switch (this->trigger_mode) {
         case AIO_TRIGGER_MODE_PASSIVE:
             if (!is_space_or_line_break(symbol)) {
-                this->trigger_mode = AIO_TRIGGER_MODE_ACTIVE;
-                this->token_holder->start = position;
+                if (isalpha(symbol)) {
+                    this->trigger_mode = AIO_TRIGGER_MODE_ACTIVE;
+                    this->token_holder->start = position;
+                } else {
+                    throw_error_with_tag(AIO_CLASS_PARTICLE_ERROR_TAG, "The parent name must begin with a letter");
+                }
             }
             break;
         case AIO_TRIGGER_MODE_ACTIVE:

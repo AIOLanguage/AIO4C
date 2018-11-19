@@ -25,20 +25,13 @@ bool aio_inheritable<T>::operator==(const aio_inheritable &rhs) const
     if (!this->parents->equals(rhs.parents, [this](const T *o1, const T *o2) { return this->compare(o1, o2); })) {
         return false;
     }
-    printf("PARENTS IS OK\n");
     if (!this->parent_names->equals(rhs.parent_names, str_hook::compare_hooks)) {
         return false;
     }
-    printf("NAMES IS OK\n");
     if (!this->children->equals(rhs.children, [this](const T *o1, const T *o2) { return this->compare(o1, o2); })) {
         return false;
     }
-    printf("CHILDREN ARE OK\n");
-    if (this->inherited_type != rhs.inherited_type) {
-        return false;
-    }
-    printf("INHERITANCE IS OK\n");
-    return true;
+    return !(this->inherited_type != rhs.inherited_type);
 }
 
 template<typename T>

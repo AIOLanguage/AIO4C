@@ -8,236 +8,175 @@
 		<Option virtualFolders="CMake Files\;CMake Files\com\;CMake Files\tests\;CMake Files\libs\;CMake Files\libs\lib4aio\;CMake Files\libs\googletest\;CMake Files\libs\googletest\googlemock\;CMake Files\libs\googletest\googlemock\cmake\;CMake Files\libs\googletest\googletest\;CMake Files\libs\googletest\googletest\cmake\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="D:/edu/AIO/cmake-build-debug/libs/googletest/googlemock/gtest"/>
+				<Option working_dir="/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/libs/googletest/googlemock/gtest"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/edu/AIO/cmake-build-debug/libs/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/edu/AIO/cmake-build-debug/libs/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/edu/AIO/cmake-build-debug/libs/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/edu/AIO/cmake-build-debug/libs/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="gtest">
-				<Option output="D:/edu/AIO/cmake-build-debug/lib/libgtestd.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="D:/edu/AIO/cmake-build-debug/libs/googletest/googlemock/gtest"/>
-				<Option object_output="./"/>
-				<Option type="2"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="D:/edu/AIO/com/headers"/>
-					<Add directory="D:/edu/AIO/com/sources"/>
-					<Add directory="D:/edu/AIO/tests"/>
-					<Add directory="D:/edu/AIO/libs/lib4aio"/>
-					<Add directory="D:/edu/AIO/libs/googletest/googletest/include"/>
-					<Add directory="D:/edu/AIO/libs/googletest/googletest"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.2.0/include/c++"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.2.0/include/c++/i686-w64-mingw32"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.2.0/include/c++/backward"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.2.0/include"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.2.0/include-fixed"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.2.0/../../../../i686-w64-mingw32/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/edu/AIO/cmake-build-debug/libs/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 gtest"/>
-					<CompileFile command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/edu/AIO/cmake-build-debug/libs/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/edu/AIO/cmake-build-debug/libs/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/edu/AIO/cmake-build-debug/libs/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="gtest/fast">
-				<Option output="D:/edu/AIO/cmake-build-debug/lib/libgtestd.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="D:/edu/AIO/cmake-build-debug/libs/googletest/googlemock/gtest"/>
-				<Option object_output="./"/>
-				<Option type="2"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="D:/edu/AIO/com/headers"/>
-					<Add directory="D:/edu/AIO/com/sources"/>
-					<Add directory="D:/edu/AIO/tests"/>
-					<Add directory="D:/edu/AIO/libs/lib4aio"/>
-					<Add directory="D:/edu/AIO/libs/googletest/googletest/include"/>
-					<Add directory="D:/edu/AIO/libs/googletest/googletest"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.2.0/include/c++"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.2.0/include/c++/i686-w64-mingw32"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.2.0/include/c++/backward"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.2.0/include"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.2.0/include-fixed"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.2.0/../../../../i686-w64-mingw32/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/edu/AIO/cmake-build-debug/libs/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 gtest/fast"/>
-					<CompileFile command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/edu/AIO/cmake-build-debug/libs/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/edu/AIO/cmake-build-debug/libs/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/edu/AIO/cmake-build-debug/libs/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/libs/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/libs/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/libs/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/libs/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="gtest_main">
-				<Option output="D:/edu/AIO/cmake-build-debug/lib/libgtest_maind.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="D:/edu/AIO/cmake-build-debug/libs/googletest/googlemock/gtest"/>
+				<Option output="/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/lib/libgtest_maind.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/libs/googletest/googlemock/gtest"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="D:/edu/AIO/com/headers"/>
-					<Add directory="D:/edu/AIO/com/sources"/>
-					<Add directory="D:/edu/AIO/tests"/>
-					<Add directory="D:/edu/AIO/libs/lib4aio"/>
-					<Add directory="D:/edu/AIO/libs/googletest/googletest/include"/>
-					<Add directory="D:/edu/AIO/libs/googletest/googletest"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.2.0/include/c++"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.2.0/include/c++/i686-w64-mingw32"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.2.0/include/c++/backward"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.2.0/include"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.2.0/include-fixed"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.2.0/../../../../i686-w64-mingw32/include"/>
+					<Add directory="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/headers"/>
+					<Add directory="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/sources"/>
+					<Add directory="/home/ihb/IgorProjects/projects/aio/os/AIO4C/tests"/>
+					<Add directory="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/lib4aio"/>
+					<Add directory="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/googletest/googletest/include"/>
+					<Add directory="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/googletest/googletest"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/edu/AIO/cmake-build-debug/libs/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 gtest_main"/>
-					<CompileFile command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/edu/AIO/cmake-build-debug/libs/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/edu/AIO/cmake-build-debug/libs/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/edu/AIO/cmake-build-debug/libs/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/libs/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 gtest_main"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/libs/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/libs/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/libs/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="gtest_main/fast">
-				<Option output="D:/edu/AIO/cmake-build-debug/lib/libgtest_maind.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="D:/edu/AIO/cmake-build-debug/libs/googletest/googlemock/gtest"/>
+				<Option output="/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/lib/libgtest_maind.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/libs/googletest/googlemock/gtest"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="D:/edu/AIO/com/headers"/>
-					<Add directory="D:/edu/AIO/com/sources"/>
-					<Add directory="D:/edu/AIO/tests"/>
-					<Add directory="D:/edu/AIO/libs/lib4aio"/>
-					<Add directory="D:/edu/AIO/libs/googletest/googletest/include"/>
-					<Add directory="D:/edu/AIO/libs/googletest/googletest"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.2.0/include/c++"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.2.0/include/c++/i686-w64-mingw32"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.2.0/include/c++/backward"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.2.0/include"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.2.0/include-fixed"/>
-					<Add directory="C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.2.0/../../../../i686-w64-mingw32/include"/>
+					<Add directory="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/headers"/>
+					<Add directory="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/sources"/>
+					<Add directory="/home/ihb/IgorProjects/projects/aio/os/AIO4C/tests"/>
+					<Add directory="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/lib4aio"/>
+					<Add directory="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/googletest/googletest/include"/>
+					<Add directory="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/googletest/googletest"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/edu/AIO/cmake-build-debug/libs/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 gtest_main/fast"/>
-					<CompileFile command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/edu/AIO/cmake-build-debug/libs/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/edu/AIO/cmake-build-debug/libs/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/edu/AIO/cmake-build-debug/libs/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/libs/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 gtest_main/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/libs/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/libs/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/libs/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="gtest">
+				<Option output="/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/lib/libgtestd.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/libs/googletest/googlemock/gtest"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/headers"/>
+					<Add directory="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/sources"/>
+					<Add directory="/home/ihb/IgorProjects/projects/aio/os/AIO4C/tests"/>
+					<Add directory="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/lib4aio"/>
+					<Add directory="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/googletest/googletest/include"/>
+					<Add directory="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/googletest/googletest"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/libs/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 gtest"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/libs/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/libs/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/libs/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="gtest/fast">
+				<Option output="/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/lib/libgtestd.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/libs/googletest/googlemock/gtest"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/headers"/>
+					<Add directory="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/sources"/>
+					<Add directory="/home/ihb/IgorProjects/projects/aio/os/AIO4C/tests"/>
+					<Add directory="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/lib4aio"/>
+					<Add directory="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/googletest/googletest/include"/>
+					<Add directory="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/googletest/googletest"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/libs/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 gtest/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/libs/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/libs/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/ihb/IgorProjects/projects/aio/os/AIO4C/cmake-build-debug/libs/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="D:/edu/AIO/libs/googletest/googletest/src/gtest-all.cc">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/googletest/googletest/src/gtest-all.cc">
 			<Option target="gtest"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/libs/googletest/googletest/src/gtest_main.cc">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/googletest/googletest/src/gtest_main.cc">
 			<Option target="gtest_main"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/CMakeLists.txt">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/com/CMakeLists.txt">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/com/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\com\"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/tests/CMakeLists.txt">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/tests/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\tests\"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/libs/lib4aio/CMakeLists.txt">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/lib4aio/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\libs\lib4aio\"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/libs/lib4aio/CMakeLists.txt">
-			<Option virtualFolder="CMake Files\libs\lib4aio\"/>
-		</Unit>
-		<Unit filename="D:/edu/AIO/libs/googletest/CMakeLists.txt">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/googletest/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\libs\googletest\"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/libs/googletest/CMakeLists.txt">
-			<Option virtualFolder="CMake Files\libs\googletest\"/>
-		</Unit>
-		<Unit filename="D:/edu/AIO/libs/googletest/googlemock/CMakeLists.txt">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/googletest/googlemock/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\libs\googletest\googlemock\"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/libs/googletest/googlemock/CMakeLists.txt">
-			<Option virtualFolder="CMake Files\libs\googletest\googlemock\"/>
-		</Unit>
-		<Unit filename="D:/edu/AIO/libs/googletest/googlemock/CMakeLists.txt">
-			<Option virtualFolder="CMake Files\libs\googletest\googlemock\"/>
-		</Unit>
-		<Unit filename="D:/edu/AIO/libs/googletest/googlemock/cmake/gmock.pc.in">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/googletest/googlemock/cmake/gmock.pc.in">
 			<Option virtualFolder="CMake Files\libs\googletest\googlemock\cmake\"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/libs/googletest/googlemock/cmake/gmock_main.pc.in">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/googletest/googlemock/cmake/gmock_main.pc.in">
 			<Option virtualFolder="CMake Files\libs\googletest\googlemock\cmake\"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/libs/googletest/googlemock/cmake/gmock.pc.in">
-			<Option virtualFolder="CMake Files\libs\googletest\googlemock\cmake\"/>
-		</Unit>
-		<Unit filename="D:/edu/AIO/libs/googletest/googlemock/cmake/gmock_main.pc.in">
-			<Option virtualFolder="CMake Files\libs\googletest\googlemock\cmake\"/>
-		</Unit>
-		<Unit filename="D:/edu/AIO/libs/googletest/googlemock/cmake/gmock.pc.in">
-			<Option virtualFolder="CMake Files\libs\googletest\googlemock\cmake\"/>
-		</Unit>
-		<Unit filename="D:/edu/AIO/libs/googletest/googlemock/cmake/gmock_main.pc.in">
-			<Option virtualFolder="CMake Files\libs\googletest\googlemock\cmake\"/>
-		</Unit>
-		<Unit filename="D:/edu/AIO/libs/googletest/googletest/CMakeLists.txt">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/googletest/googletest/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\libs\googletest\googletest\"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/libs/googletest/googletest/CMakeLists.txt">
-			<Option virtualFolder="CMake Files\libs\googletest\googletest\"/>
-		</Unit>
-		<Unit filename="D:/edu/AIO/libs/googletest/googletest/CMakeLists.txt">
-			<Option virtualFolder="CMake Files\libs\googletest\googletest\"/>
-		</Unit>
-		<Unit filename="D:/edu/AIO/libs/googletest/googletest/CMakeLists.txt">
-			<Option virtualFolder="CMake Files\libs\googletest\googletest\"/>
-		</Unit>
-		<Unit filename="D:/edu/AIO/libs/googletest/googletest/cmake/internal_utils.cmake">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/googletest/googletest/cmake/Config.cmake.in">
 			<Option virtualFolder="CMake Files\libs\googletest\googletest\cmake\"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/libs/googletest/googletest/cmake/Config.cmake.in">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/googletest/googletest/cmake/gtest.pc.in">
 			<Option virtualFolder="CMake Files\libs\googletest\googletest\cmake\"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/libs/googletest/googletest/cmake/gtest.pc.in">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/googletest/googletest/cmake/gtest_main.pc.in">
 			<Option virtualFolder="CMake Files\libs\googletest\googletest\cmake\"/>
 		</Unit>
-		<Unit filename="D:/edu/AIO/libs/googletest/googletest/cmake/gtest_main.pc.in">
-			<Option virtualFolder="CMake Files\libs\googletest\googletest\cmake\"/>
-		</Unit>
-		<Unit filename="D:/edu/AIO/libs/googletest/googletest/cmake/internal_utils.cmake">
-			<Option virtualFolder="CMake Files\libs\googletest\googletest\cmake\"/>
-		</Unit>
-		<Unit filename="D:/edu/AIO/libs/googletest/googletest/cmake/Config.cmake.in">
-			<Option virtualFolder="CMake Files\libs\googletest\googletest\cmake\"/>
-		</Unit>
-		<Unit filename="D:/edu/AIO/libs/googletest/googletest/cmake/gtest.pc.in">
-			<Option virtualFolder="CMake Files\libs\googletest\googletest\cmake\"/>
-		</Unit>
-		<Unit filename="D:/edu/AIO/libs/googletest/googletest/cmake/gtest_main.pc.in">
-			<Option virtualFolder="CMake Files\libs\googletest\googletest\cmake\"/>
-		</Unit>
-		<Unit filename="D:/edu/AIO/libs/googletest/googletest/cmake/internal_utils.cmake">
-			<Option virtualFolder="CMake Files\libs\googletest\googletest\cmake\"/>
-		</Unit>
-		<Unit filename="D:/edu/AIO/libs/googletest/googletest/cmake/Config.cmake.in">
-			<Option virtualFolder="CMake Files\libs\googletest\googletest\cmake\"/>
-		</Unit>
-		<Unit filename="D:/edu/AIO/libs/googletest/googletest/cmake/gtest.pc.in">
-			<Option virtualFolder="CMake Files\libs\googletest\googletest\cmake\"/>
-		</Unit>
-		<Unit filename="D:/edu/AIO/libs/googletest/googletest/cmake/gtest_main.pc.in">
-			<Option virtualFolder="CMake Files\libs\googletest\googletest\cmake\"/>
-		</Unit>
-		<Unit filename="D:/edu/AIO/libs/googletest/googletest/cmake/internal_utils.cmake">
-			<Option virtualFolder="CMake Files\libs\googletest\googletest\cmake\"/>
-		</Unit>
-		<Unit filename="D:/edu/AIO/libs/googletest/googletest/cmake/Config.cmake.in">
-			<Option virtualFolder="CMake Files\libs\googletest\googletest\cmake\"/>
-		</Unit>
-		<Unit filename="D:/edu/AIO/libs/googletest/googletest/cmake/gtest.pc.in">
-			<Option virtualFolder="CMake Files\libs\googletest\googletest\cmake\"/>
-		</Unit>
-		<Unit filename="D:/edu/AIO/libs/googletest/googletest/cmake/gtest_main.pc.in">
+		<Unit filename="/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/googletest/googletest/cmake/internal_utils.cmake">
 			<Option virtualFolder="CMake Files\libs\googletest\googletest\cmake\"/>
 		</Unit>
 	</Project>

@@ -576,21 +576,21 @@ absl/debugging/symbolize.h
 absl/strings/str_cat.h
 ../libs/googletest/googletest/src/absl/strings/str_cat.h
 
-D:/edu/AIO/libs/googletest/googletest/src/gtest-all.cc
+/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/googletest/googletest/src/gtest-all.cc
 gtest/gtest.h
-D:/edu/AIO/libs/googletest/googletest/src/gtest/gtest.h
+/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/googletest/googletest/src/gtest/gtest.h
 src/gtest.cc
-D:/edu/AIO/libs/googletest/googletest/src/src/gtest.cc
+/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/googletest/googletest/src/src/gtest.cc
 src/gtest-death-test.cc
-D:/edu/AIO/libs/googletest/googletest/src/src/gtest-death-test.cc
+/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/googletest/googletest/src/src/gtest-death-test.cc
 src/gtest-filepath.cc
-D:/edu/AIO/libs/googletest/googletest/src/src/gtest-filepath.cc
+/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/googletest/googletest/src/src/gtest-filepath.cc
 src/gtest-port.cc
-D:/edu/AIO/libs/googletest/googletest/src/src/gtest-port.cc
+/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/googletest/googletest/src/src/gtest-port.cc
 src/gtest-printers.cc
-D:/edu/AIO/libs/googletest/googletest/src/src/gtest-printers.cc
+/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/googletest/googletest/src/src/gtest-printers.cc
 src/gtest-test-part.cc
-D:/edu/AIO/libs/googletest/googletest/src/src/gtest-test-part.cc
+/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/googletest/googletest/src/src/gtest-test-part.cc
 src/gtest-typed-test.cc
-D:/edu/AIO/libs/googletest/googletest/src/src/gtest-typed-test.cc
+/home/ihb/IgorProjects/projects/aio/os/AIO4C/libs/googletest/googletest/src/src/gtest-typed-test.cc
 
